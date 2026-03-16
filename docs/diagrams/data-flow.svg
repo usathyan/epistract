@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1412.283 263.6" width="1412.283" height="263.6" style="--bg:#FFFFFF;--fg:#27272A;background:var(--bg)">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="8" markerHeight="5" refX="7" refY="2.5" orient="auto">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+  <marker id="arrowhead-start" markerWidth="8" markerHeight="5" refX="1" refY="2.5" orient="auto-start-reverse">
+    <polygon points="8 0, 0 2.5, 8 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+</defs>
+<polyline class="edge" data-from="DOCS" data-to="ING" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="205.697,131.8 253.697,131.8" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="ING" data-to="EXT" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="385.308,131.8 433.308,131.8" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="EXT" data-to="VAL" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="584.9259999999999,131.8 632.9259999999999,131.8" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="VAL" data-to="BLD" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="794.9179999999999,131.8 842.9180000000001,131.8" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="BLD" data-to="OUT" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1007.874,131.8 1055.874,131.8" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="OUT" data-to="VIZ" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1134.874,131.8 1152.874,131.8 1152.874,58.45 1170.874,58.45" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="OUT" data-to="EXP" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1134.874,131.8 1152.874,131.8 1152.874,131.8 1170.874,131.8" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="OUT" data-to="QRY" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="1134.874,131.8 1152.874,131.8 1152.874,205.15000000000003 1170.874,205.15000000000003" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<g class="node" data-id="DOCS" data-label="Documents
+PDF · DOCX · HTML
+TXT · Patents" data-shape="rectangle">
+  <rect x="40" y="96.45" width="165.697" height="70.7" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="122.8485" y="131.8" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="122.8485" dy="-12.350000000000001">Documents</tspan><tspan x="122.8485" dy="16.900000000000002">PDF · DOCX · HTML</tspan><tspan x="122.8485" dy="16.900000000000002">TXT · Patents</tspan></text>
+</g>
+<g class="node" data-id="ING" data-label="Text Extraction
++ Chunking" data-shape="rectangle">
+  <rect x="253.697" y="104.9" width="131.611" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="319.5025" y="131.8" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="319.5025" dy="-3.9000000000000012">Text Extraction</tspan><tspan x="319.5025" dy="16.900000000000002">+ Chunking</tspan></text>
+</g>
+<g class="node" data-id="EXT" data-label="Claude Extraction
+Entities + Relations" data-shape="rectangle">
+  <rect x="433.308" y="104.9" width="151.618" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="509.11699999999996" y="131.8" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="509.11699999999996" dy="-3.9000000000000012">Claude Extraction</tspan><tspan x="509.11699999999996" dy="16.900000000000002">Entities + Relations</tspan></text>
+</g>
+<g class="node" data-id="VAL" data-label="Molecular Validation
+RDKit · Biopython" data-shape="rectangle">
+  <rect x="632.9259999999999" y="104.9" width="161.99200000000002" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="713.9219999999999" y="131.8" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="713.9219999999999" dy="-3.9000000000000012">Molecular Validation</tspan><tspan x="713.9219999999999" dy="16.900000000000002">RDKit · Biopython</tspan></text>
+</g>
+<g class="node" data-id="BLD" data-label="Graph Building
+Dedup · Communities" data-shape="rectangle">
+  <rect x="842.9180000000001" y="104.9" width="164.95600000000002" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="925.3960000000002" y="131.8" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="925.3960000000002" dy="-3.9000000000000012">Graph Building</tspan><tspan x="925.3960000000002" dy="16.900000000000002">Dedup · Communities</tspan></text>
+</g>
+<g class="node" data-id="OUT" data-label="Output" data-shape="rectangle">
+  <rect x="1055.874" y="113.35" width="79" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1095.374" y="131.8" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Output</text>
+</g>
+<g class="node" data-id="VIZ" data-label="Interactive Viewer" data-shape="rectangle">
+  <rect x="1170.874" y="40" width="147.913" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1244.8305" y="58.45" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Interactive Viewer</text>
+</g>
+<g class="node" data-id="EXP" data-label="Export
+GraphML · SQLite · CSV" data-shape="rectangle">
+  <rect x="1170.874" y="104.9" width="189.40899999999996" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1265.5785" y="131.8" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="1265.5785" dy="-3.9000000000000012">Export</tspan><tspan x="1265.5785" dy="16.900000000000002">GraphML · SQLite · CSV</tspan></text>
+</g>
+<g class="node" data-id="QRY" data-label="Search &amp; Query" data-shape="rectangle">
+  <rect x="1170.874" y="186.70000000000002" width="135.31599999999997" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="1238.532" y="205.15000000000003" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Search &amp; Query</text>
+</g>
+</svg>

@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1072.3441666666665 924.2999999999998" width="1072.3441666666665" height="924.2999999999998" style="--bg:#FFFFFF;--fg:#27272A;background:var(--bg)">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="8" markerHeight="5" refX="7" refY="2.5" orient="auto">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+  <marker id="arrowhead-start" markerWidth="8" markerHeight="5" refX="1" refY="2.5" orient="auto-start-reverse">
+    <polygon points="8 0, 0 2.5, 8 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+</defs>
+<polyline class="edge" data-from="GENE" data-to="PROT" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="ENCODES" points="195.39757142857144,93.80000000000001 195.39757142857144,275.90000000000003 106.23307142857142,275.90000000000003 106.23307142857142,526.3000000000001 206.63330952380952,526.3000000000001 206.63330952380952,532.3000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="GENE" data-to="VAR" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="HAS_VARIANT" points="235.8099047619048,93.80000000000001 235.8099047619048,105.80000000000001 355.46116666666666,105.80000000000001 355.4611666666667,198.1" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="PROT" data-to="PATH" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="PARTICIPATES_IN" points="214.82214285714286,586.1 214.82214285714286,604.1 113.58600000000001,604.1 113.586,718.55" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="PROT" data-to="CELL" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="EXPRESSED_IN" points="247.5774761904762,586.1 247.5774761904762,648.4 293.94500000000005,648.4 293.945,718.55" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="PATH" data-to="DIS" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="IMPLICATED_IN" points="113.586,772.3499999999999 113.58600000000001,818.4999999999999 402.02099999999996,818.4999999999999 402.02099999999996,830.4999999999999" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="VAR" data-to="DRUG" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="CONFERS_RESISTANCE_TO" points="325.9925,251.9 325.9925,275.90000000000003 275.10616666666664,275.90000000000003 275.10616666666664,344.20000000000005 396.0976666666666,344.20000000000005 396.0976666666666,356.20000000000005" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="VAR" data-to="DRUG" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="PREDICTS_RESPONSE_TO" points="384.92983333333336,251.9 384.92983333333336,275.90000000000003 435.8161666666666,275.90000000000003 435.8161666666666,344.20000000000005 434.00216666666665,344.20000000000005 434.00216666666665,356.20000000000005" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="DRUG" data-to="PROT" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="TARGETS" points="379.85288095238093,410.00000000000006 379.85288095238093,446.00000000000006 209.46005952380943,446.00000000000006 209.46005952380943,526.3000000000001 231.19980952380953,526.3000000000001 231.19980952380953,532.3000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="DRUG" data-to="PROT" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="INHIBITS" points="401.5125952380952,410.00000000000006 401.5125952380952,458.00000000000006 287.0905595238095,458.00000000000006 287.0905595238095,526.3000000000001 255.76630952380953,526.3000000000001 255.76630952380953,532.3000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="DRUG" data-to="DIS" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="INDICATED_FOR" points="423.1723095238095,410.00000000000006 423.1723095238095,514.3000000000001 391.70916666666665,514.3000000000001 391.70916666666665,806.4999999999999 426.5874999999999,806.4999999999999 426.5874999999999,830.4999999999999" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="DRUG" data-to="TRIAL" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="EVALUATED_IN" points="444.8320238095238,410.00000000000006 444.8320238095238,446.00000000000006 476.29516666666666,446.00000000000006 476.29516666666666,532.3000000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="DRUG" data-to="AE" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="CAUSES" points="466.4917380952381,410.00000000000006 466.4917380952381,434.00000000000006 655.9131666666665,434.00000000000006 655.9131666666665,718.55" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="DRUG" data-to="MOA" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="HAS_MECHANISM" points="488.1514523809524,410.00000000000006 488.1514523809524,422.00000000000006 862.2071666666666,422.00000000000006 862.2071666666666,718.55" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="BIO" data-to="DRUG" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="PREDICTS_RESPONSE_TO" points="803.7836785714285,251.90000000000003 803.7836785714285,275.90000000000003 592.8981666666666,275.90000000000003 592.8981666666666,344.20000000000005 471.90666666666664,344.20000000000005 471.90666666666664,356.20000000000005" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="BIO" data-to="DIS" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="DIAGNOSTIC_FOR" points="851.1120119047617,251.90000000000003 851.1120119047617,410.00000000000006 972.4691666666665,410.00000000000006 972.4691666666665,818.4999999999999 451.15399999999994,818.4999999999999 451.15399999999994,830.4999999999999" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<g class="edge-label" data-from="GENE" data-to="PROT" data-label="ENCODES">
+  <rect x="72.23307142857144" y="489.00000000000006" width="67.546" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="106.00607142857143" y="504.15000000000003" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">ENCODES</text>
+</g>
+<g class="edge-label" data-from="GENE" data-to="VAR" data-label="HAS_VARIANT">
+  <rect x="309.9611666666667" y="112.80000000000001" width="90.118" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="355.0201666666667" y="127.95000000000002" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">HAS_VARIANT</text>
+</g>
+<g class="edge-label" data-from="PROT" data-to="PATH" data-label="PARTICIPATES_IN">
+  <rect x="58.586" y="611.1" width="109.126" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="113.149" y="626.25" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">PARTICIPATES_IN</text>
+</g>
+<g class="edge-label" data-from="PROT" data-to="CELL" data-label="EXPRESSED_IN">
+  <rect x="244.94500000000005" y="655.4" width="97.246" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="293.56800000000004" y="670.55" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">EXPRESSED_IN</text>
+</g>
+<g class="edge-label" data-from="PATH" data-to="DIS" data-label="IMPLICATED_IN">
+  <rect x="65.08600000000001" y="781.1999999999999" width="96.652" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="113.412" y="796.3499999999999" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">IMPLICATED_IN</text>
+</g>
+<g class="edge-label" data-from="VAR" data-to="DRUG" data-label="CONFERS_RESISTANCE_TO">
+  <rect x="194.6061666666666" y="282.90000000000003" width="160.20999999999998" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="274.7111666666666" y="298.05" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">CONFERS_RESISTANCE_TO</text>
+</g>
+<g class="edge-label" data-from="VAR" data-to="DRUG" data-label="PREDICTS_RESPONSE_TO">
+  <rect x="358.8161666666666" y="282.90000000000003" width="153.08199999999997" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="435.3571666666666" y="298.05" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">PREDICTS_RESPONSE_TO</text>
+</g>
+<g class="edge-label" data-from="DRUG" data-to="PROT" data-label="TARGETS">
+  <rect x="175.46005952380943" y="465.00000000000006" width="67.546" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="209.23305952380943" y="480.15000000000003" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">TARGETS</text>
+</g>
+<g class="edge-label" data-from="DRUG" data-to="PROT" data-label="INHIBITS">
+  <rect x="256.5905595238095" y="465.00000000000006" width="60.418000000000006" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="286.7995595238095" y="480.15000000000003" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">INHIBITS</text>
+</g>
+<g class="edge-label" data-from="DRUG" data-to="DIS" data-label="INDICATED_FOR">
+  <rect x="341.70916666666665" y="623.1" width="99.62199999999999" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="391.5201666666666" y="638.25" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">INDICATED_FOR</text>
+</g>
+<g class="edge-label" data-from="DRUG" data-to="TRIAL" data-label="EVALUATED_IN">
+  <rect x="427.29516666666666" y="453.00000000000006" width="97.246" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="475.91816666666665" y="468.15000000000003" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">EVALUATED_IN</text>
+</g>
+<g class="edge-label" data-from="DRUG" data-to="AE" data-label="CAUSES">
+  <rect x="625.4131666666665" y="679.4" width="60.418000000000006" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="655.6221666666665" y="694.55" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">CAUSES</text>
+</g>
+<g class="edge-label" data-from="DRUG" data-to="MOA" data-label="HAS_MECHANISM">
+  <rect x="808.2071666666666" y="628" width="107.93799999999999" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="862.1761666666666" y="643.15" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">HAS_MECHANISM</text>
+</g>
+<g class="edge-label" data-from="BIO" data-to="DRUG" data-label="PREDICTS_RESPONSE_TO">
+  <rect x="515.8981666666666" y="282.90000000000003" width="153.08199999999997" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="592.4391666666666" y="298.05" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">PREDICTS_RESPONSE_TO</text>
+</g>
+<g class="edge-label" data-from="BIO" data-to="DIS" data-label="DIAGNOSTIC_FOR">
+  <rect x="918.9691666666665" y="781.1999999999999" width="106.75" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="972.3441666666665" y="796.3499999999999" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">DIAGNOSTIC_FOR</text>
+</g>
+<g class="node" data-id="GENE" data-label="GENE
+HGNC symbol" data-shape="rectangle">
+  <rect x="154.98523809523812" y="40" width="121.237" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="215.6037380952381" y="66.9" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="215.6037380952381" dy="-3.9000000000000012">GENE</tspan><tspan x="215.6037380952381" dy="16.900000000000002">HGNC symbol</tspan></text>
+</g>
+<g class="node" data-id="PROT" data-label="PROTEIN
+UniProt" data-shape="rectangle">
+  <rect x="182.06680952380952" y="532.3000000000001" width="98.266" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="231.19980952380953" y="559.2" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="231.19980952380953" dy="-3.9000000000000012">PROTEIN</tspan><tspan x="231.19980952380953" dy="16.900000000000002">UniProt</tspan></text>
+</g>
+<g class="node" data-id="VAR" data-label="SEQUENCE_VARIANT
+ClinVar · COSMIC" data-shape="rectangle">
+  <rect x="267.0551666666667" y="198.1" width="176.81199999999995" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="355.4611666666667" y="225" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="355.4611666666667" dy="-3.9000000000000012">SEQUENCE_VARIANT</tspan><tspan x="355.4611666666667" dy="16.900000000000002">ClinVar · COSMIC</tspan></text>
+</g>
+<g class="node" data-id="PATH" data-label="PATHWAY
+KEGG · Reactome" data-shape="rectangle">
+  <rect x="40" y="718.55" width="147.172" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="113.586" y="745.4499999999999" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="113.586" dy="-3.9000000000000012">PATHWAY</tspan><tspan x="113.586" dy="16.900000000000002">KEGG · Reactome</tspan></text>
+</g>
+<g class="node" data-id="CELL" data-label="CELL_OR_TISSUE
+Cell Ontology" data-shape="rectangle">
+  <rect x="215.17200000000003" y="718.55" width="157.54599999999996" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="293.945" y="745.4499999999999" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="293.945" dy="-3.9000000000000012">CELL_OR_TISSUE</tspan><tspan x="293.945" dy="16.900000000000002">Cell Ontology</tspan></text>
+</g>
+<g class="node" data-id="DIS" data-label="DISEASE
+MeSH" data-shape="rectangle">
+  <rect x="377.45449999999994" y="830.4999999999999" width="98.266" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="426.5874999999999" y="857.3999999999999" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="426.5874999999999" dy="-3.9000000000000012">DISEASE</tspan><tspan x="426.5874999999999" dy="16.900000000000002">MeSH</tspan></text>
+</g>
+<g class="node" data-id="DRUG" data-label="COMPOUND
+ChEBI · DrugBank" data-shape="rectangle">
+  <rect x="358.1931666666666" y="356.20000000000005" width="151.618" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="434.00216666666665" y="383.1" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="434.00216666666665" dy="-3.9000000000000012">COMPOUND</tspan><tspan x="434.00216666666665" dy="16.900000000000002">ChEBI · DrugBank</tspan></text>
+</g>
+<g class="node" data-id="TRIAL" data-label="CLINICAL_TRIAL
+NCT" data-shape="rectangle">
+  <rect x="402.70916666666665" y="532.3000000000001" width="147.17199999999997" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="476.29516666666666" y="559.2" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="476.29516666666666" dy="-3.9000000000000012">CLINICAL_TRIAL</tspan><tspan x="476.29516666666666" dy="16.900000000000002">NCT</tspan></text>
+</g>
+<g class="node" data-id="AE" data-label="ADVERSE_EVENT
+MedDRA" data-shape="rectangle">
+  <rect x="577.8811666666666" y="718.55" width="156.06399999999996" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="655.9131666666665" y="745.4499999999999" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="655.9131666666665" dy="-3.9000000000000012">ADVERSE_EVENT</tspan><tspan x="655.9131666666665" dy="16.900000000000002">MedDRA</tspan></text>
+</g>
+<g class="node" data-id="MOA" data-label="MECHANISM_OF_ACTION" data-shape="rectangle">
+  <rect x="761.9451666666666" y="718.55" width="200.52399999999994" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="862.2071666666666" y="737" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">MECHANISM_OF_ACTION</text>
+</g>
+<g class="node" data-id="BIO" data-label="BIOMARKER
+BEST framework" data-shape="rectangle">
+  <rect x="756.4553452380951" y="198.1" width="141.985" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="827.4478452380952" y="225" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="827.4478452380952" dy="-3.9000000000000012">BIOMARKER</tspan><tspan x="827.4478452380952" dy="16.900000000000002">BEST framework</tspan></text>
+</g>
+</svg>
