@@ -124,7 +124,7 @@ See [tests/MANUAL_TEST_SCENARIOS.md](tests/MANUAL_TEST_SCENARIOS.md) for the ful
 
 ### Scenario 1 Result: PICALM / Alzheimer's Disease
 
-![PICALM Alzheimer's Knowledge Graph](tests/corpora/01_picalm_alzheimers/output/screenshots/graph_overview.png)
+![PICALM Alzheimer's Knowledge Graph](tests/scenarios/screenshots/scenario-01-graph.png)
 
 *149 nodes, 457 links, 6 auto-labeled communities. Full results: [scenario-01-picalm-alzheimers.md](tests/scenarios/scenario-01-picalm-alzheimers.md)*
 

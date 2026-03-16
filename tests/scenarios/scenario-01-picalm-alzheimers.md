@@ -9,7 +9,7 @@
 
 ## Knowledge Graph
 
-![PICALM Alzheimer's Knowledge Graph](../corpora/01_picalm_alzheimers/output/screenshots/graph_overview.png)
+![PICALM Alzheimer's Knowledge Graph](screenshots/scenario-01-graph.png)
 
 *Force-directed graph showing 149 nodes and 457 links across 6 auto-labeled communities. Node color = community membership. Node size = connection count. Edge color = relation type.*
 
