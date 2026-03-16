@@ -1,0 +1,179 @@
+{
+  "document_id": "pmid_38614387",
+  "document_path": "pmid_38614387",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "valoctocogene roxaparvovec",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "gene therapy",
+        "vector": "AAV5"
+      },
+      "confidence": 0.98,
+      "context": "Three-year outcomes of valoctocogene roxaparvovec for hemophilia A"
+    },
+    {
+      "name": "hemophilia A",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "severity": "severe"
+      },
+      "confidence": 0.99,
+      "context": "GENEr8-1 phase 3: 131 of 134 remained at week 156"
+    },
+    {
+      "name": "GENEr8-1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "3",
+        "nct_id": "NCT03370913",
+        "n_remaining": 131,
+        "n_enrolled": 134,
+        "timepoint": "week 156"
+      },
+      "confidence": 0.98,
+      "context": "GENEr8-1 phase 3: 131 of 134 remained at week 156"
+    },
+    {
+      "name": "factor VIII",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "mean_activity_week156": "18.4 IU/dL"
+      },
+      "confidence": 0.97,
+      "context": "Mean FVIII 18.4 IU/dL at week 156"
+    },
+    {
+      "name": "FVIII activity",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "value_week156": "18.4 IU/dL",
+        "decline_trend": "lower between years 2-3 than 1-2"
+      },
+      "confidence": 0.95,
+      "context": "Mean FVIII 18.4 IU/dL at week 156. FVIII decrease lower between years 2-3 than 1-2"
+    },
+    {
+      "name": "ALT elevation",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "severity": "mild",
+        "incidence_year3": "23.7%",
+        "description": "most common AE"
+      },
+      "confidence": 0.95,
+      "context": "Mild ALT elevations remained most common AE (23.7%)"
+    },
+    {
+      "name": "BioMarin",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "sponsor"
+      },
+      "confidence": 0.95,
+      "context": "BioMarin, NCT03370913"
+    },
+    {
+      "name": "Madan et al. 2024",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "journal": "JTH",
+        "year": 2024,
+        "pmid": "38614387"
+      },
+      "confidence": 0.95,
+      "context": "Madan et al., JTH (2024)"
+    },
+    {
+      "name": "annualized bleeding rate reduction",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "baseline": "4.8 bleeds/y",
+        "post_treatment": "0.8 bleeds/y",
+        "year3": "0.97 bleeds/y",
+        "p_value": "<0.0001"
+      },
+      "confidence": 0.95,
+      "context": "Mean annualized bleeding rate decreased from 4.8 to 0.8 bleeds/y (P<.0001) and 0.97 during year 3"
+    },
+    {
+      "name": "HemA-QoL",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "quality of life instrument",
+        "result": "improvement",
+        "p_value": "<0.0001"
+      },
+      "confidence": 0.88,
+      "context": "Quality of life improvement (HemA-QoL, P<.0001)"
+    },
+    {
+      "name": "prophylaxis resumption",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "count": 17,
+        "of_total": 134
+      },
+      "confidence": 0.9,
+      "context": "17 resumed prophylaxis"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "hemophilia A",
+      "confidence": 0.97,
+      "evidence": "Three-year outcomes of valoctocogene roxaparvovec for hemophilia A"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "GENEr8-1",
+      "confidence": 0.98,
+      "evidence": "GENEr8-1 phase 3: 131 of 134 remained at week 156"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "ALT elevation",
+      "confidence": 0.93,
+      "evidence": "Mild ALT elevations remained most common AE (23.7%)"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "BioMarin",
+      "confidence": 0.93,
+      "evidence": "BioMarin, NCT03370913"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "FVIII activity",
+      "target_entity": "hemophilia A",
+      "confidence": 0.9,
+      "evidence": "Mean FVIII 18.4 IU/dL at week 156"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "FVIII activity",
+      "target_entity": "valoctocogene roxaparvovec",
+      "confidence": 0.88,
+      "evidence": "FVIII decrease lower between years 2-3 than 1-2"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "HemA-QoL",
+      "target_entity": "valoctocogene roxaparvovec",
+      "confidence": 0.82,
+      "evidence": "Quality of life improvement (HemA-QoL, P<.0001)"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T23:51:10.044044+00:00",
+  "error": null
+}

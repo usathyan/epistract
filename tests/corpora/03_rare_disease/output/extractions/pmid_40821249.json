@@ -1,0 +1,222 @@
+{
+  "document_id": "pmid_40821249",
+  "document_path": "pmid_40821249",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "vosoritide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "brand_name": "Voxzogo",
+        "route": "subcutaneous",
+        "dose": "15 \u00b5g/kg daily"
+      },
+      "confidence": 0.98,
+      "context": "Vosoritide is first targeted therapy approved"
+    },
+    {
+      "name": "achondroplasia",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "category": "genetic skeletal dysplasia"
+      },
+      "confidence": 0.98,
+      "context": "Achondroplasia is most common genetic skeletal dysplasia caused by activating FGFR3 mutations"
+    },
+    {
+      "name": "FGFR3",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "fibroblast growth factor receptor 3"
+      },
+      "confidence": 0.98,
+      "context": "caused by activating FGFR3 mutations"
+    },
+    {
+      "name": "fibroblast growth factor receptor 3",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene": "FGFR3"
+      },
+      "confidence": 0.95,
+      "context": "caused by activating FGFR3 mutations"
+    },
+    {
+      "name": "FGFR3 activating mutation",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "effect": "gain-of-function"
+      },
+      "confidence": 0.9,
+      "context": "caused by activating FGFR3 mutations"
+    },
+    {
+      "name": "C-type natriuretic peptide analog",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "description": "CNP analog that counteracts FGFR3 signaling to promote endochondral bone growth"
+      },
+      "confidence": 0.88,
+      "context": "Vosoritide is first targeted therapy approved"
+    },
+    {
+      "name": "injection site reaction",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "severity": "mild"
+      },
+      "confidence": 0.95,
+      "context": "Common AEs: mild injection site reactions"
+    },
+    {
+      "name": "transient hypotension",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "population": "infants"
+      },
+      "confidence": 0.9,
+      "context": "transient hypotension in infants"
+    },
+    {
+      "name": "increased annualized growth velocity",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "magnitude": "~1.5-2.0 cm/year vs placebo",
+        "duration": "sustained over 7 years"
+      },
+      "confidence": 0.95,
+      "context": "daily SC 15 \u00b5g/kg increases AGV by ~1.5-2.0 cm/year vs placebo"
+    },
+    {
+      "name": "improved body proportions",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.88,
+      "context": "Improvements in body proportions, craniofacial development"
+    },
+    {
+      "name": "reduced lumbar lordosis",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "reduction in lumbar lordosis and leg bowing"
+    },
+    {
+      "name": "reduced leg bowing",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "reduction in lumbar lordosis and leg bowing"
+    },
+    {
+      "name": "annualized growth velocity",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "AGV",
+        "type": "efficacy endpoint"
+      },
+      "confidence": 0.92,
+      "context": "increases AGV by ~1.5-2.0 cm/year vs placebo"
+    },
+    {
+      "name": "vosoritide phase II/III trial",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "II/III",
+        "design": "placebo-controlled"
+      },
+      "confidence": 0.9,
+      "context": "Phase II/III: daily SC 15 \u00b5g/kg increases AGV by ~1.5-2.0 cm/year vs placebo"
+    },
+    {
+      "name": "Jones et al. 2025",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "journal": "Cureus",
+        "year": 2025,
+        "pmid": "40821249"
+      },
+      "confidence": 0.98,
+      "context": "Jones et al., Cureus (2025)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "vosoritide",
+      "target_entity": "achondroplasia",
+      "confidence": 0.97,
+      "evidence": "Vosoritide is first targeted therapy approved"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "vosoritide",
+      "target_entity": "fibroblast growth factor receptor 3",
+      "confidence": 0.82,
+      "evidence": "Vosoritide is first targeted therapy approved... caused by activating FGFR3 mutations"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "vosoritide",
+      "target_entity": "C-type natriuretic peptide analog",
+      "confidence": 0.88,
+      "evidence": "Vosoritide is first targeted therapy approved"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "FGFR3",
+      "target_entity": "achondroplasia",
+      "confidence": 0.98,
+      "evidence": "Achondroplasia is most common genetic skeletal dysplasia caused by activating FGFR3 mutations"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "FGFR3",
+      "target_entity": "fibroblast growth factor receptor 3",
+      "confidence": 0.95,
+      "evidence": "FGFR3 mutations"
+    },
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "FGFR3",
+      "target_entity": "FGFR3 activating mutation",
+      "confidence": 0.92,
+      "evidence": "caused by activating FGFR3 mutations"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "vosoritide",
+      "target_entity": "injection site reaction",
+      "confidence": 0.95,
+      "evidence": "Common AEs: mild injection site reactions"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "vosoritide",
+      "target_entity": "transient hypotension",
+      "confidence": 0.88,
+      "evidence": "transient hypotension in infants"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "vosoritide",
+      "target_entity": "vosoritide phase II/III trial",
+      "confidence": 0.92,
+      "evidence": "Phase II/III: daily SC 15 \u00b5g/kg increases AGV by ~1.5-2.0 cm/year vs placebo"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "FGFR3 activating mutation",
+      "target_entity": "achondroplasia",
+      "confidence": 0.97,
+      "evidence": "Achondroplasia is most common genetic skeletal dysplasia caused by activating FGFR3 mutations"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T23:53:45.847354+00:00",
+  "error": null
+}

@@ -1,0 +1,139 @@
+{
+  "document_id": "pmid_31258325",
+  "document_path": "pmid_31258325",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "pegvaliase",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "PEGylated enzyme",
+        "description": "pegylated PAL enzyme"
+      },
+      "confidence": 0.98,
+      "context": "Pegvaliase is a pegylated PAL enzyme that converts phenylalanine to ammonia and trans-cinnamic acid"
+    },
+    {
+      "name": "phenylketonuria",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "alias": "PKU"
+      },
+      "confidence": 0.98,
+      "context": "Comprehensive Review of Pegvaliase for Treatment of PKU"
+    },
+    {
+      "name": "phenylalanine ammonia-lyase",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "alias": "PAL"
+      },
+      "confidence": 0.95,
+      "context": "Pegvaliase is a pegylated PAL enzyme"
+    },
+    {
+      "name": "phenylalanine",
+      "entity_type": "METABOLITE",
+      "attributes": {
+        "alias": "Phe"
+      },
+      "confidence": 0.95,
+      "context": "converts phenylalanine to ammonia and trans-cinnamic acid"
+    },
+    {
+      "name": "trans-cinnamic acid",
+      "entity_type": "METABOLITE",
+      "attributes": {},
+      "confidence": 0.92,
+      "context": "converts phenylalanine to ammonia and trans-cinnamic acid"
+    },
+    {
+      "name": "ammonia",
+      "entity_type": "METABOLITE",
+      "attributes": {},
+      "confidence": 0.88,
+      "context": "converts phenylalanine to ammonia and trans-cinnamic acid"
+    },
+    {
+      "name": "blood phenylalanine",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "reduction": "50-70% at therapeutic doses"
+      },
+      "confidence": 0.92,
+      "context": "Blood Phe reduced ~50-70% at therapeutic doses"
+    },
+    {
+      "name": "FDA approval of pegvaliase for PKU",
+      "entity_type": "REGULATORY_ACTION",
+      "attributes": {
+        "agency": "FDA",
+        "designation": "first enzyme substitution therapy for PKU"
+      },
+      "confidence": 0.95,
+      "context": "First FDA-approved enzyme substitution therapy for PKU"
+    },
+    {
+      "name": "enzyme substitution therapy",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "description": "PAL enzyme substitutes for deficient PAH to metabolize phenylalanine"
+      },
+      "confidence": 0.9,
+      "context": "First FDA-approved enzyme substitution therapy for PKU"
+    },
+    {
+      "name": "Drug Target Insights",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "year": 2019,
+        "authors": "Hydery & Coppenrath"
+      },
+      "confidence": 0.88,
+      "context": "Hydery & Coppenrath, Drug Target Insights (2019)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "pegvaliase",
+      "target_entity": "phenylketonuria",
+      "confidence": 0.98,
+      "evidence": "Comprehensive Review of Pegvaliase for Treatment of PKU"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "pegvaliase",
+      "target_entity": "enzyme substitution therapy",
+      "confidence": 0.92,
+      "evidence": "First FDA-approved enzyme substitution therapy for PKU"
+    },
+    {
+      "relation_type": "GRANTS_APPROVAL_FOR",
+      "source_entity": "FDA approval of pegvaliase for PKU",
+      "target_entity": "pegvaliase",
+      "confidence": 0.95,
+      "evidence": "First FDA-approved enzyme substitution therapy for PKU"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "blood phenylalanine",
+      "target_entity": "phenylketonuria",
+      "confidence": 0.9,
+      "evidence": "Viable option for patients with blood Phe >600 umol/L who have failed existing management"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "blood phenylalanine",
+      "target_entity": "pegvaliase",
+      "confidence": 0.88,
+      "evidence": "Blood Phe reduced ~50-70% at therapeutic doses"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T23:51:08.509051+00:00",
+  "error": null
+}

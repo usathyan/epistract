@@ -1,0 +1,251 @@
+{
+  "document_id": "pmid_29653686",
+  "document_path": "pmid_29653686",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "pegvaliase",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "PEGylated enzyme",
+        "description": "PEGylated recombinant Anabaena variabilis PAL"
+      },
+      "confidence": 0.98,
+      "context": "Pegvaliase, PEGylated recombinant Anabaena variabilis PAL, converts Phe to trans-cinnamic acid and ammonia"
+    },
+    {
+      "name": "phenylketonuria",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "alias": "PKU"
+      },
+      "confidence": 0.98,
+      "context": "PKU is caused by PAH deficiency resulting in Phe accumulation"
+    },
+    {
+      "name": "PAH",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "phenylalanine hydroxylase"
+      },
+      "confidence": 0.95,
+      "context": "PKU is caused by PAH deficiency resulting in Phe accumulation"
+    },
+    {
+      "name": "phenylalanine hydroxylase",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "alias": "PAH"
+      },
+      "confidence": 0.95,
+      "context": "PKU is caused by PAH deficiency resulting in Phe accumulation"
+    },
+    {
+      "name": "phenylalanine ammonia-lyase",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "alias": "PAL",
+        "source_organism": "Anabaena variabilis"
+      },
+      "confidence": 0.95,
+      "context": "PEGylated recombinant Anabaena variabilis PAL"
+    },
+    {
+      "name": "phenylalanine",
+      "entity_type": "METABOLITE",
+      "attributes": {
+        "alias": "Phe"
+      },
+      "confidence": 0.98,
+      "context": "PKU is caused by PAH deficiency resulting in Phe accumulation"
+    },
+    {
+      "name": "trans-cinnamic acid",
+      "entity_type": "METABOLITE",
+      "attributes": {},
+      "confidence": 0.92,
+      "context": "converts Phe to trans-cinnamic acid and ammonia"
+    },
+    {
+      "name": "ammonia",
+      "entity_type": "METABOLITE",
+      "attributes": {},
+      "confidence": 0.88,
+      "context": "converts Phe to trans-cinnamic acid and ammonia"
+    },
+    {
+      "name": "PRISM-1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "Phase 3",
+        "participants": 261
+      },
+      "confidence": 0.95,
+      "context": "PRISM-1 and PRISM-2 Phase 3 studies: 261 participants"
+    },
+    {
+      "name": "PRISM-2",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "Phase 3",
+        "participants": 261
+      },
+      "confidence": 0.95,
+      "context": "PRISM-1 and PRISM-2 Phase 3 studies: 261 participants"
+    },
+    {
+      "name": "phenylalanine reduction",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "description": "PEGylated PAL converts phenylalanine to trans-cinnamic acid and ammonia"
+      },
+      "confidence": 0.92,
+      "context": "PEGylated recombinant Anabaena variabilis PAL, converts Phe to trans-cinnamic acid and ammonia"
+    },
+    {
+      "name": "blood phenylalanine",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "unit": "umol/L",
+        "baseline": 1232.7,
+        "month_12": 564.5,
+        "month_24": 311.4
+      },
+      "confidence": 0.95,
+      "context": "Mean blood Phe decreased from 1232.7 to 564.5 umol/L at 12 months (51.1% decrease) and 311.4 umol/L at 24 months (68.7%)"
+    },
+    {
+      "name": "arthralgia",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "incidence": "70.5%"
+      },
+      "confidence": 0.95,
+      "context": "Most common AEs: arthralgia (70.5%)"
+    },
+    {
+      "name": "injection-site reaction",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "incidence": "62.1%"
+      },
+      "confidence": 0.95,
+      "context": "injection-site reaction (62.1%)"
+    },
+    {
+      "name": "headache",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "incidence": "47.1%"
+      },
+      "confidence": 0.95,
+      "context": "headache (47.1%)"
+    },
+    {
+      "name": "acute systemic hypersensitivity",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "participants_affected": 12,
+        "events": 17,
+        "IgE_associated": false
+      },
+      "confidence": 0.92,
+      "context": "Acute systemic hypersensitivity in 12 participants (17 events). Not associated with IgE"
+    },
+    {
+      "name": "Molecular Genetics and Metabolism",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "year": 2018,
+        "authors": "Thomas et al."
+      },
+      "confidence": 0.9,
+      "context": "Thomas et al., Molecular Genetics and Metabolism (2018)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "pegvaliase",
+      "target_entity": "phenylketonuria",
+      "confidence": 0.95,
+      "evidence": "Pegvaliase for treatment of PKU"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "pegvaliase",
+      "target_entity": "phenylalanine reduction",
+      "confidence": 0.92,
+      "evidence": "PEGylated recombinant Anabaena variabilis PAL, converts Phe to trans-cinnamic acid and ammonia"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PAH",
+      "target_entity": "phenylketonuria",
+      "confidence": 0.95,
+      "evidence": "PKU is caused by PAH deficiency resulting in Phe accumulation"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "pegvaliase",
+      "target_entity": "PRISM-1",
+      "confidence": 0.95,
+      "evidence": "PRISM-1 and PRISM-2 Phase 3 studies: 261 participants"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "pegvaliase",
+      "target_entity": "PRISM-2",
+      "confidence": 0.95,
+      "evidence": "PRISM-1 and PRISM-2 Phase 3 studies: 261 participants"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "blood phenylalanine",
+      "target_entity": "phenylketonuria",
+      "confidence": 0.9,
+      "evidence": "Mean blood Phe decreased from 1232.7 to 564.5 umol/L at 12 months"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "pegvaliase",
+      "target_entity": "arthralgia",
+      "confidence": 0.95,
+      "evidence": "Most common AEs: arthralgia (70.5%)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "pegvaliase",
+      "target_entity": "injection-site reaction",
+      "confidence": 0.95,
+      "evidence": "injection-site reaction (62.1%)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "pegvaliase",
+      "target_entity": "headache",
+      "confidence": 0.95,
+      "evidence": "headache (47.1%)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "pegvaliase",
+      "target_entity": "acute systemic hypersensitivity",
+      "confidence": 0.92,
+      "evidence": "Acute systemic hypersensitivity in 12 participants (17 events)"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "blood phenylalanine",
+      "target_entity": "pegvaliase",
+      "confidence": 0.85,
+      "evidence": "Mean blood Phe decreased from 1232.7 to 564.5 umol/L at 12 months (51.1% decrease)"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T23:50:58.627644+00:00",
+  "error": null
+}

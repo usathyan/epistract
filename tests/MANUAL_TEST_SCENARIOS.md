@@ -31,7 +31,7 @@ Five real-world drug discovery research scenarios, each backed by a curated corp
 |---|---|---|---|---|---|---|---|
 | 1 | [PICALM / Alzheimer's](scenarios/scenario-01-picalm-alzheimers.md) | Genetic target validation | 15 | **Completed** | 149 | 457 | 6 |
 | 2 | [KRAS G12C Landscape](scenarios/scenario-02-kras-g12c-landscape.md) | Competitive intelligence | 16 | **Completed** | 108 | 307 | 4 |
-| 3 | [Rare Disease Therapeutics](scenarios/scenario-03-rare-disease.md) | Due diligence | 15 | Pending | — | — | — |
+| 3 | [Rare Disease Therapeutics](scenarios/scenario-03-rare-disease.md) | Due diligence | 15 | **Completed** | 94 | 229 | 4 |
 | 4 | [Immuno-Oncology Combinations](scenarios/scenario-04-immunooncology.md) | Checkpoint combinations | 15 | Pending | — | — | — |
 | 5 | [Cardiovascular & Inflammation](scenarios/scenario-05-cardiovascular.md) | Cardiology + inflammation | 14 | Pending | — | — | — |
 
@@ -53,17 +53,17 @@ Together, the five scenarios are designed to exercise all 17 entity types and al
 
 ## Cumulative Results
 
-| Metric | Scenario 1 | Scenario 2 | Combined | Target |
-|---|---|---|---|---|
-| Documents processed | 15 | 16 | 31 | 75+ |
-| Raw entities extracted | 297 | 231 | 528 | — |
-| Graph nodes (deduplicated) | 149 | 108 | 257 | — |
-| Graph links | 457 | 307 | 764 | — |
-| Communities detected | 6 | 4 | 10 | — |
-| Entity types exercised | 10/17 (59%) | 16/17 (94%) | 17/17 (100%) | 17/17 |
-| Relation types exercised | 14/30 (47%) | 17/30 (57%) | 20/30 (67%) | 30/30 |
-| UATs passed | 4/4 | 5/5 | 9/9 | 18/18 |
-| Critical bugs found & fixed | 2 | 1 | 3 | 0 remaining |
+| Metric | Scenario 1 | Scenario 2 | Scenario 3 | Combined | Target |
+|---|---|---|---|---|---|
+| Documents processed | 15 | 16 | 15 | 46 | 75+ |
+| Raw entities extracted | 297 | 231 | 182 | 710 | — |
+| Graph nodes (deduplicated) | 149 | 108 | 94 | 351 | — |
+| Graph links | 457 | 307 | 229 | 993 | — |
+| Communities detected | 6 | 4 | 4 | 14 | — |
+| Entity types exercised | 10/17 (59%) | 16/17 (94%) | 16/17 (94%) | 17/17 (100%) | 17/17 |
+| Relation types exercised | 14/30 (47%) | 17/30 (57%) | 21/30 (70%) | 24/30 (80%) | 30/30 |
+| UATs passed | 4/4 | 5/5 | 3/3 | 12/12 | 18/18 |
+| Critical bugs found & fixed | 2 | 1 | 0 | 3 | 0 remaining |
 
 ---
 

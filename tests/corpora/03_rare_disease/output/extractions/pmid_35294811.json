@@ -1,0 +1,217 @@
+{
+  "document_id": "pmid_35294811",
+  "document_path": "pmid_35294811",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "valoctocogene roxaparvovec",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "gene therapy",
+        "vector": "AAV5",
+        "transgene": "FVIII-SQ cDNA",
+        "dose": "6e13 vg/kg"
+      },
+      "confidence": 0.98,
+      "context": "Valoctocogene roxaparvovec (AAV5-hFVIII-SQ) is AAV5-based gene therapy vector with FVIII cDNA driven by liver-selective promoter"
+    },
+    {
+      "name": "F8",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "coagulation factor VIII"
+      },
+      "confidence": 0.95,
+      "context": "AAV5-based gene therapy vector with FVIII cDNA driven by liver-selective promoter"
+    },
+    {
+      "name": "factor VIII",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "function": "coagulation factor"
+      },
+      "confidence": 0.97,
+      "context": "Mean FVIII activity increased by 41.9 IU/dL at weeks 49-52"
+    },
+    {
+      "name": "hemophilia A",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "severity": "severe",
+        "inheritance": "X-linked recessive"
+      },
+      "confidence": 0.99,
+      "context": "Phase 3 study: 134 men with severe hemophilia A"
+    },
+    {
+      "name": "AAV5",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "viral vector",
+        "serotype": "5"
+      },
+      "confidence": 0.9,
+      "context": "Valoctocogene roxaparvovec (AAV5-hFVIII-SQ) is AAV5-based gene therapy vector"
+    },
+    {
+      "name": "GENEr8-1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "3",
+        "nct_id": "NCT03370913",
+        "design": "single-arm",
+        "n": 134,
+        "population": "severe hemophilia A men"
+      },
+      "confidence": 0.98,
+      "context": "Funded by BioMarin; GENEr8-1, NCT03370913"
+    },
+    {
+      "name": "BioMarin",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "sponsor"
+      },
+      "confidence": 0.95,
+      "context": "Funded by BioMarin"
+    },
+    {
+      "name": "gene replacement therapy",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "description": "AAV5-mediated liver-directed FVIII gene transfer"
+      },
+      "confidence": 0.92,
+      "context": "AAV5-based gene therapy vector with FVIII cDNA driven by liver-selective promoter"
+    },
+    {
+      "name": "ALT elevation",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "incidence": "85.8%",
+        "management": "immunosuppressants"
+      },
+      "confidence": 0.97,
+      "context": "ALT elevations in 85.8% managed with immunosuppressants"
+    },
+    {
+      "name": "FVIII inhibitors",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "status": "not observed"
+      },
+      "confidence": 0.9,
+      "context": "No FVIII inhibitors or thrombosis"
+    },
+    {
+      "name": "liver",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {
+        "role": "target tissue for transgene expression"
+      },
+      "confidence": 0.92,
+      "context": "FVIII cDNA driven by liver-selective promoter"
+    },
+    {
+      "name": "Ozelo et al. 2022",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "journal": "NEJM",
+        "year": 2022,
+        "pmid": "35294811"
+      },
+      "confidence": 0.95,
+      "context": "Ozelo et al., NEJM (2022)"
+    },
+    {
+      "name": "FVIII activity",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "value": "41.9 IU/dL increase",
+        "timepoint": "weeks 49-52"
+      },
+      "confidence": 0.95,
+      "context": "Mean FVIII activity increased by 41.9 IU/dL at weeks 49-52 (P<0.001)"
+    },
+    {
+      "name": "thrombosis",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "status": "not observed"
+      },
+      "confidence": 0.88,
+      "context": "No FVIII inhibitors or thrombosis"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "hemophilia A",
+      "confidence": 0.97,
+      "evidence": "Valoctocogene Roxaparvovec Gene Therapy for Hemophilia A"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "GENEr8-1",
+      "confidence": 0.98,
+      "evidence": "Phase 3 study: 134 men with severe hemophilia A. Single infusion 6x10^13 vg/kg"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "gene replacement therapy",
+      "confidence": 0.93,
+      "evidence": "AAV5-based gene therapy vector with FVIII cDNA driven by liver-selective promoter"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "F8",
+      "target_entity": "factor VIII",
+      "confidence": 0.95,
+      "evidence": "AAV5-based gene therapy vector with FVIII cDNA"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "ALT elevation",
+      "confidence": 0.95,
+      "evidence": "ALT elevations in 85.8% managed with immunosuppressants"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "BioMarin",
+      "confidence": 0.93,
+      "evidence": "Funded by BioMarin"
+    },
+    {
+      "relation_type": "EXPRESSED_IN",
+      "source_entity": "factor VIII",
+      "target_entity": "liver",
+      "confidence": 0.9,
+      "evidence": "FVIII cDNA driven by liver-selective promoter"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "FVIII activity",
+      "target_entity": "hemophilia A",
+      "confidence": 0.92,
+      "evidence": "Mean FVIII activity increased by 41.9 IU/dL at weeks 49-52 (P<0.001)"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "F8",
+      "target_entity": "hemophilia A",
+      "confidence": 0.95,
+      "evidence": "gene therapy vector with FVIII cDNA for severe hemophilia A"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T23:50:40.891336+00:00",
+  "error": null
+}

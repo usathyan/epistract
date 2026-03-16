@@ -1,0 +1,835 @@
+{
+  "generated_at": "2026-03-16T23:54:09.048537+00:00",
+  "output_dir": "/Users/umeshbhatt/code/epistract/tests/corpora/03_rare_disease/output",
+  "stats": {
+    "files_scanned": 15,
+    "total_matches": 54,
+    "valid": 0,
+    "invalid": 42,
+    "unvalidated": 0,
+    "found": 12,
+    "by_type": {
+      "SMILES": 42,
+      "NCT_NUMBER": 12
+    },
+    "rdkit_available": true,
+    "biopython_available": true,
+    "enrichment": {
+      "entities_added": 0,
+      "relations_added": 0
+    }
+  },
+  "files": [
+    {
+      "file": "pmid_26684019.json",
+      "document_id": "pmid_26684019",
+      "matches_found": 2,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "Fgfr3Y367C/+",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ed to large improvement in skeletal parameters in Fgfr3Y367C/+ mice",
+          "validation": {
+            "valid": false,
+            "input": "Fgfr3Y367C/+",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_26684019.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "Fgfr3Y367C/+",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Fgfr3Y367C/+ mice",
+          "validation": {
+            "valid": false,
+            "input": "Fgfr3Y367C/+",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_26684019.json",
+          "source_field": "relations[6].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_29653686.json",
+      "document_id": "pmid_29653686",
+      "matches_found": 2,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "decrease)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "d from 1232.7 to 564.5 umol/L at 12 months (51.1% decrease) and 311.4 umol/L at 24 months (68.7%)",
+          "validation": {
+            "valid": false,
+            "input": "decrease)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_29653686.json",
+          "source_field": "entities[11].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "decrease)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "d from 1232.7 to 564.5 umol/L at 12 months (51.1% decrease)",
+          "validation": {
+            "valid": false,
+            "input": "decrease)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_29653686.json",
+          "source_field": "relations[10].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_31258325.json",
+      "document_id": "pmid_31258325",
+      "matches_found": 0,
+      "results": []
+    },
+    {
+      "file": "pmid_31375398.json",
+      "document_id": "pmid_31375398",
+      "matches_found": 5,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "induction/titration",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "action, causing HAEs with peak event rates during induction/titration",
+          "validation": {
+            "valid": false,
+            "input": "induction/titration",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31375398.json",
+          "source_field": "entities[3].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(epinephrine)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "requirement to carry auto-injectable adrenaline (epinephrine)",
+          "validation": {
+            "valid": false,
+            "input": "(epinephrine)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31375398.json",
+          "source_field": "entities[9].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(pegvaliase)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "injectable enzyme substitution therapy (pegvaliase) in adult patients with phenylketonuria (PKU)",
+          "validation": {
+            "valid": false,
+            "input": "(pegvaliase)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31375398.json",
+          "source_field": "relations[0].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "induction/titration",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "action, causing HAEs with peak event rates during induction/titration",
+          "validation": {
+            "valid": false,
+            "input": "induction/titration",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31375398.json",
+          "source_field": "relations[1].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(epinephrine)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "requirement to carry auto-injectable adrenaline (epinephrine)",
+          "validation": {
+            "valid": false,
+            "input": "(epinephrine)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31375398.json",
+          "source_field": "relations[2].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_34070375.json",
+      "document_id": "pmid_34070375",
+      "matches_found": 3,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(fibroblast",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "missense mutation in the FGFR3 (fibroblast growth factor receptor 3) gene",
+          "validation": {
+            "valid": false,
+            "input": "(fibroblast",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34070375.json",
+          "source_field": "entities[1].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(fibroblast",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "FGFR3 (fibroblast growth factor receptor 3)",
+          "validation": {
+            "valid": false,
+            "input": "(fibroblast",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34070375.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(fibroblast",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "FGFR3 (fibroblast growth factor receptor 3) gene",
+          "validation": {
+            "valid": false,
+            "input": "(fibroblast",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34070375.json",
+          "source_field": "relations[8].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_34694597.json",
+      "document_id": "pmid_34694597",
+      "matches_found": 1,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(VOXZOGO)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Vosoritide (VOXZOGO) is a modified recombinant human C-type natriureti",
+          "validation": {
+            "valid": false,
+            "input": "(VOXZOGO)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34694597.json",
+          "source_field": "entities[0].context"
+        }
+      ]
+    },
+    {
+      "file": "pmid_35294811.json",
+      "document_id": "pmid_35294811",
+      "matches_found": 3,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(AAV5-hFVIII-SQ)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Valoctocogene roxaparvovec (AAV5-hFVIII-SQ) is AAV5-based gene therapy vector with FVIII cDNA",
+          "validation": {
+            "valid": false,
+            "input": "(AAV5-hFVIII-SQ)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35294811.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(AAV5-hFVIII-SQ)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Valoctocogene roxaparvovec (AAV5-hFVIII-SQ) is AAV5-based gene therapy vector",
+          "validation": {
+            "valid": false,
+            "input": "(AAV5-hFVIII-SQ)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35294811.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03370913",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "Funded by BioMarin; GENEr8-1, NCT03370913",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_35294811.json",
+          "source_field": "entities[5].context"
+        }
+      ]
+    },
+    {
+      "file": "pmid_36812433.json",
+      "document_id": "pmid_36812433",
+      "matches_found": 5,
+      "results": [
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03370913",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "Phase 3 trial, 134 men, single infusion. NCT03370913",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_36812433.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "bleed/year",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "At FVIII 5 IU/dL: expected 1.0 joint bleed/year",
+          "validation": {
+            "valid": false,
+            "input": "bleed/year",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_36812433.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "bleed/year",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "At FVIII 5 IU/dL: expected 1.0 joint bleed/year",
+          "validation": {
+            "valid": false,
+            "input": "bleed/year",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_36812433.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "bleed/year",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "At FVIII 5 IU/dL: expected 1.0 joint bleed/year",
+          "validation": {
+            "valid": false,
+            "input": "bleed/year",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_36812433.json",
+          "source_field": "relations[2].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "bleed/year",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "At FVIII 5 IU/dL: expected 1.0 joint bleed/year",
+          "validation": {
+            "valid": false,
+            "input": "bleed/year",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_36812433.json",
+          "source_field": "relations[4].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_38522180.json",
+      "document_id": "pmid_38522180",
+      "matches_found": 1,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "Ammonia-Lyase)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": " enzyme substitution therapy (MeSH: Phenylalanine Ammonia-Lyase)",
+          "validation": {
+            "valid": false,
+            "input": "Ammonia-Lyase)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38522180.json",
+          "source_field": "relations[1].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_38614387.json",
+      "document_id": "pmid_38614387",
+      "matches_found": 5,
+      "results": [
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03370913",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "BioMarin, NCT03370913",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38614387.json",
+          "source_field": "entities[6].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "bleeds/y",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "nnualized bleeding rate decreased from 4.8 to 0.8 bleeds/y (P<.0001) and 0.97 during year 3",
+          "validation": {
+            "valid": false,
+            "input": "bleeds/y",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38614387.json",
+          "source_field": "entities[8].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(HemA-QoL",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Quality of life improvement (HemA-QoL, P<.0001)",
+          "validation": {
+            "valid": false,
+            "input": "(HemA-QoL",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38614387.json",
+          "source_field": "entities[9].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03370913",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "BioMarin, NCT03370913",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38614387.json",
+          "source_field": "relations[3].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(HemA-QoL",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Quality of life improvement (HemA-QoL, P<.0001)",
+          "validation": {
+            "valid": false,
+            "input": "(HemA-QoL",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38614387.json",
+          "source_field": "relations[6].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_38694233.json",
+      "document_id": "pmid_38694233",
+      "matches_found": 12,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT01819727)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "randomized trials PRISM-1 (NCT01819727)",
+          "validation": {
+            "valid": false,
+            "input": "(NCT01819727)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38694233.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT01819727",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "randomized trials PRISM-1 (NCT01819727)",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38694233.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT01889862)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "PRISM-2 (NCT01889862)",
+          "validation": {
+            "valid": false,
+            "input": "(NCT01889862)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38694233.json",
+          "source_field": "entities[6].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT01889862",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "PRISM-2 (NCT01889862)",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38694233.json",
+          "source_field": "entities[6].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT03694353)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "open-label extension study 165-304 (NCT03694353)",
+          "validation": {
+            "valid": false,
+            "input": "(NCT03694353)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38694233.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03694353",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "open-label extension study 165-304 (NCT03694353)",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38694233.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT01819727)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "final data from the randomized trials PRISM-1 (NCT01819727)",
+          "validation": {
+            "valid": false,
+            "input": "(NCT01819727)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38694233.json",
+          "source_field": "relations[1].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT01819727",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "final data from the randomized trials PRISM-1 (NCT01819727)",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38694233.json",
+          "source_field": "relations[1].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT01889862)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "final data from the randomized trials PRISM-2 (NCT01889862)",
+          "validation": {
+            "valid": false,
+            "input": "(NCT01889862)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38694233.json",
+          "source_field": "relations[2].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT01889862",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "final data from the randomized trials PRISM-2 (NCT01889862)",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38694233.json",
+          "source_field": "relations[2].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT03694353)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "open-label extension study 165-304 (NCT03694353)",
+          "validation": {
+            "valid": false,
+            "input": "(NCT03694353)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38694233.json",
+          "source_field": "relations[3].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03694353",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "open-label extension study 165-304 (NCT03694353)",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38694233.json",
+          "source_field": "relations[3].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_38813446.json",
+      "document_id": "pmid_38813446",
+      "matches_found": 5,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT04219007)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "label trial... registered with ClinicalTrials.gov (NCT04219007)",
+          "validation": {
+            "valid": false,
+            "input": "(NCT04219007)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38813446.json",
+          "source_field": "entities[6].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT04219007",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "abel trial... registered with ClinicalTrials.gov (NCT04219007)",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38813446.json",
+          "source_field": "entities[6].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT04219007)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "registered with ClinicalTrials.gov (NCT04219007)",
+          "validation": {
+            "valid": false,
+            "input": "(NCT04219007)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38813446.json",
+          "source_field": "relations[1].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT04219007",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "registered with ClinicalTrials.gov (NCT04219007)",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38813446.json",
+          "source_field": "relations[1].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(FGFR3-related)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "has been reported in children with achondroplasia (FGFR3-related)",
+          "validation": {
+            "valid": false,
+            "input": "(FGFR3-related)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38813446.json",
+          "source_field": "relations[4].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_38991118.json",
+      "document_id": "pmid_38991118",
+      "matches_found": 8,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(Roctavian",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Valoctocogene roxaparvovec (Roctavian; BioMarin) is first licensed HA gene therapy",
+          "validation": {
+            "valid": false,
+            "input": "(Roctavian",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38991118.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "BioMarin)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Valoctocogene roxaparvovec (Roctavian; BioMarin) is first licensed HA gene therapy",
+          "validation": {
+            "valid": false,
+            "input": "BioMarin)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38991118.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(Roctavian",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Valoctocogene roxaparvovec (Roctavian; BioMarin)",
+          "validation": {
+            "valid": false,
+            "input": "(Roctavian",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38991118.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "BioMarin)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Valoctocogene roxaparvovec (Roctavian; BioMarin)",
+          "validation": {
+            "valid": false,
+            "input": "BioMarin)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38991118.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(Roctavian",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Valoctocogene roxaparvovec (Roctavian; BioMarin) is first licensed HA gene therapy",
+          "validation": {
+            "valid": false,
+            "input": "(Roctavian",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38991118.json",
+          "source_field": "relations[0].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "BioMarin)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Valoctocogene roxaparvovec (Roctavian; BioMarin) is first licensed HA gene therapy",
+          "validation": {
+            "valid": false,
+            "input": "BioMarin)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38991118.json",
+          "source_field": "relations[0].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(Roctavian",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Valoctocogene roxaparvovec (Roctavian; BioMarin)",
+          "validation": {
+            "valid": false,
+            "input": "(Roctavian",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38991118.json",
+          "source_field": "relations[2].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "BioMarin)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Valoctocogene roxaparvovec (Roctavian; BioMarin)",
+          "validation": {
+            "valid": false,
+            "input": "BioMarin)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38991118.json",
+          "source_field": "relations[2].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_39226466.json",
+      "document_id": "pmid_39226466",
+      "matches_found": 2,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "1-2x/week",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Post-treatment: ALT monitoring 1-2x/week for \u22651.5x ULN",
+          "validation": {
+            "valid": false,
+            "input": "1-2x/week",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_39226466.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "1-2x/week",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Post-treatment: ALT monitoring 1-2x/week for \u22651.5x ULN",
+          "validation": {
+            "valid": false,
+            "input": "1-2x/week",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_39226466.json",
+          "source_field": "relations[6].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_40821249.json",
+      "document_id": "pmid_40821249",
+      "matches_found": 0,
+      "results": []
+    }
+  ]
+}

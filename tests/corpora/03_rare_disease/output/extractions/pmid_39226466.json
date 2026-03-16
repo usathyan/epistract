@@ -1,0 +1,178 @@
+{
+  "document_id": "pmid_39226466",
+  "document_path": "pmid_39226466",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "valoctocogene roxaparvovec",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "gene therapy",
+        "brand_name": "Roctavian",
+        "vector": "AAV"
+      },
+      "confidence": 0.98,
+      "context": "valoctocogene roxaparvovec for hemophilia A"
+    },
+    {
+      "name": "hemophilia A",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.98,
+      "context": "valoctocogene roxaparvovec for hemophilia A"
+    },
+    {
+      "name": "prednisone",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "dose": "60 mg/day",
+        "indication": "ALT elevation management"
+      },
+      "confidence": 0.95,
+      "context": "ALT elevation in 85.8% managed with prednisone 60mg/d"
+    },
+    {
+      "name": "autoimmune hepatitis",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.92,
+      "context": "Contraindicated in: uncontrolled liver infections, autoimmune hepatitis"
+    },
+    {
+      "name": "cirrhosis",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.92,
+      "context": "Contraindicated in: ... cirrhosis"
+    },
+    {
+      "name": "liver",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {
+        "type": "organ"
+      },
+      "confidence": 0.95,
+      "context": "Liver-related aspects of valoctocogene roxaparvovec"
+    },
+    {
+      "name": "ALT elevation",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "incidence": "85.8%",
+        "management": "prednisone 60mg/d"
+      },
+      "confidence": 0.95,
+      "context": "ALT elevation in 85.8% managed with prednisone 60mg/d"
+    },
+    {
+      "name": "alanine aminotransferase",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "ALT",
+        "monitoring_frequency": "1-2x/week post-treatment, every 3-6 months long-term"
+      },
+      "confidence": 0.95,
+      "context": "Post-treatment: ALT monitoring 1-2x/week for \u22651.5x ULN"
+    },
+    {
+      "name": "liver stiffness",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "threshold": "\u22658 kPa",
+        "method": "transient elastography"
+      },
+      "confidence": 0.9,
+      "context": "liver stiffness \u22658 kPa"
+    },
+    {
+      "name": "uncontrolled liver infection",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.88,
+      "context": "Contraindicated in: uncontrolled liver infections"
+    },
+    {
+      "name": "La Mura et al. 2024",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "journal": "Blood Advances",
+        "year": 2024,
+        "pmid": "39226466"
+      },
+      "confidence": 0.98,
+      "context": "La Mura et al., Blood Advances (2024)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "hemophilia A",
+      "confidence": 0.97,
+      "evidence": "valoctocogene roxaparvovec for hemophilia A"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "ALT elevation",
+      "confidence": 0.95,
+      "evidence": "ALT elevation in 85.8% managed with prednisone 60mg/d"
+    },
+    {
+      "relation_type": "CONTRAINDICATED_FOR",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "autoimmune hepatitis",
+      "confidence": 0.95,
+      "evidence": "Contraindicated in: uncontrolled liver infections, autoimmune hepatitis"
+    },
+    {
+      "relation_type": "CONTRAINDICATED_FOR",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "cirrhosis",
+      "confidence": 0.95,
+      "evidence": "Contraindicated in: ... cirrhosis"
+    },
+    {
+      "relation_type": "CONTRAINDICATED_FOR",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "uncontrolled liver infection",
+      "confidence": 0.92,
+      "evidence": "Contraindicated in: uncontrolled liver infections"
+    },
+    {
+      "relation_type": "LOCALIZED_TO",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "liver",
+      "confidence": 0.9,
+      "evidence": "Liver-related aspects of valoctocogene roxaparvovec"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "alanine aminotransferase",
+      "target_entity": "ALT elevation",
+      "confidence": 0.92,
+      "evidence": "Post-treatment: ALT monitoring 1-2x/week for \u22651.5x ULN"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "liver stiffness",
+      "target_entity": "cirrhosis",
+      "confidence": 0.88,
+      "evidence": "liver stiffness \u22658 kPa, cirrhosis"
+    },
+    {
+      "relation_type": "COMBINED_WITH",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "prednisone",
+      "confidence": 0.85,
+      "evidence": "ALT elevation in 85.8% managed with prednisone 60mg/d"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T23:51:32.974046+00:00",
+  "error": null
+}

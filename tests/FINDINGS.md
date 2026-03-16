@@ -137,35 +137,35 @@ Integrated into `scripts/run_sift.py` build step — runs automatically after ev
 
 The same 17-entity-type, 30-relation-type schema produces meaningful knowledge graphs across fundamentally different drug discovery domains:
 
-| Dimension | Scenario 1 (Neurogenetics) | Scenario 2 (Oncology) |
-|---|---|---|
-| Dominant entity types | GENE (48), PROTEIN (21), PHENOTYPE (18) | GENE (20), COMPOUND (11), SEQUENCE_VARIANT (10) |
-| Dominant relation types | IMPLICATED_IN (84), PARTICIPATES_IN (23) | CONFERS_RESISTANCE_TO (26), INHIBITS (10), COMBINED_WITH (9) |
-| Community themes | GWAS loci, pathways, cell biology | Drug combinations, resistance, clinical trials |
-| Schema coverage (entity types used) | 10 of 17 (59%) | 16 of 17 (94%) |
-| Schema coverage (relation types used) | 14 of 30 (47%) | 17 of 30 (57%) |
+| Dimension | Scenario 1 (Neurogenetics) | Scenario 2 (Oncology) | Scenario 3 (Rare Disease) |
+|---|---|---|---|
+| Dominant entity types | GENE (48), PROTEIN (21), PHENOTYPE (18) | GENE (20), COMPOUND (11), SEQUENCE_VARIANT (10) | COMPOUND (5), ADVERSE_EVENT (9), BIOMARKER (8), CLINICAL_TRIAL (7) |
+| Dominant relation types | IMPLICATED_IN (84), PARTICIPATES_IN (23) | CONFERS_RESISTANCE_TO (26), INHIBITS (10), COMBINED_WITH (9) | CAUSES (10), HAS_MECHANISM (8), EVALUATED_IN (7), DIAGNOSTIC_FOR (4) |
+| Community themes | GWAS loci, pathways, cell biology | Drug combinations, resistance, clinical trials | PKU enzyme therapy, gene therapy safety, CNP analog, bone biology |
+| Schema coverage (entity types used) | 10 of 17 (59%) | 16 of 17 (94%) | 16 of 17 (94%) |
+| Schema coverage (relation types used) | 14 of 30 (47%) | 17 of 30 (57%) | 21 of 30 (70%) |
 
-Scenario 2's higher schema coverage is expected — oncology competitive intelligence naturally touches more of the drug-target-trial-resistance pipeline. The two scenarios together exercise 17 of 17 entity types and 20 of 30 relation types (67%).
+The three scenarios together exercise 17 of 17 entity types (100%) and 24 of 30 relation types (80%). Scenario 3 added 4 new relation types: CONTRAINDICATED_FOR, GRANTS_APPROVAL_FOR, DIAGNOSTIC_FOR, and PREDICTS_RESPONSE_TO — reflecting the clinical/regulatory focus of rare disease due diligence.
 
-**Systemic lesson:** A domain schema designed for the breadth of drug discovery generalizes well across sub-domains. The schema did not need modification between a genetics-heavy corpus and a clinical-oncology corpus.
+**Systemic lesson:** A domain schema designed for the breadth of drug discovery generalizes across neurogenetics, oncology, and rare disease without modification. Each domain naturally exercises different schema facets, confirming the schema is neither over-specified nor under-specified.
 
 ---
 
 ## Cumulative Test Metrics
 
-| Metric | Scenario 1 | Scenario 2 | Combined |
-|---|---|---|---|
-| Documents processed | 15 | 16 | 31 |
-| Raw entities extracted | 297 | 231 | 528 |
-| Raw relations extracted | 251 | 194 | 445 |
-| Graph nodes (deduplicated) | 149 | 108 | 257 |
-| Graph links | 457 | 307 | 764 |
-| Communities detected | 6 | 4 | 10 |
-| Entity types exercised | 10 | 16 | 17 (100%) |
-| Relation types exercised | 14 | 17 | 20 (67%) |
-| UATs passed | 4/4 | 5/5 | 9/9 |
-| Bugs found | 2 critical, 2 medium, 2 low | 1 critical, 0 new | 3 critical, 2 medium, 2 low |
-| Code fixes applied | 6 files modified, 2 new scripts | 3 files modified | 9 files modified, 2 new scripts |
+| Metric | Scenario 1 | Scenario 2 | Scenario 3 | Combined |
+|---|---|---|---|---|
+| Documents processed | 15 | 16 | 15 | 46 |
+| Raw entities extracted | 297 | 231 | 182 | 710 |
+| Raw relations extracted | 251 | 194 | 128 | 573 |
+| Graph nodes (deduplicated) | 149 | 108 | 94 | 351 |
+| Graph links | 457 | 307 | 229 | 993 |
+| Communities detected | 6 | 4 | 4 | 14 |
+| Entity types exercised | 10 | 16 | 16 | 17 (100%) |
+| Relation types exercised | 14 | 17 | 21 | 24 (80%) |
+| UATs passed | 4/4 | 5/5 | 3/3 | 12/12 |
+| Bugs found | 2 critical, 2 medium, 2 low | 1 critical | 0 new | 3 critical, 2 medium, 2 low |
+| Code fixes applied | 6 files modified, 2 new scripts | 3 files modified | 0 (stable) | 9 files modified, 2 new scripts |
 
 ---
 

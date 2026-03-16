@@ -1,0 +1,188 @@
+{
+  "document_id": "pmid_31375398",
+  "document_path": "tests/corpora/03_rare_disease/docs/pmid_31375398.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "pegvaliase",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "enzyme substitution therapy",
+        "description": "PEGylated phenylalanine ammonia lyase enzyme"
+      },
+      "confidence": 0.98,
+      "context": "pegvaliase, a PEGylated phenylalanine ammonia lyase enzyme"
+    },
+    {
+      "name": "phenylketonuria",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "PKU"
+      },
+      "confidence": 0.98,
+      "context": "adult patients with phenylketonuria (PKU)"
+    },
+    {
+      "name": "phenylalanine ammonia lyase",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "abbreviation": "PAL"
+      },
+      "confidence": 0.95,
+      "context": "pegvaliase, a PEGylated phenylalanine ammonia lyase enzyme"
+    },
+    {
+      "name": "hypersensitivity",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "type": "Type III hypersensitivity reaction"
+      },
+      "confidence": 0.97,
+      "context": "pegvaliase induces a Type III hypersensitivity reaction, causing HAEs with peak event rates during induction/titration"
+    },
+    {
+      "name": "anaphylaxis",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "experience in hypersensitivity, anaphylaxis, and/or drug reactions"
+    },
+    {
+      "name": "anti-drug antibody",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "ADA"
+      },
+      "confidence": 0.9,
+      "context": "driven by anti-drug antibody affinity maturation, reduced immune complex formation"
+    },
+    {
+      "name": "complement activation",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "decreased complement activation over time"
+    },
+    {
+      "name": "immune complex formation",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "reduced immune complex formation, and decreased complement activation over time"
+    },
+    {
+      "name": "H1-receptor antagonists",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "role": "premedication"
+      },
+      "confidence": 0.9,
+      "context": "premedication with H1-receptor antagonists"
+    },
+    {
+      "name": "epinephrine",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "synonym": "adrenaline"
+      },
+      "confidence": 0.92,
+      "context": "requirement to carry auto-injectable adrenaline (epinephrine)"
+    },
+    {
+      "name": "phenylalanine",
+      "entity_type": "METABOLITE",
+      "attributes": {},
+      "confidence": 0.93,
+      "context": "maintaining blood phenylalanine within the recommended therapeutic range"
+    },
+    {
+      "name": "Phase 3 clinical trials",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "3"
+      },
+      "confidence": 0.88,
+      "context": "Key risk mitigation strategies utilized in the Phase 3 clinical trials"
+    },
+    {
+      "name": "Type III hypersensitivity reaction",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "pegvaliase induces a Type III hypersensitivity reaction"
+    },
+    {
+      "name": "spinal canal stenosis",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.0,
+      "context": ""
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "pegvaliase",
+      "target_entity": "phenylketonuria",
+      "confidence": 0.97,
+      "evidence": "injectable enzyme substitution therapy (pegvaliase) in adult patients with phenylketonuria (PKU)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "pegvaliase",
+      "target_entity": "hypersensitivity",
+      "confidence": 0.96,
+      "evidence": "pegvaliase induces a Type III hypersensitivity reaction, causing HAEs with peak event rates during induction/titration"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "pegvaliase",
+      "target_entity": "anaphylaxis",
+      "confidence": 0.75,
+      "evidence": "requirement to carry auto-injectable adrenaline (epinephrine)"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "pegvaliase",
+      "target_entity": "Type III hypersensitivity reaction",
+      "confidence": 0.95,
+      "evidence": "pegvaliase induces a Type III hypersensitivity reaction"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "pegvaliase",
+      "target_entity": "Phase 3 clinical trials",
+      "confidence": 0.9,
+      "evidence": "Key risk mitigation strategies utilized in the Phase 3 clinical trials"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "anti-drug antibody",
+      "target_entity": "hypersensitivity",
+      "confidence": 0.9,
+      "evidence": "driven by anti-drug antibody affinity maturation, reduced immune complex formation"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "anti-drug antibody",
+      "target_entity": "immune complex formation",
+      "confidence": 0.88,
+      "evidence": "driven by anti-drug antibody affinity maturation, reduced immune complex formation"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "anti-drug antibody",
+      "target_entity": "complement activation",
+      "confidence": 0.85,
+      "evidence": "decreased complement activation over time"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T23:50:35.557868+00:00",
+  "error": null
+}

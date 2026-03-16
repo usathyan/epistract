@@ -1,0 +1,133 @@
+{
+  "document_id": "pmid_36812433",
+  "document_path": "pmid_36812433",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "valoctocogene roxaparvovec",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "gene therapy",
+        "vector": "AAV5"
+      },
+      "confidence": 0.98,
+      "context": "Two-Year Outcomes of Valoctocogene Roxaparvovec for Hemophilia A"
+    },
+    {
+      "name": "hemophilia A",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "severity": "severe"
+      },
+      "confidence": 0.99,
+      "context": "Phase 3 trial, 134 men"
+    },
+    {
+      "name": "GENEr8-1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "3",
+        "nct_id": "NCT03370913",
+        "n": 134,
+        "timepoint": "week 104"
+      },
+      "confidence": 0.98,
+      "context": "Phase 3 trial, 134 men, single infusion. NCT03370913"
+    },
+    {
+      "name": "factor VIII",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "function": "coagulation factor",
+        "pharmacokinetics": "first-order elimination from week 76",
+        "half_life": "123 weeks"
+      },
+      "confidence": 0.97,
+      "context": "Transgene-derived FVIII showed first-order elimination kinetics from week 76; model-estimated half-life 123 weeks"
+    },
+    {
+      "name": "FVIII activity",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "threshold": "5 IU/dL",
+        "clinical_correlation": "1.0 joint bleed/year"
+      },
+      "confidence": 0.93,
+      "context": "At FVIII 5 IU/dL: expected 1.0 joint bleed/year"
+    },
+    {
+      "name": "annualized bleeding rate reduction",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "reduction": "84.5%",
+        "timepoint": "week 104",
+        "p_value": "<0.001"
+      },
+      "confidence": 0.92,
+      "context": "mean annualized treated bleeding rate decreased 84.5% from baseline (P<0.001)"
+    },
+    {
+      "name": "Mahlangu et al. 2023",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "journal": "NEJM",
+        "year": 2023,
+        "pmid": "36812433"
+      },
+      "confidence": 0.95,
+      "context": "Mahlangu et al., NEJM (2023)"
+    },
+    {
+      "name": "joint bleeding",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "expected_rate": "1.0 per year at FVIII 5 IU/dL"
+      },
+      "confidence": 0.88,
+      "context": "At FVIII 5 IU/dL: expected 1.0 joint bleed/year"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "hemophilia A",
+      "confidence": 0.97,
+      "evidence": "Two-Year Outcomes of Valoctocogene Roxaparvovec for Hemophilia A"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "GENEr8-1",
+      "confidence": 0.98,
+      "evidence": "Phase 3 trial, 134 men, single infusion"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "FVIII activity",
+      "target_entity": "hemophilia A",
+      "confidence": 0.9,
+      "evidence": "At FVIII 5 IU/dL: expected 1.0 joint bleed/year"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "FVIII activity",
+      "target_entity": "valoctocogene roxaparvovec",
+      "confidence": 0.88,
+      "evidence": "Transgene-derived FVIII showed first-order elimination kinetics from week 76; model-estimated half-life 123 weeks"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "joint bleeding",
+      "target_entity": "hemophilia A",
+      "confidence": 0.92,
+      "evidence": "At FVIII 5 IU/dL: expected 1.0 joint bleed/year"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T23:50:52.538974+00:00",
+  "error": null
+}

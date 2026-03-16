@@ -1,0 +1,181 @@
+{
+  "document_id": "pmid_38991118",
+  "document_path": "pmid_38991118",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "valoctocogene roxaparvovec",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "gene therapy",
+        "brand_name": "Roctavian",
+        "route": "intravenous",
+        "vector": "AAV"
+      },
+      "confidence": 0.98,
+      "context": "Valoctocogene roxaparvovec (Roctavian; BioMarin) is first licensed HA gene therapy"
+    },
+    {
+      "name": "hemophilia A",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "HA"
+      },
+      "confidence": 0.98,
+      "context": "AAV gene addition for HA"
+    },
+    {
+      "name": "F8",
+      "entity_type": "GENE",
+      "attributes": {
+        "product": "coagulation factor VIII"
+      },
+      "confidence": 0.92,
+      "context": "year-over-year declines in FVIII expression contrast with stable FVIII in other AAV HA trials"
+    },
+    {
+      "name": "coagulation factor VIII",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "abbreviation": "FVIII"
+      },
+      "confidence": 0.95,
+      "context": "year-over-year declines in FVIII expression contrast with stable FVIII in other AAV HA trials with more modest initial expression"
+    },
+    {
+      "name": "BioMarin",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "developer"
+      },
+      "confidence": 0.98,
+      "context": "Valoctocogene roxaparvovec (Roctavian; BioMarin)"
+    },
+    {
+      "name": "AAV gene addition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "description": "adeno-associated virus vector-mediated gene addition to express FVIII"
+      },
+      "confidence": 0.9,
+      "context": "AAV gene addition for HA"
+    },
+    {
+      "name": "EMA conditional approval August 2022",
+      "entity_type": "REGULATORY_ACTION",
+      "attributes": {
+        "agency": "EMA",
+        "date": "2022-08",
+        "type": "conditional approval",
+        "region": "Europe"
+      },
+      "confidence": 0.95,
+      "context": "conditionally approved Europe August 2022"
+    },
+    {
+      "name": "FDA approval June 2023",
+      "entity_type": "REGULATORY_ACTION",
+      "attributes": {
+        "agency": "FDA",
+        "date": "2023-06",
+        "type": "approval",
+        "region": "USA"
+      },
+      "confidence": 0.95,
+      "context": "approved USA June 2023"
+    },
+    {
+      "name": "FVIII expression",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "pharmacodynamic"
+      },
+      "confidence": 0.9,
+      "context": "year-over-year declines in FVIII expression"
+    },
+    {
+      "name": "declining FVIII expression",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "description": "year-over-year declines in FVIII expression after gene therapy"
+      },
+      "confidence": 0.88,
+      "context": "year-over-year declines in FVIII expression contrast with stable FVIII in other AAV HA trials with more modest initial expression"
+    },
+    {
+      "name": "Samelson-Jones et al. 2024",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "journal": "Blood Advances",
+        "year": 2024,
+        "pmid": "38991118"
+      },
+      "confidence": 0.98,
+      "context": "Samelson-Jones et al., Blood Advances (2024)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "hemophilia A",
+      "confidence": 0.97,
+      "evidence": "Valoctocogene roxaparvovec (Roctavian; BioMarin) is first licensed HA gene therapy"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "AAV gene addition",
+      "confidence": 0.92,
+      "evidence": "AAV gene addition for HA"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "BioMarin",
+      "confidence": 0.98,
+      "evidence": "Valoctocogene roxaparvovec (Roctavian; BioMarin)"
+    },
+    {
+      "relation_type": "GRANTS_APPROVAL_FOR",
+      "source_entity": "EMA conditional approval August 2022",
+      "target_entity": "valoctocogene roxaparvovec",
+      "confidence": 0.95,
+      "evidence": "conditionally approved Europe August 2022"
+    },
+    {
+      "relation_type": "GRANTS_APPROVAL_FOR",
+      "source_entity": "FDA approval June 2023",
+      "target_entity": "valoctocogene roxaparvovec",
+      "confidence": 0.95,
+      "evidence": "approved USA June 2023"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "F8",
+      "target_entity": "coagulation factor VIII",
+      "confidence": 0.92,
+      "evidence": "FVIII expression"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "coagulation factor VIII",
+      "target_entity": "hemophilia A",
+      "confidence": 0.93,
+      "evidence": "AAV gene addition for HA... FVIII expression"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "FVIII expression",
+      "target_entity": "valoctocogene roxaparvovec",
+      "confidence": 0.85,
+      "evidence": "year-over-year declines in FVIII expression contrast with stable FVIII in other AAV HA trials"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T23:51:14.822010+00:00",
+  "error": null
+}

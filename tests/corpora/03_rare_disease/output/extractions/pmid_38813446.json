@@ -1,0 +1,222 @@
+{
+  "document_id": "pmid_38813446",
+  "document_path": "tests/corpora/03_rare_disease/docs/pmid_38813446.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "vosoritide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "C-type natriuretic peptide analog",
+        "route": "subcutaneous",
+        "dose": "15 \u00b5g/kg/day"
+      },
+      "confidence": 0.99,
+      "context": "Vosoritide is a C-type natriuretic peptide analog that was recently approved for improving growth in children with achondroplasia"
+    },
+    {
+      "name": "hypochondroplasia",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "inheritance": "autosomal dominant"
+      },
+      "confidence": 0.99,
+      "context": "Hypochondroplasia is a rare autosomal dominant skeletal dysplasia due to activating variants in FGFR3"
+    },
+    {
+      "name": "achondroplasia",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.97,
+      "context": "Vosoritide is a C-type natriuretic peptide analog that was recently approved for improving growth in children with achondroplasia"
+    },
+    {
+      "name": "FGFR3",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "fibroblast growth factor receptor 3"
+      },
+      "confidence": 0.99,
+      "context": "rare autosomal dominant skeletal dysplasia due to activating variants in FGFR3"
+    },
+    {
+      "name": "FGFR3",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "fibroblast growth factor receptor 3"
+      },
+      "confidence": 0.95,
+      "context": "activating variants in FGFR3"
+    },
+    {
+      "name": "C-type natriuretic peptide",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "abbreviation": "CNP"
+      },
+      "confidence": 0.9,
+      "context": "Vosoritide is a C-type natriuretic peptide analog"
+    },
+    {
+      "name": "NCT04219007",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT04219007",
+        "phase": "Phase 2",
+        "design": "single-arm, open-label"
+      },
+      "confidence": 0.99,
+      "context": "single-arm, phase 2, open-label trial... registered with ClinicalTrials.gov (NCT04219007)"
+    },
+    {
+      "name": "injection site reaction",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "incidence": "83.3%"
+      },
+      "confidence": 0.97,
+      "context": "Injection site reactions occurred in 83.3% of participants"
+    },
+    {
+      "name": "disproportionate short stature",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "presents with disproportionate short stature with a wide range of clinical severity"
+    },
+    {
+      "name": "annualized growth velocity",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "change": "+2.26 SD",
+        "absolute_change": "+1.81 cm/year"
+      },
+      "confidence": 0.95,
+      "context": "Annualized growth velocity increased by 2.26 standard deviations (SD)"
+    },
+    {
+      "name": "height SDS",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "change": "+0.36 SD"
+      },
+      "confidence": 0.93,
+      "context": "height SDS increased by 0.36 SD during the treatment period versus the observation period"
+    },
+    {
+      "name": "BioMarin Pharmaceutical",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "funder"
+      },
+      "confidence": 0.99,
+      "context": "supported by an investigator-initiated grant from BioMarin Pharmaceutical"
+    },
+    {
+      "name": "Dauber et al. 2024",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "38813446",
+        "journal": "EClinicalMedicine",
+        "year": 2024
+      },
+      "confidence": 0.99,
+      "context": "Dauber Andrew, Zhang Anqing, Kanakatti Shankar Roopa, Boucher Kimberly, McCarthy Tara"
+    },
+    {
+      "name": "FGFR3 activating variant",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "variant_type": "activating",
+        "gene": "FGFR3"
+      },
+      "confidence": 0.9,
+      "context": "rare autosomal dominant skeletal dysplasia due to activating variants in FGFR3"
+    },
+    {
+      "name": "enzyme substitution therapy",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.7,
+      "context": "C-type natriuretic peptide analog - acts as CNP to counteract overactive FGFR3 signaling"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "vosoritide",
+      "target_entity": "achondroplasia",
+      "confidence": 0.98,
+      "evidence": "Vosoritide is a C-type natriuretic peptide analog that was recently approved for improving growth in children with achondroplasia"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "vosoritide",
+      "target_entity": "NCT04219007",
+      "confidence": 0.99,
+      "evidence": "registered with ClinicalTrials.gov (NCT04219007)"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "vosoritide",
+      "target_entity": "FGFR3",
+      "confidence": 0.8,
+      "evidence": "Vosoritide is a C-type natriuretic peptide analog; hypochondroplasia is due to activating variants in FGFR3"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "FGFR3",
+      "target_entity": "hypochondroplasia",
+      "confidence": 0.99,
+      "evidence": "rare autosomal dominant skeletal dysplasia due to activating variants in FGFR3"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "FGFR3",
+      "target_entity": "achondroplasia",
+      "confidence": 0.9,
+      "evidence": "Efficacy was similar to what has been reported in children with achondroplasia (FGFR3-related)"
+    },
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "FGFR3",
+      "target_entity": "FGFR3 activating variant",
+      "confidence": 0.9,
+      "evidence": "activating variants in FGFR3"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "vosoritide",
+      "target_entity": "injection site reaction",
+      "confidence": 0.97,
+      "evidence": "Injection site reactions occurred in 83.3% of participants"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "hypochondroplasia",
+      "target_entity": "disproportionate short stature",
+      "confidence": 0.95,
+      "evidence": "presents with disproportionate short stature with a wide range of clinical severity"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "vosoritide",
+      "target_entity": "BioMarin Pharmaceutical",
+      "confidence": 0.9,
+      "evidence": "supported by an investigator-initiated grant from BioMarin Pharmaceutical"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "annualized growth velocity",
+      "target_entity": "vosoritide",
+      "confidence": 0.88,
+      "evidence": "Annualized growth velocity increased by 2.26 standard deviations (SD)"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T23:51:31.050029+00:00",
+  "error": null
+}

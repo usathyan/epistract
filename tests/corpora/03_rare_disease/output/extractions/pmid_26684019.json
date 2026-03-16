@@ -1,0 +1,185 @@
+{
+  "document_id": "pmid_26684019",
+  "document_path": "pmid_26684019",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "vosoritide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide analog",
+        "alias": "BMN111",
+        "description": "C-type natriuretic peptide analog"
+      },
+      "confidence": 0.95,
+      "context": "CNP analog BMN111 acts as key regulator of longitudinal bone growth"
+    },
+    {
+      "name": "FGFR3",
+      "entity_type": "GENE",
+      "attributes": {
+        "role": "regulator of bone formation"
+      },
+      "confidence": 0.98,
+      "context": "FGFR3 is an important regulator of bone formation"
+    },
+    {
+      "name": "FGFR3",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "function": "receptor tyrosine kinase"
+      },
+      "confidence": 0.95,
+      "context": "FGFR3 is an important regulator of bone formation. Gain-of-function mutations in FGFR3 result in achondroplasia"
+    },
+    {
+      "name": "achondroplasia",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "description": "most common form of dwarfism"
+      },
+      "confidence": 0.98,
+      "context": "Gain-of-function mutations in FGFR3 result in achondroplasia (ACH), the most common form of dwarfism"
+    },
+    {
+      "name": "MAPK pathway",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "downregulating the MAPK pathway, activated by FGFR3 gain-of-function mutation"
+    },
+    {
+      "name": "FGFR3 gain-of-function",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "description": "gain-of-function mutation activates MAPK pathway"
+      },
+      "confidence": 0.92,
+      "context": "Gain-of-function mutations in FGFR3 result in achondroplasia"
+    },
+    {
+      "name": "MAPK pathway downregulation",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "description": "BMN111 downregulates MAPK pathway to restore bone growth"
+      },
+      "confidence": 0.9,
+      "context": "BMN111 acts as key regulator of longitudinal bone growth by downregulating the MAPK pathway"
+    },
+    {
+      "name": "FGFR3 Y367C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "notation": "Fgfr3Y367C/+",
+        "species": "mouse"
+      },
+      "confidence": 0.9,
+      "context": "Preclinical studies showed BMN111 led to large improvement in skeletal parameters in Fgfr3Y367C/+ mice"
+    },
+    {
+      "name": "BMN111 Phase 2 trial in ACH",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "Phase 2",
+        "population": "pediatric patients with ACH",
+        "start_year": 2014
+      },
+      "confidence": 0.92,
+      "context": "In 2014, a phase 2 clinical trial of BMN111 in pediatric patients with ACH started"
+    },
+    {
+      "name": "dwarfism",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "achondroplasia (ACH), the most common form of dwarfism"
+    },
+    {
+      "name": "C-type natriuretic peptide",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "alias": "CNP"
+      },
+      "confidence": 0.88,
+      "context": "C-Type Natriuretic Peptide Analog as Therapy for Achondroplasia"
+    },
+    {
+      "name": "bone",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "FGFR3 is an important regulator of bone formation"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "FGFR3",
+      "target_entity": "achondroplasia",
+      "confidence": 0.98,
+      "evidence": "Gain-of-function mutations in FGFR3 result in achondroplasia (ACH), the most common form of dwarfism"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "vosoritide",
+      "target_entity": "achondroplasia",
+      "confidence": 0.92,
+      "evidence": "C-Type Natriuretic Peptide Analog as Therapy for Achondroplasia"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "vosoritide",
+      "target_entity": "MAPK pathway downregulation",
+      "confidence": 0.92,
+      "evidence": "BMN111 acts as key regulator of longitudinal bone growth by downregulating the MAPK pathway"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "vosoritide",
+      "target_entity": "MAPK pathway",
+      "confidence": 0.9,
+      "evidence": "downregulating the MAPK pathway, activated by FGFR3 gain-of-function mutation"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "FGFR3",
+      "target_entity": "MAPK pathway",
+      "confidence": 0.92,
+      "evidence": "the MAPK pathway, activated by FGFR3 gain-of-function mutation"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "vosoritide",
+      "target_entity": "BMN111 Phase 2 trial in ACH",
+      "confidence": 0.92,
+      "evidence": "In 2014, a phase 2 clinical trial of BMN111 in pediatric patients with ACH started"
+    },
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "FGFR3",
+      "target_entity": "FGFR3 Y367C",
+      "confidence": 0.9,
+      "evidence": "Fgfr3Y367C/+ mice"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "achondroplasia",
+      "target_entity": "dwarfism",
+      "confidence": 0.9,
+      "evidence": "achondroplasia (ACH), the most common form of dwarfism"
+    },
+    {
+      "relation_type": "EXPRESSED_IN",
+      "source_entity": "FGFR3",
+      "target_entity": "bone",
+      "confidence": 0.85,
+      "evidence": "FGFR3 is an important regulator of bone formation"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T23:50:19.318655+00:00",
+  "error": null
+}

@@ -1,0 +1,105 @@
+{
+  "document_id": "pmid_38522180",
+  "document_path": "tests/corpora/03_rare_disease/docs/pmid_38522180.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "pegvaliase",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "enzyme substitution therapy",
+        "route": "subcutaneous"
+      },
+      "confidence": 0.98,
+      "context": "real-life use of pegvaliase in Italy in managing patients affected by phenylketonuria (PKU)"
+    },
+    {
+      "name": "phenylketonuria",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "PKU"
+      },
+      "confidence": 0.99,
+      "context": "managing patients affected by phenylketonuria (PKU)"
+    },
+    {
+      "name": "phenylalanine",
+      "entity_type": "METABOLITE",
+      "attributes": {
+        "abbreviation": "Phe"
+      },
+      "confidence": 0.95,
+      "context": "11 out of 18 patients (61%) reached Phe levels below 600 \u03bcmol/l"
+    },
+    {
+      "name": "PAL",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "phenylalanine ammonia-lyase"
+      },
+      "confidence": 0.85,
+      "context": "Phenylalanine Ammonia-Lyase (MeSH term); pegvaliase is a PEGylated PAL enzyme"
+    },
+    {
+      "name": "injection site reaction",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {},
+      "confidence": 0.8,
+      "context": "challenges associated with pegvaliase therapy, including managing adverse events"
+    },
+    {
+      "name": "Scala et al. 2024",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "38522180",
+        "journal": "Molecular genetics and metabolism",
+        "year": 2024
+      },
+      "confidence": 0.99,
+      "context": "Scala Iris, Brodosi Lucia, Gueraldi Daniela, Manti Filippo, Rovelli Valentina"
+    },
+    {
+      "name": "improved quality of life",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "enhancing the quality of life, and promoting social skills and independence"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "pegvaliase",
+      "target_entity": "phenylketonuria",
+      "confidence": 0.98,
+      "evidence": "real-life use of pegvaliase in Italy in managing patients affected by phenylketonuria (PKU)"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "pegvaliase",
+      "target_entity": "PAL",
+      "confidence": 0.85,
+      "evidence": "this novel enzyme substitution therapy (MeSH: Phenylalanine Ammonia-Lyase)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "pegvaliase",
+      "target_entity": "injection site reaction",
+      "confidence": 0.8,
+      "evidence": "challenges associated with pegvaliase therapy, including managing adverse events"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "phenylalanine",
+      "target_entity": "phenylketonuria",
+      "confidence": 0.95,
+      "evidence": "11 out of 18 patients (61%) reached Phe levels below 600 \u03bcmol/l"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T23:50:48.293955+00:00",
+  "error": null
+}

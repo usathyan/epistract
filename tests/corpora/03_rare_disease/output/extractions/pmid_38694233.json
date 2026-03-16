@@ -1,0 +1,243 @@
+{
+  "document_id": "pmid_38694233",
+  "document_path": "tests/corpora/03_rare_disease/docs/pmid_38694233.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "pegvaliase",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "enzyme substitution therapy",
+        "route": "subcutaneous"
+      },
+      "confidence": 0.99,
+      "context": "Pegvaliase is an enzyme-substitution therapy approved for individuals with PKU"
+    },
+    {
+      "name": "phenylketonuria",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "PKU"
+      },
+      "confidence": 0.99,
+      "context": "Phenylketonuria (PKU) is a genetic disorder caused by deficiency of the enzyme phenylalanine hydroxylase"
+    },
+    {
+      "name": "PAH",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "phenylalanine hydroxylase"
+      },
+      "confidence": 0.97,
+      "context": "genetic disorder caused by deficiency of the enzyme phenylalanine hydroxylase (PAH)"
+    },
+    {
+      "name": "phenylalanine hydroxylase",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene": "PAH"
+      },
+      "confidence": 0.97,
+      "context": "deficiency of the enzyme phenylalanine hydroxylase (PAH), which results in phenylalanine (Phe) accumulation"
+    },
+    {
+      "name": "phenylalanine",
+      "entity_type": "METABOLITE",
+      "attributes": {
+        "abbreviation": "Phe"
+      },
+      "confidence": 0.99,
+      "context": "phenylalanine (Phe) accumulation in the blood and brain"
+    },
+    {
+      "name": "PRISM-1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT01819727",
+        "phase": "Phase 3",
+        "design": "randomized"
+      },
+      "confidence": 0.99,
+      "context": "randomized trials PRISM-1 (NCT01819727)"
+    },
+    {
+      "name": "PRISM-2",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT01889862",
+        "phase": "Phase 3",
+        "design": "randomized"
+      },
+      "confidence": 0.99,
+      "context": "PRISM-2 (NCT01889862)"
+    },
+    {
+      "name": "165-304",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT03694353",
+        "design": "open-label extension"
+      },
+      "confidence": 0.99,
+      "context": "open-label extension study 165-304 (NCT03694353)"
+    },
+    {
+      "name": "arthralgia",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {},
+      "confidence": 0.97,
+      "context": "most common adverse events (AEs) being arthralgia, injection site reactions, headache"
+    },
+    {
+      "name": "injection site reaction",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {},
+      "confidence": 0.97,
+      "context": "most common adverse events (AEs) being arthralgia, injection site reactions, headache"
+    },
+    {
+      "name": "headache",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {},
+      "confidence": 0.97,
+      "context": "most common adverse events (AEs) being arthralgia, injection site reactions, headache"
+    },
+    {
+      "name": "injection site erythema",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "injection site reactions, headache, and injection site erythema"
+    },
+    {
+      "name": "hypersensitivity",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {},
+      "confidence": 0.93,
+      "context": "incidence of most AEs, including hypersensitivity AEs, was higher during the early treatment phase"
+    },
+    {
+      "name": "blood phenylalanine",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "thresholds": [
+          "600 \u00b5mol/L",
+          "360 \u00b5mol/L",
+          "120 \u00b5mol/L"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "71.3%, 65.1%, and 59.4% achieved clinically significant blood Phe levels of \u2264600, \u2264360, and \u2264120 \u03bcmol/L"
+    },
+    {
+      "name": "Harding et al. 2024",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "38694233",
+        "journal": "Molecular genetics and metabolism reports",
+        "year": 2024
+      },
+      "confidence": 0.99,
+      "context": "Harding Cary O, Longo Nicola, Northrup Hope, Sacharow Stephanie, Singh Rani"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "pegvaliase",
+      "target_entity": "phenylketonuria",
+      "confidence": 0.99,
+      "evidence": "Pegvaliase is an enzyme-substitution therapy approved for individuals with PKU and uncontrolled blood Phe concentrations"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "pegvaliase",
+      "target_entity": "PRISM-1",
+      "confidence": 0.99,
+      "evidence": "final data from the randomized trials PRISM-1 (NCT01819727)"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "pegvaliase",
+      "target_entity": "PRISM-2",
+      "confidence": 0.99,
+      "evidence": "final data from the randomized trials PRISM-2 (NCT01889862)"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "pegvaliase",
+      "target_entity": "165-304",
+      "confidence": 0.99,
+      "evidence": "open-label extension study 165-304 (NCT03694353)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "pegvaliase",
+      "target_entity": "arthralgia",
+      "confidence": 0.97,
+      "evidence": "most common adverse events (AEs) being arthralgia"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "pegvaliase",
+      "target_entity": "injection site reaction",
+      "confidence": 0.97,
+      "evidence": "most common adverse events (AEs) being arthralgia, injection site reactions"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "pegvaliase",
+      "target_entity": "headache",
+      "confidence": 0.97,
+      "evidence": "most common adverse events (AEs) being arthralgia, injection site reactions, headache"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "pegvaliase",
+      "target_entity": "injection site erythema",
+      "confidence": 0.95,
+      "evidence": "injection site reactions, headache, and injection site erythema"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "pegvaliase",
+      "target_entity": "hypersensitivity",
+      "confidence": 0.93,
+      "evidence": "incidence of most AEs, including hypersensitivity AEs, was higher during the early treatment phase"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PAH",
+      "target_entity": "phenylketonuria",
+      "confidence": 0.98,
+      "evidence": "genetic disorder caused by deficiency of the enzyme phenylalanine hydroxylase (PAH)"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "PAH",
+      "target_entity": "phenylalanine hydroxylase",
+      "confidence": 0.97,
+      "evidence": "deficiency of the enzyme phenylalanine hydroxylase (PAH)"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "blood phenylalanine",
+      "target_entity": "phenylketonuria",
+      "confidence": 0.95,
+      "evidence": "uncontrolled blood Phe concentrations (>600 \u03bcmol/L)"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "blood phenylalanine",
+      "target_entity": "pegvaliase",
+      "confidence": 0.9,
+      "evidence": "71.3%, 65.1%, and 59.4% achieved clinically significant blood Phe levels of \u2264600, \u2264360, and \u2264120 \u03bcmol/L"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T23:51:10.831160+00:00",
+  "error": null
+}

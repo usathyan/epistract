@@ -1,0 +1,124 @@
+review_threshold: 0.7
+relations:
+- source_id: biomarker:blood_phenylalanine
+  source_name: blood phenylalanine
+  target_id: disease:phenylketonuria
+  target_name: phenylketonuria
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.9995
+  evidence: uncontrolled blood Phe concentrations (>600 μmol/L)
+  source_document: pmid_38694233
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:blood_phenylalanine
+  source_name: blood phenylalanine
+  target_id: compound:pegvaliase
+  target_name: pegvaliase
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.9982
+  evidence: 71.3%, 65.1%, and 59.4% achieved clinically significant blood Phe levels
+    of ≤600, ≤360, and ≤120 μmol/L
+  source_document: pmid_38694233
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: compound:valoctocogene_roxaparvovec
+  source_name: valoctocogene roxaparvovec
+  target_id: disease:autoimmune_hepatitis
+  target_name: autoimmune hepatitis
+  relation_type: CONTRAINDICATED_FOR
+  confidence: 0.95
+  evidence: 'Contraindicated in: uncontrolled liver infections, autoimmune hepatitis'
+  source_document: pmid_39226466
+  status: DRAFT
+  flag_reason: Type 'CONTRAINDICATED_FOR' requires review
+- source_id: compound:valoctocogene_roxaparvovec
+  source_name: valoctocogene roxaparvovec
+  target_id: disease:cirrhosis
+  target_name: cirrhosis
+  relation_type: CONTRAINDICATED_FOR
+  confidence: 0.95
+  evidence: 'Contraindicated in: ... cirrhosis'
+  source_document: pmid_39226466
+  status: DRAFT
+  flag_reason: Type 'CONTRAINDICATED_FOR' requires review
+- source_id: compound:valoctocogene_roxaparvovec
+  source_name: valoctocogene roxaparvovec
+  target_id: disease:uncontrolled_liver_infection
+  target_name: uncontrolled liver infection
+  relation_type: CONTRAINDICATED_FOR
+  confidence: 0.92
+  evidence: 'Contraindicated in: uncontrolled liver infections'
+  source_document: pmid_39226466
+  status: DRAFT
+  flag_reason: Type 'CONTRAINDICATED_FOR' requires review
+- source_id: biomarker:fviii_activity
+  source_name: FVIII activity
+  target_id: disease:hemophilia_a
+  target_name: hemophilia A
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.9992
+  evidence: Mean FVIII activity increased by 41.9 IU/dL at weeks 49-52 (P<0.001)
+  source_document: pmid_35294811
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:fviii_activity
+  source_name: FVIII activity
+  target_id: compound:valoctocogene_roxaparvovec
+  target_name: valoctocogene roxaparvovec
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.9856
+  evidence: FVIII decrease lower between years 2-3 than 1-2
+  source_document: pmid_38614387
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:hema_qol
+  source_name: HemA-QoL
+  target_id: compound:valoctocogene_roxaparvovec
+  target_name: valoctocogene roxaparvovec
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.82
+  evidence: Quality of life improvement (HemA-QoL, P<.0001)
+  source_document: pmid_38614387
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:annualized_growth_velocity
+  source_name: annualized growth velocity
+  target_id: compound:vosoritide
+  target_name: vosoritide
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.88
+  evidence: Annualized growth velocity increased by 2.26 standard deviations (SD)
+  source_document: pmid_38813446
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:fviii_expression
+  source_name: FVIII expression
+  target_id: compound:valoctocogene_roxaparvovec
+  target_name: valoctocogene roxaparvovec
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.85
+  evidence: year-over-year declines in FVIII expression contrast with stable FVIII
+    in other AAV HA trials
+  source_document: pmid_38991118
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:alanine_aminotransferase
+  source_name: alanine aminotransferase
+  target_id: adverse_event:alt_elevation
+  target_name: ALT elevation
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.92
+  evidence: 'Post-treatment: ALT monitoring 1-2x/week for ≥1.5x ULN'
+  source_document: pmid_39226466
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:liver_stiffness
+  source_name: liver stiffness
+  target_id: disease:cirrhosis
+  target_name: cirrhosis
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.88
+  evidence: liver stiffness ≥8 kPa, cirrhosis
+  source_document: pmid_39226466
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
