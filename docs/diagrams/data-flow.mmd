@@ -1,0 +1,9 @@
+flowchart LR
+    DOCS["Documents<br/>PDF · DOCX · HTML<br/>TXT · Patents"] --> ING["Text Extraction<br/>+ Chunking"]
+    ING --> EXT["Claude Extraction<br/>Entities + Relations"]
+    EXT --> VAL["Molecular Validation<br/>RDKit · Biopython"]
+    VAL --> BLD["Graph Building<br/>Dedup · Communities"]
+    BLD --> OUT["Output"]
+    OUT --> VIZ["Interactive Viewer"]
+    OUT --> EXP["Export<br/>GraphML · SQLite · CSV"]
+    OUT --> QRY["Search & Query"]

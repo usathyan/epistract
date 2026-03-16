@@ -1,0 +1,23 @@
+flowchart TB
+    subgraph CC["Claude Code Runtime"]
+        subgraph EP["Epistract Plugin"]
+            CMD["Commands<br/>/ingest /build /view<br/>/query /export /validate"]
+            SKL["Drug Discovery<br/>Extraction Skill"]
+            AGT["Agents<br/>extractor · validator"]
+            CMD --> SKL
+            SKL --> AGT
+        end
+        subgraph SK["sift-kg Engine"]
+            ING["Document Ingest<br/>Kreuzberg · OCR"]
+            GRB["Graph Builder<br/>NetworkX · SemHash"]
+            RES["Entity Resolution<br/>LLM-proposed merges"]
+            EXP["Export<br/>JSON · GraphML · GEXF<br/>CSV · SQLite"]
+            VIZ["Interactive Viewer<br/>HTML · Force-directed"]
+            ING --> GRB --> RES --> EXP
+            RES --> VIZ
+        end
+        EP --> SK
+    end
+    USR["Scientist / Researcher"] --> CMD
+    VIZ --> BRW["Browser"]
+    EXP --> EXT["Gephi · Cytoscape<br/>DuckDB · pandas"]
