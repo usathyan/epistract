@@ -1,0 +1,21 @@
+{
+  "name": "epistract",
+  "version": "1.0.0",
+  "description": "Expert drug discovery knowledge graph extraction from scientific literature. Extracts compounds, targets, mechanisms, clinical trials, and their relationships from PubMed, bioRxiv, patents, and regulatory documents into a structured, queryable knowledge graph.",
+  "author": {
+    "name": "Umesh Bhatt"
+  },
+  "license": "MIT",
+  "keywords": [
+    "drug-discovery",
+    "knowledge-graph",
+    "biomedical",
+    "pharma",
+    "entity-extraction",
+    "ontology",
+    "sift-kg",
+    "PubMed",
+    "clinical-trials",
+    "molecular-validation"
+  ]
+}
