@@ -195,7 +195,12 @@ See [MANUAL_TEST_SCENARIOS.md](tests/MANUAL_TEST_SCENARIOS.md) for full details 
 
 **Phase 1.5 (in progress):** Structural enrichment — validated SMILES, sequences, and molecular identifiers become first-class graph nodes with computed properties. InChIKey-based compound deduplication. Structural similarity edges.
 
-**Phase 2 (planned):** Neo4j graph database ingestion, vector embeddings for semantic search, combined graph+vector RAG queries.
+**Phase 2 (planned):**
+1. **Neo4j Cypher exporter** — MERGE nodes/edges into Neo4j with constraints and indexes
+2. **Entity description embeddings** — embed entity descriptions with sentence-transformers, store in Neo4j vector index
+3. **Morgan fingerprint embeddings** — RDKit molecular fingerprints stored as vectors for structural similarity search
+4. **Combined RAG query** — `/epistract-ask "What compounds similar to sotorasib target KRAS?"` → vector search + graph traversal + structure similarity in one query
+5. **External enrichment** — PubChem/ChEMBL/UniProt API lookups that add nodes and edges from external knowledge bases
 
 ## Requirements
 
