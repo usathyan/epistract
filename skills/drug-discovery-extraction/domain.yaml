@@ -1,0 +1,329 @@
+name: "Drug Discovery"
+version: "1.0.0"
+description: |
+  Domain for extracting structured knowledge graphs from drug discovery and
+  pharmaceutical research documents. Covers the full pipeline from target
+  identification through clinical development and regulatory approval.
+  Optimized for scientific papers, clinical trial reports, drug labels,
+  patent filings, and regulatory submissions.
+
+system_context: |
+  You are analyzing drug discovery and pharmaceutical research documents to
+  build a knowledge graph of compounds, targets, mechanisms, and clinical
+  outcomes.
+
+  NOMENCLATURE STANDARDS — use canonical names whenever possible:
+  - Drugs/compounds: prefer International Nonproprietary Names (INN), e.g.
+    "imatinib" not "Gleevec" or "STI-571", unless the brand or code is the
+    only identifier available.
+  - Genes: use HGNC-approved symbols, e.g. "BRAF" not "v-raf murine sarcoma
+    viral oncogene homolog B1".
+  - Diseases: prefer MeSH terms, e.g. "Non-Small Cell Lung Carcinoma" not
+    "non-small cell lung cancer" or "NSCLC" (use NSCLC only as an alias).
+  - Adverse events: prefer MedDRA Preferred Terms, e.g. "Hepatotoxicity"
+    not "liver damage".
+
+  DISAMBIGUATION RULES — choose the correct entity type:
+  - GENE vs PROTEIN: Use GENE when the text refers to the genomic locus,
+    mutation, expression level, or coding sequence. Use PROTEIN when it
+    refers to the translated product, its structure, or its enzymatic
+    activity. When ambiguous (e.g. "EGFR"), prefer PROTEIN if discussing
+    binding or inhibition, GENE if discussing expression or mutation.
+  - COMPOUND vs MECHANISM_OF_ACTION: "PD-1 inhibition" is a
+    MECHANISM_OF_ACTION; "nivolumab" is a COMPOUND.
+  - DISEASE vs PHENOTYPE: Use DISEASE for classifiable medical conditions
+    with diagnostic criteria (e.g. "Type 2 Diabetes Mellitus"). Use
+    PHENOTYPE for observable traits or biomarker states (e.g. "insulin
+    resistance", "HER2-positive").
+  - ADVERSE_EVENT vs DISEASE: Use ADVERSE_EVENT when the condition is
+    caused by a drug or treatment. Use DISEASE when it is the condition
+    being treated or studied independently of drug exposure.
+
+  CONFIDENCE CALIBRATION — assign confidence scores as follows:
+  - 0.9–1.0: Explicitly stated in the text with clear evidence.
+  - 0.7–0.89: Strongly supported by context but not directly quoted.
+  - 0.5–0.69: Inferred from indirect evidence or background knowledge.
+  - Below 0.5: Speculative; flag for review.
+
+fallback_relation: ASSOCIATED_WITH
+
+entity_types:
+  COMPOUND:
+    description: "Small molecules, biologics, drug candidates, approved drugs, and chemical probes"
+    extraction_hints:
+      - "Look for drug names (INN), brand names, compound codes (e.g. 'BMS-986158'), and chemical names"
+      - "Include biologics such as monoclonal antibodies (e.g. 'trastuzumab'), ADCs, and gene therapies"
+      - "Capture development stage when mentioned (preclinical, Phase I–III, approved)"
+      - "Prefer INN over brand names; record brand names as aliases"
+
+  GENE:
+    description: "Genes, genetic loci, alleles, and genomic variants relevant to drug targets or disease mechanisms"
+    extraction_hints:
+      - "Use HGNC symbols when available (e.g. 'BRCA1', 'TP53', 'KRAS')"
+      - "Include specific variants and mutations (e.g. 'BRAF V600E', 'EGFR T790M')"
+      - "Use GENE when the text discusses expression, mutation, polymorphism, or genetic association"
+      - "If the text is about protein function or drug binding, prefer PROTEIN"
+
+  PROTEIN:
+    description: "Proteins, enzymes, receptors, ion channels, and protein complexes that serve as drug targets or functional entities"
+    extraction_hints:
+      - "Look for drug targets: kinases, GPCRs, nuclear receptors, ion channels, transporters"
+      - "Use PROTEIN when discussing binding, catalytic activity, structural domains, or post-translational modification"
+      - "Include protein complexes (e.g. 'proteasome', 'PD-1/PD-L1 complex')"
+      - "Prefer UniProt canonical names where possible"
+
+  DISEASE:
+    description: "Medical conditions, syndromes, and disease classifications with established diagnostic criteria"
+    extraction_hints:
+      - "Prefer MeSH disease terms for canonical naming"
+      - "Include disease subtypes and staging (e.g. 'HER2-positive Breast Cancer', 'Stage IV NSCLC')"
+      - "Use DISEASE for conditions being treated or studied; use ADVERSE_EVENT for drug-caused conditions"
+      - "Use DISEASE for classifiable conditions; use PHENOTYPE for observable traits"
+
+  MECHANISM_OF_ACTION:
+    description: "Pharmacological mechanisms by which compounds exert their effects"
+    extraction_hints:
+      - "Look for phrases like 'inhibits', 'agonist of', 'antagonist of', 'blocks', 'modulates'"
+      - "Capture the mechanism as a noun phrase (e.g. 'selective BRAF inhibition', 'PD-1 checkpoint blockade')"
+      - "Distinguish from the compound itself: 'nivolumab' is a COMPOUND; 'PD-1 inhibition' is a MECHANISM_OF_ACTION"
+      - "Include mechanism classes (e.g. 'tyrosine kinase inhibition', 'immune checkpoint blockade')"
+
+  CLINICAL_TRIAL:
+    description: "Specific clinical studies identified by registry ID, study name, or phase designation"
+    extraction_hints:
+      - "Look for NCT numbers (e.g. 'NCT02302807'), study acronyms (e.g. 'KEYNOTE-024'), and phase designations"
+      - "Capture trial phase, primary endpoints, and patient population when mentioned"
+      - "Include both interventional and observational studies"
+
+  PATHWAY:
+    description: "Biological signaling pathways, metabolic pathways, and regulatory cascades"
+    extraction_hints:
+      - "Look for named pathways (e.g. 'MAPK/ERK pathway', 'PI3K/AKT/mTOR signaling', 'Wnt/beta-catenin pathway')"
+      - "Include metabolic pathways (e.g. 'glycolysis', 'folate metabolism')"
+      - "Use canonical pathway names from KEGG or Reactome when possible"
+
+  BIOMARKER:
+    description: "Measurable indicators used for diagnosis, prognosis, patient stratification, or treatment response prediction"
+    extraction_hints:
+      - "Look for biomarkers used in patient selection (e.g. 'PD-L1 expression >= 50%', 'microsatellite instability-high')"
+      - "Include genomic biomarkers (e.g. 'TMB-high'), protein biomarkers (e.g. 'HER2 overexpression'), and circulating biomarkers"
+      - "Capture the threshold or cutoff when specified"
+      - "Distinguish from GENE/PROTEIN: use BIOMARKER when the entity is used as a measurable clinical indicator"
+
+  ADVERSE_EVENT:
+    description: "Drug-induced side effects, toxicities, and safety signals observed in clinical or post-market settings"
+    extraction_hints:
+      - "Prefer MedDRA Preferred Terms for naming (e.g. 'Hepatotoxicity', 'QT Prolongation')"
+      - "Capture severity grades (e.g. 'Grade 3 neutropenia') and frequency when mentioned"
+      - "Use ADVERSE_EVENT only for drug-caused conditions; use DISEASE for conditions being treated"
+      - "Include both common and serious adverse events, black box warnings"
+
+  ORGANIZATION:
+    description: "Pharmaceutical companies, biotech firms, regulatory agencies, research institutions, and consortia"
+    extraction_hints:
+      - "Look for sponsors, manufacturers, CROs, and regulatory bodies (e.g. 'Pfizer', 'FDA', 'EMA')"
+      - "Include academic institutions and consortia when they are key actors in development"
+      - "Use the most commonly recognized name (e.g. 'Roche' not 'F. Hoffmann-La Roche AG')"
+
+  PUBLICATION:
+    description: "Specific journal articles, clinical study reports, regulatory filings, and patent documents"
+    extraction_hints:
+      - "Extract publications discussed substantively, not routine citations"
+      - "Include landmark trials, meta-analyses, and regulatory documents"
+      - "Capture journal name, year, and first author when available"
+
+  REGULATORY_ACTION:
+    description: "Regulatory decisions, approvals, label changes, and safety communications by health authorities"
+    extraction_hints:
+      - "Look for FDA approvals, EMA authorizations, REMS programs, and safety warnings"
+      - "Capture the action type (e.g. 'accelerated approval', 'complete response letter', 'black box warning')"
+      - "Include the date and agency when mentioned"
+
+  PHENOTYPE:
+    description: "Observable biological traits, expression states, and patient characteristics used in stratification"
+    extraction_hints:
+      - "Use for observable traits: 'HER2-positive', 'EGFR-mutant', 'PD-L1 high', 'triple-negative'"
+      - "Include cellular phenotypes (e.g. 'apoptosis', 'epithelial-mesenchymal transition')"
+      - "Distinguish from DISEASE: PHENOTYPE is an observable characteristic; DISEASE is a classifiable condition"
+      - "Distinguish from BIOMARKER: use PHENOTYPE for the biological state, BIOMARKER for the measured indicator"
+
+relation_types:
+  TARGETS:
+    description: "Compound acts on a protein or gene target"
+    source_types: [COMPOUND]
+    target_types: [PROTEIN, GENE]
+    extraction_hints:
+      - "Look for 'targets', 'acts on', 'directed against', 'selective for'"
+      - "The compound is the source; the molecular target is the target"
+
+  INHIBITS:
+    description: "Entity inhibits, suppresses, or blocks the activity of another entity"
+    source_types: [COMPOUND, PROTEIN]
+    target_types: [PROTEIN, GENE, PATHWAY]
+    extraction_hints:
+      - "Look for 'inhibits', 'blocks', 'suppresses', 'downregulates', 'antagonizes'"
+      - "Includes both direct inhibition (enzyme) and pathway suppression"
+
+  ACTIVATES:
+    description: "Entity activates, stimulates, or enhances the activity of another entity"
+    source_types: [COMPOUND, PROTEIN]
+    target_types: [PROTEIN, GENE, PATHWAY]
+    extraction_hints:
+      - "Look for 'activates', 'stimulates', 'upregulates', 'agonizes', 'enhances'"
+      - "Includes receptor agonism and pathway activation"
+
+  BINDS_TO:
+    description: "Physical binding interaction between molecular entities"
+    source_types: [COMPOUND, PROTEIN]
+    target_types: [PROTEIN]
+    symmetric: true
+    extraction_hints:
+      - "Look for 'binds to', 'interacts with', 'affinity for', 'Kd', 'IC50 binding'"
+      - "Use for physical interactions; use INHIBITS or ACTIVATES for functional consequences"
+
+  HAS_MECHANISM:
+    description: "Compound operates through a specific mechanism of action"
+    source_types: [COMPOUND]
+    target_types: [MECHANISM_OF_ACTION]
+    extraction_hints:
+      - "Look for 'mechanism of action', 'works by', 'acts as a', 'MOA'"
+      - "'Imatinib HAS_MECHANISM BCR-ABL tyrosine kinase inhibition'"
+
+  INDICATED_FOR:
+    description: "Compound is indicated for or used to treat a disease"
+    source_types: [COMPOUND]
+    target_types: [DISEASE]
+    extraction_hints:
+      - "Look for 'indicated for', 'approved for', 'used to treat', 'therapeutic use in'"
+      - "Include both approved indications and investigational uses"
+
+  CONTRAINDICATED_FOR:
+    description: "Compound is contraindicated for a disease or patient population"
+    source_types: [COMPOUND]
+    target_types: [DISEASE]
+    review_required: true
+    extraction_hints:
+      - "Look for 'contraindicated in', 'should not be used in', 'avoid in patients with'"
+      - "Flag for review due to patient safety implications"
+
+  EVALUATED_IN:
+    description: "Compound is evaluated or tested in a clinical trial"
+    source_types: [COMPOUND]
+    target_types: [CLINICAL_TRIAL]
+    extraction_hints:
+      - "Look for 'evaluated in', 'tested in', 'studied in', 'enrolled in'"
+      - "'Pembrolizumab EVALUATED_IN KEYNOTE-024'"
+
+  CAUSES:
+    description: "Compound causes or is associated with an adverse event"
+    source_types: [COMPOUND]
+    target_types: [ADVERSE_EVENT]
+    extraction_hints:
+      - "Look for 'causes', 'associated with', 'adverse event', 'side effect', 'toxicity'"
+      - "Capture frequency and severity when available"
+
+  DERIVED_FROM:
+    description: "Compound is derived from, a metabolite of, or structurally based on another compound"
+    source_types: [COMPOUND]
+    target_types: [COMPOUND]
+    extraction_hints:
+      - "Look for 'derived from', 'analog of', 'metabolite of', 'prodrug of', 'structurally related to'"
+      - "Includes SAR-based derivatives and metabolic products"
+
+  COMBINED_WITH:
+    description: "Compound is used in combination with another compound"
+    source_types: [COMPOUND]
+    target_types: [COMPOUND]
+    symmetric: true
+    extraction_hints:
+      - "Look for 'combined with', 'in combination with', 'plus', 'co-administered with'"
+      - "Common in oncology regimens and HIV antiretroviral therapy"
+
+  ENCODES:
+    description: "Gene encodes a protein product"
+    source_types: [GENE]
+    target_types: [PROTEIN]
+    extraction_hints:
+      - "Look for 'encodes', 'codes for', 'gene product', 'translated into'"
+      - "'BRAF ENCODES BRAF kinase'"
+
+  PARTICIPATES_IN:
+    description: "Protein or gene participates in a biological pathway"
+    source_types: [PROTEIN, GENE]
+    target_types: [PATHWAY]
+    extraction_hints:
+      - "Look for 'participates in', 'involved in', 'member of', 'component of', 'signaling through'"
+
+  IMPLICATED_IN:
+    description: "Gene, protein, pathway, or phenotype is implicated in or contributes to a disease"
+    source_types: [GENE, PROTEIN, PATHWAY, PHENOTYPE]
+    target_types: [DISEASE]
+    extraction_hints:
+      - "Look for 'implicated in', 'contributes to', 'driver of', 'risk factor for', 'pathogenic role in'"
+      - "Includes causal, correlational, and GWAS associations"
+
+  CONFERS_RESISTANCE_TO:
+    description: "Gene, protein, or phenotype confers resistance to a compound"
+    source_types: [GENE, PROTEIN, PHENOTYPE]
+    target_types: [COMPOUND]
+    review_required: true
+    extraction_hints:
+      - "Look for 'resistance to', 'refractory to', 'insensitive to', 'resistance mutation'"
+      - "'EGFR T790M CONFERS_RESISTANCE_TO gefitinib'"
+
+  PREDICTS_RESPONSE_TO:
+    description: "Biomarker predicts response to a compound or mechanism of action"
+    source_types: [BIOMARKER]
+    target_types: [COMPOUND, MECHANISM_OF_ACTION]
+    review_required: true
+    extraction_hints:
+      - "Look for 'predicts response to', 'predictive biomarker for', 'companion diagnostic'"
+      - "Flag for review due to clinical decision implications"
+
+  DIAGNOSTIC_FOR:
+    description: "Biomarker is used for diagnosis or prognosis of a disease"
+    source_types: [BIOMARKER]
+    target_types: [DISEASE]
+    review_required: true
+    extraction_hints:
+      - "Look for 'diagnostic for', 'prognostic for', 'used to diagnose', 'marker of'"
+      - "Flag for review due to clinical decision implications"
+
+  DEVELOPED_BY:
+    description: "Compound or clinical trial is developed or sponsored by an organization"
+    source_types: [COMPOUND, CLINICAL_TRIAL]
+    target_types: [ORGANIZATION]
+    extraction_hints:
+      - "Look for 'developed by', 'manufactured by', 'sponsored by', 'discovered at'"
+
+  PUBLISHED_IN:
+    description: "Clinical trial results or compound data are published in a specific publication"
+    source_types: [CLINICAL_TRIAL, COMPOUND]
+    target_types: [PUBLICATION]
+    extraction_hints:
+      - "Look for 'published in', 'reported in', 'results presented in'"
+
+  GRANTS_APPROVAL_FOR:
+    description: "Regulatory action grants approval or authorization for a compound"
+    source_types: [REGULATORY_ACTION]
+    target_types: [COMPOUND]
+    extraction_hints:
+      - "Look for 'approved', 'granted approval', 'authorized', 'received marketing authorization'"
+      - "'FDA accelerated approval GRANTS_APPROVAL_FOR pembrolizumab'"
+
+  EXPRESSED_IN:
+    description: "Gene or protein is expressed in a phenotypic context or tissue"
+    source_types: [GENE, PROTEIN]
+    target_types: [PHENOTYPE]
+    extraction_hints:
+      - "Look for 'expressed in', 'overexpressed in', 'detected in', 'upregulated in'"
+      - "Includes tissue-specific expression and disease-associated expression patterns"
+
+  ASSOCIATED_WITH:
+    description: "General association between entities — use when a more specific relation does not apply"
+    source_types: [COMPOUND, GENE, PROTEIN, DISEASE, MECHANISM_OF_ACTION, CLINICAL_TRIAL, PATHWAY, BIOMARKER, ADVERSE_EVENT, ORGANIZATION, PUBLICATION, REGULATORY_ACTION, PHENOTYPE]
+    target_types: [COMPOUND, GENE, PROTEIN, DISEASE, MECHANISM_OF_ACTION, CLINICAL_TRIAL, PATHWAY, BIOMARKER, ADVERSE_EVENT, ORGANIZATION, PUBLICATION, REGULATORY_ACTION, PHENOTYPE]
+    symmetric: true
+    extraction_hints:
+      - "Use only when a more specific relation type does not apply"
+      - "This is the fallback relation for associations that do not fit other categories"
