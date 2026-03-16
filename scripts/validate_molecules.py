@@ -4,14 +4,20 @@
 Scans extraction files for molecular identifiers (SMILES, sequences, CAS numbers,
 clinical trial IDs, patents) and validates them with optional RDKit/Biopython support.
 
+Phase 1.5: When --enrich is enabled (default), validated molecules become graph nodes
+(CHEMICAL_STRUCTURE, NUCLEOTIDE_SEQUENCE, PEPTIDE_SEQUENCE) with HAS_STRUCTURE/HAS_SEQUENCE
+relations linking them to parent entities.
+
 Usage:
     python validate_molecules.py <output_dir>
+    python validate_molecules.py <output_dir> --no-enrich
 """
 
 from __future__ import annotations
 
 import json
 import sys
+from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -141,12 +147,233 @@ def process_extraction(filepath: Path) -> dict:
     }
 
 
+# ---------------------------------------------------------------------------
+# Phase 1.5: Structural Enrichment
+# ---------------------------------------------------------------------------
+
+def _find_nearest_entity(
+    entities: list[dict],
+    match_context: str,
+    target_types: set[str],
+) -> dict | None:
+    """Find the nearest entity of a given type by checking if entity name appears in context."""
+    for entity in entities:
+        if entity.get("entity_type") in target_types:
+            name = entity.get("name", "")
+            if name and name.lower() in match_context.lower():
+                return entity
+    # Fallback: return first entity of the target type
+    for entity in entities:
+        if entity.get("entity_type") in target_types:
+            return entity
+    return None
+
+
+def _build_smiles_entity(result: dict) -> dict | None:
+    """Build a CHEMICAL_STRUCTURE entity from a validated SMILES match."""
+    validation = result.get("validation")
+    if not validation or not validation.get("valid"):
+        return None
+
+    name = validation.get("inchikey") or validation.get("canonical_smiles", result["value"])
+
+    return {
+        "name": name,
+        "entity_type": "CHEMICAL_STRUCTURE",
+        "attributes": {
+            "canonical_smiles": validation.get("canonical_smiles", ""),
+            "inchi": validation.get("inchi", ""),
+            "inchikey": validation.get("inchikey", ""),
+            "molecular_formula": validation.get("molecular_formula", ""),
+            "molecular_weight": validation.get("molecular_weight"),
+            "logp": validation.get("logp"),
+            "hbd": validation.get("hbd"),
+            "hba": validation.get("hba"),
+            "tpsa": validation.get("tpsa"),
+            "lipinski_violations": validation.get("lipinski_violations"),
+            "notation_type": "SMILES",
+            "validated": True,
+        },
+        "confidence": 1.0,
+        "context": result.get("context", ""),
+    }
+
+
+def _build_sequence_entity(result: dict) -> dict | None:
+    """Build a NUCLEOTIDE_SEQUENCE or PEPTIDE_SEQUENCE entity from a validated sequence match."""
+    validation = result.get("validation")
+    if not validation or not validation.get("valid"):
+        return None
+
+    seq_type = validation.get("type", "unknown")
+    sequence = result["value"]
+    seq_len = validation.get("length", len(sequence))
+
+    if seq_type in ("DNA", "RNA"):
+        entity_type = "NUCLEOTIDE_SEQUENCE"
+        name = f"{seq_type}_{seq_len}nt"
+        attributes: dict = {
+            "sequence": sequence[:100],
+            "sequence_type": seq_type,
+            "length": seq_len,
+            "validated": True,
+        }
+        if validation.get("gc_content") is not None:
+            attributes["gc_content"] = validation["gc_content"]
+    elif seq_type.lower() == "protein":
+        entity_type = "PEPTIDE_SEQUENCE"
+        name = f"peptide_{seq_len}aa"
+        attributes = {
+            "sequence": sequence[:100],
+            "sequence_type": "protein",
+            "length": seq_len,
+            "validated": True,
+        }
+        if validation.get("molecular_weight") is not None:
+            attributes["molecular_weight"] = validation["molecular_weight"]
+    else:
+        return None
+
+    return {
+        "name": name,
+        "entity_type": entity_type,
+        "attributes": attributes,
+        "confidence": 1.0,
+        "context": result.get("context", ""),
+    }
+
+
+def enrich_extraction(
+    extraction_path: Path,
+    results: list[dict],
+    output_dir: Path,
+) -> dict:
+    """Enrich an extraction JSON with structural entities and relations.
+
+    Args:
+        extraction_path: Path to the extraction JSON file.
+        results: Validated match results from process_extraction().
+        output_dir: Root output directory (unused here, kept for API consistency).
+
+    Returns:
+        Dict of enrichment stats.
+    """
+    data = json.loads(extraction_path.read_text(encoding="utf-8"))
+    entities = data.setdefault("entities", [])
+    relations = data.setdefault("relations", [])
+
+    stats = {"entities_added": 0, "relations_added": 0, "inchikeys": []}
+
+    # Track existing entity names to avoid duplicates
+    existing_names = {e.get("name") for e in entities}
+
+    for result in results:
+        ptype = result.get("pattern_type", "")
+        status = result.get("status", "")
+
+        if status != "valid":
+            continue
+
+        new_entity = None
+        relation_type = None
+        parent_types: set[str] = set()
+
+        if ptype in SMILES_TYPES:
+            new_entity = _build_smiles_entity(result)
+            relation_type = "HAS_STRUCTURE"
+            parent_types = {"COMPOUND", "DRUG", "MOLECULE"}
+            # Collect InChIKey for dedup
+            inchikey = (result.get("validation") or {}).get("inchikey")
+            if inchikey:
+                stats["inchikeys"].append(inchikey)
+
+        elif ptype in SEQUENCE_TYPES:
+            new_entity = _build_sequence_entity(result)
+            relation_type = "HAS_SEQUENCE"
+            parent_types = {"GENE", "PROTEIN", "COMPOUND"}
+
+        if new_entity is None:
+            continue
+
+        entity_name = new_entity["name"]
+        if entity_name in existing_names:
+            continue
+
+        entities.append(new_entity)
+        existing_names.add(entity_name)
+        stats["entities_added"] += 1
+
+        # Find parent entity and create relation
+        parent = _find_nearest_entity(entities, result.get("context", ""), parent_types)
+        if parent and relation_type:
+            relation = {
+                "relation_type": relation_type,
+                "source_entity": parent["name"],
+                "target_entity": entity_name,
+                "confidence": 0.95,
+                "evidence": result.get("context", ""),
+            }
+            relations.append(relation)
+            stats["relations_added"] += 1
+
+    # Write enriched extraction back to disk
+    extraction_path.write_text(json.dumps(data, indent=2), encoding="utf-8")
+
+    return stats
+
+
+def build_dedup_report(
+    all_inchikeys: dict[str, list[dict]],
+    output_dir: Path,
+) -> dict:
+    """Build and save InChIKey deduplication report.
+
+    Args:
+        all_inchikeys: Mapping of InChIKey -> list of {name, document} dicts.
+        output_dir: Root output directory.
+
+    Returns:
+        The dedup report dict.
+    """
+    matches = []
+    for inchikey, compounds in sorted(all_inchikeys.items()):
+        if len(compounds) > 1:
+            matches.append({
+                "inchikey": inchikey,
+                "compounds": compounds,
+            })
+
+    report = {"inchikey_matches": matches}
+
+    validation_dir = output_dir / "validation"
+    validation_dir.mkdir(parents=True, exist_ok=True)
+    dedup_path = validation_dir / "dedup_candidates.json"
+    dedup_path.write_text(json.dumps(report, indent=2), encoding="utf-8")
+
+    return report
+
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
 def main() -> None:
-    if len(sys.argv) != 2:
-        print(f"Usage: {sys.argv[0]} <output_dir>", file=sys.stderr)
+    # Parse arguments
+    args = sys.argv[1:]
+    enrich = True
+
+    if "--no-enrich" in args:
+        enrich = False
+        args.remove("--no-enrich")
+    elif "--enrich" in args:
+        enrich = True
+        args.remove("--enrich")
+
+    if len(args) != 1:
+        print(f"Usage: {sys.argv[0]} <output_dir> [--no-enrich]", file=sys.stderr)
         sys.exit(1)
 
-    output_dir = Path(sys.argv[1])
+    output_dir = Path(args[0])
     extractions_dir = output_dir / "extractions"
 
     if not extractions_dir.is_dir():
@@ -167,6 +394,13 @@ def main() -> None:
         "unvalidated": 0,
         "found": 0,
         "by_type": {},
+    }
+
+    # InChIKey dedup tracking: inchikey -> [{name, document}]
+    inchikey_map: dict[str, list[dict]] = defaultdict(list)
+    enrichment_stats = {
+        "entities_added": 0,
+        "relations_added": 0,
     }
 
     for filepath in json_files:
@@ -195,9 +429,46 @@ def main() -> None:
             ptype = r.get("pattern_type", "unknown")
             stats["by_type"][ptype] = stats["by_type"].get(ptype, 0) + 1
 
+        # Phase 1.5: Enrich extraction with structural entities
+        if enrich and file_result["results"]:
+            try:
+                enrich_result = enrich_extraction(
+                    filepath, file_result["results"], output_dir
+                )
+                enrichment_stats["entities_added"] += enrich_result["entities_added"]
+                enrichment_stats["relations_added"] += enrich_result["relations_added"]
+
+                # Collect InChIKeys for dedup
+                doc_id = file_result.get("document_id", filepath.stem)
+                for inchikey in enrich_result.get("inchikeys", []):
+                    # Find compound name from results
+                    compound_name = None
+                    for r in file_result["results"]:
+                        v = r.get("validation") or {}
+                        if v.get("inchikey") == inchikey:
+                            # Find parent compound name from context
+                            data = json.loads(filepath.read_text(encoding="utf-8"))
+                            parent = _find_nearest_entity(
+                                data.get("entities", []),
+                                r.get("context", ""),
+                                {"COMPOUND", "DRUG", "MOLECULE"},
+                            )
+                            if parent:
+                                compound_name = parent["name"]
+                            break
+                    inchikey_map[inchikey].append({
+                        "name": compound_name or "unknown",
+                        "document": doc_id,
+                    })
+            except Exception as exc:
+                print(f"Warning: enrichment failed for {filepath.name}: {exc}", file=sys.stderr)
+
     # Add availability info
     stats["rdkit_available"] = HAS_RDKIT
     stats["biopython_available"] = HAS_BIOPYTHON
+
+    if enrich:
+        stats["enrichment"] = enrichment_stats
 
     # Save results
     validation_dir = output_dir / "validation"
@@ -212,6 +483,13 @@ def main() -> None:
 
     results_path = validation_dir / "results.json"
     results_path.write_text(json.dumps(output_data, indent=2), encoding="utf-8")
+
+    # Phase 1.5: Build dedup report
+    if enrich and inchikey_map:
+        dedup_report = build_dedup_report(dict(inchikey_map), output_dir)
+        dedup_count = len(dedup_report.get("inchikey_matches", []))
+        if dedup_count > 0:
+            stats["dedup_candidates"] = dedup_count
 
     # Print summary stats to stdout
     print(json.dumps(stats, indent=2))
