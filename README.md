@@ -142,21 +142,29 @@ This means your knowledge graph contains **verified** molecular structures, not 
 
 Requires [Claude Code](https://claude.ai/claude-code) and Python 3.11+.
 
-**Install in one command:**
+**Install from GitHub** — run these inside any Claude Code session:
 
-```bash
-git clone https://github.com/usathyan/epistract.git ~/.claude/plugins/epistract
+```
+/plugin marketplace add usathyan/epistract
+/plugin install epistract@epistract
 ```
 
-That's it. The plugin is now available in all your Claude Code sessions. No build step, no package manager — just clone into the plugins directory.
+Then restart Claude Code. The plugin is now available in all sessions.
 
-**Already have a clone elsewhere?** Symlink it:
+**For developers** — clone locally and install as a dev marketplace:
 
 ```bash
-ln -s /path/to/your/epistract ~/.claude/plugins/epistract
+git clone https://github.com/usathyan/epistract.git
 ```
 
-**Verify installation** — inside any Claude Code session:
+```
+/plugin marketplace add /path/to/epistract
+/plugin install epistract@epistract
+```
+
+Restart Claude Code after installing.
+
+**Verify installation:**
 
 ```
 /epistract-setup
