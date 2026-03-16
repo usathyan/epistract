@@ -632,6 +632,7 @@ Epistract is a Claude Code plugin. When you modify plugin files (agents, command
 - The cache lives at `~/.claude/plugins/cache/epistract/epistract/<version>/`
 - If the cache is stale, you can nuke it: `rm -rf ~/.claude/plugins/cache/epistract/` then reinstall
 - After reinstall, restart Claude Code (or `/reload-plugins`) for agents and skills to load
+- **After clearing cache or reinstalling, re-run `/epistract-setup`** — the setup script lives in the plugin cache, and dependencies (sift-kg, RDKit, Biopython) need to be verified against the new cache location
 
 ### Field Naming: entity_type vs type
 
