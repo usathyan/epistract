@@ -5,3 +5,4 @@ __pycache__/
 output/
 epistract-output/
 .DS_Store
+lib/

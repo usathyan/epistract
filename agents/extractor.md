@@ -18,7 +18,7 @@ You are processing a single document for the epistract knowledge graph.
 
 ## Entity Types (use ONLY these)
 
-COMPOUND, GENE, PROTEIN, DISEASE, MECHANISM_OF_ACTION, CLINICAL_TRIAL, PATHWAY, BIOMARKER, ADVERSE_EVENT, ORGANIZATION, PUBLICATION, REGULATORY_ACTION, PHENOTYPE
+COMPOUND, GENE, PROTEIN, DISEASE, MECHANISM_OF_ACTION, CLINICAL_TRIAL, PATHWAY, BIOMARKER, ADVERSE_EVENT, ORGANIZATION, PUBLICATION, REGULATORY_ACTION, PHENOTYPE, METABOLITE, CELL_OR_TISSUE, PROTEIN_DOMAIN, SEQUENCE_VARIANT
 
 ## Naming Standards
 
@@ -37,11 +37,36 @@ COMPOUND, GENE, PROTEIN, DISEASE, MECHANISM_OF_ACTION, CLINICAL_TRIAL, PATHWAY, 
 - Biology: ENCODES, PARTICIPATES_IN, IMPLICATED_IN
 - Biomarker: PREDICTS_RESPONSE_TO, DIAGNOSTIC_FOR
 
-## Output
+## Output Format
 
-Combine all chunks into a single JSON and write using:
+**CRITICAL: Use `entity_type` and `relation_type` as field names, NOT `type`.**
+
+```json
+{
+  "entities": [
+    {
+      "name": "sotorasib",
+      "entity_type": "COMPOUND",
+      "attributes": {"modality": "small molecule"},
+      "confidence": 0.95,
+      "context": "exact quote from text"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.98,
+      "evidence": "exact quote from text"
+    }
+  ]
+}
+```
+
+Write extraction using stdin pipe to avoid shell escaping issues:
 ```bash
-python3 ${CLAUDE_PLUGIN_ROOT}/scripts/build_extraction.py <doc_id> <output_dir> --json '<json>'
+echo '<json>' | python3 ${CLAUDE_PLUGIN_ROOT}/scripts/build_extraction.py <doc_id> <output_dir>
 ```
 
 ## Rules

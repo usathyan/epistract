@@ -12,6 +12,162 @@ From Greek **episteme** (ἐπιστήμη) — structured scientific knowledge,
 
 ---
 
+## Quick Start
+
+### 1. Install
+
+Requires [Claude Code](https://claude.ai/claude-code) and Python 3.11+.
+
+**Install from GitHub** — run these inside any Claude Code session:
+
+```
+/plugin marketplace add usathyan/epistract
+/plugin install epistract@epistract
+```
+
+Then restart Claude Code. The plugin is now available in all sessions.
+
+**For developers** — clone locally and install as a dev marketplace:
+
+```bash
+git clone https://github.com/usathyan/epistract.git
+```
+
+```
+/plugin marketplace add /path/to/epistract
+/plugin install epistract@epistract
+```
+
+Restart Claude Code after installing.
+
+**Verify installation:**
+
+```
+/epistract-setup
+```
+
+This installs [sift-kg](https://github.com/juanceresa/sift-kg) (the knowledge graph engine) and checks for optional molecular validation libraries ([RDKit](https://www.rdkit.org/), [Biopython](https://biopython.org/)).
+
+### 2. Ingest Documents
+
+```
+/epistract-ingest ./my-papers/
+```
+
+Epistract will:
+1. Read and chunk all documents (PDFs, DOCX, HTML, TXT, 75+ formats, OCR for scans)
+2. Extract entities and relations using the drug discovery schema
+3. Validate SMILES, sequences, CAS numbers, NCT IDs found in the text
+4. Create structural graph nodes from validated molecular identifiers
+5. Build a deduplicated knowledge graph with community detection and auto-labeling
+6. Open an interactive visualization in your browser
+
+### 3. Explore
+
+The interactive viewer shows your knowledge graph with labeled community regions, focus mode, trail breadcrumbs, search, and filtering.
+
+### 4. Export
+
+```
+/epistract-export graphml    # For Gephi, yEd, Cytoscape
+/epistract-export sqlite     # For SQL queries, DuckDB, Datasette
+/epistract-export csv        # For spreadsheets, pandas
+```
+
+### 5. Query
+
+```
+/epistract-query "sotorasib"              # Find entities by name
+/epistract-query "KRAS" --type PROTEIN    # Filter by type
+```
+
+---
+
+## Commands
+
+| Command | Description |
+|---|---|
+| `/epistract-setup` | Install dependencies (sift-kg, optional RDKit/Biopython) |
+| `/epistract-ingest <path>` | Full pipeline: ingest → extract → validate → build → view |
+| `/epistract-build` | Build graph from existing extractions |
+| `/epistract-validate` | Validate molecular identifiers in extractions |
+| `/epistract-view` | Open interactive graph viewer |
+| `/epistract-query <term>` | Search entities in the knowledge graph |
+| `/epistract-export <format>` | Export to graphml, gexf, csv, sqlite, json |
+
+---
+
+## Use Cases
+
+- **Literature review** — Map how compounds, targets, and mechanisms connect across a body of research
+- **Target validation** — Trace genetic evidence (GWAS, MR) through to protein targets and existing compounds
+- **Competitive intelligence** — Ingest patent filings and clinical trial publications to map a therapeutic landscape
+- **Safety signal detection** — Extract and connect adverse events across clinical trial reports
+- **Biomarker discovery** — Identify which biomarkers predict response to which therapies
+- **Due diligence** — Build a structured knowledge base from a target company's publication and patent portfolio
+
+---
+
+## Test Scenarios
+
+Epistract ships with five real-world drug discovery research scenarios, each backed by a curated corpus of PubMed abstracts. Each scenario page includes the use case, corpus details, how to run, expected graph structure, and — for completed runs — actual results with graph screenshots and community analysis.
+
+| # | Scenario | Focus | Documents | Status |
+|---|---|---|---|---|
+| 1 | [PICALM / Alzheimer's](tests/scenarios/scenario-01-picalm-alzheimers.md) | Genetic target validation | 15 papers | **Completed** |
+| 2 | [KRAS G12C Landscape](tests/scenarios/scenario-02-kras-g12c-landscape.md) | Competitive intelligence | 15 papers | Pending |
+| 3 | [Rare Disease Therapeutics](tests/scenarios/scenario-03-rare-disease.md) | Due diligence | 15 papers | Pending |
+| 4 | [Immuno-Oncology Combinations](tests/scenarios/scenario-04-immunooncology.md) | Checkpoint combinations | 15 papers | Pending |
+| 5 | [Cardiovascular & Inflammation](tests/scenarios/scenario-05-cardiovascular.md) | Cardiology + inflammation | 14 papers | Pending |
+
+See [tests/MANUAL_TEST_SCENARIOS.md](tests/MANUAL_TEST_SCENARIOS.md) for the full index, acceptance criteria, and corpus provenance.
+
+### Scenario 1 Result: PICALM / Alzheimer's Disease
+
+![PICALM Alzheimer's Knowledge Graph](tests/corpora/01_picalm_alzheimers/output/screenshots/graph_overview.png)
+
+*149 nodes, 457 links, 6 auto-labeled communities. Full results: [scenario-01-picalm-alzheimers.md](tests/scenarios/scenario-01-picalm-alzheimers.md)*
+
+| Community | Members | Theme |
+|---|---|---|
+| **Alzheimer Disease Risk Loci (30 genes)** | 49 | GWAS genes converging on LOAD |
+| **Endosomal Trafficking (APP, PSEN1, PSEN2)** | 18 | Core amyloid/tau pathology cascade |
+| **Phagocytosis / Amyloid Beta Processing** | 15 | PICALM variants, TREM2, CD33 |
+| **Autophagy / Endocytic Pathway** | 17 | Cross-disease autophagy links (AD, PD) |
+| **Clathrin-Mediated Endocytosis in Hippocampus** | 10 | Tissue-specific CME biology |
+| **Cholesterol Synthesis in Microglia** | 8 | 2025 Nature: rs10792832 causal mechanism |
+
+### Automating Test Runs
+
+To run fully automated without permission prompts:
+
+```bash
+# Option 1: Skip all permissions (trusted local use only)
+claude --dangerously-skip-permissions
+
+# Option 2: Pre-approve specific patterns
+claude --allowedTools "Bash(python3 *)" --allowedTools "Read(*)" --allowedTools "Write(*)"
+```
+
+Or add to `.claude/settings.json`:
+```json
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 *)",
+      "Bash(echo *)",
+      "Bash(ls *)",
+      "Bash(mkdir *)",
+      "Read(*)",
+      "Write(*/output/*)",
+      "Edit(*)"
+    ]
+  }
+}
+```
+
+---
+
 ## Architecture
 
 ```mermaid
@@ -48,9 +204,10 @@ flowchart LR
     ING --> EXT["Claude Extraction<br/>Entities + Relations"]
     EXT --> VAL["Molecular Validation<br/>RDKit · Biopython"]
     VAL --> BLD["Graph Building<br/>Dedup · Communities"]
-    BLD --> OUT["Output"]
+    BLD --> LBL["Community Labeling<br/>Auto-generated names"]
+    LBL --> OUT["Output"]
     OUT --> VIZ["Interactive Viewer"]
-    OUT --> EXP["Export<br/>GraphML · SQLite · CSV"]
+    OUT --> EXPF["Export<br/>GraphML · SQLite · CSV"]
     OUT --> QRY["Search & Query"]
 ```
 
@@ -136,105 +293,6 @@ This means your knowledge graph contains **verified** molecular structures, not 
 
 ---
 
-## Quick Start
-
-### 1. Install
-
-Requires [Claude Code](https://claude.ai/claude-code) and Python 3.11+.
-
-**Install from GitHub** — run these inside any Claude Code session:
-
-```
-/plugin marketplace add usathyan/epistract
-/plugin install epistract@epistract
-```
-
-Then restart Claude Code. The plugin is now available in all sessions.
-
-**For developers** — clone locally and install as a dev marketplace:
-
-```bash
-git clone https://github.com/usathyan/epistract.git
-```
-
-```
-/plugin marketplace add /path/to/epistract
-/plugin install epistract@epistract
-```
-
-Restart Claude Code after installing.
-
-**Verify installation:**
-
-```
-/epistract-setup
-```
-
-This installs [sift-kg](https://github.com/juanceresa/sift-kg) (the knowledge graph engine) and checks for optional molecular validation libraries ([RDKit](https://www.rdkit.org/), [Biopython](https://biopython.org/)).
-
-### 2. Ingest Documents
-
-```
-/epistract-ingest ./my-papers/
-```
-
-Epistract will:
-1. Read and chunk all documents (PDFs, DOCX, HTML, TXT, 75+ formats, OCR for scans)
-2. Extract entities and relations using the drug discovery schema
-3. Validate SMILES, sequences, CAS numbers, NCT IDs found in the text
-4. Create structural graph nodes from validated molecular identifiers
-5. Build a deduplicated knowledge graph with community detection
-6. Open an interactive visualization in your browser
-
-### 3. Explore
-
-The interactive viewer shows your knowledge graph with community regions, focus mode, trail breadcrumbs, search, and filtering.
-
-### 4. Export
-
-```
-/epistract-export graphml    # For Gephi, yEd, Cytoscape
-/epistract-export sqlite     # For SQL queries, DuckDB, Datasette
-/epistract-export csv        # For spreadsheets, pandas
-```
-
-### 5. Query
-
-```
-/epistract-query "sotorasib"              # Find entities by name
-/epistract-query "KRAS" --type PROTEIN    # Filter by type
-```
-
----
-
-## Example: KRAS G12C Inhibitor Landscape
-
-```
-/epistract-ingest ./kras_papers/
-
-Result:
-  Documents: 16 processed (15 PubMed abstracts + 1 structural profile)
-  Entities: 13 extracted from structural profile alone:
-    COMPOUND: sotorasib
-    PROTEIN: KRAS
-    SEQUENCE_VARIANT: KRAS G12C, KRAS Y96D, KRAS R68S
-    MECHANISM_OF_ACTION: covalent KRAS G12C inhibition
-    PROTEIN_DOMAIN: Switch II pocket
-    DISEASE: non-small cell lung cancer
-    CLINICAL_TRIAL: CodeBreaK 100 (NCT03600883), CodeBreaK 200 (NCT04303780)
-    REGULATORY_ACTION: FDA accelerated approval (2021-05-28)
-    GENE: MET (amplification — resistance mechanism)
-    ORGANIZATION: Amgen
-
-  Relations: 14 (INHIBITS, TARGETS, HAS_MECHANISM, HAS_DOMAIN,
-    INDICATED_FOR, EVALUATED_IN, GRANTS_APPROVAL_FOR,
-    CONFERS_RESISTANCE_TO, HAS_VARIANT, DEVELOPED_BY)
-
-  Molecular identifiers: 1 SMILES, 1 CAS, 1 InChIKey, 2 NCT numbers
-```
-
----
-
 ## Molecular Validation
 
 When [RDKit](https://www.rdkit.org/) and/or [Biopython](https://biopython.org/) are installed, Epistract automatically validates molecular identifiers:
@@ -263,6 +321,8 @@ Epistract combines two systems:
 1. **Claude** reads scientific text with deep domain understanding. It identifies entities, classifies them into the schema, extracts relationships with confidence scores, and captures evidence passages. Claude understands that "BRAF V600E" is a sequence variant in the BRAF gene, that "pembrolizumab" is a PD-1-targeting monoclonal antibody, and that "KEYNOTE-024" is a Phase III trial.
 
 2. **[sift-kg](https://github.com/juanceresa/sift-kg)** handles everything downstream: text ingestion from 75+ formats, graph construction with automatic deduplication (SemHash, Unicode normalization), entity resolution with human-in-the-loop review, Louvain community detection, interactive visualization, and export to GraphML/GEXF/CSV/SQLite.
+
+3. **Community labeling** (`label_communities.py`) automatically generates descriptive names for each community based on member entity composition — gene-dominant clusters become "Disease Risk Loci (N genes)", pathway-driven clusters name the pathway, mechanism+cell clusters produce labels like "Cholesterol Synthesis in Microglia".
 
 ---
 
@@ -301,49 +361,6 @@ Epistract enforces standard biomedical nomenclature:
 
 ---
 
-## Use Cases
-
-- **Literature review** — Map how compounds, targets, and mechanisms connect across a body of research
-- **Target validation** — Trace genetic evidence (GWAS, MR) through to protein targets and existing compounds
-- **Competitive intelligence** — Ingest patent filings and clinical trial publications to map a therapeutic landscape
-- **Safety signal detection** — Extract and connect adverse events across clinical trial reports
-- **Biomarker discovery** — Identify which biomarkers predict response to which therapies
-- **Due diligence** — Build a structured knowledge base from a target company's publication and patent portfolio
-
----
-
-## Test Scenarios
-
-Epistract ships with five real-world drug discovery research scenarios, each backed by a curated corpus of PubMed abstracts:
-
-| # | Scenario | Focus | Documents |
-|---|---|---|---|
-| 1 | [PICALM / Alzheimer's](tests/MANUAL_TEST_SCENARIOS.md#scenario-1-picalm--alzheimers-disease--genetic-target-validation) | Genetic target validation | 15 papers |
-| 2 | [KRAS G12C Landscape](tests/MANUAL_TEST_SCENARIOS.md#scenario-2-kras-g12c-inhibitor-landscape--competitive-intelligence) | Competitive intelligence | 16 papers |
-| 3 | [Rare Disease Therapeutics](tests/MANUAL_TEST_SCENARIOS.md#scenario-3-rare-disease-therapeutics--pku-achondroplasia-hemophilia-a) | Due diligence | 15 papers |
-| 4 | [Immuno-Oncology Combinations](tests/MANUAL_TEST_SCENARIOS.md#scenario-4-immuno-oncology-combinations--checkpoint-combinations) | Checkpoint combinations | 16 papers |
-| 5 | [Cardiovascular & Inflammation](tests/MANUAL_TEST_SCENARIOS.md#scenario-5-bms-cardiovascular--inflammation--mavacamten-and-deucravacitinib) | Cardiology + inflammation | 15 papers |
-
-See [MANUAL_TEST_SCENARIOS.md](tests/MANUAL_TEST_SCENARIOS.md) for full details, PubMed queries, expected graph structure, and acceptance criteria.
-
-For validation results and manual cross-reference checklists, see [VALIDATION_RESULTS.md](tests/VALIDATION_RESULTS.md).
-
----
-
-## Commands
-
-| Command | Description |
-|---|---|
-| `/epistract-setup` | Install dependencies (sift-kg, optional RDKit/Biopython) |
-| `/epistract-ingest <path>` | Full pipeline: ingest → extract → validate → build → view |
-| `/epistract-build` | Build graph from existing extractions |
-| `/epistract-validate` | Validate molecular identifiers in extractions |
-| `/epistract-view` | Open interactive graph viewer |
-| `/epistract-query <term>` | Search entities in the knowledge graph |
-| `/epistract-export <format>` | Export to graphml, gexf, csv, sqlite, json |
-
----
-
 ## Roadmap
 
 - **Neo4j graph database export** — MERGE nodes/edges with constraints and indexes
@@ -358,7 +375,8 @@ For validation results and manual cross-reference checklists, see [VALIDATION_RE
 - **[DEVELOPER.md](DEVELOPER.md)** — Technical reference with 40+ ontology links, sift-kg integration details, data formats, and the full dependency tree
 - **[Domain Specification](docs/drug-discovery-domain-spec.md)** — Complete 2000-line schema specification with ontology alignment, extraction guidance, and validation criteria
 - **[Plugin Design](docs/epistract-plugin-design.md)** — Architecture and component design
-- **[Test Requirements](tests/TEST_REQUIREMENTS.md)** — 14 unit tests, 8 functional tests, 18 user acceptance tests with traceability matrix
+- **[Test Requirements](tests/TEST_REQUIREMENTS.md)** — 16 unit tests, 8 functional tests, 18 user acceptance tests with traceability matrix
+- **[Test Scenarios](tests/MANUAL_TEST_SCENARIOS.md)** — 5 real-world drug discovery scenarios with curated PubMed corpora
 
 ---
 

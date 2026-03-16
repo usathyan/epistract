@@ -11,7 +11,7 @@ Unit tests validate individual components in isolation.
 
 ### UT-001: Domain YAML Loads Successfully
 - **Traces to:** Domain spec Section 3 (Entity Types)
-- **Test:** Load `domain.yaml` via sift-kg DomainLoader, verify 13 entity types and 22 relation types
+- **Test:** Load `domain.yaml` via sift-kg DomainLoader, verify 17 entity types and 30 relation types
 - **Pass criteria:** No errors, correct counts
 
 ### UT-002: Pattern Scanner Detects SMILES
@@ -83,6 +83,16 @@ Unit tests validate individual components in isolation.
 - **Test:** Create extraction JSON with SMILES in context, run validate_molecules.py, verify results.json created
 - **Pass criteria:** results.json exists, identifiers_found > 0
 
+### UT-015: Extraction Adapter Normalizes Field Names
+- **Traces to:** Bug fix — agents may use `type` instead of `entity_type`/`relation_type`
+- **Test:** Call build_extraction.write_extraction() with entities using `type` field, verify output uses `entity_type`
+- **Pass criteria:** Output JSON has `entity_type` on all entities, `relation_type` on all relations, no `type` keys
+
+### UT-016: Community Labeling Generates Descriptive Names
+- **Traces to:** scripts/label_communities.py
+- **Test:** Build graph from 01_picalm_alzheimers corpus, run label_communities, verify communities have descriptive labels
+- **Pass criteria:** No community label starts with "Community " (numbered), all labels are descriptive strings
+
 ---
 
 ## 2. Functional Tests (FT)
@@ -119,10 +129,10 @@ Functional tests validate end-to-end pipeline behavior.
 - **Test:** Ingest document containing known SMILES, run validation, verify SMILES detected and (if RDKit available) validated
 - **Pass criteria:** validation/results.json has smiles_found ≥ 1
 
-### FT-007: Community Detection
-- **Traces to:** sift-kg graph/communities.py
-- **Test:** Build graph from 15 KRAS documents, verify communities detected
-- **Pass criteria:** communities.json has ≥2 communities
+### FT-007: Community Detection and Labeling
+- **Traces to:** sift-kg graph/communities.py, scripts/label_communities.py
+- **Test:** Build graph from 15 documents, verify communities detected and auto-labeled
+- **Pass criteria:** communities.json has ≥2 communities, all community values are descriptive labels (not "Community N")
 
 ### FT-008: Interactive Viewer Generates HTML
 - **Traces to:** sift-kg visualize.py
@@ -246,11 +256,13 @@ These are real research questions a PhD scientist would ask. Each tests whether 
 
 | Requirement | Domain Spec Section | Entity Types Tested | Relation Types Tested | Test Corpus |
 |---|---|---|---|---|
-| UT-001 | 3 | All 13 | All 22 | N/A (schema test) |
+| UT-001 | 3 | All 17 | All 30 | N/A (schema test) |
 | UT-002–005 | 16.6 | CHEMICAL_STRUCTURE, CLINICAL_TRIAL | N/A | Synthetic text |
 | UT-006–008 | 16.7 | CHEMICAL_STRUCTURE | HAS_STRUCTURE | Synthetic SMILES |
 | UT-009–011 | 16.7 | NUCLEOTIDE_SEQUENCE, PEPTIDE_SEQUENCE | HAS_SEQUENCE | Synthetic sequences |
 | UT-012–014 | Design spec 3, 8, 16.9 | All | All | Synthetic extraction |
+| UT-015 | Bug fix | All | All | Synthetic extraction |
+| UT-016 | label_communities.py | N/A | N/A | 01_picalm_alzheimers |
 | FT-001–008 | Design spec 9 | All | All | PubMed abstracts |
 | UAT-101–104 | 3, 4 | GENE, PROTEIN, DISEASE, PATHWAY | IMPLICATED_IN, PARTICIPATES_IN | 01_picalm_alzheimers |
 | UAT-201–205 | 3, 4 | COMPOUND, GENE, CLINICAL_TRIAL, MOA | TARGETS, INHIBITS, EVALUATED_IN, CONFERS_RESISTANCE_TO, COMBINED_WITH, HAS_MECHANISM | 02_kras_g12c_landscape |

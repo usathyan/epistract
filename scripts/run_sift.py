@@ -37,6 +37,15 @@ def cmd_build(output_dir: str, domain_path: str | None = None):
         else load_domain(domain_path=Path(__file__).parent.parent / "skills" / "drug-discovery-extraction" / "domain.yaml")
     )
     kg = run_build(Path(output_dir), domain)
+
+    # Auto-label communities with descriptive names
+    try:
+        sys.path.insert(0, str(Path(__file__).parent))
+        from label_communities import label_communities
+        label_communities(Path(output_dir))
+    except Exception as e:
+        print(f"Warning: community labeling failed: {e}", file=sys.stderr)
+
     print(json.dumps({
         "entities": kg.entity_count,
         "relations": kg.relation_count,

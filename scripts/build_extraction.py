@@ -10,7 +10,22 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
+def _normalize_fields(entities, relations):
+    """Normalize 'type' → 'entity_type'/'relation_type' for sift-kg compatibility.
+
+    LLM agents sometimes use 'type' instead of the required field names.
+    """
+    for e in entities:
+        if "type" in e and "entity_type" not in e:
+            e["entity_type"] = e.pop("type")
+    for r in relations:
+        if "type" in r and "relation_type" not in r:
+            r["relation_type"] = r.pop("type")
+    return entities, relations
+
+
 def write_extraction(doc_id, output_dir, entities, relations, document_path="", chunks_processed=1, chunk_size=10000):
+    entities, relations = _normalize_fields(entities, relations)
     extraction = {
         "document_id": doc_id,
         "document_path": document_path,
