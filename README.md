@@ -179,6 +179,12 @@ Or add to `.claude/settings.json`:
 }
 ```
 
+### Testing Rigor & Findings
+
+Each test run exercises the full pipeline and feeds engineering findings back into the codebase. Three critical bugs were discovered and fixed during testing — including an LLM-output schema mismatch (F-001), a semantic community labeling gap (F-002), and a plugin version propagation failure (F-003). All findings include root cause analysis, two-layer fixes, and cross-scenario verification.
+
+See [tests/FINDINGS.md](tests/FINDINGS.md) for the complete engineering findings log.
+
 ---
 
 ## Architecture
@@ -388,8 +394,9 @@ Epistract enforces standard biomedical nomenclature:
 - **[DEVELOPER.md](DEVELOPER.md)** — Technical reference with 40+ ontology links, sift-kg integration details, data formats, and the full dependency tree
 - **[Domain Specification](docs/drug-discovery-domain-spec.md)** — Complete 2000-line schema specification with ontology alignment, extraction guidance, and validation criteria
 - **[Plugin Design](docs/epistract-plugin-design.md)** — Architecture and component design
-- **[Test Requirements](tests/TEST_REQUIREMENTS.md)** — 16 unit tests, 8 functional tests, 18 user acceptance tests with traceability matrix
 - **[Test Scenarios](tests/MANUAL_TEST_SCENARIOS.md)** — 5 real-world drug discovery scenarios with curated PubMed corpora
+- **[Test Requirements](tests/TEST_REQUIREMENTS.md)** — 16 unit tests, 8 functional tests, 18 user acceptance tests with traceability matrix
+- **[Engineering Findings](tests/FINDINGS.md)** — Bugs discovered, root cause analysis, systemic lessons from production-quality testing
 
 ---
 
