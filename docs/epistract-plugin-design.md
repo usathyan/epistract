@@ -199,7 +199,7 @@ epistract/
 ```json
 {
   "name": "epistract",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Expert drug discovery knowledge graph extraction from scientific literature",
   "author": {
     "name": "Umesh Bhatt"

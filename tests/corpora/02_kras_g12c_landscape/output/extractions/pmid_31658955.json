@@ -1,0 +1,213 @@
+{
+  "document_id": "pmid_31658955",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "adagrasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "aliases": [
+          "MRTX849"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "MRTX849 was identified as a potent, selective, and covalent KRASG12C inhibitor"
+    },
+    {
+      "name": "KRAS",
+      "entity_type": "GENE",
+      "attributes": {
+        "organism": "Homo sapiens"
+      },
+      "confidence": 0.98,
+      "context": "efforts to directly target KRAS have been challenging"
+    },
+    {
+      "name": "KRAS G12C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "variant_type": "missense",
+        "gene": "KRAS",
+        "position": 12,
+        "ref_aa": "G",
+        "alt_aa": "C"
+      },
+      "confidence": 0.99,
+      "context": "selectively modifies mutant cysteine 12 in GDP-bound KRASG12C"
+    },
+    {
+      "name": "KRAS",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene": "KRAS"
+      },
+      "confidence": 0.95,
+      "context": "inhibits KRAS-dependent signaling"
+    },
+    {
+      "name": "non-small cell lung cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Carcinoma, Non-Small-Cell Lung"
+      },
+      "confidence": 0.9,
+      "context": "KRASG12C-positive lung and colon adenocarcinomas"
+    },
+    {
+      "name": "colorectal cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Colorectal Neoplasms"
+      },
+      "confidence": 0.9,
+      "context": "KRASG12C-positive lung and colon adenocarcinomas"
+    },
+    {
+      "name": "MTOR",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "Combinations of MRTX849 with agents that target RTKs, mTOR, or cell cycle"
+    },
+    {
+      "name": "RAS signaling pathway",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "inhibits KRAS-dependent signaling"
+    },
+    {
+      "name": "RTK signaling",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "activation of receptor tyrosine kinases (RTK)"
+    },
+    {
+      "name": "cell cycle pathway",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "genetic dysregulation of cell cycle"
+    },
+    {
+      "name": "KRAS nucleotide cycling",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "mechanisms implicated in limiting antitumor activity including KRAS nucleotide cycling"
+    },
+    {
+      "name": "covalent inhibition of KRAS G12C",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "potent, selective, and covalent KRASG12C inhibitor that exhibits favorable drug-like properties, selectively modifies mutant cysteine 12"
+    },
+    {
+      "name": "tumor regression",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "demonstrated pronounced tumor regression in 17 of 26 (65%) KRASG12C-positive cell line- and patient-derived xenograft models"
+    },
+    {
+      "name": "Hallin et al. 2020",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "31658955",
+        "journal": "Cancer Discovery",
+        "year": 2020
+      },
+      "confidence": 0.99,
+      "context": "Hallin et al., Cancer Discovery (2020)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.98,
+      "evidence": "MRTX849 was identified as a potent, selective, and covalent KRASG12C inhibitor"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.95,
+      "evidence": "selectively modifies mutant cysteine 12 in GDP-bound KRASG12C"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "adagrasib",
+      "target_entity": "covalent inhibition of KRAS G12C",
+      "confidence": 0.95,
+      "evidence": "potent, selective, and covalent KRASG12C inhibitor that exhibits favorable drug-like properties, selectively modifies mutant cysteine 12"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "adagrasib",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.8,
+      "evidence": "objective responses have been observed in patients with KRASG12C-positive lung and colon adenocarcinomas"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "adagrasib",
+      "target_entity": "colorectal cancer",
+      "confidence": 0.8,
+      "evidence": "objective responses have been observed in patients with KRASG12C-positive lung and colon adenocarcinomas"
+    },
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.99,
+      "evidence": "KRASG12C-positive cell line- and patient-derived xenograft models"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "KRAS",
+      "target_entity": "RAS signaling pathway",
+      "confidence": 0.95,
+      "evidence": "inhibits KRAS-dependent signaling"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "RTK signaling",
+      "target_entity": "adagrasib",
+      "confidence": 0.85,
+      "evidence": "activation of receptor tyrosine kinases (RTK), bypass of KRAS dependence"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "KRAS nucleotide cycling",
+      "target_entity": "adagrasib",
+      "confidence": 0.85,
+      "evidence": "mechanisms implicated in limiting antitumor activity including KRAS nucleotide cycling"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.9,
+      "evidence": "KRASG12C-positive lung and colon adenocarcinomas"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "colorectal cancer",
+      "confidence": 0.9,
+      "evidence": "KRASG12C-positive lung and colon adenocarcinomas"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T23:28:08.646314+00:00",
+  "error": null
+}

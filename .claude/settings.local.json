@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bash */epistract/*/scripts/setup.sh)",
+      "Bash(python3:*)",
+      "Bash(which playwright:*)"
+    ]
+  }
+}

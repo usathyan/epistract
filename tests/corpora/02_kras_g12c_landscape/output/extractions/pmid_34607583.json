@@ -1,0 +1,196 @@
+{
+  "document_id": "pmid_34607583",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "sotorasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "aliases": [
+          "AMG 510"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "sotorasib (AMG 510)"
+    },
+    {
+      "name": "adagrasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "aliases": [
+          "MRTX849"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "adagrasib (MRTX849)"
+    },
+    {
+      "name": "KRAS",
+      "entity_type": "GENE",
+      "attributes": {
+        "organism": "Homo sapiens"
+      },
+      "confidence": 0.99,
+      "context": "gain-of-function mutations in RAS genes (HRAS, NRAS, and KRAS)"
+    },
+    {
+      "name": "HRAS",
+      "entity_type": "GENE",
+      "attributes": {
+        "organism": "Homo sapiens"
+      },
+      "confidence": 0.95,
+      "context": "RAS genes (HRAS, NRAS, and KRAS)"
+    },
+    {
+      "name": "NRAS",
+      "entity_type": "GENE",
+      "attributes": {
+        "organism": "Homo sapiens"
+      },
+      "confidence": 0.95,
+      "context": "RAS genes (HRAS, NRAS, and KRAS)"
+    },
+    {
+      "name": "KRAS G12C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "variant_type": "missense",
+        "gene": "KRAS"
+      },
+      "confidence": 0.99,
+      "context": "KRAS-G12C variant contains a druggable pocket below the switch-II loop region"
+    },
+    {
+      "name": "non-small cell lung cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Carcinoma, Non-Small-Cell Lung"
+      },
+      "confidence": 0.95,
+      "context": "phase I-III trials for NSCLC with KRAS-G12C mutations"
+    },
+    {
+      "name": "switch-II loop region",
+      "entity_type": "PROTEIN_DOMAIN",
+      "attributes": {
+        "protein": "KRAS"
+      },
+      "confidence": 0.9,
+      "context": "KRAS-G12C variant contains a druggable pocket below the switch-II loop region"
+    },
+    {
+      "name": "covalent inhibition of KRAS G12C",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "design irreversible covalent inhibitors with improved potency, selectivity and bioavailability"
+    },
+    {
+      "name": "RAS signaling pathway",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "constitutive activity of oncoproteins"
+    },
+    {
+      "name": "Tang et al. 2021",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "34607583",
+        "journal": "Molecular Cancer",
+        "year": 2021
+      },
+      "confidence": 0.99,
+      "context": "Tang et al., Molecular Cancer (2021)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.95,
+      "evidence": "sotorasib (AMG 510) and adagrasib (MRTX849), were recently evaluated in phase I-III trials for NSCLC with KRAS-G12C mutations"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.95,
+      "evidence": "sotorasib (AMG 510) and adagrasib (MRTX849), were recently evaluated in phase I-III trials for NSCLC with KRAS-G12C mutations"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "sotorasib",
+      "target_entity": "covalent inhibition of KRAS G12C",
+      "confidence": 0.95,
+      "evidence": "irreversible covalent inhibitors with improved potency, selectivity and bioavailability"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "adagrasib",
+      "target_entity": "covalent inhibition of KRAS G12C",
+      "confidence": 0.95,
+      "evidence": "irreversible covalent inhibitors with improved potency, selectivity and bioavailability"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "sotorasib",
+      "target_entity": "switch-II loop region",
+      "confidence": 0.9,
+      "evidence": "KRAS-G12C variant contains a druggable pocket below the switch-II loop region"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "adagrasib",
+      "target_entity": "switch-II loop region",
+      "confidence": 0.9,
+      "evidence": "KRAS-G12C variant contains a druggable pocket below the switch-II loop region"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "sotorasib",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.85,
+      "evidence": "phase I-III trials for NSCLC with KRAS-G12C mutations"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "adagrasib",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.85,
+      "evidence": "phase I-III trials for NSCLC with KRAS-G12C mutations"
+    },
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.99,
+      "evidence": "KRAS-G12C variant"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.95,
+      "evidence": "NSCLC with KRAS-G12C mutations"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "KRAS",
+      "target_entity": "RAS signaling pathway",
+      "confidence": 0.95,
+      "evidence": "gain-of-function mutations in RAS genes lead to constitutive activity of oncoproteins"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T23:28:56.603624+00:00",
+  "error": null
+}

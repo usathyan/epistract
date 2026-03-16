@@ -18,7 +18,7 @@ claude --dangerously-skip-permissions
 | # | Scenario | Focus | Documents | Status |
 |---|---|---|---|---|
 | 1 | [PICALM / Alzheimer's](scenarios/scenario-01-picalm-alzheimers.md) | Genetic target validation | 15 papers | **Completed** |
-| 2 | [KRAS G12C Landscape](scenarios/scenario-02-kras-g12c-landscape.md) | Competitive intelligence | 15 papers | Pending |
+| 2 | [KRAS G12C Landscape](scenarios/scenario-02-kras-g12c-landscape.md) | Competitive intelligence | 16 papers | **Completed** |
 | 3 | [Rare Disease Therapeutics](scenarios/scenario-03-rare-disease.md) | Due diligence | 15 papers | Pending |
 | 4 | [Immuno-Oncology Combinations](scenarios/scenario-04-immunooncology.md) | Checkpoint combinations | 15 papers | Pending |
 | 5 | [Cardiovascular & Inflammation](scenarios/scenario-05-cardiovascular.md) | Cardiology + inflammation | 14 papers | Pending |

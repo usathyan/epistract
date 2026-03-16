@@ -1,0 +1,204 @@
+{
+  "document_id": "pmid_39215000",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "KRAS G12C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS"
+      },
+      "confidence": 0.99,
+      "context": "Selective KRASG12C inhibitors lock the oncogene in inactive GDP-bound state"
+    },
+    {
+      "name": "KRAS",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.99,
+      "context": "acquired KRAS mutations in cis and in trans"
+    },
+    {
+      "name": "non-small cell lung cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "NSCLC"
+      },
+      "confidence": 0.99,
+      "context": "KRASG12C-mutated previously treated advanced NSCLC"
+    },
+    {
+      "name": "sotorasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "state_target": "GDP-bound (OFF)"
+      },
+      "confidence": 0.99,
+      "context": "Sotorasib and adagrasib are approved for KRASG12C-mutated previously treated advanced NSCLC"
+    },
+    {
+      "name": "adagrasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "state_target": "GDP-bound (OFF)"
+      },
+      "confidence": 0.99,
+      "context": "Sotorasib and adagrasib are approved for KRASG12C-mutated previously treated advanced NSCLC"
+    },
+    {
+      "name": "RMC-4998",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "alias": "RM-029",
+        "mechanism": "tri-complex KRASG12C(ON) covalent inhibitor",
+        "stage": "preclinical"
+      },
+      "confidence": 0.95,
+      "context": "preclinical tri-complex KRASG12C-selective covalent inhibitor RMC-4998 (RM-029)"
+    },
+    {
+      "name": "RMC-6291",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "mechanism": "KRASG12C(ON) inhibitor",
+        "stage": "clinical"
+      },
+      "confidence": 0.95,
+      "context": "clinical stage KRASG12C(ON) inhibitor RMC-6291"
+    },
+    {
+      "name": "GDP",
+      "entity_type": "METABOLITE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "lock the oncogene in inactive GDP-bound state"
+    },
+    {
+      "name": "GTP",
+      "entity_type": "METABOLITE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "targets the active GTP-bound (ON) state"
+    },
+    {
+      "name": "KRAS-GTP loading",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.88,
+      "context": "resistance due to increased KRAS-GTP loading"
+    },
+    {
+      "name": "adaptive resistance",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "Disease progression can occur due to adaptive mechanisms"
+    },
+    {
+      "name": "Nature Communications",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "year": 2024
+      },
+      "confidence": 0.9,
+      "context": "Nokin et al., Nature Communications (2024)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.98,
+      "evidence": "Selective KRASG12C inhibitors lock the oncogene in inactive GDP-bound state"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.98,
+      "evidence": "Sotorasib and adagrasib are approved for KRASG12C-mutated previously treated advanced NSCLC"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "RMC-4998",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.95,
+      "evidence": "preclinical tri-complex KRASG12C-selective covalent inhibitor RMC-4998"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "RMC-6291",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.95,
+      "evidence": "clinical stage KRASG12C(ON) inhibitor RMC-6291"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "sotorasib",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.98,
+      "evidence": "approved for KRASG12C-mutated previously treated advanced NSCLC"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "adagrasib",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.98,
+      "evidence": "approved for KRASG12C-mutated previously treated advanced NSCLC"
+    },
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.99,
+      "evidence": "KRASG12C-mutated"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.98,
+      "evidence": "KRASG12C-mutated previously treated advanced NSCLC"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "sotorasib",
+      "target_entity": "GDP",
+      "confidence": 0.85,
+      "evidence": "lock the oncogene in inactive GDP-bound state"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "RMC-4998",
+      "target_entity": "GTP",
+      "confidence": 0.85,
+      "evidence": "targets the active GTP-bound (ON) state"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "KRAS-GTP loading",
+      "target_entity": "sotorasib",
+      "confidence": 0.9,
+      "evidence": "resistance due to increased KRAS-GTP loading"
+    },
+    {
+      "relation_type": "COMBINED_WITH",
+      "source_entity": "RMC-6291",
+      "target_entity": "sotorasib",
+      "confidence": 0.88,
+      "evidence": "RMC-6291 alone or in combination with KRASG12C(OFF) drugs can circumvent resistance"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T23:29:32.396882+00:00",
+  "error": null
+}

@@ -1,0 +1,192 @@
+{
+  "document_id": "pmid_35837349",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "KRAS",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.99,
+      "context": "Identifying mutations in the KRAS gene has become increasingly important in CRC treatment"
+    },
+    {
+      "name": "KRAS G12C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "mutation_type": "missense"
+      },
+      "confidence": 0.99,
+      "context": "Targeting KRAS G12C Mutation in Colorectal Cancer"
+    },
+    {
+      "name": "colorectal cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "CRC"
+      },
+      "confidence": 0.99,
+      "context": "Targeting KRAS G12C Mutation in Colorectal Cancer"
+    },
+    {
+      "name": "non-small cell lung cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "NSCLC"
+      },
+      "confidence": 0.95,
+      "context": "patients with CRC derive less benefit compared to NSCLC"
+    },
+    {
+      "name": "sotorasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "synonyms": [
+          "AMG510"
+        ]
+      },
+      "confidence": 0.99,
+      "context": "KRAS G12C inhibitors sotorasib (AMG510) and adagrasib (MRTX849)"
+    },
+    {
+      "name": "adagrasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "synonyms": [
+          "MRTX849"
+        ]
+      },
+      "confidence": 0.99,
+      "context": "KRAS G12C inhibitors sotorasib (AMG510) and adagrasib (MRTX849)"
+    },
+    {
+      "name": "EGFR",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "rapid treatment-induced resistance through increased EGFR signaling"
+    },
+    {
+      "name": "EGFR signaling pathway",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.92,
+      "context": "rapid treatment-induced resistance through increased EGFR signaling"
+    },
+    {
+      "name": "EGFR inhibitors",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "EGFR inhibitor"
+      },
+      "confidence": 0.9,
+      "context": "Combination therapy trials with EGFR inhibitors are currently underway"
+    },
+    {
+      "name": "treatment-induced resistance",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "rapid treatment-induced resistance through increased EGFR signaling"
+    },
+    {
+      "name": "Ji et al 2022 OncoTargets and Therapy",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "35837349",
+        "journal": "OncoTargets and Therapy",
+        "year": 2022
+      },
+      "confidence": 0.99,
+      "context": "Ji et al., OncoTargets and Therapy (2022)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.99,
+      "evidence": "KRAS G12C inhibitors sotorasib (AMG510) and adagrasib (MRTX849)"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.99,
+      "evidence": "KRAS G12C inhibitors sotorasib (AMG510) and adagrasib (MRTX849)"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "colorectal cancer",
+      "confidence": 0.95,
+      "evidence": "Targeting KRAS G12C Mutation in Colorectal Cancer"
+    },
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.99,
+      "evidence": "mutations in the KRAS gene"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "sotorasib",
+      "target_entity": "colorectal cancer",
+      "confidence": 0.75,
+      "evidence": "have demonstrated safety and promising efficacy in preclinical studies and early phase trials"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "adagrasib",
+      "target_entity": "colorectal cancer",
+      "confidence": 0.75,
+      "evidence": "have demonstrated safety and promising efficacy in preclinical studies and early phase trials"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "EGFR signaling pathway",
+      "target_entity": "sotorasib",
+      "confidence": 0.9,
+      "evidence": "rapid treatment-induced resistance through increased EGFR signaling"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "EGFR signaling pathway",
+      "target_entity": "adagrasib",
+      "confidence": 0.9,
+      "evidence": "rapid treatment-induced resistance through increased EGFR signaling"
+    },
+    {
+      "relation_type": "COMBINED_WITH",
+      "source_entity": "sotorasib",
+      "target_entity": "EGFR inhibitors",
+      "confidence": 0.85,
+      "evidence": "Combination therapy trials with EGFR inhibitors are currently underway"
+    },
+    {
+      "relation_type": "COMBINED_WITH",
+      "source_entity": "adagrasib",
+      "target_entity": "EGFR inhibitors",
+      "confidence": 0.85,
+      "evidence": "Combination therapy trials with EGFR inhibitors are currently underway"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "EGFR",
+      "target_entity": "EGFR signaling pathway",
+      "confidence": 0.95,
+      "evidence": "increased EGFR signaling"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T23:29:14.358669+00:00",
+  "error": null
+}

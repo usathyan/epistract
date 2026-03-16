@@ -1,0 +1,211 @@
+{
+  "document_id": "pmid_35658005",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "adagrasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "dose": "600 mg twice daily",
+        "synonyms": [
+          "MRTX849"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "Adagrasib, a KRASG12C inhibitor, irreversibly and selectively binds KRASG12C, locking it in its inactive state."
+    },
+    {
+      "name": "KRAS",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.98,
+      "context": "KRASG12C-mutated NSCLC"
+    },
+    {
+      "name": "KRAS G12C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "mutation_type": "missense"
+      },
+      "confidence": 0.99,
+      "context": "Adagrasib, a KRASG12C inhibitor, irreversibly and selectively binds KRASG12C"
+    },
+    {
+      "name": "KRAS protein",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "irreversibly and selectively binds KRASG12C, locking it in its inactive state"
+    },
+    {
+      "name": "non-small cell lung cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "NSCLC"
+      },
+      "confidence": 0.99,
+      "context": "Adagrasib in Non-Small-Cell Lung Cancer Harboring a KRASG12C Mutation"
+    },
+    {
+      "name": "covalent irreversible inhibition of KRAS G12C",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "irreversibly and selectively binds KRASG12C, locking it in its inactive state"
+    },
+    {
+      "name": "KRYSTAL-1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "1/2",
+        "nct_id": "NCT03785249"
+      },
+      "confidence": 0.99,
+      "context": "Phase 1-1b of KRYSTAL-1 showed clinical activity"
+    },
+    {
+      "name": "platinum-based chemotherapy",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "chemotherapy regimen"
+      },
+      "confidence": 0.85,
+      "context": "previously treated with platinum-based chemo and anti-PD-1/PD-L1"
+    },
+    {
+      "name": "anti-PD-1/PD-L1 therapy",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "immunotherapy"
+      },
+      "confidence": 0.85,
+      "context": "previously treated with platinum-based chemo and anti-PD-1/PD-L1"
+    },
+    {
+      "name": "CNS metastases",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "Among 33 patients with CNS metastases, intracranial ORR was 33.3%"
+    },
+    {
+      "name": "diarrhoea",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "Treatment-related AEs in 97.4%"
+    },
+    {
+      "name": "Mirati Therapeutics",
+      "entity_type": "ORGANIZATION",
+      "attributes": {},
+      "confidence": 0.99,
+      "context": "Funded by Mirati Therapeutics"
+    },
+    {
+      "name": "Janne et al 2022 NEJM",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "35658005",
+        "journal": "NEJM",
+        "year": 2022
+      },
+      "confidence": 0.99,
+      "context": "J\u00e4nne et al., NEJM (2022)"
+    },
+    {
+      "name": "PD-1",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "anti-PD-1/PD-L1"
+    },
+    {
+      "name": "PD-L1",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "anti-PD-1/PD-L1"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.99,
+      "evidence": "Adagrasib, a KRASG12C inhibitor, irreversibly and selectively binds KRASG12C, locking it in its inactive state."
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS protein",
+      "confidence": 0.98,
+      "evidence": "irreversibly and selectively binds KRASG12C"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "adagrasib",
+      "target_entity": "covalent irreversible inhibition of KRAS G12C",
+      "confidence": 0.95,
+      "evidence": "irreversibly and selectively binds KRASG12C, locking it in its inactive state"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "adagrasib",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.92,
+      "evidence": "Adagrasib in Non-Small-Cell Lung Cancer Harboring a KRASG12C Mutation"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "adagrasib",
+      "target_entity": "KRYSTAL-1",
+      "confidence": 0.99,
+      "evidence": "Phase 1-1b of KRYSTAL-1 showed clinical activity"
+    },
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.99,
+      "evidence": "KRASG12C-mutated NSCLC"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.95,
+      "evidence": "KRASG12C-mutated NSCLC"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "adagrasib",
+      "target_entity": "Mirati Therapeutics",
+      "confidence": 0.99,
+      "evidence": "Funded by Mirati Therapeutics"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "adagrasib",
+      "target_entity": "diarrhoea",
+      "confidence": 0.85,
+      "evidence": "Treatment-related AEs in 97.4%"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "non-small cell lung cancer",
+      "target_entity": "CNS metastases",
+      "confidence": 0.85,
+      "evidence": "Among 33 patients with CNS metastases, intracranial ORR was 33.3%"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T23:29:14.327444+00:00",
+  "error": null
+}

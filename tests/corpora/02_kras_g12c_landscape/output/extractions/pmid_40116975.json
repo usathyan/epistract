@@ -1,0 +1,198 @@
+{
+  "document_id": "pmid_40116975",
+  "document_path": "pmid_40116975",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "sotorasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule"
+      },
+      "confidence": 0.97,
+      "context": "Sotorasib alone: ORR 7.1-9.7%, DC 73.8-82.3%, PFS 4-5.6 months"
+    },
+    {
+      "name": "adagrasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule"
+      },
+      "confidence": 0.97,
+      "context": "Adagrasib+cetuximab: ORR 42%, PFS 6.9 months vs adagrasib alone 19% ORR"
+    },
+    {
+      "name": "divarasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "target": "KRAS G12C"
+      },
+      "confidence": 0.95,
+      "context": "Divarasib monotherapy: ORR 36%, DC 85.5%, PFS 5.6 months"
+    },
+    {
+      "name": "panitumumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "EGFR"
+      },
+      "confidence": 0.95,
+      "context": "Sotorasib+panitumumab: ORR 26.4%"
+    },
+    {
+      "name": "cetuximab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "EGFR"
+      },
+      "confidence": 0.95,
+      "context": "Adagrasib+cetuximab: ORR 42%, PFS 6.9 months"
+    },
+    {
+      "name": "KRAS G12C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "notation": "G12C"
+      },
+      "confidence": 0.97,
+      "context": "KRAS-G12C inhibitors in colorectal cancer"
+    },
+    {
+      "name": "KRAS",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.97,
+      "context": "KRAS-G12C inhibitors in colorectal cancer"
+    },
+    {
+      "name": "EGFR",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "epidermal growth factor receptor"
+      },
+      "confidence": 0.95,
+      "context": "EGFR inhibitors like cetuximab or panitumumab"
+    },
+    {
+      "name": "colorectal cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "CRC"
+      },
+      "confidence": 0.97,
+      "context": "Efficacy and safety of KRAS-G12C inhibitors in colorectal cancer"
+    },
+    {
+      "name": "non-small cell lung cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "NSCLC"
+      },
+      "confidence": 0.8,
+      "context": "KRAS G12C inhibitors offer benefits for CRC"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.97,
+      "evidence": "KRAS-G12C inhibitors in colorectal cancer"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.97,
+      "evidence": "KRAS-G12C inhibitors in colorectal cancer"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "divarasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.95,
+      "evidence": "Divarasib monotherapy: ORR 36%, DC 85.5%"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "panitumumab",
+      "target_entity": "EGFR",
+      "confidence": 0.95,
+      "evidence": "EGFR inhibitors like cetuximab or panitumumab"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "cetuximab",
+      "target_entity": "EGFR",
+      "confidence": 0.95,
+      "evidence": "EGFR inhibitors like cetuximab or panitumumab"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "sotorasib",
+      "target_entity": "colorectal cancer",
+      "confidence": 0.85,
+      "evidence": "Sotorasib alone: ORR 7.1-9.7% in CRC"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "adagrasib",
+      "target_entity": "colorectal cancer",
+      "confidence": 0.85,
+      "evidence": "Adagrasib+cetuximab: ORR 42% in CRC"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "divarasib",
+      "target_entity": "colorectal cancer",
+      "confidence": 0.85,
+      "evidence": "Divarasib monotherapy: ORR 36% in CRC"
+    },
+    {
+      "relation_type": "COMBINED_WITH",
+      "source_entity": "sotorasib",
+      "target_entity": "panitumumab",
+      "confidence": 0.95,
+      "evidence": "Sotorasib+panitumumab: ORR 26.4%"
+    },
+    {
+      "relation_type": "COMBINED_WITH",
+      "source_entity": "adagrasib",
+      "target_entity": "cetuximab",
+      "confidence": 0.95,
+      "evidence": "Adagrasib+cetuximab: ORR 42%, PFS 6.9 months"
+    },
+    {
+      "relation_type": "COMBINED_WITH",
+      "source_entity": "divarasib",
+      "target_entity": "cetuximab",
+      "confidence": 0.95,
+      "evidence": "Divarasib+cetuximab: ORR 62.5%, PFS 8.1 months"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "colorectal cancer",
+      "confidence": 0.95,
+      "evidence": "KRAS-G12C inhibitors in colorectal cancer"
+    },
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.97,
+      "evidence": "KRAS-G12C inhibitors"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T23:29:33.495973+00:00",
+  "error": null
+}

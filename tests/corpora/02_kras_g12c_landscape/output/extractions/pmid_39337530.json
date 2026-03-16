@@ -1,0 +1,154 @@
+{
+  "document_id": "pmid_39337530",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "non-small cell lung cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "NSCLC"
+      },
+      "confidence": 0.99,
+      "context": "Emerging Targets in Non-Small Cell Lung Cancer"
+    },
+    {
+      "name": "KRAS",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "KRAS non-G12C"
+    },
+    {
+      "name": "RAF",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "RAF/MEK"
+    },
+    {
+      "name": "MEK",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "RAF/MEK"
+    },
+    {
+      "name": "HER3",
+      "entity_type": "GENE",
+      "attributes": {
+        "alias": "ERBB3"
+      },
+      "confidence": 0.92,
+      "context": "HER3"
+    },
+    {
+      "name": "Nectin-4",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "Nectin-4"
+    },
+    {
+      "name": "folate receptor alpha",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene": "FOLR1"
+      },
+      "confidence": 0.9,
+      "context": "folate receptor alpha"
+    },
+    {
+      "name": "ITGB6",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "ITGB6"
+    },
+    {
+      "name": "PRMT5",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "PRMT5"
+    },
+    {
+      "name": "RAF/MEK pathway",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.88,
+      "context": "RAF/MEK"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.95,
+      "evidence": "KRAS non-G12C as promising therapeutic target in NSCLC"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "HER3",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.88,
+      "evidence": "HER3 as promising therapeutic target in NSCLC"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "Nectin-4",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.88,
+      "evidence": "Nectin-4 as promising therapeutic target in NSCLC"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "folate receptor alpha",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.88,
+      "evidence": "folate receptor alpha as promising therapeutic target in NSCLC"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "ITGB6",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.88,
+      "evidence": "ITGB6 as promising therapeutic target in NSCLC"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PRMT5",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.88,
+      "evidence": "PRMT5 as promising therapeutic target in NSCLC"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "RAF",
+      "target_entity": "RAF/MEK pathway",
+      "confidence": 0.9,
+      "evidence": "RAF/MEK"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "MEK",
+      "target_entity": "RAF/MEK pathway",
+      "confidence": 0.9,
+      "evidence": "RAF/MEK"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "RAF/MEK pathway",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.88,
+      "evidence": "RAF/MEK as promising therapeutic target in NSCLC"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T23:29:32.429670+00:00",
+  "error": null
+}
