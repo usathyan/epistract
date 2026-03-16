@@ -605,13 +605,98 @@ User: "What compounds target KRAS G12C and what are their clinical results?"
 
 ---
 
+## Plugin Development Workflow
+
+### Local Plugin Install & Update Cycle
+
+Epistract is a Claude Code plugin. When you modify plugin files (agents, commands, skills, scripts), the cached copy must be refreshed. The plugin system caches by **name + version** — changing files without bumping the version won't trigger a refresh.
+
+**Update workflow:**
+
+1. Make your changes to the repo
+2. Bump version in `.claude-plugin/plugin.json` (e.g., `1.1.0` → `1.2.0`)
+3. Commit and push
+4. In Claude Code:
+   ```
+   /plugin          → select epistract → Uninstall
+   /reload-plugins
+   /plugin marketplace add /path/to/epistract
+   /plugin install epistract@epistract
+   /reload-plugins
+   ```
+5. Verify: `/plugin` should show the new version
+
+**Key gotchas:**
+- You must run `/reload-plugins` **both** after uninstall and after install
+- Local plugins show "Local plugins cannot be updated remotely" — this is expected; uninstall/reinstall is the update path
+- The cache lives at `~/.claude/plugins/cache/epistract/epistract/<version>/`
+- If the cache is stale, you can nuke it: `rm -rf ~/.claude/plugins/cache/epistract/` then reinstall
+- After reinstall, restart Claude Code (or `/reload-plugins`) for agents and skills to load
+
+### Field Naming: entity_type vs type
+
+sift-kg's Pydantic models require `entity_type` on entities and `relation_type` on relations. LLM agents naturally gravitate toward `type` as a field name. Two defenses:
+
+1. **Agent prompts must include explicit JSON examples** with the exact field names (see `agents/extractor.md`)
+2. **`build_extraction.py` normalizes defensively** — `_normalize_fields()` converts `type` → `entity_type`/`relation_type` at write time
+
+If you create new agent prompts that produce extraction JSON, always include a concrete JSON example showing `entity_type` and `relation_type`.
+
+### Community Labeling
+
+sift-kg's Louvain community detection produces numbered labels (`Community 1`, `Community 2`). The `label_communities.py` script auto-generates descriptive labels based on member entity composition. It runs automatically after `run_sift.py build`.
+
+The labeling heuristic priority:
+1. Gene-dominant clusters (>50% genes, >15 members) → "Disease Risk Loci (N genes)"
+2. Variant-dominant clusters (>50% variants) → "GENE Genetic Variants"
+3. Mechanism + cell type → "Mechanism in Cell Type"
+4. Pathway-driven → "Pathway A / Pathway B"
+5. Disease + protein → "Disease — Protein1, Protein2"
+6. Fallback → top 3 entities by priority
+
+### Running Test Scenarios
+
+Each scenario in `tests/scenarios/` is self-contained. After running:
+
+1. Capture a screenshot: use Playwright (`python3 -c "from playwright.sync_api import ..."`) to screenshot `output/graph.html`
+2. Save screenshot to `tests/scenarios/screenshots/scenario-NN-graph.png`
+3. Update the scenario markdown with results, community analysis, UAT pass/fail
+4. Commit output files (`tests/corpora/*/output/` is allowed by `.gitignore`)
+
+**Fully automated runs** (no permission prompts):
+```bash
+claude --dangerously-skip-permissions
+```
+
+Or pre-approve in `.claude/settings.json`:
+```json
+{
+  "permissions": {
+    "allow": ["Bash(python3 *)", "Bash(echo *)", "Read(*)", "Write(*/output/*)"]
+  }
+}
+```
+
+### Scripts Reference
+
+| Script | Purpose | Called By |
+|---|---|---|
+| `scripts/setup.sh` | Install sift-kg, check RDKit/Biopython | `/epistract-setup` command |
+| `scripts/build_extraction.py` | Write Claude's extraction JSON in sift-kg format (with field normalization) | Extractor agents via stdin pipe |
+| `scripts/run_sift.py` | sift-kg Python API wrapper (build, view, export, search, info) | All commands |
+| `scripts/label_communities.py` | Auto-label communities with descriptive names | Called by `run_sift.py build` |
+| `scripts/validate_molecules.py` | Scan extractions for SMILES/sequences, validate with RDKit/Biopython | `/epistract-validate` and ingest pipeline |
+
+---
+
 ## Contributing
 
 1. Fork the repository
 2. Create a feature branch
 3. Follow the existing code patterns (sift-kg conventions)
-4. Run the test suite
-5. Submit a pull request with a clear description
+4. Bump the plugin version in `.claude-plugin/plugin.json` for any user-facing changes
+5. Run the test suite
+6. Submit a pull request with a clear description
 
 ## License
 
