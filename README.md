@@ -4,84 +4,131 @@
 
 Epistract reads drug discovery documents — PubMed papers, bioRxiv preprints, patent filings, clinical trial reports, FDA labels — and builds a knowledge graph that captures the entities and relationships a scientist cares about: compounds, targets, mechanisms, trials, biomarkers, pathways, and how they connect.
 
-It runs as a Claude Code plugin. You point it at a folder of documents. It reads them with a scientist's understanding, extracts structured knowledge using a 23-type entity schema grounded in established biomedical ontologies, validates molecular identifiers with RDKit and Biopython, and produces an interactive graph you can explore in your browser.
+It runs as a [Claude Code](https://claude.ai/claude-code) plugin. You point it at a folder of documents. It reads them with a scientist's understanding, extracts structured knowledge using a schema grounded in 40+ established biomedical ontologies, validates molecular identifiers with [RDKit](https://www.rdkit.org/) and [Biopython](https://biopython.org/), and produces an interactive graph you can explore in your browser.
 
 ## The Name
 
 From Greek **episteme** (ἐπιστήμη) — structured scientific knowledge, the highest form of knowledge in Aristotle's epistemological hierarchy — combined with **extract**. Episteme is not opinion or belief; it is knowledge grounded in evidence, demonstration, and systematic understanding. That is what this tool produces: not a bag of keywords, but a structured representation of how scientific concepts relate to each other, traceable back to the source text.
 
+---
+
+## Architecture
+
+<picture>
+  <img alt="Epistract Architecture" src="docs/diagrams/architecture.svg" width="800">
+</picture>
+
+## Pipeline
+
+<picture>
+  <img alt="Data Flow Pipeline" src="docs/diagrams/data-flow.svg" width="800">
+</picture>
+
+---
+
 ## What It Extracts
 
 Epistract uses a domain schema designed for drug discovery, grounded in the [Biolink Model](https://biolink.github.io/biolink-model/), [Gene Ontology](http://geneontology.org/), [ChEBI](https://www.ebi.ac.uk/chebi/), [MeSH](https://meshb.nlm.nih.gov/), and 40+ other biomedical ontologies.
 
-### Entities (23 types)
+### Domain Schema — 17 Entity Types, 30 Relation Types
 
-| Category | Entity Types |
-|---|---|
-| **Drug & Chemistry** | COMPOUND, CHEMICAL_STRUCTURE, METABOLITE |
-| **Molecular Biology** | GENE, PROTEIN, PROTEIN_DOMAIN, SEQUENCE_VARIANT, PROTEIN_COMPLEX |
-| **Sequences** | NUCLEOTIDE_SEQUENCE, PEPTIDE_SEQUENCE |
-| **Disease & Phenotype** | DISEASE, PHENOTYPE, ADVERSE_EVENT |
-| **Clinical** | CLINICAL_TRIAL, BIOMARKER, REGULATORY_ACTION |
-| **Pathways & Processes** | PATHWAY, MECHANISM_OF_ACTION |
-| **Genomics** | GENETIC_ASSOCIATION, GENE_SIGNATURE |
-| **Context** | ORGANIZATION, PUBLICATION, CELL_OR_TISSUE |
+**Implemented in `domain.yaml`, enforced during extraction:**
 
-### Relations (46 types)
+| Category | Entity Types | Count |
+|---|---|---|
+| **Drug & Chemistry** | COMPOUND, METABOLITE | 2 |
+| **Molecular Biology** | GENE, PROTEIN, PROTEIN_DOMAIN, SEQUENCE_VARIANT, CELL_OR_TISSUE | 5 |
+| **Disease & Phenotype** | DISEASE, PHENOTYPE, ADVERSE_EVENT | 3 |
+| **Clinical** | CLINICAL_TRIAL, BIOMARKER, REGULATORY_ACTION | 3 |
+| **Pathways & Mechanisms** | PATHWAY, MECHANISM_OF_ACTION | 2 |
+| **Context** | ORGANIZATION, PUBLICATION | 2 |
 
-Covering drug-target pharmacology (TARGETS, INHIBITS, ACTIVATES, BINDS_TO), drug-disease (INDICATED_FOR, CONTRAINDICATED_FOR), clinical development (EVALUATED_IN, CAUSES), molecular biology (ENCODES, PARTICIPATES_IN, EXPRESSED_IN, PHOSPHORYLATES), statistical genetics (GENETICALLY_ASSOCIATED_WITH, CAUSAL_FOR), and more.
+**30 relation types** covering:
+- **Drug-Target** — TARGETS, INHIBITS, ACTIVATES, BINDS_TO, HAS_MECHANISM
+- **Drug-Disease** — INDICATED_FOR, CONTRAINDICATED_FOR
+- **Drug-Clinical** — EVALUATED_IN, CAUSES
+- **Drug-Drug** — DERIVED_FROM, COMBINED_WITH, INTERACTS_WITH
+- **Molecular Biology** — ENCODES, PARTICIPATES_IN, IMPLICATED_IN, CONFERS_RESISTANCE_TO, EXPRESSED_IN, LOCALIZED_TO, HAS_VARIANT, HAS_DOMAIN, METABOLIZED_BY, PHOSPHORYLATES, FORMS_COMPLEX_WITH, REGULATES_EXPRESSION
+- **Biomarker** — PREDICTS_RESPONSE_TO, DIAGNOSTIC_FOR
+- **Organizational** — DEVELOPED_BY, PUBLISHED_IN, GRANTS_APPROVAL_FOR
+- **Fallback** — ASSOCIATED_WITH
 
 Every extraction links back to the source document and passage. Every relation carries a confidence score calibrated for scientific literature.
+
+### Molecular Biology Linkage
+
+<picture>
+  <img alt="Molecular Biology Chain" src="docs/diagrams/molecular-biology-chain.svg" width="800">
+</picture>
+
+The schema captures the full chain from gene → protein → pathway → disease, with drug intervention points, resistance mechanisms, and biomarker links at every level.
+
+---
+
+## Structural Enrichment (Phase 1.5)
+
+Epistract doesn't just extract text — it **validates and enriches molecular structures and sequences**, creating first-class graph nodes from validated identifiers.
+
+### Three Levels of Structural Knowledge
+
+**Level 1 — Structure as Identity:**
+Validated SMILES strings become `CHEMICAL_STRUCTURE` nodes with canonical SMILES, InChI, InChIKey, molecular weight, LogP, TPSA, and Lipinski Ro5 analysis. Validated sequences become `NUCLEOTIDE_SEQUENCE` or `PEPTIDE_SEQUENCE` nodes with computed properties. All linked to parent entities via `HAS_STRUCTURE` / `HAS_SEQUENCE` relations.
+
+**Level 2 — InChIKey Deduplication:**
+Same molecule, different names across documents? Epistract detects this via InChIKey matching. If two papers call the same compound different names but contain the same SMILES → same InChIKey → merge candidate reported. This is structural deduplication — far more reliable than name matching.
+
+**Level 3 — Computed Properties as Knowledge:**
+RDKit computes drug-likeness properties (Lipinski Ro5 violations, TPSA, LogP) that become queryable attributes. Biopython computes sequence properties (GC content, isoelectric point, molecular weight) that enable filtering.
+
+### Why This Matters
+
+LLMs cannot reliably reproduce character-exact molecular notation (SMILES, sequences). A single transposition produces a different molecule. Epistract uses a **hybrid approach**:
+1. **Claude** identifies molecular identifiers in text and understands what they represent
+2. **Regex patterns** extract the exact strings from the source text
+3. **RDKit/Biopython** validates and enriches with computed properties
+
+This means your knowledge graph contains **verified** molecular structures, not LLM approximations.
+
+---
 
 ## Quick Start
 
 ### 1. Install
 
-Epistract requires [Claude Code](https://claude.ai/claude-code) and Python 3.11+.
+Requires [Claude Code](https://claude.ai/claude-code) and Python 3.11+.
 
 ```bash
 # Clone the repository
 git clone https://github.com/yourusername/epistract.git
 cd epistract
 
-# Install as a Claude Code plugin
-claude plugin add ./epistract
-
-# Or symlink for development
+# Symlink as a Claude Code plugin
 ln -s $(pwd) ~/.claude/plugins/epistract
 ```
 
-Then, inside a Claude Code session:
+Inside a Claude Code session:
 
 ```
 /epistract-setup
 ```
 
-This installs sift-kg and optionally RDKit (for SMILES validation) and Biopython (for sequence validation).
-
 ### 2. Ingest Documents
-
-Place your documents in a folder — PDFs, DOCX, HTML, plain text, and 75+ other formats are supported.
 
 ```
 /epistract-ingest ./my-papers/
 ```
 
 Epistract will:
-1. Read and chunk all documents (handling scanned PDFs with OCR if needed)
+1. Read and chunk all documents (PDFs, DOCX, HTML, TXT, 75+ formats, OCR for scans)
 2. Extract entities and relations using the drug discovery schema
-3. Validate any SMILES strings and sequences found in the text
-4. Build a deduplicated knowledge graph with community detection
-5. Open an interactive visualization in your browser
+3. Validate SMILES, sequences, CAS numbers, NCT IDs found in the text
+4. Create structural graph nodes from validated molecular identifiers
+5. Build a deduplicated knowledge graph with community detection
+6. Open an interactive visualization in your browser
 
 ### 3. Explore
 
-The interactive viewer shows your knowledge graph with:
-- **Community regions** — colored zones grouping related entities
-- **Focus mode** — double-click any entity to isolate its neighborhood
-- **Trail breadcrumb** — tracks your exploration path through the graph
-- **Search** — find entities by name, type, or source document
-- **Filtering** — by entity type, community, confidence, source document
+The interactive viewer shows your knowledge graph with community regions, focus mode, trail breadcrumbs, search, and filtering.
 
 ### 4. Export
 
@@ -91,48 +138,73 @@ The interactive viewer shows your knowledge graph with:
 /epistract-export csv        # For spreadsheets, pandas
 ```
 
+### 5. Query
+
+```
+/epistract-query "sotorasib"              # Find entities by name
+/epistract-query "KRAS" --type PROTEIN    # Filter by type
+```
+
+---
+
 ## Example: KRAS G12C Inhibitor Landscape
 
 ```
 /epistract-ingest ./kras_papers/
 
 Result:
-  15 papers processed
-  267 entities extracted:
-    34 compounds, 45 proteins, 28 genes, 19 diseases,
-    23 clinical trials, 15 mechanisms, 12 biomarkers, ...
-  489 relations:
-    67 INHIBITS, 45 TARGETS, 23 INDICATED_FOR,
-    18 EVALUATED_IN, 15 CONFERS_RESISTANCE_TO, ...
-  7 SMILES validated, 3 sequences validated
-  6 communities detected
+  Documents: 16 processed (15 PubMed abstracts + 1 structural profile)
+  Entities: 13 extracted from structural profile alone:
+    COMPOUND: sotorasib
+    PROTEIN: KRAS
+    SEQUENCE_VARIANT: KRAS G12C, KRAS Y96D, KRAS R68S
+    MECHANISM_OF_ACTION: covalent KRAS G12C inhibition
+    PROTEIN_DOMAIN: Switch II pocket
+    DISEASE: non-small cell lung cancer
+    CLINICAL_TRIAL: CodeBreaK 100 (NCT03600883), CodeBreaK 200 (NCT04303780)
+    REGULATORY_ACTION: FDA accelerated approval (2021-05-28)
+    GENE: MET (amplification — resistance mechanism)
+    ORGANIZATION: Amgen
+
+  Relations: 14 (INHIBITS, TARGETS, HAS_MECHANISM, HAS_DOMAIN,
+    INDICATED_FOR, EVALUATED_IN, GRANTS_APPROVAL_FOR,
+    CONFERS_RESISTANCE_TO, HAS_VARIANT, DEVELOPED_BY)
+
+  Molecular identifiers: 1 SMILES, 1 CAS, 1 InChIKey, 2 NCT numbers
 ```
 
-The resulting graph connects sotorasib and adagrasib to their shared target (KRAS G12C), links to clinical trials (CodeBreaK 100, KRYSTAL-1), captures resistance mechanisms (acquired mutations in KRAS, MET amplification), and maps the upstream signaling cascade (RAS-MAPK pathway) — all traceable to specific passages in the source papers.
+---
 
 ## Molecular Validation
 
-When RDKit and/or Biopython are installed, Epistract automatically validates molecular identifiers found in your documents:
+When [RDKit](https://www.rdkit.org/) and/or [Biopython](https://biopython.org/) are installed, Epistract automatically validates molecular identifiers:
 
 **Chemistry (RDKit):**
-- SMILES strings → validated, canonicalized, enriched with molecular weight, LogP, H-bond donors/acceptors, TPSA, ring count
-- InChI/InChIKey → cross-referenced
-- Invalid SMILES → flagged and excluded
+- SMILES → canonical form, InChI, InChIKey, molecular formula, MW, LogP, HBD/HBA, TPSA, Lipinski Ro5
+- Invalid SMILES → flagged and excluded from graph
 
 **Sequences (Biopython):**
-- DNA/RNA sequences → validated, GC content computed, reverse complement generated
-- Amino acid sequences → validated, molecular weight and isoelectric point computed
-- Antibody CDR sequences → identified and annotated
+- DNA/RNA → GC content, complement, reverse complement, translation
+- Amino acid → molecular weight, isoelectric point, instability index, GRAVY
+- Antibody CDR sequences → identified by region (H1/H2/H3, L1/L2/L3)
 
-This matters because LLMs cannot reliably reproduce character-exact molecular notation. Epistract uses a hybrid approach: Claude identifies and contextualizes molecular identifiers, then deterministic tools extract and validate the exact strings from the source text.
+**Pattern Detection (no dependencies):**
+- NCT numbers → ClinicalTrials.gov identifiers
+- CAS numbers → chemical registry identifiers
+- Patent numbers (US, PCT) → intellectual property references
+- InChIKey → 27-character molecular fingerprints
+
+---
 
 ## How It Works
 
 Epistract combines two systems:
 
-1. **Claude** (the LLM running in Claude Code) reads scientific text with deep domain understanding. It identifies entities, classifies them into the 23-type schema, extracts relationships with confidence scores, and captures evidence passages. Claude understands that "BRAF V600E" is a sequence variant in the BRAF gene, that "pembrolizumab" is a PD-1-targeting monoclonal antibody, and that "KEYNOTE-024" is a Phase III trial — this domain expertise produces higher-quality extractions than general-purpose NER.
+1. **Claude** reads scientific text with deep domain understanding. It identifies entities, classifies them into the schema, extracts relationships with confidence scores, and captures evidence passages. Claude understands that "BRAF V600E" is a sequence variant in the BRAF gene, that "pembrolizumab" is a PD-1-targeting monoclonal antibody, and that "KEYNOTE-024" is a Phase III trial.
 
-2. **sift-kg** (the knowledge graph engine) handles everything downstream: text ingestion from 75+ document formats, graph construction with automatic deduplication, entity resolution with human-in-the-loop review, community detection, interactive visualization, and export to GraphML/GEXF/CSV/SQLite. It is a mature, tested pipeline that Epistract uses as its core engine.
+2. **[sift-kg](https://github.com/juanceresa/sift-kg)** handles everything downstream: text ingestion from 75+ formats, graph construction with automatic deduplication (SemHash, Unicode normalization), entity resolution with human-in-the-loop review, Louvain community detection, interactive visualization, and export to GraphML/GEXF/CSV/SQLite.
+
+---
 
 ## Ontology Grounding
 
@@ -150,21 +222,13 @@ Every entity type maps to established biomedical ontologies:
 | BIOMARKER | [BEST Framework](https://www.ncbi.nlm.nih.gov/books/NBK326791/) | Per-analyte ontology |
 | CELL_OR_TISSUE | [Cell Ontology](http://obofoundry.org/ontology/cl.html) | Uberon |
 | PROTEIN_DOMAIN | [InterPro](https://www.ebi.ac.uk/interpro/) | Pfam, SMART |
+| METABOLITE | [ChEBI](https://www.ebi.ac.uk/chebi/) | HMDB, KEGG Compound |
 
-This grounding means extracted entities can be cross-referenced against public databases — linking your knowledge graph to the broader biomedical knowledge ecosystem.
-
-## Use Cases
-
-- **Literature review** — Map how compounds, targets, and mechanisms connect across a body of research. See which findings support or contradict each other.
-- **Target validation** — Trace genetic evidence (GWAS, Mendelian randomization) through to protein targets and existing compounds.
-- **Competitive intelligence** — Ingest patent filings and clinical trial publications to map the landscape for a therapeutic area.
-- **Safety signal detection** — Extract and connect adverse events across clinical trial reports and post-marketing surveillance documents.
-- **Biomarker discovery** — Identify which biomarkers predict response to which therapies, across published evidence.
-- **Due diligence** — Build a structured knowledge base from a target company's publication and patent portfolio.
+---
 
 ## Naming Conventions
 
-Epistract enforces standard biomedical nomenclature in its extractions:
+Epistract enforces standard biomedical nomenclature:
 
 | Entity | Standard | Example |
 |---|---|---|
@@ -175,6 +239,19 @@ Epistract enforces standard biomedical nomenclature in its extractions:
 | Adverse events | MedDRA preferred terms | immune-mediated colitis |
 | Proteins | UniProt standard names | PD-1, HER2, VEGFR-2 |
 
+---
+
+## Use Cases
+
+- **Literature review** — Map how compounds, targets, and mechanisms connect across a body of research
+- **Target validation** — Trace genetic evidence (GWAS, MR) through to protein targets and existing compounds
+- **Competitive intelligence** — Ingest patent filings and clinical trial publications to map a therapeutic landscape
+- **Safety signal detection** — Extract and connect adverse events across clinical trial reports
+- **Biomarker discovery** — Identify which biomarkers predict response to which therapies
+- **Due diligence** — Build a structured knowledge base from a target company's publication and patent portfolio
+
+---
+
 ## Test Scenarios
 
 Epistract ships with five real-world drug discovery research scenarios, each backed by a curated corpus of PubMed abstracts:
@@ -182,32 +259,62 @@ Epistract ships with five real-world drug discovery research scenarios, each bac
 | # | Scenario | Focus | Documents |
 |---|---|---|---|
 | 1 | [PICALM / Alzheimer's](tests/MANUAL_TEST_SCENARIOS.md#scenario-1-picalm--alzheimers-disease--genetic-target-validation) | Genetic target validation | 15 papers |
-| 2 | [KRAS G12C Landscape](tests/MANUAL_TEST_SCENARIOS.md#scenario-2-kras-g12c-inhibitor-landscape--competitive-intelligence) | Competitive intelligence | 15 papers |
-| 3 | [BioMarin Rare Disease](tests/MANUAL_TEST_SCENARIOS.md#scenario-3-biomarin-rare-disease-pipeline--pku-achondroplasia-hemophilia-a) | Due diligence | 15 papers |
-| 4 | [BMS Immuno-Oncology](tests/MANUAL_TEST_SCENARIOS.md#scenario-4-bristol-myers-squibb-immuno-oncology--checkpoint-combinations) | Checkpoint combinations | 15 papers |
-| 5 | [BMS Cardiovascular](tests/MANUAL_TEST_SCENARIOS.md#scenario-5-bms-cardiovascular--inflammation--mavacamten-and-deucravacitinib) | Cardiology + inflammation | 14 papers |
+| 2 | [KRAS G12C Landscape](tests/MANUAL_TEST_SCENARIOS.md#scenario-2-kras-g12c-inhibitor-landscape--competitive-intelligence) | Competitive intelligence | 16 papers |
+| 3 | [Rare Disease Therapeutics](tests/MANUAL_TEST_SCENARIOS.md#scenario-3-biomarin-rare-disease-pipeline--pku-achondroplasia-hemophilia-a) | Due diligence | 15 papers |
+| 4 | [Immuno-Oncology Combinations](tests/MANUAL_TEST_SCENARIOS.md#scenario-4-bristol-myers-squibb-immuno-oncology--checkpoint-combinations) | Checkpoint combinations | 16 papers |
+| 5 | [Cardiovascular & Inflammation](tests/MANUAL_TEST_SCENARIOS.md#scenario-5-bms-cardiovascular--inflammation--mavacamten-and-deucravacitinib) | Cardiology + inflammation | 15 papers |
 
-See [MANUAL_TEST_SCENARIOS.md](tests/MANUAL_TEST_SCENARIOS.md) for full details on each scenario, including the PubMed queries used, expected knowledge graph structure, and acceptance criteria.
+See [MANUAL_TEST_SCENARIOS.md](tests/MANUAL_TEST_SCENARIOS.md) for full details, PubMed queries, expected graph structure, and acceptance criteria.
+
+For validation results and manual cross-reference checklists, see [VALIDATION_RESULTS.md](tests/VALIDATION_RESULTS.md).
+
+---
+
+## Commands
+
+| Command | Description |
+|---|---|
+| `/epistract-setup` | Install dependencies (sift-kg, optional RDKit/Biopython) |
+| `/epistract-ingest <path>` | Full pipeline: ingest → extract → validate → build → view |
+| `/epistract-build` | Build graph from existing extractions |
+| `/epistract-validate` | Validate molecular identifiers in extractions |
+| `/epistract-view` | Open interactive graph viewer |
+| `/epistract-query <term>` | Search entities in the knowledge graph |
+| `/epistract-export <format>` | Export to graphml, gexf, csv, sqlite, json |
+
+---
 
 ## Phases
 
-**Phase 1 (current):** Document extraction, knowledge graph building, interactive visualization, static export formats.
+**Phase 1 (complete):** Document extraction, knowledge graph building, interactive visualization, static export formats. 17 entity types, 30 relation types.
 
-**Phase 1.5 (in progress):** Structural enrichment — validated SMILES, sequences, and molecular identifiers become first-class graph nodes with computed properties. InChIKey-based compound deduplication. Structural similarity edges.
+**Phase 1.5 (complete):** Structural enrichment — validated SMILES and sequences become first-class graph nodes with computed properties. InChIKey-based cross-document compound deduplication.
 
 **Phase 2 (planned):**
 1. **Neo4j Cypher exporter** — MERGE nodes/edges into Neo4j with constraints and indexes
-2. **Entity description embeddings** — embed entity descriptions with sentence-transformers, store in Neo4j vector index
-3. **Morgan fingerprint embeddings** — RDKit molecular fingerprints stored as vectors for structural similarity search
-4. **Combined RAG query** — `/epistract-ask "What compounds similar to sotorasib target KRAS?"` → vector search + graph traversal + structure similarity in one query
-5. **External enrichment** — PubChem/ChEMBL/UniProt API lookups that add nodes and edges from external knowledge bases
+2. **Entity description embeddings** — sentence-transformers embeddings stored in Neo4j vector index
+3. **Morgan fingerprint embeddings** — RDKit molecular fingerprints as vectors for structural similarity
+4. **Combined RAG query** — `/epistract-ask "What compounds similar to sotorasib target KRAS?"` → vector + graph + structure similarity
+5. **External enrichment** — PubChem/ChEMBL/UniProt API lookups adding nodes from external knowledge bases
+
+---
+
+## Technical Documentation
+
+- **[DEVELOPER.md](DEVELOPER.md)** — Technical reference with 40+ ontology links, sift-kg integration details, data formats, and the full dependency tree
+- **[Domain Specification](docs/drug-discovery-domain-spec.md)** — Complete 2000-line schema specification with ontology alignment, extraction guidance, and validation criteria
+- **[Plugin Design](docs/epistract-plugin-design.md)** — Architecture, components, and phased delivery plan
+- **[Test Requirements](tests/TEST_REQUIREMENTS.md)** — 14 unit tests, 8 functional tests, 18 user acceptance tests with traceability matrix
+
+---
 
 ## Requirements
 
 - [Claude Code](https://claude.ai/claude-code) (the runtime environment)
 - Python 3.11+
 - sift-kg (installed by `/epistract-setup`)
-- Optional: RDKit (~50MB), Biopython (~20MB) for molecular validation
+- Optional: [RDKit](https://www.rdkit.org/) (~50MB) for SMILES validation and structural enrichment
+- Optional: [Biopython](https://biopython.org/) (~20MB) for sequence validation
 
 ## License
 

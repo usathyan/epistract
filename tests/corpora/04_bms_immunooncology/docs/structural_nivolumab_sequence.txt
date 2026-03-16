@@ -4,7 +4,7 @@ Source: Compiled from DrugBank DB09035, IMGT, and published structure data
 COMPOUND IDENTITY:
 Nivolumab (BMS-936558, MDX-1106, ONO-4538, Opdivo) is a fully human IgG4
 monoclonal antibody targeting PD-1 (programmed death-1, CD279).
-Developed by Bristol-Myers Squibb / Ono Pharmaceutical.
+Developed by the originator companies.
 
 ANTIBODY SEQUENCES:
 

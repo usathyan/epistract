@@ -95,7 +95,7 @@ For each scenario:
 
 ## Scenarios 1, 3, 4, 5 — Pending Full Extraction
 
-Scenarios 1 (PICALM/Alzheimer's), 3 (BioMarin), 4 (BMS IO), 5 (BMS CV) have corpora downloaded but have not yet been run through the full extraction pipeline (requires interactive `/epistract-ingest` sessions).
+Scenarios 1 (PICALM/Alzheimer's), 3 (Rare Disease), 4 (Immuno-Oncology), 5 (Cardiovascular) have corpora downloaded but have not yet been run through the full extraction pipeline (requires interactive `/epistract-ingest` sessions).
 
 **To run each:** Open Claude Code in the epistract project and invoke:
 ```
@@ -112,9 +112,9 @@ After each run, I will produce a validation results table like Scenario 2 above 
 |---|---|---|---|---|---|
 | 1: PICALM/Alzheimer's | [ ] / [ ] | [ ] / [ ] | [ ] / 4 | [ ] / [ ] | _________________ |
 | 2: KRAS G12C | [ ] / 13 | [ ] / 14 | [ ] / 4 | [ ] / 5 | _________________ |
-| 3: BioMarin Rare Disease | [ ] / [ ] | [ ] / [ ] | [ ] / 3 | [ ] / [ ] | _________________ |
-| 4: BMS Immuno-Oncology | [ ] / [ ] | [ ] / [ ] | [ ] / 4 | [ ] / [ ] | _________________ |
-| 5: BMS Cardiovascular | [ ] / [ ] | [ ] / [ ] | [ ] / 3 | [ ] / [ ] | _________________ |
+| 3: Rare Disease Therapeutics | [ ] / [ ] | [ ] / [ ] | [ ] / 3 | [ ] / [ ] | _________________ |
+| 4: Immuno-Oncology Combinations | [ ] / [ ] | [ ] / [ ] | [ ] / 4 | [ ] / [ ] | _________________ |
+| 5: Cardiovascular & Inflammation | [ ] / [ ] | [ ] / [ ] | [ ] / 3 | [ ] / [ ] | _________________ |
 
 **Overall Status:** [ ] ACCEPTED / [ ] ACCEPTED WITH CONDITIONS / [ ] REJECTED
 

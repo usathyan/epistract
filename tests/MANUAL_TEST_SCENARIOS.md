@@ -127,11 +127,11 @@ This represents a **competitive intelligence** workflow — mapping the therapeu
 
 ---
 
-## Scenario 3: BioMarin Rare Disease Pipeline — PKU, Achondroplasia, Hemophilia A
+## Scenario 3: Rare Disease Therapeutics — PKU, Achondroplasia, Hemophilia A
 
 ### Use Case
 
-You are a rare disease research analyst conducting **due diligence** on BioMarin's pipeline. Three key programs:
+You are a rare disease research analyst conducting **due diligence** on a rare disease therapeutics pipeline. Three key programs:
 
 1. **Pegvaliase (Palynziq)** — enzyme substitution therapy for phenylketonuria (PKU)
 2. **Vosoritide (Voxzogo)** — C-type natriuretic peptide analog for achondroplasia
@@ -147,7 +147,7 @@ You want to map the targets, mechanisms, clinical evidence, and competitive cont
 | **Documents** | 15 PubMed abstracts |
 | **Source queries** | `pegvaliase phenylketonuria PKU enzyme substitution therapy` (5 results) |
 | | `vosoritide achondroplasia FGFR3 C-type natriuretic peptide` (5 results) |
-| | `BioMarin valoctocogene roxaparvovec hemophilia A gene therapy` (5 results) |
+| | `valoctocogene roxaparvovec hemophilia A gene therapy` (5 results) |
 | | `phenylketonuria phenylalanine hydroxylase dietary treatment` (5 results) |
 | **Source database** | PubMed via NCBI E-utilities API |
 | **Date retrieved** | 2026-03-16 |
@@ -169,7 +169,7 @@ You want to map the targets, mechanisms, clinical evidence, and competitive cont
 
 | # | Question | Expected Graph Evidence |
 |---|---|---|
-| UAT-301 | What is BioMarin's PKU treatment? | COMPOUND(pegvaliase) → INDICATED_FOR → DISEASE(phenylketonuria) |
+| UAT-301 | What is the PKU treatment? | COMPOUND(pegvaliase) → INDICATED_FOR → DISEASE(phenylketonuria) |
 | UAT-302 | What is vosoritide's target? | COMPOUND(vosoritide) → TARGETS → PROTEIN(NPR-B/FGFR3 pathway) |
 | UAT-303 | What gene therapy for hemophilia A? | COMPOUND(valoctocogene roxaparvovec) → INDICATED_FOR → DISEASE(hemophilia A) |
 
@@ -180,16 +180,16 @@ You want to map the targets, mechanisms, clinical evidence, and competitive cont
 - Phenylalanine ammonia lyase (PAL) extracted as the enzyme mechanism for pegvaliase
 - FGFR3 pathway extracted for vosoritide
 - Factor VIII / AAV5 gene therapy mechanism for valoctocogene
-- BioMarin extracted as ORGANIZATION via DEVELOPED_BY
-- Graph shows three distinct clusters (one per program) connected through BioMarin
+- Sponsor extracted as ORGANIZATION via DEVELOPED_BY
+- Graph shows three distinct clusters (one per program) connected through the sponsor
 
 ---
 
-## Scenario 4: Bristol-Myers Squibb Immuno-Oncology — Checkpoint Combinations
+## Scenario 4: Immuno-Oncology Combinations — Checkpoint Combinations
 
 ### Use Case
 
-You are an immuno-oncology researcher tracking **BMS's checkpoint inhibitor portfolio**:
+You are an immuno-oncology researcher tracking a **checkpoint inhibitor portfolio**:
 
 1. **Nivolumab (Opdivo)** — anti-PD-1 monoclonal antibody
 2. **Ipilimumab (Yervoy)** — anti-CTLA-4 monoclonal antibody
@@ -205,7 +205,7 @@ You want to map the combination strategies, clinical trials, response biomarkers
 | **Documents** | 15 PubMed abstracts |
 | **Source queries** | `nivolumab ipilimumab combination immunotherapy melanoma CheckMate` (5 results) |
 | | `relatlimab LAG-3 nivolumab RELATIVITY clinical trial` (5 results) |
-| | `Bristol-Myers Squibb opdivo checkpoint inhibitor` (5 results) |
+| | `opdivo checkpoint inhibitor PD-1` (5 results) |
 | | `nivolumab resistance mechanism tumor microenvironment` (5 results) |
 | **Source database** | PubMed via NCBI E-utilities API |
 | **Date retrieved** | 2026-03-16 |
@@ -244,16 +244,16 @@ You want to map the combination strategies, clinical trials, response biomarkers
 
 ---
 
-## Scenario 5: BMS Cardiovascular & Inflammation — Mavacamten and Deucravacitinib
+## Scenario 5: Cardiovascular & Inflammation — Mavacamten and Deucravacitinib
 
 ### Use Case
 
-You are a cardiovascular/inflammation research analyst evaluating two newer BMS programs:
+You are a cardiovascular/inflammation research analyst evaluating two newer programs:
 
 1. **Mavacamten (Camzyos)** — selective cardiac myosin inhibitor for hypertrophic cardiomyopathy (HCM)
 2. **Deucravacitinib (Sotyktu)** — selective TYK2 inhibitor for plaque psoriasis
 
-These represent BMS's diversification beyond oncology. You want to understand targets, mechanisms, clinical evidence, and safety profiles.
+These represent a diversification beyond oncology. You want to understand targets, mechanisms, clinical evidence, and safety profiles.
 
 ### Corpus Details
 
@@ -263,7 +263,7 @@ These represent BMS's diversification beyond oncology. You want to understand ta
 | **Documents** | 14 PubMed abstracts |
 | **Source queries** | `mavacamten hypertrophic cardiomyopathy EXPLORER-HCM` (5 results) |
 | | `cardiac myosin inhibitor obstructive hypertrophic cardiomyopathy` (5 results) |
-| | `Bristol-Myers Squibb Camzyos mavacamten` (5 results) |
+| | `Camzyos mavacamten cardiac myosin inhibitor` (5 results) |
 | | `deucravacitinib TYK2 psoriasis POETYK` (5 results) |
 | **Source database** | PubMed via NCBI E-utilities API |
 | **Date retrieved** | 2026-03-16 |
@@ -295,7 +295,7 @@ These represent BMS's diversification beyond oncology. You want to understand ta
 - Cardiac myosin (beta-MHC) and TYK2 as PROTEIN targets
 - HCM and psoriasis as distinct DISEASE entities
 - EXPLORER-HCM and POETYK trials extracted with phase and results
-- Graph shows two distinct clusters (cardiology + dermatology) both linked to BMS
+- Graph shows two distinct clusters (cardiology + dermatology) both linked to the developer
 - LVOT gradient reduction mentioned as clinical endpoint for mavacamten
 - JAK/STAT pathway context for deucravacitinib
 

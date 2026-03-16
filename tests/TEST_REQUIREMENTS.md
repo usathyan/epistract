@@ -184,9 +184,9 @@ These are real research questions a PhD scientist would ask. Each tests whether 
 - **Graph traversal:** COMPOUND(sotorasib) → HAS_MECHANISM → MECHANISM_OF_ACTION; COMPOUND → INHIBITS → PROTEIN(KRAS)
 - **Acceptance:** Mechanism described with covalent/irreversible attributes
 
-### Topic 3: BioMarin Rare Disease
+### Topic 3: Rare Disease Therapeutics
 
-#### UAT-301: What is BioMarin's approach to treating PKU?
+#### UAT-301: What is the approach to treating PKU?
 - **Expected:** Pegvaliase (enzyme substitution with PEGylated phenylalanine ammonia lyase)
 - **Graph traversal:** COMPOUND(pegvaliase) → INDICATED_FOR → DISEASE(phenylketonuria); COMPOUND → HAS_MECHANISM → MOA
 - **Acceptance:** Pegvaliase linked to PKU with mechanism
@@ -201,9 +201,9 @@ These are real research questions a PhD scientist would ask. Each tests whether 
 - **Graph traversal:** COMPOUND(valoctocogene roxaparvovec) → INDICATED_FOR → DISEASE(hemophilia A)
 - **Acceptance:** Gene therapy compound extracted with correct indication
 
-### Topic 4: BMS Immuno-Oncology
+### Topic 4: Immuno-Oncology Combinations
 
-#### UAT-401: What checkpoint combinations has BMS developed?
+#### UAT-401: What checkpoint combinations have been developed?
 - **Expected:** nivolumab + ipilimumab (PD-1 + CTLA-4), nivolumab + relatlimab (PD-1 + LAG-3)
 - **Graph traversal:** COMPOUND(nivolumab) → COMBINED_WITH → COMPOUND; each → TARGETS → PROTEIN(checkpoint)
 - **Acceptance:** Both combinations identified with correct targets
@@ -223,7 +223,7 @@ These are real research questions a PhD scientist would ask. Each tests whether 
 - **Graph traversal:** BIOMARKER → PREDICTS_RESPONSE_TO → COMPOUND(nivolumab)
 - **Acceptance:** ≥1 predictive biomarker linked
 
-### Topic 5: BMS Cardiovascular / Inflammation
+### Topic 5: Cardiovascular & Inflammation
 
 #### UAT-501: What is mavacamten's mechanism of action?
 - **Expected:** Selective cardiac myosin inhibitor that reduces cardiac hypercontractility
@@ -254,6 +254,6 @@ These are real research questions a PhD scientist would ask. Each tests whether 
 | FT-001–008 | Design spec 9 | All | All | PubMed abstracts |
 | UAT-101–104 | 3, 4 | GENE, PROTEIN, DISEASE, PATHWAY | IMPLICATED_IN, PARTICIPATES_IN | 01_picalm_alzheimers |
 | UAT-201–205 | 3, 4 | COMPOUND, GENE, CLINICAL_TRIAL, MOA | TARGETS, INHIBITS, EVALUATED_IN, CONFERS_RESISTANCE_TO, COMBINED_WITH, HAS_MECHANISM | 02_kras_g12c_landscape |
-| UAT-301–303 | 3, 4 | COMPOUND, DISEASE, PROTEIN, MOA | INDICATED_FOR, HAS_MECHANISM, TARGETS | 03_biomarin_rare_disease |
-| UAT-401–404 | 3, 4 | COMPOUND, CLINICAL_TRIAL, ADVERSE_EVENT, BIOMARKER | COMBINED_WITH, EVALUATED_IN, CAUSES, PREDICTS_RESPONSE_TO | 04_bms_immunooncology |
-| UAT-501–503 | 3, 4 | COMPOUND, PROTEIN, DISEASE, CLINICAL_TRIAL | HAS_MECHANISM, TARGETS, INHIBITS, EVALUATED_IN, INDICATED_FOR | 05_bms_cardiovascular |
+| UAT-301–303 | 3, 4 | COMPOUND, DISEASE, PROTEIN, MOA | INDICATED_FOR, HAS_MECHANISM, TARGETS | 03_rare_disease |
+| UAT-401–404 | 3, 4 | COMPOUND, CLINICAL_TRIAL, ADVERSE_EVENT, BIOMARKER | COMBINED_WITH, EVALUATED_IN, CAUSES, PREDICTS_RESPONSE_TO | 04_immunooncology |
+| UAT-501–503 | 3, 4 | COMPOUND, PROTEIN, DISEASE, CLINICAL_TRIAL | HAS_MECHANISM, TARGETS, INHIBITS, EVALUATED_IN, INDICATED_FOR | 05_cardiovascular |
