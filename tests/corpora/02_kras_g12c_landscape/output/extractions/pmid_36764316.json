@@ -1,0 +1,227 @@
+{
+  "document_id": "pmid_36764316",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "sotorasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "dose": "960 mg daily"
+      },
+      "confidence": 0.99,
+      "context": "sotorasib (960 mg daily)"
+    },
+    {
+      "name": "docetaxel",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "dose": "75 mg/m2 q3w"
+      },
+      "confidence": 0.99,
+      "context": "docetaxel (75 mg/m2 q3w)"
+    },
+    {
+      "name": "KRAS G12C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "mutation_type": "missense"
+      },
+      "confidence": 0.99,
+      "context": "previously treated NSCLC with KRASG12C"
+    },
+    {
+      "name": "non-small cell lung cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "NSCLC"
+      },
+      "confidence": 0.99,
+      "context": "previously treated NSCLC with KRASG12C"
+    },
+    {
+      "name": "CodeBreaK 200",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "3",
+        "nct_id": "NCT04303780",
+        "enrollment": 345,
+        "design": "randomized"
+      },
+      "confidence": 0.99,
+      "context": "Phase 3 trial at 148 centres in 22 countries. 345 patients randomized"
+    },
+    {
+      "name": "diarrhoea",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "grade": "3+",
+        "incidence": "12%"
+      },
+      "confidence": 0.95,
+      "context": "sotorasib \u2014 diarrhoea (12%)"
+    },
+    {
+      "name": "ALT increase",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "grade": "3+",
+        "incidence": "8%"
+      },
+      "confidence": 0.95,
+      "context": "ALT increase (8%)"
+    },
+    {
+      "name": "AST increase",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "grade": "3+",
+        "incidence": "5%"
+      },
+      "confidence": 0.95,
+      "context": "AST increase (5%)"
+    },
+    {
+      "name": "neutropenia",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "grade": "3+",
+        "incidence": "9%"
+      },
+      "confidence": 0.95,
+      "context": "docetaxel \u2014 neutropenia (9%)"
+    },
+    {
+      "name": "fatigue",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "grade": "3+",
+        "incidence": "6%"
+      },
+      "confidence": 0.9,
+      "context": "fatigue (6%)"
+    },
+    {
+      "name": "febrile neutropenia",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "grade": "3+",
+        "incidence": "5%"
+      },
+      "confidence": 0.95,
+      "context": "febrile neutropenia (5%)"
+    },
+    {
+      "name": "Amgen",
+      "entity_type": "ORGANIZATION",
+      "attributes": {},
+      "confidence": 0.99,
+      "context": "FUNDING: Amgen"
+    },
+    {
+      "name": "de Langen et al 2023 Lancet",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "36764316",
+        "journal": "Lancet",
+        "year": 2023
+      },
+      "confidence": 0.99,
+      "context": "de Langen et al., Lancet (2023)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.99,
+      "evidence": "Sotorasib versus docetaxel for previously treated NSCLC with KRASG12C"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "sotorasib",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.95,
+      "evidence": "Sotorasib versus docetaxel for previously treated NSCLC with KRASG12C"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "sotorasib",
+      "target_entity": "CodeBreaK 200",
+      "confidence": 0.99,
+      "evidence": "Phase 3 trial at 148 centres in 22 countries. 345 patients randomized to sotorasib or docetaxel"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "docetaxel",
+      "target_entity": "CodeBreaK 200",
+      "confidence": 0.99,
+      "evidence": "345 patients randomized to sotorasib (960 mg daily) or docetaxel (75 mg/m2 q3w)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "sotorasib",
+      "target_entity": "diarrhoea",
+      "confidence": 0.95,
+      "evidence": "sotorasib \u2014 diarrhoea (12%)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "sotorasib",
+      "target_entity": "ALT increase",
+      "confidence": 0.95,
+      "evidence": "ALT increase (8%)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "sotorasib",
+      "target_entity": "AST increase",
+      "confidence": 0.95,
+      "evidence": "AST increase (5%)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "docetaxel",
+      "target_entity": "neutropenia",
+      "confidence": 0.95,
+      "evidence": "docetaxel \u2014 neutropenia (9%)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "docetaxel",
+      "target_entity": "fatigue",
+      "confidence": 0.9,
+      "evidence": "fatigue (6%)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "docetaxel",
+      "target_entity": "febrile neutropenia",
+      "confidence": 0.95,
+      "evidence": "febrile neutropenia (5%)"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "sotorasib",
+      "target_entity": "Amgen",
+      "confidence": 0.99,
+      "evidence": "FUNDING: Amgen"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.95,
+      "evidence": "previously treated NSCLC with KRASG12C"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T23:29:14.388827+00:00",
+  "error": null
+}

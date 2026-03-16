@@ -115,7 +115,7 @@ Epistract ships with five real-world drug discovery research scenarios, each bac
 | # | Scenario | Focus | Documents | Status |
 |---|---|---|---|---|
 | 1 | [PICALM / Alzheimer's](tests/scenarios/scenario-01-picalm-alzheimers.md) | Genetic target validation | 15 papers | **Completed** |
-| 2 | [KRAS G12C Landscape](tests/scenarios/scenario-02-kras-g12c-landscape.md) | Competitive intelligence | 15 papers | Pending |
+| 2 | [KRAS G12C Landscape](tests/scenarios/scenario-02-kras-g12c-landscape.md) | Competitive intelligence | 16 papers | **Completed** |
 | 3 | [Rare Disease Therapeutics](tests/scenarios/scenario-03-rare-disease.md) | Due diligence | 15 papers | Pending |
 | 4 | [Immuno-Oncology Combinations](tests/scenarios/scenario-04-immunooncology.md) | Checkpoint combinations | 15 papers | Pending |
 | 5 | [Cardiovascular & Inflammation](tests/scenarios/scenario-05-cardiovascular.md) | Cardiology + inflammation | 14 papers | Pending |
@@ -136,6 +136,19 @@ See [tests/MANUAL_TEST_SCENARIOS.md](tests/MANUAL_TEST_SCENARIOS.md) for the ful
 | **Autophagy / Endocytic Pathway** | 17 | Cross-disease autophagy links (AD, PD) |
 | **Clathrin-Mediated Endocytosis in Hippocampus** | 10 | Tissue-specific CME biology |
 | **Cholesterol Synthesis in Microglia** | 8 | 2025 Nature: rs10792832 causal mechanism |
+
+### Scenario 2 Result: KRAS G12C Inhibitor Landscape
+
+![KRAS G12C Knowledge Graph](tests/scenarios/screenshots/scenario-02-graph.png)
+
+*108 nodes, 307 links, 4 auto-labeled communities. Full results: [scenario-02-kras-g12c-landscape.md](tests/scenarios/scenario-02-kras-g12c-landscape.md)*
+
+| Community | Members | Theme |
+|---|---|---|
+| **EGFR Inhibitors / Adavosertib / Panitumumab** | 25 | Combination strategies and CRC responses |
+| **Adagrasib / Immune Checkpoint Inhibitors / BRAF** | 20 | Adagrasib clinical profile and bypass resistance |
+| **RAS Signaling / RAF/MEK Pathway** | 17 | Mechanistic biology and emerging targets |
+| **Pancreatic Ductal Adenocarcinoma / PD-1** | 10 | Disease indications and next-gen RAS-ON inhibitors |
 
 ### Automating Test Runs
 

@@ -1,0 +1,235 @@
+{
+  "document_id": "pmid_34953682",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "adagrasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule"
+      },
+      "confidence": 0.9,
+      "context": "Resistance to adagrasib indicated that half present multiple KRas mutations"
+    },
+    {
+      "name": "KRAS",
+      "entity_type": "GENE",
+      "attributes": {
+        "organism": "Homo sapiens"
+      },
+      "confidence": 0.99,
+      "context": "KRasG12C driver mutation emerges in different cancers"
+    },
+    {
+      "name": "KRAS G12C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "variant_type": "missense",
+        "gene": "KRAS"
+      },
+      "confidence": 0.99,
+      "context": "The common KRasG12C driver mutation emerges in different cancers"
+    },
+    {
+      "name": "non-small cell lung cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Carcinoma, Non-Small-Cell Lung"
+      },
+      "confidence": 0.95,
+      "context": "Most occur in NSCLC"
+    },
+    {
+      "name": "colorectal cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Colorectal Neoplasms"
+      },
+      "confidence": 0.95,
+      "context": "some in CRC"
+    },
+    {
+      "name": "pancreatic ductal adenocarcinoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Carcinoma, Pancreatic Ductal"
+      },
+      "confidence": 0.95,
+      "context": "pancreatic ductal carcinoma"
+    },
+    {
+      "name": "MET",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "MET amplification"
+    },
+    {
+      "name": "NRAS",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "emerging driver mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "name": "BRAF",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "emerging driver mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "name": "MAP2K1",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "emerging driver mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "name": "RET",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "emerging driver mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "name": "ALK",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "gene fusion events in ALK, RET, BRAF, RAF1, and FGFR3"
+    },
+    {
+      "name": "RAF1",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "gene fusion events in ALK, RET, BRAF, RAF1, and FGFR3"
+    },
+    {
+      "name": "FGFR3",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "gene fusion events in ALK, RET, BRAF, RAF1, and FGFR3"
+    },
+    {
+      "name": "NF1",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "loss-of-function mutations in NF1 and PTEN"
+    },
+    {
+      "name": "PTEN",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "loss-of-function mutations in NF1 and PTEN"
+    },
+    {
+      "name": "Nussinov et al. 2021",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "34953682",
+        "journal": "Drug Resistance Updates",
+        "year": 2021
+      },
+      "confidence": 0.99,
+      "context": "Nussinov et al., Drug Resistance Updates (2021)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.9,
+      "evidence": "Resistance to adagrasib indicated that half present multiple KRas mutations and allele amplification"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.95,
+      "evidence": "Most occur in NSCLC"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "colorectal cancer",
+      "confidence": 0.95,
+      "evidence": "some in CRC"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "pancreatic ductal adenocarcinoma",
+      "confidence": 0.95,
+      "evidence": "pancreatic ductal carcinoma"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "MET",
+      "target_entity": "adagrasib",
+      "confidence": 0.93,
+      "evidence": "Redundant pathways included MET amplification"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "NRAS",
+      "target_entity": "adagrasib",
+      "confidence": 0.93,
+      "evidence": "emerging driver mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "BRAF",
+      "target_entity": "adagrasib",
+      "confidence": 0.93,
+      "evidence": "emerging driver mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "MAP2K1",
+      "target_entity": "adagrasib",
+      "confidence": 0.93,
+      "evidence": "emerging driver mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "RET",
+      "target_entity": "adagrasib",
+      "confidence": 0.93,
+      "evidence": "emerging driver mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "NF1",
+      "target_entity": "adagrasib",
+      "confidence": 0.93,
+      "evidence": "loss-of-function mutations in NF1 and PTEN"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "PTEN",
+      "target_entity": "adagrasib",
+      "confidence": 0.93,
+      "evidence": "loss-of-function mutations in NF1 and PTEN"
+    },
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.99,
+      "evidence": "KRasG12C driver mutation"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T23:29:15.139266+00:00",
+  "error": null
+}

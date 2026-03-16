@@ -1,0 +1,265 @@
+review_threshold: 0.7
+relations:
+- source_id: pathway:rtk_signaling
+  source_name: RTK signaling
+  target_id: compound:adagrasib
+  target_name: adagrasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.85
+  evidence: activation of receptor tyrosine kinases (RTK), bypass of KRAS dependence
+  source_document: pmid_31658955
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: mechanism_of_action:kras_nucleotide_cycling
+  source_name: KRAS nucleotide cycling
+  target_id: compound:adagrasib
+  target_name: adagrasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.85
+  evidence: mechanisms implicated in limiting antitumor activity including KRAS nucleotide
+    cycling
+  source_document: pmid_31658955
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: sequence_variant:kras_g12d
+  source_name: KRAS G12D
+  target_id: compound:adagrasib
+  target_name: adagrasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.95
+  evidence: Acquired KRAS alterations included G12D/R/V/W
+  source_document: pmid_34161704
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: sequence_variant:kras_g12v
+  source_name: KRAS G12V
+  target_id: compound:adagrasib
+  target_name: adagrasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.95
+  evidence: Acquired KRAS alterations included G12D/R/V/W
+  source_document: pmid_34161704
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: sequence_variant:kras_g13d
+  source_name: KRAS G13D
+  target_id: compound:adagrasib
+  target_name: adagrasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.95
+  evidence: Acquired KRAS alterations included G12D/R/V/W, G13D, Q61H
+  source_document: pmid_34161704
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: sequence_variant:kras_q61h
+  source_name: KRAS Q61H
+  target_id: compound:adagrasib
+  target_name: adagrasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.95
+  evidence: Q61H, R68S, H95D/Q/R, Y96C
+  source_document: pmid_34161704
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: sequence_variant:kras_r68s
+  source_name: KRAS R68S
+  target_id: compound:sotorasib
+  target_name: sotorasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.93
+  evidence: R68S (alters interface)
+  source_document: structural_sotorasib
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: sequence_variant:kras_h95d
+  source_name: KRAS H95D
+  target_id: compound:adagrasib
+  target_name: adagrasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.95
+  evidence: H95D/Q/R
+  source_document: pmid_34161704
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: sequence_variant:kras_h95q
+  source_name: KRAS H95Q
+  target_id: compound:sotorasib
+  target_name: sotorasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.93
+  evidence: H95Q/R (affects cavity geometry)
+  source_document: structural_sotorasib
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: sequence_variant:kras_y96c
+  source_name: KRAS Y96C
+  target_id: compound:adagrasib
+  target_name: adagrasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.95
+  evidence: Y96C
+  source_document: pmid_34161704
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: gene:met
+  source_name: MET
+  target_id: compound:adagrasib
+  target_name: adagrasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.9951
+  evidence: Redundant pathways included MET amplification
+  source_document: pmid_34953682
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: gene:met
+  source_name: MET
+  target_id: compound:sotorasib
+  target_name: sotorasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.985
+  evidence: 'Bypass: MET amplification, MAPK reactivation'
+  source_document: structural_sotorasib
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: gene:nras
+  source_name: NRAS
+  target_id: compound:adagrasib
+  target_name: adagrasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.9951
+  evidence: emerging driver mutations in NRAS, BRAF, MAP2K1, and RET
+  source_document: pmid_34953682
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: gene:braf
+  source_name: BRAF
+  target_id: compound:adagrasib
+  target_name: adagrasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.9951
+  evidence: emerging driver mutations in NRAS, BRAF, MAP2K1, and RET
+  source_document: pmid_34953682
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: gene:map2k1
+  source_name: MAP2K1
+  target_id: compound:adagrasib
+  target_name: adagrasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.9951
+  evidence: emerging driver mutations in NRAS, BRAF, MAP2K1, and RET
+  source_document: pmid_34953682
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: gene:ret
+  source_name: RET
+  target_id: compound:adagrasib
+  target_name: adagrasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.9951
+  evidence: emerging driver mutations in NRAS, BRAF, MAP2K1, and RET
+  source_document: pmid_34953682
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: gene:nf1
+  source_name: NF1
+  target_id: compound:adagrasib
+  target_name: adagrasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.9951
+  evidence: loss-of-function mutations in NF1 and PTEN
+  source_document: pmid_34953682
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: gene:pten
+  source_name: PTEN
+  target_id: compound:adagrasib
+  target_name: adagrasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.9951
+  evidence: loss-of-function mutations in NF1 and PTEN
+  source_document: pmid_34953682
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: gene:egfr
+  source_name: EGFR
+  target_id: compound:sotorasib
+  target_name: sotorasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.88
+  evidence: adaptive resistance occurs due to rewiring of signaling pathways, activating
+    RTKs primarily EGFR
+  source_document: pmid_38072173
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: pathway:egfr_signaling_pathway
+  source_name: EGFR signaling pathway
+  target_id: compound:sotorasib
+  target_name: sotorasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.9
+  evidence: rapid treatment-induced resistance through increased EGFR signaling
+  source_document: pmid_35837349
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: pathway:egfr_signaling_pathway
+  source_name: EGFR signaling pathway
+  target_id: compound:adagrasib
+  target_name: adagrasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.9
+  evidence: rapid treatment-induced resistance through increased EGFR signaling
+  source_document: pmid_35837349
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: gene:stk11
+  source_name: STK11
+  target_id: protein:pd_1
+  target_name: PD-1
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.85
+  evidence: Comutations in STK11/LKB1 often co-occur with KRAS G12C, jeopardizing
+    the effect of immune checkpoint (anti-PD1/PDL1) inhibitors
+  source_document: pmid_38072173
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: mechanism_of_action:kras_gtp_loading
+  source_name: KRAS-GTP loading
+  target_id: compound:sotorasib
+  target_name: sotorasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.9
+  evidence: resistance due to increased KRAS-GTP loading
+  source_document: pmid_39215000
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: protein:wee1
+  source_name: WEE1
+  target_id: compound:sotorasib
+  target_name: sotorasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.93
+  evidence: WEE1 overexpression conferred resistance via MCL-1 upregulation
+  source_document: pmid_39725152
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: protein:mcl_1
+  source_name: MCL-1
+  target_id: compound:sotorasib
+  target_name: sotorasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.9
+  evidence: WEE1 overexpression conferred resistance via MCL-1 upregulation
+  source_document: pmid_39725152
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: sequence_variant:kras_y96d
+  source_name: KRAS Y96D
+  target_id: compound:sotorasib
+  target_name: sotorasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.93
+  evidence: Y96D (disrupts binding)
+  source_document: structural_sotorasib
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review

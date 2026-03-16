@@ -1,0 +1,1239 @@
+{
+  "generated_at": "2026-03-16T23:33:05.928980+00:00",
+  "output_dir": "/Users/umeshbhatt/code/epistract/tests/corpora/02_kras_g12c_landscape/output",
+  "stats": {
+    "files_scanned": 16,
+    "total_matches": 81,
+    "valid": 0,
+    "invalid": 75,
+    "unvalidated": 0,
+    "found": 6,
+    "by_type": {
+      "SMILES": 75,
+      "NCT_NUMBER": 6
+    },
+    "rdkit_available": true,
+    "biopython_available": true,
+    "enrichment": {
+      "entities_added": 0,
+      "relations_added": 0
+    }
+  },
+  "files": [
+    {
+      "file": "pmid_31658955.json",
+      "document_id": "pmid_31658955",
+      "matches_found": 0,
+      "results": []
+    },
+    {
+      "file": "pmid_34161704.json",
+      "document_id": "pmid_34161704",
+      "matches_found": 18,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "G12D/R/V/W",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Acquired KRAS alterations included G12D/R/V/W",
+          "validation": {
+            "valid": false,
+            "input": "G12D/R/V/W",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34161704.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "G12D/R/V/W",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Acquired KRAS alterations included G12D/R/V/W",
+          "validation": {
+            "valid": false,
+            "input": "G12D/R/V/W",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34161704.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "G12D/R/V/W",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Acquired KRAS alterations included G12D/R/V/W",
+          "validation": {
+            "valid": false,
+            "input": "G12D/R/V/W",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34161704.json",
+          "source_field": "entities[6].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "G12D/R/V/W",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Acquired KRAS alterations included G12D/R/V/W",
+          "validation": {
+            "valid": false,
+            "input": "G12D/R/V/W",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34161704.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "H95D/Q/R",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "G13D, Q61H, R68S, H95D/Q/R, Y96C",
+          "validation": {
+            "valid": false,
+            "input": "H95D/Q/R",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34161704.json",
+          "source_field": "entities[8].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "H95D/Q/R",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "G13D, Q61H, R68S, H95D/Q/R, Y96C",
+          "validation": {
+            "valid": false,
+            "input": "H95D/Q/R",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34161704.json",
+          "source_field": "entities[9].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "H95D/Q/R",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "G13D, Q61H, R68S, H95D/Q/R, Y96C",
+          "validation": {
+            "valid": false,
+            "input": "H95D/Q/R",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34161704.json",
+          "source_field": "entities[10].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "H95D/Q/R",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "H95D/Q/R, Y96C",
+          "validation": {
+            "valid": false,
+            "input": "H95D/Q/R",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34161704.json",
+          "source_field": "entities[11].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "H95D/Q/R",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "H95D/Q/R, Y96C",
+          "validation": {
+            "valid": false,
+            "input": "H95D/Q/R",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34161704.json",
+          "source_field": "entities[12].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "H95D/Q/R",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "H95D/Q/R, Y96C",
+          "validation": {
+            "valid": false,
+            "input": "H95D/Q/R",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34161704.json",
+          "source_field": "entities[13].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "H95D/Q/R",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "H95D/Q/R, Y96C",
+          "validation": {
+            "valid": false,
+            "input": "H95D/Q/R",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34161704.json",
+          "source_field": "entities[14].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03785249",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "Funded by Mirati Therapeutics; NCT03785249",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_34161704.json",
+          "source_field": "entities[29].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03785249",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "Funded by Mirati Therapeutics; NCT03785249",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_34161704.json",
+          "source_field": "relations[2].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "G12D/R/V/W",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Acquired KRAS alterations included G12D/R/V/W",
+          "validation": {
+            "valid": false,
+            "input": "G12D/R/V/W",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34161704.json",
+          "source_field": "relations[4].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "G12D/R/V/W",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Acquired KRAS alterations included G12D/R/V/W",
+          "validation": {
+            "valid": false,
+            "input": "G12D/R/V/W",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34161704.json",
+          "source_field": "relations[5].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "G12D/R/V/W",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Acquired KRAS alterations included G12D/R/V/W, G13D, Q61H",
+          "validation": {
+            "valid": false,
+            "input": "G12D/R/V/W",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34161704.json",
+          "source_field": "relations[6].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "H95D/Q/R",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Q61H, R68S, H95D/Q/R, Y96C",
+          "validation": {
+            "valid": false,
+            "input": "H95D/Q/R",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34161704.json",
+          "source_field": "relations[7].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "H95D/Q/R",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "H95D/Q/R",
+          "validation": {
+            "valid": false,
+            "input": "H95D/Q/R",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34161704.json",
+          "source_field": "relations[9].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_34607583.json",
+      "document_id": "pmid_34607583",
+      "matches_found": 3,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(MRTX849)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "adagrasib (MRTX849)",
+          "validation": {
+            "valid": false,
+            "input": "(MRTX849)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34607583.json",
+          "source_field": "entities[1].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(MRTX849)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "sotorasib (AMG 510) and adagrasib (MRTX849), were recently evaluated in phase I-III trials fo",
+          "validation": {
+            "valid": false,
+            "input": "(MRTX849)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34607583.json",
+          "source_field": "relations[0].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(MRTX849)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "sotorasib (AMG 510) and adagrasib (MRTX849), were recently evaluated in phase I-III trials fo",
+          "validation": {
+            "valid": false,
+            "input": "(MRTX849)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34607583.json",
+          "source_field": "relations[1].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_34953682.json",
+      "document_id": "pmid_34953682",
+      "matches_found": 0,
+      "results": []
+    },
+    {
+      "file": "pmid_35658005.json",
+      "document_id": "pmid_35658005",
+      "matches_found": 4,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "anti-PD-1/PD-L1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "previously treated with platinum-based chemo and anti-PD-1/PD-L1",
+          "validation": {
+            "valid": false,
+            "input": "anti-PD-1/PD-L1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35658005.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "anti-PD-1/PD-L1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "previously treated with platinum-based chemo and anti-PD-1/PD-L1",
+          "validation": {
+            "valid": false,
+            "input": "anti-PD-1/PD-L1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35658005.json",
+          "source_field": "entities[8].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "anti-PD-1/PD-L1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "anti-PD-1/PD-L1",
+          "validation": {
+            "valid": false,
+            "input": "anti-PD-1/PD-L1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35658005.json",
+          "source_field": "entities[13].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "anti-PD-1/PD-L1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "anti-PD-1/PD-L1",
+          "validation": {
+            "valid": false,
+            "input": "anti-PD-1/PD-L1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35658005.json",
+          "source_field": "entities[14].context"
+        }
+      ]
+    },
+    {
+      "file": "pmid_35837349.json",
+      "document_id": "pmid_35837349",
+      "matches_found": 8,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(AMG510)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "KRAS G12C inhibitors sotorasib (AMG510) and adagrasib (MRTX849)",
+          "validation": {
+            "valid": false,
+            "input": "(AMG510)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35837349.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(MRTX849)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": " G12C inhibitors sotorasib (AMG510) and adagrasib (MRTX849)",
+          "validation": {
+            "valid": false,
+            "input": "(MRTX849)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35837349.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(AMG510)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "KRAS G12C inhibitors sotorasib (AMG510) and adagrasib (MRTX849)",
+          "validation": {
+            "valid": false,
+            "input": "(AMG510)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35837349.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(MRTX849)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": " G12C inhibitors sotorasib (AMG510) and adagrasib (MRTX849)",
+          "validation": {
+            "valid": false,
+            "input": "(MRTX849)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35837349.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(AMG510)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "KRAS G12C inhibitors sotorasib (AMG510) and adagrasib (MRTX849)",
+          "validation": {
+            "valid": false,
+            "input": "(AMG510)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35837349.json",
+          "source_field": "relations[0].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(MRTX849)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": " G12C inhibitors sotorasib (AMG510) and adagrasib (MRTX849)",
+          "validation": {
+            "valid": false,
+            "input": "(MRTX849)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35837349.json",
+          "source_field": "relations[0].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(AMG510)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "KRAS G12C inhibitors sotorasib (AMG510) and adagrasib (MRTX849)",
+          "validation": {
+            "valid": false,
+            "input": "(AMG510)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35837349.json",
+          "source_field": "relations[1].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(MRTX849)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": " G12C inhibitors sotorasib (AMG510) and adagrasib (MRTX849)",
+          "validation": {
+            "valid": false,
+            "input": "(MRTX849)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35837349.json",
+          "source_field": "relations[1].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_36764316.json",
+      "document_id": "pmid_36764316",
+      "matches_found": 0,
+      "results": []
+    },
+    {
+      "file": "pmid_37101895.json",
+      "document_id": "pmid_37101895",
+      "matches_found": 6,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(sotorasib)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "CodeBreaK 200 phase III: PFS 5.6 months (sotorasib) vs 4.5 months (docetaxel)",
+          "validation": {
+            "valid": false,
+            "input": "(sotorasib)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_37101895.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(docetaxel)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ase III: PFS 5.6 months (sotorasib) vs 4.5 months (docetaxel)",
+          "validation": {
+            "valid": false,
+            "input": "(docetaxel)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_37101895.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(sotorasib)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "PFS 5.6 months (sotorasib) vs 4.5 months (docetaxel)",
+          "validation": {
+            "valid": false,
+            "input": "(sotorasib)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_37101895.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(docetaxel)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "PFS 5.6 months (sotorasib) vs 4.5 months (docetaxel)",
+          "validation": {
+            "valid": false,
+            "input": "(docetaxel)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_37101895.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(sotorasib)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "CodeBreaK 200 phase III: PFS 5.6 months (sotorasib) vs 4.5 months (docetaxel)",
+          "validation": {
+            "valid": false,
+            "input": "(sotorasib)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_37101895.json",
+          "source_field": "relations[4].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(docetaxel)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ase III: PFS 5.6 months (sotorasib) vs 4.5 months (docetaxel)",
+          "validation": {
+            "valid": false,
+            "input": "(docetaxel)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_37101895.json",
+          "source_field": "relations[4].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_38072173.json",
+      "document_id": "pmid_38072173",
+      "matches_found": 6,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "STK11/LKB1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Comutations in STK11/LKB1 often co-occur with KRAS G12C",
+          "validation": {
+            "valid": false,
+            "input": "STK11/LKB1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38072173.json",
+          "source_field": "entities[14].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(anti-PD1/PDL1)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "immune checkpoint (anti-PD1/PDL1) inhibitors",
+          "validation": {
+            "valid": false,
+            "input": "(anti-PD1/PDL1)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38072173.json",
+          "source_field": "entities[15].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(anti-PD1/PDL1)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "immune checkpoint (anti-PD1/PDL1) inhibitors",
+          "validation": {
+            "valid": false,
+            "input": "(anti-PD1/PDL1)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38072173.json",
+          "source_field": "entities[16].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "STK11/LKB1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Comutations in STK11/LKB1 often co-occur with KRAS G12C",
+          "validation": {
+            "valid": false,
+            "input": "STK11/LKB1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38072173.json",
+          "source_field": "relations[12].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "STK11/LKB1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Comutations in STK11/LKB1 often co-occur with KRAS G12C, jeopardizing the e",
+          "validation": {
+            "valid": false,
+            "input": "STK11/LKB1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38072173.json",
+          "source_field": "relations[13].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(anti-PD1/PDL1)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "12C, jeopardizing the effect of immune checkpoint (anti-PD1/PDL1) inhibitors",
+          "validation": {
+            "valid": false,
+            "input": "(anti-PD1/PDL1)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38072173.json",
+          "source_field": "relations[13].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_38625662.json",
+      "document_id": "pmid_38625662",
+      "matches_found": 0,
+      "results": []
+    },
+    {
+      "file": "pmid_39215000.json",
+      "document_id": "pmid_39215000",
+      "matches_found": 4,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(RM-029)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ex KRASG12C-selective covalent inhibitor RMC-4998 (RM-029)",
+          "validation": {
+            "valid": false,
+            "input": "(RM-029)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_39215000.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "KRASG12C(ON)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "clinical stage KRASG12C(ON) inhibitor RMC-6291",
+          "validation": {
+            "valid": false,
+            "input": "KRASG12C(ON)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_39215000.json",
+          "source_field": "entities[6].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "KRASG12C(ON)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "clinical stage KRASG12C(ON) inhibitor RMC-6291",
+          "validation": {
+            "valid": false,
+            "input": "KRASG12C(ON)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_39215000.json",
+          "source_field": "relations[3].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "KRASG12C(OFF)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "RMC-6291 alone or in combination with KRASG12C(OFF) drugs can circumvent resistance",
+          "validation": {
+            "valid": false,
+            "input": "KRASG12C(OFF)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_39215000.json",
+          "source_field": "relations[11].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_39337530.json",
+      "document_id": "pmid_39337530",
+      "matches_found": 0,
+      "results": []
+    },
+    {
+      "file": "pmid_39725152.json",
+      "document_id": "pmid_39725152",
+      "matches_found": 3,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "inhibitor)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "identified adavosertib (WEE1 inhibitor) as combination partner of sotorasib",
+          "validation": {
+            "valid": false,
+            "input": "inhibitor)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_39725152.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "inhibitor)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "identified adavosertib (WEE1 inhibitor) as combination partner of sotorasib",
+          "validation": {
+            "valid": false,
+            "input": "inhibitor)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_39725152.json",
+          "source_field": "relations[2].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "inhibitor)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "identified adavosertib (WEE1 inhibitor) as combination partner of sotorasib",
+          "validation": {
+            "valid": false,
+            "input": "inhibitor)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_39725152.json",
+          "source_field": "relations[5].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_39732595.json",
+      "document_id": "pmid_39732595",
+      "matches_found": 0,
+      "results": []
+    },
+    {
+      "file": "pmid_40116975.json",
+      "document_id": "pmid_40116975",
+      "matches_found": 0,
+      "results": []
+    },
+    {
+      "file": "structural_sotorasib.json",
+      "document_id": "structural_sotorasib",
+      "matches_found": 29,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "Lumakras)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Sotorasib (AMG 510, Lumakras) is a first-in-class KRAS G12C covalent inhibitor",
+          "validation": {
+            "valid": false,
+            "input": "Lumakras)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(UniProt",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Target: KRAS protein (UniProt: P01116)",
+          "validation": {
+            "valid": false,
+            "input": "(UniProt",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "entities[1].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(disrupts",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Y96D (disrupts binding)",
+          "validation": {
+            "valid": false,
+            "input": "(disrupts",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "entities[3].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "binding)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Y96D (disrupts binding)",
+          "validation": {
+            "valid": false,
+            "input": "binding)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "entities[3].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "interface)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "R68S (alters interface)",
+          "validation": {
+            "valid": false,
+            "input": "interface)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(affects",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "H95Q/R (affects cavity geometry)",
+          "validation": {
+            "valid": false,
+            "input": "(affects",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "geometry)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "H95Q/R (affects cavity geometry)",
+          "validation": {
+            "valid": false,
+            "input": "geometry)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT03600883)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "CodeBreaK 100 (NCT03600883): Phase I/II, ORR 37.1%, PFS 6.8 months",
+          "validation": {
+            "valid": false,
+            "input": "(NCT03600883)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "entities[11].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03600883",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "CodeBreaK 100 (NCT03600883): Phase I/II, ORR 37.1%, PFS 6.8 months",
+          "validation": null,
+          "status": "found",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "entities[11].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT04303780)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "CodeBreaK 200 (NCT04303780): Phase III vs docetaxel, PFS HR 0.66",
+          "validation": {
+            "valid": false,
+            "input": "(NCT04303780)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "entities[12].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT04303780",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "CodeBreaK 200 (NCT04303780): Phase III vs docetaxel, PFS HR 0.66",
+          "validation": null,
+          "status": "found",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "entities[12].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "inhibition)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "EC50: 38 nM (H358 cells, p-ERK inhibition)",
+          "validation": {
+            "valid": false,
+            "input": "inhibition)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "entities[15].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "inhibition)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "EC50: 38 nM (H358 cells, p-ERK inhibition)",
+          "validation": {
+            "valid": false,
+            "input": "inhibition)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "entities[16].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "inhibition)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "EC50: 38 nM (H358 cells, p-ERK inhibition)",
+          "validation": {
+            "valid": false,
+            "input": "inhibition)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "entities[17].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT03600883)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "CodeBreaK 100 (NCT03600883): Phase I/II, ORR 37.1%, PFS 6.8 months",
+          "validation": {
+            "valid": false,
+            "input": "(NCT03600883)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "relations[3].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03600883",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "CodeBreaK 100 (NCT03600883): Phase I/II, ORR 37.1%, PFS 6.8 months",
+          "validation": null,
+          "status": "found",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "relations[3].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT04303780)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "CodeBreaK 200 (NCT04303780): Phase III vs docetaxel, PFS HR 0.66",
+          "validation": {
+            "valid": false,
+            "input": "(NCT04303780)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "relations[4].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT04303780",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "CodeBreaK 200 (NCT04303780): Phase III vs docetaxel, PFS HR 0.66",
+          "validation": null,
+          "status": "found",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "relations[4].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(disrupts",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Y96D (disrupts binding)",
+          "validation": {
+            "valid": false,
+            "input": "(disrupts",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "relations[7].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "binding)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Y96D (disrupts binding)",
+          "validation": {
+            "valid": false,
+            "input": "binding)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "relations[7].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "interface)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "R68S (alters interface)",
+          "validation": {
+            "valid": false,
+            "input": "interface)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "relations[8].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(affects",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "H95Q/R (affects cavity geometry)",
+          "validation": {
+            "valid": false,
+            "input": "(affects",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "relations[9].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "geometry)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "H95Q/R (affects cavity geometry)",
+          "validation": {
+            "valid": false,
+            "input": "geometry)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "relations[9].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "inhibition)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "EC50: 38 nM (H358 cells, p-ERK inhibition)",
+          "validation": {
+            "valid": false,
+            "input": "inhibition)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "relations[12].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(disrupts",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Resistance: Y96D (disrupts binding)",
+          "validation": {
+            "valid": false,
+            "input": "(disrupts",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "relations[14].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "binding)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Resistance: Y96D (disrupts binding)",
+          "validation": {
+            "valid": false,
+            "input": "binding)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "relations[14].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "interface)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "R68S (alters interface)",
+          "validation": {
+            "valid": false,
+            "input": "interface)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "relations[15].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(affects",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "H95Q/R (affects cavity geometry)",
+          "validation": {
+            "valid": false,
+            "input": "(affects",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "relations[16].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "geometry)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "H95Q/R (affects cavity geometry)",
+          "validation": {
+            "valid": false,
+            "input": "geometry)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_sotorasib.json",
+          "source_field": "relations[16].evidence"
+        }
+      ]
+    }
+  ]
+}

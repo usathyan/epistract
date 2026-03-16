@@ -1,0 +1,284 @@
+{
+  "document_id": "pmid_38072173",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "KRAS G12C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "mutation": "G12C"
+      },
+      "confidence": 0.98,
+      "context": "KRAS G12C mutations in NSCLC partially respond to KRAS G12C covalent inhibitors"
+    },
+    {
+      "name": "KRAS",
+      "entity_type": "GENE",
+      "attributes": {
+        "symbol": "KRAS"
+      },
+      "confidence": 0.99,
+      "context": "KRAS G12C mutations in NSCLC"
+    },
+    {
+      "name": "non-small cell lung cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "NSCLC"
+      },
+      "confidence": 0.99,
+      "context": "KRAS G12C-mutant driven non-small cell lung cancer (NSCLC)"
+    },
+    {
+      "name": "sotorasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "mechanism": "KRAS G12C covalent inhibitor"
+      },
+      "confidence": 0.99,
+      "context": "Treatment with sotorasib triggers the MRAS:SHOC2:PP1C trimeric complex"
+    },
+    {
+      "name": "EGFR",
+      "entity_type": "GENE",
+      "attributes": {
+        "role": "receptor tyrosine kinase"
+      },
+      "confidence": 0.95,
+      "context": "activating RTKs primarily EGFR"
+    },
+    {
+      "name": "MET",
+      "entity_type": "GENE",
+      "attributes": {
+        "role": "receptor tyrosine kinase"
+      },
+      "confidence": 0.9,
+      "context": "activating RTKs primarily EGFR, also MET and ligands"
+    },
+    {
+      "name": "MRAS",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Treatment with sotorasib triggers the MRAS:SHOC2:PP1C trimeric complex"
+    },
+    {
+      "name": "SHOC2",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "MRAS:SHOC2:PP1C trimeric complex"
+    },
+    {
+      "name": "PP1C",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "MRAS:SHOC2:PP1C trimeric complex"
+    },
+    {
+      "name": "MRAS:SHOC2:PP1C complex",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "type": "trimeric complex"
+      },
+      "confidence": 0.92,
+      "context": "Treatment with sotorasib triggers the MRAS:SHOC2:PP1C trimeric complex"
+    },
+    {
+      "name": "YAP",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "Hippo-dependent pathways, leading to YAP activation"
+    },
+    {
+      "name": "Hippo pathway",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "alterations in Scribble and Hippo-dependent pathways"
+    },
+    {
+      "name": "STAT3",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "STAT3 signaling intertwined with MRAS activation"
+    },
+    {
+      "name": "VCP",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "valosin containing protein"
+      },
+      "confidence": 0.92,
+      "context": "reactivation of the MRAS complex is carried out by valosin containing protein (VCP)"
+    },
+    {
+      "name": "STK11",
+      "entity_type": "GENE",
+      "attributes": {
+        "alias": "LKB1"
+      },
+      "confidence": 0.95,
+      "context": "Comutations in STK11/LKB1 often co-occur with KRAS G12C"
+    },
+    {
+      "name": "PD-1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "role": "immune checkpoint"
+      },
+      "confidence": 0.9,
+      "context": "immune checkpoint (anti-PD1/PDL1) inhibitors"
+    },
+    {
+      "name": "PD-L1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "role": "immune checkpoint ligand"
+      },
+      "confidence": 0.9,
+      "context": "immune checkpoint (anti-PD1/PDL1) inhibitors"
+    },
+    {
+      "name": "Scribble pathway",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "alterations in Scribble and Hippo-dependent pathways"
+    },
+    {
+      "name": "STAT3 signaling",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.88,
+      "context": "STAT3 signaling intertwined with MRAS activation"
+    },
+    {
+      "name": "adaptive resistance",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "Early adaptive resistance occurs due to rewiring of signaling pathways"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.99,
+      "evidence": "KRAS G12C mutations in NSCLC"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.98,
+      "evidence": "KRAS G12C-mutant driven non-small cell lung cancer"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.95,
+      "evidence": "KRAS G12C covalent inhibitors"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "sotorasib",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.9,
+      "evidence": "KRAS G12C mutations in NSCLC partially respond to KRAS G12C covalent inhibitors"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "EGFR",
+      "target_entity": "sotorasib",
+      "confidence": 0.88,
+      "evidence": "adaptive resistance occurs due to rewiring of signaling pathways, activating RTKs primarily EGFR"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "MET",
+      "target_entity": "sotorasib",
+      "confidence": 0.85,
+      "evidence": "activating RTKs primarily EGFR, also MET"
+    },
+    {
+      "relation_type": "FORMS_COMPLEX_WITH",
+      "source_entity": "MRAS",
+      "target_entity": "SHOC2",
+      "confidence": 0.95,
+      "evidence": "MRAS:SHOC2:PP1C trimeric complex"
+    },
+    {
+      "relation_type": "FORMS_COMPLEX_WITH",
+      "source_entity": "SHOC2",
+      "target_entity": "PP1C",
+      "confidence": 0.95,
+      "evidence": "MRAS:SHOC2:PP1C trimeric complex"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "sotorasib",
+      "target_entity": "MRAS:SHOC2:PP1C complex",
+      "confidence": 0.88,
+      "evidence": "Treatment with sotorasib triggers the MRAS:SHOC2:PP1C trimeric complex"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "YAP",
+      "target_entity": "Hippo pathway",
+      "confidence": 0.9,
+      "evidence": "Hippo-dependent pathways, leading to YAP activation"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "Hippo pathway",
+      "target_entity": "YAP",
+      "confidence": 0.88,
+      "evidence": "Hippo-dependent pathways, leading to YAP activation"
+    },
+    {
+      "relation_type": "REGULATES_EXPRESSION",
+      "source_entity": "VCP",
+      "target_entity": "MRAS:SHOC2:PP1C complex",
+      "confidence": 0.88,
+      "evidence": "reactivation of the MRAS complex is carried out by valosin containing protein (VCP)"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "STK11",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.92,
+      "evidence": "Comutations in STK11/LKB1 often co-occur with KRAS G12C"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "STK11",
+      "target_entity": "PD-1",
+      "confidence": 0.85,
+      "evidence": "Comutations in STK11/LKB1 often co-occur with KRAS G12C, jeopardizing the effect of immune checkpoint (anti-PD1/PDL1) inhibitors"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "STAT3",
+      "target_entity": "STAT3 signaling",
+      "confidence": 0.9,
+      "evidence": "STAT3 signaling intertwined with MRAS activation"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T23:29:32.333364+00:00",
+  "error": null
+}

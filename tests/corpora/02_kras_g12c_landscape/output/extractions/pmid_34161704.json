@@ -1,0 +1,460 @@
+{
+  "document_id": "pmid_34161704",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "adagrasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule"
+      },
+      "confidence": 0.95,
+      "context": "KRAS inhibitors adagrasib and sotorasib"
+    },
+    {
+      "name": "sotorasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule"
+      },
+      "confidence": 0.95,
+      "context": "KRAS inhibitors adagrasib and sotorasib"
+    },
+    {
+      "name": "KRAS",
+      "entity_type": "GENE",
+      "attributes": {
+        "organism": "Homo sapiens"
+      },
+      "confidence": 0.99,
+      "context": "KRASG12C-mutant cancers treated with adagrasib"
+    },
+    {
+      "name": "KRAS G12C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "variant_type": "missense",
+        "gene": "KRAS"
+      },
+      "confidence": 0.99,
+      "context": "cancers harboring KRAS G12C"
+    },
+    {
+      "name": "KRAS G12D",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "variant_type": "missense",
+        "gene": "KRAS"
+      },
+      "confidence": 0.95,
+      "context": "Acquired KRAS alterations included G12D/R/V/W"
+    },
+    {
+      "name": "KRAS G12R",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "variant_type": "missense",
+        "gene": "KRAS"
+      },
+      "confidence": 0.95,
+      "context": "Acquired KRAS alterations included G12D/R/V/W"
+    },
+    {
+      "name": "KRAS G12V",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "variant_type": "missense",
+        "gene": "KRAS"
+      },
+      "confidence": 0.95,
+      "context": "Acquired KRAS alterations included G12D/R/V/W"
+    },
+    {
+      "name": "KRAS G12W",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "variant_type": "missense",
+        "gene": "KRAS"
+      },
+      "confidence": 0.95,
+      "context": "Acquired KRAS alterations included G12D/R/V/W"
+    },
+    {
+      "name": "KRAS G13D",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "variant_type": "missense",
+        "gene": "KRAS"
+      },
+      "confidence": 0.95,
+      "context": "G13D, Q61H, R68S, H95D/Q/R, Y96C"
+    },
+    {
+      "name": "KRAS Q61H",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "variant_type": "missense",
+        "gene": "KRAS"
+      },
+      "confidence": 0.95,
+      "context": "G13D, Q61H, R68S, H95D/Q/R, Y96C"
+    },
+    {
+      "name": "KRAS R68S",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "variant_type": "missense",
+        "gene": "KRAS"
+      },
+      "confidence": 0.95,
+      "context": "G13D, Q61H, R68S, H95D/Q/R, Y96C"
+    },
+    {
+      "name": "KRAS H95D",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "variant_type": "missense",
+        "gene": "KRAS"
+      },
+      "confidence": 0.95,
+      "context": "H95D/Q/R, Y96C"
+    },
+    {
+      "name": "KRAS H95Q",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "variant_type": "missense",
+        "gene": "KRAS"
+      },
+      "confidence": 0.95,
+      "context": "H95D/Q/R, Y96C"
+    },
+    {
+      "name": "KRAS H95R",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "variant_type": "missense",
+        "gene": "KRAS"
+      },
+      "confidence": 0.95,
+      "context": "H95D/Q/R, Y96C"
+    },
+    {
+      "name": "KRAS Y96C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "variant_type": "missense",
+        "gene": "KRAS"
+      },
+      "confidence": 0.95,
+      "context": "H95D/Q/R, Y96C"
+    },
+    {
+      "name": "MET",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "MET amplification"
+    },
+    {
+      "name": "NRAS",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "activating mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "name": "BRAF",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "activating mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "name": "MAP2K1",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "activating mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "name": "RET",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "activating mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "name": "ALK",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "oncogenic fusions involving ALK, RET, BRAF, RAF1, and FGFR3"
+    },
+    {
+      "name": "RAF1",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "oncogenic fusions involving ALK, RET, BRAF, RAF1, and FGFR3"
+    },
+    {
+      "name": "FGFR3",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "oncogenic fusions involving ALK, RET, BRAF, RAF1, and FGFR3"
+    },
+    {
+      "name": "NF1",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "loss-of-function mutations in NF1 and PTEN"
+    },
+    {
+      "name": "PTEN",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "loss-of-function mutations in NF1 and PTEN"
+    },
+    {
+      "name": "non-small cell lung cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Carcinoma, Non-Small-Cell Lung"
+      },
+      "confidence": 0.95,
+      "context": "27 NSCLC"
+    },
+    {
+      "name": "colorectal cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Colorectal Neoplasms"
+      },
+      "confidence": 0.95,
+      "context": "10 CRC"
+    },
+    {
+      "name": "appendiceal cancer",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "1 appendiceal"
+    },
+    {
+      "name": "squamous cell carcinoma",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "histologic transformation to squamous-cell carcinoma"
+    },
+    {
+      "name": "NCT03785249",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT03785249",
+        "drug": "adagrasib"
+      },
+      "confidence": 0.99,
+      "context": "Funded by Mirati Therapeutics; NCT03785249"
+    },
+    {
+      "name": "Mirati Therapeutics",
+      "entity_type": "ORGANIZATION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Funded by Mirati Therapeutics"
+    },
+    {
+      "name": "histologic transformation",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "histologic transformation to squamous-cell carcinoma was observed"
+    },
+    {
+      "name": "Awad et al. 2021",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "34161704",
+        "journal": "NEJM",
+        "year": 2021
+      },
+      "confidence": 0.99,
+      "context": "Awad et al., NEJM (2021)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.95,
+      "evidence": "KRAS inhibitors adagrasib and sotorasib have shown promising activity in cancers harboring KRAS G12C"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.95,
+      "evidence": "KRAS inhibitors adagrasib and sotorasib have shown promising activity in cancers harboring KRAS G12C"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "adagrasib",
+      "target_entity": "NCT03785249",
+      "confidence": 0.99,
+      "evidence": "Funded by Mirati Therapeutics; NCT03785249"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "adagrasib",
+      "target_entity": "Mirati Therapeutics",
+      "confidence": 0.95,
+      "evidence": "Funded by Mirati Therapeutics"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "KRAS G12D",
+      "target_entity": "adagrasib",
+      "confidence": 0.95,
+      "evidence": "Acquired KRAS alterations included G12D/R/V/W"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "KRAS G12V",
+      "target_entity": "adagrasib",
+      "confidence": 0.95,
+      "evidence": "Acquired KRAS alterations included G12D/R/V/W"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "KRAS G13D",
+      "target_entity": "adagrasib",
+      "confidence": 0.95,
+      "evidence": "Acquired KRAS alterations included G12D/R/V/W, G13D, Q61H"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "KRAS Q61H",
+      "target_entity": "adagrasib",
+      "confidence": 0.95,
+      "evidence": "Q61H, R68S, H95D/Q/R, Y96C"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "KRAS Y96C",
+      "target_entity": "adagrasib",
+      "confidence": 0.95,
+      "evidence": "Y96C"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "KRAS H95D",
+      "target_entity": "adagrasib",
+      "confidence": 0.95,
+      "evidence": "H95D/Q/R"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "MET",
+      "target_entity": "adagrasib",
+      "confidence": 0.93,
+      "evidence": "Acquired bypass mechanisms included MET amplification"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "NRAS",
+      "target_entity": "adagrasib",
+      "confidence": 0.93,
+      "evidence": "activating mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "BRAF",
+      "target_entity": "adagrasib",
+      "confidence": 0.93,
+      "evidence": "activating mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "MAP2K1",
+      "target_entity": "adagrasib",
+      "confidence": 0.93,
+      "evidence": "activating mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "RET",
+      "target_entity": "adagrasib",
+      "confidence": 0.93,
+      "evidence": "activating mutations in NRAS, BRAF, MAP2K1, and RET; oncogenic fusions involving ALK, RET"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "NF1",
+      "target_entity": "adagrasib",
+      "confidence": 0.93,
+      "evidence": "loss-of-function mutations in NF1 and PTEN"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "PTEN",
+      "target_entity": "adagrasib",
+      "confidence": 0.93,
+      "evidence": "loss-of-function mutations in NF1 and PTEN"
+    },
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.99,
+      "evidence": "KRASG12C-mutant cancers"
+    },
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS G12D",
+      "confidence": 0.95,
+      "evidence": "Acquired KRAS alterations included G12D"
+    },
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS Q61H",
+      "confidence": 0.95,
+      "evidence": "Acquired KRAS alterations included Q61H"
+    },
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS Y96C",
+      "confidence": 0.95,
+      "evidence": "Y96C"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.95,
+      "evidence": "27 NSCLC"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "colorectal cancer",
+      "confidence": 0.95,
+      "evidence": "10 CRC"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T23:28:45.545033+00:00",
+  "error": null
+}
