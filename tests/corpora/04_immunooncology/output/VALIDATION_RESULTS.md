@@ -19,74 +19,74 @@
 
 | # | Source File | Entity | Type | Confidence | Source Text (verify against) | Verification |
 |---|-------------|--------|------|-----------|------------------------------|-------------|
-| 1 | `structural_nivolumab_sequence.txt` | nivolumab | COMPOUND | 0.99 | "Nivolumab (BMS-936558, MDX-1106, ONO-4538, Opdivo) is a fully human IgG4 monoclonal antibody targeting PD-1" | [x] DrugBank DB09035 confirmed |
-| 2 | `structural_nivolumab_sequence.txt` | PDCD1 | GENE | 0.99 | "TARGET: PD-1 (PDCD1 gene, UniProt: Q15116)" | [x] UniProt Q15116 confirmed |
-| 3 | `structural_nivolumab_sequence.txt` | PD-1 | PROTEIN | 0.99 | "PD-1 is a type I transmembrane receptor expressed on activated T cells, B cells, and myeloid cells" | [x] Correct receptor description |
-| 4 | `structural_nivolumab_sequence.txt` | PD-L1 | PROTEIN | 0.95 | "Binding of PD-L1 (CD274) or PD-L2 (PDCD1LG2) to PD-1 delivers inhibitory signals" | [x] CD274 alias correct |
-| 5 | `structural_nivolumab_sequence.txt` | PD-L2 | PROTEIN | 0.95 | "Binding of PD-L1 (CD274) or PD-L2 (PDCD1LG2) to PD-1 delivers inhibitory signals" | [x] PDCD1LG2 alias correct |
-| 6 | `structural_nivolumab_sequence.txt` | ipilimumab | COMPOUND | 0.90 | "nivo+ipi vs nivo vs ipi, melanoma. 5-year OS: 52% (nivo+ipi), 44% (nivo), 26% (ipi)" | [x] Anti-CTLA-4 mAb |
-| 7 | `structural_nivolumab_sequence.txt` | relatlimab | COMPOUND | 0.90 | "RELATIVITY-047 (NCT03470922): Phase II/III, nivo+relatlimab vs nivo, melanoma" | [x] Anti-LAG-3 mAb |
-| 8 | `structural_nivolumab_sequence.txt` | melanoma | DISEASE | 0.99 | "CheckMate 037 (NCT01721746): Phase III, melanoma post-CTLA-4" | [x] Correct indication |
-| 9 | `structural_nivolumab_sequence.txt` | non-small cell lung cancer | DISEASE | 0.95 | "CheckMate 227 (NCT02477826): Phase III, nivo+ipi vs chemo, NSCLC" | [x] NSCLC abbreviation correct |
-| 10 | `structural_nivolumab_sequence.txt` | PD-1/PD-L1 checkpoint pathway | MECHANISM_OF_ACTION | 0.95 | "By blocking PD-1, nivolumab prevents the inhibitory checkpoint signal, allowing T cells to maintain anti-tumor activity" | [x] Accurate MOA |
-| 11 | `structural_nivolumab_sequence.txt` | CheckMate 037 | CLINICAL_TRIAL | 0.99 | "CheckMate 037 (NCT01721746): Phase III, melanoma post-CTLA-4" | [x] NCT01721746 found |
-| 12 | `structural_nivolumab_sequence.txt` | CheckMate 067 | CLINICAL_TRIAL | 0.99 | "CheckMate 067 (NCT01844505): Phase III, nivo+ipi vs nivo vs ipi, melanoma. 5-year OS: 52% (nivo+ipi), 44% (nivo), 26% (ipi)" | [x] NCT01844505 found |
-| 13 | `structural_nivolumab_sequence.txt` | CheckMate 227 | CLINICAL_TRIAL | 0.99 | "CheckMate 227 (NCT02477826): Phase III, nivo+ipi vs chemo, NSCLC" | [x] NCT02477826 found |
-| 14 | `structural_nivolumab_sequence.txt` | RELATIVITY-047 | CLINICAL_TRIAL | 0.99 | "RELATIVITY-047 (NCT03470922): Phase II/III, nivo+relatlimab vs nivo, melanoma. PFS HR 0.75 (p=0.006)" | [x] NCT03470922 found |
-| 15 | `structural_nivolumab_sequence.txt` | PD-L1 expression | BIOMARKER | 0.95 | "PD-L1 expression (TPS >= 1% or >= 50%): predictive of nivolumab response" | [x] Standard thresholds |
-| 16 | `structural_nivolumab_sequence.txt` | TMB-high | BIOMARKER | 0.95 | "TMB-high (>= 10 mut/Mb): associated with improved response across tumor types" | [x] FDA-recognized threshold |
-| 17 | `structural_nivolumab_sequence.txt` | MSI-H/dMMR | BIOMARKER | 0.95 | "MSI-H/dMMR: FDA-approved biomarker for nivolumab in certain settings" | [x] Tissue-agnostic approval |
-| 18 | `structural_nivolumab_sequence.txt` | fatigue | ADVERSE_EVENT | 0.95 | "Most common irAEs: fatigue (26%)" | [x] Rate consistent with label |
-| 19 | `structural_nivolumab_sequence.txt` | rash | ADVERSE_EVENT | 0.95 | "rash (17%)" | [x] |
-| 20 | `structural_nivolumab_sequence.txt` | pruritus | ADVERSE_EVENT | 0.95 | "pruritus (14%)" | [x] |
-| 21 | `structural_nivolumab_sequence.txt` | diarrhea | ADVERSE_EVENT | 0.95 | "diarrhea (13%)" | [x] |
-| 22 | `structural_nivolumab_sequence.txt` | immune-mediated pneumonitis | ADVERSE_EVENT | 0.95 | "immune-mediated pneumonitis (3.1%)" | [x] Serious irAE |
-| 23 | `structural_nivolumab_sequence.txt` | immune-mediated colitis | ADVERSE_EVENT | 0.95 | "colitis (1.7%)" | [x] Serious irAE |
-| 24 | `structural_nivolumab_sequence.txt` | immune-mediated hepatitis | ADVERSE_EVENT | 0.95 | "hepatitis (1.8%)" | [x] Serious irAE |
-| 25 | `structural_nivolumab_sequence.txt` | immune-mediated nephritis | ADVERSE_EVENT | 0.95 | "nephritis (1.2%)" | [x] Serious irAE |
-| 26 | `structural_nivolumab_sequence.txt` | hypothyroidism | ADVERSE_EVENT | 0.95 | "hypothyroidism (8.0%)" | [x] Endocrinopathy |
-| 27 | `structural_nivolumab_sequence.txt` | hyperthyroidism | ADVERSE_EVENT | 0.95 | "hyperthyroidism (3.0%)" | [x] Endocrinopathy |
-| 28 | `structural_nivolumab_sequence.txt` | T cells | CELL_OR_TISSUE | 0.90 | "expressed on activated T cells, B cells, and myeloid cells" | [x] |
-| 29 | `structural_nivolumab_sequence.txt` | nivolumab VH | PROTEIN_DOMAIN | 0.90 | "Heavy Chain Variable Region (VH): QVQLVESGGG..." | [x] IgG4 VH framework |
-| 30 | `structural_nivolumab_sequence.txt` | nivolumab VL | PROTEIN_DOMAIN | 0.90 | "Light Chain Variable Region (VL): EIVLTQSPATL..." | [x] Kappa VL framework |
-| 31 | `structural_nivolumab_sequence.txt` | peptide_10aa | PEPTIDE_SEQUENCE | 1.00 | "RELATIVITY-047 (NCT03470922)..." — false positive, "RELATIVITY" parsed as amino acids | [ ] False positive — trial name, not a peptide |
-| 32 | `structural_nivolumab_sequence.txt` | peptide_113aa | PEPTIDE_SEQUENCE | 1.00 | "Heavy Chain Variable Region (VH): QVQLVESGGG..." (MW 12519.86 Da) | [x] Valid VH sequence |
-| 33 | `structural_nivolumab_sequence.txt` | peptide_107aa | PEPTIDE_SEQUENCE | 1.00 | "Light Chain Variable Region (VL): EIVLTQSPATL..." (MW 11626.80 Da) | [x] Valid VL sequence |
+| 1 | `structural_nivolumab_sequence.txt:5` | nivolumab | COMPOUND | 0.99 | "Nivolumab (BMS-936558, MDX-1106, ONO-4538, Opdivo) is a fully human IgG4 monoclonal antibody targeting PD-1" | [x] DrugBank DB09035 confirmed |
+| 2 | `structural_nivolumab_sequence.txt:27` | PDCD1 | GENE | 0.99 | "TARGET: PD-1 (PDCD1 gene, UniProt: Q15116)" | [x] UniProt Q15116 confirmed |
+| 3 | `structural_nivolumab_sequence.txt:28` | PD-1 | PROTEIN | 0.99 | "PD-1 is a type I transmembrane receptor expressed on activated T cells, B cells, and myeloid cells" | [x] Correct receptor description |
+| 4 | `structural_nivolumab_sequence.txt:29` | PD-L1 | PROTEIN | 0.95 | "Binding of PD-L1 (CD274) or PD-L2 (PDCD1LG2) to PD-1 delivers inhibitory signals" | [x] CD274 alias correct |
+| 5 | `structural_nivolumab_sequence.txt:29` | PD-L2 | PROTEIN | 0.95 | "Binding of PD-L1 (CD274) or PD-L2 (PDCD1LG2) to PD-1 delivers inhibitory signals" | [x] PDCD1LG2 alias correct |
+| 6 | `structural_nivolumab_sequence.txt:42` | ipilimumab | COMPOUND | 0.90 | "nivo+ipi vs nivo vs ipi, melanoma. 5-year OS: 52% (nivo+ipi), 44% (nivo), 26% (ipi)" | [x] Anti-CTLA-4 mAb |
+| 7 | `structural_nivolumab_sequence.txt:45` | relatlimab | COMPOUND | 0.90 | "RELATIVITY-047 (NCT03470922): Phase II/III, nivo+relatlimab vs nivo, melanoma" | [x] Anti-LAG-3 mAb |
+| 8 | `structural_nivolumab_sequence.txt:41` | melanoma | DISEASE | 0.99 | "CheckMate 037 (NCT01721746): Phase III, melanoma post-CTLA-4" | [x] Correct indication |
+| 9 | `structural_nivolumab_sequence.txt:44` | non-small cell lung cancer | DISEASE | 0.95 | "CheckMate 227 (NCT02477826): Phase III, nivo+ipi vs chemo, NSCLC" | [x] NSCLC abbreviation correct |
+| 10 | `structural_nivolumab_sequence.txt:35` | PD-1/PD-L1 checkpoint pathway | MECHANISM_OF_ACTION | 0.95 | "By blocking PD-1, nivolumab prevents the inhibitory checkpoint signal, allowing T cells to maintain anti-tumor activity" | [x] Accurate MOA |
+| 11 | `structural_nivolumab_sequence.txt:41` | CheckMate 037 | CLINICAL_TRIAL | 0.99 | "CheckMate 037 (NCT01721746): Phase III, melanoma post-CTLA-4" | [x] NCT01721746 found |
+| 12 | `structural_nivolumab_sequence.txt:42` | CheckMate 067 | CLINICAL_TRIAL | 0.99 | "CheckMate 067 (NCT01844505): Phase III, nivo+ipi vs nivo vs ipi, melanoma. 5-year OS: 52% (nivo+ipi), 44% (nivo), 26% (ipi)" | [x] NCT01844505 found |
+| 13 | `structural_nivolumab_sequence.txt:44` | CheckMate 227 | CLINICAL_TRIAL | 0.99 | "CheckMate 227 (NCT02477826): Phase III, nivo+ipi vs chemo, NSCLC" | [x] NCT02477826 found |
+| 14 | `structural_nivolumab_sequence.txt:45` | RELATIVITY-047 | CLINICAL_TRIAL | 0.99 | "RELATIVITY-047 (NCT03470922): Phase II/III, nivo+relatlimab vs nivo, melanoma. PFS HR 0.75 (p=0.006)" | [x] NCT03470922 found |
+| 15 | `structural_nivolumab_sequence.txt:49` | PD-L1 expression | BIOMARKER | 0.95 | "PD-L1 expression (TPS >= 1% or >= 50%): predictive of nivolumab response" | [x] Standard thresholds |
+| 16 | `structural_nivolumab_sequence.txt:50` | TMB-high | BIOMARKER | 0.95 | "TMB-high (>= 10 mut/Mb): associated with improved response across tumor types" | [x] FDA-recognized threshold |
+| 17 | `structural_nivolumab_sequence.txt:51` | MSI-H/dMMR | BIOMARKER | 0.95 | "MSI-H/dMMR: FDA-approved biomarker for nivolumab in certain settings" | [x] Tissue-agnostic approval |
+| 18 | `structural_nivolumab_sequence.txt:54` | fatigue | ADVERSE_EVENT | 0.95 | "Most common irAEs: fatigue (26%)" | [x] Rate consistent with label |
+| 19 | `structural_nivolumab_sequence.txt:54` | rash | ADVERSE_EVENT | 0.95 | "rash (17%)" | [x] |
+| 20 | `structural_nivolumab_sequence.txt:54` | pruritus | ADVERSE_EVENT | 0.95 | "pruritus (14%)" | [x] |
+| 21 | `structural_nivolumab_sequence.txt:54` | diarrhea | ADVERSE_EVENT | 0.95 | "diarrhea (13%)" | [x] |
+| 22 | `structural_nivolumab_sequence.txt:55` | immune-mediated pneumonitis | ADVERSE_EVENT | 0.95 | "immune-mediated pneumonitis (3.1%)" | [x] Serious irAE |
+| 23 | `structural_nivolumab_sequence.txt:55` | immune-mediated colitis | ADVERSE_EVENT | 0.95 | "colitis (1.7%)" | [x] Serious irAE |
+| 24 | `structural_nivolumab_sequence.txt:55` | immune-mediated hepatitis | ADVERSE_EVENT | 0.95 | "hepatitis (1.8%)" | [x] Serious irAE |
+| 25 | `structural_nivolumab_sequence.txt:56` | immune-mediated nephritis | ADVERSE_EVENT | 0.95 | "nephritis (1.2%)" | [x] Serious irAE |
+| 26 | `structural_nivolumab_sequence.txt:56` | hypothyroidism | ADVERSE_EVENT | 0.95 | "hypothyroidism (8.0%)" | [x] Endocrinopathy |
+| 27 | `structural_nivolumab_sequence.txt:56` | hyperthyroidism | ADVERSE_EVENT | 0.95 | "hyperthyroidism (3.0%)" | [x] Endocrinopathy |
+| 28 | `structural_nivolumab_sequence.txt:28` | T cells | CELL_OR_TISSUE | 0.90 | "expressed on activated T cells, B cells, and myeloid cells" | [x] |
+| 29 | `structural_nivolumab_sequence.txt:11` | nivolumab VH | PROTEIN_DOMAIN | 0.90 | "Heavy Chain Variable Region (VH): QVQLVESGGG..." | [x] IgG4 VH framework |
+| 30 | `structural_nivolumab_sequence.txt:19` | nivolumab VL | PROTEIN_DOMAIN | 0.90 | "Light Chain Variable Region (VL): EIVLTQSPATL..." | [x] Kappa VL framework |
+| 31 | `structural_nivolumab_sequence.txt:45` | peptide_10aa | PEPTIDE_SEQUENCE | 1.00 | "RELATIVITY-047 (NCT03470922)..." — false positive, "RELATIVITY" parsed as amino acids | [ ] False positive — trial name, not a peptide |
+| 32 | `structural_nivolumab_sequence.txt:11` | peptide_113aa | PEPTIDE_SEQUENCE | 1.00 | "Heavy Chain Variable Region (VH): QVQLVESGGG..." (MW 12519.86 Da) | [x] Valid VH sequence |
+| 33 | `structural_nivolumab_sequence.txt:19` | peptide_107aa | PEPTIDE_SEQUENCE | 1.00 | "Light Chain Variable Region (VL): EIVLTQSPATL..." (MW 11626.80 Da) | [x] Valid VL sequence |
 
 ### Relations Extracted
 
 | # | Source File | Source Entity | Relation | Target Entity | Confidence | Evidence | Verification |
 |---|-------------|--------------|----------|--------------|-----------|---------|-------------|
-| 1 | `structural_nivolumab_sequence.txt` | nivolumab | BINDS_TO | PD-1 | 0.99 | "Nivolumab blocks the PD-1/PD-L1 interaction with KD = 2.6 nM (BIAcore SPR assay)" | [x] KD value consistent with literature |
-| 2 | `structural_nivolumab_sequence.txt` | nivolumab | INHIBITS | PD-1 | 0.99 | "By blocking PD-1, nivolumab prevents the inhibitory checkpoint signal" | [x] |
-| 3 | `structural_nivolumab_sequence.txt` | PDCD1 | ENCODES | PD-1 | 0.99 | "TARGET: PD-1 (PDCD1 gene, UniProt: Q15116)" | [x] |
-| 4 | `structural_nivolumab_sequence.txt` | PD-L1 | BINDS_TO | PD-1 | 0.95 | "Binding of PD-L1 (CD274) or PD-L2 (PDCD1LG2) to PD-1 delivers inhibitory signals" | [x] |
-| 5 | `structural_nivolumab_sequence.txt` | PD-L2 | BINDS_TO | PD-1 | 0.95 | "Binding of PD-L1 (CD274) or PD-L2 (PDCD1LG2) to PD-1 delivers inhibitory signals" | [x] |
-| 6 | `structural_nivolumab_sequence.txt` | nivolumab | INDICATED_FOR | melanoma | 0.95 | "CheckMate 037 (NCT01721746): Phase III, melanoma post-CTLA-4" | [x] FDA-approved indication |
-| 7 | `structural_nivolumab_sequence.txt` | nivolumab | INDICATED_FOR | non-small cell lung cancer | 0.90 | "CheckMate 227 (NCT02477826): Phase III, nivo+ipi vs chemo, NSCLC" | [x] FDA-approved indication |
-| 8 | `structural_nivolumab_sequence.txt` | nivolumab | EVALUATED_IN | CheckMate 037 | 0.99 | "CheckMate 037 (NCT01721746): Phase III, melanoma post-CTLA-4" | [x] |
-| 9 | `structural_nivolumab_sequence.txt` | nivolumab | EVALUATED_IN | CheckMate 067 | 0.99 | "CheckMate 067 (NCT01844505): Phase III, nivo+ipi vs nivo vs ipi, melanoma" | [x] |
-| 10 | `structural_nivolumab_sequence.txt` | nivolumab | EVALUATED_IN | CheckMate 227 | 0.99 | "CheckMate 227 (NCT02477826): Phase III, nivo+ipi vs chemo, NSCLC" | [x] |
-| 11 | `structural_nivolumab_sequence.txt` | nivolumab | EVALUATED_IN | RELATIVITY-047 | 0.99 | "RELATIVITY-047 (NCT03470922): Phase II/III, nivo+relatlimab vs nivo, melanoma" | [x] |
-| 12 | `structural_nivolumab_sequence.txt` | ipilimumab | EVALUATED_IN | CheckMate 067 | 0.95 | "nivo+ipi vs nivo vs ipi, melanoma" | [x] |
-| 13 | `structural_nivolumab_sequence.txt` | relatlimab | EVALUATED_IN | RELATIVITY-047 | 0.95 | "nivo+relatlimab vs nivo, melanoma" | [x] |
-| 14 | `structural_nivolumab_sequence.txt` | PD-L1 expression | PREDICTS_RESPONSE_TO | nivolumab | 0.95 | "PD-L1 expression (TPS >= 1% or >= 50%): predictive of nivolumab response" | [x] |
-| 15 | `structural_nivolumab_sequence.txt` | TMB-high | PREDICTS_RESPONSE_TO | nivolumab | 0.90 | "TMB-high (>= 10 mut/Mb): associated with improved response across tumor types" | [x] |
-| 16 | `structural_nivolumab_sequence.txt` | MSI-H/dMMR | PREDICTS_RESPONSE_TO | nivolumab | 0.95 | "MSI-H/dMMR: FDA-approved biomarker for nivolumab in certain settings" | [x] |
-| 17 | `structural_nivolumab_sequence.txt` | nivolumab | CAUSES | fatigue | 0.95 | "Most common irAEs: fatigue (26%)" | [x] |
-| 18 | `structural_nivolumab_sequence.txt` | nivolumab | CAUSES | rash | 0.95 | "rash (17%)" | [x] |
-| 19 | `structural_nivolumab_sequence.txt` | nivolumab | CAUSES | pruritus | 0.95 | "pruritus (14%)" | [x] |
-| 20 | `structural_nivolumab_sequence.txt` | nivolumab | CAUSES | diarrhea | 0.95 | "diarrhea (13%)" | [x] |
-| 21 | `structural_nivolumab_sequence.txt` | nivolumab | CAUSES | immune-mediated pneumonitis | 0.95 | "immune-mediated pneumonitis (3.1%)" | [x] |
-| 22 | `structural_nivolumab_sequence.txt` | nivolumab | CAUSES | immune-mediated colitis | 0.95 | "colitis (1.7%)" | [x] |
-| 23 | `structural_nivolumab_sequence.txt` | nivolumab | CAUSES | immune-mediated hepatitis | 0.95 | "hepatitis (1.8%)" | [x] |
-| 24 | `structural_nivolumab_sequence.txt` | nivolumab | CAUSES | immune-mediated nephritis | 0.95 | "nephritis (1.2%)" | [x] |
-| 25 | `structural_nivolumab_sequence.txt` | nivolumab | CAUSES | hypothyroidism | 0.95 | "hypothyroidism (8.0%)" | [x] |
-| 26 | `structural_nivolumab_sequence.txt` | nivolumab | CAUSES | hyperthyroidism | 0.95 | "hyperthyroidism (3.0%)" | [x] |
-| 27 | `structural_nivolumab_sequence.txt` | PD-1 | PARTICIPATES_IN | PD-1/PD-L1 checkpoint pathway | 0.95 | "nivolumab prevents the inhibitory checkpoint signal, allowing T cells to maintain anti-tumor activity" | [x] |
-| 28 | `structural_nivolumab_sequence.txt` | relatlimab | HAS_SEQUENCE | peptide_10aa | 0.95 | "RELATIVITY-047 (NCT03470922)..." | [ ] False positive — "RELATIVITY" is a trial name |
-| 29 | `structural_nivolumab_sequence.txt` | nivolumab | HAS_SEQUENCE | peptide_113aa | 0.95 | "Heavy Chain Variable Region (VH): QVQLVESGGG..." | [x] VH sequence |
-| 30 | `structural_nivolumab_sequence.txt` | nivolumab | HAS_SEQUENCE | peptide_107aa | 0.95 | "Light Chain Variable Region (VL): EIVLTQSPATL..." | [x] VL sequence |
+| 1 | `structural_nivolumab_sequence.txt:32` | nivolumab | BINDS_TO | PD-1 | 0.99 | "Nivolumab blocks the PD-1/PD-L1 interaction with KD = 2.6 nM (BIAcore SPR assay)" | [x] KD value consistent with literature |
+| 2 | `structural_nivolumab_sequence.txt:35` | nivolumab | INHIBITS | PD-1 | 0.99 | "By blocking PD-1, nivolumab prevents the inhibitory checkpoint signal" | [x] |
+| 3 | `structural_nivolumab_sequence.txt:27` | PDCD1 | ENCODES | PD-1 | 0.99 | "TARGET: PD-1 (PDCD1 gene, UniProt: Q15116)" | [x] |
+| 4 | `structural_nivolumab_sequence.txt:29` | PD-L1 | BINDS_TO | PD-1 | 0.95 | "Binding of PD-L1 (CD274) or PD-L2 (PDCD1LG2) to PD-1 delivers inhibitory signals" | [x] |
+| 5 | `structural_nivolumab_sequence.txt:29` | PD-L2 | BINDS_TO | PD-1 | 0.95 | "Binding of PD-L1 (CD274) or PD-L2 (PDCD1LG2) to PD-1 delivers inhibitory signals" | [x] |
+| 6 | `structural_nivolumab_sequence.txt:41` | nivolumab | INDICATED_FOR | melanoma | 0.95 | "CheckMate 037 (NCT01721746): Phase III, melanoma post-CTLA-4" | [x] FDA-approved indication |
+| 7 | `structural_nivolumab_sequence.txt:44` | nivolumab | INDICATED_FOR | non-small cell lung cancer | 0.90 | "CheckMate 227 (NCT02477826): Phase III, nivo+ipi vs chemo, NSCLC" | [x] FDA-approved indication |
+| 8 | `structural_nivolumab_sequence.txt:41` | nivolumab | EVALUATED_IN | CheckMate 037 | 0.99 | "CheckMate 037 (NCT01721746): Phase III, melanoma post-CTLA-4" | [x] |
+| 9 | `structural_nivolumab_sequence.txt:42` | nivolumab | EVALUATED_IN | CheckMate 067 | 0.99 | "CheckMate 067 (NCT01844505): Phase III, nivo+ipi vs nivo vs ipi, melanoma" | [x] |
+| 10 | `structural_nivolumab_sequence.txt:44` | nivolumab | EVALUATED_IN | CheckMate 227 | 0.99 | "CheckMate 227 (NCT02477826): Phase III, nivo+ipi vs chemo, NSCLC" | [x] |
+| 11 | `structural_nivolumab_sequence.txt:45` | nivolumab | EVALUATED_IN | RELATIVITY-047 | 0.99 | "RELATIVITY-047 (NCT03470922): Phase II/III, nivo+relatlimab vs nivo, melanoma" | [x] |
+| 12 | `structural_nivolumab_sequence.txt:42` | ipilimumab | EVALUATED_IN | CheckMate 067 | 0.95 | "nivo+ipi vs nivo vs ipi, melanoma" | [x] |
+| 13 | `structural_nivolumab_sequence.txt:45` | relatlimab | EVALUATED_IN | RELATIVITY-047 | 0.95 | "nivo+relatlimab vs nivo, melanoma" | [x] |
+| 14 | `structural_nivolumab_sequence.txt:49` | PD-L1 expression | PREDICTS_RESPONSE_TO | nivolumab | 0.95 | "PD-L1 expression (TPS >= 1% or >= 50%): predictive of nivolumab response" | [x] |
+| 15 | `structural_nivolumab_sequence.txt:50` | TMB-high | PREDICTS_RESPONSE_TO | nivolumab | 0.90 | "TMB-high (>= 10 mut/Mb): associated with improved response across tumor types" | [x] |
+| 16 | `structural_nivolumab_sequence.txt:51` | MSI-H/dMMR | PREDICTS_RESPONSE_TO | nivolumab | 0.95 | "MSI-H/dMMR: FDA-approved biomarker for nivolumab in certain settings" | [x] |
+| 17 | `structural_nivolumab_sequence.txt:54` | nivolumab | CAUSES | fatigue | 0.95 | "Most common irAEs: fatigue (26%)" | [x] |
+| 18 | `structural_nivolumab_sequence.txt:54` | nivolumab | CAUSES | rash | 0.95 | "rash (17%)" | [x] |
+| 19 | `structural_nivolumab_sequence.txt:54` | nivolumab | CAUSES | pruritus | 0.95 | "pruritus (14%)" | [x] |
+| 20 | `structural_nivolumab_sequence.txt:54` | nivolumab | CAUSES | diarrhea | 0.95 | "diarrhea (13%)" | [x] |
+| 21 | `structural_nivolumab_sequence.txt:55` | nivolumab | CAUSES | immune-mediated pneumonitis | 0.95 | "immune-mediated pneumonitis (3.1%)" | [x] |
+| 22 | `structural_nivolumab_sequence.txt:55` | nivolumab | CAUSES | immune-mediated colitis | 0.95 | "colitis (1.7%)" | [x] |
+| 23 | `structural_nivolumab_sequence.txt:55` | nivolumab | CAUSES | immune-mediated hepatitis | 0.95 | "hepatitis (1.8%)" | [x] |
+| 24 | `structural_nivolumab_sequence.txt:56` | nivolumab | CAUSES | immune-mediated nephritis | 0.95 | "nephritis (1.2%)" | [x] |
+| 25 | `structural_nivolumab_sequence.txt:56` | nivolumab | CAUSES | hypothyroidism | 0.95 | "hypothyroidism (8.0%)" | [x] |
+| 26 | `structural_nivolumab_sequence.txt:56` | nivolumab | CAUSES | hyperthyroidism | 0.95 | "hyperthyroidism (3.0%)" | [x] |
+| 27 | `structural_nivolumab_sequence.txt:35` | PD-1 | PARTICIPATES_IN | PD-1/PD-L1 checkpoint pathway | 0.95 | "nivolumab prevents the inhibitory checkpoint signal, allowing T cells to maintain anti-tumor activity" | [x] |
+| 28 | `structural_nivolumab_sequence.txt:45` | relatlimab | HAS_SEQUENCE | peptide_10aa | 0.95 | "RELATIVITY-047 (NCT03470922)..." | [ ] False positive — "RELATIVITY" is a trial name |
+| 29 | `structural_nivolumab_sequence.txt:11` | nivolumab | HAS_SEQUENCE | peptide_113aa | 0.95 | "Heavy Chain Variable Region (VH): QVQLVESGGG..." | [x] VH sequence |
+| 30 | `structural_nivolumab_sequence.txt:19` | nivolumab | HAS_SEQUENCE | peptide_107aa | 0.95 | "Light Chain Variable Region (VL): EIVLTQSPATL..." | [x] VL sequence |
 
 ### UAT Question Verification
 

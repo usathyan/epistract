@@ -20,37 +20,37 @@
 
 | # | Source File | Entity | Type | Confidence | Source Text (verify against) | Verification |
 |---|---|---|---|---|---|---|
-| 1 | pmid_36552756.txt | PICALM | GENE | 0.95 | "PICALM (Phosphatidylinositol binding clathrin-assembly protein) gene as the most significant genetic susceptibility locus after APOE and BIN1" | [ ] V / F / M |
-| 2 | pmid_36552756.txt | PICALM | PROTEIN | 0.95 | "PICALM is a clathrin-adaptor protein that plays a critical role in clathrin-mediated endocytosis and autophagy" | [ ] V / F / M |
-| 3 | pmid_36552756.txt | APOE | GENE | 0.95 | "the most significant genetic susceptibility locus after APOE and BIN1" | [ ] V / F / M |
-| 4 | pmid_36552756.txt | BIN1 | GENE | 0.95 | "the most significant genetic susceptibility locus after APOE and BIN1" | [ ] V / F / M |
-| 5 | pmid_36552756.txt | APP | GENE | 0.95 | "differential modulation of APP processing...by PICALM" | [ ] V / F / M |
-| 6 | pmid_36552756.txt | amyloid precursor protein | PROTEIN | 0.95 | "differential modulation of APP processing" | [ ] V / F / M |
-| 7 | pmid_36552756.txt | amyloid beta | PROTEIN | 0.95 | "A-beta transcytosis by PICALM" | [ ] V / F / M |
-| 8 | pmid_36552756.txt | tau | PROTEIN | 0.90 | "significant effects of PICALM modulation of tau pathology progression" | [ ] V / F / M |
-| 9 | pmid_36552756.txt | Alzheimer disease | DISEASE | 0.95 | "PICALM and Alzheimer's Disease" | [ ] V / F / M |
-| 10 | pmid_36552756.txt | clathrin-mediated endocytosis | PATHWAY | 0.95 | "PICALM is a clathrin-adaptor protein that plays a critical role in clathrin-mediated endocytosis" | [ ] V / F / M |
-| 11 | pmid_36552756.txt | autophagy | PATHWAY | 0.90 | "plays a critical role in clathrin-mediated endocytosis and autophagy" | [ ] V / F / M |
-| 12 | pmid_36552756.txt | PICALM | BIOMARKER | 0.85 | "effects of genetic variants of PICALM as AD-susceptibility loci have been confirmed by independent genetic studies in several distinct cohorts" | [ ] V / F / M |
-| 13 | pmid_36552756.txt | amyloid beta transcytosis | MECHANISM_OF_ACTION | 0.90 | "A-beta transcytosis by PICALM" | [ ] V / F / M |
-| 14 | pmid_36552756.txt | tau pathology | PHENOTYPE | 0.90 | "significant effects of PICALM modulation of tau pathology progression have also been evidenced in Alzheimer's disease models" | [ ] V / F / M |
+| 1 | pmid_36552756.txt:8 | PICALM | GENE | 0.95 | "PICALM (Phosphatidylinositol binding clathrin-assembly protein) gene as the most significant genetic susceptibility locus after APOE and BIN1" | [ ] V / F / M |
+| 2 | pmid_36552756.txt:8 | PICALM | PROTEIN | 0.95 | "PICALM is a clathrin-adaptor protein that plays a critical role in clathrin-mediated endocytosis and autophagy" | [ ] V / F / M |
+| 3 | pmid_36552756.txt:8 | APOE | GENE | 0.95 | "the most significant genetic susceptibility locus after APOE and BIN1" | [ ] V / F / M |
+| 4 | pmid_36552756.txt:8 | BIN1 | GENE | 0.95 | "the most significant genetic susceptibility locus after APOE and BIN1" | [ ] V / F / M |
+| 5 | pmid_36552756.txt:8 | APP | GENE | 0.95 | "differential modulation of APP processing...by PICALM" | [ ] V / F / M |
+| 6 | pmid_36552756.txt:8 | amyloid precursor protein | PROTEIN | 0.95 | "differential modulation of APP processing" | [ ] V / F / M |
+| 7 | pmid_36552756.txt:8 | amyloid beta | PROTEIN | 0.95 | "A-beta transcytosis by PICALM" | [ ] V / F / M |
+| 8 | pmid_36552756.txt:8 | tau | PROTEIN | 0.90 | "significant effects of PICALM modulation of tau pathology progression" | [ ] V / F / M |
+| 9 | pmid_36552756.txt:1 | Alzheimer disease | DISEASE | 0.95 | "PICALM and Alzheimer's Disease" | [ ] V / F / M |
+| 10 | pmid_36552756.txt:8 | clathrin-mediated endocytosis | PATHWAY | 0.95 | "PICALM is a clathrin-adaptor protein that plays a critical role in clathrin-mediated endocytosis" | [ ] V / F / M |
+| 11 | pmid_36552756.txt:8 | autophagy | PATHWAY | 0.90 | "plays a critical role in clathrin-mediated endocytosis and autophagy" | [ ] V / F / M |
+| 12 | pmid_36552756.txt:8 | PICALM | BIOMARKER | 0.85 | "effects of genetic variants of PICALM as AD-susceptibility loci have been confirmed by independent genetic studies in several distinct cohorts" | [ ] V / F / M |
+| 13 | pmid_36552756.txt:8 | amyloid beta transcytosis | MECHANISM_OF_ACTION | 0.90 | "A-beta transcytosis by PICALM" | [ ] V / F / M |
+| 14 | pmid_36552756.txt:8 | tau pathology | PHENOTYPE | 0.90 | "significant effects of PICALM modulation of tau pathology progression have also been evidenced in Alzheimer's disease models" | [ ] V / F / M |
 
 ### Relations Extracted
 
 | # | Source File | Source Entity | Relation | Target Entity | Confidence | Evidence | Verification |
 |---|---|---|---|---|---|---|---|
-| 1 | pmid_36552756.txt | PICALM | IMPLICATED_IN | Alzheimer disease | 0.95 | "PICALM gene as the most significant genetic susceptibility locus after APOE and BIN1" | [ ] V / F / M |
-| 2 | pmid_36552756.txt | APOE | IMPLICATED_IN | Alzheimer disease | 0.95 | "the most significant genetic susceptibility locus after APOE" | [ ] V / F / M |
-| 3 | pmid_36552756.txt | BIN1 | IMPLICATED_IN | Alzheimer disease | 0.95 | "the most significant genetic susceptibility locus after APOE and BIN1" | [ ] V / F / M |
-| 4 | pmid_36552756.txt | PICALM | PARTICIPATES_IN | clathrin-mediated endocytosis | 0.95 | "PICALM is a clathrin-adaptor protein that plays a critical role in clathrin-mediated endocytosis" | [ ] V / F / M |
-| 5 | pmid_36552756.txt | PICALM | PARTICIPATES_IN | autophagy | 0.90 | "plays a critical role in clathrin-mediated endocytosis and autophagy" | [ ] V / F / M |
-| 6 | pmid_36552756.txt | PICALM | REGULATES_EXPRESSION | amyloid precursor protein | 0.85 | "differential modulation of APP processing...by PICALM" | [ ] V / F / M |
-| 7 | pmid_36552756.txt | PICALM | ASSOCIATED_WITH | amyloid beta | 0.90 | "A-beta transcytosis by PICALM has been reported" | [ ] V / F / M |
-| 8 | pmid_36552756.txt | PICALM | ASSOCIATED_WITH | tau | 0.90 | "significant effects of PICALM modulation of tau pathology progression have also been evidenced in Alzheimer's disease models" | [ ] V / F / M |
-| 9 | pmid_36552756.txt | APP | ENCODES | amyloid precursor protein | 0.95 | "amyloid precursor protein (APP)" | [ ] V / F / M |
-| 10 | pmid_36552756.txt | amyloid beta | IMPLICATED_IN | Alzheimer disease | 0.90 | "A-beta transcytosis...AD risk" | [ ] V / F / M |
-| 11 | pmid_36552756.txt | tau | IMPLICATED_IN | Alzheimer disease | 0.90 | "tau pathology progression...in Alzheimer's disease models" | [ ] V / F / M |
-| 12 | pmid_36552756.txt | tau pathology | ASSOCIATED_WITH | Alzheimer disease | 0.90 | "PICALM modulation of tau pathology progression have also been evidenced in Alzheimer's disease models" | [ ] V / F / M |
+| 1 | pmid_36552756.txt:8 | PICALM | IMPLICATED_IN | Alzheimer disease | 0.95 | "PICALM gene as the most significant genetic susceptibility locus after APOE and BIN1" | [ ] V / F / M |
+| 2 | pmid_36552756.txt:8 | APOE | IMPLICATED_IN | Alzheimer disease | 0.95 | "the most significant genetic susceptibility locus after APOE" | [ ] V / F / M |
+| 3 | pmid_36552756.txt:8 | BIN1 | IMPLICATED_IN | Alzheimer disease | 0.95 | "the most significant genetic susceptibility locus after APOE and BIN1" | [ ] V / F / M |
+| 4 | pmid_36552756.txt:8 | PICALM | PARTICIPATES_IN | clathrin-mediated endocytosis | 0.95 | "PICALM is a clathrin-adaptor protein that plays a critical role in clathrin-mediated endocytosis" | [ ] V / F / M |
+| 5 | pmid_36552756.txt:8 | PICALM | PARTICIPATES_IN | autophagy | 0.90 | "plays a critical role in clathrin-mediated endocytosis and autophagy" | [ ] V / F / M |
+| 6 | pmid_36552756.txt:8 | PICALM | REGULATES_EXPRESSION | amyloid precursor protein | 0.85 | "differential modulation of APP processing...by PICALM" | [ ] V / F / M |
+| 7 | pmid_36552756.txt:8 | PICALM | ASSOCIATED_WITH | amyloid beta | 0.90 | "A-beta transcytosis by PICALM has been reported" | [ ] V / F / M |
+| 8 | pmid_36552756.txt:8 | PICALM | ASSOCIATED_WITH | tau | 0.90 | "significant effects of PICALM modulation of tau pathology progression have also been evidenced in Alzheimer's disease models" | [ ] V / F / M |
+| 9 | pmid_36552756.txt:8 | APP | ENCODES | amyloid precursor protein | 0.95 | "amyloid precursor protein (APP)" | [ ] V / F / M |
+| 10 | pmid_36552756.txt:8 | amyloid beta | IMPLICATED_IN | Alzheimer disease | 0.90 | "A-beta transcytosis...AD risk" | [ ] V / F / M |
+| 11 | pmid_36552756.txt:8 | tau | IMPLICATED_IN | Alzheimer disease | 0.90 | "tau pathology progression...in Alzheimer's disease models" | [ ] V / F / M |
+| 12 | pmid_36552756.txt:8 | tau pathology | ASSOCIATED_WITH | Alzheimer disease | 0.90 | "PICALM modulation of tau pathology progression have also been evidenced in Alzheimer's disease models" | [ ] V / F / M |
 
 ### UAT Question Verification
 
