@@ -1,1 +1,79 @@
 \section{Evaluation}
+\label{sec:evaluation}
+
+We validated epistract across five drug discovery domains, each backed by a curated corpus of 15--16 PubMed abstracts.
+Every scenario exercises a distinct facet of the biomedical schema and pipeline, from gene-centric neurogenetics to multi-indication cardiovascular medicine.
+Table~\ref{tab:scenarios} summarizes the quantitative results.
+
+\subsection{Five Evaluation Scenarios}
+
+\begin{table}[t]
+\centering
+\caption{Evaluation scenarios. Each row reports the number of input documents, extracted graph statistics, and user acceptance test (UAT) pass rate. All 19 UATs passed.}
+\label{tab:scenarios}
+\begin{tabular}{cllrrrrr}
+\toprule
+\textbf{\#} & \textbf{Domain} & \textbf{Focus} & \textbf{Docs} & \textbf{Nodes} & \textbf{Links} & \textbf{Comm.} & \textbf{UATs} \\
+\midrule
+1 & Neurogenetics       & PICALM / Alzheimer's target validation         & 15 & 149 & 457 & 6 & 4/4 \\
+2 & Oncology            & KRAS G12C inhibitor landscape                   & 16 & 108 & 307 & 4 & 5/5 \\
+3 & Rare Disease        & PKU, achondroplasia, NPC therapeutics            & 15 &  94 & 229 & 4 & 3/3 \\
+4 & Immuno-Oncology     & Checkpoint inhibitor combinations                & 16 & 132 & 361 & 5 & 4/4 \\
+5 & CV / Inflammation   & Mavacamten (HCM) + Deucravacitinib (psoriasis)  & 15 &  94 & 246 & 5 & 3/3 \\
+\midrule
+  & \textbf{Total}      & 5 domains                                        & 77 & 577 & 1{,}600 & 24 & 19/19 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Scenario~1 (Neurogenetics)} targets Alzheimer's disease genetics, centering on the PICALM locus and its network of risk genes.
+This corpus is gene-heavy and tests the pipeline's ability to resolve gene--disease associations and group co-implicated loci into coherent communities.
+
+\textbf{Scenario~2 (Oncology)} maps the KRAS G12C inhibitor landscape, including sotorasib, adagrasib, and emerging combination strategies.
+It exercises resistance-mechanism relations (\texttt{CONFERS\_RESISTANCE\_TO}) and tests whether the schema captures the interplay between sequence variants, compounds, and clinical trials.
+
+\textbf{Scenario~3 (Rare Disease)} spans three unrelated rare conditions---phenylketonuria (PKU), achondroplasia, and Niemann--Pick type~C---to stress-test schema breadth.
+It is the first scenario to exercise \texttt{CONTRAINDICATED\_FOR} and \texttt{GRANTS\_APPROVAL\_FOR}, covering both therapeutic and regulatory relationships.
+
+\textbf{Scenario~4 (Immuno-Oncology)} focuses on checkpoint inhibitor combinations, particularly nivolumab and ipilimumab across melanoma, NSCLC, and renal cell carcinoma indications.
+The corpus is protein-heavy and dominated by \texttt{COMBINED\_WITH} and \texttt{BINDS\_TO} relations, testing the pipeline's handling of multi-drug regimens linked to specific clinical trials.
+
+\textbf{Scenario~5 (Cardiovascular / Inflammation)} deliberately includes two unrelated therapeutic areas---hypertrophic cardiomyopathy (HCM, mavacamten) and plaque psoriasis (deucravacitinib)---to test whether community detection correctly separates them into distinct subgraphs without spurious cross-connections.
+
+\subsection{Cross-Domain Schema Coverage}
+\label{sec:coverage}
+
+Across all five scenarios, the pipeline exercised 17 of 17 entity types (100\%) and 27 of 30 relation types (90\%).
+Each domain naturally activates different schema facets:
+
+\begin{itemize}
+  \item \textbf{Scenario~1} is gene-dominant (48 \texttt{GENE} entities), with \texttt{IMPLICATED\_IN} as the most frequent relation type.
+  \item \textbf{Scenario~2} is compound-heavy, with \texttt{CONFERS\_RESISTANCE\_TO} linking \texttt{SEQUENCE\_VARIANT} nodes to \texttt{COMPOUND} nodes.
+  \item \textbf{Scenario~3} is clinical-heavy and the first to exercise \texttt{CONTRAINDICATED\_FOR} and \texttt{GRANTS\_APPROVAL\_FOR}, covering regulatory-action edges absent from the other corpora.
+  \item \textbf{Scenario~4} is protein-heavy, dominated by \texttt{COMBINED\_WITH} and \texttt{BINDS\_TO} relations reflecting checkpoint-receptor biology.
+  \item \textbf{Scenario~5} is mechanism-heavy, with \texttt{EVALUATED\_IN} as the dominant relation linking compounds to their pivotal trials.
+\end{itemize}
+
+The three unused relation types---\texttt{DERIVED\_FROM}, \texttt{HAS\_DOMAIN}, and \texttt{METABOLIZED\_BY}---represent specialized biochemical relationships (prodrug derivation, protein domain annotation, metabolic clearance) that are rarely discussed at the abstract level.
+Full-text extraction would likely activate these relations, but they fall outside the scope of the current evaluation.
+Figure~\ref{fig:coverage} presents a heatmap of entity-type and relation-type usage across all five scenarios.
+
+\subsection{Community Detection Quality}
+\label{sec:communities}
+
+The Leiden-based community detection step produced 24 communities across the five scenarios, each assigned a biologically meaningful auto-generated label by the summarization agent.
+Representative examples illustrate the specificity of the labels:
+
+\begin{itemize}
+  \item \emph{``Alzheimer Disease Risk Loci (30 genes)''}---a gene-dominant cluster in Scenario~1 that groups co-implicated GWAS loci around the PICALM hub node.
+  \item \emph{``EGFR Inhibitors / Adavosertib / Panitumumab''}---a combination-strategy cluster in Scenario~2 that captures emerging multi-target regimens.
+  \item \emph{``TYK2 Allosteric Inhibition''}---a mechanism cluster in Scenario~5 that isolates the deucravacitinib mode-of-action subgraph from the unrelated cardiology cluster.
+\end{itemize}
+
+Scenario~5 provided the strongest test of community separation.
+Community detection correctly assigned HCM-related nodes (mavacamten, cardiac myosin, obstructive HCM) and psoriasis-related nodes (deucravacitinib, TYK2, plaque psoriasis) to distinct communities with no spurious cross-connections, confirming that the Leiden algorithm~\cite{traag2019louvain} respects topological boundaries even when unrelated literatures are mixed in a single corpus.
+Figure~\ref{fig:scenarios} presents multi-panel graph visualizations for all five scenarios.
+
+All 19 user acceptance tests (UATs) passed across the five scenarios.
+Each UAT verifies that a specific expected relationship appears in the constructed graph---for example, ``Does \texttt{COMPOUND}(nivolumab) connect to \texttt{CLINICAL\_TRIAL}(CheckMate-067) via \texttt{EVALUATED\_IN}?''
+UATs serve as functional regression tests: they confirm that the extraction prompt, schema enforcement, and graph construction pipeline jointly produce the relationships a domain scientist would expect from a given literature set.
