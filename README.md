@@ -449,10 +449,10 @@ Epistract enforces standard biomedical nomenclature:
 
 - [Claude Code](https://claude.ai/claude-code) (the runtime environment — handles all extraction via its own API access)
 - Python 3.11+
-- sift-kg (installed by `/epistract-setup`) — requires an LLM API key for entity resolution during graph building. Configure via `.env` file in the sift-kg directory with one of:
-  - `OPENROUTER_API_KEY` ([OpenRouter](https://openrouter.ai/) — recommended, supports multiple models)
-  - `OPENAI_API_KEY` ([OpenAI](https://platform.openai.com/))
-  - `ANTHROPIC_API_KEY` ([Anthropic](https://console.anthropic.com/))
+- sift-kg (installed by `/epistract-setup`) — requires an LLM API key for entity resolution during graph building. Set one of the following environment variables (sift-kg uses the `SIFT_` prefix):
+  - `SIFT_OPENAI_API_KEY` ([OpenAI](https://platform.openai.com/))
+  - `SIFT_ANTHROPIC_API_KEY` ([Anthropic](https://console.anthropic.com/))
+  - Or configure via `.env` file in the sift-kg installation directory
 - Optional: [RDKit](https://www.rdkit.org/) (~50MB) for SMILES validation and structural enrichment
 - Optional: [Biopython](https://biopython.org/) (~20MB) for sequence validation
 
