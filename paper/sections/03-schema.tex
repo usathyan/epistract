@@ -1,1 +1,96 @@
 \section{Domain Schema Design}
+\label{sec:schema}
+
+A well-specified schema is the contract between the LLM extraction agent and every downstream consumer of the knowledge graph.
+We define 17 entity types and 30 relation types, organized into functional categories that mirror the vocabulary of translational biomedicine.
+The full schema is rendered as a linkage diagram in Figure~\ref{fig:schema}.
+
+\subsection{Entity Type Taxonomy}
+
+Entity types are grouped into six categories (Table~\ref{tab:entity-types}).
+The taxonomy deliberately stays coarse-grained: each type maps to one or more
+public ontologies (Section~\ref{sec:ontology-grounding}), and fine-grained
+distinctions (e.g., kinase vs.\ phosphatase) are captured via ontology
+identifiers rather than additional types.
+
+\begin{table}[t]
+\centering
+\caption{Entity type taxonomy. Seventeen types organized into six functional categories.}
+\label{tab:entity-types}
+\begin{tabular}{lll}
+\toprule
+\textbf{Category} & \textbf{Entity Types} & \textbf{Count} \\
+\midrule
+Drug \& Chemistry      & \texttt{COMPOUND}, \texttt{METABOLITE}                                                                          & 2 \\
+Molecular Biology      & \texttt{GENE}, \texttt{PROTEIN}, \texttt{PROTEIN\_DOMAIN}, \texttt{SEQUENCE\_VARIANT}, \texttt{CELL\_OR\_TISSUE} & 5 \\
+Disease \& Phenotype   & \texttt{DISEASE}, \texttt{PHENOTYPE}, \texttt{ADVERSE\_EVENT}                                                    & 3 \\
+Clinical               & \texttt{CLINICAL\_TRIAL}, \texttt{BIOMARKER}, \texttt{REGULATORY\_ACTION}                                       & 3 \\
+Pathways \& Mechanisms & \texttt{PATHWAY}, \texttt{MECHANISM\_OF\_ACTION}                                                                & 2 \\
+Context                & \texttt{ORGANIZATION}, \texttt{PUBLICATION}                                                                     & 2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Relation Type Taxonomy}
+
+The 30 relation types are organized into eight functional groups (Table~\ref{tab:relation-types}).
+Most relations are directed; for example, \texttt{TARGETS} connects a \texttt{COMPOUND} subject to a \texttt{PROTEIN} object.
+A single catch-all relation, \texttt{ASSOCIATED\_WITH}, absorbs associations that the model can identify but cannot classify into a more specific type, preserving recall at the cost of precision.
+
+\begin{table}[t]
+\centering
+\caption{Relation type taxonomy. Thirty directed relation types in eight functional groups.}
+\label{tab:relation-types}
+\begin{tabular}{llr}
+\toprule
+\textbf{Group} & \textbf{Relation Types} & \textbf{Count} \\
+\midrule
+Drug--Target & \texttt{TARGETS}, \texttt{INHIBITS}, \texttt{ACTIVATES}, \texttt{BINDS\_TO}, \texttt{HAS\_MECHANISM} & 5 \\
+Drug--Disease & \texttt{INDICATED\_FOR}, \texttt{CONTRAINDICATED\_FOR} & 2 \\
+Drug--Clinical & \texttt{EVALUATED\_IN}, \texttt{CAUSES} & 2 \\
+Drug--Drug & \texttt{DERIVED\_FROM}, \texttt{COMBINED\_WITH}, \texttt{INTERACTS\_WITH} & 3 \\
+Molecular Biology & \makecell[tl]{\texttt{ENCODES}, \texttt{PARTICIPATES\_IN}, \texttt{IMPLICATED\_IN}, \texttt{CONFERS\_RESISTANCE\_TO},\\
+\texttt{EXPRESSED\_IN}, \texttt{LOCALIZED\_TO}, \texttt{HAS\_VARIANT}, \texttt{HAS\_DOMAIN},\\
+\texttt{METABOLIZED\_BY}, \texttt{PHOSPHORYLATES}, \texttt{FORMS\_COMPLEX\_WITH},\\
+\texttt{REGULATES\_EXPRESSION}} & 12 \\
+Biomarker & \texttt{PREDICTS\_RESPONSE\_TO}, \texttt{DIAGNOSTIC\_FOR} & 2 \\
+Organizational & \texttt{DEVELOPED\_BY}, \texttt{PUBLISHED\_IN}, \texttt{GRANTS\_APPROVAL\_FOR} & 3 \\
+Fallback & \texttt{ASSOCIATED\_WITH} & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Ontology Grounding}
+\label{sec:ontology-grounding}
+
+Every extracted entity is grounded to one or more public ontologies at extraction time.
+Table~\ref{tab:ontology-mapping} lists the primary mappings.
+Grounding serves two purposes: it disambiguates synonyms (e.g., ``imatinib'' vs.\ ``Gleevec'' both resolve to ChEMBL941) and enables downstream federation with external databases such as Open Targets and ClinicalTrials.gov.
+
+\begin{table}[t]
+\centering
+\caption{Primary ontology mappings for each entity type.}
+\label{tab:ontology-mapping}
+\begin{tabular}{ll}
+\toprule
+\textbf{Entity Type} & \textbf{Ontologies / Databases} \\
+\midrule
+\texttt{COMPOUND}         & ChEBI~\cite{chebi2016}, DrugBank, ChEMBL \\
+\texttt{GENE}             & HGNC, NCBI Gene \\
+\texttt{PROTEIN}          & UniProtKB \\
+\texttt{DISEASE}          & MeSH~\cite{mesh2000}, Disease Ontology \\
+\texttt{PATHWAY}          & KEGG, Reactome \\
+\texttt{ADVERSE\_EVENT}   & MedDRA~\cite{meddra1999} \\
+\texttt{SEQUENCE\_VARIANT}& ClinVar, dbSNP \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Naming Conventions}
+
+Consistent surface-form normalization is enforced at extraction time to reduce post-processing deduplication.
+Drugs are recorded as International Nonproprietary Names (INN)---``pembrolizumab'' rather than the trade name ``Keytruda.''
+Gene symbols follow HGNC conventions (\texttt{EGFR}, \texttt{TP53}, \texttt{BRCA1}).
+Sequence variants use HGVS protein-level notation (e.g., BRAF V600E, KRAS G12C).
+Diseases are normalized to MeSH~\cite{mesh2000} preferred terms, and adverse events to MedDRA~\cite{meddra1999} preferred terms.
+These conventions are encoded directly in the extraction prompt (Section~\ref{sec:extraction}), so the LLM produces normalized names without a separate entity-linking pass.
