@@ -50,22 +50,22 @@ Restart Claude Code after installing.
 
 This installs [sift-kg](https://github.com/juanceresa/sift-kg) (the knowledge graph engine) and checks for optional molecular validation libraries ([RDKit](https://www.rdkit.org/), [Biopython](https://biopython.org/)).
 
-**Set up API keys** — sift-kg uses [LiteLLM](https://docs.litellm.ai/) for entity resolution during graph building, which means it supports many LLM providers. Set one of the following in your environment before running the pipeline:
+**Set up API keys** — sift-kg uses [LiteLLM](https://docs.litellm.ai/) for entity resolution during graph building. Set one of the following in your environment before running the pipeline:
 
 ```bash
-# Option A: OpenRouter (recommended — access to multiple models via one key)
+# Option A: OpenRouter (recommended — one key, many models; used in development)
 export OPENROUTER_API_KEY="your-key-here"
 
-# Option B: OpenAI
+# Option B: OpenAI (SIFT_ prefix required — sift-kg forwards to LiteLLM)
 export SIFT_OPENAI_API_KEY="your-key-here"
 
-# Option C: Anthropic
+# Option C: Anthropic (SIFT_ prefix required)
 export SIFT_ANTHROPIC_API_KEY="your-key-here"
 
-# Option D: Google Gemini
+# Option D: Google Gemini (SIFT_ prefix required)
 export SIFT_GEMINI_API_KEY="your-key-here"
 
-# Option E: AWS Bedrock (via LiteLLM — uses standard AWS credentials)
+# Option E: AWS Bedrock (standard AWS credentials — LiteLLM reads directly)
 export AWS_ACCESS_KEY_ID="your-key"
 export AWS_SECRET_ACCESS_KEY="your-secret"
 export AWS_REGION_NAME="us-east-1"
@@ -74,7 +74,9 @@ export AWS_REGION_NAME="us-east-1"
 # Just ensure ollama is running: ollama serve
 ```
 
-This is separate from Claude Code's own API access, which is handled by your Claude Code subscription. You can also configure the default model via `SIFT_DEFAULT_MODEL` (e.g., `openai/gpt-4o-mini`, `anthropic/claude-haiku`, `ollama/llama3.3`).
+> **Note:** OpenRouter and AWS Bedrock keys are read directly by LiteLLM (no prefix). OpenAI, Anthropic, and Gemini keys use the `SIFT_` prefix because sift-kg manages them through its config layer. You can also set `SIFT_DEFAULT_MODEL` to choose the model (e.g., `openai/gpt-4o-mini`, `anthropic/claude-haiku`, `ollama/llama3.3`).
+
+This is separate from Claude Code's own API access, which is handled by your Claude Code subscription.
 
 ### 2. Ingest Documents
 
