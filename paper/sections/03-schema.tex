@@ -15,18 +15,19 @@ identifiers rather than additional types.
 
 \begin{table}[t]
 \centering
-\caption{Entity type taxonomy. Seventeen types organized into six functional categories.}
+\small
+\caption{Entity type taxonomy. Seventeen types in six categories.}
 \label{tab:entity-types}
-\begin{tabular}{lll}
+\begin{tabular}{@{}lp{5.5cm}r@{}}
 \toprule
-\textbf{Category} & \textbf{Entity Types} & \textbf{Count} \\
+\textbf{Category} & \textbf{Entity Types} & \textbf{N} \\
 \midrule
-Drug \& Chemistry      & \texttt{COMPOUND}, \texttt{METABOLITE}                                                                          & 2 \\
-Molecular Biology      & \texttt{GENE}, \texttt{PROTEIN}, \texttt{PROTEIN\_DOMAIN}, \texttt{SEQUENCE\_VARIANT}, \texttt{CELL\_OR\_TISSUE} & 5 \\
-Disease \& Phenotype   & \texttt{DISEASE}, \texttt{PHENOTYPE}, \texttt{ADVERSE\_EVENT}                                                    & 3 \\
-Clinical               & \texttt{CLINICAL\_TRIAL}, \texttt{BIOMARKER}, \texttt{REGULATORY\_ACTION}                                       & 3 \\
-Pathways \& Mechanisms & \texttt{PATHWAY}, \texttt{MECHANISM\_OF\_ACTION}                                                                & 2 \\
-Context                & \texttt{ORGANIZATION}, \texttt{PUBLICATION}                                                                     & 2 \\
+Drug \& Chemistry      & \texttt{COMPOUND, METABOLITE}  & 2 \\
+Molecular Biology      & \texttt{GENE, PROTEIN, PROTEIN\_DOMAIN, SEQUENCE\_VARIANT, CELL\_OR\_TISSUE} & 5 \\
+Disease \& Phenotype   & \texttt{DISEASE, PHENOTYPE, ADVERSE\_EVENT}  & 3 \\
+Clinical               & \texttt{CLINICAL\_TRIAL, BIOMARKER, REGULATORY\_ACTION}  & 3 \\
+Pathways \& Mechanisms & \texttt{PATHWAY, MECHANISM\_OF\_ACTION}  & 2 \\
+Context                & \texttt{ORGANIZATION, PUBLICATION}  & 2 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -39,22 +40,20 @@ A single catch-all relation, \texttt{ASSOCIATED\_WITH}, absorbs associations tha
 
 \begin{table}[t]
 \centering
-\caption{Relation type taxonomy. Thirty directed relation types in eight functional groups.}
+\small
+\caption{Relation type taxonomy. Thirty directed relation types in eight groups.}
 \label{tab:relation-types}
-\begin{tabular}{llr}
+\begin{tabular}{@{}lp{5.5cm}r@{}}
 \toprule
-\textbf{Group} & \textbf{Relation Types} & \textbf{Count} \\
+\textbf{Group} & \textbf{Relation Types} & \textbf{N} \\
 \midrule
-Drug--Target & \texttt{TARGETS}, \texttt{INHIBITS}, \texttt{ACTIVATES}, \texttt{BINDS\_TO}, \texttt{HAS\_MECHANISM} & 5 \\
-Drug--Disease & \texttt{INDICATED\_FOR}, \texttt{CONTRAINDICATED\_FOR} & 2 \\
-Drug--Clinical & \texttt{EVALUATED\_IN}, \texttt{CAUSES} & 2 \\
-Drug--Drug & \texttt{DERIVED\_FROM}, \texttt{COMBINED\_WITH}, \texttt{INTERACTS\_WITH} & 3 \\
-Molecular Biology & \makecell[tl]{\texttt{ENCODES}, \texttt{PARTICIPATES\_IN}, \texttt{IMPLICATED\_IN}, \texttt{CONFERS\_RESISTANCE\_TO},\\
-\texttt{EXPRESSED\_IN}, \texttt{LOCALIZED\_TO}, \texttt{HAS\_VARIANT}, \texttt{HAS\_DOMAIN},\\
-\texttt{METABOLIZED\_BY}, \texttt{PHOSPHORYLATES}, \texttt{FORMS\_COMPLEX\_WITH},\\
-\texttt{REGULATES\_EXPRESSION}} & 12 \\
-Biomarker & \texttt{PREDICTS\_RESPONSE\_TO}, \texttt{DIAGNOSTIC\_FOR} & 2 \\
-Organizational & \texttt{DEVELOPED\_BY}, \texttt{PUBLISHED\_IN}, \texttt{GRANTS\_APPROVAL\_FOR} & 3 \\
+Drug--Target & \texttt{TARGETS, INHIBITS, ACTIVATES, BINDS\_TO, HAS\_MECHANISM} & 5 \\
+Drug--Disease & \texttt{INDICATED\_FOR, CONTRAINDICATED\_FOR} & 2 \\
+Drug--Clinical & \texttt{EVALUATED\_IN, CAUSES} & 2 \\
+Drug--Drug & \texttt{DERIVED\_FROM, COMBINED\_WITH, INTERACTS\_WITH} & 3 \\
+Molecular Biology & \texttt{ENCODES, PARTICIPATES\_IN, IMPLICATED\_IN, CONFERS\_RESISTANCE\_TO, EXPRESSED\_IN, LOCALIZED\_TO, HAS\_VARIANT, HAS\_DOMAIN, METABOLIZED\_BY, PHOSPHORYLATES, FORMS\_COMPLEX\_WITH, REGULATES\_EXPRESSION} & 12 \\
+Biomarker & \texttt{PREDICTS\_RESPONSE\_TO, DIAGNOSTIC\_FOR} & 2 \\
+Organizational & \texttt{DEVELOPED\_BY, PUBLISHED\_IN, GRANTS\_APPROVAL\_FOR} & 3 \\
 Fallback & \texttt{ASSOCIATED\_WITH} & 1 \\
 \bottomrule
 \end{tabular}

@@ -7,21 +7,22 @@ Epistract grew directly from my earlier GraphRAG prototype~\cite{edge2024graphra
 \centering
 \caption{Architectural evolution from GraphRAG to Epistract.}
 \label{tab:evolution}
-\begin{tabular}{@{}lll@{}}
+\small
+\begin{tabular}{@{}lp{2.8cm}p{4.2cm}@{}}
 \toprule
-\textbf{Dimension} & \textbf{GraphRAG (Prequel)} & \textbf{Epistract (Current)} \\
+\textbf{Dimension} & \textbf{GraphRAG} & \textbf{Epistract} \\
 \midrule
 Relationship basis   & Embedding similarity        & LLM comprehension \\
-Schema               & Generic NER                 & 17 entity types, 30 relations, 40+ ontologies \\
-Relation typing      & Untyped edges               & Typed, directional (\textsc{inhibits}, \textsc{causes}, etc.) \\
-Evidence             & None                        & Source passage + confidence score \\
-Validation           & None                        & RDKit, Biopython, NCT/CAS patterns \\
-Development tool     & Cursor + Gemini 2.5 Pro     & Claude Code \\
-Delivery             & Scripts, manual setup        & One-command plugin install \\
-Scale tested         & 6 articles                  & 77 articles across 5 domains \\
+Schema               & Generic NER                 & 17 types, 30 relations, 40+ ontologies \\
+Relation typing      & Untyped edges               & Typed, directional \\
+Evidence             & None                        & Source passage + confidence \\
+Validation           & None                        & RDKit, Biopython, NCT/CAS \\
+Dev tool             & Cursor + Gemini             & Claude Code \\
+Delivery             & Scripts, manual              & One-command plugin \\
+Scale                & 6 articles                  & 77 articles, 5 domains \\
 Cross-domain         & Single domain               & 5 domains, zero retraining \\
-Community labels     & Numbered                    & Semantic heuristic labeling \\
-Reproducibility      & Code on GitHub              & Plugin + committed test artifacts \\
+Community labels     & Numbered                    & Semantic heuristic \\
+Reproducibility      & Code on GitHub              & Plugin + committed artifacts \\
 \bottomrule
 \end{tabular}
 \end{table}
