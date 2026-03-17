@@ -110,7 +110,9 @@ The interactive viewer shows your knowledge graph with labeled community regions
 
 ## Test Scenarios
 
-Epistract ships with five real-world drug discovery research scenarios, each backed by a curated corpus of PubMed abstracts. Each scenario page includes the use case, corpus details, how to run, expected graph structure, and — for completed runs — actual results with graph screenshots and community analysis.
+Epistract ships with five drug discovery research scenarios, each backed by a curated corpus of PubMed abstracts. Each scenario page includes the use case, corpus details, how to run, expected graph structure, and actual results with graph screenshots and community analysis.
+
+> **Note:** These are hypothetical test scenarios designed to validate the pipeline across diverse drug discovery domains. They are not attributable to any ongoing research. The author is not a research scientist but is working to support the scientific community in adopting AI-assisted workflows.
 
 | # | Scenario | Focus | Documents | Status |
 |---|---|---|---|---|
@@ -118,7 +120,7 @@ Epistract ships with five real-world drug discovery research scenarios, each bac
 | 2 | [KRAS G12C Landscape](tests/scenarios/scenario-02-kras-g12c-landscape.md) | Competitive intelligence | 16 papers | **Completed** |
 | 3 | [Rare Disease Therapeutics](tests/scenarios/scenario-03-rare-disease.md) | Due diligence | 15 papers | **Completed** |
 | 4 | [Immuno-Oncology Combinations](tests/scenarios/scenario-04-immunooncology.md) | Checkpoint combinations | 16 papers | **Completed** |
-| 5 | [Cardiovascular & Inflammation](tests/scenarios/scenario-05-cardiovascular.md) | Cardiology + inflammation | 14 papers | Pending |
+| 5 | [Cardiovascular & Inflammation](tests/scenarios/scenario-05-cardiovascular.md) | Cardiology + inflammation | 15 papers | **Completed** |
 
 See [tests/MANUAL_TEST_SCENARIOS.md](tests/MANUAL_TEST_SCENARIOS.md) for the full index, acceptance criteria, and corpus provenance.
 
@@ -176,6 +178,20 @@ See [tests/MANUAL_TEST_SCENARIOS.md](tests/MANUAL_TEST_SCENARIOS.md) for the ful
 | **LAG-3 Signaling Pathway (LAG3)** | 18 | Relatlimab, RELATIVITY trials, dual checkpoint blockade |
 | **PD-1/PD-L1 Signaling Pathway (PDCD1, CD274)** | 15 | 13 approved anti-PD-(L)1 agents, combination strategies |
 | **Metabolic Reprogramming in Tumor Immune Microenvironment** | 15 | HCC immunotherapy, cabozantinib/VEGF, spatial transcriptomics |
+
+### Scenario 5 Result: Cardiovascular & Inflammation
+
+![Cardiovascular Knowledge Graph](tests/scenarios/screenshots/scenario-05-graph.png)
+
+*94 nodes, 246 links, 5 auto-labeled communities. Full results: [scenario-05-cardiovascular.md](tests/scenarios/scenario-05-cardiovascular.md)*
+
+| Community | Members | Theme |
+|---|---|---|
+| **Obstructive HCM — Cardiac Myosin ATPase** | 24 | Mavacamten trials, LVOT gradient, NT-proBNP |
+| **Sarcomere Contractile Pathway (MYBPC3, MYH7)** | 15 | Aficamten, R403Q mutation, sarcomere biology |
+| **TYK2 Allosteric Inhibition** | 14 | Deucravacitinib, POETYK trials, psoriasis |
+| **JAK-STAT Signaling Pathway** | 11 | IL-12/IL-23, type I interferons, cytokine signaling |
+| **Cardiac Myosin Inhibition** | 8 | Shared mechanism hub, FDA approval, REMS |
 
 ### Automating Test Runs
 

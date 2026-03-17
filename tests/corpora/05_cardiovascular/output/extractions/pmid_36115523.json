@@ -1,0 +1,144 @@
+{
+  "document_id": "pmid_36115523",
+  "document_path": "tests/corpora/05_cardiovascular/pmid_36115523.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "deucravacitinib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "dose": "6 mg QD",
+        "route": "oral",
+        "mechanism": "allosteric TYK2 inhibitor"
+      },
+      "confidence": 0.98,
+      "context": "Deucravacitinib, an oral, selective, allosteric tyrosine kinase 2 inhibitor"
+    },
+    {
+      "name": "apremilast",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "dose": "30 mg BID"
+      },
+      "confidence": 0.98,
+      "context": "apremilast 30 mg BID (n=254)"
+    },
+    {
+      "name": "TYK2",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "tyrosine kinase 2"
+      },
+      "confidence": 0.97,
+      "context": "selective, allosteric tyrosine kinase 2 inhibitor, inhibits cytokine signaling"
+    },
+    {
+      "name": "plaque psoriasis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "severity": "moderate to severe"
+      },
+      "confidence": 0.98,
+      "context": "moderate to severe plaque psoriasis"
+    },
+    {
+      "name": "POETYK PSO-2",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT03611751",
+        "phase": "3",
+        "duration_weeks": 52,
+        "design": "randomized, double-blinded"
+      },
+      "confidence": 0.99,
+      "context": "POETYK PSO-2 (NCT03611751), a 52-week, phase 3 trial"
+    },
+    {
+      "name": "nasopharyngitis",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "frequency": "most frequent"
+      },
+      "confidence": 0.95,
+      "context": "Most frequent AE: nasopharyngitis"
+    },
+    {
+      "name": "PASI75",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "description": "75% reduction in Psoriasis Area and Severity Index"
+      },
+      "confidence": 0.93,
+      "context": "significantly more deucravacitinib-treated patients achieved PASI75 (53.0% vs 9.4% placebo and 39.8% apremilast)"
+    },
+    {
+      "name": "JAAD",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "year": 2023,
+        "pmid": "36115523"
+      },
+      "confidence": 0.95,
+      "context": "Journal: JAAD (2023)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "deucravacitinib",
+      "target_entity": "TYK2",
+      "confidence": 0.98,
+      "evidence": "Deucravacitinib, an oral, selective, allosteric tyrosine kinase 2 inhibitor"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "deucravacitinib",
+      "target_entity": "plaque psoriasis",
+      "confidence": 0.9,
+      "evidence": "Deucravacitinib demonstrated superiority versus placebo and apremilast in moderate to severe plaque psoriasis"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "deucravacitinib",
+      "target_entity": "POETYK PSO-2",
+      "confidence": 0.99,
+      "evidence": "POETYK PSO-2 (NCT03611751), a 52-week, phase 3 trial, randomized patients 2:1:1 to deucravacitinib 6 mg QD"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "apremilast",
+      "target_entity": "POETYK PSO-2",
+      "confidence": 0.97,
+      "evidence": "randomized patients 2:1:1 to deucravacitinib 6 mg QD (n=511), placebo (n=255), or apremilast 30 mg BID (n=254)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "nasopharyngitis",
+      "confidence": 0.85,
+      "evidence": "Most frequent AE: nasopharyngitis"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "PASI75",
+      "target_entity": "deucravacitinib",
+      "confidence": 0.88,
+      "evidence": "significantly more deucravacitinib-treated patients achieved PASI75 (53.0% vs 9.4% placebo and 39.8% apremilast)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "apremilast",
+      "target_entity": "plaque psoriasis",
+      "confidence": 0.85,
+      "evidence": "Deucravacitinib versus placebo and apremilast in moderate to severe plaque psoriasis"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T00:00:00+00:00",
+  "error": null
+}

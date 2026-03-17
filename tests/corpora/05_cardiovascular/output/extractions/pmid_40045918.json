@@ -1,0 +1,247 @@
+{
+  "document_id": "pmid_40045918",
+  "document_path": "pmid_40045918",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "deucravacitinib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "route": "oral",
+        "mechanism": "selective allosteric TYK2 inhibitor"
+      },
+      "confidence": 0.98,
+      "context": "Deucravacitinib, an oral, selective, allosteric TYK2 inhibitor, approved in multiple countries for moderate to severe plaque psoriasis."
+    },
+    {
+      "name": "TYK2",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "tyrosine kinase 2"
+      },
+      "confidence": 0.97,
+      "context": "an oral, selective, allosteric TYK2 inhibitor"
+    },
+    {
+      "name": "plaque psoriasis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "severity": "moderate to severe"
+      },
+      "confidence": 0.98,
+      "context": "approved in multiple countries for moderate to severe plaque psoriasis"
+    },
+    {
+      "name": "POETYK PSO-1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": 3,
+        "type": "pivotal"
+      },
+      "confidence": 0.95,
+      "context": "4-year data from POETYK PSO-1, PSO-2 and LTE"
+    },
+    {
+      "name": "POETYK PSO-2",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": 3,
+        "type": "pivotal"
+      },
+      "confidence": 0.95,
+      "context": "4-year data from POETYK PSO-1, PSO-2 and LTE"
+    },
+    {
+      "name": "POETYK LTE",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": 3,
+        "type": "long-term extension"
+      },
+      "confidence": 0.90,
+      "context": "POETYK PSO-1, PSO-2 and long-term extension trials"
+    },
+    {
+      "name": "herpes zoster",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "EAIR_per_100PY_4yr": 0.55,
+        "EAIR_per_100PY_1yr": 0.81
+      },
+      "confidence": 0.95,
+      "context": "herpes zoster (0.81 to 0.55)"
+    },
+    {
+      "name": "malignancy",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "EAIR_per_100PY_4yr": 0.89,
+        "EAIR_per_100PY_1yr": 1.02
+      },
+      "confidence": 0.92,
+      "context": "malignancies (1.02 to 0.89)"
+    },
+    {
+      "name": "major adverse cardiovascular event",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "EAIR_per_100PY_4yr": 0.32,
+        "EAIR_per_100PY_1yr": 0.30,
+        "abbreviation": "MACE"
+      },
+      "confidence": 0.93,
+      "context": "MACE (0.30 to 0.32)"
+    },
+    {
+      "name": "venous thromboembolism",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "EAIR_per_100PY_4yr": 0.07,
+        "EAIR_per_100PY_1yr": 0.20,
+        "abbreviation": "VTE"
+      },
+      "confidence": 0.93,
+      "context": "VTE (0.20 to 0.07)"
+    },
+    {
+      "name": "PASI 90",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "clinical endpoint",
+        "response_1yr": "45.6%",
+        "response_4yr": "47.5%"
+      },
+      "confidence": 0.90,
+      "context": "Clinical responses maintained: PASI 90 at 1 year 45.6%, at 4 years 47.5%"
+    },
+    {
+      "name": "JEADV",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "year": 2025,
+        "pmid": "40045918",
+        "authors": "Armstrong April W, Lebwohl Mark, Warren Richard B, Sofen Howard, Morita Akimichi"
+      },
+      "confidence": 0.95,
+      "context": "Journal: JEADV (2025)"
+    },
+    {
+      "name": "JAK-STAT pathway",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.75,
+      "context": "selective, allosteric TYK2 inhibitor"
+    },
+    {
+      "name": "TYK2 allosteric inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "target": "TYK2",
+        "strategy": "allosteric inhibition",
+        "selectivity": "selective"
+      },
+      "confidence": 0.95,
+      "context": "oral, selective, allosteric TYK2 inhibitor"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "deucravacitinib",
+      "target_entity": "TYK2",
+      "confidence": 0.98,
+      "evidence": "Deucravacitinib, an oral, selective, allosteric TYK2 inhibitor"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "deucravacitinib",
+      "target_entity": "plaque psoriasis",
+      "confidence": 0.97,
+      "evidence": "approved in multiple countries for moderate to severe plaque psoriasis"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "deucravacitinib",
+      "target_entity": "POETYK PSO-1",
+      "confidence": 0.96,
+      "evidence": "4-year data from POETYK PSO-1, PSO-2 and LTE"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "deucravacitinib",
+      "target_entity": "POETYK PSO-2",
+      "confidence": 0.96,
+      "evidence": "4-year data from POETYK PSO-1, PSO-2 and LTE"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "deucravacitinib",
+      "target_entity": "POETYK LTE",
+      "confidence": 0.93,
+      "evidence": "POETYK PSO-1, PSO-2 and long-term extension trials"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "herpes zoster",
+      "confidence": 0.75,
+      "evidence": "herpes zoster (0.81 to 0.55)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "malignancy",
+      "confidence": 0.70,
+      "evidence": "malignancies (1.02 to 0.89)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "major adverse cardiovascular event",
+      "confidence": 0.65,
+      "evidence": "MACE (0.30 to 0.32)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "venous thromboembolism",
+      "confidence": 0.60,
+      "evidence": "VTE (0.20 to 0.07)"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "PASI 90",
+      "target_entity": "deucravacitinib",
+      "confidence": 0.85,
+      "evidence": "Clinical responses maintained: PASI 90 at 1 year 45.6%, at 4 years 47.5%"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "TYK2",
+      "target_entity": "JAK-STAT pathway",
+      "confidence": 0.80,
+      "evidence": "selective, allosteric TYK2 inhibitor"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "TYK2",
+      "target_entity": "plaque psoriasis",
+      "confidence": 0.85,
+      "evidence": "Deucravacitinib, an oral, selective, allosteric TYK2 inhibitor, approved in multiple countries for moderate to severe plaque psoriasis"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "deucravacitinib",
+      "target_entity": "TYK2 allosteric inhibition",
+      "confidence": 0.95,
+      "evidence": "oral, selective, allosteric TYK2 inhibitor"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T00:00:00+00:00",
+  "error": null
+}

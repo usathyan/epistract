@@ -1,0 +1,103 @@
+{
+  "document_id": "pmid_38718139",
+  "document_path": "tests/corpora/05_cardiovascular/pmid_38718139.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "hypertrophic cardiomyopathy",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Cardiomyopathy, Hypertrophic"
+      },
+      "confidence": 0.98,
+      "context": "2024 AHA/ACC/AMSSM/HRS/PACES/SCMR Guideline for the Management of Hypertrophic Cardiomyopathy"
+    },
+    {
+      "name": "American Heart Association",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "abbreviation": "AHA"
+      },
+      "confidence": 0.95,
+      "context": "2024 AHA/ACC Guideline for the Management of Hypertrophic Cardiomyopathy"
+    },
+    {
+      "name": "American College of Cardiology",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "abbreviation": "ACC"
+      },
+      "confidence": 0.95,
+      "context": "2024 AHA/ACC Guideline for the Management of Hypertrophic Cardiomyopathy"
+    },
+    {
+      "name": "American Medical Society for Sports Medicine",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "abbreviation": "AMSSM"
+      },
+      "confidence": 0.9,
+      "context": "2024 AHA/ACC/AMSSM/HRS/PACES/SCMR Guideline for the Management of Hypertrophic Cardiomyopathy"
+    },
+    {
+      "name": "Heart Rhythm Society",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "abbreviation": "HRS"
+      },
+      "confidence": 0.9,
+      "context": "2024 AHA/ACC/AMSSM/HRS/PACES/SCMR Guideline for the Management of Hypertrophic Cardiomyopathy"
+    },
+    {
+      "name": "Pediatric and Congenital Electrophysiology Society",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "abbreviation": "PACES"
+      },
+      "confidence": 0.9,
+      "context": "2024 AHA/ACC/AMSSM/HRS/PACES/SCMR Guideline for the Management of Hypertrophic Cardiomyopathy"
+    },
+    {
+      "name": "Society for Cardiovascular Magnetic Resonance",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "abbreviation": "SCMR"
+      },
+      "confidence": 0.9,
+      "context": "2024 AHA/ACC/AMSSM/HRS/PACES/SCMR Guideline for the Management of Hypertrophic Cardiomyopathy"
+    },
+    {
+      "name": "Ommen 2024",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "38718139",
+        "journal": "Circulation",
+        "year": 2024
+      },
+      "confidence": 0.98,
+      "context": "Circulation (2024) PMID: 38718139"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "PUBLISHED_BY",
+      "source_entity": "Ommen 2024",
+      "target_entity": "American Heart Association",
+      "confidence": 0.95,
+      "evidence": "2024 AHA/ACC Guideline for the Management of Hypertrophic Cardiomyopathy"
+    },
+    {
+      "relation_type": "PUBLISHED_BY",
+      "source_entity": "Ommen 2024",
+      "target_entity": "American College of Cardiology",
+      "confidence": 0.95,
+      "evidence": "2024 AHA/ACC Guideline for the Management of Hypertrophic Cardiomyopathy"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T00:33:55.213436+00:00",
+  "error": null
+}

@@ -1,0 +1,368 @@
+{
+  "document_id": "structural_mavacamten",
+  "document_path": "tests/corpora/05_cardiovascular/structural_mavacamten.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "mavacamten",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "cas": "1642288-47-8",
+        "molecular_formula": "C25H28N4O2",
+        "molecular_weight": "428.52 g/mol",
+        "smiles": "CC(C1=CC=CC=C1)NC(=O)N1CCC(CC1)OC1=NC=NC(=C1)NCC1=CC=CC=C1",
+        "synonyms": [
+          "MYK-461",
+          "Camzyos"
+        ],
+        "requires_validation": true
+      },
+      "confidence": 0.99,
+      "context": "Mavacamten (MYK-461, Camzyos) is a first-in-class selective cardiac myosin inhibitor."
+    },
+    {
+      "name": "MYH7",
+      "entity_type": "GENE",
+      "attributes": {
+        "uniprot": "P12883",
+        "full_name": "beta-cardiac myosin heavy chain"
+      },
+      "confidence": 0.99,
+      "context": "Target: Beta-cardiac myosin heavy chain (MYH7, UniProt: P12883)"
+    },
+    {
+      "name": "beta-cardiac myosin",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene": "MYH7",
+        "uniprot": "P12883"
+      },
+      "confidence": 0.99,
+      "context": "stabilizing an auto-inhibited (super-relaxed) state of beta-cardiac myosin (MYH7)"
+    },
+    {
+      "name": "cardiac myosin ATPase",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "ic50": "0.3 uM"
+      },
+      "confidence": 0.95,
+      "context": "Mavacamten selectively inhibits cardiac myosin ATPase"
+    },
+    {
+      "name": "MYH1",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "fast skeletal myosin"
+      },
+      "confidence": 0.9,
+      "context": ">100-fold selective for cardiac myosin over fast skeletal myosin (MYH1)"
+    },
+    {
+      "name": "MYBPC3",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "myosin-binding protein C"
+      },
+      "confidence": 0.9,
+      "context": "mutations in MYH7 or MYBPC3 cause excessive cross-bridge formation"
+    },
+    {
+      "name": "hypertrophic cardiomyopathy",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "oHCM",
+        "subtype": "obstructive"
+      },
+      "confidence": 0.98,
+      "context": "FDA approved April 28, 2022 for symptomatic oHCM (NYHA class II-III)"
+    },
+    {
+      "name": "cardiac myosin ATPase inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "binding_site": "allosteric site on myosin motor domain",
+        "state": "super-relaxed"
+      },
+      "confidence": 0.97,
+      "context": "selectively inhibits cardiac myosin ATPase by stabilizing an auto-inhibited (super-relaxed) state"
+    },
+    {
+      "name": "sarcomere contractile pathway",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "Sarcomere contractile unit"
+    },
+    {
+      "name": "EXPLORER-HCM",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT03470545",
+        "phase": "III",
+        "design": "mavacamten vs placebo"
+      },
+      "confidence": 0.99,
+      "context": "EXPLORER-HCM (NCT03470545): Phase III, mavacamten vs placebo in oHCM. Primary endpoint met."
+    },
+    {
+      "name": "VALOR-HCM",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT04349072",
+        "phase": "III",
+        "result": "82% no longer met SRT criteria"
+      },
+      "confidence": 0.99,
+      "context": "VALOR-HCM (NCT04349072): Phase III, patients eligible for septal reduction therapy."
+    },
+    {
+      "name": "FDA approval of mavacamten",
+      "entity_type": "REGULATORY_ACTION",
+      "attributes": {
+        "agency": "FDA",
+        "date": "2022-04-28",
+        "indication": "symptomatic oHCM NYHA class II-III",
+        "rems": true
+      },
+      "confidence": 0.99,
+      "context": "FDA approved April 28, 2022 for symptomatic oHCM (NYHA class II-III). REMS program required."
+    },
+    {
+      "name": "dizziness",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "incidence": "11%"
+      },
+      "confidence": 0.95,
+      "context": "Key AEs: dizziness (11%), syncope (4%), atrial fibrillation (4%)"
+    },
+    {
+      "name": "syncope",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "incidence": "4%"
+      },
+      "confidence": 0.95,
+      "context": "Key AEs: dizziness (11%), syncope (4%), atrial fibrillation (4%)"
+    },
+    {
+      "name": "atrial fibrillation",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "incidence": "4%"
+      },
+      "confidence": 0.95,
+      "context": "Key AEs: dizziness (11%), syncope (4%), atrial fibrillation (4%)"
+    },
+    {
+      "name": "heart failure",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "severity": "black box warning",
+        "mechanism": "systolic dysfunction"
+      },
+      "confidence": 0.97,
+      "context": "Black box warning: Risk of heart failure due to systolic dysfunction."
+    },
+    {
+      "name": "CYP2C19",
+      "entity_type": "GENE",
+      "attributes": {
+        "role": "primary metabolizing enzyme"
+      },
+      "confidence": 0.97,
+      "context": "Primarily metabolized by CYP2C19 and CYP3A4."
+    },
+    {
+      "name": "CYP3A4",
+      "entity_type": "GENE",
+      "attributes": {
+        "role": "metabolizing enzyme"
+      },
+      "confidence": 0.95,
+      "context": "Primarily metabolized by CYP2C19 and CYP3A4."
+    },
+    {
+      "name": "CYP2C19 poor metabolizer",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "effect": "~2-fold higher exposure"
+      },
+      "confidence": 0.93,
+      "context": "CYP2C19 poor metabolizers have ~2-fold higher exposure."
+    },
+    {
+      "name": "fluconazole",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "role": "strong CYP2C19 inhibitor"
+      },
+      "confidence": 0.92,
+      "context": "Strong CYP2C19 inhibitors (fluconazole, fluvoxamine) are contraindicated."
+    },
+    {
+      "name": "fluvoxamine",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "role": "strong CYP2C19 inhibitor"
+      },
+      "confidence": 0.92,
+      "context": "Strong CYP2C19 inhibitors (fluconazole, fluvoxamine) are contraindicated."
+    },
+    {
+      "name": "LVEF",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "threshold": "< 55%",
+        "context": "contraindication"
+      },
+      "confidence": 0.9,
+      "context": "Contraindicated: LVEF < 55%"
+    },
+    {
+      "name": "myosin motor domain",
+      "entity_type": "PROTEIN_DOMAIN",
+      "attributes": {
+        "protein": "MYH7"
+      },
+      "confidence": 0.9,
+      "context": "Binding site: Allosteric site on the myosin motor domain"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "mavacamten",
+      "target_entity": "cardiac myosin ATPase",
+      "confidence": 0.99,
+      "evidence": "Mavacamten selectively inhibits cardiac myosin ATPase by stabilizing an auto-inhibited (super-relaxed) state"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "mavacamten",
+      "target_entity": "beta-cardiac myosin",
+      "confidence": 0.97,
+      "evidence": "stabilizing an auto-inhibited (super-relaxed) state of beta-cardiac myosin (MYH7)"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "mavacamten",
+      "target_entity": "MYH7",
+      "confidence": 0.99,
+      "evidence": "Target: Beta-cardiac myosin heavy chain (MYH7, UniProt: P12883)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "mavacamten",
+      "target_entity": "hypertrophic cardiomyopathy",
+      "confidence": 0.99,
+      "evidence": "FDA approved April 28, 2022 for symptomatic oHCM (NYHA class II-III)"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "mavacamten",
+      "target_entity": "EXPLORER-HCM",
+      "confidence": 0.99,
+      "evidence": "EXPLORER-HCM (NCT03470545): Phase III, mavacamten vs placebo in oHCM"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "mavacamten",
+      "target_entity": "VALOR-HCM",
+      "confidence": 0.99,
+      "evidence": "VALOR-HCM (NCT04349072): Phase III, patients eligible for septal reduction therapy"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "mavacamten",
+      "target_entity": "dizziness",
+      "confidence": 0.93,
+      "evidence": "Key AEs: dizziness (11%)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "mavacamten",
+      "target_entity": "syncope",
+      "confidence": 0.93,
+      "evidence": "Key AEs: syncope (4%)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "mavacamten",
+      "target_entity": "atrial fibrillation",
+      "confidence": 0.93,
+      "evidence": "Key AEs: atrial fibrillation (4%)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "mavacamten",
+      "target_entity": "heart failure",
+      "confidence": 0.97,
+      "evidence": "Black box warning: Risk of heart failure due to systolic dysfunction."
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "MYH7",
+      "target_entity": "beta-cardiac myosin",
+      "confidence": 0.99,
+      "evidence": "beta-cardiac myosin (MYH7)"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "MYH7",
+      "target_entity": "hypertrophic cardiomyopathy",
+      "confidence": 0.95,
+      "evidence": "mutations in MYH7 or MYBPC3 cause excessive cross-bridge formation"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "MYBPC3",
+      "target_entity": "hypertrophic cardiomyopathy",
+      "confidence": 0.95,
+      "evidence": "mutations in MYH7 or MYBPC3 cause excessive cross-bridge formation"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "beta-cardiac myosin",
+      "target_entity": "sarcomere contractile pathway",
+      "confidence": 0.92,
+      "evidence": "Sarcomere contractile unit"
+    },
+    {
+      "relation_type": "CONTRAINDICATED_FOR",
+      "source_entity": "fluconazole",
+      "target_entity": "mavacamten",
+      "confidence": 0.95,
+      "evidence": "Strong CYP2C19 inhibitors (fluconazole, fluvoxamine) are contraindicated."
+    },
+    {
+      "relation_type": "CONTRAINDICATED_FOR",
+      "source_entity": "fluvoxamine",
+      "target_entity": "mavacamten",
+      "confidence": 0.95,
+      "evidence": "Strong CYP2C19 inhibitors (fluconazole, fluvoxamine) are contraindicated."
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "LVEF",
+      "target_entity": "hypertrophic cardiomyopathy",
+      "confidence": 0.8,
+      "evidence": "Contraindicated: LVEF < 55%"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "CYP2C19 poor metabolizer",
+      "target_entity": "mavacamten",
+      "confidence": 0.9,
+      "evidence": "CYP2C19 poor metabolizers have ~2-fold higher exposure."
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T00:00:00+00:00",
+  "error": null
+}

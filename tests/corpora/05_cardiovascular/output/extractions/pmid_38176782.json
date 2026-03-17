@@ -1,0 +1,236 @@
+{
+  "document_id": "pmid_38176782",
+  "document_path": "tests/corpora/05_cardiovascular/pmid_38176782.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "mavacamten",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "mechanism": "cardiac myosin inhibitor"
+      },
+      "confidence": 0.98,
+      "context": "Mavacamten Treatment for Symptomatic Obstructive Hypertrophic Cardiomyopathy"
+    },
+    {
+      "name": "obstructive hypertrophic cardiomyopathy",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Cardiomyopathy, Hypertrophic"
+      },
+      "confidence": 0.98,
+      "context": "Symptomatic Obstructive Hypertrophic Cardiomyopathy"
+    },
+    {
+      "name": "MAVA-LTE",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT03723655",
+        "phase": "long-term extension",
+        "enrollment": 231
+      },
+      "confidence": 0.99,
+      "context": "MAVA-LTE (NCT03723655) is a long-term safety extension study. 231 of 244 eligible patients (94.7%) enrolled."
+    },
+    {
+      "name": "EXPLORER-HCM",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT03470545",
+        "role": "parent trial"
+      },
+      "confidence": 0.95,
+      "context": "Parent trial: EXPLORER-HCM (NCT03470545)"
+    },
+    {
+      "name": "NT-proBNP",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "cardiac",
+        "direction": "reduction",
+        "median_change": "-480 ng/L"
+      },
+      "confidence": 0.97,
+      "context": "NT-proBNP reductions (median: -480 ng/L)"
+    },
+    {
+      "name": "LVOT gradient",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "hemodynamic",
+        "resting_change": "-35.6 mm Hg",
+        "valsalva_change": "-45.3 mm Hg"
+      },
+      "confidence": 0.95,
+      "context": "LVOT gradient improvements (resting: -35.6 mm Hg; Valsalva: -45.3 mm Hg)"
+    },
+    {
+      "name": "cardiac failure",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "meddra_term": "Cardiac failure",
+        "count": 8,
+        "observation_period": "315 patient-years"
+      },
+      "confidence": 0.95,
+      "context": "Over 315 patient-years: 8 patients had cardiac failure AE"
+    },
+    {
+      "name": "atrial fibrillation",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "meddra_term": "Atrial fibrillation",
+        "count": 21,
+        "new_onset": 11
+      },
+      "confidence": 0.95,
+      "context": "21 had atrial fibrillation (11 new onset)"
+    },
+    {
+      "name": "left ventricular ejection fraction reduction",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "meddra_term": "Ejection fraction decreased",
+        "count": 12,
+        "percentage": "5.2%",
+        "outcome": "recovered after temporary interruption"
+      },
+      "confidence": 0.93,
+      "context": "12 patients (5.2%) had transient LVEF <50% resulting in temporary treatment interruption; all recovered"
+    },
+    {
+      "name": "NYHA functional class",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "improvement_rate": "67.5%",
+        "threshold": ">=1 class improvement",
+        "timepoint": "48 weeks"
+      },
+      "confidence": 0.92,
+      "context": "67.5% improved by >=1 NYHA class"
+    },
+    {
+      "name": "JACC Heart failure",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "year": 2024,
+        "pmid": "38176782"
+      },
+      "confidence": 0.99,
+      "context": "Journal: JACC Heart failure (2024) PMID: 38176782"
+    },
+    {
+      "name": "MYH7",
+      "entity_type": "GENE",
+      "attributes": {
+        "role": "target of cardiac myosin inhibitors",
+        "note": "implied target of mavacamten"
+      },
+      "confidence": 0.6,
+      "context": "Mavacamten Treatment for Symptomatic Obstructive Hypertrophic Cardiomyopathy"
+    },
+    {
+      "name": "cardiac myosin",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "role": "drug target",
+        "note": "beta-cardiac myosin, pharmacological target of mavacamten"
+      },
+      "confidence": 0.6,
+      "context": "Mavacamten Treatment for Symptomatic Obstructive Hypertrophic Cardiomyopathy"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "mavacamten",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.95,
+      "evidence": "Mavacamten Treatment for Symptomatic Obstructive Hypertrophic Cardiomyopathy"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "mavacamten",
+      "target_entity": "MAVA-LTE",
+      "confidence": 0.99,
+      "evidence": "MAVA-LTE (NCT03723655) is a long-term safety extension study. 231 of 244 eligible patients (94.7%) enrolled."
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "mavacamten",
+      "target_entity": "EXPLORER-HCM",
+      "confidence": 0.95,
+      "evidence": "Parent trial: EXPLORER-HCM (NCT03470545)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "mavacamten",
+      "target_entity": "cardiac failure",
+      "confidence": 0.75,
+      "evidence": "Over 315 patient-years: 8 patients had cardiac failure AE"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "mavacamten",
+      "target_entity": "atrial fibrillation",
+      "confidence": 0.7,
+      "evidence": "21 had atrial fibrillation (11 new onset)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "mavacamten",
+      "target_entity": "left ventricular ejection fraction reduction",
+      "confidence": 0.85,
+      "evidence": "12 patients (5.2%) had transient LVEF <50% resulting in temporary treatment interruption; all recovered"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "NT-proBNP",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.85,
+      "evidence": "NT-proBNP reductions (median: -480 ng/L)"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "LVOT gradient",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.9,
+      "evidence": "LVOT gradient improvements (resting: -35.6 mm Hg; Valsalva: -45.3 mm Hg)"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "NT-proBNP",
+      "target_entity": "mavacamten",
+      "confidence": 0.8,
+      "evidence": "NT-proBNP reductions (median: -480 ng/L)"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "LVOT gradient",
+      "target_entity": "mavacamten",
+      "confidence": 0.82,
+      "evidence": "LVOT gradient improvements (resting: -35.6 mm Hg; Valsalva: -45.3 mm Hg)"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "mavacamten",
+      "target_entity": "cardiac myosin",
+      "confidence": 0.6,
+      "evidence": "Mavacamten Treatment for Symptomatic Obstructive Hypertrophic Cardiomyopathy"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "MYH7",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.55,
+      "evidence": "Mavacamten Treatment for Symptomatic Obstructive Hypertrophic Cardiomyopathy"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T00:00:00+00:00",
+  "error": null
+}

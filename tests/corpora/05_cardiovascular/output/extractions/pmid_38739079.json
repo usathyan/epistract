@@ -1,0 +1,191 @@
+{
+  "document_id": "pmid_38739079",
+  "document_path": "tests/corpora/05_cardiovascular/pmid_38739079.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "aficamten",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "route": "oral",
+        "dose_range": "5-20 mg"
+      },
+      "confidence": 0.98,
+      "context": "Aficamten is an oral selective cardiac myosin inhibitor that reduces LVOT gradients by mitigating cardiac hypercontractility."
+    },
+    {
+      "name": "MYH7",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "description": "cardiac myosin (beta-myosin heavy chain), target of aficamten"
+      },
+      "confidence": 0.9,
+      "context": "Aficamten is an oral selective cardiac myosin inhibitor"
+    },
+    {
+      "name": "obstructive hypertrophic cardiomyopathy",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "oHCM"
+      },
+      "confidence": 0.98,
+      "context": "Aficamten for Symptomatic Obstructive Hypertrophic Cardiomyopathy."
+    },
+    {
+      "name": "cardiac myosin inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "description": "selective inhibition of cardiac myosin reducing hypercontractility and LVOT gradients"
+      },
+      "confidence": 0.95,
+      "context": "Aficamten is an oral selective cardiac myosin inhibitor that reduces LVOT gradients by mitigating cardiac hypercontractility."
+    },
+    {
+      "name": "SEQUOIA-HCM",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT05186818",
+        "phase": 3,
+        "design": "double-blind, randomized, placebo-controlled",
+        "n_patients": 282,
+        "duration_weeks": 24
+      },
+      "confidence": 0.98,
+      "context": "Phase 3, double-blind trial: 282 patients randomized to aficamten (5-20 mg) or placebo for 24 weeks. (SEQUOIA-HCM, NCT05186818, funded by Cytokinetics.)"
+    },
+    {
+      "name": "Cytokinetics",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "sponsor"
+      },
+      "confidence": 0.98,
+      "context": "SEQUOIA-HCM, NCT05186818, funded by Cytokinetics."
+    },
+    {
+      "name": "PMID:38739079",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "journal": "NEJM",
+        "year": 2024,
+        "first_author": "Maron Martin S",
+        "pmid": "38739079"
+      },
+      "confidence": 0.99,
+      "context": "Maron Martin S, Masri Ahmad, Nassif Michael E, Barriales-Villa Roberto, Arad Michael. NEJM (2024). PMID: 38739079"
+    },
+    {
+      "name": "peak oxygen uptake",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "pVO2",
+        "unit": "mL/kg/min",
+        "role": "primary endpoint"
+      },
+      "confidence": 0.95,
+      "context": "Mean change in peak oxygen uptake: 1.8 vs 0.0 mL/kg/min (difference 1.7, P<0.001)."
+    },
+    {
+      "name": "LVOT gradient",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "unit": "mm Hg",
+        "baseline_mean": 55.1,
+        "role": "hemodynamic measure"
+      },
+      "confidence": 0.95,
+      "context": "Baseline mean resting LVOT gradient: 55.1 mm Hg"
+    },
+    {
+      "name": "left ventricular ejection fraction",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "LVEF",
+        "baseline_mean_pct": 74.8
+      },
+      "confidence": 0.93,
+      "context": "mean LVEF: 74.8%."
+    },
+    {
+      "name": "cardiac hypercontractility",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "description": "excessive myocardial contractility characteristic of oHCM"
+      },
+      "confidence": 0.9,
+      "context": "reduces LVOT gradients by mitigating cardiac hypercontractility"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "aficamten",
+      "target_entity": "MYH7",
+      "confidence": 0.93,
+      "evidence": "Aficamten is an oral selective cardiac myosin inhibitor"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "aficamten",
+      "target_entity": "cardiac myosin inhibition",
+      "confidence": 0.95,
+      "evidence": "Aficamten is an oral selective cardiac myosin inhibitor that reduces LVOT gradients by mitigating cardiac hypercontractility."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "aficamten",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.92,
+      "evidence": "Aficamten for Symptomatic Obstructive Hypertrophic Cardiomyopathy."
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "aficamten",
+      "target_entity": "SEQUOIA-HCM",
+      "confidence": 0.98,
+      "evidence": "Phase 3, double-blind trial: 282 patients randomized to aficamten (5-20 mg) or placebo for 24 weeks."
+    },
+    {
+      "relation_type": "SPONSORED_BY",
+      "source_entity": "SEQUOIA-HCM",
+      "target_entity": "Cytokinetics",
+      "confidence": 0.98,
+      "evidence": "SEQUOIA-HCM, NCT05186818, funded by Cytokinetics."
+    },
+    {
+      "relation_type": "REPORTED_IN",
+      "source_entity": "SEQUOIA-HCM",
+      "target_entity": "PMID:38739079",
+      "confidence": 0.99,
+      "evidence": "NEJM (2024). PMID: 38739079"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "LVOT gradient",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.88,
+      "evidence": "reduces LVOT gradients by mitigating cardiac hypercontractility. Baseline mean resting LVOT gradient: 55.1 mm Hg"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "peak oxygen uptake",
+      "target_entity": "aficamten",
+      "confidence": 0.88,
+      "evidence": "Mean change in peak oxygen uptake: 1.8 vs 0.0 mL/kg/min (difference 1.7, P<0.001)."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "cardiac hypercontractility",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.9,
+      "evidence": "reduces LVOT gradients by mitigating cardiac hypercontractility"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T12:00:00.000000+00:00",
+  "error": null
+}

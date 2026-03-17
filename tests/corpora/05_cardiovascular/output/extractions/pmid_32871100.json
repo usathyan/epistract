@@ -1,0 +1,176 @@
+{
+  "document_id": "pmid_32871100",
+  "document_path": "tests/corpora/05_cardiovascular/pmid_32871100.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "mavacamten",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "mechanism": "cardiac myosin inhibitor",
+        "class": "first-in-class"
+      },
+      "confidence": 0.98,
+      "context": "Mavacamten is a first-in-class cardiac myosin inhibitor."
+    },
+    {
+      "name": "MYH7",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "description": "cardiac myosin (beta-myosin heavy chain), target of mavacamten"
+      },
+      "confidence": 0.85,
+      "context": "Mavacamten is a first-in-class cardiac myosin inhibitor."
+    },
+    {
+      "name": "hypertrophic cardiomyopathy",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "subtype": "obstructive",
+        "abbreviation": "HCM"
+      },
+      "confidence": 0.98,
+      "context": "symptomatic obstructive hypertrophic cardiomyopathy (EXPLORER-HCM)"
+    },
+    {
+      "name": "EXPLORER-HCM",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "3",
+        "design": "randomised, double-blind, placebo-controlled",
+        "nct_id": "NCT03470545",
+        "n_enrolled": 251
+      },
+      "confidence": 0.99,
+      "context": "EXPLORER-HCM: a randomised, double-blind, placebo-controlled, phase 3 trial"
+    },
+    {
+      "name": "left ventricular outflow tract obstruction",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "abbreviation": "LVOT obstruction"
+      },
+      "confidence": 0.95,
+      "context": "a major determinant of dynamic left ventricular outflow tract (LVOT) obstruction"
+    },
+    {
+      "name": "cardiac muscle hypercontractility",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.92,
+      "context": "Cardiac muscle hypercontractility is a key pathophysiological abnormality in hypertrophic cardiomyopathy"
+    },
+    {
+      "name": "post-exercise LVOT gradient",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "measurement_type": "hemodynamic"
+      },
+      "confidence": 0.9,
+      "context": "greater reductions in post-exercise LVOT gradient (-36 mm Hg, p<0.0001)"
+    },
+    {
+      "name": "peak oxygen consumption",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "pVO2",
+        "unit": "mL/kg per min"
+      },
+      "confidence": 0.9,
+      "context": "greater increase in pVO2 (+1.4 mL/kg per min, p=0.0006)"
+    },
+    {
+      "name": "NYHA functional class",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "measurement_type": "clinical symptom score"
+      },
+      "confidence": 0.88,
+      "context": "34% more patients in the mavacamten group improved by at least one NYHA class"
+    },
+    {
+      "name": "MyoKardia",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "sponsor"
+      },
+      "confidence": 0.95,
+      "context": "FUNDING: MyoKardia."
+    },
+    {
+      "name": "Lancet",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "year": 2020,
+        "pmid": "32871100"
+      },
+      "confidence": 0.95,
+      "context": "Journal: Lancet (2020) PMID: 32871100"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "mavacamten",
+      "target_entity": "MYH7",
+      "confidence": 0.88,
+      "evidence": "Mavacamten is a first-in-class cardiac myosin inhibitor."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "mavacamten",
+      "target_entity": "hypertrophic cardiomyopathy",
+      "confidence": 0.92,
+      "evidence": "Treatment with mavacamten improved exercise capacity, LVOT obstruction, NYHA functional class, and health status in patients with obstructive hypertrophic cardiomyopathy."
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "mavacamten",
+      "target_entity": "EXPLORER-HCM",
+      "confidence": 0.99,
+      "evidence": "Mavacamten for treatment of symptomatic obstructive hypertrophic cardiomyopathy (EXPLORER-HCM): a randomised, double-blind, placebo-controlled, phase 3 trial."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "cardiac muscle hypercontractility",
+      "target_entity": "hypertrophic cardiomyopathy",
+      "confidence": 0.95,
+      "evidence": "Cardiac muscle hypercontractility is a key pathophysiological abnormality in hypertrophic cardiomyopathy"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "left ventricular outflow tract obstruction",
+      "target_entity": "hypertrophic cardiomyopathy",
+      "confidence": 0.93,
+      "evidence": "a major determinant of dynamic left ventricular outflow tract (LVOT) obstruction"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "post-exercise LVOT gradient",
+      "target_entity": "hypertrophic cardiomyopathy",
+      "confidence": 0.82,
+      "evidence": "greater reductions in post-exercise LVOT gradient (-36 mm Hg, p<0.0001)"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "peak oxygen consumption",
+      "target_entity": "hypertrophic cardiomyopathy",
+      "confidence": 0.78,
+      "evidence": "greater increase in pVO2 (+1.4 mL/kg per min, p=0.0006)"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "NYHA functional class",
+      "target_entity": "mavacamten",
+      "confidence": 0.8,
+      "evidence": "34% more patients in the mavacamten group improved by at least one NYHA class"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T00:00:00+00:00",
+  "error": null
+}

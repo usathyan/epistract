@@ -1,0 +1,240 @@
+{
+  "document_id": "pmid_38451052",
+  "document_path": "tests/corpora/05_cardiovascular/pmid_38451052.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "deucravacitinib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "mechanism": "TYK2 inhibitor"
+      },
+      "confidence": 0.98,
+      "context": "Deucravacitinib in moderate-to-severe plaque psoriasis"
+    },
+    {
+      "name": "apremilast",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "mechanism": "PDE4 inhibitor"
+      },
+      "confidence": 0.95,
+      "context": "1683 patients randomized to placebo, deucravacitinib or apremilast"
+    },
+    {
+      "name": "plaque psoriasis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "severity": "moderate-to-severe"
+      },
+      "confidence": 0.98,
+      "context": "Deucravacitinib in moderate-to-severe plaque psoriasis"
+    },
+    {
+      "name": "TYK2",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "family": "Janus kinase"
+      },
+      "confidence": 0.85,
+      "context": "Deucravacitinib in moderate-to-severe plaque psoriasis"
+    },
+    {
+      "name": "POETYK PSO-1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "3",
+        "duration": "52 weeks"
+      },
+      "confidence": 0.98,
+      "context": "Pooled safety and tolerability over 52 weeks from two phase 3 trials (POETYK PSO-1 and PSO-2)"
+    },
+    {
+      "name": "POETYK PSO-2",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "3",
+        "duration": "52 weeks"
+      },
+      "confidence": 0.98,
+      "context": "Pooled safety and tolerability over 52 weeks from two phase 3 trials (POETYK PSO-1 and PSO-2)"
+    },
+    {
+      "name": "serious infection",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "EAIR": "1.7/100 PY"
+      },
+      "confidence": 0.95,
+      "context": "EAIRs with deucravacitinib: serious infections 1.7/100 PY"
+    },
+    {
+      "name": "major adverse cardiovascular event",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "EAIR": "0.3/100 PY",
+        "abbreviation": "MACE"
+      },
+      "confidence": 0.95,
+      "context": "MACE 0.3/100 PY"
+    },
+    {
+      "name": "venous thromboembolism",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "EAIR": "0.2/100 PY",
+        "abbreviation": "VTE"
+      },
+      "confidence": 0.95,
+      "context": "VTE 0.2/100 PY"
+    },
+    {
+      "name": "malignancy",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "EAIR": "1.0/100 PY"
+      },
+      "confidence": 0.95,
+      "context": "malignancies 1.0/100 PY"
+    },
+    {
+      "name": "herpes zoster",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "EAIR": "0.8/100 PY"
+      },
+      "confidence": 0.95,
+      "context": "herpes zoster 0.8/100 PY"
+    },
+    {
+      "name": "acne",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "EAIR": "2.9/100 PY"
+      },
+      "confidence": 0.95,
+      "context": "acne 2.9/100 PY"
+    },
+    {
+      "name": "folliculitis",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "EAIR": "2.8/100 PY"
+      },
+      "confidence": 0.95,
+      "context": "folliculitis 2.8/100 PY"
+    },
+    {
+      "name": "JEADV",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "year": "2024",
+        "pmid": "38451052",
+        "authors": "Strober Bruce, Blauvelt Andrew, Warren Richard B, Papp Kim A, Armstrong April W"
+      },
+      "confidence": 0.98,
+      "context": "Journal: JEADV (2024) PMID: 38451052"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "deucravacitinib",
+      "target_entity": "TYK2",
+      "confidence": 0.85,
+      "evidence": "Deucravacitinib in moderate-to-severe plaque psoriasis (known TYK2 allosteric inhibitor)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "deucravacitinib",
+      "target_entity": "plaque psoriasis",
+      "confidence": 0.92,
+      "evidence": "Deucravacitinib in moderate-to-severe plaque psoriasis"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "deucravacitinib",
+      "target_entity": "POETYK PSO-1",
+      "confidence": 0.98,
+      "evidence": "Pooled safety and tolerability over 52 weeks from two phase 3 trials (POETYK PSO-1 and PSO-2)"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "deucravacitinib",
+      "target_entity": "POETYK PSO-2",
+      "confidence": 0.98,
+      "evidence": "Pooled safety and tolerability over 52 weeks from two phase 3 trials (POETYK PSO-1 and PSO-2)"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "apremilast",
+      "target_entity": "POETYK PSO-1",
+      "confidence": 0.9,
+      "evidence": "1683 patients randomized to placebo, deucravacitinib or apremilast"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "apremilast",
+      "target_entity": "POETYK PSO-2",
+      "confidence": 0.9,
+      "evidence": "1683 patients randomized to placebo, deucravacitinib or apremilast"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "serious infection",
+      "confidence": 0.8,
+      "evidence": "EAIRs with deucravacitinib: serious infections 1.7/100 PY"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "major adverse cardiovascular event",
+      "confidence": 0.75,
+      "evidence": "MACE 0.3/100 PY"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "venous thromboembolism",
+      "confidence": 0.75,
+      "evidence": "VTE 0.2/100 PY"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "malignancy",
+      "confidence": 0.75,
+      "evidence": "malignancies 1.0/100 PY"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "herpes zoster",
+      "confidence": 0.8,
+      "evidence": "herpes zoster 0.8/100 PY"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "acne",
+      "confidence": 0.85,
+      "evidence": "acne 2.9/100 PY"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "folliculitis",
+      "confidence": 0.85,
+      "evidence": "folliculitis 2.8/100 PY"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T00:00:00+00:00",
+  "error": null
+}

@@ -1,0 +1,178 @@
+{
+  "document_id": "pmid_34004177",
+  "document_path": "tests/corpora/05_cardiovascular/pmid_34004177.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "mavacamten",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "mechanism": "cardiac myosin inhibitor",
+        "first_in_class": true
+      },
+      "confidence": 0.98,
+      "context": "Mavacamten is a first-in-class cardiac myosin inhibitor."
+    },
+    {
+      "name": "MYH7",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "description": "cardiac myosin beta-myosin heavy chain"
+      },
+      "confidence": 0.85,
+      "context": "Mavacamten is a first-in-class cardiac myosin inhibitor."
+    },
+    {
+      "name": "obstructive hypertrophic cardiomyopathy",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "oHCM"
+      },
+      "confidence": 0.98,
+      "context": "Mavacamten for treatment of symptomatic obstructive hypertrophic cardiomyopathy (EXPLORER-HCM)"
+    },
+    {
+      "name": "EXPLORER-HCM",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT03470545",
+        "phase": 3,
+        "design": "randomised, double-blind, placebo-controlled",
+        "duration_weeks": 30
+      },
+      "confidence": 0.98,
+      "context": "EXPLORER-HCM: health status analysis of a randomised, double-blind, placebo-controlled, phase 3 trial. NCT03470545."
+    },
+    {
+      "name": "KCCQ-OS",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "description": "Kansas City Cardiomyopathy Questionnaire Overall Summary score",
+        "type": "patient-reported outcome"
+      },
+      "confidence": 0.9,
+      "context": "the change in KCCQ-OS score was greater with mavacamten than placebo (14.9 vs 5.4; difference +9.1; p<0.0001)"
+    },
+    {
+      "name": "cardiac myosin inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "target_class": "cardiac myosin"
+      },
+      "confidence": 0.95,
+      "context": "Mavacamten is a first-in-class cardiac myosin inhibitor."
+    },
+    {
+      "name": "MyoKardia",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "sponsor"
+      },
+      "confidence": 0.95,
+      "context": "FUNDING: MyoKardia/BMS."
+    },
+    {
+      "name": "Bristol-Myers Squibb",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "abbreviation": "BMS",
+        "role": "sponsor"
+      },
+      "confidence": 0.95,
+      "context": "FUNDING: MyoKardia/BMS."
+    },
+    {
+      "name": "The Lancet",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "34004177",
+        "year": 2021,
+        "journal": "Lancet"
+      },
+      "confidence": 0.98,
+      "context": "Journal: Lancet (2021) PMID: 34004177"
+    },
+    {
+      "name": "improved health status",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "measure": "KCCQ-OS change +9.1 vs placebo",
+        "nnt": 5
+      },
+      "confidence": 0.9,
+      "context": "Mavacamten markedly improved health status with a low number needed to treat for marked improvement."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "mavacamten",
+      "target_entity": "MYH7",
+      "confidence": 0.9,
+      "evidence": "Mavacamten is a first-in-class cardiac myosin inhibitor."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "mavacamten",
+      "target_entity": "cardiac myosin inhibition",
+      "confidence": 0.95,
+      "evidence": "Mavacamten is a first-in-class cardiac myosin inhibitor."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "mavacamten",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.88,
+      "evidence": "Mavacamten for treatment of symptomatic obstructive hypertrophic cardiomyopathy"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "mavacamten",
+      "target_entity": "EXPLORER-HCM",
+      "confidence": 0.98,
+      "evidence": "Mavacamten for treatment of symptomatic obstructive hypertrophic cardiomyopathy (EXPLORER-HCM): health status analysis of a randomised, double-blind, placebo-controlled, phase 3 trial."
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "KCCQ-OS",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.8,
+      "evidence": "the change in KCCQ-OS score was greater with mavacamten than placebo (14.9 vs 5.4; difference +9.1; p<0.0001)"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "KCCQ-OS",
+      "target_entity": "mavacamten",
+      "confidence": 0.82,
+      "evidence": "The proportion of patients with a very large change (KCCQ-OS >=20 points) was 36% vs 15%, NNT of five."
+    },
+    {
+      "relation_type": "FUNDED_BY",
+      "source_entity": "EXPLORER-HCM",
+      "target_entity": "MyoKardia",
+      "confidence": 0.95,
+      "evidence": "FUNDING: MyoKardia/BMS."
+    },
+    {
+      "relation_type": "FUNDED_BY",
+      "source_entity": "EXPLORER-HCM",
+      "target_entity": "Bristol-Myers Squibb",
+      "confidence": 0.95,
+      "evidence": "FUNDING: MyoKardia/BMS."
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "EXPLORER-HCM",
+      "target_entity": "The Lancet",
+      "confidence": 0.98,
+      "evidence": "Journal: Lancet (2021) PMID: 34004177"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T00:33:18.540180+00:00",
+  "error": null
+}

@@ -1,0 +1,229 @@
+{
+  "document_id": "pmid_39196032",
+  "document_path": "tests/corpora/05_cardiovascular/pmid_39196032.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "aficamten",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "mechanism": "cardiac myosin inhibitor"
+      },
+      "confidence": 0.98,
+      "context": "Aficamten is a selective small-molecule inhibitor of cardiac myosin"
+    },
+    {
+      "name": "mavacamten",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "mechanism": "cardiac myosin inhibitor",
+        "class": "first-in-class"
+      },
+      "confidence": 0.95,
+      "context": "The first-in-class cardiac myosin inhibitor, mavacamten, improves symptoms in oHCM"
+    },
+    {
+      "name": "MYH7",
+      "entity_type": "GENE",
+      "attributes": {
+        "description": "cardiac myosin heavy chain beta"
+      },
+      "confidence": 0.85,
+      "context": "selective small-molecule inhibitor of cardiac myosin that diminishes ATPase activity"
+    },
+    {
+      "name": "cardiac myosin",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "function": "sarcomere motor protein",
+        "activity": "ATPase"
+      },
+      "confidence": 0.97,
+      "context": "Aficamten is a selective small-molecule inhibitor of cardiac myosin that diminishes ATPase activity"
+    },
+    {
+      "name": "hypertrophic cardiomyopathy",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "HCM",
+        "inheritance": "inherited",
+        "subtype_mentioned": "obstructive HCM (oHCM)"
+      },
+      "confidence": 0.99,
+      "context": "HCM is an inherited disease of the sarcomere resulting in excessive cardiac contractility"
+    },
+    {
+      "name": "obstructive hypertrophic cardiomyopathy",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "oHCM"
+      },
+      "confidence": 0.95,
+      "context": "mavacamten, improves symptoms in oHCM"
+    },
+    {
+      "name": "cardiac myosin inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "details": "diminishes ATPase activity by strongly slowing phosphate release, stabilizing a weak actin-binding state"
+      },
+      "confidence": 0.97,
+      "context": "aficamten diminishes ATPase activity by strongly slowing phosphate release, stabilizing a weak actin-binding state"
+    },
+    {
+      "name": "MYH7 R403Q",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "MYH7",
+        "mutation": "R403Q",
+        "effect": "hypertrophic"
+      },
+      "confidence": 0.95,
+      "context": "mice bearing the hypertrophic R403Q cardiac myosin mutation"
+    },
+    {
+      "name": "myosin catalytic domain",
+      "entity_type": "PROTEIN_DOMAIN",
+      "attributes": {
+        "description": "catalytic domain of cardiac myosin, contains allosteric binding site for aficamten"
+      },
+      "confidence": 0.92,
+      "context": "Binding to an allosteric site on the myosin catalytic domain distinct from mavacamten"
+    },
+    {
+      "name": "cardiac myocytes",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {
+        "description": "cardiac muscle cells"
+      },
+      "confidence": 0.93,
+      "context": "In cardiac myocytes and in mice bearing the hypertrophic R403Q cardiac myosin mutation"
+    },
+    {
+      "name": "smooth muscle",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {
+        "description": "smooth muscle tissue"
+      },
+      "confidence": 0.85,
+      "context": "provides a basis for selectivity over smooth and fast skeletal muscle"
+    },
+    {
+      "name": "fast skeletal muscle",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {
+        "description": "fast-twitch skeletal muscle tissue"
+      },
+      "confidence": 0.85,
+      "context": "provides a basis for selectivity over smooth and fast skeletal muscle"
+    },
+    {
+      "name": "Nature Cardiovascular Research",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "year": 2024,
+        "pmid": "39196032"
+      },
+      "confidence": 0.99,
+      "context": "Journal: Nature cardiovascular research (2024)"
+    },
+    {
+      "name": "sarcomere contractility pathway",
+      "entity_type": "PATHWAY",
+      "attributes": {
+        "description": "sarcomere-mediated cardiac contractility"
+      },
+      "confidence": 0.88,
+      "context": "HCM is an inherited disease of the sarcomere resulting in excessive cardiac contractility"
+    },
+    {
+      "name": "excessive cardiac contractility",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "description": "increased cardiac contraction force due to sarcomere dysfunction"
+      },
+      "confidence": 0.92,
+      "context": "HCM is an inherited disease of the sarcomere resulting in excessive cardiac contractility"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "aficamten",
+      "target_entity": "cardiac myosin",
+      "confidence": 0.98,
+      "evidence": "Aficamten is a selective small-molecule inhibitor of cardiac myosin that diminishes ATPase activity"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "aficamten",
+      "target_entity": "hypertrophic cardiomyopathy",
+      "confidence": 0.95,
+      "evidence": "Aficamten is a small-molecule cardiac myosin inhibitor designed to treat hypertrophic cardiomyopathy"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "mavacamten",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.93,
+      "evidence": "The first-in-class cardiac myosin inhibitor, mavacamten, improves symptoms in oHCM"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "mavacamten",
+      "target_entity": "cardiac myosin",
+      "confidence": 0.93,
+      "evidence": "The first-in-class cardiac myosin inhibitor, mavacamten"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "aficamten",
+      "target_entity": "myosin catalytic domain",
+      "confidence": 0.96,
+      "evidence": "Binding to an allosteric site on the myosin catalytic domain distinct from mavacamten"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "MYH7 R403Q",
+      "target_entity": "hypertrophic cardiomyopathy",
+      "confidence": 0.94,
+      "evidence": "mice bearing the hypertrophic R403Q cardiac myosin mutation"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "cardiac myosin",
+      "target_entity": "hypertrophic cardiomyopathy",
+      "confidence": 0.92,
+      "evidence": "HCM is an inherited disease of the sarcomere resulting in excessive cardiac contractility"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "cardiac myosin",
+      "target_entity": "sarcomere contractility pathway",
+      "confidence": 0.90,
+      "evidence": "HCM is an inherited disease of the sarcomere resulting in excessive cardiac contractility"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "excessive cardiac contractility",
+      "target_entity": "hypertrophic cardiomyopathy",
+      "confidence": 0.93,
+      "evidence": "HCM is an inherited disease of the sarcomere resulting in excessive cardiac contractility"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "MYH7",
+      "target_entity": "cardiac myosin",
+      "confidence": 0.85,
+      "evidence": "selective small-molecule inhibitor of cardiac myosin that diminishes ATPase activity"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T00:00:00+00:00",
+  "error": null
+}

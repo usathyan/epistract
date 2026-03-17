@@ -1,0 +1,242 @@
+review_threshold: 0.7
+relations:
+- source_id: biomarker:post_exercise_lvot_gradient
+  source_name: post-exercise LVOT gradient
+  target_id: disease:hypertrophic_cardiomyopathy
+  target_name: hypertrophic cardiomyopathy
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.82
+  evidence: greater reductions in post-exercise LVOT gradient (-36 mm Hg, p<0.0001)
+  source_document: pmid_32871100
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:peak_oxygen_consumption
+  source_name: peak oxygen consumption
+  target_id: disease:hypertrophic_cardiomyopathy
+  target_name: hypertrophic cardiomyopathy
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.78
+  evidence: greater increase in pVO2 (+1.4 mL/kg per min, p=0.0006)
+  source_document: pmid_32871100
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:nyha_functional_class
+  source_name: NYHA functional class
+  target_id: compound:mavacamten
+  target_name: mavacamten
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.8
+  evidence: 34% more patients in the mavacamten group improved by at least one NYHA
+    class
+  source_document: pmid_32871100
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:kccq_os
+  source_name: KCCQ-OS
+  target_id: disease:obstructive_hypertrophic_cardiomyopathy
+  target_name: obstructive hypertrophic cardiomyopathy
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.8
+  evidence: the change in KCCQ-OS score was greater with mavacamten than placebo (14.9
+    vs 5.4; difference +9.1; p<0.0001)
+  source_document: pmid_34004177
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:kccq_os
+  source_name: KCCQ-OS
+  target_id: compound:mavacamten
+  target_name: mavacamten
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.82
+  evidence: The proportion of patients with a very large change (KCCQ-OS >=20 points)
+    was 36% vs 15%, NNT of five.
+  source_document: pmid_34004177
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:pasi75
+  source_name: PASI75
+  target_id: compound:deucravacitinib
+  target_name: deucravacitinib
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.988
+  evidence: At week 16, over 50% of patients treated with deucravacitinib reached
+    PASI75, significantly superior to placebo and apremilast.
+  source_document: pmid_36453809
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:pasi75
+  source_name: PASI75
+  target_id: disease:psoriasis
+  target_name: psoriasis
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.88
+  evidence: over 50% of patients treated with deucravacitinib reached PASI75
+  source_document: pmid_36453809
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:left_ventricular_outflow_tract_gradient
+  source_name: left ventricular outflow tract gradient
+  target_id: disease:obstructive_hypertrophic_cardiomyopathy
+  target_name: obstructive hypertrophic cardiomyopathy
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.85
+  evidence: reduced LVOT gradients
+  source_document: pmid_37804245
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:left_ventricular_outflow_tract_gradient
+  source_name: left ventricular outflow tract gradient
+  target_id: compound:mavacamten
+  target_name: mavacamten
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.87
+  evidence: mavacamten was well tolerated, reduced LVOT gradients, improved exercise
+    capacity and symptoms
+  source_document: pmid_37804245
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:nt_probnp
+  source_name: NT-proBNP
+  target_id: disease:obstructive_hypertrophic_cardiomyopathy
+  target_name: obstructive hypertrophic cardiomyopathy
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.85
+  evidence: 'NT-proBNP reductions (median: -480 ng/L)'
+  source_document: pmid_38176782
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:nt_probnp
+  source_name: NT-proBNP
+  target_id: compound:mavacamten
+  target_name: mavacamten
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.8
+  evidence: 'NT-proBNP reductions (median: -480 ng/L)'
+  source_document: pmid_38176782
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:nt_probnp
+  source_name: NT-proBNP
+  target_id: disease:hypertrophic_cardiomyopathy
+  target_name: hypertrophic cardiomyopathy
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.85
+  evidence: 'Sustained reductions to Week 180: resting LVOT gradient -40.3 mm Hg,
+    Valsalva -55.3 mm Hg, NT-proBNP -562 ng/L.'
+  source_document: pmid_39217450
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:lvot_gradient
+  source_name: LVOT gradient
+  target_id: disease:obstructive_hypertrophic_cardiomyopathy
+  target_name: obstructive hypertrophic cardiomyopathy
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.988
+  evidence: 'LVOT gradient improvements (resting: -35.6 mm Hg; Valsalva: -45.3 mm
+    Hg)'
+  source_document: pmid_38176782
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:lvot_gradient
+  source_name: LVOT gradient
+  target_id: compound:mavacamten
+  target_name: mavacamten
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.82
+  evidence: 'LVOT gradient improvements (resting: -35.6 mm Hg; Valsalva: -45.3 mm
+    Hg)'
+  source_document: pmid_38176782
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:lvot_gradient
+  source_name: LVOT gradient
+  target_id: disease:hypertrophic_cardiomyopathy
+  target_name: hypertrophic cardiomyopathy
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.88
+  evidence: 'Sustained reductions to Week 180: resting LVOT gradient -40.3 mm Hg,
+    Valsalva -55.3 mm Hg'
+  source_document: pmid_39217450
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: gene:myh7
+  source_name: MYH7
+  target_id: disease:obstructive_hypertrophic_cardiomyopathy
+  target_name: obstructive hypertrophic cardiomyopathy
+  relation_type: IMPLICATED_IN
+  confidence: 0.55
+  evidence: Mavacamten Treatment for Symptomatic Obstructive Hypertrophic Cardiomyopathy
+  source_document: pmid_38176782
+  status: DRAFT
+  flag_reason: Low confidence (0.55 < 0.7)
+- source_id: biomarker:pasi_75
+  source_name: PASI 75
+  target_id: disease:plaque_psoriasis
+  target_name: plaque psoriasis
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.85
+  evidence: 'Clinical responses maintained: PASI 75 week 52: 72.4%, week 112: 79.7%'
+  source_document: pmid_38226713
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:peak_oxygen_uptake
+  source_name: peak oxygen uptake
+  target_id: compound:aficamten
+  target_name: aficamten
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.88
+  evidence: 'Mean change in peak oxygen uptake: 1.8 vs 0.0 mL/kg/min (difference 1.7,
+    P<0.001).'
+  source_document: pmid_38739079
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:lvef
+  source_name: LVEF
+  target_id: disease:hypertrophic_cardiomyopathy
+  target_name: hypertrophic cardiomyopathy
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.97
+  evidence: Mean LVEF decreased from 73.9% to 63.9% (Week 180).
+  source_document: pmid_39217450
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:pasi_90
+  source_name: PASI 90
+  target_id: compound:deucravacitinib
+  target_name: deucravacitinib
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.85
+  evidence: 'Clinical responses maintained: PASI 90 at 1 year 45.6%, at 4 years 47.5%'
+  source_document: pmid_40045918
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: phenotype:cyp2c19_poor_metabolizer
+  source_name: CYP2C19 poor metabolizer
+  target_id: compound:mavacamten
+  target_name: mavacamten
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.9
+  evidence: CYP2C19 poor metabolizers have ~2-fold higher exposure.
+  source_document: structural_mavacamten
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: compound:fluconazole
+  source_name: fluconazole
+  target_id: compound:mavacamten
+  target_name: mavacamten
+  relation_type: CONTRAINDICATED_FOR
+  confidence: 0.95
+  evidence: Strong CYP2C19 inhibitors (fluconazole, fluvoxamine) are contraindicated.
+  source_document: structural_mavacamten
+  status: DRAFT
+  flag_reason: Type 'CONTRAINDICATED_FOR' requires review
+- source_id: compound:fluvoxamine
+  source_name: fluvoxamine
+  target_id: compound:mavacamten
+  target_name: mavacamten
+  relation_type: CONTRAINDICATED_FOR
+  confidence: 0.95
+  evidence: Strong CYP2C19 inhibitors (fluconazole, fluvoxamine) are contraindicated.
+  source_document: structural_mavacamten
+  status: DRAFT
+  flag_reason: Type 'CONTRAINDICATED_FOR' requires review

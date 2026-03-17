@@ -1,0 +1,178 @@
+{
+  "document_id": "pmid_37804245",
+  "document_path": "tests/corpora/05_cardiovascular/pmid_37804245.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "mavacamten",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "cardiac myosin inhibitor",
+        "first_in_class": true
+      },
+      "confidence": 0.98,
+      "context": "Mavacamten is a first-in-class, targeted, cardiac-specific myosin inhibitor approved by the US FDA for treatment of adults with symptomatic NYHA Classes II and III obstructive HCM."
+    },
+    {
+      "name": "cardiac myosin",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "specificity": "cardiac-specific"
+      },
+      "confidence": 0.95,
+      "context": "cardiac-specific myosin inhibitor"
+    },
+    {
+      "name": "obstructive hypertrophic cardiomyopathy",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "oHCM",
+        "NYHA_classes": ["II", "III"]
+      },
+      "confidence": 0.98,
+      "context": "approved by the US FDA for treatment of adults with symptomatic NYHA Classes II and III obstructive HCM"
+    },
+    {
+      "name": "hypertrophic cardiomyopathy",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "HCM"
+      },
+      "confidence": 0.95,
+      "context": "obstructive hypertrophic cardiomyopathy"
+    },
+    {
+      "name": "hyper-contractile phenotype",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.90,
+      "context": "Mavacamten targets the hyper-contractile phenotype."
+    },
+    {
+      "name": "left ventricular outflow tract gradient",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "LVOT gradient",
+        "direction": "reduced"
+      },
+      "confidence": 0.92,
+      "context": "reduced LVOT gradients"
+    },
+    {
+      "name": "US FDA",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "full_name": "United States Food and Drug Administration"
+      },
+      "confidence": 0.98,
+      "context": "approved by the US FDA"
+    },
+    {
+      "name": "FDA approval of mavacamten",
+      "entity_type": "REGULATORY_ACTION",
+      "attributes": {
+        "agency": "US FDA",
+        "indication": "symptomatic NYHA Classes II and III obstructive HCM",
+        "population": "adults"
+      },
+      "confidence": 0.97,
+      "context": "approved by the US FDA for treatment of adults with symptomatic NYHA Classes II and III obstructive HCM"
+    },
+    {
+      "name": "European heart journal",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "year": 2023,
+        "pmid": "37804245",
+        "authors": "Braunwald E, Saberi S, Abraham TP, Elliott PM, Olivotto I"
+      },
+      "confidence": 0.99,
+      "context": "European heart journal (2023) PMID: 37804245"
+    },
+    {
+      "name": "septal reduction therapy",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "type": "surgical intervention"
+      },
+      "confidence": 0.85,
+      "context": "Mavacamten substantially reduced guideline eligibility for septal reduction therapy candidates with oHCM and drug-refractory symptoms."
+    },
+    {
+      "name": "cardiac remodelling",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "direction": "favourable"
+      },
+      "confidence": 0.88,
+      "context": "Treatment was associated with evidence of favourable cardiac remodelling in multi-modality imaging studies."
+    },
+    {
+      "name": "exercise capacity",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "direction": "improved"
+      },
+      "confidence": 0.85,
+      "context": "improved exercise capacity and symptoms"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "mavacamten",
+      "target_entity": "cardiac myosin",
+      "confidence": 0.97,
+      "evidence": "Mavacamten is a first-in-class, targeted, cardiac-specific myosin inhibitor"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "mavacamten",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.98,
+      "evidence": "approved by the US FDA for treatment of adults with symptomatic NYHA Classes II and III obstructive HCM"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "mavacamten",
+      "target_entity": "hyper-contractile phenotype",
+      "confidence": 0.92,
+      "evidence": "Mavacamten targets the hyper-contractile phenotype."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "hyper-contractile phenotype",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.88,
+      "evidence": "Mavacamten targets the hyper-contractile phenotype... obstructive HCM"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "left ventricular outflow tract gradient",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.85,
+      "evidence": "reduced LVOT gradients"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "left ventricular outflow tract gradient",
+      "target_entity": "mavacamten",
+      "confidence": 0.87,
+      "evidence": "mavacamten was well tolerated, reduced LVOT gradients, improved exercise capacity and symptoms"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "mavacamten",
+      "target_entity": "European heart journal",
+      "confidence": 0.90,
+      "evidence": "European heart journal (2023) PMID: 37804245"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T00:00:00+00:00",
+  "error": null
+}

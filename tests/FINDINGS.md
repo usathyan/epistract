@@ -137,15 +137,15 @@ Integrated into `scripts/run_sift.py` build step — runs automatically after ev
 
 The same 17-entity-type, 30-relation-type schema produces meaningful knowledge graphs across fundamentally different drug discovery domains:
 
-| Dimension | Scenario 1 (Neurogenetics) | Scenario 2 (Oncology) | Scenario 3 (Rare Disease) | Scenario 4 (Immuno-Oncology) |
-|---|---|---|---|---|
-| Dominant entity types | GENE (48), PROTEIN (21), PHENOTYPE (18) | GENE (20), COMPOUND (11), SEQUENCE_VARIANT (10) | COMPOUND (5), ADVERSE_EVENT (9), BIOMARKER (8), CLINICAL_TRIAL (7) | COMPOUND (30+), PROTEIN (20+), CLINICAL_TRIAL (8), ADVERSE_EVENT (10+) |
-| Dominant relation types | IMPLICATED_IN (84), PARTICIPATES_IN (23) | CONFERS_RESISTANCE_TO (26), INHIBITS (10), COMBINED_WITH (9) | CAUSES (10), HAS_MECHANISM (8), EVALUATED_IN (7), DIAGNOSTIC_FOR (4) | INHIBITS (20+), INDICATED_FOR (30+), EVALUATED_IN (16+), CAUSES (10+) |
-| Community themes | GWAS loci, pathways, cell biology | Drug combinations, resistance, clinical trials | PKU enzyme therapy, gene therapy safety, CNP analog, bone biology | PD-1/CTLA-4/LAG-3 checkpoint axes, HCC microenvironment, combination strategies |
-| Schema coverage (entity types used) | 10 of 17 (59%) | 16 of 17 (94%) | 16 of 17 (94%) | 15 of 17 (88%) |
-| Schema coverage (relation types used) | 14 of 30 (47%) | 17 of 30 (57%) | 21 of 30 (70%) | 16 of 30 (53%) |
+| Dimension | Scenario 1 (Neurogenetics) | Scenario 2 (Oncology) | Scenario 3 (Rare Disease) | Scenario 4 (Immuno-Oncology) | Scenario 5 (Cardio/Inflammation) |
+|---|---|---|---|---|---|
+| Dominant entity types | GENE (48), PROTEIN (21), PHENOTYPE (18) | GENE (20), COMPOUND (11), SEQUENCE_VARIANT (10) | COMPOUND (5), ADVERSE_EVENT (9), BIOMARKER (8), CLINICAL_TRIAL (7) | COMPOUND (30+), PROTEIN (20+), CLINICAL_TRIAL (8), ADVERSE_EVENT (10+) | COMPOUND (5), CLINICAL_TRIAL (8), ADVERSE_EVENT (15+), BIOMARKER (10+) |
+| Dominant relation types | IMPLICATED_IN (84), PARTICIPATES_IN (23) | CONFERS_RESISTANCE_TO (26), INHIBITS (10), COMBINED_WITH (9) | CAUSES (10), HAS_MECHANISM (8), EVALUATED_IN (7), DIAGNOSTIC_FOR (4) | INHIBITS (20+), INDICATED_FOR (30+), EVALUATED_IN (16+), CAUSES (10+) | EVALUATED_IN (15+), CAUSES (12+), INHIBITS (8), INDICATED_FOR (8) |
+| Community themes | GWAS loci, pathways, cell biology | Drug combinations, resistance, clinical trials | PKU enzyme therapy, gene therapy safety, CNP analog, bone biology | PD-1/CTLA-4/LAG-3 checkpoint axes, HCC microenvironment, combination strategies | HCM/sarcomere biology, TYK2/JAK-STAT psoriasis, cardiac myosin inhibitors |
+| Schema coverage (entity types used) | 10 of 17 (59%) | 16 of 17 (94%) | 16 of 17 (94%) | 15 of 17 (88%) | 14 of 17 (82%) |
+| Schema coverage (relation types used) | 14 of 30 (47%) | 17 of 30 (57%) | 21 of 30 (70%) | 16 of 30 (53%) | 14 of 30 (47%) |
 
-The four scenarios together exercise 17 of 17 entity types (100%) and 26 of 30 relation types (87%). Scenario 4 added 2 new relation types: COMBINED_WITH and BINDS_TO — reflecting the combination-centric nature of immuno-oncology and the structural/binding data from the nivolumab sequence profile.
+The five scenarios together exercise 17 of 17 entity types (100%) and 27 of 30 relation types (90%). Scenario 5 validated the schema's ability to cleanly separate two unrelated therapeutic areas (cardiology vs dermatology) within a single corpus — community detection correctly produced distinct clusters with no spurious cross-domain connections. The addition of CONTRAINDICATED_FOR (mavacamten/CYP2C19 inhibitors) brings the cumulative relation type coverage to 90%.
 
 **Systemic lesson:** A domain schema designed for the breadth of drug discovery generalizes across neurogenetics, oncology, and rare disease without modification. Each domain naturally exercises different schema facets, confirming the schema is neither over-specified nor under-specified.
 
@@ -153,19 +153,19 @@ The four scenarios together exercise 17 of 17 entity types (100%) and 26 of 30 r
 
 ## Cumulative Test Metrics
 
-| Metric | Scenario 1 | Scenario 2 | Scenario 3 | Scenario 4 | Combined |
-|---|---|---|---|---|---|
-| Documents processed | 15 | 16 | 15 | 16 | 62 |
-| Raw entities extracted | 297 | 231 | 182 | 256 | 966 |
-| Raw relations extracted | 251 | 194 | 128 | 216 | 789 |
-| Graph nodes (deduplicated) | 149 | 108 | 94 | 132 | 483 |
-| Graph links | 457 | 307 | 229 | 361 | 1354 |
-| Communities detected | 6 | 4 | 4 | 5 | 19 |
-| Entity types exercised | 10 | 16 | 16 | 15 | 17 (100%) |
-| Relation types exercised | 14 | 17 | 21 | 16 | 26 (87%) |
-| UATs passed | 4/4 | 5/5 | 3/3 | 4/4 | 16/16 |
-| Bugs found | 2 critical, 2 medium, 2 low | 1 critical | 0 new | 0 new | 3 critical, 2 medium, 2 low |
-| Code fixes applied | 6 files modified, 2 new scripts | 3 files modified | 0 (stable) | 0 (stable) | 9 files modified, 2 new scripts |
+| Metric | Scenario 1 | Scenario 2 | Scenario 3 | Scenario 4 | Scenario 5 | Combined |
+|---|---|---|---|---|---|---|
+| Documents processed | 15 | 16 | 15 | 16 | 15 | 77 |
+| Raw entities extracted | 297 | 231 | 182 | 256 | 185 | 1151 |
+| Raw relations extracted | 251 | 194 | 128 | 216 | 148 | 937 |
+| Graph nodes (deduplicated) | 149 | 108 | 94 | 132 | 94 | 577 |
+| Graph links | 457 | 307 | 229 | 361 | 246 | 1600 |
+| Communities detected | 6 | 4 | 4 | 5 | 5 | 24 |
+| Entity types exercised | 10 | 16 | 16 | 15 | 14 | 17 (100%) |
+| Relation types exercised | 14 | 17 | 21 | 16 | 14 | 27 (90%) |
+| UATs passed | 4/4 | 5/5 | 3/3 | 4/4 | 3/3 | 19/19 |
+| Bugs found | 2 critical, 2 medium, 2 low | 1 critical | 0 new | 0 new | 0 new | 3 critical, 2 medium, 2 low |
+| Code fixes applied | 6 files modified, 2 new scripts | 3 files modified | 0 (stable) | 0 (stable) | 0 (stable) | 9 files modified, 2 new scripts |
 
 ---
 
@@ -183,7 +183,7 @@ All test inputs (PubMed abstracts), outputs (extraction JSONs, graph data), and 
 Critical fixes employ two-layer defenses: the primary fix addresses root cause (prompt improvement), the secondary fix catches regressions defensively (runtime normalization). This is consistent with pharmaceutical software validation practices where single points of failure are unacceptable.
 
 ### Cross-Domain Validation
-The same pipeline is tested across fundamentally different drug discovery domains (neurogenetics, oncology, rare disease, and immuno-oncology, with cardiovascular pending). This validates that the system generalizes rather than overfitting to a single domain.
+The same pipeline is tested across fundamentally different drug discovery domains (neurogenetics, oncology, rare disease, immuno-oncology, and cardiovascular/inflammation). All five scenarios are complete. This validates that the system generalizes rather than overfitting to a single domain.
 
 ### Scientist-Facing Documentation
 Every scenario result includes a scientific narrative that a domain expert can evaluate for accuracy. Community labels are generated algorithmically but validated against biological expectations. This bridges the gap between software validation and scientific validation.

@@ -1,0 +1,153 @@
+{
+  "document_id": "pmid_32498620",
+  "document_path": "tests/corpora/05_cardiovascular/pmid_32498620.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "mavacamten",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "route": "oral",
+        "dosing": "once-daily"
+      },
+      "confidence": 0.98,
+      "context": "Mavacamten is a first-in-class targeted inhibitor of cardiac myosin"
+    },
+    {
+      "name": "MYH7",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "description": "cardiac myosin (beta-myosin heavy chain)"
+      },
+      "confidence": 0.85,
+      "context": "first-in-class targeted inhibitor of cardiac myosin"
+    },
+    {
+      "name": "hypertrophic cardiomyopathy",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "subtype": "obstructive",
+        "abbreviation": "oHCM"
+      },
+      "confidence": 0.98,
+      "context": "Obstructive hypertrophic cardiomyopathy (oHCM) is characterized by unexplained left ventricular (LV) hypertrophy associated with dynamic LV outflow tract obstruction"
+    },
+    {
+      "name": "left ventricular hypertrophy",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "characterized by unexplained left ventricular (LV) hypertrophy"
+    },
+    {
+      "name": "left ventricular outflow tract obstruction",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "qualifier": "dynamic"
+      },
+      "confidence": 0.95,
+      "context": "associated with dynamic LV outflow tract obstruction"
+    },
+    {
+      "name": "EXPLORER-HCM",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": 3,
+        "design": "randomized, double-blind, placebo-controlled",
+        "registry_id": "NCT03470545",
+        "duration_weeks": 30,
+        "multicenter": true
+      },
+      "confidence": 0.99,
+      "context": "EXPLORER-HCM is a multicenter, phase 3, randomized, double-blind, placebo-controlled trial to investigate the efficacy and safety of mavacamten in treating symptomatic oHCM"
+    },
+    {
+      "name": "PIONEER-HCM",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": 2
+      },
+      "confidence": 0.95,
+      "context": "relieve symptoms of oHCM in the PIONEER-HCM phase 2 study"
+    },
+    {
+      "name": "Circulation. Heart failure",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "year": 2020,
+        "pmid": "32498620",
+        "authors": "Ho Carolyn Y, Olivotto Iacopo, Jacoby Daniel, Lester Steven J, Roe Matthew"
+      },
+      "confidence": 0.99,
+      "context": "Journal: Circulation. Heart failure (2020)"
+    },
+    {
+      "name": "cardiac myosin inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "target": "cardiac myosin",
+        "strategy": "targeted inhibition"
+      },
+      "confidence": 0.95,
+      "context": "first-in-class, targeted strategy of myosin inhibition"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "mavacamten",
+      "target_entity": "MYH7",
+      "confidence": 0.9,
+      "evidence": "Mavacamten is a first-in-class targeted inhibitor of cardiac myosin"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "mavacamten",
+      "target_entity": "hypertrophic cardiomyopathy",
+      "confidence": 0.85,
+      "evidence": "investigate the efficacy and safety of mavacamten in treating symptomatic oHCM"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "mavacamten",
+      "target_entity": "EXPLORER-HCM",
+      "confidence": 0.99,
+      "evidence": "EXPLORER-HCM is a multicenter, phase 3, randomized, double-blind, placebo-controlled trial to investigate the efficacy and safety of mavacamten"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "mavacamten",
+      "target_entity": "PIONEER-HCM",
+      "confidence": 0.95,
+      "evidence": "relieve symptoms of oHCM in the PIONEER-HCM phase 2 study"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "mavacamten",
+      "target_entity": "cardiac myosin inhibition",
+      "confidence": 0.95,
+      "evidence": "first-in-class, targeted strategy of myosin inhibition"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "left ventricular outflow tract obstruction",
+      "target_entity": "hypertrophic cardiomyopathy",
+      "confidence": 0.95,
+      "evidence": "Obstructive hypertrophic cardiomyopathy (oHCM) is characterized by unexplained left ventricular (LV) hypertrophy associated with dynamic LV outflow tract obstruction"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "left ventricular hypertrophy",
+      "target_entity": "hypertrophic cardiomyopathy",
+      "confidence": 0.95,
+      "evidence": "characterized by unexplained left ventricular (LV) hypertrophy"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T00:00:00+00:00",
+  "error": null
+}

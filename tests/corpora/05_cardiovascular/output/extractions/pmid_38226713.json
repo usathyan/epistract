@@ -1,0 +1,242 @@
+{
+  "document_id": "pmid_38226713",
+  "document_path": "tests/corpora/05_cardiovascular/pmid_38226713.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "deucravacitinib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "route": "oral",
+        "mechanism": "selective allosteric TYK2 inhibitor"
+      },
+      "confidence": 0.98,
+      "context": "deucravacitinib, an oral selective allosteric TYK2 inhibitor, was well tolerated and efficacious over 1 year"
+    },
+    {
+      "name": "TYK2",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "tyrosine kinase 2"
+      },
+      "confidence": 0.97,
+      "context": "an oral selective allosteric TYK2 inhibitor"
+    },
+    {
+      "name": "plaque psoriasis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "psoriasis"
+      },
+      "confidence": 0.98,
+      "context": "Deucravacitinib in plaque psoriasis: 2-year safety and efficacy results"
+    },
+    {
+      "name": "POETYK PSO-1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "III",
+        "design": "randomized controlled trial"
+      },
+      "confidence": 0.95,
+      "context": "In the phase III POETYK PSO-1 and PSO-2 trials"
+    },
+    {
+      "name": "POETYK PSO-2",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "III",
+        "design": "randomized controlled trial"
+      },
+      "confidence": 0.95,
+      "context": "In the phase III POETYK PSO-1 and PSO-2 trials"
+    },
+    {
+      "name": "POETYK LTE",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "IIIb",
+        "design": "open-label extension"
+      },
+      "confidence": 0.95,
+      "context": "POETYK LTE is an ongoing phase IIIb open-label extension"
+    },
+    {
+      "name": "herpes zoster",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "meddra_term": "herpes zoster"
+      },
+      "confidence": 0.9,
+      "context": "EAIRs per 100 PY were similar at 1 year and 2 years for serious AEs, discontinuations, deaths, serious infections, herpes zoster, MACE, VTE and malignancies"
+    },
+    {
+      "name": "major adverse cardiovascular events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "meddra_term": "major adverse cardiovascular events",
+        "abbreviation": "MACE"
+      },
+      "confidence": 0.88,
+      "context": "EAIRs per 100 PY were similar at 1 year and 2 years for serious AEs, discontinuations, deaths, serious infections, herpes zoster, MACE, VTE and malignancies"
+    },
+    {
+      "name": "venous thromboembolism",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "meddra_term": "venous thromboembolism",
+        "abbreviation": "VTE"
+      },
+      "confidence": 0.88,
+      "context": "EAIRs per 100 PY were similar at 1 year and 2 years for serious AEs, discontinuations, deaths, serious infections, herpes zoster, MACE, VTE and malignancies"
+    },
+    {
+      "name": "malignancies",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "meddra_term": "malignant neoplasm"
+      },
+      "confidence": 0.88,
+      "context": "EAIRs per 100 PY were similar at 1 year and 2 years for serious AEs, discontinuations, deaths, serious infections, herpes zoster, MACE, VTE and malignancies"
+    },
+    {
+      "name": "serious infections",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "meddra_term": "serious infection"
+      },
+      "confidence": 0.9,
+      "context": "EAIRs per 100 PY were similar at 1 year and 2 years for serious AEs, discontinuations, deaths, serious infections, herpes zoster, MACE, VTE and malignancies"
+    },
+    {
+      "name": "PASI 75",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "description": "75% reduction in Psoriasis Area and Severity Index",
+        "type": "clinical endpoint"
+      },
+      "confidence": 0.92,
+      "context": "Clinical responses maintained: PASI 75 week 52: 72.4%, week 112: 79.7%"
+    },
+    {
+      "name": "Lebwohl et al. 2024",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "38226713",
+        "journal": "British journal of dermatology",
+        "year": 2024
+      },
+      "confidence": 0.99,
+      "context": "Lebwohl Mark, Warren Richard B, Sofen Howard, Imafuku Shinichi, Paul Carle. British journal of dermatology (2024)"
+    },
+    {
+      "name": "JAK-STAT signaling pathway",
+      "entity_type": "PATHWAY",
+      "attributes": {
+        "description": "TYK2 is a member of the JAK family involved in JAK-STAT signaling"
+      },
+      "confidence": 0.8,
+      "context": "an oral selective allosteric TYK2 inhibitor"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "deucravacitinib",
+      "target_entity": "TYK2",
+      "confidence": 0.98,
+      "evidence": "deucravacitinib, an oral selective allosteric TYK2 inhibitor"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "deucravacitinib",
+      "target_entity": "plaque psoriasis",
+      "confidence": 0.92,
+      "evidence": "Deucravacitinib in plaque psoriasis: 2-year safety and efficacy results"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "deucravacitinib",
+      "target_entity": "POETYK PSO-1",
+      "confidence": 0.97,
+      "evidence": "In the phase III POETYK PSO-1 and PSO-2 trials, deucravacitinib was well tolerated and efficacious"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "deucravacitinib",
+      "target_entity": "POETYK PSO-2",
+      "confidence": 0.97,
+      "evidence": "In the phase III POETYK PSO-1 and PSO-2 trials, deucravacitinib was well tolerated and efficacious"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "deucravacitinib",
+      "target_entity": "POETYK LTE",
+      "confidence": 0.95,
+      "evidence": "POETYK LTE is an ongoing phase IIIb open-label extension. 1519 patients received at least one dose."
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "herpes zoster",
+      "confidence": 0.7,
+      "evidence": "EAIRs per 100 PY were similar at 1 year and 2 years for herpes zoster"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "major adverse cardiovascular events",
+      "confidence": 0.6,
+      "evidence": "EAIRs per 100 PY were similar at 1 year and 2 years for MACE"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "venous thromboembolism",
+      "confidence": 0.6,
+      "evidence": "EAIRs per 100 PY were similar at 1 year and 2 years for VTE"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "serious infections",
+      "confidence": 0.65,
+      "evidence": "EAIRs per 100 PY were similar at 1 year and 2 years for serious infections"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "malignancies",
+      "confidence": 0.55,
+      "evidence": "EAIRs per 100 PY were similar at 1 year and 2 years for malignancies"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "PASI 75",
+      "target_entity": "plaque psoriasis",
+      "confidence": 0.85,
+      "evidence": "Clinical responses maintained: PASI 75 week 52: 72.4%, week 112: 79.7%"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "TYK2",
+      "target_entity": "JAK-STAT signaling pathway",
+      "confidence": 0.8,
+      "evidence": "an oral selective allosteric TYK2 inhibitor"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "JAK-STAT signaling pathway",
+      "target_entity": "plaque psoriasis",
+      "confidence": 0.75,
+      "evidence": "deucravacitinib, an oral selective allosteric TYK2 inhibitor, was well tolerated and efficacious"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T00:00:00+00:00",
+  "error": null
+}

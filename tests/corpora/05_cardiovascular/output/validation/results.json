@@ -1,0 +1,1073 @@
+{
+  "generated_at": "2026-03-17T00:36:12.749239+00:00",
+  "output_dir": "/Users/umeshbhatt/code/epistract/tests/corpora/05_cardiovascular/output",
+  "stats": {
+    "files_scanned": 15,
+    "total_matches": 73,
+    "valid": 0,
+    "invalid": 55,
+    "unvalidated": 0,
+    "found": 18,
+    "by_type": {
+      "SMILES": 55,
+      "NCT_NUMBER": 18
+    },
+    "rdkit_available": true,
+    "biopython_available": true,
+    "enrichment": {
+      "entities_added": 0,
+      "relations_added": 0
+    }
+  },
+  "files": [
+    {
+      "file": "pmid_32498620.json",
+      "document_id": "pmid_32498620",
+      "matches_found": 0,
+      "results": []
+    },
+    {
+      "file": "pmid_32871100.json",
+      "document_id": "pmid_32871100",
+      "matches_found": 2,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(EXPLORER-HCM)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "mptomatic obstructive hypertrophic cardiomyopathy (EXPLORER-HCM)",
+          "validation": {
+            "valid": false,
+            "input": "(EXPLORER-HCM)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_32871100.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(EXPLORER-HCM)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "mptomatic obstructive hypertrophic cardiomyopathy (EXPLORER-HCM): a randomised, double-blind, placebo-controlled, ",
+          "validation": {
+            "valid": false,
+            "input": "(EXPLORER-HCM)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_32871100.json",
+          "source_field": "relations[2].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_34004177.json",
+      "document_id": "pmid_34004177",
+      "matches_found": 8,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(EXPLORER-HCM)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "mptomatic obstructive hypertrophic cardiomyopathy (EXPLORER-HCM)",
+          "validation": {
+            "valid": false,
+            "input": "(EXPLORER-HCM)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34004177.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03470545",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": " double-blind, placebo-controlled, phase 3 trial. NCT03470545.",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_34004177.json",
+          "source_field": "entities[3].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "MyoKardia/BMS",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "FUNDING: MyoKardia/BMS.",
+          "validation": {
+            "valid": false,
+            "input": "MyoKardia/BMS",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34004177.json",
+          "source_field": "entities[6].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "MyoKardia/BMS",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "FUNDING: MyoKardia/BMS.",
+          "validation": {
+            "valid": false,
+            "input": "MyoKardia/BMS",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34004177.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(EXPLORER-HCM)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "mptomatic obstructive hypertrophic cardiomyopathy (EXPLORER-HCM): health status analysis of a randomised, double-b",
+          "validation": {
+            "valid": false,
+            "input": "(EXPLORER-HCM)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34004177.json",
+          "source_field": "relations[3].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(KCCQ-OS",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "e proportion of patients with a very large change (KCCQ-OS >=20 points) was 36% vs 15%, NNT of five.",
+          "validation": {
+            "valid": false,
+            "input": "(KCCQ-OS",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34004177.json",
+          "source_field": "relations[5].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "MyoKardia/BMS",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "FUNDING: MyoKardia/BMS.",
+          "validation": {
+            "valid": false,
+            "input": "MyoKardia/BMS",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34004177.json",
+          "source_field": "relations[6].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "MyoKardia/BMS",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "FUNDING: MyoKardia/BMS.",
+          "validation": {
+            "valid": false,
+            "input": "MyoKardia/BMS",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34004177.json",
+          "source_field": "relations[7].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_36115523.json",
+      "document_id": "pmid_36115523",
+      "matches_found": 6,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT03611751)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "POETYK PSO-2 (NCT03611751), a 52-week, phase 3 trial",
+          "validation": {
+            "valid": false,
+            "input": "(NCT03611751)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_36115523.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03611751",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "POETYK PSO-2 (NCT03611751), a 52-week, phase 3 trial",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_36115523.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "apremilast)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": " achieved PASI75 (53.0% vs 9.4% placebo and 39.8% apremilast)",
+          "validation": {
+            "valid": false,
+            "input": "apremilast)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_36115523.json",
+          "source_field": "entities[6].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT03611751)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "POETYK PSO-2 (NCT03611751), a 52-week, phase 3 trial, randomized patients 2:",
+          "validation": {
+            "valid": false,
+            "input": "(NCT03611751)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_36115523.json",
+          "source_field": "relations[2].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03611751",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "POETYK PSO-2 (NCT03611751), a 52-week, phase 3 trial, randomized patients 2",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_36115523.json",
+          "source_field": "relations[2].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "apremilast)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": " achieved PASI75 (53.0% vs 9.4% placebo and 39.8% apremilast)",
+          "validation": {
+            "valid": false,
+            "input": "apremilast)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_36115523.json",
+          "source_field": "relations[5].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_36453809.json",
+      "document_id": "pmid_36453809",
+      "matches_found": 0,
+      "results": []
+    },
+    {
+      "file": "pmid_37804245.json",
+      "document_id": "pmid_37804245",
+      "matches_found": 0,
+      "results": []
+    },
+    {
+      "file": "pmid_38176782.json",
+      "document_id": "pmid_38176782",
+      "matches_found": 11,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT03723655)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "MAVA-LTE (NCT03723655) is a long-term safety extension study. 231 of 244",
+          "validation": {
+            "valid": false,
+            "input": "(NCT03723655)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38176782.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03723655",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "MAVA-LTE (NCT03723655) is a long-term safety extension study. 231 of 24",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38176782.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT03470545)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Parent trial: EXPLORER-HCM (NCT03470545)",
+          "validation": {
+            "valid": false,
+            "input": "(NCT03470545)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38176782.json",
+          "source_field": "entities[3].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03470545",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "Parent trial: EXPLORER-HCM (NCT03470545)",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38176782.json",
+          "source_field": "entities[3].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(resting",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "LVOT gradient improvements (resting: -35.6 mm Hg; Valsalva: -45.3 mm Hg)",
+          "validation": {
+            "valid": false,
+            "input": "(resting",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38176782.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT03723655)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "MAVA-LTE (NCT03723655) is a long-term safety extension study. 231 of 244",
+          "validation": {
+            "valid": false,
+            "input": "(NCT03723655)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38176782.json",
+          "source_field": "relations[1].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03723655",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "MAVA-LTE (NCT03723655) is a long-term safety extension study. 231 of 24",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38176782.json",
+          "source_field": "relations[1].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT03470545)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Parent trial: EXPLORER-HCM (NCT03470545)",
+          "validation": {
+            "valid": false,
+            "input": "(NCT03470545)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38176782.json",
+          "source_field": "relations[2].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03470545",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "Parent trial: EXPLORER-HCM (NCT03470545)",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38176782.json",
+          "source_field": "relations[2].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(resting",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "LVOT gradient improvements (resting: -35.6 mm Hg; Valsalva: -45.3 mm Hg)",
+          "validation": {
+            "valid": false,
+            "input": "(resting",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38176782.json",
+          "source_field": "relations[7].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(resting",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "LVOT gradient improvements (resting: -35.6 mm Hg; Valsalva: -45.3 mm Hg)",
+          "validation": {
+            "valid": false,
+            "input": "(resting",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38176782.json",
+          "source_field": "relations[9].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_38226713.json",
+      "document_id": "pmid_38226713",
+      "matches_found": 0,
+      "results": []
+    },
+    {
+      "file": "pmid_38451052.json",
+      "document_id": "pmid_38451052",
+      "matches_found": 1,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "inhibitor)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "to-severe plaque psoriasis (known TYK2 allosteric inhibitor)",
+          "validation": {
+            "valid": false,
+            "input": "inhibitor)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38451052.json",
+          "source_field": "relations[0].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_38718139.json",
+      "document_id": "pmid_38718139",
+      "matches_found": 5,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "AHA/ACC/AMSSM/HRS/PACES/SCMR",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "2024 AHA/ACC/AMSSM/HRS/PACES/SCMR Guideline for the Management of Hypertrophic Card",
+          "validation": {
+            "valid": false,
+            "input": "AHA/ACC/AMSSM/HRS/PACES/SCMR",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38718139.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "AHA/ACC/AMSSM/HRS/PACES/SCMR",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "2024 AHA/ACC/AMSSM/HRS/PACES/SCMR Guideline for the Management of Hypertrophic Card",
+          "validation": {
+            "valid": false,
+            "input": "AHA/ACC/AMSSM/HRS/PACES/SCMR",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38718139.json",
+          "source_field": "entities[3].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "AHA/ACC/AMSSM/HRS/PACES/SCMR",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "2024 AHA/ACC/AMSSM/HRS/PACES/SCMR Guideline for the Management of Hypertrophic Card",
+          "validation": {
+            "valid": false,
+            "input": "AHA/ACC/AMSSM/HRS/PACES/SCMR",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38718139.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "AHA/ACC/AMSSM/HRS/PACES/SCMR",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "2024 AHA/ACC/AMSSM/HRS/PACES/SCMR Guideline for the Management of Hypertrophic Card",
+          "validation": {
+            "valid": false,
+            "input": "AHA/ACC/AMSSM/HRS/PACES/SCMR",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38718139.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "AHA/ACC/AMSSM/HRS/PACES/SCMR",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "2024 AHA/ACC/AMSSM/HRS/PACES/SCMR Guideline for the Management of Hypertrophic Card",
+          "validation": {
+            "valid": false,
+            "input": "AHA/ACC/AMSSM/HRS/PACES/SCMR",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38718139.json",
+          "source_field": "entities[6].context"
+        }
+      ]
+    },
+    {
+      "file": "pmid_38739079.json",
+      "document_id": "pmid_38739079",
+      "matches_found": 8,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(SEQUOIA-HCM",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "d to aficamten (5-20 mg) or placebo for 24 weeks. (SEQUOIA-HCM, NCT05186818, funded by Cytokinetics.)",
+          "validation": {
+            "valid": false,
+            "input": "(SEQUOIA-HCM",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38739079.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT05186818",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": " (5-20 mg) or placebo for 24 weeks. (SEQUOIA-HCM, NCT05186818, funded by Cytokinetics.)",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38739079.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT05186818",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "SEQUOIA-HCM, NCT05186818, funded by Cytokinetics.",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38739079.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "mL/kg/min",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Mean change in peak oxygen uptake: 1.8 vs 0.0 mL/kg/min (difference 1.7, P<0.001).",
+          "validation": {
+            "valid": false,
+            "input": "mL/kg/min",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38739079.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(difference",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "hange in peak oxygen uptake: 1.8 vs 0.0 mL/kg/min (difference 1.7, P<0.001).",
+          "validation": {
+            "valid": false,
+            "input": "(difference",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38739079.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT05186818",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "SEQUOIA-HCM, NCT05186818, funded by Cytokinetics.",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38739079.json",
+          "source_field": "relations[4].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "mL/kg/min",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Mean change in peak oxygen uptake: 1.8 vs 0.0 mL/kg/min (difference 1.7, P<0.001).",
+          "validation": {
+            "valid": false,
+            "input": "mL/kg/min",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38739079.json",
+          "source_field": "relations[7].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(difference",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "hange in peak oxygen uptake: 1.8 vs 0.0 mL/kg/min (difference 1.7, P<0.001).",
+          "validation": {
+            "valid": false,
+            "input": "(difference",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38739079.json",
+          "source_field": "relations[7].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_39196032.json",
+      "document_id": "pmid_39196032",
+      "matches_found": 0,
+      "results": []
+    },
+    {
+      "file": "pmid_39217450.json",
+      "document_id": "pmid_39217450",
+      "matches_found": 10,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT03723655)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "MAVA-LTE (NCT03723655) is an ongoing 5-year open-label extension study.",
+          "validation": {
+            "valid": false,
+            "input": "(NCT03723655)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_39217450.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03723655",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "MAVA-LTE (NCT03723655) is an ongoing 5-year open-label extension study.",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_39217450.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT03470545)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Parent: EXPLORER-HCM (NCT03470545).",
+          "validation": {
+            "valid": false,
+            "input": "(NCT03470545)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_39217450.json",
+          "source_field": "entities[3].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03470545",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "Parent: EXPLORER-HCM (NCT03470545).",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_39217450.json",
+          "source_field": "entities[3].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "recovered)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "20 patients (8.7%) had transient LVEF <50% (all recovered).",
+          "validation": {
+            "valid": false,
+            "input": "recovered)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_39217450.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT03723655)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "MAVA-LTE (NCT03723655) is an ongoing 5-year open-label extension study. ",
+          "validation": {
+            "valid": false,
+            "input": "(NCT03723655)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_39217450.json",
+          "source_field": "relations[1].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03723655",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "MAVA-LTE (NCT03723655) is an ongoing 5-year open-label extension study.",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_39217450.json",
+          "source_field": "relations[1].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT03470545)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Parent: EXPLORER-HCM (NCT03470545).",
+          "validation": {
+            "valid": false,
+            "input": "(NCT03470545)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_39217450.json",
+          "source_field": "relations[2].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03470545",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "Parent: EXPLORER-HCM (NCT03470545).",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_39217450.json",
+          "source_field": "relations[2].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "recovered)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "20 patients (8.7%) had transient LVEF <50% (all recovered).",
+          "validation": {
+            "valid": false,
+            "input": "recovered)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_39217450.json",
+          "source_field": "relations[3].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_40045918.json",
+      "document_id": "pmid_40045918",
+      "matches_found": 0,
+      "results": []
+    },
+    {
+      "file": "structural_mavacamten.json",
+      "document_id": "structural_mavacamten",
+      "matches_found": 22,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(MYK-461",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Mavacamten (MYK-461, Camzyos) is a first-in-class selective cardiac m",
+          "validation": {
+            "valid": false,
+            "input": "(MYK-461",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_mavacamten.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "Camzyos)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Mavacamten (MYK-461, Camzyos) is a first-in-class selective cardiac myosin inhi",
+          "validation": {
+            "valid": false,
+            "input": "Camzyos)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_mavacamten.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(super-relaxed)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "stabilizing an auto-inhibited (super-relaxed) state of beta-cardiac myosin (MYH7)",
+          "validation": {
+            "valid": false,
+            "input": "(super-relaxed)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_mavacamten.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(super-relaxed)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ac myosin ATPase by stabilizing an auto-inhibited (super-relaxed) state",
+          "validation": {
+            "valid": false,
+            "input": "(super-relaxed)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_mavacamten.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT03470545)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "EXPLORER-HCM (NCT03470545): Phase III, mavacamten vs placebo in oHCM. Primar",
+          "validation": {
+            "valid": false,
+            "input": "(NCT03470545)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_mavacamten.json",
+          "source_field": "entities[9].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03470545",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "EXPLORER-HCM (NCT03470545): Phase III, mavacamten vs placebo in oHCM. Prima",
+          "validation": null,
+          "status": "found",
+          "source_file": "structural_mavacamten.json",
+          "source_field": "entities[9].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT04349072)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "VALOR-HCM (NCT04349072): Phase III, patients eligible for septal reductio",
+          "validation": {
+            "valid": false,
+            "input": "(NCT04349072)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_mavacamten.json",
+          "source_field": "entities[10].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT04349072",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "VALOR-HCM (NCT04349072): Phase III, patients eligible for septal reducti",
+          "validation": null,
+          "status": "found",
+          "source_file": "structural_mavacamten.json",
+          "source_field": "entities[10].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(fluconazole",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Strong CYP2C19 inhibitors (fluconazole, fluvoxamine) are contraindicated.",
+          "validation": {
+            "valid": false,
+            "input": "(fluconazole",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_mavacamten.json",
+          "source_field": "entities[19].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "fluvoxamine)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Strong CYP2C19 inhibitors (fluconazole, fluvoxamine) are contraindicated.",
+          "validation": {
+            "valid": false,
+            "input": "fluvoxamine)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_mavacamten.json",
+          "source_field": "entities[19].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(fluconazole",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Strong CYP2C19 inhibitors (fluconazole, fluvoxamine) are contraindicated.",
+          "validation": {
+            "valid": false,
+            "input": "(fluconazole",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_mavacamten.json",
+          "source_field": "entities[20].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "fluvoxamine)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Strong CYP2C19 inhibitors (fluconazole, fluvoxamine) are contraindicated.",
+          "validation": {
+            "valid": false,
+            "input": "fluvoxamine)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_mavacamten.json",
+          "source_field": "entities[20].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(super-relaxed)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ac myosin ATPase by stabilizing an auto-inhibited (super-relaxed) state",
+          "validation": {
+            "valid": false,
+            "input": "(super-relaxed)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_mavacamten.json",
+          "source_field": "relations[0].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(super-relaxed)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "stabilizing an auto-inhibited (super-relaxed) state of beta-cardiac myosin (MYH7)",
+          "validation": {
+            "valid": false,
+            "input": "(super-relaxed)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_mavacamten.json",
+          "source_field": "relations[1].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT03470545)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "EXPLORER-HCM (NCT03470545): Phase III, mavacamten vs placebo in oHCM",
+          "validation": {
+            "valid": false,
+            "input": "(NCT03470545)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_mavacamten.json",
+          "source_field": "relations[4].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03470545",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "EXPLORER-HCM (NCT03470545): Phase III, mavacamten vs placebo in oHCM",
+          "validation": null,
+          "status": "found",
+          "source_file": "structural_mavacamten.json",
+          "source_field": "relations[4].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT04349072)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "VALOR-HCM (NCT04349072): Phase III, patients eligible for septal reductio",
+          "validation": {
+            "valid": false,
+            "input": "(NCT04349072)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_mavacamten.json",
+          "source_field": "relations[5].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT04349072",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "VALOR-HCM (NCT04349072): Phase III, patients eligible for septal reducti",
+          "validation": null,
+          "status": "found",
+          "source_file": "structural_mavacamten.json",
+          "source_field": "relations[5].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(fluconazole",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Strong CYP2C19 inhibitors (fluconazole, fluvoxamine) are contraindicated.",
+          "validation": {
+            "valid": false,
+            "input": "(fluconazole",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_mavacamten.json",
+          "source_field": "relations[14].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "fluvoxamine)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Strong CYP2C19 inhibitors (fluconazole, fluvoxamine) are contraindicated.",
+          "validation": {
+            "valid": false,
+            "input": "fluvoxamine)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_mavacamten.json",
+          "source_field": "relations[14].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(fluconazole",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Strong CYP2C19 inhibitors (fluconazole, fluvoxamine) are contraindicated.",
+          "validation": {
+            "valid": false,
+            "input": "(fluconazole",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_mavacamten.json",
+          "source_field": "relations[15].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "fluvoxamine)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Strong CYP2C19 inhibitors (fluconazole, fluvoxamine) are contraindicated.",
+          "validation": {
+            "valid": false,
+            "input": "fluvoxamine)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_mavacamten.json",
+          "source_field": "relations[15].evidence"
+        }
+      ]
+    }
+  ]
+}
