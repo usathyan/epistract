@@ -2,6 +2,8 @@
 
 **Turn scientific literature into structured biomedical knowledge.**
 
+> **Paper:** [Beyond RAG: Domain-Specific Agentic Architecture for Biomedical Knowledge Graph Construction](paper/main.pdf) — technical report describing the architecture, evaluation across 5 drug discovery domains, and the evolution from GraphRAG to comprehension-based extraction.
+
 Epistract reads drug discovery documents — PubMed papers, bioRxiv preprints, patent filings, clinical trial reports, FDA labels — and builds a knowledge graph that captures the entities and relationships a scientist cares about: compounds, targets, mechanisms, trials, biomarkers, pathways, and how they connect.
 
 It runs as a [Claude Code](https://claude.ai/claude-code) plugin. You point it at a folder of documents. It reads them with a scientist's understanding, extracts structured knowledge using a schema grounded in 40+ established biomedical ontologies, validates molecular identifiers with [RDKit](https://www.rdkit.org/) and [Biopython](https://biopython.org/), and produces an interactive graph you can explore in your browser.
