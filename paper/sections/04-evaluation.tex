@@ -57,37 +57,7 @@ Each domain naturally activates different schema facets:
 
 The three unused relation types---\texttt{DERIVED\_FROM}, \texttt{HAS\_DOMAIN}, and \texttt{METABOLIZED\_BY}---represent specialized biochemical relationships (prodrug derivation, protein domain annotation, metabolic clearance) that are rarely discussed at the abstract level.
 Full-text extraction would likely activate these relations, but they fall outside the scope of the current evaluation.
-Table~\ref{tab:coverage} summarizes entity-type and relation-type coverage across all five scenarios.
-
-\begin{table}[t]
-\centering
-\small
-\caption{Schema coverage across five scenarios. Entity types: 17/17 (100\%). Relation types: 27/30 (90\%).}
-\label{tab:coverage}
-\begin{tabular}{@{}lr|lr@{}}
-\toprule
-\textbf{Entity Type} & \textbf{N/5} & \textbf{Relation Type} & \textbf{N/5} \\
-\midrule
-\texttt{COMPOUND}        & 5 & \texttt{ENCODES}              & 5 \\
-\texttt{GENE}            & 5 & \texttt{PARTICIPATES\_IN}     & 5 \\
-\texttt{PROTEIN}         & 5 & \texttt{IMPLICATED\_IN}       & 5 \\
-\texttt{DISEASE}         & 5 & \texttt{INHIBITS}             & 4 \\
-\texttt{PHENOTYPE}       & 5 & \texttt{HAS\_MECHANISM}       & 4 \\
-\texttt{CELL\_OR\_TISSUE}& 5 & \texttt{INDICATED\_FOR}       & 4 \\
-\texttt{PATHWAY}         & 5 & \texttt{EVALUATED\_IN}        & 4 \\
-\texttt{MECHANISM\_OF\_ACTION} & 5 & \texttt{CAUSES}          & 4 \\
-\texttt{PROTEIN\_DOMAIN} & 4 & \texttt{PREDICTS\_RESPONSE\_TO}& 4 \\
-\texttt{SEQUENCE\_VARIANT}& 4 & \texttt{PUBLISHED\_IN}       & 4 \\
-\texttt{ADVERSE\_EVENT}  & 4 & \texttt{ASSOCIATED\_WITH}     & 4 \\
-\texttt{CLINICAL\_TRIAL} & 4 & \texttt{HAS\_VARIANT}         & 3 \\
-\texttt{BIOMARKER}       & 4 & \texttt{DIAGNOSTIC\_FOR}      & 3 \\
-\texttt{REGULATORY\_ACTION}& 4 & \texttt{TARGETS}            & 2 \\
-\texttt{ORGANIZATION}    & 4 & \texttt{BINDS\_TO}            & 2 \\
-\texttt{PUBLICATION}     & 4 & \texttt{COMBINED\_WITH}       & 2 \\
-\texttt{METABOLITE}      & 2 & \texttt{CONTRAINDICATED\_FOR} & 2 \\
-\bottomrule
-\end{tabular}
-\end{table}
+Figure~\ref{fig:coverage} presents a heatmap of entity-type and relation-type usage across all five scenarios.
 
 \subsection{Community Detection Quality}
 \label{sec:communities}

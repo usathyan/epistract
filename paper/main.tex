@@ -63,16 +63,16 @@
 \label{fig:scenarios}
 \end{figure*}
 
-% Schema coverage is now Table~\ref{tab:coverage} in Section 4.2
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig5-schema-coverage.pdf}
+\caption{Schema coverage across five evaluation scenarios. Blue cells indicate an entity type (top) or relation type (bottom) was exercised in a given scenario. The rightmost column shows coverage out of five. Together, the five domains exercise 17/17 entity types (100\%) and 27/30 relation types (90\%).}
+\label{fig:coverage}
+\end{figure}
 
 \input{sections/05-comparison}
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=\columnwidth]{fig6-evolution.pdf}
-\caption{Architectural evolution from GraphRAG to Epistract. The prequel system (left) relied on embedding similarity and generic NER. Epistract (right) uses LLM comprehension, a domain-specific schema, and molecular validation to produce typed, evidence-backed knowledge graphs.}
-\label{fig:evolution}
-\end{figure}
+% Evolution comparison is Table~\ref{tab:evolution} in Section 5
 
 \input{sections/06-collaboration}
 \input{sections/07-availability}
