@@ -246,12 +246,13 @@ git commit -m "paper: write Section 1 — Motivation"
 
 - [ ] **Step 1: Write architecture section**
 
-Use `scientific-skills:scientific-writing`. ~1.5 pages. Five subsections per spec:
+Use `scientific-skills:scientific-writing`. ~1.5 pages. Six subsections per spec:
 - 2.1 Agent-Based Extraction — why agents not APIs, why agents not RAG
 - 2.2 Domain Schema — 17 types, 30 relations, 40+ ontologies
 - 2.3 Molecular Validation — RDKit, Biopython, regex patterns
 - 2.4 Graph Construction — sift-kg, dedup, community detection, labeling
 - 2.5 Plugin Delivery — one-command install
+- 2.6 Claude Code as Development Environment — what it is, plugin system, agent dispatch, permissions
 
 Reference Figure 1 (architecture diagram). Frame each decision as GraphRAG → Epistract evolution.
 
@@ -339,20 +340,24 @@ git commit -m "paper: write Section 5 — GraphRAG to Epistract Comparison"
 
 ## Chunk 5: Write Sections 6-8 + Abstract + Final Assembly
 
-### Task 12: Write Section 6 — Findings & Lessons Learned
+### Task 12: Write Section 6 — Human-AI Collaboration Process
 
 **Files:**
-- Create: `paper/sections/06-findings.tex`
+- Create: `paper/sections/06-collaboration.tex`
 
-- [ ] **Step 1: Write findings section**
+- [ ] **Step 1: Write collaboration section**
 
-~0.5 page. Brief: 3 bugs found and fixed (F-001 schema field naming, F-002 unlabeled communities, F-003 version propagation). Core design principles for LLM-in-the-loop systems. Reference FINDINGS.md for details.
+~1 page. Four subsections:
+- 6.1 Session Structure — interactive power sessions, not autonomous generation
+- 6.2 Course Corrections — specific examples: branding, tooling (Playwright vs CDP), docs completeness ("did we push?"), disclaimer wording iterations, paper framing sharpened from architecture to epistemology
+- 6.3 Human vs AI Decisions — human drove science/strategy (scenarios, schema, UATs, branding), AI drove implementation (parallel agents, graph building, docs)
+- 6.4 Engineering Findings — brief: 3 bugs, two-layer defense pattern, reference FINDINGS.md
 
 - [ ] **Step 2: Commit**
 
 ```bash
-git add paper/sections/06-findings.tex
-git commit -m "paper: write Section 6 — Findings"
+git add paper/sections/06-collaboration.tex
+git commit -m "paper: write Section 6 — Human-AI Collaboration"
 ```
 
 ### Task 13: Write Section 7 — Availability & Reproducibility

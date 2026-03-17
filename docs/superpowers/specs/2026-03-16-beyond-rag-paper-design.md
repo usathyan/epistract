@@ -75,6 +75,10 @@ sift-kg handles deduplication (SemHash, Unicode normalization), Louvain communit
 
 Packaged as a Claude Code plugin — `plugin install` installs it, `/epistract-ingest` runs the full pipeline. This is the delivery innovation: a production KG pipeline that a scientist installs in one command and runs in their terminal, not a notebook or cloud service.
 
+**2.6 Claude Code as Development Environment**
+
+Brief introduction to Claude Code: an agentic coding CLI that orchestrates LLM agents as subprocesses. Key capabilities used by epistract: plugin system (installable tools), skills (domain-specific prompts), parallel agent dispatch (one extractor per document), permission model (user controls what agents can do), bash/file tools (agents read/write extraction JSON, run Python scripts). This section contextualizes epistract within the Claude Code ecosystem for readers unfamiliar with agentic development tools.
+
 ### Section 3: Domain Schema Design (~1 page)
 
 The 17 entity types organized by category:
@@ -139,28 +143,30 @@ Discussion of what each column means for a scientist using the graph:
 - Evidence traceability means you can verify any edge back to the source text
 - Molecular validation means SMILES in the graph are verified structures, not LLM approximations
 
-### Section 6: Findings & Lessons Learned (~1 page)
+### Section 6: Human-AI Collaboration Process (~1 page)
 
-**6.1 LLM-Specific Failure Modes**
+This section describes how epistract was actually built — not as autonomous AI generation, but as an interactive power session with continuous human-AI collaboration.
 
-F-001 (entity_type field naming): LLM agents used "type" instead of "entity_type" — a class of bug unique to LLM-in-the-loop systems. Fixed with two-layer defense: explicit JSON examples in prompts + defensive normalization at write time.
+**6.1 Session Structure**
 
-F-002 (unlabeled communities): Graph algorithms produce structure, not semantics. Scientists need interpretable community names, not numbers. Custom labeling engine added.
+The entire system — plugin architecture, domain schema, 5 test scenarios, extraction pipeline, documentation, and this paper — was built in collaborative Claude Code sessions. The human drove scientific and strategic decisions; Claude Code drove implementation, parallelization, and documentation.
 
-F-003 (version cascade): Plugin version as distributed constant — appears in 6+ files with no propagation mechanism.
+**6.2 Course Corrections**
 
-**6.2 Design Principles for LLM-in-the-Loop Systems**
+Document specific instances where human judgment redirected the process:
+- Branding: user proposed the "latent knowledge graphs" framing and title direction
+- Tooling: user redirected from Chrome DevTools Protocol to Playwright for screenshots
+- Documentation completeness: user caught that scenario results weren't pushed, that README still showed "Pending," that the status column was redundant after all scenarios completed
+- Disclaimer wording: multiple iterations to find the right tone ("explores how AI-assisted tooling can accelerate...")
+- Paper framing: user sharpened "Beyond RAG" from an architecture claim to an epistemological one (comprehension vs similarity)
 
-- Always include concrete JSON examples in agent prompts, not field name lists
-- Add defensive normalization at consumption boundaries
-- Monitor for silent data loss
-- Two-layer defenses for critical data paths
+**6.3 What the Human Decided vs What the AI Decided**
 
-**6.3 Schema Design Principles**
+Human decisions: scenario topics, UAT criteria, branding, paper framing, target audience, what to include/exclude. AI decisions: extraction JSON schema, parallel agent dispatch, defensive normalization, community labeling heuristics, documentation structure.
 
-- Design for the breadth of the domain, not a single use case
-- Each domain will naturally exercise different facets
-- 100% entity coverage and 90% relation coverage across 5 domains validates the design
+**6.4 Engineering Findings**
+
+Brief: 3 bugs found through live testing (F-001 schema naming, F-002 unlabeled communities, F-003 version cascade). Two-layer defense pattern. Reference FINDINGS.md for details.
 
 ### Section 7: Availability & Reproducibility (~0.5 page)
 
