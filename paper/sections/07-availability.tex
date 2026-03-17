@@ -1,6 +1,6 @@
 \section{Availability and Reproducibility}
 
-Epistract is released as open-source software under the MIT license and is available on GitHub. The system is installable as a Claude Code plugin in a single command, requiring no manual dependency resolution beyond the Claude Code runtime itself. On first invocation, the setup command automatically installs the Python extraction pipeline, the sift-kg graph construction library, and all required dependencies into an isolated virtual environment.
+Epistract is released as open-source software under the MIT license and is available at \url{https://github.com/usathyan/epistract}. The system is installable as a Claude Code plugin in a single command, requiring no manual dependency resolution beyond the Claude Code runtime itself. On first invocation, the setup command automatically installs the Python extraction pipeline, the sift-kg graph construction library, and all required dependencies into an isolated virtual environment.
 
 The runtime requirements are minimal: Claude Code as the execution environment, Python 3.11 or later, and the sift-kg library for graph construction. Two optional dependencies extend the pipeline's validation capabilities: RDKit enables SMILES string validation and molecular property computation for chemical entities, and Biopython enables sequence format validation for protein and nucleic acid entities. Both are installed automatically when available but degrade gracefully when absent, ensuring the core pipeline functions on any system that meets the base requirements.
 
