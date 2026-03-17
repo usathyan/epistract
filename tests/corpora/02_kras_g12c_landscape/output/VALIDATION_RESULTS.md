@@ -4,6 +4,11 @@
 **Pipeline:** 16 documents → 108 nodes, 307 links, 4 communities
 **UATs:** 5/5 passed
 
+## Legend
+- **V** = Verified — extraction matches source text accurately
+- **F** = Flagged — incorrect, hallucinated, or questionable extraction
+- **M** = Missing — should have been extracted from source but wasn't
+
 ---
 
 ## Representative Extraction: structural_sotorasib
@@ -13,49 +18,49 @@
 
 ### Entities Extracted
 
-| # | Entity | Type | Confidence | Source Text (verify against) | Verification |
-|---|--------|------|------------|------------------------------|--------------|
-| 1 | sotorasib | COMPOUND | 0.98 | "Sotorasib (AMG 510, Lumakras) is a first-in-class KRAS G12C covalent inhibitor" | [ ] V / F / M |
-| 2 | KRAS | PROTEIN | 0.98 | "Target: KRAS protein (UniProt: P01116)" | [ ] V / F / M |
-| 3 | KRAS G12C | SEQUENCE_VARIANT | 0.98 | "Irreversibly and covalently binds to cysteine-12 of KRAS G12C" | [ ] V / F / M |
-| 4 | KRAS Y96D | SEQUENCE_VARIANT | 0.93 | "Y96D (disrupts binding)" | [ ] V / F / M |
-| 5 | KRAS R68S | SEQUENCE_VARIANT | 0.93 | "R68S (alters interface)" | [ ] V / F / M |
-| 6 | KRAS H95Q | SEQUENCE_VARIANT | 0.93 | "H95Q/R (affects cavity geometry)" | [ ] V / F / M |
-| 7 | MET | GENE | 0.90 | "Bypass: MET amplification, MAPK reactivation" | [ ] V / F / M |
-| 8 | Switch II pocket | PROTEIN_DOMAIN | 0.95 | "Binding site: Switch II pocket (P2 pocket)" | [ ] V / F / M |
-| 9 | MAPK pathway | PATHWAY | 0.90 | "Bypass: MET amplification, MAPK reactivation" | [ ] V / F / M |
-| 10 | non-small cell lung cancer | DISEASE | 0.98 | "KRAS G12C-mutant locally advanced or metastatic NSCLC" | [ ] V / F / M |
-| 11 | covalent KRAS G12C inhibition | MECHANISM_OF_ACTION | 0.95 | "locks KRAS in inactive GDP-bound conformation" | [ ] V / F / M |
-| 12 | CodeBreaK 100 | CLINICAL_TRIAL | 0.98 | "CodeBreaK 100 (NCT03600883): Phase I/II, ORR 37.1%, PFS 6.8 months" | [ ] V / F / M |
-| 13 | CodeBreaK 200 | CLINICAL_TRIAL | 0.98 | "CodeBreaK 200 (NCT04303780): Phase III vs docetaxel, PFS HR 0.66" | [ ] V / F / M |
-| 14 | docetaxel | COMPOUND | 0.90 | "Phase III vs docetaxel" | [ ] V / F / M |
-| 15 | FDA accelerated approval sotorasib | REGULATORY_ACTION | 0.98 | "FDA approved May 28, 2021 under accelerated approval" | [ ] V / F / M |
-| 16 | H358 | CELL_OR_TISSUE | 0.90 | "EC50: 38 nM (H358 cells, p-ERK inhibition)" | [ ] V / F / M |
-| 17 | ERK | PROTEIN | 0.88 | "EC50: 38 nM (H358 cells, p-ERK inhibition)" | [ ] V / F / M |
-| 18 | p-ERK inhibition | BIOMARKER | 0.85 | "EC50: 38 nM (H358 cells, p-ERK inhibition)" | [ ] V / F / M |
+| # | Source File | Entity | Type | Confidence | Source Text (verify against) | Verification |
+|---|-------------|--------|------|------------|------------------------------|--------------|
+| 1 | structural_sotorasib.txt | sotorasib | COMPOUND | 0.98 | "Sotorasib (AMG 510, Lumakras) is a first-in-class KRAS G12C covalent inhibitor" | [ ] V / F / M |
+| 2 | structural_sotorasib.txt | KRAS | PROTEIN | 0.98 | "Target: KRAS protein (UniProt: P01116)" | [ ] V / F / M |
+| 3 | structural_sotorasib.txt | KRAS G12C | SEQUENCE_VARIANT | 0.98 | "Irreversibly and covalently binds to cysteine-12 of KRAS G12C" | [ ] V / F / M |
+| 4 | structural_sotorasib.txt | KRAS Y96D | SEQUENCE_VARIANT | 0.93 | "Y96D (disrupts binding)" | [ ] V / F / M |
+| 5 | structural_sotorasib.txt | KRAS R68S | SEQUENCE_VARIANT | 0.93 | "R68S (alters interface)" | [ ] V / F / M |
+| 6 | structural_sotorasib.txt | KRAS H95Q | SEQUENCE_VARIANT | 0.93 | "H95Q/R (affects cavity geometry)" | [ ] V / F / M |
+| 7 | structural_sotorasib.txt | MET | GENE | 0.90 | "Bypass: MET amplification, MAPK reactivation" | [ ] V / F / M |
+| 8 | structural_sotorasib.txt | Switch II pocket | PROTEIN_DOMAIN | 0.95 | "Binding site: Switch II pocket (P2 pocket)" | [ ] V / F / M |
+| 9 | structural_sotorasib.txt | MAPK pathway | PATHWAY | 0.90 | "Bypass: MET amplification, MAPK reactivation" | [ ] V / F / M |
+| 10 | structural_sotorasib.txt | non-small cell lung cancer | DISEASE | 0.98 | "KRAS G12C-mutant locally advanced or metastatic NSCLC" | [ ] V / F / M |
+| 11 | structural_sotorasib.txt | covalent KRAS G12C inhibition | MECHANISM_OF_ACTION | 0.95 | "locks KRAS in inactive GDP-bound conformation" | [ ] V / F / M |
+| 12 | structural_sotorasib.txt | CodeBreaK 100 | CLINICAL_TRIAL | 0.98 | "CodeBreaK 100 (NCT03600883): Phase I/II, ORR 37.1%, PFS 6.8 months" | [ ] V / F / M |
+| 13 | structural_sotorasib.txt | CodeBreaK 200 | CLINICAL_TRIAL | 0.98 | "CodeBreaK 200 (NCT04303780): Phase III vs docetaxel, PFS HR 0.66" | [ ] V / F / M |
+| 14 | structural_sotorasib.txt | docetaxel | COMPOUND | 0.90 | "Phase III vs docetaxel" | [ ] V / F / M |
+| 15 | structural_sotorasib.txt | FDA accelerated approval sotorasib | REGULATORY_ACTION | 0.98 | "FDA approved May 28, 2021 under accelerated approval" | [ ] V / F / M |
+| 16 | structural_sotorasib.txt | H358 | CELL_OR_TISSUE | 0.90 | "EC50: 38 nM (H358 cells, p-ERK inhibition)" | [ ] V / F / M |
+| 17 | structural_sotorasib.txt | ERK | PROTEIN | 0.88 | "EC50: 38 nM (H358 cells, p-ERK inhibition)" | [ ] V / F / M |
+| 18 | structural_sotorasib.txt | p-ERK inhibition | BIOMARKER | 0.85 | "EC50: 38 nM (H358 cells, p-ERK inhibition)" | [ ] V / F / M |
 
 ### Relations Extracted
 
-| # | Source Entity | Relation | Target Entity | Confidence | Evidence | Verification |
-|---|---------------|----------|---------------|------------|----------|--------------|
-| 1 | sotorasib | INHIBITS | KRAS G12C | 0.98 | "Irreversibly and covalently binds to cysteine-12 of KRAS G12C, locking protein in inactive GDP-bound conformation" | [ ] V / F / M |
-| 2 | sotorasib | BINDS_TO | Switch II pocket | 0.95 | "Binding site: Switch II pocket (P2 pocket)" | [ ] V / F / M |
-| 3 | sotorasib | HAS_MECHANISM | covalent KRAS G12C inhibition | 0.95 | "Irreversibly and covalently binds to cysteine-12 of KRAS G12C, locking protein in inactive GDP-bound conformation" | [ ] V / F / M |
-| 4 | sotorasib | EVALUATED_IN | CodeBreaK 100 | 0.98 | "CodeBreaK 100 (NCT03600883): Phase I/II, ORR 37.1%, PFS 6.8 months" | [ ] V / F / M |
-| 5 | sotorasib | EVALUATED_IN | CodeBreaK 200 | 0.98 | "CodeBreaK 200 (NCT04303780): Phase III vs docetaxel, PFS HR 0.66" | [ ] V / F / M |
-| 6 | sotorasib | INDICATED_FOR | non-small cell lung cancer | 0.98 | "FDA approved May 28, 2021 under accelerated approval for KRAS G12C-mutant locally advanced or metastatic NSCLC" | [ ] V / F / M |
-| 7 | sotorasib | ASSOCIATED_WITH | FDA accelerated approval sotorasib | 0.98 | "FDA approved May 28, 2021 under accelerated approval" | [ ] V / F / M |
-| 8 | KRAS Y96D | CONFERS_RESISTANCE_TO | sotorasib | 0.93 | "Y96D (disrupts binding)" | [ ] V / F / M |
-| 9 | KRAS R68S | CONFERS_RESISTANCE_TO | sotorasib | 0.93 | "R68S (alters interface)" | [ ] V / F / M |
-| 10 | KRAS H95Q | CONFERS_RESISTANCE_TO | sotorasib | 0.93 | "H95Q/R (affects cavity geometry)" | [ ] V / F / M |
-| 11 | MET | CONFERS_RESISTANCE_TO | sotorasib | 0.90 | "Bypass: MET amplification, MAPK reactivation" | [ ] V / F / M |
-| 12 | KRAS | PARTICIPATES_IN | MAPK pathway | 0.88 | "Bypass: MET amplification, MAPK reactivation" | [ ] V / F / M |
-| 13 | p-ERK inhibition | EXPRESSED_IN | H358 | 0.85 | "EC50: 38 nM (H358 cells, p-ERK inhibition)" | [ ] V / F / M |
-| 14 | KRAS | HAS_VARIANT | KRAS G12C | 0.98 | "KRAS G12C covalent inhibitor" | [ ] V / F / M |
-| 15 | KRAS | HAS_VARIANT | KRAS Y96D | 0.93 | "Resistance: Y96D (disrupts binding)" | [ ] V / F / M |
-| 16 | KRAS | HAS_VARIANT | KRAS R68S | 0.93 | "R68S (alters interface)" | [ ] V / F / M |
-| 17 | KRAS | HAS_VARIANT | KRAS H95Q | 0.93 | "H95Q/R (affects cavity geometry)" | [ ] V / F / M |
-| 18 | KRAS G12C | IMPLICATED_IN | non-small cell lung cancer | 0.98 | "KRAS G12C-mutant locally advanced or metastatic NSCLC" | [ ] V / F / M |
+| # | Source File | Source Entity | Relation | Target Entity | Confidence | Evidence | Verification |
+|---|-------------|---------------|----------|---------------|------------|----------|--------------|
+| 1 | structural_sotorasib.txt | sotorasib | INHIBITS | KRAS G12C | 0.98 | "Irreversibly and covalently binds to cysteine-12 of KRAS G12C, locking protein in inactive GDP-bound conformation" | [ ] V / F / M |
+| 2 | structural_sotorasib.txt | sotorasib | BINDS_TO | Switch II pocket | 0.95 | "Binding site: Switch II pocket (P2 pocket)" | [ ] V / F / M |
+| 3 | structural_sotorasib.txt | sotorasib | HAS_MECHANISM | covalent KRAS G12C inhibition | 0.95 | "Irreversibly and covalently binds to cysteine-12 of KRAS G12C, locking protein in inactive GDP-bound conformation" | [ ] V / F / M |
+| 4 | structural_sotorasib.txt | sotorasib | EVALUATED_IN | CodeBreaK 100 | 0.98 | "CodeBreaK 100 (NCT03600883): Phase I/II, ORR 37.1%, PFS 6.8 months" | [ ] V / F / M |
+| 5 | structural_sotorasib.txt | sotorasib | EVALUATED_IN | CodeBreaK 200 | 0.98 | "CodeBreaK 200 (NCT04303780): Phase III vs docetaxel, PFS HR 0.66" | [ ] V / F / M |
+| 6 | structural_sotorasib.txt | sotorasib | INDICATED_FOR | non-small cell lung cancer | 0.98 | "FDA approved May 28, 2021 under accelerated approval for KRAS G12C-mutant locally advanced or metastatic NSCLC" | [ ] V / F / M |
+| 7 | structural_sotorasib.txt | sotorasib | ASSOCIATED_WITH | FDA accelerated approval sotorasib | 0.98 | "FDA approved May 28, 2021 under accelerated approval" | [ ] V / F / M |
+| 8 | structural_sotorasib.txt | KRAS Y96D | CONFERS_RESISTANCE_TO | sotorasib | 0.93 | "Y96D (disrupts binding)" | [ ] V / F / M |
+| 9 | structural_sotorasib.txt | KRAS R68S | CONFERS_RESISTANCE_TO | sotorasib | 0.93 | "R68S (alters interface)" | [ ] V / F / M |
+| 10 | structural_sotorasib.txt | KRAS H95Q | CONFERS_RESISTANCE_TO | sotorasib | 0.93 | "H95Q/R (affects cavity geometry)" | [ ] V / F / M |
+| 11 | structural_sotorasib.txt | MET | CONFERS_RESISTANCE_TO | sotorasib | 0.90 | "Bypass: MET amplification, MAPK reactivation" | [ ] V / F / M |
+| 12 | structural_sotorasib.txt | KRAS | PARTICIPATES_IN | MAPK pathway | 0.88 | "Bypass: MET amplification, MAPK reactivation" | [ ] V / F / M |
+| 13 | structural_sotorasib.txt | p-ERK inhibition | EXPRESSED_IN | H358 | 0.85 | "EC50: 38 nM (H358 cells, p-ERK inhibition)" | [ ] V / F / M |
+| 14 | structural_sotorasib.txt | KRAS | HAS_VARIANT | KRAS G12C | 0.98 | "KRAS G12C covalent inhibitor" | [ ] V / F / M |
+| 15 | structural_sotorasib.txt | KRAS | HAS_VARIANT | KRAS Y96D | 0.93 | "Resistance: Y96D (disrupts binding)" | [ ] V / F / M |
+| 16 | structural_sotorasib.txt | KRAS | HAS_VARIANT | KRAS R68S | 0.93 | "R68S (alters interface)" | [ ] V / F / M |
+| 17 | structural_sotorasib.txt | KRAS | HAS_VARIANT | KRAS H95Q | 0.93 | "H95Q/R (affects cavity geometry)" | [ ] V / F / M |
+| 18 | structural_sotorasib.txt | KRAS G12C | IMPLICATED_IN | non-small cell lung cancer | 0.98 | "KRAS G12C-mutant locally advanced or metastatic NSCLC" | [ ] V / F / M |
 
 ### UAT Question Verification
 
