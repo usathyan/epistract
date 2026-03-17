@@ -135,7 +135,7 @@ right_items = [
     'Semantic community labels ("AD Risk Loci")',
     "RDKit + Biopython validation",
     "Source passage + confidence scores",
-    "77 articles, 5 domains, zero retraining",
+    "111 documents, 6 domains, zero retraining",
     "One-command plugin install",
 ]
 
@@ -144,7 +144,7 @@ draw_panel(
     "Epistract",
     "Comprehension-Based Synthesis",
     right_items,
-    "577 nodes  /  1,600 links  /  19/19 UATs",
+    "783 nodes  /  2,230 links  /  25/25 UATs",
     RIGHT_HDR, BULLET_R,
 )
 

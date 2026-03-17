@@ -16,7 +16,7 @@ Several instances during development required human judgment to redirect the AI'
 
 \textbf{Tooling decisions.} An early attempt to capture graph screenshots using Chrome DevTools Protocol proved cumbersome and brittle. The human redirected to Playwright, which provided reliable, headless screenshot capture in a single command. This saved significant debugging time and improved reproducibility.
 
-\textbf{Documentation completeness.} The human caught several gaps that the AI had not flagged: scenario results that were generated but not pushed to the repository, a README that still displayed ``Pending'' status for completed scenarios, and a status column that became redundant once all five scenarios were validated. Each correction required the human to hold the full project state in mind---a task that remains difficult to delegate to current AI systems.
+\textbf{Documentation completeness.} The human caught several gaps that the AI had not flagged: scenario results that were generated but not pushed to the repository, a README that still displayed ``Pending'' status for completed scenarios, and a status column that became redundant once all scenarios were validated. Each correction required the human to hold the full project state in mind---a task that remains difficult to delegate to current AI systems.
 
 \textbf{Disclaimer wording.} The test scenario disclaimer went through multiple iterations to find the right tone. The final version---``This project explores how AI-assisted tooling can accelerate scientific literature analysis''---was chosen to be honest about the system's capabilities without overclaiming clinical or regulatory applicability.
 
@@ -24,7 +24,7 @@ Several instances during development required human judgment to redirect the AI'
 
 The collaboration exhibited a clear division of labor that emerged organically rather than being prescribed. Human decisions included: which therapeutic domains to test (immuno-oncology, targeted therapy, rare disease, antibody engineering, epigenetics), which PubMed abstracts to include in each corpus, what constituted a passing UAT, how to brand and position the project, the paper's structure and target audience, and what to exclude from the final system. AI decisions included: the extraction JSON schema structure and field naming, the parallel agent dispatch architecture, defensive normalization patterns for handling LLM output variability, community labeling heuristics for graph visualization, documentation formatting conventions, and commit message style.
 
-This division maps onto a recognizable pattern: the human controlled \textit{what} and \textit{why}; the AI controlled \textit{how}. Neither party could have produced the final system alone. The human lacked the implementation velocity to build, test, and document five scenarios in the available time. The AI lacked the domain judgment to select meaningful corpora, evaluate extraction quality, or frame the scientific contribution.
+This division maps onto a recognizable pattern: the human controlled \textit{what} and \textit{why}; the AI controlled \textit{how}. Neither party could have produced the final system alone. The human lacked the implementation velocity to build, test, and document six scenarios in the available time. The AI lacked the domain judgment to select meaningful corpora, evaluate extraction quality, or frame the scientific contribution.
 
 \subsection{Engineering Findings}
 
