@@ -50,6 +50,18 @@ Restart Claude Code after installing.
 
 This installs [sift-kg](https://github.com/juanceresa/sift-kg) (the knowledge graph engine) and checks for optional molecular validation libraries ([RDKit](https://www.rdkit.org/), [Biopython](https://biopython.org/)).
 
+**Set up API keys** — sift-kg requires an LLM API key for entity resolution during graph building. Set one of the following in your environment before running the pipeline:
+
+```bash
+# Option A: OpenAI
+export SIFT_OPENAI_API_KEY="your-key-here"
+
+# Option B: Anthropic
+export SIFT_ANTHROPIC_API_KEY="your-key-here"
+```
+
+This is separate from Claude Code's own API access, which is handled by your Claude Code subscription.
+
 ### 2. Ingest Documents
 
 ```
@@ -449,10 +461,7 @@ Epistract enforces standard biomedical nomenclature:
 
 - [Claude Code](https://claude.ai/claude-code) (the runtime environment — handles all extraction via its own API access)
 - Python 3.11+
-- sift-kg (installed by `/epistract-setup`) — requires an LLM API key for entity resolution during graph building. Set one of the following environment variables (sift-kg uses the `SIFT_` prefix):
-  - `SIFT_OPENAI_API_KEY` ([OpenAI](https://platform.openai.com/))
-  - `SIFT_ANTHROPIC_API_KEY` ([Anthropic](https://console.anthropic.com/))
-  - Or configure via `.env` file in the sift-kg installation directory
+- sift-kg (installed by `/epistract-setup`) — requires an LLM API key for entity resolution (see Quick Start above)
 - Optional: [RDKit](https://www.rdkit.org/) (~50MB) for SMILES validation and structural enrichment
 - Optional: [Biopython](https://biopython.org/) (~20MB) for sequence validation
 
