@@ -8,6 +8,7 @@
 \usepackage{xcolor}
 \usepackage{microtype}
 \usepackage{natbib}
+\usepackage{makecell}
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 
 % --- Figure path ---
@@ -19,7 +20,9 @@
   for Biomedical Knowledge Graph Construction\\[0.5em]
   \large From GraphRAG to Epistract --- evolving latent knowledge graphs for drug discovery
 }
-\author{Umesh Bhatt}
+\author{Umesh Bhatt\\
+\texttt{umesh@8thcross.com}\\
+\texttt{@8thcross} on Medium}
 \date{March 2026}
 
 \begin{document}
@@ -34,9 +37,48 @@
 % --- Sections ---
 \input{sections/01-motivation}
 \input{sections/02-architecture}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig1-architecture.pdf}
+\caption{Epistract pipeline architecture. Documents are chunked, processed by parallel LLM extraction agents, validated with deterministic molecular tools, assembled into a deduplicated knowledge graph with community detection, and presented as an interactive visualization.}
+\label{fig:architecture}
+\end{figure*}
+
 \input{sections/03-schema}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.9\columnwidth]{fig2-schema-linkage.pdf}
+\caption{Domain schema linkage diagram showing typed relationships between the 17 entity types. Edges represent the 30 directed relation types, connecting molecular biology (genes, proteins, variants) through pathways and diseases to clinical entities (compounds, trials, adverse events).}
+\label{fig:schema}
+\end{figure}
+
 \input{sections/04-evaluation}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig3-scenario-graphs.png}
+\caption{Knowledge graph visualizations for all five evaluation scenarios. Each panel shows the interactive sift-kg viewer with auto-labeled communities. (a) PICALM/Alzheimer's, 149 nodes. (b) KRAS G12C, 108 nodes. (c) Rare Disease, 94 nodes. (d) Immuno-Oncology, 132 nodes. (e) Cardiovascular/Inflammation, 94 nodes.}
+\label{fig:scenarios}
+\end{figure*}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig5-schema-coverage.pdf}
+\caption{Schema coverage heatmap across five evaluation scenarios. Blue cells indicate an entity type (top) or relation type (bottom) was exercised in a given scenario. The rightmost column shows coverage out of five scenarios. Together, the five domains exercise 17/17 entity types (100\%) and 27/30 relation types (90\%).}
+\label{fig:coverage}
+\end{figure}
+
 \input{sections/05-comparison}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig6-evolution.pdf}
+\caption{Architectural evolution from GraphRAG to Epistract. The prequel system (left) relied on embedding similarity and generic NER. Epistract (right) uses LLM comprehension, a domain-specific schema, and molecular validation to produce typed, evidence-backed knowledge graphs.}
+\label{fig:evolution}
+\end{figure}
+
 \input{sections/06-collaboration}
 \input{sections/07-availability}
 \input{sections/08-conclusion}
