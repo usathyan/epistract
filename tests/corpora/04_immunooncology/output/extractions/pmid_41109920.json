@@ -1,0 +1,298 @@
+{
+  "document_id": "pmid_41109920",
+  "document_path": "tests/corpora/04_immunooncology/pmid_41109920.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "nivolumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "PD-1",
+        "dose": "480 mg every 4 weeks"
+      },
+      "confidence": 0.98,
+      "context": "nivolumab 480 mg plus relatlimab 160 mg (n=547) or nivolumab 480 mg (n=546) every 4 weeks for \u22641 year"
+    },
+    {
+      "name": "relatlimab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "LAG-3",
+        "dose": "160 mg every 4 weeks"
+      },
+      "confidence": 0.98,
+      "context": "nivolumab 480 mg plus relatlimab 160 mg (n=547)"
+    },
+    {
+      "name": "LAG3",
+      "entity_type": "GENE",
+      "attributes": {
+        "common_name": "LAG-3"
+      },
+      "confidence": 0.95,
+      "context": "lower circulating LAG-3+ T cells in the adjuvant setting versus advanced melanoma"
+    },
+    {
+      "name": "LAG-3",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "lymphocyte activation gene 3 protein"
+      },
+      "confidence": 0.95,
+      "context": "LAG-3+ T cells were enriched in tumor versus blood"
+    },
+    {
+      "name": "PD-1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "programmed cell death protein 1"
+      },
+      "confidence": 0.9,
+      "context": "nivolumab is an anti-PD-1 antibody used in adjuvant nivolumab plus relatlimab"
+    },
+    {
+      "name": "melanoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "melanoma"
+      },
+      "confidence": 0.98,
+      "context": "adjuvant nivolumab plus relatlimab to nivolumab after complete resection of stage III/IV melanoma"
+    },
+    {
+      "name": "advanced melanoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "melanoma",
+        "stage": "advanced/metastatic"
+      },
+      "confidence": 0.95,
+      "context": "nivolumab plus relatlimab is approved for advanced melanoma"
+    },
+    {
+      "name": "stage III/IV melanoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "melanoma",
+        "stage": "III/IV",
+        "setting": "resected"
+      },
+      "confidence": 0.97,
+      "context": "completely resected melanoma, the phase 3 RELATIVITY-098 trial compared adjuvant nivolumab plus relatlimab to nivolumab after complete resection of stage III/IV melanoma"
+    },
+    {
+      "name": "RELATIVITY-098",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "3",
+        "nct_id": "NCT05002569",
+        "design": "randomized",
+        "setting": "adjuvant",
+        "primary_endpoint": "recurrence-free survival",
+        "n_combo_arm": 547,
+        "n_control_arm": 546
+      },
+      "confidence": 0.99,
+      "context": "the phase 3 RELATIVITY-098 trial compared adjuvant nivolumab plus relatlimab to nivolumab after complete resection of stage III/IV melanoma"
+    },
+    {
+      "name": "RELATIVITY-047",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "indication": "advanced melanoma"
+      },
+      "confidence": 0.95,
+      "context": "Based on RELATIVITY-047, nivolumab plus relatlimab is approved for advanced melanoma"
+    },
+    {
+      "name": "recurrence-free survival",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "clinical endpoint",
+        "HR": 1.01,
+        "95_CI": "0.83-1.22",
+        "p_value": 0.928
+      },
+      "confidence": 0.95,
+      "context": "The primary endpoint was recurrence-free survival (RFS). There was no difference in RFS (HR=1.01; 95% CI: 0.83-1.22; P=0.928)"
+    },
+    {
+      "name": "LAG-3+ T cells",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "circulating immune cell",
+        "compartment": "blood"
+      },
+      "confidence": 0.92,
+      "context": "lower circulating LAG-3+ T cells in the adjuvant setting versus advanced melanoma, where LAG-3+ T cells were enriched in tumor versus blood"
+    },
+    {
+      "name": "T cell",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {
+        "cell_type": "lymphocyte"
+      },
+      "confidence": 0.9,
+      "context": "LAG-3+ T cells were enriched in tumor versus blood"
+    },
+    {
+      "name": "tumor",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {
+        "tissue_type": "tumor microenvironment"
+      },
+      "confidence": 0.85,
+      "context": "LAG-3+ T cells were enriched in tumor versus blood"
+    },
+    {
+      "name": "LAG-3 inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "target": "LAG-3"
+      },
+      "confidence": 0.92,
+      "context": "relatlimab targets LAG-3; the absence of macroscopic tumor and reduced peripheral LAG-3+ T cells may explain the lack of added benefit"
+    },
+    {
+      "name": "PD-1 inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "target": "PD-1"
+      },
+      "confidence": 0.9,
+      "context": "nivolumab is an anti-PD-1 checkpoint inhibitor used in adjuvant treatment"
+    },
+    {
+      "name": "Nature Medicine",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "year": 2025,
+        "pmid": "41109920",
+        "authors_first": "Long Georgina V"
+      },
+      "confidence": 0.99,
+      "context": "Journal: Nature medicine (2025) PMID: 41109920"
+    },
+    {
+      "name": "peptide_10aa",
+      "entity_type": "PEPTIDE_SEQUENCE",
+      "attributes": {
+        "sequence": "RELATIVITY",
+        "sequence_type": "protein",
+        "length": 10,
+        "validated": true,
+        "molecular_weight": 1178.38
+      },
+      "confidence": 1.0,
+      "context": "completely resected melanoma, the phase 3 RELATIVITY-098 trial compared adjuvant nivolumab plus relatl"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "nivolumab",
+      "target_entity": "PD-1",
+      "confidence": 0.95,
+      "evidence": "nivolumab is an anti-PD-1 antibody approved for advanced melanoma"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "relatlimab",
+      "target_entity": "LAG-3",
+      "confidence": 0.95,
+      "evidence": "relatlimab targets LAG-3; reduced peripheral LAG-3+ T cells may explain the lack of added benefit"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "nivolumab",
+      "target_entity": "advanced melanoma",
+      "confidence": 0.95,
+      "evidence": "nivolumab plus relatlimab is approved for advanced melanoma"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "relatlimab",
+      "target_entity": "advanced melanoma",
+      "confidence": 0.95,
+      "evidence": "Based on RELATIVITY-047, nivolumab plus relatlimab is approved for advanced melanoma"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "nivolumab",
+      "target_entity": "RELATIVITY-098",
+      "confidence": 0.99,
+      "evidence": "the phase 3 RELATIVITY-098 trial compared adjuvant nivolumab plus relatlimab to nivolumab after complete resection of stage III/IV melanoma"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "relatlimab",
+      "target_entity": "RELATIVITY-098",
+      "confidence": 0.99,
+      "evidence": "the phase 3 RELATIVITY-098 trial compared adjuvant nivolumab plus relatlimab to nivolumab after complete resection of stage III/IV melanoma"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "nivolumab",
+      "target_entity": "RELATIVITY-047",
+      "confidence": 0.9,
+      "evidence": "Based on RELATIVITY-047, nivolumab plus relatlimab is approved for advanced melanoma"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "relatlimab",
+      "target_entity": "RELATIVITY-047",
+      "confidence": 0.9,
+      "evidence": "Based on RELATIVITY-047, nivolumab plus relatlimab is approved for advanced melanoma"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "LAG-3+ T cells",
+      "target_entity": "relatlimab",
+      "confidence": 0.82,
+      "evidence": "lower circulating LAG-3+ T cells in the adjuvant setting versus advanced melanoma, where LAG-3+ T cells were enriched in tumor versus blood. The absence of macroscopic tumor and reduced peripheral LAG-3+ T cells may explain the lack of added benefit"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "LAG-3+ T cells",
+      "target_entity": "advanced melanoma",
+      "confidence": 0.75,
+      "evidence": "LAG-3+ T cells were enriched in tumor versus blood"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "LAG3",
+      "target_entity": "LAG-3",
+      "confidence": 0.95,
+      "evidence": "LAG-3 protein encoded by LAG3 gene"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "nivolumab",
+      "target_entity": "PD-1",
+      "confidence": 0.93,
+      "evidence": "nivolumab is a monoclonal antibody targeting PD-1"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "relatlimab",
+      "target_entity": "LAG-3",
+      "confidence": 0.93,
+      "evidence": "relatlimab is a monoclonal antibody targeting LAG-3"
+    },
+    {
+      "relation_type": "HAS_SEQUENCE",
+      "source_entity": "nivolumab",
+      "target_entity": "peptide_10aa",
+      "confidence": 0.95,
+      "evidence": "completely resected melanoma, the phase 3 RELATIVITY-098 trial compared adjuvant nivolumab plus relatl"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T00:00:00+00:00",
+  "error": null
+}

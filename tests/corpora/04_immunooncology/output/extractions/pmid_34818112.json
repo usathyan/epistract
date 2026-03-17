@@ -1,0 +1,178 @@
+{
+  "document_id": "pmid_34818112",
+  "document_path": "tests/corpora/04_immunooncology/pmid_34818112.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "nivolumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "PD-1"
+      },
+      "confidence": 0.99,
+      "context": "durable clinical benefit was demonstrated with nivolumab plus ipilimumab and nivolumab alone versus ipilimumab"
+    },
+    {
+      "name": "ipilimumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "CTLA-4"
+      },
+      "confidence": 0.99,
+      "context": "nivolumab plus ipilimumab and nivolumab alone versus ipilimumab"
+    },
+    {
+      "name": "melanoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "melanoma",
+        "stage": "advanced"
+      },
+      "confidence": 0.99,
+      "context": "patients with advanced melanoma"
+    },
+    {
+      "name": "CheckMate 067",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "III",
+        "design": "randomized",
+        "follow_up": "6.5 years",
+        "arms": [
+          "nivolumab plus ipilimumab",
+          "nivolumab",
+          "ipilimumab"
+        ],
+        "primary_endpoint": "overall survival"
+      },
+      "confidence": 0.99,
+      "context": "In the phase III CheckMate 067 trial"
+    },
+    {
+      "name": "BRAF",
+      "entity_type": "GENE",
+      "attributes": {
+        "role": "stratification biomarker"
+      },
+      "confidence": 0.95,
+      "context": "6.5-year OS rates were 57%, 43%, and 25% in patients with BRAF-mutant tumors and 46%, 42%, and 22% in those with BRAF-wild-type tumors"
+    },
+    {
+      "name": "BRAF mutation",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "predictive",
+        "variants": [
+          "BRAF-mutant",
+          "BRAF-wild-type"
+        ]
+      },
+      "confidence": 0.92,
+      "context": "6.5-year OS rates were 57%, 43%, and 25% in patients with BRAF-mutant tumors"
+    },
+    {
+      "name": "PD-1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene": "PDCD1",
+        "function": "immune checkpoint receptor"
+      },
+      "confidence": 0.90,
+      "context": "nivolumab plus ipilimumab"
+    },
+    {
+      "name": "CTLA-4",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene": "CTLA4",
+        "function": "immune checkpoint receptor"
+      },
+      "confidence": 0.90,
+      "context": "nivolumab plus ipilimumab"
+    },
+    {
+      "name": "Journal of clinical oncology",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "34818112",
+        "year": 2022,
+        "first_author": "Wolchok Jedd D"
+      },
+      "confidence": 0.99,
+      "context": "Journal of clinical oncology (2022) PMID: 34818112"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "nivolumab",
+      "target_entity": "PD-1",
+      "confidence": 0.95,
+      "evidence": "nivolumab is an anti-PD-1 monoclonal antibody evaluated in CheckMate 067"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "ipilimumab",
+      "target_entity": "CTLA-4",
+      "confidence": 0.95,
+      "evidence": "ipilimumab is an anti-CTLA-4 monoclonal antibody evaluated in CheckMate 067"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "nivolumab",
+      "target_entity": "melanoma",
+      "confidence": 0.95,
+      "evidence": "durable, improved clinical outcomes with nivolumab plus ipilimumab or nivolumab versus ipilimumab in patients with advanced melanoma"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "ipilimumab",
+      "target_entity": "melanoma",
+      "confidence": 0.95,
+      "evidence": "nivolumab plus ipilimumab or nivolumab versus ipilimumab in patients with advanced melanoma"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "nivolumab",
+      "target_entity": "CheckMate 067",
+      "confidence": 0.99,
+      "evidence": "In the phase III CheckMate 067 trial, durable clinical benefit was demonstrated with nivolumab plus ipilimumab and nivolumab alone"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "ipilimumab",
+      "target_entity": "CheckMate 067",
+      "confidence": 0.99,
+      "evidence": "In the phase III CheckMate 067 trial, durable clinical benefit was demonstrated with nivolumab plus ipilimumab and nivolumab alone versus ipilimumab"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "BRAF mutation",
+      "target_entity": "nivolumab",
+      "confidence": 0.85,
+      "evidence": "6.5-year OS rates were 57%, 43%, and 25% in patients with BRAF-mutant tumors and 46%, 42%, and 22% in those with BRAF-wild-type tumors"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "BRAF",
+      "target_entity": "melanoma",
+      "confidence": 0.92,
+      "evidence": "patients with BRAF-mutant tumors and BRAF-wild-type tumors with advanced melanoma"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "BRAF mutation",
+      "target_entity": "melanoma",
+      "confidence": 0.88,
+      "evidence": "BRAF-mutant tumors in patients with advanced melanoma"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T00:00:00+00:00",
+  "error": null
+}

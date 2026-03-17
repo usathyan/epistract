@@ -1,0 +1,222 @@
+{
+  "document_id": "pmid_28889792",
+  "document_path": "tests/corpora/04_immunooncology/pmid_28889792.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "nivolumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "dose": "1 mg/kg or 3 mg/kg",
+        "target": "PD-1"
+      },
+      "confidence": 0.98,
+      "context": "nivolumab at a dose of 1 mg per kilogram plus ipilimumab at a dose of 3 mg per kilogram every 3 weeks for four doses, followed by nivolumab at 3 mg per kilogram every 2 weeks"
+    },
+    {
+      "name": "ipilimumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "dose": "3 mg/kg",
+        "target": "CTLA-4"
+      },
+      "confidence": 0.98,
+      "context": "ipilimumab at a dose of 3 mg per kilogram every 3 weeks for four doses"
+    },
+    {
+      "name": "melanoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "stage": "advanced",
+        "mesh_term": "melanoma"
+      },
+      "confidence": 0.98,
+      "context": "patients with previously untreated advanced melanoma"
+    },
+    {
+      "name": "PDCD1",
+      "entity_type": "GENE",
+      "attributes": {
+        "common_name": "PD-1"
+      },
+      "confidence": 0.85,
+      "context": "nivolumab combined with ipilimumab resulted in longer progression-free survival"
+    },
+    {
+      "name": "CTLA4",
+      "entity_type": "GENE",
+      "attributes": {
+        "common_name": "CTLA-4"
+      },
+      "confidence": 0.85,
+      "context": "ipilimumab at a dose of 3 mg per kilogram every 3 weeks"
+    },
+    {
+      "name": "PD-1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene": "PDCD1"
+      },
+      "confidence": 0.85,
+      "context": "nivolumab combined with ipilimumab resulted in longer progression-free survival"
+    },
+    {
+      "name": "CTLA-4",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene": "CTLA4"
+      },
+      "confidence": 0.85,
+      "context": "ipilimumab at a dose of 3 mg per kilogram every 3 weeks"
+    },
+    {
+      "name": "immune checkpoint inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism": "immune checkpoint blockade"
+      },
+      "confidence": 0.8,
+      "context": "Nivolumab combined with ipilimumab resulted in longer progression-free survival and a higher objective response rate than ipilimumab alone"
+    },
+    {
+      "name": "CheckMate 067",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT01844505",
+        "phase": "3",
+        "design": "randomized 1:1:1"
+      },
+      "confidence": 0.99,
+      "context": "CheckMate 067 ClinicalTrials.gov number, NCT01844505"
+    },
+    {
+      "name": "treatment-related adverse events grade 3-4",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "grade": "3 or 4",
+        "incidence": "59%",
+        "arm": "nivolumab-plus-ipilimumab"
+      },
+      "confidence": 0.95,
+      "context": "Treatment-related adverse events of grade 3 or 4 occurred in 59% of the patients in the nivolumab-plus-ipilimumab group"
+    },
+    {
+      "name": "The New England Journal of Medicine",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "year": "2017",
+        "pmid": "28889792"
+      },
+      "confidence": 0.99,
+      "context": "The New England journal of medicine (2017) PMID: 28889792"
+    },
+    {
+      "name": "overall survival",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "clinical endpoint",
+        "3yr_rate_combo": "58%",
+        "3yr_rate_nivo": "52%",
+        "3yr_rate_ipi": "34%"
+      },
+      "confidence": 0.95,
+      "context": "The overall survival rate at 3 years was 58% in the nivolumab-plus-ipilimumab group and 52% in the nivolumab group, as compared with 34% in the ipilimumab group"
+    },
+    {
+      "name": "progression-free survival",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "clinical endpoint"
+      },
+      "confidence": 0.9,
+      "context": "Nivolumab combined with ipilimumab resulted in longer progression-free survival"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "nivolumab",
+      "target_entity": "PD-1",
+      "confidence": 0.95,
+      "evidence": "nivolumab combined with ipilimumab resulted in longer progression-free survival"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "ipilimumab",
+      "target_entity": "CTLA-4",
+      "confidence": 0.95,
+      "evidence": "ipilimumab at a dose of 3 mg per kilogram every 3 weeks for four doses"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "nivolumab",
+      "target_entity": "melanoma",
+      "confidence": 0.95,
+      "evidence": "Among patients with advanced melanoma, significantly longer overall survival occurred with combination therapy with nivolumab plus ipilimumab or with nivolumab alone than with ipilimumab alone"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "ipilimumab",
+      "target_entity": "melanoma",
+      "confidence": 0.95,
+      "evidence": "patients with previously untreated advanced melanoma to receive nivolumab at a dose of 1 mg per kilogram plus ipilimumab"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "nivolumab",
+      "target_entity": "CheckMate 067",
+      "confidence": 0.99,
+      "evidence": "CheckMate 067 ClinicalTrials.gov number, NCT01844505"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "ipilimumab",
+      "target_entity": "CheckMate 067",
+      "confidence": 0.99,
+      "evidence": "CheckMate 067 ClinicalTrials.gov number, NCT01844505"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "nivolumab",
+      "target_entity": "treatment-related adverse events grade 3-4",
+      "confidence": 0.9,
+      "evidence": "Treatment-related adverse events of grade 3 or 4 occurred in 59% of the patients in the nivolumab-plus-ipilimumab group"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "ipilimumab",
+      "target_entity": "treatment-related adverse events grade 3-4",
+      "confidence": 0.9,
+      "evidence": "Treatment-related adverse events of grade 3 or 4 occurred in 59% of the patients in the nivolumab-plus-ipilimumab group"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "PDCD1",
+      "target_entity": "PD-1",
+      "confidence": 0.85,
+      "evidence": "nivolumab combined with ipilimumab resulted in longer progression-free survival"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "CTLA4",
+      "target_entity": "CTLA-4",
+      "confidence": 0.85,
+      "evidence": "ipilimumab at a dose of 3 mg per kilogram every 3 weeks"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "overall survival",
+      "target_entity": "nivolumab",
+      "confidence": 0.8,
+      "evidence": "The overall survival rate at 3 years was 58% in the nivolumab-plus-ipilimumab group and 52% in the nivolumab group, as compared with 34% in the ipilimumab group"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T00:00:00+00:00",
+  "error": null
+}

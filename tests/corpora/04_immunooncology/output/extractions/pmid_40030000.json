@@ -1,0 +1,316 @@
+{
+  "document_id": "pmid_40030000",
+  "document_path": "tests/corpora/04_immunooncology/pmid_40030000.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "nivolumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "PD-1",
+        "dose": "240 mg every 2 weeks"
+      },
+      "confidence": 0.98,
+      "context": "nivolumab 240 mg plus relatlimab 160 mg every 2 weeks"
+    },
+    {
+      "name": "relatlimab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "LAG-3",
+        "dose_monotherapy": "240 mg",
+        "dose_combination": "160 mg every 2 weeks"
+      },
+      "confidence": 0.98,
+      "context": "relatlimab 240 mg as monotherapy or nivolumab 240 mg plus relatlimab 160 mg every 2 weeks"
+    },
+    {
+      "name": "PDCD1",
+      "entity_type": "GENE",
+      "attributes": {
+        "common_name": "PD-1"
+      },
+      "confidence": 0.92,
+      "context": "anti-PD-1 monotherapy eventually fails in most patients"
+    },
+    {
+      "name": "LAG3",
+      "entity_type": "GENE",
+      "attributes": {
+        "common_name": "LAG-3"
+      },
+      "confidence": 0.95,
+      "context": "LAG-3 represents another immune checkpoint that can be targeted"
+    },
+    {
+      "name": "PD-1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene": "PDCD1",
+        "function": "immune checkpoint receptor"
+      },
+      "confidence": 0.95,
+      "context": "anti-PD-1 monotherapy eventually fails in most patients"
+    },
+    {
+      "name": "LAG-3",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene": "LAG3",
+        "function": "immune checkpoint receptor"
+      },
+      "confidence": 0.95,
+      "context": "LAG-3 represents another immune checkpoint that can be targeted"
+    },
+    {
+      "name": "Hodgkin lymphoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Hodgkin Disease",
+        "subtype": "relapsed/refractory"
+      },
+      "confidence": 0.98,
+      "context": "relapsed/refractory (R/R) Hodgkin lymphoma (HL)"
+    },
+    {
+      "name": "diffuse large B-cell lymphoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Lymphoma, Large B-Cell, Diffuse",
+        "abbreviation": "DLBCL"
+      },
+      "confidence": 0.95,
+      "context": "In DLBCL, ORR was 7% (n=15) and median PFS was 2 months"
+    },
+    {
+      "name": "B-cell malignancies",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Lymphoma, B-Cell"
+      },
+      "confidence": 0.95,
+      "context": "patients with relapsed or progressed B-cell malignancies"
+    },
+    {
+      "name": "melanoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Melanoma",
+        "subtype": "advanced"
+      },
+      "confidence": 0.9,
+      "context": "dual PD-1 and LAG-3 inhibition is approved in advanced melanoma"
+    },
+    {
+      "name": "RELATIVITY-022",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT02061761",
+        "phase": "1/2a",
+        "design": "open-label, multicenter",
+        "n_patients": 106
+      },
+      "confidence": 0.99,
+      "context": "We performed a multicenter phase 1/2a open-label study of relatlimab (RELATIVITY-022)"
+    },
+    {
+      "name": "PD-1 signaling pathway",
+      "entity_type": "PATHWAY",
+      "attributes": {
+        "role": "immune checkpoint"
+      },
+      "confidence": 0.85,
+      "context": "anti-PD-1 monotherapy eventually fails in most patients"
+    },
+    {
+      "name": "LAG-3 signaling pathway",
+      "entity_type": "PATHWAY",
+      "attributes": {
+        "role": "immune checkpoint"
+      },
+      "confidence": 0.85,
+      "context": "LAG-3 represents another immune checkpoint that can be targeted"
+    },
+    {
+      "name": "objective response rate",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "ORR",
+        "type": "clinical endpoint"
+      },
+      "confidence": 0.9,
+      "context": "ORR was 62% and CRR was 19% in anti-PD-(L)1-naive patients"
+    },
+    {
+      "name": "complete response rate",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "CRR",
+        "type": "clinical endpoint"
+      },
+      "confidence": 0.9,
+      "context": "CRR was 19% in anti-PD-(L)1-naive patients"
+    },
+    {
+      "name": "progression-free survival",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "PFS",
+        "type": "clinical endpoint"
+      },
+      "confidence": 0.9,
+      "context": "median PFS of 19 months"
+    },
+    {
+      "name": "Blood advances",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "40030000",
+        "year": 2025,
+        "type": "journal article"
+      },
+      "confidence": 0.99,
+      "context": "Blood advances (2025)"
+    },
+    {
+      "name": "immune checkpoint inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "targets": [
+          "PD-1",
+          "LAG-3"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "dual PD-1 and LAG-3 inhibition is approved in advanced melanoma"
+    },
+    {
+      "name": "peptide_10aa",
+      "entity_type": "PEPTIDE_SEQUENCE",
+      "attributes": {
+        "sequence": "RELATIVITY",
+        "sequence_type": "protein",
+        "length": 10,
+        "validated": true,
+        "molecular_weight": 1178.38
+      },
+      "confidence": 1.0,
+      "context": "center phase 1/2a open-label study of relatlimab (RELATIVITY-022)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "nivolumab",
+      "target_entity": "PD-1",
+      "confidence": 0.98,
+      "evidence": "anti-PD-1 monotherapy eventually fails in most patients"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "relatlimab",
+      "target_entity": "LAG-3",
+      "confidence": 0.98,
+      "evidence": "LAG-3 represents another immune checkpoint that can be targeted"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "nivolumab",
+      "target_entity": "RELATIVITY-022",
+      "confidence": 0.99,
+      "evidence": "multicenter phase 1/2a open-label study of relatlimab (RELATIVITY-022) as monotherapy or with nivolumab"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "relatlimab",
+      "target_entity": "RELATIVITY-022",
+      "confidence": 0.99,
+      "evidence": "multicenter phase 1/2a open-label study of relatlimab (RELATIVITY-022)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "nivolumab",
+      "target_entity": "Hodgkin lymphoma",
+      "confidence": 0.8,
+      "evidence": "In HL expansion cohorts, ORR was 62% and CRR was 19% in anti-PD-(L)1-naive patients"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "nivolumab",
+      "target_entity": "melanoma",
+      "confidence": 0.85,
+      "evidence": "dual PD-1 and LAG-3 inhibition is approved in advanced melanoma"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "relatlimab",
+      "target_entity": "melanoma",
+      "confidence": 0.85,
+      "evidence": "dual PD-1 and LAG-3 inhibition is approved in advanced melanoma"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "nivolumab",
+      "target_entity": "B-cell malignancies",
+      "confidence": 0.95,
+      "evidence": "Nivolumab plus relatlimab for patients with relapsed or progressed B-cell malignancies"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "relatlimab",
+      "target_entity": "B-cell malignancies",
+      "confidence": 0.95,
+      "evidence": "Nivolumab plus relatlimab for patients with relapsed or progressed B-cell malignancies"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "PDCD1",
+      "target_entity": "PD-1",
+      "confidence": 0.95,
+      "evidence": "anti-PD-1 monotherapy"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "LAG3",
+      "target_entity": "LAG-3",
+      "confidence": 0.95,
+      "evidence": "LAG-3 represents another immune checkpoint that can be targeted"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "PD-1",
+      "target_entity": "PD-1 signaling pathway",
+      "confidence": 0.88,
+      "evidence": "anti-PD-1 monotherapy eventually fails in most patients"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "LAG-3",
+      "target_entity": "LAG-3 signaling pathway",
+      "confidence": 0.88,
+      "evidence": "LAG-3 represents another immune checkpoint that can be targeted"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "relatlimab",
+      "target_entity": "diffuse large B-cell lymphoma",
+      "confidence": 0.9,
+      "evidence": "In DLBCL, ORR was 7% (n=15) and median PFS was 2 months"
+    },
+    {
+      "relation_type": "HAS_SEQUENCE",
+      "source_entity": "relatlimab",
+      "target_entity": "peptide_10aa",
+      "confidence": 0.95,
+      "evidence": "center phase 1/2a open-label study of relatlimab (RELATIVITY-022)"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T00:00:00+00:00",
+  "error": null
+}

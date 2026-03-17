@@ -117,7 +117,7 @@ Epistract ships with five real-world drug discovery research scenarios, each bac
 | 1 | [PICALM / Alzheimer's](tests/scenarios/scenario-01-picalm-alzheimers.md) | Genetic target validation | 15 papers | **Completed** |
 | 2 | [KRAS G12C Landscape](tests/scenarios/scenario-02-kras-g12c-landscape.md) | Competitive intelligence | 16 papers | **Completed** |
 | 3 | [Rare Disease Therapeutics](tests/scenarios/scenario-03-rare-disease.md) | Due diligence | 15 papers | **Completed** |
-| 4 | [Immuno-Oncology Combinations](tests/scenarios/scenario-04-immunooncology.md) | Checkpoint combinations | 15 papers | Pending |
+| 4 | [Immuno-Oncology Combinations](tests/scenarios/scenario-04-immunooncology.md) | Checkpoint combinations | 16 papers | **Completed** |
 | 5 | [Cardiovascular & Inflammation](tests/scenarios/scenario-05-cardiovascular.md) | Cardiology + inflammation | 14 papers | Pending |
 
 See [tests/MANUAL_TEST_SCENARIOS.md](tests/MANUAL_TEST_SCENARIOS.md) for the full index, acceptance criteria, and corpus provenance.
@@ -149,6 +149,33 @@ See [tests/MANUAL_TEST_SCENARIOS.md](tests/MANUAL_TEST_SCENARIOS.md) for the ful
 | **Adagrasib / Immune Checkpoint Inhibitors / BRAF** | 20 | Adagrasib clinical profile and bypass resistance |
 | **RAS Signaling / RAF/MEK Pathway** | 17 | Mechanistic biology and emerging targets |
 | **Pancreatic Ductal Adenocarcinoma / PD-1** | 10 | Disease indications and next-gen RAS-ON inhibitors |
+
+### Scenario 3 Result: Rare Disease Therapeutics
+
+![Rare Disease Knowledge Graph](tests/scenarios/screenshots/scenario-03-graph.png)
+
+*94 nodes, 229 links, 4 auto-labeled communities. Full results: [scenario-03-rare-disease.md](tests/scenarios/scenario-03-rare-disease.md)*
+
+| Community | Members | Theme |
+|---|---|---|
+| **PKU Enzyme Replacement / Gene Therapy Safety** | 28 | Pegvaliase, sapropterin, PAH gene therapy |
+| **CNP Analog / Bone Biology** | 24 | Vosoritide, achondroplasia, FGFR3/NPR-B pathway |
+| **Arimoclomol / HSP Co-induction** | 22 | Niemann-Pick C, HSF1/HSP70, miglustat |
+| **ERT Immunogenicity / Clinical Trials** | 20 | Enzyme replacement therapy, anti-drug antibodies |
+
+### Scenario 4 Result: Immuno-Oncology Combinations
+
+![Immuno-Oncology Knowledge Graph](tests/scenarios/screenshots/scenario-04-graph.png)
+
+*132 nodes, 361 links, 5 auto-labeled communities. Full results: [scenario-04-immunooncology.md](tests/scenarios/scenario-04-immunooncology.md)*
+
+| Community | Members | Theme |
+|---|---|---|
+| **PD-1 Immune Checkpoint Blockade in CD8+ T Cells** | 31 | Core nivolumab biology, biomarkers (PD-L1, TMB, MSI-H) |
+| **Brain Metastases — CTLA-4** | 16 | Ipilimumab combinations, CheckMate trials, melanoma |
+| **LAG-3 Signaling Pathway (LAG3)** | 18 | Relatlimab, RELATIVITY trials, dual checkpoint blockade |
+| **PD-1/PD-L1 Signaling Pathway (PDCD1, CD274)** | 15 | 13 approved anti-PD-(L)1 agents, combination strategies |
+| **Metabolic Reprogramming in Tumor Immune Microenvironment** | 15 | HCC immunotherapy, cabozantinib/VEGF, spatial transcriptomics |
 
 ### Automating Test Runs
 

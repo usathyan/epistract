@@ -1,0 +1,276 @@
+{
+  "document_id": "pmid_30134131",
+  "document_path": "tests/corpora/04_immunooncology/pmid_30134131.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "nivolumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "dose": "1 mg/kg induction, 3 mg/kg maintenance",
+        "schedule": "every 3 weeks induction, every 2 weeks maintenance"
+      },
+      "confidence": 0.98,
+      "context": "nivolumab (1 mg per kilogram) plus ipilimumab (3 mg per kilogram) every 3 weeks for up to four doses, followed by nivolumab (3 mg per kilogram) every 2 weeks"
+    },
+    {
+      "name": "ipilimumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "dose": "3 mg/kg",
+        "schedule": "every 3 weeks for up to four doses"
+      },
+      "confidence": 0.98,
+      "context": "nivolumab (1 mg per kilogram) plus ipilimumab (3 mg per kilogram) every 3 weeks for up to four doses"
+    },
+    {
+      "name": "PD-1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene_symbol": "PDCD1"
+      },
+      "confidence": 0.9,
+      "context": "nivolumab plus ipilimumab in patients with melanoma who had untreated brain metastases"
+    },
+    {
+      "name": "CTLA-4",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene_symbol": "CTLA4"
+      },
+      "confidence": 0.9,
+      "context": "nivolumab plus ipilimumab in patients with melanoma who had untreated brain metastases"
+    },
+    {
+      "name": "melanoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Melanoma"
+      },
+      "confidence": 0.99,
+      "context": "Combined Nivolumab and Ipilimumab in Melanoma Metastatic to the Brain"
+    },
+    {
+      "name": "brain metastases",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Brain Neoplasms",
+        "secondary_to": "melanoma"
+      },
+      "confidence": 0.99,
+      "context": "Brain metastases are a common cause of disabling neurologic complications and death in patients with metastatic melanoma"
+    },
+    {
+      "name": "CheckMate 204",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT02320058",
+        "phase": "2",
+        "design": "open-label, multicenter",
+        "n_patients": 94,
+        "median_follow_up_months": 14.0
+      },
+      "confidence": 0.99,
+      "context": "CheckMate 204 ClinicalTrials.gov number, NCT02320058"
+    },
+    {
+      "name": "immune-related myocarditis",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "grade": "5",
+        "fatal": true
+      },
+      "confidence": 0.97,
+      "context": "One patient died from immune-related myocarditis"
+    },
+    {
+      "name": "central nervous system adverse events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "grade": "3-4",
+        "incidence_pct": 7
+      },
+      "confidence": 0.92,
+      "context": "events involving the central nervous system in 7%"
+    },
+    {
+      "name": "treatment-related grade 3-4 adverse events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "grade": "3-4",
+        "incidence_pct": 55
+      },
+      "confidence": 0.95,
+      "context": "Treatment-related grade 3 or 4 adverse events were reported in 55% of patients"
+    },
+    {
+      "name": "brain",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "Melanoma Metastatic to the Brain"
+    },
+    {
+      "name": "immune checkpoint inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "targets": [
+          "PD-1",
+          "CTLA-4"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "nivolumab plus ipilimumab in patients with melanoma who had untreated brain metastases"
+    },
+    {
+      "name": "Tawbi et al. 2018",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "30134131",
+        "journal": "The New England Journal of Medicine",
+        "year": 2018
+      },
+      "confidence": 0.99,
+      "context": "The New England journal of medicine (2018) PMID: 30134131"
+    },
+    {
+      "name": "intracranial clinical benefit",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "rate_pct": 57,
+        "includes": "CR + PR + SD >= 6 months"
+      },
+      "confidence": 0.95,
+      "context": "the rate of intracranial clinical benefit was 57%"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "nivolumab",
+      "target_entity": "PD-1",
+      "confidence": 0.95,
+      "evidence": "nivolumab is a PD-1 immune checkpoint inhibitor used in combination with ipilimumab"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "ipilimumab",
+      "target_entity": "CTLA-4",
+      "confidence": 0.95,
+      "evidence": "ipilimumab is a CTLA-4 immune checkpoint inhibitor used in combination with nivolumab"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "nivolumab",
+      "target_entity": "melanoma",
+      "confidence": 0.92,
+      "evidence": "Nivolumab combined with ipilimumab had clinically meaningful intracranial efficacy in patients with melanoma who had untreated brain metastases"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "ipilimumab",
+      "target_entity": "melanoma",
+      "confidence": 0.92,
+      "evidence": "Nivolumab combined with ipilimumab had clinically meaningful intracranial efficacy in patients with melanoma who had untreated brain metastases"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "nivolumab",
+      "target_entity": "brain metastases",
+      "confidence": 0.88,
+      "evidence": "clinically meaningful intracranial efficacy in patients with melanoma who had untreated brain metastases"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "ipilimumab",
+      "target_entity": "brain metastases",
+      "confidence": 0.88,
+      "evidence": "clinically meaningful intracranial efficacy in patients with melanoma who had untreated brain metastases"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "nivolumab",
+      "target_entity": "CheckMate 204",
+      "confidence": 0.99,
+      "evidence": "patients received nivolumab (1 mg per kilogram) plus ipilimumab (3 mg per kilogram) ... CheckMate 204 ClinicalTrials.gov number, NCT02320058"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "ipilimumab",
+      "target_entity": "CheckMate 204",
+      "confidence": 0.99,
+      "evidence": "patients received nivolumab (1 mg per kilogram) plus ipilimumab (3 mg per kilogram) ... CheckMate 204 ClinicalTrials.gov number, NCT02320058"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "nivolumab",
+      "target_entity": "immune-related myocarditis",
+      "confidence": 0.85,
+      "evidence": "One patient died from immune-related myocarditis"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "ipilimumab",
+      "target_entity": "immune-related myocarditis",
+      "confidence": 0.85,
+      "evidence": "One patient died from immune-related myocarditis"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "nivolumab",
+      "target_entity": "treatment-related grade 3-4 adverse events",
+      "confidence": 0.9,
+      "evidence": "Treatment-related grade 3 or 4 adverse events were reported in 55% of patients"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "ipilimumab",
+      "target_entity": "treatment-related grade 3-4 adverse events",
+      "confidence": 0.9,
+      "evidence": "Treatment-related grade 3 or 4 adverse events were reported in 55% of patients"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "nivolumab",
+      "target_entity": "central nervous system adverse events",
+      "confidence": 0.85,
+      "evidence": "events involving the central nervous system in 7%"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "ipilimumab",
+      "target_entity": "central nervous system adverse events",
+      "confidence": 0.85,
+      "evidence": "events involving the central nervous system in 7%"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "melanoma",
+      "target_entity": "brain metastases",
+      "confidence": 0.97,
+      "evidence": "Brain metastases are a common cause of disabling neurologic complications and death in patients with metastatic melanoma"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "nivolumab",
+      "target_entity": "immune checkpoint inhibition",
+      "confidence": 0.92,
+      "evidence": "nivolumab plus ipilimumab combination targeting immune checkpoints"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "ipilimumab",
+      "target_entity": "immune checkpoint inhibition",
+      "confidence": 0.92,
+      "evidence": "nivolumab plus ipilimumab combination targeting immune checkpoints"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T00:00:00+00:00",
+  "error": null
+}

@@ -1,0 +1,262 @@
+{
+  "document_id": "pmid_37723590",
+  "document_path": "tests/corpora/04_immunooncology/pmid_37723590.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "cabozantinib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "multi-tyrosine kinase inhibitor"
+      },
+      "confidence": 0.98,
+      "context": "neoadjuvant cabozantinib, a multi-tyrosine kinase inhibitor that primarily blocks VEGF"
+    },
+    {
+      "name": "nivolumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "class": "PD-1 inhibitor"
+      },
+      "confidence": 0.98,
+      "context": "nivolumab, a PD-1 inhibitor"
+    },
+    {
+      "name": "hepatocellular carcinoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "HCC"
+      },
+      "confidence": 0.99,
+      "context": "neoadjuvant cabozantinib and nivolumab in advanced hepatocellular carcinoma"
+    },
+    {
+      "name": "VEGF",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "a multi-tyrosine kinase inhibitor that primarily blocks VEGF"
+    },
+    {
+      "name": "PDCD1",
+      "entity_type": "GENE",
+      "attributes": {
+        "common_name": "PD-1"
+      },
+      "confidence": 0.95,
+      "context": "nivolumab, a PD-1 inhibitor"
+    },
+    {
+      "name": "PAX5",
+      "entity_type": "GENE",
+      "attributes": {
+        "function": "regulator of B cell maturation"
+      },
+      "confidence": 0.97,
+      "context": "activation of the PAX5 module, a known regulator of B cell maturation"
+    },
+    {
+      "name": "B cell maturation",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "activation of the PAX5 module, a known regulator of B cell maturation, colocalized with increased B cell marker expression"
+    },
+    {
+      "name": "tumor microenvironment remodeling",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "description": "TME enrichment for immune cells and CAFs with pro-inflammatory signaling"
+      },
+      "confidence": 0.85,
+      "context": "the TME of responding tumors was enriched for immune cells and cancer-associated fibroblasts (CAF) with pro-inflammatory signaling"
+    },
+    {
+      "name": "immune escape",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "description": "cancer stem cell marker expression in immune-poor tumor region"
+      },
+      "confidence": 0.82,
+      "context": "a distinctive immune-poor tumor region characterized by expression of cancer stem cell markers, potentially mediating immune escape and recurrence"
+    },
+    {
+      "name": "cancer-associated fibroblasts",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {
+        "abbreviation": "CAF"
+      },
+      "confidence": 0.95,
+      "context": "enriched for immune cells and cancer-associated fibroblasts (CAF) with pro-inflammatory signaling"
+    },
+    {
+      "name": "B cells",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {},
+      "confidence": 0.92,
+      "context": "colocalized with increased B cell marker expression"
+    },
+    {
+      "name": "cancer stem cells",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {},
+      "confidence": 0.88,
+      "context": "expression of cancer stem cell markers, potentially mediating immune escape and recurrence"
+    },
+    {
+      "name": "B cell markers",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "cell identity"
+      },
+      "confidence": 0.85,
+      "context": "colocalized with increased B cell marker expression"
+    },
+    {
+      "name": "cancer stem cell markers",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "resistance"
+      },
+      "confidence": 0.85,
+      "context": "expression of cancer stem cell markers, potentially mediating immune escape and recurrence"
+    },
+    {
+      "name": "disease recurrence",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "a single patient experienced early HCC recurrence"
+    },
+    {
+      "name": "pathologic response",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.92,
+      "context": "5 out of 15 patients had a pathologic response"
+    },
+    {
+      "name": "tumor heterogeneity",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "ST analysis of this clinical outlier demonstrated marked tumor heterogeneity"
+    },
+    {
+      "name": "NCT neoadjuvant cabo/nivo HCC trial",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "neoadjuvant",
+        "n_patients": 15,
+        "responders": 5
+      },
+      "confidence": 0.8,
+      "context": "a prospective clinical trial of neoadjuvant cabozantinib...and nivolumab, in which 5 out of 15 patients had a pathologic response"
+    },
+    {
+      "name": "Zhang et al. 2023",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "37723590",
+        "journal": "Genome medicine",
+        "year": 2023
+      },
+      "confidence": 0.99,
+      "context": "Spatial transcriptomics analysis of neoadjuvant cabozantinib and nivolumab in advanced hepatocellular carcinoma"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "cabozantinib",
+      "target_entity": "VEGF",
+      "confidence": 0.95,
+      "evidence": "cabozantinib, a multi-tyrosine kinase inhibitor that primarily blocks VEGF"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "nivolumab",
+      "target_entity": "PDCD1",
+      "confidence": 0.95,
+      "evidence": "nivolumab, a PD-1 inhibitor"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "cabozantinib",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.88,
+      "evidence": "neoadjuvant cabozantinib and nivolumab in advanced hepatocellular carcinoma"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "nivolumab",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.88,
+      "evidence": "neoadjuvant cabozantinib and nivolumab in advanced hepatocellular carcinoma"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "cabozantinib",
+      "target_entity": "NCT neoadjuvant cabo/nivo HCC trial",
+      "confidence": 0.92,
+      "evidence": "a prospective clinical trial of neoadjuvant cabozantinib...and nivolumab"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "nivolumab",
+      "target_entity": "NCT neoadjuvant cabo/nivo HCC trial",
+      "confidence": 0.92,
+      "evidence": "a prospective clinical trial of neoadjuvant cabozantinib...and nivolumab"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "PAX5",
+      "target_entity": "B cell maturation",
+      "confidence": 0.93,
+      "evidence": "activation of the PAX5 module, a known regulator of B cell maturation"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "cancer stem cell markers",
+      "target_entity": "immune escape",
+      "confidence": 0.78,
+      "evidence": "expression of cancer stem cell markers, potentially mediating immune escape and recurrence"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "B cell markers",
+      "target_entity": "nivolumab",
+      "confidence": 0.75,
+      "evidence": "enriched cancer-immune interactions in responding tumors are characterized by...increased B cell marker expression"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "cancer stem cells",
+      "target_entity": "disease recurrence",
+      "confidence": 0.78,
+      "evidence": "expression of cancer stem cell markers, potentially mediating immune escape and recurrence"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "tumor heterogeneity",
+      "target_entity": "disease recurrence",
+      "confidence": 0.72,
+      "evidence": "ST analysis of this clinical outlier demonstrated marked tumor heterogeneity, with a distinctive immune-poor tumor region...potentially mediating immune escape and recurrence"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "cancer-associated fibroblasts",
+      "target_entity": "pathologic response",
+      "confidence": 0.82,
+      "evidence": "TME of responding tumors was enriched for immune cells and cancer-associated fibroblasts (CAF) with pro-inflammatory signaling"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T00:09:24.176538+00:00",
+  "error": null
+}

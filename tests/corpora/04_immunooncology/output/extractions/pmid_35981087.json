@@ -1,0 +1,226 @@
+{
+  "document_id": "pmid_35981087",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "relatlimab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "LAG-3"
+      },
+      "confidence": 0.99,
+      "context": "relatlimab, a human antibody that binds to human LAG-3"
+    },
+    {
+      "name": "nivolumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "PD-1"
+      },
+      "confidence": 0.98,
+      "context": "combined with nivolumab"
+    },
+    {
+      "name": "LAG-3",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "lymphocyte-activation gene 3"
+      },
+      "confidence": 0.99,
+      "context": "Lymphocyte-activation gene 3 (LAG-3) is an immune-checkpoint molecule"
+    },
+    {
+      "name": "PD-1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "programmed death-1"
+      },
+      "confidence": 0.98,
+      "context": "programmed death-1 (PD-1)"
+    },
+    {
+      "name": "CTLA-4",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "cytotoxic T-lymphocyte-associated antigen-4"
+      },
+      "confidence": 0.95,
+      "context": "cytotoxic T-lymphocyte-associated antigen-4 (CTLA-4)"
+    },
+    {
+      "name": "MHC II",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "major histocompatibility complex class II"
+      },
+      "confidence": 0.95,
+      "context": "block the interaction of LAG-3 with the ligands MHC II"
+    },
+    {
+      "name": "fibrinogen-like protein-1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "abbreviation": "FGL1"
+      },
+      "confidence": 0.93,
+      "context": "fibrinogen-like protein-1"
+    },
+    {
+      "name": "LAG3",
+      "entity_type": "GENE",
+      "attributes": {
+        "encodes": "LAG-3"
+      },
+      "confidence": 0.95,
+      "context": "inferred from LAG-3 protein"
+    },
+    {
+      "name": "melanoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "stage": "unresectable or metastatic"
+      },
+      "confidence": 0.97,
+      "context": "patients with unresectable or metastatic melanoma"
+    },
+    {
+      "name": "RELATIVITY-047",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "phase II/III",
+        "nct": "NCT03470922"
+      },
+      "confidence": 0.99,
+      "context": "RELATIVITY-047 phase II/III trial"
+    },
+    {
+      "name": "immune checkpoint inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "immune-checkpoint inhibitors"
+    },
+    {
+      "name": "T cell inhibition",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.93,
+      "context": "inhibits T-cell activity and antitumor immune responses"
+    },
+    {
+      "name": "T cells",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "reverse LAG-3-mediated inhibition of T-cell function"
+    },
+    {
+      "name": "peptide_10aa",
+      "entity_type": "PEPTIDE_SEQUENCE",
+      "attributes": {
+        "sequence": "RELATIVITY",
+        "sequence_type": "protein",
+        "length": 10,
+        "validated": true,
+        "molecular_weight": 1178.38
+      },
+      "confidence": 1.0,
+      "context": "RELATIVITY-047 phase II/III trial"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "relatlimab",
+      "target_entity": "LAG-3",
+      "confidence": 0.99,
+      "evidence": "relatlimab, a human antibody that binds to human LAG-3 with high affinity"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "nivolumab",
+      "target_entity": "PD-1",
+      "confidence": 0.98,
+      "evidence": "PD-1 blockade"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "LAG-3",
+      "target_entity": "MHC II",
+      "confidence": 0.95,
+      "evidence": "block the interaction of LAG-3 with the ligands MHC II"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "LAG-3",
+      "target_entity": "fibrinogen-like protein-1",
+      "confidence": 0.93,
+      "evidence": "block the interaction of LAG-3 with the ligands MHC II and fibrinogen-like protein-1"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "relatlimab",
+      "target_entity": "RELATIVITY-047",
+      "confidence": 0.98,
+      "evidence": "consistent with findings from the RELATIVITY-047 phase II/III trial"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "nivolumab",
+      "target_entity": "RELATIVITY-047",
+      "confidence": 0.98,
+      "evidence": "RELATIVITY-047 trial"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "relatlimab",
+      "target_entity": "melanoma",
+      "confidence": 0.95,
+      "evidence": "patients with unresectable or metastatic melanoma"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "nivolumab",
+      "target_entity": "melanoma",
+      "confidence": 0.95,
+      "evidence": "patients with unresectable or metastatic melanoma"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "LAG-3",
+      "target_entity": "T cell inhibition",
+      "confidence": 0.95,
+      "evidence": "LAG-3 is an immune-checkpoint molecule that inhibits T-cell activity"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "LAG3",
+      "target_entity": "LAG-3",
+      "confidence": 0.95,
+      "evidence": "inferred from LAG-3 protein"
+    },
+    {
+      "relation_type": "COMBINED_WITH",
+      "source_entity": "relatlimab",
+      "target_entity": "nivolumab",
+      "confidence": 0.98,
+      "evidence": "combined blockade of LAG-3 and PD-1 resulted in enhanced antitumor activity"
+    },
+    {
+      "relation_type": "HAS_SEQUENCE",
+      "source_entity": "relatlimab",
+      "target_entity": "peptide_10aa",
+      "confidence": 0.95,
+      "evidence": "RELATIVITY-047 phase II/III trial"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T00:12:32.204788+00:00",
+  "error": null
+}

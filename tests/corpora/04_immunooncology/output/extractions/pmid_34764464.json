@@ -1,0 +1,318 @@
+{
+  "document_id": "pmid_34764464",
+  "document_path": "tests/corpora/04_immunooncology/pmid_34764464.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "hepatocellular carcinoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "synonyms": [
+          "HCC",
+          "liver cancer"
+        ]
+      },
+      "confidence": 0.99,
+      "context": "Liver cancer, more specifically hepatocellular carcinoma (HCC), is the second leading cause of cancer-related death"
+    },
+    {
+      "name": "sorafenib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "line_of_therapy": "first-line"
+      },
+      "confidence": 0.99,
+      "context": "traditionally sorafenib or lenvatinib in the first line"
+    },
+    {
+      "name": "lenvatinib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "line_of_therapy": "first-line"
+      },
+      "confidence": 0.99,
+      "context": "traditionally sorafenib or lenvatinib in the first line"
+    },
+    {
+      "name": "regorafenib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "line_of_therapy": "second-line"
+      },
+      "confidence": 0.99,
+      "context": "regorafenib, cabozantinib or ramucirumab in the second line"
+    },
+    {
+      "name": "cabozantinib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "line_of_therapy": "second-line"
+      },
+      "confidence": 0.99,
+      "context": "regorafenib, cabozantinib or ramucirumab in the second line"
+    },
+    {
+      "name": "ramucirumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "line_of_therapy": "second-line"
+      },
+      "confidence": 0.99,
+      "context": "regorafenib, cabozantinib or ramucirumab in the second line"
+    },
+    {
+      "name": "atezolizumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "PD-L1"
+      },
+      "confidence": 0.99,
+      "context": "The combination of atezolizumab and bevacizumab has been shown to improve overall survival"
+    },
+    {
+      "name": "bevacizumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "VEGF"
+      },
+      "confidence": 0.99,
+      "context": "The combination of atezolizumab and bevacizumab has been shown to improve overall survival"
+    },
+    {
+      "name": "durvalumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "PD-L1"
+      },
+      "confidence": 0.99,
+      "context": "durvalumab plus tremelimumab yielded superior overall survival versus sorafenib"
+    },
+    {
+      "name": "tremelimumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "CTLA-4"
+      },
+      "confidence": 0.99,
+      "context": "durvalumab plus tremelimumab yielded superior overall survival versus sorafenib"
+    },
+    {
+      "name": "pembrolizumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "PD-1",
+        "line_of_therapy": "second-line"
+      },
+      "confidence": 0.99,
+      "context": "pembrolizumab monotherapy and the combination of nivolumab plus ipilimumab have received FDA Accelerated Approval in the second-line setting"
+    },
+    {
+      "name": "nivolumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "PD-1",
+        "line_of_therapy": "second-line"
+      },
+      "confidence": 0.99,
+      "context": "the combination of nivolumab plus ipilimumab have received FDA Accelerated Approval in the second-line setting"
+    },
+    {
+      "name": "ipilimumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "CTLA-4",
+        "line_of_therapy": "second-line"
+      },
+      "confidence": 0.99,
+      "context": "the combination of nivolumab plus ipilimumab have received FDA Accelerated Approval in the second-line setting"
+    },
+    {
+      "name": "immune checkpoint inhibitor",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "immune-checkpoint inhibitors have revolutionized the management of HCC"
+    },
+    {
+      "name": "FDA Accelerated Approval for pembrolizumab in HCC",
+      "entity_type": "REGULATORY_ACTION",
+      "attributes": {
+        "agency": "FDA",
+        "approval_type": "Accelerated Approval",
+        "setting": "second-line"
+      },
+      "confidence": 0.95,
+      "context": "pembrolizumab monotherapy and the combination of nivolumab plus ipilimumab have received FDA Accelerated Approval in the second-line setting"
+    },
+    {
+      "name": "FDA Accelerated Approval for nivolumab plus ipilimumab in HCC",
+      "entity_type": "REGULATORY_ACTION",
+      "attributes": {
+        "agency": "FDA",
+        "approval_type": "Accelerated Approval",
+        "setting": "second-line"
+      },
+      "confidence": 0.95,
+      "context": "pembrolizumab monotherapy and the combination of nivolumab plus ipilimumab have received FDA Accelerated Approval in the second-line setting"
+    },
+    {
+      "name": "FDA approval for atezolizumab plus bevacizumab in HCC",
+      "entity_type": "REGULATORY_ACTION",
+      "attributes": {
+        "agency": "FDA"
+      },
+      "confidence": 0.95,
+      "context": "The combination of atezolizumab and bevacizumab has been shown to improve overall survival relative to sorafenib, resulting in FDA approval"
+    },
+    {
+      "name": "tumor immune microenvironment",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "The immune microenvironment has crucial roles in the development and progression of HCC"
+    },
+    {
+      "name": "Llovet et al. 2022",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "34764464",
+        "journal": "Nature reviews. Clinical oncology",
+        "year": 2022
+      },
+      "confidence": 0.99,
+      "context": "Llovet Josep M, Castet Florian, Heikenwalder Mathias, Maini Mala K, Mazzaferro Vincenzo"
+    },
+    {
+      "name": "inflamed HCC class",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "Inflamed and non-inflamed classes of HCC and genomic signatures have been associated with response to immune-checkpoint inhibitors"
+    },
+    {
+      "name": "non-inflamed HCC class",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "Inflamed and non-inflamed classes of HCC and genomic signatures have been associated with response to immune-checkpoint inhibitors"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "sorafenib",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.95,
+      "evidence": "traditionally sorafenib or lenvatinib in the first line"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "lenvatinib",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.95,
+      "evidence": "traditionally sorafenib or lenvatinib in the first line"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "regorafenib",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.95,
+      "evidence": "regorafenib, cabozantinib or ramucirumab in the second line"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "cabozantinib",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.95,
+      "evidence": "regorafenib, cabozantinib or ramucirumab in the second line"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "ramucirumab",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.95,
+      "evidence": "regorafenib, cabozantinib or ramucirumab in the second line"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "atezolizumab",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.97,
+      "evidence": "The combination of atezolizumab and bevacizumab has been shown to improve overall survival relative to sorafenib, resulting in FDA approval"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "bevacizumab",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.97,
+      "evidence": "The combination of atezolizumab and bevacizumab has been shown to improve overall survival relative to sorafenib, resulting in FDA approval"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "durvalumab",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.93,
+      "evidence": "durvalumab plus tremelimumab yielded superior overall survival versus sorafenib"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tremelimumab",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.93,
+      "evidence": "durvalumab plus tremelimumab yielded superior overall survival versus sorafenib"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "pembrolizumab",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.93,
+      "evidence": "pembrolizumab monotherapy and the combination of nivolumab plus ipilimumab have received FDA Accelerated Approval in the second-line setting"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "nivolumab",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.93,
+      "evidence": "the combination of nivolumab plus ipilimumab have received FDA Accelerated Approval in the second-line setting"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "ipilimumab",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.93,
+      "evidence": "the combination of nivolumab plus ipilimumab have received FDA Accelerated Approval in the second-line setting"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "inflamed HCC class",
+      "target_entity": "immune checkpoint inhibitor",
+      "confidence": 0.8,
+      "evidence": "Inflamed and non-inflamed classes of HCC and genomic signatures have been associated with response to immune-checkpoint inhibitors"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "tumor immune microenvironment",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.9,
+      "evidence": "The immune microenvironment has crucial roles in the development and progression of HCC"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T00:08:50.221900+00:00",
+  "error": null
+}

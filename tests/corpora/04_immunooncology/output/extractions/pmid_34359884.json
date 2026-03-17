@@ -1,0 +1,101 @@
+{
+  "document_id": "pmid_34359884",
+  "document_path": "tests/corpora/04_immunooncology/pmid_34359884.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "hepatocellular carcinoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Carcinoma, Hepatocellular",
+        "abbreviation": "HCC"
+      },
+      "confidence": 0.98,
+      "context": "hepatocellular carcinoma (HCC), one of the most common and fatal cancers worldwide"
+    },
+    {
+      "name": "liver cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Liver Neoplasms"
+      },
+      "confidence": 0.95,
+      "context": "Hypoxia, Metabolic Reprogramming, and Drug Resistance in Liver Cancer"
+    },
+    {
+      "name": "HIF",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "hypoxia-inducible factor"
+      },
+      "confidence": 0.95,
+      "context": "hypoxia-inducible factor (HIF)-mediated metabolic reprogramming in drug resistance in HCC"
+    },
+    {
+      "name": "hypoxia",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "definition": "low oxygen (O2) level"
+      },
+      "confidence": 0.97,
+      "context": "Hypoxia, low oxygen (O2) level, is a hallmark of solid cancers"
+    },
+    {
+      "name": "drug resistance",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Hypoxia contributes to drug resistance in cancer through various molecular mechanisms"
+    },
+    {
+      "name": "metabolic reprogramming",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "HIF-mediated metabolic reprogramming in drug resistance in HCC"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "hypoxia",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.95,
+      "evidence": "Hypoxia, low oxygen (O2) level, is a hallmark of solid cancers, especially hepatocellular carcinoma (HCC)"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "hypoxia",
+      "target_entity": "drug resistance",
+      "confidence": 0.95,
+      "evidence": "Hypoxia contributes to drug resistance in cancer through various molecular mechanisms"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "HIF",
+      "target_entity": "metabolic reprogramming",
+      "confidence": 0.93,
+      "evidence": "hypoxia-inducible factor (HIF)-mediated metabolic reprogramming in drug resistance in HCC"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "metabolic reprogramming",
+      "target_entity": "drug resistance",
+      "confidence": 0.9,
+      "evidence": "HIF-mediated metabolic reprogramming in drug resistance in HCC"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "drug resistance",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.92,
+      "evidence": "Acquisition of drug resistance is the major cause of unsatisfactory clinical outcomes of existing HCC treatments"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T00:08:12.498219+00:00",
+  "error": null
+}

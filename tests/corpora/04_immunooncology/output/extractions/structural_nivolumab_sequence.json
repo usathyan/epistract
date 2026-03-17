@@ -1,0 +1,574 @@
+{
+  "document_id": "structural_nivolumab_sequence",
+  "document_path": "tests/corpora/04_immunooncology/structural_nivolumab_sequence",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "nivolumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "isotype": "IgG4",
+        "species": "fully human",
+        "aliases": [
+          "BMS-936558",
+          "MDX-1106",
+          "ONO-4538",
+          "Opdivo"
+        ],
+        "drugbank_id": "DB09035"
+      },
+      "confidence": 0.99,
+      "context": "Nivolumab (BMS-936558, MDX-1106, ONO-4538, Opdivo) is a fully human IgG4 monoclonal antibody targeting PD-1"
+    },
+    {
+      "name": "PDCD1",
+      "entity_type": "GENE",
+      "attributes": {
+        "uniprot": "Q15116",
+        "aliases": [
+          "PD-1",
+          "CD279"
+        ]
+      },
+      "confidence": 0.99,
+      "context": "TARGET: PD-1 (PDCD1 gene, UniProt: Q15116)"
+    },
+    {
+      "name": "PD-1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene": "PDCD1",
+        "uniprot": "Q15116",
+        "protein_type": "type I transmembrane receptor"
+      },
+      "confidence": 0.99,
+      "context": "PD-1 is a type I transmembrane receptor expressed on activated T cells, B cells, and myeloid cells"
+    },
+    {
+      "name": "PD-L1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene": "CD274",
+        "aliases": [
+          "CD274"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "Binding of PD-L1 (CD274) or PD-L2 (PDCD1LG2) to PD-1 delivers inhibitory signals"
+    },
+    {
+      "name": "PD-L2",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene": "PDCD1LG2"
+      },
+      "confidence": 0.95,
+      "context": "Binding of PD-L1 (CD274) or PD-L2 (PDCD1LG2) to PD-1 delivers inhibitory signals"
+    },
+    {
+      "name": "ipilimumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody"
+      },
+      "confidence": 0.9,
+      "context": "nivo+ipi vs nivo vs ipi, melanoma. 5-year OS: 52% (nivo+ipi), 44% (nivo), 26% (ipi)"
+    },
+    {
+      "name": "relatlimab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody"
+      },
+      "confidence": 0.9,
+      "context": "RELATIVITY-047 (NCT03470922): Phase II/III, nivo+relatlimab vs nivo, melanoma"
+    },
+    {
+      "name": "melanoma",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.99,
+      "context": "CheckMate 037 (NCT01721746): Phase III, melanoma post-CTLA-4"
+    },
+    {
+      "name": "non-small cell lung cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "NSCLC"
+      },
+      "confidence": 0.95,
+      "context": "CheckMate 227 (NCT02477826): Phase III, nivo+ipi vs chemo, NSCLC"
+    },
+    {
+      "name": "PD-1/PD-L1 checkpoint pathway",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "description": "PD-1 checkpoint blockade restores T cell anti-tumor activity"
+      },
+      "confidence": 0.95,
+      "context": "By blocking PD-1, nivolumab prevents the inhibitory checkpoint signal, allowing T cells to maintain anti-tumor activity"
+    },
+    {
+      "name": "CheckMate 037",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT01721746",
+        "phase": "Phase III",
+        "indication": "melanoma"
+      },
+      "confidence": 0.99,
+      "context": "CheckMate 037 (NCT01721746): Phase III, melanoma post-CTLA-4"
+    },
+    {
+      "name": "CheckMate 067",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT01844505",
+        "phase": "Phase III",
+        "indication": "melanoma",
+        "five_year_os_combo": "52%",
+        "five_year_os_nivo": "44%"
+      },
+      "confidence": 0.99,
+      "context": "CheckMate 067 (NCT01844505): Phase III, nivo+ipi vs nivo vs ipi, melanoma. 5-year OS: 52% (nivo+ipi), 44% (nivo), 26% (ipi)"
+    },
+    {
+      "name": "CheckMate 227",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT02477826",
+        "phase": "Phase III",
+        "indication": "NSCLC"
+      },
+      "confidence": 0.99,
+      "context": "CheckMate 227 (NCT02477826): Phase III, nivo+ipi vs chemo, NSCLC"
+    },
+    {
+      "name": "RELATIVITY-047",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT03470922",
+        "phase": "Phase II/III",
+        "indication": "melanoma",
+        "pfs_hr": 0.75
+      },
+      "confidence": 0.99,
+      "context": "RELATIVITY-047 (NCT03470922): Phase II/III, nivo+relatlimab vs nivo, melanoma. PFS HR 0.75 (p=0.006)"
+    },
+    {
+      "name": "PD-L1 expression",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "thresholds": [
+          "TPS >= 1%",
+          "TPS >= 50%"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "PD-L1 expression (TPS >= 1% or >= 50%): predictive of nivolumab response"
+    },
+    {
+      "name": "TMB-high",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "threshold": ">= 10 mut/Mb"
+      },
+      "confidence": 0.95,
+      "context": "TMB-high (>= 10 mut/Mb): associated with improved response across tumor types"
+    },
+    {
+      "name": "MSI-H/dMMR",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "fda_approved": true
+      },
+      "confidence": 0.95,
+      "context": "MSI-H/dMMR: FDA-approved biomarker for nivolumab in certain settings"
+    },
+    {
+      "name": "fatigue",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "incidence": "26%"
+      },
+      "confidence": 0.95,
+      "context": "Most common irAEs: fatigue (26%)"
+    },
+    {
+      "name": "rash",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "incidence": "17%"
+      },
+      "confidence": 0.95,
+      "context": "rash (17%)"
+    },
+    {
+      "name": "pruritus",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "incidence": "14%"
+      },
+      "confidence": 0.95,
+      "context": "pruritus (14%)"
+    },
+    {
+      "name": "diarrhea",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "incidence": "13%"
+      },
+      "confidence": 0.95,
+      "context": "diarrhea (13%)"
+    },
+    {
+      "name": "immune-mediated pneumonitis",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "incidence": "3.1%",
+        "severity": "serious"
+      },
+      "confidence": 0.95,
+      "context": "immune-mediated pneumonitis (3.1%)"
+    },
+    {
+      "name": "immune-mediated colitis",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "incidence": "1.7%",
+        "severity": "serious"
+      },
+      "confidence": 0.95,
+      "context": "colitis (1.7%)"
+    },
+    {
+      "name": "immune-mediated hepatitis",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "incidence": "1.8%",
+        "severity": "serious"
+      },
+      "confidence": 0.95,
+      "context": "hepatitis (1.8%)"
+    },
+    {
+      "name": "immune-mediated nephritis",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "incidence": "1.2%",
+        "severity": "serious"
+      },
+      "confidence": 0.95,
+      "context": "nephritis (1.2%)"
+    },
+    {
+      "name": "hypothyroidism",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "incidence": "8.0%",
+        "category": "endocrinopathy"
+      },
+      "confidence": 0.95,
+      "context": "hypothyroidism (8.0%)"
+    },
+    {
+      "name": "hyperthyroidism",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "incidence": "3.0%",
+        "category": "endocrinopathy"
+      },
+      "confidence": 0.95,
+      "context": "hyperthyroidism (3.0%)"
+    },
+    {
+      "name": "T cells",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "expressed on activated T cells, B cells, and myeloid cells"
+    },
+    {
+      "name": "nivolumab VH",
+      "entity_type": "PROTEIN_DOMAIN",
+      "attributes": {
+        "sequence": "QVQLVESGGGVVQPGRSLRLDCKASGITFSNSGMHWVRQAPGKGLEWVAVIWYDGSKRYYADSVKGRFTISRDNSKNTLFLQMNSLRAEDTAVYYCATNDDYWGQGTLVTVSS",
+        "requires_validation": true
+      },
+      "confidence": 0.9,
+      "context": "Heavy Chain Variable Region (VH): QVQLVESGGGVVQPGRSLRLDCKASGITFSNSGMHWVRQAPGKGLEWVAVIWYDGSKRYYADSVKGRFTISRDNSKNTLFLQMNSLRAEDTAVYYCATNDDYWGQGTLVTVSS"
+    },
+    {
+      "name": "nivolumab VL",
+      "entity_type": "PROTEIN_DOMAIN",
+      "attributes": {
+        "sequence": "EIVLTQSPATLSLSPGERATLSCRASQSVSSYLAWYQQKPGQAPRLLIYDASNRATGIPARFSGSGSGTDFTLTISSLEPEDFAVYYCQQSSNWPRTFGQGTKVEIK",
+        "requires_validation": true
+      },
+      "confidence": 0.9,
+      "context": "Light Chain Variable Region (VL): EIVLTQSPATLSLSPGERATLSCRASQSVSSYLAWYQQKPGQAPRLLIYDASNRATGIPARFSGSGSGTDFTLTISSLEPEDFAVYYCQQSSNWPRTFGQGTKVEIK"
+    },
+    {
+      "name": "peptide_10aa",
+      "entity_type": "PEPTIDE_SEQUENCE",
+      "attributes": {
+        "sequence": "RELATIVITY",
+        "sequence_type": "protein",
+        "length": 10,
+        "validated": true,
+        "molecular_weight": 1178.38
+      },
+      "confidence": 1.0,
+      "context": "RELATIVITY-047 (NCT03470922): Phase II/III, nivo+relatlimab "
+    },
+    {
+      "name": "peptide_113aa",
+      "entity_type": "PEPTIDE_SEQUENCE",
+      "attributes": {
+        "sequence": "QVQLVESGGGVVQPGRSLRLDCKASGITFSNSGMHWVRQAPGKGLEWVAVIWYDGSKRYYADSVKGRFTISRDNSKNTLFLQMNSLRAEDTAVYYCATND",
+        "sequence_type": "protein",
+        "length": 113,
+        "validated": true,
+        "molecular_weight": 12519.86
+      },
+      "confidence": 1.0,
+      "context": "Heavy Chain Variable Region (VH): QVQLVESGGGVVQPGRSLRLDCKASGITFSNSGMHWVRQAPGKGLEWVAVIWYDGSKRYYADSVKGRFTISRDNSKNTLFLQMNSLRAEDTAVYYCATNDDYWGQGTLVTVSS"
+    },
+    {
+      "name": "peptide_107aa",
+      "entity_type": "PEPTIDE_SEQUENCE",
+      "attributes": {
+        "sequence": "EIVLTQSPATLSLSPGERATLSCRASQSVSSYLAWYQQKPGQAPRLLIYDASNRATGIPARFSGSGSGTDFTLTISSLEPEDFAVYYCQQSSNWPRTFGQ",
+        "sequence_type": "protein",
+        "length": 107,
+        "validated": true,
+        "molecular_weight": 11626.8
+      },
+      "confidence": 1.0,
+      "context": "Light Chain Variable Region (VL): EIVLTQSPATLSLSPGERATLSCRASQSVSSYLAWYQQKPGQAPRLLIYDASNRATGIPARFSGSGSGTDFTLTISSLEPEDFAVYYCQQSSNWPRTFGQGTKVEIK"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "nivolumab",
+      "target_entity": "PD-1",
+      "attributes": {
+        "KD_nM": 2.6,
+        "method": "BIAcore SPR"
+      },
+      "confidence": 0.99,
+      "evidence": "Nivolumab blocks the PD-1/PD-L1 interaction with KD = 2.6 nM (BIAcore SPR assay)"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "nivolumab",
+      "target_entity": "PD-1",
+      "confidence": 0.99,
+      "evidence": "By blocking PD-1, nivolumab prevents the inhibitory checkpoint signal"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "PDCD1",
+      "target_entity": "PD-1",
+      "confidence": 0.99,
+      "evidence": "TARGET: PD-1 (PDCD1 gene, UniProt: Q15116)"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "PD-L1",
+      "target_entity": "PD-1",
+      "confidence": 0.95,
+      "evidence": "Binding of PD-L1 (CD274) or PD-L2 (PDCD1LG2) to PD-1 delivers inhibitory signals"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "PD-L2",
+      "target_entity": "PD-1",
+      "confidence": 0.95,
+      "evidence": "Binding of PD-L1 (CD274) or PD-L2 (PDCD1LG2) to PD-1 delivers inhibitory signals"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "nivolumab",
+      "target_entity": "melanoma",
+      "confidence": 0.95,
+      "evidence": "CheckMate 037 (NCT01721746): Phase III, melanoma post-CTLA-4"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "nivolumab",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.9,
+      "evidence": "CheckMate 227 (NCT02477826): Phase III, nivo+ipi vs chemo, NSCLC"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "nivolumab",
+      "target_entity": "CheckMate 037",
+      "confidence": 0.99,
+      "evidence": "CheckMate 037 (NCT01721746): Phase III, melanoma post-CTLA-4"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "nivolumab",
+      "target_entity": "CheckMate 067",
+      "confidence": 0.99,
+      "evidence": "CheckMate 067 (NCT01844505): Phase III, nivo+ipi vs nivo vs ipi, melanoma"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "nivolumab",
+      "target_entity": "CheckMate 227",
+      "confidence": 0.99,
+      "evidence": "CheckMate 227 (NCT02477826): Phase III, nivo+ipi vs chemo, NSCLC"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "nivolumab",
+      "target_entity": "RELATIVITY-047",
+      "confidence": 0.99,
+      "evidence": "RELATIVITY-047 (NCT03470922): Phase II/III, nivo+relatlimab vs nivo, melanoma"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "ipilimumab",
+      "target_entity": "CheckMate 067",
+      "confidence": 0.95,
+      "evidence": "nivo+ipi vs nivo vs ipi, melanoma"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "relatlimab",
+      "target_entity": "RELATIVITY-047",
+      "confidence": 0.95,
+      "evidence": "nivo+relatlimab vs nivo, melanoma"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "PD-L1 expression",
+      "target_entity": "nivolumab",
+      "confidence": 0.95,
+      "evidence": "PD-L1 expression (TPS >= 1% or >= 50%): predictive of nivolumab response"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "TMB-high",
+      "target_entity": "nivolumab",
+      "confidence": 0.9,
+      "evidence": "TMB-high (>= 10 mut/Mb): associated with improved response across tumor types"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "MSI-H/dMMR",
+      "target_entity": "nivolumab",
+      "confidence": 0.95,
+      "evidence": "MSI-H/dMMR: FDA-approved biomarker for nivolumab in certain settings"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "nivolumab",
+      "target_entity": "fatigue",
+      "confidence": 0.95,
+      "evidence": "Most common irAEs: fatigue (26%)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "nivolumab",
+      "target_entity": "rash",
+      "confidence": 0.95,
+      "evidence": "rash (17%)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "nivolumab",
+      "target_entity": "pruritus",
+      "confidence": 0.95,
+      "evidence": "pruritus (14%)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "nivolumab",
+      "target_entity": "diarrhea",
+      "confidence": 0.95,
+      "evidence": "diarrhea (13%)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "nivolumab",
+      "target_entity": "immune-mediated pneumonitis",
+      "confidence": 0.95,
+      "evidence": "immune-mediated pneumonitis (3.1%)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "nivolumab",
+      "target_entity": "immune-mediated colitis",
+      "confidence": 0.95,
+      "evidence": "colitis (1.7%)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "nivolumab",
+      "target_entity": "immune-mediated hepatitis",
+      "confidence": 0.95,
+      "evidence": "hepatitis (1.8%)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "nivolumab",
+      "target_entity": "immune-mediated nephritis",
+      "confidence": 0.95,
+      "evidence": "nephritis (1.2%)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "nivolumab",
+      "target_entity": "hypothyroidism",
+      "confidence": 0.95,
+      "evidence": "hypothyroidism (8.0%)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "nivolumab",
+      "target_entity": "hyperthyroidism",
+      "confidence": 0.95,
+      "evidence": "hyperthyroidism (3.0%)"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "PD-1",
+      "target_entity": "PD-1/PD-L1 checkpoint pathway",
+      "confidence": 0.95,
+      "evidence": "nivolumab prevents the inhibitory checkpoint signal, allowing T cells to maintain anti-tumor activity"
+    },
+    {
+      "relation_type": "HAS_SEQUENCE",
+      "source_entity": "relatlimab",
+      "target_entity": "peptide_10aa",
+      "confidence": 0.95,
+      "evidence": "RELATIVITY-047 (NCT03470922): Phase II/III, nivo+relatlimab "
+    },
+    {
+      "relation_type": "HAS_SEQUENCE",
+      "source_entity": "nivolumab",
+      "target_entity": "peptide_113aa",
+      "confidence": 0.95,
+      "evidence": "Heavy Chain Variable Region (VH): QVQLVESGGGVVQPGRSLRLDCKASGITFSNSGMHWVRQAPGKGLEWVAVIWYDGSKRYYADSVKGRFTISRDNSKNTLFLQMNSLRAEDTAVYYCATNDDYWGQGTLVTVSS"
+    },
+    {
+      "relation_type": "HAS_SEQUENCE",
+      "source_entity": "nivolumab",
+      "target_entity": "peptide_107aa",
+      "confidence": 0.95,
+      "evidence": "Light Chain Variable Region (VL): EIVLTQSPATLSLSPGERATLSCRASQSVSSYLAWYQQKPGQAPRLLIYDASNRATGIPARFSGSGSGTDFTLTISSLEPEDFAVYYCQQSSNWPRTFGQGTKVEIK"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T00:00:00+00:00",
+  "error": null
+}

@@ -1,0 +1,256 @@
+{
+  "document_id": "pmid_38723227",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "nivolumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "PD-1"
+      },
+      "confidence": 0.98,
+      "context": "nivolumab (PD-1-blocking antibody)"
+    },
+    {
+      "name": "relatlimab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "LAG-3"
+      },
+      "confidence": 0.98,
+      "context": "relatlimab (LAG-3-blocking antibody)"
+    },
+    {
+      "name": "PDCD1",
+      "entity_type": "GENE",
+      "attributes": {
+        "common_name": "PD-1"
+      },
+      "confidence": 0.95,
+      "context": "nivolumab (PD-1-blocking antibody)"
+    },
+    {
+      "name": "LAG3",
+      "entity_type": "GENE",
+      "attributes": {
+        "common_name": "LAG-3"
+      },
+      "confidence": 0.95,
+      "context": "relatlimab (LAG-3-blocking antibody)"
+    },
+    {
+      "name": "PD-1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene": "PDCD1"
+      },
+      "confidence": 0.95,
+      "context": "nivolumab (PD-1-blocking antibody)"
+    },
+    {
+      "name": "LAG-3",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene": "LAG3"
+      },
+      "confidence": 0.95,
+      "context": "relatlimab (LAG-3-blocking antibody)"
+    },
+    {
+      "name": "gastric adenocarcinoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "stage": "advanced"
+      },
+      "confidence": 0.95,
+      "context": "previously untreated advanced gastric cancer (GC)"
+    },
+    {
+      "name": "gastroesophageal junction adenocarcinoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "stage": "advanced"
+      },
+      "confidence": 0.95,
+      "context": "gastroesophageal junction cancer (GEJC)"
+    },
+    {
+      "name": "RELATIVITY-060",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "II",
+        "design": "open-label, randomized",
+        "primary_endpoint": "objective response rate",
+        "n_patients": 274
+      },
+      "confidence": 0.98,
+      "context": "Open-label phase II study (RELATIVITY-060)"
+    },
+    {
+      "name": "LAG-3 expression",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "threshold": ">=1%"
+      },
+      "confidence": 0.9,
+      "context": "objective response rate (ORR) in patients whose tumors had LAG-3 expression >=1%"
+    },
+    {
+      "name": "PD-1 immune checkpoint blockade",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "nivolumab (PD-1-blocking antibody)"
+    },
+    {
+      "name": "LAG-3 immune checkpoint blockade",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "relatlimab (LAG-3-blocking antibody)"
+    },
+    {
+      "name": "treatment-related adverse events grade 3-4",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "incidence_combo": "69%",
+        "incidence_control": "61%"
+      },
+      "confidence": 0.9,
+      "context": "Grade 3 or 4 TRAEs occurred in 69% and 61%, respectively"
+    },
+    {
+      "name": "Hegewisch-Becker et al. 2024",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "38723227",
+        "journal": "Journal of Clinical Oncology",
+        "year": 2024
+      },
+      "confidence": 0.99,
+      "context": "Journal of clinical oncology (2024) PMID: 38723227"
+    },
+    {
+      "name": "peptide_10aa",
+      "entity_type": "PEPTIDE_SEQUENCE",
+      "attributes": {
+        "sequence": "RELATIVITY",
+        "sequence_type": "protein",
+        "length": 10,
+        "validated": true,
+        "molecular_weight": 1178.38
+      },
+      "confidence": 1.0,
+      "context": "Open-label phase II study (RELATIVITY-060)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "nivolumab",
+      "target_entity": "PD-1",
+      "confidence": 0.98,
+      "evidence": "nivolumab (PD-1-blocking antibody)"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "relatlimab",
+      "target_entity": "LAG-3",
+      "confidence": 0.98,
+      "evidence": "relatlimab (LAG-3-blocking antibody)"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "nivolumab",
+      "target_entity": "PD-1 immune checkpoint blockade",
+      "confidence": 0.95,
+      "evidence": "nivolumab (PD-1-blocking antibody)"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "relatlimab",
+      "target_entity": "LAG-3 immune checkpoint blockade",
+      "confidence": 0.95,
+      "evidence": "relatlimab (LAG-3-blocking antibody)"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "nivolumab",
+      "target_entity": "RELATIVITY-060",
+      "confidence": 0.98,
+      "evidence": "first-line nivolumab (PD-1-blocking antibody) plus relatlimab (LAG-3-blocking antibody) plus chemotherapy"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "relatlimab",
+      "target_entity": "RELATIVITY-060",
+      "confidence": 0.98,
+      "evidence": "first-line nivolumab (PD-1-blocking antibody) plus relatlimab (LAG-3-blocking antibody) plus chemotherapy"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "nivolumab",
+      "target_entity": "gastric adenocarcinoma",
+      "confidence": 0.75,
+      "evidence": "first-line nivolumab plus chemotherapy in patients with previously untreated advanced gastric cancer (GC)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "nivolumab",
+      "target_entity": "gastroesophageal junction adenocarcinoma",
+      "confidence": 0.75,
+      "evidence": "first-line nivolumab plus chemotherapy in patients with previously untreated advanced gastroesophageal junction cancer (GEJC)"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "LAG-3 expression",
+      "target_entity": "relatlimab",
+      "confidence": 0.7,
+      "evidence": "objective response rate (ORR) in patients whose tumors had LAG-3 expression >=1%"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "nivolumab",
+      "target_entity": "treatment-related adverse events grade 3-4",
+      "confidence": 0.85,
+      "evidence": "Grade 3 or 4 TRAEs occurred in 69% and 61%, respectively"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "relatlimab",
+      "target_entity": "treatment-related adverse events grade 3-4",
+      "confidence": 0.85,
+      "evidence": "Grade 3 or 4 TRAEs occurred in 69% and 61%, respectively"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "PDCD1",
+      "target_entity": "PD-1",
+      "confidence": 0.95,
+      "evidence": "nivolumab (PD-1-blocking antibody)"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "LAG3",
+      "target_entity": "LAG-3",
+      "confidence": 0.95,
+      "evidence": "relatlimab (LAG-3-blocking antibody)"
+    },
+    {
+      "relation_type": "HAS_SEQUENCE",
+      "source_entity": "nivolumab",
+      "target_entity": "peptide_10aa",
+      "confidence": 0.95,
+      "evidence": "Open-label phase II study (RELATIVITY-060)"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-16T00:00:00+00:00",
+  "error": null
+}

@@ -1,0 +1,221 @@
+{
+  "document_id": "pmid_34715028",
+  "document_path": "tests/corpora/04_immunooncology/pmid_34715028.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "nivolumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "PD-1",
+        "mechanism": "anti-PD-1"
+      },
+      "confidence": 0.98,
+      "context": "ADAPTeR is a prospective, phase II study of nivolumab (anti-PD-1) in 15 treatment-naive patients"
+    },
+    {
+      "name": "PDCD1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "common_name": "PD-1",
+        "function": "immune checkpoint receptor"
+      },
+      "confidence": 0.95,
+      "context": "nivolumab (anti-PD-1)"
+    },
+    {
+      "name": "clear cell renal cell carcinoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "ccRCC",
+        "stage": "metastatic"
+      },
+      "confidence": 0.98,
+      "context": "metastatic clear cell renal cell carcinoma (ccRCC)"
+    },
+    {
+      "name": "ADAPTeR",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "II",
+        "design": "prospective",
+        "patients": 15,
+        "samples": 115,
+        "indication": "metastatic ccRCC",
+        "treatment": "nivolumab",
+        "population": "treatment-naive"
+      },
+      "confidence": 0.98,
+      "context": "ADAPTeR is a prospective, phase II study of nivolumab (anti-PD-1) in 15 treatment-naive patients (115 multiregion tumor samples)"
+    },
+    {
+      "name": "GZMK",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "granzyme K"
+      },
+      "confidence": 0.92,
+      "context": "nivolumab-bound CD8+ T cells are expanded and express GZMK/B"
+    },
+    {
+      "name": "GZMB",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "granzyme B"
+      },
+      "confidence": 0.92,
+      "context": "nivolumab-bound CD8+ T cells are expanded and express GZMK/B"
+    },
+    {
+      "name": "CD8",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "function": "T cell co-receptor",
+        "cell_type_marker": "cytotoxic T cells"
+      },
+      "confidence": 0.93,
+      "context": "nivolumab-bound CD8+ T cells are expanded and express GZMK/B"
+    },
+    {
+      "name": "T cell receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "abbreviation": "TCR"
+      },
+      "confidence": 0.95,
+      "context": "T cell receptor (TCR) analysis reveals a significantly higher number of expanded TCR clones pre-treatment in responders"
+    },
+    {
+      "name": "human endogenous retrovirus",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "HERV",
+        "specificity": "ccRCC-specific",
+        "biomarker_type": "expression"
+      },
+      "confidence": 0.88,
+      "context": "ccRCC-specific human endogenous retrovirus expression indirectly correlates with clinical response"
+    },
+    {
+      "name": "expanded TCR clones",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "immune repertoire",
+        "timepoint": "pre-treatment"
+      },
+      "confidence": 0.85,
+      "context": "TCR analysis reveals a significantly higher number of expanded TCR clones pre-treatment in responders suggesting pre-existing immunity"
+    },
+    {
+      "name": "CD8+ T cells",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {
+        "cell_type": "cytotoxic T lymphocyte"
+      },
+      "confidence": 0.95,
+      "context": "nivolumab-bound CD8+ T cells are expanded and express GZMK/B"
+    },
+    {
+      "name": "Au Lewis et al. 2021",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "34715028",
+        "journal": "Cancer cell",
+        "year": 2021,
+        "first_author": "Au Lewis"
+      },
+      "confidence": 0.98,
+      "context": "Authors: Au Lewis, Hatipoglu Emine, Robert de Massy Marc, Litchfield Kevin, Beattie Gordon. Journal: Cancer cell (2021)"
+    },
+    {
+      "name": "TCR cluster maintenance",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "immune repertoire",
+        "timepoint": "post-treatment",
+        "description": "maintenance of highly similar clusters of TCRs"
+      },
+      "confidence": 0.82,
+      "context": "Maintenance of highly similar clusters of TCRs post-treatment predict response, suggesting ongoing antigen engagement"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "nivolumab",
+      "target_entity": "PDCD1",
+      "confidence": 0.97,
+      "evidence": "nivolumab (anti-PD-1)"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "nivolumab",
+      "target_entity": "ADAPTeR",
+      "confidence": 0.98,
+      "evidence": "ADAPTeR is a prospective, phase II study of nivolumab (anti-PD-1)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "nivolumab",
+      "target_entity": "clear cell renal cell carcinoma",
+      "confidence": 0.85,
+      "evidence": "phase II study of nivolumab (anti-PD-1) in 15 treatment-naive patients with metastatic clear cell renal cell carcinoma"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "human endogenous retrovirus",
+      "target_entity": "nivolumab",
+      "confidence": 0.78,
+      "evidence": "ccRCC-specific human endogenous retrovirus expression indirectly correlates with clinical response"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "expanded TCR clones",
+      "target_entity": "nivolumab",
+      "confidence": 0.85,
+      "evidence": "TCR analysis reveals a significantly higher number of expanded TCR clones pre-treatment in responders suggesting pre-existing immunity"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "TCR cluster maintenance",
+      "target_entity": "nivolumab",
+      "confidence": 0.82,
+      "evidence": "Maintenance of highly similar clusters of TCRs post-treatment predict response, suggesting ongoing antigen engagement and survival of families of T cells"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "nivolumab",
+      "target_entity": "CD8+ T cells",
+      "confidence": 0.9,
+      "evidence": "nivolumab-bound CD8+ T cells are expanded and express GZMK/B"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "GZMK",
+      "target_entity": "clear cell renal cell carcinoma",
+      "confidence": 0.75,
+      "evidence": "nivolumab-bound CD8+ T cells are expanded and express GZMK/B"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "GZMB",
+      "target_entity": "clear cell renal cell carcinoma",
+      "confidence": 0.75,
+      "evidence": "nivolumab-bound CD8+ T cells are expanded and express GZMK/B"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "human endogenous retrovirus",
+      "target_entity": "clear cell renal cell carcinoma",
+      "confidence": 0.7,
+      "evidence": "ccRCC-specific human endogenous retrovirus expression"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T00:08:49.270064+00:00",
+  "error": null
+}
