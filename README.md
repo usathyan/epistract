@@ -112,7 +112,7 @@ The interactive viewer shows your knowledge graph with labeled community regions
 
 Epistract ships with five drug discovery research scenarios, each backed by a curated corpus of PubMed abstracts. Each scenario page includes the use case, corpus details, how to run, expected graph structure, and actual results with graph screenshots and community analysis.
 
-> **Note:** These are hypothetical test scenarios designed to validate the pipeline across diverse drug discovery domains. They are not attributable to any ongoing research. The author is not a research scientist but is working to support the scientific community in adopting AI-assisted workflows.
+> **Note:** These are hypothetical test scenarios designed to validate the pipeline across diverse drug discovery domains. They are not attributable to any ongoing research. This project explores how AI-assisted tooling can accelerate scientific literature analysis.
 
 | # | Scenario | Focus | Documents |
 |---|---|---|---|
