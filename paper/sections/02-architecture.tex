@@ -1,1 +1,38 @@
 \section{Architecture}
+\label{sec:architecture}
+
+Epistract implements a five-stage pipeline for biomedical knowledge graph construction: agent-based extraction, molecular validation, graph construction with community detection, and plugin delivery (Figure~\ref{fig:architecture}). Each stage reflects a deliberate architectural decision that distinguishes the system from both traditional NLP pipelines and similarity-driven GraphRAG approaches.
+
+\subsection{Agent-Based Extraction}
+
+The central architectural choice in Epistract is that extraction agents run as Claude Code subprocesses, not stateless API calls. Each agent receives a full biomedical document---an entire research paper, clinical trial report, or patent filing---and reads it with scientific understanding before producing structured JSON conforming to the domain schema. For corpora containing four or more documents, agents execute in parallel, with one extractor assigned per document. This parallelism is bounded by the subprocess model: each agent maintains its own context window, reads the complete document, and reasons over entity and relation candidates independently.
+
+This design is fundamentally different from both API-based extraction and RAG-based assembly. API-based pipelines are stateless: they process text in chunks, losing cross-paragraph context that is essential for resolving coreference, understanding experimental conditions, and linking results to methods. RAG-based approaches retrieve text fragments by embedding similarity and assemble graphs from proximity signals, producing edges that reflect co-occurrence rather than meaning. When an Epistract agent reads ``sotorasib inhibits KRAS G12C,'' it produces a typed \texttt{INHIBITS} relation between a drug entity and a gene variant entity, annotated with a confidence score and the verbatim evidence passage. A similarity-based system would instead produce an embedding-proximity edge between ``sotorasib'' and ``KRAS G12C'' with no typed semantics---a co-occurrence signal, not a mechanistic assertion.
+
+\subsection{Domain Schema}
+
+The extraction schema defines 17 entity types and 30 relation types, grounded in over 40 biomedical ontologies including the Biolink Model~\cite{biolink2022}, Gene Ontology, ChEBI, MeSH, MedDRA, HGNC, and UniProt. The schema was designed for the breadth of drug discovery workflows, spanning gene variants and molecular targets through signaling pathways and biological processes to clinical trials and adverse events. Entity types include genes, proteins, small molecules, diseases, phenotypes, anatomical structures, cell types, biological processes, pathways, gene variants, clinical trials, adverse events, drug classes, assays, species, dosage forms, and regulatory statuses. Relation types capture mechanistic semantics: \texttt{INHIBITS}, \texttt{ACTIVATES}, \texttt{UPREGULATES}, \texttt{ASSOCIATED\_WITH}, \texttt{TREATS}, \texttt{CAUSES\_ADVERSE\_EVENT}, among others.
+
+The schema is enforced during extraction, not post hoc. Agents must classify every extracted entity into one of the 17 types and every relation into one of the 30 types. Entities that do not fit the schema are discarded rather than forced into an approximate category. This constraint ensures that downstream graph analytics operate on semantically typed nodes and edges, enabling queries such as ``find all genes that are targets of drugs that cause hepatotoxicity'' that would be impossible on an untyped co-occurrence graph.
+
+\subsection{Molecular Validation Pipeline}
+
+Biomedical text contains molecular identifiers---SMILES strings, amino acid sequences, nucleotide sequences, clinical trial numbers---that large language models can identify but cannot reliably reproduce with character-level fidelity. A single character transposition in a SMILES string produces a different molecule; a single residue substitution in a protein sequence changes the protein. Epistract addresses this with a deterministic validation layer that acts as a trust boundary between LLM extraction and the final knowledge graph.
+
+RDKit~\cite{rdkit2024} validates SMILES strings and computes structural properties including InChI, InChIKey, molecular weight, LogP, and Lipinski Rule of Five compliance. Biopython~\cite{biopython2009} validates nucleotide and amino acid sequences against standard alphabets. Regex patterns extract and validate structured identifiers: NCT numbers for clinical trials, CAS registry numbers for chemical substances, and patent identifiers. Entities that fail validation are flagged rather than silently included, producing an audit trail that distinguishes LLM-extracted identifiers from deterministically verified ones.
+
+\subsection{Graph Construction and Community Labeling}
+
+Once extraction and validation are complete, sift-kg~\cite{sifkg2024} handles graph assembly. The construction pipeline performs entity deduplication using SemHash and Unicode normalization to merge lexical variants (``KRAS'' and ``K-Ras,'' ``non-small cell lung cancer'' and ``NSCLC''), applies Louvain community detection to identify functional clusters, and generates interactive visualizations.
+
+A custom heuristic labeling engine generates descriptive community names from member entity composition rather than assigning opaque numeric identifiers. The labeling rules are type-aware: gene-dominant clusters receive names reflecting the biological context of their gene members (e.g., ``Alzheimer Disease Risk Loci (30 genes)''), pathway-driven clusters are named for the dominant pathway, and clusters organized around a mechanism--cell type axis receive compound labels. This labeling transforms the output from a graph that requires expert inspection to one that communicates biological meaning at a glance.
+
+\subsection{Plugin Delivery}
+
+Epistract is packaged as a Claude Code plugin. A scientist installs it with a single \texttt{plugin install} command and runs the full pipeline---extraction, validation, graph construction, and visualization---via the \texttt{/epistract-ingest} slash command in their terminal. The input is a directory of biomedical documents; the output is a validated knowledge graph with community labels and an interactive visualization.
+
+This delivery model is a deliberate departure from the dominant paradigms for computational biology tools: Jupyter notebooks that require environment configuration, cloud services that require data upload, and command-line pipelines that require dependency management. A Claude Code plugin encapsulates the entire dependency tree and execution logic, exposing a single entry point that handles corpus discovery, agent dispatch, result aggregation, and output generation.
+
+\subsection{Claude Code as Development Environment}
+
+For readers unfamiliar with the platform, Claude Code is an agentic coding CLI from Anthropic that orchestrates large language model agents as subprocesses within a developer's terminal. Epistract relies on four capabilities of this environment. First, the plugin system provides installable tools with named commands, skills, and agent definitions that integrate into the Claude Code session. Second, parallel agent dispatch allows Epistract to launch one extraction agent per document, with the runtime managing subprocess lifecycles and resource allocation. Third, a permission model gives the user explicit control over what agents can execute---file reads, file writes, shell commands---preventing unintended side effects. Fourth, the bash and file tools allow agents to read source documents, write extraction JSON, and invoke Python validation scripts (RDKit, Biopython) as part of their execution flow, bridging LLM reasoning and deterministic computation within a single agent turn.
