@@ -1,0 +1,48 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- Packages ---
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+% --- Figure path ---
+\graphicspath{{figures/}}
+
+% --- Title ---
+\title{%
+  Beyond RAG: Domain-Specific Agentic Architecture\\
+  for Biomedical Knowledge Graph Construction\\[0.5em]
+  \large From GraphRAG to Epistract --- evolving latent knowledge graphs for drug discovery
+}
+\author{Umesh Bhatt}
+\date{March 2026}
+
+\begin{document}
+
+\maketitle
+
+% --- Abstract ---
+\begin{abstract}
+\input{sections/00-abstract}
+\end{abstract}
+
+% --- Sections ---
+\input{sections/01-motivation}
+\input{sections/02-architecture}
+\input{sections/03-schema}
+\input{sections/04-evaluation}
+\input{sections/05-comparison}
+\input{sections/06-findings}
+\input{sections/07-availability}
+\input{sections/08-conclusion}
+
+% --- Bibliography ---
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
