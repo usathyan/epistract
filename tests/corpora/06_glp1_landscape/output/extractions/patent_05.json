@@ -1,0 +1,332 @@
+{
+  "document_id": "patent_05",
+  "document_path": "tests/corpora/06_glp1_landscape/docs/patent_05_WO2018109607A1_pfizer_oral_glp1.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "danuglipron",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "code_name": "PF-06882961",
+        "chemical_class": "benzimidazole 6-carboxylic acid",
+        "administration": "oral",
+        "mechanism": "allosteric GLP-1 receptor agonist"
+      },
+      "confidence": 0.97,
+      "context": "This patent covers the chemical class from which danuglipron (PF-06882961) was developed"
+    },
+    {
+      "name": "orforglipron",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "code_names": [
+          "LY3502970",
+          "OWL-833"
+        ],
+        "molecular_formula": "C48H48F2N10O5",
+        "molecular_weight": 882.96,
+        "CAS": "2212020-52-3",
+        "administration": "oral"
+      },
+      "confidence": 0.95,
+      "context": "orforglipron (LY3502970, originally OWL-833), is being developed by Eli Lilly with the molecular formula C48H48F2N10O5 and molecular weight 882.96"
+    },
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "mentioned_as": "comparator"
+      },
+      "confidence": 0.9,
+      "context": "Unlike peptide-based GLP-1 receptor agonists (semaglutide, liraglutide, tirzepatide)"
+    },
+    {
+      "name": "liraglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "mentioned_as": "comparator"
+      },
+      "confidence": 0.9,
+      "context": "Unlike peptide-based GLP-1 receptor agonists (semaglutide, liraglutide, tirzepatide)"
+    },
+    {
+      "name": "tirzepatide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "mentioned_as": "comparator"
+      },
+      "confidence": 0.9,
+      "context": "Unlike peptide-based GLP-1 receptor agonists (semaglutide, liraglutide, tirzepatide)"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor",
+        "binding_site": "transmembrane pocket (allosteric)"
+      },
+      "confidence": 0.98,
+      "context": "small-molecule GLP-1 receptor agonists"
+    },
+    {
+      "name": "Gs protein",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "role": "downstream signaling"
+      },
+      "confidence": 0.88,
+      "context": "stabilizing an active receptor conformation that couples to Gs proteins"
+    },
+    {
+      "name": "DPP-4",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "dipeptidyl peptidase-4",
+        "role": "protease"
+      },
+      "confidence": 0.92,
+      "context": "resistant to proteolytic degradation by enzymes such as dipeptidyl peptidase-4 (DPP-4)"
+    },
+    {
+      "name": "cAMP",
+      "entity_type": "METABOLITE",
+      "attributes": {
+        "full_name": "cyclic adenosine monophosphate",
+        "direction": "accumulation"
+      },
+      "confidence": 0.9,
+      "context": "drives intracellular cAMP accumulation"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.97,
+      "context": "Phase 2/3 clinical trials for type 2 diabetes and obesity"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.97,
+      "context": "Phase 2/3 clinical trials for type 2 diabetes and obesity"
+    },
+    {
+      "name": "allosteric GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "binding_site": "transmembrane pocket, distinct from orthosteric peptide-binding domain"
+      },
+      "confidence": 0.95,
+      "context": "activate the GLP-1 receptor through an allosteric mechanism. The compounds bind within a transmembrane pocket distinct from the orthosteric peptide-binding domain"
+    },
+    {
+      "name": "cAMP signaling",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.88,
+      "context": "drives intracellular cAMP accumulation"
+    },
+    {
+      "name": "HbA1c",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "direction": "reduction"
+      },
+      "confidence": 0.93,
+      "context": "significant weight loss and HbA1c reduction in Phase 3 trials"
+    },
+    {
+      "name": "body weight",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "direction": "reduction"
+      },
+      "confidence": 0.9,
+      "context": "significant weight loss"
+    },
+    {
+      "name": "ACHIEVE",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "type": "trial program",
+        "phase": "Phase 3"
+      },
+      "confidence": 0.93,
+      "context": "Phase 3 trials (ACHIEVE program)"
+    },
+    {
+      "name": "Pfizer",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "type": "pharmaceutical company"
+      },
+      "confidence": 0.99,
+      "context": "Assignee: Pfizer Inc"
+    },
+    {
+      "name": "Eli Lilly",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "type": "pharmaceutical company"
+      },
+      "confidence": 0.95,
+      "context": "orforglipron (LY3502970, originally OWL-833), is being developed by Eli Lilly"
+    },
+    {
+      "name": "WO2018109607A1",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "type": "patent application",
+        "title": "GLP-1 receptor agonists and uses thereof (small molecule)",
+        "filing_date": "2017-12-01"
+      },
+      "confidence": 0.99,
+      "context": "Patent ID: WO2018109607A1"
+    },
+    {
+      "name": "orthosteric peptide-binding domain",
+      "entity_type": "PROTEIN_DOMAIN",
+      "attributes": {
+        "protein": "GLP1R"
+      },
+      "confidence": 0.88,
+      "context": "distinct from the orthosteric peptide-binding domain"
+    },
+    {
+      "name": "transmembrane pocket",
+      "entity_type": "PROTEIN_DOMAIN",
+      "attributes": {
+        "protein": "GLP1R",
+        "function": "allosteric binding site for small molecules"
+      },
+      "confidence": 0.88,
+      "context": "bind within a transmembrane pocket distinct from the orthosteric peptide-binding domain"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "danuglipron",
+      "target_entity": "GLP1R",
+      "confidence": 0.97,
+      "evidence": "small-molecule GLP-1 receptor agonists"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "orforglipron",
+      "target_entity": "GLP1R",
+      "confidence": 0.95,
+      "evidence": "oral small-molecule GLP-1 agonist"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "danuglipron",
+      "target_entity": "allosteric GLP-1 receptor agonism",
+      "confidence": 0.95,
+      "evidence": "activate the GLP-1 receptor through an allosteric mechanism"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "orforglipron",
+      "target_entity": "allosteric GLP-1 receptor agonism",
+      "confidence": 0.88,
+      "evidence": "oral small-molecule GLP-1 agonist"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "danuglipron",
+      "target_entity": "transmembrane pocket",
+      "confidence": 0.9,
+      "evidence": "bind within a transmembrane pocket distinct from the orthosteric peptide-binding domain"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "danuglipron",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.95,
+      "evidence": "Phase 2/3 clinical trials for type 2 diabetes and obesity"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "danuglipron",
+      "target_entity": "obesity",
+      "confidence": 0.95,
+      "evidence": "Phase 2/3 clinical trials for type 2 diabetes and obesity"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "orforglipron",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.93,
+      "evidence": "significant weight loss and HbA1c reduction in Phase 3 trials"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "orforglipron",
+      "target_entity": "obesity",
+      "confidence": 0.93,
+      "evidence": "significant weight loss"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "orforglipron",
+      "target_entity": "ACHIEVE",
+      "confidence": 0.93,
+      "evidence": "Phase 3 trials (ACHIEVE program)"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "GLP1R",
+      "target_entity": "cAMP signaling",
+      "confidence": 0.88,
+      "evidence": "stabilizing an active receptor conformation that couples to Gs proteins and drives intracellular cAMP accumulation"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "danuglipron",
+      "target_entity": "Pfizer",
+      "confidence": 0.99,
+      "evidence": "Assignee: Pfizer Inc"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "orforglipron",
+      "target_entity": "Eli Lilly",
+      "confidence": 0.95,
+      "evidence": "orforglipron (LY3502970, originally OWL-833), is being developed by Eli Lilly"
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "danuglipron",
+      "target_entity": "WO2018109607A1",
+      "confidence": 0.99,
+      "evidence": "Patent ID: WO2018109607A1"
+    },
+    {
+      "relation_type": "HAS_DOMAIN",
+      "source_entity": "GLP1R",
+      "target_entity": "orthosteric peptide-binding domain",
+      "confidence": 0.88,
+      "evidence": "distinct from the orthosteric peptide-binding domain"
+    },
+    {
+      "relation_type": "HAS_DOMAIN",
+      "source_entity": "GLP1R",
+      "target_entity": "transmembrane pocket",
+      "confidence": 0.88,
+      "evidence": "bind within a transmembrane pocket"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T14:16:44.937358+00:00",
+  "error": null
+}

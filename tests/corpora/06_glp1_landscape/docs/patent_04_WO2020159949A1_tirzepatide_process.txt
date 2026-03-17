@@ -1,0 +1,14 @@
+Title: Process for preparing a GIP/GLP1 dual agonist
+Source: Google Patents
+Patent ID: WO2020159949A1
+Assignee: Eli Lilly and Company
+Filing Date: January 28, 2020
+
+ABSTRACT/DESCRIPTION:
+The invention describes manufacturing processes and intermediates for producing tirzepatide, a GIP/GLP-1 dual agonist peptide. The tirzepatide peptide (SEQ ID NO: 1) is a 39-amino-acid synthetic peptide with the sequence YX1EGTFTSDYSIX2LDKIAQKAFVQWLMGGPSSGAPPPS, where X1 and X2 are Aib (2-aminoisobutyric acid). The C-terminal amino acid is amidated. At position 20, the lysine residue is acylated with a C20 fatty diacid moiety via a linker containing (2-[2-(2-Amino-ethoxy)-ethoxy]-acetyl)2-(gamma-Glu)1-CO-(CH2)18-CO2H.
+
+The improved manufacturing methods offer enhanced efficiency through fewer synthesis steps while maintaining high purity and quality standards. These processes reduce resource consumption and minimize waste generation compared to prior methods. The synthesis employs solid-phase peptide synthesis (SPPS) using Fmoc chemistry with multiple peptide intermediates (Preparations 1-42) using various protecting groups and configurations.
+
+Key process innovations include: nanofiltration for purification and reagent removal; transition metal-free desulfurization methods; selective lysine acylation with protected intermediates; depsi peptide isomer conversion at pH 7-10; and deprotection using dithiothreitol, triisopropylsilane, and trifluoroacetic acid.
+
+Tirzepatide is a dual GIP/GLP-1 receptor agonist developed by Eli Lilly for the treatment of type 2 diabetes mellitus and obesity. It activates both the glucose-dependent insulinotropic polypeptide (GIP) receptor and the glucagon-like peptide-1 (GLP-1) receptor, with imbalanced potency favoring GIP receptor activation. The compound has CAS Registry Number 2023788-19-2. Clinical development includes the SURPASS and SURMOUNT trial programs demonstrating superior glycemic control and weight loss versus selective GLP-1 receptor agonists.

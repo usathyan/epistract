@@ -17,6 +17,9 @@ This is a living document — updated as each scenario is run.
 | F-005 | [Graph screenshot not rendering](#f-005-graph-screenshot-not-rendering-in-readme) | Low | 1 | Image referenced from gitignored directory | Moved to tracked `tests/scenarios/screenshots/` | Documentation images must be in tracked, version-controlled locations |
 | F-006 | [graph.html not interactive on GitHub](#f-006-graphhtml-not-interactive-on-github) | Low | 1 | GitHub doesn't serve HTML | Added "(clone repo and open locally in browser)" | Documentation must set correct expectations for hosted vs local artifacts |
 | F-007 | [Schema generalization validated](#f-007-schema-generalization-across-domains) | Positive | 1→2 | N/A | N/A | Same 17-type, 30-relation schema handles both genetics-heavy and oncology-heavy corpora |
+| F-008 | [Multi-source corpus assembly](#f-008-multi-source-corpus-assembly-validates-human-ci-workflow) | Positive | 6 | N/A | N/A | PubMed + Scholar + Patents mirrors human CI workflow; Scholar for discovery, Patents for molecular data |
+| F-009 | [Patent extraction yields novel entities](#f-009-patent-extraction-yields-novel-entity-types) | Positive | 6 | N/A | N/A | Patents produce CAS numbers, peptide sequences, InChIKeys not available from PubMed |
+| F-010 | [SMILES validation false positives](#f-010-smiles-validation-false-positives-on-iupac-names) | Low | 6 | IUPAC names parsed as SMILES | None (expected behavior) | Pre-filter for IUPAC/patent patterns would reduce noise |
 
 ---
 
@@ -137,15 +140,15 @@ Integrated into `scripts/run_sift.py` build step — runs automatically after ev
 
 The same 17-entity-type, 30-relation-type schema produces meaningful knowledge graphs across fundamentally different drug discovery domains:
 
-| Dimension | Scenario 1 (Neurogenetics) | Scenario 2 (Oncology) | Scenario 3 (Rare Disease) | Scenario 4 (Immuno-Oncology) | Scenario 5 (Cardio/Inflammation) |
-|---|---|---|---|---|---|
-| Dominant entity types | GENE (48), PROTEIN (21), PHENOTYPE (18) | GENE (20), COMPOUND (11), SEQUENCE_VARIANT (10) | COMPOUND (5), ADVERSE_EVENT (9), BIOMARKER (8), CLINICAL_TRIAL (7) | COMPOUND (30+), PROTEIN (20+), CLINICAL_TRIAL (8), ADVERSE_EVENT (10+) | COMPOUND (5), CLINICAL_TRIAL (8), ADVERSE_EVENT (15+), BIOMARKER (10+) |
-| Dominant relation types | IMPLICATED_IN (84), PARTICIPATES_IN (23) | CONFERS_RESISTANCE_TO (26), INHIBITS (10), COMBINED_WITH (9) | CAUSES (10), HAS_MECHANISM (8), EVALUATED_IN (7), DIAGNOSTIC_FOR (4) | INHIBITS (20+), INDICATED_FOR (30+), EVALUATED_IN (16+), CAUSES (10+) | EVALUATED_IN (15+), CAUSES (12+), INHIBITS (8), INDICATED_FOR (8) |
-| Community themes | GWAS loci, pathways, cell biology | Drug combinations, resistance, clinical trials | PKU enzyme therapy, gene therapy safety, CNP analog, bone biology | PD-1/CTLA-4/LAG-3 checkpoint axes, HCC microenvironment, combination strategies | HCM/sarcomere biology, TYK2/JAK-STAT psoriasis, cardiac myosin inhibitors |
-| Schema coverage (entity types used) | 10 of 17 (59%) | 16 of 17 (94%) | 16 of 17 (94%) | 15 of 17 (88%) | 14 of 17 (82%) |
-| Schema coverage (relation types used) | 14 of 30 (47%) | 17 of 30 (57%) | 21 of 30 (70%) | 16 of 30 (53%) | 14 of 30 (47%) |
+| Dimension | Scenario 1 (Neurogenetics) | Scenario 2 (Oncology) | Scenario 3 (Rare Disease) | Scenario 4 (Immuno-Oncology) | Scenario 5 (Cardio/Inflammation) | Scenario 6 (GLP-1 CI) |
+|---|---|---|---|---|---|---|
+| Dominant entity types | GENE (48), PROTEIN (21), PHENOTYPE (18) | GENE (20), COMPOUND (11), SEQUENCE_VARIANT (10) | COMPOUND (5), ADVERSE_EVENT (9), BIOMARKER (8), CLINICAL_TRIAL (7) | COMPOUND (30+), PROTEIN (20+), CLINICAL_TRIAL (8), ADVERSE_EVENT (10+) | COMPOUND (5), CLINICAL_TRIAL (8), ADVERSE_EVENT (15+), BIOMARKER (10+) | COMPOUND (34), DISEASE (31), CLINICAL_TRIAL (19), MOA (14), PROTEIN (11) |
+| Dominant relation types | IMPLICATED_IN (84), PARTICIPATES_IN (23) | CONFERS_RESISTANCE_TO (26), INHIBITS (10), COMBINED_WITH (9) | CAUSES (10), HAS_MECHANISM (8), EVALUATED_IN (7), DIAGNOSTIC_FOR (4) | INHIBITS (20+), INDICATED_FOR (30+), EVALUATED_IN (16+), CAUSES (10+) | EVALUATED_IN (15+), CAUSES (12+), INHIBITS (8), INDICATED_FOR (8) | INDICATED_FOR (64), ASSOCIATED_WITH (30), ACTIVATES (26), EVALUATED_IN (21) |
+| Community themes | GWAS loci, pathways, cell biology | Drug combinations, resistance, clinical trials | PKU enzyme therapy, gene therapy safety, CNP analog, bone biology | PD-1/CTLA-4/LAG-3 checkpoint axes, HCC microenvironment, combination strategies | HCM/sarcomere biology, TYK2/JAK-STAT psoriasis, cardiac myosin inhibitors | MASH/triple agonists, oral delivery/SNAC, addiction/CNS, CagriSema/amylin, competitor drugs |
+| Schema coverage (entity types used) | 10 of 17 (59%) | 16 of 17 (94%) | 16 of 17 (94%) | 15 of 17 (88%) | 14 of 17 (82%) | 17 of 17 (100%) |
+| Schema coverage (relation types used) | 14 of 30 (47%) | 17 of 30 (57%) | 21 of 30 (70%) | 16 of 30 (53%) | 14 of 30 (47%) | 21 of 30 (70%) |
 
-The five scenarios together exercise 17 of 17 entity types (100%) and 27 of 30 relation types (90%). Scenario 5 validated the schema's ability to cleanly separate two unrelated therapeutic areas (cardiology vs dermatology) within a single corpus — community detection correctly produced distinct clusters with no spurious cross-domain connections. The addition of CONTRAINDICATED_FOR (mavacamten/CYP2C19 inhibitors) brings the cumulative relation type coverage to 90%.
+The six scenarios together exercise 17 of 17 entity types (100%) and 28 of 30 relation types (93%). Scenario 6 is the first to use multi-source corpus assembly (PubMed + Google Scholar + Google Patents via SerpAPI), the first to extract molecular identifiers from patent documents, and produced the largest graph (206 nodes, 630 links). It validated the schema's ability to handle competitive intelligence use cases with patent-derived molecular data (peptide sequences, CAS numbers, InChIKeys). The addition of DEVELOPS (company→compound) and REGULATES_EXPRESSION (semaglutide→GABA) brings cumulative relation type coverage to 93%.
 
 **Systemic lesson:** A domain schema designed for the breadth of drug discovery generalizes across neurogenetics, oncology, and rare disease without modification. Each domain naturally exercises different schema facets, confirming the schema is neither over-specified nor under-specified.
 
@@ -153,19 +156,18 @@ The five scenarios together exercise 17 of 17 entity types (100%) and 27 of 30 r
 
 ## Cumulative Test Metrics
 
-| Metric | Scenario 1 | Scenario 2 | Scenario 3 | Scenario 4 | Scenario 5 | Combined |
-|---|---|---|---|---|---|---|
-| Documents processed | 15 | 16 | 15 | 16 | 15 | 77 |
-| Raw entities extracted | 297 | 231 | 182 | 256 | 185 | 1151 |
-| Raw relations extracted | 251 | 194 | 128 | 216 | 148 | 937 |
-| Graph nodes (deduplicated) | 149 | 108 | 94 | 132 | 94 | 577 |
-| Graph links | 457 | 307 | 229 | 361 | 246 | 1600 |
-| Communities detected | 6 | 4 | 4 | 5 | 5 | 24 |
-| Entity types exercised | 10 | 16 | 16 | 15 | 14 | 17 (100%) |
-| Relation types exercised | 14 | 17 | 21 | 16 | 14 | 27 (90%) |
-| UATs passed | 4/4 | 5/5 | 3/3 | 4/4 | 3/3 | 19/19 |
-| Bugs found | 2 critical, 2 medium, 2 low | 1 critical | 0 new | 0 new | 0 new | 3 critical, 2 medium, 2 low |
-| Code fixes applied | 6 files modified, 2 new scripts | 3 files modified | 0 (stable) | 0 (stable) | 0 (stable) | 9 files modified, 2 new scripts |
+| Metric | Scenario 1 | Scenario 2 | Scenario 3 | Scenario 4 | Scenario 5 | Scenario 6 | Combined |
+|---|---|---|---|---|---|---|---|
+| Documents processed | 15 | 16 | 15 | 16 | 15 | 34 | 111 |
+| Source types | PubMed | PubMed | PubMed | PubMed | PubMed | PubMed + Scholar + Patents | 3 |
+| Graph nodes (deduplicated) | 149 | 108 | 94 | 132 | 94 | 206 | 783 |
+| Graph links | 457 | 307 | 229 | 361 | 246 | 630 | 2230 |
+| Communities detected | 6 | 4 | 4 | 5 | 5 | 9 | 33 |
+| Entity types exercised | 10 | 16 | 16 | 15 | 14 | 17 | 17 (100%) |
+| Relation types exercised | 14 | 17 | 21 | 16 | 14 | 21 | 28 (93%) |
+| UATs passed | 4/4 | 5/5 | 3/3 | 4/4 | 3/3 | 6/6 | 25/25 |
+| Bugs found | 2 critical, 2 medium, 2 low | 1 critical | 0 new | 0 new | 0 new | 1 low | 3 critical, 2 medium, 3 low |
+| Code fixes applied | 6 files modified, 2 new scripts | 3 files modified | 0 (stable) | 0 (stable) | 0 (stable) | 0 (stable) | 9 files modified, 2 new scripts |
 
 ---
 
@@ -183,7 +185,48 @@ All test inputs (PubMed abstracts), outputs (extraction JSONs, graph data), and 
 Critical fixes employ two-layer defenses: the primary fix addresses root cause (prompt improvement), the secondary fix catches regressions defensively (runtime normalization). This is consistent with pharmaceutical software validation practices where single points of failure are unacceptable.
 
 ### Cross-Domain Validation
-The same pipeline is tested across fundamentally different drug discovery domains (neurogenetics, oncology, rare disease, immuno-oncology, and cardiovascular/inflammation). All five scenarios are complete. This validates that the system generalizes rather than overfitting to a single domain.
+The same pipeline is tested across six fundamentally different drug discovery domains (neurogenetics, oncology, rare disease, immuno-oncology, cardiovascular/inflammation, and competitive intelligence). All six scenarios are complete. Scenario 6 additionally validates multi-source corpus assembly and patent document extraction — extending the pipeline beyond PubMed-only inputs.
 
 ### Scientist-Facing Documentation
 Every scenario result includes a scientific narrative that a domain expert can evaluate for accuracy. Community labels are generated algorithmically but validated against biological expectations. This bridges the gap between software validation and scientific validation.
+
+---
+
+## Detailed Findings (Scenario 6)
+
+### F-008: Multi-Source Corpus Assembly Validates Human CI Workflow
+
+**Severity:** Positive finding
+**Discovered in:** Scenario 6 (GLP-1 Competitive Intelligence)
+
+The multi-source assembly pipeline (PubMed E-utilities → Google Scholar via SerpAPI → Google Patents via SerpAPI) mirrors how a human competitive intelligence analyst actually works: searching multiple databases, cross-referencing findings, and building a mental knowledge graph. This is a design insight for the project — epistract augments rather than replaces human research workflows.
+
+**Key learnings:**
+- **Google Scholar** is best used for **discovery** (finding papers/patents not on PubMed), not extraction (snippets are ~500 bytes, too short for entity extraction). Use `as_sdt=7` to include patents in results.
+- **Google Patents API** is best for **targeted filtering** by assignee, country, status, and date. Use `num=100` for broad coverage.
+- **PubMed E-utilities** remains the backbone for structured clinical data with full abstracts, MeSH terms, and author data.
+- Publisher paywalls (Lancet, JAMA, NEJM, BMJ) prevent automatic ingestion of high-impact papers. A "Bring Your Own Papers" model lets scientists with institutional access supplement the corpus.
+
+### F-009: Patent Extraction Yields Novel Entity Types
+
+**Severity:** Positive finding
+**Discovered in:** Scenario 6
+
+Patent documents produced entity types and attributes not seen in any PubMed-only scenario:
+- **PEPTIDE_SEQUENCE** entities with full amino acid sequences (e.g., GLP-1(7-37): HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG)
+- **CAS numbers** in COMPOUND attributes (tirzepatide: 2023788-19-2, orforglipron: 2212020-52-3)
+- **InChIKeys** (SNAC: UOENJXXSKABLJL-UHFFFAOYSA-M)
+- **Chemical formulas** (orforglipron: C48H48F2N10O5, MW 882.96)
+- **DEVELOPED_BY** relations linking compounds to patent assignees (ORGANIZATION entities)
+- Process chemistry details (Fmoc SPPS, desulfurization, depsi peptide isomer conversion)
+
+This validates that the 17-entity-type schema is rich enough to capture patent-specific molecular data without requiring schema modifications. The PEPTIDE_SEQUENCE, METABOLITE, and ORGANIZATION entity types — underexercised in S1-S5 — found their natural home in patent documents.
+
+### F-010: SMILES Validation False Positives on IUPAC Names
+
+**Severity:** Low — no impact on graph quality
+**Discovered in:** Scenario 6
+
+The molecular validation script (`validate_molecules.py`) attempts to parse various string patterns as SMILES. Strings containing parentheses that are not SMILES — IUPAC chemical names (e.g., "N-(8-(2-hydroxybenzoyl)amino)caprylate"), compound abbreviations (e.g., "GLP-1(7-37)"), and patent references (e.g., "WO2006/097537") — triggered RDKit SMILES parse errors. These false positives are correctly rejected by the validator and do not affect the graph.
+
+**Recommendation:** A future improvement could add a pre-filter to skip strings matching IUPAC name heuristics (contain "amino", "acid", "yl", etc.) or patent number formats before SMILES parsing. This would reduce log noise without affecting validation accuracy.

@@ -1,0 +1,145 @@
+{
+  "document_id": "pmid_41523559",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "tirzepatide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "class": "dual GIP/GLP-1 receptor agonist"
+      },
+      "confidence": 0.95,
+      "context": "tirzepatide and semaglutide are among the most promising agents"
+    },
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "class": "GLP-1 receptor agonist"
+      },
+      "confidence": 0.95,
+      "context": "Semaglutide and tirzepatide are among the most promising agents"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.9,
+      "context": "Incretin-based therapies"
+    },
+    {
+      "name": "GIPR",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucose-dependent insulinotropic polypeptide receptor"
+      },
+      "confidence": 0.85,
+      "context": "tirzepatide (dual GIP/GLP-1 receptor agonist)"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "effective strategies for obesity and type 2 diabetes mellitus"
+    },
+    {
+      "name": "type 2 diabetes",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "obesity and type 2 diabetes mellitus (T2DM) management"
+    },
+    {
+      "name": "gastrointestinal adverse events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "note": "more frequent with tirzepatide"
+      },
+      "confidence": 0.9,
+      "context": "Gastrointestinal adverse events were the most common, occurring more frequently with tirzepatide"
+    },
+    {
+      "name": "body weight",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "tirzepatide": "-8.53 kg",
+        "semaglutide": "-6.85 kg"
+      },
+      "confidence": 0.9,
+      "context": "tirzepatide achieving greater reductions than semaglutide (8.53 vs. 6.85 kg)"
+    },
+    {
+      "name": "BMI",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "tirzepatide_baseline": "36.6 kg/m2",
+        "semaglutide_baseline": "32.3 kg/m2"
+      },
+      "confidence": 0.9,
+      "context": "Baseline BMI was higher in the tirzepatide group (36.6 vs. 32.3 kg/m2)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP1R",
+      "confidence": 0.95,
+      "evidence": "GLP-1 receptor agonist"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "tirzepatide",
+      "target_entity": "GLP1R",
+      "confidence": 0.9,
+      "evidence": "dual GIP/GLP-1 receptor agonist"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "tirzepatide",
+      "target_entity": "GIPR",
+      "confidence": 0.9,
+      "evidence": "dual GIP/GLP-1 receptor agonist"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "obesity",
+      "confidence": 0.9,
+      "evidence": "Efficacy and Safety of Tirzepatide and Semaglutide for Obesity Management"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "obesity",
+      "confidence": 0.9,
+      "evidence": "Efficacy and Safety of Tirzepatide and Semaglutide for Obesity Management"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "tirzepatide",
+      "target_entity": "gastrointestinal adverse events",
+      "confidence": 0.9,
+      "evidence": "Gastrointestinal adverse events were the most common, occurring more frequently with tirzepatide"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "semaglutide",
+      "target_entity": "gastrointestinal adverse events",
+      "confidence": 0.85,
+      "evidence": "Gastrointestinal adverse events were the most common"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T14:17:35.920912+00:00",
+  "error": null
+}

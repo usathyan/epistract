@@ -1,0 +1,288 @@
+{
+  "document_id": "pmid_39903735",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "MASH",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "full_name": "metabolic dysfunction-associated steatohepatitis"
+      },
+      "confidence": 0.98,
+      "context": "Metabolic dysfunction-associated steatohepatitis (MASH) is a leading cause of liver disease"
+    },
+    {
+      "name": "pegozafermin",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "biologic",
+        "class": "FGF21 analogue"
+      },
+      "confidence": 0.95,
+      "context": "Pegozafermin (SUCRA: 79.92)... ranked the most effective interventions"
+    },
+    {
+      "name": "cilofexor",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "FXR agonist"
+      },
+      "confidence": 0.9,
+      "context": "cilofexor + firsocostat (SUCRA: 71.38)"
+    },
+    {
+      "name": "firsocostat",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "ACC inhibitor"
+      },
+      "confidence": 0.9,
+      "context": "cilofexor + firsocostat (SUCRA: 71.38)"
+    },
+    {
+      "name": "selonsertib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "ASK1 inhibitor"
+      },
+      "confidence": 0.9,
+      "context": "cilofexor + selonsertib (SUCRA: 69.11)"
+    },
+    {
+      "name": "denifanstat",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "FASN inhibitor"
+      },
+      "confidence": 0.9,
+      "context": "denifanstat... were significantly better than placebo in achieving fibrosis regression"
+    },
+    {
+      "name": "survodutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "class": "dual glucagon/GLP-1 receptor agonist"
+      },
+      "confidence": 0.95,
+      "context": "survodutide (SUCRA: 90.87)"
+    },
+    {
+      "name": "obeticholic acid",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "FXR agonist"
+      },
+      "confidence": 0.9,
+      "context": "obeticholic acid... were significantly better than placebo in achieving fibrosis regression"
+    },
+    {
+      "name": "tirzepatide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "class": "dual GIP/GLP-1 receptor agonist"
+      },
+      "confidence": 0.95,
+      "context": "tirzepatide (SUCRA: 84.70)"
+    },
+    {
+      "name": "resmetirom",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "THR-beta agonist"
+      },
+      "confidence": 0.95,
+      "context": "resmetirom... were significantly better than placebo"
+    },
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "class": "GLP-1 receptor agonist"
+      },
+      "confidence": 0.95,
+      "context": "semaglutide were significantly better than placebo"
+    },
+    {
+      "name": "efruxifermin",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "biologic",
+        "class": "FGF21 analogue"
+      },
+      "confidence": 0.9,
+      "context": "efruxifermin... significantly better than placebo in achieving MASH resolution"
+    },
+    {
+      "name": "liraglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "class": "GLP-1 receptor agonist"
+      },
+      "confidence": 0.9,
+      "context": "liraglutide... significantly better than placebo in achieving MASH resolution"
+    },
+    {
+      "name": "vitamin E",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule"
+      },
+      "confidence": 0.85,
+      "context": "vitamin E + pioglitazone"
+    },
+    {
+      "name": "pioglitazone",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "PPAR-gamma agonist"
+      },
+      "confidence": 0.9,
+      "context": "pioglitazone... significantly better than placebo in achieving MASH resolution"
+    },
+    {
+      "name": "lanifibranor",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "pan-PPAR agonist"
+      },
+      "confidence": 0.9,
+      "context": "lanifibranor were significantly better than placebo in achieving MASH resolution"
+    },
+    {
+      "name": "liver fibrosis",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "fibrosis improvement >= 1 stage without MASH worsening"
+    },
+    {
+      "name": "PMID:39903735",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "journal": "Hepatology",
+        "year": 2025
+      },
+      "confidence": 0.95,
+      "context": "Hepatology (Baltimore, Md.) (2025)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "pegozafermin",
+      "target_entity": "MASH",
+      "confidence": 0.9,
+      "evidence": "Pegozafermin (SUCRA: 79.92) ranked the most effective interventions for fibrosis regression"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "survodutide",
+      "target_entity": "MASH",
+      "confidence": 0.9,
+      "evidence": "survodutide (SUCRA: 90.87) ranked the most effective interventions for achieving MASH resolution"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "MASH",
+      "confidence": 0.9,
+      "evidence": "tirzepatide (SUCRA: 84.70) ranked the most effective interventions for achieving MASH resolution"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "resmetirom",
+      "target_entity": "MASH",
+      "confidence": 0.9,
+      "evidence": "resmetirom were significantly better than placebo in achieving fibrosis regression"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "MASH",
+      "confidence": 0.85,
+      "evidence": "semaglutide were significantly better than placebo in achieving fibrosis regression"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "obeticholic acid",
+      "target_entity": "MASH",
+      "confidence": 0.85,
+      "evidence": "obeticholic acid were significantly better than placebo in achieving fibrosis regression"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "denifanstat",
+      "target_entity": "MASH",
+      "confidence": 0.85,
+      "evidence": "denifanstat were significantly better than placebo in achieving fibrosis regression"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "efruxifermin",
+      "target_entity": "MASH",
+      "confidence": 0.85,
+      "evidence": "efruxifermin significantly better than placebo in achieving MASH resolution"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "liraglutide",
+      "target_entity": "MASH",
+      "confidence": 0.85,
+      "evidence": "liraglutide significantly better than placebo in achieving MASH resolution"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "pioglitazone",
+      "target_entity": "MASH",
+      "confidence": 0.85,
+      "evidence": "pioglitazone significantly better than placebo in achieving MASH resolution"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "lanifibranor",
+      "target_entity": "MASH",
+      "confidence": 0.85,
+      "evidence": "lanifibranor were significantly better than placebo in achieving MASH resolution"
+    },
+    {
+      "relation_type": "COMBINED_WITH",
+      "source_entity": "cilofexor",
+      "target_entity": "firsocostat",
+      "confidence": 0.95,
+      "evidence": "cilofexor + firsocostat (SUCRA: 71.38)"
+    },
+    {
+      "relation_type": "COMBINED_WITH",
+      "source_entity": "cilofexor",
+      "target_entity": "selonsertib",
+      "confidence": 0.95,
+      "evidence": "cilofexor + selonsertib (SUCRA: 69.11)"
+    },
+    {
+      "relation_type": "COMBINED_WITH",
+      "source_entity": "vitamin E",
+      "target_entity": "pioglitazone",
+      "confidence": 0.95,
+      "evidence": "vitamin E + pioglitazone"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T14:16:02.316988+00:00",
+  "error": null
+}

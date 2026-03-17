@@ -1,0 +1,140 @@
+{
+  "document_id": "pmid_38958939",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "class": "GLP-1 receptor agonist"
+      },
+      "confidence": 0.98,
+      "context": "semaglutide, a glucagon-like peptide 1 receptor agonist (GLP-1 RA)"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide 1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "glucagon-like peptide 1 receptor agonist (GLP-1 RA)"
+    },
+    {
+      "name": "nonarteritic anterior ischemic optic neuropathy",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "abbreviation": "NAION",
+        "MedDRA_term": "ischaemic optic neuropathy"
+      },
+      "confidence": 0.95,
+      "context": "nonarteritic anterior ischemic optic neuropathy (NAION)"
+    },
+    {
+      "name": "type 2 diabetes",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "T2D"
+      },
+      "confidence": 0.95,
+      "context": "patients with type 2 diabetes (T2D)"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "overweight or obese"
+    },
+    {
+      "name": "systemic hypertension",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "accounting for covarying factors (sex, age, systemic hypertension, T2D, obstructive sleep apnea, obesity, hyperlipidemia, and coronary artery disease)"
+    },
+    {
+      "name": "obstructive sleep apnea",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "obstructive sleep apnea"
+    },
+    {
+      "name": "hyperlipidemia",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "hyperlipidemia"
+    },
+    {
+      "name": "coronary artery disease",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "coronary artery disease"
+    },
+    {
+      "name": "PMID:38958939",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "journal": "JAMA ophthalmology",
+        "year": 2024
+      },
+      "confidence": 0.95,
+      "context": "JAMA ophthalmology (2024)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "semaglutide",
+      "target_entity": "nonarteritic anterior ischemic optic neuropathy",
+      "confidence": 0.8,
+      "evidence": "A Cox proportional hazards regression model showed higher risk of NAION for patients receiving semaglutide (hazard ratio [HR], 4.28; 95% CI, 1.62-11.29; P < .001)"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP1R",
+      "confidence": 0.95,
+      "evidence": "semaglutide, a glucagon-like peptide 1 receptor agonist (GLP-1 RA)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "type 2 diabetes",
+      "confidence": 0.9,
+      "evidence": "Prescriptions for semaglutide vs non-GLP-1 RA medications to manage either T2D or weight"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "obesity",
+      "confidence": 0.9,
+      "evidence": "Prescriptions for semaglutide vs non-GLP-1 RA medications to manage either T2D or weight"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "type 2 diabetes",
+      "target_entity": "nonarteritic anterior ischemic optic neuropathy",
+      "confidence": 0.7,
+      "evidence": "propensity matching was used to assess whether prescribed semaglutide was associated with NAION in patients with type 2 diabetes"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "obesity",
+      "target_entity": "nonarteritic anterior ischemic optic neuropathy",
+      "confidence": 0.7,
+      "evidence": "In the population of patients who were overweight or obese, 20 NAION events occurred in the prescribed semaglutide cohort"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T14:15:13.836736+00:00",
+  "error": null
+}

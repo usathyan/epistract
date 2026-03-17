@@ -1,0 +1,172 @@
+{
+  "document_id": "pmid_37351564",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "orforglipron",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "nonpeptide small molecule",
+        "route": "oral",
+        "doses_tested": "12, 24, 36, 45 mg",
+        "frequency": "once daily"
+      },
+      "confidence": 0.99,
+      "context": "nonpeptide glucagon-like peptide-1 (GLP-1) receptor agonist orforglipron as a once-daily oral therapy"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "GLP-1 receptor agonist"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Obesity"
+      },
+      "confidence": 0.99,
+      "context": "Daily Oral GLP-1 Receptor Agonist Orforglipron for Adults with Obesity"
+    },
+    {
+      "name": "overweight",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "adults with obesity, or with overweight plus at least one weight-related coexisting condition"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Diabetes Mellitus, Type 2"
+      },
+      "confidence": 0.9,
+      "context": "without diabetes"
+    },
+    {
+      "name": "GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "subtype": "nonpeptide"
+      },
+      "confidence": 0.95,
+      "context": "nonpeptide glucagon-like peptide-1 (GLP-1) receptor agonist"
+    },
+    {
+      "name": "NCT05051579",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "name": "GZGI",
+        "phase": "phase 2",
+        "design": "randomized, double-blind",
+        "duration": "36 weeks",
+        "enrollment": 272
+      },
+      "confidence": 0.99,
+      "context": "phase 2, randomized, double-blind trial... NCT05051579"
+    },
+    {
+      "name": "gastrointestinal events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "severity": "mild to moderate",
+        "timing": "primarily during dose escalation",
+        "discontinuation_rate": "10-17%"
+      },
+      "confidence": 0.95,
+      "context": "The most common adverse events reported with orforglipron were gastrointestinal events, which were mild to moderate"
+    },
+    {
+      "name": "weight loss",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "range_at_week_36": "-9.4% to -14.7%",
+        "placebo": "-2.3%"
+      },
+      "confidence": 0.97,
+      "context": "mean change ranged from -9.4% to -14.7% with orforglipron and was -2.3% with placebo"
+    },
+    {
+      "name": "Eli Lilly",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "sponsor"
+      },
+      "confidence": 0.99,
+      "context": "Funded by Eli Lilly"
+    },
+    {
+      "name": "The New England journal of medicine",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "37351564",
+        "year": 2023
+      },
+      "confidence": 0.99,
+      "context": "Journal: The New England journal of medicine (2023)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "orforglipron",
+      "target_entity": "GLP1R",
+      "confidence": 0.97,
+      "evidence": "nonpeptide glucagon-like peptide-1 (GLP-1) receptor agonist orforglipron"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "orforglipron",
+      "target_entity": "GLP-1 receptor agonism",
+      "confidence": 0.95,
+      "evidence": "nonpeptide GLP-1 receptor agonist"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "orforglipron",
+      "target_entity": "obesity",
+      "confidence": 0.92,
+      "evidence": "Daily Oral GLP-1 Receptor Agonist Orforglipron for Adults with Obesity"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "orforglipron",
+      "target_entity": "NCT05051579",
+      "confidence": 0.99,
+      "evidence": "Funded by Eli Lilly; GZGI ClinicalTrials.gov number, NCT05051579"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "orforglipron",
+      "target_entity": "gastrointestinal events",
+      "confidence": 0.95,
+      "evidence": "The most common adverse events reported with orforglipron were gastrointestinal events"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "orforglipron",
+      "target_entity": "weight loss",
+      "confidence": 0.97,
+      "evidence": "mean change ranged from -9.4% to -14.7% with orforglipron"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "orforglipron",
+      "target_entity": "Eli Lilly",
+      "confidence": 0.95,
+      "evidence": "Funded by Eli Lilly"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T14:17:35.268053+00:00",
+  "error": null
+}

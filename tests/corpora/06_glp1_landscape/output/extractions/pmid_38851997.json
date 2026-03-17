@@ -1,0 +1,269 @@
+{
+  "document_id": "pmid_38851997",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "MASLD",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "synonyms": [
+          "metabolic dysfunction-associated steatotic liver disease",
+          "NAFLD",
+          "non-alcoholic fatty liver disease"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "Metabolic dysfunction-associated steatotic liver disease (MASLD), previously termed non-alcoholic fatty liver disease (NAFLD)"
+    },
+    {
+      "name": "MASH",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "synonyms": [
+          "metabolic dysfunction-associated steatohepatitis",
+          "NASH"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "metabolic dysfunction-associated steatohepatitis (MASH, previously NASH)"
+    },
+    {
+      "name": "hepatocellular carcinoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "HCC"
+      },
+      "confidence": 0.9,
+      "context": "MASH-related hepatocellular carcinoma (HCC)"
+    },
+    {
+      "name": "type 2 diabetes",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "T2D"
+      },
+      "confidence": 0.95,
+      "context": "particularly in the presence of type 2 diabetes (T2D)"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "obesity with additional metabolic risk factor(s)"
+    },
+    {
+      "name": "cirrhosis",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "fibrosis, cirrhosis and MASH-related hepatocellular carcinoma"
+    },
+    {
+      "name": "portal hypertension",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "surveillance for portal hypertension and HCC"
+    },
+    {
+      "name": "hepatic steatosis",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "radiological signs of hepatic steatosis"
+    },
+    {
+      "name": "liver fibrosis",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "MASLD with liver fibrosis, using non-invasive tests"
+    },
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "class": "GLP-1 receptor agonist"
+      },
+      "confidence": 0.95,
+      "context": "incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity"
+    },
+    {
+      "name": "tirzepatide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "class": "dual GIP/GLP-1 receptor agonist"
+      },
+      "confidence": 0.95,
+      "context": "incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity"
+    },
+    {
+      "name": "resmetirom",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "THR-beta agonist"
+      },
+      "confidence": 0.95,
+      "context": "MASH-targeted treatment with resmetirom, which demonstrated histological effectiveness on steatohepatitis and fibrosis"
+    },
+    {
+      "name": "FIB-4",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "blood-based score"
+      },
+      "confidence": 0.9,
+      "context": "blood-based scores (such as FIB-4)"
+    },
+    {
+      "name": "transient elastography",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "imaging technique"
+      },
+      "confidence": 0.85,
+      "context": "imaging techniques (such as transient elastography)"
+    },
+    {
+      "name": "EASL",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "full_name": "European Association for the Study of the Liver"
+      },
+      "confidence": 0.9,
+      "context": "EASL-EASD-EASO Clinical Practice Guidelines"
+    },
+    {
+      "name": "EASD",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "full_name": "European Association for the Study of Diabetes"
+      },
+      "confidence": 0.9,
+      "context": "EASL-EASD-EASO Clinical Practice Guidelines"
+    },
+    {
+      "name": "EASO",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "full_name": "European Association for the Study of Obesity"
+      },
+      "confidence": 0.9,
+      "context": "EASL-EASD-EASO Clinical Practice Guidelines"
+    },
+    {
+      "name": "bariatric surgery",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.7,
+      "context": "Bariatric surgery is also an option in individuals with MASLD and obesity"
+    },
+    {
+      "name": "liver transplantation",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.7,
+      "context": "liver transplantation in decompensated cirrhosis"
+    },
+    {
+      "name": "PMID:38851997",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "journal": "Journal of hepatology",
+        "year": 2024
+      },
+      "confidence": 0.95,
+      "context": "Journal of hepatology (2024)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "type 2 diabetes",
+      "confidence": 0.9,
+      "evidence": "incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity, if indicated"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "obesity",
+      "confidence": 0.9,
+      "evidence": "incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity, if indicated"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "type 2 diabetes",
+      "confidence": 0.9,
+      "evidence": "incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity, if indicated"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "obesity",
+      "confidence": 0.9,
+      "evidence": "incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity, if indicated"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "resmetirom",
+      "target_entity": "MASH",
+      "confidence": 0.95,
+      "evidence": "adults with non-cirrhotic MASH and significant liver fibrosis (stage >=2) should be considered for a MASH-targeted treatment with resmetirom"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "FIB-4",
+      "target_entity": "liver fibrosis",
+      "confidence": 0.9,
+      "evidence": "blood-based scores (such as FIB-4) and, sequentially, imaging techniques (such as transient elastography) is suitable to rule-out/in advanced fibrosis"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "transient elastography",
+      "target_entity": "liver fibrosis",
+      "confidence": 0.9,
+      "evidence": "imaging techniques (such as transient elastography) is suitable to rule-out/in advanced fibrosis"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "MASLD",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.85,
+      "evidence": "MASH-related hepatocellular carcinoma (HCC)"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "MASLD",
+      "target_entity": "cirrhosis",
+      "confidence": 0.9,
+      "evidence": "The spectrum of MASLD includes steatosis, metabolic dysfunction-associated steatohepatitis (MASH), fibrosis, cirrhosis"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "obesity",
+      "target_entity": "MASLD",
+      "confidence": 0.85,
+      "evidence": "obesity with additional metabolic risk factor(s)"
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "PMID:38851997",
+      "target_entity": "EASL",
+      "confidence": 0.9,
+      "evidence": "EASL-EASD-EASO Clinical Practice Guidelines"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T14:15:00.493951+00:00",
+  "error": null
+}

@@ -1,0 +1,171 @@
+{
+  "document_id": "pmid_39536238",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "tirzepatide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "class": "dual GIP/GLP-1 receptor agonist"
+      },
+      "confidence": 0.98,
+      "context": "tirzepatide was shown to provide substantial and sustained reductions in body weight in persons with obesity"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Obesity is a chronic disease and causal precursor to myriad other conditions"
+    },
+    {
+      "name": "type 2 diabetes",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "including type 2 diabetes"
+    },
+    {
+      "name": "prediabetes",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "persons with both obesity and prediabetes"
+    },
+    {
+      "name": "gastrointestinal disorders",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "MedDRA_term": "gastrointestinal disorders"
+      },
+      "confidence": 0.9,
+      "context": "the most common adverse events were gastrointestinal, most of which were mild to moderate in severity"
+    },
+    {
+      "name": "SURMOUNT-1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": 3,
+        "nct_id": "NCT04184622",
+        "design": "double-blind, randomized, controlled"
+      },
+      "confidence": 0.98,
+      "context": "SURMOUNT-1 trial... a phase 3, double-blind, randomized, controlled trial"
+    },
+    {
+      "name": "Eli Lilly",
+      "entity_type": "ORGANIZATION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Funded by Eli Lilly"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.9,
+      "context": "Glucagon-Like Peptide-1 Receptor Agonists"
+    },
+    {
+      "name": "GIPR",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucose-dependent insulinotropic polypeptide receptor"
+      },
+      "confidence": 0.85,
+      "context": "tirzepatide dual GIP/GLP-1 receptor agonist"
+    },
+    {
+      "name": "weight loss",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "substantial and sustained reductions in body weight"
+    },
+    {
+      "name": "PMID:39536238",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "journal": "The New England journal of medicine",
+        "year": 2025
+      },
+      "confidence": 0.95,
+      "context": "The New England journal of medicine (2025)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "obesity",
+      "confidence": 0.95,
+      "evidence": "tirzepatide was shown to provide substantial and sustained reductions in body weight in persons with obesity"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "prediabetes",
+      "confidence": 0.85,
+      "evidence": "its efficacy in reducing weight and delaying progression to type 2 diabetes in persons with both obesity and prediabetes"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "tirzepatide",
+      "target_entity": "SURMOUNT-1",
+      "confidence": 0.98,
+      "evidence": "SURMOUNT-1 trial, tirzepatide was shown to provide substantial and sustained reductions in body weight"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "tirzepatide",
+      "target_entity": "gastrointestinal disorders",
+      "confidence": 0.9,
+      "evidence": "the most common adverse events were gastrointestinal, most of which were mild to moderate in severity"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "tirzepatide",
+      "target_entity": "weight loss",
+      "confidence": 0.95,
+      "evidence": "the mean percent change in body weight among the participants who received tirzepatide was -12.3% with the 5-mg dose, -18.7% with the 10-mg dose, and -19.7% with the 15-mg dose"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "tirzepatide",
+      "target_entity": "GLP1R",
+      "confidence": 0.9,
+      "evidence": "Glucagon-Like Peptide-1 Receptor Agonists"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "tirzepatide",
+      "target_entity": "GIPR",
+      "confidence": 0.85,
+      "evidence": "tirzepatide dual GIP/GLP-1 receptor agonist"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "tirzepatide",
+      "target_entity": "Eli Lilly",
+      "confidence": 0.95,
+      "evidence": "Funded by Eli Lilly"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "obesity",
+      "target_entity": "type 2 diabetes",
+      "confidence": 0.9,
+      "evidence": "Obesity is a chronic disease and causal precursor to myriad other conditions, including type 2 diabetes"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T14:15:41.541340+00:00",
+  "error": null
+}

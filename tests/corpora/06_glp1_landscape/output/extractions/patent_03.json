@@ -1,0 +1,284 @@
+{
+  "document_id": "patent_03",
+  "document_path": "tests/corpora/06_glp1_landscape/docs/patent_03_US10335462B2_semaglutide_longacting.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "designation": "[Aib8, Arg34, Lys37]GLP-1(7-37)",
+        "half_life": "approximately 160 hours (7 days)",
+        "dosing": "once-weekly subcutaneous",
+        "doses": [
+          "0.25 mg",
+          "0.5 mg",
+          "1.0 mg"
+        ]
+      },
+      "confidence": 0.99,
+      "context": "Semaglutide is described as a unique acylated GLP-1 peptide with a half-life of approximately 160 hours (approximately 7 days)"
+    },
+    {
+      "name": "GLP-1(7-37)",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "sequence": "HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG",
+        "seq_id": "SEQ ID NO: 1",
+        "half_life": "approximately 2 minutes"
+      },
+      "confidence": 0.98,
+      "context": "The native GLP-1(7-37) peptide sequence is HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG (SEQ ID NO: 1)"
+    },
+    {
+      "name": "liraglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "half_life": "approximately 13 hours"
+      },
+      "confidence": 0.95,
+      "context": "liraglutide (half-life approximately 13 hours)"
+    },
+    {
+      "name": "Aib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "amino acid analog",
+        "full_name": "alpha-aminoisobutyric acid",
+        "position": "8"
+      },
+      "confidence": 0.95,
+      "context": "alpha-aminoisobutyric acid replaces the amino acid at position 8"
+    },
+    {
+      "name": "C18 fatty diacid",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "lipid linker",
+        "linker": "gamma-glutamic acid and mini-PEG linker",
+        "acylation_site": "Lys26"
+      },
+      "confidence": 0.93,
+      "context": "acylation at Lys26 with a C18 fatty diacid through a gamma-glutamic acid and mini-PEG linker"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.97,
+      "context": "GLP-1 agonist"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.98,
+      "context": "managing type 2 diabetes, hyperglycemia, glucose tolerance disorders, and obesity"
+    },
+    {
+      "name": "hyperglycemia",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "managing type 2 diabetes, hyperglycemia, glucose tolerance disorders"
+    },
+    {
+      "name": "glucose tolerance disorders",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.93,
+      "context": "managing type 2 diabetes, hyperglycemia, glucose tolerance disorders"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.97,
+      "context": "managing type 2 diabetes, hyperglycemia, glucose tolerance disorders, and obesity"
+    },
+    {
+      "name": "major adverse cardiovascular events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "abbreviation": "MACE",
+        "direction": "reduced trend"
+      },
+      "confidence": 0.85,
+      "context": "cardiovascular safety with a trend toward reduced major adverse cardiovascular events (MACE)"
+    },
+    {
+      "name": "HbA1c",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "direction": "reduction"
+      },
+      "confidence": 0.95,
+      "context": "significant reductions in HbA1c and body weight"
+    },
+    {
+      "name": "body weight",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "direction": "reduction"
+      },
+      "confidence": 0.93,
+      "context": "significant reductions in HbA1c and body weight"
+    },
+    {
+      "name": "SUSTAIN",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "type": "trial program"
+      },
+      "confidence": 0.95,
+      "context": "The SUSTAIN clinical trial program showed cardiovascular safety"
+    },
+    {
+      "name": "GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.97,
+      "context": "GLP-1 agonist with a minimum half-life of 72 hours"
+    },
+    {
+      "name": "Novo Nordisk",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "type": "pharmaceutical company"
+      },
+      "confidence": 0.99,
+      "context": "Assignee: Novo Nordisk AS"
+    },
+    {
+      "name": "US10335462B2",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "type": "patent",
+        "title": "Use of long-acting GLP-1 peptides",
+        "filing_date": "2017-07-21"
+      },
+      "confidence": 0.99,
+      "context": "Patent ID: US10335462B2"
+    },
+    {
+      "name": "WO2006/097537",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "type": "patent application",
+        "reference": "Example 4"
+      },
+      "confidence": 0.9,
+      "context": "prepared per Example 4 of WO2006/097537"
+    },
+    {
+      "name": "peptide_31aa",
+      "entity_type": "PEPTIDE_SEQUENCE",
+      "attributes": {
+        "sequence": "HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG",
+        "sequence_type": "protein",
+        "length": 31,
+        "validated": true,
+        "molecular_weight": 3355.67
+      },
+      "confidence": 1.0,
+      "context": "The native GLP-1(7-37) peptide sequence is HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG (SEQ ID NO: 1)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP1R",
+      "confidence": 0.98,
+      "evidence": "GLP-1 agonist"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.98,
+      "evidence": "managing type 2 diabetes"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "hyperglycemia",
+      "confidence": 0.95,
+      "evidence": "managing type 2 diabetes, hyperglycemia"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "glucose tolerance disorders",
+      "confidence": 0.93,
+      "evidence": "managing type 2 diabetes, hyperglycemia, glucose tolerance disorders"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "obesity",
+      "confidence": 0.97,
+      "evidence": "managing type 2 diabetes, hyperglycemia, glucose tolerance disorders, and obesity"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "semaglutide",
+      "target_entity": "SUSTAIN",
+      "confidence": 0.95,
+      "evidence": "The SUSTAIN clinical trial program"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor agonism",
+      "confidence": 0.97,
+      "evidence": "GLP-1 agonist"
+    },
+    {
+      "relation_type": "DERIVED_FROM",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1(7-37)",
+      "confidence": 0.95,
+      "evidence": "The key semaglutide analog is designated [Aib8, Arg34, Lys37]GLP-1(7-37)"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "semaglutide",
+      "target_entity": "Novo Nordisk",
+      "confidence": 0.99,
+      "evidence": "Assignee: Novo Nordisk AS"
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "semaglutide",
+      "target_entity": "US10335462B2",
+      "confidence": 0.99,
+      "evidence": "Patent ID: US10335462B2"
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "semaglutide",
+      "target_entity": "WO2006/097537",
+      "confidence": 0.9,
+      "evidence": "prepared per Example 4 of WO2006/097537"
+    },
+    {
+      "relation_type": "HAS_SEQUENCE",
+      "source_entity": "GLP-1(7-37)",
+      "target_entity": "peptide_31aa",
+      "confidence": 0.95,
+      "evidence": "The native GLP-1(7-37) peptide sequence is HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG (SEQ ID NO: 1)"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T14:15:50.511878+00:00",
+  "error": null
+}

@@ -2,7 +2,7 @@
 
 **Turn scientific literature into structured biomedical knowledge.**
 
-> **Paper:** [Beyond RAG: Domain-Specific Agentic Architecture for Biomedical Knowledge Graph Construction](paper/main.pdf) — technical report describing the architecture, evaluation across 5 drug discovery domains, and the evolution from GraphRAG to comprehension-based extraction.
+> **Paper:** [Beyond RAG: Domain-Specific Agentic Architecture for Biomedical Knowledge Graph Construction](paper/main.pdf) — technical report describing the architecture, evaluation across 6 drug discovery domains, and the evolution from GraphRAG to comprehension-based extraction.
 
 Epistract reads drug discovery documents — PubMed papers, bioRxiv preprints, patent filings, clinical trial reports, FDA labels — and builds a knowledge graph that captures the entities and relationships a scientist cares about: compounds, targets, mechanisms, trials, biomarkers, pathways, and how they connect.
 
@@ -140,17 +140,18 @@ The interactive viewer shows your knowledge graph with labeled community regions
 
 ## Test Scenarios
 
-Epistract ships with five drug discovery research scenarios, each backed by a curated corpus of PubMed abstracts. Each scenario page includes the use case, corpus details, how to run, expected graph structure, and actual results with graph screenshots and community analysis.
+Epistract ships with six drug discovery research scenarios, each backed by a curated corpus. Scenarios 1-5 use PubMed abstracts; Scenario 6 demonstrates multi-source corpus assembly from PubMed + Google Scholar + Google Patents via SerpAPI. Each scenario page includes the use case, corpus details, how to run, expected graph structure, and actual results with graph screenshots and community analysis.
 
 > **Note:** These are hypothetical test scenarios designed to validate the pipeline across diverse drug discovery domains. They are not attributable to any ongoing research. This project explores how AI-assisted tooling can accelerate scientific literature analysis.
 
-| # | Scenario | Focus | Documents |
-|---|---|---|---|
-| 1 | [PICALM / Alzheimer's](tests/scenarios/scenario-01-picalm-alzheimers.md) | Genetic target validation | 15 papers |
-| 2 | [KRAS G12C Landscape](tests/scenarios/scenario-02-kras-g12c-landscape.md) | Competitive intelligence | 16 papers |
-| 3 | [Rare Disease Therapeutics](tests/scenarios/scenario-03-rare-disease.md) | Due diligence | 15 papers |
-| 4 | [Immuno-Oncology Combinations](tests/scenarios/scenario-04-immunooncology.md) | Checkpoint combinations | 16 papers |
-| 5 | [Cardiovascular & Inflammation](tests/scenarios/scenario-05-cardiovascular.md) | Cardiology + inflammation | 15 papers |
+| # | Scenario | Focus | Documents | Sources |
+|---|---|---|---|---|
+| 1 | [PICALM / Alzheimer's](tests/scenarios/scenario-01-picalm-alzheimers.md) | Genetic target validation | 15 papers | PubMed |
+| 2 | [KRAS G12C Landscape](tests/scenarios/scenario-02-kras-g12c-landscape.md) | Competitive intelligence | 16 papers | PubMed |
+| 3 | [Rare Disease Therapeutics](tests/scenarios/scenario-03-rare-disease.md) | Due diligence | 15 papers | PubMed |
+| 4 | [Immuno-Oncology Combinations](tests/scenarios/scenario-04-immunooncology.md) | Checkpoint combinations | 16 papers | PubMed |
+| 5 | [Cardiovascular & Inflammation](tests/scenarios/scenario-05-cardiovascular.md) | Cardiology + inflammation | 15 papers | PubMed |
+| 6 | [GLP-1 Competitive Intelligence](tests/scenarios/scenario-06-glp1-landscape.md) | Multi-source CI landscape | 34 docs | PubMed + Scholar + Patents |
 
 See [tests/MANUAL_TEST_SCENARIOS.md](tests/MANUAL_TEST_SCENARIOS.md) for the full index, acceptance criteria, and corpus provenance.
 
@@ -222,6 +223,30 @@ See [tests/MANUAL_TEST_SCENARIOS.md](tests/MANUAL_TEST_SCENARIOS.md) for the ful
 | **TYK2 Allosteric Inhibition** | 14 | Deucravacitinib, POETYK trials, psoriasis |
 | **JAK-STAT Signaling Pathway** | 11 | IL-12/IL-23, type I interferons, cytokine signaling |
 | **Cardiac Myosin Inhibition** | 8 | Shared mechanism hub, FDA approval, REMS |
+
+### Scenario 6 Result: GLP-1 Competitive Intelligence
+
+![GLP-1 Knowledge Graph](tests/scenarios/screenshots/scenario-06-graph.png)
+
+*206 nodes, 630 links, 9 auto-labeled communities. 34 documents (24 PubMed + 10 patents from 5 companies). Full results: [scenario-06-glp1-landscape.md](tests/scenarios/scenario-06-glp1-landscape.md)*
+
+| Community | Members | Theme |
+|---|---|---|
+| **MASH — GCGR, Albumin, GIPR** | 26 | Survodutide, retatrutide, hepatic lipid oxidation |
+| **GLP-1(7-37) / SNAC / Semaglutide** | 24 | Oral delivery technology, SNAC absorption enhancer |
+| **Appetite Regulation in Infralimbic Cortex** | 21 | GLP-1 in addiction, GABA modulation, CNS expression |
+| **Danuglipron / Alzheimer / Parkinson** | 19 | Oral small molecules, neurodegeneration |
+| **Orforglipron / Tirzepatide / MASLD** | 18 | Next-gen compounds, ACHIEVE/SURMOUNT trials |
+| **CagriSema / Amylin Co-Agonist / Cagrilintide** | 17 | Combination therapy, REDEFINE trials |
+| **GLP-1 Receptor Agonism / Inflammation** | 14 | Core mechanism, cardiovascular protection |
+| **Anti-Inflammatory Activity** | 9 | CV risk reduction mechanisms |
+| **Denifanstat / Efruxifermin / Lanifibranor** | 9 | Non-GLP-1 MASH competitor drugs |
+
+**What's new in Scenario 6:**
+- **Multi-source corpus** — first scenario using PubMed + Google Scholar + Google Patents (via SerpAPI)
+- **Patent extraction** — peptide sequences, CAS numbers (tirzepatide: 2023788-19-2), InChIKeys, chemical formulas from 10 patents across 5 companies
+- **Largest graph** — 206 nodes, 630 links (vs 94-149 nodes for S1-S5)
+- **"Bring Your Own Papers"** — scientists with institutional access can supplement the corpus with paywalled Lancet/JAMA/BMJ papers
 
 ### Automating Test Runs
 
@@ -467,7 +492,7 @@ Epistract enforces standard biomedical nomenclature:
 - **[DEVELOPER.md](DEVELOPER.md)** — Technical reference with 40+ ontology links, sift-kg integration details, data formats, and the full dependency tree
 - **[Domain Specification](docs/drug-discovery-domain-spec.md)** — Complete 2000-line schema specification with ontology alignment, extraction guidance, and validation criteria
 - **[Plugin Design](docs/epistract-plugin-design.md)** — Architecture and component design
-- **[Test Scenarios](tests/MANUAL_TEST_SCENARIOS.md)** — 5 real-world drug discovery scenarios with curated PubMed corpora
+- **[Test Scenarios](tests/MANUAL_TEST_SCENARIOS.md)** — 6 real-world drug discovery scenarios with curated corpora (PubMed + Google Scholar + Google Patents)
 - **[Test Requirements](tests/TEST_REQUIREMENTS.md)** — 16 unit tests, 8 functional tests, 18 user acceptance tests with traceability matrix
 - **[Engineering Findings](tests/FINDINGS.md)** — Bugs discovered, root cause analysis, systemic lessons from production-quality testing
 

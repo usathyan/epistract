@@ -1,0 +1,9 @@
+Title: Targeting the incretin system in obesity and type 2 diabetes mellitus.
+Authors: Ansari Saleem, Khoo Bernard, Tan Tricia
+Journal: Nature reviews. Endocrinology (2024)
+PMID: 38632474
+Source: Google Scholar topic: oral GLP-1 landscape
+MeSH Terms: Humans, Diabetes Mellitus, Type 2, Incretins, Obesity, Glucagon-Like Peptide 1, Animals, Hypoglycemic Agents, Glucagon-Like Peptide-1 Receptor Agonists, Glucagon-Like Peptide-1 Receptor
+
+ABSTRACT:
+Obesity and type 2 diabetes mellitus (T2DM) are widespread, non-communicable diseases that are responsible for considerable levels of morbidity and mortality globally, primarily in the form of cardiovascular disease (CVD). Changes to lifestyle and behaviour have insufficient long-term efficacy in most patients with these diseases; metabolic surgery, although effective, is not practically deliverable on the scale that is required. Over the past two decades, therapies based on incretin hormones, spearheaded by glucagon-like peptide 1 (GLP1) receptor agonists (GLP1RAs), have become the treatment of choice for obesity and T2DM, and clinical evidence now suggests that these agents have benefits for CVD. We review the latest advances in incretin-based pharmacotherapy. These include 'GLP1 plus' agents, which combine the known advantages of GLP1RAs with the activity of additional hormones, such as glucose-dependent insulinotropic peptide, glucagon and amylin, to achieve desired therapeutic goals. Second-generation non-peptidic oral GLP1RAs promise to extend the benefits of GLP1 therapy to those who do not want, or cannot have, subcutaneous injection therapy. We conclude with a discussion of the knowledge gaps that must be addressed before incretin-based therapies can be properly deployed for maximum benefit in the treatment of obesity and T2DM.

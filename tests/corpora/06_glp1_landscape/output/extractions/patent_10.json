@@ -1,0 +1,222 @@
+{
+  "document_id": "patent_10",
+  "document_path": "tests/corpora/06_glp1_landscape/docs/patent_10_US11622996B2_oral_semaglutide_snac.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "class": "GLP-1 receptor agonist",
+        "route": "oral"
+      },
+      "confidence": 0.95,
+      "context": "pharmaceutical compositions combining a GLP-1 receptor agonist with sodium N-(8-(2-hydroxybenzoyl)amino)caprylate (SNAC) for oral administration"
+    },
+    {
+      "name": "SNAC",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "chemical_name": "sodium N-(8-(2-hydroxybenzoyl)amino)caprylate",
+        "synonym": "salcaprozate sodium",
+        "IUPAC": "sodium 8-[(2-hydroxybenzoyl)amino]octanoate",
+        "InChIKey": "UOENJXXSKABLJL-UHFFFAOYSA-M",
+        "role": "absorption enhancer"
+      },
+      "confidence": 0.95,
+      "context": "SNAC is an absorption enhancer that enables oral delivery of peptide therapeutics by transiently increasing gastric epithelial permeability"
+    },
+    {
+      "name": "liraglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "class": "GLP-1 receptor agonist"
+      },
+      "confidence": 0.9,
+      "context": "The GLP-1 agonists specifically discussed include semaglutide and liraglutide."
+    },
+    {
+      "name": "oral semaglutide tablet",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "fixed-dose combination",
+        "components": "semaglutide + SNAC 300mg",
+        "doses": "3mg, 7mg, 14mg semaglutide",
+        "brand_name": "Rybelsus"
+      },
+      "confidence": 0.95,
+      "context": "Semaglutide is formulated as oral tablets containing 300 mg SNAC with 3 mg, 7 mg, or 14 mg semaglutide... marketed as Rybelsus"
+    },
+    {
+      "name": "orforglipron",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "nonpeptide GLP-1 agonist"
+      },
+      "confidence": 0.9,
+      "context": "Next-generation oral approaches include small-molecule nonpeptide GLP-1 agonists (orforglipron, danuglipron)"
+    },
+    {
+      "name": "danuglipron",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "nonpeptide GLP-1 agonist"
+      },
+      "confidence": 0.9,
+      "context": "small-molecule nonpeptide GLP-1 agonists (orforglipron, danuglipron) that do not require absorption enhancers"
+    },
+    {
+      "name": "octanoic acid",
+      "entity_type": "METABOLITE",
+      "attributes": {
+        "InChIKey": "WWZKQHOCKIZLMA-UHFFFAOYSA-N",
+        "role": "caprylic acid backbone of SNAC"
+      },
+      "confidence": 0.85,
+      "context": "The related caprylic acid backbone has the identifier WWZKQHOCKIZLMA-UHFFFAOYSA-N (octanoic acid)"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "GLP-1 receptor agonist"
+    },
+    {
+      "name": "pepsin",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "role": "gastric protease"
+      },
+      "confidence": 0.88,
+      "context": "protecting semaglutide from pepsin degradation"
+    },
+    {
+      "name": "oral peptide absorption enhancement",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism": "localized pH increase, pepsin protection, transcellular absorption in stomach"
+      },
+      "confidence": 0.93,
+      "context": "SNAC overcomes these barriers by creating a localized pH increase around the tablet, protecting semaglutide from pepsin degradation, and facilitating transcellular absorption primarily in the stomach"
+    },
+    {
+      "name": "Novo Nordisk AS",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "patent assignee"
+      },
+      "confidence": 0.95,
+      "context": "Assignee: Novo Nordisk AS"
+    },
+    {
+      "name": "Rybelsus",
+      "entity_type": "REGULATORY_ACTION",
+      "attributes": {
+        "type": "marketed product",
+        "compound": "oral semaglutide"
+      },
+      "confidence": 0.9,
+      "context": "This oral formulation is marketed as Rybelsus."
+    },
+    {
+      "name": "gastric epithelium",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "transiently increasing gastric epithelial permeability"
+    },
+    {
+      "name": "intestinal epithelium",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {},
+      "confidence": 0.82,
+      "context": "poor passive permeability across the intestinal epithelium"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP1R",
+      "confidence": 0.95,
+      "evidence": "GLP-1 receptor agonist"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "liraglutide",
+      "target_entity": "GLP1R",
+      "confidence": 0.9,
+      "evidence": "The GLP-1 agonists specifically discussed include semaglutide and liraglutide."
+    },
+    {
+      "relation_type": "COMBINED_WITH",
+      "source_entity": "semaglutide",
+      "target_entity": "SNAC",
+      "confidence": 0.95,
+      "evidence": "pharmaceutical compositions combining a GLP-1 receptor agonist with sodium N-(8-(2-hydroxybenzoyl)amino)caprylate (SNAC) for oral administration"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "SNAC",
+      "target_entity": "oral peptide absorption enhancement",
+      "confidence": 0.93,
+      "evidence": "SNAC overcomes these barriers by creating a localized pH increase around the tablet, protecting semaglutide from pepsin degradation, and facilitating transcellular absorption primarily in the stomach"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "oral semaglutide tablet",
+      "target_entity": "Novo Nordisk AS",
+      "confidence": 0.95,
+      "evidence": "Assignee: Novo Nordisk AS"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "semaglutide",
+      "target_entity": "Novo Nordisk AS",
+      "confidence": 0.93,
+      "evidence": "Assignee: Novo Nordisk AS"
+    },
+    {
+      "relation_type": "GRANTS_APPROVAL_FOR",
+      "source_entity": "Rybelsus",
+      "target_entity": "oral semaglutide tablet",
+      "confidence": 0.88,
+      "evidence": "This oral formulation is marketed as Rybelsus."
+    },
+    {
+      "relation_type": "DERIVED_FROM",
+      "source_entity": "SNAC",
+      "target_entity": "octanoic acid",
+      "confidence": 0.85,
+      "evidence": "The related caprylic acid backbone has the identifier WWZKQHOCKIZLMA-UHFFFAOYSA-N (octanoic acid)"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "orforglipron",
+      "target_entity": "GLP1R",
+      "confidence": 0.88,
+      "evidence": "small-molecule nonpeptide GLP-1 agonists (orforglipron, danuglipron)"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "danuglipron",
+      "target_entity": "GLP1R",
+      "confidence": 0.88,
+      "evidence": "small-molecule nonpeptide GLP-1 agonists (orforglipron, danuglipron)"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T14:16:41.893116+00:00",
+  "error": null
+}

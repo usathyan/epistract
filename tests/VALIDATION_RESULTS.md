@@ -95,13 +95,14 @@ For each scenario:
 
 ## Per-Scenario Validation Results
 
-All five scenarios have been run and validated. Detailed validation results with entity tables, relation tables, UAT verification, and molecular identifier checks are available in each scenario's output directory:
+All six scenarios have been run and validated. Detailed validation results with entity tables, relation tables, UAT verification, and molecular identifier checks are available in each scenario's output directory:
 
 - [Scenario 1: PICALM / Alzheimer's](corpora/01_picalm_alzheimers/output/VALIDATION_RESULTS.md) — 14 entities, 12 relations verified
 - [Scenario 2: KRAS G12C Landscape](corpora/02_kras_g12c_landscape/output/VALIDATION_RESULTS.md) — 18 entities, 19 relations verified
 - [Scenario 3: Rare Disease Therapeutics](corpora/03_rare_disease/output/VALIDATION_RESULTS.md) — 15 entities, 13 relations verified
 - [Scenario 4: Immuno-Oncology Combinations](corpora/04_immunooncology/output/VALIDATION_RESULTS.md) — 33 entities, 30 relations verified (ACCEPTED WITH CONDITIONS — 1 false-positive peptide sequence)
 - [Scenario 5: Cardiovascular & Inflammation](corpora/05_cardiovascular/output/VALIDATION_RESULTS.md) — 22 entities, 18 relations verified
+- [Scenario 6: GLP-1 Competitive Intelligence](corpora/06_glp1_landscape/output/VALIDATION_RESULTS.md) — 206 nodes, 630 links; multi-source (PubMed + Scholar + Patents); patent molecular identifiers validated
 
 ---
 
@@ -114,7 +115,8 @@ All five scenarios have been run and validated. Detailed validation results with
 | 3: Rare Disease Therapeutics | 15 / 15 | 13 / 13 | 3 / 3 | 5 NCTs | ACCEPTED |
 | 4: Immuno-Oncology Combinations | 32 / 33 | 28 / 30 | 4 / 4 | 23 NCTs, 22 seqs | ACCEPTED W/ CONDITIONS |
 | 5: Cardiovascular & Inflammation | 22 / 22 | 18 / 18 | 3 / 3 | 6 IDs | ACCEPTED |
+| 6: GLP-1 CI (multi-source) | PENDING | PENDING | 6 / 6 | 5 AA seqs, 1 CAS, 2 InChIKeys, 17 NCTs, 6 patents | PENDING REVIEW |
 
-**Overall Status:** [x] ACCEPTED WITH CONDITIONS (S4 false-positive peptide noted)
+**Overall Status:** [x] ACCEPTED WITH CONDITIONS (S4 false-positive peptide noted; S6 pending manual review)
 
-**Reviewer:** Umesh Bhatt  **Date:** 2026-03-16
+**Reviewer:** Umesh Bhatt  **Date:** 2026-03-17

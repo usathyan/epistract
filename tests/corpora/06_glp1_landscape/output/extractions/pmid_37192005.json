@@ -1,0 +1,174 @@
+{
+  "document_id": "pmid_37192005",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "description": "long-acting GLP-1 analogue"
+      },
+      "confidence": 0.98,
+      "context": "semaglutide, a long-acting GLP-1 analogue"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "glucagon-like peptide-1 (GLP-1) system"
+    },
+    {
+      "name": "GLP-1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1"
+      },
+      "confidence": 0.97,
+      "context": "The glucagon-like peptide-1 (GLP-1) analogue semaglutide"
+    },
+    {
+      "name": "GABA",
+      "entity_type": "METABOLITE",
+      "attributes": {
+        "full_name": "gamma-aminobutyric acid"
+      },
+      "confidence": 0.95,
+      "context": "modulates central GABA neurotransmission"
+    },
+    {
+      "name": "alcohol use disorder",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "AUD",
+        "mesh_term": "Alcoholism"
+      },
+      "confidence": 0.97,
+      "context": "GLP-1 analogues may be used for the treatment of alcohol use disorder (AUD)"
+    },
+    {
+      "name": "alcohol dependence",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.88,
+      "context": "dependence-induced alcohol drinking in rats"
+    },
+    {
+      "name": "central amygdala",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {
+        "abbreviation": "CeA"
+      },
+      "confidence": 0.93,
+      "context": "spontaneous inhibitory postsynaptic currents (sIPSCs) from central amygdala (CeA)"
+    },
+    {
+      "name": "infralimbic cortex",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {
+        "abbreviation": "ILC"
+      },
+      "confidence": 0.93,
+      "context": "infralimbic cortex (ILC) neurons"
+    },
+    {
+      "name": "GABAergic neurotransmission",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.92,
+      "context": "modulated central GABA neurotransmission"
+    },
+    {
+      "name": "GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "GLP-1 analogue semaglutide"
+    },
+    {
+      "name": "binge-like alcohol drinking",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "Semaglutide dose-dependently reduced binge-like alcohol drinking in mice"
+    },
+    {
+      "name": "JCI insight",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "37192005",
+        "year": 2023
+      },
+      "confidence": 0.99,
+      "context": "Journal: JCI insight (2023)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP1R",
+      "confidence": 0.97,
+      "evidence": "GLP-1 analogue semaglutide"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor agonism",
+      "confidence": 0.95,
+      "evidence": "semaglutide, a long-acting GLP-1 analogue"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "alcohol use disorder",
+      "confidence": 0.75,
+      "evidence": "GLP-1 analogues may be used for the treatment of alcohol use disorder (AUD)"
+    },
+    {
+      "relation_type": "REGULATES_EXPRESSION",
+      "source_entity": "semaglutide",
+      "target_entity": "GABA",
+      "confidence": 0.88,
+      "evidence": "Semaglutide increased sIPSC frequency in CeA and ILC neurons from alcohol-naive rats, suggesting enhanced GABA release"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "GABA",
+      "target_entity": "GABAergic neurotransmission",
+      "confidence": 0.95,
+      "evidence": "modulated central GABA neurotransmission"
+    },
+    {
+      "relation_type": "EXPRESSED_IN",
+      "source_entity": "GLP1R",
+      "target_entity": "central amygdala",
+      "confidence": 0.8,
+      "evidence": "sIPSCs from central amygdala (CeA) and infralimbic cortex (ILC) neurons"
+    },
+    {
+      "relation_type": "EXPRESSED_IN",
+      "source_entity": "GLP1R",
+      "target_entity": "infralimbic cortex",
+      "confidence": 0.8,
+      "evidence": "sIPSCs from central amygdala (CeA) and infralimbic cortex (ILC) neurons"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "semaglutide",
+      "target_entity": "binge-like alcohol drinking",
+      "confidence": 0.92,
+      "evidence": "Semaglutide dose-dependently reduced binge-like alcohol drinking in mice"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T14:17:06.543160+00:00",
+  "error": null
+}

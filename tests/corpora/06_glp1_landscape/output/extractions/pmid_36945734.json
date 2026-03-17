@@ -1,0 +1,178 @@
+{
+  "document_id": "pmid_36945734",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule (oral)",
+        "dose": "14 mg once daily",
+        "route": "oral"
+      },
+      "confidence": 0.98,
+      "context": "oral semaglutide, the first oral glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "oral glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Diabetes Mellitus, Type 2"
+      },
+      "confidence": 0.99,
+      "context": "individuals with type 2 diabetes and established atherosclerotic CV disease"
+    },
+    {
+      "name": "atherosclerotic cardiovascular disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "ASCVD"
+      },
+      "confidence": 0.97,
+      "context": "established atherosclerotic CV disease (ASCVD)"
+    },
+    {
+      "name": "chronic kidney disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "CKD"
+      },
+      "confidence": 0.97,
+      "context": "chronic kidney disease (CKD)"
+    },
+    {
+      "name": "coronary artery disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "CAD"
+      },
+      "confidence": 0.95,
+      "context": "coronary artery disease [CAD], cerebrovascular disease, symptomatic peripheral arterial disease"
+    },
+    {
+      "name": "cerebrovascular disease",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.93,
+      "context": "coronary artery disease [CAD], cerebrovascular disease, symptomatic peripheral arterial disease"
+    },
+    {
+      "name": "peripheral arterial disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "PAD"
+      },
+      "confidence": 0.93,
+      "context": "symptomatic peripheral arterial disease [PAD]"
+    },
+    {
+      "name": "SOUL",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "full_name": "Semaglutide cardiOvascular oUtcomes triaL",
+        "design": "randomized, double-blind, parallel-group, placebo-controlled",
+        "enrollment": 9650,
+        "enrollment_start": "2019-06-17",
+        "enrollment_end": "2021-03-24"
+      },
+      "confidence": 0.99,
+      "context": "SOUL trial (Semaglutide cardiOvascular oUtcomes triaL)"
+    },
+    {
+      "name": "SGLT2 inhibitors",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "drug_class": "Sodium-Glucose Transporter 2 Inhibitors"
+      },
+      "confidence": 0.85,
+      "context": "Sodium-Glucose Transporter 2 Inhibitors"
+    },
+    {
+      "name": "insulin",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "biologic"
+      },
+      "confidence": 0.85,
+      "context": "Insulins"
+    },
+    {
+      "name": "GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "oral glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "name": "Diabetes, obesity & metabolism",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "36945734",
+        "year": 2023
+      },
+      "confidence": 0.99,
+      "context": "Journal: Diabetes, obesity & metabolism (2023)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP1R",
+      "confidence": 0.97,
+      "evidence": "oral semaglutide, the first oral glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor agonism",
+      "confidence": 0.95,
+      "evidence": "oral glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "semaglutide",
+      "target_entity": "SOUL",
+      "confidence": 0.99,
+      "evidence": "SOUL trial (Semaglutide cardiOvascular oUtcomes triaL)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.95,
+      "evidence": "individuals with type 2 diabetes and established atherosclerotic CV disease"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "type 2 diabetes mellitus",
+      "target_entity": "atherosclerotic cardiovascular disease",
+      "confidence": 0.9,
+      "evidence": "individuals with type 2 diabetes and established atherosclerotic CV disease (ASCVD)"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "type 2 diabetes mellitus",
+      "target_entity": "chronic kidney disease",
+      "confidence": 0.9,
+      "evidence": "individuals with type 2 diabetes and established atherosclerotic CV disease (ASCVD) and/or chronic kidney disease (CKD)"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T14:16:38.224211+00:00",
+  "error": null
+}

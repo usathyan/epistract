@@ -1,0 +1,8 @@
+Title: Weight regain and cardiometabolic effects after withdrawal of semaglutide: The STEP 1 trial extension.
+Authors: Wilding John P H, Batterham Rachel L, Davies Melanie, Van Gaal Luc F, Kandler Kristian
+Journal: Diabetes, obesity & metabolism (2022)
+PMID: 35441470
+MeSH Terms: Adult, Cardiovascular Diseases, Diabetes Mellitus, Glucagon-Like Peptides, Humans, Weight Gain, Semaglutide
+
+ABSTRACT:
+AIM: To explore changes in body weight and cardiometabolic risk factors after treatment withdrawal in the STEP 1 trial extension. MATERIALS AND METHODS: STEP 1 (NCT03548935) randomized 1961 adults with a body mass index ≥ 30 kg/m RESULTS: Extension analyses included 327 participants. From week 0 to week 68, mean weight loss was 17.3% (SD: 9.3%) with semaglutide and 2.0% (SD: 6.1%) with placebo. Following treatment withdrawal, semaglutide and placebo participants regained 11.6 (SD: 7.7) and 1.9 (SD: 4.8) percentage points of lost weight, respectively, by week 120, resulting in net losses of 5.6% (SD: 8.9%) and 0.1% (SD: 5.8%), respectively, from week 0 to week 120. Cardiometabolic improvements seen from week 0 to week 68 with semaglutide reverted towards baseline at week 120 for most variables. CONCLUSIONS: One year after withdrawal of once-weekly subcutaneous semaglutide 2.4 mg and lifestyle intervention, participants regained two-thirds of their prior weight loss, with similar changes in cardiometabolic variables. Findings confirm the chronicity of obesity and suggest ongoing treatment is required to maintain improvements in weight and health.

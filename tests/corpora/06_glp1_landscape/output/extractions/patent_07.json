@@ -1,0 +1,211 @@
+{
+  "document_id": "patent_07",
+  "document_path": "tests/corpora/06_glp1_landscape/docs/patent_07_WO2019239319A1_pfizer_danuglipron.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "danuglipron",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "synonym": "PF-06882961",
+        "chemical_class": "benzimidazole-6-carboxylic acid"
+      },
+      "confidence": 0.95,
+      "context": "This patent is part of the chemical series from which danuglipron (PF-06882961) was developed by Pfizer."
+    },
+    {
+      "name": "Compound 1 (benzodioxol-benzimidazole)",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "chemical_name": "2-({4-[2-(4-chloro-2-fluorophenyl)-1,3-benzodioxol-4-yl]piperidin-1-yl}methyl)-1-[(2S)-oxetan-2-ylmethyl]-1H-benzimidazole-6-carboxylic acid"
+      },
+      "confidence": 0.9,
+      "context": "Compound 1: 2-({4-[2-(4-chloro-2-fluorophenyl)-1,3-benzodioxol-4-yl]piperidin-1-yl}methyl)-1-[(2S)-oxetan-2-ylmethyl]-1H-benzimidazole-6-carboxylic acid"
+    },
+    {
+      "name": "Compound 2 (methylbenzodioxol-benzimidazole)",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "chemical_name": "2-({4-[(2S)-2-(4-chloro-2-fluorophenyl)-2-methyl-1,3-benzodioxol-4-yl]piperidin-1-yl}methyl)-1-[(2S)-oxetan-2-ylmethyl]-1H-benzimidazole-6-carboxylic acid"
+      },
+      "confidence": 0.9,
+      "context": "Compound 2: 2-({4-[(2S)-2-(4-chloro-2-fluorophenyl)-2-methyl-1,3-benzodioxol-4-yl]piperidin-1-yl}methyl)-1-[(2S)-oxetan-2-ylmethyl]-1H-benzimidazole-6-carboxylic acid (including tris salt forms)"
+    },
+    {
+      "name": "Compound 3 (chloropyridinyl-benzimidazole)",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "chemical_name": "2-({4-[2-(5-Chloropyridin-2-yl)-2-methyl-1,3-benzodioxol-4-yl]piperidin-1-yl}methyl)-1-[(2S)-oxetan-2-ylmethyl]-1H-benzimidazole-6-carboxylic acid",
+        "designation": "DIAST-X2"
+      },
+      "confidence": 0.9,
+      "context": "Compound 3: 2-({4-[2-(5-Chloropyridin-2-yl)-2-methyl-1,3-benzodioxol-4-yl]piperidin-1-yl}methyl)-1-[(2S)-oxetan-2-ylmethyl]-1H-benzimidazole-6-carboxylic acid (DIAST-X2)"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "small-molecule GLP-1 receptor agonists"
+    },
+    {
+      "name": "DPP4",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "dipeptidyl peptidase-4"
+      },
+      "confidence": 0.9,
+      "context": "resistant to proteolytic degradation by DPP-4 and neutral endopeptidases"
+    },
+    {
+      "name": "allosteric GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "binding_site": "transmembrane pocket"
+      },
+      "confidence": 0.93,
+      "context": "activate the GLP-1 receptor through an allosteric mechanism, binding within a transmembrane pocket distinct from the orthosteric peptide-binding domain"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Therapeutic indications include type 2 diabetes mellitus, obesity, non-alcoholic steatohepatitis (NASH)"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Therapeutic indications include type 2 diabetes mellitus, obesity"
+    },
+    {
+      "name": "non-alcoholic steatohepatitis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "synonym": "NASH"
+      },
+      "confidence": 0.95,
+      "context": "non-alcoholic steatohepatitis (NASH)"
+    },
+    {
+      "name": "cardiovascular disease",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "cardiovascular disease, and related metabolic disorders"
+    },
+    {
+      "name": "Pfizer Inc",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "patent assignee"
+      },
+      "confidence": 0.95,
+      "context": "Assignee: Pfizer Inc"
+    },
+    {
+      "name": "danuglipron Phase 2/3",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "Phase 2/3",
+        "compound": "danuglipron",
+        "status": "twice-daily discontinued; once-daily ER continues"
+      },
+      "confidence": 0.9,
+      "context": "Danuglipron, derived from this chemical series, advanced to Phase 2/3 clinical trials. Pfizer discontinued the twice-daily formulation but continues development of a once-daily extended-release formulation for obesity."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "danuglipron",
+      "target_entity": "GLP1R",
+      "confidence": 0.95,
+      "evidence": "small-molecule GLP-1 receptor agonists... danuglipron (PF-06882961) was developed by Pfizer"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "danuglipron",
+      "target_entity": "allosteric GLP-1 receptor agonism",
+      "confidence": 0.93,
+      "evidence": "activate the GLP-1 receptor through an allosteric mechanism, binding within a transmembrane pocket distinct from the orthosteric peptide-binding domain"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "danuglipron",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.93,
+      "evidence": "Therapeutic indications include type 2 diabetes mellitus"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "danuglipron",
+      "target_entity": "obesity",
+      "confidence": 0.93,
+      "evidence": "continues development of a once-daily extended-release formulation for obesity"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "danuglipron",
+      "target_entity": "non-alcoholic steatohepatitis",
+      "confidence": 0.88,
+      "evidence": "Therapeutic indications include type 2 diabetes mellitus, obesity, non-alcoholic steatohepatitis (NASH)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "danuglipron",
+      "target_entity": "cardiovascular disease",
+      "confidence": 0.85,
+      "evidence": "cardiovascular disease, and related metabolic disorders"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "danuglipron",
+      "target_entity": "Pfizer Inc",
+      "confidence": 0.95,
+      "evidence": "danuglipron (PF-06882961) was developed by Pfizer"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "danuglipron",
+      "target_entity": "danuglipron Phase 2/3",
+      "confidence": 0.9,
+      "evidence": "Danuglipron, derived from this chemical series, advanced to Phase 2/3 clinical trials"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "Compound 1 (benzodioxol-benzimidazole)",
+      "target_entity": "GLP1R",
+      "confidence": 0.88,
+      "evidence": "6-carboxylic acids of benzimidazoles... as small-molecule GLP-1 receptor agonists"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "Compound 2 (methylbenzodioxol-benzimidazole)",
+      "target_entity": "GLP1R",
+      "confidence": 0.88,
+      "evidence": "6-carboxylic acids of benzimidazoles... as small-molecule GLP-1 receptor agonists"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "Compound 3 (chloropyridinyl-benzimidazole)",
+      "target_entity": "GLP1R",
+      "confidence": 0.88,
+      "evidence": "6-carboxylic acids of benzimidazoles... as small-molecule GLP-1 receptor agonists"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T14:15:28.672938+00:00",
+  "error": null
+}

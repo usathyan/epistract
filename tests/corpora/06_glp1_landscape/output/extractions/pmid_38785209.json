@@ -1,0 +1,192 @@
+{
+  "document_id": "pmid_38785209",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "route": "subcutaneous"
+      },
+      "confidence": 0.98,
+      "context": "treatment with semaglutide would mitigate these risks"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.97,
+      "context": "Patients with type 2 diabetes and chronic kidney disease"
+    },
+    {
+      "name": "chronic kidney disease",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.97,
+      "context": "chronic kidney disease"
+    },
+    {
+      "name": "kidney failure",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "at high risk for kidney failure"
+    },
+    {
+      "name": "cardiovascular disease",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "cardiovascular events, and death"
+    },
+    {
+      "name": "diabetic nephropathy",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "Diabetic Nephropathies"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.9,
+      "context": "Glucagon-Like Peptide-1 Receptor Agonists"
+    },
+    {
+      "name": "estimated glomerular filtration rate",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "eGFR",
+        "unit": "ml per minute per 1.73 m2"
+      },
+      "confidence": 0.95,
+      "context": "estimated glomerular filtration rate [eGFR] of 50 to 75 ml per minute per 1.73 m"
+    },
+    {
+      "name": "FLOW",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT03819153",
+        "phase": "III",
+        "design": "randomized, placebo-controlled",
+        "n": 3533,
+        "median_followup": "3.4 years"
+      },
+      "confidence": 0.97,
+      "context": "FLOW ClinicalTrials.gov number, NCT03819153"
+    },
+    {
+      "name": "Novo Nordisk",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "sponsor"
+      },
+      "confidence": 0.95,
+      "context": "Funded by Novo Nordisk"
+    },
+    {
+      "name": "GLP-1 receptor agonist",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.93,
+      "context": "Glucagon-Like Peptide-1 Receptor Agonists, Semaglutide"
+    },
+    {
+      "name": "cardiovascular death",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "death from cardiovascular causes (hazard ratio, 0.71)"
+    },
+    {
+      "name": "kidney outcome events",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.88,
+      "context": "risk of clinically important kidney outcomes"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP1R",
+      "confidence": 0.93,
+      "evidence": "Glucagon-Like Peptide-1 Receptor Agonists, Semaglutide"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor agonist",
+      "confidence": 0.93,
+      "evidence": "Glucagon-Like Peptide-1 Receptor Agonists"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.9,
+      "evidence": "Patients with type 2 diabetes"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "chronic kidney disease",
+      "confidence": 0.9,
+      "evidence": "Semaglutide reduced the risk of clinically important kidney outcomes"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "semaglutide",
+      "target_entity": "FLOW",
+      "confidence": 0.97,
+      "evidence": "FLOW ClinicalTrials.gov number, NCT03819153"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "semaglutide",
+      "target_entity": "Novo Nordisk",
+      "confidence": 0.9,
+      "evidence": "Funded by Novo Nordisk"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "type 2 diabetes mellitus",
+      "target_entity": "chronic kidney disease",
+      "confidence": 0.95,
+      "evidence": "Patients with type 2 diabetes and chronic kidney disease"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "chronic kidney disease",
+      "target_entity": "kidney failure",
+      "confidence": 0.9,
+      "evidence": "at high risk for kidney failure"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "chronic kidney disease",
+      "target_entity": "cardiovascular disease",
+      "confidence": 0.9,
+      "evidence": "cardiovascular events, and death"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "estimated glomerular filtration rate",
+      "target_entity": "chronic kidney disease",
+      "confidence": 0.93,
+      "evidence": "chronic kidney disease (defined by an estimated glomerular filtration rate [eGFR])"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T14:15:44.959776+00:00",
+  "error": null
+}

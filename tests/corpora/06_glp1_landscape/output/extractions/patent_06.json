@@ -1,0 +1,254 @@
+{
+  "document_id": "patent_06",
+  "document_path": "tests/corpora/06_glp1_landscape/docs/patent_06_US10370426B2_triple_agonist.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "triple GLP-1/GIP/glucagon receptor agonist peptide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "variants": "SEQ ID NOS 1-102",
+        "general_formula": "SEQ ID NO 103"
+      },
+      "confidence": 0.95,
+      "context": "The patent discloses 102 specific peptide variants (SEQ ID NOS: 1-102) for triple receptor agonism."
+    },
+    {
+      "name": "retatrutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "synonym": "LY3437943",
+        "mechanism": "triple GIP/GLP-1/glucagon receptor agonist"
+      },
+      "confidence": 0.95,
+      "context": "Retatrutide (LY3437943), developed by Eli Lilly, is a related triple GIP/GLP-1/glucagon receptor agonist currently in Phase 3 clinical trials"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "activates glucagon-like peptide-1 (GLP-1) receptor for glucose-dependent insulin secretion and appetite suppression"
+    },
+    {
+      "name": "GIPR",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucose-dependent insulinotropic polypeptide receptor"
+      },
+      "confidence": 0.95,
+      "context": "glucose-dependent insulinotropic polypeptide (GIP) receptor for enhanced insulin response and lipid metabolism"
+    },
+    {
+      "name": "GCGR",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon receptor"
+      },
+      "confidence": 0.95,
+      "context": "glucagon receptor (GCGR) for increased energy expenditure and hepatic lipid oxidation"
+    },
+    {
+      "name": "triple GLP-1/GIP/glucagon receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "The triple agonist approach simultaneously activates glucagon-like peptide-1 (GLP-1) receptor... glucose-dependent insulinotropic polypeptide (GIP) receptor... and glucagon receptor (GCGR)"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease"
+    },
+    {
+      "name": "dyslipidemia",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease"
+    },
+    {
+      "name": "non-alcoholic fatty liver disease",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease"
+    },
+    {
+      "name": "Hanmi Pharmaceutical Co Ltd",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "patent assignee"
+      },
+      "confidence": 0.95,
+      "context": "Assignee: Hanmi Pharmaceutical Co Ltd"
+    },
+    {
+      "name": "Eli Lilly",
+      "entity_type": "ORGANIZATION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Retatrutide (LY3437943), developed by Eli Lilly"
+    },
+    {
+      "name": "retatrutide Phase 3",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "Phase 3",
+        "compound": "retatrutide"
+      },
+      "confidence": 0.9,
+      "context": "currently in Phase 3 clinical trials that has demonstrated up to 24% body weight reduction in Phase 2 studies"
+    },
+    {
+      "name": "glucose-dependent insulin secretion",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "GLP-1 receptor for glucose-dependent insulin secretion and appetite suppression"
+    },
+    {
+      "name": "hepatic lipid oxidation",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "glucagon receptor (GCGR) for increased energy expenditure and hepatic lipid oxidation"
+    },
+    {
+      "name": "body weight reduction",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "magnitude": "up to 24%",
+        "trial_phase": "Phase 2"
+      },
+      "confidence": 0.9,
+      "context": "demonstrated up to 24% body weight reduction in Phase 2 studies"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "triple GLP-1/GIP/glucagon receptor agonist peptide",
+      "target_entity": "GLP1R",
+      "confidence": 0.95,
+      "evidence": "The triple agonist approach simultaneously activates glucagon-like peptide-1 (GLP-1) receptor"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "triple GLP-1/GIP/glucagon receptor agonist peptide",
+      "target_entity": "GIPR",
+      "confidence": 0.95,
+      "evidence": "glucose-dependent insulinotropic polypeptide (GIP) receptor for enhanced insulin response"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "triple GLP-1/GIP/glucagon receptor agonist peptide",
+      "target_entity": "GCGR",
+      "confidence": 0.95,
+      "evidence": "glucagon receptor (GCGR) for increased energy expenditure and hepatic lipid oxidation"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "retatrutide",
+      "target_entity": "GLP1R",
+      "confidence": 0.93,
+      "evidence": "Retatrutide (LY3437943), developed by Eli Lilly, is a related triple GIP/GLP-1/glucagon receptor agonist"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "retatrutide",
+      "target_entity": "GIPR",
+      "confidence": 0.93,
+      "evidence": "Retatrutide (LY3437943), developed by Eli Lilly, is a related triple GIP/GLP-1/glucagon receptor agonist"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "retatrutide",
+      "target_entity": "GCGR",
+      "confidence": 0.93,
+      "evidence": "Retatrutide (LY3437943), developed by Eli Lilly, is a related triple GIP/GLP-1/glucagon receptor agonist"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "triple GLP-1/GIP/glucagon receptor agonist peptide",
+      "target_entity": "triple GLP-1/GIP/glucagon receptor agonism",
+      "confidence": 0.95,
+      "evidence": "The triple agonist approach simultaneously activates glucagon-like peptide-1 (GLP-1) receptor... GIP receptor... and glucagon receptor"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "triple GLP-1/GIP/glucagon receptor agonist peptide",
+      "target_entity": "obesity",
+      "confidence": 0.95,
+      "evidence": "treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "triple GLP-1/GIP/glucagon receptor agonist peptide",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.95,
+      "evidence": "treating metabolic disorders including obesity, type 2 diabetes"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "triple GLP-1/GIP/glucagon receptor agonist peptide",
+      "target_entity": "dyslipidemia",
+      "confidence": 0.9,
+      "evidence": "treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "triple GLP-1/GIP/glucagon receptor agonist peptide",
+      "target_entity": "non-alcoholic fatty liver disease",
+      "confidence": 0.95,
+      "evidence": "treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "triple GLP-1/GIP/glucagon receptor agonist peptide",
+      "target_entity": "Hanmi Pharmaceutical Co Ltd",
+      "confidence": 0.95,
+      "evidence": "Assignee: Hanmi Pharmaceutical Co Ltd"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "retatrutide",
+      "target_entity": "Eli Lilly",
+      "confidence": 0.95,
+      "evidence": "Retatrutide (LY3437943), developed by Eli Lilly"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "retatrutide",
+      "target_entity": "retatrutide Phase 3",
+      "confidence": 0.9,
+      "evidence": "currently in Phase 3 clinical trials that has demonstrated up to 24% body weight reduction in Phase 2 studies"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "retatrutide",
+      "target_entity": "body weight reduction",
+      "confidence": 0.9,
+      "evidence": "demonstrated up to 24% body weight reduction in Phase 2 studies"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T14:14:58.653444+00:00",
+  "error": null
+}

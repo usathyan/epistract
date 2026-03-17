@@ -1,0 +1,225 @@
+{
+  "document_id": "pmid_38367045",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "retatrutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "status": "investigational",
+        "triple_agonist": true
+      },
+      "confidence": 0.97,
+      "context": "Retatrutide is a novel triple receptor agonist peptide"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.97,
+      "context": "Obesity is one of the critical public health problems in our society"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "type 2 diabetes mellitus"
+    },
+    {
+      "name": "cardiovascular disease",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "cardiovascular disease"
+    },
+    {
+      "name": "hypertension",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "hypertension"
+    },
+    {
+      "name": "dyslipidaemia",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "dyslipidaemia"
+    },
+    {
+      "name": "non-alcoholic fatty liver disease",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "non-alcoholic fatty liver disease"
+    },
+    {
+      "name": "GCGR",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon receptor"
+      },
+      "confidence": 0.95,
+      "context": "targets the glucagon receptor (GCGR)"
+    },
+    {
+      "name": "GIPR",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucose-dependent insulinotropic polypeptide receptor"
+      },
+      "confidence": 0.95,
+      "context": "glucose-dependent insulinotropic polypeptide receptor (GIPR)"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "glucagon-like peptide-1 receptor (GLP-1R)"
+    },
+    {
+      "name": "triple receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "targets": [
+          "GCGR",
+          "GIPR",
+          "GLP1R"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "novel triple receptor agonist peptide that targets the glucagon receptor (GCGR), glucose-dependent insulinotropic polypeptide receptor (GIPR), and glucagon-like peptide-1 receptor (GLP-1R)"
+    },
+    {
+      "name": "weight loss",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "significant weight reduction in overweight and obese adults"
+    },
+    {
+      "name": "Phase II clinical trial (retatrutide obesity)",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "II",
+        "weight_loss_24wk": "17.5%",
+        "weight_loss_48wk": "24.4%"
+      },
+      "confidence": 0.93,
+      "context": "The results of a Phase II clinical trial have demonstrated significant weight reduction"
+    },
+    {
+      "name": "Phase III trial (retatrutide)",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "III",
+        "start_date": "2023-08-28",
+        "indications": [
+          "type 2 diabetes mellitus",
+          "non-alcoholic fatty liver disease",
+          "obesity"
+        ]
+      },
+      "confidence": 0.93,
+      "context": "The Phase III trial of this pipeline drug for treating type 2 diabetes mellitus, non-alcoholic fatty liver disease, and obesity started on August 28, 2023"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "retatrutide",
+      "target_entity": "GCGR",
+      "confidence": 0.95,
+      "evidence": "targets the glucagon receptor (GCGR)"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "retatrutide",
+      "target_entity": "GIPR",
+      "confidence": 0.95,
+      "evidence": "glucose-dependent insulinotropic polypeptide receptor (GIPR)"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "retatrutide",
+      "target_entity": "GLP1R",
+      "confidence": 0.95,
+      "evidence": "glucagon-like peptide-1 receptor (GLP-1R)"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "retatrutide",
+      "target_entity": "triple receptor agonism",
+      "confidence": 0.95,
+      "evidence": "novel triple receptor agonist peptide"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "retatrutide",
+      "target_entity": "obesity",
+      "confidence": 0.9,
+      "evidence": "treatment of obesity"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "retatrutide",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.85,
+      "evidence": "Phase III trial of this pipeline drug for treating type 2 diabetes mellitus"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "retatrutide",
+      "target_entity": "non-alcoholic fatty liver disease",
+      "confidence": 0.85,
+      "evidence": "Phase III trial of this pipeline drug for treating...non-alcoholic fatty liver disease"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "retatrutide",
+      "target_entity": "Phase II clinical trial (retatrutide obesity)",
+      "confidence": 0.95,
+      "evidence": "The results of a Phase II clinical trial have demonstrated significant weight reduction"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "retatrutide",
+      "target_entity": "Phase III trial (retatrutide)",
+      "confidence": 0.93,
+      "evidence": "The Phase III trial of this pipeline drug"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "obesity",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.9,
+      "evidence": "leads to various health conditions, such as type 2 diabetes mellitus"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "obesity",
+      "target_entity": "cardiovascular disease",
+      "confidence": 0.9,
+      "evidence": "leads to various health conditions, such as...cardiovascular disease"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "obesity",
+      "target_entity": "non-alcoholic fatty liver disease",
+      "confidence": 0.9,
+      "evidence": "leads to various health conditions, such as...non-alcoholic fatty liver disease"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T14:15:06.217710+00:00",
+  "error": null
+}

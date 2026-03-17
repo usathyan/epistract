@@ -1,0 +1,236 @@
+{
+  "document_id": "pmid_38858523",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "retatrutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "triple_agonist": true
+      },
+      "confidence": 0.98,
+      "context": "Retatrutide is a novel triple agonist of the glucose-dependent insulinotropic polypeptide, glucagon-like peptide 1 and glucagon receptors"
+    },
+    {
+      "name": "metabolic dysfunction-associated steatotic liver disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "MASLD"
+      },
+      "confidence": 0.97,
+      "context": "metabolic dysfunction-associated steatotic liver disease"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.93,
+      "context": "A 48-week phase 2 obesity study"
+    },
+    {
+      "name": "GIPR",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucose-dependent insulinotropic polypeptide receptor"
+      },
+      "confidence": 0.95,
+      "context": "glucose-dependent insulinotropic polypeptide"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "glucagon-like peptide 1"
+    },
+    {
+      "name": "GCGR",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon receptor"
+      },
+      "confidence": 0.95,
+      "context": "glucagon receptors"
+    },
+    {
+      "name": "liver fat",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "LF"
+      },
+      "confidence": 0.93,
+      "context": "mean relative change from baseline in liver fat (LF) at 24 weeks"
+    },
+    {
+      "name": "insulin sensitivity",
+      "entity_type": "BIOMARKER",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "metabolic measures associated with improved insulin sensitivity"
+    },
+    {
+      "name": "lipid metabolism",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "lipid metabolism"
+    },
+    {
+      "name": "NCT04881760",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT04881760",
+        "phase": "2a",
+        "design": "randomized, double-blind, placebo-controlled",
+        "n": 98,
+        "duration": "48 weeks"
+      },
+      "confidence": 0.97,
+      "context": "ClinicalTrials.gov registration is NCT04881760"
+    },
+    {
+      "name": "liver",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "liver fat"
+    },
+    {
+      "name": "weight loss",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "reductions": {
+          "8mg": "22.8%",
+          "12mg": "24.2%"
+        }
+      },
+      "confidence": 0.95,
+      "context": "weight reductions of 22.8% and 24.2% with retatrutide 8 and 12 mg"
+    },
+    {
+      "name": "triple receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "targets": [
+          "GIPR",
+          "GLP1R",
+          "GCGR"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "novel triple agonist of the glucose-dependent insulinotropic polypeptide, glucagon-like peptide 1 and glucagon receptors"
+    },
+    {
+      "name": "abdominal fat",
+      "entity_type": "BIOMARKER",
+      "attributes": {},
+      "confidence": 0.8,
+      "context": "changes in body weight, abdominal fat and metabolic measures"
+    },
+    {
+      "name": "Nature Medicine",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "year": 2024
+      },
+      "confidence": 0.95,
+      "context": "Nature medicine (2024)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "retatrutide",
+      "target_entity": "GIPR",
+      "confidence": 0.95,
+      "evidence": "triple agonist of the glucose-dependent insulinotropic polypeptide"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "retatrutide",
+      "target_entity": "GLP1R",
+      "confidence": 0.95,
+      "evidence": "glucagon-like peptide 1"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "retatrutide",
+      "target_entity": "GCGR",
+      "confidence": 0.95,
+      "evidence": "glucagon receptors"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "retatrutide",
+      "target_entity": "triple receptor agonism",
+      "confidence": 0.95,
+      "evidence": "novel triple agonist"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "retatrutide",
+      "target_entity": "metabolic dysfunction-associated steatotic liver disease",
+      "confidence": 0.9,
+      "evidence": "Triple hormone receptor agonist retatrutide for metabolic dysfunction-associated steatotic liver disease"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "retatrutide",
+      "target_entity": "obesity",
+      "confidence": 0.9,
+      "evidence": "A 48-week phase 2 obesity study"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "retatrutide",
+      "target_entity": "NCT04881760",
+      "confidence": 0.97,
+      "evidence": "ClinicalTrials.gov registration is NCT04881760"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "liver fat",
+      "target_entity": "metabolic dysfunction-associated steatotic liver disease",
+      "confidence": 0.9,
+      "evidence": "participants from that study with metabolic dysfunction-associated steatotic liver disease and >=10% of LF"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "metabolic dysfunction-associated steatotic liver disease",
+      "target_entity": "obesity",
+      "confidence": 0.85,
+      "evidence": "phase 2 obesity study...participants with metabolic dysfunction-associated steatotic liver disease"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "weight loss",
+      "target_entity": "liver fat",
+      "confidence": 0.88,
+      "evidence": "LF reductions were significantly related to changes in body weight"
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "NCT04881760",
+      "target_entity": "Nature Medicine",
+      "confidence": 0.9,
+      "evidence": "Nature medicine (2024)"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "insulin sensitivity",
+      "target_entity": "lipid metabolism",
+      "confidence": 0.7,
+      "evidence": "metabolic measures associated with improved insulin sensitivity and lipid metabolism"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T14:16:03.017392+00:00",
+  "error": null
+}

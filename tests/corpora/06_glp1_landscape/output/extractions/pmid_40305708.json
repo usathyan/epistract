@@ -1,0 +1,162 @@
+{
+  "document_id": "pmid_40305708",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "dose": "2.4 mg once weekly",
+        "route": "subcutaneous"
+      },
+      "confidence": 0.95,
+      "context": "once-weekly subcutaneous semaglutide at a dose of 2.4 mg"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "name": "metabolic dysfunction-associated steatohepatitis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "MASH"
+      },
+      "confidence": 0.95,
+      "context": "treatment of metabolic dysfunction-associated steatohepatitis (MASH)"
+    },
+    {
+      "name": "liver fibrosis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "stages": "stage 2 or 3"
+      },
+      "confidence": 0.95,
+      "context": "biopsy-defined MASH and fibrosis stage 2 or 3"
+    },
+    {
+      "name": "NCT04822181",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "phase 3",
+        "design": "multicenter, randomized, double-blind, placebo-controlled",
+        "duration": "240 weeks",
+        "n_patients": 1197
+      },
+      "confidence": 0.95,
+      "context": "phase 3, multicenter, randomized, double-blind, placebo-controlled trial"
+    },
+    {
+      "name": "GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "name": "gastrointestinal adverse events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "Gastrointestinal adverse events were more common in the semaglutide group"
+    },
+    {
+      "name": "steatohepatitis resolution",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "response_rate_drug": "62.9%",
+        "response_rate_placebo": "34.3%"
+      },
+      "confidence": 0.9,
+      "context": "Resolution of steatohepatitis without worsening of fibrosis occurred in 62.9%"
+    },
+    {
+      "name": "liver fibrosis reduction",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "response_rate_drug": "36.8%",
+        "response_rate_placebo": "22.4%"
+      },
+      "confidence": 0.9,
+      "context": "reduction in liver fibrosis without worsening of steatohepatitis was reported in 36.8%"
+    },
+    {
+      "name": "liver",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "improved liver histologic results"
+    },
+    {
+      "name": "Novo Nordisk",
+      "entity_type": "ORGANIZATION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Funded by Novo Nordisk"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP1R",
+      "confidence": 0.95,
+      "evidence": "glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor agonism",
+      "confidence": 0.95,
+      "evidence": "Semaglutide, a glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "metabolic dysfunction-associated steatohepatitis",
+      "confidence": 0.9,
+      "evidence": "candidate for the treatment of metabolic dysfunction-associated steatohepatitis"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "semaglutide",
+      "target_entity": "NCT04822181",
+      "confidence": 0.95,
+      "evidence": "ClinicalTrials.gov number, NCT04822181"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "semaglutide",
+      "target_entity": "gastrointestinal adverse events",
+      "confidence": 0.9,
+      "evidence": "Gastrointestinal adverse events were more common in the semaglutide group"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "semaglutide",
+      "target_entity": "Novo Nordisk",
+      "confidence": 0.9,
+      "evidence": "Funded by Novo Nordisk"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "steatohepatitis resolution",
+      "target_entity": "semaglutide",
+      "confidence": 0.85,
+      "evidence": "Resolution of steatohepatitis without worsening of fibrosis occurred in 62.9%"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T14:15:25.715970+00:00",
+  "error": null
+}

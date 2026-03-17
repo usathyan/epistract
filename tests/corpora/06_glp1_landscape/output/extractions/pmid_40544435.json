@@ -1,0 +1,161 @@
+{
+  "document_id": "pmid_40544435",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "orforglipron",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "oral nonpeptide GLP-1 receptor agonist",
+        "doses": "3 mg, 12 mg, 36 mg once daily",
+        "route": "oral",
+        "chemical_class": "oxadiazole/fluorine compound"
+      },
+      "confidence": 0.95,
+      "context": "Orforglipron is a small-molecule, nonpeptide glucagon-like peptide-1 (GLP-1) receptor agonist"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "glucagon-like peptide-1 (GLP-1) receptor agonist"
+    },
+    {
+      "name": "type 2 diabetes",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "clinical development for type 2 diabetes and weight management"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "clinical development for type 2 diabetes and weight management"
+    },
+    {
+      "name": "NCT05971940",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "phase 3",
+        "name": "ACHIEVE-1",
+        "design": "double-blind, placebo-controlled",
+        "duration": "40 weeks",
+        "n_patients": 559
+      },
+      "confidence": 0.95,
+      "context": "ACHIEVE-1 ClinicalTrials.gov number, NCT05971940"
+    },
+    {
+      "name": "GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "glucagon-like peptide-1 (GLP-1) receptor agonist"
+    },
+    {
+      "name": "gastrointestinal adverse events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "severity": "mild-to-moderate",
+        "timing": "during dose escalation"
+      },
+      "confidence": 0.9,
+      "context": "most common adverse events were mild-to-moderate gastrointestinal events"
+    },
+    {
+      "name": "hypoglycemia",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "severity": "no severe episodes"
+      },
+      "confidence": 0.9,
+      "context": "No episodes of severe hypoglycemia were reported"
+    },
+    {
+      "name": "glycated hemoglobin",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "baseline": "8.0%",
+        "on_treatment": "6.5-6.7%"
+      },
+      "confidence": 0.9,
+      "context": "mean glycated hemoglobin level at week 40 was 6.5 to 6.7% with orforglipron"
+    },
+    {
+      "name": "body weight",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "change_3mg": "-4.5%",
+        "change_12mg": "-5.8%",
+        "change_36mg": "-7.6%",
+        "change_placebo": "-1.7%"
+      },
+      "confidence": 0.9,
+      "context": "percent change in body weight from baseline to week 40"
+    },
+    {
+      "name": "Eli Lilly",
+      "entity_type": "ORGANIZATION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Supported by Eli Lilly"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "orforglipron",
+      "target_entity": "GLP1R",
+      "confidence": 0.95,
+      "evidence": "glucagon-like peptide-1 (GLP-1) receptor agonist"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "orforglipron",
+      "target_entity": "GLP-1 receptor agonism",
+      "confidence": 0.95,
+      "evidence": "small-molecule, nonpeptide glucagon-like peptide-1 (GLP-1) receptor agonist"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "orforglipron",
+      "target_entity": "type 2 diabetes",
+      "confidence": 0.9,
+      "evidence": "clinical development for type 2 diabetes and weight management"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "orforglipron",
+      "target_entity": "NCT05971940",
+      "confidence": 0.95,
+      "evidence": "ACHIEVE-1 ClinicalTrials.gov number, NCT05971940"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "orforglipron",
+      "target_entity": "gastrointestinal adverse events",
+      "confidence": 0.9,
+      "evidence": "most common adverse events were mild-to-moderate gastrointestinal events"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "orforglipron",
+      "target_entity": "Eli Lilly",
+      "confidence": 0.95,
+      "evidence": "Supported by Eli Lilly"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T14:16:41.193035+00:00",
+  "error": null
+}

@@ -1,0 +1,130 @@
+{
+  "document_id": "pmid_39663847",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "survodutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "class": "dual GLP-1R/GCGR agonist",
+        "phase": "phase 3"
+      },
+      "confidence": 0.95,
+      "context": "Survodutide, an investigational dual agonist that simultaneously targets both the glucagon receptor (GCGR) and GLP-1 R"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "Glucagon-like peptide-1 receptor (GLP-1 R) agonists"
+    },
+    {
+      "name": "GCGR",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon receptor"
+      },
+      "confidence": 0.95,
+      "context": "simultaneously targets both the glucagon receptor (GCGR) and GLP-1 R"
+    },
+    {
+      "name": "metabolic dysfunction-associated steatohepatitis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "MASH"
+      },
+      "confidence": 0.95,
+      "context": "metabolic dysfunction-associated steatohepatitis (MASH)"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "remarkable effectiveness in the treatment of obesity and type 2 diabetes"
+    },
+    {
+      "name": "type 2 diabetes",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "remarkable effectiveness in the treatment of obesity and type 2 diabetes"
+    },
+    {
+      "name": "liver fibrosis",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "efficacy in promoting fibrosis regression remains unproven"
+    },
+    {
+      "name": "dual GLP-1R/GCGR agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "dual agonism of the GCGR and GLP-1 R may surpass the efficacy of selective GLP-1 R agonists"
+    },
+    {
+      "name": "gastrointestinal adverse events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "primarily manageable gastrointestinal adverse effects"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "survodutide",
+      "target_entity": "GLP1R",
+      "confidence": 0.95,
+      "evidence": "dual agonist that simultaneously targets both the glucagon receptor (GCGR) and GLP-1 R"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "survodutide",
+      "target_entity": "GCGR",
+      "confidence": 0.95,
+      "evidence": "dual agonist that simultaneously targets both the glucagon receptor (GCGR) and GLP-1 R"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "survodutide",
+      "target_entity": "dual GLP-1R/GCGR agonism",
+      "confidence": 0.95,
+      "evidence": "Survodutide's dual agonism of the GCGR and GLP-1 R"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "survodutide",
+      "target_entity": "metabolic dysfunction-associated steatohepatitis",
+      "confidence": 0.85,
+      "evidence": "promising therapeutic candidate for the comprehensive management of obesity and MASH"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "survodutide",
+      "target_entity": "obesity",
+      "confidence": 0.85,
+      "evidence": "promising therapeutic candidate for the comprehensive management of obesity and MASH"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "survodutide",
+      "target_entity": "gastrointestinal adverse events",
+      "confidence": 0.9,
+      "evidence": "primarily manageable gastrointestinal adverse effects"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T14:14:51.261436+00:00",
+  "error": null
+}

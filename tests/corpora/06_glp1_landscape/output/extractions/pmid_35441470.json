@@ -1,0 +1,110 @@
+{
+  "document_id": "pmid_35441470",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "class": "GLP-1 receptor agonist",
+        "dose": "2.4 mg once weekly",
+        "route": "subcutaneous"
+      },
+      "confidence": 0.97,
+      "context": "once-weekly subcutaneous semaglutide 2.4 mg"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Findings confirm the chronicity of obesity"
+    },
+    {
+      "name": "weight regain",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "participants regained two-thirds of their prior weight loss"
+    },
+    {
+      "name": "weight loss",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "mean weight loss was 17.3% (SD: 9.3%) with semaglutide"
+    },
+    {
+      "name": "cardiovascular disease",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.7,
+      "context": "cardiometabolic risk factors"
+    },
+    {
+      "name": "cardiometabolic risk factors",
+      "entity_type": "BIOMARKER",
+      "attributes": {},
+      "confidence": 0.8,
+      "context": "changes in body weight and cardiometabolic risk factors after treatment withdrawal"
+    },
+    {
+      "name": "STEP 1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT03548935",
+        "phase": "3"
+      },
+      "confidence": 0.97,
+      "context": "STEP 1 (NCT03548935) randomized 1961 adults"
+    },
+    {
+      "name": "body mass index",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "BMI",
+        "threshold": ">=30 kg/m2"
+      },
+      "confidence": 0.85,
+      "context": "adults with a body mass index >= 30 kg/m"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "obesity",
+      "confidence": 0.9,
+      "evidence": "mean weight loss was 17.3% (SD: 9.3%) with semaglutide"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "semaglutide",
+      "target_entity": "STEP 1",
+      "confidence": 0.97,
+      "evidence": "STEP 1 (NCT03548935) randomized 1961 adults"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "semaglutide",
+      "target_entity": "weight loss",
+      "confidence": 0.95,
+      "evidence": "mean weight loss was 17.3% (SD: 9.3%) with semaglutide"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "semaglutide",
+      "target_entity": "weight regain",
+      "confidence": 0.9,
+      "evidence": "semaglutide and placebo participants regained 11.6 (SD: 7.7) and 1.9 (SD: 4.8) percentage points of lost weight"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T14:16:30.245373+00:00",
+  "error": null
+}

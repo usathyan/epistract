@@ -1,0 +1,26 @@
+Title: Glucagon-GLP-1-GIP triple agonist compounds
+Source: Google Patents (via SerpAPI)
+Patent ID: US11111285B2
+Assignee: Zealand Pharma AS
+Filing Date: October 4, 2018
+
+ABSTRACT/DESCRIPTION:
+The invention describes compounds possessing agonist activity at glucagon, GIP, and GLP-1 receptors for treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease. These triple agonists combine benefits across three receptor pathways in a single peptide molecule.
+
+The core peptide backbone follows General Formula I (SEQ ID NO: 52):
+R1-Tyr-X2-Gln-Gly-Thr-Phe-Thr-Ser-Asp-X10-Ser-X12-X13-Leu-X15-X16-X17-Ala-X19-X20-X21-Phe-X23-X24-Trp-Leu-X27-X28-X29-X30-Y1-R2
+
+Key variable positions include:
+- X2: Aib, Gly, Ala, D-Ala, Ser, N-Me-Ser, Ac3c, Ac4c, or Ac5c
+- X10: Tyr or Leu (determines glucagon receptor potency)
+- X12, X16, X17, X20, X24, X28: Can be Lys, Arg, Orn, or Cys with lipophilic conjugates for half-life extension
+
+Representative sequences:
+SEQ ID NO: 1 (wild-type reference): YSQGTFTSDYSKYLDSKAAHDFVEWLLRA
+SEQ ID NO: 5: Y-Aib-QGTFTSDYSIYLDSKAAHDFVEWLLSA
+
+Six C-terminal extension sequences (Y1, SEQ ID NOs 53-58) are derived from Exendin-4, including Gly-Pro-Ser-Ser-Gly-Ala-Pro-Pro-Pro-Ser (SEQ ID NO: 53). These extensions enhance in vivo stability without reducing glucagon receptor activity.
+
+Lipophilic modification at designated residues uses fatty acid conjugates with terminal polar groups (carboxylic acid, phosphonate, or sulfonate) connected via PEG-containing spacers. This enables albumin binding and extends plasma half-life to support once-weekly or less frequent dosing.
+
+The triple agonist mechanism simultaneously engages: GLP-1 receptor for glucose-dependent insulin secretion and appetite suppression; GIP receptor for enhanced insulin response and improved lipid metabolism; and glucagon receptor for increased energy expenditure and hepatic lipid oxidation. Zealand Pharma is developing these compounds as potential best-in-class treatments for obesity and metabolic syndrome.

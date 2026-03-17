@@ -1,0 +1,237 @@
+{
+  "document_id": "pmid_40726115",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "GLP-1 receptor agonists",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "drug class",
+        "abbreviation": "GLP-1RAs"
+      },
+      "confidence": 0.95,
+      "context": "glucagon-like peptide-1 receptor agonists (GLP-1RAs), developed for diabetes and obesity"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "glucagon-like peptide-1 receptor agonists"
+    },
+    {
+      "name": "chronic pain",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Chronic pain imposes a significant healthcare burden"
+    },
+    {
+      "name": "osteoarthritis",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "pain in headaches, osteoarthritis, diabetic neuropathy"
+    },
+    {
+      "name": "diabetic neuropathy",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "pain in headaches, osteoarthritis, diabetic neuropathy"
+    },
+    {
+      "name": "migraine",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "Preclinical data support GLP-1RAs signaling in migraines"
+    },
+    {
+      "name": "substance use disorders",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "dopaminergic pathways in substance use disorders"
+    },
+    {
+      "name": "alcohol use disorder",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "Trials in alcohol addiction show promise"
+    },
+    {
+      "name": "opioid dependence",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "potentially reducing opioid dependence"
+    },
+    {
+      "name": "type 2 diabetes",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "developed for diabetes and obesity"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "developed for diabetes and obesity"
+    },
+    {
+      "name": "anti-inflammatory activity",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "focusing on inflammation, macrophage repolarization, oxidative stress"
+    },
+    {
+      "name": "macrophage repolarization",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.8,
+      "context": "focusing on inflammation, macrophage repolarization"
+    },
+    {
+      "name": "dopaminergic pathway modulation",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "dopaminergic pathways in substance use disorders"
+    },
+    {
+      "name": "nerve repair",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.8,
+      "context": "GLP-1RAs show potential for nerve repair"
+    },
+    {
+      "name": "cartilage degradation",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.8,
+      "context": "they appear to reduce inflammation and cartilage degradation"
+    },
+    {
+      "name": "inflammation",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "focusing on inflammation, macrophage repolarization, oxidative stress"
+    },
+    {
+      "name": "oxidative stress",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "focusing on inflammation, macrophage repolarization, oxidative stress"
+    },
+    {
+      "name": "dopaminergic pathway",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "dopaminergic pathways in substance use disorders"
+    },
+    {
+      "name": "macrophage",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "macrophage repolarization"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "GLP1R",
+      "confidence": 0.95,
+      "evidence": "glucagon-like peptide-1 receptor agonists"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "chronic pain",
+      "confidence": 0.7,
+      "evidence": "may offer novel analgesia"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "osteoarthritis",
+      "confidence": 0.7,
+      "evidence": "In osteoarthritis, they appear to reduce inflammation and cartilage degradation"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "diabetic neuropathy",
+      "confidence": 0.7,
+      "evidence": "In diabetic neuropathy, GLP-1RAs show potential for nerve repair"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "substance use disorders",
+      "confidence": 0.65,
+      "evidence": "treat drug-seeking behavior"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "alcohol use disorder",
+      "confidence": 0.7,
+      "evidence": "Trials in alcohol addiction show promise"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "anti-inflammatory activity",
+      "confidence": 0.85,
+      "evidence": "focusing on inflammation, macrophage repolarization, oxidative stress"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "macrophage repolarization",
+      "confidence": 0.8,
+      "evidence": "macrophage repolarization"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "dopaminergic pathway modulation",
+      "confidence": 0.8,
+      "evidence": "dopaminergic pathways in substance use disorders"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "GLP1R",
+      "target_entity": "dopaminergic pathway",
+      "confidence": 0.75,
+      "evidence": "dopaminergic pathways in substance use disorders"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "GLP1R",
+      "target_entity": "inflammation",
+      "confidence": 0.8,
+      "evidence": "They may reduce inflammation, protect nerve cells"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T14:17:05.759747+00:00",
+  "error": null
+}

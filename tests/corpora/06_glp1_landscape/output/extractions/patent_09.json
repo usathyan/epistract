@@ -1,0 +1,279 @@
+{
+  "document_id": "patent_09",
+  "document_path": "tests/corpora/06_glp1_landscape/docs/patent_09_US11111285B2_zealand_triple_agonist.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "Zealand triple agonist peptide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "general_formula": "General Formula I (SEQ ID NO: 52)",
+        "variants": "SEQ ID NOs 1-58"
+      },
+      "confidence": 0.95,
+      "context": "compounds possessing agonist activity at glucagon, GIP, and GLP-1 receptors for treating metabolic disorders"
+    },
+    {
+      "name": "Zealand SEQ ID NO:1 reference peptide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "sequence": "YSQGTFTSDYSKYLDSKAAHDFVEWLLRA",
+        "seq_id": "SEQ ID NO: 1",
+        "role": "wild-type reference"
+      },
+      "confidence": 0.93,
+      "context": "SEQ ID NO: 1 (wild-type reference): YSQGTFTSDYSKYLDSKAAHDFVEWLLRA"
+    },
+    {
+      "name": "Zealand SEQ ID NO:5 variant",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "sequence": "Y-Aib-QGTFTSDYSIYLDSKAAHDFVEWLLSA",
+        "seq_id": "SEQ ID NO: 5"
+      },
+      "confidence": 0.9,
+      "context": "SEQ ID NO: 5: Y-Aib-QGTFTSDYSIYLDSKAAHDFVEWLLSA"
+    },
+    {
+      "name": "exendin-4",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide"
+      },
+      "confidence": 0.88,
+      "context": "Six C-terminal extension sequences (Y1, SEQ ID NOs 53-58) are derived from Exendin-4"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "GLP-1 receptor for glucose-dependent insulin secretion and appetite suppression"
+    },
+    {
+      "name": "GIPR",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucose-dependent insulinotropic polypeptide receptor"
+      },
+      "confidence": 0.95,
+      "context": "GIP receptor for enhanced insulin response and improved lipid metabolism"
+    },
+    {
+      "name": "GCGR",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon receptor"
+      },
+      "confidence": 0.95,
+      "context": "glucagon receptor for increased energy expenditure and hepatic lipid oxidation"
+    },
+    {
+      "name": "albumin",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "role": "half-life extension binding target"
+      },
+      "confidence": 0.85,
+      "context": "This enables albumin binding and extends plasma half-life to support once-weekly or less frequent dosing."
+    },
+    {
+      "name": "triple GLP-1/GIP/glucagon receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "The triple agonist mechanism simultaneously engages: GLP-1 receptor... GIP receptor... and glucagon receptor"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "treating metabolic disorders including obesity, type 2 diabetes"
+    },
+    {
+      "name": "dyslipidemia",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia"
+    },
+    {
+      "name": "non-alcoholic fatty liver disease",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "non-alcoholic fatty liver disease"
+    },
+    {
+      "name": "metabolic syndrome",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.88,
+      "context": "best-in-class treatments for obesity and metabolic syndrome"
+    },
+    {
+      "name": "Zealand Pharma AS",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "patent assignee"
+      },
+      "confidence": 0.95,
+      "context": "Assignee: Zealand Pharma AS"
+    },
+    {
+      "name": "Aib",
+      "entity_type": "METABOLITE",
+      "attributes": {
+        "full_name": "alpha-aminoisobutyric acid",
+        "role": "non-natural amino acid substitution at position 2"
+      },
+      "confidence": 0.85,
+      "context": "X2: Aib, Gly, Ala, D-Ala, Ser, N-Me-Ser, Ac3c, Ac4c, or Ac5c"
+    },
+    {
+      "name": "peptide_29aa",
+      "entity_type": "PEPTIDE_SEQUENCE",
+      "attributes": {
+        "sequence": "YSQGTFTSDYSKYLDSKAAHDFVEWLLRA",
+        "sequence_type": "protein",
+        "length": 29,
+        "validated": true,
+        "molecular_weight": 3399.67
+      },
+      "confidence": 1.0,
+      "context": "SEQ ID NO: 1 (wild-type reference): YSQGTFTSDYSKYLDSKAAHDFVEWLLRA"
+    },
+    {
+      "name": "peptide_27aa",
+      "entity_type": "PEPTIDE_SEQUENCE",
+      "attributes": {
+        "sequence": "QGTFTSDYSIYLDSKAAHDFVEWLLSA",
+        "sequence_type": "protein",
+        "length": 27,
+        "validated": true,
+        "molecular_weight": 3065.3
+      },
+      "confidence": 1.0,
+      "context": "SEQ ID NO: 5: Y-Aib-QGTFTSDYSIYLDSKAAHDFVEWLLSA"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "Zealand triple agonist peptide",
+      "target_entity": "GLP1R",
+      "confidence": 0.95,
+      "evidence": "GLP-1 receptor for glucose-dependent insulin secretion and appetite suppression"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "Zealand triple agonist peptide",
+      "target_entity": "GIPR",
+      "confidence": 0.95,
+      "evidence": "GIP receptor for enhanced insulin response and improved lipid metabolism"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "Zealand triple agonist peptide",
+      "target_entity": "GCGR",
+      "confidence": 0.95,
+      "evidence": "glucagon receptor for increased energy expenditure and hepatic lipid oxidation"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "Zealand triple agonist peptide",
+      "target_entity": "triple GLP-1/GIP/glucagon receptor agonism",
+      "confidence": 0.95,
+      "evidence": "The triple agonist mechanism simultaneously engages: GLP-1 receptor... GIP receptor... and glucagon receptor"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "Zealand triple agonist peptide",
+      "target_entity": "obesity",
+      "confidence": 0.95,
+      "evidence": "treating metabolic disorders including obesity"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "Zealand triple agonist peptide",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.95,
+      "evidence": "treating metabolic disorders including obesity, type 2 diabetes"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "Zealand triple agonist peptide",
+      "target_entity": "dyslipidemia",
+      "confidence": 0.9,
+      "evidence": "treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "Zealand triple agonist peptide",
+      "target_entity": "non-alcoholic fatty liver disease",
+      "confidence": 0.95,
+      "evidence": "non-alcoholic fatty liver disease"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "Zealand triple agonist peptide",
+      "target_entity": "metabolic syndrome",
+      "confidence": 0.88,
+      "evidence": "best-in-class treatments for obesity and metabolic syndrome"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "Zealand triple agonist peptide",
+      "target_entity": "Zealand Pharma AS",
+      "confidence": 0.95,
+      "evidence": "Assignee: Zealand Pharma AS"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "Zealand triple agonist peptide",
+      "target_entity": "albumin",
+      "confidence": 0.85,
+      "evidence": "This enables albumin binding and extends plasma half-life to support once-weekly or less frequent dosing."
+    },
+    {
+      "relation_type": "DERIVED_FROM",
+      "source_entity": "Zealand triple agonist peptide",
+      "target_entity": "exendin-4",
+      "confidence": 0.85,
+      "evidence": "Six C-terminal extension sequences (Y1, SEQ ID NOs 53-58) are derived from Exendin-4"
+    },
+    {
+      "relation_type": "HAS_SEQUENCE",
+      "source_entity": "Zealand triple agonist peptide",
+      "target_entity": "peptide_29aa",
+      "confidence": 0.95,
+      "evidence": "SEQ ID NO: 1 (wild-type reference): YSQGTFTSDYSKYLDSKAAHDFVEWLLRA"
+    },
+    {
+      "relation_type": "HAS_SEQUENCE",
+      "source_entity": "Zealand triple agonist peptide",
+      "target_entity": "peptide_27aa",
+      "confidence": 0.95,
+      "evidence": "SEQ ID NO: 5: Y-Aib-QGTFTSDYSIYLDSKAAHDFVEWLLSA"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T14:16:17.819252+00:00",
+  "error": null
+}

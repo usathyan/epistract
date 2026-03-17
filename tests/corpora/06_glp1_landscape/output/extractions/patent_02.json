@@ -1,0 +1,240 @@
+{
+  "document_id": "patent_02",
+  "document_path": "tests/corpora/06_glp1_landscape/docs/patent_02_US11357820B2_tirzepatide.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "tirzepatide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "CAS": "2023788-19-2",
+        "sequence": "YX1EGTFTSDYSIX2LDKIAQKAFVQWLMGGPSSGAPPPS (X1=Aib, X2=Aib)",
+        "amino_acids": 39,
+        "c_terminal": "amidated",
+        "acylation_site": "Lys20",
+        "fatty_acid": "C20 fatty diacid",
+        "dosing": "once-weekly subcutaneous"
+      },
+      "confidence": 0.99,
+      "context": "Tirzepatide is a dual GIP/GLP-1 receptor agonist peptide with CAS Registry Number 2023788-19-2"
+    },
+    {
+      "name": "tirzepatide trifluoroacetate",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "salt form",
+        "parent_compound": "tirzepatide"
+      },
+      "confidence": 0.88,
+      "context": "The tirzepatide trifluoroacetate salt form is also described"
+    },
+    {
+      "name": "Aib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "amino acid analog",
+        "full_name": "2-aminoisobutyric acid",
+        "positions": "2, 13"
+      },
+      "confidence": 0.95,
+      "context": "X1 = Aib (2-aminoisobutyric acid) and X2 = Aib"
+    },
+    {
+      "name": "C20 fatty diacid",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "lipid linker",
+        "structure": "(2-[2-(2-Amino-ethoxy)-ethoxy]-acetyl)2-(gamma-Glu)1-CO-(CH2)18-CO2H",
+        "role": "albumin binding for half-life extension"
+      },
+      "confidence": 0.93,
+      "context": "chemically modified via conjugation to the epsilon-amino group with a C20 fatty diacid moiety"
+    },
+    {
+      "name": "GIPR",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucose-dependent insulinotropic polypeptide receptor"
+      },
+      "confidence": 0.97,
+      "context": "dual GIP/GLP-1 receptor agonist"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.97,
+      "context": "dual GIP/GLP-1 receptor agonist"
+    },
+    {
+      "name": "albumin",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "role": "binding partner for half-life extension"
+      },
+      "confidence": 0.92,
+      "context": "The fatty diacid moiety enables albumin binding, extending the plasma half-life"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "superior efficacy in glycemic control (HbA1c reduction)"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "dual GIP/GLP-1 receptor agonist"
+    },
+    {
+      "name": "dual GIP/GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "potency_bias": "imbalanced, favoring GIP receptor activation"
+      },
+      "confidence": 0.97,
+      "context": "The dual agonist mechanism activates both the GIP receptor (primary) and the GLP-1 receptor, with an imbalanced potency favoring GIP receptor activation"
+    },
+    {
+      "name": "albumin binding",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "purpose": "half-life extension to ~5 days"
+      },
+      "confidence": 0.92,
+      "context": "The fatty diacid moiety enables albumin binding, extending the plasma half-life to approximately 5 days"
+    },
+    {
+      "name": "HbA1c",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "direction": "reduction"
+      },
+      "confidence": 0.93,
+      "context": "superior efficacy in glycemic control (HbA1c reduction)"
+    },
+    {
+      "name": "body weight",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "direction": "reduction"
+      },
+      "confidence": 0.9,
+      "context": "weight loss compared to selective GLP-1 receptor agonists"
+    },
+    {
+      "name": "SURPASS",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "type": "trial program"
+      },
+      "confidence": 0.95,
+      "context": "SURPASS clinical trial program"
+    },
+    {
+      "name": "Eli Lilly",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "type": "pharmaceutical company",
+        "country": "United States"
+      },
+      "confidence": 0.99,
+      "context": "Assignee: Eli Lilly and Company"
+    },
+    {
+      "name": "US11357820B2",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "type": "patent",
+        "title": "GIP/GLP1 agonist compositions",
+        "filing_date": "2019-06-14"
+      },
+      "confidence": 0.99,
+      "context": "Patent ID: US11357820B2"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "tirzepatide",
+      "target_entity": "GIPR",
+      "confidence": 0.98,
+      "evidence": "activates both the GIP receptor (primary) and the GLP-1 receptor"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "tirzepatide",
+      "target_entity": "GLP1R",
+      "confidence": 0.97,
+      "evidence": "activates both the GIP receptor (primary) and the GLP-1 receptor"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "tirzepatide",
+      "target_entity": "albumin",
+      "confidence": 0.92,
+      "evidence": "The fatty diacid moiety enables albumin binding"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "tirzepatide",
+      "target_entity": "dual GIP/GLP-1 receptor agonism",
+      "confidence": 0.97,
+      "evidence": "The dual agonist mechanism activates both the GIP receptor (primary) and the GLP-1 receptor"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "tirzepatide",
+      "target_entity": "albumin binding",
+      "confidence": 0.92,
+      "evidence": "The fatty diacid moiety enables albumin binding, extending the plasma half-life to approximately 5 days"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.95,
+      "evidence": "superior efficacy in glycemic control (HbA1c reduction)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "obesity",
+      "confidence": 0.9,
+      "evidence": "weight loss compared to selective GLP-1 receptor agonists"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "tirzepatide",
+      "target_entity": "SURPASS",
+      "confidence": 0.95,
+      "evidence": "SURPASS clinical trial program"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "tirzepatide",
+      "target_entity": "Eli Lilly",
+      "confidence": 0.99,
+      "evidence": "Assignee: Eli Lilly and Company"
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "tirzepatide",
+      "target_entity": "US11357820B2",
+      "confidence": 0.99,
+      "evidence": "Patent ID: US11357820B2"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T14:15:26.773106+00:00",
+  "error": null
+}

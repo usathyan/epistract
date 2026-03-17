@@ -1,0 +1,245 @@
+{
+  "document_id": "pmid_40544433",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "cagrilintide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "dose": "2.4 mg once weekly"
+      },
+      "confidence": 0.95,
+      "context": "cagrilintide at a dose of 2.4 mg has shown promising results in early-phase trials"
+    },
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "dose": "2.4 mg once weekly"
+      },
+      "confidence": 0.95,
+      "context": "Semaglutide at a dose of 2.4 mg has established weight-loss and cardiovascular benefits"
+    },
+    {
+      "name": "CagriSema",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "fixed-dose combination",
+        "components": "cagrilintide 2.4 mg + semaglutide 2.4 mg"
+      },
+      "confidence": 0.95,
+      "context": "the combination (known as CagriSema)"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "Glucagon-Like Peptide-1 Receptor Agonists"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "definition": "BMI 30 or higher"
+      },
+      "confidence": 0.95,
+      "context": "persons with either overweight and coexisting conditions or obesity"
+    },
+    {
+      "name": "overweight",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "definition": "BMI 27 or higher with complications"
+      },
+      "confidence": 0.9,
+      "context": "BMI of 27 or higher with at least one obesity-related complication"
+    },
+    {
+      "name": "dyslipidemia",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "Dyslipidemias"
+    },
+    {
+      "name": "hypertension",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "Hypertension"
+    },
+    {
+      "name": "NCT05567796",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "phase 3a",
+        "name": "REDEFINE 1",
+        "design": "double-blind, placebo-controlled and active-controlled",
+        "duration": "68 weeks",
+        "n_patients": 3417
+      },
+      "confidence": 0.95,
+      "context": "REDEFINE 1 ClinicalTrials.gov number, NCT05567796"
+    },
+    {
+      "name": "nausea",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "nausea, vomiting, diarrhea, constipation, or abdominal pain"
+    },
+    {
+      "name": "vomiting",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "nausea, vomiting, diarrhea, constipation, or abdominal pain"
+    },
+    {
+      "name": "diarrhea",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "nausea, vomiting, diarrhea, constipation, or abdominal pain"
+    },
+    {
+      "name": "constipation",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "nausea, vomiting, diarrhea, constipation, or abdominal pain"
+    },
+    {
+      "name": "abdominal pain",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "nausea, vomiting, diarrhea, constipation, or abdominal pain"
+    },
+    {
+      "name": "gastrointestinal adverse events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "rate_drug": "79.6%",
+        "rate_placebo": "39.9%"
+      },
+      "confidence": 0.9,
+      "context": "Gastrointestinal adverse events (affecting 79.6% in the cagrilintide-semaglutide group)"
+    },
+    {
+      "name": "body weight",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "change_drug": "-20.4%",
+        "change_placebo": "-3.0%"
+      },
+      "confidence": 0.9,
+      "context": "estimated mean percent change in body weight from baseline to week 68 was -20.4%"
+    },
+    {
+      "name": "Novo Nordisk",
+      "entity_type": "ORGANIZATION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Funded by Novo Nordisk"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "COMBINED_WITH",
+      "source_entity": "cagrilintide",
+      "target_entity": "semaglutide",
+      "confidence": 0.95,
+      "evidence": "the combination (known as CagriSema)"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP1R",
+      "confidence": 0.95,
+      "evidence": "Glucagon-Like Peptide-1 Receptor Agonists"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "CagriSema",
+      "target_entity": "obesity",
+      "confidence": 0.9,
+      "evidence": "clinically relevant body-weight reductions in adults with overweight or obesity"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "CagriSema",
+      "target_entity": "NCT05567796",
+      "confidence": 0.95,
+      "evidence": "REDEFINE 1 ClinicalTrials.gov number, NCT05567796"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "semaglutide",
+      "target_entity": "NCT05567796",
+      "confidence": 0.9,
+      "evidence": "semaglutide alone at a dose of 2.4 mg"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "cagrilintide",
+      "target_entity": "NCT05567796",
+      "confidence": 0.9,
+      "evidence": "cagrilintide alone at a dose of 2.4 mg"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "CagriSema",
+      "target_entity": "nausea",
+      "confidence": 0.9,
+      "evidence": "nausea, vomiting, diarrhea, constipation, or abdominal pain"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "CagriSema",
+      "target_entity": "vomiting",
+      "confidence": 0.9,
+      "evidence": "nausea, vomiting, diarrhea, constipation, or abdominal pain"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "CagriSema",
+      "target_entity": "diarrhea",
+      "confidence": 0.9,
+      "evidence": "nausea, vomiting, diarrhea, constipation, or abdominal pain"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "CagriSema",
+      "target_entity": "constipation",
+      "confidence": 0.9,
+      "evidence": "nausea, vomiting, diarrhea, constipation, or abdominal pain"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "CagriSema",
+      "target_entity": "abdominal pain",
+      "confidence": 0.9,
+      "evidence": "nausea, vomiting, diarrhea, constipation, or abdominal pain"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "CagriSema",
+      "target_entity": "Novo Nordisk",
+      "confidence": 0.9,
+      "evidence": "Funded by Novo Nordisk"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T14:16:18.670583+00:00",
+  "error": null
+}

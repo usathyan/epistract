@@ -1,0 +1,222 @@
+{
+  "document_id": "patent_04",
+  "document_path": "tests/corpora/06_glp1_landscape/docs/patent_04_WO2020159949A1_tirzepatide_process.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "tirzepatide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "CAS": "2023788-19-2",
+        "sequence": "YX1EGTFTSDYSIX2LDKIAQKAFVQWLMGGPSSGAPPPS (X1=Aib, X2=Aib)",
+        "amino_acids": 39,
+        "c_terminal": "amidated",
+        "acylation_site": "Lys20",
+        "fatty_acid": "C20 fatty diacid",
+        "synthesis_method": "solid-phase peptide synthesis (SPPS) using Fmoc chemistry"
+      },
+      "confidence": 0.99,
+      "context": "The tirzepatide peptide (SEQ ID NO: 1) is a 39-amino-acid synthetic peptide"
+    },
+    {
+      "name": "Aib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "amino acid analog",
+        "full_name": "2-aminoisobutyric acid"
+      },
+      "confidence": 0.95,
+      "context": "X1 and X2 are Aib (2-aminoisobutyric acid)"
+    },
+    {
+      "name": "C20 fatty diacid",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "lipid linker",
+        "structure": "(2-[2-(2-Amino-ethoxy)-ethoxy]-acetyl)2-(gamma-Glu)1-CO-(CH2)18-CO2H"
+      },
+      "confidence": 0.93,
+      "context": "acylated with a C20 fatty diacid moiety via a linker"
+    },
+    {
+      "name": "dithiothreitol",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "role": "deprotection reagent"
+      },
+      "confidence": 0.88,
+      "context": "deprotection using dithiothreitol, triisopropylsilane, and trifluoroacetic acid"
+    },
+    {
+      "name": "triisopropylsilane",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "role": "deprotection reagent"
+      },
+      "confidence": 0.88,
+      "context": "deprotection using dithiothreitol, triisopropylsilane, and trifluoroacetic acid"
+    },
+    {
+      "name": "trifluoroacetic acid",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "role": "deprotection reagent"
+      },
+      "confidence": 0.88,
+      "context": "deprotection using dithiothreitol, triisopropylsilane, and trifluoroacetic acid"
+    },
+    {
+      "name": "GIPR",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucose-dependent insulinotropic polypeptide receptor"
+      },
+      "confidence": 0.97,
+      "context": "dual GIP/GLP-1 receptor agonist"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.97,
+      "context": "dual GIP/GLP-1 receptor agonist"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.98,
+      "context": "for the treatment of type 2 diabetes mellitus and obesity"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.97,
+      "context": "for the treatment of type 2 diabetes mellitus and obesity"
+    },
+    {
+      "name": "dual GIP/GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "potency_bias": "imbalanced, favoring GIP receptor activation"
+      },
+      "confidence": 0.97,
+      "context": "activates both the glucose-dependent insulinotropic polypeptide (GIP) receptor and the glucagon-like peptide-1 (GLP-1) receptor, with imbalanced potency favoring GIP receptor activation"
+    },
+    {
+      "name": "SURPASS",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "type": "trial program",
+        "indication": "glycemic control"
+      },
+      "confidence": 0.93,
+      "context": "SURPASS and SURMOUNT trial programs"
+    },
+    {
+      "name": "SURMOUNT",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "type": "trial program",
+        "indication": "weight loss"
+      },
+      "confidence": 0.93,
+      "context": "SURPASS and SURMOUNT trial programs"
+    },
+    {
+      "name": "Eli Lilly",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "type": "pharmaceutical company"
+      },
+      "confidence": 0.99,
+      "context": "Assignee: Eli Lilly and Company"
+    },
+    {
+      "name": "WO2020159949A1",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "type": "patent application",
+        "title": "Process for preparing a GIP/GLP1 dual agonist",
+        "filing_date": "2020-01-28"
+      },
+      "confidence": 0.99,
+      "context": "Patent ID: WO2020159949A1"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "tirzepatide",
+      "target_entity": "GIPR",
+      "confidence": 0.98,
+      "evidence": "activates both the glucose-dependent insulinotropic polypeptide (GIP) receptor and the glucagon-like peptide-1 (GLP-1) receptor"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "tirzepatide",
+      "target_entity": "GLP1R",
+      "confidence": 0.97,
+      "evidence": "activates both the GIP receptor and the GLP-1 receptor"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "tirzepatide",
+      "target_entity": "dual GIP/GLP-1 receptor agonism",
+      "confidence": 0.97,
+      "evidence": "dual GIP/GLP-1 receptor agonist"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.98,
+      "evidence": "for the treatment of type 2 diabetes mellitus and obesity"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "obesity",
+      "confidence": 0.97,
+      "evidence": "for the treatment of type 2 diabetes mellitus and obesity"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "tirzepatide",
+      "target_entity": "SURPASS",
+      "confidence": 0.93,
+      "evidence": "SURPASS and SURMOUNT trial programs"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "tirzepatide",
+      "target_entity": "SURMOUNT",
+      "confidence": 0.93,
+      "evidence": "SURPASS and SURMOUNT trial programs"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "tirzepatide",
+      "target_entity": "Eli Lilly",
+      "confidence": 0.99,
+      "evidence": "Assignee: Eli Lilly and Company"
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "tirzepatide",
+      "target_entity": "WO2020159949A1",
+      "confidence": 0.99,
+      "evidence": "Patent ID: WO2020159949A1"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-03-17T14:16:16.927320+00:00",
+  "error": null
+}
