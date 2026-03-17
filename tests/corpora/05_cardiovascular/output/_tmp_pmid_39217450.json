@@ -1,0 +1,127 @@
+{
+  "document_path": "tests/corpora/05_cardiovascular/pmid_39217450.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "mavacamten",
+      "entity_type": "COMPOUND",
+      "attributes": {"modality": "small molecule", "drug_class": "cardiac myosin inhibitor"},
+      "confidence": 0.97,
+      "context": "Long-term effect of mavacamten in obstructive hypertrophic cardiomyopathy."
+    },
+    {
+      "name": "hypertrophic cardiomyopathy",
+      "entity_type": "DISEASE",
+      "attributes": {"subtype": "obstructive"},
+      "confidence": 0.97,
+      "context": "Long-term effect of mavacamten in obstructive hypertrophic cardiomyopathy."
+    },
+    {
+      "name": "MAVA-LTE",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {"nct_id": "NCT03723655", "phase": "long-term extension", "design": "open-label", "duration": "5 years", "enrollment": 231},
+      "confidence": 0.97,
+      "context": "MAVA-LTE (NCT03723655) is an ongoing 5-year open-label extension study."
+    },
+    {
+      "name": "EXPLORER-HCM",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {"nct_id": "NCT03470545", "role": "parent study"},
+      "confidence": 0.95,
+      "context": "Parent: EXPLORER-HCM (NCT03470545)."
+    },
+    {
+      "name": "NT-proBNP",
+      "entity_type": "BIOMARKER",
+      "attributes": {"biomarker_type": "cardiac"},
+      "confidence": 0.95,
+      "context": "Sustained reductions to Week 180: NT-proBNP -562 ng/L."
+    },
+    {
+      "name": "LVOT gradient",
+      "entity_type": "BIOMARKER",
+      "attributes": {"biomarker_type": "hemodynamic"},
+      "confidence": 0.92,
+      "context": "Sustained reductions to Week 180: resting LVOT gradient -40.3 mm Hg, Valsalva -55.3 mm Hg"
+    },
+    {
+      "name": "LVEF",
+      "entity_type": "BIOMARKER",
+      "attributes": {"biomarker_type": "cardiac function", "full_name": "left ventricular ejection fraction"},
+      "confidence": 0.95,
+      "context": "Mean LVEF decreased from 73.9% to 63.9% (Week 180)."
+    },
+    {
+      "name": "ejection fraction decreased",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {"frequency": "8.7%", "severity": "transient", "threshold": "LVEF <50%", "outcome": "all recovered"},
+      "confidence": 0.90,
+      "context": "20 patients (8.7%) had transient LVEF <50% (all recovered)."
+    },
+    {
+      "name": "NYHA functional class",
+      "entity_type": "PHENOTYPE",
+      "attributes": {"improvement_rate": "77.9%"},
+      "confidence": 0.90,
+      "context": "74 (77.9%) of 95 patients improved by >=1 NYHA class."
+    },
+    {
+      "name": "Garcia-Pavia Pablo",
+      "entity_type": "PUBLICATION",
+      "attributes": {"journal": "European heart journal", "year": 2024, "pmid": "39217450"},
+      "confidence": 0.95,
+      "context": "European heart journal (2024). PMID: 39217450"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "mavacamten",
+      "target_entity": "hypertrophic cardiomyopathy",
+      "confidence": 0.93,
+      "evidence": "Long-term effect of mavacamten in obstructive hypertrophic cardiomyopathy."
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "mavacamten",
+      "target_entity": "MAVA-LTE",
+      "confidence": 0.97,
+      "evidence": "MAVA-LTE (NCT03723655) is an ongoing 5-year open-label extension study. 211 (91.3%) of 231 patients still on mavacamten."
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "mavacamten",
+      "target_entity": "EXPLORER-HCM",
+      "confidence": 0.93,
+      "evidence": "Parent: EXPLORER-HCM (NCT03470545)."
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "mavacamten",
+      "target_entity": "ejection fraction decreased",
+      "confidence": 0.88,
+      "evidence": "20 patients (8.7%) had transient LVEF <50% (all recovered)."
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "NT-proBNP",
+      "target_entity": "hypertrophic cardiomyopathy",
+      "confidence": 0.85,
+      "evidence": "Sustained reductions to Week 180: NT-proBNP -562 ng/L."
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "LVOT gradient",
+      "target_entity": "hypertrophic cardiomyopathy",
+      "confidence": 0.88,
+      "evidence": "Sustained reductions to Week 180: resting LVOT gradient -40.3 mm Hg, Valsalva -55.3 mm Hg"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "LVEF",
+      "target_entity": "hypertrophic cardiomyopathy",
+      "confidence": 0.85,
+      "evidence": "Mean LVEF decreased from 73.9% to 63.9% (Week 180)."
+    }
+  ]
+}

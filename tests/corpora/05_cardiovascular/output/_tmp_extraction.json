@@ -1,0 +1,190 @@
+{
+  "entities": [
+    {
+      "name": "deucravacitinib",
+      "entity_type": "COMPOUND",
+      "attributes": {"modality": "small molecule", "mechanism": "TYK2 inhibitor"},
+      "confidence": 0.98,
+      "context": "Deucravacitinib selectively inhibits TYK2, granting it a low risk of off-target effects."
+    },
+    {
+      "name": "apremilast",
+      "entity_type": "COMPOUND",
+      "attributes": {"modality": "small molecule"},
+      "confidence": 0.95,
+      "context": "significantly superior to placebo and apremilast"
+    },
+    {
+      "name": "TYK2",
+      "entity_type": "PROTEIN",
+      "attributes": {"full_name": "Tyrosine kinase 2"},
+      "confidence": 0.98,
+      "context": "Tyrosine kinase 2 (TYK2) mediates immune signaling of IL-12, IL-23, and type I interferons"
+    },
+    {
+      "name": "IL12",
+      "entity_type": "PROTEIN",
+      "attributes": {"full_name": "Interleukin 12"},
+      "confidence": 0.95,
+      "context": "TYK2 mediates immune signaling of IL-12, IL-23, and type I interferons"
+    },
+    {
+      "name": "IL23",
+      "entity_type": "PROTEIN",
+      "attributes": {"full_name": "Interleukin 23"},
+      "confidence": 0.95,
+      "context": "TYK2 mediates immune signaling of IL-12, IL-23, and type I interferons"
+    },
+    {
+      "name": "psoriasis",
+      "entity_type": "DISEASE",
+      "attributes": {"mesh_term": "Psoriasis"},
+      "confidence": 0.99,
+      "context": "Psoriasis is a chronic, immune-mediated, skin disease."
+    },
+    {
+      "name": "TYK2 inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {"selectivity": "selective"},
+      "confidence": 0.95,
+      "context": "Deucravacitinib selectively inhibits TYK2, granting it a low risk of off-target effects."
+    },
+    {
+      "name": "POETYK PSO-1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {"phase": 3, "duration_weeks": 52},
+      "confidence": 0.95,
+      "context": "Two phase 3, 52-week trials (POETYK PSO-1 and PSO-2) enrolled 1688 patients."
+    },
+    {
+      "name": "POETYK PSO-2",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {"phase": 3, "duration_weeks": 52},
+      "confidence": 0.95,
+      "context": "Two phase 3, 52-week trials (POETYK PSO-1 and PSO-2) enrolled 1688 patients."
+    },
+    {
+      "name": "PASI75",
+      "entity_type": "BIOMARKER",
+      "attributes": {"type": "clinical endpoint", "description": "75% improvement in Psoriasis Area and Severity Index"},
+      "confidence": 0.92,
+      "context": "over 50% of patients treated with deucravacitinib reached PASI75"
+    },
+    {
+      "name": "type I interferons",
+      "entity_type": "PROTEIN",
+      "attributes": {"family": "interferon"},
+      "confidence": 0.90,
+      "context": "TYK2 mediates immune signaling of IL-12, IL-23, and type I interferons"
+    },
+    {
+      "name": "immune signaling pathway",
+      "entity_type": "PATHWAY",
+      "attributes": {"components": ["IL-12", "IL-23", "type I interferons"]},
+      "confidence": 0.85,
+      "context": "Tyrosine kinase 2 (TYK2) mediates immune signaling of IL-12, IL-23, and type I interferons"
+    },
+    {
+      "name": "The Journal of dermatological treatment",
+      "entity_type": "PUBLICATION",
+      "attributes": {"pmid": "36453809", "year": 2023, "authors": "Estevinho Tomas, Le Ana Maria, Torres Tiago"},
+      "confidence": 0.99,
+      "context": "The Journal of dermatological treatment (2023) PMID: 36453809"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "deucravacitinib",
+      "target_entity": "TYK2",
+      "confidence": 0.98,
+      "evidence": "Deucravacitinib selectively inhibits TYK2, granting it a low risk of off-target effects."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "deucravacitinib",
+      "target_entity": "psoriasis",
+      "confidence": 0.95,
+      "evidence": "Deucravacitinib in the treatment of psoriasis."
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "deucravacitinib",
+      "target_entity": "POETYK PSO-1",
+      "confidence": 0.95,
+      "evidence": "Two phase 3, 52-week trials (POETYK PSO-1 and PSO-2) enrolled 1688 patients."
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "deucravacitinib",
+      "target_entity": "POETYK PSO-2",
+      "confidence": 0.95,
+      "evidence": "Two phase 3, 52-week trials (POETYK PSO-1 and PSO-2) enrolled 1688 patients."
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "apremilast",
+      "target_entity": "POETYK PSO-1",
+      "confidence": 0.85,
+      "evidence": "significantly superior to placebo and apremilast"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "apremilast",
+      "target_entity": "POETYK PSO-2",
+      "confidence": 0.85,
+      "evidence": "significantly superior to placebo and apremilast"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "TYK2",
+      "target_entity": "immune signaling pathway",
+      "confidence": 0.92,
+      "evidence": "Tyrosine kinase 2 (TYK2) mediates immune signaling of IL-12, IL-23, and type I interferons"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "IL12",
+      "target_entity": "immune signaling pathway",
+      "confidence": 0.90,
+      "evidence": "TYK2 mediates immune signaling of IL-12, IL-23, and type I interferons"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "IL23",
+      "target_entity": "immune signaling pathway",
+      "confidence": 0.90,
+      "evidence": "TYK2 mediates immune signaling of IL-12, IL-23, and type I interferons"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "type I interferons",
+      "target_entity": "immune signaling pathway",
+      "confidence": 0.90,
+      "evidence": "TYK2 mediates immune signaling of IL-12, IL-23, and type I interferons"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "TYK2",
+      "target_entity": "psoriasis",
+      "confidence": 0.88,
+      "evidence": "Psoriasis is a chronic, immune-mediated, skin disease. Tyrosine kinase 2 (TYK2) mediates immune signaling"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "PASI75",
+      "target_entity": "psoriasis",
+      "confidence": 0.88,
+      "evidence": "over 50% of patients treated with deucravacitinib reached PASI75"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "PASI75",
+      "target_entity": "deucravacitinib",
+      "confidence": 0.90,
+      "evidence": "At week 16, over 50% of patients treated with deucravacitinib reached PASI75, significantly superior to placebo and apremilast."
+    }
+  ],
+  "document_path": "tests/corpora/05_cardiovascular/pmid_36453809.txt",
+  "chunks_processed": 1
+}
