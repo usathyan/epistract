@@ -41,27 +41,27 @@ This scenario introduces three capabilities not tested in S1-S5:
 
 | # | Source File | Entity | Type | Confidence | Source Text | Verification |
 |---|-------------|--------|------|------------|-------------|--------------|
-| 1 | `patent_02_US11357820B2_tirzepatide.txt` | tirzepatide | COMPOUND | 0.99 | "tirzepatide is a dual GIP/GLP-1 receptor agonist peptide with CAS Registry Number 2023788-19-2" | [x] CAS 2023788-19-2 verified |
-| 2 | `patent_02_US11357820B2_tirzepatide.txt` | GLP1R | PROTEIN | 0.99 | "dual GIP/GLP-1 receptor agonist" | [x] Target receptor correct |
-| 3 | `patent_02_US11357820B2_tirzepatide.txt` | GIPR | PROTEIN | 0.99 | "dual GIP/GLP-1 receptor agonist" | [x] Second target correct |
-| 4 | `patent_02_US11357820B2_tirzepatide.txt` | Eli Lilly | ORGANIZATION | 0.98 | "Assignee: Eli Lilly and Company" | [x] Patent assignee correct |
-| 5 | `patent_02_US11357820B2_tirzepatide.txt` | type 2 diabetes mellitus | DISEASE | 0.98 | "treatment of type 2 diabetes mellitus and obesity" | [x] Primary indication |
-| 6 | `patent_02_US11357820B2_tirzepatide.txt` | obesity | DISEASE | 0.98 | "treatment of type 2 diabetes mellitus and obesity" | [x] Approved indication |
-| 7 | `patent_02_US11357820B2_tirzepatide.txt` | dual GIP/GLP-1 receptor agonism | MECHANISM_OF_ACTION | 0.97 | "imbalanced potency favoring GIP receptor activation" | [x] MOA with selectivity detail |
-| 8 | `patent_02_US11357820B2_tirzepatide.txt` | SURPASS | CLINICAL_TRIAL | 0.95 | "SURPASS clinical trial program" | [x] Phase 3 program name |
-| 9 | `patent_02_US11357820B2_tirzepatide.txt` | tirzepatide peptide sequence | PEPTIDE_SEQUENCE | 0.95 | "YX1EGTFTSDYSIX2LDKIAQKAFVQWLMGGPSSGAPPPS, where X1 = Aib and X2 = Aib" | [x] 39-AA sequence with Aib substitutions |
+| 1 | `patent_02_US11357820B2_tirzepatide.txt:9` | tirzepatide | COMPOUND | 0.99 | "tirzepatide is a dual GIP/GLP-1 receptor agonist peptide with CAS Registry Number 2023788-19-2" | [x] CAS 2023788-19-2 verified |
+| 2 | `patent_02_US11357820B2_tirzepatide.txt:9` | GLP1R | PROTEIN | 0.99 | "dual GIP/GLP-1 receptor agonist" | [x] Target receptor correct |
+| 3 | `patent_02_US11357820B2_tirzepatide.txt:9` | GIPR | PROTEIN | 0.99 | "dual GIP/GLP-1 receptor agonist" | [x] Second target correct |
+| 4 | `patent_02_US11357820B2_tirzepatide.txt:4` | Eli Lilly | ORGANIZATION | 0.98 | "Assignee: Eli Lilly and Company" | [x] Patent assignee correct |
+| 5 | `patent_02_US11357820B2_tirzepatide.txt:13` | type 2 diabetes mellitus | DISEASE | 0.98 | "treatment of type 2 diabetes mellitus and obesity" | [x] Primary indication |
+| 6 | `patent_02_US11357820B2_tirzepatide.txt:13` | obesity | DISEASE | 0.98 | "treatment of type 2 diabetes mellitus and obesity" | [x] Approved indication |
+| 7 | `patent_02_US11357820B2_tirzepatide.txt:13` | dual GIP/GLP-1 receptor agonism | MECHANISM_OF_ACTION | 0.97 | "imbalanced potency favoring GIP receptor activation" | [x] MOA with selectivity detail |
+| 8 | `patent_02_US11357820B2_tirzepatide.txt:13` | SURPASS | CLINICAL_TRIAL | 0.95 | "SURPASS clinical trial program" | [x] Phase 3 program name |
+| 9 | `patent_02_US11357820B2_tirzepatide.txt:11` | tirzepatide peptide sequence | PEPTIDE_SEQUENCE | 0.95 | "YX1EGTFTSDYSIX2LDKIAQKAFVQWLMGGPSSGAPPPS, where X1 = Aib and X2 = Aib" | [x] 39-AA sequence with Aib substitutions |
 
 ### Relations Extracted
 
 | # | Source File | Source → Relation → Target | Confidence | Evidence | Verification |
 |---|-------------|---------------------------|------------|----------|--------------|
-| 1 | `patent_02_US11357820B2_tirzepatide.txt` | tirzepatide → ACTIVATES → GLP1R | 0.99 | "dual GIP/GLP-1 receptor agonist" | [x] Core MOA |
-| 2 | `patent_02_US11357820B2_tirzepatide.txt` | tirzepatide → ACTIVATES → GIPR | 0.99 | "imbalanced potency favoring GIP receptor activation" | [x] GIP-biased agonism |
-| 3 | `patent_02_US11357820B2_tirzepatide.txt` | tirzepatide → INDICATED_FOR → T2DM | 0.99 | "treatment of type 2 diabetes mellitus" | [x] Approved indication |
-| 4 | `patent_02_US11357820B2_tirzepatide.txt` | tirzepatide → INDICATED_FOR → obesity | 0.99 | "treatment of... obesity" | [x] Approved indication |
-| 5 | `patent_02_US11357820B2_tirzepatide.txt` | tirzepatide → DEVELOPED_BY → Eli Lilly | 0.98 | "Assignee: Eli Lilly and Company" | [x] Patent assignee |
-| 6 | `patent_02_US11357820B2_tirzepatide.txt` | tirzepatide → EVALUATED_IN → SURPASS | 0.95 | "SURPASS clinical trial program" | [x] Phase 3 program |
-| 7 | `patent_02_US11357820B2_tirzepatide.txt` | tirzepatide → HAS_MECHANISM → dual GIP/GLP-1 agonism | 0.97 | "dual agonist mechanism activates both the GIP receptor (primary) and the GLP-1 receptor" | [x] Correct dual mechanism |
+| 1 | `patent_02_US11357820B2_tirzepatide.txt:9` | tirzepatide → ACTIVATES → GLP1R | 0.99 | "dual GIP/GLP-1 receptor agonist" | [x] Core MOA |
+| 2 | `patent_02_US11357820B2_tirzepatide.txt:13` | tirzepatide → ACTIVATES → GIPR | 0.99 | "imbalanced potency favoring GIP receptor activation" | [x] GIP-biased agonism |
+| 3 | `patent_02_US11357820B2_tirzepatide.txt:13` | tirzepatide → INDICATED_FOR → T2DM | 0.99 | "treatment of type 2 diabetes mellitus" | [x] Approved indication |
+| 4 | `patent_02_US11357820B2_tirzepatide.txt:13` | tirzepatide → INDICATED_FOR → obesity | 0.99 | "treatment of... obesity" | [x] Approved indication |
+| 5 | `patent_02_US11357820B2_tirzepatide.txt:4` | tirzepatide → DEVELOPED_BY → Eli Lilly | 0.98 | "Assignee: Eli Lilly and Company" | [x] Patent assignee |
+| 6 | `patent_02_US11357820B2_tirzepatide.txt:13` | tirzepatide → EVALUATED_IN → SURPASS | 0.95 | "SURPASS clinical trial program" | [x] Phase 3 program |
+| 7 | `patent_02_US11357820B2_tirzepatide.txt:13` | tirzepatide → HAS_MECHANISM → dual GIP/GLP-1 agonism | 0.97 | "dual agonist mechanism activates both the GIP receptor (primary) and the GLP-1 receptor" | [x] Correct dual mechanism |
 
 ---
 
@@ -73,21 +73,21 @@ This scenario introduces three capabilities not tested in S1-S5:
 
 | # | Source File | Entity | Type | Confidence | Source Text | Verification |
 |---|-------------|--------|------|------------|-------------|--------------|
-| 1 | `pmid_37192005.txt` | semaglutide | COMPOUND | 0.99 | "glucagon-like peptide-1 (GLP-1) analogue semaglutide reduces alcohol drinking" | [x] Correct compound |
-| 2 | `pmid_37192005.txt` | GLP1R | PROTEIN | 0.99 | "GLP-1 receptor" | [x] Target receptor |
-| 3 | `pmid_37192005.txt` | GABA | METABOLITE | 0.95 | "semaglutide modulates GABAergic transmission" | [x] Neurotransmitter |
-| 4 | `pmid_37192005.txt` | alcohol use disorder | DISEASE | 0.90 | "reduces alcohol drinking" | [x] Emerging indication |
-| 5 | `pmid_37192005.txt` | central amygdala | CELL_OR_TISSUE | 0.92 | "central amygdala" | [x] Brain region |
-| 6 | `pmid_37192005.txt` | infralimbic cortex | CELL_OR_TISSUE | 0.92 | "infralimbic cortex" | [x] Brain region |
+| 1 | `pmid_37192005.txt:8` | semaglutide | COMPOUND | 0.99 | "glucagon-like peptide-1 (GLP-1) analogue semaglutide reduces alcohol drinking" | [x] Correct compound |
+| 2 | `pmid_37192005.txt:8` | GLP1R | PROTEIN | 0.99 | "GLP-1 receptor" | [x] Target receptor |
+| 3 | `pmid_37192005.txt:8` | GABA | METABOLITE | 0.95 | "semaglutide modulates GABAergic transmission" | [x] Neurotransmitter |
+| 4 | `pmid_37192005.txt:8` | alcohol use disorder | DISEASE | 0.90 | "reduces alcohol drinking" | [x] Emerging indication |
+| 5 | `pmid_37192005.txt:8` | central amygdala | CELL_OR_TISSUE | 0.92 | "central amygdala" | [x] Brain region |
+| 6 | `pmid_37192005.txt:8` | infralimbic cortex | CELL_OR_TISSUE | 0.92 | "infralimbic cortex" | [x] Brain region |
 
 ### Relations Extracted
 
 | # | Source File | Source → Relation → Target | Confidence | Evidence | Verification |
 |---|-------------|---------------------------|------------|----------|--------------|
-| 1 | `pmid_37192005.txt` | semaglutide → ACTIVATES → GLP1R | 0.99 | "GLP-1 analogue" | [x] Core MOA |
-| 2 | `pmid_37192005.txt` | semaglutide → INDICATED_FOR → alcohol use disorder | 0.75 | "reduces alcohol drinking" | [x] Emerging/preclinical, lower confidence appropriate |
-| 3 | `pmid_37192005.txt` | GLP1R → EXPRESSED_IN → central amygdala | 0.90 | "GLP-1 receptor in central amygdala" | [x] Brain expression |
-| 4 | `pmid_37192005.txt` | semaglutide → REGULATES_EXPRESSION → GABA | 0.85 | "modulates GABAergic transmission" | [x] Mechanism of anti-addictive effect |
+| 1 | `pmid_37192005.txt:8` | semaglutide → ACTIVATES → GLP1R | 0.99 | "GLP-1 analogue" | [x] Core MOA |
+| 2 | `pmid_37192005.txt:8` | semaglutide → INDICATED_FOR → alcohol use disorder | 0.75 | "reduces alcohol drinking" | [x] Emerging/preclinical, lower confidence appropriate |
+| 3 | `pmid_37192005.txt:8` | GLP1R → EXPRESSED_IN → central amygdala | 0.90 | "GLP-1 receptor in central amygdala" | [x] Brain expression |
+| 4 | `pmid_37192005.txt:8` | semaglutide → REGULATES_EXPRESSION → GABA | 0.85 | "modulates GABAergic transmission" | [x] Mechanism of anti-addictive effect |
 
 ---
 

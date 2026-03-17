@@ -20,39 +20,39 @@
 
 | # | Source File | Entity | Type | Confidence | Source Text (verify against) | Verification |
 |---|-------------|--------|------|------------|------------------------------|--------------|
-| 1 | pmid_38694233.txt | pegvaliase | COMPOUND | 0.99 | "Pegvaliase is an enzyme-substitution therapy approved for individuals with PKU" | [x] Correct |
-| 2 | pmid_38694233.txt | phenylketonuria | DISEASE | 0.99 | "Phenylketonuria (PKU) is a genetic disorder caused by deficiency of the enzyme phenylalanine hydroxylase" | [x] Correct |
-| 3 | pmid_38694233.txt | PAH | GENE | 0.97 | "genetic disorder caused by deficiency of the enzyme phenylalanine hydroxylase (PAH)" | [x] Correct |
-| 4 | pmid_38694233.txt | phenylalanine hydroxylase | PROTEIN | 0.97 | "deficiency of the enzyme phenylalanine hydroxylase (PAH), which results in phenylalanine (Phe) accumulation" | [x] Correct |
-| 5 | pmid_38694233.txt | phenylalanine | METABOLITE | 0.99 | "phenylalanine (Phe) accumulation in the blood and brain" | [x] Correct |
-| 6 | pmid_38694233.txt | PRISM-1 | CLINICAL_TRIAL | 0.99 | "randomized trials PRISM-1 (NCT01819727)" | [x] Correct — NCT ID present |
-| 7 | pmid_38694233.txt | PRISM-2 | CLINICAL_TRIAL | 0.99 | "PRISM-2 (NCT01889862)" | [x] Correct — NCT ID present |
-| 8 | pmid_38694233.txt | 165-304 | CLINICAL_TRIAL | 0.99 | "open-label extension study 165-304 (NCT03694353)" | [x] Correct — NCT ID present |
-| 9 | pmid_38694233.txt | arthralgia | ADVERSE_EVENT | 0.97 | "most common adverse events (AEs) being arthralgia, injection site reactions, headache" | [x] Correct |
-| 10 | pmid_38694233.txt | injection site reaction | ADVERSE_EVENT | 0.97 | "most common adverse events (AEs) being arthralgia, injection site reactions, headache" | [x] Correct |
-| 11 | pmid_38694233.txt | headache | ADVERSE_EVENT | 0.97 | "most common adverse events (AEs) being arthralgia, injection site reactions, headache" | [x] Correct |
-| 12 | pmid_38694233.txt | injection site erythema | ADVERSE_EVENT | 0.95 | "injection site reactions, headache, and injection site erythema" | [x] Correct |
-| 13 | pmid_38694233.txt | hypersensitivity | ADVERSE_EVENT | 0.93 | "incidence of most AEs, including hypersensitivity AEs, was higher during the early treatment phase" | [x] Correct |
-| 14 | pmid_38694233.txt | blood phenylalanine | BIOMARKER | 0.95 | "71.3%, 65.1%, and 59.4% achieved clinically significant blood Phe levels of <=600, <=360, and <=120 umol/L" | [x] Correct — thresholds captured |
-| 15 | pmid_38694233.txt | Harding et al. 2024 | PUBLICATION | 0.99 | "Harding Cary O, Longo Nicola, Northrup Hope, Sacharow Stephanie, Singh Rani" | [x] Correct |
+| 1 | pmid_38694233.txt:8 | pegvaliase | COMPOUND | 0.99 | "Pegvaliase is an enzyme-substitution therapy approved for individuals with PKU" | [x] Correct |
+| 2 | pmid_38694233.txt:8 | phenylketonuria | DISEASE | 0.99 | "Phenylketonuria (PKU) is a genetic disorder caused by deficiency of the enzyme phenylalanine hydroxylase" | [x] Correct |
+| 3 | pmid_38694233.txt:8 | PAH | GENE | 0.97 | "genetic disorder caused by deficiency of the enzyme phenylalanine hydroxylase (PAH)" | [x] Correct |
+| 4 | pmid_38694233.txt:8 | phenylalanine hydroxylase | PROTEIN | 0.97 | "deficiency of the enzyme phenylalanine hydroxylase (PAH), which results in phenylalanine (Phe) accumulation" | [x] Correct |
+| 5 | pmid_38694233.txt:8 | phenylalanine | METABOLITE | 0.99 | "phenylalanine (Phe) accumulation in the blood and brain" | [x] Correct |
+| 6 | pmid_38694233.txt:8 | PRISM-1 | CLINICAL_TRIAL | 0.99 | "randomized trials PRISM-1 (NCT01819727)" | [x] Correct — NCT ID present |
+| 7 | pmid_38694233.txt:8 | PRISM-2 | CLINICAL_TRIAL | 0.99 | "PRISM-2 (NCT01889862)" | [x] Correct — NCT ID present |
+| 8 | pmid_38694233.txt:8 | 165-304 | CLINICAL_TRIAL | 0.99 | "open-label extension study 165-304 (NCT03694353)" | [x] Correct — NCT ID present |
+| 9 | pmid_38694233.txt:8 | arthralgia | ADVERSE_EVENT | 0.97 | "most common adverse events (AEs) being arthralgia, injection site reactions, headache" | [x] Correct |
+| 10 | pmid_38694233.txt:8 | injection site reaction | ADVERSE_EVENT | 0.97 | "most common adverse events (AEs) being arthralgia, injection site reactions, headache" | [x] Correct |
+| 11 | pmid_38694233.txt:8 | headache | ADVERSE_EVENT | 0.97 | "most common adverse events (AEs) being arthralgia, injection site reactions, headache" | [x] Correct |
+| 12 | pmid_38694233.txt:8 | injection site erythema | ADVERSE_EVENT | 0.95 | "injection site reactions, headache, and injection site erythema" | [x] Correct |
+| 13 | pmid_38694233.txt:8 | hypersensitivity | ADVERSE_EVENT | 0.93 | "incidence of most AEs, including hypersensitivity AEs, was higher during the early treatment phase" | [x] Correct |
+| 14 | pmid_38694233.txt:8 | blood phenylalanine | BIOMARKER | 0.95 | "71.3%, 65.1%, and 59.4% achieved clinically significant blood Phe levels of <=600, <=360, and <=120 umol/L" | [x] Correct — thresholds captured |
+| 15 | pmid_38694233.txt:2 | Harding et al. 2024 | PUBLICATION | 0.99 | "Harding Cary O, Longo Nicola, Northrup Hope, Sacharow Stephanie, Singh Rani" | [x] Correct |
 
 ### Relations Extracted
 
 | # | Source File | Source Entity | Relation | Target Entity | Confidence | Evidence | Verification |
 |---|-------------|---------------|----------|---------------|------------|----------|--------------|
-| 1 | pmid_38694233.txt | pegvaliase | INDICATED_FOR | phenylketonuria | 0.99 | "Pegvaliase is an enzyme-substitution therapy approved for individuals with PKU and uncontrolled blood Phe concentrations" | [x] Correct |
-| 2 | pmid_38694233.txt | pegvaliase | EVALUATED_IN | PRISM-1 | 0.99 | "final data from the randomized trials PRISM-1 (NCT01819727)" | [x] Correct |
-| 3 | pmid_38694233.txt | pegvaliase | EVALUATED_IN | PRISM-2 | 0.99 | "final data from the randomized trials PRISM-2 (NCT01889862)" | [x] Correct |
-| 4 | pmid_38694233.txt | pegvaliase | EVALUATED_IN | 165-304 | 0.99 | "open-label extension study 165-304 (NCT03694353)" | [x] Correct |
-| 5 | pmid_38694233.txt | pegvaliase | CAUSES | arthralgia | 0.97 | "most common adverse events (AEs) being arthralgia" | [x] Correct |
-| 6 | pmid_38694233.txt | pegvaliase | CAUSES | injection site reaction | 0.97 | "most common adverse events (AEs) being arthralgia, injection site reactions" | [x] Correct |
-| 7 | pmid_38694233.txt | pegvaliase | CAUSES | headache | 0.97 | "most common adverse events (AEs) being arthralgia, injection site reactions, headache" | [x] Correct |
-| 8 | pmid_38694233.txt | pegvaliase | CAUSES | injection site erythema | 0.95 | "injection site reactions, headache, and injection site erythema" | [x] Correct |
-| 9 | pmid_38694233.txt | pegvaliase | CAUSES | hypersensitivity | 0.93 | "incidence of most AEs, including hypersensitivity AEs, was higher during the early treatment phase" | [x] Correct |
-| 10 | pmid_38694233.txt | PAH | IMPLICATED_IN | phenylketonuria | 0.98 | "genetic disorder caused by deficiency of the enzyme phenylalanine hydroxylase (PAH)" | [x] Correct |
-| 11 | pmid_38694233.txt | PAH | ENCODES | phenylalanine hydroxylase | 0.97 | "deficiency of the enzyme phenylalanine hydroxylase (PAH)" | [x] Correct |
-| 12 | pmid_38694233.txt | blood phenylalanine | DIAGNOSTIC_FOR | phenylketonuria | 0.95 | "uncontrolled blood Phe concentrations (>600 umol/L)" | [x] Correct |
-| 13 | pmid_38694233.txt | blood phenylalanine | PREDICTS_RESPONSE_TO | pegvaliase | 0.90 | "71.3%, 65.1%, and 59.4% achieved clinically significant blood Phe levels of <=600, <=360, and <=120 umol/L" | [x] Correct |
+| 1 | pmid_38694233.txt:8 | pegvaliase | INDICATED_FOR | phenylketonuria | 0.99 | "Pegvaliase is an enzyme-substitution therapy approved for individuals with PKU and uncontrolled blood Phe concentrations" | [x] Correct |
+| 2 | pmid_38694233.txt:8 | pegvaliase | EVALUATED_IN | PRISM-1 | 0.99 | "final data from the randomized trials PRISM-1 (NCT01819727)" | [x] Correct |
+| 3 | pmid_38694233.txt:8 | pegvaliase | EVALUATED_IN | PRISM-2 | 0.99 | "final data from the randomized trials PRISM-2 (NCT01889862)" | [x] Correct |
+| 4 | pmid_38694233.txt:8 | pegvaliase | EVALUATED_IN | 165-304 | 0.99 | "open-label extension study 165-304 (NCT03694353)" | [x] Correct |
+| 5 | pmid_38694233.txt:8 | pegvaliase | CAUSES | arthralgia | 0.97 | "most common adverse events (AEs) being arthralgia" | [x] Correct |
+| 6 | pmid_38694233.txt:8 | pegvaliase | CAUSES | injection site reaction | 0.97 | "most common adverse events (AEs) being arthralgia, injection site reactions" | [x] Correct |
+| 7 | pmid_38694233.txt:8 | pegvaliase | CAUSES | headache | 0.97 | "most common adverse events (AEs) being arthralgia, injection site reactions, headache" | [x] Correct |
+| 8 | pmid_38694233.txt:8 | pegvaliase | CAUSES | injection site erythema | 0.95 | "injection site reactions, headache, and injection site erythema" | [x] Correct |
+| 9 | pmid_38694233.txt:8 | pegvaliase | CAUSES | hypersensitivity | 0.93 | "incidence of most AEs, including hypersensitivity AEs, was higher during the early treatment phase" | [x] Correct |
+| 10 | pmid_38694233.txt:8 | PAH | IMPLICATED_IN | phenylketonuria | 0.98 | "genetic disorder caused by deficiency of the enzyme phenylalanine hydroxylase (PAH)" | [x] Correct |
+| 11 | pmid_38694233.txt:8 | PAH | ENCODES | phenylalanine hydroxylase | 0.97 | "deficiency of the enzyme phenylalanine hydroxylase (PAH)" | [x] Correct |
+| 12 | pmid_38694233.txt:8 | blood phenylalanine | DIAGNOSTIC_FOR | phenylketonuria | 0.95 | "uncontrolled blood Phe concentrations (>600 umol/L)" | [x] Correct |
+| 13 | pmid_38694233.txt:8 | blood phenylalanine | PREDICTS_RESPONSE_TO | pegvaliase | 0.90 | "71.3%, 65.1%, and 59.4% achieved clinically significant blood Phe levels of <=600, <=360, and <=120 umol/L" | [x] Correct |
 
 ### UAT Question Verification
 
