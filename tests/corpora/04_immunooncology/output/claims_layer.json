@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "description": "Super Domain epistemic layer \u2014 complements Louvain community structure",
+    "reference": "Eric Little, 'Reasoning with Knowledge Graphs \u2014 Super Domains', KG Conference NYC 2025",
+    "generated_from": "tests/corpora/04_immunooncology/output/graph_data.json",
+    "total_relations": 361
+  },
+  "summary": {
+    "epistemic_status_counts": {
+      "asserted": 357,
+      "hypothesized": 3,
+      "negative": 1
+    },
+    "contradictions_found": 0,
+    "hypotheses_found": 1,
+    "document_types": {
+      "paper": {
+        "asserted": 367,
+        "hypothesized": 3,
+        "negative": 1
+      },
+      "unknown": {
+        "asserted": 60
+      }
+    }
+  },
+  "base_domain": {
+    "description": "Brute facts \u2014 asserted with high confidence, no hedging",
+    "relation_count": 357
+  },
+  "super_domain": {
+    "description": "Epistemic facts \u2014 hypothesized, speculative, prophetic, negative, or contested",
+    "relation_count": 4,
+    "hypotheses": [
+      {
+        "id": "hypothesis:1",
+        "label": "cancer stem cells \u2014 disease recurrence \u2014 tumor heterogeneity",
+        "status": "proposed",
+        "member_relations": [
+          "cell_or_tissue:cancer_stem_cells|IMPLICATED_IN|phenotype:disease_recurrence",
+          "phenotype:tumor_heterogeneity|DIAGNOSTIC_FOR|phenotype:disease_recurrence"
+        ],
+        "member_entities": [
+          "cell_or_tissue:cancer_stem_cells",
+          "phenotype:disease_recurrence",
+          "phenotype:tumor_heterogeneity"
+        ],
+        "support_documents": [
+          "pmid_37723590"
+        ],
+        "evidence_summary": "expression of cancer stem cell markers, potentially mediating immune escape and recurrence",
+        "relation_count": 2,
+        "entity_count": 3
+      }
+    ],
+    "contradictions": []
+  }
+}

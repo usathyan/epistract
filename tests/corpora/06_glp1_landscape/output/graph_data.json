@@ -3196,7 +3196,8 @@
           "evidence": "",
           "relation_id": "compound:semaglutide|MENTIONED_IN|doc:patent_01"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -3296,7 +3297,8 @@
           "evidence": "GLP-1 receptor agonist",
           "relation_id": "compound:semaglutide|ACTIVATES|protein:glp1r|pmid_41523559"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -3319,7 +3321,8 @@
           "evidence": "Glucagon-Like Peptide-1 Receptor Agonists, Semaglutide",
           "relation_id": "compound:semaglutide|TARGETS|protein:glp1r|pmid_38785209"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -3370,7 +3373,8 @@
           "evidence": "Patients with type 2 diabetes",
           "relation_id": "compound:semaglutide|INDICATED_FOR|disease:type_2_diabetes_mellitus|pmid_38785209"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -3435,7 +3439,8 @@
           "evidence": "Efficacy and Safety of Tirzepatide and Semaglutide for Obesity Management",
           "relation_id": "compound:semaglutide|INDICATED_FOR|disease:obesity|pmid_41523559"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -3458,7 +3463,8 @@
           "evidence": "cardiovascular risk reduction",
           "relation_id": "compound:semaglutide|INDICATED_FOR|disease:cardiovascular_disease|patent_01"
         }
-      ]
+      ],
+      "epistemic_status": "prophetic"
     },
     {
       "source": "compound:semaglutide",
@@ -3516,7 +3522,8 @@
           "evidence": "Semaglutide, a glucagon-like peptide-1 receptor agonist",
           "relation_id": "compound:semaglutide|HAS_MECHANISM|mechanism_of_action:glp_1_receptor_agonism|pmid_40305708"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -3539,7 +3546,8 @@
           "evidence": "extends the half-life by promoting albumin binding",
           "relation_id": "compound:semaglutide|HAS_MECHANISM|mechanism_of_action:albumin_binding|patent_01"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -3562,7 +3570,8 @@
           "evidence": "extends the half-life by promoting albumin binding",
           "relation_id": "compound:semaglutide|BINDS_TO|protein:albumin|patent_01"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -3592,7 +3601,8 @@
           "evidence": "The key semaglutide analog is designated [Aib8, Arg34, Lys37]GLP-1(7-37)",
           "relation_id": "compound:semaglutide|DERIVED_FROM|compound:glp_1_7_37|patent_03"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -3615,7 +3625,8 @@
           "evidence": "Patent ID: US10888605B2",
           "relation_id": "compound:semaglutide|PUBLISHED_IN|publication:us10888605b2|patent_01"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -3638,7 +3649,8 @@
           "evidence": "",
           "relation_id": "compound:semaglutide|MENTIONED_IN|doc:patent_03"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -3661,7 +3673,8 @@
           "evidence": "managing type 2 diabetes, hyperglycemia",
           "relation_id": "compound:semaglutide|INDICATED_FOR|disease:hyperglycemia|patent_03"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -3684,7 +3697,8 @@
           "evidence": "managing type 2 diabetes, hyperglycemia, glucose tolerance disorders",
           "relation_id": "compound:semaglutide|INDICATED_FOR|disease:glucose_tolerance_disorders|patent_03"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -3714,7 +3728,8 @@
           "evidence": "phase-3 clinical trials like SUSTAIN and PIONEER",
           "relation_id": "compound:semaglutide|EVALUATED_IN|clinical_trial:sustain|pmid_35650449"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -3737,7 +3752,8 @@
           "evidence": "Patent ID: US10335462B2",
           "relation_id": "compound:semaglutide|PUBLISHED_IN|publication:us10335462b2|patent_03"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -3760,7 +3776,8 @@
           "evidence": "prepared per Example 4 of WO2006/097537",
           "relation_id": "compound:semaglutide|PUBLISHED_IN|publication:wo2006_097537|patent_03"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -3783,7 +3800,8 @@
           "evidence": "",
           "relation_id": "compound:semaglutide|MENTIONED_IN|doc:patent_05"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -3806,7 +3824,8 @@
           "evidence": "",
           "relation_id": "compound:semaglutide|MENTIONED_IN|doc:patent_08"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -3829,7 +3848,8 @@
           "evidence": "",
           "relation_id": "compound:semaglutide|MENTIONED_IN|doc:patent_10"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -3852,7 +3872,8 @@
           "evidence": "pharmaceutical compositions combining a GLP-1 receptor agonist with sodium N-(8-(2-hydroxybenzoyl)amino)caprylate (SNAC) for oral administration",
           "relation_id": "compound:semaglutide|COMBINED_WITH|compound:snac|patent_10"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -3875,7 +3896,8 @@
           "evidence": "",
           "relation_id": "compound:semaglutide|MENTIONED_IN|doc:pmid_35441470"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -3905,7 +3927,8 @@
           "evidence": "anti-obesity potential of semaglutide, which was established in STEP trials",
           "relation_id": "compound:semaglutide|EVALUATED_IN|clinical_trial:step_1|pmid_35650449"
         }
-      ]
+      ],
+      "epistemic_status": "contested"
     },
     {
       "source": "compound:semaglutide",
@@ -3928,7 +3951,8 @@
           "evidence": "mean weight loss was 17.3% (SD: 9.3%) with semaglutide",
           "relation_id": "compound:semaglutide|CAUSES|phenotype:weight_loss|pmid_35441470"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -3951,7 +3975,8 @@
           "evidence": "semaglutide and placebo participants regained 11.6 (SD: 7.7) and 1.9 (SD: 4.8) percentage points of lost weight",
           "relation_id": "compound:semaglutide|ASSOCIATED_WITH|phenotype:weight_regain|pmid_35441470"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -3974,7 +3999,8 @@
           "evidence": "",
           "relation_id": "compound:semaglutide|MENTIONED_IN|doc:pmid_35650449"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -3997,7 +4023,8 @@
           "evidence": "Various pre-clinical and clinical studies have revealed the hepatoprotective effect of semaglutide in NASH",
           "relation_id": "compound:semaglutide|INDICATED_FOR|disease:non_alcoholic_steatohepatitis|pmid_35650449"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4020,7 +4047,8 @@
           "evidence": "neuroprotective effect in Parkinson's and Alzheimer's disease",
           "relation_id": "compound:semaglutide|INDICATED_FOR|disease:parkinson_disease|pmid_35650449"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4043,7 +4071,8 @@
           "evidence": "neuroprotective effect in Parkinson's and Alzheimer's disease",
           "relation_id": "compound:semaglutide|INDICATED_FOR|disease:alzheimer_disease|pmid_35650449"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4066,7 +4095,8 @@
           "evidence": "phase-3 clinical trials like SUSTAIN and PIONEER",
           "relation_id": "compound:semaglutide|EVALUATED_IN|clinical_trial:pioneer|pmid_35650449"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4089,7 +4119,8 @@
           "evidence": "Semaglutide improves insulin resistance, insulin signalling pathway",
           "relation_id": "compound:semaglutide|PARTICIPATES_IN|pathway:insulin_signalling_pathway|pmid_35650449"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4112,7 +4143,8 @@
           "evidence": "",
           "relation_id": "compound:semaglutide|MENTIONED_IN|doc:pmid_36945734"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4135,7 +4167,8 @@
           "evidence": "SOUL trial (Semaglutide cardiOvascular oUtcomes triaL)",
           "relation_id": "compound:semaglutide|EVALUATED_IN|clinical_trial:soul|pmid_36945734"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4158,7 +4191,8 @@
           "evidence": "",
           "relation_id": "compound:semaglutide|MENTIONED_IN|doc:pmid_37192005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4181,7 +4215,8 @@
           "evidence": "GLP-1 analogues may be used for the treatment of alcohol use disorder (AUD)",
           "relation_id": "compound:semaglutide|INDICATED_FOR|disease:alcohol_use_disorder|pmid_37192005"
         }
-      ]
+      ],
+      "epistemic_status": "hypothesized"
     },
     {
       "source": "compound:semaglutide",
@@ -4204,7 +4239,8 @@
           "evidence": "Semaglutide increased sIPSC frequency in CeA and ILC neurons from alcohol-naive rats, suggesting enhanced GABA release",
           "relation_id": "compound:semaglutide|REGULATES_EXPRESSION|metabolite:gaba|pmid_37192005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4227,7 +4263,8 @@
           "evidence": "Semaglutide dose-dependently reduced binge-like alcohol drinking in mice",
           "relation_id": "compound:semaglutide|ASSOCIATED_WITH|phenotype:binge_like_alcohol_drinking|pmid_37192005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4250,7 +4287,8 @@
           "evidence": "",
           "relation_id": "compound:semaglutide|MENTIONED_IN|doc:pmid_38785209"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4273,7 +4311,8 @@
           "evidence": "Glucagon-Like Peptide-1 Receptor Agonists",
           "relation_id": "compound:semaglutide|HAS_MECHANISM|mechanism_of_action:glp_1_receptor_agonist|pmid_38785209"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4296,7 +4335,8 @@
           "evidence": "Semaglutide reduced the risk of clinically important kidney outcomes",
           "relation_id": "compound:semaglutide|INDICATED_FOR|disease:chronic_kidney_disease|pmid_38785209"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4319,7 +4359,8 @@
           "evidence": "FLOW ClinicalTrials.gov number, NCT03819153",
           "relation_id": "compound:semaglutide|EVALUATED_IN|clinical_trial:flow|pmid_38785209"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4342,7 +4383,8 @@
           "evidence": "",
           "relation_id": "compound:semaglutide|MENTIONED_IN|doc:pmid_38851997"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4372,7 +4414,8 @@
           "evidence": "Prescriptions for semaglutide vs non-GLP-1 RA medications to manage either T2D or weight",
           "relation_id": "compound:semaglutide|INDICATED_FOR|disease:type_2_diabetes|pmid_38958939"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4395,7 +4438,8 @@
           "evidence": "",
           "relation_id": "compound:semaglutide|MENTIONED_IN|doc:pmid_38958939"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4418,7 +4462,8 @@
           "evidence": "A Cox proportional hazards regression model showed higher risk of NAION for patients receiving semaglutide (hazard ratio [HR], 4.28; 95% CI, 1.62-11.29; P < .001)",
           "relation_id": "compound:semaglutide|CAUSES|adverse_event:nonarteritic_anterior_ischemic_optic_neuropathy|pmid_38958939"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4441,7 +4486,8 @@
           "evidence": "",
           "relation_id": "compound:semaglutide|MENTIONED_IN|doc:pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4464,7 +4510,8 @@
           "evidence": "semaglutide were significantly better than placebo in achieving fibrosis regression",
           "relation_id": "compound:semaglutide|INDICATED_FOR|disease:mash|pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4487,7 +4534,8 @@
           "evidence": "",
           "relation_id": "compound:semaglutide|MENTIONED_IN|doc:pmid_40305708"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4510,7 +4558,8 @@
           "evidence": "candidate for the treatment of metabolic dysfunction-associated steatohepatitis",
           "relation_id": "compound:semaglutide|INDICATED_FOR|disease:metabolic_dysfunction_associated_steatohepatitis|pmid_40305708"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4533,7 +4582,8 @@
           "evidence": "ClinicalTrials.gov number, NCT04822181",
           "relation_id": "compound:semaglutide|EVALUATED_IN|clinical_trial:nct04822181|pmid_40305708"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4563,7 +4613,8 @@
           "evidence": "Gastrointestinal adverse events were the most common",
           "relation_id": "compound:semaglutide|CAUSES|adverse_event:gastrointestinal_adverse_events|pmid_41523559"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4586,7 +4637,8 @@
           "evidence": "",
           "relation_id": "compound:semaglutide|MENTIONED_IN|doc:pmid_40544432"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4609,7 +4661,8 @@
           "evidence": "",
           "relation_id": "compound:semaglutide|MENTIONED_IN|doc:pmid_40544433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4632,7 +4685,8 @@
           "evidence": "semaglutide alone at a dose of 2.4 mg",
           "relation_id": "compound:semaglutide|EVALUATED_IN|clinical_trial:nct05567796|pmid_40544433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:semaglutide",
@@ -4655,7 +4709,8 @@
           "evidence": "",
           "relation_id": "compound:semaglutide|MENTIONED_IN|doc:pmid_41523559"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:glp_1_7_37",
@@ -4678,7 +4733,8 @@
           "evidence": "",
           "relation_id": "compound:glp_1_7_37|MENTIONED_IN|doc:patent_01"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:glp_1_7_37",
@@ -4715,7 +4771,8 @@
           "evidence": " ID NO: 1 \u2014 Human GLP-1(7-37) reference sequence: HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG",
           "relation_id": "compound:glp_1_7_37|HAS_SEQUENCE|peptide_sequence:peptide_31aa|patent_08"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:glp_1_7_37",
@@ -4738,7 +4795,8 @@
           "evidence": "",
           "relation_id": "compound:glp_1_7_37|MENTIONED_IN|doc:patent_03"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:glp_1_7_37",
@@ -4761,7 +4819,8 @@
           "evidence": "",
           "relation_id": "compound:glp_1_7_37|MENTIONED_IN|doc:patent_08"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -4784,7 +4843,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:patent_01"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -4807,7 +4867,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:patent_02"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -4830,7 +4891,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:patent_03"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -4853,7 +4915,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:patent_04"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -4876,7 +4939,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:patent_05"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -4899,7 +4963,8 @@
           "evidence": "stabilizing an active receptor conformation that couples to Gs proteins and drives intracellular cAMP accumulation",
           "relation_id": "protein:glp1r|PARTICIPATES_IN|pathway:camp_signaling|patent_05"
         }
-      ]
+      ],
+      "epistemic_status": "prophetic"
     },
     {
       "source": "protein:glp1r",
@@ -4922,7 +4987,8 @@
           "evidence": "distinct from the orthosteric peptide-binding domain",
           "relation_id": "protein:glp1r|HAS_DOMAIN|protein_domain:orthosteric_peptide_binding_domain|patent_05"
         }
-      ]
+      ],
+      "epistemic_status": "prophetic"
     },
     {
       "source": "protein:glp1r",
@@ -4945,7 +5011,8 @@
           "evidence": "bind within a transmembrane pocket",
           "relation_id": "protein:glp1r|HAS_DOMAIN|protein_domain:transmembrane_pocket|patent_05"
         }
-      ]
+      ],
+      "epistemic_status": "prophetic"
     },
     {
       "source": "protein:glp1r",
@@ -4968,7 +5035,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:patent_06"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -4991,7 +5059,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:patent_07"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5014,7 +5083,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:patent_08"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5037,7 +5107,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5060,7 +5131,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:patent_10"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5083,7 +5155,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:pmid_32442310"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5106,7 +5179,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:pmid_35650449"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5129,7 +5203,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:pmid_35658024"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5152,7 +5227,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:pmid_36945734"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5175,7 +5251,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:pmid_37192005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5198,7 +5275,8 @@
           "evidence": "sIPSCs from central amygdala (CeA) and infralimbic cortex (ILC) neurons",
           "relation_id": "protein:glp1r|EXPRESSED_IN|cell_or_tissue:central_amygdala|pmid_37192005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5221,7 +5299,8 @@
           "evidence": "sIPSCs from central amygdala (CeA) and infralimbic cortex (ILC) neurons",
           "relation_id": "protein:glp1r|EXPRESSED_IN|cell_or_tissue:infralimbic_cortex|pmid_37192005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5244,7 +5323,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:pmid_37351564"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5267,7 +5347,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:pmid_37657738"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5290,7 +5371,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:pmid_38367045"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5313,7 +5395,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:pmid_38632474"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5336,7 +5419,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:pmid_38785209"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5359,7 +5443,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:pmid_38858523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5382,7 +5467,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:pmid_38958939"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5405,7 +5491,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:pmid_39357509"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5428,7 +5515,8 @@
           "evidence": "GLP-1R agonism in curbing obesity, achieved by impacting appetite",
           "relation_id": "protein:glp1r|HAS_MECHANISM|mechanism_of_action:appetite_regulation|pmid_39357509"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5451,7 +5539,8 @@
           "evidence": "GLP-1R agonism may have the capacity to shape the neurovascular landscape",
           "relation_id": "protein:glp1r|PARTICIPATES_IN|pathway:neurovascular_signaling|pmid_39357509"
         }
-      ]
+      ],
+      "epistemic_status": "hypothesized"
     },
     {
       "source": "protein:glp1r",
@@ -5474,7 +5563,8 @@
           "evidence": "Whether GLP-1R agonism directly impacts brain health",
           "relation_id": "protein:glp1r|EXPRESSED_IN|cell_or_tissue:brain|pmid_39357509"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5497,7 +5587,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:pmid_39536238"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5520,7 +5611,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:pmid_39663847"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5543,7 +5635,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:pmid_40305708"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5566,7 +5659,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:pmid_40544432"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5589,7 +5683,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:pmid_40544433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5612,7 +5707,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:pmid_40544435"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5635,7 +5731,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:pmid_40726115"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5658,7 +5755,8 @@
           "evidence": "dopaminergic pathways in substance use disorders",
           "relation_id": "protein:glp1r|PARTICIPATES_IN|pathway:dopaminergic_pathway|pmid_40726115"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp1r",
@@ -5681,7 +5779,8 @@
           "evidence": "They may reduce inflammation, protect nerve cells",
           "relation_id": "protein:glp1r|PARTICIPATES_IN|pathway:inflammation|pmid_40726115"
         }
-      ]
+      ],
+      "epistemic_status": "hypothesized"
     },
     {
       "source": "protein:glp1r",
@@ -5704,7 +5803,8 @@
           "evidence": "",
           "relation_id": "protein:glp1r|MENTIONED_IN|doc:pmid_41523559"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:albumin",
@@ -5727,7 +5827,8 @@
           "evidence": "",
           "relation_id": "protein:albumin|MENTIONED_IN|doc:patent_01"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:albumin",
@@ -5750,7 +5851,8 @@
           "evidence": "",
           "relation_id": "protein:albumin|MENTIONED_IN|doc:patent_02"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:albumin",
@@ -5773,7 +5875,8 @@
           "evidence": "",
           "relation_id": "protein:albumin|MENTIONED_IN|doc:patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes_mellitus",
@@ -5796,7 +5899,8 @@
           "evidence": "",
           "relation_id": "disease:type_2_diabetes_mellitus|MENTIONED_IN|doc:patent_01"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes_mellitus",
@@ -5819,7 +5923,8 @@
           "evidence": "",
           "relation_id": "disease:type_2_diabetes_mellitus|MENTIONED_IN|doc:patent_02"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes_mellitus",
@@ -5842,7 +5947,8 @@
           "evidence": "",
           "relation_id": "disease:type_2_diabetes_mellitus|MENTIONED_IN|doc:patent_03"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes_mellitus",
@@ -5865,7 +5971,8 @@
           "evidence": "",
           "relation_id": "disease:type_2_diabetes_mellitus|MENTIONED_IN|doc:patent_04"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes_mellitus",
@@ -5888,7 +5995,8 @@
           "evidence": "",
           "relation_id": "disease:type_2_diabetes_mellitus|MENTIONED_IN|doc:patent_05"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes_mellitus",
@@ -5911,7 +6019,8 @@
           "evidence": "",
           "relation_id": "disease:type_2_diabetes_mellitus|MENTIONED_IN|doc:patent_06"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes_mellitus",
@@ -5934,7 +6043,8 @@
           "evidence": "",
           "relation_id": "disease:type_2_diabetes_mellitus|MENTIONED_IN|doc:patent_07"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes_mellitus",
@@ -5957,7 +6067,8 @@
           "evidence": "",
           "relation_id": "disease:type_2_diabetes_mellitus|MENTIONED_IN|doc:patent_08"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes_mellitus",
@@ -5980,7 +6091,8 @@
           "evidence": "",
           "relation_id": "disease:type_2_diabetes_mellitus|MENTIONED_IN|doc:patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes_mellitus",
@@ -6003,7 +6115,8 @@
           "evidence": "",
           "relation_id": "disease:type_2_diabetes_mellitus|MENTIONED_IN|doc:pmid_35650449"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes_mellitus",
@@ -6026,7 +6139,8 @@
           "evidence": "",
           "relation_id": "disease:type_2_diabetes_mellitus|MENTIONED_IN|doc:pmid_36945734"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes_mellitus",
@@ -6049,7 +6163,8 @@
           "evidence": "individuals with type 2 diabetes and established atherosclerotic CV disease (ASCVD)",
           "relation_id": "disease:type_2_diabetes_mellitus|ASSOCIATED_WITH|disease:atherosclerotic_cardiovascular_disease|pmid_36945734"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes_mellitus",
@@ -6079,7 +6194,8 @@
           "evidence": "Patients with type 2 diabetes and chronic kidney disease",
           "relation_id": "disease:type_2_diabetes_mellitus|ASSOCIATED_WITH|disease:chronic_kidney_disease|pmid_38785209"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes_mellitus",
@@ -6102,7 +6218,8 @@
           "evidence": "",
           "relation_id": "disease:type_2_diabetes_mellitus|MENTIONED_IN|doc:pmid_37351564"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes_mellitus",
@@ -6125,7 +6242,8 @@
           "evidence": "",
           "relation_id": "disease:type_2_diabetes_mellitus|MENTIONED_IN|doc:pmid_37657738"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes_mellitus",
@@ -6148,7 +6266,8 @@
           "evidence": "Type 2 diabetes appears to share common pathophysiological mechanisms with the development of cognitive disorders, such as Alzheimer's and Parkinson's disease",
           "relation_id": "disease:type_2_diabetes_mellitus|ASSOCIATED_WITH|disease:alzheimer_disease|pmid_37657738"
         }
-      ]
+      ],
+      "epistemic_status": "hypothesized"
     },
     {
       "source": "disease:type_2_diabetes_mellitus",
@@ -6171,7 +6290,8 @@
           "evidence": "cognitive disorders, such as Alzheimer's and Parkinson's disease, related to insulin resistance",
           "relation_id": "disease:type_2_diabetes_mellitus|ASSOCIATED_WITH|disease:parkinson_disease|pmid_37657738"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes_mellitus",
@@ -6194,7 +6314,8 @@
           "evidence": "delaying progression to dementia when diabetic patients are treated with GLP-1 receptor agonists",
           "relation_id": "disease:type_2_diabetes_mellitus|ASSOCIATED_WITH|disease:dementia|pmid_37657738"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes_mellitus",
@@ -6217,7 +6338,8 @@
           "evidence": "",
           "relation_id": "disease:type_2_diabetes_mellitus|MENTIONED_IN|doc:pmid_38367045"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes_mellitus",
@@ -6240,7 +6362,8 @@
           "evidence": "",
           "relation_id": "disease:type_2_diabetes_mellitus|MENTIONED_IN|doc:pmid_38632474"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes_mellitus",
@@ -6263,7 +6386,8 @@
           "evidence": "responsible for considerable levels of morbidity and mortality globally, primarily in the form of cardiovascular disease",
           "relation_id": "disease:type_2_diabetes_mellitus|ASSOCIATED_WITH|disease:cardiovascular_disease|pmid_38632474"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes_mellitus",
@@ -6286,7 +6410,8 @@
           "evidence": "",
           "relation_id": "disease:type_2_diabetes_mellitus|MENTIONED_IN|doc:pmid_38785209"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6309,7 +6434,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:patent_01"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6332,7 +6458,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:patent_02"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6355,7 +6482,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:patent_03"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6378,7 +6506,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:patent_04"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6401,7 +6530,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:patent_05"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6424,7 +6554,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:patent_06"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6447,7 +6578,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:patent_07"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6470,7 +6602,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:patent_08"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6493,7 +6626,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6516,7 +6650,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:pmid_32442310"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6539,7 +6674,8 @@
           "evidence": "Obesity is responsible for an increased risk of sub-fecundity and infertility",
           "relation_id": "disease:obesity|IMPLICATED_IN|disease:infertility|pmid_32442310"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6562,7 +6698,8 @@
           "evidence": "an underlying pathophysiological link between obesity, GLP-1 kinetic alterations, and PCOS pathogenesis",
           "relation_id": "disease:obesity|IMPLICATED_IN|disease:polycystic_ovary_syndrome|pmid_32442310"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6585,7 +6722,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:pmid_35441470"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6608,7 +6746,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:pmid_35650449"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6631,7 +6770,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:pmid_35658024"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6654,7 +6794,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:pmid_37351564"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6677,7 +6818,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:pmid_37657738"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6700,7 +6842,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:pmid_38367045"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6723,7 +6866,8 @@
           "evidence": "leads to various health conditions, such as type 2 diabetes mellitus",
           "relation_id": "disease:obesity|ASSOCIATED_WITH|disease:type_2_diabetes_mellitus|pmid_38367045"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6753,7 +6897,8 @@
           "evidence": "responsible for considerable levels of morbidity and mortality globally, primarily in the form of cardiovascular disease",
           "relation_id": "disease:obesity|ASSOCIATED_WITH|disease:cardiovascular_disease|pmid_38632474"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6776,7 +6921,8 @@
           "evidence": "leads to various health conditions, such as...non-alcoholic fatty liver disease",
           "relation_id": "disease:obesity|ASSOCIATED_WITH|disease:non_alcoholic_fatty_liver_disease|pmid_38367045"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6799,7 +6945,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:pmid_38632474"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6822,7 +6969,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:pmid_38851997"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6845,7 +6993,8 @@
           "evidence": "obesity with additional metabolic risk factor(s)",
           "relation_id": "disease:obesity|ASSOCIATED_WITH|disease:masld|pmid_38851997"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6868,7 +7017,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:pmid_38858523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6891,7 +7041,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:pmid_38958939"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6914,7 +7065,8 @@
           "evidence": "In the population of patients who were overweight or obese, 20 NAION events occurred in the prescribed semaglutide cohort",
           "relation_id": "disease:obesity|ASSOCIATED_WITH|adverse_event:nonarteritic_anterior_ischemic_optic_neuropathy|pmid_38958939"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6937,7 +7089,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:pmid_39357509"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6960,7 +7113,8 @@
           "evidence": "Obesity is directly linked to chronic low-grade inflammation",
           "relation_id": "disease:obesity|ASSOCIATED_WITH|phenotype:chronic_low_grade_inflammation|pmid_39357509"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -6983,7 +7137,8 @@
           "evidence": "connecting our metabolic environment to neurodegenerative diseases",
           "relation_id": "disease:obesity|ASSOCIATED_WITH|disease:neurodegenerative_diseases|pmid_39357509"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -7006,7 +7161,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:pmid_39536238"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -7029,7 +7185,8 @@
           "evidence": "Obesity is a chronic disease and causal precursor to myriad other conditions, including type 2 diabetes",
           "relation_id": "disease:obesity|ASSOCIATED_WITH|disease:type_2_diabetes|pmid_39536238"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -7052,7 +7209,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:pmid_39663847"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -7075,7 +7233,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:pmid_40544432"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -7098,7 +7257,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:pmid_40544433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -7121,7 +7281,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:pmid_40544435"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -7144,7 +7305,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:pmid_40726115"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obesity",
@@ -7167,7 +7329,8 @@
           "evidence": "",
           "relation_id": "disease:obesity|MENTIONED_IN|doc:pmid_41523559"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:cardiovascular_disease",
@@ -7190,7 +7353,8 @@
           "evidence": "",
           "relation_id": "disease:cardiovascular_disease|MENTIONED_IN|doc:patent_01"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:cardiovascular_disease",
@@ -7213,7 +7377,8 @@
           "evidence": "",
           "relation_id": "disease:cardiovascular_disease|MENTIONED_IN|doc:patent_07"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:cardiovascular_disease",
@@ -7236,7 +7401,8 @@
           "evidence": "",
           "relation_id": "disease:cardiovascular_disease|MENTIONED_IN|doc:patent_08"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:cardiovascular_disease",
@@ -7259,7 +7425,8 @@
           "evidence": "",
           "relation_id": "disease:cardiovascular_disease|MENTIONED_IN|doc:pmid_35441470"
         }
-      ]
+      ],
+      "epistemic_status": "unclassified"
     },
     {
       "source": "disease:cardiovascular_disease",
@@ -7282,7 +7449,8 @@
           "evidence": "",
           "relation_id": "disease:cardiovascular_disease|MENTIONED_IN|doc:pmid_38367045"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:cardiovascular_disease",
@@ -7305,7 +7473,8 @@
           "evidence": "",
           "relation_id": "disease:cardiovascular_disease|MENTIONED_IN|doc:pmid_38632474"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:cardiovascular_disease",
@@ -7328,7 +7497,8 @@
           "evidence": "",
           "relation_id": "disease:cardiovascular_disease|MENTIONED_IN|doc:pmid_38785209"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:glp_1_receptor_agonism",
@@ -7351,7 +7521,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:glp_1_receptor_agonism|MENTIONED_IN|doc:patent_01"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:glp_1_receptor_agonism",
@@ -7374,7 +7545,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:glp_1_receptor_agonism|MENTIONED_IN|doc:patent_03"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:glp_1_receptor_agonism",
@@ -7397,7 +7569,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:glp_1_receptor_agonism|MENTIONED_IN|doc:pmid_32442310"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:glp_1_receptor_agonism",
@@ -7420,7 +7593,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:glp_1_receptor_agonism|MENTIONED_IN|doc:pmid_35650449"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:glp_1_receptor_agonism",
@@ -7443,7 +7617,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:glp_1_receptor_agonism|MENTIONED_IN|doc:pmid_36945734"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:glp_1_receptor_agonism",
@@ -7466,7 +7641,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:glp_1_receptor_agonism|MENTIONED_IN|doc:pmid_37192005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:glp_1_receptor_agonism",
@@ -7489,7 +7665,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:glp_1_receptor_agonism|MENTIONED_IN|doc:pmid_37351564"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:glp_1_receptor_agonism",
@@ -7512,7 +7689,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:glp_1_receptor_agonism|MENTIONED_IN|doc:pmid_37657738"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:glp_1_receptor_agonism",
@@ -7535,7 +7713,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:glp_1_receptor_agonism|MENTIONED_IN|doc:pmid_40305708"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:glp_1_receptor_agonism",
@@ -7558,7 +7737,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:glp_1_receptor_agonism|MENTIONED_IN|doc:pmid_40544435"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:albumin_binding",
@@ -7581,7 +7761,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:albumin_binding|MENTIONED_IN|doc:patent_01"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:albumin_binding",
@@ -7604,7 +7785,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:albumin_binding|MENTIONED_IN|doc:patent_02"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:novo_nordisk",
@@ -7627,7 +7809,8 @@
           "evidence": "",
           "relation_id": "organization:novo_nordisk|MENTIONED_IN|doc:patent_01"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:novo_nordisk",
@@ -7650,7 +7833,8 @@
           "evidence": "",
           "relation_id": "organization:novo_nordisk|MENTIONED_IN|doc:patent_03"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:novo_nordisk",
@@ -7673,7 +7857,8 @@
           "evidence": "",
           "relation_id": "organization:novo_nordisk|MENTIONED_IN|doc:patent_08"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:novo_nordisk",
@@ -7696,7 +7881,8 @@
           "evidence": "",
           "relation_id": "organization:novo_nordisk|MENTIONED_IN|doc:patent_10"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:novo_nordisk",
@@ -7719,7 +7905,8 @@
           "evidence": "",
           "relation_id": "organization:novo_nordisk|MENTIONED_IN|doc:pmid_38785209"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:novo_nordisk",
@@ -7742,7 +7929,8 @@
           "evidence": "",
           "relation_id": "organization:novo_nordisk|MENTIONED_IN|doc:pmid_40305708"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:novo_nordisk",
@@ -7765,7 +7953,8 @@
           "evidence": "",
           "relation_id": "organization:novo_nordisk|MENTIONED_IN|doc:pmid_40544432"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:novo_nordisk",
@@ -7788,7 +7977,8 @@
           "evidence": "",
           "relation_id": "organization:novo_nordisk|MENTIONED_IN|doc:pmid_40544433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:novo_nordisk",
@@ -7839,7 +8029,8 @@
           "evidence": "Funded by Novo Nordisk",
           "relation_id": "compound:semaglutide|DEVELOPED_BY|organization:novo_nordisk|pmid_40305708"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:novo_nordisk",
@@ -7862,7 +8053,8 @@
           "evidence": "Assignee: Novo Nordisk AS",
           "relation_id": "compound:glp_1_amylin_co_agonist_polypeptide|DEVELOPED_BY|organization:novo_nordisk|patent_08"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:novo_nordisk",
@@ -7899,7 +8091,8 @@
           "evidence": "Funded by Novo Nordisk",
           "relation_id": "compound:cagrisema|DEVELOPED_BY|organization:novo_nordisk|pmid_40544433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:novo_nordisk",
@@ -7922,7 +8115,8 @@
           "evidence": "Assignee: Novo Nordisk AS",
           "relation_id": "compound:oral_semaglutide_tablet|DEVELOPED_BY|organization:novo_nordisk|patent_10"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "publication:us10888605b2",
@@ -7945,7 +8139,8 @@
           "evidence": "",
           "relation_id": "publication:us10888605b2|MENTIONED_IN|doc:patent_01"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "peptide_sequence:peptide_31aa",
@@ -7968,7 +8163,8 @@
           "evidence": "",
           "relation_id": "peptide_sequence:peptide_31aa|MENTIONED_IN|doc:patent_01"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "peptide_sequence:peptide_31aa",
@@ -7991,7 +8187,8 @@
           "evidence": "",
           "relation_id": "peptide_sequence:peptide_31aa|MENTIONED_IN|doc:patent_03"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "peptide_sequence:peptide_31aa",
@@ -8014,7 +8211,8 @@
           "evidence": "",
           "relation_id": "peptide_sequence:peptide_31aa|MENTIONED_IN|doc:patent_08"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tirzepatide",
@@ -8037,7 +8235,8 @@
           "evidence": "",
           "relation_id": "compound:tirzepatide|MENTIONED_IN|doc:patent_02"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tirzepatide",
@@ -8088,7 +8287,8 @@
           "evidence": "dual GIP/GLP-1 receptor agonist",
           "relation_id": "compound:tirzepatide|ACTIVATES|protein:gipr|pmid_41523559"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tirzepatide",
@@ -8139,7 +8339,8 @@
           "evidence": "dual GIP/GLP-1 receptor agonist",
           "relation_id": "compound:tirzepatide|ACTIVATES|protein:glp1r|pmid_41523559"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tirzepatide",
@@ -8162,7 +8363,8 @@
           "evidence": "The fatty diacid moiety enables albumin binding",
           "relation_id": "compound:tirzepatide|BINDS_TO|protein:albumin|patent_02"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tirzepatide",
@@ -8199,7 +8401,8 @@
           "evidence": "a novel glucose-dependent insulinotropic polypeptide and glucagon-like peptide-1 receptor agonist",
           "relation_id": "compound:tirzepatide|HAS_MECHANISM|mechanism_of_action:dual_gip_glp_1_receptor_agonism|pmid_35658024"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tirzepatide",
@@ -8222,7 +8425,8 @@
           "evidence": "The fatty diacid moiety enables albumin binding, extending the plasma half-life to approximately 5 days",
           "relation_id": "compound:tirzepatide|HAS_MECHANISM|mechanism_of_action:albumin_binding|patent_02"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tirzepatide",
@@ -8252,7 +8456,8 @@
           "evidence": "for the treatment of type 2 diabetes mellitus and obesity",
           "relation_id": "compound:tirzepatide|INDICATED_FOR|disease:type_2_diabetes_mellitus|patent_04"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tirzepatide",
@@ -8310,7 +8515,8 @@
           "evidence": "Efficacy and Safety of Tirzepatide and Semaglutide for Obesity Management",
           "relation_id": "compound:tirzepatide|INDICATED_FOR|disease:obesity|pmid_41523559"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tirzepatide",
@@ -8340,7 +8546,8 @@
           "evidence": "SURPASS and SURMOUNT trial programs",
           "relation_id": "compound:tirzepatide|EVALUATED_IN|clinical_trial:surpass|patent_04"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tirzepatide",
@@ -8363,7 +8570,8 @@
           "evidence": "Patent ID: US11357820B2",
           "relation_id": "compound:tirzepatide|PUBLISHED_IN|publication:us11357820b2|patent_02"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tirzepatide",
@@ -8386,7 +8594,8 @@
           "evidence": "",
           "relation_id": "compound:tirzepatide|MENTIONED_IN|doc:patent_04"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tirzepatide",
@@ -8423,7 +8632,8 @@
           "evidence": "SURMOUNT-1 trial, tirzepatide was shown to provide substantial and sustained reductions in body weight",
           "relation_id": "compound:tirzepatide|EVALUATED_IN|clinical_trial:surmount|pmid_39536238"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tirzepatide",
@@ -8446,7 +8656,8 @@
           "evidence": "Patent ID: WO2020159949A1",
           "relation_id": "compound:tirzepatide|PUBLISHED_IN|publication:wo2020159949a1|patent_04"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tirzepatide",
@@ -8469,7 +8680,8 @@
           "evidence": "",
           "relation_id": "compound:tirzepatide|MENTIONED_IN|doc:patent_05"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tirzepatide",
@@ -8492,7 +8704,8 @@
           "evidence": "",
           "relation_id": "compound:tirzepatide|MENTIONED_IN|doc:pmid_35658024"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tirzepatide",
@@ -8522,7 +8735,8 @@
           "evidence": "Gastrointestinal adverse events were the most common, occurring more frequently with tirzepatide",
           "relation_id": "compound:tirzepatide|CAUSES|adverse_event:gastrointestinal_adverse_events|pmid_41523559"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tirzepatide",
@@ -8552,7 +8766,8 @@
           "evidence": "the mean percent change in body weight among the participants who received tirzepatide was -12.3% with the 5-mg dose, -18.7% with the 10-mg dose, and -19.7% with the 15-mg dose",
           "relation_id": "compound:tirzepatide|CAUSES|phenotype:weight_loss|pmid_39536238"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tirzepatide",
@@ -8575,7 +8790,8 @@
           "evidence": "",
           "relation_id": "compound:tirzepatide|MENTIONED_IN|doc:pmid_38851997"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tirzepatide",
@@ -8598,7 +8814,8 @@
           "evidence": "incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity, if indicated",
           "relation_id": "compound:tirzepatide|INDICATED_FOR|disease:type_2_diabetes|pmid_38851997"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tirzepatide",
@@ -8621,7 +8838,8 @@
           "evidence": "",
           "relation_id": "compound:tirzepatide|MENTIONED_IN|doc:pmid_39536238"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tirzepatide",
@@ -8644,7 +8862,8 @@
           "evidence": "its efficacy in reducing weight and delaying progression to type 2 diabetes in persons with both obesity and prediabetes",
           "relation_id": "compound:tirzepatide|INDICATED_FOR|disease:prediabetes|pmid_39536238"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tirzepatide",
@@ -8667,7 +8886,8 @@
           "evidence": "the most common adverse events were gastrointestinal, most of which were mild to moderate in severity",
           "relation_id": "compound:tirzepatide|CAUSES|adverse_event:gastrointestinal_disorders|pmid_39536238"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tirzepatide",
@@ -8690,7 +8910,8 @@
           "evidence": "",
           "relation_id": "compound:tirzepatide|MENTIONED_IN|doc:pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tirzepatide",
@@ -8713,7 +8934,8 @@
           "evidence": "tirzepatide (SUCRA: 84.70) ranked the most effective interventions for achieving MASH resolution",
           "relation_id": "compound:tirzepatide|INDICATED_FOR|disease:mash|pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tirzepatide",
@@ -8736,7 +8958,8 @@
           "evidence": "",
           "relation_id": "compound:tirzepatide|MENTIONED_IN|doc:pmid_41523559"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:gipr",
@@ -8759,7 +8982,8 @@
           "evidence": "",
           "relation_id": "protein:gipr|MENTIONED_IN|doc:patent_02"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:gipr",
@@ -8782,7 +9006,8 @@
           "evidence": "",
           "relation_id": "protein:gipr|MENTIONED_IN|doc:patent_04"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:gipr",
@@ -8805,7 +9030,8 @@
           "evidence": "",
           "relation_id": "protein:gipr|MENTIONED_IN|doc:patent_06"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:gipr",
@@ -8828,7 +9054,8 @@
           "evidence": "",
           "relation_id": "protein:gipr|MENTIONED_IN|doc:patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:gipr",
@@ -8851,7 +9078,8 @@
           "evidence": "",
           "relation_id": "protein:gipr|MENTIONED_IN|doc:pmid_35658024"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:gipr",
@@ -8874,7 +9102,8 @@
           "evidence": "",
           "relation_id": "protein:gipr|MENTIONED_IN|doc:pmid_38367045"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:gipr",
@@ -8897,7 +9126,8 @@
           "evidence": "",
           "relation_id": "protein:gipr|MENTIONED_IN|doc:pmid_38858523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:gipr",
@@ -8920,7 +9150,8 @@
           "evidence": "",
           "relation_id": "protein:gipr|MENTIONED_IN|doc:pmid_39536238"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:gipr",
@@ -8943,7 +9174,8 @@
           "evidence": "",
           "relation_id": "protein:gipr|MENTIONED_IN|doc:pmid_41523559"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:dual_gip_glp_1_receptor_agonism",
@@ -8966,7 +9198,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:dual_gip_glp_1_receptor_agonism|MENTIONED_IN|doc:patent_02"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:dual_gip_glp_1_receptor_agonism",
@@ -8989,7 +9222,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:dual_gip_glp_1_receptor_agonism|MENTIONED_IN|doc:patent_04"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:dual_gip_glp_1_receptor_agonism",
@@ -9012,7 +9246,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:dual_gip_glp_1_receptor_agonism|MENTIONED_IN|doc:pmid_35658024"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:surpass",
@@ -9035,7 +9270,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:surpass|MENTIONED_IN|doc:patent_02"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:surpass",
@@ -9058,7 +9294,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:surpass|MENTIONED_IN|doc:patent_04"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:eli_lilly",
@@ -9081,7 +9318,8 @@
           "evidence": "",
           "relation_id": "organization:eli_lilly|MENTIONED_IN|doc:patent_02"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:eli_lilly",
@@ -9104,7 +9342,8 @@
           "evidence": "",
           "relation_id": "organization:eli_lilly|MENTIONED_IN|doc:patent_04"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:eli_lilly",
@@ -9127,7 +9366,8 @@
           "evidence": "",
           "relation_id": "organization:eli_lilly|MENTIONED_IN|doc:patent_05"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:eli_lilly",
@@ -9150,7 +9390,8 @@
           "evidence": "",
           "relation_id": "organization:eli_lilly|MENTIONED_IN|doc:patent_06"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:eli_lilly",
@@ -9173,7 +9414,8 @@
           "evidence": "",
           "relation_id": "organization:eli_lilly|MENTIONED_IN|doc:pmid_35658024"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:eli_lilly",
@@ -9196,7 +9438,8 @@
           "evidence": "",
           "relation_id": "organization:eli_lilly|MENTIONED_IN|doc:pmid_37351564"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:eli_lilly",
@@ -9219,7 +9462,8 @@
           "evidence": "",
           "relation_id": "organization:eli_lilly|MENTIONED_IN|doc:pmid_39536238"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:eli_lilly",
@@ -9242,7 +9486,8 @@
           "evidence": "",
           "relation_id": "organization:eli_lilly|MENTIONED_IN|doc:pmid_40544435"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:eli_lilly",
@@ -9286,7 +9531,8 @@
           "evidence": "Funded by Eli Lilly",
           "relation_id": "compound:tirzepatide|DEVELOPED_BY|organization:eli_lilly|pmid_39536238"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:eli_lilly",
@@ -9323,7 +9569,8 @@
           "evidence": "Supported by Eli Lilly",
           "relation_id": "compound:orforglipron|DEVELOPED_BY|organization:eli_lilly|pmid_40544435"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:eli_lilly",
@@ -9346,7 +9593,8 @@
           "evidence": "Retatrutide (LY3437943), developed by Eli Lilly",
           "relation_id": "compound:retatrutide|DEVELOPED_BY|organization:eli_lilly|patent_06"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "publication:us11357820b2",
@@ -9369,7 +9617,8 @@
           "evidence": "",
           "relation_id": "publication:us11357820b2|MENTIONED_IN|doc:patent_02"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:liraglutide",
@@ -9392,7 +9641,8 @@
           "evidence": "",
           "relation_id": "compound:liraglutide|MENTIONED_IN|doc:patent_03"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:liraglutide",
@@ -9415,7 +9665,8 @@
           "evidence": "",
           "relation_id": "compound:liraglutide|MENTIONED_IN|doc:patent_05"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:liraglutide",
@@ -9438,7 +9689,8 @@
           "evidence": "",
           "relation_id": "compound:liraglutide|MENTIONED_IN|doc:patent_10"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:liraglutide",
@@ -9468,7 +9720,8 @@
           "evidence": "glucagon-like peptide-1 (GLP-1) receptor agonists (GLP-1 RAs)",
           "relation_id": "compound:liraglutide|ACTIVATES|protein:glp1r|pmid_32442310"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:liraglutide",
@@ -9491,7 +9744,8 @@
           "evidence": "",
           "relation_id": "compound:liraglutide|MENTIONED_IN|doc:pmid_32442310"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:liraglutide",
@@ -9514,7 +9768,8 @@
           "evidence": "the administration of GLP-1 RA (mainly liraglutide)",
           "relation_id": "compound:liraglutide|HAS_MECHANISM|mechanism_of_action:glp_1_receptor_agonism|pmid_32442310"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:liraglutide",
@@ -9537,7 +9792,8 @@
           "evidence": "the administration of GLP-1 RA (mainly liraglutide) alone or in combination with metformin has been investigated in women with obesity and PCOS",
           "relation_id": "compound:liraglutide|INDICATED_FOR|disease:polycystic_ovary_syndrome|pmid_32442310"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:liraglutide",
@@ -9560,7 +9816,8 @@
           "evidence": "Based on the positive results in patients affected by obesity",
           "relation_id": "compound:liraglutide|INDICATED_FOR|disease:obesity|pmid_32442310"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:liraglutide",
@@ -9583,7 +9840,8 @@
           "evidence": "in combination with metformin has been investigated in women with obesity and PCOS",
           "relation_id": "compound:liraglutide|COMBINED_WITH|compound:metformin|pmid_32442310"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:liraglutide",
@@ -9606,7 +9864,8 @@
           "evidence": "",
           "relation_id": "compound:liraglutide|MENTIONED_IN|doc:pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:liraglutide",
@@ -9629,7 +9888,8 @@
           "evidence": "liraglutide significantly better than placebo in achieving MASH resolution",
           "relation_id": "compound:liraglutide|INDICATED_FOR|disease:mash|pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:hyperglycemia",
@@ -9652,7 +9912,8 @@
           "evidence": "",
           "relation_id": "disease:hyperglycemia|MENTIONED_IN|doc:patent_03"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:glucose_tolerance_disorders",
@@ -9675,7 +9936,8 @@
           "evidence": "",
           "relation_id": "disease:glucose_tolerance_disorders|MENTIONED_IN|doc:patent_03"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:sustain",
@@ -9698,7 +9960,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:sustain|MENTIONED_IN|doc:patent_03"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:sustain",
@@ -9721,7 +9984,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:sustain|MENTIONED_IN|doc:pmid_35650449"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "publication:us10335462b2",
@@ -9744,7 +10008,8 @@
           "evidence": "",
           "relation_id": "publication:us10335462b2|MENTIONED_IN|doc:patent_03"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "publication:wo2006_097537",
@@ -9767,7 +10032,8 @@
           "evidence": "",
           "relation_id": "publication:wo2006_097537|MENTIONED_IN|doc:patent_03"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:surmount",
@@ -9790,7 +10056,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:surmount|MENTIONED_IN|doc:patent_04"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:surmount",
@@ -9813,7 +10080,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:surmount|MENTIONED_IN|doc:pmid_35658024"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:surmount",
@@ -9836,7 +10104,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:surmount|MENTIONED_IN|doc:pmid_39536238"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "publication:wo2020159949a1",
@@ -9859,7 +10128,8 @@
           "evidence": "",
           "relation_id": "publication:wo2020159949a1|MENTIONED_IN|doc:patent_04"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:danuglipron",
@@ -9882,7 +10152,8 @@
           "evidence": "",
           "relation_id": "compound:danuglipron|MENTIONED_IN|doc:patent_05"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:danuglipron",
@@ -9919,7 +10190,8 @@
           "evidence": "small-molecule nonpeptide GLP-1 agonists (orforglipron, danuglipron)",
           "relation_id": "compound:danuglipron|ACTIVATES|protein:glp1r|patent_10"
         }
-      ]
+      ],
+      "epistemic_status": "contested"
     },
     {
       "source": "compound:danuglipron",
@@ -9949,7 +10221,8 @@
           "evidence": "activate the GLP-1 receptor through an allosteric mechanism, binding within a transmembrane pocket distinct from the orthosteric peptide-binding domain",
           "relation_id": "compound:danuglipron|HAS_MECHANISM|mechanism_of_action:allosteric_glp_1_receptor_agonism|patent_07"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:danuglipron",
@@ -9972,7 +10245,8 @@
           "evidence": "bind within a transmembrane pocket distinct from the orthosteric peptide-binding domain",
           "relation_id": "compound:danuglipron|BINDS_TO|protein_domain:transmembrane_pocket|patent_05"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:danuglipron",
@@ -10002,7 +10276,8 @@
           "evidence": "Therapeutic indications include type 2 diabetes mellitus",
           "relation_id": "compound:danuglipron|INDICATED_FOR|disease:type_2_diabetes_mellitus|patent_07"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:danuglipron",
@@ -10032,7 +10307,8 @@
           "evidence": "continues development of a once-daily extended-release formulation for obesity",
           "relation_id": "compound:danuglipron|INDICATED_FOR|disease:obesity|patent_07"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:danuglipron",
@@ -10055,7 +10331,8 @@
           "evidence": "Patent ID: WO2018109607A1",
           "relation_id": "compound:danuglipron|PUBLISHED_IN|publication:wo2018109607a1|patent_05"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:danuglipron",
@@ -10078,7 +10355,8 @@
           "evidence": "",
           "relation_id": "compound:danuglipron|MENTIONED_IN|doc:patent_07"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:danuglipron",
@@ -10101,7 +10379,8 @@
           "evidence": "Therapeutic indications include type 2 diabetes mellitus, obesity, non-alcoholic steatohepatitis (NASH)",
           "relation_id": "compound:danuglipron|INDICATED_FOR|disease:non_alcoholic_steatohepatitis|patent_07"
         }
-      ]
+      ],
+      "epistemic_status": "prophetic"
     },
     {
       "source": "compound:danuglipron",
@@ -10124,7 +10403,8 @@
           "evidence": "cardiovascular disease, and related metabolic disorders",
           "relation_id": "compound:danuglipron|INDICATED_FOR|disease:cardiovascular_disease|patent_07"
         }
-      ]
+      ],
+      "epistemic_status": "prophetic"
     },
     {
       "source": "compound:danuglipron",
@@ -10147,7 +10427,8 @@
           "evidence": "Danuglipron, derived from this chemical series, advanced to Phase 2/3 clinical trials",
           "relation_id": "compound:danuglipron|EVALUATED_IN|clinical_trial:danuglipron_phase_2_3|patent_07"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:danuglipron",
@@ -10170,7 +10451,8 @@
           "evidence": "",
           "relation_id": "compound:danuglipron|MENTIONED_IN|doc:patent_10"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:orforglipron",
@@ -10193,7 +10475,8 @@
           "evidence": "",
           "relation_id": "compound:orforglipron|MENTIONED_IN|doc:patent_05"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:orforglipron",
@@ -10237,7 +10520,8 @@
           "evidence": "glucagon-like peptide-1 (GLP-1) receptor agonist",
           "relation_id": "compound:orforglipron|ACTIVATES|protein:glp1r|pmid_40544435"
         }
-      ]
+      ],
+      "epistemic_status": "contested"
     },
     {
       "source": "compound:orforglipron",
@@ -10260,7 +10544,8 @@
           "evidence": "oral small-molecule GLP-1 agonist",
           "relation_id": "compound:orforglipron|HAS_MECHANISM|mechanism_of_action:allosteric_glp_1_receptor_agonism|patent_05"
         }
-      ]
+      ],
+      "epistemic_status": "prophetic"
     },
     {
       "source": "compound:orforglipron",
@@ -10283,7 +10568,8 @@
           "evidence": "significant weight loss and HbA1c reduction in Phase 3 trials",
           "relation_id": "compound:orforglipron|INDICATED_FOR|disease:type_2_diabetes_mellitus|patent_05"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:orforglipron",
@@ -10313,7 +10599,8 @@
           "evidence": "Daily Oral GLP-1 Receptor Agonist Orforglipron for Adults with Obesity",
           "relation_id": "compound:orforglipron|INDICATED_FOR|disease:obesity|pmid_37351564"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:orforglipron",
@@ -10336,7 +10623,8 @@
           "evidence": "Phase 3 trials (ACHIEVE program)",
           "relation_id": "compound:orforglipron|EVALUATED_IN|clinical_trial:achieve|patent_05"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:orforglipron",
@@ -10359,7 +10647,8 @@
           "evidence": "",
           "relation_id": "compound:orforglipron|MENTIONED_IN|doc:patent_10"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:orforglipron",
@@ -10382,7 +10671,8 @@
           "evidence": "",
           "relation_id": "compound:orforglipron|MENTIONED_IN|doc:pmid_37351564"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:orforglipron",
@@ -10412,7 +10702,8 @@
           "evidence": "small-molecule, nonpeptide glucagon-like peptide-1 (GLP-1) receptor agonist",
           "relation_id": "compound:orforglipron|HAS_MECHANISM|mechanism_of_action:glp_1_receptor_agonism|pmid_40544435"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:orforglipron",
@@ -10435,7 +10726,8 @@
           "evidence": "Funded by Eli Lilly; GZGI ClinicalTrials.gov number, NCT05051579",
           "relation_id": "compound:orforglipron|EVALUATED_IN|clinical_trial:nct05051579|pmid_37351564"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:orforglipron",
@@ -10458,7 +10750,8 @@
           "evidence": "The most common adverse events reported with orforglipron were gastrointestinal events",
           "relation_id": "compound:orforglipron|CAUSES|adverse_event:gastrointestinal_events|pmid_37351564"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:orforglipron",
@@ -10481,7 +10774,8 @@
           "evidence": "mean change ranged from -9.4% to -14.7% with orforglipron",
           "relation_id": "compound:orforglipron|ASSOCIATED_WITH|phenotype:weight_loss|pmid_37351564"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:orforglipron",
@@ -10504,7 +10798,8 @@
           "evidence": "",
           "relation_id": "compound:orforglipron|MENTIONED_IN|doc:pmid_40544435"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:orforglipron",
@@ -10527,7 +10822,8 @@
           "evidence": "clinical development for type 2 diabetes and weight management",
           "relation_id": "compound:orforglipron|INDICATED_FOR|disease:type_2_diabetes|pmid_40544435"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:orforglipron",
@@ -10550,7 +10846,8 @@
           "evidence": "ACHIEVE-1 ClinicalTrials.gov number, NCT05971940",
           "relation_id": "compound:orforglipron|EVALUATED_IN|clinical_trial:nct05971940|pmid_40544435"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:orforglipron",
@@ -10573,7 +10870,8 @@
           "evidence": "most common adverse events were mild-to-moderate gastrointestinal events",
           "relation_id": "compound:orforglipron|CAUSES|adverse_event:gastrointestinal_adverse_events|pmid_40544435"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:allosteric_glp_1_receptor_agonism",
@@ -10596,7 +10894,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:allosteric_glp_1_receptor_agonism|MENTIONED_IN|doc:patent_05"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:allosteric_glp_1_receptor_agonism",
@@ -10619,7 +10918,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:allosteric_glp_1_receptor_agonism|MENTIONED_IN|doc:patent_07"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:camp_signaling",
@@ -10642,7 +10942,8 @@
           "evidence": "",
           "relation_id": "pathway:camp_signaling|MENTIONED_IN|doc:patent_05"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:achieve",
@@ -10665,7 +10966,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:achieve|MENTIONED_IN|doc:patent_05"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:pfizer",
@@ -10688,7 +10990,8 @@
           "evidence": "",
           "relation_id": "organization:pfizer|MENTIONED_IN|doc:patent_05"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:pfizer",
@@ -10711,7 +11014,8 @@
           "evidence": "Assignee: Pfizer Inc",
           "relation_id": "compound:danuglipron|DEVELOPED_BY|organization:pfizer|patent_05"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "publication:wo2018109607a1",
@@ -10734,7 +11038,8 @@
           "evidence": "",
           "relation_id": "publication:wo2018109607a1|MENTIONED_IN|doc:patent_05"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein_domain:orthosteric_peptide_binding_domain",
@@ -10757,7 +11062,8 @@
           "evidence": "",
           "relation_id": "protein_domain:orthosteric_peptide_binding_domain|MENTIONED_IN|doc:patent_05"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein_domain:transmembrane_pocket",
@@ -10780,7 +11086,8 @@
           "evidence": "",
           "relation_id": "protein_domain:transmembrane_pocket|MENTIONED_IN|doc:patent_05"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:triple_glp_1_gip_glucagon_receptor_agonist_peptide",
@@ -10803,7 +11110,8 @@
           "evidence": "",
           "relation_id": "compound:triple_glp_1_gip_glucagon_receptor_agonist_peptide|MENTIONED_IN|doc:patent_06"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:triple_glp_1_gip_glucagon_receptor_agonist_peptide",
@@ -10826,7 +11134,8 @@
           "evidence": "The triple agonist approach simultaneously activates glucagon-like peptide-1 (GLP-1) receptor",
           "relation_id": "compound:triple_glp_1_gip_glucagon_receptor_agonist_peptide|ACTIVATES|protein:glp1r|patent_06"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:triple_glp_1_gip_glucagon_receptor_agonist_peptide",
@@ -10849,7 +11158,8 @@
           "evidence": "glucose-dependent insulinotropic polypeptide (GIP) receptor for enhanced insulin response",
           "relation_id": "compound:triple_glp_1_gip_glucagon_receptor_agonist_peptide|ACTIVATES|protein:gipr|patent_06"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:triple_glp_1_gip_glucagon_receptor_agonist_peptide",
@@ -10872,7 +11182,8 @@
           "evidence": "glucagon receptor (GCGR) for increased energy expenditure and hepatic lipid oxidation",
           "relation_id": "compound:triple_glp_1_gip_glucagon_receptor_agonist_peptide|ACTIVATES|protein:gcgr|patent_06"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:triple_glp_1_gip_glucagon_receptor_agonist_peptide",
@@ -10895,7 +11206,8 @@
           "evidence": "The triple agonist approach simultaneously activates glucagon-like peptide-1 (GLP-1) receptor... GIP receptor... and glucagon receptor",
           "relation_id": "compound:triple_glp_1_gip_glucagon_receptor_agonist_peptide|HAS_MECHANISM|mechanism_of_action:triple_glp_1_gip_glucagon_receptor_agonism|patent_06"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:triple_glp_1_gip_glucagon_receptor_agonist_peptide",
@@ -10918,7 +11230,8 @@
           "evidence": "treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease",
           "relation_id": "compound:triple_glp_1_gip_glucagon_receptor_agonist_peptide|INDICATED_FOR|disease:obesity|patent_06"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:triple_glp_1_gip_glucagon_receptor_agonist_peptide",
@@ -10941,7 +11254,8 @@
           "evidence": "treating metabolic disorders including obesity, type 2 diabetes",
           "relation_id": "compound:triple_glp_1_gip_glucagon_receptor_agonist_peptide|INDICATED_FOR|disease:type_2_diabetes_mellitus|patent_06"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:triple_glp_1_gip_glucagon_receptor_agonist_peptide",
@@ -10964,7 +11278,8 @@
           "evidence": "treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia",
           "relation_id": "compound:triple_glp_1_gip_glucagon_receptor_agonist_peptide|INDICATED_FOR|disease:dyslipidemia|patent_06"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:triple_glp_1_gip_glucagon_receptor_agonist_peptide",
@@ -10987,7 +11302,8 @@
           "evidence": "treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease",
           "relation_id": "compound:triple_glp_1_gip_glucagon_receptor_agonist_peptide|INDICATED_FOR|disease:non_alcoholic_fatty_liver_disease|patent_06"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:retatrutide",
@@ -11010,7 +11326,8 @@
           "evidence": "",
           "relation_id": "compound:retatrutide|MENTIONED_IN|doc:patent_06"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:retatrutide",
@@ -11047,7 +11364,8 @@
           "evidence": "glucagon-like peptide 1",
           "relation_id": "compound:retatrutide|ACTIVATES|protein:glp1r|pmid_38858523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:retatrutide",
@@ -11084,7 +11402,8 @@
           "evidence": "triple agonist of the glucose-dependent insulinotropic polypeptide",
           "relation_id": "compound:retatrutide|ACTIVATES|protein:gipr|pmid_38858523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:retatrutide",
@@ -11121,7 +11440,8 @@
           "evidence": "glucagon receptors",
           "relation_id": "compound:retatrutide|ACTIVATES|protein:gcgr|pmid_38858523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:retatrutide",
@@ -11144,7 +11464,8 @@
           "evidence": "currently in Phase 3 clinical trials that has demonstrated up to 24% body weight reduction in Phase 2 studies",
           "relation_id": "compound:retatrutide|EVALUATED_IN|clinical_trial:retatrutide_phase_3|patent_06"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:retatrutide",
@@ -11167,7 +11488,8 @@
           "evidence": "demonstrated up to 24% body weight reduction in Phase 2 studies",
           "relation_id": "compound:retatrutide|ASSOCIATED_WITH|phenotype:body_weight_reduction|patent_06"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:retatrutide",
@@ -11190,7 +11512,8 @@
           "evidence": "",
           "relation_id": "compound:retatrutide|MENTIONED_IN|doc:pmid_38367045"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:retatrutide",
@@ -11220,7 +11543,8 @@
           "evidence": "novel triple agonist",
           "relation_id": "compound:retatrutide|HAS_MECHANISM|mechanism_of_action:triple_receptor_agonism|pmid_38858523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:retatrutide",
@@ -11250,7 +11574,8 @@
           "evidence": "A 48-week phase 2 obesity study",
           "relation_id": "compound:retatrutide|INDICATED_FOR|disease:obesity|pmid_38858523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:retatrutide",
@@ -11273,7 +11598,8 @@
           "evidence": "Phase III trial of this pipeline drug for treating type 2 diabetes mellitus",
           "relation_id": "compound:retatrutide|INDICATED_FOR|disease:type_2_diabetes_mellitus|pmid_38367045"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:retatrutide",
@@ -11296,7 +11622,8 @@
           "evidence": "Phase III trial of this pipeline drug for treating...non-alcoholic fatty liver disease",
           "relation_id": "compound:retatrutide|INDICATED_FOR|disease:non_alcoholic_fatty_liver_disease|pmid_38367045"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:retatrutide",
@@ -11319,7 +11646,8 @@
           "evidence": "The results of a Phase II clinical trial have demonstrated significant weight reduction",
           "relation_id": "compound:retatrutide|EVALUATED_IN|clinical_trial:phase_ii_clinical_trial_retatrutide_obesity|pmid_38367045"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:retatrutide",
@@ -11342,7 +11670,8 @@
           "evidence": "The Phase III trial of this pipeline drug",
           "relation_id": "compound:retatrutide|EVALUATED_IN|clinical_trial:phase_iii_trial_retatrutide|pmid_38367045"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:retatrutide",
@@ -11365,7 +11694,8 @@
           "evidence": "",
           "relation_id": "compound:retatrutide|MENTIONED_IN|doc:pmid_38858523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:retatrutide",
@@ -11388,7 +11718,8 @@
           "evidence": "Triple hormone receptor agonist retatrutide for metabolic dysfunction-associated steatotic liver disease",
           "relation_id": "compound:retatrutide|INDICATED_FOR|disease:metabolic_dysfunction_associated_steatotic_liver_disease|pmid_38858523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:retatrutide",
@@ -11411,7 +11742,8 @@
           "evidence": "ClinicalTrials.gov registration is NCT04881760",
           "relation_id": "compound:retatrutide|EVALUATED_IN|clinical_trial:nct04881760|pmid_38858523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:gcgr",
@@ -11434,7 +11766,8 @@
           "evidence": "",
           "relation_id": "protein:gcgr|MENTIONED_IN|doc:patent_06"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:gcgr",
@@ -11457,7 +11790,8 @@
           "evidence": "",
           "relation_id": "protein:gcgr|MENTIONED_IN|doc:patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:gcgr",
@@ -11480,7 +11814,8 @@
           "evidence": "",
           "relation_id": "protein:gcgr|MENTIONED_IN|doc:pmid_38367045"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:gcgr",
@@ -11503,7 +11838,8 @@
           "evidence": "",
           "relation_id": "protein:gcgr|MENTIONED_IN|doc:pmid_38858523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:gcgr",
@@ -11526,7 +11862,8 @@
           "evidence": "",
           "relation_id": "protein:gcgr|MENTIONED_IN|doc:pmid_39663847"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:triple_glp_1_gip_glucagon_receptor_agonism",
@@ -11549,7 +11886,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:triple_glp_1_gip_glucagon_receptor_agonism|MENTIONED_IN|doc:patent_06"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:triple_glp_1_gip_glucagon_receptor_agonism",
@@ -11572,7 +11910,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:triple_glp_1_gip_glucagon_receptor_agonism|MENTIONED_IN|doc:patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:dyslipidemia",
@@ -11595,7 +11934,8 @@
           "evidence": "",
           "relation_id": "disease:dyslipidemia|MENTIONED_IN|doc:patent_06"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:dyslipidemia",
@@ -11618,7 +11958,8 @@
           "evidence": "",
           "relation_id": "disease:dyslipidemia|MENTIONED_IN|doc:patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:dyslipidemia",
@@ -11641,7 +11982,8 @@
           "evidence": "",
           "relation_id": "disease:dyslipidemia|MENTIONED_IN|doc:pmid_40544433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:non_alcoholic_fatty_liver_disease",
@@ -11664,7 +12006,8 @@
           "evidence": "",
           "relation_id": "disease:non_alcoholic_fatty_liver_disease|MENTIONED_IN|doc:patent_06"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:non_alcoholic_fatty_liver_disease",
@@ -11687,7 +12030,8 @@
           "evidence": "",
           "relation_id": "disease:non_alcoholic_fatty_liver_disease|MENTIONED_IN|doc:patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:non_alcoholic_fatty_liver_disease",
@@ -11710,7 +12054,8 @@
           "evidence": "",
           "relation_id": "disease:non_alcoholic_fatty_liver_disease|MENTIONED_IN|doc:pmid_38367045"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:hanmi_pharmaceutical_co_ltd",
@@ -11733,7 +12078,8 @@
           "evidence": "",
           "relation_id": "organization:hanmi_pharmaceutical_co_ltd|MENTIONED_IN|doc:patent_06"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:hanmi_pharmaceutical_co_ltd",
@@ -11756,7 +12102,8 @@
           "evidence": "Assignee: Hanmi Pharmaceutical Co Ltd",
           "relation_id": "compound:triple_glp_1_gip_glucagon_receptor_agonist_peptide|DEVELOPED_BY|organization:hanmi_pharmaceutical_co_ltd|patent_06"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:retatrutide_phase_3",
@@ -11779,7 +12126,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:retatrutide_phase_3|MENTIONED_IN|doc:patent_06"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:body_weight_reduction",
@@ -11802,7 +12150,8 @@
           "evidence": "",
           "relation_id": "phenotype:body_weight_reduction|MENTIONED_IN|doc:patent_06"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:compound_1_benzodioxol_benzimidazole",
@@ -11825,7 +12174,8 @@
           "evidence": "",
           "relation_id": "compound:compound_1_benzodioxol_benzimidazole|MENTIONED_IN|doc:patent_07"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:compound_1_benzodioxol_benzimidazole",
@@ -11848,7 +12198,8 @@
           "evidence": "6-carboxylic acids of benzimidazoles... as small-molecule GLP-1 receptor agonists",
           "relation_id": "compound:compound_1_benzodioxol_benzimidazole|ACTIVATES|protein:glp1r|patent_07"
         }
-      ]
+      ],
+      "epistemic_status": "prophetic"
     },
     {
       "source": "compound:compound_2_methylbenzodioxol_benzimidazole",
@@ -11871,7 +12222,8 @@
           "evidence": "",
           "relation_id": "compound:compound_2_methylbenzodioxol_benzimidazole|MENTIONED_IN|doc:patent_07"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:compound_2_methylbenzodioxol_benzimidazole",
@@ -11894,7 +12246,8 @@
           "evidence": "6-carboxylic acids of benzimidazoles... as small-molecule GLP-1 receptor agonists",
           "relation_id": "compound:compound_2_methylbenzodioxol_benzimidazole|ACTIVATES|protein:glp1r|patent_07"
         }
-      ]
+      ],
+      "epistemic_status": "prophetic"
     },
     {
       "source": "compound:compound_3_chloropyridinyl_benzimidazole",
@@ -11917,7 +12270,8 @@
           "evidence": "",
           "relation_id": "compound:compound_3_chloropyridinyl_benzimidazole|MENTIONED_IN|doc:patent_07"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:compound_3_chloropyridinyl_benzimidazole",
@@ -11940,7 +12294,8 @@
           "evidence": "6-carboxylic acids of benzimidazoles... as small-molecule GLP-1 receptor agonists",
           "relation_id": "compound:compound_3_chloropyridinyl_benzimidazole|ACTIVATES|protein:glp1r|patent_07"
         }
-      ]
+      ],
+      "epistemic_status": "prophetic"
     },
     {
       "source": "disease:non_alcoholic_steatohepatitis",
@@ -11963,7 +12318,8 @@
           "evidence": "",
           "relation_id": "disease:non_alcoholic_steatohepatitis|MENTIONED_IN|doc:patent_07"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:non_alcoholic_steatohepatitis",
@@ -11986,7 +12342,8 @@
           "evidence": "",
           "relation_id": "disease:non_alcoholic_steatohepatitis|MENTIONED_IN|doc:pmid_35650449"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:pfizer_inc",
@@ -12009,7 +12366,8 @@
           "evidence": "",
           "relation_id": "organization:pfizer_inc|MENTIONED_IN|doc:patent_07"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:pfizer_inc",
@@ -12032,7 +12390,8 @@
           "evidence": "danuglipron (PF-06882961) was developed by Pfizer",
           "relation_id": "compound:danuglipron|DEVELOPED_BY|organization:pfizer_inc|patent_07"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:danuglipron_phase_2_3",
@@ -12055,7 +12414,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:danuglipron_phase_2_3|MENTIONED_IN|doc:patent_07"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:glp_1_amylin_co_agonist_polypeptide",
@@ -12078,7 +12438,8 @@
           "evidence": "",
           "relation_id": "compound:glp_1_amylin_co_agonist_polypeptide|MENTIONED_IN|doc:patent_08"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:glp_1_amylin_co_agonist_polypeptide",
@@ -12101,7 +12462,8 @@
           "evidence": "compounds functioning as dual receptor agonists that bind to and activate both GLP-1 and amylin receptors",
           "relation_id": "compound:glp_1_amylin_co_agonist_polypeptide|ACTIVATES|protein:glp1r|patent_08"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:glp_1_amylin_co_agonist_polypeptide",
@@ -12124,7 +12486,8 @@
           "evidence": "compounds functioning as dual receptor agonists that bind to and activate both GLP-1 and amylin receptors",
           "relation_id": "compound:glp_1_amylin_co_agonist_polypeptide|ACTIVATES|protein:amylin_receptor|patent_08"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:glp_1_amylin_co_agonist_polypeptide",
@@ -12147,7 +12510,8 @@
           "evidence": "GLP-1-mediated glucose-dependent insulin secretion and appetite suppression, and amylin-mediated gastric emptying delay and central satiety signaling",
           "relation_id": "compound:glp_1_amylin_co_agonist_polypeptide|HAS_MECHANISM|mechanism_of_action:dual_glp_1_amylin_receptor_agonism|patent_08"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:glp_1_amylin_co_agonist_polypeptide",
@@ -12170,7 +12534,8 @@
           "evidence": "treating obesity, type 2 diabetes mellitus, cardiovascular disease",
           "relation_id": "compound:glp_1_amylin_co_agonist_polypeptide|INDICATED_FOR|disease:obesity|patent_08"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:glp_1_amylin_co_agonist_polypeptide",
@@ -12193,7 +12558,8 @@
           "evidence": "treating obesity, type 2 diabetes mellitus",
           "relation_id": "compound:glp_1_amylin_co_agonist_polypeptide|INDICATED_FOR|disease:type_2_diabetes_mellitus|patent_08"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cagrilintide",
@@ -12216,7 +12582,8 @@
           "evidence": "",
           "relation_id": "compound:cagrilintide|MENTIONED_IN|doc:patent_08"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cagrilintide",
@@ -12253,7 +12620,8 @@
           "evidence": "the combination (known as CagriSema)",
           "relation_id": "compound:cagrilintide|COMBINED_WITH|compound:semaglutide|pmid_40544433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cagrilintide",
@@ -12276,7 +12644,8 @@
           "evidence": "cagrilintide (a long-acting amylin analog)",
           "relation_id": "compound:cagrilintide|ACTIVATES|protein:amylin_receptor|patent_08"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cagrilintide",
@@ -12299,7 +12668,8 @@
           "evidence": "",
           "relation_id": "compound:cagrilintide|MENTIONED_IN|doc:pmid_40544432"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cagrilintide",
@@ -12322,7 +12692,8 @@
           "evidence": "Islet Amyloid Polypeptide",
           "relation_id": "compound:cagrilintide|ACTIVATES|protein:iapp|pmid_40544432"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cagrilintide",
@@ -12345,7 +12716,8 @@
           "evidence": "",
           "relation_id": "compound:cagrilintide|MENTIONED_IN|doc:pmid_40544433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cagrilintide",
@@ -12368,7 +12740,8 @@
           "evidence": "cagrilintide alone at a dose of 2.4 mg",
           "relation_id": "compound:cagrilintide|EVALUATED_IN|clinical_trial:nct05567796|pmid_40544433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cagrisema",
@@ -12391,7 +12764,8 @@
           "evidence": "",
           "relation_id": "compound:cagrisema|MENTIONED_IN|doc:patent_08"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cagrisema",
@@ -12428,7 +12802,8 @@
           "evidence": "clinically relevant body-weight reductions in adults with overweight or obesity",
           "relation_id": "compound:cagrisema|INDICATED_FOR|disease:obesity|pmid_40544433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cagrisema",
@@ -12451,7 +12826,8 @@
           "evidence": "CagriSema... currently in Phase 3 clinical trials",
           "relation_id": "compound:cagrisema|EVALUATED_IN|clinical_trial:cagrisema_phase_3|patent_08"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cagrisema",
@@ -12474,7 +12850,8 @@
           "evidence": "",
           "relation_id": "compound:cagrisema|MENTIONED_IN|doc:pmid_40544432"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cagrisema",
@@ -12497,7 +12874,8 @@
           "evidence": "weight management in adults with type 2 diabetes",
           "relation_id": "compound:cagrisema|INDICATED_FOR|disease:type_2_diabetes|pmid_40544432"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cagrisema",
@@ -12520,7 +12898,8 @@
           "evidence": "REDEFINE 2 ClinicalTrials.gov number, NCT05394519",
           "relation_id": "compound:cagrisema|EVALUATED_IN|clinical_trial:nct05394519|pmid_40544432"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cagrisema",
@@ -12543,7 +12922,8 @@
           "evidence": "Gastrointestinal adverse events were reported by 72.5%",
           "relation_id": "compound:cagrisema|CAUSES|adverse_event:gastrointestinal_adverse_events|pmid_40544432"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cagrisema",
@@ -12566,7 +12946,8 @@
           "evidence": "",
           "relation_id": "compound:cagrisema|MENTIONED_IN|doc:pmid_40544433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cagrisema",
@@ -12589,7 +12970,8 @@
           "evidence": "REDEFINE 1 ClinicalTrials.gov number, NCT05567796",
           "relation_id": "compound:cagrisema|EVALUATED_IN|clinical_trial:nct05567796|pmid_40544433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cagrisema",
@@ -12612,7 +12994,8 @@
           "evidence": "nausea, vomiting, diarrhea, constipation, or abdominal pain",
           "relation_id": "compound:cagrisema|CAUSES|adverse_event:nausea|pmid_40544433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cagrisema",
@@ -12635,7 +13018,8 @@
           "evidence": "nausea, vomiting, diarrhea, constipation, or abdominal pain",
           "relation_id": "compound:cagrisema|CAUSES|adverse_event:vomiting|pmid_40544433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cagrisema",
@@ -12658,7 +13042,8 @@
           "evidence": "nausea, vomiting, diarrhea, constipation, or abdominal pain",
           "relation_id": "compound:cagrisema|CAUSES|adverse_event:diarrhea|pmid_40544433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cagrisema",
@@ -12681,7 +13066,8 @@
           "evidence": "nausea, vomiting, diarrhea, constipation, or abdominal pain",
           "relation_id": "compound:cagrisema|CAUSES|adverse_event:constipation|pmid_40544433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cagrisema",
@@ -12704,7 +13090,8 @@
           "evidence": "nausea, vomiting, diarrhea, constipation, or abdominal pain",
           "relation_id": "compound:cagrisema|CAUSES|adverse_event:abdominal_pain|pmid_40544433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:amylin_receptor",
@@ -12727,7 +13114,8 @@
           "evidence": "",
           "relation_id": "protein:amylin_receptor|MENTIONED_IN|doc:patent_08"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:dual_glp_1_amylin_receptor_agonism",
@@ -12750,7 +13138,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:dual_glp_1_amylin_receptor_agonism|MENTIONED_IN|doc:patent_08"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:cagrisema_phase_3",
@@ -12773,7 +13162,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:cagrisema_phase_3|MENTIONED_IN|doc:patent_08"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:zealand_triple_agonist_peptide",
@@ -12796,7 +13186,8 @@
           "evidence": "",
           "relation_id": "compound:zealand_triple_agonist_peptide|MENTIONED_IN|doc:patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:zealand_triple_agonist_peptide",
@@ -12819,7 +13210,8 @@
           "evidence": "GLP-1 receptor for glucose-dependent insulin secretion and appetite suppression",
           "relation_id": "compound:zealand_triple_agonist_peptide|ACTIVATES|protein:glp1r|patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:zealand_triple_agonist_peptide",
@@ -12842,7 +13234,8 @@
           "evidence": "GIP receptor for enhanced insulin response and improved lipid metabolism",
           "relation_id": "compound:zealand_triple_agonist_peptide|ACTIVATES|protein:gipr|patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:zealand_triple_agonist_peptide",
@@ -12865,7 +13258,8 @@
           "evidence": "glucagon receptor for increased energy expenditure and hepatic lipid oxidation",
           "relation_id": "compound:zealand_triple_agonist_peptide|ACTIVATES|protein:gcgr|patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:zealand_triple_agonist_peptide",
@@ -12888,7 +13282,8 @@
           "evidence": "The triple agonist mechanism simultaneously engages: GLP-1 receptor... GIP receptor... and glucagon receptor",
           "relation_id": "compound:zealand_triple_agonist_peptide|HAS_MECHANISM|mechanism_of_action:triple_glp_1_gip_glucagon_receptor_agonism|patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:zealand_triple_agonist_peptide",
@@ -12911,7 +13306,8 @@
           "evidence": "treating metabolic disorders including obesity",
           "relation_id": "compound:zealand_triple_agonist_peptide|INDICATED_FOR|disease:obesity|patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:zealand_triple_agonist_peptide",
@@ -12934,7 +13330,8 @@
           "evidence": "treating metabolic disorders including obesity, type 2 diabetes",
           "relation_id": "compound:zealand_triple_agonist_peptide|INDICATED_FOR|disease:type_2_diabetes_mellitus|patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:zealand_triple_agonist_peptide",
@@ -12957,7 +13354,8 @@
           "evidence": "treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia",
           "relation_id": "compound:zealand_triple_agonist_peptide|INDICATED_FOR|disease:dyslipidemia|patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:zealand_triple_agonist_peptide",
@@ -12980,7 +13378,8 @@
           "evidence": "non-alcoholic fatty liver disease",
           "relation_id": "compound:zealand_triple_agonist_peptide|INDICATED_FOR|disease:non_alcoholic_fatty_liver_disease|patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:zealand_triple_agonist_peptide",
@@ -13003,7 +13402,8 @@
           "evidence": "best-in-class treatments for obesity and metabolic syndrome",
           "relation_id": "compound:zealand_triple_agonist_peptide|INDICATED_FOR|disease:metabolic_syndrome|patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "prophetic"
     },
     {
       "source": "compound:zealand_triple_agonist_peptide",
@@ -13026,7 +13426,8 @@
           "evidence": "This enables albumin binding and extends plasma half-life to support once-weekly or less frequent dosing.",
           "relation_id": "compound:zealand_triple_agonist_peptide|BINDS_TO|protein:albumin|patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "prophetic"
     },
     {
       "source": "compound:zealand_triple_agonist_peptide",
@@ -13049,7 +13450,8 @@
           "evidence": "Six C-terminal extension sequences (Y1, SEQ ID NOs 53-58) are derived from Exendin-4",
           "relation_id": "compound:zealand_triple_agonist_peptide|DERIVED_FROM|compound:exendin_4|patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "prophetic"
     },
     {
       "source": "compound:zealand_triple_agonist_peptide",
@@ -13072,7 +13474,8 @@
           "evidence": "SEQ ID NO: 1 (wild-type reference): YSQGTFTSDYSKYLDSKAAHDFVEWLLRA",
           "relation_id": "compound:zealand_triple_agonist_peptide|HAS_SEQUENCE|peptide_sequence:peptide_29aa|patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:zealand_triple_agonist_peptide",
@@ -13095,7 +13498,8 @@
           "evidence": "SEQ ID NO: 5: Y-Aib-QGTFTSDYSIYLDSKAAHDFVEWLLSA",
           "relation_id": "compound:zealand_triple_agonist_peptide|HAS_SEQUENCE|peptide_sequence:peptide_27aa|patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:exendin_4",
@@ -13118,7 +13522,8 @@
           "evidence": "",
           "relation_id": "compound:exendin_4|MENTIONED_IN|doc:patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:metabolic_syndrome",
@@ -13141,7 +13546,8 @@
           "evidence": "",
           "relation_id": "disease:metabolic_syndrome|MENTIONED_IN|doc:patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:metabolic_syndrome",
@@ -13164,7 +13570,8 @@
           "evidence": "",
           "relation_id": "disease:metabolic_syndrome|MENTIONED_IN|doc:pmid_39357509"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:zealand_pharma_as",
@@ -13187,7 +13594,8 @@
           "evidence": "",
           "relation_id": "organization:zealand_pharma_as|MENTIONED_IN|doc:patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:zealand_pharma_as",
@@ -13210,7 +13618,8 @@
           "evidence": "Assignee: Zealand Pharma AS",
           "relation_id": "compound:zealand_triple_agonist_peptide|DEVELOPED_BY|organization:zealand_pharma_as|patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "peptide_sequence:peptide_29aa",
@@ -13233,7 +13642,8 @@
           "evidence": "",
           "relation_id": "peptide_sequence:peptide_29aa|MENTIONED_IN|doc:patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "peptide_sequence:peptide_27aa",
@@ -13256,7 +13666,8 @@
           "evidence": "",
           "relation_id": "peptide_sequence:peptide_27aa|MENTIONED_IN|doc:patent_09"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:snac",
@@ -13279,7 +13690,8 @@
           "evidence": "",
           "relation_id": "compound:snac|MENTIONED_IN|doc:patent_10"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:snac",
@@ -13302,7 +13714,8 @@
           "evidence": "SNAC overcomes these barriers by creating a localized pH increase around the tablet, protecting semaglutide from pepsin degradation, and facilitating transcellular absorption primarily in the stomach",
           "relation_id": "compound:snac|HAS_MECHANISM|mechanism_of_action:oral_peptide_absorption_enhancement|patent_10"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:snac",
@@ -13325,7 +13738,8 @@
           "evidence": "The related caprylic acid backbone has the identifier WWZKQHOCKIZLMA-UHFFFAOYSA-N (octanoic acid)",
           "relation_id": "compound:snac|DERIVED_FROM|metabolite:octanoic_acid|patent_10"
         }
-      ]
+      ],
+      "epistemic_status": "prophetic"
     },
     {
       "source": "compound:oral_semaglutide_tablet",
@@ -13348,7 +13762,8 @@
           "evidence": "",
           "relation_id": "compound:oral_semaglutide_tablet|MENTIONED_IN|doc:patent_10"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "metabolite:octanoic_acid",
@@ -13371,7 +13786,8 @@
           "evidence": "",
           "relation_id": "metabolite:octanoic_acid|MENTIONED_IN|doc:patent_10"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:oral_peptide_absorption_enhancement",
@@ -13394,7 +13810,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:oral_peptide_absorption_enhancement|MENTIONED_IN|doc:patent_10"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "regulatory_action:rybelsus",
@@ -13417,7 +13834,8 @@
           "evidence": "",
           "relation_id": "regulatory_action:rybelsus|MENTIONED_IN|doc:patent_10"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "regulatory_action:rybelsus",
@@ -13440,7 +13858,8 @@
           "evidence": "This oral formulation is marketed as Rybelsus.",
           "relation_id": "regulatory_action:rybelsus|GRANTS_APPROVAL_FOR|compound:oral_semaglutide_tablet|patent_10"
         }
-      ]
+      ],
+      "epistemic_status": "prophetic"
     },
     {
       "source": "compound:metformin",
@@ -13463,7 +13882,8 @@
           "evidence": "",
           "relation_id": "compound:metformin|MENTIONED_IN|doc:pmid_32442310"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp_1",
@@ -13486,7 +13906,8 @@
           "evidence": "",
           "relation_id": "protein:glp_1|MENTIONED_IN|doc:pmid_32442310"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp_1",
@@ -13509,7 +13930,8 @@
           "evidence": "",
           "relation_id": "protein:glp_1|MENTIONED_IN|doc:pmid_37192005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp_1",
@@ -13532,7 +13954,8 @@
           "evidence": "",
           "relation_id": "protein:glp_1|MENTIONED_IN|doc:pmid_37657738"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glp_1",
@@ -13555,7 +13978,8 @@
           "evidence": "Glucagon-like peptide 1 (GLP-1) is a hormone of the incretin family",
           "relation_id": "protein:glp_1|PARTICIPATES_IN|pathway:incretin_signaling_pathway|pmid_37657738"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:testosterone",
@@ -13578,7 +14002,8 @@
           "evidence": "",
           "relation_id": "biomarker:testosterone|MENTIONED_IN|doc:pmid_32442310"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:testosterone",
@@ -13601,7 +14026,8 @@
           "evidence": "Several studies demonstrated significant weight loss and testosterone reduction",
           "relation_id": "biomarker:testosterone|DIAGNOSTIC_FOR|disease:polycystic_ovary_syndrome|pmid_32442310"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:polycystic_ovary_syndrome",
@@ -13624,7 +14050,8 @@
           "evidence": "",
           "relation_id": "disease:polycystic_ovary_syndrome|MENTIONED_IN|doc:pmid_32442310"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:polycystic_ovary_syndrome",
@@ -13647,7 +14074,8 @@
           "evidence": "Polycystic ovary syndrome (PCOS) is one of the leading causes of infertility",
           "relation_id": "disease:polycystic_ovary_syndrome|ASSOCIATED_WITH|disease:infertility|pmid_32442310"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:infertility",
@@ -13670,7 +14098,8 @@
           "evidence": "",
           "relation_id": "disease:infertility|MENTIONED_IN|doc:pmid_32442310"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:insulin_resistance",
@@ -13693,7 +14122,8 @@
           "evidence": "",
           "relation_id": "phenotype:insulin_resistance|MENTIONED_IN|doc:pmid_32442310"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:insulin_resistance",
@@ -13716,7 +14146,8 @@
           "evidence": "",
           "relation_id": "phenotype:insulin_resistance|MENTIONED_IN|doc:pmid_35650449"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:insulin_resistance",
@@ -13739,7 +14170,8 @@
           "evidence": "Diabetes, insulin resistance, and obesity are responsible for the pathological manifestations of non-alcoholic steatohepatitis",
           "relation_id": "phenotype:insulin_resistance|IMPLICATED_IN|disease:non_alcoholic_steatohepatitis|pmid_35650449"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:insulin_resistance",
@@ -13762,7 +14194,8 @@
           "evidence": "insulin resistance in brain is also responsible for neurodegeneration and impaired cognitive functions",
           "relation_id": "phenotype:insulin_resistance|IMPLICATED_IN|disease:neurodegenerative_diseases|pmid_35650449"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:insulin_resistance",
@@ -13785,7 +14218,8 @@
           "evidence": "",
           "relation_id": "phenotype:insulin_resistance|MENTIONED_IN|doc:pmid_37657738"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:insulin_resistance",
@@ -13808,7 +14242,8 @@
           "evidence": "related to insulin resistance",
           "relation_id": "phenotype:insulin_resistance|IMPLICATED_IN|disease:alzheimer_disease|pmid_37657738"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:insulin_resistance",
@@ -13831,7 +14266,8 @@
           "evidence": "related to insulin resistance",
           "relation_id": "phenotype:insulin_resistance|IMPLICATED_IN|disease:parkinson_disease|pmid_37657738"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:weight_loss",
@@ -13854,7 +14290,8 @@
           "evidence": "",
           "relation_id": "phenotype:weight_loss|MENTIONED_IN|doc:pmid_32442310"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:weight_loss",
@@ -13877,7 +14314,8 @@
           "evidence": "",
           "relation_id": "phenotype:weight_loss|MENTIONED_IN|doc:pmid_35441470"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:weight_loss",
@@ -13900,7 +14338,8 @@
           "evidence": "",
           "relation_id": "phenotype:weight_loss|MENTIONED_IN|doc:pmid_35650449"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:weight_loss",
@@ -13923,7 +14362,8 @@
           "evidence": "",
           "relation_id": "phenotype:weight_loss|MENTIONED_IN|doc:pmid_35658024"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:weight_loss",
@@ -13946,7 +14386,8 @@
           "evidence": "",
           "relation_id": "phenotype:weight_loss|MENTIONED_IN|doc:pmid_37351564"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:weight_loss",
@@ -13969,7 +14410,8 @@
           "evidence": "",
           "relation_id": "phenotype:weight_loss|MENTIONED_IN|doc:pmid_38367045"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:weight_loss",
@@ -13992,7 +14434,8 @@
           "evidence": "",
           "relation_id": "phenotype:weight_loss|MENTIONED_IN|doc:pmid_38858523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:weight_loss",
@@ -14015,7 +14458,8 @@
           "evidence": "LF reductions were significantly related to changes in body weight",
           "relation_id": "phenotype:weight_loss|ASSOCIATED_WITH|biomarker:liver_fat|pmid_38858523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:weight_loss",
@@ -14038,7 +14482,8 @@
           "evidence": "",
           "relation_id": "phenotype:weight_loss|MENTIONED_IN|doc:pmid_39536238"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:weight_regain",
@@ -14061,7 +14506,8 @@
           "evidence": "",
           "relation_id": "phenotype:weight_regain|MENTIONED_IN|doc:pmid_35441470"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:step_1",
@@ -14084,7 +14530,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:step_1|MENTIONED_IN|doc:pmid_35441470"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:step_1",
@@ -14107,7 +14554,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:step_1|MENTIONED_IN|doc:pmid_35650449"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:parkinson_disease",
@@ -14130,7 +14578,8 @@
           "evidence": "",
           "relation_id": "disease:parkinson_disease|MENTIONED_IN|doc:pmid_35650449"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:parkinson_disease",
@@ -14153,7 +14602,8 @@
           "evidence": "",
           "relation_id": "disease:parkinson_disease|MENTIONED_IN|doc:pmid_37657738"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:alzheimer_disease",
@@ -14176,7 +14626,8 @@
           "evidence": "",
           "relation_id": "disease:alzheimer_disease|MENTIONED_IN|doc:pmid_35650449"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:alzheimer_disease",
@@ -14199,7 +14650,8 @@
           "evidence": "",
           "relation_id": "disease:alzheimer_disease|MENTIONED_IN|doc:pmid_37657738"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:neurodegenerative_diseases",
@@ -14222,7 +14674,8 @@
           "evidence": "",
           "relation_id": "disease:neurodegenerative_diseases|MENTIONED_IN|doc:pmid_35650449"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:neurodegenerative_diseases",
@@ -14245,7 +14698,8 @@
           "evidence": "",
           "relation_id": "disease:neurodegenerative_diseases|MENTIONED_IN|doc:pmid_39357509"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:insulin_signalling_pathway",
@@ -14268,7 +14722,8 @@
           "evidence": "",
           "relation_id": "pathway:insulin_signalling_pathway|MENTIONED_IN|doc:pmid_35650449"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:pioneer",
@@ -14291,7 +14746,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:pioneer|MENTIONED_IN|doc:pmid_35650449"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:united_states_food_and_drug_administration",
@@ -14314,7 +14770,8 @@
           "evidence": "",
           "relation_id": "organization:united_states_food_and_drug_administration|MENTIONED_IN|doc:pmid_35650449"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:united_states_food_and_drug_administration",
@@ -14337,7 +14794,8 @@
           "evidence": "approved by the United States Food and Drug Administration for management of obesity",
           "relation_id": "organization:united_states_food_and_drug_administration|GRANTS_APPROVAL_FOR|compound:semaglutide|pmid_35650449"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:gastrointestinal_adverse_events",
@@ -14360,7 +14818,8 @@
           "evidence": "",
           "relation_id": "adverse_event:gastrointestinal_adverse_events|MENTIONED_IN|doc:pmid_35658024"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:gastrointestinal_adverse_events",
@@ -14383,7 +14842,8 @@
           "evidence": "",
           "relation_id": "adverse_event:gastrointestinal_adverse_events|MENTIONED_IN|doc:pmid_39663847"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:gastrointestinal_adverse_events",
@@ -14406,7 +14866,8 @@
           "evidence": "",
           "relation_id": "adverse_event:gastrointestinal_adverse_events|MENTIONED_IN|doc:pmid_40305708"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:gastrointestinal_adverse_events",
@@ -14429,7 +14890,8 @@
           "evidence": "",
           "relation_id": "adverse_event:gastrointestinal_adverse_events|MENTIONED_IN|doc:pmid_40544432"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:gastrointestinal_adverse_events",
@@ -14452,7 +14914,8 @@
           "evidence": "",
           "relation_id": "adverse_event:gastrointestinal_adverse_events|MENTIONED_IN|doc:pmid_40544433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:gastrointestinal_adverse_events",
@@ -14475,7 +14938,8 @@
           "evidence": "",
           "relation_id": "adverse_event:gastrointestinal_adverse_events|MENTIONED_IN|doc:pmid_40544435"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:gastrointestinal_adverse_events",
@@ -14498,7 +14962,8 @@
           "evidence": "",
           "relation_id": "adverse_event:gastrointestinal_adverse_events|MENTIONED_IN|doc:pmid_41523559"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:atherosclerotic_cardiovascular_disease",
@@ -14521,7 +14986,8 @@
           "evidence": "",
           "relation_id": "disease:atherosclerotic_cardiovascular_disease|MENTIONED_IN|doc:pmid_36945734"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:chronic_kidney_disease",
@@ -14544,7 +15010,8 @@
           "evidence": "",
           "relation_id": "disease:chronic_kidney_disease|MENTIONED_IN|doc:pmid_36945734"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:chronic_kidney_disease",
@@ -14567,7 +15034,8 @@
           "evidence": "",
           "relation_id": "disease:chronic_kidney_disease|MENTIONED_IN|doc:pmid_38785209"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:chronic_kidney_disease",
@@ -14590,7 +15058,8 @@
           "evidence": "at high risk for kidney failure",
           "relation_id": "disease:chronic_kidney_disease|ASSOCIATED_WITH|disease:kidney_failure|pmid_38785209"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:chronic_kidney_disease",
@@ -14613,7 +15082,8 @@
           "evidence": "cardiovascular events, and death",
           "relation_id": "disease:chronic_kidney_disease|ASSOCIATED_WITH|disease:cardiovascular_disease|pmid_38785209"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:soul",
@@ -14636,7 +15106,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:soul|MENTIONED_IN|doc:pmid_36945734"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "metabolite:gaba",
@@ -14659,7 +15130,8 @@
           "evidence": "",
           "relation_id": "metabolite:gaba|MENTIONED_IN|doc:pmid_37192005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "metabolite:gaba",
@@ -14682,7 +15154,8 @@
           "evidence": "modulated central GABA neurotransmission",
           "relation_id": "metabolite:gaba|PARTICIPATES_IN|pathway:gabaergic_neurotransmission|pmid_37192005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:alcohol_use_disorder",
@@ -14705,7 +15178,8 @@
           "evidence": "",
           "relation_id": "disease:alcohol_use_disorder|MENTIONED_IN|doc:pmid_37192005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:alcohol_use_disorder",
@@ -14728,7 +15202,8 @@
           "evidence": "",
           "relation_id": "disease:alcohol_use_disorder|MENTIONED_IN|doc:pmid_40726115"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "cell_or_tissue:central_amygdala",
@@ -14751,7 +15226,8 @@
           "evidence": "",
           "relation_id": "cell_or_tissue:central_amygdala|MENTIONED_IN|doc:pmid_37192005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "cell_or_tissue:infralimbic_cortex",
@@ -14774,7 +15250,8 @@
           "evidence": "",
           "relation_id": "cell_or_tissue:infralimbic_cortex|MENTIONED_IN|doc:pmid_37192005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:gabaergic_neurotransmission",
@@ -14797,7 +15274,8 @@
           "evidence": "",
           "relation_id": "pathway:gabaergic_neurotransmission|MENTIONED_IN|doc:pmid_37192005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:binge_like_alcohol_drinking",
@@ -14820,7 +15298,8 @@
           "evidence": "",
           "relation_id": "phenotype:binge_like_alcohol_drinking|MENTIONED_IN|doc:pmid_37192005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:nct05051579",
@@ -14843,7 +15322,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:nct05051579|MENTIONED_IN|doc:pmid_37351564"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:gastrointestinal_events",
@@ -14866,7 +15346,8 @@
           "evidence": "",
           "relation_id": "adverse_event:gastrointestinal_events|MENTIONED_IN|doc:pmid_37351564"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:glp_1_receptor_agonists",
@@ -14889,7 +15370,8 @@
           "evidence": "",
           "relation_id": "compound:glp_1_receptor_agonists|MENTIONED_IN|doc:pmid_37657738"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:glp_1_receptor_agonists",
@@ -14919,7 +15401,8 @@
           "evidence": "glucagon-like peptide-1 receptor agonists",
           "relation_id": "compound:glp_1_receptor_agonists|ACTIVATES|protein:glp1r|pmid_40726115"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:glp_1_receptor_agonists",
@@ -14942,7 +15425,8 @@
           "evidence": "stimulation of glucose-dependent insulin secretion and insulin biosynthesis, inhibition of glucagon secretion and gastric emptying",
           "relation_id": "compound:glp_1_receptor_agonists|HAS_MECHANISM|mechanism_of_action:glp_1_receptor_agonism|pmid_37657738"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:glp_1_receptor_agonists",
@@ -14965,7 +15449,8 @@
           "evidence": "their use in the treatment of type 2 diabetes",
           "relation_id": "compound:glp_1_receptor_agonists|INDICATED_FOR|disease:type_2_diabetes_mellitus|pmid_37657738"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:glp_1_receptor_agonists",
@@ -14988,7 +15473,8 @@
           "evidence": "extended to the management of obesity",
           "relation_id": "compound:glp_1_receptor_agonists|INDICATED_FOR|disease:obesity|pmid_37657738"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:glp_1_receptor_agonists",
@@ -15011,7 +15497,8 @@
           "evidence": "",
           "relation_id": "compound:glp_1_receptor_agonists|MENTIONED_IN|doc:pmid_40726115"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:glp_1_receptor_agonists",
@@ -15034,7 +15521,8 @@
           "evidence": "may offer novel analgesia",
           "relation_id": "compound:glp_1_receptor_agonists|INDICATED_FOR|disease:chronic_pain|pmid_40726115"
         }
-      ]
+      ],
+      "epistemic_status": "hypothesized"
     },
     {
       "source": "compound:glp_1_receptor_agonists",
@@ -15057,7 +15545,8 @@
           "evidence": "In osteoarthritis, they appear to reduce inflammation and cartilage degradation",
           "relation_id": "compound:glp_1_receptor_agonists|INDICATED_FOR|disease:osteoarthritis|pmid_40726115"
         }
-      ]
+      ],
+      "epistemic_status": "hypothesized"
     },
     {
       "source": "compound:glp_1_receptor_agonists",
@@ -15080,7 +15569,8 @@
           "evidence": "In diabetic neuropathy, GLP-1RAs show potential for nerve repair",
           "relation_id": "compound:glp_1_receptor_agonists|INDICATED_FOR|disease:diabetic_neuropathy|pmid_40726115"
         }
-      ]
+      ],
+      "epistemic_status": "hypothesized"
     },
     {
       "source": "compound:glp_1_receptor_agonists",
@@ -15103,7 +15593,8 @@
           "evidence": "treat drug-seeking behavior",
           "relation_id": "compound:glp_1_receptor_agonists|INDICATED_FOR|disease:substance_use_disorders|pmid_40726115"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:glp_1_receptor_agonists",
@@ -15126,7 +15617,8 @@
           "evidence": "Trials in alcohol addiction show promise",
           "relation_id": "compound:glp_1_receptor_agonists|INDICATED_FOR|disease:alcohol_use_disorder|pmid_40726115"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:glp_1_receptor_agonists",
@@ -15149,7 +15641,8 @@
           "evidence": "focusing on inflammation, macrophage repolarization, oxidative stress",
           "relation_id": "compound:glp_1_receptor_agonists|HAS_MECHANISM|mechanism_of_action:anti_inflammatory_activity|pmid_40726115"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:glp_1_receptor_agonists",
@@ -15172,7 +15665,8 @@
           "evidence": "macrophage repolarization",
           "relation_id": "compound:glp_1_receptor_agonists|HAS_MECHANISM|mechanism_of_action:macrophage_repolarization|pmid_40726115"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:glp_1_receptor_agonists",
@@ -15195,7 +15689,8 @@
           "evidence": "dopaminergic pathways in substance use disorders",
           "relation_id": "compound:glp_1_receptor_agonists|HAS_MECHANISM|mechanism_of_action:dopaminergic_pathway_modulation|pmid_40726115"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glucagon",
@@ -15218,7 +15713,8 @@
           "evidence": "",
           "relation_id": "protein:glucagon|MENTIONED_IN|doc:pmid_37657738"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glucagon",
@@ -15241,7 +15737,8 @@
           "evidence": "",
           "relation_id": "protein:glucagon|MENTIONED_IN|doc:pmid_38632474"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glucagon",
@@ -15264,7 +15761,8 @@
           "evidence": "activity of additional hormones, such as...glucagon",
           "relation_id": "protein:glucagon|PARTICIPATES_IN|pathway:incretin_system|pmid_38632474"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:dementia",
@@ -15287,7 +15785,8 @@
           "evidence": "",
           "relation_id": "disease:dementia|MENTIONED_IN|doc:pmid_37657738"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:cognitive_impairment",
@@ -15310,7 +15809,8 @@
           "evidence": "",
           "relation_id": "phenotype:cognitive_impairment|MENTIONED_IN|doc:pmid_37657738"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:incretin_signaling_pathway",
@@ -15333,7 +15833,8 @@
           "evidence": "",
           "relation_id": "pathway:incretin_signaling_pathway|MENTIONED_IN|doc:pmid_37657738"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:cerebral_glucose_metabolism",
@@ -15356,7 +15857,8 @@
           "evidence": "",
           "relation_id": "biomarker:cerebral_glucose_metabolism|MENTIONED_IN|doc:pmid_37657738"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:cerebral_glucose_metabolism",
@@ -15379,7 +15881,8 @@
           "evidence": "improvement in some brain markers (e.g. hippocampal connections, cerebral glucose metabolism)",
           "relation_id": "biomarker:cerebral_glucose_metabolism|DIAGNOSTIC_FOR|phenotype:cognitive_impairment|pmid_37657738"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:hippocampal_connectivity",
@@ -15402,7 +15905,8 @@
           "evidence": "",
           "relation_id": "biomarker:hippocampal_connectivity|MENTIONED_IN|doc:pmid_37657738"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:hippocampal_connectivity",
@@ -15425,7 +15929,8 @@
           "evidence": "improvement in some brain markers (e.g. hippocampal connections)",
           "relation_id": "biomarker:hippocampal_connectivity|DIAGNOSTIC_FOR|phenotype:cognitive_impairment|pmid_37657738"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:triple_receptor_agonism",
@@ -15448,7 +15953,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:triple_receptor_agonism|MENTIONED_IN|doc:pmid_38367045"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:triple_receptor_agonism",
@@ -15471,7 +15977,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:triple_receptor_agonism|MENTIONED_IN|doc:pmid_38858523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:phase_ii_clinical_trial_retatrutide_obesity",
@@ -15494,7 +16001,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:phase_ii_clinical_trial_retatrutide_obesity|MENTIONED_IN|doc:pmid_38367045"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:phase_iii_trial_retatrutide",
@@ -15517,7 +16025,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:phase_iii_trial_retatrutide|MENTIONED_IN|doc:pmid_38367045"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glucagon_like_peptide_1",
@@ -15540,7 +16049,8 @@
           "evidence": "",
           "relation_id": "protein:glucagon_like_peptide_1|MENTIONED_IN|doc:pmid_38632474"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glucagon_like_peptide_1",
@@ -15563,7 +16073,8 @@
           "evidence": "therapies based on incretin hormones, spearheaded by glucagon-like peptide 1",
           "relation_id": "protein:glucagon_like_peptide_1|PARTICIPATES_IN|pathway:incretin_system|pmid_38632474"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glucagon_like_peptide_1",
@@ -15586,7 +16097,8 @@
           "evidence": "",
           "relation_id": "protein:glucagon_like_peptide_1|MENTIONED_IN|doc:pmid_39357509"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glucagon_like_peptide_1",
@@ -15609,7 +16121,8 @@
           "evidence": "glucagon-like peptide-1 receptor (GLP-1R) agonists",
           "relation_id": "protein:glucagon_like_peptide_1|TARGETS|protein:glp1r|pmid_39357509"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glucose_dependent_insulinotropic_peptide",
@@ -15632,7 +16145,8 @@
           "evidence": "",
           "relation_id": "protein:glucose_dependent_insulinotropic_peptide|MENTIONED_IN|doc:pmid_38632474"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:glucose_dependent_insulinotropic_peptide",
@@ -15655,7 +16169,8 @@
           "evidence": "glucose-dependent insulinotropic peptide",
           "relation_id": "protein:glucose_dependent_insulinotropic_peptide|PARTICIPATES_IN|pathway:incretin_system|pmid_38632474"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:amylin",
@@ -15678,7 +16193,8 @@
           "evidence": "",
           "relation_id": "protein:amylin|MENTIONED_IN|doc:pmid_38632474"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:amylin",
@@ -15701,7 +16217,8 @@
           "evidence": "activity of additional hormones, such as...amylin",
           "relation_id": "protein:amylin|PARTICIPATES_IN|pathway:incretin_system|pmid_38632474"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:glp_1_receptor_agonist",
@@ -15724,7 +16241,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:glp_1_receptor_agonist|MENTIONED_IN|doc:pmid_38632474"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:glp_1_receptor_agonist",
@@ -15747,7 +16265,8 @@
           "evidence": "have become the treatment of choice for obesity and T2DM",
           "relation_id": "mechanism_of_action:glp_1_receptor_agonist|INDICATED_FOR|disease:obesity|pmid_38632474"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:glp_1_receptor_agonist",
@@ -15770,7 +16289,8 @@
           "evidence": "have become the treatment of choice for obesity and T2DM",
           "relation_id": "mechanism_of_action:glp_1_receptor_agonist|INDICATED_FOR|disease:type_2_diabetes_mellitus|pmid_38632474"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:glp_1_receptor_agonist",
@@ -15793,7 +16313,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:glp_1_receptor_agonist|MENTIONED_IN|doc:pmid_38785209"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:incretin_system",
@@ -15816,7 +16337,8 @@
           "evidence": "",
           "relation_id": "pathway:incretin_system|MENTIONED_IN|doc:pmid_38632474"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:incretin_system",
@@ -15839,7 +16361,8 @@
           "evidence": "Nature reviews. Endocrinology (2024)",
           "relation_id": "pathway:incretin_system|PUBLISHED_IN|publication:nature_reviews_endocrinology|pmid_38632474"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:non_peptidic_oral_glp1ra",
@@ -15862,7 +16385,8 @@
           "evidence": "",
           "relation_id": "compound:non_peptidic_oral_glp1ra|MENTIONED_IN|doc:pmid_38632474"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:non_peptidic_oral_glp1ra",
@@ -15885,7 +16409,8 @@
           "evidence": "Second-generation non-peptidic oral GLP1RAs",
           "relation_id": "compound:non_peptidic_oral_glp1ra|TARGETS|protein:glp1r|pmid_38632474"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:glp1_plus_agents",
@@ -15908,7 +16433,8 @@
           "evidence": "",
           "relation_id": "compound:glp1_plus_agents|MENTIONED_IN|doc:pmid_38632474"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:glp1_plus_agents",
@@ -15931,7 +16457,8 @@
           "evidence": "combine the known advantages of GLP1RAs with the activity of additional hormones",
           "relation_id": "compound:glp1_plus_agents|ACTIVATES|protein:glp1r|pmid_38632474"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "publication:nature_reviews_endocrinology",
@@ -15954,7 +16481,8 @@
           "evidence": "",
           "relation_id": "publication:nature_reviews_endocrinology|MENTIONED_IN|doc:pmid_38632474"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:kidney_failure",
@@ -15977,7 +16505,8 @@
           "evidence": "",
           "relation_id": "disease:kidney_failure|MENTIONED_IN|doc:pmid_38785209"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:estimated_glomerular_filtration_rate",
@@ -16000,7 +16529,8 @@
           "evidence": "",
           "relation_id": "biomarker:estimated_glomerular_filtration_rate|MENTIONED_IN|doc:pmid_38785209"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:estimated_glomerular_filtration_rate",
@@ -16023,7 +16553,8 @@
           "evidence": "chronic kidney disease (defined by an estimated glomerular filtration rate [eGFR])",
           "relation_id": "biomarker:estimated_glomerular_filtration_rate|DIAGNOSTIC_FOR|disease:chronic_kidney_disease|pmid_38785209"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:flow",
@@ -16046,7 +16577,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:flow|MENTIONED_IN|doc:pmid_38785209"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:masld",
@@ -16069,7 +16601,8 @@
           "evidence": "",
           "relation_id": "disease:masld|MENTIONED_IN|doc:pmid_38851997"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:masld",
@@ -16092,7 +16625,8 @@
           "evidence": "MASH-related hepatocellular carcinoma (HCC)",
           "relation_id": "disease:masld|ASSOCIATED_WITH|disease:hepatocellular_carcinoma|pmid_38851997"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:masld",
@@ -16115,7 +16649,8 @@
           "evidence": "The spectrum of MASLD includes steatosis, metabolic dysfunction-associated steatohepatitis (MASH), fibrosis, cirrhosis",
           "relation_id": "disease:masld|ASSOCIATED_WITH|disease:cirrhosis|pmid_38851997"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:mash",
@@ -16138,7 +16673,8 @@
           "evidence": "",
           "relation_id": "disease:mash|MENTIONED_IN|doc:pmid_38851997"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:mash",
@@ -16161,7 +16697,8 @@
           "evidence": "",
           "relation_id": "disease:mash|MENTIONED_IN|doc:pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:hepatocellular_carcinoma",
@@ -16184,7 +16721,8 @@
           "evidence": "",
           "relation_id": "disease:hepatocellular_carcinoma|MENTIONED_IN|doc:pmid_38851997"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes",
@@ -16207,7 +16745,8 @@
           "evidence": "",
           "relation_id": "disease:type_2_diabetes|MENTIONED_IN|doc:pmid_38851997"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes",
@@ -16230,7 +16769,8 @@
           "evidence": "",
           "relation_id": "disease:type_2_diabetes|MENTIONED_IN|doc:pmid_38958939"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes",
@@ -16253,7 +16793,8 @@
           "evidence": "propensity matching was used to assess whether prescribed semaglutide was associated with NAION in patients with type 2 diabetes",
           "relation_id": "disease:type_2_diabetes|ASSOCIATED_WITH|adverse_event:nonarteritic_anterior_ischemic_optic_neuropathy|pmid_38958939"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes",
@@ -16276,7 +16817,8 @@
           "evidence": "",
           "relation_id": "disease:type_2_diabetes|MENTIONED_IN|doc:pmid_39536238"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes",
@@ -16299,7 +16841,8 @@
           "evidence": "",
           "relation_id": "disease:type_2_diabetes|MENTIONED_IN|doc:pmid_39663847"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes",
@@ -16322,7 +16865,8 @@
           "evidence": "",
           "relation_id": "disease:type_2_diabetes|MENTIONED_IN|doc:pmid_40544432"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes",
@@ -16345,7 +16889,8 @@
           "evidence": "",
           "relation_id": "disease:type_2_diabetes|MENTIONED_IN|doc:pmid_40544435"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes",
@@ -16368,7 +16913,8 @@
           "evidence": "",
           "relation_id": "disease:type_2_diabetes|MENTIONED_IN|doc:pmid_40726115"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:type_2_diabetes",
@@ -16391,7 +16937,8 @@
           "evidence": "",
           "relation_id": "disease:type_2_diabetes|MENTIONED_IN|doc:pmid_41523559"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:cirrhosis",
@@ -16414,7 +16961,8 @@
           "evidence": "",
           "relation_id": "disease:cirrhosis|MENTIONED_IN|doc:pmid_38851997"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:liver_fibrosis",
@@ -16437,7 +16985,8 @@
           "evidence": "",
           "relation_id": "phenotype:liver_fibrosis|MENTIONED_IN|doc:pmid_38851997"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:liver_fibrosis",
@@ -16460,7 +17009,8 @@
           "evidence": "",
           "relation_id": "phenotype:liver_fibrosis|MENTIONED_IN|doc:pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:resmetirom",
@@ -16483,7 +17033,8 @@
           "evidence": "",
           "relation_id": "compound:resmetirom|MENTIONED_IN|doc:pmid_38851997"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:resmetirom",
@@ -16513,7 +17064,8 @@
           "evidence": "resmetirom were significantly better than placebo in achieving fibrosis regression",
           "relation_id": "compound:resmetirom|INDICATED_FOR|disease:mash|pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:resmetirom",
@@ -16536,7 +17088,8 @@
           "evidence": "",
           "relation_id": "compound:resmetirom|MENTIONED_IN|doc:pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:fib_4",
@@ -16559,7 +17112,8 @@
           "evidence": "",
           "relation_id": "biomarker:fib_4|MENTIONED_IN|doc:pmid_38851997"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:fib_4",
@@ -16582,7 +17136,8 @@
           "evidence": "blood-based scores (such as FIB-4) and, sequentially, imaging techniques (such as transient elastography) is suitable to rule-out/in advanced fibrosis",
           "relation_id": "biomarker:fib_4|DIAGNOSTIC_FOR|phenotype:liver_fibrosis|pmid_38851997"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:transient_elastography",
@@ -16605,7 +17160,8 @@
           "evidence": "",
           "relation_id": "biomarker:transient_elastography|MENTIONED_IN|doc:pmid_38851997"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:transient_elastography",
@@ -16628,7 +17184,8 @@
           "evidence": "imaging techniques (such as transient elastography) is suitable to rule-out/in advanced fibrosis",
           "relation_id": "biomarker:transient_elastography|DIAGNOSTIC_FOR|phenotype:liver_fibrosis|pmid_38851997"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:easl",
@@ -16651,7 +17208,8 @@
           "evidence": "",
           "relation_id": "organization:easl|MENTIONED_IN|doc:pmid_38851997"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "publication:pmid_38851997",
@@ -16674,7 +17232,8 @@
           "evidence": "",
           "relation_id": "publication:pmid_38851997|MENTIONED_IN|doc:pmid_38851997"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "publication:pmid_38851997",
@@ -16697,7 +17256,8 @@
           "evidence": "EASL-EASD-EASO Clinical Practice Guidelines",
           "relation_id": "publication:pmid_38851997|PUBLISHED_IN|organization:easl|pmid_38851997"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:metabolic_dysfunction_associated_steatotic_liver_disease",
@@ -16720,7 +17280,8 @@
           "evidence": "",
           "relation_id": "disease:metabolic_dysfunction_associated_steatotic_liver_disease|MENTIONED_IN|doc:pmid_38858523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:metabolic_dysfunction_associated_steatotic_liver_disease",
@@ -16743,7 +17304,8 @@
           "evidence": "phase 2 obesity study...participants with metabolic dysfunction-associated steatotic liver disease",
           "relation_id": "disease:metabolic_dysfunction_associated_steatotic_liver_disease|ASSOCIATED_WITH|disease:obesity|pmid_38858523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:liver_fat",
@@ -16766,7 +17328,8 @@
           "evidence": "",
           "relation_id": "biomarker:liver_fat|MENTIONED_IN|doc:pmid_38858523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:liver_fat",
@@ -16789,7 +17352,8 @@
           "evidence": "participants from that study with metabolic dysfunction-associated steatotic liver disease and >=10% of LF",
           "relation_id": "biomarker:liver_fat|DIAGNOSTIC_FOR|disease:metabolic_dysfunction_associated_steatotic_liver_disease|pmid_38858523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:insulin_sensitivity",
@@ -16812,7 +17376,8 @@
           "evidence": "",
           "relation_id": "biomarker:insulin_sensitivity|MENTIONED_IN|doc:pmid_38858523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:insulin_sensitivity",
@@ -16835,7 +17400,8 @@
           "evidence": "metabolic measures associated with improved insulin sensitivity and lipid metabolism",
           "relation_id": "biomarker:insulin_sensitivity|PARTICIPATES_IN|pathway:lipid_metabolism|pmid_38858523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:lipid_metabolism",
@@ -16858,7 +17424,8 @@
           "evidence": "",
           "relation_id": "pathway:lipid_metabolism|MENTIONED_IN|doc:pmid_38858523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:nct04881760",
@@ -16881,7 +17448,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:nct04881760|MENTIONED_IN|doc:pmid_38858523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:nct04881760",
@@ -16904,7 +17472,8 @@
           "evidence": "Nature medicine (2024)",
           "relation_id": "clinical_trial:nct04881760|PUBLISHED_IN|publication:nature_medicine|pmid_38858523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "publication:nature_medicine",
@@ -16927,7 +17496,8 @@
           "evidence": "",
           "relation_id": "publication:nature_medicine|MENTIONED_IN|doc:pmid_38858523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:nonarteritic_anterior_ischemic_optic_neuropathy",
@@ -16950,7 +17520,8 @@
           "evidence": "",
           "relation_id": "adverse_event:nonarteritic_anterior_ischemic_optic_neuropathy|MENTIONED_IN|doc:pmid_38958939"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:chronic_low_grade_inflammation",
@@ -16973,7 +17544,8 @@
           "evidence": "",
           "relation_id": "phenotype:chronic_low_grade_inflammation|MENTIONED_IN|doc:pmid_39357509"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:chronic_low_grade_inflammation",
@@ -16996,7 +17568,8 @@
           "evidence": "Obesity is directly linked to chronic low-grade inflammation, connecting our metabolic environment to neurodegenerative diseases",
           "relation_id": "phenotype:chronic_low_grade_inflammation|ASSOCIATED_WITH|disease:neurodegenerative_diseases|pmid_39357509"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:appetite_regulation",
@@ -17019,7 +17592,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:appetite_regulation|MENTIONED_IN|doc:pmid_39357509"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:neurovascular_signaling",
@@ -17042,7 +17616,8 @@
           "evidence": "",
           "relation_id": "pathway:neurovascular_signaling|MENTIONED_IN|doc:pmid_39357509"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "cell_or_tissue:brain",
@@ -17065,7 +17640,8 @@
           "evidence": "",
           "relation_id": "cell_or_tissue:brain|MENTIONED_IN|doc:pmid_39357509"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:prediabetes",
@@ -17088,7 +17664,8 @@
           "evidence": "",
           "relation_id": "disease:prediabetes|MENTIONED_IN|doc:pmid_39536238"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:gastrointestinal_disorders",
@@ -17111,7 +17688,8 @@
           "evidence": "",
           "relation_id": "adverse_event:gastrointestinal_disorders|MENTIONED_IN|doc:pmid_39536238"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:survodutide",
@@ -17134,7 +17712,8 @@
           "evidence": "",
           "relation_id": "compound:survodutide|MENTIONED_IN|doc:pmid_39663847"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:survodutide",
@@ -17157,7 +17736,8 @@
           "evidence": "dual agonist that simultaneously targets both the glucagon receptor (GCGR) and GLP-1 R",
           "relation_id": "compound:survodutide|ACTIVATES|protein:glp1r|pmid_39663847"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:survodutide",
@@ -17180,7 +17760,8 @@
           "evidence": "dual agonist that simultaneously targets both the glucagon receptor (GCGR) and GLP-1 R",
           "relation_id": "compound:survodutide|ACTIVATES|protein:gcgr|pmid_39663847"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:survodutide",
@@ -17203,7 +17784,8 @@
           "evidence": "Survodutide's dual agonism of the GCGR and GLP-1 R",
           "relation_id": "compound:survodutide|HAS_MECHANISM|mechanism_of_action:dual_glp_1r_gcgr_agonism|pmid_39663847"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:survodutide",
@@ -17226,7 +17808,8 @@
           "evidence": "promising therapeutic candidate for the comprehensive management of obesity and MASH",
           "relation_id": "compound:survodutide|INDICATED_FOR|disease:metabolic_dysfunction_associated_steatohepatitis|pmid_39663847"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:survodutide",
@@ -17249,7 +17832,8 @@
           "evidence": "promising therapeutic candidate for the comprehensive management of obesity and MASH",
           "relation_id": "compound:survodutide|INDICATED_FOR|disease:obesity|pmid_39663847"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:survodutide",
@@ -17272,7 +17856,8 @@
           "evidence": "primarily manageable gastrointestinal adverse effects",
           "relation_id": "compound:survodutide|CAUSES|adverse_event:gastrointestinal_adverse_events|pmid_39663847"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:survodutide",
@@ -17295,7 +17880,8 @@
           "evidence": "",
           "relation_id": "compound:survodutide|MENTIONED_IN|doc:pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:survodutide",
@@ -17318,7 +17904,8 @@
           "evidence": "survodutide (SUCRA: 90.87) ranked the most effective interventions for achieving MASH resolution",
           "relation_id": "compound:survodutide|INDICATED_FOR|disease:mash|pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:metabolic_dysfunction_associated_steatohepatitis",
@@ -17341,7 +17928,8 @@
           "evidence": "",
           "relation_id": "disease:metabolic_dysfunction_associated_steatohepatitis|MENTIONED_IN|doc:pmid_39663847"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:metabolic_dysfunction_associated_steatohepatitis",
@@ -17364,7 +17952,8 @@
           "evidence": "",
           "relation_id": "disease:metabolic_dysfunction_associated_steatohepatitis|MENTIONED_IN|doc:pmid_40305708"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:dual_glp_1r_gcgr_agonism",
@@ -17387,7 +17976,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:dual_glp_1r_gcgr_agonism|MENTIONED_IN|doc:pmid_39663847"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pegozafermin",
@@ -17410,7 +18000,8 @@
           "evidence": "",
           "relation_id": "compound:pegozafermin|MENTIONED_IN|doc:pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pegozafermin",
@@ -17433,7 +18024,8 @@
           "evidence": "Pegozafermin (SUCRA: 79.92) ranked the most effective interventions for fibrosis regression",
           "relation_id": "compound:pegozafermin|INDICATED_FOR|disease:mash|pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cilofexor",
@@ -17456,7 +18048,8 @@
           "evidence": "",
           "relation_id": "compound:cilofexor|MENTIONED_IN|doc:pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cilofexor",
@@ -17479,7 +18072,8 @@
           "evidence": "cilofexor + firsocostat (SUCRA: 71.38)",
           "relation_id": "compound:cilofexor|COMBINED_WITH|compound:firsocostat|pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cilofexor",
@@ -17502,7 +18096,8 @@
           "evidence": "cilofexor + selonsertib (SUCRA: 69.11)",
           "relation_id": "compound:cilofexor|COMBINED_WITH|compound:selonsertib|pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:firsocostat",
@@ -17525,7 +18120,8 @@
           "evidence": "",
           "relation_id": "compound:firsocostat|MENTIONED_IN|doc:pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:selonsertib",
@@ -17548,7 +18144,8 @@
           "evidence": "",
           "relation_id": "compound:selonsertib|MENTIONED_IN|doc:pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:denifanstat",
@@ -17571,7 +18168,8 @@
           "evidence": "",
           "relation_id": "compound:denifanstat|MENTIONED_IN|doc:pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:denifanstat",
@@ -17594,7 +18192,8 @@
           "evidence": "denifanstat were significantly better than placebo in achieving fibrosis regression",
           "relation_id": "compound:denifanstat|INDICATED_FOR|disease:mash|pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:obeticholic_acid",
@@ -17617,7 +18216,8 @@
           "evidence": "",
           "relation_id": "compound:obeticholic_acid|MENTIONED_IN|doc:pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:obeticholic_acid",
@@ -17640,7 +18240,8 @@
           "evidence": "obeticholic acid were significantly better than placebo in achieving fibrosis regression",
           "relation_id": "compound:obeticholic_acid|INDICATED_FOR|disease:mash|pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:efruxifermin",
@@ -17663,7 +18264,8 @@
           "evidence": "",
           "relation_id": "compound:efruxifermin|MENTIONED_IN|doc:pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:efruxifermin",
@@ -17686,7 +18288,8 @@
           "evidence": "efruxifermin significantly better than placebo in achieving MASH resolution",
           "relation_id": "compound:efruxifermin|INDICATED_FOR|disease:mash|pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:vitamin_e",
@@ -17709,7 +18312,8 @@
           "evidence": "",
           "relation_id": "compound:vitamin_e|MENTIONED_IN|doc:pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:vitamin_e",
@@ -17732,7 +18336,8 @@
           "evidence": "vitamin E + pioglitazone",
           "relation_id": "compound:vitamin_e|COMBINED_WITH|compound:pioglitazone|pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pioglitazone",
@@ -17755,7 +18360,8 @@
           "evidence": "",
           "relation_id": "compound:pioglitazone|MENTIONED_IN|doc:pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pioglitazone",
@@ -17778,7 +18384,8 @@
           "evidence": "pioglitazone significantly better than placebo in achieving MASH resolution",
           "relation_id": "compound:pioglitazone|INDICATED_FOR|disease:mash|pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:lanifibranor",
@@ -17801,7 +18408,8 @@
           "evidence": "",
           "relation_id": "compound:lanifibranor|MENTIONED_IN|doc:pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:lanifibranor",
@@ -17824,7 +18432,8 @@
           "evidence": "lanifibranor were significantly better than placebo in achieving MASH resolution",
           "relation_id": "compound:lanifibranor|INDICATED_FOR|disease:mash|pmid_39903735"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:nct04822181",
@@ -17847,7 +18456,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:nct04822181|MENTIONED_IN|doc:pmid_40305708"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:steatohepatitis_resolution",
@@ -17870,7 +18480,8 @@
           "evidence": "",
           "relation_id": "biomarker:steatohepatitis_resolution|MENTIONED_IN|doc:pmid_40305708"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:steatohepatitis_resolution",
@@ -17893,7 +18504,8 @@
           "evidence": "Resolution of steatohepatitis without worsening of fibrosis occurred in 62.9%",
           "relation_id": "biomarker:steatohepatitis_resolution|PREDICTS_RESPONSE_TO|compound:semaglutide|pmid_40305708"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:iapp",
@@ -17916,7 +18528,8 @@
           "evidence": "",
           "relation_id": "protein:iapp|MENTIONED_IN|doc:pmid_40544432"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:nct05394519",
@@ -17939,7 +18552,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:nct05394519|MENTIONED_IN|doc:pmid_40544432"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:nct05567796",
@@ -17962,7 +18576,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:nct05567796|MENTIONED_IN|doc:pmid_40544433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:nausea",
@@ -17985,7 +18600,8 @@
           "evidence": "",
           "relation_id": "adverse_event:nausea|MENTIONED_IN|doc:pmid_40544433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:vomiting",
@@ -18008,7 +18624,8 @@
           "evidence": "",
           "relation_id": "adverse_event:vomiting|MENTIONED_IN|doc:pmid_40544433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:diarrhea",
@@ -18031,7 +18648,8 @@
           "evidence": "",
           "relation_id": "adverse_event:diarrhea|MENTIONED_IN|doc:pmid_40544433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:constipation",
@@ -18054,7 +18672,8 @@
           "evidence": "",
           "relation_id": "adverse_event:constipation|MENTIONED_IN|doc:pmid_40544433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:abdominal_pain",
@@ -18077,7 +18696,8 @@
           "evidence": "",
           "relation_id": "adverse_event:abdominal_pain|MENTIONED_IN|doc:pmid_40544433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:nct05971940",
@@ -18100,7 +18720,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:nct05971940|MENTIONED_IN|doc:pmid_40544435"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:chronic_pain",
@@ -18123,7 +18744,8 @@
           "evidence": "",
           "relation_id": "disease:chronic_pain|MENTIONED_IN|doc:pmid_40726115"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:osteoarthritis",
@@ -18146,7 +18768,8 @@
           "evidence": "",
           "relation_id": "disease:osteoarthritis|MENTIONED_IN|doc:pmid_40726115"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:diabetic_neuropathy",
@@ -18169,7 +18792,8 @@
           "evidence": "",
           "relation_id": "disease:diabetic_neuropathy|MENTIONED_IN|doc:pmid_40726115"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:substance_use_disorders",
@@ -18192,7 +18816,8 @@
           "evidence": "",
           "relation_id": "disease:substance_use_disorders|MENTIONED_IN|doc:pmid_40726115"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:anti_inflammatory_activity",
@@ -18215,7 +18840,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:anti_inflammatory_activity|MENTIONED_IN|doc:pmid_40726115"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:macrophage_repolarization",
@@ -18238,7 +18864,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:macrophage_repolarization|MENTIONED_IN|doc:pmid_40726115"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:dopaminergic_pathway_modulation",
@@ -18261,7 +18888,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:dopaminergic_pathway_modulation|MENTIONED_IN|doc:pmid_40726115"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:inflammation",
@@ -18284,7 +18912,8 @@
           "evidence": "",
           "relation_id": "pathway:inflammation|MENTIONED_IN|doc:pmid_40726115"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:dopaminergic_pathway",
@@ -18307,7 +18936,8 @@
           "evidence": "",
           "relation_id": "pathway:dopaminergic_pathway|MENTIONED_IN|doc:pmid_40726115"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     }
   ]
 }

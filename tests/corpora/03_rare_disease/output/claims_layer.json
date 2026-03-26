@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "description": "Super Domain epistemic layer \u2014 complements Louvain community structure",
+    "reference": "Eric Little, 'Reasoning with Knowledge Graphs \u2014 Super Domains', KG Conference NYC 2025",
+    "generated_from": "tests/corpora/03_rare_disease/output/graph_data.json",
+    "total_relations": 229
+  },
+  "summary": {
+    "epistemic_status_counts": {
+      "asserted": 226,
+      "contested": 1,
+      "unclassified": 2
+    },
+    "contradictions_found": 0,
+    "hypotheses_found": 0,
+    "document_types": {
+      "paper": {
+        "asserted": 269,
+        "hypothesized": 1,
+        "unclassified": 2
+      }
+    }
+  },
+  "base_domain": {
+    "description": "Brute facts \u2014 asserted with high confidence, no hedging",
+    "relation_count": 226
+  },
+  "super_domain": {
+    "description": "Epistemic facts \u2014 hypothesized, speculative, prophetic, negative, or contested",
+    "relation_count": 3,
+    "hypotheses": [],
+    "contradictions": []
+  }
+}

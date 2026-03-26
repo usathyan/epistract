@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "description": "Super Domain epistemic layer \u2014 complements Louvain community structure",
+    "reference": "Eric Little, 'Reasoning with Knowledge Graphs \u2014 Super Domains', KG Conference NYC 2025",
+    "generated_from": "tests/corpora/06_glp1_landscape/output/graph_data.json",
+    "total_relations": 630
+  },
+  "summary": {
+    "epistemic_status_counts": {
+      "asserted": 604,
+      "prophetic": 15,
+      "contested": 3,
+      "hypothesized": 7,
+      "unclassified": 1
+    },
+    "contradictions_found": 0,
+    "hypotheses_found": 4,
+    "document_types": {
+      "patent": {
+        "asserted": 233,
+        "prophetic": 17
+      },
+      "paper": {
+        "asserted": 463,
+        "hypothesized": 8,
+        "unclassified": 1
+      }
+    }
+  },
+  "base_domain": {
+    "description": "Brute facts \u2014 asserted with high confidence, no hedging",
+    "relation_count": 604
+  },
+  "super_domain": {
+    "description": "Epistemic facts \u2014 hypothesized, speculative, prophetic, negative, or contested",
+    "relation_count": 26,
+    "hypotheses": [
+      {
+        "id": "hypothesis:1",
+        "label": "danuglipron \u2014 semaglutide \u2014 alcohol use disorder \u2014 cardiovascular disease",
+        "status": "proposed",
+        "member_relations": [
+          "compound:semaglutide|INDICATED_FOR|disease:cardiovascular_disease",
+          "compound:semaglutide|INDICATED_FOR|disease:alcohol_use_disorder",
+          "compound:danuglipron|INDICATED_FOR|disease:cardiovascular_disease",
+          "compound:danuglipron|INDICATED_FOR|disease:non_alcoholic_steatohepatitis"
+        ],
+        "member_entities": [
+          "compound:danuglipron",
+          "compound:semaglutide",
+          "disease:alcohol_use_disorder",
+          "disease:cardiovascular_disease",
+          "disease:non_alcoholic_steatohepatitis"
+        ],
+        "support_documents": [
+          "patent_01",
+          "patent_07",
+          "pmid_37192005"
+        ],
+        "evidence_summary": "Therapeutic indications include type 2 diabetes mellitus, obesity, non-alcoholic steatohepatitis (NASH)",
+        "relation_count": 4,
+        "entity_count": 5
+      },
+      {
+        "id": "hypothesis:2",
+        "label": "Compound 1 (benzodioxol-benzimidazole) \u2014 Compound 2 (methylbenzodioxol-benzimidazole) \u2014 Compound 3 (chloropyridinyl-benzimidazole) \u2014 cAMP signaling",
+        "status": "proposed",
+        "member_relations": [
+          "protein:glp1r|PARTICIPATES_IN|pathway:camp_signaling",
+          "protein:glp1r|HAS_DOMAIN|protein_domain:orthosteric_peptide_binding_domain",
+          "protein:glp1r|HAS_DOMAIN|protein_domain:transmembrane_pocket",
+          "protein:glp1r|PARTICIPATES_IN|pathway:neurovascular_signaling",
+          "protein:glp1r|PARTICIPATES_IN|pathway:inflammation",
+          "compound:compound_1_benzodioxol_benzimidazole|ACTIVATES|protein:glp1r",
+          "compound:compound_2_methylbenzodioxol_benzimidazole|ACTIVATES|protein:glp1r",
+          "compound:compound_3_chloropyridinyl_benzimidazole|ACTIVATES|protein:glp1r"
+        ],
+        "member_entities": [
+          "compound:compound_1_benzodioxol_benzimidazole",
+          "compound:compound_2_methylbenzodioxol_benzimidazole",
+          "compound:compound_3_chloropyridinyl_benzimidazole",
+          "pathway:camp_signaling",
+          "pathway:inflammation",
+          "pathway:neurovascular_signaling",
+          "protein:glp1r",
+          "protein_domain:orthosteric_peptide_binding_domain",
+          "protein_domain:transmembrane_pocket"
+        ],
+        "support_documents": [
+          "patent_05",
+          "patent_07",
+          "pmid_39357509",
+          "pmid_40726115"
+        ],
+        "evidence_summary": "stabilizing an active receptor conformation that couples to Gs proteins and drives intracellular cAMP accumulation",
+        "relation_count": 8,
+        "entity_count": 9
+      },
+      {
+        "id": "hypothesis:3",
+        "label": "exendin-4 \u2014 Zealand triple agonist peptide \u2014 metabolic syndrome \u2014 albumin",
+        "status": "proposed",
+        "member_relations": [
+          "compound:zealand_triple_agonist_peptide|INDICATED_FOR|disease:metabolic_syndrome",
+          "compound:zealand_triple_agonist_peptide|BINDS_TO|protein:albumin",
+          "compound:zealand_triple_agonist_peptide|DERIVED_FROM|compound:exendin_4"
+        ],
+        "member_entities": [
+          "compound:exendin_4",
+          "compound:zealand_triple_agonist_peptide",
+          "disease:metabolic_syndrome",
+          "protein:albumin"
+        ],
+        "support_documents": [
+          "patent_09"
+        ],
+        "evidence_summary": "best-in-class treatments for obesity and metabolic syndrome",
+        "relation_count": 3,
+        "entity_count": 4
+      },
+      {
+        "id": "hypothesis:4",
+        "label": "GLP-1 receptor agonists \u2014 chronic pain \u2014 diabetic neuropathy \u2014 osteoarthritis",
+        "status": "proposed",
+        "member_relations": [
+          "compound:glp_1_receptor_agonists|INDICATED_FOR|disease:chronic_pain",
+          "compound:glp_1_receptor_agonists|INDICATED_FOR|disease:osteoarthritis",
+          "compound:glp_1_receptor_agonists|INDICATED_FOR|disease:diabetic_neuropathy"
+        ],
+        "member_entities": [
+          "compound:glp_1_receptor_agonists",
+          "disease:chronic_pain",
+          "disease:diabetic_neuropathy",
+          "disease:osteoarthritis"
+        ],
+        "support_documents": [
+          "pmid_40726115"
+        ],
+        "evidence_summary": "may offer novel analgesia",
+        "relation_count": 3,
+        "entity_count": 4
+      }
+    ],
+    "contradictions": []
+  }
+}

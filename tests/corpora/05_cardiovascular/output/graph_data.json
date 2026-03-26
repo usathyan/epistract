@@ -1533,7 +1533,8 @@
           "evidence": "",
           "relation_id": "compound:mavacamten|MENTIONED_IN|doc:pmid_32498620"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -1570,7 +1571,8 @@
           "evidence": "Mavacamten is a first-in-class cardiac myosin inhibitor.",
           "relation_id": "compound:mavacamten|INHIBITS|protein:myh7|pmid_34004177"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -1614,7 +1616,8 @@
           "evidence": "FDA approved April 28, 2022 for symptomatic oHCM (NYHA class II-III)",
           "relation_id": "compound:mavacamten|INDICATED_FOR|disease:hypertrophic_cardiomyopathy|structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -1672,7 +1675,8 @@
           "evidence": "EXPLORER-HCM (NCT03470545): Phase III, mavacamten vs placebo in oHCM",
           "relation_id": "compound:mavacamten|EVALUATED_IN|clinical_trial:explorer_hcm|structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -1695,7 +1699,8 @@
           "evidence": "relieve symptoms of oHCM in the PIONEER-HCM phase 2 study",
           "relation_id": "compound:mavacamten|EVALUATED_IN|clinical_trial:pioneer_hcm|pmid_32498620"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -1725,7 +1730,8 @@
           "evidence": "Mavacamten is a first-in-class cardiac myosin inhibitor.",
           "relation_id": "compound:mavacamten|HAS_MECHANISM|mechanism_of_action:cardiac_myosin_inhibition|pmid_34004177"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -1748,7 +1754,8 @@
           "evidence": "",
           "relation_id": "compound:mavacamten|MENTIONED_IN|doc:pmid_32871100"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -1771,7 +1778,8 @@
           "evidence": "",
           "relation_id": "compound:mavacamten|MENTIONED_IN|doc:pmid_34004177"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -1815,7 +1823,8 @@
           "evidence": "The first-in-class cardiac myosin inhibitor, mavacamten, improves symptoms in oHCM",
           "relation_id": "compound:mavacamten|INDICATED_FOR|disease:obstructive_hypertrophic_cardiomyopathy|pmid_39196032"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -1838,7 +1847,8 @@
           "evidence": "",
           "relation_id": "compound:mavacamten|MENTIONED_IN|doc:pmid_37804245"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -1875,7 +1885,8 @@
           "evidence": "The first-in-class cardiac myosin inhibitor, mavacamten",
           "relation_id": "compound:mavacamten|INHIBITS|protein:cardiac_myosin|pmid_39196032"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -1898,7 +1909,8 @@
           "evidence": "Mavacamten targets the hyper-contractile phenotype.",
           "relation_id": "compound:mavacamten|TARGETS|phenotype:hyper_contractile_phenotype|pmid_37804245"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -1921,7 +1933,8 @@
           "evidence": "European heart journal (2023) PMID: 37804245",
           "relation_id": "compound:mavacamten|EVALUATED_IN|publication:european_heart_journal|pmid_37804245"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -1944,7 +1957,8 @@
           "evidence": "",
           "relation_id": "compound:mavacamten|MENTIONED_IN|doc:pmid_38176782"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -1974,7 +1988,8 @@
           "evidence": "MAVA-LTE (NCT03723655) is an ongoing 5-year open-label extension study. 211 (91.3%) of 231 patients still on mavacamten.",
           "relation_id": "compound:mavacamten|EVALUATED_IN|clinical_trial:mava_lte|pmid_39217450"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -1997,7 +2012,8 @@
           "evidence": "Over 315 patient-years: 8 patients had cardiac failure AE",
           "relation_id": "compound:mavacamten|CAUSES|adverse_event:cardiac_failure|pmid_38176782"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -2027,7 +2043,8 @@
           "evidence": "Key AEs: atrial fibrillation (4%)",
           "relation_id": "compound:mavacamten|CAUSES|adverse_event:atrial_fibrillation|structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -2050,7 +2067,8 @@
           "evidence": "12 patients (5.2%) had transient LVEF <50% resulting in temporary treatment interruption; all recovered",
           "relation_id": "compound:mavacamten|CAUSES|adverse_event:left_ventricular_ejection_fraction_reduction|pmid_38176782"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -2073,7 +2091,8 @@
           "evidence": "",
           "relation_id": "compound:mavacamten|MENTIONED_IN|doc:pmid_39196032"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -2096,7 +2115,8 @@
           "evidence": "",
           "relation_id": "compound:mavacamten|MENTIONED_IN|doc:pmid_39217450"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -2119,7 +2139,8 @@
           "evidence": "20 patients (8.7%) had transient LVEF <50% (all recovered).",
           "relation_id": "compound:mavacamten|CAUSES|adverse_event:ejection_fraction_decreased|pmid_39217450"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -2142,7 +2163,8 @@
           "evidence": "",
           "relation_id": "compound:mavacamten|MENTIONED_IN|doc:structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -2165,7 +2187,8 @@
           "evidence": "Mavacamten selectively inhibits cardiac myosin ATPase by stabilizing an auto-inhibited (super-relaxed) state",
           "relation_id": "compound:mavacamten|INHIBITS|protein:cardiac_myosin_atpase|structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -2188,7 +2211,8 @@
           "evidence": "stabilizing an auto-inhibited (super-relaxed) state of beta-cardiac myosin (MYH7)",
           "relation_id": "compound:mavacamten|BINDS_TO|protein:beta_cardiac_myosin|structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -2211,7 +2235,8 @@
           "evidence": "Target: Beta-cardiac myosin heavy chain (MYH7, UniProt: P12883)",
           "relation_id": "compound:mavacamten|TARGETS|gene:myh7|structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -2234,7 +2259,8 @@
           "evidence": "VALOR-HCM (NCT04349072): Phase III, patients eligible for septal reduction therapy",
           "relation_id": "compound:mavacamten|EVALUATED_IN|clinical_trial:valor_hcm|structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -2257,7 +2283,8 @@
           "evidence": "Key AEs: dizziness (11%)",
           "relation_id": "compound:mavacamten|CAUSES|adverse_event:dizziness|structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -2280,7 +2307,8 @@
           "evidence": "Key AEs: syncope (4%)",
           "relation_id": "compound:mavacamten|CAUSES|adverse_event:syncope|structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:mavacamten",
@@ -2303,7 +2331,8 @@
           "evidence": "Black box warning: Risk of heart failure due to systolic dysfunction.",
           "relation_id": "compound:mavacamten|CAUSES|adverse_event:heart_failure|structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:myh7",
@@ -2326,7 +2355,8 @@
           "evidence": "",
           "relation_id": "protein:myh7|MENTIONED_IN|doc:pmid_32498620"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:myh7",
@@ -2349,7 +2379,8 @@
           "evidence": "",
           "relation_id": "protein:myh7|MENTIONED_IN|doc:pmid_32871100"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:myh7",
@@ -2372,7 +2403,8 @@
           "evidence": "",
           "relation_id": "protein:myh7|MENTIONED_IN|doc:pmid_34004177"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:myh7",
@@ -2395,7 +2427,8 @@
           "evidence": "",
           "relation_id": "protein:myh7|MENTIONED_IN|doc:pmid_38739079"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:hypertrophic_cardiomyopathy",
@@ -2418,7 +2451,8 @@
           "evidence": "",
           "relation_id": "disease:hypertrophic_cardiomyopathy|MENTIONED_IN|doc:pmid_32498620"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:hypertrophic_cardiomyopathy",
@@ -2441,7 +2475,8 @@
           "evidence": "",
           "relation_id": "disease:hypertrophic_cardiomyopathy|MENTIONED_IN|doc:pmid_32871100"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:hypertrophic_cardiomyopathy",
@@ -2464,7 +2499,8 @@
           "evidence": "",
           "relation_id": "disease:hypertrophic_cardiomyopathy|MENTIONED_IN|doc:pmid_37804245"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:hypertrophic_cardiomyopathy",
@@ -2487,7 +2523,8 @@
           "evidence": "",
           "relation_id": "disease:hypertrophic_cardiomyopathy|MENTIONED_IN|doc:pmid_38718139"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:hypertrophic_cardiomyopathy",
@@ -2510,7 +2547,8 @@
           "evidence": "",
           "relation_id": "disease:hypertrophic_cardiomyopathy|MENTIONED_IN|doc:pmid_39196032"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:hypertrophic_cardiomyopathy",
@@ -2533,7 +2571,8 @@
           "evidence": "",
           "relation_id": "disease:hypertrophic_cardiomyopathy|MENTIONED_IN|doc:pmid_39217450"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:hypertrophic_cardiomyopathy",
@@ -2556,7 +2595,8 @@
           "evidence": "",
           "relation_id": "disease:hypertrophic_cardiomyopathy|MENTIONED_IN|doc:structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:left_ventricular_hypertrophy",
@@ -2579,7 +2619,8 @@
           "evidence": "",
           "relation_id": "phenotype:left_ventricular_hypertrophy|MENTIONED_IN|doc:pmid_32498620"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:left_ventricular_hypertrophy",
@@ -2602,7 +2643,8 @@
           "evidence": "characterized by unexplained left ventricular (LV) hypertrophy",
           "relation_id": "phenotype:left_ventricular_hypertrophy|IMPLICATED_IN|disease:hypertrophic_cardiomyopathy|pmid_32498620"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:left_ventricular_outflow_tract_obstruction",
@@ -2625,7 +2667,8 @@
           "evidence": "",
           "relation_id": "phenotype:left_ventricular_outflow_tract_obstruction|MENTIONED_IN|doc:pmid_32498620"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:left_ventricular_outflow_tract_obstruction",
@@ -2655,7 +2698,8 @@
           "evidence": "a major determinant of dynamic left ventricular outflow tract (LVOT) obstruction",
           "relation_id": "phenotype:left_ventricular_outflow_tract_obstruction|IMPLICATED_IN|disease:hypertrophic_cardiomyopathy|pmid_32871100"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:left_ventricular_outflow_tract_obstruction",
@@ -2678,7 +2722,8 @@
           "evidence": "",
           "relation_id": "phenotype:left_ventricular_outflow_tract_obstruction|MENTIONED_IN|doc:pmid_32871100"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:explorer_hcm",
@@ -2701,7 +2746,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:explorer_hcm|MENTIONED_IN|doc:pmid_32498620"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:explorer_hcm",
@@ -2724,7 +2770,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:explorer_hcm|MENTIONED_IN|doc:pmid_32871100"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:explorer_hcm",
@@ -2747,7 +2794,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:explorer_hcm|MENTIONED_IN|doc:pmid_34004177"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:explorer_hcm",
@@ -2770,7 +2818,8 @@
           "evidence": "Journal: Lancet (2021) PMID: 34004177",
           "relation_id": "clinical_trial:explorer_hcm|PUBLISHED_IN|publication:lancet|pmid_34004177"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:explorer_hcm",
@@ -2793,7 +2842,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:explorer_hcm|MENTIONED_IN|doc:pmid_38176782"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:explorer_hcm",
@@ -2816,7 +2866,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:explorer_hcm|MENTIONED_IN|doc:pmid_39217450"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:explorer_hcm",
@@ -2839,7 +2890,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:explorer_hcm|MENTIONED_IN|doc:structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:pioneer_hcm",
@@ -2862,7 +2914,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:pioneer_hcm|MENTIONED_IN|doc:pmid_32498620"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:cardiac_myosin_inhibition",
@@ -2885,7 +2938,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:cardiac_myosin_inhibition|MENTIONED_IN|doc:pmid_32498620"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:cardiac_myosin_inhibition",
@@ -2908,7 +2962,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:cardiac_myosin_inhibition|MENTIONED_IN|doc:pmid_34004177"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:cardiac_myosin_inhibition",
@@ -2931,7 +2986,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:cardiac_myosin_inhibition|MENTIONED_IN|doc:pmid_38739079"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:cardiac_myosin_inhibition",
@@ -2954,7 +3010,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:cardiac_myosin_inhibition|MENTIONED_IN|doc:pmid_39196032"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:cardiac_muscle_hypercontractility",
@@ -2977,7 +3034,8 @@
           "evidence": "",
           "relation_id": "phenotype:cardiac_muscle_hypercontractility|MENTIONED_IN|doc:pmid_32871100"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:cardiac_muscle_hypercontractility",
@@ -3000,7 +3058,8 @@
           "evidence": "Cardiac muscle hypercontractility is a key pathophysiological abnormality in hypertrophic cardiomyopathy",
           "relation_id": "phenotype:cardiac_muscle_hypercontractility|IMPLICATED_IN|disease:hypertrophic_cardiomyopathy|pmid_32871100"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:post_exercise_lvot_gradient",
@@ -3023,7 +3082,8 @@
           "evidence": "",
           "relation_id": "biomarker:post_exercise_lvot_gradient|MENTIONED_IN|doc:pmid_32871100"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:post_exercise_lvot_gradient",
@@ -3046,7 +3106,8 @@
           "evidence": "greater reductions in post-exercise LVOT gradient (-36 mm Hg, p<0.0001)",
           "relation_id": "biomarker:post_exercise_lvot_gradient|DIAGNOSTIC_FOR|disease:hypertrophic_cardiomyopathy|pmid_32871100"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:peak_oxygen_consumption",
@@ -3069,7 +3130,8 @@
           "evidence": "",
           "relation_id": "biomarker:peak_oxygen_consumption|MENTIONED_IN|doc:pmid_32871100"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:peak_oxygen_consumption",
@@ -3092,7 +3154,8 @@
           "evidence": "greater increase in pVO2 (+1.4 mL/kg per min, p=0.0006)",
           "relation_id": "biomarker:peak_oxygen_consumption|DIAGNOSTIC_FOR|disease:hypertrophic_cardiomyopathy|pmid_32871100"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:nyha_functional_class",
@@ -3115,7 +3178,8 @@
           "evidence": "",
           "relation_id": "biomarker:nyha_functional_class|MENTIONED_IN|doc:pmid_32871100"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:nyha_functional_class",
@@ -3138,7 +3202,8 @@
           "evidence": "34% more patients in the mavacamten group improved by at least one NYHA class",
           "relation_id": "biomarker:nyha_functional_class|PREDICTS_RESPONSE_TO|compound:mavacamten|pmid_32871100"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:myokardia",
@@ -3161,7 +3226,8 @@
           "evidence": "",
           "relation_id": "organization:myokardia|MENTIONED_IN|doc:pmid_32871100"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:myokardia",
@@ -3184,7 +3250,8 @@
           "evidence": "",
           "relation_id": "organization:myokardia|MENTIONED_IN|doc:pmid_34004177"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:myokardia",
@@ -3207,7 +3274,8 @@
           "evidence": "FUNDING: MyoKardia/BMS.",
           "relation_id": "clinical_trial:explorer_hcm|FUNDED_BY|organization:myokardia|pmid_34004177"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "publication:lancet",
@@ -3230,7 +3298,8 @@
           "evidence": "",
           "relation_id": "publication:lancet|MENTIONED_IN|doc:pmid_32871100"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "publication:lancet",
@@ -3253,7 +3322,8 @@
           "evidence": "",
           "relation_id": "publication:lancet|MENTIONED_IN|doc:pmid_34004177"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obstructive_hypertrophic_cardiomyopathy",
@@ -3276,7 +3346,8 @@
           "evidence": "",
           "relation_id": "disease:obstructive_hypertrophic_cardiomyopathy|MENTIONED_IN|doc:pmid_34004177"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obstructive_hypertrophic_cardiomyopathy",
@@ -3299,7 +3370,8 @@
           "evidence": "",
           "relation_id": "disease:obstructive_hypertrophic_cardiomyopathy|MENTIONED_IN|doc:pmid_37804245"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obstructive_hypertrophic_cardiomyopathy",
@@ -3322,7 +3394,8 @@
           "evidence": "",
           "relation_id": "disease:obstructive_hypertrophic_cardiomyopathy|MENTIONED_IN|doc:pmid_38176782"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obstructive_hypertrophic_cardiomyopathy",
@@ -3345,7 +3418,8 @@
           "evidence": "",
           "relation_id": "disease:obstructive_hypertrophic_cardiomyopathy|MENTIONED_IN|doc:pmid_38739079"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:obstructive_hypertrophic_cardiomyopathy",
@@ -3368,7 +3442,8 @@
           "evidence": "",
           "relation_id": "disease:obstructive_hypertrophic_cardiomyopathy|MENTIONED_IN|doc:pmid_39196032"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:kccq_os",
@@ -3391,7 +3466,8 @@
           "evidence": "",
           "relation_id": "biomarker:kccq_os|MENTIONED_IN|doc:pmid_34004177"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:kccq_os",
@@ -3414,7 +3490,8 @@
           "evidence": "the change in KCCQ-OS score was greater with mavacamten than placebo (14.9 vs 5.4; difference +9.1; p<0.0001)",
           "relation_id": "biomarker:kccq_os|DIAGNOSTIC_FOR|disease:obstructive_hypertrophic_cardiomyopathy|pmid_34004177"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:kccq_os",
@@ -3437,7 +3514,8 @@
           "evidence": "The proportion of patients with a very large change (KCCQ-OS >=20 points) was 36% vs 15%, NNT of five.",
           "relation_id": "biomarker:kccq_os|PREDICTS_RESPONSE_TO|compound:mavacamten|pmid_34004177"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:bristol_myers_squibb",
@@ -3460,7 +3538,8 @@
           "evidence": "",
           "relation_id": "organization:bristol_myers_squibb|MENTIONED_IN|doc:pmid_34004177"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:bristol_myers_squibb",
@@ -3483,7 +3562,8 @@
           "evidence": "FUNDING: MyoKardia/BMS.",
           "relation_id": "clinical_trial:explorer_hcm|FUNDED_BY|organization:bristol_myers_squibb|pmid_34004177"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:deucravacitinib",
@@ -3506,7 +3586,8 @@
           "evidence": "",
           "relation_id": "compound:deucravacitinib|MENTIONED_IN|doc:pmid_36115523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:deucravacitinib",
@@ -3557,7 +3638,8 @@
           "evidence": "Deucravacitinib, an oral, selective, allosteric TYK2 inhibitor",
           "relation_id": "compound:deucravacitinib|INHIBITS|protein:tyk2|pmid_40045918"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:deucravacitinib",
@@ -3601,7 +3683,8 @@
           "evidence": "approved in multiple countries for moderate to severe plaque psoriasis",
           "relation_id": "compound:deucravacitinib|INDICATED_FOR|disease:plaque_psoriasis|pmid_40045918"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:deucravacitinib",
@@ -3676,7 +3759,8 @@
           "evidence": "4-year data from POETYK PSO-1, PSO-2 and LTE",
           "relation_id": "compound:deucravacitinib|EVALUATED_IN|clinical_trial:poetyk_pso_2|pmid_40045918"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:deucravacitinib",
@@ -3699,7 +3783,8 @@
           "evidence": "Most frequent AE: nasopharyngitis",
           "relation_id": "compound:deucravacitinib|CAUSES|adverse_event:nasopharyngitis|pmid_36115523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:deucravacitinib",
@@ -3722,7 +3807,8 @@
           "evidence": "",
           "relation_id": "compound:deucravacitinib|MENTIONED_IN|doc:pmid_36453809"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:deucravacitinib",
@@ -3745,7 +3831,8 @@
           "evidence": "Deucravacitinib in the treatment of psoriasis.",
           "relation_id": "compound:deucravacitinib|INDICATED_FOR|disease:psoriasis|pmid_36453809"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:deucravacitinib",
@@ -3768,7 +3855,8 @@
           "evidence": "",
           "relation_id": "compound:deucravacitinib|MENTIONED_IN|doc:pmid_38226713"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:deucravacitinib",
@@ -3798,7 +3886,8 @@
           "evidence": "POETYK PSO-1, PSO-2 and long-term extension trials",
           "relation_id": "compound:deucravacitinib|EVALUATED_IN|clinical_trial:poetyk_lte|pmid_40045918"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:deucravacitinib",
@@ -3835,7 +3924,8 @@
           "evidence": "herpes zoster (0.81 to 0.55)",
           "relation_id": "compound:deucravacitinib|CAUSES|adverse_event:herpes_zoster|pmid_40045918"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:deucravacitinib",
@@ -3872,7 +3962,8 @@
           "evidence": "MACE (0.30 to 0.32)",
           "relation_id": "compound:deucravacitinib|CAUSES|adverse_event:major_adverse_cardiovascular_event|pmid_40045918"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:deucravacitinib",
@@ -3909,7 +4000,8 @@
           "evidence": "VTE (0.20 to 0.07)",
           "relation_id": "compound:deucravacitinib|CAUSES|adverse_event:venous_thromboembolism|pmid_40045918"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:deucravacitinib",
@@ -3939,7 +4031,8 @@
           "evidence": "EAIRs with deucravacitinib: serious infections 1.7/100 PY",
           "relation_id": "compound:deucravacitinib|CAUSES|adverse_event:serious_infections|pmid_38451052"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:deucravacitinib",
@@ -3976,7 +4069,8 @@
           "evidence": "malignancies (1.02 to 0.89)",
           "relation_id": "compound:deucravacitinib|CAUSES|adverse_event:malignancy|pmid_40045918"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:deucravacitinib",
@@ -3999,7 +4093,8 @@
           "evidence": "",
           "relation_id": "compound:deucravacitinib|MENTIONED_IN|doc:pmid_38451052"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:deucravacitinib",
@@ -4022,7 +4117,8 @@
           "evidence": "acne 2.9/100 PY",
           "relation_id": "compound:deucravacitinib|CAUSES|adverse_event:acne|pmid_38451052"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:deucravacitinib",
@@ -4045,7 +4141,8 @@
           "evidence": "folliculitis 2.8/100 PY",
           "relation_id": "compound:deucravacitinib|CAUSES|adverse_event:folliculitis|pmid_38451052"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:deucravacitinib",
@@ -4068,7 +4165,8 @@
           "evidence": "",
           "relation_id": "compound:deucravacitinib|MENTIONED_IN|doc:pmid_40045918"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:deucravacitinib",
@@ -4091,7 +4189,8 @@
           "evidence": "oral, selective, allosteric TYK2 inhibitor",
           "relation_id": "compound:deucravacitinib|HAS_MECHANISM|mechanism_of_action:tyk2_allosteric_inhibition|pmid_40045918"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:apremilast",
@@ -4114,7 +4213,8 @@
           "evidence": "",
           "relation_id": "compound:apremilast|MENTIONED_IN|doc:pmid_36115523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:apremilast",
@@ -4163,7 +4263,8 @@
           "evidence": "1683 patients randomized to placebo, deucravacitinib or apremilast",
           "relation_id": "compound:apremilast|EVALUATED_IN|clinical_trial:poetyk_pso_2|pmid_38451052"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:apremilast",
@@ -4186,7 +4287,8 @@
           "evidence": "Deucravacitinib versus placebo and apremilast in moderate to severe plaque psoriasis",
           "relation_id": "compound:apremilast|INDICATED_FOR|disease:plaque_psoriasis|pmid_36115523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:apremilast",
@@ -4209,7 +4311,8 @@
           "evidence": "",
           "relation_id": "compound:apremilast|MENTIONED_IN|doc:pmid_36453809"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:apremilast",
@@ -4232,7 +4335,8 @@
           "evidence": "",
           "relation_id": "compound:apremilast|MENTIONED_IN|doc:pmid_38451052"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:tyk2",
@@ -4255,7 +4359,8 @@
           "evidence": "",
           "relation_id": "protein:tyk2|MENTIONED_IN|doc:pmid_36115523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:tyk2",
@@ -4278,7 +4383,8 @@
           "evidence": "",
           "relation_id": "protein:tyk2|MENTIONED_IN|doc:pmid_36453809"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:tyk2",
@@ -4301,7 +4407,8 @@
           "evidence": "Tyrosine kinase 2 (TYK2) mediates immune signaling of IL-12, IL-23, and type I interferons",
           "relation_id": "protein:tyk2|PARTICIPATES_IN|pathway:immune_signaling_pathway|pmid_36453809"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:tyk2",
@@ -4324,7 +4431,8 @@
           "evidence": "Psoriasis is a chronic, immune-mediated, skin disease. Tyrosine kinase 2 (TYK2) mediates immune signaling",
           "relation_id": "protein:tyk2|IMPLICATED_IN|disease:psoriasis|pmid_36453809"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:tyk2",
@@ -4347,7 +4455,8 @@
           "evidence": "",
           "relation_id": "protein:tyk2|MENTIONED_IN|doc:pmid_38226713"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:tyk2",
@@ -4370,7 +4479,8 @@
           "evidence": "an oral selective allosteric TYK2 inhibitor",
           "relation_id": "protein:tyk2|PARTICIPATES_IN|pathway:jak_stat_signaling_pathway|pmid_38226713"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:tyk2",
@@ -4393,7 +4503,8 @@
           "evidence": "",
           "relation_id": "protein:tyk2|MENTIONED_IN|doc:pmid_38451052"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:tyk2",
@@ -4416,7 +4527,8 @@
           "evidence": "",
           "relation_id": "protein:tyk2|MENTIONED_IN|doc:pmid_40045918"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:tyk2",
@@ -4439,7 +4551,8 @@
           "evidence": "selective, allosteric TYK2 inhibitor",
           "relation_id": "protein:tyk2|PARTICIPATES_IN|pathway:jak_stat_pathway|pmid_40045918"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:tyk2",
@@ -4462,7 +4575,8 @@
           "evidence": "Deucravacitinib, an oral, selective, allosteric TYK2 inhibitor, approved in multiple countries for moderate to severe plaque psoriasis",
           "relation_id": "protein:tyk2|IMPLICATED_IN|disease:plaque_psoriasis|pmid_40045918"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:plaque_psoriasis",
@@ -4485,7 +4599,8 @@
           "evidence": "",
           "relation_id": "disease:plaque_psoriasis|MENTIONED_IN|doc:pmid_36115523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:plaque_psoriasis",
@@ -4508,7 +4623,8 @@
           "evidence": "",
           "relation_id": "disease:plaque_psoriasis|MENTIONED_IN|doc:pmid_38226713"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:plaque_psoriasis",
@@ -4531,7 +4647,8 @@
           "evidence": "",
           "relation_id": "disease:plaque_psoriasis|MENTIONED_IN|doc:pmid_38451052"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:plaque_psoriasis",
@@ -4554,7 +4671,8 @@
           "evidence": "",
           "relation_id": "disease:plaque_psoriasis|MENTIONED_IN|doc:pmid_40045918"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:poetyk_pso_2",
@@ -4577,7 +4695,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:poetyk_pso_2|MENTIONED_IN|doc:pmid_36115523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:poetyk_pso_2",
@@ -4606,7 +4725,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:poetyk_pso_2|MENTIONED_IN|doc:pmid_36453809"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:poetyk_pso_2",
@@ -4635,7 +4755,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:poetyk_pso_2|MENTIONED_IN|doc:pmid_38226713"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:poetyk_pso_2",
@@ -4664,7 +4785,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:poetyk_pso_2|MENTIONED_IN|doc:pmid_38451052"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:poetyk_pso_2",
@@ -4693,7 +4815,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:poetyk_pso_2|MENTIONED_IN|doc:pmid_40045918"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:nasopharyngitis",
@@ -4716,7 +4839,8 @@
           "evidence": "",
           "relation_id": "adverse_event:nasopharyngitis|MENTIONED_IN|doc:pmid_36115523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:pasi75",
@@ -4739,7 +4863,8 @@
           "evidence": "",
           "relation_id": "biomarker:pasi75|MENTIONED_IN|doc:pmid_36115523"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:pasi75",
@@ -4769,7 +4894,8 @@
           "evidence": "At week 16, over 50% of patients treated with deucravacitinib reached PASI75, significantly superior to placebo and apremilast.",
           "relation_id": "biomarker:pasi75|PREDICTS_RESPONSE_TO|compound:deucravacitinib|pmid_36453809"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:pasi75",
@@ -4792,7 +4918,8 @@
           "evidence": "",
           "relation_id": "biomarker:pasi75|MENTIONED_IN|doc:pmid_36453809"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:pasi75",
@@ -4815,7 +4942,8 @@
           "evidence": "over 50% of patients treated with deucravacitinib reached PASI75",
           "relation_id": "biomarker:pasi75|DIAGNOSTIC_FOR|disease:psoriasis|pmid_36453809"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:il12",
@@ -4838,7 +4966,8 @@
           "evidence": "",
           "relation_id": "protein:il12|MENTIONED_IN|doc:pmid_36453809"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:il12",
@@ -4861,7 +4990,8 @@
           "evidence": "TYK2 mediates immune signaling of IL-12, IL-23, and type I interferons",
           "relation_id": "protein:il12|PARTICIPATES_IN|pathway:immune_signaling_pathway|pmid_36453809"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:il23",
@@ -4884,7 +5014,8 @@
           "evidence": "",
           "relation_id": "protein:il23|MENTIONED_IN|doc:pmid_36453809"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:il23",
@@ -4907,7 +5038,8 @@
           "evidence": "TYK2 mediates immune signaling of IL-12, IL-23, and type I interferons",
           "relation_id": "protein:il23|PARTICIPATES_IN|pathway:immune_signaling_pathway|pmid_36453809"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:psoriasis",
@@ -4930,7 +5062,8 @@
           "evidence": "",
           "relation_id": "disease:psoriasis|MENTIONED_IN|doc:pmid_36453809"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:type_i_interferons",
@@ -4953,7 +5086,8 @@
           "evidence": "",
           "relation_id": "protein:type_i_interferons|MENTIONED_IN|doc:pmid_36453809"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:type_i_interferons",
@@ -4976,7 +5110,8 @@
           "evidence": "TYK2 mediates immune signaling of IL-12, IL-23, and type I interferons",
           "relation_id": "protein:type_i_interferons|PARTICIPATES_IN|pathway:immune_signaling_pathway|pmid_36453809"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:immune_signaling_pathway",
@@ -4999,7 +5134,8 @@
           "evidence": "",
           "relation_id": "pathway:immune_signaling_pathway|MENTIONED_IN|doc:pmid_36453809"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:cardiac_myosin",
@@ -5022,7 +5158,8 @@
           "evidence": "",
           "relation_id": "protein:cardiac_myosin|MENTIONED_IN|doc:pmid_37804245"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:cardiac_myosin",
@@ -5045,7 +5182,8 @@
           "evidence": "",
           "relation_id": "protein:cardiac_myosin|MENTIONED_IN|doc:pmid_38176782"
         }
-      ]
+      ],
+      "epistemic_status": "unclassified"
     },
     {
       "source": "protein:cardiac_myosin",
@@ -5068,7 +5206,8 @@
           "evidence": "",
           "relation_id": "protein:cardiac_myosin|MENTIONED_IN|doc:pmid_39196032"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:cardiac_myosin",
@@ -5091,7 +5230,8 @@
           "evidence": "HCM is an inherited disease of the sarcomere resulting in excessive cardiac contractility",
           "relation_id": "protein:cardiac_myosin|IMPLICATED_IN|disease:hypertrophic_cardiomyopathy|pmid_39196032"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:cardiac_myosin",
@@ -5114,7 +5254,8 @@
           "evidence": "HCM is an inherited disease of the sarcomere resulting in excessive cardiac contractility",
           "relation_id": "protein:cardiac_myosin|PARTICIPATES_IN|pathway:sarcomere_contractility_pathway|pmid_39196032"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:hyper_contractile_phenotype",
@@ -5137,7 +5278,8 @@
           "evidence": "",
           "relation_id": "phenotype:hyper_contractile_phenotype|MENTIONED_IN|doc:pmid_37804245"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:hyper_contractile_phenotype",
@@ -5160,7 +5302,8 @@
           "evidence": "Mavacamten targets the hyper-contractile phenotype... obstructive HCM",
           "relation_id": "phenotype:hyper_contractile_phenotype|IMPLICATED_IN|disease:obstructive_hypertrophic_cardiomyopathy|pmid_37804245"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:left_ventricular_outflow_tract_gradient",
@@ -5183,7 +5326,8 @@
           "evidence": "",
           "relation_id": "biomarker:left_ventricular_outflow_tract_gradient|MENTIONED_IN|doc:pmid_37804245"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:left_ventricular_outflow_tract_gradient",
@@ -5206,7 +5350,8 @@
           "evidence": "reduced LVOT gradients",
           "relation_id": "biomarker:left_ventricular_outflow_tract_gradient|DIAGNOSTIC_FOR|disease:obstructive_hypertrophic_cardiomyopathy|pmid_37804245"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:left_ventricular_outflow_tract_gradient",
@@ -5229,7 +5374,8 @@
           "evidence": "mavacamten was well tolerated, reduced LVOT gradients, improved exercise capacity and symptoms",
           "relation_id": "biomarker:left_ventricular_outflow_tract_gradient|PREDICTS_RESPONSE_TO|compound:mavacamten|pmid_37804245"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "publication:european_heart_journal",
@@ -5252,7 +5398,8 @@
           "evidence": "",
           "relation_id": "publication:european_heart_journal|MENTIONED_IN|doc:pmid_37804245"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:mava_lte",
@@ -5275,7 +5422,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:mava_lte|MENTIONED_IN|doc:pmid_38176782"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:mava_lte",
@@ -5298,7 +5446,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:mava_lte|MENTIONED_IN|doc:pmid_39217450"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:nt_probnp",
@@ -5321,7 +5470,8 @@
           "evidence": "",
           "relation_id": "biomarker:nt_probnp|MENTIONED_IN|doc:pmid_38176782"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:nt_probnp",
@@ -5344,7 +5494,8 @@
           "evidence": "NT-proBNP reductions (median: -480 ng/L)",
           "relation_id": "biomarker:nt_probnp|DIAGNOSTIC_FOR|disease:obstructive_hypertrophic_cardiomyopathy|pmid_38176782"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:nt_probnp",
@@ -5367,7 +5518,8 @@
           "evidence": "NT-proBNP reductions (median: -480 ng/L)",
           "relation_id": "biomarker:nt_probnp|PREDICTS_RESPONSE_TO|compound:mavacamten|pmid_38176782"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:nt_probnp",
@@ -5390,7 +5542,8 @@
           "evidence": "",
           "relation_id": "biomarker:nt_probnp|MENTIONED_IN|doc:pmid_39217450"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:nt_probnp",
@@ -5413,7 +5566,8 @@
           "evidence": "Sustained reductions to Week 180: resting LVOT gradient -40.3 mm Hg, Valsalva -55.3 mm Hg, NT-proBNP -562 ng/L.",
           "relation_id": "biomarker:nt_probnp|DIAGNOSTIC_FOR|disease:hypertrophic_cardiomyopathy|pmid_39217450"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:lvot_gradient",
@@ -5436,7 +5590,8 @@
           "evidence": "",
           "relation_id": "biomarker:lvot_gradient|MENTIONED_IN|doc:pmid_38176782"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:lvot_gradient",
@@ -5466,7 +5621,8 @@
           "evidence": "reduces LVOT gradients by mitigating cardiac hypercontractility. Baseline mean resting LVOT gradient: 55.1 mm Hg",
           "relation_id": "biomarker:lvot_gradient|DIAGNOSTIC_FOR|disease:obstructive_hypertrophic_cardiomyopathy|pmid_38739079"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:lvot_gradient",
@@ -5489,7 +5645,8 @@
           "evidence": "LVOT gradient improvements (resting: -35.6 mm Hg; Valsalva: -45.3 mm Hg)",
           "relation_id": "biomarker:lvot_gradient|PREDICTS_RESPONSE_TO|compound:mavacamten|pmid_38176782"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:lvot_gradient",
@@ -5512,7 +5669,8 @@
           "evidence": "",
           "relation_id": "biomarker:lvot_gradient|MENTIONED_IN|doc:pmid_38739079"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:lvot_gradient",
@@ -5535,7 +5693,8 @@
           "evidence": "",
           "relation_id": "biomarker:lvot_gradient|MENTIONED_IN|doc:pmid_39217450"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:lvot_gradient",
@@ -5558,7 +5717,8 @@
           "evidence": "Sustained reductions to Week 180: resting LVOT gradient -40.3 mm Hg, Valsalva -55.3 mm Hg",
           "relation_id": "biomarker:lvot_gradient|DIAGNOSTIC_FOR|disease:hypertrophic_cardiomyopathy|pmid_39217450"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:cardiac_failure",
@@ -5581,7 +5741,8 @@
           "evidence": "",
           "relation_id": "adverse_event:cardiac_failure|MENTIONED_IN|doc:pmid_38176782"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:atrial_fibrillation",
@@ -5604,7 +5765,8 @@
           "evidence": "",
           "relation_id": "adverse_event:atrial_fibrillation|MENTIONED_IN|doc:pmid_38176782"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:atrial_fibrillation",
@@ -5627,7 +5789,8 @@
           "evidence": "",
           "relation_id": "adverse_event:atrial_fibrillation|MENTIONED_IN|doc:structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:left_ventricular_ejection_fraction_reduction",
@@ -5650,7 +5813,8 @@
           "evidence": "",
           "relation_id": "adverse_event:left_ventricular_ejection_fraction_reduction|MENTIONED_IN|doc:pmid_38176782"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:myh7",
@@ -5673,7 +5837,8 @@
           "evidence": "",
           "relation_id": "gene:myh7|MENTIONED_IN|doc:pmid_38176782"
         }
-      ]
+      ],
+      "epistemic_status": "unclassified"
     },
     {
       "source": "gene:myh7",
@@ -5696,7 +5861,8 @@
           "evidence": "Mavacamten Treatment for Symptomatic Obstructive Hypertrophic Cardiomyopathy",
           "relation_id": "gene:myh7|IMPLICATED_IN|disease:obstructive_hypertrophic_cardiomyopathy|pmid_38176782"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:myh7",
@@ -5719,7 +5885,8 @@
           "evidence": "",
           "relation_id": "gene:myh7|MENTIONED_IN|doc:pmid_39196032"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:myh7",
@@ -5742,7 +5909,8 @@
           "evidence": "selective small-molecule inhibitor of cardiac myosin that diminishes ATPase activity",
           "relation_id": "gene:myh7|ENCODES|protein:cardiac_myosin|pmid_39196032"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:myh7",
@@ -5765,7 +5933,8 @@
           "evidence": "",
           "relation_id": "gene:myh7|MENTIONED_IN|doc:structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:myh7",
@@ -5788,7 +5957,8 @@
           "evidence": "beta-cardiac myosin (MYH7)",
           "relation_id": "gene:myh7|ENCODES|protein:beta_cardiac_myosin|structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:myh7",
@@ -5811,7 +5981,8 @@
           "evidence": "mutations in MYH7 or MYBPC3 cause excessive cross-bridge formation",
           "relation_id": "gene:myh7|IMPLICATED_IN|disease:hypertrophic_cardiomyopathy|structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:poetyk_lte",
@@ -5834,7 +6005,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:poetyk_lte|MENTIONED_IN|doc:pmid_38226713"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:poetyk_lte",
@@ -5857,7 +6029,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:poetyk_lte|MENTIONED_IN|doc:pmid_40045918"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:herpes_zoster",
@@ -5880,7 +6053,8 @@
           "evidence": "",
           "relation_id": "adverse_event:herpes_zoster|MENTIONED_IN|doc:pmid_38226713"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:herpes_zoster",
@@ -5903,7 +6077,8 @@
           "evidence": "",
           "relation_id": "adverse_event:herpes_zoster|MENTIONED_IN|doc:pmid_38451052"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:herpes_zoster",
@@ -5926,7 +6101,8 @@
           "evidence": "",
           "relation_id": "adverse_event:herpes_zoster|MENTIONED_IN|doc:pmid_40045918"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:major_adverse_cardiovascular_event",
@@ -5949,7 +6125,8 @@
           "evidence": "",
           "relation_id": "adverse_event:major_adverse_cardiovascular_event|MENTIONED_IN|doc:pmid_38226713"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:major_adverse_cardiovascular_event",
@@ -5972,7 +6149,8 @@
           "evidence": "",
           "relation_id": "adverse_event:major_adverse_cardiovascular_event|MENTIONED_IN|doc:pmid_38451052"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:major_adverse_cardiovascular_event",
@@ -5995,7 +6173,8 @@
           "evidence": "",
           "relation_id": "adverse_event:major_adverse_cardiovascular_event|MENTIONED_IN|doc:pmid_40045918"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:venous_thromboembolism",
@@ -6018,7 +6197,8 @@
           "evidence": "",
           "relation_id": "adverse_event:venous_thromboembolism|MENTIONED_IN|doc:pmid_38226713"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:venous_thromboembolism",
@@ -6041,7 +6221,8 @@
           "evidence": "",
           "relation_id": "adverse_event:venous_thromboembolism|MENTIONED_IN|doc:pmid_38451052"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:venous_thromboembolism",
@@ -6064,7 +6245,8 @@
           "evidence": "",
           "relation_id": "adverse_event:venous_thromboembolism|MENTIONED_IN|doc:pmid_40045918"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:malignancy",
@@ -6087,7 +6269,8 @@
           "evidence": "",
           "relation_id": "adverse_event:malignancy|MENTIONED_IN|doc:pmid_38226713"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:malignancy",
@@ -6110,7 +6293,8 @@
           "evidence": "",
           "relation_id": "adverse_event:malignancy|MENTIONED_IN|doc:pmid_38451052"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:malignancy",
@@ -6133,7 +6317,8 @@
           "evidence": "",
           "relation_id": "adverse_event:malignancy|MENTIONED_IN|doc:pmid_40045918"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:serious_infections",
@@ -6156,7 +6341,8 @@
           "evidence": "",
           "relation_id": "adverse_event:serious_infections|MENTIONED_IN|doc:pmid_38226713"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:serious_infections",
@@ -6179,7 +6365,8 @@
           "evidence": "",
           "relation_id": "adverse_event:serious_infections|MENTIONED_IN|doc:pmid_38451052"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:pasi_75",
@@ -6202,7 +6389,8 @@
           "evidence": "",
           "relation_id": "biomarker:pasi_75|MENTIONED_IN|doc:pmid_38226713"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:pasi_75",
@@ -6225,7 +6413,8 @@
           "evidence": "Clinical responses maintained: PASI 75 week 52: 72.4%, week 112: 79.7%",
           "relation_id": "biomarker:pasi_75|DIAGNOSTIC_FOR|disease:plaque_psoriasis|pmid_38226713"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:jak_stat_signaling_pathway",
@@ -6248,7 +6437,8 @@
           "evidence": "",
           "relation_id": "pathway:jak_stat_signaling_pathway|MENTIONED_IN|doc:pmid_38226713"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:jak_stat_signaling_pathway",
@@ -6271,7 +6461,8 @@
           "evidence": "deucravacitinib, an oral selective allosteric TYK2 inhibitor, was well tolerated and efficacious",
           "relation_id": "pathway:jak_stat_signaling_pathway|IMPLICATED_IN|disease:plaque_psoriasis|pmid_38226713"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:acne",
@@ -6294,7 +6485,8 @@
           "evidence": "",
           "relation_id": "adverse_event:acne|MENTIONED_IN|doc:pmid_38451052"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:folliculitis",
@@ -6317,7 +6509,8 @@
           "evidence": "",
           "relation_id": "adverse_event:folliculitis|MENTIONED_IN|doc:pmid_38451052"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:american_heart_association",
@@ -6340,7 +6533,8 @@
           "evidence": "",
           "relation_id": "organization:american_heart_association|MENTIONED_IN|doc:pmid_38718139"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:american_heart_association",
@@ -6363,7 +6557,8 @@
           "evidence": "2024 AHA/ACC Guideline for the Management of Hypertrophic Cardiomyopathy",
           "relation_id": "publication:ommen_2024|PUBLISHED_BY|organization:american_heart_association|pmid_38718139"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:american_college_of_cardiology",
@@ -6386,7 +6581,8 @@
           "evidence": "",
           "relation_id": "organization:american_college_of_cardiology|MENTIONED_IN|doc:pmid_38718139"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:american_college_of_cardiology",
@@ -6409,7 +6605,8 @@
           "evidence": "2024 AHA/ACC Guideline for the Management of Hypertrophic Cardiomyopathy",
           "relation_id": "publication:ommen_2024|PUBLISHED_BY|organization:american_college_of_cardiology|pmid_38718139"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "publication:ommen_2024",
@@ -6432,7 +6629,8 @@
           "evidence": "",
           "relation_id": "publication:ommen_2024|MENTIONED_IN|doc:pmid_38718139"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:aficamten",
@@ -6455,7 +6653,8 @@
           "evidence": "",
           "relation_id": "compound:aficamten|MENTIONED_IN|doc:pmid_38739079"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:aficamten",
@@ -6478,7 +6677,8 @@
           "evidence": "Aficamten is an oral selective cardiac myosin inhibitor",
           "relation_id": "compound:aficamten|INHIBITS|protein:myh7|pmid_38739079"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:aficamten",
@@ -6501,7 +6701,8 @@
           "evidence": "Aficamten is an oral selective cardiac myosin inhibitor that reduces LVOT gradients by mitigating cardiac hypercontractility.",
           "relation_id": "compound:aficamten|HAS_MECHANISM|mechanism_of_action:cardiac_myosin_inhibition|pmid_38739079"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:aficamten",
@@ -6524,7 +6725,8 @@
           "evidence": "Aficamten for Symptomatic Obstructive Hypertrophic Cardiomyopathy.",
           "relation_id": "compound:aficamten|INDICATED_FOR|disease:obstructive_hypertrophic_cardiomyopathy|pmid_38739079"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:aficamten",
@@ -6547,7 +6749,8 @@
           "evidence": "Phase 3, double-blind trial: 282 patients randomized to aficamten (5-20 mg) or placebo for 24 weeks.",
           "relation_id": "compound:aficamten|EVALUATED_IN|clinical_trial:sequoia_hcm|pmid_38739079"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:aficamten",
@@ -6570,7 +6773,8 @@
           "evidence": "",
           "relation_id": "compound:aficamten|MENTIONED_IN|doc:pmid_39196032"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:aficamten",
@@ -6593,7 +6797,8 @@
           "evidence": "Aficamten is a selective small-molecule inhibitor of cardiac myosin that diminishes ATPase activity",
           "relation_id": "compound:aficamten|INHIBITS|protein:cardiac_myosin|pmid_39196032"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:aficamten",
@@ -6616,7 +6821,8 @@
           "evidence": "Aficamten is a small-molecule cardiac myosin inhibitor designed to treat hypertrophic cardiomyopathy",
           "relation_id": "compound:aficamten|INDICATED_FOR|disease:hypertrophic_cardiomyopathy|pmid_39196032"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:aficamten",
@@ -6639,7 +6845,8 @@
           "evidence": "Binding to an allosteric site on the myosin catalytic domain distinct from mavacamten",
           "relation_id": "compound:aficamten|BINDS_TO|protein_domain:myosin_catalytic_domain|pmid_39196032"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:sequoia_hcm",
@@ -6662,7 +6869,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:sequoia_hcm|MENTIONED_IN|doc:pmid_38739079"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:sequoia_hcm",
@@ -6685,7 +6893,8 @@
           "evidence": "NEJM (2024). PMID: 38739079",
           "relation_id": "clinical_trial:sequoia_hcm|REPORTED_IN|publication:pmid_38739079|pmid_38739079"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:cytokinetics",
@@ -6708,7 +6917,8 @@
           "evidence": "",
           "relation_id": "organization:cytokinetics|MENTIONED_IN|doc:pmid_38739079"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:cytokinetics",
@@ -6731,7 +6941,8 @@
           "evidence": "SEQUOIA-HCM, NCT05186818, funded by Cytokinetics.",
           "relation_id": "clinical_trial:sequoia_hcm|SPONSORED_BY|organization:cytokinetics|pmid_38739079"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "publication:pmid_38739079",
@@ -6754,7 +6965,8 @@
           "evidence": "",
           "relation_id": "publication:pmid_38739079|MENTIONED_IN|doc:pmid_38739079"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:peak_oxygen_uptake",
@@ -6777,7 +6989,8 @@
           "evidence": "",
           "relation_id": "biomarker:peak_oxygen_uptake|MENTIONED_IN|doc:pmid_38739079"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:peak_oxygen_uptake",
@@ -6800,7 +7013,8 @@
           "evidence": "Mean change in peak oxygen uptake: 1.8 vs 0.0 mL/kg/min (difference 1.7, P<0.001).",
           "relation_id": "biomarker:peak_oxygen_uptake|PREDICTS_RESPONSE_TO|compound:aficamten|pmid_38739079"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:cardiac_hypercontractility",
@@ -6823,7 +7037,8 @@
           "evidence": "",
           "relation_id": "phenotype:cardiac_hypercontractility|MENTIONED_IN|doc:pmid_38739079"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:cardiac_hypercontractility",
@@ -6846,7 +7061,8 @@
           "evidence": "reduces LVOT gradients by mitigating cardiac hypercontractility",
           "relation_id": "phenotype:cardiac_hypercontractility|IMPLICATED_IN|disease:obstructive_hypertrophic_cardiomyopathy|pmid_38739079"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:myh7_r403q",
@@ -6869,7 +7085,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:myh7_r403q|MENTIONED_IN|doc:pmid_39196032"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:myh7_r403q",
@@ -6892,7 +7109,8 @@
           "evidence": "mice bearing the hypertrophic R403Q cardiac myosin mutation",
           "relation_id": "sequence_variant:myh7_r403q|IMPLICATED_IN|disease:hypertrophic_cardiomyopathy|pmid_39196032"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein_domain:myosin_catalytic_domain",
@@ -6915,7 +7133,8 @@
           "evidence": "",
           "relation_id": "protein_domain:myosin_catalytic_domain|MENTIONED_IN|doc:pmid_39196032"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:sarcomere_contractility_pathway",
@@ -6938,7 +7157,8 @@
           "evidence": "",
           "relation_id": "pathway:sarcomere_contractility_pathway|MENTIONED_IN|doc:pmid_39196032"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:excessive_cardiac_contractility",
@@ -6961,7 +7181,8 @@
           "evidence": "",
           "relation_id": "phenotype:excessive_cardiac_contractility|MENTIONED_IN|doc:pmid_39196032"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:excessive_cardiac_contractility",
@@ -6984,7 +7205,8 @@
           "evidence": "HCM is an inherited disease of the sarcomere resulting in excessive cardiac contractility",
           "relation_id": "phenotype:excessive_cardiac_contractility|IMPLICATED_IN|disease:hypertrophic_cardiomyopathy|pmid_39196032"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:lvef",
@@ -7007,7 +7229,8 @@
           "evidence": "",
           "relation_id": "biomarker:lvef|MENTIONED_IN|doc:pmid_39217450"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:lvef",
@@ -7037,7 +7260,8 @@
           "evidence": "Contraindicated: LVEF < 55%",
           "relation_id": "biomarker:lvef|DIAGNOSTIC_FOR|disease:hypertrophic_cardiomyopathy|structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:lvef",
@@ -7060,7 +7284,8 @@
           "evidence": "",
           "relation_id": "biomarker:lvef|MENTIONED_IN|doc:structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:ejection_fraction_decreased",
@@ -7083,7 +7308,8 @@
           "evidence": "",
           "relation_id": "adverse_event:ejection_fraction_decreased|MENTIONED_IN|doc:pmid_39217450"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:pasi_90",
@@ -7106,7 +7332,8 @@
           "evidence": "",
           "relation_id": "biomarker:pasi_90|MENTIONED_IN|doc:pmid_40045918"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:pasi_90",
@@ -7129,7 +7356,8 @@
           "evidence": "Clinical responses maintained: PASI 90 at 1 year 45.6%, at 4 years 47.5%",
           "relation_id": "biomarker:pasi_90|PREDICTS_RESPONSE_TO|compound:deucravacitinib|pmid_40045918"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:jak_stat_pathway",
@@ -7152,7 +7380,8 @@
           "evidence": "",
           "relation_id": "pathway:jak_stat_pathway|MENTIONED_IN|doc:pmid_40045918"
         }
-      ]
+      ],
+      "epistemic_status": "unclassified"
     },
     {
       "source": "mechanism_of_action:tyk2_allosteric_inhibition",
@@ -7175,7 +7404,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:tyk2_allosteric_inhibition|MENTIONED_IN|doc:pmid_40045918"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:beta_cardiac_myosin",
@@ -7198,7 +7428,8 @@
           "evidence": "",
           "relation_id": "protein:beta_cardiac_myosin|MENTIONED_IN|doc:structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:beta_cardiac_myosin",
@@ -7221,7 +7452,8 @@
           "evidence": "Sarcomere contractile unit",
           "relation_id": "protein:beta_cardiac_myosin|PARTICIPATES_IN|pathway:sarcomere_contractile_pathway|structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:cardiac_myosin_atpase",
@@ -7244,7 +7476,8 @@
           "evidence": "",
           "relation_id": "protein:cardiac_myosin_atpase|MENTIONED_IN|doc:structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:mybpc3",
@@ -7267,7 +7500,8 @@
           "evidence": "",
           "relation_id": "gene:mybpc3|MENTIONED_IN|doc:structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:mybpc3",
@@ -7290,7 +7524,8 @@
           "evidence": "mutations in MYH7 or MYBPC3 cause excessive cross-bridge formation",
           "relation_id": "gene:mybpc3|IMPLICATED_IN|disease:hypertrophic_cardiomyopathy|structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:sarcomere_contractile_pathway",
@@ -7313,7 +7548,8 @@
           "evidence": "",
           "relation_id": "pathway:sarcomere_contractile_pathway|MENTIONED_IN|doc:structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:valor_hcm",
@@ -7336,7 +7572,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:valor_hcm|MENTIONED_IN|doc:structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:dizziness",
@@ -7359,7 +7596,8 @@
           "evidence": "",
           "relation_id": "adverse_event:dizziness|MENTIONED_IN|doc:structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:syncope",
@@ -7382,7 +7620,8 @@
           "evidence": "",
           "relation_id": "adverse_event:syncope|MENTIONED_IN|doc:structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:heart_failure",
@@ -7405,7 +7644,8 @@
           "evidence": "",
           "relation_id": "adverse_event:heart_failure|MENTIONED_IN|doc:structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:cyp2c19_poor_metabolizer",
@@ -7428,7 +7668,8 @@
           "evidence": "",
           "relation_id": "phenotype:cyp2c19_poor_metabolizer|MENTIONED_IN|doc:structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:cyp2c19_poor_metabolizer",
@@ -7451,7 +7692,8 @@
           "evidence": "CYP2C19 poor metabolizers have ~2-fold higher exposure.",
           "relation_id": "phenotype:cyp2c19_poor_metabolizer|PREDICTS_RESPONSE_TO|compound:mavacamten|structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:fluconazole",
@@ -7474,7 +7716,8 @@
           "evidence": "",
           "relation_id": "compound:fluconazole|MENTIONED_IN|doc:structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:fluconazole",
@@ -7497,7 +7740,8 @@
           "evidence": "Strong CYP2C19 inhibitors (fluconazole, fluvoxamine) are contraindicated.",
           "relation_id": "compound:fluconazole|CONTRAINDICATED_FOR|compound:mavacamten|structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:fluvoxamine",
@@ -7520,7 +7764,8 @@
           "evidence": "",
           "relation_id": "compound:fluvoxamine|MENTIONED_IN|doc:structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:fluvoxamine",
@@ -7543,7 +7788,8 @@
           "evidence": "Strong CYP2C19 inhibitors (fluconazole, fluvoxamine) are contraindicated.",
           "relation_id": "compound:fluvoxamine|CONTRAINDICATED_FOR|compound:mavacamten|structural_mavacamten"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     }
   ]
 }

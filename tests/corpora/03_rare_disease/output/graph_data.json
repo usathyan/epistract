@@ -1429,7 +1429,8 @@
           "evidence": "",
           "relation_id": "compound:vosoritide|MENTIONED_IN|doc:pmid_26684019"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:vosoritide",
@@ -1480,7 +1481,8 @@
           "evidence": "Vosoritide is first targeted therapy approved",
           "relation_id": "compound:vosoritide|INDICATED_FOR|disease:achondroplasia|pmid_40821249"
         }
-      ]
+      ],
+      "epistemic_status": "contested"
     },
     {
       "source": "compound:vosoritide",
@@ -1503,7 +1505,8 @@
           "evidence": "BMN111 acts as key regulator of longitudinal bone growth by downregulating the MAPK pathway",
           "relation_id": "compound:vosoritide|HAS_MECHANISM|mechanism_of_action:mapk_pathway_downregulation|pmid_26684019"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:vosoritide",
@@ -1526,7 +1529,8 @@
           "evidence": "downregulating the MAPK pathway, activated by FGFR3 gain-of-function mutation",
           "relation_id": "compound:vosoritide|INHIBITS|pathway:mapk_pathway|pmid_26684019"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:vosoritide",
@@ -1549,7 +1553,8 @@
           "evidence": "In 2014, a phase 2 clinical trial of BMN111 in pediatric patients with ACH started",
           "relation_id": "compound:vosoritide|EVALUATED_IN|clinical_trial:bmn111_phase_2_trial_in_ach|pmid_26684019"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:vosoritide",
@@ -1572,7 +1577,8 @@
           "evidence": "",
           "relation_id": "compound:vosoritide|MENTIONED_IN|doc:pmid_34070375"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:vosoritide",
@@ -1595,7 +1601,8 @@
           "evidence": "",
           "relation_id": "compound:vosoritide|MENTIONED_IN|doc:pmid_34694597"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:vosoritide",
@@ -1618,7 +1625,8 @@
           "evidence": "Vosoritide acts to restore chondrogenesis through its binding to natriuretic peptide receptor B (NPR-B)",
           "relation_id": "compound:vosoritide|BINDS_TO|protein:natriuretic_peptide_receptor_b|pmid_34694597"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:vosoritide",
@@ -1641,7 +1649,8 @@
           "evidence": "resulting in the inhibition of downstream signalling pathways of the overactive FGFR3 gene",
           "relation_id": "compound:vosoritide|INHIBITS|pathway:fgfr3_signalling_pathway|pmid_34694597"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:vosoritide",
@@ -1664,7 +1673,8 @@
           "evidence": "Vosoritide acts to restore chondrogenesis through its binding to natriuretic peptide receptor B",
           "relation_id": "compound:vosoritide|ACTIVATES|pathway:chondrogenesis|pmid_34694597"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:vosoritide",
@@ -1687,7 +1697,8 @@
           "evidence": "",
           "relation_id": "compound:vosoritide|MENTIONED_IN|doc:pmid_38813446"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:vosoritide",
@@ -1710,7 +1721,8 @@
           "evidence": "registered with ClinicalTrials.gov (NCT04219007)",
           "relation_id": "compound:vosoritide|EVALUATED_IN|clinical_trial:nct04219007|pmid_38813446"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:vosoritide",
@@ -1733,7 +1745,8 @@
           "evidence": "Vosoritide is a C-type natriuretic peptide analog; hypochondroplasia is due to activating variants in FGFR3",
           "relation_id": "compound:vosoritide|INHIBITS|protein:fgfr3|pmid_38813446"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:vosoritide",
@@ -1763,7 +1776,8 @@
           "evidence": "Common AEs: mild injection site reactions",
           "relation_id": "compound:vosoritide|CAUSES|adverse_event:injection_site_reaction|pmid_40821249"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:vosoritide",
@@ -1786,7 +1800,8 @@
           "evidence": "",
           "relation_id": "compound:vosoritide|MENTIONED_IN|doc:pmid_40821249"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:vosoritide",
@@ -1809,7 +1824,8 @@
           "evidence": "Vosoritide is first targeted therapy approved... caused by activating FGFR3 mutations",
           "relation_id": "compound:vosoritide|INHIBITS|protein:fibroblast_growth_factor_receptor_3|pmid_40821249"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:vosoritide",
@@ -1832,7 +1848,8 @@
           "evidence": "Vosoritide is first targeted therapy approved",
           "relation_id": "compound:vosoritide|HAS_MECHANISM|mechanism_of_action:c_type_natriuretic_peptide_analog|pmid_40821249"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:vosoritide",
@@ -1855,7 +1872,8 @@
           "evidence": "transient hypotension in infants",
           "relation_id": "compound:vosoritide|CAUSES|adverse_event:transient_hypotension|pmid_40821249"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:vosoritide",
@@ -1878,7 +1896,8 @@
           "evidence": "Phase II/III: daily SC 15 \u00b5g/kg increases AGV by ~1.5-2.0 cm/year vs placebo",
           "relation_id": "compound:vosoritide|EVALUATED_IN|clinical_trial:vosoritide_phase_ii_iii_trial|pmid_40821249"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:fgfr3",
@@ -1901,7 +1920,8 @@
           "evidence": "",
           "relation_id": "gene:fgfr3|MENTIONED_IN|doc:pmid_26684019"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:fgfr3",
@@ -1924,7 +1944,8 @@
           "evidence": "",
           "relation_id": "gene:fgfr3|MENTIONED_IN|doc:pmid_34070375"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:fgfr3",
@@ -1961,7 +1982,8 @@
           "evidence": "Achondroplasia is most common genetic skeletal dysplasia caused by activating FGFR3 mutations",
           "relation_id": "gene:fgfr3|IMPLICATED_IN|disease:achondroplasia|pmid_40821249"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:fgfr3",
@@ -1984,7 +2006,8 @@
           "evidence": "a disease caused by a missense mutation in the FGFR3 gene",
           "relation_id": "gene:fgfr3|HAS_VARIANT|sequence_variant:fgfr3_missense_mutation|pmid_34070375"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:fgfr3",
@@ -2021,7 +2044,8 @@
           "evidence": "FGFR3 mutations",
           "relation_id": "gene:fgfr3|ENCODES|protein:fibroblast_growth_factor_receptor_3|pmid_40821249"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:fgfr3",
@@ -2044,7 +2068,8 @@
           "evidence": "",
           "relation_id": "gene:fgfr3|MENTIONED_IN|doc:pmid_34694597"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:fgfr3",
@@ -2067,7 +2092,8 @@
           "evidence": "gain-of-function mutation in the fibroblast growth factor receptor 3 gene (FGFR3)",
           "relation_id": "gene:fgfr3|HAS_VARIANT|sequence_variant:fgfr3_gain_of_function_mutation|pmid_34694597"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:fgfr3",
@@ -2090,7 +2116,8 @@
           "evidence": "",
           "relation_id": "gene:fgfr3|MENTIONED_IN|doc:pmid_38813446"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:fgfr3",
@@ -2113,7 +2140,8 @@
           "evidence": "",
           "relation_id": "gene:fgfr3|MENTIONED_IN|doc:pmid_40821249"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:fgfr3",
@@ -2136,7 +2164,8 @@
           "evidence": "caused by activating FGFR3 mutations",
           "relation_id": "gene:fgfr3|HAS_VARIANT|sequence_variant:fgfr3_activating_mutation|pmid_40821249"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:fgfr3",
@@ -2159,7 +2188,8 @@
           "evidence": "",
           "relation_id": "protein:fgfr3|MENTIONED_IN|doc:pmid_26684019"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:fgfr3",
@@ -2189,7 +2219,8 @@
           "evidence": "Efficacy was similar to what has been reported in children with achondroplasia (FGFR3-related)",
           "relation_id": "protein:fgfr3|IMPLICATED_IN|disease:achondroplasia|pmid_38813446"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:fgfr3",
@@ -2212,7 +2243,8 @@
           "evidence": "the MAPK pathway, activated by FGFR3 gain-of-function mutation",
           "relation_id": "protein:fgfr3|ACTIVATES|pathway:mapk_pathway|pmid_26684019"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:fgfr3",
@@ -2235,7 +2267,8 @@
           "evidence": "Fgfr3Y367C/+ mice",
           "relation_id": "protein:fgfr3|HAS_VARIANT|sequence_variant:fgfr3_y367c|pmid_26684019"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:fgfr3",
@@ -2258,7 +2291,8 @@
           "evidence": "FGFR3 is an important regulator of bone formation",
           "relation_id": "protein:fgfr3|EXPRESSED_IN|cell_or_tissue:bone|pmid_26684019"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:fgfr3",
@@ -2281,7 +2315,8 @@
           "evidence": "",
           "relation_id": "protein:fgfr3|MENTIONED_IN|doc:pmid_38813446"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:fgfr3",
@@ -2304,7 +2339,8 @@
           "evidence": "rare autosomal dominant skeletal dysplasia due to activating variants in FGFR3",
           "relation_id": "protein:fgfr3|IMPLICATED_IN|disease:hypochondroplasia|pmid_38813446"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:fgfr3",
@@ -2327,7 +2363,8 @@
           "evidence": "activating variants in FGFR3",
           "relation_id": "protein:fgfr3|HAS_VARIANT|sequence_variant:fgfr3_activating_variant|pmid_38813446"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:achondroplasia",
@@ -2350,7 +2387,8 @@
           "evidence": "",
           "relation_id": "disease:achondroplasia|MENTIONED_IN|doc:pmid_26684019"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:achondroplasia",
@@ -2373,7 +2411,8 @@
           "evidence": "achondroplasia (ACH), the most common form of dwarfism",
           "relation_id": "disease:achondroplasia|ASSOCIATED_WITH|phenotype:dwarfism|pmid_26684019"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:achondroplasia",
@@ -2396,7 +2435,8 @@
           "evidence": "",
           "relation_id": "disease:achondroplasia|MENTIONED_IN|doc:pmid_34070375"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:achondroplasia",
@@ -2419,7 +2459,8 @@
           "evidence": "the most common cause of short stature in humans",
           "relation_id": "disease:achondroplasia|ASSOCIATED_WITH|phenotype:short_stature|pmid_34070375"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:achondroplasia",
@@ -2442,7 +2483,8 @@
           "evidence": "effects on spinal canal stenosis",
           "relation_id": "disease:achondroplasia|ASSOCIATED_WITH|phenotype:spinal_canal_stenosis|pmid_34070375"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:achondroplasia",
@@ -2465,7 +2507,8 @@
           "evidence": "the narrowing of the foramen magnum",
           "relation_id": "disease:achondroplasia|ASSOCIATED_WITH|phenotype:foramen_magnum_narrowing|pmid_34070375"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:achondroplasia",
@@ -2488,7 +2531,8 @@
           "evidence": "",
           "relation_id": "disease:achondroplasia|MENTIONED_IN|doc:pmid_34694597"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:achondroplasia",
@@ -2511,7 +2555,8 @@
           "evidence": "",
           "relation_id": "disease:achondroplasia|MENTIONED_IN|doc:pmid_38813446"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:achondroplasia",
@@ -2534,7 +2579,8 @@
           "evidence": "",
           "relation_id": "disease:achondroplasia|MENTIONED_IN|doc:pmid_40821249"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:mapk_pathway",
@@ -2557,7 +2603,8 @@
           "evidence": "",
           "relation_id": "pathway:mapk_pathway|MENTIONED_IN|doc:pmid_26684019"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:mapk_pathway_downregulation",
@@ -2580,7 +2627,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:mapk_pathway_downregulation|MENTIONED_IN|doc:pmid_26684019"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:fgfr3_y367c",
@@ -2603,7 +2651,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:fgfr3_y367c|MENTIONED_IN|doc:pmid_26684019"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:bmn111_phase_2_trial_in_ach",
@@ -2626,7 +2675,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:bmn111_phase_2_trial_in_ach|MENTIONED_IN|doc:pmid_26684019"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:dwarfism",
@@ -2649,7 +2699,8 @@
           "evidence": "",
           "relation_id": "phenotype:dwarfism|MENTIONED_IN|doc:pmid_26684019"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "cell_or_tissue:bone",
@@ -2672,7 +2723,8 @@
           "evidence": "",
           "relation_id": "cell_or_tissue:bone|MENTIONED_IN|doc:pmid_26684019"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pegvaliase",
@@ -2695,7 +2747,8 @@
           "evidence": "",
           "relation_id": "compound:pegvaliase|MENTIONED_IN|doc:pmid_29653686"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pegvaliase",
@@ -2746,7 +2799,8 @@
           "evidence": "Pegvaliase is an enzyme-substitution therapy approved for individuals with PKU and uncontrolled blood Phe concentrations",
           "relation_id": "compound:pegvaliase|INDICATED_FOR|disease:phenylketonuria|pmid_38694233"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pegvaliase",
@@ -2769,7 +2823,8 @@
           "evidence": "PEGylated recombinant Anabaena variabilis PAL, converts Phe to trans-cinnamic acid and ammonia",
           "relation_id": "compound:pegvaliase|HAS_MECHANISM|mechanism_of_action:phenylalanine_reduction|pmid_29653686"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pegvaliase",
@@ -2811,7 +2866,8 @@
           "evidence": "final data from the randomized trials PRISM-2 (NCT01889862)",
           "relation_id": "compound:pegvaliase|EVALUATED_IN|clinical_trial:prism_1|pmid_38694233"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pegvaliase",
@@ -2841,7 +2897,8 @@
           "evidence": "most common adverse events (AEs) being arthralgia",
           "relation_id": "compound:pegvaliase|CAUSES|adverse_event:arthralgia|pmid_38694233"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pegvaliase",
@@ -2878,7 +2935,8 @@
           "evidence": "most common adverse events (AEs) being arthralgia, injection site reactions",
           "relation_id": "compound:pegvaliase|CAUSES|adverse_event:injection_site_reaction|pmid_38694233"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pegvaliase",
@@ -2908,7 +2966,8 @@
           "evidence": "most common adverse events (AEs) being arthralgia, injection site reactions, headache",
           "relation_id": "compound:pegvaliase|CAUSES|adverse_event:headache|pmid_38694233"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pegvaliase",
@@ -2931,7 +2990,8 @@
           "evidence": "Acute systemic hypersensitivity in 12 participants (17 events)",
           "relation_id": "compound:pegvaliase|CAUSES|adverse_event:acute_systemic_hypersensitivity|pmid_29653686"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pegvaliase",
@@ -2954,7 +3014,8 @@
           "evidence": "",
           "relation_id": "compound:pegvaliase|MENTIONED_IN|doc:pmid_31258325"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pegvaliase",
@@ -2977,7 +3038,8 @@
           "evidence": "First FDA-approved enzyme substitution therapy for PKU",
           "relation_id": "compound:pegvaliase|HAS_MECHANISM|mechanism_of_action:enzyme_substitution_therapy|pmid_31258325"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pegvaliase",
@@ -3000,7 +3062,8 @@
           "evidence": "",
           "relation_id": "compound:pegvaliase|MENTIONED_IN|doc:pmid_31375398"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pegvaliase",
@@ -3030,7 +3093,8 @@
           "evidence": "incidence of most AEs, including hypersensitivity AEs, was higher during the early treatment phase",
           "relation_id": "compound:pegvaliase|CAUSES|adverse_event:hypersensitivity|pmid_38694233"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pegvaliase",
@@ -3053,7 +3117,8 @@
           "evidence": "requirement to carry auto-injectable adrenaline (epinephrine)",
           "relation_id": "compound:pegvaliase|CAUSES|adverse_event:anaphylaxis|pmid_31375398"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pegvaliase",
@@ -3076,7 +3141,8 @@
           "evidence": "pegvaliase induces a Type III hypersensitivity reaction",
           "relation_id": "compound:pegvaliase|HAS_MECHANISM|mechanism_of_action:type_iii_hypersensitivity_reaction|pmid_31375398"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pegvaliase",
@@ -3099,7 +3165,8 @@
           "evidence": "Key risk mitigation strategies utilized in the Phase 3 clinical trials",
           "relation_id": "compound:pegvaliase|EVALUATED_IN|clinical_trial:phase_3_clinical_trials|pmid_31375398"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pegvaliase",
@@ -3122,7 +3189,8 @@
           "evidence": "",
           "relation_id": "compound:pegvaliase|MENTIONED_IN|doc:pmid_38522180"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pegvaliase",
@@ -3145,7 +3213,8 @@
           "evidence": "this novel enzyme substitution therapy (MeSH: Phenylalanine Ammonia-Lyase)",
           "relation_id": "compound:pegvaliase|HAS_MECHANISM|protein:pal|pmid_38522180"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pegvaliase",
@@ -3168,7 +3237,8 @@
           "evidence": "",
           "relation_id": "compound:pegvaliase|MENTIONED_IN|doc:pmid_38694233"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pegvaliase",
@@ -3191,7 +3261,8 @@
           "evidence": "open-label extension study 165-304 (NCT03694353)",
           "relation_id": "compound:pegvaliase|EVALUATED_IN|clinical_trial:165_304|pmid_38694233"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pegvaliase",
@@ -3214,7 +3285,8 @@
           "evidence": "injection site reactions, headache, and injection site erythema",
           "relation_id": "compound:pegvaliase|CAUSES|adverse_event:injection_site_erythema|pmid_38694233"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:phenylketonuria",
@@ -3237,7 +3309,8 @@
           "evidence": "",
           "relation_id": "disease:phenylketonuria|MENTIONED_IN|doc:pmid_29653686"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:phenylketonuria",
@@ -3260,7 +3333,8 @@
           "evidence": "",
           "relation_id": "disease:phenylketonuria|MENTIONED_IN|doc:pmid_31258325"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:phenylketonuria",
@@ -3283,7 +3357,8 @@
           "evidence": "",
           "relation_id": "disease:phenylketonuria|MENTIONED_IN|doc:pmid_31375398"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:phenylketonuria",
@@ -3306,7 +3381,8 @@
           "evidence": "",
           "relation_id": "disease:phenylketonuria|MENTIONED_IN|doc:pmid_38522180"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:phenylketonuria",
@@ -3329,7 +3405,8 @@
           "evidence": "",
           "relation_id": "disease:phenylketonuria|MENTIONED_IN|doc:pmid_38694233"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:pah",
@@ -3352,7 +3429,8 @@
           "evidence": "",
           "relation_id": "gene:pah|MENTIONED_IN|doc:pmid_29653686"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:pah",
@@ -3382,7 +3460,8 @@
           "evidence": "genetic disorder caused by deficiency of the enzyme phenylalanine hydroxylase (PAH)",
           "relation_id": "gene:pah|IMPLICATED_IN|disease:phenylketonuria|pmid_38694233"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:pah",
@@ -3405,7 +3484,8 @@
           "evidence": "",
           "relation_id": "gene:pah|MENTIONED_IN|doc:pmid_38694233"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:pah",
@@ -3428,7 +3508,8 @@
           "evidence": "deficiency of the enzyme phenylalanine hydroxylase (PAH)",
           "relation_id": "gene:pah|ENCODES|protein:phenylalanine_hydroxylase|pmid_38694233"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:phenylalanine_hydroxylase",
@@ -3451,7 +3532,8 @@
           "evidence": "",
           "relation_id": "protein:phenylalanine_hydroxylase|MENTIONED_IN|doc:pmid_29653686"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:phenylalanine_hydroxylase",
@@ -3474,7 +3556,8 @@
           "evidence": "",
           "relation_id": "protein:phenylalanine_hydroxylase|MENTIONED_IN|doc:pmid_38694233"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "metabolite:phenylalanine",
@@ -3497,7 +3580,8 @@
           "evidence": "",
           "relation_id": "metabolite:phenylalanine|MENTIONED_IN|doc:pmid_29653686"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "metabolite:phenylalanine",
@@ -3520,7 +3604,8 @@
           "evidence": "",
           "relation_id": "metabolite:phenylalanine|MENTIONED_IN|doc:pmid_31258325"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "metabolite:phenylalanine",
@@ -3543,7 +3628,8 @@
           "evidence": "",
           "relation_id": "metabolite:phenylalanine|MENTIONED_IN|doc:pmid_31375398"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "metabolite:phenylalanine",
@@ -3566,7 +3652,8 @@
           "evidence": "",
           "relation_id": "metabolite:phenylalanine|MENTIONED_IN|doc:pmid_38522180"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "metabolite:phenylalanine",
@@ -3589,7 +3676,8 @@
           "evidence": "11 out of 18 patients (61%) reached Phe levels below 600 \u03bcmol/l",
           "relation_id": "metabolite:phenylalanine|IMPLICATED_IN|disease:phenylketonuria|pmid_38522180"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "metabolite:phenylalanine",
@@ -3612,7 +3700,8 @@
           "evidence": "",
           "relation_id": "metabolite:phenylalanine|MENTIONED_IN|doc:pmid_38694233"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:prism_1",
@@ -3641,7 +3730,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:prism_1|MENTIONED_IN|doc:pmid_29653686"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:prism_1",
@@ -3670,7 +3760,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:prism_1|MENTIONED_IN|doc:pmid_38694233"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:phenylalanine_reduction",
@@ -3693,7 +3784,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:phenylalanine_reduction|MENTIONED_IN|doc:pmid_29653686"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:blood_phenylalanine",
@@ -3716,7 +3808,8 @@
           "evidence": "",
           "relation_id": "biomarker:blood_phenylalanine|MENTIONED_IN|doc:pmid_29653686"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:blood_phenylalanine",
@@ -3753,7 +3846,8 @@
           "evidence": "uncontrolled blood Phe concentrations (>600 \u03bcmol/L)",
           "relation_id": "biomarker:blood_phenylalanine|DIAGNOSTIC_FOR|disease:phenylketonuria|pmid_38694233"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:blood_phenylalanine",
@@ -3790,7 +3884,8 @@
           "evidence": "71.3%, 65.1%, and 59.4% achieved clinically significant blood Phe levels of \u2264600, \u2264360, and \u2264120 \u03bcmol/L",
           "relation_id": "biomarker:blood_phenylalanine|PREDICTS_RESPONSE_TO|compound:pegvaliase|pmid_38694233"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:blood_phenylalanine",
@@ -3813,7 +3908,8 @@
           "evidence": "",
           "relation_id": "biomarker:blood_phenylalanine|MENTIONED_IN|doc:pmid_31258325"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:blood_phenylalanine",
@@ -3836,7 +3932,8 @@
           "evidence": "",
           "relation_id": "biomarker:blood_phenylalanine|MENTIONED_IN|doc:pmid_38694233"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:arthralgia",
@@ -3859,7 +3956,8 @@
           "evidence": "",
           "relation_id": "adverse_event:arthralgia|MENTIONED_IN|doc:pmid_29653686"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:arthralgia",
@@ -3882,7 +3980,8 @@
           "evidence": "",
           "relation_id": "adverse_event:arthralgia|MENTIONED_IN|doc:pmid_38694233"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:injection_site_reaction",
@@ -3905,7 +4004,8 @@
           "evidence": "",
           "relation_id": "adverse_event:injection_site_reaction|MENTIONED_IN|doc:pmid_29653686"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:injection_site_reaction",
@@ -3928,7 +4028,8 @@
           "evidence": "",
           "relation_id": "adverse_event:injection_site_reaction|MENTIONED_IN|doc:pmid_38522180"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:injection_site_reaction",
@@ -3951,7 +4052,8 @@
           "evidence": "",
           "relation_id": "adverse_event:injection_site_reaction|MENTIONED_IN|doc:pmid_38694233"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:injection_site_reaction",
@@ -3974,7 +4076,8 @@
           "evidence": "",
           "relation_id": "adverse_event:injection_site_reaction|MENTIONED_IN|doc:pmid_38813446"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:injection_site_reaction",
@@ -3997,7 +4100,8 @@
           "evidence": "",
           "relation_id": "adverse_event:injection_site_reaction|MENTIONED_IN|doc:pmid_40821249"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:headache",
@@ -4020,7 +4124,8 @@
           "evidence": "",
           "relation_id": "adverse_event:headache|MENTIONED_IN|doc:pmid_29653686"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:headache",
@@ -4043,7 +4148,8 @@
           "evidence": "",
           "relation_id": "adverse_event:headache|MENTIONED_IN|doc:pmid_38694233"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:acute_systemic_hypersensitivity",
@@ -4066,7 +4172,8 @@
           "evidence": "",
           "relation_id": "adverse_event:acute_systemic_hypersensitivity|MENTIONED_IN|doc:pmid_29653686"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "regulatory_action:fda_approval_of_pegvaliase_for_pku",
@@ -4089,7 +4196,8 @@
           "evidence": "",
           "relation_id": "regulatory_action:fda_approval_of_pegvaliase_for_pku|MENTIONED_IN|doc:pmid_31258325"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "regulatory_action:fda_approval_of_pegvaliase_for_pku",
@@ -4112,7 +4220,8 @@
           "evidence": "First FDA-approved enzyme substitution therapy for PKU",
           "relation_id": "regulatory_action:fda_approval_of_pegvaliase_for_pku|GRANTS_APPROVAL_FOR|compound:pegvaliase|pmid_31258325"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:enzyme_substitution_therapy",
@@ -4135,7 +4244,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:enzyme_substitution_therapy|MENTIONED_IN|doc:pmid_31258325"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:enzyme_substitution_therapy",
@@ -4158,7 +4268,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:enzyme_substitution_therapy|MENTIONED_IN|doc:pmid_38813446"
         }
-      ]
+      ],
+      "epistemic_status": "unclassified"
     },
     {
       "source": "adverse_event:hypersensitivity",
@@ -4181,7 +4292,8 @@
           "evidence": "",
           "relation_id": "adverse_event:hypersensitivity|MENTIONED_IN|doc:pmid_31375398"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:hypersensitivity",
@@ -4204,7 +4316,8 @@
           "evidence": "",
           "relation_id": "adverse_event:hypersensitivity|MENTIONED_IN|doc:pmid_38694233"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:anaphylaxis",
@@ -4227,7 +4340,8 @@
           "evidence": "",
           "relation_id": "adverse_event:anaphylaxis|MENTIONED_IN|doc:pmid_31375398"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:anti_drug_antibody",
@@ -4250,7 +4364,8 @@
           "evidence": "",
           "relation_id": "biomarker:anti_drug_antibody|MENTIONED_IN|doc:pmid_31375398"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:anti_drug_antibody",
@@ -4273,7 +4388,8 @@
           "evidence": "driven by anti-drug antibody affinity maturation, reduced immune complex formation",
           "relation_id": "biomarker:anti_drug_antibody|ASSOCIATED_WITH|adverse_event:hypersensitivity|pmid_31375398"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:anti_drug_antibody",
@@ -4296,7 +4412,8 @@
           "evidence": "driven by anti-drug antibody affinity maturation, reduced immune complex formation",
           "relation_id": "biomarker:anti_drug_antibody|PARTICIPATES_IN|mechanism_of_action:immune_complex_formation|pmid_31375398"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:anti_drug_antibody",
@@ -4319,7 +4436,8 @@
           "evidence": "decreased complement activation over time",
           "relation_id": "biomarker:anti_drug_antibody|PARTICIPATES_IN|pathway:complement_activation|pmid_31375398"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:complement_activation",
@@ -4342,7 +4460,8 @@
           "evidence": "",
           "relation_id": "pathway:complement_activation|MENTIONED_IN|doc:pmid_31375398"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:immune_complex_formation",
@@ -4365,7 +4484,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:immune_complex_formation|MENTIONED_IN|doc:pmid_31375398"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:phase_3_clinical_trials",
@@ -4388,7 +4508,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:phase_3_clinical_trials|MENTIONED_IN|doc:pmid_31375398"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:type_iii_hypersensitivity_reaction",
@@ -4411,7 +4532,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:type_iii_hypersensitivity_reaction|MENTIONED_IN|doc:pmid_31375398"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:spinal_canal_stenosis",
@@ -4434,7 +4556,8 @@
           "evidence": "",
           "relation_id": "phenotype:spinal_canal_stenosis|MENTIONED_IN|doc:pmid_31375398"
         }
-      ]
+      ],
+      "epistemic_status": "unclassified"
     },
     {
       "source": "phenotype:spinal_canal_stenosis",
@@ -4457,7 +4580,8 @@
           "evidence": "",
           "relation_id": "phenotype:spinal_canal_stenosis|MENTIONED_IN|doc:pmid_34070375"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:fibroblast_growth_factor_receptor_3",
@@ -4480,7 +4604,8 @@
           "evidence": "",
           "relation_id": "protein:fibroblast_growth_factor_receptor_3|MENTIONED_IN|doc:pmid_34070375"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:fibroblast_growth_factor_receptor_3",
@@ -4503,7 +4628,8 @@
           "evidence": "",
           "relation_id": "protein:fibroblast_growth_factor_receptor_3|MENTIONED_IN|doc:pmid_34694597"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:fibroblast_growth_factor_receptor_3",
@@ -4526,7 +4652,8 @@
           "evidence": "FGFR3, which is a negative regulator of bone growth",
           "relation_id": "protein:fibroblast_growth_factor_receptor_3|REGULATES_EXPRESSION|pathway:bone_growth|pmid_34694597"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:fibroblast_growth_factor_receptor_3",
@@ -4549,7 +4676,8 @@
           "evidence": "",
           "relation_id": "protein:fibroblast_growth_factor_receptor_3|MENTIONED_IN|doc:pmid_40821249"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:fgfr3_missense_mutation",
@@ -4572,7 +4700,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:fgfr3_missense_mutation|MENTIONED_IN|doc:pmid_34070375"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:fgfr3_missense_mutation",
@@ -4595,7 +4724,8 @@
           "evidence": "a disease caused by a missense mutation in the FGFR3 gene",
           "relation_id": "sequence_variant:fgfr3_missense_mutation|ASSOCIATED_WITH|disease:achondroplasia|pmid_34070375"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:recombinant_human_growth_hormone",
@@ -4618,7 +4748,8 @@
           "evidence": "",
           "relation_id": "compound:recombinant_human_growth_hormone|MENTIONED_IN|doc:pmid_34070375"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:recombinant_human_growth_hormone",
@@ -4641,7 +4772,8 @@
           "evidence": "The criteria for a good drug for achondroplasia are best met by recombinant human growth hormone at present",
           "relation_id": "compound:recombinant_human_growth_hormone|INDICATED_FOR|disease:achondroplasia|pmid_34070375"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:short_stature",
@@ -4664,7 +4796,8 @@
           "evidence": "",
           "relation_id": "phenotype:short_stature|MENTIONED_IN|doc:pmid_34070375"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:foramen_magnum_narrowing",
@@ -4687,7 +4820,8 @@
           "evidence": "",
           "relation_id": "phenotype:foramen_magnum_narrowing|MENTIONED_IN|doc:pmid_34070375"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:fgfr3_gain_of_function_mutation",
@@ -4710,7 +4844,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:fgfr3_gain_of_function_mutation|MENTIONED_IN|doc:pmid_34694597"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:fgfr3_gain_of_function_mutation",
@@ -4733,7 +4868,8 @@
           "evidence": "Achondroplasia is caused by a gain-of-function mutation in the fibroblast growth factor receptor 3 gene",
           "relation_id": "sequence_variant:fgfr3_gain_of_function_mutation|ASSOCIATED_WITH|disease:achondroplasia|pmid_34694597"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:natriuretic_peptide_receptor_b",
@@ -4756,7 +4892,8 @@
           "evidence": "",
           "relation_id": "protein:natriuretic_peptide_receptor_b|MENTIONED_IN|doc:pmid_34694597"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:biomarin_pharmaceutical",
@@ -4779,7 +4916,8 @@
           "evidence": "",
           "relation_id": "organization:biomarin_pharmaceutical|MENTIONED_IN|doc:pmid_34694597"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:biomarin_pharmaceutical",
@@ -4802,7 +4940,8 @@
           "evidence": "",
           "relation_id": "organization:biomarin_pharmaceutical|MENTIONED_IN|doc:pmid_38813446"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:biomarin_pharmaceutical",
@@ -4832,7 +4971,8 @@
           "evidence": "supported by an investigator-initiated grant from BioMarin Pharmaceutical",
           "relation_id": "compound:vosoritide|DEVELOPED_BY|organization:biomarin_pharmaceutical|pmid_38813446"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:chondrogenesis",
@@ -4855,7 +4995,8 @@
           "evidence": "",
           "relation_id": "pathway:chondrogenesis|MENTIONED_IN|doc:pmid_34694597"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:fgfr3_signalling_pathway",
@@ -4878,7 +5019,8 @@
           "evidence": "",
           "relation_id": "pathway:fgfr3_signalling_pathway|MENTIONED_IN|doc:pmid_34694597"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "regulatory_action:eu_approval_of_vosoritide",
@@ -4901,7 +5043,8 @@
           "evidence": "",
           "relation_id": "regulatory_action:eu_approval_of_vosoritide|MENTIONED_IN|doc:pmid_34694597"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "regulatory_action:eu_approval_of_vosoritide",
@@ -4924,7 +5067,8 @@
           "evidence": "Vosoritide was approved in August 2021 in the EU for the treatment of achondroplasia",
           "relation_id": "regulatory_action:eu_approval_of_vosoritide|GRANTS_APPROVAL_FOR|compound:vosoritide|pmid_34694597"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:bone_growth",
@@ -4947,7 +5091,8 @@
           "evidence": "",
           "relation_id": "pathway:bone_growth|MENTIONED_IN|doc:pmid_34694597"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:valoctocogene_roxaparvovec",
@@ -4970,7 +5115,8 @@
           "evidence": "",
           "relation_id": "compound:valoctocogene_roxaparvovec|MENTIONED_IN|doc:pmid_35294811"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:valoctocogene_roxaparvovec",
@@ -5021,7 +5167,8 @@
           "evidence": "valoctocogene roxaparvovec for hemophilia A",
           "relation_id": "compound:valoctocogene_roxaparvovec|INDICATED_FOR|disease:hemophilia_a|pmid_39226466"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:valoctocogene_roxaparvovec",
@@ -5058,7 +5205,8 @@
           "evidence": "GENEr8-1 phase 3: 131 of 134 remained at week 156",
           "relation_id": "compound:valoctocogene_roxaparvovec|EVALUATED_IN|clinical_trial:gener8_1|pmid_38614387"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:valoctocogene_roxaparvovec",
@@ -5081,7 +5229,8 @@
           "evidence": "AAV5-based gene therapy vector with FVIII cDNA driven by liver-selective promoter",
           "relation_id": "compound:valoctocogene_roxaparvovec|HAS_MECHANISM|mechanism_of_action:gene_replacement_therapy|pmid_35294811"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:valoctocogene_roxaparvovec",
@@ -5118,7 +5267,8 @@
           "evidence": "ALT elevation in 85.8% managed with prednisone 60mg/d",
           "relation_id": "compound:valoctocogene_roxaparvovec|CAUSES|adverse_event:alt_elevation|pmid_39226466"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:valoctocogene_roxaparvovec",
@@ -5141,7 +5291,8 @@
           "evidence": "",
           "relation_id": "compound:valoctocogene_roxaparvovec|MENTIONED_IN|doc:pmid_36812433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:valoctocogene_roxaparvovec",
@@ -5164,7 +5315,8 @@
           "evidence": "",
           "relation_id": "compound:valoctocogene_roxaparvovec|MENTIONED_IN|doc:pmid_38614387"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:valoctocogene_roxaparvovec",
@@ -5187,7 +5339,8 @@
           "evidence": "",
           "relation_id": "compound:valoctocogene_roxaparvovec|MENTIONED_IN|doc:pmid_38991118"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:valoctocogene_roxaparvovec",
@@ -5210,7 +5363,8 @@
           "evidence": "AAV gene addition for HA",
           "relation_id": "compound:valoctocogene_roxaparvovec|HAS_MECHANISM|mechanism_of_action:aav_gene_addition|pmid_38991118"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:valoctocogene_roxaparvovec",
@@ -5233,7 +5387,8 @@
           "evidence": "",
           "relation_id": "compound:valoctocogene_roxaparvovec|MENTIONED_IN|doc:pmid_39226466"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:valoctocogene_roxaparvovec",
@@ -5256,7 +5411,8 @@
           "evidence": "Contraindicated in: uncontrolled liver infections, autoimmune hepatitis",
           "relation_id": "compound:valoctocogene_roxaparvovec|CONTRAINDICATED_FOR|disease:autoimmune_hepatitis|pmid_39226466"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:valoctocogene_roxaparvovec",
@@ -5279,7 +5435,8 @@
           "evidence": "Contraindicated in: ... cirrhosis",
           "relation_id": "compound:valoctocogene_roxaparvovec|CONTRAINDICATED_FOR|disease:cirrhosis|pmid_39226466"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:valoctocogene_roxaparvovec",
@@ -5302,7 +5459,8 @@
           "evidence": "Contraindicated in: uncontrolled liver infections",
           "relation_id": "compound:valoctocogene_roxaparvovec|CONTRAINDICATED_FOR|disease:uncontrolled_liver_infection|pmid_39226466"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:valoctocogene_roxaparvovec",
@@ -5325,7 +5483,8 @@
           "evidence": "Liver-related aspects of valoctocogene roxaparvovec",
           "relation_id": "compound:valoctocogene_roxaparvovec|LOCALIZED_TO|cell_or_tissue:liver|pmid_39226466"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:valoctocogene_roxaparvovec",
@@ -5348,7 +5507,8 @@
           "evidence": "ALT elevation in 85.8% managed with prednisone 60mg/d",
           "relation_id": "compound:valoctocogene_roxaparvovec|COMBINED_WITH|compound:prednisone|pmid_39226466"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:f8",
@@ -5371,7 +5531,8 @@
           "evidence": "",
           "relation_id": "gene:f8|MENTIONED_IN|doc:pmid_35294811"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:f8",
@@ -5394,7 +5555,8 @@
           "evidence": "AAV5-based gene therapy vector with FVIII cDNA",
           "relation_id": "gene:f8|ENCODES|protein:factor_viii|pmid_35294811"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:f8",
@@ -5417,7 +5579,8 @@
           "evidence": "gene therapy vector with FVIII cDNA for severe hemophilia A",
           "relation_id": "gene:f8|IMPLICATED_IN|disease:hemophilia_a|pmid_35294811"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:f8",
@@ -5440,7 +5603,8 @@
           "evidence": "",
           "relation_id": "gene:f8|MENTIONED_IN|doc:pmid_38991118"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:f8",
@@ -5463,7 +5627,8 @@
           "evidence": "FVIII expression",
           "relation_id": "gene:f8|ENCODES|protein:coagulation_factor_viii|pmid_38991118"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:factor_viii",
@@ -5486,7 +5651,8 @@
           "evidence": "",
           "relation_id": "protein:factor_viii|MENTIONED_IN|doc:pmid_35294811"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:factor_viii",
@@ -5509,7 +5675,8 @@
           "evidence": "FVIII cDNA driven by liver-selective promoter",
           "relation_id": "protein:factor_viii|EXPRESSED_IN|cell_or_tissue:liver|pmid_35294811"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:factor_viii",
@@ -5532,7 +5699,8 @@
           "evidence": "",
           "relation_id": "protein:factor_viii|MENTIONED_IN|doc:pmid_36812433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:factor_viii",
@@ -5555,7 +5723,8 @@
           "evidence": "",
           "relation_id": "protein:factor_viii|MENTIONED_IN|doc:pmid_38614387"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:hemophilia_a",
@@ -5578,7 +5747,8 @@
           "evidence": "",
           "relation_id": "disease:hemophilia_a|MENTIONED_IN|doc:pmid_35294811"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:hemophilia_a",
@@ -5601,7 +5771,8 @@
           "evidence": "",
           "relation_id": "disease:hemophilia_a|MENTIONED_IN|doc:pmid_36812433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:hemophilia_a",
@@ -5624,7 +5795,8 @@
           "evidence": "",
           "relation_id": "disease:hemophilia_a|MENTIONED_IN|doc:pmid_38614387"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:hemophilia_a",
@@ -5647,7 +5819,8 @@
           "evidence": "",
           "relation_id": "disease:hemophilia_a|MENTIONED_IN|doc:pmid_38991118"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:hemophilia_a",
@@ -5670,7 +5843,8 @@
           "evidence": "",
           "relation_id": "disease:hemophilia_a|MENTIONED_IN|doc:pmid_39226466"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:gener8_1",
@@ -5693,7 +5867,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:gener8_1|MENTIONED_IN|doc:pmid_35294811"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:gener8_1",
@@ -5716,7 +5891,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:gener8_1|MENTIONED_IN|doc:pmid_36812433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:gener8_1",
@@ -5739,7 +5915,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:gener8_1|MENTIONED_IN|doc:pmid_38614387"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:biomarin",
@@ -5762,7 +5939,8 @@
           "evidence": "",
           "relation_id": "organization:biomarin|MENTIONED_IN|doc:pmid_35294811"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:biomarin",
@@ -5785,7 +5963,8 @@
           "evidence": "",
           "relation_id": "organization:biomarin|MENTIONED_IN|doc:pmid_38614387"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:biomarin",
@@ -5808,7 +5987,8 @@
           "evidence": "",
           "relation_id": "organization:biomarin|MENTIONED_IN|doc:pmid_38991118"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:biomarin",
@@ -5845,7 +6025,8 @@
           "evidence": "Valoctocogene roxaparvovec (Roctavian; BioMarin)",
           "relation_id": "compound:valoctocogene_roxaparvovec|DEVELOPED_BY|organization:biomarin|pmid_38991118"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:gene_replacement_therapy",
@@ -5868,7 +6049,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:gene_replacement_therapy|MENTIONED_IN|doc:pmid_35294811"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:alt_elevation",
@@ -5891,7 +6073,8 @@
           "evidence": "",
           "relation_id": "adverse_event:alt_elevation|MENTIONED_IN|doc:pmid_35294811"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:alt_elevation",
@@ -5914,7 +6097,8 @@
           "evidence": "",
           "relation_id": "adverse_event:alt_elevation|MENTIONED_IN|doc:pmid_38614387"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:alt_elevation",
@@ -5937,7 +6121,8 @@
           "evidence": "",
           "relation_id": "adverse_event:alt_elevation|MENTIONED_IN|doc:pmid_39226466"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "cell_or_tissue:liver",
@@ -5960,7 +6145,8 @@
           "evidence": "",
           "relation_id": "cell_or_tissue:liver|MENTIONED_IN|doc:pmid_35294811"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "cell_or_tissue:liver",
@@ -5983,7 +6169,8 @@
           "evidence": "",
           "relation_id": "cell_or_tissue:liver|MENTIONED_IN|doc:pmid_39226466"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:fviii_activity",
@@ -6006,7 +6193,8 @@
           "evidence": "",
           "relation_id": "biomarker:fviii_activity|MENTIONED_IN|doc:pmid_35294811"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:fviii_activity",
@@ -6043,7 +6231,8 @@
           "evidence": "Mean FVIII 18.4 IU/dL at week 156",
           "relation_id": "biomarker:fviii_activity|DIAGNOSTIC_FOR|disease:hemophilia_a|pmid_38614387"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:fviii_activity",
@@ -6066,7 +6255,8 @@
           "evidence": "",
           "relation_id": "biomarker:fviii_activity|MENTIONED_IN|doc:pmid_36812433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:fviii_activity",
@@ -6096,7 +6286,8 @@
           "evidence": "FVIII decrease lower between years 2-3 than 1-2",
           "relation_id": "biomarker:fviii_activity|PREDICTS_RESPONSE_TO|compound:valoctocogene_roxaparvovec|pmid_38614387"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:fviii_activity",
@@ -6119,7 +6310,8 @@
           "evidence": "",
           "relation_id": "biomarker:fviii_activity|MENTIONED_IN|doc:pmid_38614387"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:joint_bleeding",
@@ -6142,7 +6334,8 @@
           "evidence": "",
           "relation_id": "phenotype:joint_bleeding|MENTIONED_IN|doc:pmid_36812433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:joint_bleeding",
@@ -6165,7 +6358,8 @@
           "evidence": "At FVIII 5 IU/dL: expected 1.0 joint bleed/year",
           "relation_id": "phenotype:joint_bleeding|ASSOCIATED_WITH|disease:hemophilia_a|pmid_36812433"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pal",
@@ -6188,7 +6382,8 @@
           "evidence": "",
           "relation_id": "protein:pal|MENTIONED_IN|doc:pmid_38522180"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:hema_qol",
@@ -6211,7 +6406,8 @@
           "evidence": "",
           "relation_id": "biomarker:hema_qol|MENTIONED_IN|doc:pmid_38614387"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:hema_qol",
@@ -6234,7 +6430,8 @@
           "evidence": "Quality of life improvement (HemA-QoL, P<.0001)",
           "relation_id": "biomarker:hema_qol|PREDICTS_RESPONSE_TO|compound:valoctocogene_roxaparvovec|pmid_38614387"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:165_304",
@@ -6257,7 +6454,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:165_304|MENTIONED_IN|doc:pmid_38694233"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:injection_site_erythema",
@@ -6280,7 +6478,8 @@
           "evidence": "",
           "relation_id": "adverse_event:injection_site_erythema|MENTIONED_IN|doc:pmid_38694233"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:hypochondroplasia",
@@ -6303,7 +6502,8 @@
           "evidence": "",
           "relation_id": "disease:hypochondroplasia|MENTIONED_IN|doc:pmid_38813446"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:hypochondroplasia",
@@ -6326,7 +6526,8 @@
           "evidence": "presents with disproportionate short stature with a wide range of clinical severity",
           "relation_id": "disease:hypochondroplasia|ASSOCIATED_WITH|phenotype:disproportionate_short_stature|pmid_38813446"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:nct04219007",
@@ -6349,7 +6550,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:nct04219007|MENTIONED_IN|doc:pmid_38813446"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:disproportionate_short_stature",
@@ -6372,7 +6574,8 @@
           "evidence": "",
           "relation_id": "phenotype:disproportionate_short_stature|MENTIONED_IN|doc:pmid_38813446"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:annualized_growth_velocity",
@@ -6395,7 +6598,8 @@
           "evidence": "",
           "relation_id": "biomarker:annualized_growth_velocity|MENTIONED_IN|doc:pmid_38813446"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:annualized_growth_velocity",
@@ -6418,7 +6622,8 @@
           "evidence": "Annualized growth velocity increased by 2.26 standard deviations (SD)",
           "relation_id": "biomarker:annualized_growth_velocity|PREDICTS_RESPONSE_TO|compound:vosoritide|pmid_38813446"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:annualized_growth_velocity",
@@ -6441,7 +6646,8 @@
           "evidence": "",
           "relation_id": "biomarker:annualized_growth_velocity|MENTIONED_IN|doc:pmid_40821249"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:fgfr3_activating_variant",
@@ -6464,7 +6670,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:fgfr3_activating_variant|MENTIONED_IN|doc:pmid_38813446"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:coagulation_factor_viii",
@@ -6487,7 +6694,8 @@
           "evidence": "",
           "relation_id": "protein:coagulation_factor_viii|MENTIONED_IN|doc:pmid_38991118"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:coagulation_factor_viii",
@@ -6510,7 +6718,8 @@
           "evidence": "AAV gene addition for HA... FVIII expression",
           "relation_id": "protein:coagulation_factor_viii|IMPLICATED_IN|disease:hemophilia_a|pmid_38991118"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:aav_gene_addition",
@@ -6533,7 +6742,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:aav_gene_addition|MENTIONED_IN|doc:pmid_38991118"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "regulatory_action:ema_conditional_approval_august_2022",
@@ -6556,7 +6766,8 @@
           "evidence": "",
           "relation_id": "regulatory_action:ema_conditional_approval_august_2022|MENTIONED_IN|doc:pmid_38991118"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "regulatory_action:ema_conditional_approval_august_2022",
@@ -6579,7 +6790,8 @@
           "evidence": "conditionally approved Europe August 2022",
           "relation_id": "regulatory_action:ema_conditional_approval_august_2022|GRANTS_APPROVAL_FOR|compound:valoctocogene_roxaparvovec|pmid_38991118"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "regulatory_action:fda_approval_june_2023",
@@ -6602,7 +6814,8 @@
           "evidence": "",
           "relation_id": "regulatory_action:fda_approval_june_2023|MENTIONED_IN|doc:pmid_38991118"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "regulatory_action:fda_approval_june_2023",
@@ -6625,7 +6838,8 @@
           "evidence": "approved USA June 2023",
           "relation_id": "regulatory_action:fda_approval_june_2023|GRANTS_APPROVAL_FOR|compound:valoctocogene_roxaparvovec|pmid_38991118"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:fviii_expression",
@@ -6648,7 +6862,8 @@
           "evidence": "",
           "relation_id": "biomarker:fviii_expression|MENTIONED_IN|doc:pmid_38991118"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:fviii_expression",
@@ -6671,7 +6886,8 @@
           "evidence": "year-over-year declines in FVIII expression contrast with stable FVIII in other AAV HA trials",
           "relation_id": "biomarker:fviii_expression|PREDICTS_RESPONSE_TO|compound:valoctocogene_roxaparvovec|pmid_38991118"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:prednisone",
@@ -6694,7 +6910,8 @@
           "evidence": "",
           "relation_id": "compound:prednisone|MENTIONED_IN|doc:pmid_39226466"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:autoimmune_hepatitis",
@@ -6717,7 +6934,8 @@
           "evidence": "",
           "relation_id": "disease:autoimmune_hepatitis|MENTIONED_IN|doc:pmid_39226466"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:cirrhosis",
@@ -6740,7 +6958,8 @@
           "evidence": "",
           "relation_id": "disease:cirrhosis|MENTIONED_IN|doc:pmid_39226466"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:alanine_aminotransferase",
@@ -6763,7 +6982,8 @@
           "evidence": "",
           "relation_id": "biomarker:alanine_aminotransferase|MENTIONED_IN|doc:pmid_39226466"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:alanine_aminotransferase",
@@ -6786,7 +7006,8 @@
           "evidence": "Post-treatment: ALT monitoring 1-2x/week for \u22651.5x ULN",
           "relation_id": "biomarker:alanine_aminotransferase|DIAGNOSTIC_FOR|adverse_event:alt_elevation|pmid_39226466"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:liver_stiffness",
@@ -6809,7 +7030,8 @@
           "evidence": "",
           "relation_id": "biomarker:liver_stiffness|MENTIONED_IN|doc:pmid_39226466"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:liver_stiffness",
@@ -6832,7 +7054,8 @@
           "evidence": "liver stiffness \u22658 kPa, cirrhosis",
           "relation_id": "biomarker:liver_stiffness|DIAGNOSTIC_FOR|disease:cirrhosis|pmid_39226466"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:uncontrolled_liver_infection",
@@ -6855,7 +7078,8 @@
           "evidence": "",
           "relation_id": "disease:uncontrolled_liver_infection|MENTIONED_IN|doc:pmid_39226466"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:fgfr3_activating_mutation",
@@ -6878,7 +7102,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:fgfr3_activating_mutation|MENTIONED_IN|doc:pmid_40821249"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:fgfr3_activating_mutation",
@@ -6901,7 +7126,8 @@
           "evidence": "Achondroplasia is most common genetic skeletal dysplasia caused by activating FGFR3 mutations",
           "relation_id": "sequence_variant:fgfr3_activating_mutation|ASSOCIATED_WITH|disease:achondroplasia|pmid_40821249"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:c_type_natriuretic_peptide_analog",
@@ -6924,7 +7150,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:c_type_natriuretic_peptide_analog|MENTIONED_IN|doc:pmid_40821249"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:transient_hypotension",
@@ -6947,7 +7174,8 @@
           "evidence": "",
           "relation_id": "adverse_event:transient_hypotension|MENTIONED_IN|doc:pmid_40821249"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:vosoritide_phase_ii_iii_trial",
@@ -6970,7 +7198,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:vosoritide_phase_ii_iii_trial|MENTIONED_IN|doc:pmid_40821249"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     }
   ]
 }

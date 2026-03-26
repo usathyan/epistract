@@ -2104,7 +2104,8 @@
           "evidence": "",
           "relation_id": "compound:nivolumab|MENTIONED_IN|doc:pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2197,7 +2198,8 @@
           "evidence": "By blocking PD-1, nivolumab prevents the inhibitory checkpoint signal",
           "relation_id": "compound:nivolumab|INHIBITS|protein:pd_1|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2234,7 +2236,8 @@
           "evidence": "Nivolumab blocks the PD-1/PD-L1 interaction with KD = 2.6 nM (BIAcore SPR assay)",
           "relation_id": "compound:nivolumab|BINDS_TO|protein:pd_1|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2313,7 +2316,8 @@
           "evidence": "CheckMate 037 (NCT01721746): Phase III, melanoma post-CTLA-4",
           "relation_id": "compound:nivolumab|INDICATED_FOR|disease:melanoma|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2343,7 +2347,8 @@
           "evidence": "CheckMate 037 (NCT01721746): Phase III, melanoma post-CTLA-4",
           "relation_id": "compound:nivolumab|EVALUATED_IN|clinical_trial:checkmate_037|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2366,7 +2371,8 @@
           "evidence": "Grade 3-4 adverse events related to nivolumab included increased lipase",
           "relation_id": "compound:nivolumab|CAUSES|adverse_event:increased_lipase|pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2389,7 +2395,8 @@
           "evidence": "Grade 3-4 adverse events related to nivolumab included ... increased alanine aminotransferase",
           "relation_id": "compound:nivolumab|CAUSES|adverse_event:increased_alanine_aminotransferase|pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2412,7 +2419,8 @@
           "evidence": "Grade 3-4 adverse events related to nivolumab included ... anaemia",
           "relation_id": "compound:nivolumab|CAUSES|adverse_event:anaemia|pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2442,7 +2450,8 @@
           "evidence": "Most common irAEs: fatigue (26%)",
           "relation_id": "compound:nivolumab|CAUSES|adverse_event:fatigue|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2465,7 +2474,8 @@
           "evidence": "",
           "relation_id": "compound:nivolumab|MENTIONED_IN|doc:pmid_28889792"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2509,7 +2519,8 @@
           "evidence": "CheckMate 067 (NCT01844505): Phase III, nivo+ipi vs nivo vs ipi, melanoma",
           "relation_id": "compound:nivolumab|EVALUATED_IN|clinical_trial:checkmate_067|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2553,7 +2564,8 @@
           "evidence": "Grade 3 or 4 TRAEs occurred in 69% and 61%, respectively",
           "relation_id": "compound:nivolumab|CAUSES|adverse_event:treatment_related_adverse_events_grade_3_4|pmid_38723227"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2576,7 +2588,8 @@
           "evidence": "",
           "relation_id": "compound:nivolumab|MENTIONED_IN|doc:pmid_30134131"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2599,7 +2612,8 @@
           "evidence": "clinically meaningful intracranial efficacy in patients with melanoma who had untreated brain metastases",
           "relation_id": "compound:nivolumab|INDICATED_FOR|disease:brain_metastases|pmid_30134131"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2622,7 +2636,8 @@
           "evidence": "patients received nivolumab (1 mg per kilogram) plus ipilimumab (3 mg per kilogram) ... CheckMate 204 ClinicalTrials.gov number, NCT02320058",
           "relation_id": "compound:nivolumab|EVALUATED_IN|clinical_trial:checkmate_204|pmid_30134131"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2645,7 +2660,8 @@
           "evidence": "One patient died from immune-related myocarditis",
           "relation_id": "compound:nivolumab|CAUSES|adverse_event:immune_related_myocarditis|pmid_30134131"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2668,7 +2684,8 @@
           "evidence": "events involving the central nervous system in 7%",
           "relation_id": "compound:nivolumab|CAUSES|adverse_event:central_nervous_system_adverse_events|pmid_30134131"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2691,7 +2708,8 @@
           "evidence": "nivolumab plus ipilimumab combination targeting immune checkpoints",
           "relation_id": "compound:nivolumab|PARTICIPATES_IN|mechanism_of_action:immune_checkpoint_inhibition|pmid_30134131"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2714,7 +2732,8 @@
           "evidence": "",
           "relation_id": "compound:nivolumab|MENTIONED_IN|doc:pmid_31562797"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2744,7 +2763,8 @@
           "evidence": "nivolumab, a PD-1 inhibitor",
           "relation_id": "compound:nivolumab|INHIBITS|gene:pdcd1|pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2767,7 +2787,8 @@
           "evidence": "",
           "relation_id": "compound:nivolumab|MENTIONED_IN|doc:pmid_34715028"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2790,7 +2811,8 @@
           "evidence": "nivolumab (anti-PD-1)",
           "relation_id": "compound:nivolumab|INHIBITS|protein:pdcd1|pmid_34715028"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2813,7 +2835,8 @@
           "evidence": "ADAPTeR is a prospective, phase II study of nivolumab (anti-PD-1)",
           "relation_id": "compound:nivolumab|EVALUATED_IN|clinical_trial:adapter|pmid_34715028"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2836,7 +2859,8 @@
           "evidence": "phase II study of nivolumab (anti-PD-1) in 15 treatment-naive patients with metastatic clear cell renal cell carcinoma",
           "relation_id": "compound:nivolumab|INDICATED_FOR|disease:clear_cell_renal_cell_carcinoma|pmid_34715028"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2859,7 +2883,8 @@
           "evidence": "nivolumab-bound CD8+ T cells are expanded and express GZMK/B",
           "relation_id": "compound:nivolumab|BINDS_TO|cell_or_tissue:cd8_t_cells|pmid_34715028"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2882,7 +2907,8 @@
           "evidence": "",
           "relation_id": "compound:nivolumab|MENTIONED_IN|doc:pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2912,7 +2938,8 @@
           "evidence": "neoadjuvant cabozantinib and nivolumab in advanced hepatocellular carcinoma",
           "relation_id": "compound:nivolumab|INDICATED_FOR|disease:hepatocellular_carcinoma|pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2935,7 +2962,8 @@
           "evidence": "",
           "relation_id": "compound:nivolumab|MENTIONED_IN|doc:pmid_34818112"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -2958,7 +2986,8 @@
           "evidence": "",
           "relation_id": "compound:nivolumab|MENTIONED_IN|doc:pmid_34986285"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3002,7 +3031,8 @@
           "evidence": "RELATIVITY-047 (NCT03470922): Phase II/III, nivo+relatlimab vs nivo, melanoma",
           "relation_id": "compound:nivolumab|EVALUATED_IN|clinical_trial:relativity_047|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3025,7 +3055,8 @@
           "evidence": "",
           "relation_id": "compound:nivolumab|MENTIONED_IN|doc:pmid_35062949"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3048,7 +3079,8 @@
           "evidence": "approved for various types of cancers",
           "relation_id": "compound:nivolumab|INDICATED_FOR|disease:cancer|pmid_35062949"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3071,7 +3103,8 @@
           "evidence": "",
           "relation_id": "compound:nivolumab|MENTIONED_IN|doc:pmid_35981087"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3094,7 +3127,8 @@
           "evidence": "",
           "relation_id": "compound:nivolumab|MENTIONED_IN|doc:pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3117,7 +3151,8 @@
           "evidence": "a prospective clinical trial of neoadjuvant cabozantinib...and nivolumab",
           "relation_id": "compound:nivolumab|EVALUATED_IN|clinical_trial:nct_neoadjuvant_cabo_nivo_hcc_trial|pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3140,7 +3175,8 @@
           "evidence": "",
           "relation_id": "compound:nivolumab|MENTIONED_IN|doc:pmid_38723227"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3163,7 +3199,8 @@
           "evidence": "nivolumab (PD-1-blocking antibody)",
           "relation_id": "compound:nivolumab|HAS_MECHANISM|mechanism_of_action:pd_1_immune_checkpoint_blockade|pmid_38723227"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3186,7 +3223,8 @@
           "evidence": "first-line nivolumab (PD-1-blocking antibody) plus relatlimab (LAG-3-blocking antibody) plus chemotherapy",
           "relation_id": "compound:nivolumab|EVALUATED_IN|clinical_trial:relativity_060|pmid_38723227"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3209,7 +3247,8 @@
           "evidence": "first-line nivolumab plus chemotherapy in patients with previously untreated advanced gastric cancer (GC)",
           "relation_id": "compound:nivolumab|INDICATED_FOR|disease:gastric_adenocarcinoma|pmid_38723227"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3232,7 +3271,8 @@
           "evidence": "first-line nivolumab plus chemotherapy in patients with previously untreated advanced gastroesophageal junction cancer (GEJC)",
           "relation_id": "compound:nivolumab|INDICATED_FOR|disease:gastroesophageal_junction_adenocarcinoma|pmid_38723227"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3262,7 +3302,8 @@
           "evidence": "completely resected melanoma, the phase 3 RELATIVITY-098 trial compared adjuvant nivolumab plus relatl",
           "relation_id": "compound:nivolumab|HAS_SEQUENCE|peptide_sequence:peptide_10aa|pmid_41109920"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3285,7 +3326,8 @@
           "evidence": "",
           "relation_id": "compound:nivolumab|MENTIONED_IN|doc:pmid_40030000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3308,7 +3350,8 @@
           "evidence": "multicenter phase 1/2a open-label study of relatlimab (RELATIVITY-022) as monotherapy or with nivolumab",
           "relation_id": "compound:nivolumab|EVALUATED_IN|clinical_trial:relativity_022|pmid_40030000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3331,7 +3374,8 @@
           "evidence": "In HL expansion cohorts, ORR was 62% and CRR was 19% in anti-PD-(L)1-naive patients",
           "relation_id": "compound:nivolumab|INDICATED_FOR|disease:hodgkin_lymphoma|pmid_40030000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3354,7 +3398,8 @@
           "evidence": "Nivolumab plus relatlimab for patients with relapsed or progressed B-cell malignancies",
           "relation_id": "compound:nivolumab|EVALUATED_IN|disease:b_cell_malignancies|pmid_40030000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3377,7 +3422,8 @@
           "evidence": "",
           "relation_id": "compound:nivolumab|MENTIONED_IN|doc:pmid_41109920"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3400,7 +3446,8 @@
           "evidence": "nivolumab plus relatlimab is approved for advanced melanoma",
           "relation_id": "compound:nivolumab|INDICATED_FOR|disease:advanced_melanoma|pmid_41109920"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3423,7 +3470,8 @@
           "evidence": "the phase 3 RELATIVITY-098 trial compared adjuvant nivolumab plus relatlimab to nivolumab after complete resection of stage III/IV melanoma",
           "relation_id": "compound:nivolumab|EVALUATED_IN|clinical_trial:relativity_098|pmid_41109920"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3446,7 +3494,8 @@
           "evidence": "",
           "relation_id": "compound:nivolumab|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3469,7 +3518,8 @@
           "evidence": "CheckMate 227 (NCT02477826): Phase III, nivo+ipi vs chemo, NSCLC",
           "relation_id": "compound:nivolumab|INDICATED_FOR|disease:non_small_cell_lung_cancer|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3492,7 +3542,8 @@
           "evidence": "CheckMate 227 (NCT02477826): Phase III, nivo+ipi vs chemo, NSCLC",
           "relation_id": "compound:nivolumab|EVALUATED_IN|clinical_trial:checkmate_227|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3515,7 +3566,8 @@
           "evidence": "rash (17%)",
           "relation_id": "compound:nivolumab|CAUSES|adverse_event:rash|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3538,7 +3590,8 @@
           "evidence": "pruritus (14%)",
           "relation_id": "compound:nivolumab|CAUSES|adverse_event:pruritus|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3561,7 +3614,8 @@
           "evidence": "diarrhea (13%)",
           "relation_id": "compound:nivolumab|CAUSES|adverse_event:diarrhea|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3584,7 +3638,8 @@
           "evidence": "immune-mediated pneumonitis (3.1%)",
           "relation_id": "compound:nivolumab|CAUSES|adverse_event:immune_mediated_pneumonitis|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3607,7 +3662,8 @@
           "evidence": "colitis (1.7%)",
           "relation_id": "compound:nivolumab|CAUSES|adverse_event:immune_mediated_colitis|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3630,7 +3686,8 @@
           "evidence": "hepatitis (1.8%)",
           "relation_id": "compound:nivolumab|CAUSES|adverse_event:immune_mediated_hepatitis|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3653,7 +3710,8 @@
           "evidence": "nephritis (1.2%)",
           "relation_id": "compound:nivolumab|CAUSES|adverse_event:immune_mediated_nephritis|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3676,7 +3734,8 @@
           "evidence": "hypothyroidism (8.0%)",
           "relation_id": "compound:nivolumab|CAUSES|adverse_event:hypothyroidism|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3699,7 +3758,8 @@
           "evidence": "hyperthyroidism (3.0%)",
           "relation_id": "compound:nivolumab|CAUSES|adverse_event:hyperthyroidism|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3722,7 +3782,8 @@
           "evidence": "Heavy Chain Variable Region (VH): QVQLVESGGGVVQPGRSLRLDCKASGITFSNSGMHWVRQAPGKGLEWVAVIWYDGSKRYYADSVKGRFTISRDNSKNTLFLQMNSLRAEDTAVYYCATNDDYWGQGTLVTVSS",
           "relation_id": "compound:nivolumab|HAS_SEQUENCE|peptide_sequence:peptide_113aa|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:nivolumab",
@@ -3745,7 +3806,8 @@
           "evidence": "Light Chain Variable Region (VL): EIVLTQSPATLSLSPGERATLSCRASQSVSSYLAWYQQKPGQAPRLLIYDASNRATGIPARFSGSGSGTDFTLTISSLEPEDFAVYYCQQSSNWPRTFGQGTKVEIK",
           "relation_id": "compound:nivolumab|HAS_SEQUENCE|peptide_sequence:peptide_107aa|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:ipilimumab",
@@ -3768,7 +3830,8 @@
           "evidence": "",
           "relation_id": "compound:ipilimumab|MENTIONED_IN|doc:pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:ipilimumab",
@@ -3812,7 +3875,8 @@
           "evidence": "ipilimumab is an anti-CTLA-4 monoclonal antibody evaluated in CheckMate 067",
           "relation_id": "compound:ipilimumab|INHIBITS|protein:ctla_4|pmid_34818112"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:ipilimumab",
@@ -3863,7 +3927,8 @@
           "evidence": "nivolumab plus ipilimumab or nivolumab versus ipilimumab in patients with advanced melanoma",
           "relation_id": "compound:ipilimumab|INDICATED_FOR|disease:melanoma|pmid_34818112"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:ipilimumab",
@@ -3886,7 +3951,8 @@
           "evidence": "",
           "relation_id": "compound:ipilimumab|MENTIONED_IN|doc:pmid_28889792"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:ipilimumab",
@@ -3930,7 +3996,8 @@
           "evidence": "nivo+ipi vs nivo vs ipi, melanoma",
           "relation_id": "compound:ipilimumab|EVALUATED_IN|clinical_trial:checkmate_067|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:ipilimumab",
@@ -3960,7 +4027,8 @@
           "evidence": "Treatment-related grade 3 or 4 adverse events were reported in 55% of patients",
           "relation_id": "compound:ipilimumab|CAUSES|adverse_event:treatment_related_adverse_events_grade_3_4|pmid_30134131"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:ipilimumab",
@@ -3983,7 +4051,8 @@
           "evidence": "",
           "relation_id": "compound:ipilimumab|MENTIONED_IN|doc:pmid_30134131"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:ipilimumab",
@@ -4006,7 +4075,8 @@
           "evidence": "clinically meaningful intracranial efficacy in patients with melanoma who had untreated brain metastases",
           "relation_id": "compound:ipilimumab|INDICATED_FOR|disease:brain_metastases|pmid_30134131"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:ipilimumab",
@@ -4029,7 +4099,8 @@
           "evidence": "patients received nivolumab (1 mg per kilogram) plus ipilimumab (3 mg per kilogram) ... CheckMate 204 ClinicalTrials.gov number, NCT02320058",
           "relation_id": "compound:ipilimumab|EVALUATED_IN|clinical_trial:checkmate_204|pmid_30134131"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:ipilimumab",
@@ -4052,7 +4123,8 @@
           "evidence": "One patient died from immune-related myocarditis",
           "relation_id": "compound:ipilimumab|CAUSES|adverse_event:immune_related_myocarditis|pmid_30134131"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:ipilimumab",
@@ -4075,7 +4147,8 @@
           "evidence": "events involving the central nervous system in 7%",
           "relation_id": "compound:ipilimumab|CAUSES|adverse_event:central_nervous_system_adverse_events|pmid_30134131"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:ipilimumab",
@@ -4098,7 +4171,8 @@
           "evidence": "nivolumab plus ipilimumab combination targeting immune checkpoints",
           "relation_id": "compound:ipilimumab|PARTICIPATES_IN|mechanism_of_action:immune_checkpoint_inhibition|pmid_30134131"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:ipilimumab",
@@ -4121,7 +4195,8 @@
           "evidence": "",
           "relation_id": "compound:ipilimumab|MENTIONED_IN|doc:pmid_31562797"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:ipilimumab",
@@ -4144,7 +4219,8 @@
           "evidence": "Ipilimumab is a well-established anti-CTLA-4 monoclonal antibody (implied by drug identity)",
           "relation_id": "compound:ipilimumab|INHIBITS|gene:ctla4|pmid_31562797"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:ipilimumab",
@@ -4167,7 +4243,8 @@
           "evidence": "",
           "relation_id": "compound:ipilimumab|MENTIONED_IN|doc:pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:ipilimumab",
@@ -4190,7 +4267,8 @@
           "evidence": "the combination of nivolumab plus ipilimumab have received FDA Accelerated Approval in the second-line setting",
           "relation_id": "compound:ipilimumab|INDICATED_FOR|disease:hepatocellular_carcinoma|pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:ipilimumab",
@@ -4213,7 +4291,8 @@
           "evidence": "",
           "relation_id": "compound:ipilimumab|MENTIONED_IN|doc:pmid_34818112"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:ipilimumab",
@@ -4236,7 +4315,8 @@
           "evidence": "",
           "relation_id": "compound:ipilimumab|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:dacarbazine",
@@ -4259,7 +4339,8 @@
           "evidence": "",
           "relation_id": "compound:dacarbazine|MENTIONED_IN|doc:pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:dacarbazine",
@@ -4282,7 +4363,8 @@
           "evidence": "ICC (dacarbazine 1000 mg/m(2) every 3 weeks or paclitaxel 175 mg/m(2) combined with carboplatin)",
           "relation_id": "compound:dacarbazine|EVALUATED_IN|clinical_trial:checkmate_037|pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:dacarbazine",
@@ -4305,7 +4387,8 @@
           "evidence": "for ICC, these included neutropenia, thrombocytopenia, and anaemia",
           "relation_id": "compound:dacarbazine|CAUSES|adverse_event:neutropenia|pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:dacarbazine",
@@ -4328,7 +4411,8 @@
           "evidence": "for ICC, these included neutropenia, thrombocytopenia, and anaemia",
           "relation_id": "compound:dacarbazine|CAUSES|adverse_event:thrombocytopenia|pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:paclitaxel",
@@ -4351,7 +4435,8 @@
           "evidence": "",
           "relation_id": "compound:paclitaxel|MENTIONED_IN|doc:pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:paclitaxel",
@@ -4374,7 +4459,8 @@
           "evidence": "paclitaxel 175 mg/m(2) combined with carboplatin area under the curve 6 every 3 weeks",
           "relation_id": "compound:paclitaxel|EVALUATED_IN|clinical_trial:checkmate_037|pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:paclitaxel",
@@ -4397,7 +4483,8 @@
           "evidence": "for ICC, these included neutropenia, thrombocytopenia, and anaemia",
           "relation_id": "compound:paclitaxel|CAUSES|adverse_event:neutropenia|pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:carboplatin",
@@ -4420,7 +4507,8 @@
           "evidence": "",
           "relation_id": "compound:carboplatin|MENTIONED_IN|doc:pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:carboplatin",
@@ -4443,7 +4531,8 @@
           "evidence": "paclitaxel 175 mg/m(2) combined with carboplatin area under the curve 6 every 3 weeks",
           "relation_id": "compound:carboplatin|EVALUATED_IN|clinical_trial:checkmate_037|pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:pdcd1",
@@ -4466,7 +4555,8 @@
           "evidence": "",
           "relation_id": "gene:pdcd1|MENTIONED_IN|doc:pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:pdcd1",
@@ -4531,7 +4621,8 @@
           "evidence": "TARGET: PD-1 (PDCD1 gene, UniProt: Q15116)",
           "relation_id": "gene:pdcd1|ENCODES|protein:pd_1|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:pdcd1",
@@ -4554,7 +4645,8 @@
           "evidence": "",
           "relation_id": "gene:pdcd1|MENTIONED_IN|doc:pmid_28889792"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:pdcd1",
@@ -4577,7 +4669,8 @@
           "evidence": "",
           "relation_id": "gene:pdcd1|MENTIONED_IN|doc:pmid_31562797"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:pdcd1",
@@ -4600,7 +4693,8 @@
           "evidence": "",
           "relation_id": "gene:pdcd1|MENTIONED_IN|doc:pmid_34986285"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:pdcd1",
@@ -4623,7 +4717,8 @@
           "evidence": "",
           "relation_id": "gene:pdcd1|MENTIONED_IN|doc:pmid_35062949"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:pdcd1",
@@ -4646,7 +4741,8 @@
           "evidence": "",
           "relation_id": "gene:pdcd1|MENTIONED_IN|doc:pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:pdcd1",
@@ -4669,7 +4765,8 @@
           "evidence": "",
           "relation_id": "gene:pdcd1|MENTIONED_IN|doc:pmid_38723227"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:pdcd1",
@@ -4692,7 +4789,8 @@
           "evidence": "",
           "relation_id": "gene:pdcd1|MENTIONED_IN|doc:pmid_40030000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:pdcd1",
@@ -4715,7 +4813,8 @@
           "evidence": "",
           "relation_id": "gene:pdcd1|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pd_1",
@@ -4738,7 +4837,8 @@
           "evidence": "",
           "relation_id": "protein:pd_1|MENTIONED_IN|doc:pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pd_1",
@@ -4761,7 +4861,8 @@
           "evidence": "",
           "relation_id": "protein:pd_1|MENTIONED_IN|doc:pmid_28889792"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pd_1",
@@ -4784,7 +4885,8 @@
           "evidence": "",
           "relation_id": "protein:pd_1|MENTIONED_IN|doc:pmid_30134131"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pd_1",
@@ -4807,7 +4909,8 @@
           "evidence": "",
           "relation_id": "protein:pd_1|MENTIONED_IN|doc:pmid_34818112"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pd_1",
@@ -4830,7 +4933,8 @@
           "evidence": "",
           "relation_id": "protein:pd_1|MENTIONED_IN|doc:pmid_34986285"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pd_1",
@@ -4853,7 +4957,8 @@
           "evidence": "LAG-3 and programmed death 1 (PD-1) are distinct inhibitory immune checkpoints that contribute to T-cell exhaustion",
           "relation_id": "protein:pd_1|IMPLICATED_IN|phenotype:t_cell_exhaustion|pmid_34986285"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pd_1",
@@ -4876,7 +4981,8 @@
           "evidence": "",
           "relation_id": "protein:pd_1|MENTIONED_IN|doc:pmid_35062949"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pd_1",
@@ -4899,7 +5005,8 @@
           "evidence": "PD-1/PD-L1 pathway",
           "relation_id": "protein:pd_1|PARTICIPATES_IN|pathway:pd_1_pd_l1_signaling_pathway|pmid_35062949"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pd_1",
@@ -4922,7 +5029,8 @@
           "evidence": "",
           "relation_id": "protein:pd_1|MENTIONED_IN|doc:pmid_35981087"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pd_1",
@@ -4945,7 +5053,8 @@
           "evidence": "",
           "relation_id": "protein:pd_1|MENTIONED_IN|doc:pmid_38723227"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pd_1",
@@ -4968,7 +5077,8 @@
           "evidence": "",
           "relation_id": "protein:pd_1|MENTIONED_IN|doc:pmid_40030000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pd_1",
@@ -4991,7 +5101,8 @@
           "evidence": "anti-PD-1 monotherapy eventually fails in most patients",
           "relation_id": "protein:pd_1|PARTICIPATES_IN|pathway:pd_1_signaling_pathway|pmid_40030000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pd_1",
@@ -5014,7 +5125,8 @@
           "evidence": "",
           "relation_id": "protein:pd_1|MENTIONED_IN|doc:pmid_41109920"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pd_1",
@@ -5037,7 +5149,8 @@
           "evidence": "",
           "relation_id": "protein:pd_1|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pd_1",
@@ -5060,7 +5173,8 @@
           "evidence": "nivolumab prevents the inhibitory checkpoint signal, allowing T cells to maintain anti-tumor activity",
           "relation_id": "protein:pd_1|PARTICIPATES_IN|mechanism_of_action:pd_1_pd_l1_checkpoint_pathway|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:ctla_4",
@@ -5083,7 +5197,8 @@
           "evidence": "",
           "relation_id": "protein:ctla_4|MENTIONED_IN|doc:pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:ctla_4",
@@ -5106,7 +5221,8 @@
           "evidence": "",
           "relation_id": "protein:ctla_4|MENTIONED_IN|doc:pmid_28889792"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:ctla_4",
@@ -5129,7 +5245,8 @@
           "evidence": "",
           "relation_id": "protein:ctla_4|MENTIONED_IN|doc:pmid_30134131"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:ctla_4",
@@ -5152,7 +5269,8 @@
           "evidence": "",
           "relation_id": "protein:ctla_4|MENTIONED_IN|doc:pmid_34818112"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:ctla_4",
@@ -5175,7 +5293,8 @@
           "evidence": "",
           "relation_id": "protein:ctla_4|MENTIONED_IN|doc:pmid_35981087"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:braf",
@@ -5198,7 +5317,8 @@
           "evidence": "",
           "relation_id": "gene:braf|MENTIONED_IN|doc:pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:braf",
@@ -5221,7 +5341,8 @@
           "evidence": "",
           "relation_id": "gene:braf|MENTIONED_IN|doc:pmid_34818112"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:braf",
@@ -5244,7 +5365,8 @@
           "evidence": "patients with BRAF-mutant tumors and BRAF-wild-type tumors with advanced melanoma",
           "relation_id": "gene:braf|IMPLICATED_IN|disease:melanoma|pmid_34818112"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:braf_v600",
@@ -5267,7 +5389,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:braf_v600|MENTIONED_IN|doc:pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:braf_v600",
@@ -5290,7 +5413,8 @@
           "evidence": "BRAF(V 600) mutation-positive",
           "relation_id": "sequence_variant:braf_v600|IMPLICATED_IN|disease:melanoma|pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:braf_v600",
@@ -5313,7 +5437,8 @@
           "evidence": "ipilimumab and a BRAF inhibitor if they were BRAF(V 600) mutation-positive",
           "relation_id": "sequence_variant:braf_v600|PREDICTS_RESPONSE_TO|compound:nivolumab|pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:melanoma",
@@ -5336,7 +5461,8 @@
           "evidence": "",
           "relation_id": "disease:melanoma|MENTIONED_IN|doc:pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:melanoma",
@@ -5359,7 +5485,8 @@
           "evidence": "",
           "relation_id": "disease:melanoma|MENTIONED_IN|doc:pmid_28889792"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:melanoma",
@@ -5382,7 +5509,8 @@
           "evidence": "",
           "relation_id": "disease:melanoma|MENTIONED_IN|doc:pmid_30134131"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:melanoma",
@@ -5405,7 +5533,8 @@
           "evidence": "Brain metastases are a common cause of disabling neurologic complications and death in patients with metastatic melanoma",
           "relation_id": "disease:melanoma|IMPLICATED_IN|disease:brain_metastases|pmid_30134131"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:melanoma",
@@ -5428,7 +5557,8 @@
           "evidence": "",
           "relation_id": "disease:melanoma|MENTIONED_IN|doc:pmid_31562797"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:melanoma",
@@ -5451,7 +5581,8 @@
           "evidence": "",
           "relation_id": "disease:melanoma|MENTIONED_IN|doc:pmid_34818112"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:melanoma",
@@ -5474,7 +5605,8 @@
           "evidence": "",
           "relation_id": "disease:melanoma|MENTIONED_IN|doc:pmid_34986285"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:melanoma",
@@ -5497,7 +5629,8 @@
           "evidence": "",
           "relation_id": "disease:melanoma|MENTIONED_IN|doc:pmid_35981087"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:melanoma",
@@ -5520,7 +5653,8 @@
           "evidence": "",
           "relation_id": "disease:melanoma|MENTIONED_IN|doc:pmid_40030000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:melanoma",
@@ -5543,7 +5677,8 @@
           "evidence": "",
           "relation_id": "disease:melanoma|MENTIONED_IN|doc:pmid_41109920"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:melanoma",
@@ -5566,7 +5701,8 @@
           "evidence": "",
           "relation_id": "disease:melanoma|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:checkmate_037",
@@ -5589,7 +5725,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:checkmate_037|MENTIONED_IN|doc:pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:checkmate_037",
@@ -5612,7 +5749,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:checkmate_037|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:immune_checkpoint_inhibition",
@@ -5635,7 +5773,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:immune_checkpoint_inhibition|MENTIONED_IN|doc:pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:immune_checkpoint_inhibition",
@@ -5658,7 +5797,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:immune_checkpoint_inhibition|MENTIONED_IN|doc:pmid_28889792"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:immune_checkpoint_inhibition",
@@ -5681,7 +5821,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:immune_checkpoint_inhibition|MENTIONED_IN|doc:pmid_30134131"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:immune_checkpoint_inhibition",
@@ -5704,7 +5845,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:immune_checkpoint_inhibition|MENTIONED_IN|doc:pmid_34986285"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:immune_checkpoint_inhibition",
@@ -5727,7 +5869,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:immune_checkpoint_inhibition|MENTIONED_IN|doc:pmid_35981087"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:immune_checkpoint_inhibition",
@@ -5750,7 +5893,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:immune_checkpoint_inhibition|MENTIONED_IN|doc:pmid_40030000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:increased_lipase",
@@ -5773,7 +5917,8 @@
           "evidence": "",
           "relation_id": "adverse_event:increased_lipase|MENTIONED_IN|doc:pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:increased_alanine_aminotransferase",
@@ -5796,7 +5941,8 @@
           "evidence": "",
           "relation_id": "adverse_event:increased_alanine_aminotransferase|MENTIONED_IN|doc:pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:anaemia",
@@ -5819,7 +5965,8 @@
           "evidence": "",
           "relation_id": "adverse_event:anaemia|MENTIONED_IN|doc:pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:fatigue",
@@ -5842,7 +5989,8 @@
           "evidence": "",
           "relation_id": "adverse_event:fatigue|MENTIONED_IN|doc:pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:fatigue",
@@ -5865,7 +6013,8 @@
           "evidence": "",
           "relation_id": "adverse_event:fatigue|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:neutropenia",
@@ -5888,7 +6037,8 @@
           "evidence": "",
           "relation_id": "adverse_event:neutropenia|MENTIONED_IN|doc:pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:thrombocytopenia",
@@ -5911,7 +6061,8 @@
           "evidence": "",
           "relation_id": "adverse_event:thrombocytopenia|MENTIONED_IN|doc:pmid_25795410"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:ctla4",
@@ -5934,7 +6085,8 @@
           "evidence": "",
           "relation_id": "gene:ctla4|MENTIONED_IN|doc:pmid_28889792"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:ctla4",
@@ -5957,7 +6109,8 @@
           "evidence": "ipilimumab at a dose of 3 mg per kilogram every 3 weeks",
           "relation_id": "gene:ctla4|ENCODES|protein:ctla_4|pmid_28889792"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:ctla4",
@@ -5980,7 +6133,8 @@
           "evidence": "",
           "relation_id": "gene:ctla4|MENTIONED_IN|doc:pmid_31562797"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:checkmate_067",
@@ -6003,7 +6157,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:checkmate_067|MENTIONED_IN|doc:pmid_28889792"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:checkmate_067",
@@ -6026,7 +6181,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:checkmate_067|MENTIONED_IN|doc:pmid_31562797"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:checkmate_067",
@@ -6049,7 +6205,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:checkmate_067|MENTIONED_IN|doc:pmid_34818112"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:checkmate_067",
@@ -6072,7 +6229,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:checkmate_067|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:treatment_related_adverse_events_grade_3_4",
@@ -6095,7 +6253,8 @@
           "evidence": "",
           "relation_id": "adverse_event:treatment_related_adverse_events_grade_3_4|MENTIONED_IN|doc:pmid_28889792"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:treatment_related_adverse_events_grade_3_4",
@@ -6118,7 +6277,8 @@
           "evidence": "",
           "relation_id": "adverse_event:treatment_related_adverse_events_grade_3_4|MENTIONED_IN|doc:pmid_30134131"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:treatment_related_adverse_events_grade_3_4",
@@ -6141,7 +6301,8 @@
           "evidence": "",
           "relation_id": "adverse_event:treatment_related_adverse_events_grade_3_4|MENTIONED_IN|doc:pmid_34986285"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:treatment_related_adverse_events_grade_3_4",
@@ -6164,7 +6325,8 @@
           "evidence": "",
           "relation_id": "adverse_event:treatment_related_adverse_events_grade_3_4|MENTIONED_IN|doc:pmid_38723227"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:overall_survival",
@@ -6187,7 +6349,8 @@
           "evidence": "",
           "relation_id": "biomarker:overall_survival|MENTIONED_IN|doc:pmid_28889792"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:overall_survival",
@@ -6210,7 +6373,8 @@
           "evidence": "The overall survival rate at 3 years was 58% in the nivolumab-plus-ipilimumab group and 52% in the nivolumab group, as compared with 34% in the ipilimumab group",
           "relation_id": "biomarker:overall_survival|PREDICTS_RESPONSE_TO|compound:nivolumab|pmid_28889792"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:overall_survival",
@@ -6233,7 +6397,8 @@
           "evidence": "",
           "relation_id": "biomarker:overall_survival|MENTIONED_IN|doc:pmid_31562797"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:overall_survival",
@@ -6256,7 +6421,8 @@
           "evidence": "the median overall survival was more than 60.0 months in the nivolumab-plus-ipilimumab group and 36.9 months in the nivolumab group, as compared with 19.9 months in the ipilimumab group",
           "relation_id": "biomarker:overall_survival|DIAGNOSTIC_FOR|disease:melanoma|pmid_31562797"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:progression_free_survival",
@@ -6279,7 +6445,8 @@
           "evidence": "",
           "relation_id": "biomarker:progression_free_survival|MENTIONED_IN|doc:pmid_28889792"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:progression_free_survival",
@@ -6302,7 +6469,8 @@
           "evidence": "",
           "relation_id": "biomarker:progression_free_survival|MENTIONED_IN|doc:pmid_31562797"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:progression_free_survival",
@@ -6325,7 +6493,8 @@
           "evidence": "Nivolumab plus ipilimumab or nivolumab alone resulted in longer progression-free and overall survival than ipilimumab alone",
           "relation_id": "biomarker:progression_free_survival|DIAGNOSTIC_FOR|disease:melanoma|pmid_31562797"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:progression_free_survival",
@@ -6348,7 +6517,8 @@
           "evidence": "",
           "relation_id": "biomarker:progression_free_survival|MENTIONED_IN|doc:pmid_40030000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:brain_metastases",
@@ -6371,7 +6541,8 @@
           "evidence": "",
           "relation_id": "disease:brain_metastases|MENTIONED_IN|doc:pmid_30134131"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:checkmate_204",
@@ -6394,7 +6565,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:checkmate_204|MENTIONED_IN|doc:pmid_30134131"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:immune_related_myocarditis",
@@ -6417,7 +6589,8 @@
           "evidence": "",
           "relation_id": "adverse_event:immune_related_myocarditis|MENTIONED_IN|doc:pmid_30134131"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:central_nervous_system_adverse_events",
@@ -6440,7 +6613,8 @@
           "evidence": "",
           "relation_id": "adverse_event:central_nervous_system_adverse_events|MENTIONED_IN|doc:pmid_30134131"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:hepatocellular_carcinoma",
@@ -6463,7 +6637,8 @@
           "evidence": "",
           "relation_id": "disease:hepatocellular_carcinoma|MENTIONED_IN|doc:pmid_34359884"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:hepatocellular_carcinoma",
@@ -6486,7 +6661,8 @@
           "evidence": "",
           "relation_id": "disease:hepatocellular_carcinoma|MENTIONED_IN|doc:pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:hepatocellular_carcinoma",
@@ -6509,7 +6685,8 @@
           "evidence": "",
           "relation_id": "disease:hepatocellular_carcinoma|MENTIONED_IN|doc:pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:hif",
@@ -6532,7 +6709,8 @@
           "evidence": "",
           "relation_id": "protein:hif|MENTIONED_IN|doc:pmid_34359884"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:hif",
@@ -6555,7 +6733,8 @@
           "evidence": "hypoxia-inducible factor (HIF)-mediated metabolic reprogramming in drug resistance in HCC",
           "relation_id": "protein:hif|PARTICIPATES_IN|pathway:metabolic_reprogramming|pmid_34359884"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:hypoxia",
@@ -6578,7 +6757,8 @@
           "evidence": "",
           "relation_id": "phenotype:hypoxia|MENTIONED_IN|doc:pmid_34359884"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:hypoxia",
@@ -6601,7 +6781,8 @@
           "evidence": "Hypoxia, low oxygen (O2) level, is a hallmark of solid cancers, especially hepatocellular carcinoma (HCC)",
           "relation_id": "phenotype:hypoxia|IMPLICATED_IN|disease:hepatocellular_carcinoma|pmid_34359884"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:hypoxia",
@@ -6624,7 +6805,8 @@
           "evidence": "Hypoxia contributes to drug resistance in cancer through various molecular mechanisms",
           "relation_id": "phenotype:hypoxia|IMPLICATED_IN|phenotype:drug_resistance|pmid_34359884"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:drug_resistance",
@@ -6647,7 +6829,8 @@
           "evidence": "",
           "relation_id": "phenotype:drug_resistance|MENTIONED_IN|doc:pmid_34359884"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:drug_resistance",
@@ -6670,7 +6853,8 @@
           "evidence": "Acquisition of drug resistance is the major cause of unsatisfactory clinical outcomes of existing HCC treatments",
           "relation_id": "phenotype:drug_resistance|IMPLICATED_IN|disease:hepatocellular_carcinoma|pmid_34359884"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:metabolic_reprogramming",
@@ -6693,7 +6877,8 @@
           "evidence": "",
           "relation_id": "pathway:metabolic_reprogramming|MENTIONED_IN|doc:pmid_34359884"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:metabolic_reprogramming",
@@ -6716,7 +6901,8 @@
           "evidence": "HIF-mediated metabolic reprogramming in drug resistance in HCC",
           "relation_id": "pathway:metabolic_reprogramming|IMPLICATED_IN|phenotype:drug_resistance|pmid_34359884"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pdcd1",
@@ -6739,7 +6925,8 @@
           "evidence": "",
           "relation_id": "protein:pdcd1|MENTIONED_IN|doc:pmid_34715028"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:clear_cell_renal_cell_carcinoma",
@@ -6762,7 +6949,8 @@
           "evidence": "",
           "relation_id": "disease:clear_cell_renal_cell_carcinoma|MENTIONED_IN|doc:pmid_34715028"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:adapter",
@@ -6785,7 +6973,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:adapter|MENTIONED_IN|doc:pmid_34715028"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:gzmk",
@@ -6808,7 +6997,8 @@
           "evidence": "",
           "relation_id": "gene:gzmk|MENTIONED_IN|doc:pmid_34715028"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:gzmk",
@@ -6831,7 +7021,8 @@
           "evidence": "nivolumab-bound CD8+ T cells are expanded and express GZMK/B",
           "relation_id": "gene:gzmk|IMPLICATED_IN|disease:clear_cell_renal_cell_carcinoma|pmid_34715028"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:gzmb",
@@ -6854,7 +7045,8 @@
           "evidence": "",
           "relation_id": "gene:gzmb|MENTIONED_IN|doc:pmid_34715028"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:gzmb",
@@ -6877,7 +7069,8 @@
           "evidence": "nivolumab-bound CD8+ T cells are expanded and express GZMK/B",
           "relation_id": "gene:gzmb|IMPLICATED_IN|disease:clear_cell_renal_cell_carcinoma|pmid_34715028"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:human_endogenous_retrovirus",
@@ -6900,7 +7093,8 @@
           "evidence": "",
           "relation_id": "biomarker:human_endogenous_retrovirus|MENTIONED_IN|doc:pmid_34715028"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:human_endogenous_retrovirus",
@@ -6923,7 +7117,8 @@
           "evidence": "ccRCC-specific human endogenous retrovirus expression indirectly correlates with clinical response",
           "relation_id": "biomarker:human_endogenous_retrovirus|PREDICTS_RESPONSE_TO|compound:nivolumab|pmid_34715028"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:human_endogenous_retrovirus",
@@ -6946,7 +7141,8 @@
           "evidence": "ccRCC-specific human endogenous retrovirus expression",
           "relation_id": "biomarker:human_endogenous_retrovirus|DIAGNOSTIC_FOR|disease:clear_cell_renal_cell_carcinoma|pmid_34715028"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:expanded_tcr_clones",
@@ -6969,7 +7165,8 @@
           "evidence": "",
           "relation_id": "biomarker:expanded_tcr_clones|MENTIONED_IN|doc:pmid_34715028"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:expanded_tcr_clones",
@@ -6992,7 +7189,8 @@
           "evidence": "TCR analysis reveals a significantly higher number of expanded TCR clones pre-treatment in responders suggesting pre-existing immunity",
           "relation_id": "biomarker:expanded_tcr_clones|PREDICTS_RESPONSE_TO|compound:nivolumab|pmid_34715028"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "cell_or_tissue:cd8_t_cells",
@@ -7015,7 +7213,8 @@
           "evidence": "",
           "relation_id": "cell_or_tissue:cd8_t_cells|MENTIONED_IN|doc:pmid_34715028"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:tcr_cluster_maintenance",
@@ -7038,7 +7237,8 @@
           "evidence": "",
           "relation_id": "biomarker:tcr_cluster_maintenance|MENTIONED_IN|doc:pmid_34715028"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:tcr_cluster_maintenance",
@@ -7061,7 +7261,8 @@
           "evidence": "Maintenance of highly similar clusters of TCRs post-treatment predict response, suggesting ongoing antigen engagement and survival of families of T cells",
           "relation_id": "biomarker:tcr_cluster_maintenance|PREDICTS_RESPONSE_TO|compound:nivolumab|pmid_34715028"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sorafenib",
@@ -7084,7 +7285,8 @@
           "evidence": "",
           "relation_id": "compound:sorafenib|MENTIONED_IN|doc:pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sorafenib",
@@ -7107,7 +7309,8 @@
           "evidence": "traditionally sorafenib or lenvatinib in the first line",
           "relation_id": "compound:sorafenib|INDICATED_FOR|disease:hepatocellular_carcinoma|pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:lenvatinib",
@@ -7130,7 +7333,8 @@
           "evidence": "",
           "relation_id": "compound:lenvatinib|MENTIONED_IN|doc:pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:lenvatinib",
@@ -7153,7 +7357,8 @@
           "evidence": "traditionally sorafenib or lenvatinib in the first line",
           "relation_id": "compound:lenvatinib|INDICATED_FOR|disease:hepatocellular_carcinoma|pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:regorafenib",
@@ -7176,7 +7381,8 @@
           "evidence": "",
           "relation_id": "compound:regorafenib|MENTIONED_IN|doc:pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:regorafenib",
@@ -7199,7 +7405,8 @@
           "evidence": "regorafenib, cabozantinib or ramucirumab in the second line",
           "relation_id": "compound:regorafenib|INDICATED_FOR|disease:hepatocellular_carcinoma|pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cabozantinib",
@@ -7222,7 +7429,8 @@
           "evidence": "",
           "relation_id": "compound:cabozantinib|MENTIONED_IN|doc:pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cabozantinib",
@@ -7252,7 +7460,8 @@
           "evidence": "neoadjuvant cabozantinib and nivolumab in advanced hepatocellular carcinoma",
           "relation_id": "compound:cabozantinib|INDICATED_FOR|disease:hepatocellular_carcinoma|pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cabozantinib",
@@ -7275,7 +7484,8 @@
           "evidence": "",
           "relation_id": "compound:cabozantinib|MENTIONED_IN|doc:pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cabozantinib",
@@ -7298,7 +7508,8 @@
           "evidence": "cabozantinib, a multi-tyrosine kinase inhibitor that primarily blocks VEGF",
           "relation_id": "compound:cabozantinib|INHIBITS|protein:vegf|pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cabozantinib",
@@ -7321,7 +7532,8 @@
           "evidence": "a prospective clinical trial of neoadjuvant cabozantinib...and nivolumab",
           "relation_id": "compound:cabozantinib|EVALUATED_IN|clinical_trial:nct_neoadjuvant_cabo_nivo_hcc_trial|pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:ramucirumab",
@@ -7344,7 +7556,8 @@
           "evidence": "",
           "relation_id": "compound:ramucirumab|MENTIONED_IN|doc:pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:ramucirumab",
@@ -7367,7 +7580,8 @@
           "evidence": "regorafenib, cabozantinib or ramucirumab in the second line",
           "relation_id": "compound:ramucirumab|INDICATED_FOR|disease:hepatocellular_carcinoma|pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:atezolizumab",
@@ -7390,7 +7604,8 @@
           "evidence": "",
           "relation_id": "compound:atezolizumab|MENTIONED_IN|doc:pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:atezolizumab",
@@ -7413,7 +7628,8 @@
           "evidence": "The combination of atezolizumab and bevacizumab has been shown to improve overall survival relative to sorafenib, resulting in FDA approval",
           "relation_id": "compound:atezolizumab|INDICATED_FOR|disease:hepatocellular_carcinoma|pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:atezolizumab",
@@ -7436,7 +7652,8 @@
           "evidence": "",
           "relation_id": "compound:atezolizumab|MENTIONED_IN|doc:pmid_35062949"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:atezolizumab",
@@ -7459,7 +7676,8 @@
           "evidence": "three \u03b1-PD-L1 antibodies",
           "relation_id": "compound:atezolizumab|INHIBITS|protein:pd_l1|pmid_35062949"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:bevacizumab",
@@ -7482,7 +7700,8 @@
           "evidence": "",
           "relation_id": "compound:bevacizumab|MENTIONED_IN|doc:pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:bevacizumab",
@@ -7505,7 +7724,8 @@
           "evidence": "The combination of atezolizumab and bevacizumab has been shown to improve overall survival relative to sorafenib, resulting in FDA approval",
           "relation_id": "compound:bevacizumab|INDICATED_FOR|disease:hepatocellular_carcinoma|pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:durvalumab",
@@ -7528,7 +7748,8 @@
           "evidence": "",
           "relation_id": "compound:durvalumab|MENTIONED_IN|doc:pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:durvalumab",
@@ -7551,7 +7772,8 @@
           "evidence": "durvalumab plus tremelimumab yielded superior overall survival versus sorafenib",
           "relation_id": "compound:durvalumab|INDICATED_FOR|disease:hepatocellular_carcinoma|pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:durvalumab",
@@ -7574,7 +7796,8 @@
           "evidence": "",
           "relation_id": "compound:durvalumab|MENTIONED_IN|doc:pmid_35062949"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:durvalumab",
@@ -7597,7 +7820,8 @@
           "evidence": "three \u03b1-PD-L1 antibodies",
           "relation_id": "compound:durvalumab|INHIBITS|protein:pd_l1|pmid_35062949"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tremelimumab",
@@ -7620,7 +7844,8 @@
           "evidence": "",
           "relation_id": "compound:tremelimumab|MENTIONED_IN|doc:pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:tremelimumab",
@@ -7643,7 +7868,8 @@
           "evidence": "durvalumab plus tremelimumab yielded superior overall survival versus sorafenib",
           "relation_id": "compound:tremelimumab|INDICATED_FOR|disease:hepatocellular_carcinoma|pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pembrolizumab",
@@ -7666,7 +7892,8 @@
           "evidence": "",
           "relation_id": "compound:pembrolizumab|MENTIONED_IN|doc:pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pembrolizumab",
@@ -7689,7 +7916,8 @@
           "evidence": "pembrolizumab monotherapy and the combination of nivolumab plus ipilimumab have received FDA Accelerated Approval in the second-line setting",
           "relation_id": "compound:pembrolizumab|INDICATED_FOR|disease:hepatocellular_carcinoma|pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pembrolizumab",
@@ -7712,7 +7940,8 @@
           "evidence": "",
           "relation_id": "compound:pembrolizumab|MENTIONED_IN|doc:pmid_35062949"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pembrolizumab",
@@ -7735,7 +7964,8 @@
           "evidence": "ten \u03b1-PD-1 antibodies",
           "relation_id": "compound:pembrolizumab|INHIBITS|protein:pd_1|pmid_35062949"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:pembrolizumab",
@@ -7758,7 +7988,8 @@
           "evidence": "approved for various types of cancers",
           "relation_id": "compound:pembrolizumab|INDICATED_FOR|disease:cancer|pmid_35062949"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:immune_checkpoint_inhibitor",
@@ -7781,7 +8012,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:immune_checkpoint_inhibitor|MENTIONED_IN|doc:pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "cell_or_tissue:tumor_immune_microenvironment",
@@ -7804,7 +8036,8 @@
           "evidence": "",
           "relation_id": "cell_or_tissue:tumor_immune_microenvironment|MENTIONED_IN|doc:pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "cell_or_tissue:tumor_immune_microenvironment",
@@ -7827,7 +8060,8 @@
           "evidence": "The immune microenvironment has crucial roles in the development and progression of HCC",
           "relation_id": "cell_or_tissue:tumor_immune_microenvironment|IMPLICATED_IN|disease:hepatocellular_carcinoma|pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:inflamed_hcc_class",
@@ -7856,7 +8090,8 @@
           "evidence": "",
           "relation_id": "phenotype:inflamed_hcc_class|MENTIONED_IN|doc:pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:inflamed_hcc_class",
@@ -7879,7 +8114,8 @@
           "evidence": "Inflamed and non-inflamed classes of HCC and genomic signatures have been associated with response to immune-checkpoint inhibitors",
           "relation_id": "phenotype:inflamed_hcc_class|PREDICTS_RESPONSE_TO|mechanism_of_action:immune_checkpoint_inhibitor|pmid_34764464"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:braf_mutation",
@@ -7902,7 +8138,8 @@
           "evidence": "",
           "relation_id": "biomarker:braf_mutation|MENTIONED_IN|doc:pmid_34818112"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:braf_mutation",
@@ -7925,7 +8162,8 @@
           "evidence": "6.5-year OS rates were 57%, 43%, and 25% in patients with BRAF-mutant tumors and 46%, 42%, and 22% in those with BRAF-wild-type tumors",
           "relation_id": "biomarker:braf_mutation|PREDICTS_RESPONSE_TO|compound:nivolumab|pmid_34818112"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:braf_mutation",
@@ -7948,7 +8186,8 @@
           "evidence": "BRAF-mutant tumors in patients with advanced melanoma",
           "relation_id": "biomarker:braf_mutation|DIAGNOSTIC_FOR|disease:melanoma|pmid_34818112"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:relatlimab",
@@ -7971,7 +8210,8 @@
           "evidence": "",
           "relation_id": "compound:relatlimab|MENTIONED_IN|doc:pmid_34986285"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:relatlimab",
@@ -8022,7 +8262,8 @@
           "evidence": "relatlimab targets LAG-3; reduced peripheral LAG-3+ T cells may explain the lack of added benefit",
           "relation_id": "compound:relatlimab|INHIBITS|protein:lag_3|pmid_41109920"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:relatlimab",
@@ -8045,7 +8286,8 @@
           "evidence": "relatlimab is a monoclonal antibody targeting LAG-3",
           "relation_id": "compound:relatlimab|BINDS_TO|protein:lag_3|pmid_41109920"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:relatlimab",
@@ -8082,7 +8324,8 @@
           "evidence": "dual PD-1 and LAG-3 inhibition is approved in advanced melanoma",
           "relation_id": "compound:relatlimab|INDICATED_FOR|disease:melanoma|pmid_40030000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:relatlimab",
@@ -8126,7 +8369,8 @@
           "evidence": "nivo+relatlimab vs nivo, melanoma",
           "relation_id": "compound:relatlimab|EVALUATED_IN|clinical_trial:relativity_047|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:relatlimab",
@@ -8156,7 +8400,8 @@
           "evidence": "Grade 3 or 4 TRAEs occurred in 69% and 61%, respectively",
           "relation_id": "compound:relatlimab|CAUSES|adverse_event:treatment_related_adverse_events_grade_3_4|pmid_38723227"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:relatlimab",
@@ -8200,7 +8445,8 @@
           "evidence": "RELATIVITY-047 (NCT03470922): Phase II/III, nivo+relatlimab ",
           "relation_id": "compound:relatlimab|HAS_SEQUENCE|peptide_sequence:peptide_10aa|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:relatlimab",
@@ -8223,7 +8469,8 @@
           "evidence": "",
           "relation_id": "compound:relatlimab|MENTIONED_IN|doc:pmid_35981087"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:relatlimab",
@@ -8246,7 +8493,8 @@
           "evidence": "combined blockade of LAG-3 and PD-1 resulted in enhanced antitumor activity",
           "relation_id": "compound:relatlimab|COMBINED_WITH|compound:nivolumab|pmid_35981087"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:relatlimab",
@@ -8269,7 +8517,8 @@
           "evidence": "",
           "relation_id": "compound:relatlimab|MENTIONED_IN|doc:pmid_38723227"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:relatlimab",
@@ -8292,7 +8541,8 @@
           "evidence": "relatlimab (LAG-3-blocking antibody)",
           "relation_id": "compound:relatlimab|HAS_MECHANISM|mechanism_of_action:lag_3_immune_checkpoint_blockade|pmid_38723227"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:relatlimab",
@@ -8315,7 +8565,8 @@
           "evidence": "first-line nivolumab (PD-1-blocking antibody) plus relatlimab (LAG-3-blocking antibody) plus chemotherapy",
           "relation_id": "compound:relatlimab|EVALUATED_IN|clinical_trial:relativity_060|pmid_38723227"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:relatlimab",
@@ -8338,7 +8589,8 @@
           "evidence": "",
           "relation_id": "compound:relatlimab|MENTIONED_IN|doc:pmid_40030000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:relatlimab",
@@ -8361,7 +8613,8 @@
           "evidence": "multicenter phase 1/2a open-label study of relatlimab (RELATIVITY-022)",
           "relation_id": "compound:relatlimab|EVALUATED_IN|clinical_trial:relativity_022|pmid_40030000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:relatlimab",
@@ -8384,7 +8637,8 @@
           "evidence": "Nivolumab plus relatlimab for patients with relapsed or progressed B-cell malignancies",
           "relation_id": "compound:relatlimab|EVALUATED_IN|disease:b_cell_malignancies|pmid_40030000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:relatlimab",
@@ -8407,7 +8661,8 @@
           "evidence": "In DLBCL, ORR was 7% (n=15) and median PFS was 2 months",
           "relation_id": "compound:relatlimab|EVALUATED_IN|disease:diffuse_large_b_cell_lymphoma|pmid_40030000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:relatlimab",
@@ -8430,7 +8685,8 @@
           "evidence": "",
           "relation_id": "compound:relatlimab|MENTIONED_IN|doc:pmid_41109920"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:relatlimab",
@@ -8453,7 +8709,8 @@
           "evidence": "Based on RELATIVITY-047, nivolumab plus relatlimab is approved for advanced melanoma",
           "relation_id": "compound:relatlimab|INDICATED_FOR|disease:advanced_melanoma|pmid_41109920"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:relatlimab",
@@ -8476,7 +8733,8 @@
           "evidence": "the phase 3 RELATIVITY-098 trial compared adjuvant nivolumab plus relatlimab to nivolumab after complete resection of stage III/IV melanoma",
           "relation_id": "compound:relatlimab|EVALUATED_IN|clinical_trial:relativity_098|pmid_41109920"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:relatlimab",
@@ -8499,7 +8757,8 @@
           "evidence": "",
           "relation_id": "compound:relatlimab|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:lag3",
@@ -8522,7 +8781,8 @@
           "evidence": "",
           "relation_id": "gene:lag3|MENTIONED_IN|doc:pmid_34986285"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:lag3",
@@ -8573,7 +8833,8 @@
           "evidence": "LAG-3 protein encoded by LAG3 gene",
           "relation_id": "gene:lag3|ENCODES|protein:lag_3|pmid_41109920"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:lag3",
@@ -8596,7 +8857,8 @@
           "evidence": "",
           "relation_id": "gene:lag3|MENTIONED_IN|doc:pmid_35981087"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:lag3",
@@ -8619,7 +8881,8 @@
           "evidence": "",
           "relation_id": "gene:lag3|MENTIONED_IN|doc:pmid_38723227"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:lag3",
@@ -8642,7 +8905,8 @@
           "evidence": "",
           "relation_id": "gene:lag3|MENTIONED_IN|doc:pmid_40030000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:lag3",
@@ -8665,7 +8929,8 @@
           "evidence": "",
           "relation_id": "gene:lag3|MENTIONED_IN|doc:pmid_41109920"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:lag_3",
@@ -8688,7 +8953,8 @@
           "evidence": "",
           "relation_id": "protein:lag_3|MENTIONED_IN|doc:pmid_34986285"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:lag_3",
@@ -8711,7 +8977,8 @@
           "evidence": "LAG-3 and programmed death 1 (PD-1) are distinct inhibitory immune checkpoints that contribute to T-cell exhaustion",
           "relation_id": "protein:lag_3|IMPLICATED_IN|phenotype:t_cell_exhaustion|pmid_34986285"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:lag_3",
@@ -8734,7 +9001,8 @@
           "evidence": "",
           "relation_id": "protein:lag_3|MENTIONED_IN|doc:pmid_35981087"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:lag_3",
@@ -8757,7 +9025,8 @@
           "evidence": "block the interaction of LAG-3 with the ligands MHC II",
           "relation_id": "protein:lag_3|BINDS_TO|protein:mhc_ii|pmid_35981087"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:lag_3",
@@ -8780,7 +9049,8 @@
           "evidence": "block the interaction of LAG-3 with the ligands MHC II and fibrinogen-like protein-1",
           "relation_id": "protein:lag_3|BINDS_TO|protein:fibrinogen_like_protein_1|pmid_35981087"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:lag_3",
@@ -8803,7 +9073,8 @@
           "evidence": "LAG-3 is an immune-checkpoint molecule that inhibits T-cell activity",
           "relation_id": "protein:lag_3|IMPLICATED_IN|phenotype:t_cell_inhibition|pmid_35981087"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:lag_3",
@@ -8826,7 +9097,8 @@
           "evidence": "",
           "relation_id": "protein:lag_3|MENTIONED_IN|doc:pmid_38723227"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:lag_3",
@@ -8849,7 +9121,8 @@
           "evidence": "",
           "relation_id": "protein:lag_3|MENTIONED_IN|doc:pmid_40030000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:lag_3",
@@ -8872,7 +9145,8 @@
           "evidence": "LAG-3 represents another immune checkpoint that can be targeted",
           "relation_id": "protein:lag_3|PARTICIPATES_IN|pathway:lag_3_signaling_pathway|pmid_40030000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:lag_3",
@@ -8895,7 +9169,8 @@
           "evidence": "",
           "relation_id": "protein:lag_3|MENTIONED_IN|doc:pmid_41109920"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:relativity_047",
@@ -8918,7 +9193,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:relativity_047|MENTIONED_IN|doc:pmid_34986285"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:relativity_047",
@@ -8941,7 +9217,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:relativity_047|MENTIONED_IN|doc:pmid_35981087"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:relativity_047",
@@ -8964,7 +9241,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:relativity_047|MENTIONED_IN|doc:pmid_41109920"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:relativity_047",
@@ -8987,7 +9265,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:relativity_047|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:t_cell_exhaustion",
@@ -9010,7 +9289,8 @@
           "evidence": "",
           "relation_id": "phenotype:t_cell_exhaustion|MENTIONED_IN|doc:pmid_34986285"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:t_cell_exhaustion",
@@ -9033,7 +9313,8 @@
           "evidence": "",
           "relation_id": "phenotype:t_cell_exhaustion|MENTIONED_IN|doc:pmid_35062949"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:t_cell_exhaustion",
@@ -9056,7 +9337,8 @@
           "evidence": "rescue T cells from exhausted status and revive immune response against cancer cells",
           "relation_id": "phenotype:t_cell_exhaustion|IMPLICATED_IN|disease:cancer|pmid_35062949"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "peptide_sequence:peptide_10aa",
@@ -9079,7 +9361,8 @@
           "evidence": "",
           "relation_id": "peptide_sequence:peptide_10aa|MENTIONED_IN|doc:pmid_34986285"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "peptide_sequence:peptide_10aa",
@@ -9102,7 +9385,8 @@
           "evidence": "",
           "relation_id": "peptide_sequence:peptide_10aa|MENTIONED_IN|doc:pmid_35981087"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "peptide_sequence:peptide_10aa",
@@ -9125,7 +9409,8 @@
           "evidence": "",
           "relation_id": "peptide_sequence:peptide_10aa|MENTIONED_IN|doc:pmid_38723227"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "peptide_sequence:peptide_10aa",
@@ -9148,7 +9433,8 @@
           "evidence": "",
           "relation_id": "peptide_sequence:peptide_10aa|MENTIONED_IN|doc:pmid_40030000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "peptide_sequence:peptide_10aa",
@@ -9171,7 +9457,8 @@
           "evidence": "",
           "relation_id": "peptide_sequence:peptide_10aa|MENTIONED_IN|doc:pmid_41109920"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "peptide_sequence:peptide_10aa",
@@ -9194,7 +9481,8 @@
           "evidence": "",
           "relation_id": "peptide_sequence:peptide_10aa|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cemiplimab",
@@ -9217,7 +9505,8 @@
           "evidence": "",
           "relation_id": "compound:cemiplimab|MENTIONED_IN|doc:pmid_35062949"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cemiplimab",
@@ -9240,7 +9529,8 @@
           "evidence": "ten \u03b1-PD-1 antibodies",
           "relation_id": "compound:cemiplimab|INHIBITS|protein:pd_1|pmid_35062949"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:avelumab",
@@ -9263,7 +9553,8 @@
           "evidence": "",
           "relation_id": "compound:avelumab|MENTIONED_IN|doc:pmid_35062949"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:avelumab",
@@ -9286,7 +9577,8 @@
           "evidence": "three \u03b1-PD-L1 antibodies",
           "relation_id": "compound:avelumab|INHIBITS|protein:pd_l1|pmid_35062949"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pd_l1",
@@ -9309,7 +9601,8 @@
           "evidence": "",
           "relation_id": "protein:pd_l1|MENTIONED_IN|doc:pmid_35062949"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pd_l1",
@@ -9332,7 +9625,8 @@
           "evidence": "PD-1/PD-L1 pathway",
           "relation_id": "protein:pd_l1|PARTICIPATES_IN|pathway:pd_1_pd_l1_signaling_pathway|pmid_35062949"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pd_l1",
@@ -9355,7 +9649,8 @@
           "evidence": "",
           "relation_id": "protein:pd_l1|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pd_l1",
@@ -9378,7 +9673,8 @@
           "evidence": "Binding of PD-L1 (CD274) or PD-L2 (PDCD1LG2) to PD-1 delivers inhibitory signals",
           "relation_id": "protein:pd_l1|BINDS_TO|protein:pd_1|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:cd274",
@@ -9401,7 +9697,8 @@
           "evidence": "",
           "relation_id": "gene:cd274|MENTIONED_IN|doc:pmid_35062949"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:cd274",
@@ -9424,7 +9721,8 @@
           "evidence": "inferred",
           "relation_id": "gene:cd274|ENCODES|protein:pd_l1|pmid_35062949"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:cancer",
@@ -9447,7 +9745,8 @@
           "evidence": "",
           "relation_id": "disease:cancer|MENTIONED_IN|doc:pmid_35062949"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:pd_1_pd_l1_signaling_pathway",
@@ -9470,7 +9769,8 @@
           "evidence": "",
           "relation_id": "pathway:pd_1_pd_l1_signaling_pathway|MENTIONED_IN|doc:pmid_35062949"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:mhc_ii",
@@ -9493,7 +9793,8 @@
           "evidence": "",
           "relation_id": "protein:mhc_ii|MENTIONED_IN|doc:pmid_35981087"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:fibrinogen_like_protein_1",
@@ -9516,7 +9817,8 @@
           "evidence": "",
           "relation_id": "protein:fibrinogen_like_protein_1|MENTIONED_IN|doc:pmid_35981087"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:t_cell_inhibition",
@@ -9539,7 +9841,8 @@
           "evidence": "",
           "relation_id": "phenotype:t_cell_inhibition|MENTIONED_IN|doc:pmid_35981087"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:vegf",
@@ -9562,7 +9865,8 @@
           "evidence": "",
           "relation_id": "protein:vegf|MENTIONED_IN|doc:pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:pax5",
@@ -9585,7 +9889,8 @@
           "evidence": "",
           "relation_id": "gene:pax5|MENTIONED_IN|doc:pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:pax5",
@@ -9608,7 +9913,8 @@
           "evidence": "activation of the PAX5 module, a known regulator of B cell maturation",
           "relation_id": "gene:pax5|PARTICIPATES_IN|pathway:b_cell_maturation|pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:b_cell_maturation",
@@ -9631,7 +9937,8 @@
           "evidence": "",
           "relation_id": "pathway:b_cell_maturation|MENTIONED_IN|doc:pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:immune_escape",
@@ -9654,7 +9961,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:immune_escape|MENTIONED_IN|doc:pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "cell_or_tissue:cancer_associated_fibroblasts",
@@ -9677,7 +9985,8 @@
           "evidence": "",
           "relation_id": "cell_or_tissue:cancer_associated_fibroblasts|MENTIONED_IN|doc:pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "cell_or_tissue:cancer_associated_fibroblasts",
@@ -9700,7 +10009,8 @@
           "evidence": "TME of responding tumors was enriched for immune cells and cancer-associated fibroblasts (CAF) with pro-inflammatory signaling",
           "relation_id": "cell_or_tissue:cancer_associated_fibroblasts|IMPLICATED_IN|phenotype:pathologic_response|pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "cell_or_tissue:cancer_stem_cells",
@@ -9723,7 +10033,8 @@
           "evidence": "",
           "relation_id": "cell_or_tissue:cancer_stem_cells|MENTIONED_IN|doc:pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "cell_or_tissue:cancer_stem_cells",
@@ -9746,7 +10057,8 @@
           "evidence": "expression of cancer stem cell markers, potentially mediating immune escape and recurrence",
           "relation_id": "cell_or_tissue:cancer_stem_cells|IMPLICATED_IN|phenotype:disease_recurrence|pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "hypothesized"
     },
     {
       "source": "biomarker:b_cell_markers",
@@ -9769,7 +10081,8 @@
           "evidence": "",
           "relation_id": "biomarker:b_cell_markers|MENTIONED_IN|doc:pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:b_cell_markers",
@@ -9792,7 +10105,8 @@
           "evidence": "enriched cancer-immune interactions in responding tumors are characterized by...increased B cell marker expression",
           "relation_id": "biomarker:b_cell_markers|PREDICTS_RESPONSE_TO|compound:nivolumab|pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:cancer_stem_cell_markers",
@@ -9815,7 +10129,8 @@
           "evidence": "",
           "relation_id": "biomarker:cancer_stem_cell_markers|MENTIONED_IN|doc:pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:cancer_stem_cell_markers",
@@ -9838,7 +10153,8 @@
           "evidence": "expression of cancer stem cell markers, potentially mediating immune escape and recurrence",
           "relation_id": "biomarker:cancer_stem_cell_markers|IMPLICATED_IN|mechanism_of_action:immune_escape|pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "hypothesized"
     },
     {
       "source": "phenotype:disease_recurrence",
@@ -9861,7 +10177,8 @@
           "evidence": "",
           "relation_id": "phenotype:disease_recurrence|MENTIONED_IN|doc:pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:pathologic_response",
@@ -9884,7 +10201,8 @@
           "evidence": "",
           "relation_id": "phenotype:pathologic_response|MENTIONED_IN|doc:pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:tumor_heterogeneity",
@@ -9907,7 +10225,8 @@
           "evidence": "",
           "relation_id": "phenotype:tumor_heterogeneity|MENTIONED_IN|doc:pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:tumor_heterogeneity",
@@ -9930,7 +10249,8 @@
           "evidence": "ST analysis of this clinical outlier demonstrated marked tumor heterogeneity, with a distinctive immune-poor tumor region...potentially mediating immune escape and recurrence",
           "relation_id": "phenotype:tumor_heterogeneity|DIAGNOSTIC_FOR|phenotype:disease_recurrence|pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "hypothesized"
     },
     {
       "source": "clinical_trial:nct_neoadjuvant_cabo_nivo_hcc_trial",
@@ -9953,7 +10273,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:nct_neoadjuvant_cabo_nivo_hcc_trial|MENTIONED_IN|doc:pmid_37723590"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:gastric_adenocarcinoma",
@@ -9976,7 +10297,8 @@
           "evidence": "",
           "relation_id": "disease:gastric_adenocarcinoma|MENTIONED_IN|doc:pmid_38723227"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:gastroesophageal_junction_adenocarcinoma",
@@ -9999,7 +10321,8 @@
           "evidence": "",
           "relation_id": "disease:gastroesophageal_junction_adenocarcinoma|MENTIONED_IN|doc:pmid_38723227"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:relativity_060",
@@ -10022,7 +10345,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:relativity_060|MENTIONED_IN|doc:pmid_38723227"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:lag_3_expression",
@@ -10045,7 +10369,8 @@
           "evidence": "",
           "relation_id": "biomarker:lag_3_expression|MENTIONED_IN|doc:pmid_38723227"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:lag_3_expression",
@@ -10068,7 +10393,8 @@
           "evidence": "objective response rate (ORR) in patients whose tumors had LAG-3 expression >=1%",
           "relation_id": "biomarker:lag_3_expression|PREDICTS_RESPONSE_TO|compound:relatlimab|pmid_38723227"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:pd_1_immune_checkpoint_blockade",
@@ -10091,7 +10417,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:pd_1_immune_checkpoint_blockade|MENTIONED_IN|doc:pmid_38723227"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:lag_3_immune_checkpoint_blockade",
@@ -10114,7 +10441,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:lag_3_immune_checkpoint_blockade|MENTIONED_IN|doc:pmid_38723227"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:hodgkin_lymphoma",
@@ -10137,7 +10465,8 @@
           "evidence": "",
           "relation_id": "disease:hodgkin_lymphoma|MENTIONED_IN|doc:pmid_40030000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:diffuse_large_b_cell_lymphoma",
@@ -10160,7 +10489,8 @@
           "evidence": "",
           "relation_id": "disease:diffuse_large_b_cell_lymphoma|MENTIONED_IN|doc:pmid_40030000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:b_cell_malignancies",
@@ -10183,7 +10513,8 @@
           "evidence": "",
           "relation_id": "disease:b_cell_malignancies|MENTIONED_IN|doc:pmid_40030000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:relativity_022",
@@ -10206,7 +10537,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:relativity_022|MENTIONED_IN|doc:pmid_40030000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:pd_1_signaling_pathway",
@@ -10229,7 +10561,8 @@
           "evidence": "",
           "relation_id": "pathway:pd_1_signaling_pathway|MENTIONED_IN|doc:pmid_40030000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:lag_3_signaling_pathway",
@@ -10252,7 +10585,8 @@
           "evidence": "",
           "relation_id": "pathway:lag_3_signaling_pathway|MENTIONED_IN|doc:pmid_40030000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:advanced_melanoma",
@@ -10275,7 +10609,8 @@
           "evidence": "",
           "relation_id": "disease:advanced_melanoma|MENTIONED_IN|doc:pmid_41109920"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:relativity_098",
@@ -10298,7 +10633,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:relativity_098|MENTIONED_IN|doc:pmid_41109920"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:lag_3_t_cells",
@@ -10321,7 +10657,8 @@
           "evidence": "",
           "relation_id": "biomarker:lag_3_t_cells|MENTIONED_IN|doc:pmid_41109920"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:lag_3_t_cells",
@@ -10344,7 +10681,8 @@
           "evidence": "lower circulating LAG-3+ T cells in the adjuvant setting versus advanced melanoma, where LAG-3+ T cells were enriched in tumor versus blood. The absence of macroscopic tumor and reduced peripheral LAG-3+ T cells may explain the lack of added benefit",
           "relation_id": "biomarker:lag_3_t_cells|PREDICTS_RESPONSE_TO|compound:relatlimab|pmid_41109920"
         }
-      ]
+      ],
+      "epistemic_status": "negative"
     },
     {
       "source": "biomarker:lag_3_t_cells",
@@ -10367,7 +10705,8 @@
           "evidence": "LAG-3+ T cells were enriched in tumor versus blood",
           "relation_id": "biomarker:lag_3_t_cells|DIAGNOSTIC_FOR|disease:advanced_melanoma|pmid_41109920"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pd_l2",
@@ -10390,7 +10729,8 @@
           "evidence": "",
           "relation_id": "protein:pd_l2|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pd_l2",
@@ -10413,7 +10753,8 @@
           "evidence": "Binding of PD-L1 (CD274) or PD-L2 (PDCD1LG2) to PD-1 delivers inhibitory signals",
           "relation_id": "protein:pd_l2|BINDS_TO|protein:pd_1|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:non_small_cell_lung_cancer",
@@ -10436,7 +10777,8 @@
           "evidence": "",
           "relation_id": "disease:non_small_cell_lung_cancer|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:pd_1_pd_l1_checkpoint_pathway",
@@ -10459,7 +10801,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:pd_1_pd_l1_checkpoint_pathway|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:checkmate_227",
@@ -10482,7 +10825,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:checkmate_227|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:pd_l1_expression",
@@ -10505,7 +10849,8 @@
           "evidence": "",
           "relation_id": "biomarker:pd_l1_expression|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:pd_l1_expression",
@@ -10528,7 +10873,8 @@
           "evidence": "PD-L1 expression (TPS >= 1% or >= 50%): predictive of nivolumab response",
           "relation_id": "biomarker:pd_l1_expression|PREDICTS_RESPONSE_TO|compound:nivolumab|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:tmb_high",
@@ -10551,7 +10897,8 @@
           "evidence": "",
           "relation_id": "biomarker:tmb_high|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:tmb_high",
@@ -10574,7 +10921,8 @@
           "evidence": "TMB-high (>= 10 mut/Mb): associated with improved response across tumor types",
           "relation_id": "biomarker:tmb_high|PREDICTS_RESPONSE_TO|compound:nivolumab|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:msi_h_dmmr",
@@ -10597,7 +10945,8 @@
           "evidence": "",
           "relation_id": "biomarker:msi_h_dmmr|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:msi_h_dmmr",
@@ -10620,7 +10969,8 @@
           "evidence": "MSI-H/dMMR: FDA-approved biomarker for nivolumab in certain settings",
           "relation_id": "biomarker:msi_h_dmmr|PREDICTS_RESPONSE_TO|compound:nivolumab|structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:rash",
@@ -10643,7 +10993,8 @@
           "evidence": "",
           "relation_id": "adverse_event:rash|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:pruritus",
@@ -10666,7 +11017,8 @@
           "evidence": "",
           "relation_id": "adverse_event:pruritus|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:diarrhea",
@@ -10689,7 +11041,8 @@
           "evidence": "",
           "relation_id": "adverse_event:diarrhea|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:immune_mediated_pneumonitis",
@@ -10712,7 +11065,8 @@
           "evidence": "",
           "relation_id": "adverse_event:immune_mediated_pneumonitis|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:immune_mediated_colitis",
@@ -10735,7 +11089,8 @@
           "evidence": "",
           "relation_id": "adverse_event:immune_mediated_colitis|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:immune_mediated_hepatitis",
@@ -10758,7 +11113,8 @@
           "evidence": "",
           "relation_id": "adverse_event:immune_mediated_hepatitis|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:immune_mediated_nephritis",
@@ -10781,7 +11137,8 @@
           "evidence": "",
           "relation_id": "adverse_event:immune_mediated_nephritis|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:hypothyroidism",
@@ -10804,7 +11161,8 @@
           "evidence": "",
           "relation_id": "adverse_event:hypothyroidism|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:hyperthyroidism",
@@ -10827,7 +11185,8 @@
           "evidence": "",
           "relation_id": "adverse_event:hyperthyroidism|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "peptide_sequence:peptide_113aa",
@@ -10850,7 +11209,8 @@
           "evidence": "",
           "relation_id": "peptide_sequence:peptide_113aa|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "peptide_sequence:peptide_107aa",
@@ -10873,7 +11233,8 @@
           "evidence": "",
           "relation_id": "peptide_sequence:peptide_107aa|MENTIONED_IN|doc:structural_nivolumab_sequence"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     }
   ]
 }

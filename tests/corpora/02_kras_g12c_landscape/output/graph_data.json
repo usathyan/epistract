@@ -1633,7 +1633,8 @@
           "evidence": "",
           "relation_id": "compound:adagrasib|MENTIONED_IN|doc:pmid_31658955"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -1726,7 +1727,8 @@
           "evidence": "KRAS-G12C inhibitors in colorectal cancer",
           "relation_id": "compound:adagrasib|INHIBITS|sequence_variant:kras_g12c|pmid_40116975"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -1749,7 +1751,8 @@
           "evidence": "selectively modifies mutant cysteine 12 in GDP-bound KRASG12C",
           "relation_id": "compound:adagrasib|BINDS_TO|sequence_variant:kras_g12c|pmid_31658955"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -1779,7 +1782,8 @@
           "evidence": "irreversible covalent inhibitors with improved potency, selectivity and bioavailability",
           "relation_id": "compound:adagrasib|HAS_MECHANISM|mechanism_of_action:covalent_inhibition_of_kras_g12c|pmid_34607583"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -1844,7 +1848,8 @@
           "evidence": "KRASG12C inhibitors sotorasib and adagrasib approved for KRASG12C-mutant NSCLC",
           "relation_id": "compound:adagrasib|INDICATED_FOR|disease:non_small_cell_lung_cancer|pmid_39725152"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -1881,7 +1886,8 @@
           "evidence": "Adagrasib+cetuximab: ORR 42% in CRC",
           "relation_id": "compound:adagrasib|INDICATED_FOR|disease:colorectal_cancer|pmid_40116975"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -1904,7 +1910,8 @@
           "evidence": "",
           "relation_id": "compound:adagrasib|MENTIONED_IN|doc:pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -1927,7 +1934,8 @@
           "evidence": "Funded by Mirati Therapeutics; NCT03785249",
           "relation_id": "compound:adagrasib|EVALUATED_IN|clinical_trial:nct03785249|pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -1950,7 +1958,8 @@
           "evidence": "",
           "relation_id": "compound:adagrasib|MENTIONED_IN|doc:pmid_34607583"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -1973,7 +1982,8 @@
           "evidence": "KRAS-G12C variant contains a druggable pocket below the switch-II loop region",
           "relation_id": "compound:adagrasib|BINDS_TO|protein_domain:switch_ii_loop_region|pmid_34607583"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -1996,7 +2006,8 @@
           "evidence": "",
           "relation_id": "compound:adagrasib|MENTIONED_IN|doc:pmid_34953682"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -2019,7 +2030,8 @@
           "evidence": "",
           "relation_id": "compound:adagrasib|MENTIONED_IN|doc:pmid_35658005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -2042,7 +2054,8 @@
           "evidence": "irreversibly and selectively binds KRASG12C",
           "relation_id": "compound:adagrasib|BINDS_TO|protein:kras_protein|pmid_35658005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -2065,7 +2078,8 @@
           "evidence": "irreversibly and selectively binds KRASG12C, locking it in its inactive state",
           "relation_id": "compound:adagrasib|HAS_MECHANISM|mechanism_of_action:covalent_irreversible_inhibition_of_kras_g12c|pmid_35658005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -2095,7 +2109,8 @@
           "evidence": "Adagrasib gained FDA accelerated approval based on KRYSTAL-1: response rate 43%",
           "relation_id": "compound:adagrasib|EVALUATED_IN|clinical_trial:krystal_1|pmid_37101895"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -2118,7 +2133,8 @@
           "evidence": "Treatment-related AEs in 97.4%",
           "relation_id": "compound:adagrasib|CAUSES|adverse_event:diarrhoea|pmid_35658005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -2141,7 +2157,8 @@
           "evidence": "",
           "relation_id": "compound:adagrasib|MENTIONED_IN|doc:pmid_35837349"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -2164,7 +2181,8 @@
           "evidence": "Combination therapy trials with EGFR inhibitors are currently underway",
           "relation_id": "compound:adagrasib|COMBINED_WITH|compound:egfr_inhibitors|pmid_35837349"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -2187,7 +2205,8 @@
           "evidence": "",
           "relation_id": "compound:adagrasib|MENTIONED_IN|doc:pmid_37101895"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -2210,7 +2229,8 @@
           "evidence": "Adagrasib gained FDA accelerated approval based on KRYSTAL-1",
           "relation_id": "compound:adagrasib|INHIBITS|biomarker:kras_g12c|pmid_37101895"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -2233,7 +2253,8 @@
           "evidence": "Adagrasib gained FDA accelerated approval based on KRYSTAL-1",
           "relation_id": "compound:adagrasib|ASSOCIATED_WITH|regulatory_action:fda_accelerated_approval_of_adagrasib|pmid_37101895"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -2256,7 +2277,8 @@
           "evidence": "",
           "relation_id": "compound:adagrasib|MENTIONED_IN|doc:pmid_38625662"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -2279,7 +2301,8 @@
           "evidence": "combination strategies including immune checkpoint inhibitors are being studied",
           "relation_id": "compound:adagrasib|COMBINED_WITH|compound:immune_checkpoint_inhibitors|pmid_38625662"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -2302,7 +2325,8 @@
           "evidence": "",
           "relation_id": "compound:adagrasib|MENTIONED_IN|doc:pmid_39215000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -2325,7 +2349,8 @@
           "evidence": "",
           "relation_id": "compound:adagrasib|MENTIONED_IN|doc:pmid_39725152"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -2348,7 +2373,8 @@
           "evidence": "",
           "relation_id": "compound:adagrasib|MENTIONED_IN|doc:pmid_39732595"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -2371,7 +2397,8 @@
           "evidence": "sotorasib and adagrasib, in 2021 and 2022 respectively",
           "relation_id": "compound:adagrasib|ASSOCIATED_WITH|regulatory_action:fda_approval_adagrasib_2022|pmid_39732595"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -2394,7 +2421,8 @@
           "evidence": "",
           "relation_id": "compound:adagrasib|MENTIONED_IN|doc:pmid_40116975"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adagrasib",
@@ -2417,7 +2445,8 @@
           "evidence": "Adagrasib+cetuximab: ORR 42%, PFS 6.9 months",
           "relation_id": "compound:adagrasib|COMBINED_WITH|compound:cetuximab|pmid_40116975"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:kras",
@@ -2440,7 +2469,8 @@
           "evidence": "",
           "relation_id": "gene:kras|MENTIONED_IN|doc:pmid_31658955"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:kras",
@@ -2463,7 +2493,8 @@
           "evidence": "",
           "relation_id": "gene:kras|MENTIONED_IN|doc:pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:kras",
@@ -2556,7 +2587,8 @@
           "evidence": "KRAS-G12C inhibitors",
           "relation_id": "gene:kras|HAS_VARIANT|sequence_variant:kras_g12c|pmid_40116975"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:kras",
@@ -2579,7 +2611,8 @@
           "evidence": "Acquired KRAS alterations included G12D",
           "relation_id": "gene:kras|HAS_VARIANT|sequence_variant:kras_g12d|pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:kras",
@@ -2602,7 +2635,8 @@
           "evidence": "Acquired KRAS alterations included Q61H",
           "relation_id": "gene:kras|HAS_VARIANT|sequence_variant:kras_q61h|pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:kras",
@@ -2625,7 +2659,8 @@
           "evidence": "Y96C",
           "relation_id": "gene:kras|HAS_VARIANT|sequence_variant:kras_y96c|pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:kras",
@@ -2648,7 +2683,8 @@
           "evidence": "",
           "relation_id": "gene:kras|MENTIONED_IN|doc:pmid_34607583"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:kras",
@@ -2671,7 +2707,8 @@
           "evidence": "gain-of-function mutations in RAS genes lead to constitutive activity of oncoproteins",
           "relation_id": "gene:kras|PARTICIPATES_IN|pathway:ras_signaling_pathway|pmid_34607583"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:kras",
@@ -2694,7 +2731,8 @@
           "evidence": "",
           "relation_id": "gene:kras|MENTIONED_IN|doc:pmid_34953682"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:kras",
@@ -2717,7 +2755,8 @@
           "evidence": "",
           "relation_id": "gene:kras|MENTIONED_IN|doc:pmid_35658005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:kras",
@@ -2740,7 +2779,8 @@
           "evidence": "",
           "relation_id": "gene:kras|MENTIONED_IN|doc:pmid_35837349"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:kras",
@@ -2763,7 +2803,8 @@
           "evidence": "",
           "relation_id": "gene:kras|MENTIONED_IN|doc:pmid_37101895"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:kras",
@@ -2786,7 +2827,8 @@
           "evidence": "KRAS G12C mutation",
           "relation_id": "gene:kras|HAS_VARIANT|biomarker:kras_g12c|pmid_37101895"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:kras",
@@ -2809,7 +2851,8 @@
           "evidence": "",
           "relation_id": "gene:kras|MENTIONED_IN|doc:pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:kras",
@@ -2832,7 +2875,8 @@
           "evidence": "",
           "relation_id": "gene:kras|MENTIONED_IN|doc:pmid_38625662"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:kras",
@@ -2855,7 +2899,8 @@
           "evidence": "",
           "relation_id": "gene:kras|MENTIONED_IN|doc:pmid_39215000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:kras",
@@ -2878,7 +2923,8 @@
           "evidence": "",
           "relation_id": "gene:kras|MENTIONED_IN|doc:pmid_39337530"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:kras",
@@ -2901,7 +2947,8 @@
           "evidence": "KRAS non-G12C as promising therapeutic target in NSCLC",
           "relation_id": "gene:kras|IMPLICATED_IN|disease:non_small_cell_lung_cancer|pmid_39337530"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:kras",
@@ -2924,7 +2971,8 @@
           "evidence": "",
           "relation_id": "gene:kras|MENTIONED_IN|doc:pmid_39725152"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:kras",
@@ -2947,7 +2995,8 @@
           "evidence": "",
           "relation_id": "gene:kras|MENTIONED_IN|doc:pmid_39732595"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:kras",
@@ -2970,7 +3019,8 @@
           "evidence": "RAS genes HRAS and KRAS discovered as first human cancer genes",
           "relation_id": "gene:kras|PARTICIPATES_IN|pathway:ras_signaling|pmid_39732595"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:kras",
@@ -2993,7 +3043,8 @@
           "evidence": "",
           "relation_id": "gene:kras|MENTIONED_IN|doc:pmid_40116975"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_g12c",
@@ -3016,7 +3067,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:kras_g12c|MENTIONED_IN|doc:pmid_31658955"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_g12c",
@@ -3109,7 +3161,8 @@
           "evidence": "KRAS G12C-mutant locally advanced or metastatic NSCLC",
           "relation_id": "sequence_variant:kras_g12c|IMPLICATED_IN|disease:non_small_cell_lung_cancer|structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_g12c",
@@ -3160,7 +3213,8 @@
           "evidence": "KRAS-G12C inhibitors in colorectal cancer",
           "relation_id": "sequence_variant:kras_g12c|IMPLICATED_IN|disease:colorectal_cancer|pmid_40116975"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_g12c",
@@ -3183,7 +3237,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:kras_g12c|MENTIONED_IN|doc:pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_g12c",
@@ -3206,7 +3261,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:kras_g12c|MENTIONED_IN|doc:pmid_34607583"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_g12c",
@@ -3229,7 +3285,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:kras_g12c|MENTIONED_IN|doc:pmid_34953682"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_g12c",
@@ -3252,7 +3309,8 @@
           "evidence": "pancreatic ductal carcinoma",
           "relation_id": "sequence_variant:kras_g12c|IMPLICATED_IN|disease:pancreatic_ductal_adenocarcinoma|pmid_34953682"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_g12c",
@@ -3275,7 +3333,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:kras_g12c|MENTIONED_IN|doc:pmid_35658005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_g12c",
@@ -3298,7 +3357,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:kras_g12c|MENTIONED_IN|doc:pmid_35837349"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_g12c",
@@ -3321,7 +3381,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:kras_g12c|MENTIONED_IN|doc:pmid_36764316"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_g12c",
@@ -3344,7 +3405,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:kras_g12c|MENTIONED_IN|doc:pmid_37101895"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_g12c",
@@ -3367,7 +3429,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:kras_g12c|MENTIONED_IN|doc:pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_g12c",
@@ -3390,7 +3453,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:kras_g12c|MENTIONED_IN|doc:pmid_38625662"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_g12c",
@@ -3413,7 +3477,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:kras_g12c|MENTIONED_IN|doc:pmid_39215000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_g12c",
@@ -3436,7 +3501,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:kras_g12c|MENTIONED_IN|doc:pmid_39725152"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_g12c",
@@ -3459,7 +3525,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:kras_g12c|MENTIONED_IN|doc:pmid_39732595"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_g12c",
@@ -3482,7 +3549,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:kras_g12c|MENTIONED_IN|doc:pmid_40116975"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_g12c",
@@ -3505,7 +3573,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:kras_g12c|MENTIONED_IN|doc:structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:kras",
@@ -3528,7 +3597,8 @@
           "evidence": "",
           "relation_id": "protein:kras|MENTIONED_IN|doc:pmid_31658955"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:kras",
@@ -3558,7 +3628,8 @@
           "evidence": "KRAS G12C covalent inhibitor",
           "relation_id": "protein:kras|HAS_VARIANT|sequence_variant:kras_g12c|structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:kras",
@@ -3581,7 +3652,8 @@
           "evidence": "inhibits KRAS-dependent signaling",
           "relation_id": "protein:kras|PARTICIPATES_IN|pathway:ras_signaling_pathway|pmid_31658955"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:kras",
@@ -3604,7 +3676,8 @@
           "evidence": "",
           "relation_id": "protein:kras|MENTIONED_IN|doc:structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:kras",
@@ -3627,7 +3700,8 @@
           "evidence": "Bypass: MET amplification, MAPK reactivation",
           "relation_id": "protein:kras|PARTICIPATES_IN|pathway:mapk_pathway|structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:kras",
@@ -3650,7 +3724,8 @@
           "evidence": "Resistance: Y96D (disrupts binding)",
           "relation_id": "protein:kras|HAS_VARIANT|sequence_variant:kras_y96d|structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:kras",
@@ -3673,7 +3748,8 @@
           "evidence": "R68S (alters interface)",
           "relation_id": "protein:kras|HAS_VARIANT|sequence_variant:kras_r68s|structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:kras",
@@ -3696,7 +3772,8 @@
           "evidence": "H95Q/R (affects cavity geometry)",
           "relation_id": "protein:kras|HAS_VARIANT|sequence_variant:kras_h95q|structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:non_small_cell_lung_cancer",
@@ -3719,7 +3796,8 @@
           "evidence": "",
           "relation_id": "disease:non_small_cell_lung_cancer|MENTIONED_IN|doc:pmid_31658955"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:non_small_cell_lung_cancer",
@@ -3742,7 +3820,8 @@
           "evidence": "",
           "relation_id": "disease:non_small_cell_lung_cancer|MENTIONED_IN|doc:pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:non_small_cell_lung_cancer",
@@ -3765,7 +3844,8 @@
           "evidence": "",
           "relation_id": "disease:non_small_cell_lung_cancer|MENTIONED_IN|doc:pmid_34607583"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:non_small_cell_lung_cancer",
@@ -3788,7 +3868,8 @@
           "evidence": "",
           "relation_id": "disease:non_small_cell_lung_cancer|MENTIONED_IN|doc:pmid_34953682"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:non_small_cell_lung_cancer",
@@ -3811,7 +3892,8 @@
           "evidence": "",
           "relation_id": "disease:non_small_cell_lung_cancer|MENTIONED_IN|doc:pmid_35658005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:non_small_cell_lung_cancer",
@@ -3834,7 +3916,8 @@
           "evidence": "Among 33 patients with CNS metastases, intracranial ORR was 33.3%",
           "relation_id": "disease:non_small_cell_lung_cancer|ASSOCIATED_WITH|phenotype:cns_metastases|pmid_35658005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:non_small_cell_lung_cancer",
@@ -3857,7 +3940,8 @@
           "evidence": "",
           "relation_id": "disease:non_small_cell_lung_cancer|MENTIONED_IN|doc:pmid_35837349"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:non_small_cell_lung_cancer",
@@ -3880,7 +3964,8 @@
           "evidence": "",
           "relation_id": "disease:non_small_cell_lung_cancer|MENTIONED_IN|doc:pmid_36764316"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:non_small_cell_lung_cancer",
@@ -3903,7 +3988,8 @@
           "evidence": "",
           "relation_id": "disease:non_small_cell_lung_cancer|MENTIONED_IN|doc:pmid_37101895"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:non_small_cell_lung_cancer",
@@ -3926,7 +4012,8 @@
           "evidence": "",
           "relation_id": "disease:non_small_cell_lung_cancer|MENTIONED_IN|doc:pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:non_small_cell_lung_cancer",
@@ -3949,7 +4036,8 @@
           "evidence": "",
           "relation_id": "disease:non_small_cell_lung_cancer|MENTIONED_IN|doc:pmid_38625662"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:non_small_cell_lung_cancer",
@@ -3972,7 +4060,8 @@
           "evidence": "",
           "relation_id": "disease:non_small_cell_lung_cancer|MENTIONED_IN|doc:pmid_39215000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:non_small_cell_lung_cancer",
@@ -3995,7 +4084,8 @@
           "evidence": "",
           "relation_id": "disease:non_small_cell_lung_cancer|MENTIONED_IN|doc:pmid_39337530"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:non_small_cell_lung_cancer",
@@ -4018,7 +4108,8 @@
           "evidence": "",
           "relation_id": "disease:non_small_cell_lung_cancer|MENTIONED_IN|doc:pmid_39725152"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:non_small_cell_lung_cancer",
@@ -4041,7 +4132,8 @@
           "evidence": "",
           "relation_id": "disease:non_small_cell_lung_cancer|MENTIONED_IN|doc:pmid_40116975"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:non_small_cell_lung_cancer",
@@ -4064,7 +4156,8 @@
           "evidence": "",
           "relation_id": "disease:non_small_cell_lung_cancer|MENTIONED_IN|doc:structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:colorectal_cancer",
@@ -4087,7 +4180,8 @@
           "evidence": "",
           "relation_id": "disease:colorectal_cancer|MENTIONED_IN|doc:pmid_31658955"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:colorectal_cancer",
@@ -4110,7 +4204,8 @@
           "evidence": "",
           "relation_id": "disease:colorectal_cancer|MENTIONED_IN|doc:pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:colorectal_cancer",
@@ -4133,7 +4228,8 @@
           "evidence": "",
           "relation_id": "disease:colorectal_cancer|MENTIONED_IN|doc:pmid_34953682"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:colorectal_cancer",
@@ -4156,7 +4252,8 @@
           "evidence": "",
           "relation_id": "disease:colorectal_cancer|MENTIONED_IN|doc:pmid_35837349"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:colorectal_cancer",
@@ -4179,7 +4276,8 @@
           "evidence": "",
           "relation_id": "disease:colorectal_cancer|MENTIONED_IN|doc:pmid_40116975"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:ras_signaling_pathway",
@@ -4202,7 +4300,8 @@
           "evidence": "",
           "relation_id": "pathway:ras_signaling_pathway|MENTIONED_IN|doc:pmid_31658955"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:ras_signaling_pathway",
@@ -4225,7 +4324,8 @@
           "evidence": "",
           "relation_id": "pathway:ras_signaling_pathway|MENTIONED_IN|doc:pmid_34607583"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:rtk_signaling",
@@ -4248,7 +4348,8 @@
           "evidence": "",
           "relation_id": "pathway:rtk_signaling|MENTIONED_IN|doc:pmid_31658955"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:rtk_signaling",
@@ -4271,7 +4372,8 @@
           "evidence": "activation of receptor tyrosine kinases (RTK), bypass of KRAS dependence",
           "relation_id": "pathway:rtk_signaling|CONFERS_RESISTANCE_TO|compound:adagrasib|pmid_31658955"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:kras_nucleotide_cycling",
@@ -4294,7 +4396,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:kras_nucleotide_cycling|MENTIONED_IN|doc:pmid_31658955"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:kras_nucleotide_cycling",
@@ -4317,7 +4420,8 @@
           "evidence": "mechanisms implicated in limiting antitumor activity including KRAS nucleotide cycling",
           "relation_id": "mechanism_of_action:kras_nucleotide_cycling|CONFERS_RESISTANCE_TO|compound:adagrasib|pmid_31658955"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:covalent_inhibition_of_kras_g12c",
@@ -4340,7 +4444,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:covalent_inhibition_of_kras_g12c|MENTIONED_IN|doc:pmid_31658955"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:covalent_inhibition_of_kras_g12c",
@@ -4363,7 +4468,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:covalent_inhibition_of_kras_g12c|MENTIONED_IN|doc:pmid_34607583"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:covalent_inhibition_of_kras_g12c",
@@ -4386,7 +4492,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:covalent_inhibition_of_kras_g12c|MENTIONED_IN|doc:structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -4409,7 +4516,8 @@
           "evidence": "",
           "relation_id": "compound:sotorasib|MENTIONED_IN|doc:pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -4502,7 +4610,8 @@
           "evidence": "Irreversibly and covalently binds to cysteine-12 of KRAS G12C, locking protein in inactive GDP-bound conformation",
           "relation_id": "compound:sotorasib|INHIBITS|sequence_variant:kras_g12c|structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -4525,7 +4634,8 @@
           "evidence": "",
           "relation_id": "compound:sotorasib|MENTIONED_IN|doc:pmid_34607583"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -4555,7 +4665,8 @@
           "evidence": "Irreversibly and covalently binds to cysteine-12 of KRAS G12C, locking protein in inactive GDP-bound conformation",
           "relation_id": "compound:sotorasib|HAS_MECHANISM|mechanism_of_action:covalent_inhibition_of_kras_g12c|structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -4578,7 +4689,8 @@
           "evidence": "KRAS-G12C variant contains a druggable pocket below the switch-II loop region",
           "relation_id": "compound:sotorasib|BINDS_TO|protein_domain:switch_ii_loop_region|pmid_34607583"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -4650,7 +4762,8 @@
           "evidence": "FDA approved May 28, 2021 under accelerated approval for KRAS G12C-mutant locally advanced or metastatic NSCLC",
           "relation_id": "compound:sotorasib|INDICATED_FOR|disease:non_small_cell_lung_cancer|structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -4673,7 +4786,8 @@
           "evidence": "",
           "relation_id": "compound:sotorasib|MENTIONED_IN|doc:pmid_35837349"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -4703,7 +4817,8 @@
           "evidence": "Sotorasib alone: ORR 7.1-9.7% in CRC",
           "relation_id": "compound:sotorasib|INDICATED_FOR|disease:colorectal_cancer|pmid_40116975"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -4726,7 +4841,8 @@
           "evidence": "Combination therapy trials with EGFR inhibitors are currently underway",
           "relation_id": "compound:sotorasib|COMBINED_WITH|compound:egfr_inhibitors|pmid_35837349"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -4749,7 +4865,8 @@
           "evidence": "",
           "relation_id": "compound:sotorasib|MENTIONED_IN|doc:pmid_36764316"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -4786,7 +4903,8 @@
           "evidence": "CodeBreaK 200 (NCT04303780): Phase III vs docetaxel, PFS HR 0.66",
           "relation_id": "compound:sotorasib|EVALUATED_IN|clinical_trial:codebreak_200|structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -4809,7 +4927,8 @@
           "evidence": "sotorasib \u2014 diarrhoea (12%)",
           "relation_id": "compound:sotorasib|CAUSES|adverse_event:diarrhoea|pmid_36764316"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -4832,7 +4951,8 @@
           "evidence": "ALT increase (8%)",
           "relation_id": "compound:sotorasib|CAUSES|adverse_event:alt_increase|pmid_36764316"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -4855,7 +4975,8 @@
           "evidence": "AST increase (5%)",
           "relation_id": "compound:sotorasib|CAUSES|adverse_event:ast_increase|pmid_36764316"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -4878,7 +4999,8 @@
           "evidence": "",
           "relation_id": "compound:sotorasib|MENTIONED_IN|doc:pmid_37101895"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -4901,7 +5023,8 @@
           "evidence": "Sotorasib is a novel KRAS G12C inhibitor",
           "relation_id": "compound:sotorasib|INHIBITS|biomarker:kras_g12c|pmid_37101895"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -4924,7 +5047,8 @@
           "evidence": "FDA conditional approval May 2021",
           "relation_id": "compound:sotorasib|ASSOCIATED_WITH|regulatory_action:fda_conditional_approval_of_sotorasib|pmid_37101895"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -4947,7 +5071,8 @@
           "evidence": "",
           "relation_id": "compound:sotorasib|MENTIONED_IN|doc:pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -4970,7 +5095,8 @@
           "evidence": "Treatment with sotorasib triggers the MRAS:SHOC2:PP1C trimeric complex",
           "relation_id": "compound:sotorasib|ACTIVATES|protein:mras_shoc2_pp1c_complex|pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -4993,7 +5119,8 @@
           "evidence": "",
           "relation_id": "compound:sotorasib|MENTIONED_IN|doc:pmid_38625662"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -5016,7 +5143,8 @@
           "evidence": "combination strategies including immune checkpoint inhibitors are being studied",
           "relation_id": "compound:sotorasib|COMBINED_WITH|compound:immune_checkpoint_inhibitors|pmid_38625662"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -5039,7 +5167,8 @@
           "evidence": "",
           "relation_id": "compound:sotorasib|MENTIONED_IN|doc:pmid_39215000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -5062,7 +5191,8 @@
           "evidence": "lock the oncogene in inactive GDP-bound state",
           "relation_id": "compound:sotorasib|BINDS_TO|metabolite:gdp|pmid_39215000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -5085,7 +5215,8 @@
           "evidence": "",
           "relation_id": "compound:sotorasib|MENTIONED_IN|doc:pmid_39725152"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -5108,7 +5239,8 @@
           "evidence": "",
           "relation_id": "compound:sotorasib|MENTIONED_IN|doc:pmid_39732595"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -5138,7 +5270,8 @@
           "evidence": "Binding site: Switch II pocket (P2 pocket)",
           "relation_id": "compound:sotorasib|BINDS_TO|protein_domain:switch_ii_pocket|structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -5161,7 +5294,8 @@
           "evidence": "FDA approval of first covalently binding KRASG12C inhibitors, sotorasib and adagrasib, in 2021",
           "relation_id": "compound:sotorasib|ASSOCIATED_WITH|regulatory_action:fda_approval_sotorasib_2021|pmid_39732595"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -5184,7 +5318,8 @@
           "evidence": "",
           "relation_id": "compound:sotorasib|MENTIONED_IN|doc:pmid_40116975"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -5207,7 +5342,8 @@
           "evidence": "Sotorasib+panitumumab: ORR 26.4%",
           "relation_id": "compound:sotorasib|COMBINED_WITH|compound:panitumumab|pmid_40116975"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -5230,7 +5366,8 @@
           "evidence": "",
           "relation_id": "compound:sotorasib|MENTIONED_IN|doc:structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -5253,7 +5390,8 @@
           "evidence": "CodeBreaK 100 (NCT03600883): Phase I/II, ORR 37.1%, PFS 6.8 months",
           "relation_id": "compound:sotorasib|EVALUATED_IN|clinical_trial:codebreak_100|structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:sotorasib",
@@ -5276,7 +5414,8 @@
           "evidence": "FDA approved May 28, 2021 under accelerated approval",
           "relation_id": "compound:sotorasib|ASSOCIATED_WITH|regulatory_action:fda_accelerated_approval_sotorasib|structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_g12d",
@@ -5299,7 +5438,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:kras_g12d|MENTIONED_IN|doc:pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_g12d",
@@ -5322,7 +5462,8 @@
           "evidence": "Acquired KRAS alterations included G12D/R/V/W",
           "relation_id": "sequence_variant:kras_g12d|CONFERS_RESISTANCE_TO|compound:adagrasib|pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_g12v",
@@ -5345,7 +5486,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:kras_g12v|MENTIONED_IN|doc:pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_g12v",
@@ -5368,7 +5510,8 @@
           "evidence": "Acquired KRAS alterations included G12D/R/V/W",
           "relation_id": "sequence_variant:kras_g12v|CONFERS_RESISTANCE_TO|compound:adagrasib|pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_g13d",
@@ -5391,7 +5534,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:kras_g13d|MENTIONED_IN|doc:pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_g13d",
@@ -5414,7 +5558,8 @@
           "evidence": "Acquired KRAS alterations included G12D/R/V/W, G13D, Q61H",
           "relation_id": "sequence_variant:kras_g13d|CONFERS_RESISTANCE_TO|compound:adagrasib|pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_q61h",
@@ -5437,7 +5582,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:kras_q61h|MENTIONED_IN|doc:pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_q61h",
@@ -5460,7 +5606,8 @@
           "evidence": "Q61H, R68S, H95D/Q/R, Y96C",
           "relation_id": "sequence_variant:kras_q61h|CONFERS_RESISTANCE_TO|compound:adagrasib|pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_r68s",
@@ -5483,7 +5630,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:kras_r68s|MENTIONED_IN|doc:pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_r68s",
@@ -5506,7 +5654,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:kras_r68s|MENTIONED_IN|doc:structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_r68s",
@@ -5529,7 +5678,8 @@
           "evidence": "R68S (alters interface)",
           "relation_id": "sequence_variant:kras_r68s|CONFERS_RESISTANCE_TO|compound:sotorasib|structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_h95d",
@@ -5552,7 +5702,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:kras_h95d|MENTIONED_IN|doc:pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_h95d",
@@ -5575,7 +5726,8 @@
           "evidence": "H95D/Q/R",
           "relation_id": "sequence_variant:kras_h95d|CONFERS_RESISTANCE_TO|compound:adagrasib|pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_h95q",
@@ -5598,7 +5750,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:kras_h95q|MENTIONED_IN|doc:pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_h95q",
@@ -5621,7 +5774,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:kras_h95q|MENTIONED_IN|doc:structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_h95q",
@@ -5644,7 +5798,8 @@
           "evidence": "H95Q/R (affects cavity geometry)",
           "relation_id": "sequence_variant:kras_h95q|CONFERS_RESISTANCE_TO|compound:sotorasib|structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_y96c",
@@ -5667,7 +5822,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:kras_y96c|MENTIONED_IN|doc:pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_y96c",
@@ -5690,7 +5846,8 @@
           "evidence": "Y96C",
           "relation_id": "sequence_variant:kras_y96c|CONFERS_RESISTANCE_TO|compound:adagrasib|pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:met",
@@ -5713,7 +5870,8 @@
           "evidence": "",
           "relation_id": "gene:met|MENTIONED_IN|doc:pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:met",
@@ -5743,7 +5901,8 @@
           "evidence": "Redundant pathways included MET amplification",
           "relation_id": "gene:met|CONFERS_RESISTANCE_TO|compound:adagrasib|pmid_34953682"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:met",
@@ -5766,7 +5925,8 @@
           "evidence": "",
           "relation_id": "gene:met|MENTIONED_IN|doc:pmid_34953682"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:met",
@@ -5789,7 +5949,8 @@
           "evidence": "",
           "relation_id": "gene:met|MENTIONED_IN|doc:pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:met",
@@ -5819,7 +5980,8 @@
           "evidence": "Bypass: MET amplification, MAPK reactivation",
           "relation_id": "gene:met|CONFERS_RESISTANCE_TO|compound:sotorasib|structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:met",
@@ -5842,7 +6004,8 @@
           "evidence": "",
           "relation_id": "gene:met|MENTIONED_IN|doc:structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:nras",
@@ -5865,7 +6028,8 @@
           "evidence": "",
           "relation_id": "gene:nras|MENTIONED_IN|doc:pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:nras",
@@ -5895,7 +6059,8 @@
           "evidence": "emerging driver mutations in NRAS, BRAF, MAP2K1, and RET",
           "relation_id": "gene:nras|CONFERS_RESISTANCE_TO|compound:adagrasib|pmid_34953682"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:nras",
@@ -5918,7 +6083,8 @@
           "evidence": "",
           "relation_id": "gene:nras|MENTIONED_IN|doc:pmid_34607583"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:nras",
@@ -5941,7 +6107,8 @@
           "evidence": "",
           "relation_id": "gene:nras|MENTIONED_IN|doc:pmid_34953682"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:braf",
@@ -5964,7 +6131,8 @@
           "evidence": "",
           "relation_id": "gene:braf|MENTIONED_IN|doc:pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:braf",
@@ -5994,7 +6162,8 @@
           "evidence": "emerging driver mutations in NRAS, BRAF, MAP2K1, and RET",
           "relation_id": "gene:braf|CONFERS_RESISTANCE_TO|compound:adagrasib|pmid_34953682"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:braf",
@@ -6017,7 +6186,8 @@
           "evidence": "",
           "relation_id": "gene:braf|MENTIONED_IN|doc:pmid_34953682"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:map2k1",
@@ -6040,7 +6210,8 @@
           "evidence": "",
           "relation_id": "gene:map2k1|MENTIONED_IN|doc:pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:map2k1",
@@ -6070,7 +6241,8 @@
           "evidence": "emerging driver mutations in NRAS, BRAF, MAP2K1, and RET",
           "relation_id": "gene:map2k1|CONFERS_RESISTANCE_TO|compound:adagrasib|pmid_34953682"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:map2k1",
@@ -6093,7 +6265,8 @@
           "evidence": "",
           "relation_id": "gene:map2k1|MENTIONED_IN|doc:pmid_34953682"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:ret",
@@ -6116,7 +6289,8 @@
           "evidence": "",
           "relation_id": "gene:ret|MENTIONED_IN|doc:pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:ret",
@@ -6146,7 +6320,8 @@
           "evidence": "emerging driver mutations in NRAS, BRAF, MAP2K1, and RET",
           "relation_id": "gene:ret|CONFERS_RESISTANCE_TO|compound:adagrasib|pmid_34953682"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:ret",
@@ -6169,7 +6344,8 @@
           "evidence": "",
           "relation_id": "gene:ret|MENTIONED_IN|doc:pmid_34953682"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:nf1",
@@ -6192,7 +6368,8 @@
           "evidence": "",
           "relation_id": "gene:nf1|MENTIONED_IN|doc:pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:nf1",
@@ -6222,7 +6399,8 @@
           "evidence": "loss-of-function mutations in NF1 and PTEN",
           "relation_id": "gene:nf1|CONFERS_RESISTANCE_TO|compound:adagrasib|pmid_34953682"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:nf1",
@@ -6245,7 +6423,8 @@
           "evidence": "",
           "relation_id": "gene:nf1|MENTIONED_IN|doc:pmid_34953682"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:pten",
@@ -6268,7 +6447,8 @@
           "evidence": "",
           "relation_id": "gene:pten|MENTIONED_IN|doc:pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:pten",
@@ -6298,7 +6478,8 @@
           "evidence": "loss-of-function mutations in NF1 and PTEN",
           "relation_id": "gene:pten|CONFERS_RESISTANCE_TO|compound:adagrasib|pmid_34953682"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:pten",
@@ -6321,7 +6502,8 @@
           "evidence": "",
           "relation_id": "gene:pten|MENTIONED_IN|doc:pmid_34953682"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:nct03785249",
@@ -6344,7 +6526,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:nct03785249|MENTIONED_IN|doc:pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:mirati_therapeutics",
@@ -6367,7 +6550,8 @@
           "evidence": "",
           "relation_id": "organization:mirati_therapeutics|MENTIONED_IN|doc:pmid_34161704"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:mirati_therapeutics",
@@ -6390,7 +6574,8 @@
           "evidence": "",
           "relation_id": "organization:mirati_therapeutics|MENTIONED_IN|doc:pmid_35658005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:mirati_therapeutics",
@@ -6420,7 +6605,8 @@
           "evidence": "Funded by Mirati Therapeutics",
           "relation_id": "compound:adagrasib|DEVELOPED_BY|organization:mirati_therapeutics|pmid_35658005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:hras",
@@ -6443,7 +6629,8 @@
           "evidence": "",
           "relation_id": "gene:hras|MENTIONED_IN|doc:pmid_34607583"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:hras",
@@ -6466,7 +6653,8 @@
           "evidence": "",
           "relation_id": "gene:hras|MENTIONED_IN|doc:pmid_39732595"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:hras",
@@ -6489,7 +6677,8 @@
           "evidence": "RAS genes HRAS and KRAS discovered as first human cancer genes",
           "relation_id": "gene:hras|PARTICIPATES_IN|pathway:ras_signaling|pmid_39732595"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein_domain:switch_ii_loop_region",
@@ -6512,7 +6701,8 @@
           "evidence": "",
           "relation_id": "protein_domain:switch_ii_loop_region|MENTIONED_IN|doc:pmid_34607583"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:pancreatic_ductal_adenocarcinoma",
@@ -6535,7 +6725,8 @@
           "evidence": "",
           "relation_id": "disease:pancreatic_ductal_adenocarcinoma|MENTIONED_IN|doc:pmid_34953682"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:kras_protein",
@@ -6558,7 +6749,8 @@
           "evidence": "",
           "relation_id": "protein:kras_protein|MENTIONED_IN|doc:pmid_35658005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:covalent_irreversible_inhibition_of_kras_g12c",
@@ -6581,7 +6773,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:covalent_irreversible_inhibition_of_kras_g12c|MENTIONED_IN|doc:pmid_35658005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:krystal_1",
@@ -6604,7 +6797,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:krystal_1|MENTIONED_IN|doc:pmid_35658005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:krystal_1",
@@ -6627,7 +6821,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:krystal_1|MENTIONED_IN|doc:pmid_37101895"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:cns_metastases",
@@ -6650,7 +6845,8 @@
           "evidence": "",
           "relation_id": "phenotype:cns_metastases|MENTIONED_IN|doc:pmid_35658005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:diarrhoea",
@@ -6673,7 +6869,8 @@
           "evidence": "",
           "relation_id": "adverse_event:diarrhoea|MENTIONED_IN|doc:pmid_35658005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:diarrhoea",
@@ -6696,7 +6893,8 @@
           "evidence": "",
           "relation_id": "adverse_event:diarrhoea|MENTIONED_IN|doc:pmid_36764316"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pd_1",
@@ -6719,7 +6917,8 @@
           "evidence": "",
           "relation_id": "protein:pd_1|MENTIONED_IN|doc:pmid_35658005"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pd_1",
@@ -6742,7 +6941,8 @@
           "evidence": "",
           "relation_id": "protein:pd_1|MENTIONED_IN|doc:pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:egfr",
@@ -6765,7 +6965,8 @@
           "evidence": "",
           "relation_id": "gene:egfr|MENTIONED_IN|doc:pmid_35837349"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:egfr",
@@ -6788,7 +6989,8 @@
           "evidence": "increased EGFR signaling",
           "relation_id": "gene:egfr|PARTICIPATES_IN|pathway:egfr_signaling_pathway|pmid_35837349"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:egfr",
@@ -6811,7 +7013,8 @@
           "evidence": "",
           "relation_id": "gene:egfr|MENTIONED_IN|doc:pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:egfr",
@@ -6834,7 +7037,8 @@
           "evidence": "adaptive resistance occurs due to rewiring of signaling pathways, activating RTKs primarily EGFR",
           "relation_id": "gene:egfr|CONFERS_RESISTANCE_TO|compound:sotorasib|pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:egfr",
@@ -6857,7 +7061,8 @@
           "evidence": "",
           "relation_id": "gene:egfr|MENTIONED_IN|doc:pmid_40116975"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:egfr_signaling_pathway",
@@ -6880,7 +7085,8 @@
           "evidence": "",
           "relation_id": "pathway:egfr_signaling_pathway|MENTIONED_IN|doc:pmid_35837349"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:egfr_signaling_pathway",
@@ -6903,7 +7109,8 @@
           "evidence": "rapid treatment-induced resistance through increased EGFR signaling",
           "relation_id": "pathway:egfr_signaling_pathway|CONFERS_RESISTANCE_TO|compound:sotorasib|pmid_35837349"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:egfr_signaling_pathway",
@@ -6926,7 +7133,8 @@
           "evidence": "rapid treatment-induced resistance through increased EGFR signaling",
           "relation_id": "pathway:egfr_signaling_pathway|CONFERS_RESISTANCE_TO|compound:adagrasib|pmid_35837349"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:egfr_inhibitors",
@@ -6949,7 +7157,8 @@
           "evidence": "",
           "relation_id": "compound:egfr_inhibitors|MENTIONED_IN|doc:pmid_35837349"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:docetaxel",
@@ -6972,7 +7181,8 @@
           "evidence": "",
           "relation_id": "compound:docetaxel|MENTIONED_IN|doc:pmid_36764316"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:docetaxel",
@@ -6995,7 +7205,8 @@
           "evidence": "345 patients randomized to sotorasib (960 mg daily) or docetaxel (75 mg/m2 q3w)",
           "relation_id": "compound:docetaxel|EVALUATED_IN|clinical_trial:codebreak_200|pmid_36764316"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:docetaxel",
@@ -7018,7 +7229,8 @@
           "evidence": "docetaxel \u2014 neutropenia (9%)",
           "relation_id": "compound:docetaxel|CAUSES|adverse_event:neutropenia|pmid_36764316"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:docetaxel",
@@ -7041,7 +7253,8 @@
           "evidence": "fatigue (6%)",
           "relation_id": "compound:docetaxel|CAUSES|adverse_event:fatigue|pmid_36764316"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:docetaxel",
@@ -7064,7 +7277,8 @@
           "evidence": "febrile neutropenia (5%)",
           "relation_id": "compound:docetaxel|CAUSES|adverse_event:febrile_neutropenia|pmid_36764316"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:docetaxel",
@@ -7087,7 +7301,8 @@
           "evidence": "",
           "relation_id": "compound:docetaxel|MENTIONED_IN|doc:pmid_37101895"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:docetaxel",
@@ -7110,7 +7325,8 @@
           "evidence": "",
           "relation_id": "compound:docetaxel|MENTIONED_IN|doc:structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:codebreak_200",
@@ -7133,7 +7349,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:codebreak_200|MENTIONED_IN|doc:pmid_36764316"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:codebreak_200",
@@ -7156,7 +7373,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:codebreak_200|MENTIONED_IN|doc:pmid_37101895"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:codebreak_200",
@@ -7179,7 +7397,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:codebreak_200|MENTIONED_IN|doc:structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:alt_increase",
@@ -7202,7 +7421,8 @@
           "evidence": "",
           "relation_id": "adverse_event:alt_increase|MENTIONED_IN|doc:pmid_36764316"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:ast_increase",
@@ -7225,7 +7445,8 @@
           "evidence": "",
           "relation_id": "adverse_event:ast_increase|MENTIONED_IN|doc:pmid_36764316"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:neutropenia",
@@ -7248,7 +7469,8 @@
           "evidence": "",
           "relation_id": "adverse_event:neutropenia|MENTIONED_IN|doc:pmid_36764316"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:fatigue",
@@ -7271,7 +7493,8 @@
           "evidence": "",
           "relation_id": "adverse_event:fatigue|MENTIONED_IN|doc:pmid_36764316"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "adverse_event:febrile_neutropenia",
@@ -7294,7 +7517,8 @@
           "evidence": "",
           "relation_id": "adverse_event:febrile_neutropenia|MENTIONED_IN|doc:pmid_36764316"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:amgen",
@@ -7317,7 +7541,8 @@
           "evidence": "",
           "relation_id": "organization:amgen|MENTIONED_IN|doc:pmid_36764316"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "organization:amgen",
@@ -7340,7 +7565,8 @@
           "evidence": "FUNDING: Amgen",
           "relation_id": "compound:sotorasib|DEVELOPED_BY|organization:amgen|pmid_36764316"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "regulatory_action:fda_conditional_approval_of_sotorasib",
@@ -7363,7 +7589,8 @@
           "evidence": "",
           "relation_id": "regulatory_action:fda_conditional_approval_of_sotorasib|MENTIONED_IN|doc:pmid_37101895"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "regulatory_action:fda_accelerated_approval_of_adagrasib",
@@ -7386,7 +7613,8 @@
           "evidence": "",
           "relation_id": "regulatory_action:fda_accelerated_approval_of_adagrasib|MENTIONED_IN|doc:pmid_37101895"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "regulatory_action:fda_accelerated_approval_of_adagrasib",
@@ -7409,7 +7637,8 @@
           "evidence": "",
           "relation_id": "regulatory_action:fda_accelerated_approval_of_adagrasib|MENTIONED_IN|doc:pmid_38625662"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:kras_g12c",
@@ -7432,7 +7661,8 @@
           "evidence": "",
           "relation_id": "biomarker:kras_g12c|MENTIONED_IN|doc:pmid_37101895"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:kras_g12c",
@@ -7455,7 +7685,8 @@
           "evidence": "13% of NSCLC patients have KRAS G12C mutation",
           "relation_id": "biomarker:kras_g12c|IMPLICATED_IN|disease:non_small_cell_lung_cancer|pmid_37101895"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:mras",
@@ -7478,7 +7709,8 @@
           "evidence": "",
           "relation_id": "gene:mras|MENTIONED_IN|doc:pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:mras",
@@ -7501,7 +7733,8 @@
           "evidence": "MRAS:SHOC2:PP1C trimeric complex",
           "relation_id": "gene:mras|FORMS_COMPLEX_WITH|gene:shoc2|pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:shoc2",
@@ -7524,7 +7757,8 @@
           "evidence": "",
           "relation_id": "gene:shoc2|MENTIONED_IN|doc:pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:shoc2",
@@ -7547,7 +7781,8 @@
           "evidence": "MRAS:SHOC2:PP1C trimeric complex",
           "relation_id": "gene:shoc2|FORMS_COMPLEX_WITH|protein:pp1c|pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pp1c",
@@ -7570,7 +7805,8 @@
           "evidence": "",
           "relation_id": "protein:pp1c|MENTIONED_IN|doc:pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:mras_shoc2_pp1c_complex",
@@ -7593,7 +7829,8 @@
           "evidence": "",
           "relation_id": "protein:mras_shoc2_pp1c_complex|MENTIONED_IN|doc:pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:mras_shoc2_pp1c_complex",
@@ -7616,7 +7853,8 @@
           "evidence": "reactivation of the MRAS complex is carried out by valosin containing protein (VCP)",
           "relation_id": "gene:vcp|REGULATES_EXPRESSION|protein:mras_shoc2_pp1c_complex|pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:yap",
@@ -7639,7 +7877,8 @@
           "evidence": "",
           "relation_id": "protein:yap|MENTIONED_IN|doc:pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:yap",
@@ -7662,7 +7901,8 @@
           "evidence": "Hippo-dependent pathways, leading to YAP activation",
           "relation_id": "protein:yap|PARTICIPATES_IN|pathway:hippo_pathway|pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:yap",
@@ -7685,7 +7925,8 @@
           "evidence": "Hippo-dependent pathways, leading to YAP activation",
           "relation_id": "pathway:hippo_pathway|ACTIVATES|protein:yap|pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:hippo_pathway",
@@ -7708,7 +7949,8 @@
           "evidence": "",
           "relation_id": "pathway:hippo_pathway|MENTIONED_IN|doc:pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:stat3",
@@ -7731,7 +7973,8 @@
           "evidence": "",
           "relation_id": "gene:stat3|MENTIONED_IN|doc:pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:stat3",
@@ -7754,7 +7997,8 @@
           "evidence": "STAT3 signaling intertwined with MRAS activation",
           "relation_id": "gene:stat3|PARTICIPATES_IN|pathway:stat3_signaling|pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:vcp",
@@ -7777,7 +8021,8 @@
           "evidence": "",
           "relation_id": "gene:vcp|MENTIONED_IN|doc:pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:stk11",
@@ -7800,7 +8045,8 @@
           "evidence": "",
           "relation_id": "gene:stk11|MENTIONED_IN|doc:pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:stk11",
@@ -7823,7 +8069,8 @@
           "evidence": "Comutations in STK11/LKB1 often co-occur with KRAS G12C",
           "relation_id": "gene:stk11|ASSOCIATED_WITH|sequence_variant:kras_g12c|pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:stk11",
@@ -7846,7 +8093,8 @@
           "evidence": "Comutations in STK11/LKB1 often co-occur with KRAS G12C, jeopardizing the effect of immune checkpoint (anti-PD1/PDL1) inhibitors",
           "relation_id": "gene:stk11|CONFERS_RESISTANCE_TO|protein:pd_1|pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:stk11",
@@ -7869,7 +8117,8 @@
           "evidence": "",
           "relation_id": "gene:stk11|MENTIONED_IN|doc:pmid_39725152"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:stat3_signaling",
@@ -7892,7 +8141,8 @@
           "evidence": "",
           "relation_id": "pathway:stat3_signaling|MENTIONED_IN|doc:pmid_38072173"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:immune_checkpoint_inhibitors",
@@ -7915,7 +8165,8 @@
           "evidence": "",
           "relation_id": "compound:immune_checkpoint_inhibitors|MENTIONED_IN|doc:pmid_38625662"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:rmc_4998",
@@ -7938,7 +8189,8 @@
           "evidence": "",
           "relation_id": "compound:rmc_4998|MENTIONED_IN|doc:pmid_39215000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:rmc_4998",
@@ -7961,7 +8213,8 @@
           "evidence": "preclinical tri-complex KRASG12C-selective covalent inhibitor RMC-4998",
           "relation_id": "compound:rmc_4998|INHIBITS|sequence_variant:kras_g12c|pmid_39215000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:rmc_4998",
@@ -7984,7 +8237,8 @@
           "evidence": "targets the active GTP-bound (ON) state",
           "relation_id": "compound:rmc_4998|BINDS_TO|metabolite:gtp|pmid_39215000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:rmc_6291",
@@ -8007,7 +8261,8 @@
           "evidence": "",
           "relation_id": "compound:rmc_6291|MENTIONED_IN|doc:pmid_39215000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:rmc_6291",
@@ -8030,7 +8285,8 @@
           "evidence": "clinical stage KRASG12C(ON) inhibitor RMC-6291",
           "relation_id": "compound:rmc_6291|INHIBITS|sequence_variant:kras_g12c|pmid_39215000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:rmc_6291",
@@ -8053,7 +8309,8 @@
           "evidence": "RMC-6291 alone or in combination with KRASG12C(OFF) drugs can circumvent resistance",
           "relation_id": "compound:rmc_6291|COMBINED_WITH|compound:sotorasib|pmid_39215000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "metabolite:gdp",
@@ -8076,7 +8333,8 @@
           "evidence": "",
           "relation_id": "metabolite:gdp|MENTIONED_IN|doc:pmid_39215000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "metabolite:gtp",
@@ -8099,7 +8357,8 @@
           "evidence": "",
           "relation_id": "metabolite:gtp|MENTIONED_IN|doc:pmid_39215000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:kras_gtp_loading",
@@ -8122,7 +8381,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:kras_gtp_loading|MENTIONED_IN|doc:pmid_39215000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:kras_gtp_loading",
@@ -8145,7 +8405,8 @@
           "evidence": "resistance due to increased KRAS-GTP loading",
           "relation_id": "mechanism_of_action:kras_gtp_loading|CONFERS_RESISTANCE_TO|compound:sotorasib|pmid_39215000"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:raf",
@@ -8168,7 +8429,8 @@
           "evidence": "",
           "relation_id": "gene:raf|MENTIONED_IN|doc:pmid_39337530"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:raf",
@@ -8191,7 +8453,8 @@
           "evidence": "RAF/MEK",
           "relation_id": "gene:raf|PARTICIPATES_IN|pathway:raf_mek_pathway|pmid_39337530"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:mek",
@@ -8214,7 +8477,8 @@
           "evidence": "",
           "relation_id": "gene:mek|MENTIONED_IN|doc:pmid_39337530"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:mek",
@@ -8237,7 +8501,8 @@
           "evidence": "RAF/MEK",
           "relation_id": "gene:mek|PARTICIPATES_IN|pathway:raf_mek_pathway|pmid_39337530"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:her3",
@@ -8260,7 +8525,8 @@
           "evidence": "",
           "relation_id": "gene:her3|MENTIONED_IN|doc:pmid_39337530"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:her3",
@@ -8283,7 +8549,8 @@
           "evidence": "HER3 as promising therapeutic target in NSCLC",
           "relation_id": "gene:her3|IMPLICATED_IN|disease:non_small_cell_lung_cancer|pmid_39337530"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:nectin_4",
@@ -8306,7 +8573,8 @@
           "evidence": "",
           "relation_id": "protein:nectin_4|MENTIONED_IN|doc:pmid_39337530"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:nectin_4",
@@ -8329,7 +8597,8 @@
           "evidence": "Nectin-4 as promising therapeutic target in NSCLC",
           "relation_id": "protein:nectin_4|IMPLICATED_IN|disease:non_small_cell_lung_cancer|pmid_39337530"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:folate_receptor_alpha",
@@ -8352,7 +8621,8 @@
           "evidence": "",
           "relation_id": "protein:folate_receptor_alpha|MENTIONED_IN|doc:pmid_39337530"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:folate_receptor_alpha",
@@ -8375,7 +8645,8 @@
           "evidence": "folate receptor alpha as promising therapeutic target in NSCLC",
           "relation_id": "protein:folate_receptor_alpha|IMPLICATED_IN|disease:non_small_cell_lung_cancer|pmid_39337530"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:itgb6",
@@ -8398,7 +8669,8 @@
           "evidence": "",
           "relation_id": "gene:itgb6|MENTIONED_IN|doc:pmid_39337530"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:itgb6",
@@ -8421,7 +8693,8 @@
           "evidence": "ITGB6 as promising therapeutic target in NSCLC",
           "relation_id": "gene:itgb6|IMPLICATED_IN|disease:non_small_cell_lung_cancer|pmid_39337530"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:prmt5",
@@ -8444,7 +8717,8 @@
           "evidence": "",
           "relation_id": "gene:prmt5|MENTIONED_IN|doc:pmid_39337530"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:prmt5",
@@ -8467,7 +8741,8 @@
           "evidence": "PRMT5 as promising therapeutic target in NSCLC",
           "relation_id": "gene:prmt5|IMPLICATED_IN|disease:non_small_cell_lung_cancer|pmid_39337530"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:raf_mek_pathway",
@@ -8490,7 +8765,8 @@
           "evidence": "",
           "relation_id": "pathway:raf_mek_pathway|MENTIONED_IN|doc:pmid_39337530"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:raf_mek_pathway",
@@ -8513,7 +8789,8 @@
           "evidence": "RAF/MEK as promising therapeutic target in NSCLC",
           "relation_id": "pathway:raf_mek_pathway|IMPLICATED_IN|disease:non_small_cell_lung_cancer|pmid_39337530"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adavosertib",
@@ -8536,7 +8813,8 @@
           "evidence": "",
           "relation_id": "compound:adavosertib|MENTIONED_IN|doc:pmid_39725152"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adavosertib",
@@ -8559,7 +8837,8 @@
           "evidence": "identified adavosertib (WEE1 inhibitor) as combination partner of sotorasib",
           "relation_id": "compound:adavosertib|INHIBITS|protein:wee1|pmid_39725152"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adavosertib",
@@ -8582,7 +8861,8 @@
           "evidence": "identified adavosertib (WEE1 inhibitor) as combination partner of sotorasib",
           "relation_id": "compound:adavosertib|COMBINED_WITH|compound:sotorasib|pmid_39725152"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:adavosertib",
@@ -8605,7 +8885,8 @@
           "evidence": "WEE1 inhibition potentiated MCL-1-mediated apoptosis",
           "relation_id": "compound:adavosertib|HAS_MECHANISM|mechanism_of_action:mcl_1_mediated_apoptosis|pmid_39725152"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:wee1",
@@ -8628,7 +8909,8 @@
           "evidence": "",
           "relation_id": "protein:wee1|MENTIONED_IN|doc:pmid_39725152"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:wee1",
@@ -8651,7 +8933,8 @@
           "evidence": "WEE1 overexpression conferred resistance via MCL-1 upregulation",
           "relation_id": "protein:wee1|CONFERS_RESISTANCE_TO|compound:sotorasib|pmid_39725152"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:mcl_1",
@@ -8674,7 +8957,8 @@
           "evidence": "",
           "relation_id": "protein:mcl_1|MENTIONED_IN|doc:pmid_39725152"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:mcl_1",
@@ -8697,7 +8981,8 @@
           "evidence": "WEE1 overexpression conferred resistance via MCL-1 upregulation",
           "relation_id": "protein:mcl_1|CONFERS_RESISTANCE_TO|compound:sotorasib|pmid_39725152"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:mcl_1_mediated_apoptosis",
@@ -8720,7 +9005,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:mcl_1_mediated_apoptosis|MENTIONED_IN|doc:pmid_39725152"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:ras_signaling",
@@ -8743,7 +9029,8 @@
           "evidence": "",
           "relation_id": "pathway:ras_signaling|MENTIONED_IN|doc:pmid_39732595"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein_domain:switch_ii_pocket",
@@ -8766,7 +9053,8 @@
           "evidence": "",
           "relation_id": "protein_domain:switch_ii_pocket|MENTIONED_IN|doc:pmid_39732595"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein_domain:switch_ii_pocket",
@@ -8789,7 +9077,8 @@
           "evidence": "",
           "relation_id": "protein_domain:switch_ii_pocket|MENTIONED_IN|doc:structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "regulatory_action:fda_approval_sotorasib_2021",
@@ -8812,7 +9101,8 @@
           "evidence": "",
           "relation_id": "regulatory_action:fda_approval_sotorasib_2021|MENTIONED_IN|doc:pmid_39732595"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "regulatory_action:fda_approval_adagrasib_2022",
@@ -8835,7 +9125,8 @@
           "evidence": "",
           "relation_id": "regulatory_action:fda_approval_adagrasib_2022|MENTIONED_IN|doc:pmid_39732595"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:divarasib",
@@ -8858,7 +9149,8 @@
           "evidence": "",
           "relation_id": "compound:divarasib|MENTIONED_IN|doc:pmid_40116975"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:divarasib",
@@ -8881,7 +9173,8 @@
           "evidence": "Divarasib monotherapy: ORR 36%, DC 85.5%",
           "relation_id": "compound:divarasib|INHIBITS|sequence_variant:kras_g12c|pmid_40116975"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:divarasib",
@@ -8904,7 +9197,8 @@
           "evidence": "Divarasib monotherapy: ORR 36% in CRC",
           "relation_id": "compound:divarasib|INDICATED_FOR|disease:colorectal_cancer|pmid_40116975"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:divarasib",
@@ -8927,7 +9221,8 @@
           "evidence": "Divarasib+cetuximab: ORR 62.5%, PFS 8.1 months",
           "relation_id": "compound:divarasib|COMBINED_WITH|compound:cetuximab|pmid_40116975"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:panitumumab",
@@ -8950,7 +9245,8 @@
           "evidence": "",
           "relation_id": "compound:panitumumab|MENTIONED_IN|doc:pmid_40116975"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:panitumumab",
@@ -8973,7 +9269,8 @@
           "evidence": "EGFR inhibitors like cetuximab or panitumumab",
           "relation_id": "compound:panitumumab|INHIBITS|gene:egfr|pmid_40116975"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cetuximab",
@@ -8996,7 +9293,8 @@
           "evidence": "",
           "relation_id": "compound:cetuximab|MENTIONED_IN|doc:pmid_40116975"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:cetuximab",
@@ -9019,7 +9317,8 @@
           "evidence": "EGFR inhibitors like cetuximab or panitumumab",
           "relation_id": "compound:cetuximab|INHIBITS|gene:egfr|pmid_40116975"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_y96d",
@@ -9042,7 +9341,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:kras_y96d|MENTIONED_IN|doc:structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:kras_y96d",
@@ -9065,7 +9365,8 @@
           "evidence": "Y96D (disrupts binding)",
           "relation_id": "sequence_variant:kras_y96d|CONFERS_RESISTANCE_TO|compound:sotorasib|structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:mapk_pathway",
@@ -9088,7 +9389,8 @@
           "evidence": "",
           "relation_id": "pathway:mapk_pathway|MENTIONED_IN|doc:structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "clinical_trial:codebreak_100",
@@ -9111,7 +9413,8 @@
           "evidence": "",
           "relation_id": "clinical_trial:codebreak_100|MENTIONED_IN|doc:structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "regulatory_action:fda_accelerated_approval_sotorasib",
@@ -9134,7 +9437,8 @@
           "evidence": "",
           "relation_id": "regulatory_action:fda_accelerated_approval_sotorasib|MENTIONED_IN|doc:structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "cell_or_tissue:h358",
@@ -9157,7 +9461,8 @@
           "evidence": "",
           "relation_id": "cell_or_tissue:h358|MENTIONED_IN|doc:structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:p_erk_inhibition",
@@ -9180,7 +9485,8 @@
           "evidence": "",
           "relation_id": "biomarker:p_erk_inhibition|MENTIONED_IN|doc:structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:p_erk_inhibition",
@@ -9203,7 +9509,8 @@
           "evidence": "EC50: 38 nM (H358 cells, p-ERK inhibition)",
           "relation_id": "biomarker:p_erk_inhibition|EXPRESSED_IN|cell_or_tissue:h358|structural_sotorasib"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     }
   ]
 }

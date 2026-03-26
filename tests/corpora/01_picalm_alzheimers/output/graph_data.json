@@ -1934,7 +1934,8 @@
           "evidence": "",
           "relation_id": "gene:apoe|MENTIONED_IN|doc:pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:apoe",
@@ -1978,7 +1979,8 @@
           "evidence": "genetic risk for AD... including APOE",
           "relation_id": "gene:apoe|IMPLICATED_IN|disease:alzheimer_disease|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:apoe",
@@ -2008,7 +2010,8 @@
           "evidence": "Apolipoprotein E (APOE)",
           "relation_id": "gene:apoe|ENCODES|protein:apolipoprotein_e|pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:apoe",
@@ -2031,7 +2034,8 @@
           "evidence": "",
           "relation_id": "gene:apoe|MENTIONED_IN|doc:pmid_24729694"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:apoe",
@@ -2054,7 +2058,8 @@
           "evidence": "The apolipoprotein E (APOE) E4 allele has been found to be a main risk factor for late-onset Alzheimer's disease",
           "relation_id": "gene:apoe|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_24729694"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:apoe",
@@ -2077,7 +2082,8 @@
           "evidence": "apolipoprotein E (APOE) E4 allele",
           "relation_id": "gene:apoe|HAS_VARIANT|sequence_variant:apoe_e4|pmid_24729694"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:apoe",
@@ -2100,7 +2106,8 @@
           "evidence": "",
           "relation_id": "gene:apoe|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:apoe",
@@ -2123,7 +2130,8 @@
           "evidence": "",
           "relation_id": "gene:apoe|MENTIONED_IN|doc:pmid_36552756"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:apoe",
@@ -2146,7 +2154,8 @@
           "evidence": "",
           "relation_id": "gene:apoe|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:clu",
@@ -2169,7 +2178,8 @@
           "evidence": "",
           "relation_id": "gene:clu|MENTIONED_IN|doc:pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:clu",
@@ -2220,7 +2230,8 @@
           "evidence": "genetic risk for AD... including CLU",
           "relation_id": "gene:clu|IMPLICATED_IN|disease:alzheimer_disease|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "contested"
     },
     {
       "source": "gene:clu",
@@ -2250,7 +2261,8 @@
           "evidence": "clusterin (CLU)",
           "relation_id": "gene:clu|ENCODES|protein:clusterin|pmid_21300948"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:clu",
@@ -2273,7 +2285,8 @@
           "evidence": "",
           "relation_id": "gene:clu|MENTIONED_IN|doc:pmid_21300948"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:clu",
@@ -2296,7 +2309,8 @@
           "evidence": "",
           "relation_id": "gene:clu|MENTIONED_IN|doc:pmid_24729694"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:clu",
@@ -2319,7 +2333,8 @@
           "evidence": "",
           "relation_id": "gene:clu|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:clu",
@@ -2342,7 +2357,8 @@
           "evidence": "new genes associated with AD risk",
           "relation_id": "gene:clu|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:clu",
@@ -2365,7 +2381,8 @@
           "evidence": "",
           "relation_id": "gene:clu|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:clu",
@@ -2388,7 +2405,8 @@
           "evidence": "",
           "relation_id": "gene:clu|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:cr1",
@@ -2411,7 +2429,8 @@
           "evidence": "",
           "relation_id": "gene:cr1|MENTIONED_IN|doc:pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:cr1",
@@ -2462,7 +2481,8 @@
           "evidence": "genetic risk for AD... including CR1",
           "relation_id": "gene:cr1|IMPLICATED_IN|disease:alzheimer_disease|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "contested"
     },
     {
       "source": "gene:cr1",
@@ -2492,7 +2512,8 @@
           "evidence": "complement receptor 1 (CR1)",
           "relation_id": "gene:cr1|ENCODES|protein:complement_receptor_1|pmid_21300948"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:cr1",
@@ -2515,7 +2536,8 @@
           "evidence": "",
           "relation_id": "gene:cr1|MENTIONED_IN|doc:pmid_21300948"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:cr1",
@@ -2538,7 +2560,8 @@
           "evidence": "",
           "relation_id": "gene:cr1|MENTIONED_IN|doc:pmid_24729694"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:cr1",
@@ -2561,7 +2584,8 @@
           "evidence": "",
           "relation_id": "gene:cr1|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:cr1",
@@ -2584,7 +2608,8 @@
           "evidence": "new genes associated with AD risk",
           "relation_id": "gene:cr1|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:cr1",
@@ -2607,7 +2632,8 @@
           "evidence": "",
           "relation_id": "gene:cr1|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:cr1",
@@ -2630,7 +2656,8 @@
           "evidence": "",
           "relation_id": "gene:cr1|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:picalm",
@@ -2653,7 +2680,8 @@
           "evidence": "",
           "relation_id": "gene:picalm|MENTIONED_IN|doc:pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:picalm",
@@ -2732,7 +2760,8 @@
           "evidence": "genetic risk for AD... including PICALM",
           "relation_id": "gene:picalm|IMPLICATED_IN|disease:alzheimer_disease|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "contested"
     },
     {
       "source": "gene:picalm",
@@ -2755,7 +2784,8 @@
           "evidence": "phosphatidylinositol binding clathrin assembly protein PICALM",
           "relation_id": "gene:picalm|PARTICIPATES_IN|pathway:endocytosis|pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:picalm",
@@ -2778,7 +2808,8 @@
           "evidence": "",
           "relation_id": "gene:picalm|MENTIONED_IN|doc:pmid_21300948"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:picalm",
@@ -2808,7 +2839,8 @@
           "evidence": "phosphatidylinositol clathrin assembly lymphoid-myeloid leukemia (PICALM)",
           "relation_id": "gene:picalm|ENCODES|protein:picalm_protein|pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:picalm",
@@ -2831,7 +2863,8 @@
           "evidence": "rs541458 in PICALM was shown to have an effect on CSF protein levels",
           "relation_id": "gene:picalm|HAS_VARIANT|sequence_variant:rs541458|pmid_21300948"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:picalm",
@@ -2854,7 +2887,8 @@
           "evidence": "CSF biomarker analyses provide a first insight into the potentially predominant pathogenetic mechanisms underlying the association between AD risk and PICALM",
           "relation_id": "gene:picalm|PARTICIPATES_IN|pathway:amyloid_beta_processing|pmid_21300948"
         }
-      ]
+      ],
+      "epistemic_status": "hypothesized"
     },
     {
       "source": "gene:picalm",
@@ -2877,7 +2911,8 @@
           "evidence": "",
           "relation_id": "gene:picalm|MENTIONED_IN|doc:pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:picalm",
@@ -2900,7 +2935,8 @@
           "evidence": "",
           "relation_id": "gene:picalm|MENTIONED_IN|doc:pmid_24729694"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:picalm",
@@ -2923,7 +2959,8 @@
           "evidence": "",
           "relation_id": "gene:picalm|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:picalm",
@@ -2946,7 +2983,8 @@
           "evidence": "new genes associated with AD risk",
           "relation_id": "gene:picalm|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:picalm",
@@ -2969,7 +3007,8 @@
           "evidence": "",
           "relation_id": "gene:picalm|MENTIONED_IN|doc:pmid_25186232"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:picalm",
@@ -2992,7 +3031,8 @@
           "evidence": "",
           "relation_id": "gene:picalm|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:picalm",
@@ -3015,7 +3055,8 @@
           "evidence": "",
           "relation_id": "gene:picalm|MENTIONED_IN|doc:pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:picalm",
@@ -3045,7 +3086,8 @@
           "evidence": "rs541458 of the PICALM gene",
           "relation_id": "gene:picalm|HAS_VARIANT|sequence_variant:picalm_rs541458|pmid_31385771"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:picalm",
@@ -3075,7 +3117,8 @@
           "evidence": "rs3851179 of the PICALM gene",
           "relation_id": "gene:picalm|HAS_VARIANT|sequence_variant:picalm_rs3851179|pmid_31385771"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:picalm",
@@ -3098,7 +3141,8 @@
           "evidence": "",
           "relation_id": "gene:picalm|MENTIONED_IN|doc:pmid_31385771"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:picalm",
@@ -3121,7 +3165,8 @@
           "evidence": "rs592297 of the PICALM gene",
           "relation_id": "gene:picalm|HAS_VARIANT|sequence_variant:picalm_rs592297|pmid_31385771"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:picalm",
@@ -3144,7 +3189,8 @@
           "evidence": "",
           "relation_id": "gene:picalm|MENTIONED_IN|doc:pmid_36552756"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:picalm",
@@ -3167,7 +3213,8 @@
           "evidence": "",
           "relation_id": "gene:picalm|MENTIONED_IN|doc:pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:picalm",
@@ -3190,7 +3237,8 @@
           "evidence": "Phosphatidylinositol Binding Clathrin Assembly Protein gene (PICALM)",
           "relation_id": "gene:picalm|PARTICIPATES_IN|pathway:clathrin_mediated_endocytosis|pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:picalm",
@@ -3213,7 +3261,8 @@
           "evidence": "",
           "relation_id": "gene:picalm|MENTIONED_IN|doc:pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:picalm",
@@ -3236,7 +3285,8 @@
           "evidence": "the LOAD-risk allele of the single-nucleotide polymorphism rs10792832",
           "relation_id": "gene:picalm|HAS_VARIANT|sequence_variant:rs10792832|pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:picalm",
@@ -3259,7 +3309,8 @@
           "evidence": "",
           "relation_id": "gene:picalm|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:picalm",
@@ -3282,7 +3333,8 @@
           "evidence": "genetic risk for AD can be linked to microglial phagocytosis, including... PICALM",
           "relation_id": "gene:picalm|PARTICIPATES_IN|pathway:phagocytosis|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:app",
@@ -3305,7 +3357,8 @@
           "evidence": "",
           "relation_id": "gene:app|MENTIONED_IN|doc:pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:app",
@@ -3328,7 +3381,8 @@
           "evidence": "amyloid precursor protein processing and signalling as well as beta-amyloid processing",
           "relation_id": "gene:app|ASSOCIATED_WITH|protein:amyloid_beta|pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:app",
@@ -3351,7 +3405,8 @@
           "evidence": "",
           "relation_id": "gene:app|MENTIONED_IN|doc:pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:app",
@@ -3374,7 +3429,8 @@
           "evidence": "amyloid precursor protein cleaved C-terminal fragment (APP-CTF)",
           "relation_id": "gene:app|ASSOCIATED_WITH|protein:app_ctf|pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:app",
@@ -3397,7 +3453,8 @@
           "evidence": "",
           "relation_id": "gene:app|MENTIONED_IN|doc:pmid_24729694"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:app",
@@ -3420,7 +3477,8 @@
           "evidence": "Three main genes are involved in early onset AD: amyloid precursor protein (APP)",
           "relation_id": "gene:app|IMPLICATED_IN|disease:early_onset_alzheimer_disease|pmid_24729694"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:app",
@@ -3443,7 +3501,8 @@
           "evidence": "",
           "relation_id": "gene:app|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:app",
@@ -3473,7 +3532,8 @@
           "evidence": "genetic risk for AD... including APP",
           "relation_id": "gene:app|IMPLICATED_IN|disease:alzheimer_disease|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:app",
@@ -3496,7 +3556,8 @@
           "evidence": "",
           "relation_id": "gene:app|MENTIONED_IN|doc:pmid_33453937"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:app",
@@ -3526,7 +3587,8 @@
           "evidence": "amyloid precursor protein (APP)",
           "relation_id": "gene:app|ENCODES|protein:amyloid_precursor_protein|pmid_36552756"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:app",
@@ -3549,7 +3611,8 @@
           "evidence": "",
           "relation_id": "gene:app|MENTIONED_IN|doc:pmid_36552756"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:app",
@@ -3572,7 +3635,8 @@
           "evidence": "",
           "relation_id": "gene:app|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:alzheimer_disease",
@@ -3595,7 +3659,8 @@
           "evidence": "",
           "relation_id": "disease:alzheimer_disease|MENTIONED_IN|doc:pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:alzheimer_disease",
@@ -3618,7 +3683,8 @@
           "evidence": "",
           "relation_id": "disease:alzheimer_disease|MENTIONED_IN|doc:pmid_21300948"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:alzheimer_disease",
@@ -3641,7 +3707,8 @@
           "evidence": "",
           "relation_id": "disease:alzheimer_disease|MENTIONED_IN|doc:pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:alzheimer_disease",
@@ -3664,7 +3731,8 @@
           "evidence": "",
           "relation_id": "disease:alzheimer_disease|MENTIONED_IN|doc:pmid_24729694"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:alzheimer_disease",
@@ -3687,7 +3755,8 @@
           "evidence": "",
           "relation_id": "disease:alzheimer_disease|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:alzheimer_disease",
@@ -3710,7 +3779,8 @@
           "evidence": "",
           "relation_id": "disease:alzheimer_disease|MENTIONED_IN|doc:pmid_25186232"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:alzheimer_disease",
@@ -3733,7 +3803,8 @@
           "evidence": "",
           "relation_id": "disease:alzheimer_disease|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:alzheimer_disease",
@@ -3756,7 +3827,8 @@
           "evidence": "",
           "relation_id": "disease:alzheimer_disease|MENTIONED_IN|doc:pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:alzheimer_disease",
@@ -3779,7 +3851,8 @@
           "evidence": "",
           "relation_id": "disease:alzheimer_disease|MENTIONED_IN|doc:pmid_31385771"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:alzheimer_disease",
@@ -3802,7 +3875,8 @@
           "evidence": "",
           "relation_id": "disease:alzheimer_disease|MENTIONED_IN|doc:pmid_33453937"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:alzheimer_disease",
@@ -3825,7 +3899,8 @@
           "evidence": "",
           "relation_id": "disease:alzheimer_disease|MENTIONED_IN|doc:pmid_34130600"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:alzheimer_disease",
@@ -3848,7 +3923,8 @@
           "evidence": "",
           "relation_id": "disease:alzheimer_disease|MENTIONED_IN|doc:pmid_36552756"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:alzheimer_disease",
@@ -3871,7 +3947,8 @@
           "evidence": "",
           "relation_id": "disease:alzheimer_disease|MENTIONED_IN|doc:pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:alzheimer_disease",
@@ -3894,7 +3971,8 @@
           "evidence": "",
           "relation_id": "disease:alzheimer_disease|MENTIONED_IN|doc:pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:alzheimer_disease",
@@ -3917,7 +3995,8 @@
           "evidence": "",
           "relation_id": "disease:alzheimer_disease|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:amyloid_beta",
@@ -3940,7 +4019,8 @@
           "evidence": "",
           "relation_id": "protein:amyloid_beta|MENTIONED_IN|doc:pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:amyloid_beta",
@@ -3963,7 +4043,8 @@
           "evidence": "Amyloid-containing plaques",
           "relation_id": "protein:amyloid_beta|ASSOCIATED_WITH|phenotype:amyloid_plaques|pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:amyloid_beta",
@@ -3986,7 +4067,8 @@
           "evidence": "",
           "relation_id": "protein:amyloid_beta|MENTIONED_IN|doc:pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:amyloid_beta",
@@ -4037,7 +4119,8 @@
           "evidence": "accumulation of amyloid-beta (A\u03b2) plaques",
           "relation_id": "protein:amyloid_beta|IMPLICATED_IN|disease:alzheimer_disease|pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:amyloid_beta",
@@ -4060,7 +4143,8 @@
           "evidence": "",
           "relation_id": "protein:amyloid_beta|MENTIONED_IN|doc:pmid_25186232"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:amyloid_beta",
@@ -4083,7 +4167,8 @@
           "evidence": "",
           "relation_id": "protein:amyloid_beta|MENTIONED_IN|doc:pmid_33453937"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:amyloid_beta",
@@ -4106,7 +4191,8 @@
           "evidence": "",
           "relation_id": "protein:amyloid_beta|MENTIONED_IN|doc:pmid_36552756"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:amyloid_beta",
@@ -4129,7 +4215,8 @@
           "evidence": "",
           "relation_id": "protein:amyloid_beta|MENTIONED_IN|doc:pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:amyloid_beta",
@@ -4152,7 +4239,8 @@
           "evidence": "",
           "relation_id": "protein:amyloid_beta|MENTIONED_IN|doc:pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:amyloid_beta",
@@ -4175,7 +4263,8 @@
           "evidence": "",
           "relation_id": "protein:amyloid_beta|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:amyloid_beta",
@@ -4198,7 +4287,8 @@
           "evidence": "pruning and compacting plaques, restricting subsequent tau pathology",
           "relation_id": "protein:amyloid_beta|ASSOCIATED_WITH|phenotype:tau_pathology|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:tau",
@@ -4221,7 +4311,8 @@
           "evidence": "",
           "relation_id": "protein:tau|MENTIONED_IN|doc:pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:tau",
@@ -4244,7 +4335,8 @@
           "evidence": "neurofibrillary tangles",
           "relation_id": "protein:tau|ASSOCIATED_WITH|phenotype:neurofibrillary_tangles|pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:tau",
@@ -4267,7 +4359,8 @@
           "evidence": "",
           "relation_id": "protein:tau|MENTIONED_IN|doc:pmid_21300948"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:tau",
@@ -4290,7 +4383,8 @@
           "evidence": "",
           "relation_id": "protein:tau|MENTIONED_IN|doc:pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:tau",
@@ -4334,7 +4428,8 @@
           "evidence": "neurofibrillary Tau tangles in the brain",
           "relation_id": "protein:tau|IMPLICATED_IN|disease:alzheimer_disease|pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:tau",
@@ -4357,7 +4452,8 @@
           "evidence": "",
           "relation_id": "protein:tau|MENTIONED_IN|doc:pmid_25186232"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:tau",
@@ -4380,7 +4476,8 @@
           "evidence": "",
           "relation_id": "protein:tau|MENTIONED_IN|doc:pmid_33453937"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:tau",
@@ -4403,7 +4500,8 @@
           "evidence": "",
           "relation_id": "protein:tau|MENTIONED_IN|doc:pmid_36552756"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:tau",
@@ -4426,7 +4524,8 @@
           "evidence": "",
           "relation_id": "protein:tau|MENTIONED_IN|doc:pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:apolipoprotein_e",
@@ -4449,7 +4548,8 @@
           "evidence": "",
           "relation_id": "protein:apolipoprotein_e|MENTIONED_IN|doc:pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:apolipoprotein_e",
@@ -4472,7 +4572,8 @@
           "evidence": "",
           "relation_id": "protein:apolipoprotein_e|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:clusterin",
@@ -4495,7 +4596,8 @@
           "evidence": "",
           "relation_id": "protein:clusterin|MENTIONED_IN|doc:pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:clusterin",
@@ -4518,7 +4620,8 @@
           "evidence": "",
           "relation_id": "protein:clusterin|MENTIONED_IN|doc:pmid_21300948"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:complement_receptor_1",
@@ -4541,7 +4644,8 @@
           "evidence": "",
           "relation_id": "protein:complement_receptor_1|MENTIONED_IN|doc:pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:complement_receptor_1",
@@ -4564,7 +4668,8 @@
           "evidence": "",
           "relation_id": "protein:complement_receptor_1|MENTIONED_IN|doc:pmid_21300948"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:complement_membrane_attack_complex",
@@ -4587,7 +4692,8 @@
           "evidence": "",
           "relation_id": "protein:complement_membrane_attack_complex|MENTIONED_IN|doc:pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:complement_membrane_attack_complex",
@@ -4610,7 +4716,8 @@
           "evidence": "The presence of the complement membrane attack complex in AD neurones suggests complement mediated neuronal lysis",
           "relation_id": "protein:complement_membrane_attack_complex|HAS_MECHANISM|mechanism_of_action:complement_mediated_neuronal_lysis|pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "hypothesized"
     },
     {
       "source": "phenotype:amyloid_plaques",
@@ -4633,7 +4740,8 @@
           "evidence": "",
           "relation_id": "phenotype:amyloid_plaques|MENTIONED_IN|doc:pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:amyloid_plaques",
@@ -4656,7 +4764,8 @@
           "evidence": "the core pathologies of Alzheimers disease",
           "relation_id": "phenotype:amyloid_plaques|ASSOCIATED_WITH|disease:alzheimer_disease|pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:amyloid_plaques",
@@ -4679,7 +4788,8 @@
           "evidence": "",
           "relation_id": "phenotype:amyloid_plaques|MENTIONED_IN|doc:pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:neurofibrillary_tangles",
@@ -4702,7 +4812,8 @@
           "evidence": "",
           "relation_id": "phenotype:neurofibrillary_tangles|MENTIONED_IN|doc:pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:neurofibrillary_tangles",
@@ -4725,7 +4836,8 @@
           "evidence": "the core pathologies of Alzheimers disease",
           "relation_id": "phenotype:neurofibrillary_tangles|ASSOCIATED_WITH|disease:alzheimer_disease|pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:neurofibrillary_tangles",
@@ -4748,7 +4860,8 @@
           "evidence": "",
           "relation_id": "phenotype:neurofibrillary_tangles|MENTIONED_IN|doc:pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:tau_phosphorylation",
@@ -4771,7 +4884,8 @@
           "evidence": "",
           "relation_id": "phenotype:tau_phosphorylation|MENTIONED_IN|doc:pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:tau_phosphorylation",
@@ -4794,7 +4908,8 @@
           "evidence": "microtubule stability and tau phosphorylation, the core pathologies of Alzheimers disease",
           "relation_id": "phenotype:tau_phosphorylation|ASSOCIATED_WITH|disease:alzheimer_disease|pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:cortical_neuronal_loss",
@@ -4817,7 +4932,8 @@
           "evidence": "",
           "relation_id": "phenotype:cortical_neuronal_loss|MENTIONED_IN|doc:pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:cortical_neuronal_loss",
@@ -4840,7 +4956,8 @@
           "evidence": "cortical and hippocampal neuronal loss, cerebral shrinkage and memory deficits in mice",
           "relation_id": "phenotype:cortical_neuronal_loss|ASSOCIATED_WITH|disease:alzheimer_disease|pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:hippocampal_neuronal_loss",
@@ -4863,7 +4980,8 @@
           "evidence": "",
           "relation_id": "phenotype:hippocampal_neuronal_loss|MENTIONED_IN|doc:pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:hippocampal_neuronal_loss",
@@ -4886,7 +5004,8 @@
           "evidence": "cortical and hippocampal neuronal loss",
           "relation_id": "phenotype:hippocampal_neuronal_loss|ASSOCIATED_WITH|disease:alzheimer_disease|pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:complement_activation",
@@ -4909,7 +5028,8 @@
           "evidence": "",
           "relation_id": "pathway:complement_activation|MENTIONED_IN|doc:pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:complement_activation",
@@ -4932,7 +5052,8 @@
           "evidence": "plaques or tangles also contain a large number of complement, acute phase and immune-related proteins",
           "relation_id": "pathway:complement_activation|IMPLICATED_IN|disease:alzheimer_disease|pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:endocytosis",
@@ -4955,7 +5076,8 @@
           "evidence": "",
           "relation_id": "pathway:endocytosis|MENTIONED_IN|doc:pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:complement_mediated_neuronal_lysis",
@@ -4978,7 +5100,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:complement_mediated_neuronal_lysis|MENTIONED_IN|doc:pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:complement_mediated_neuronal_lysis",
@@ -5001,7 +5124,8 @@
           "evidence": "complement mediated neuronal lysis may be a consequence of this struggle",
           "relation_id": "mechanism_of_action:complement_mediated_neuronal_lysis|IMPLICATED_IN|disease:alzheimer_disease|pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "hypothesized"
     },
     {
       "source": "cell_or_tissue:hippocampus",
@@ -5024,7 +5148,8 @@
           "evidence": "",
           "relation_id": "cell_or_tissue:hippocampus|MENTIONED_IN|doc:pmid_21167244"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "cell_or_tissue:hippocampus",
@@ -5047,7 +5172,8 @@
           "evidence": "",
           "relation_id": "cell_or_tissue:hippocampus|MENTIONED_IN|doc:pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:picalm_protein",
@@ -5070,7 +5196,8 @@
           "evidence": "",
           "relation_id": "protein:picalm_protein|MENTIONED_IN|doc:pmid_21300948"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:picalm_protein",
@@ -5093,7 +5220,8 @@
           "evidence": "",
           "relation_id": "protein:picalm_protein|MENTIONED_IN|doc:pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:picalm_protein",
@@ -5116,7 +5244,8 @@
           "evidence": "we identified AP2 together with PICALM as binding proteins of LC3",
           "relation_id": "protein:picalm_protein|BINDS_TO|protein:lc3|pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:picalm_protein",
@@ -5139,7 +5268,8 @@
           "evidence": "AP2 and PICALM cross-link LC3 with APP-CTF",
           "relation_id": "protein:picalm_protein|BINDS_TO|protein:app_ctf|pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:picalm_protein",
@@ -5162,7 +5292,8 @@
           "evidence": "recognition and shipment of APP-CTF from the endocytic pathway to the LC3-marked autophagic degradation pathway",
           "relation_id": "protein:picalm_protein|PARTICIPATES_IN|pathway:endocytic_pathway|pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:picalm_protein",
@@ -5185,7 +5316,8 @@
           "evidence": "",
           "relation_id": "protein:picalm_protein|MENTIONED_IN|doc:pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:picalm_protein",
@@ -5208,7 +5340,8 @@
           "evidence": "impairing the uptake of amyloid beta (A\u03b2)",
           "relation_id": "protein:picalm_protein|TARGETS|protein:amyloid_beta|pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:picalm_protein",
@@ -5231,7 +5364,8 @@
           "evidence": "microglial-specific role of PICALM",
           "relation_id": "protein:picalm_protein|EXPRESSED_IN|cell_or_tissue:microglia|pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:picalm_protein",
@@ -5254,7 +5388,8 @@
           "evidence": "PICALM expression, impairing the uptake of amyloid beta",
           "relation_id": "protein:picalm_protein|PARTICIPATES_IN|pathway:clathrin_mediated_endocytosis|pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:rs541458",
@@ -5277,7 +5412,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:rs541458|MENTIONED_IN|doc:pmid_21300948"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:rs541458",
@@ -5300,7 +5436,8 @@
           "evidence": "the AD risk allele is associated with decreased CSF Abeta42 levels (2-tailed P = .002)",
           "relation_id": "sequence_variant:rs541458|ASSOCIATED_WITH|biomarker:csf_amyloid_beta_42|pmid_21300948"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:csf_amyloid_beta_42",
@@ -5323,7 +5460,8 @@
           "evidence": "",
           "relation_id": "biomarker:csf_amyloid_beta_42|MENTIONED_IN|doc:pmid_21300948"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:csf_amyloid_beta_42",
@@ -5346,7 +5484,8 @@
           "evidence": "CSF biomarker analyses provide a first insight into the potentially predominant pathogenetic mechanisms underlying the association between AD risk and PICALM",
           "relation_id": "biomarker:csf_amyloid_beta_42|ASSOCIATED_WITH|disease:alzheimer_disease|pmid_21300948"
         }
-      ]
+      ],
+      "epistemic_status": "hypothesized"
     },
     {
       "source": "biomarker:csf_total_tau",
@@ -5369,7 +5508,8 @@
           "evidence": "",
           "relation_id": "biomarker:csf_total_tau|MENTIONED_IN|doc:pmid_21300948"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:csf_total_tau",
@@ -5392,7 +5532,8 @@
           "evidence": "test the impact of these markers on cerebrospinal fluid (CSF)-Abeta42 and total-tau protein levels",
           "relation_id": "biomarker:csf_total_tau|ASSOCIATED_WITH|disease:alzheimer_disease|pmid_21300948"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:amyloid_beta_processing",
@@ -5415,7 +5556,8 @@
           "evidence": "",
           "relation_id": "pathway:amyloid_beta_processing|MENTIONED_IN|doc:pmid_21300948"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:map1lc3",
@@ -5438,7 +5580,8 @@
           "evidence": "",
           "relation_id": "gene:map1lc3|MENTIONED_IN|doc:pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:map1lc3",
@@ -5461,7 +5604,8 @@
           "evidence": "microtubule-associated protein 1 light chain 3 (LC3)",
           "relation_id": "gene:map1lc3|ENCODES|protein:lc3|pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:ap2a1",
@@ -5484,7 +5628,8 @@
           "evidence": "",
           "relation_id": "gene:ap2a1|MENTIONED_IN|doc:pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:ap2a1",
@@ -5507,7 +5652,8 @@
           "evidence": "",
           "relation_id": "gene:ap2a1|MENTIONED_IN|doc:pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:ap2a1",
@@ -5530,7 +5676,8 @@
           "evidence": "CME hub proteins... AP2A1",
           "relation_id": "gene:ap2a1|PARTICIPATES_IN|pathway:clathrin_mediated_endocytosis|pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:app_ctf",
@@ -5553,7 +5700,8 @@
           "evidence": "",
           "relation_id": "protein:app_ctf|MENTIONED_IN|doc:pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:lc3",
@@ -5576,7 +5724,8 @@
           "evidence": "",
           "relation_id": "protein:lc3|MENTIONED_IN|doc:pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:ap2",
@@ -5599,7 +5748,8 @@
           "evidence": "",
           "relation_id": "protein:ap2|MENTIONED_IN|doc:pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:ap2",
@@ -5622,7 +5772,8 @@
           "evidence": "adaptor protein (AP) 2 together with PICALM as binding proteins of LC3",
           "relation_id": "protein:ap2|FORMS_COMPLEX_WITH|protein:picalm_protein|pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:ap2",
@@ -5645,7 +5796,8 @@
           "evidence": "we identified adaptor protein (AP) 2 together with PICALM as binding proteins of LC3",
           "relation_id": "protein:ap2|BINDS_TO|protein:lc3|pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:ap2",
@@ -5668,7 +5820,8 @@
           "evidence": "AP2 and PICALM cross-link LC3 with APP-CTF",
           "relation_id": "protein:ap2|BINDS_TO|protein:app_ctf|pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:ap2",
@@ -5691,7 +5844,8 @@
           "evidence": "AP2 regulated the cellular levels of APP-CTF. Knockdown of AP2 reduced autophagy-mediated APP-CTF degradation",
           "relation_id": "protein:ap2|REGULATES_EXPRESSION|protein:app_ctf|pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:ap2",
@@ -5714,7 +5868,8 @@
           "evidence": "Knockdown of AP2 reduced autophagy-mediated APP-CTF degradation",
           "relation_id": "protein:ap2|PARTICIPATES_IN|pathway:autophagy|pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:atg5_protein",
@@ -5737,7 +5892,8 @@
           "evidence": "",
           "relation_id": "protein:atg5_protein|MENTIONED_IN|doc:pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:atg5_protein",
@@ -5760,7 +5916,8 @@
           "evidence": "amyloid beta clearance in an Atg5-dependent manner",
           "relation_id": "protein:atg5_protein|PARTICIPATES_IN|pathway:autophagy|pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:autophagy",
@@ -5783,7 +5940,8 @@
           "evidence": "",
           "relation_id": "pathway:autophagy|MENTIONED_IN|doc:pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:autophagy",
@@ -5806,7 +5964,8 @@
           "evidence": "autophagy was responsible for APP-CTF degradation",
           "relation_id": "pathway:autophagy|ASSOCIATED_WITH|protein:app_ctf|pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:autophagy",
@@ -5829,7 +5988,8 @@
           "evidence": "",
           "relation_id": "pathway:autophagy|MENTIONED_IN|doc:pmid_34130600"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:autophagy",
@@ -5852,7 +6012,8 @@
           "evidence": "AD: Alzheimer disease [listed among autophagy-related neurodegenerative disorders]",
           "relation_id": "pathway:autophagy|IMPLICATED_IN|disease:alzheimer_disease|pmid_34130600"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:autophagy",
@@ -5875,7 +6036,8 @@
           "evidence": "PD: Parkinson disease [listed among autophagy-related disorders]",
           "relation_id": "pathway:autophagy|IMPLICATED_IN|disease:parkinson_disease|pmid_34130600"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:autophagy",
@@ -5898,7 +6060,8 @@
           "evidence": "FTD: frontotemporal dementia [listed among autophagy-related disorders]",
           "relation_id": "pathway:autophagy|IMPLICATED_IN|disease:frontotemporal_dementia|pmid_34130600"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:autophagy",
@@ -5921,7 +6084,8 @@
           "evidence": "HD: Huntington disease [listed among autophagy-related disorders]",
           "relation_id": "pathway:autophagy|IMPLICATED_IN|disease:huntington_disease|pmid_34130600"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:autophagy",
@@ -5944,7 +6108,8 @@
           "evidence": "Primary dysfunction of autophagy...important cause of genetic disease...severe early-onset neurodevelopmental...disorders",
           "relation_id": "pathway:autophagy|IMPLICATED_IN|disease:neurodevelopmental_disorders|pmid_34130600"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:autophagy",
@@ -5967,7 +6132,8 @@
           "evidence": "spasticity...prominent neurological features, indicating a specific vulnerability of certain neuronal populations to autophagic disturbance",
           "relation_id": "pathway:autophagy|ASSOCIATED_WITH|phenotype:spasticity|pmid_34130600"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:autophagy",
@@ -5990,7 +6156,8 @@
           "evidence": "an associated myopathy has been characterized in several conditions",
           "relation_id": "pathway:autophagy|ASSOCIATED_WITH|phenotype:myopathy|pmid_34130600"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:autophagy",
@@ -6013,7 +6180,8 @@
           "evidence": "",
           "relation_id": "pathway:autophagy|MENTIONED_IN|doc:pmid_36552756"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:endocytic_pathway",
@@ -6036,7 +6204,8 @@
           "evidence": "",
           "relation_id": "pathway:endocytic_pathway|MENTIONED_IN|doc:pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:clathrin_mediated_endocytosis",
@@ -6059,7 +6228,8 @@
           "evidence": "",
           "relation_id": "pathway:clathrin_mediated_endocytosis|MENTIONED_IN|doc:pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:clathrin_mediated_endocytosis",
@@ -6082,7 +6252,8 @@
           "evidence": "",
           "relation_id": "pathway:clathrin_mediated_endocytosis|MENTIONED_IN|doc:pmid_25186232"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:clathrin_mediated_endocytosis",
@@ -6105,7 +6276,8 @@
           "evidence": "",
           "relation_id": "pathway:clathrin_mediated_endocytosis|MENTIONED_IN|doc:pmid_36552756"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:clathrin_mediated_endocytosis",
@@ -6128,7 +6300,8 @@
           "evidence": "",
           "relation_id": "pathway:clathrin_mediated_endocytosis|MENTIONED_IN|doc:pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:clathrin_mediated_endocytosis",
@@ -6151,7 +6324,8 @@
           "evidence": "CME is altered in multiple brain cell types in AD and is implicated in early cellular phenotypes",
           "relation_id": "pathway:clathrin_mediated_endocytosis|IMPLICATED_IN|disease:alzheimer_disease|pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:clathrin_mediated_endocytosis",
@@ -6174,7 +6348,8 @@
           "evidence": "implicated in early cellular phenotypes such as enlarged early endosomes",
           "relation_id": "pathway:clathrin_mediated_endocytosis|ASSOCIATED_WITH|phenotype:enlarged_early_endosomes|pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:clathrin_mediated_endocytosis",
@@ -6197,7 +6372,8 @@
           "evidence": "pathogenic processing of A\u03b2",
           "relation_id": "pathway:clathrin_mediated_endocytosis|ASSOCIATED_WITH|protein:amyloid_beta|pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:clathrin_mediated_endocytosis",
@@ -6220,7 +6396,8 @@
           "evidence": "",
           "relation_id": "pathway:clathrin_mediated_endocytosis|MENTIONED_IN|doc:pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:ap2_picalm_mediated_autophagic_cargo_recognition",
@@ -6243,7 +6420,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:ap2_picalm_mediated_autophagic_cargo_recognition|MENTIONED_IN|doc:pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:ap2_picalm_mediated_autophagic_cargo_recognition",
@@ -6266,7 +6444,8 @@
           "evidence": "AP-2/PICALM complex functions as an autophagic cargo receptor... This molecular mechanism linking AP2/PICALM and AD",
           "relation_id": "mechanism_of_action:ap2_picalm_mediated_autophagic_cargo_recognition|IMPLICATED_IN|disease:alzheimer_disease|pmid_24067654"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:psen1",
@@ -6289,7 +6468,8 @@
           "evidence": "",
           "relation_id": "gene:psen1|MENTIONED_IN|doc:pmid_24729694"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:psen1",
@@ -6312,7 +6492,8 @@
           "evidence": "Three main genes are involved in early onset AD: ... presenilin 1 (PSEN1)",
           "relation_id": "gene:psen1|IMPLICATED_IN|disease:early_onset_alzheimer_disease|pmid_24729694"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:psen1",
@@ -6335,7 +6516,8 @@
           "evidence": "",
           "relation_id": "gene:psen1|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:psen1",
@@ -6365,7 +6547,8 @@
           "evidence": "genetic risk for AD... including PSEN1",
           "relation_id": "gene:psen1|IMPLICATED_IN|disease:alzheimer_disease|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:psen1",
@@ -6388,7 +6571,8 @@
           "evidence": "",
           "relation_id": "gene:psen1|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:psen2",
@@ -6411,7 +6595,8 @@
           "evidence": "",
           "relation_id": "gene:psen2|MENTIONED_IN|doc:pmid_24729694"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:psen2",
@@ -6434,7 +6619,8 @@
           "evidence": "Three main genes are involved in early onset AD: ... presenilin 2 (PSEN2)",
           "relation_id": "gene:psen2|IMPLICATED_IN|disease:early_onset_alzheimer_disease|pmid_24729694"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:psen2",
@@ -6457,7 +6643,8 @@
           "evidence": "",
           "relation_id": "gene:psen2|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:psen2",
@@ -6480,7 +6667,8 @@
           "evidence": "discovery of mutations in three major genes, APP, PSEN1, and PSEN2",
           "relation_id": "gene:psen2|IMPLICATED_IN|disease:alzheimer_disease|pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:sorl1",
@@ -6503,7 +6691,8 @@
           "evidence": "",
           "relation_id": "gene:sorl1|MENTIONED_IN|doc:pmid_24729694"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:sorl1",
@@ -6547,7 +6736,8 @@
           "evidence": "genetic risk for AD... including SORL1",
           "relation_id": "gene:sorl1|IMPLICATED_IN|disease:alzheimer_disease|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "contested"
     },
     {
       "source": "gene:sorl1",
@@ -6570,7 +6760,8 @@
           "evidence": "",
           "relation_id": "gene:sorl1|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:sorl1",
@@ -6593,7 +6784,8 @@
           "evidence": "new genes associated with AD risk",
           "relation_id": "gene:sorl1|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:sorl1",
@@ -6616,7 +6808,8 @@
           "evidence": "",
           "relation_id": "gene:sorl1|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:sorl1",
@@ -6639,7 +6832,8 @@
           "evidence": "",
           "relation_id": "gene:sorl1|MENTIONED_IN|doc:pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:sorl1",
@@ -6662,7 +6856,8 @@
           "evidence": "SNPs on SORL1",
           "relation_id": "gene:sorl1|HAS_VARIANT|sequence_variant:sorl1_rs1010159|pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:sorl1",
@@ -6685,7 +6880,8 @@
           "evidence": "SNPs on SORL1",
           "relation_id": "gene:sorl1|HAS_VARIANT|sequence_variant:sorl1_rs641120|pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:sorl1",
@@ -6708,7 +6904,8 @@
           "evidence": "SNPs on SORL1",
           "relation_id": "gene:sorl1|HAS_VARIANT|sequence_variant:sorl1_rs668387|pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:sorl1",
@@ -6731,7 +6928,8 @@
           "evidence": "SNPs on SORL1",
           "relation_id": "gene:sorl1|HAS_VARIANT|sequence_variant:sorl1_rs689021|pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:sorl1",
@@ -6754,7 +6952,8 @@
           "evidence": "SNPs on SORL1",
           "relation_id": "gene:sorl1|HAS_VARIANT|sequence_variant:sorl1_rs12285364|pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:sorl1",
@@ -6777,7 +6976,8 @@
           "evidence": "SNPs on SORL1",
           "relation_id": "gene:sorl1|HAS_VARIANT|sequence_variant:sorl1_rs2070045|pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:sorl1",
@@ -6800,7 +7000,8 @@
           "evidence": "SNPs on SORL1",
           "relation_id": "gene:sorl1|HAS_VARIANT|sequence_variant:sorl1_rs2282649|pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:sorl1",
@@ -6823,7 +7024,8 @@
           "evidence": "",
           "relation_id": "gene:sorl1|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:trem2",
@@ -6846,7 +7048,8 @@
           "evidence": "",
           "relation_id": "gene:trem2|MENTIONED_IN|doc:pmid_24729694"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:trem2",
@@ -6876,7 +7079,8 @@
           "evidence": "coding variants that increase AD risk: ... TREM2",
           "relation_id": "gene:trem2|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "contested"
     },
     {
       "source": "gene:trem2",
@@ -6899,7 +7103,8 @@
           "evidence": "",
           "relation_id": "gene:trem2|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:trem2",
@@ -6922,7 +7127,8 @@
           "evidence": "",
           "relation_id": "gene:trem2|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:trem2",
@@ -6952,7 +7158,8 @@
           "evidence": "genetic risk for AD... including TREM2",
           "relation_id": "gene:trem2|IMPLICATED_IN|disease:alzheimer_disease|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:trem2",
@@ -6975,7 +7182,8 @@
           "evidence": "",
           "relation_id": "gene:trem2|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:trem2",
@@ -6998,7 +7206,8 @@
           "evidence": "microglial phagocytosis of A\u03b2 via TREM2... phagocytosis of synapses... via TREM2",
           "relation_id": "gene:trem2|PARTICIPATES_IN|pathway:phagocytosis|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:cd33",
@@ -7021,7 +7230,8 @@
           "evidence": "",
           "relation_id": "gene:cd33|MENTIONED_IN|doc:pmid_24729694"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:cd33",
@@ -7051,7 +7261,8 @@
           "evidence": "new genes associated with AD risk",
           "relation_id": "gene:cd33|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "contested"
     },
     {
       "source": "gene:cd33",
@@ -7074,7 +7285,8 @@
           "evidence": "",
           "relation_id": "gene:cd33|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:cd33",
@@ -7097,7 +7309,8 @@
           "evidence": "",
           "relation_id": "gene:cd33|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:cd33",
@@ -7127,7 +7340,8 @@
           "evidence": "genetic risk for AD... including CD33",
           "relation_id": "gene:cd33|IMPLICATED_IN|disease:alzheimer_disease|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:cd33",
@@ -7150,7 +7364,8 @@
           "evidence": "",
           "relation_id": "gene:cd33|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:cd33",
@@ -7173,7 +7388,8 @@
           "evidence": "phagocytosis of A\u03b2 via... CD33",
           "relation_id": "gene:cd33|PARTICIPATES_IN|pathway:phagocytosis|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:apoe_e4",
@@ -7196,7 +7412,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:apoe_e4|MENTIONED_IN|doc:pmid_24729694"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:apoe_e4",
@@ -7219,7 +7436,8 @@
           "evidence": "APOE E4 allele has been found to be a main risk factor for late-onset Alzheimer's disease",
           "relation_id": "sequence_variant:apoe_e4|ASSOCIATED_WITH|disease:late_onset_alzheimer_disease|pmid_24729694"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:early_onset_alzheimer_disease",
@@ -7242,7 +7460,8 @@
           "evidence": "",
           "relation_id": "disease:early_onset_alzheimer_disease|MENTIONED_IN|doc:pmid_24729694"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:late_onset_alzheimer_disease",
@@ -7265,7 +7484,8 @@
           "evidence": "",
           "relation_id": "disease:late_onset_alzheimer_disease|MENTIONED_IN|doc:pmid_24729694"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:late_onset_alzheimer_disease",
@@ -7288,7 +7508,8 @@
           "evidence": "",
           "relation_id": "disease:late_onset_alzheimer_disease|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:late_onset_alzheimer_disease",
@@ -7311,7 +7532,8 @@
           "evidence": "",
           "relation_id": "disease:late_onset_alzheimer_disease|MENTIONED_IN|doc:pmid_25186232"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:abca7",
@@ -7334,7 +7556,8 @@
           "evidence": "",
           "relation_id": "gene:abca7|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:abca7",
@@ -7357,7 +7580,8 @@
           "evidence": "new genes associated with AD risk, including ABCA7",
           "relation_id": "gene:abca7|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:abca7",
@@ -7380,7 +7604,8 @@
           "evidence": "",
           "relation_id": "gene:abca7|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:abca7",
@@ -7403,7 +7628,8 @@
           "evidence": "ABCA7, CD2AP",
           "relation_id": "gene:abca7|IMPLICATED_IN|disease:alzheimer_disease|pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:bin1",
@@ -7426,7 +7652,8 @@
           "evidence": "",
           "relation_id": "gene:bin1|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:bin1",
@@ -7449,7 +7676,8 @@
           "evidence": "new genes associated with AD risk, including ... BIN1",
           "relation_id": "gene:bin1|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:bin1",
@@ -7472,7 +7700,8 @@
           "evidence": "",
           "relation_id": "gene:bin1|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:bin1",
@@ -7509,7 +7738,8 @@
           "evidence": "genetic risk for AD... including BIN1",
           "relation_id": "gene:bin1|IMPLICATED_IN|disease:alzheimer_disease|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:bin1",
@@ -7532,7 +7762,8 @@
           "evidence": "",
           "relation_id": "gene:bin1|MENTIONED_IN|doc:pmid_34130600"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:bin1",
@@ -7555,7 +7786,8 @@
           "evidence": "",
           "relation_id": "gene:bin1|MENTIONED_IN|doc:pmid_36552756"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:bin1",
@@ -7578,7 +7810,8 @@
           "evidence": "",
           "relation_id": "gene:bin1|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:cass4",
@@ -7601,7 +7834,8 @@
           "evidence": "",
           "relation_id": "gene:cass4|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:cass4",
@@ -7624,7 +7858,8 @@
           "evidence": "new genes associated with AD risk",
           "relation_id": "gene:cass4|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:cass4",
@@ -7647,7 +7882,8 @@
           "evidence": "",
           "relation_id": "gene:cass4|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:cass4",
@@ -7670,7 +7906,8 @@
           "evidence": "CASS4, and TRIP4",
           "relation_id": "gene:cass4|IMPLICATED_IN|disease:alzheimer_disease|pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:cd2ap",
@@ -7693,7 +7930,8 @@
           "evidence": "",
           "relation_id": "gene:cd2ap|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:cd2ap",
@@ -7716,7 +7954,8 @@
           "evidence": "new genes associated with AD risk",
           "relation_id": "gene:cd2ap|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:cd2ap",
@@ -7739,7 +7978,8 @@
           "evidence": "",
           "relation_id": "gene:cd2ap|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:cd2ap",
@@ -7762,7 +8002,8 @@
           "evidence": "CD2AP",
           "relation_id": "gene:cd2ap|IMPLICATED_IN|disease:alzheimer_disease|pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:cd2ap",
@@ -7785,7 +8026,8 @@
           "evidence": "",
           "relation_id": "gene:cd2ap|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:celf1",
@@ -7808,7 +8050,8 @@
           "evidence": "",
           "relation_id": "gene:celf1|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:celf1",
@@ -7831,7 +8074,8 @@
           "evidence": "new genes associated with AD risk",
           "relation_id": "gene:celf1|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:celf1",
@@ -7854,7 +8098,8 @@
           "evidence": "",
           "relation_id": "gene:celf1|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:celf1",
@@ -7877,7 +8122,8 @@
           "evidence": "ZCWPW1, CELF1, FERMT2",
           "relation_id": "gene:celf1|IMPLICATED_IN|disease:alzheimer_disease|pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:dsg2",
@@ -7900,7 +8146,8 @@
           "evidence": "",
           "relation_id": "gene:dsg2|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:dsg2",
@@ -7923,7 +8170,8 @@
           "evidence": "new genes associated with AD risk",
           "relation_id": "gene:dsg2|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:epha1",
@@ -7946,7 +8194,8 @@
           "evidence": "",
           "relation_id": "gene:epha1|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:epha1",
@@ -7969,7 +8218,8 @@
           "evidence": "new genes associated with AD risk",
           "relation_id": "gene:epha1|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:epha1",
@@ -7992,7 +8242,8 @@
           "evidence": "",
           "relation_id": "gene:epha1|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:epha1",
@@ -8015,7 +8266,8 @@
           "evidence": "CD33, EPHA1",
           "relation_id": "gene:epha1|IMPLICATED_IN|disease:alzheimer_disease|pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:fermt2",
@@ -8038,7 +8290,8 @@
           "evidence": "",
           "relation_id": "gene:fermt2|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:fermt2",
@@ -8061,7 +8314,8 @@
           "evidence": "new genes associated with AD risk",
           "relation_id": "gene:fermt2|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:fermt2",
@@ -8084,7 +8338,8 @@
           "evidence": "",
           "relation_id": "gene:fermt2|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:fermt2",
@@ -8107,7 +8362,8 @@
           "evidence": "ZCWPW1, CELF1, FERMT2",
           "relation_id": "gene:fermt2|IMPLICATED_IN|disease:alzheimer_disease|pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:hla_drb5",
@@ -8130,7 +8386,8 @@
           "evidence": "",
           "relation_id": "gene:hla_drb5|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:hla_drb5",
@@ -8153,7 +8410,8 @@
           "evidence": "new genes associated with AD risk",
           "relation_id": "gene:hla_drb5|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:hla_drb5",
@@ -8176,7 +8434,8 @@
           "evidence": "",
           "relation_id": "gene:hla_drb5|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:hla_drb5",
@@ -8199,7 +8458,8 @@
           "evidence": "HLA-DRB5/DRB1",
           "relation_id": "gene:hla_drb5|IMPLICATED_IN|disease:alzheimer_disease|pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:hla_drb1",
@@ -8222,7 +8482,8 @@
           "evidence": "",
           "relation_id": "gene:hla_drb1|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:hla_drb1",
@@ -8245,7 +8506,8 @@
           "evidence": "new genes associated with AD risk",
           "relation_id": "gene:hla_drb1|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:hla_drb1",
@@ -8268,7 +8530,8 @@
           "evidence": "",
           "relation_id": "gene:hla_drb1|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:hla_drb1",
@@ -8291,7 +8554,8 @@
           "evidence": "HLA-DRB5/DRB1",
           "relation_id": "gene:hla_drb1|IMPLICATED_IN|disease:alzheimer_disease|pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:inpp5d",
@@ -8314,7 +8578,8 @@
           "evidence": "",
           "relation_id": "gene:inpp5d|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:inpp5d",
@@ -8337,7 +8602,8 @@
           "evidence": "new genes associated with AD risk",
           "relation_id": "gene:inpp5d|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:inpp5d",
@@ -8360,7 +8626,8 @@
           "evidence": "",
           "relation_id": "gene:inpp5d|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:inpp5d",
@@ -8390,7 +8657,8 @@
           "evidence": "genetic risk for AD... including INPP5D",
           "relation_id": "gene:inpp5d|IMPLICATED_IN|disease:alzheimer_disease|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:inpp5d",
@@ -8413,7 +8681,8 @@
           "evidence": "",
           "relation_id": "gene:inpp5d|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:ms4a",
@@ -8436,7 +8705,8 @@
           "evidence": "",
           "relation_id": "gene:ms4a|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:ms4a",
@@ -8459,7 +8729,8 @@
           "evidence": "new genes associated with AD risk",
           "relation_id": "gene:ms4a|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:mef2c",
@@ -8482,7 +8753,8 @@
           "evidence": "",
           "relation_id": "gene:mef2c|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:mef2c",
@@ -8505,7 +8777,8 @@
           "evidence": "new genes associated with AD risk",
           "relation_id": "gene:mef2c|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:mef2c",
@@ -8528,7 +8801,8 @@
           "evidence": "",
           "relation_id": "gene:mef2c|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:mef2c",
@@ -8551,7 +8825,8 @@
           "evidence": "INPP5D, MEF2C, NME8",
           "relation_id": "gene:mef2c|IMPLICATED_IN|disease:alzheimer_disease|pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:nme8",
@@ -8574,7 +8849,8 @@
           "evidence": "",
           "relation_id": "gene:nme8|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:nme8",
@@ -8597,7 +8873,8 @@
           "evidence": "new genes associated with AD risk",
           "relation_id": "gene:nme8|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:nme8",
@@ -8620,7 +8897,8 @@
           "evidence": "",
           "relation_id": "gene:nme8|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:nme8",
@@ -8643,7 +8921,8 @@
           "evidence": "INPP5D, MEF2C, NME8",
           "relation_id": "gene:nme8|IMPLICATED_IN|disease:alzheimer_disease|pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:ptk2b",
@@ -8666,7 +8945,8 @@
           "evidence": "",
           "relation_id": "gene:ptk2b|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:ptk2b",
@@ -8689,7 +8969,8 @@
           "evidence": "new genes associated with AD risk",
           "relation_id": "gene:ptk2b|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:ptk2b",
@@ -8712,7 +8993,8 @@
           "evidence": "",
           "relation_id": "gene:ptk2b|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:ptk2b",
@@ -8735,7 +9017,8 @@
           "evidence": "PTK2B",
           "relation_id": "gene:ptk2b|IMPLICATED_IN|disease:alzheimer_disease|pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:ptk2b",
@@ -8758,7 +9041,8 @@
           "evidence": "",
           "relation_id": "gene:ptk2b|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:slc24a4",
@@ -8781,7 +9065,8 @@
           "evidence": "",
           "relation_id": "gene:slc24a4|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:slc24a4",
@@ -8804,7 +9089,8 @@
           "evidence": "new genes associated with AD risk",
           "relation_id": "gene:slc24a4|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:slc24a4",
@@ -8827,7 +9113,8 @@
           "evidence": "",
           "relation_id": "gene:slc24a4|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:slc24a4",
@@ -8850,7 +9137,8 @@
           "evidence": "SLC24A4-RIN3",
           "relation_id": "gene:slc24a4|IMPLICATED_IN|disease:alzheimer_disease|pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:rin3",
@@ -8873,7 +9161,8 @@
           "evidence": "",
           "relation_id": "gene:rin3|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:rin3",
@@ -8896,7 +9185,8 @@
           "evidence": "new genes associated with AD risk",
           "relation_id": "gene:rin3|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:rin3",
@@ -8919,7 +9209,8 @@
           "evidence": "",
           "relation_id": "gene:rin3|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:rin3",
@@ -8942,7 +9233,8 @@
           "evidence": "SLC24A4-RIN3",
           "relation_id": "gene:rin3|IMPLICATED_IN|disease:alzheimer_disease|pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:zcwpw1",
@@ -8965,7 +9257,8 @@
           "evidence": "",
           "relation_id": "gene:zcwpw1|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:zcwpw1",
@@ -8988,7 +9281,8 @@
           "evidence": "new genes associated with AD risk",
           "relation_id": "gene:zcwpw1|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:zcwpw1",
@@ -9011,7 +9305,8 @@
           "evidence": "",
           "relation_id": "gene:zcwpw1|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:zcwpw1",
@@ -9034,7 +9329,8 @@
           "evidence": "ZCWPW1, CELF1, FERMT2",
           "relation_id": "gene:zcwpw1|IMPLICATED_IN|disease:alzheimer_disease|pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:pld3",
@@ -9057,7 +9353,8 @@
           "evidence": "",
           "relation_id": "gene:pld3|MENTIONED_IN|doc:pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:pld3",
@@ -9080,7 +9377,8 @@
           "evidence": "coding variants that increase AD risk: PLD3",
           "relation_id": "gene:pld3|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_24951455"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:pld3",
@@ -9103,7 +9401,8 @@
           "evidence": "",
           "relation_id": "gene:pld3|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:pld3",
@@ -9126,7 +9425,8 @@
           "evidence": "This effort has identified two novel genes, TREM2 and PLD3",
           "relation_id": "gene:pld3|IMPLICATED_IN|disease:alzheimer_disease|pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:picalm",
@@ -9149,7 +9449,8 @@
           "evidence": "",
           "relation_id": "protein:picalm|MENTIONED_IN|doc:pmid_25186232"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:picalm",
@@ -9172,7 +9473,8 @@
           "evidence": "PICALM gene as a susceptibility locus for late-onset Alzheimer's disease (LOAD) incidence",
           "relation_id": "protein:picalm|IMPLICATED_IN|disease:late_onset_alzheimer_disease|pmid_25186232"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:picalm",
@@ -9195,7 +9497,8 @@
           "evidence": "PICALM affects AD risk primarily by modulating production, transportation, and clearance of beta-amyloid (Abeta) peptide",
           "relation_id": "protein:picalm|REGULATES_EXPRESSION|protein:amyloid_beta|pmid_25186232"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:picalm",
@@ -9218,7 +9521,8 @@
           "evidence": "phosphatidylinositol-binding clathrin assembly protein",
           "relation_id": "protein:picalm|PARTICIPATES_IN|pathway:clathrin_mediated_endocytosis|pmid_25186232"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:picalm",
@@ -9241,7 +9545,8 @@
           "evidence": "PICALM affects AD risk primarily by modulating production, transportation, and clearance of beta-amyloid (Abeta) peptide",
           "relation_id": "protein:picalm|HAS_MECHANISM|mechanism_of_action:amyloid_beta_clearance|pmid_25186232"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:picalm",
@@ -9264,7 +9569,8 @@
           "evidence": "other Abeta-independent pathways are discussed, including tauopathy",
           "relation_id": "protein:picalm|ASSOCIATED_WITH|phenotype:tauopathy|pmid_25186232"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:picalm",
@@ -9287,7 +9593,8 @@
           "evidence": "other Abeta-independent pathways are discussed, including ... synaptic dysfunction",
           "relation_id": "protein:picalm|ASSOCIATED_WITH|phenotype:synaptic_dysfunction|pmid_25186232"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:picalm",
@@ -9310,7 +9617,8 @@
           "evidence": "disorganized lipid metabolism",
           "relation_id": "protein:picalm|PARTICIPATES_IN|pathway:lipid_metabolism|pmid_25186232"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:picalm",
@@ -9333,7 +9641,8 @@
           "evidence": "disrupted iron homeostasis",
           "relation_id": "protein:picalm|PARTICIPATES_IN|pathway:iron_homeostasis|pmid_25186232"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:picalm",
@@ -9356,7 +9665,8 @@
           "evidence": "immune disorder",
           "relation_id": "protein:picalm|PARTICIPATES_IN|pathway:immune_response|pmid_25186232"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:picalm",
@@ -9379,7 +9689,8 @@
           "evidence": "",
           "relation_id": "protein:picalm|MENTIONED_IN|doc:pmid_36552756"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:tauopathy",
@@ -9402,7 +9713,8 @@
           "evidence": "",
           "relation_id": "phenotype:tauopathy|MENTIONED_IN|doc:pmid_25186232"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:synaptic_dysfunction",
@@ -9425,7 +9737,8 @@
           "evidence": "",
           "relation_id": "phenotype:synaptic_dysfunction|MENTIONED_IN|doc:pmid_25186232"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:amyloid_beta_clearance",
@@ -9448,7 +9761,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:amyloid_beta_clearance|MENTIONED_IN|doc:pmid_25186232"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:lipid_metabolism",
@@ -9471,7 +9785,8 @@
           "evidence": "",
           "relation_id": "pathway:lipid_metabolism|MENTIONED_IN|doc:pmid_25186232"
         }
-      ]
+      ],
+      "epistemic_status": "unclassified"
     },
     {
       "source": "pathway:iron_homeostasis",
@@ -9494,7 +9809,8 @@
           "evidence": "",
           "relation_id": "pathway:iron_homeostasis|MENTIONED_IN|doc:pmid_25186232"
         }
-      ]
+      ],
+      "epistemic_status": "unclassified"
     },
     {
       "source": "pathway:immune_response",
@@ -9517,7 +9833,8 @@
           "evidence": "",
           "relation_id": "pathway:immune_response|MENTIONED_IN|doc:pmid_25186232"
         }
-      ]
+      ],
+      "epistemic_status": "unclassified"
     },
     {
       "source": "gene:ms4a4a",
@@ -9540,7 +9857,8 @@
           "evidence": "",
           "relation_id": "gene:ms4a4a|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:ms4a4a",
@@ -9563,7 +9881,8 @@
           "evidence": "MS4A4/MS4A6",
           "relation_id": "gene:ms4a4a|IMPLICATED_IN|disease:alzheimer_disease|pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:ms4a6a",
@@ -9586,7 +9905,8 @@
           "evidence": "",
           "relation_id": "gene:ms4a6a|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:ms4a6a",
@@ -9609,7 +9929,8 @@
           "evidence": "MS4A4/MS4A6",
           "relation_id": "gene:ms4a6a|IMPLICATED_IN|disease:alzheimer_disease|pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:trip4",
@@ -9632,7 +9953,8 @@
           "evidence": "",
           "relation_id": "gene:trip4|MENTIONED_IN|doc:pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:trip4",
@@ -9655,7 +9977,8 @@
           "evidence": "CASS4, and TRIP4",
           "relation_id": "gene:trip4|IMPLICATED_IN|disease:alzheimer_disease|pmid_25311924"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:gab2",
@@ -9678,7 +10001,8 @@
           "evidence": "",
           "relation_id": "gene:gab2|MENTIONED_IN|doc:pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:gab2",
@@ -9701,7 +10025,8 @@
           "evidence": "no significant association between SNPs of GAB2 rs2373115 (G > T) and AD",
           "relation_id": "gene:gab2|ASSOCIATED_WITH|disease:alzheimer_disease|pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "negative"
     },
     {
       "source": "gene:gab2",
@@ -9724,7 +10049,8 @@
           "evidence": "GAB2 rs2373115 (G > T)",
           "relation_id": "gene:gab2|HAS_VARIANT|sequence_variant:gab2_rs2373115|pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:gab2_rs2373115",
@@ -9747,7 +10073,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:gab2_rs2373115|MENTIONED_IN|doc:pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:picalm_rs541458",
@@ -9770,7 +10097,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:picalm_rs541458|MENTIONED_IN|doc:pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:picalm_rs541458",
@@ -9800,7 +10128,8 @@
           "evidence": "C carriers of rs541458 were inversely associated with AD risk (OR = 0.86; 95% CI 0.81, 0.92)",
           "relation_id": "sequence_variant:picalm_rs541458|ASSOCIATED_WITH|disease:alzheimer_disease|pmid_31385771"
         }
-      ]
+      ],
+      "epistemic_status": "contested"
     },
     {
       "source": "sequence_variant:picalm_rs541458",
@@ -9823,7 +10152,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:picalm_rs541458|MENTIONED_IN|doc:pmid_31385771"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:picalm_rs3851179",
@@ -9846,7 +10176,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:picalm_rs3851179|MENTIONED_IN|doc:pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:picalm_rs3851179",
@@ -9876,7 +10207,8 @@
           "evidence": "A carriers of rs3851179 were associated with a decreased risk of AD (OR = 0.88; 95% CI 0.84, 0.91)",
           "relation_id": "sequence_variant:picalm_rs3851179|ASSOCIATED_WITH|disease:alzheimer_disease|pmid_31385771"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:picalm_rs3851179",
@@ -9899,7 +10231,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:picalm_rs3851179|MENTIONED_IN|doc:pmid_31385771"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:sorl1_rs1010159",
@@ -9922,7 +10255,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:sorl1_rs1010159|MENTIONED_IN|doc:pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:sorl1_rs1010159",
@@ -9945,7 +10279,8 @@
           "evidence": "rs1010159*T were associated with a decreased risk of AD",
           "relation_id": "sequence_variant:sorl1_rs1010159|ASSOCIATED_WITH|disease:alzheimer_disease|pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:sorl1_rs641120",
@@ -9968,7 +10303,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:sorl1_rs641120|MENTIONED_IN|doc:pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:sorl1_rs641120",
@@ -9991,7 +10327,8 @@
           "evidence": "rs641120*A were associated with a decreased risk of AD",
           "relation_id": "sequence_variant:sorl1_rs641120|ASSOCIATED_WITH|disease:alzheimer_disease|pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:sorl1_rs668387",
@@ -10014,7 +10351,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:sorl1_rs668387|MENTIONED_IN|doc:pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:sorl1_rs668387",
@@ -10037,7 +10375,8 @@
           "evidence": "rs668387*T were associated with a decreased risk of AD",
           "relation_id": "sequence_variant:sorl1_rs668387|ASSOCIATED_WITH|disease:alzheimer_disease|pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:sorl1_rs689021",
@@ -10060,7 +10399,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:sorl1_rs689021|MENTIONED_IN|doc:pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:sorl1_rs689021",
@@ -10083,7 +10423,8 @@
           "evidence": "rs689021*A were associated with a decreased risk of AD",
           "relation_id": "sequence_variant:sorl1_rs689021|ASSOCIATED_WITH|disease:alzheimer_disease|pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:sorl1_rs12285364",
@@ -10106,7 +10447,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:sorl1_rs12285364|MENTIONED_IN|doc:pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:sorl1_rs12285364",
@@ -10129,7 +10471,8 @@
           "evidence": "rs12285364*T were all associated with an increased risk of AD",
           "relation_id": "sequence_variant:sorl1_rs12285364|ASSOCIATED_WITH|disease:alzheimer_disease|pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:sorl1_rs2070045",
@@ -10152,7 +10495,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:sorl1_rs2070045|MENTIONED_IN|doc:pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:sorl1_rs2070045",
@@ -10175,7 +10519,8 @@
           "evidence": "rs2070045*G were all associated with an increased risk of AD",
           "relation_id": "sequence_variant:sorl1_rs2070045|ASSOCIATED_WITH|disease:alzheimer_disease|pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:sorl1_rs2282649",
@@ -10198,7 +10543,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:sorl1_rs2282649|MENTIONED_IN|doc:pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:sorl1_rs2282649",
@@ -10221,7 +10567,8 @@
           "evidence": "rs2282649*T were all associated with an increased risk of AD",
           "relation_id": "sequence_variant:sorl1_rs2282649|ASSOCIATED_WITH|disease:alzheimer_disease|pmid_26611835"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:picalm_rs592297",
@@ -10244,7 +10591,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:picalm_rs592297|MENTIONED_IN|doc:pmid_31385771"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:picalm_rs592297",
@@ -10267,7 +10615,8 @@
           "evidence": "No association was observed for rs592297",
           "relation_id": "sequence_variant:picalm_rs592297|ASSOCIATED_WITH|disease:alzheimer_disease|pmid_31385771"
         }
-      ]
+      ],
+      "epistemic_status": "negative"
     },
     {
       "source": "protein:amyloid_precursor_protein",
@@ -10290,7 +10639,8 @@
           "evidence": "",
           "relation_id": "protein:amyloid_precursor_protein|MENTIONED_IN|doc:pmid_33453937"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:amyloid_precursor_protein",
@@ -10313,7 +10663,8 @@
           "evidence": "post-endocytic trafficking of amyloid precursor protein (APP) in neurons",
           "relation_id": "protein:amyloid_precursor_protein|PARTICIPATES_IN|pathway:endosomal_trafficking|pmid_33453937"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:amyloid_precursor_protein",
@@ -10336,7 +10687,8 @@
           "evidence": "amyloidogenic processing...deficits in amyloid beta (A\u03b2) clearance",
           "relation_id": "protein:amyloid_precursor_protein|ASSOCIATED_WITH|protein:amyloid_beta|pmid_33453937"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:amyloid_precursor_protein",
@@ -10359,7 +10711,8 @@
           "evidence": "",
           "relation_id": "protein:amyloid_precursor_protein|MENTIONED_IN|doc:pmid_36552756"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:endosomal_trafficking",
@@ -10382,7 +10735,8 @@
           "evidence": "",
           "relation_id": "pathway:endosomal_trafficking|MENTIONED_IN|doc:pmid_33453937"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:endosomal_trafficking",
@@ -10405,7 +10759,8 @@
           "evidence": "multiple defects in endocytic functions as early events initiating various neurodegenerative disorders, including Alzheimer's disease",
           "relation_id": "pathway:endosomal_trafficking|IMPLICATED_IN|disease:alzheimer_disease|pmid_33453937"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:amyloidogenic_processing",
@@ -10428,7 +10783,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:amyloidogenic_processing|MENTIONED_IN|doc:pmid_33453937"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:amyloidogenic_processing",
@@ -10451,7 +10807,8 @@
           "evidence": "increase in amyloidogenic processing...increases in intracellular A\u03b2",
           "relation_id": "mechanism_of_action:amyloidogenic_processing|ASSOCIATED_WITH|protein:amyloid_beta|pmid_33453937"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:endosomal_dysfunction",
@@ -10474,7 +10831,8 @@
           "evidence": "",
           "relation_id": "phenotype:endosomal_dysfunction|MENTIONED_IN|doc:pmid_33453937"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:endosomal_dysfunction",
@@ -10497,7 +10855,8 @@
           "evidence": "endosomal dysfunctions preceding A\u03b2 pathology and tau phosphorylation",
           "relation_id": "phenotype:endosomal_dysfunction|IMPLICATED_IN|disease:alzheimer_disease|pmid_33453937"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:endosomal_dysfunction",
@@ -10520,7 +10879,8 @@
           "evidence": "endosomal pathogenic phenotypes...increases in intracellular A\u03b2",
           "relation_id": "phenotype:endosomal_dysfunction|ASSOCIATED_WITH|phenotype:intracellular_amyloid_beta_accumulation|pmid_33453937"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:intracellular_amyloid_beta_accumulation",
@@ -10543,7 +10903,8 @@
           "evidence": "",
           "relation_id": "phenotype:intracellular_amyloid_beta_accumulation|MENTIONED_IN|doc:pmid_33453937"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:parkinson_disease",
@@ -10566,7 +10927,8 @@
           "evidence": "",
           "relation_id": "disease:parkinson_disease|MENTIONED_IN|doc:pmid_34130600"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:frontotemporal_dementia",
@@ -10589,7 +10951,8 @@
           "evidence": "",
           "relation_id": "disease:frontotemporal_dementia|MENTIONED_IN|doc:pmid_34130600"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:huntington_disease",
@@ -10612,7 +10975,8 @@
           "evidence": "",
           "relation_id": "disease:huntington_disease|MENTIONED_IN|doc:pmid_34130600"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:beta_propeller_protein_associated_neurodegeneration",
@@ -10635,7 +10999,8 @@
           "evidence": "",
           "relation_id": "disease:beta_propeller_protein_associated_neurodegeneration|MENTIONED_IN|doc:pmid_34130600"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:chmp2b",
@@ -10658,7 +11023,8 @@
           "evidence": "",
           "relation_id": "gene:chmp2b|MENTIONED_IN|doc:pmid_34130600"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:chmp2b",
@@ -10681,7 +11047,8 @@
           "evidence": "CHMP2B: charged multivesicular body protein 2B; FTD: frontotemporal dementia",
           "relation_id": "gene:chmp2b|IMPLICATED_IN|disease:frontotemporal_dementia|pmid_34130600"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:gba",
@@ -10704,7 +11071,8 @@
           "evidence": "",
           "relation_id": "gene:gba|MENTIONED_IN|doc:pmid_34130600"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:gba",
@@ -10727,7 +11095,8 @@
           "evidence": "GBA: glucocerebrosidase [known PD risk gene in autophagy context]",
           "relation_id": "gene:gba|IMPLICATED_IN|disease:parkinson_disease|pmid_34130600"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:wdr45",
@@ -10750,7 +11119,8 @@
           "evidence": "",
           "relation_id": "gene:wdr45|MENTIONED_IN|doc:pmid_34130600"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:wdr45",
@@ -10773,7 +11143,8 @@
           "evidence": "BPAN: beta-propeller protein associated neurodegeneration; WDR45: WD repeat domain 45",
           "relation_id": "gene:wdr45|IMPLICATED_IN|disease:beta_propeller_protein_associated_neurodegeneration|pmid_34130600"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:mtor",
@@ -10796,7 +11167,8 @@
           "evidence": "",
           "relation_id": "protein:mtor|MENTIONED_IN|doc:pmid_34130600"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:mtor",
@@ -10819,7 +11191,8 @@
           "evidence": "MTOR: mechanistic target of rapamycin kinase [key autophagy regulator]",
           "relation_id": "protein:mtor|REGULATES_EXPRESSION|pathway:autophagy|pmid_34130600"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:spasticity",
@@ -10842,7 +11215,8 @@
           "evidence": "",
           "relation_id": "phenotype:spasticity|MENTIONED_IN|doc:pmid_34130600"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:myopathy",
@@ -10865,7 +11239,8 @@
           "evidence": "",
           "relation_id": "phenotype:myopathy|MENTIONED_IN|doc:pmid_34130600"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "disease:neurodevelopmental_disorders",
@@ -10888,7 +11263,8 @@
           "evidence": "",
           "relation_id": "disease:neurodevelopmental_disorders|MENTIONED_IN|doc:pmid_34130600"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:picalm",
@@ -10911,7 +11287,8 @@
           "evidence": "",
           "relation_id": "biomarker:picalm|MENTIONED_IN|doc:pmid_36552756"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:picalm",
@@ -10934,7 +11311,8 @@
           "evidence": "PICALM gene as the most significant genetic susceptibility locus after APOE and BIN1",
           "relation_id": "biomarker:picalm|IMPLICATED_IN|disease:alzheimer_disease|pmid_36552756"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:picalm",
@@ -10957,7 +11335,8 @@
           "evidence": "PICALM is a clathrin-adaptor protein that plays a critical role in clathrin-mediated endocytosis",
           "relation_id": "biomarker:picalm|PARTICIPATES_IN|pathway:clathrin_mediated_endocytosis|pmid_36552756"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:picalm",
@@ -10980,7 +11359,8 @@
           "evidence": "plays a critical role in clathrin-mediated endocytosis and autophagy",
           "relation_id": "biomarker:picalm|PARTICIPATES_IN|pathway:autophagy|pmid_36552756"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:picalm",
@@ -11003,7 +11383,8 @@
           "evidence": "differential modulation of APP processing...by PICALM",
           "relation_id": "biomarker:picalm|REGULATES_EXPRESSION|protein:amyloid_precursor_protein|pmid_36552756"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:picalm",
@@ -11026,7 +11407,8 @@
           "evidence": "A\u03b2 transcytosis by PICALM has been reported",
           "relation_id": "biomarker:picalm|ASSOCIATED_WITH|protein:amyloid_beta|pmid_36552756"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "biomarker:picalm",
@@ -11049,7 +11431,8 @@
           "evidence": "significant effects of PICALM modulation of tau pathology progression have also been evidenced in Alzheimer's disease models",
           "relation_id": "biomarker:picalm|ASSOCIATED_WITH|protein:tau|pmid_36552756"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:tau_pathology",
@@ -11072,7 +11455,8 @@
           "evidence": "",
           "relation_id": "phenotype:tau_pathology|MENTIONED_IN|doc:pmid_36552756"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:tau_pathology",
@@ -11095,7 +11479,8 @@
           "evidence": "PICALM modulation of tau pathology progression have also been evidenced in Alzheimer's disease models",
           "relation_id": "phenotype:tau_pathology|ASSOCIATED_WITH|disease:alzheimer_disease|pmid_36552756"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:tau_pathology",
@@ -11118,7 +11503,8 @@
           "evidence": "",
           "relation_id": "phenotype:tau_pathology|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:itsn1",
@@ -11141,7 +11527,8 @@
           "evidence": "",
           "relation_id": "gene:itsn1|MENTIONED_IN|doc:pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:itsn1",
@@ -11164,7 +11551,8 @@
           "evidence": "A clathrin mediated endocytosis scaffolding protein, Intersectin 1",
           "relation_id": "gene:itsn1|PARTICIPATES_IN|pathway:clathrin_mediated_endocytosis|pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:itsn1",
@@ -11187,7 +11575,8 @@
           "evidence": "ITSN1-long (ITSN1-L)",
           "relation_id": "gene:itsn1|ENCODES|protein:intersectin_1_long|pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:itsn1",
@@ -11210,7 +11599,8 @@
           "evidence": "ITSN1-short",
           "relation_id": "gene:itsn1|ENCODES|protein:intersectin_1_short|pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:fcho1",
@@ -11233,7 +11623,8 @@
           "evidence": "",
           "relation_id": "gene:fcho1|MENTIONED_IN|doc:pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:fcho1",
@@ -11256,7 +11647,8 @@
           "evidence": "CME hub proteins... FCHO1",
           "relation_id": "gene:fcho1|PARTICIPATES_IN|pathway:clathrin_mediated_endocytosis|pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:dnm2",
@@ -11279,7 +11671,8 @@
           "evidence": "",
           "relation_id": "gene:dnm2|MENTIONED_IN|doc:pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:dnm2",
@@ -11302,7 +11695,8 @@
           "evidence": "CME hub proteins... Dynamin 2 (DNM2)",
           "relation_id": "gene:dnm2|PARTICIPATES_IN|pathway:clathrin_mediated_endocytosis|pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:intersectin_1_long",
@@ -11325,7 +11719,8 @@
           "evidence": "",
           "relation_id": "protein:intersectin_1_long|MENTIONED_IN|doc:pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:intersectin_1_long",
@@ -11348,7 +11743,8 @@
           "evidence": "ITSN1-L was decreased in the FC of males and HP of females",
           "relation_id": "protein:intersectin_1_long|ASSOCIATED_WITH|disease:alzheimer_disease|pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:intersectin_1_long",
@@ -11371,7 +11767,8 @@
           "evidence": "ITSN1-L was decreased in the FC of males",
           "relation_id": "protein:intersectin_1_long|EXPRESSED_IN|cell_or_tissue:frontal_cortex|pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:intersectin_1_long",
@@ -11394,7 +11791,8 @@
           "evidence": "ITSN1-L... HP of females",
           "relation_id": "protein:intersectin_1_long|EXPRESSED_IN|cell_or_tissue:hippocampus|pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:intersectin_1_short",
@@ -11417,7 +11815,8 @@
           "evidence": "",
           "relation_id": "protein:intersectin_1_short|MENTIONED_IN|doc:pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:intersectin_1_short",
@@ -11440,7 +11839,8 @@
           "evidence": "ITSN1-short was increased in the HP of both males and females",
           "relation_id": "protein:intersectin_1_short|ASSOCIATED_WITH|disease:alzheimer_disease|pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:intersectin_1_short",
@@ -11463,7 +11863,8 @@
           "evidence": "ITSN1-short was increased in the HP of both males and females",
           "relation_id": "protein:intersectin_1_short|EXPRESSED_IN|cell_or_tissue:hippocampus|pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:enlarged_early_endosomes",
@@ -11486,7 +11887,8 @@
           "evidence": "",
           "relation_id": "phenotype:enlarged_early_endosomes|MENTIONED_IN|doc:pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "cell_or_tissue:frontal_cortex",
@@ -11509,7 +11911,8 @@
           "evidence": "",
           "relation_id": "cell_or_tissue:frontal_cortex|MENTIONED_IN|doc:pmid_38915309"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:spi1",
@@ -11532,7 +11935,8 @@
           "evidence": "",
           "relation_id": "gene:spi1|MENTIONED_IN|doc:pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:spi1",
@@ -11555,7 +11959,8 @@
           "evidence": "transcription factor (PU.1)",
           "relation_id": "gene:spi1|ENCODES|protein:pu_1|pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:spi1",
@@ -11578,7 +11983,8 @@
           "evidence": "",
           "relation_id": "gene:spi1|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:spi1",
@@ -11601,7 +12007,8 @@
           "evidence": "genetic risk for AD... including SPI1",
           "relation_id": "gene:spi1|IMPLICATED_IN|disease:alzheimer_disease|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pu_1",
@@ -11624,7 +12031,8 @@
           "evidence": "",
           "relation_id": "protein:pu_1|MENTIONED_IN|doc:pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:pu_1",
@@ -11647,7 +12055,8 @@
           "evidence": "reduced transcription factor (PU.1) binding and PICALM expression",
           "relation_id": "protein:pu_1|REGULATES_EXPRESSION|gene:picalm|pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:rs10792832",
@@ -11670,7 +12079,8 @@
           "evidence": "",
           "relation_id": "sequence_variant:rs10792832|MENTIONED_IN|doc:pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:rs10792832",
@@ -11693,7 +12103,8 @@
           "evidence": "LOAD-risk allele of the single-nucleotide polymorphism rs10792832",
           "relation_id": "sequence_variant:rs10792832|ASSOCIATED_WITH|disease:alzheimer_disease|pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:rs10792832",
@@ -11716,7 +12127,8 @@
           "evidence": "PICALM LOAD-risk allele causes aberrant lipid droplets in microglia",
           "relation_id": "sequence_variant:rs10792832|ASSOCIATED_WITH|phenotype:lipid_droplet_accumulation|pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:rs10792832",
@@ -11739,7 +12151,8 @@
           "evidence": "causal link between reduced PICALM expression, LD accumulation and phagocytosis deficits",
           "relation_id": "sequence_variant:rs10792832|CAUSES|phenotype:phagocytosis_deficit|pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:rs10792832",
@@ -11762,7 +12175,8 @@
           "evidence": "impairing the uptake of amyloid beta (A\u03b2)",
           "relation_id": "sequence_variant:rs10792832|CAUSES|phenotype:reduced_amyloid_beta_uptake|pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "sequence_variant:rs10792832",
@@ -11785,7 +12199,8 @@
           "evidence": "impairing the uptake of... myelin debris",
           "relation_id": "sequence_variant:rs10792832|CAUSES|phenotype:reduced_myelin_debris_uptake|pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:cholesterol_synthesis",
@@ -11808,7 +12223,8 @@
           "evidence": "",
           "relation_id": "pathway:cholesterol_synthesis|MENTIONED_IN|doc:pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:cholesterol_synthesis",
@@ -11831,7 +12247,8 @@
           "evidence": "transcriptional enrichment of pathways for cholesterol synthesis and LD formation",
           "relation_id": "pathway:cholesterol_synthesis|ASSOCIATED_WITH|phenotype:lipid_droplet_accumulation|pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:lipid_droplet_accumulation",
@@ -11854,7 +12271,8 @@
           "evidence": "",
           "relation_id": "phenotype:lipid_droplet_accumulation|MENTIONED_IN|doc:pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:lipid_droplet_accumulation",
@@ -11877,7 +12295,8 @@
           "evidence": "causal link between reduced PICALM expression, LD accumulation and phagocytosis deficits",
           "relation_id": "phenotype:lipid_droplet_accumulation|ASSOCIATED_WITH|phenotype:phagocytosis_deficit|pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:lipid_droplet_accumulation",
@@ -11900,7 +12319,8 @@
           "evidence": "aberrant lipid droplets in microglia",
           "relation_id": "phenotype:lipid_droplet_accumulation|LOCALIZED_TO|cell_or_tissue:microglia|pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:phagocytosis_deficit",
@@ -11923,7 +12343,8 @@
           "evidence": "",
           "relation_id": "phenotype:phagocytosis_deficit|MENTIONED_IN|doc:pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:reduced_amyloid_beta_uptake",
@@ -11946,7 +12367,8 @@
           "evidence": "",
           "relation_id": "phenotype:reduced_amyloid_beta_uptake|MENTIONED_IN|doc:pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:reduced_myelin_debris_uptake",
@@ -11969,7 +12391,8 @@
           "evidence": "",
           "relation_id": "phenotype:reduced_myelin_debris_uptake|MENTIONED_IN|doc:pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "cell_or_tissue:microglia",
@@ -11992,7 +12415,8 @@
           "evidence": "",
           "relation_id": "cell_or_tissue:microglia|MENTIONED_IN|doc:pmid_40903578"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "cell_or_tissue:microglia",
@@ -12015,7 +12439,8 @@
           "evidence": "",
           "relation_id": "cell_or_tissue:microglia|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:abca1",
@@ -12038,7 +12463,8 @@
           "evidence": "",
           "relation_id": "gene:abca1|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:abca1",
@@ -12061,7 +12487,8 @@
           "evidence": "genetic risk for AD can be linked to microglial phagocytosis, including ABCA1",
           "relation_id": "gene:abca1|IMPLICATED_IN|disease:alzheimer_disease|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:abca1",
@@ -12084,7 +12511,8 @@
           "evidence": "genetic risk for AD can be linked to microglial phagocytosis, including ABCA1",
           "relation_id": "gene:abca1|PARTICIPATES_IN|pathway:phagocytosis|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:abi3",
@@ -12107,7 +12535,8 @@
           "evidence": "",
           "relation_id": "gene:abi3|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:abi3",
@@ -12130,7 +12559,8 @@
           "evidence": "genetic risk for AD... including ABI3",
           "relation_id": "gene:abi3|IMPLICATED_IN|disease:alzheimer_disease|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:grn",
@@ -12153,7 +12583,8 @@
           "evidence": "",
           "relation_id": "gene:grn|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:grn",
@@ -12176,7 +12607,8 @@
           "evidence": "genetic risk for AD... including GRN",
           "relation_id": "gene:grn|IMPLICATED_IN|disease:alzheimer_disease|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:plcg2",
@@ -12199,7 +12631,8 @@
           "evidence": "",
           "relation_id": "gene:plcg2|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:plcg2",
@@ -12222,7 +12655,8 @@
           "evidence": "genetic risk for AD... including PLCG2",
           "relation_id": "gene:plcg2|IMPLICATED_IN|disease:alzheimer_disease|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:tmem106b",
@@ -12245,7 +12679,8 @@
           "evidence": "",
           "relation_id": "gene:tmem106b|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:tmem106b",
@@ -12268,7 +12703,8 @@
           "evidence": "genetic risk for AD... including TMEM106B",
           "relation_id": "gene:tmem106b|IMPLICATED_IN|disease:alzheimer_disease|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:p2ry6",
@@ -12291,7 +12727,8 @@
           "evidence": "",
           "relation_id": "gene:p2ry6|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "gene:p2ry6",
@@ -12314,7 +12751,8 @@
           "evidence": "microglial phagocytosis of synapses and neurons... via... P2Y6 receptor",
           "relation_id": "gene:p2ry6|PARTICIPATES_IN|pathway:phagocytosis|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:trem2_protein",
@@ -12337,7 +12775,8 @@
           "evidence": "",
           "relation_id": "protein:trem2_protein|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:trem2_protein",
@@ -12360,7 +12799,8 @@
           "evidence": "Microglial phagocytosis of A\u03b2 via TREM2",
           "relation_id": "protein:trem2_protein|TARGETS|protein:amyloid_beta|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:trem2_protein",
@@ -12383,7 +12823,8 @@
           "evidence": "microglial phagocytosis... via TREM2",
           "relation_id": "protein:trem2_protein|EXPRESSED_IN|cell_or_tissue:microglia|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:lrp1",
@@ -12406,7 +12847,8 @@
           "evidence": "",
           "relation_id": "protein:lrp1|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:lrp1",
@@ -12429,7 +12871,8 @@
           "evidence": "Microglial phagocytosis of A\u03b2 via... LRP1",
           "relation_id": "protein:lrp1|TARGETS|protein:amyloid_beta|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:cd33_protein",
@@ -12452,7 +12895,8 @@
           "evidence": "",
           "relation_id": "protein:cd33_protein|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:cd33_protein",
@@ -12475,7 +12919,8 @@
           "evidence": "phagocytosis of A\u03b2 via... CD33",
           "relation_id": "protein:cd33_protein|TARGETS|protein:amyloid_beta|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:tam_receptors",
@@ -12498,7 +12943,8 @@
           "evidence": "",
           "relation_id": "protein:tam_receptors|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "protein:tam_receptors",
@@ -12521,7 +12967,8 @@
           "evidence": "phagocytosis of A\u03b2 via... TAM receptors",
           "relation_id": "protein:tam_receptors|TARGETS|protein:amyloid_beta|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:anti_amyloid_beta_antibodies",
@@ -12544,7 +12991,8 @@
           "evidence": "",
           "relation_id": "compound:anti_amyloid_beta_antibodies|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:anti_amyloid_beta_antibodies",
@@ -12567,7 +13015,8 @@
           "evidence": "the only disease-modifying treatments for AD - anti-A\u03b2 antibodies",
           "relation_id": "compound:anti_amyloid_beta_antibodies|INDICATED_FOR|disease:alzheimer_disease|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:anti_amyloid_beta_antibodies",
@@ -12590,7 +13039,8 @@
           "evidence": "anti-A\u03b2 antibodies - work by increasing microglial phagocytosis of A\u03b2 aggregates",
           "relation_id": "compound:anti_amyloid_beta_antibodies|TARGETS|protein:amyloid_beta|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "compound:anti_amyloid_beta_antibodies",
@@ -12613,7 +13063,8 @@
           "evidence": "work by increasing microglial phagocytosis of A\u03b2 aggregates",
           "relation_id": "compound:anti_amyloid_beta_antibodies|HAS_MECHANISM|mechanism_of_action:microglial_phagocytosis|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:microglial_phagocytosis",
@@ -12636,7 +13087,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:microglial_phagocytosis|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:microglial_phagocytosis",
@@ -12659,7 +13111,8 @@
           "evidence": "AD is caused by dysregulated microglial phagocytosis",
           "relation_id": "mechanism_of_action:microglial_phagocytosis|IMPLICATED_IN|disease:alzheimer_disease|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:complement_mediated_synapse_elimination",
@@ -12682,7 +13135,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:complement_mediated_synapse_elimination|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "mechanism_of_action:complement_mediated_synapse_elimination",
@@ -12705,7 +13159,8 @@
           "evidence": "microglial phagocytosis of synapses and neurons... via complement",
           "relation_id": "mechanism_of_action:complement_mediated_synapse_elimination|CAUSES|phenotype:synapse_loss|pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "pathway:phagocytosis",
@@ -12728,7 +13183,8 @@
           "evidence": "",
           "relation_id": "pathway:phagocytosis|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     },
     {
       "source": "phenotype:synapse_loss",
@@ -12751,7 +13207,8 @@
           "evidence": "",
           "relation_id": "phenotype:synapse_loss|MENTIONED_IN|doc:pmid_41315858"
         }
-      ]
+      ],
+      "epistemic_status": "asserted"
     }
   ]
 }

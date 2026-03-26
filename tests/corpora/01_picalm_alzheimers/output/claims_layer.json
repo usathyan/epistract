@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "description": "Super Domain epistemic layer \u2014 complements Louvain community structure",
+    "reference": "Eric Little, 'Reasoning with Knowledge Graphs \u2014 Super Domains', KG Conference NYC 2025",
+    "generated_from": "tests/corpora/01_picalm_alzheimers/output/graph_data.json",
+    "total_relations": 457
+  },
+  "summary": {
+    "epistemic_status_counts": {
+      "asserted": 441,
+      "contested": 7,
+      "hypothesized": 4,
+      "unclassified": 3,
+      "negative": 2
+    },
+    "contradictions_found": 1,
+    "hypotheses_found": 1,
+    "document_types": {
+      "paper": {
+        "asserted": 488,
+        "hypothesized": 10,
+        "unclassified": 3,
+        "negative": 3
+      }
+    }
+  },
+  "base_domain": {
+    "description": "Brute facts \u2014 asserted with high confidence, no hedging",
+    "relation_count": 441
+  },
+  "super_domain": {
+    "description": "Epistemic facts \u2014 hypothesized, speculative, prophetic, negative, or contested",
+    "relation_count": 16,
+    "hypotheses": [
+      {
+        "id": "hypothesis:1",
+        "label": "CSF amyloid beta 42 \u2014 Alzheimer disease \u2014 complement-mediated neuronal lysis \u2014 complement membrane attack complex",
+        "status": "proposed",
+        "member_relations": [
+          "protein:complement_membrane_attack_complex|HAS_MECHANISM|mechanism_of_action:complement_mediated_neuronal_lysis",
+          "mechanism_of_action:complement_mediated_neuronal_lysis|IMPLICATED_IN|disease:alzheimer_disease",
+          "biomarker:csf_amyloid_beta_42|ASSOCIATED_WITH|disease:alzheimer_disease"
+        ],
+        "member_entities": [
+          "biomarker:csf_amyloid_beta_42",
+          "disease:alzheimer_disease",
+          "mechanism_of_action:complement_mediated_neuronal_lysis",
+          "protein:complement_membrane_attack_complex"
+        ],
+        "support_documents": [
+          "pmid_21167244",
+          "pmid_21300948"
+        ],
+        "evidence_summary": "The presence of the complement membrane attack complex in AD neurones suggests complement mediated neuronal lysis",
+        "relation_count": 3,
+        "entity_count": 4
+      }
+    ],
+    "contradictions": [
+      {
+        "type": "evidence_direction",
+        "relation_id": "sequence_variant:picalm_rs541458|ASSOCIATED_WITH|disease:alzheimer_disease",
+        "source": "sequence_variant:picalm_rs541458",
+        "target": "disease:alzheimer_disease",
+        "relation_type": "ASSOCIATED_WITH",
+        "positive_mentions": [
+          {
+            "document": "pmid_31385771",
+            "evidence": "C carriers of rs541458 were inversely associated with AD risk (OR = 0.86; 95% CI 0.81, 0.92)",
+            "confidence": 0.95
+          }
+        ],
+        "negative_mentions": [
+          {
+            "document": "pmid_26611835",
+            "evidence": "no significant association between PICALM rs541458 (C > T) and AD",
+            "confidence": 0.5
+          }
+        ]
+      }
+    ]
+  }
+}

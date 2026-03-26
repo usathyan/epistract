@@ -1,0 +1,64 @@
+{
+  "metadata": {
+    "description": "Super Domain epistemic layer \u2014 complements Louvain community structure",
+    "reference": "Eric Little, 'Reasoning with Knowledge Graphs \u2014 Super Domains', KG Conference NYC 2025",
+    "generated_from": "tests/corpora/05_cardiovascular/output/graph_data.json",
+    "total_relations": 246
+  },
+  "summary": {
+    "epistemic_status_counts": {
+      "asserted": 243,
+      "unclassified": 3
+    },
+    "contradictions_found": 1,
+    "hypotheses_found": 0,
+    "document_types": {
+      "paper": {
+        "asserted": 263,
+        "unclassified": 3
+      },
+      "unknown": {
+        "asserted": 35
+      }
+    }
+  },
+  "base_domain": {
+    "description": "Brute facts \u2014 asserted with high confidence, no hedging",
+    "relation_count": 243
+  },
+  "super_domain": {
+    "description": "Epistemic facts \u2014 hypothesized, speculative, prophetic, negative, or contested",
+    "relation_count": 3,
+    "hypotheses": [],
+    "contradictions": [
+      {
+        "type": "confidence_divergence",
+        "relation_id": "compound:mavacamten|INHIBITS|protein:cardiac_myosin",
+        "source": "compound:mavacamten",
+        "target": "protein:cardiac_myosin",
+        "relation_type": "INHIBITS",
+        "confidence_range": [
+          0.6,
+          0.97
+        ],
+        "mentions": [
+          {
+            "document": "pmid_37804245",
+            "evidence": "Mavacamten is a first-in-class, targeted, cardiac-specific myosin inhibitor",
+            "confidence": 0.97
+          },
+          {
+            "document": "pmid_38176782",
+            "evidence": "Mavacamten Treatment for Symptomatic Obstructive Hypertrophic Cardiomyopathy",
+            "confidence": 0.6
+          },
+          {
+            "document": "pmid_39196032",
+            "evidence": "The first-in-class cardiac myosin inhibitor, mavacamten",
+            "confidence": 0.93
+          }
+        ]
+      }
+    ]
+  }
+}
