@@ -7,4 +7,6 @@ __pycache__/
 # Allow test corpus outputs (committed for reproducibility)
 !tests/corpora/*/output/
 .DS_Store
+docs/analysis/EricNotes.md
 lib/
+*.env
