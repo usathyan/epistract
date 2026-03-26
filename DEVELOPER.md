@@ -454,6 +454,7 @@ For protein sequences: length, molecular weight, isoelectric point, aromaticity,
 | `/epistract-view` | `scripts/run_sift.py` | `run_view()` |
 | `/epistract-query` | `scripts/run_sift.py` | `KnowledgeGraph.load()`, search |
 | `/epistract-export` | `scripts/run_sift.py` | `run_export()` |
+| `/epistract-epistemic` | `scripts/label_epistemic.py` | — |
 
 ### Agents
 
@@ -687,6 +688,7 @@ Or pre-approve in `.claude/settings.json`:
 | `scripts/run_sift.py` | sift-kg Python API wrapper (build, view, export, search, info) | All commands |
 | `scripts/label_communities.py` | Auto-label communities with descriptive names | Called by `run_sift.py build` |
 | `scripts/validate_molecules.py` | Scan extractions for SMILES/sequences, validate with RDKit/Biopython | `/epistract-validate` and ingest pipeline |
+| `scripts/label_epistemic.py` | Classify relations by epistemic status, detect contradictions, group hypotheses | `/epistract-epistemic` command |
 
 ---
 

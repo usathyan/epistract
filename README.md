@@ -122,6 +122,7 @@ The interactive viewer shows your knowledge graph with labeled community regions
 | `/epistract-build` | Build graph from existing extractions |
 | `/epistract-validate` | Validate molecular identifiers in extractions |
 | `/epistract-view` | Open interactive graph viewer |
+| `/epistract-epistemic` | Analyze epistemic patterns (hypotheses, contradictions, claims) |
 | `/epistract-query <term>` | Search entities in the knowledge graph |
 | `/epistract-export <format>` | Export to graphml, gexf, csv, sqlite, json |
 
