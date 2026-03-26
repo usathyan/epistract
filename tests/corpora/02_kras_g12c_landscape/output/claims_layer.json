@@ -1,7 +1,7 @@
 {
   "metadata": {
     "description": "Super Domain epistemic layer \u2014 complements Louvain community structure",
-    "reference": "Eric Little, 'Reasoning with Knowledge Graphs \u2014 Super Domains', KG Conference NYC 2025",
+    "reference": "Eric Little, 'Reasoning with Knowledge Graphs \u2014 Super Domains', https://www.linkedin.com/posts/eric-little-71b2a0b_pleased-to-announce-that-i-will-be-speaking-activity-7442581339096313856-wEFc",
     "generated_from": "tests/corpora/02_kras_g12c_landscape/output/graph_data.json",
     "total_relations": 307
   },
