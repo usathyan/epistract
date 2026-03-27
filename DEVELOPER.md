@@ -17,6 +17,7 @@ This document is for developers extending, debugging, or integrating with Epistr
 9. [Data Formats](#data-formats)
 10. [Testing & Validation](#testing--validation)
 11. [Phase 2: Neo4j & Vector RAG](#phase-2-neo4j--vector-rag)
+12. [Contributing](#contributing)
 
 ---
 
