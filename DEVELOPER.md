@@ -694,12 +694,49 @@ Or pre-approve in `.claude/settings.json`:
 
 ## Contributing
 
-1. Fork the repository
-2. Create a feature branch
-3. Follow the existing code patterns (sift-kg conventions)
-4. Bump the plugin version in `.claude-plugin/plugin.json` for any user-facing changes
-5. Run the test suite
-6. Submit a pull request with a clear description
+### Branch Protection
+
+The `main` branch is protected. All changes must go through pull requests — direct pushes to `main` are not allowed. PRs require review and approval from the repository owner before merging.
+
+### Workflow
+
+1. **Fork** the repository to your own GitHub account
+2. **Clone** your fork and create a feature branch from `main`:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. **Follow existing patterns** — match the code style, naming conventions, and architecture of the surrounding code. Key conventions:
+   - Python scripts in `scripts/` with CLI interfaces
+   - Agent prompts in `agents/` with frontmatter
+   - Commands in `commands/` as markdown with frontmatter
+   - Skills in `skills/` following the SKILL.md pattern
+   - Entity/relation field names: `entity_type` and `relation_type` (not `type`)
+4. **Test your changes** against at least one test scenario:
+   ```bash
+   python3 scripts/run_sift.py build tests/corpora/01_picalm_alzheimers/output
+   python3 scripts/label_epistemic.py tests/corpora/01_picalm_alzheimers/output
+   ```
+5. **Bump the plugin version** in `.claude-plugin/plugin.json` for any user-facing changes (new commands, schema changes, agent updates)
+6. **Submit a pull request** with:
+   - Clear description of what changed and why
+   - Which scenarios were tested
+   - Any new dependencies introduced
+7. **Wait for review** — the repository owner will review and merge approved PRs
+
+### What Makes a Good PR
+
+- **One concern per PR** — don't mix a bug fix with a new feature
+- **Include test evidence** — show output from a scenario run if applicable
+- **Don't modify test corpus outputs** unless the change is specifically about improving extraction quality
+- **Don't add dependencies** without discussing first — the project keeps optional deps (RDKit, Biopython) separate from core functionality
+
+### Areas Open for Contribution
+
+- New test scenarios (follow the pattern in `tests/scenarios/`)
+- Improved epistemic analysis patterns (see `scripts/label_epistemic.py`)
+- Domain schema extensions (new entity/relation types in `domain.yaml`)
+- Visualization improvements
+- Documentation and examples
 
 ## License
 
