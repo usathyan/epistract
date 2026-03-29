@@ -48,15 +48,6 @@ from scan_patterns import scan_text
 from validate_sequences import detect_type
 from build_extraction import write_extraction
 
-# Domain resolution imports
-from domain_resolver import (
-    resolve_domain,
-    list_domains,
-    get_domain_skill_md,
-    get_validation_scripts_dir,
-    validate_domain_cross_refs,
-)
-
 # Conditional imports
 if HAS_RDKIT:
     from validate_smiles import validate_smiles
@@ -278,8 +269,8 @@ def test_ut013_run_sift_build():
         # Write extraction
         write_extraction("test_doc_001", tmpdir, entities, relations)
 
-        # Run build (uses domain name, not path)
-        cmd_build(tmpdir, domain_name="drug-discovery")
+        # Run build
+        cmd_build(tmpdir, domain_path=str(DOMAIN_YAML))
 
         # Verify graph_data.json
         graph_path = Path(tmpdir) / "graph_data.json"
@@ -328,165 +319,108 @@ def test_ut014_validation_orchestrator():
 
 
 # ---------------------------------------------------------------------------
-# Domain Resolution Tests (Phase 1: DCFG-01, DCFG-04)
+# Ingestion module availability
 # ---------------------------------------------------------------------------
+try:
+    from ingest_documents import (
+        discover_corpus,
+        sanitize_doc_id,
+        detect_category,
+        parse_document,
+        ingest_corpus,
+    )
+
+    HAS_INGEST = True
+except ImportError:
+    HAS_INGEST = False
+
+FIXTURES = PROJECT_ROOT / "tests" / "fixtures"
 
 
-def test_resolve_domain_default():
-    """DCFG-04: resolve_domain(None) returns drug-discovery domain path."""
-    path = resolve_domain(None)
-    assert path.exists(), f"Default domain path does not exist: {path}"
-    assert path.name == "domain.yaml"
-    assert "drug-discovery-extraction" in str(path)
+# ========================================================================
+# UT-020: discover_corpus finds all files recursively
+# ========================================================================
+@pytest.mark.skipif(not HAS_INGEST, reason="ingest_documents not available")
+def test_ingest_discover_corpus():
+    """discover_corpus(fixtures_path) finds all files recursively."""
+    files = discover_corpus(FIXTURES)
+    assert len(files) >= 3, f"Expected >= 3 files, got {len(files)}"
+    extensions = {f.suffix.lower() for f in files}
+    assert ".pdf" in extensions, f"Expected .pdf in extensions, got {extensions}"
+    assert ".xlsx" in extensions, f"Expected .xlsx in extensions, got {extensions}"
 
 
-def test_resolve_domain_explicit_drug_discovery():
-    """DCFG-04: resolve_domain('drug-discovery') returns same as default."""
-    path = resolve_domain("drug-discovery")
-    default_path = resolve_domain(None)
-    assert path == default_path, f"Explicit != default: {path} vs {default_path}"
+# ========================================================================
+# UT-021: sanitize_doc_id normalizes filenames
+# ========================================================================
+@pytest.mark.skipif(not HAS_INGEST, reason="ingest_documents not available")
+def test_ingest_sanitize_doc_id_basic():
+    """sanitize_doc_id normalizes filenames to lowercase with underscores."""
+    result = sanitize_doc_id("Aramark Contract.pdf")
+    assert result == "aramark_contract", f"Expected 'aramark_contract', got '{result}'"
 
 
-def test_resolve_domain_nonexistent():
-    """DCFG-01: resolve_domain('nonexistent') raises FileNotFoundError."""
-    with pytest.raises(FileNotFoundError, match="not found"):
-        resolve_domain("nonexistent")
+@pytest.mark.skipif(not HAS_INGEST, reason="ingest_documents not available")
+def test_ingest_sanitize_doc_id_parens():
+    """sanitize_doc_id handles parentheses and special characters."""
+    result = sanitize_doc_id("PCC Rental Agreement (2026).PDF")
+    assert result == "pcc_rental_agreement__2026_", f"Expected 'pcc_rental_agreement__2026_', got '{result}'"
 
 
-def test_resolve_domain_validates_package(tmp_path):
-    """DCFG-01/D-03: Domain missing SKILL.md raises FileNotFoundError."""
-    # Create a domain dir with only domain.yaml (missing SKILL.md and references/)
-    fake_skills = tmp_path / "skills"
-    fake_domain = fake_skills / "fake-extraction"
-    fake_domain.mkdir(parents=True)
-    (fake_domain / "domain.yaml").write_text("name: Fake\nversion: '1.0'\n")
-    # Temporarily patch SKILLS_DIR
-    import domain_resolver
-
-    original = domain_resolver.SKILLS_DIR
-    domain_resolver.SKILLS_DIR = fake_skills
-    try:
-        with pytest.raises(FileNotFoundError, match="SKILL.md"):
-            resolve_domain("fake")
-    finally:
-        domain_resolver.SKILLS_DIR = original
+# ========================================================================
+# UT-022: detect_category from folder structure
+# ========================================================================
+@pytest.mark.skipif(not HAS_INGEST, reason="ingest_documents not available")
+def test_ingest_detect_category_known():
+    """detect_category returns lowercase folder name for known categories."""
+    result = detect_category(Path("corpus/Hotel/contract.pdf"), Path("corpus"))
+    assert result == "hotel", f"Expected 'hotel', got '{result}'"
 
 
-def test_list_domains():
-    """DCFG-01/D-06: list_domains() discovers drug-discovery domain."""
-    domains = list_domains()
-    assert len(domains) >= 1, "Should find at least drug-discovery domain"
-    names = [d["name"] for d in domains]
-    assert "drug-discovery" in names, f"drug-discovery not in {names}"
-    # Each domain has required keys
-    for d in domains:
-        assert "name" in d
-        assert "description" in d
-        assert "version" in d
+@pytest.mark.skipif(not HAS_INGEST, reason="ingest_documents not available")
+def test_ingest_detect_category_unknown():
+    """detect_category returns 'uncategorized' for unknown folder names."""
+    result = detect_category(Path("corpus/Unknown/file.pdf"), Path("corpus"))
+    assert result == "uncategorized", f"Expected 'uncategorized', got '{result}'"
 
 
-def test_get_domain_skill_md():
-    """DCFG-01: get_domain_skill_md returns SKILL.md content."""
-    content = get_domain_skill_md("drug-discovery")
-    assert len(content) > 100, "SKILL.md should have substantial content"
-    assert "drug discovery" in content.lower() or "Drug Discovery" in content
+@pytest.mark.skipif(not HAS_INGEST, reason="ingest_documents not available")
+def test_ingest_detect_category_nested():
+    """detect_category uses top-level folder for nested files."""
+    result = detect_category(Path("corpus/Hotel/SubDir/file.pdf"), Path("corpus"))
+    assert result == "hotel", f"Expected 'hotel', got '{result}'"
 
 
-def test_get_validation_scripts_dir_biomedical():
-    """DCFG-01/D-18: Biomedical domain has validation-scripts/."""
-    vs_dir = get_validation_scripts_dir("drug-discovery")
-    assert vs_dir is not None, "Biomedical domain should have validation-scripts"
-    assert vs_dir.is_dir()
+# ========================================================================
+# UT-023: parse_document reads PDF content
+# ========================================================================
+@pytest.mark.skipif(not HAS_INGEST, reason="ingest_documents not available")
+def test_ingest_parse_document_pdf():
+    """parse_document on a valid PDF returns non-empty string."""
+    result = parse_document(FIXTURES / "sample_contract_a.pdf")
+    assert isinstance(result, str), f"Expected str, got {type(result)}"
+    assert len(result) > 0, "Expected non-empty text from PDF"
 
 
-def test_validate_cross_refs_biomedical():
-    """DCFG-01/D-04: Biomedical domain has valid cross-references."""
-    domain_path = resolve_domain("drug-discovery")
-    errors = validate_domain_cross_refs(domain_path)
-    assert errors == [], f"Biomedical domain has cross-ref errors: {errors}"
+@pytest.mark.skipif(not HAS_INGEST, reason="ingest_documents not available")
+def test_ingest_parse_document_missing():
+    """parse_document on nonexistent file returns error dict."""
+    result = parse_document(Path("/nonexistent/file.pdf"))
+    assert isinstance(result, dict), f"Expected dict for missing file, got {type(result)}"
+    assert "error" in result, f"Expected 'error' key in result, got {result}"
 
 
-# ---------------------------------------------------------------------------
-# Contract Domain Integration Tests (Phase 1: DCFG-02, DCFG-03, DCFG-04)
-# ---------------------------------------------------------------------------
-
-
-def test_contract_domain_resolves():
-    """DCFG-01: resolve_domain('contract') returns contract domain path."""
-    path = resolve_domain("contract")
-    assert path.exists(), f"Contract domain path does not exist: {path}"
-    assert "contract-extraction" in str(path)
-
-
-@pytest.mark.skipif(not HAS_SIFTKG, reason="sift-kg not installed")
-def test_contract_domain_loads():
-    """DCFG-02: sift-kg load_domain() loads contract domain.yaml."""
-    from sift_kg import load_domain as sift_load
-
-    domain_path = resolve_domain("contract")
-    domain = sift_load(domain_path=domain_path)
-    assert domain.name == "Contract Analysis"
-
-
-def test_contract_domain_schema():
-    """DCFG-02: Contract domain has 7 entity types and 7 relation types."""
-    import yaml
-
-    domain_path = resolve_domain("contract")
-    with open(domain_path) as f:
-        data = yaml.safe_load(f)
-    et = set(data["entity_types"].keys())
-    expected_et = {"PARTY", "OBLIGATION", "DEADLINE", "COST", "CLAUSE", "SERVICE", "VENUE"}
-    assert et == expected_et, f"Entity types mismatch: {et}"
-    rt = set(data["relation_types"].keys())
-    expected_rt = {"OBLIGATES", "CONFLICTS_WITH", "DEPENDS_ON", "COSTS", "PROVIDES", "RESTRICTS", "RELATED_TO"}
-    assert rt == expected_rt, f"Relation types mismatch: {rt}"
-
-
-def test_contract_cross_refs():
-    """DCFG-02/D-04: Contract domain relation types reference valid entity types."""
-    domain_path = resolve_domain("contract")
-    errors = validate_domain_cross_refs(domain_path)
-    assert errors == [], f"Contract domain cross-ref errors: {errors}"
-
-
-def test_contract_skill_md():
-    """DCFG-03: Contract SKILL.md exists with extraction guidance."""
-    content = get_domain_skill_md("contract")
-    assert "PARTY" in content, "SKILL.md missing PARTY entity type"
-    assert "OBLIGATION" in content, "SKILL.md missing OBLIGATION entity type"
-    assert "entity_type" in content, "SKILL.md missing entity_type field guidance"
-
-
-def test_contract_no_validation_scripts():
-    """DCFG-03/D-18: Contract domain has no validation-scripts."""
-    vs_dir = get_validation_scripts_dir("contract")
-    assert vs_dir is None, f"Contract domain should not have validation-scripts: {vs_dir}"
-
-
-def test_contract_domain_package_complete():
-    """DCFG-03/D-03: Contract domain has all required files."""
-    contract_dir = PROJECT_ROOT / "skills" / "contract-extraction"
-    assert (contract_dir / "domain.yaml").exists(), "Missing domain.yaml"
-    assert (contract_dir / "SKILL.md").exists(), "Missing SKILL.md"
-    assert (contract_dir / "references").is_dir(), "Missing references/"
-    assert (contract_dir / "references" / "entity-types.md").exists(), "Missing entity-types.md"
-    assert (contract_dir / "references" / "relation-types.md").exists(), "Missing relation-types.md"
-
-
-def test_list_domains_includes_contract():
-    """DCFG-01/D-06: list_domains() discovers contract domain."""
-    domains = list_domains()
-    names = [d["name"] for d in domains]
-    assert "contract" in names, f"Contract not in discovered domains: {names}"
-    assert "drug-discovery" in names, f"Drug-discovery not in discovered domains: {names}"
-
-
-@pytest.mark.skipif(not HAS_SIFTKG, reason="sift-kg not installed")
-def test_biomedical_domain_still_loads():
-    """DCFG-04: Existing biomedical domain loads unchanged."""
-    from sift_kg import load_domain as sift_load
-
-    domain_path = resolve_domain(None)
-    domain = sift_load(domain_path=domain_path)
-    assert domain.name == "Drug Discovery"
+# ========================================================================
+# UT-024: ingest_corpus writes text files
+# ========================================================================
+@pytest.mark.skipif(not HAS_INGEST, reason="ingest_documents not available")
+def test_ingest_corpus_writes_txt():
+    """ingest_corpus writes .txt files to ingested/ subdirectory."""
+    with tempfile.TemporaryDirectory() as tmpdir:
+        output = Path(tmpdir)
+        result = ingest_corpus(FIXTURES, output)
+        ingested_dir = output / "ingested"
+        assert ingested_dir.exists(), "ingested/ directory not created"
+        txt_files = list(ingested_dir.glob("*.txt"))
+        assert len(txt_files) >= 1, f"Expected >= 1 .txt files, got {len(txt_files)}"
+        assert result["successful"] >= 1, f"Expected >= 1 successful, got {result}"
