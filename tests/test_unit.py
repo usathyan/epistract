@@ -48,6 +48,15 @@ from scan_patterns import scan_text
 from validate_sequences import detect_type
 from build_extraction import write_extraction
 
+# Domain resolution imports
+from domain_resolver import (
+    resolve_domain,
+    list_domains,
+    get_domain_skill_md,
+    get_validation_scripts_dir,
+    validate_domain_cross_refs,
+)
+
 # Conditional imports
 if HAS_RDKIT:
     from validate_smiles import validate_smiles
@@ -316,3 +325,82 @@ def test_ut014_validation_orchestrator():
         data = json.loads(results_path.read_text())
         total_matches = data["stats"]["total_matches"]
         assert total_matches > 0, f"Expected identifiers_found > 0, got stats: {data['stats']}"
+
+
+# ---------------------------------------------------------------------------
+# Domain Resolution Tests (Phase 1: DCFG-01, DCFG-04)
+# ---------------------------------------------------------------------------
+
+
+def test_resolve_domain_default():
+    """DCFG-04: resolve_domain(None) returns drug-discovery domain path."""
+    path = resolve_domain(None)
+    assert path.exists(), f"Default domain path does not exist: {path}"
+    assert path.name == "domain.yaml"
+    assert "drug-discovery-extraction" in str(path)
+
+
+def test_resolve_domain_explicit_drug_discovery():
+    """DCFG-04: resolve_domain('drug-discovery') returns same as default."""
+    path = resolve_domain("drug-discovery")
+    default_path = resolve_domain(None)
+    assert path == default_path, f"Explicit != default: {path} vs {default_path}"
+
+
+def test_resolve_domain_nonexistent():
+    """DCFG-01: resolve_domain('nonexistent') raises FileNotFoundError."""
+    with pytest.raises(FileNotFoundError, match="not found"):
+        resolve_domain("nonexistent")
+
+
+def test_resolve_domain_validates_package(tmp_path):
+    """DCFG-01/D-03: Domain missing SKILL.md raises FileNotFoundError."""
+    # Create a domain dir with only domain.yaml (missing SKILL.md and references/)
+    fake_skills = tmp_path / "skills"
+    fake_domain = fake_skills / "fake-extraction"
+    fake_domain.mkdir(parents=True)
+    (fake_domain / "domain.yaml").write_text("name: Fake\nversion: '1.0'\n")
+    # Temporarily patch SKILLS_DIR
+    import domain_resolver
+
+    original = domain_resolver.SKILLS_DIR
+    domain_resolver.SKILLS_DIR = fake_skills
+    try:
+        with pytest.raises(FileNotFoundError, match="SKILL.md"):
+            resolve_domain("fake")
+    finally:
+        domain_resolver.SKILLS_DIR = original
+
+
+def test_list_domains():
+    """DCFG-01/D-06: list_domains() discovers drug-discovery domain."""
+    domains = list_domains()
+    assert len(domains) >= 1, "Should find at least drug-discovery domain"
+    names = [d["name"] for d in domains]
+    assert "drug-discovery" in names, f"drug-discovery not in {names}"
+    # Each domain has required keys
+    for d in domains:
+        assert "name" in d
+        assert "description" in d
+        assert "version" in d
+
+
+def test_get_domain_skill_md():
+    """DCFG-01: get_domain_skill_md returns SKILL.md content."""
+    content = get_domain_skill_md("drug-discovery")
+    assert len(content) > 100, "SKILL.md should have substantial content"
+    assert "drug discovery" in content.lower() or "Drug Discovery" in content
+
+
+def test_get_validation_scripts_dir_biomedical():
+    """DCFG-01/D-18: Biomedical domain has validation-scripts/."""
+    vs_dir = get_validation_scripts_dir("drug-discovery")
+    assert vs_dir is not None, "Biomedical domain should have validation-scripts"
+    assert vs_dir.is_dir()
+
+
+def test_validate_cross_refs_biomedical():
+    """DCFG-01/D-04: Biomedical domain has valid cross-references."""
+    domain_path = resolve_domain("drug-discovery")
+    errors = validate_domain_cross_refs(domain_path)
+    assert errors == [], f"Biomedical domain has cross-ref errors: {errors}"
