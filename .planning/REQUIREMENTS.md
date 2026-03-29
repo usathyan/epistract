@@ -20,12 +20,12 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **INGS-02**: System ingests XLS and EML files through the same Kreuzberg parsing pipeline as PDFs
 - [ ] **INGS-03**: Document metadata (filename, file_path, file_size_bytes, page_count, category, parse_type, text_length, parse_errors, extraction_readiness_score) is captured per document in triage.json
 - [ ] **INGS-04**: Documents are triaged as text-native, scanned, or mixed; scanned documents are auto-OCR'd via Kreuzberg's Tesseract backend
-- [ ] **INGS-05**: Each ingested document produces a per-document text file at `ingested/<doc_id>.txt` in the output directory, where doc_id is the sanitized lowercase filename
-- [ ] **INGS-06**: Document category is auto-detected from the top-level folder name under the corpus root (Hotel, PCC, AV, Catering, Security, EMS; unknown folders get "uncategorized")
-- [ ] **INGS-07**: Corpus directory is scanned recursively — all files in nested subdirectories are discovered
+- [x] **INGS-05**: Each ingested document produces a per-document text file at `ingested/<doc_id>.txt` in the output directory, where doc_id is the sanitized lowercase filename
+- [x] **INGS-06**: Document category is auto-detected from the top-level folder name under the corpus root (Hotel, PCC, AV, Catering, Security, EMS; unknown folders get "uncategorized")
+- [x] **INGS-07**: Corpus directory is scanned recursively — all files in nested subdirectories are discovered
 - [ ] **INGS-08**: Parse failures (corrupted, encrypted, unsupported) are logged in triage.json and skipped; pipeline continues with remaining documents
-- [ ] **INGS-09**: A new standalone `scripts/ingest_documents.py` implements the ingestion pipeline following existing script patterns (sys.argv CLI, pathlib, Rich progress bar)
-- [ ] **INGS-10**: Development tests use small synthetic contract PDF fixtures in `tests/fixtures/` (no real contract data committed to repo)
+- [x] **INGS-09**: A new standalone `scripts/ingest_documents.py` implements the ingestion pipeline following existing script patterns (sys.argv CLI, pathlib, Rich progress bar)
+- [x] **INGS-10**: Development tests use small synthetic contract PDF fixtures in `tests/fixtures/` (no real contract data committed to repo)
 
 ### Entity Extraction
 
@@ -106,12 +106,12 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INGS-02 | Phase 2 | Pending |
 | INGS-03 | Phase 2 | Pending |
 | INGS-04 | Phase 2 | Pending |
-| INGS-05 | Phase 2 | Pending |
-| INGS-06 | Phase 2 | Pending |
-| INGS-07 | Phase 2 | Pending |
+| INGS-05 | Phase 2 | Complete |
+| INGS-06 | Phase 2 | Complete |
+| INGS-07 | Phase 2 | Complete |
 | INGS-08 | Phase 2 | Pending |
-| INGS-09 | Phase 2 | Pending |
-| INGS-10 | Phase 2 | Pending |
+| INGS-09 | Phase 2 | Complete |
+| INGS-10 | Phase 2 | Complete |
 | EXTR-01 | Phase 3 | Pending |
 | EXTR-02 | Phase 3 | Pending |
 | GRPH-01 | Phase 3 | Pending |
