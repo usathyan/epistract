@@ -277,6 +277,10 @@ def ingest_corpus(
             "documents": [],
         }
 
+    if not corpus_path.is_dir():
+        return {"error": "corpus_path is not a directory"}
+
+    output_dir.mkdir(parents=True, exist_ok=True)
     ingested_dir = output_dir / "ingested"
     ingested_dir.mkdir(parents=True, exist_ok=True)
 
@@ -340,11 +344,15 @@ def ingest_corpus(
 # CLI entry point
 # ---------------------------------------------------------------------------
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
+    if len(sys.argv) < 2 or "--help" in sys.argv:
         print(__doc__)
-        sys.exit(1)
+        sys.exit(0 if "--help" in sys.argv else 1)
 
     corpus = Path(sys.argv[1])
+    if not corpus.exists():
+        print(f"Error: corpus path does not exist: {corpus}", file=sys.stderr)
+        sys.exit(1)
+
     output = (
         Path(sys.argv[sys.argv.index("--output") + 1])
         if "--output" in sys.argv

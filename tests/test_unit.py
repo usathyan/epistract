@@ -424,3 +424,153 @@ def test_ingest_corpus_writes_txt():
         txt_files = list(ingested_dir.glob("*.txt"))
         assert len(txt_files) >= 1, f"Expected >= 1 .txt files, got {len(txt_files)}"
         assert result["successful"] >= 1, f"Expected >= 1 successful, got {result}"
+
+
+# ---------------------------------------------------------------------------
+# Integration tests for triage output and error handling (Plan 02)
+# ---------------------------------------------------------------------------
+import shutil  # noqa: E402
+
+
+@pytest.mark.skipif(not HAS_INGEST, reason="ingest_documents not available")
+def test_ingest_integration_triage_json_structure(tmp_path):
+    """ingest_corpus produces triage.json with all required top-level keys."""
+    # Create mock corpus with category folders
+    corpus = tmp_path / "corpus"
+    hotel_dir = corpus / "Hotel"
+    av_dir = corpus / "AV"
+    hotel_dir.mkdir(parents=True)
+    av_dir.mkdir(parents=True)
+    # Copy fixtures into category folders
+    shutil.copy(FIXTURES / "sample_contract_a.pdf", hotel_dir / "contract_a.pdf")
+    shutil.copy(FIXTURES / "sample_contract_b.pdf", av_dir / "contract_b.pdf")
+
+    output = tmp_path / "output"
+    _result = ingest_corpus(corpus, output)
+
+    triage_path = output / "triage.json"
+    assert triage_path.exists(), "triage.json not created"
+    triage = json.loads(triage_path.read_text())
+
+    # Top-level keys
+    for key in ("ingested_at", "corpus_path", "domain", "total_files", "successful", "failed", "documents"):
+        assert key in triage, f"Missing top-level key: {key}"
+
+    assert triage["total_files"] >= 2, f"Expected >= 2 files, got {triage['total_files']}"
+    assert triage["successful"] + triage["failed"] == triage["total_files"], (
+        f"successful ({triage['successful']}) + failed ({triage['failed']}) != total ({triage['total_files']})"
+    )
+
+
+@pytest.mark.skipif(not HAS_INGEST, reason="ingest_documents not available")
+def test_ingest_integration_document_metadata_fields(tmp_path):
+    """Each document in triage.json has all D-08 metadata fields with correct types."""
+    corpus = tmp_path / "corpus"
+    hotel_dir = corpus / "Hotel"
+    hotel_dir.mkdir(parents=True)
+    shutil.copy(FIXTURES / "sample_contract_a.pdf", hotel_dir / "contract_a.pdf")
+
+    output = tmp_path / "output"
+    _result = ingest_corpus(corpus, output)
+
+    triage = json.loads((output / "triage.json").read_text())
+    assert len(triage["documents"]) >= 1, "Expected at least 1 document"
+
+    d08_fields = {
+        "doc_id", "filename", "file_path", "file_size_bytes", "page_count",
+        "category", "parse_type", "text_length", "parse_errors",
+        "extraction_readiness_score",
+    }
+
+    for doc in triage["documents"]:
+        for field in d08_fields:
+            assert field in doc, f"Missing D-08 field '{field}' in document {doc.get('doc_id', '???')}"
+
+        assert isinstance(doc["doc_id"], str), f"doc_id not str: {type(doc['doc_id'])}"
+        assert isinstance(doc["file_size_bytes"], int), f"file_size_bytes not int: {type(doc['file_size_bytes'])}"
+        assert doc["file_size_bytes"] > 0, f"file_size_bytes should be > 0, got {doc['file_size_bytes']}"
+        assert doc["category"] in {"hotel", "av", "uncategorized"}, f"Unexpected category: {doc['category']}"
+        assert doc["parse_type"] in {"text", "scanned", "mixed", "failed"}, (
+            f"Unexpected parse_type: {doc['parse_type']}"
+        )
+        score = doc["extraction_readiness_score"]
+        assert isinstance(score, float) or isinstance(score, int), f"score not numeric: {type(score)}"
+        assert 0.0 <= score <= 1.0, f"score out of range: {score}"
+
+
+@pytest.mark.skipif(not HAS_INGEST, reason="ingest_documents not available")
+def test_ingest_integration_error_handling(tmp_path):
+    """Pipeline handles corrupt files gracefully: logs error, doesn't crash."""
+    corpus = tmp_path / "corpus"
+    sec_dir = corpus / "Security"
+    sec_dir.mkdir(parents=True)
+    # Write random bytes as corrupt PDF
+    corrupt_file = sec_dir / "corrupt.pdf"
+    corrupt_file.write_bytes(b"\x00\x01\x02\x03" * 100)
+
+    output = tmp_path / "output"
+    # Should not raise
+    _result = ingest_corpus(corpus, output)
+
+    triage = json.loads((output / "triage.json").read_text())
+    assert triage["total_files"] >= 1, "Expected at least 1 file"
+
+    # Find the corrupt document entry
+    corrupt_docs = [d for d in triage["documents"] if "corrupt" in d.get("filename", "").lower()]
+    assert len(corrupt_docs) >= 1, f"Expected corrupt.pdf entry, got docs: {[d['filename'] for d in triage['documents']]}"
+    corrupt_doc = corrupt_docs[0]
+    # Either parse_errors is set or parse_type is "failed"
+    has_error = corrupt_doc.get("parse_errors") is not None or corrupt_doc.get("parse_type") == "failed"
+    assert has_error, f"Expected error indication for corrupt file, got: {corrupt_doc}"
+
+
+@pytest.mark.skipif(not HAS_INGEST, reason="ingest_documents not available")
+def test_ingest_integration_empty_corpus(tmp_path):
+    """Ingesting an empty directory produces triage.json with total_files=0."""
+    corpus = tmp_path / "corpus"
+    corpus.mkdir()
+    output = tmp_path / "output"
+
+    _result = ingest_corpus(corpus, output)
+
+    triage = json.loads((output / "triage.json").read_text())
+    assert triage["total_files"] == 0, f"Expected 0 files, got {triage['total_files']}"
+    assert triage["documents"] == [], f"Expected empty documents list, got {triage['documents']}"
+
+
+@pytest.mark.skipif(not HAS_INGEST, reason="ingest_documents not available")
+def test_ingest_integration_text_files_written(tmp_path):
+    """After ingest_corpus, ingested/ dir exists with at least one .txt file."""
+    output = tmp_path / "output"
+    ingest_corpus(FIXTURES, output)
+
+    ingested_dir = output / "ingested"
+    assert ingested_dir.exists(), "ingested/ directory not created"
+    txt_files = list(ingested_dir.glob("*.txt"))
+    assert len(txt_files) >= 1, f"Expected >= 1 .txt file, got {len(txt_files)}"
+    # Each txt file should have content
+    for tf in txt_files:
+        assert tf.stat().st_size > 0, f"Empty text file: {tf.name}"
+
+
+@pytest.mark.skipif(not HAS_INGEST, reason="ingest_documents not available")
+def test_ingest_integration_txt_content_matches(tmp_path):
+    """Text file content in ingested/ matches parse_document output."""
+    output = tmp_path / "output"
+    ingest_corpus(FIXTURES, output)
+
+    # Parse a known fixture directly
+    fixture_file = FIXTURES / "sample_contract_a.pdf"
+    expected_text = parse_document(fixture_file)
+    assert isinstance(expected_text, str), f"parse_document failed: {expected_text}"
+
+    # Find corresponding txt file
+    doc_id = sanitize_doc_id(fixture_file.name)
+    txt_path = output / "ingested" / f"{doc_id}.txt"
+    assert txt_path.exists(), f"Expected {txt_path} to exist"
+
+    actual_text = txt_path.read_text(encoding="utf-8")
+    # Normalize whitespace for comparison (reader may produce trailing spaces)
+    actual_lines = [line.rstrip() for line in actual_text.splitlines()]
+    expected_lines = [line.rstrip() for line in expected_text.splitlines()]
+    assert actual_lines == expected_lines, "Text file content does not match parse_document output"
