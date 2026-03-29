@@ -92,30 +92,30 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DCFG-01 | TBD | Pending |
-| DCFG-02 | TBD | Pending |
-| DCFG-03 | TBD | Pending |
-| DCFG-04 | TBD | Pending |
-| INGS-01 | TBD | Pending |
-| INGS-02 | TBD | Pending |
-| INGS-03 | TBD | Pending |
-| INGS-04 | TBD | Pending |
-| EXTR-01 | TBD | Pending |
-| EXTR-02 | TBD | Pending |
-| GRPH-01 | TBD | Pending |
-| GRPH-02 | TBD | Pending |
-| XREF-01 | TBD | Pending |
-| XREF-02 | TBD | Pending |
-| XREF-03 | TBD | Pending |
-| XREF-04 | TBD | Pending |
-| DASH-01 | TBD | Pending |
-| DASH-02 | TBD | Pending |
+| DCFG-01 | Phase 1 | Pending |
+| DCFG-02 | Phase 1 | Pending |
+| DCFG-03 | Phase 1 | Pending |
+| DCFG-04 | Phase 1 | Pending |
+| INGS-01 | Phase 2 | Pending |
+| INGS-02 | Phase 2 | Pending |
+| INGS-03 | Phase 2 | Pending |
+| INGS-04 | Phase 2 | Pending |
+| EXTR-01 | Phase 3 | Pending |
+| EXTR-02 | Phase 3 | Pending |
+| GRPH-01 | Phase 3 | Pending |
+| GRPH-02 | Phase 3 | Pending |
+| XREF-01 | Phase 4 | Pending |
+| XREF-02 | Phase 4 | Pending |
+| XREF-03 | Phase 4 | Pending |
+| XREF-04 | Phase 4 | Pending |
+| DASH-01 | Phase 5 | Pending |
+| DASH-02 | Phase 5 | Pending |
 
 **Coverage:**
 - v1 requirements: 18 total
-- Mapped to phases: 0
-- Unmapped: 18
+- Mapped to phases: 18
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-29*
-*Last updated: 2026-03-29 after initial definition*
+*Last updated: 2026-03-29 after roadmap creation*
