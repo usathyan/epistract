@@ -404,3 +404,89 @@ def test_validate_cross_refs_biomedical():
     domain_path = resolve_domain("drug-discovery")
     errors = validate_domain_cross_refs(domain_path)
     assert errors == [], f"Biomedical domain has cross-ref errors: {errors}"
+
+
+# ---------------------------------------------------------------------------
+# Contract Domain Integration Tests (Phase 1: DCFG-02, DCFG-03, DCFG-04)
+# ---------------------------------------------------------------------------
+
+
+def test_contract_domain_resolves():
+    """DCFG-01: resolve_domain('contract') returns contract domain path."""
+    path = resolve_domain("contract")
+    assert path.exists(), f"Contract domain path does not exist: {path}"
+    assert "contract-extraction" in str(path)
+
+
+@pytest.mark.skipif(not HAS_SIFTKG, reason="sift-kg not installed")
+def test_contract_domain_loads():
+    """DCFG-02: sift-kg load_domain() loads contract domain.yaml."""
+    from sift_kg import load_domain as sift_load
+
+    domain_path = resolve_domain("contract")
+    domain = sift_load(domain_path=domain_path)
+    assert domain.name == "Contract Analysis"
+
+
+def test_contract_domain_schema():
+    """DCFG-02: Contract domain has 7 entity types and 7 relation types."""
+    import yaml
+
+    domain_path = resolve_domain("contract")
+    with open(domain_path) as f:
+        data = yaml.safe_load(f)
+    et = set(data["entity_types"].keys())
+    expected_et = {"PARTY", "OBLIGATION", "DEADLINE", "COST", "CLAUSE", "SERVICE", "VENUE"}
+    assert et == expected_et, f"Entity types mismatch: {et}"
+    rt = set(data["relation_types"].keys())
+    expected_rt = {"OBLIGATES", "CONFLICTS_WITH", "DEPENDS_ON", "COSTS", "PROVIDES", "RESTRICTS", "RELATED_TO"}
+    assert rt == expected_rt, f"Relation types mismatch: {rt}"
+
+
+def test_contract_cross_refs():
+    """DCFG-02/D-04: Contract domain relation types reference valid entity types."""
+    domain_path = resolve_domain("contract")
+    errors = validate_domain_cross_refs(domain_path)
+    assert errors == [], f"Contract domain cross-ref errors: {errors}"
+
+
+def test_contract_skill_md():
+    """DCFG-03: Contract SKILL.md exists with extraction guidance."""
+    content = get_domain_skill_md("contract")
+    assert "PARTY" in content, "SKILL.md missing PARTY entity type"
+    assert "OBLIGATION" in content, "SKILL.md missing OBLIGATION entity type"
+    assert "entity_type" in content, "SKILL.md missing entity_type field guidance"
+
+
+def test_contract_no_validation_scripts():
+    """DCFG-03/D-18: Contract domain has no validation-scripts."""
+    vs_dir = get_validation_scripts_dir("contract")
+    assert vs_dir is None, f"Contract domain should not have validation-scripts: {vs_dir}"
+
+
+def test_contract_domain_package_complete():
+    """DCFG-03/D-03: Contract domain has all required files."""
+    contract_dir = PROJECT_ROOT / "skills" / "contract-extraction"
+    assert (contract_dir / "domain.yaml").exists(), "Missing domain.yaml"
+    assert (contract_dir / "SKILL.md").exists(), "Missing SKILL.md"
+    assert (contract_dir / "references").is_dir(), "Missing references/"
+    assert (contract_dir / "references" / "entity-types.md").exists(), "Missing entity-types.md"
+    assert (contract_dir / "references" / "relation-types.md").exists(), "Missing relation-types.md"
+
+
+def test_list_domains_includes_contract():
+    """DCFG-01/D-06: list_domains() discovers contract domain."""
+    domains = list_domains()
+    names = [d["name"] for d in domains]
+    assert "contract" in names, f"Contract not in discovered domains: {names}"
+    assert "drug-discovery" in names, f"Drug-discovery not in discovered domains: {names}"
+
+
+@pytest.mark.skipif(not HAS_SIFTKG, reason="sift-kg not installed")
+def test_biomedical_domain_still_loads():
+    """DCFG-04: Existing biomedical domain loads unchanged."""
+    from sift_kg import load_domain as sift_load
+
+    domain_path = resolve_domain(None)
+    domain = sift_load(domain_path=domain_path)
+    assert domain.name == "Drug Discovery"
