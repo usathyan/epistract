@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: executing
-stopped_at: Completed 02-01-PLAN.md
-last_updated: "2026-03-29T23:22:08.436Z"
+status: verifying
+stopped_at: Completed 02-02-PLAN.md
+last_updated: "2026-03-29T23:29:50.328Z"
 last_activity: 2026-03-29
 progress:
   total_phases: 5
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 5
-  completed_plans: 4
+  completed_plans: 5
   percent: 20
 ---
 
@@ -27,7 +27,7 @@ See: .planning/PROJECT.md (updated 2026-03-29)
 
 Phase: 02 (document-ingestion) — EXECUTING
 Plan: 2 of 2
-Status: Ready to execute
+Status: Phase complete — ready for verification
 Last activity: 2026-03-29
 
 Progress: [██░░░░░░░░] 20%
@@ -55,6 +55,7 @@ Progress: [██░░░░░░░░] 20%
 | Phase 01 P02 | 5min | 2 tasks | 4 files |
 | Phase 01 P03 | 7min | 3 tasks | 8 files |
 | Phase 02 P01 | 3min | 2 tasks | 5 files |
+| Phase 02 P02 | 4min | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -70,6 +71,8 @@ Recent decisions affecting current work:
 - [Phase 01 P03]: validate_molecules.py exits gracefully when domain has no validation scripts
 - [Phase 02]: Used lstrip for doc IDs to preserve trailing underscores from parenthesized filenames
 - [Phase 02]: sift-kg read_document as primary parser with plain-text .txt fallback
+- [Phase 02]: Normalized whitespace comparison in txt fidelity test
+- [Phase 02]: CLI path validation in __main__ for proper exit codes
 
 ### Pending Todos
 
@@ -83,6 +86,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-29T23:22:08.433Z
-Stopped at: Completed 02-01-PLAN.md
+Last session: 2026-03-29T23:29:50.325Z
+Stopped at: Completed 02-02-PLAN.md
 Resume file: None

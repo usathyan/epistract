@@ -16,14 +16,14 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Document Ingestion
 
-- [ ] **INGS-01**: System ingests PDF contract documents from a user-provided local corpus path via CLI argument
-- [ ] **INGS-02**: System ingests XLS and EML files through the same Kreuzberg parsing pipeline as PDFs
-- [ ] **INGS-03**: Document metadata (filename, file_path, file_size_bytes, page_count, category, parse_type, text_length, parse_errors, extraction_readiness_score) is captured per document in triage.json
-- [ ] **INGS-04**: Documents are triaged as text-native, scanned, or mixed; scanned documents are auto-OCR'd via Kreuzberg's Tesseract backend
+- [x] **INGS-01**: System ingests PDF contract documents from a user-provided local corpus path via CLI argument
+- [x] **INGS-02**: System ingests XLS and EML files through the same Kreuzberg parsing pipeline as PDFs
+- [x] **INGS-03**: Document metadata (filename, file_path, file_size_bytes, page_count, category, parse_type, text_length, parse_errors, extraction_readiness_score) is captured per document in triage.json
+- [x] **INGS-04**: Documents are triaged as text-native, scanned, or mixed; scanned documents are auto-OCR'd via Kreuzberg's Tesseract backend
 - [x] **INGS-05**: Each ingested document produces a per-document text file at `ingested/<doc_id>.txt` in the output directory, where doc_id is the sanitized lowercase filename
 - [x] **INGS-06**: Document category is auto-detected from the top-level folder name under the corpus root (Hotel, PCC, AV, Catering, Security, EMS; unknown folders get "uncategorized")
 - [x] **INGS-07**: Corpus directory is scanned recursively — all files in nested subdirectories are discovered
-- [ ] **INGS-08**: Parse failures (corrupted, encrypted, unsupported) are logged in triage.json and skipped; pipeline continues with remaining documents
+- [x] **INGS-08**: Parse failures (corrupted, encrypted, unsupported) are logged in triage.json and skipped; pipeline continues with remaining documents
 - [x] **INGS-09**: A new standalone `scripts/ingest_documents.py` implements the ingestion pipeline following existing script patterns (sys.argv CLI, pathlib, Rich progress bar)
 - [x] **INGS-10**: Development tests use small synthetic contract PDF fixtures in `tests/fixtures/` (no real contract data committed to repo)
 
@@ -102,14 +102,14 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DCFG-02 | Phase 1 | Complete |
 | DCFG-03 | Phase 1 | Complete |
 | DCFG-04 | Phase 1 | Complete |
-| INGS-01 | Phase 2 | Pending |
-| INGS-02 | Phase 2 | Pending |
-| INGS-03 | Phase 2 | Pending |
-| INGS-04 | Phase 2 | Pending |
+| INGS-01 | Phase 2 | Complete |
+| INGS-02 | Phase 2 | Complete |
+| INGS-03 | Phase 2 | Complete |
+| INGS-04 | Phase 2 | Complete |
 | INGS-05 | Phase 2 | Complete |
 | INGS-06 | Phase 2 | Complete |
 | INGS-07 | Phase 2 | Complete |
-| INGS-08 | Phase 2 | Pending |
+| INGS-08 | Phase 2 | Complete |
 | INGS-09 | Phase 2 | Complete |
 | INGS-10 | Phase 2 | Complete |
 | EXTR-01 | Phase 3 | Pending |

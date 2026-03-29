@@ -49,7 +49,7 @@ Plans:
 
 Plans:
 - [x] 02-01-PLAN.md — Test fixtures and core ingestion module (corpus scanning, parsing, text output)
-- [ ] 02-02-PLAN.md — Integration tests, triage validation, and CLI hardening
+- [x] 02-02-PLAN.md — Integration tests, triage validation, and CLI hardening
 
 ### Phase 3: Entity Extraction and Graph Construction
 **Goal**: Contract entities are extracted from all documents, deduplicated, and assembled into a queryable knowledge graph
