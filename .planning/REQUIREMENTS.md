@@ -16,10 +16,16 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Document Ingestion
 
-- [ ] **INGS-01**: System ingests PDF contract documents from categorized folder structure (data/ub/)
-- [ ] **INGS-02**: System ingests XLS and EML files from the contract corpus
-- [ ] **INGS-03**: Document metadata (filename, category folder, file size, page count) is captured during ingestion
-- [ ] **INGS-04**: PDF documents are triaged as text-native vs scanned before extraction to select appropriate parsing strategy
+- [ ] **INGS-01**: System ingests PDF contract documents from a user-provided local corpus path via CLI argument
+- [ ] **INGS-02**: System ingests XLS and EML files through the same Kreuzberg parsing pipeline as PDFs
+- [ ] **INGS-03**: Document metadata (filename, file_path, file_size_bytes, page_count, category, parse_type, text_length, parse_errors, extraction_readiness_score) is captured per document in triage.json
+- [ ] **INGS-04**: Documents are triaged as text-native, scanned, or mixed; scanned documents are auto-OCR'd via Kreuzberg's Tesseract backend
+- [ ] **INGS-05**: Each ingested document produces a per-document text file at `ingested/<doc_id>.txt` in the output directory, where doc_id is the sanitized lowercase filename
+- [ ] **INGS-06**: Document category is auto-detected from the top-level folder name under the corpus root (Hotel, PCC, AV, Catering, Security, EMS; unknown folders get "uncategorized")
+- [ ] **INGS-07**: Corpus directory is scanned recursively — all files in nested subdirectories are discovered
+- [ ] **INGS-08**: Parse failures (corrupted, encrypted, unsupported) are logged in triage.json and skipped; pipeline continues with remaining documents
+- [ ] **INGS-09**: A new standalone `scripts/ingest_documents.py` implements the ingestion pipeline following existing script patterns (sys.argv CLI, pathlib, Rich progress bar)
+- [ ] **INGS-10**: Development tests use small synthetic contract PDF fixtures in `tests/fixtures/` (no real contract data committed to repo)
 
 ### Entity Extraction
 
@@ -100,6 +106,12 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INGS-02 | Phase 2 | Pending |
 | INGS-03 | Phase 2 | Pending |
 | INGS-04 | Phase 2 | Pending |
+| INGS-05 | Phase 2 | Pending |
+| INGS-06 | Phase 2 | Pending |
+| INGS-07 | Phase 2 | Pending |
+| INGS-08 | Phase 2 | Pending |
+| INGS-09 | Phase 2 | Pending |
+| INGS-10 | Phase 2 | Pending |
 | EXTR-01 | Phase 3 | Pending |
 | EXTR-02 | Phase 3 | Pending |
 | GRPH-01 | Phase 3 | Pending |
@@ -112,8 +124,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DASH-02 | Phase 5 | Pending |
 
 **Coverage:**
-- v1 requirements: 18 total
-- Mapped to phases: 18
+- v1 requirements: 24 total
+- Mapped to phases: 24
 - Unmapped: 0
 
 ---
