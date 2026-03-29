@@ -29,7 +29,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. Running `epistract` with `--domain biomedical` (or default) produces identical output to the current pipeline for Scenarios 1-6
   3. A new domain can be added by creating a YAML config and prompt template directory without modifying pipeline code
   4. Contract domain defines all 7 entity types (Party, Obligation, Deadline, Cost, Clause, Service, Venue) and 6 relation types (OBLIGATES, CONFLICTS_WITH, DEPENDS_ON, COSTS, PROVIDES, RESTRICTS)
-**Plans**: TBD
+**Plans:** 3 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Domain resolution infrastructure (domain_resolver.py + tests)
+- [ ] 01-02-PLAN.md — Contract domain package (domain.yaml + SKILL.md + references/)
+- [ ] 01-03-PLAN.md — Pipeline integration (wire scripts, commands, agents to domain resolver)
 
 ### Phase 2: Document Ingestion
 **Goal**: All 62+ contract documents are parsed, triaged, and ready for extraction
@@ -81,7 +86,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Domain Configuration | 0/TBD | Not started | - |
+| 1. Domain Configuration | 0/3 | Planning complete | - |
 | 2. Document Ingestion | 0/TBD | Not started | - |
 | 3. Entity Extraction and Graph Construction | 0/TBD | Not started | - |
 | 4. Cross-Reference Analysis | 0/TBD | Not started | - |
