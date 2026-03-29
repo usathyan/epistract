@@ -278,8 +278,8 @@ def test_ut013_run_sift_build():
         # Write extraction
         write_extraction("test_doc_001", tmpdir, entities, relations)
 
-        # Run build
-        cmd_build(tmpdir, domain_path=str(DOMAIN_YAML))
+        # Run build (uses domain name, not path)
+        cmd_build(tmpdir, domain_name="drug-discovery")
 
         # Verify graph_data.json
         graph_path = Path(tmpdir) / "graph_data.json"

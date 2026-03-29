@@ -2,16 +2,22 @@
 """sift-kg Python API wrapper.
 
 Usage:
-    python run_sift.py build <output_dir> [--domain <path>]
+    python run_sift.py --list-domains
+    python run_sift.py build <output_dir> [--domain <name>]
     python run_sift.py view <output_dir> [--neighborhood <entity>] [--top <n>]
     python run_sift.py export <output_dir> <format>
     python run_sift.py info <output_dir>
     python run_sift.py search <output_dir> <query> [--type TYPE]
+
+The --domain flag accepts a domain name (e.g. "drug-discovery", "contract"),
+not a file path. Use --list-domains to see available domains.
 """
 
 import json
 import sys
 from pathlib import Path
+
+from domain_resolver import resolve_domain, list_domains
 
 
 def _import_sift(names: list[str]):
@@ -28,14 +34,11 @@ def _import_sift(names: list[str]):
     return tuple(getattr(sift_kg, n) for n in names)
 
 
-def cmd_build(output_dir: str, domain_path: str | None = None):
+def cmd_build(output_dir: str, domain_name: str | None = None):
     run_build, load_domain = _import_sift(["run_build", "load_domain"])
 
-    domain = (
-        load_domain(domain_path=Path(domain_path))
-        if domain_path
-        else load_domain(domain_path=Path(__file__).parent.parent / "skills" / "drug-discovery-extraction" / "domain.yaml")
-    )
+    domain_path = resolve_domain(domain_name)
+    domain = load_domain(domain_path=domain_path)
     kg = run_build(Path(output_dir), domain)
 
     # Auto-label communities with descriptive names
@@ -94,6 +97,13 @@ def cmd_search(output_dir: str, query: str, entity_type: str | None = None):
 
 
 if __name__ == "__main__":
+    # --list-domains: print available domains and exit (no subcommand needed)
+    if "--list-domains" in sys.argv:
+        domains = list_domains()
+        for d in domains:
+            print(f"  {d['name']:20s} v{d['version']}  {d['description']}")
+        sys.exit(0)
+
     if len(sys.argv) < 3:
         print(__doc__)
         sys.exit(1)

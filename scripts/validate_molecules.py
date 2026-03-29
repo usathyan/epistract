@@ -9,7 +9,7 @@ Phase 1.5: When --enrich is enabled (default), validated molecules become graph 
 relations linking them to parent entities.
 
 Usage:
-    python validate_molecules.py <output_dir>
+    python validate_molecules.py <output_dir> [--domain <name>]
     python validate_molecules.py <output_dir> --no-enrich
 """
 
@@ -22,28 +22,41 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 # ---------------------------------------------------------------------------
-# Import validation helpers from the validation-scripts directory
+# Import validation helpers via domain resolver
 # ---------------------------------------------------------------------------
-VALIDATION_SCRIPTS = Path(__file__).parent.parent / "skills" / "drug-discovery-extraction" / "validation-scripts"
-sys.path.insert(0, str(VALIDATION_SCRIPTS))
+from domain_resolver import get_validation_scripts_dir  # noqa: E402
 
-from scan_patterns import scan_text  # noqa: E402
+# Domain-aware validation scripts (default: drug-discovery)
+_domain_name: str | None = None  # Set via --domain flag in __main__
+VALIDATION_SCRIPTS_DIR = get_validation_scripts_dir(_domain_name)
 
-# Optional: RDKit-based SMILES validation
-try:
-    from validate_smiles import validate_smiles
+if VALIDATION_SCRIPTS_DIR:
+    sys.path.insert(0, str(VALIDATION_SCRIPTS_DIR))
 
-    HAS_RDKIT = True
-except ImportError:
+    from scan_patterns import scan_text  # noqa: E402
+
+    # Optional: RDKit-based SMILES validation
+    try:
+        from validate_smiles import validate_smiles
+
+        HAS_RDKIT = True
+    except ImportError:
+        HAS_RDKIT = False
+        validate_smiles = None  # type: ignore[assignment]
+
+    # Optional: Biopython-based sequence validation
+    try:
+        from validate_sequences import validate_sequence
+
+        HAS_BIOPYTHON = True
+    except ImportError:
+        HAS_BIOPYTHON = False
+        validate_sequence = None  # type: ignore[assignment]
+else:
+    # Domain has no validation scripts -- skip all molecular validation
+    scan_text = None  # type: ignore[assignment]
     HAS_RDKIT = False
     validate_smiles = None  # type: ignore[assignment]
-
-# Optional: Biopython-based sequence validation
-try:
-    from validate_sequences import validate_sequence
-
-    HAS_BIOPYTHON = True
-except ImportError:
     HAS_BIOPYTHON = False
     validate_sequence = None  # type: ignore[assignment]
 
@@ -128,6 +141,16 @@ def validate_match(match: dict) -> dict:
 
 def process_extraction(filepath: Path) -> dict:
     """Process a single extraction JSON file and return validation results."""
+    if scan_text is None:
+        data = json.loads(filepath.read_text(encoding="utf-8"))
+        return {
+            "file": filepath.name,
+            "document_id": data.get("document_id", ""),
+            "matches_found": 0,
+            "results": [],
+            "note": "No validation scripts for this domain, skipping",
+        }
+
     data = json.loads(filepath.read_text(encoding="utf-8"))
     texts = collect_texts(data)
 
@@ -358,9 +381,44 @@ def build_dedup_report(
 # ---------------------------------------------------------------------------
 
 def main() -> None:
+    global _domain_name, VALIDATION_SCRIPTS_DIR, scan_text, HAS_RDKIT, validate_smiles, HAS_BIOPYTHON, validate_sequence
+
     # Parse arguments
     args = sys.argv[1:]
     enrich = True
+
+    # Domain flag -- must be parsed before validation scripts are loaded
+    if "--domain" in args:
+        idx = args.index("--domain")
+        _domain_name = args[idx + 1]
+        args = args[:idx] + args[idx + 2:]
+
+        # Re-resolve validation scripts for the specified domain
+        VALIDATION_SCRIPTS_DIR = get_validation_scripts_dir(_domain_name)
+        if VALIDATION_SCRIPTS_DIR:
+            sys.path.insert(0, str(VALIDATION_SCRIPTS_DIR))
+            from scan_patterns import scan_text as _scan_text  # noqa: E402
+            scan_text = _scan_text
+            try:
+                from validate_smiles import validate_smiles as _vs
+                HAS_RDKIT = True
+                validate_smiles = _vs
+            except ImportError:
+                HAS_RDKIT = False
+                validate_smiles = None  # type: ignore[assignment]
+            try:
+                from validate_sequences import validate_sequence as _vseq
+                HAS_BIOPYTHON = True
+                validate_sequence = _vseq
+            except ImportError:
+                HAS_BIOPYTHON = False
+                validate_sequence = None  # type: ignore[assignment]
+        else:
+            scan_text = None  # type: ignore[assignment]
+            HAS_RDKIT = False
+            validate_smiles = None  # type: ignore[assignment]
+            HAS_BIOPYTHON = False
+            validate_sequence = None  # type: ignore[assignment]
 
     if "--no-enrich" in args:
         enrich = False
@@ -374,6 +432,17 @@ def main() -> None:
         sys.exit(1)
 
     output_dir = Path(args[0])
+
+    # If no validation scripts for this domain, report and exit gracefully
+    if scan_text is None:
+        domain_label = _domain_name or "default"
+        print(json.dumps({
+            "message": f"No validation scripts for domain '{domain_label}', skipping molecular validation",
+            "files_scanned": 0,
+            "total_matches": 0,
+        }, indent=2))
+        return
+
     extractions_dir = output_dir / "extractions"
 
     if not extractions_dir.is_dir():

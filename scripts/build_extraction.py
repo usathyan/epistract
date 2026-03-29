@@ -2,12 +2,16 @@
 """Write Claude's extraction output to sift-kg DocumentExtraction format.
 
 Usage:
-    python build_extraction.py <doc_id> <output_dir> --json '{"entities": [...], "relations": [...]}'
-    echo '{"entities": [...]}' | python build_extraction.py <doc_id> <output_dir>
+    python build_extraction.py <doc_id> <output_dir> [--domain <name>] --json '{"entities": [...], "relations": [...]}'
+    echo '{"entities": [...]}' | python build_extraction.py <doc_id> <output_dir> [--domain <name>]
 """
-import json, sys
+import json
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
+
+import yaml
+from domain_resolver import resolve_domain
 
 
 def _normalize_fields(entities, relations):
@@ -24,8 +28,29 @@ def _normalize_fields(entities, relations):
     return entities, relations
 
 
-def write_extraction(doc_id, output_dir, entities, relations, document_path="", chunks_processed=1, chunk_size=10000):
+def write_extraction(doc_id, output_dir, entities, relations, document_path="", chunks_processed=1, chunk_size=10000, domain_name=None):
+    """Write extraction JSON to disk in sift-kg DocumentExtraction format.
+
+    Args:
+        doc_id: Document identifier.
+        output_dir: Root output directory.
+        entities: List of entity dicts.
+        relations: List of relation dicts.
+        document_path: Original document path.
+        chunks_processed: Number of chunks processed.
+        chunk_size: Size of each chunk.
+        domain_name: Domain name for resolution (default: drug-discovery).
+
+    Returns:
+        Path to written extraction JSON file.
+    """
     entities, relations = _normalize_fields(entities, relations)
+
+    # Resolve domain name from domain.yaml
+    domain_path = resolve_domain(domain_name)
+    with open(domain_path) as f:
+        domain_data = yaml.safe_load(f)
+
     extraction = {
         "document_id": doc_id,
         "document_path": document_path,
@@ -34,7 +59,7 @@ def write_extraction(doc_id, output_dir, entities, relations, document_path="", 
         "relations": relations,
         "cost_usd": 0.0,
         "model_used": "claude-opus-4-6",
-        "domain_name": "Drug Discovery",
+        "domain_name": domain_data["name"],
         "chunk_size": chunk_size,
         "extracted_at": datetime.now(timezone.utc).isoformat(),
         "error": None,
@@ -47,13 +72,19 @@ def write_extraction(doc_id, output_dir, entities, relations, document_path="", 
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        print("Usage: python build_extraction.py <doc_id> <output_dir> [--json '<json>']", file=sys.stderr)
+        print("Usage: python build_extraction.py <doc_id> <output_dir> [--domain <name>] [--json '<json>']", file=sys.stderr)
         sys.exit(1)
     doc_id, output_dir = sys.argv[1], sys.argv[2]
+
+    domain_name = None
+    if "--domain" in sys.argv:
+        domain_name = sys.argv[sys.argv.index("--domain") + 1]
+
     if "--json" in sys.argv:
         data = json.loads(sys.argv[sys.argv.index("--json") + 1])
     else:
         data = json.load(sys.stdin)
     path = write_extraction(doc_id, output_dir, data.get("entities", []), data.get("relations", []),
-                            data.get("document_path", ""), data.get("chunks_processed", 1))
+                            data.get("document_path", ""), data.get("chunks_processed", 1),
+                            domain_name=domain_name)
     print(f"Written: {path}")
