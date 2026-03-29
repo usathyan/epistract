@@ -39,13 +39,17 @@ Plans:
 ### Phase 2: Document Ingestion
 **Goal**: All 62+ contract documents are parsed, triaged, and ready for extraction
 **Depends on**: Phase 1
-**Requirements**: INGS-01, INGS-02, INGS-03, INGS-04
+**Requirements**: INGS-01, INGS-02, INGS-03, INGS-04, INGS-05, INGS-06, INGS-07, INGS-08, INGS-09, INGS-10
 **Success Criteria** (what must be TRUE):
   1. Every PDF in the contract corpus produces parseable text output (with OCR fallback for scanned documents)
   2. XLS and EML files in the corpus are ingested alongside PDFs through the same pipeline entry point
   3. Each ingested document has metadata captured (filename, source folder category, file size, page count)
   4. A triage report classifies each document as text-native, scanned, or mixed, and records parse quality
-**Plans**: TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Test fixtures and core ingestion module (corpus scanning, parsing, text output)
+- [ ] 02-02-PLAN.md — Integration tests, triage validation, and CLI hardening
 
 ### Phase 3: Entity Extraction and Graph Construction
 **Goal**: Contract entities are extracted from all documents, deduplicated, and assembled into a queryable knowledge graph
@@ -86,8 +90,8 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Domain Configuration | 0/3 | Planning complete | - |
-| 2. Document Ingestion | 0/TBD | Not started | - |
+| 1. Domain Configuration | 3/3 | Complete | 2026-03-29 |
+| 2. Document Ingestion | 0/2 | Planning complete | - |
 | 3. Entity Extraction and Graph Construction | 0/TBD | Not started | - |
 | 4. Cross-Reference Analysis | 0/TBD | Not started | - |
 | 5. Interactive Dashboard | 0/TBD | Not started | - |
