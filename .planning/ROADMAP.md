@@ -64,7 +64,7 @@ Plans:
 
 Plans:
 - [x] 03-01-PLAN.md — Clause-aware chunking, entity resolution, and test fixtures (EXTR-01, EXTR-02)
-- [ ] 03-02-PLAN.md — Graph construction wiring, community labeling, visualization verification (GRPH-01, GRPH-02)
+- [x] 03-02-PLAN.md — Graph construction wiring, community labeling, visualization verification (GRPH-01, GRPH-02)
 
 ### Phase 4: Cross-Reference Analysis
 **Goal**: The system surfaces conflicts, gaps, and risks that span multiple contracts -- insights a spreadsheet cannot reveal

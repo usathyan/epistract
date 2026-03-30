@@ -34,8 +34,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Graph Construction
 
-- [ ] **GRPH-01**: Extracted entities and relations are assembled into a NetworkX knowledge graph using the existing sift-kg pipeline
-- [ ] **GRPH-02**: Graph nodes carry domain-specific attributes (e.g., obligation deadlines, cost amounts, clause references)
+- [x] **GRPH-01**: Extracted entities and relations are assembled into a NetworkX knowledge graph using the existing sift-kg pipeline
+- [x] **GRPH-02**: Graph nodes carry domain-specific attributes (e.g., obligation deadlines, cost amounts, clause references)
 
 ### Cross-Reference Analysis
 
@@ -114,8 +114,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INGS-10 | Phase 2 | Complete |
 | EXTR-01 | Phase 3 | Complete |
 | EXTR-02 | Phase 3 | Complete |
-| GRPH-01 | Phase 3 | Pending |
-| GRPH-02 | Phase 3 | Pending |
+| GRPH-01 | Phase 3 | Complete |
+| GRPH-02 | Phase 3 | Complete |
 | XREF-01 | Phase 4 | Pending |
 | XREF-02 | Phase 4 | Pending |
 | XREF-03 | Phase 4 | Pending |
