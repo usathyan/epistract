@@ -19,9 +19,13 @@ def _top_entities(members: list[dict], n: int = 5) -> list[str]:
     # Sort by number of connections (approximated by confidence or just alphabetically)
     # Prefer genes/proteins/pathways as label anchors
     priority = {
+        # Biomedical (existing)
         "GENE": 1, "PROTEIN": 2, "PATHWAY": 3, "DISEASE": 4,
         "MECHANISM_OF_ACTION": 5, "PHENOTYPE": 6, "SEQUENCE_VARIANT": 7,
         "COMPOUND": 0, "BIOMARKER": 8, "CELL_OR_TISSUE": 9,
+        # Contract domain
+        "PARTY": 0, "VENUE": 1, "SERVICE": 2, "OBLIGATION": 3,
+        "COST": 4, "DEADLINE": 5, "CLAUSE": 6,
     }
     sorted_members = sorted(
         members,
@@ -35,6 +39,51 @@ def _generate_label(members: list[dict]) -> str:
     type_counts = Counter(m.get("entity_type", "UNKNOWN") for m in members)
     total = len(members)
 
+    # --- Contract domain labeling ---
+    parties = [m["name"] for m in members if m.get("entity_type") == "PARTY"]
+    venues = [m["name"] for m in members if m.get("entity_type") == "VENUE"]
+    services = [m["name"] for m in members if m.get("entity_type") == "SERVICE"]
+    obligations = [m["name"] for m in members if m.get("entity_type") == "OBLIGATION"]
+    costs = [m["name"] for m in members if m.get("entity_type") == "COST"]
+    deadlines_c = [m["name"] for m in members if m.get("entity_type") == "DEADLINE"]
+    clauses = [m["name"] for m in members if m.get("entity_type") == "CLAUSE"]
+
+    # Detect contract domain (any contract entity type present)
+    is_contract = bool(parties or venues or services or obligations or costs or deadlines_c or clauses)
+
+    if is_contract:
+        # Party-anchored community
+        if parties and len(parties) <= 3:
+            party_str = " & ".join(_clean_name(p) for p in parties[:2])
+            if services:
+                return f"{party_str}: {_clean_name(services[0])}"
+            if venues:
+                return f"{party_str} at {_clean_name(venues[0])}"
+            if obligations:
+                return f"{party_str} Obligations ({len(obligations)})"
+            return f"{party_str} Contract Terms"
+
+        # Venue-anchored community
+        if venues and not parties:
+            venue_str = _clean_name(venues[0])
+            if services:
+                return f"{venue_str}: {_clean_name(services[0])}"
+            return f"{venue_str} Requirements"
+
+        # Cost/deadline cluster
+        if costs and len(costs) > total * 0.4:
+            if parties:
+                return f"{_clean_name(parties[0])} Costs ({len(costs)} items)"
+            return f"Cost Schedule ({len(costs)} items)"
+
+        if deadlines_c and len(deadlines_c) > total * 0.4:
+            return f"Timeline & Deadlines ({len(deadlines_c)} dates)"
+
+        # Generic contract fallback
+        top = _top_entities(members, 3)
+        return " / ".join(_clean_name(t) for t in top)
+
+    # --- Biomedical domain labeling ---
     genes = [m["name"] for m in members if m.get("entity_type") == "GENE"]
     proteins = [m["name"] for m in members if m.get("entity_type") == "PROTEIN"]
     pathways = [m["name"] for m in members if m.get("entity_type") == "PATHWAY"]
