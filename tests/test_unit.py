@@ -802,3 +802,157 @@ def test_ut038_visualization_renders(tmp_path):
     html_content = html_files[0].read_text()
     assert "vis-network" in html_content or "vis.js" in html_content or "<html" in html_content, \
         "HTML file does not appear to be a vis.js visualization"
+
+
+# ========================================================================
+# UT-039: Biomedical epistemic analysis backward compatibility
+# ========================================================================
+def test_ut039_biomedical_epistemic_backward_compat(tmp_path):
+    """Biomedical epistemic analysis produces same output after refactor."""
+    from label_epistemic import analyze_epistemic
+
+    # Create minimal graph_data.json with biomedical-style links
+    graph_data = {
+        "metadata": {"domain": "drug-discovery"},
+        "nodes": [
+            {"id": "compound:sotorasib", "name": "sotorasib", "entity_type": "COMPOUND"},
+            {"id": "gene:kras_g12c", "name": "KRAS G12C", "entity_type": "GENE"},
+        ],
+        "links": [
+            {
+                "relation_id": "rel_001",
+                "source": "compound:sotorasib",
+                "target": "gene:kras_g12c",
+                "relation_type": "INHIBITS",
+                "confidence": 0.95,
+                "evidence": "Sotorasib inhibits KRAS G12C with high selectivity.",
+                "source_document": "pmid_12345",
+            },
+            {
+                "relation_id": "rel_002",
+                "source": "compound:sotorasib",
+                "target": "gene:kras_g12c",
+                "relation_type": "MODULATES",
+                "confidence": 0.6,
+                "evidence": "Sotorasib may reduce downstream signaling through KRAS G12C.",
+                "source_document": "pmid_67890",
+            },
+        ],
+    }
+    (tmp_path / "graph_data.json").write_text(json.dumps(graph_data, indent=2))
+
+    # Call with no domain (should default to biomedical)
+    result = analyze_epistemic(tmp_path)
+
+    # Verify claims_layer.json was written
+    claims_path = tmp_path / "claims_layer.json"
+    assert claims_path.exists(), "claims_layer.json was not created"
+
+    claims = json.loads(claims_path.read_text())
+    assert "metadata" in claims, "claims_layer missing metadata"
+    assert "summary" in claims, "claims_layer missing summary"
+    assert "base_domain" in claims, "claims_layer missing base_domain"
+    assert "super_domain" in claims, "claims_layer missing super_domain"
+
+    # Verify graph_data.json links have epistemic_status field
+    updated_graph = json.loads((tmp_path / "graph_data.json").read_text())
+    for link in updated_graph["links"]:
+        assert "epistemic_status" in link, f"Link {link.get('relation_id')} missing epistemic_status"
+
+    # The hedging evidence ("may reduce") should classify as hypothesized
+    rel_002 = [l for l in updated_graph["links"] if l["relation_id"] == "rel_002"][0]
+    assert rel_002["epistemic_status"] == "hypothesized", \
+        f"Expected 'hypothesized' for hedging evidence, got '{rel_002['epistemic_status']}'"
+
+
+# ========================================================================
+# UT-040: Cross-contract entity identification (placeholder for Plan 02)
+# ========================================================================
+@pytest.mark.skip(reason="epistemic_contract module created in Plan 02")
+def test_ut040_cross_contract_entities():
+    """Entities with multiple source_documents are identified as cross-contract (XREF-01)."""
+    # Create nodes list with some having source_documents: ["contract_a", "contract_b"]
+    # Import find_cross_contract_entities from epistemic_contract (Plan 02)
+    # Verify cross-contract entities are returned sorted by contract_count desc
+    pass
+
+
+# ========================================================================
+# UT-042: Conflict rules load from domain.yaml
+# ========================================================================
+def test_ut042_conflict_rules_yaml():
+    """Contract domain.yaml contains valid conflict_rules section (XREF-02)."""
+    import yaml
+
+    domain_path = PROJECT_ROOT / "skills" / "contract-extraction" / "domain.yaml"
+    data = yaml.safe_load(domain_path.read_text())
+    assert "conflict_rules" in data, "domain.yaml missing conflict_rules"
+    rules = data["conflict_rules"]
+    assert "exclusive_use" in rules
+    assert "schedule_contradiction" in rules
+    assert "term_contradiction" in rules
+    assert "cost_budget_mismatch" in rules
+    for name, rule in rules.items():
+        assert "severity" in rule, f"Rule {name} missing severity"
+        assert rule["severity"] in ("CRITICAL", "WARNING", "INFO"), f"Rule {name} invalid severity"
+        assert "suggested_action_template" in rule, f"Rule {name} missing suggested_action_template"
+
+
+# ========================================================================
+# UT-045: Domain-aware dispatch
+# ========================================================================
+def test_ut045_domain_dispatch(tmp_path):
+    """label_epistemic.py dispatches to correct module based on domain."""
+    from label_epistemic import analyze_epistemic
+
+    # Create graph_data.json with metadata.domain = "drug-discovery"
+    graph_data = {
+        "metadata": {"domain": "drug-discovery"},
+        "nodes": [
+            {"id": "compound:aspirin", "name": "aspirin", "entity_type": "COMPOUND"},
+            {"id": "disease:headache", "name": "headache", "entity_type": "DISEASE"},
+        ],
+        "links": [
+            {
+                "relation_id": "rel_d01",
+                "source": "compound:aspirin",
+                "target": "disease:headache",
+                "relation_type": "TREATS",
+                "confidence": 0.92,
+                "evidence": "Aspirin treats headache effectively.",
+                "source_document": "pmid_99999",
+            },
+            {
+                "relation_id": "rel_d02",
+                "source": "compound:aspirin",
+                "target": "disease:headache",
+                "relation_type": "MAY_TREAT",
+                "confidence": 0.55,
+                "evidence": "Aspirin may reduce chronic headache frequency.",
+                "source_document": "pmid_88888",
+            },
+        ],
+    }
+    (tmp_path / "graph_data.json").write_text(json.dumps(graph_data, indent=2))
+
+    # Call analyze_epistemic -- should use biomedical path
+    result = analyze_epistemic(tmp_path)
+
+    # Verify claims_layer.json exists
+    claims_path = tmp_path / "claims_layer.json"
+    assert claims_path.exists(), "claims_layer.json was not created"
+
+    # Check that links in graph_data.json have epistemic_status
+    updated_graph = json.loads((tmp_path / "graph_data.json").read_text())
+    for link in updated_graph["links"]:
+        assert "epistemic_status" in link, f"Link {link.get('relation_id')} missing epistemic_status"
+
+    # Contract domain should return error dict (module not yet available)
+    contract_graph = {
+        "metadata": {"domain": "contract"},
+        "nodes": [],
+        "links": [],
+    }
+    (tmp_path / "graph_data.json").write_text(json.dumps(contract_graph, indent=2))
+    contract_result = analyze_epistemic(tmp_path, domain_name="contract")
+    assert "error" in contract_result, "Contract domain should return error dict when module unavailable"

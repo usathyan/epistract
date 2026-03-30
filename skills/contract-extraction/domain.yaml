@@ -150,3 +150,38 @@ relation_types:
     extraction_hints:
       - "Use only when a more specific relation type does not apply"
       - "This is the fallback relation for associations that do not fit other categories"
+
+conflict_rules:
+  exclusive_use:
+    description: "Two contracts claiming exclusive use of same venue space or time slot"
+    entity_types: [CLAUSE, VENUE]
+    match_on: ["attributes.room_or_space", "attributes.clause_type"]
+    match_value: "exclusivity"
+    severity: CRITICAL
+    suggested_action_template: "Review {source} against {conflict} for exclusive-use overlap in {space}"
+
+  schedule_contradiction:
+    description: "Incompatible deadlines or timelines across contracts"
+    entity_types: [DEADLINE]
+    match_on: ["attributes.what_is_due"]
+    compare_attribute: "attributes.date"
+    conflict_condition: "dates_conflict"
+    severity: WARNING
+    suggested_action_template: "Reconcile deadline {entity_a} with {entity_b} -- dates conflict for {what_is_due}"
+
+  term_contradiction:
+    description: "Conflicting terms between contracts (exclusivity vs assumed access)"
+    entity_types: [OBLIGATION, CLAUSE]
+    match_on: ["attributes.action", "attributes.key_terms"]
+    conflict_condition: "terms_contradict"
+    severity: CRITICAL
+    suggested_action_template: "Review {entity_a} vs {entity_b} for contradictory terms"
+
+  cost_budget_mismatch:
+    description: "Costs exceeding budget allocations or contradictory pricing"
+    entity_types: [COST]
+    match_on: ["attributes.covers"]
+    compare_attribute: "attributes.amount"
+    compare_against: "reference"
+    severity: WARNING
+    suggested_action_template: "Verify {cost_entity} against budget allocation -- amount {amount}"
