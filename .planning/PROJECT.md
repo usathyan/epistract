@@ -25,9 +25,9 @@ Epistract evolves from a biomedical-specific literature extraction tool into a *
 - [ ] PDF/XLS/EML document ingestion for contract files
 - [x] Contract entity extraction using domain-configured prompts — Validated in Phase 3: Entity Extraction & Graph Construction
 - [x] Knowledge graph construction from contract extractions — Validated in Phase 3: Entity Extraction & Graph Construction
-- [ ] Cross-reference analysis — connecting obligations, deadlines, and costs across vendors
-- [ ] Risk and conflict detection — flagging contradictions, missing coverage, timeline conflicts
-- [ ] Dashboard master data as reference layer — import Sample_Conference_Master.md as contextual nodes (not authoritative; contracts override)
+- [x] Cross-reference analysis — connecting obligations, deadlines, and costs across vendors — Validated in Phase 4: Cross-Reference Analysis
+- [x] Risk and conflict detection — flagging contradictions, missing coverage, timeline conflicts — Validated in Phase 4: Cross-Reference Analysis
+- [x] Dashboard master data as reference layer — import Sample_Conference_Master.md as contextual nodes (not authoritative; contracts override) — Validated in Phase 4: Cross-Reference Analysis
 - [ ] Interactive web report — filterable tables, graph visualization, drill-down into contract details
 - [ ] Telegram chat interface — query the contract KG via natural language (quick lookups + cross-contract reasoning)
 
