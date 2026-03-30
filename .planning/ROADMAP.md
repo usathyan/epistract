@@ -78,7 +78,7 @@ Plans:
 **Plans:** 3 plans
 
 Plans:
-- [ ] 04-01-PLAN.md — Domain-aware epistemic dispatch, biomedical extraction, conflict rules YAML (XREF-01, XREF-02)
+- [x] 04-01-PLAN.md — Domain-aware epistemic dispatch, biomedical extraction, conflict rules YAML (XREF-01, XREF-02)
 - [ ] 04-02-PLAN.md — Contract epistemic analysis module: cross-contract linking, conflict detection, gap analysis, risk scoring (XREF-01, XREF-02, XREF-03, XREF-04)
 - [ ] 04-03-PLAN.md — Pipeline integration: wire epistemic analysis into extract_contracts.py, --master-doc CLI support (XREF-01, XREF-02, XREF-03, XREF-04)
 
@@ -102,5 +102,5 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 1. Domain Configuration | 3/3 | Complete | 2026-03-29 |
 | 2. Document Ingestion | 2/2 | Complete | 2026-03-29 |
 | 3. Entity Extraction and Graph Construction | 2/2 | Complete | 2026-03-29 |
-| 4. Cross-Reference Analysis | 0/3 | Not started | - |
+| 4. Cross-Reference Analysis | 1/3 | In Progress | - |
 | 5. Interactive Dashboard | 0/TBD | Not started | - |
