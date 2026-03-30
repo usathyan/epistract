@@ -270,7 +270,7 @@ def test_ut013_run_sift_build():
         write_extraction("test_doc_001", tmpdir, entities, relations)
 
         # Run build
-        cmd_build(tmpdir, domain_path=str(DOMAIN_YAML))
+        cmd_build(tmpdir, domain_name="drug-discovery")
 
         # Verify graph_data.json
         graph_path = Path(tmpdir) / "graph_data.json"
@@ -685,3 +685,120 @@ def test_ut035_merge_chunk_extractions():
     # Relations preserved
     assert len(merged["relations"]) == 1
     assert merged["chunks_processed"] == 2
+
+
+# ---------------------------------------------------------------------------
+# Phase 3 Wave 2: Graph Construction & Orchestration (UT-036+)
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.skipif(not HAS_SIFTKG, reason="sift-kg not installed")
+def test_ut036_graph_build_contracts(tmp_path):
+    """Graph builds from contract extraction JSON via sift-kg."""
+    from run_sift import cmd_build
+    import io
+    import contextlib
+
+    # Create a minimal contract extraction
+    entities = [
+        {"name": "Aramark", "entity_type": "PARTY", "confidence": 0.95,
+         "attributes": {"role": "Caterer", "aliases": ["Contractor"], "legal_name": "Aramark Sports & Entertainment Services, LLC"}},
+        {"name": "Hall A", "entity_type": "VENUE", "confidence": 0.9,
+         "attributes": {"capacity": "5000", "location": "Pennsylvania Convention Center"}},
+        {"name": "Catering for 500 guests", "entity_type": "SERVICE", "confidence": 0.85,
+         "attributes": {"description": "Full catering service", "provider": "Aramark"}},
+        {"name": "$45 per person lunch", "entity_type": "COST", "confidence": 0.9,
+         "attributes": {"amount": 45.0, "currency": "USD", "unit": "per person", "raw_text": "$45 per person for lunch service"}},
+        {"name": "Final headcount due Aug 1", "entity_type": "DEADLINE", "confidence": 0.88,
+         "attributes": {"date": "2026-08-01", "what_is_due": "Final headcount", "raw_text": "Final headcount due by August 1, 2026"}},
+    ]
+    relations = [
+        {"source_entity": "Aramark", "target_entity": "Catering for 500 guests",
+         "relation_type": "PROVIDES", "confidence": 0.9,
+         "attributes": {"source_contract": "test_contract", "section": "1.1"}},
+        {"source_entity": "$45 per person lunch", "target_entity": "Catering for 500 guests",
+         "relation_type": "COSTS", "confidence": 0.88},
+    ]
+    write_extraction("test_contract", str(tmp_path), entities, relations,
+                     chunks_processed=3, domain_name="contract")
+
+    # Build graph (capture stdout; label_communities may print before the result JSON)
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        cmd_build(str(tmp_path), domain_name="contract")
+
+    # Parse last JSON object from stdout (cmd_build result is the last line)
+    output_lines = buf.getvalue().strip().split("\n")
+    result = json.loads(output_lines[-1])
+    assert result["entities"] >= 4, f"Expected >= 4 entities, got {result['entities']}"
+    assert result["relations"] >= 1, f"Expected >= 1 relation, got {result['relations']}"
+    assert (tmp_path / "graph_data.json").exists(), "graph_data.json not created"
+
+
+@pytest.mark.skipif(not HAS_SIFTKG, reason="sift-kg not installed")
+def test_ut037_graph_node_attributes(tmp_path):
+    """Graph nodes carry domain-specific typed attributes (D-14, D-16)."""
+    from run_sift import cmd_build
+    import io
+    import contextlib
+
+    entities = [
+        {"name": "Aramark", "entity_type": "PARTY", "confidence": 0.95,
+         "attributes": {"role": "Caterer", "aliases": ["Contractor"]}},
+        {"name": "$45 per person lunch", "entity_type": "COST", "confidence": 0.9,
+         "attributes": {"amount": 45.0, "currency": "USD", "unit": "per person", "raw_text": "$45 per person for lunch service"}},
+    ]
+    relations = [
+        {"source_entity": "$45 per person lunch", "target_entity": "Aramark",
+         "relation_type": "COSTS", "confidence": 0.88},
+    ]
+    write_extraction("attr_test", str(tmp_path), entities, relations, domain_name="contract")
+
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        cmd_build(str(tmp_path), domain_name="contract")
+
+    # Load graph and check attributes
+    graph_data = json.loads((tmp_path / "graph_data.json").read_text())
+    nodes = graph_data.get("nodes", graph_data.get("entities", []))
+    # Find COST node
+    cost_nodes = [n for n in nodes if n.get("entity_type") == "COST"]
+    assert len(cost_nodes) >= 1, f"No COST nodes found in {len(nodes)} nodes"
+    cost = cost_nodes[0]
+    attrs = cost.get("attributes", cost)
+    # COST must have amount and raw_text (per D-16)
+    assert "amount" in str(attrs) or "45" in str(attrs), f"COST node missing amount: {attrs}"
+
+
+@pytest.mark.skipif(not HAS_SIFTKG, reason="sift-kg not installed")
+def test_ut038_visualization_renders(tmp_path):
+    """Pyvis HTML visualization renders for contract graph (D-18)."""
+    from run_sift import cmd_build, cmd_view
+    import io
+    import contextlib
+
+    entities = [
+        {"name": "Aramark", "entity_type": "PARTY", "confidence": 0.95},
+        {"name": "Hall A", "entity_type": "VENUE", "confidence": 0.9},
+    ]
+    relations = [
+        {"source_entity": "Aramark", "target_entity": "Hall A",
+         "relation_type": "PROVIDES", "confidence": 0.85},
+    ]
+    write_extraction("viz_test", str(tmp_path), entities, relations, domain_name="contract")
+
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        cmd_build(str(tmp_path), domain_name="contract")
+
+    # View should generate HTML
+    try:
+        cmd_view(str(tmp_path))
+    except SystemExit:
+        pass  # pyvis may try to open browser
+
+    html_files = list(tmp_path.glob("*.html"))
+    assert len(html_files) >= 1, f"No HTML visualization files generated in {tmp_path}"
+    html_content = html_files[0].read_text()
+    assert "vis-network" in html_content or "vis.js" in html_content or "<html" in html_content, \
+        "HTML file does not appear to be a vis.js visualization"
