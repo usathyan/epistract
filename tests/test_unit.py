@@ -574,3 +574,114 @@ def test_ingest_integration_txt_content_matches(tmp_path):
     actual_lines = [line.rstrip() for line in actual_text.splitlines()]
     expected_lines = [line.rstrip() for line in expected_text.splitlines()]
     assert actual_lines == expected_lines, "Text file content does not match parse_document output"
+
+
+# ---------------------------------------------------------------------------
+# Phase 3: Entity Extraction & Graph Construction (UT-030+)
+# ---------------------------------------------------------------------------
+
+FIXTURES = PROJECT_ROOT / "tests" / "fixtures"
+CONTRACT_TEXT_FIXTURE = FIXTURES / "sample_contract_text.txt"
+UNSTRUCTURED_TEXT_FIXTURE = FIXTURES / "sample_contract_unstructured.txt"
+
+
+def test_ut030_chunk_document_clause_split():
+    """Clause-aware chunking splits structured contract at Article/Section boundaries."""
+    from chunk_document import chunk_document
+
+    text = CONTRACT_TEXT_FIXTURE.read_text()
+    chunks = chunk_document(text, "test_contract")
+    # Must produce multiple chunks (at least 3 for 3 articles)
+    assert len(chunks) >= 3, f"Expected >= 3 chunks, got {len(chunks)}"
+    # Each chunk has required keys
+    for c in chunks:
+        assert "chunk_id" in c, "Missing chunk_id"
+        assert "text" in c, "Missing text"
+        assert "section_header" in c, "Missing section_header"
+        assert "char_offset" in c, "Missing char_offset"
+    # At least one chunk mentions ARTICLE
+    headers = [c["section_header"] for c in chunks]
+    assert any("ARTICLE" in h.upper() for h in headers if h), f"No ARTICLE header found in {headers}"
+
+
+def test_ut031_chunk_document_fallback():
+    """Unstructured text falls back to fixed-size paragraph-based chunks."""
+    from chunk_document import chunk_document
+
+    text = UNSTRUCTURED_TEXT_FIXTURE.read_text()
+    chunks = chunk_document(text, "test_unstructured")
+    # Short text produces 1 chunk (below max size)
+    assert len(chunks) >= 1, "Expected at least 1 chunk"
+    for c in chunks:
+        assert "chunk_id" in c
+        assert "text" in c
+        assert len(c["text"]) <= 11000, "Chunk exceeds max size"
+
+
+def test_ut032_chunk_document_writes_files(tmp_path):
+    """CLI mode writes chunk files to ingested/<doc_id>_chunks/ directory."""
+    from chunk_document import chunk_document_to_files
+
+    text = CONTRACT_TEXT_FIXTURE.read_text()
+    ingested_dir = tmp_path / "ingested"
+    ingested_dir.mkdir()
+    (ingested_dir / "test_contract.txt").write_text(text)
+    chunk_dir = chunk_document_to_files("test_contract", tmp_path)
+    assert chunk_dir.exists(), f"Chunk dir {chunk_dir} does not exist"
+    chunk_files = list(chunk_dir.glob("*.json"))
+    assert len(chunk_files) >= 3, f"Expected >= 3 chunk files, got {len(chunk_files)}"
+    # Each file is valid JSON with expected structure
+    for f in chunk_files:
+        data = json.loads(f.read_text())
+        assert "chunk_id" in data
+        assert "text" in data
+
+
+def test_ut033_legal_suffix_stripping():
+    """Legal suffix normalization strips LLC, Inc, etc."""
+    from entity_resolution import normalize_party_name
+
+    assert normalize_party_name("Aramark Sports & Entertainment Services, LLC") == "Aramark Sports & Entertainment Services"
+    assert normalize_party_name("PSAV Presentation Services, Inc.") == "PSAV Presentation Services"
+    assert normalize_party_name("Freeman Decorating Co.") == "Freeman Decorating"
+    # Should NOT strip "Authority" from proper names
+    assert "Authority" in normalize_party_name("Pennsylvania Convention Center Authority")
+
+
+def test_ut034_alias_resolution():
+    """Defined-term alias extraction from contract text."""
+    from entity_resolution import extract_defined_aliases
+
+    text = 'Aramark Sports & Entertainment Services, LLC (hereinafter referred to as "Caterer")'
+    aliases = extract_defined_aliases(text)
+    assert "Caterer" in aliases, f"Expected 'Caterer' in {aliases}"
+
+
+def test_ut035_merge_chunk_extractions():
+    """Chunk-level extractions merge with within-document dedup."""
+    from entity_resolution import merge_chunk_extractions
+
+    chunk1 = {
+        "entities": [
+            {"name": "Aramark", "entity_type": "PARTY", "confidence": 0.9},
+            {"name": "Hall A", "entity_type": "VENUE", "confidence": 0.8},
+        ],
+        "relations": [{"source_entity": "Aramark", "target_entity": "Hall A", "relation_type": "PROVIDES", "confidence": 0.85}],
+    }
+    chunk2 = {
+        "entities": [
+            {"name": "Aramark", "entity_type": "PARTY", "confidence": 0.95},  # duplicate, higher confidence
+            {"name": "$5000 cancellation fee", "entity_type": "COST", "confidence": 0.9},
+        ],
+        "relations": [],
+    }
+    merged = merge_chunk_extractions([chunk1, chunk2], "test_doc")
+    # Dedup: Aramark appears once, confidence updated to max
+    party_entities = [e for e in merged["entities"] if e["name"] == "Aramark"]
+    assert len(party_entities) == 1, f"Expected 1 Aramark, got {len(party_entities)}"
+    assert party_entities[0]["confidence"] == 0.95, "Confidence should be max"
+    # Total unique entities: 3 (Aramark, Hall A, $5000 fee)
+    assert len(merged["entities"]) == 3
+    # Relations preserved
+    assert len(merged["relations"]) == 1
+    assert merged["chunks_processed"] == 2

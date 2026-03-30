@@ -1,0 +1,14 @@
+Eric, this really resonated. Your description of Super Domains hit a sore point I'd seen building epistract, so I tested the hypothesis directly — built an epistemic analysis layer and ran it against 6 drug discovery knowledge graphs (2,230 relations spanning neurogenetics, oncology, rare disease, immunotherapy, cardiovascular, and GLP-1 competitive intelligence).
+
+Results:
+- 97.7% base domain, 2.3% super domain — the separation is natural
+- Patents produce prophetic claims; papers produce hedged hypotheses — distinct epistemic signatures from the same entities
+- Contradictions become structurally invisible — opposing meta-analyses merged into one relation at confidence 0.975
+- Hypotheses cross community boundaries — invisible to topology-based grouping
+- KRAS G12C: 0% epistemic — negative control confirms the classifier finds signal, not noise
+
+Key insight: communities tell you where to look; Super Domains tell you what kind of knowledge you're looking at. Complementary, not competing.
+
+Full analysis and code: https://github.com/usathyan/epistract/blob/main/docs/analysis/super-domain-addendum.md
+
+Looking forward to your talk in NYC.
