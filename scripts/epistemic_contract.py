@@ -515,3 +515,356 @@ def _detect_cost_mismatches(
                     })
 
     return conflicts
+
+
+# ---------------------------------------------------------------------------
+# XREF-03: Master doc import and coverage gap analysis
+# ---------------------------------------------------------------------------
+
+
+def import_master_doc(master_path: Path, graph_data: dict) -> tuple[list[dict], list[dict]]:
+    """Parse a reference document (e.g., Sample_Conference_Master.md) into PLANNING_ITEM nodes.
+
+    Extracts sections, budget items, timeline items, and requirement items.
+    Reference nodes are visually distinct with source="reference" and lower
+    confidence (0.5) -- contracts override per D-09.
+
+    Args:
+        master_path: Path to master reference document (Markdown).
+        graph_data: Current graph data for matching against contract entities.
+
+    Returns:
+        Tuple of (reference_nodes, reference_links) where links connect
+        to matching contract entities.
+    """
+    ref_nodes: list[dict] = []
+    ref_links: list[dict] = []
+
+    try:
+        text = master_path.read_text(encoding="utf-8")
+    except Exception:
+        return ref_nodes, ref_links
+
+    lines = text.splitlines()
+    seq = 0
+
+    for line in lines:
+        stripped = line.strip()
+        if not stripped:
+            continue
+
+        node = None
+
+        # Budget items: lines with dollar amounts
+        dollar_match = re.search(r"\$[\d,]+(?:\.\d{2})?", stripped)
+        if dollar_match:
+            seq += 1
+            slug = re.sub(r"[^a-z0-9]+", "_", stripped[:60].lower()).strip("_")
+            node = {
+                "id": f"ref:{slug}_{seq}",
+                "name": stripped[:100],
+                "entity_type": "PLANNING_ITEM",
+                "source": "reference",
+                "source_document": "Sample_Conference_Master",
+                "attributes": {
+                    "category": "budget",
+                    "amount": dollar_match.group(0),
+                    "raw_text": stripped[:200],
+                },
+                "confidence": 0.5,
+            }
+
+        # Timeline items: lines with dates
+        elif re.search(r"\b\d{4}-\d{2}-\d{2}\b|\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\w*\s+\d{1,2}", stripped, re.I):
+            seq += 1
+            slug = re.sub(r"[^a-z0-9]+", "_", stripped[:60].lower()).strip("_")
+            node = {
+                "id": f"ref:{slug}_{seq}",
+                "name": stripped[:100],
+                "entity_type": "PLANNING_ITEM",
+                "source": "reference",
+                "source_document": "Sample_Conference_Master",
+                "attributes": {
+                    "category": "timeline",
+                    "raw_text": stripped[:200],
+                },
+                "confidence": 0.5,
+            }
+
+        # Requirement items: lines with action verbs
+        elif re.match(r"^[-*]\s*(ensure|provide|arrange|coordinate|hire|secure|confirm|verify|setup|organize)\b", stripped, re.I):
+            seq += 1
+            slug = re.sub(r"[^a-z0-9]+", "_", stripped[:60].lower()).strip("_")
+            node = {
+                "id": f"ref:{slug}_{seq}",
+                "name": stripped.lstrip("-* ").strip()[:100],
+                "entity_type": "PLANNING_ITEM",
+                "source": "reference",
+                "source_document": "Sample_Conference_Master",
+                "attributes": {
+                    "category": "requirement",
+                    "raw_text": stripped[:200],
+                },
+                "confidence": 0.5,
+            }
+
+        if node:
+            ref_nodes.append(node)
+
+    # Try to link reference nodes to matching contract entities
+    contract_nodes = graph_data.get("nodes", [])
+    for ref_node in ref_nodes:
+        ref_words = _significant_words(ref_node.get("name", ""))
+        if not ref_words:
+            continue
+        for contract_node in contract_nodes:
+            contract_words = _significant_words(contract_node.get("name", ""))
+            overlap = ref_words & contract_words
+            if len(overlap) >= 2:
+                ref_links.append({
+                    "source": ref_node["id"],
+                    "target": contract_node.get("id", ""),
+                    "relation_type": "RELATED_TO",
+                    "confidence": 0.4,
+                    "evidence": f"Reference item matched to contract entity via keywords: {', '.join(sorted(overlap)[:5])}",
+                    "source_document": "Sample_Conference_Master",
+                })
+                break  # One match per ref node is enough
+
+    return ref_nodes, ref_links
+
+
+def find_coverage_gaps(
+    ref_nodes: list[dict],
+    contract_nodes: list[dict],
+    links: list[dict],
+) -> list[dict]:
+    """Identify planning items from reference doc not covered by any contract.
+
+    Matching is fuzzy: lowercase keyword overlap with a threshold of 2+
+    shared significant words after stopword removal.
+
+    Args:
+        ref_nodes: PLANNING_ITEM reference nodes from import_master_doc.
+        contract_nodes: Contract graph nodes.
+        links: Graph links (for additional context).
+
+    Returns:
+        List of gap finding dicts with id, type, severity, description,
+        reference_entity, expected_coverage, suggested_action.
+    """
+    gaps: list[dict] = []
+    seq = 0
+
+    # Map categories to entity types for matching
+    category_type_map = {
+        "budget": ["COST"],
+        "timeline": ["DEADLINE"],
+        "requirement": ["OBLIGATION", "SERVICE"],
+    }
+
+    for ref_node in ref_nodes:
+        category = ref_node.get("attributes", {}).get("category", "")
+        target_types = category_type_map.get(category, ["OBLIGATION", "COST", "DEADLINE", "SERVICE"])
+        ref_words = _significant_words(ref_node.get("name", ""))
+        if not ref_words:
+            continue
+
+        # Search for matching contract nodes
+        found_match = False
+        for cn in contract_nodes:
+            if cn.get("entity_type") not in target_types:
+                continue
+            cn_words = _significant_words(cn.get("name", "") + " " + str(cn.get("attributes", {})))
+            overlap = ref_words & cn_words
+            if len(overlap) >= 2:
+                found_match = True
+                break
+
+        if not found_match:
+            seq += 1
+            # Determine severity: safety/insurance = CRITICAL, others = WARNING
+            safety_keywords = {"security", "safety", "insurance", "medical", "emergency", "fire", "ems"}
+            is_safety = bool(ref_words & safety_keywords)
+
+            gaps.append({
+                "id": f"gap:{seq:03d}",
+                "type": "coverage_gap",
+                "severity": "CRITICAL" if is_safety else "WARNING",
+                "description": f"Master doc expects '{ref_node.get('name', '')}', no contract covers it",
+                "reference_entity": ref_node.get("id", ""),
+                "expected_coverage": ref_node.get("attributes", {}),
+                "suggested_action": f"Add contract coverage for: {ref_node.get('name', '')}",
+            })
+
+    return gaps
+
+
+# ---------------------------------------------------------------------------
+# XREF-04: Risk scoring
+# ---------------------------------------------------------------------------
+
+
+def score_risks(conflicts: list[dict], gaps: list[dict]) -> list[dict]:
+    """Aggregate conflicts and gaps into risk items with severity scoring.
+
+    CRITICAL: exclusive_use conflicts, term contradictions, safety/insurance gaps
+    WARNING: schedule contradictions, cost mismatches, budget gaps
+    INFO: minor gaps, informational notes, insufficient data notes
+
+    Args:
+        conflicts: Conflict findings from detect_conflicts.
+        gaps: Gap findings from find_coverage_gaps.
+
+    Returns:
+        List of risk dicts with id, severity, source_type, source_id,
+        description, suggested_action, contracts_affected.
+    """
+    risks: list[dict] = []
+    seq = 0
+
+    for conflict in conflicts:
+        seq += 1
+        risks.append({
+            "id": f"risk:{seq:03d}",
+            "severity": conflict.get("severity", "WARNING"),
+            "source_type": "conflict",
+            "source_id": conflict.get("id", ""),
+            "description": conflict.get("description", ""),
+            "suggested_action": conflict.get("suggested_action", "Review conflict"),
+            "contracts_affected": conflict.get("contracts_involved", []),
+        })
+
+    for gap in gaps:
+        seq += 1
+        risks.append({
+            "id": f"risk:{seq:03d}",
+            "severity": gap.get("severity", "WARNING"),
+            "source_type": "gap",
+            "source_id": gap.get("id", ""),
+            "description": gap.get("description", ""),
+            "suggested_action": gap.get("suggested_action", "Add coverage"),
+            "contracts_affected": [],
+        })
+
+    return risks
+
+
+# ---------------------------------------------------------------------------
+# Main entry point
+# ---------------------------------------------------------------------------
+
+
+def analyze_contract_epistemic(
+    output_dir: Path,
+    graph_data: dict,
+    master_doc_path: Path | None = None,
+) -> dict:
+    """Run contract cross-reference epistemic analysis.
+
+    Main entry point called by label_epistemic.py dispatcher when
+    domain == "contract". Performs cross-contract entity linking, conflict
+    detection, coverage gap analysis, and risk scoring.
+
+    Args:
+        output_dir: Output directory containing graph_data.json.
+        graph_data: Already-loaded graph data dict with nodes and links.
+        master_doc_path: Optional path to Sample_Conference_Master.md for gap analysis.
+
+    Returns:
+        claims_layer dict with metadata, summary, base_domain, super_domain.
+    """
+    nodes = graph_data.get("nodes", [])
+    links = graph_data.get("links", [])
+
+    # Step 1: Cross-contract entity linking (XREF-01)
+    cross_entities = find_cross_contract_entities(nodes, links)
+
+    # Step 2: Load conflict rules and detect conflicts (XREF-02)
+    try:
+        from domain_resolver import resolve_domain
+        domain_yaml_path = resolve_domain("contract")
+        rules = load_conflict_rules(domain_yaml_path)
+    except Exception:
+        rules = {}
+
+    conflicts = detect_conflicts(nodes, links, rules)
+
+    # Step 3: Coverage gap analysis (XREF-03)
+    ref_nodes: list[dict] = []
+    ref_links: list[dict] = []
+    gaps: list[dict] = []
+
+    if master_doc_path and master_doc_path.exists():
+        ref_nodes, ref_links = import_master_doc(master_doc_path, graph_data)
+        gaps = find_coverage_gaps(ref_nodes, nodes, links)
+
+    # Step 4: Risk scoring (XREF-04)
+    risks = score_risks(conflicts, gaps)
+
+    # Step 5: Set epistemic_status on links
+    # Build set of entity IDs involved in conflicts for "contested" marking
+    contested_entities = set()
+    for conflict in conflicts:
+        for eid in conflict.get("entities_involved", []):
+            contested_entities.add(eid)
+
+    asserted_count = 0
+    contested_count = 0
+    unverified_count = 0
+
+    for link in links:
+        source = link.get("source", "")
+        target = link.get("target", "")
+        confidence = link.get("confidence", 0.5)
+
+        if source in contested_entities or target in contested_entities:
+            link["epistemic_status"] = "contested"
+            contested_count += 1
+        elif confidence >= 0.8:
+            link["epistemic_status"] = "asserted"
+            asserted_count += 1
+        else:
+            link["epistemic_status"] = "unverified"
+            unverified_count += 1
+
+    # Step 6: Build risk severity counts
+    risk_counts = {"CRITICAL": 0, "WARNING": 0, "INFO": 0}
+    for risk in risks:
+        sev = risk.get("severity", "INFO")
+        risk_counts[sev] = risk_counts.get(sev, 0) + 1
+
+    # Step 7: Build claims_layer
+    claims_layer = {
+        "metadata": {
+            "domain": "contract",
+            "description": "Cross-contract epistemic layer -- conflicts, gaps, risks",
+            "generated_from": str(output_dir / "graph_data.json"),
+            "total_relations": len(links),
+        },
+        "summary": {
+            "cross_contract_entities": len(cross_entities),
+            "conflicts_found": len(conflicts),
+            "gaps_found": len(gaps),
+            "risks": risk_counts,
+            "epistemic_status_counts": {
+                "asserted": asserted_count,
+                "contested": contested_count,
+                "unverified": unverified_count,
+            },
+        },
+        "base_domain": {
+            "description": "Contractual facts -- asserted obligations, costs, deadlines",
+            "relation_count": asserted_count,
+        },
+        "super_domain": {
+            "domain": "contract",
+            "description": "Cross-contract epistemic layer -- conflicts, gaps, risks",
+            "cross_contract_entities": cross_entities,
+            "conflicts": conflicts,
+            "coverage_gaps": gaps,
+            "risks": risks,
+        },
+    }
+
+    return claims_layer
