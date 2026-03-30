@@ -60,10 +60,10 @@ Plans:
   2. Variant references to the same entity are resolved to a single canonical node (e.g., "Aramark" / "ARAMARK" / "the Caterer" map to one node)
   3. The knowledge graph is queryable via NetworkX with domain-specific node attributes (deadline dates, cost amounts, clause references)
   4. Graph visualization renders the contract KG with distinguishable entity types and navigable relations
-**Plans:** 2 plans
+**Plans:** 1/2 plans executed
 
 Plans:
-- [ ] 03-01-PLAN.md — Clause-aware chunking, entity resolution, and test fixtures (EXTR-01, EXTR-02)
+- [x] 03-01-PLAN.md — Clause-aware chunking, entity resolution, and test fixtures (EXTR-01, EXTR-02)
 - [ ] 03-02-PLAN.md — Graph construction wiring, community labeling, visualization verification (GRPH-01, GRPH-02)
 
 ### Phase 4: Cross-Reference Analysis
@@ -96,6 +96,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 |-------|----------------|--------|-----------|
 | 1. Domain Configuration | 3/3 | Complete | 2026-03-29 |
 | 2. Document Ingestion | 2/2 | Complete | 2026-03-29 |
-| 3. Entity Extraction and Graph Construction | 0/2 | Planning complete | - |
+| 3. Entity Extraction and Graph Construction | 1/2 | In Progress|  |
 | 4. Cross-Reference Analysis | 0/TBD | Not started | - |
 | 5. Interactive Dashboard | 0/TBD | Not started | - |

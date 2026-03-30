@@ -29,8 +29,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Entity Extraction
 
-- [ ] **EXTR-01**: System extracts contract entities (parties, obligations, deadlines, costs, clauses, services) from ingested documents using domain-configured prompts
-- [ ] **EXTR-02**: Entity resolution deduplicates variant references to the same real-world entity (e.g., "Aramark" / "ARAMARK" / "the Caterer" / "exclusive caterer")
+- [x] **EXTR-01**: System extracts contract entities (parties, obligations, deadlines, costs, clauses, services) from ingested documents using domain-configured prompts
+- [x] **EXTR-02**: Entity resolution deduplicates variant references to the same real-world entity (e.g., "Aramark" / "ARAMARK" / "the Caterer" / "exclusive caterer")
 
 ### Graph Construction
 
@@ -112,8 +112,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INGS-08 | Phase 2 | Complete |
 | INGS-09 | Phase 2 | Complete |
 | INGS-10 | Phase 2 | Complete |
-| EXTR-01 | Phase 3 | Pending |
-| EXTR-02 | Phase 3 | Pending |
+| EXTR-01 | Phase 3 | Complete |
+| EXTR-02 | Phase 3 | Complete |
 | GRPH-01 | Phase 3 | Pending |
 | GRPH-02 | Phase 3 | Pending |
 | XREF-01 | Phase 4 | Pending |
