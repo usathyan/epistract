@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """End-to-end contract extraction orchestrator.
 
-Chains document chunking, chunk-extraction merge, entity resolution, and
-graph construction into a single pipeline call.
+Chains document chunking, chunk-extraction merge, entity resolution,
+graph construction, and epistemic analysis into a single pipeline call.
 
 Usage:
-    python extract_contracts.py <output_dir> [--domain contract] [--skip-chunking] [--skip-graph]
+    python extract_contracts.py <output_dir> [--domain contract] [--master-doc path] [--skip-chunking] [--skip-graph] [--skip-epistemic]
 """
 
 from __future__ import annotations
@@ -36,6 +36,8 @@ def extract_and_build(
     domain_name: str = "contract",
     skip_chunking: bool = False,
     skip_graph: bool = False,
+    skip_epistemic: bool = False,
+    master_doc_path: Path | None = None,
 ) -> dict:
     """Run the full contract extraction pipeline.
 
@@ -44,12 +46,15 @@ def extract_and_build(
         2. Extraction merge -- merge per-chunk extraction JSONs.
         3. Entity resolution -- normalize party names, resolve aliases.
         4. Graph build -- invoke sift-kg to construct the knowledge graph.
+        5. Epistemic analysis -- cross-reference conflicts, gaps, risks.
 
     Args:
         output_dir: Root output directory (must contain triage.json or ingested/).
         domain_name: Domain name for schema resolution (default: contract).
         skip_chunking: Skip Step 1 if chunks already exist.
         skip_graph: Skip Step 4 (graph construction).
+        skip_epistemic: Skip Step 5 (epistemic analysis).
+        master_doc_path: Optional path to master reference document for gap analysis.
 
     Returns:
         Stats dict with counts for each step.
@@ -60,6 +65,7 @@ def extract_and_build(
         "extractions_merged": 0,
         "names_normalized": 0,
         "graph_built": False,
+        "epistemic_analysis": False,
     }
 
     # ------------------------------------------------------------------
@@ -72,17 +78,15 @@ def extract_and_build(
         if triage_path.exists():
             triage = json.loads(triage_path.read_text(encoding="utf-8"))
             docs = [
-                d for d in triage.get("documents", [])
+                d
+                for d in triage.get("documents", [])
                 if d.get("extraction_readiness_score", 0) > 0
             ]
         else:
             # Fallback: look for .txt files in ingested/
             ingested = output_dir / "ingested"
             if ingested.exists():
-                docs = [
-                    {"doc_id": f.stem}
-                    for f in sorted(ingested.glob("*.txt"))
-                ]
+                docs = [{"doc_id": f.stem} for f in sorted(ingested.glob("*.txt"))]
             else:
                 docs = []
 
@@ -156,6 +160,29 @@ def extract_and_build(
             if HAS_RICH:
                 _console.print(f"[red]Graph build failed: {exc}[/red]")
 
+    # ------------------------------------------------------------------
+    # Step 5: Epistemic analysis (cross-reference, conflicts, gaps, risks)
+    # ------------------------------------------------------------------
+    if not skip_epistemic and stats["graph_built"]:
+        try:
+            from label_epistemic import analyze_epistemic
+
+            claims = analyze_epistemic(
+                output_dir,
+                domain_name=domain_name,
+                master_doc_path=master_doc_path,
+            )
+            stats["epistemic_analysis"] = True
+            stats["conflicts_found"] = claims.get("summary", {}).get(
+                "conflicts_found", 0
+            )
+            stats["gaps_found"] = claims.get("summary", {}).get("gaps_found", 0)
+            stats["risks"] = claims.get("summary", {}).get("risks", {})
+        except Exception as exc:
+            if HAS_RICH:
+                _console.print(f"[red]Epistemic analysis failed: {exc}[/red]")
+            stats["epistemic_analysis"] = False
+
     return stats
 
 
@@ -165,7 +192,11 @@ def extract_and_build(
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python extract_contracts.py <output_dir> [--domain name] [--skip-chunking] [--skip-graph]", file=sys.stderr)
+        print(
+            "Usage: python extract_contracts.py <output_dir> [--domain name]"
+            " [--master-doc path] [--skip-chunking] [--skip-graph] [--skip-epistemic]",
+            file=sys.stderr,
+        )
         sys.exit(1)
 
     out = Path(sys.argv[1])
@@ -177,10 +208,16 @@ if __name__ == "__main__":
     if "--domain" in sys.argv:
         domain = sys.argv[sys.argv.index("--domain") + 1]
 
+    master_doc = None
+    if "--master-doc" in sys.argv:
+        master_doc = Path(sys.argv[sys.argv.index("--master-doc") + 1])
+
     result = extract_and_build(
         out,
         domain_name=domain,
         skip_chunking="--skip-chunking" in sys.argv,
         skip_graph="--skip-graph" in sys.argv,
+        skip_epistemic="--skip-epistemic" in sys.argv,
+        master_doc_path=master_doc,
     )
     print(json.dumps(result, indent=2))

@@ -10,7 +10,7 @@ Complements (does not replace) the Louvain community structure. Communities
 group by topology; this groups by epistemology.
 
 Usage:
-    python label_epistemic.py <output_dir> [--domain contract]
+    python label_epistemic.py <output_dir> [--domain contract] [--master-doc path]
 
 Output:
     <output_dir>/claims_layer.json  -- Super Domain overlay
@@ -36,7 +36,11 @@ from epistemic_biomedical import analyze_biomedical_epistemic
 # ---------------------------------------------------------------------------
 
 
-def analyze_epistemic(output_dir: Path, domain_name: str | None = None) -> dict:
+def analyze_epistemic(
+    output_dir: Path,
+    domain_name: str | None = None,
+    master_doc_path: Path | None = None,
+) -> dict:
     """Run full epistemic analysis on a built graph.
 
     Dispatches to the appropriate domain-specific analysis module based on
@@ -46,13 +50,18 @@ def analyze_epistemic(output_dir: Path, domain_name: str | None = None) -> dict:
         output_dir: Directory containing graph_data.json.
         domain_name: Explicit domain override. If None, detected from
             graph_data.json metadata.domain field (defaults to "drug-discovery").
+        master_doc_path: Optional path to master reference document (e.g.,
+            Sample_Conference_Master.md) for coverage gap analysis in contract domain.
 
     Returns:
         Claims layer dict with metadata, summary, base_domain, super_domain.
     """
     graph_path = output_dir / "graph_data.json"
     if not graph_path.exists():
-        print(f"Error: {graph_path} not found. Run /epistract-build first.", file=sys.stderr)
+        print(
+            f"Error: {graph_path} not found. Run /epistract-build first.",
+            file=sys.stderr,
+        )
         sys.exit(1)
 
     graph_data = json.loads(graph_path.read_text())
@@ -70,7 +79,9 @@ def analyze_epistemic(output_dir: Path, domain_name: str | None = None) -> dict:
                 "error": "Contract epistemic module not yet available. Run Plan 02 first.",
                 "summary": {"status": "unavailable"},
             }
-        claims_layer = analyze_contract_epistemic(output_dir, graph_data)
+        claims_layer = analyze_contract_epistemic(
+            output_dir, graph_data, master_doc_path=master_doc_path
+        )
     else:
         # Default: biomedical (drug-discovery) or any other domain
         claims_layer = analyze_biomedical_epistemic(output_dir, graph_data)
@@ -86,24 +97,34 @@ def analyze_epistemic(output_dir: Path, domain_name: str | None = None) -> dict:
     summary = claims_layer.get("summary", {})
     status_counts = summary.get("epistemic_status_counts", {})
     links = graph_data.get("links", [])
-    print(json.dumps({
-        "claims_layer": str(claims_path),
-        "domain": domain_name,
-        "total_relations": len(links),
-        "base_domain_relations": status_counts.get("asserted", 0),
-        "super_domain_relations": sum(v for k, v in status_counts.items() if k != "asserted"),
-        "status_breakdown": status_counts,
-        "contradictions": summary.get("contradictions_found", 0),
-        "hypotheses": summary.get("hypotheses_found", 0),
-        "document_types": list(summary.get("document_types", {}).keys()),
-    }, indent=2))
+    print(
+        json.dumps(
+            {
+                "claims_layer": str(claims_path),
+                "domain": domain_name,
+                "total_relations": len(links),
+                "base_domain_relations": status_counts.get("asserted", 0),
+                "super_domain_relations": sum(
+                    v for k, v in status_counts.items() if k != "asserted"
+                ),
+                "status_breakdown": status_counts,
+                "contradictions": summary.get("contradictions_found", 0),
+                "hypotheses": summary.get("hypotheses_found", 0),
+                "document_types": list(summary.get("document_types", {}).keys()),
+            },
+            indent=2,
+        )
+    )
 
     return claims_layer
 
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python label_epistemic.py <output_dir> [--domain <name>]", file=sys.stderr)
+        print(
+            "Usage: python label_epistemic.py <output_dir> [--domain <name>] [--master-doc <path>]",
+            file=sys.stderr,
+        )
         sys.exit(1)
 
     out_dir = Path(sys.argv[1])
@@ -113,4 +134,10 @@ if __name__ == "__main__":
         if idx + 1 < len(sys.argv):
             domain = sys.argv[idx + 1]
 
-    analyze_epistemic(out_dir, domain_name=domain)
+    master_doc = None
+    if "--master-doc" in sys.argv:
+        idx = sys.argv.index("--master-doc")
+        if idx + 1 < len(sys.argv):
+            master_doc = Path(sys.argv[idx + 1])
+
+    analyze_epistemic(out_dir, domain_name=domain, master_doc_path=master_doc)
