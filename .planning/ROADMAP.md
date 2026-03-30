@@ -79,7 +79,7 @@ Plans:
 
 Plans:
 - [x] 04-01-PLAN.md — Domain-aware epistemic dispatch, biomedical extraction, conflict rules YAML (XREF-01, XREF-02)
-- [ ] 04-02-PLAN.md — Contract epistemic analysis module: cross-contract linking, conflict detection, gap analysis, risk scoring (XREF-01, XREF-02, XREF-03, XREF-04)
+- [x] 04-02-PLAN.md — Contract epistemic analysis module: cross-contract linking, conflict detection, gap analysis, risk scoring (XREF-01, XREF-02, XREF-03, XREF-04)
 - [ ] 04-03-PLAN.md — Pipeline integration: wire epistemic analysis into extract_contracts.py, --master-doc CLI support (XREF-01, XREF-02, XREF-03, XREF-04)
 
 ### Phase 5: Interactive Dashboard
