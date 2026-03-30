@@ -866,15 +866,25 @@ def test_ut039_biomedical_epistemic_backward_compat(tmp_path):
 
 
 # ========================================================================
-# UT-040: Cross-contract entity identification (placeholder for Plan 02)
+# UT-040: Cross-contract entity identification (XREF-01)
 # ========================================================================
-@pytest.mark.skip(reason="epistemic_contract module created in Plan 02")
 def test_ut040_cross_contract_entities():
-    """Entities with multiple source_documents are identified as cross-contract (XREF-01)."""
-    # Create nodes list with some having source_documents: ["contract_a", "contract_b"]
-    # Import find_cross_contract_entities from epistemic_contract (Plan 02)
-    # Verify cross-contract entities are returned sorted by contract_count desc
-    pass
+    """Entities appearing in multiple contracts are identified (XREF-01)."""
+    from epistemic_contract import find_cross_contract_entities
+    nodes = [
+        {"id": "party:aramark", "name": "Aramark", "entity_type": "PARTY",
+         "source_documents": ["aramark_catering", "pcc_vendor_policy"]},
+        {"id": "venue:hall_a", "name": "Hall A", "entity_type": "VENUE",
+         "source_documents": ["pcc_license", "av_vendor_agreement", "aramark_catering"]},
+        {"id": "cost:setup_fee", "name": "Setup Fee", "entity_type": "COST",
+         "source_documents": ["av_vendor_agreement"]},  # Single contract -- not cross-contract
+    ]
+    result = find_cross_contract_entities(nodes)
+    assert len(result) == 2, f"Expected 2 cross-contract entities, got {len(result)}"
+    assert result[0]["entity_id"] == "venue:hall_a", "Hall A (3 contracts) should be first"
+    assert result[0]["contract_count"] == 3
+    assert result[1]["entity_id"] == "party:aramark"
+    assert result[1]["contract_count"] == 2
 
 
 # ========================================================================
@@ -947,12 +957,158 @@ def test_ut045_domain_dispatch(tmp_path):
     for link in updated_graph["links"]:
         assert "epistemic_status" in link, f"Link {link.get('relation_id')} missing epistemic_status"
 
-    # Contract domain should return error dict (module not yet available)
+    # Contract domain should now dispatch to epistemic_contract module
     contract_graph = {
         "metadata": {"domain": "contract"},
-        "nodes": [],
+        "nodes": [
+            {"id": "party:test", "name": "Test Party", "entity_type": "PARTY",
+             "confidence": 0.9, "attributes": {}},
+        ],
         "links": [],
     }
     (tmp_path / "graph_data.json").write_text(json.dumps(contract_graph, indent=2))
     contract_result = analyze_epistemic(tmp_path, domain_name="contract")
-    assert "error" in contract_result, "Contract domain should return error dict when module unavailable"
+    assert "super_domain" in contract_result, "Contract domain should return valid claims_layer"
+    assert contract_result["super_domain"].get("domain") == "contract"
+
+
+# ========================================================================
+# UT-041: Conflict detection with 4 types (XREF-02)
+# ========================================================================
+def test_ut041_conflict_detection():
+    """Four conflict types detected from graph data (XREF-02)."""
+    from epistemic_contract import detect_conflicts
+    nodes = [
+        {"id": "clause:aramark_exclusive", "name": "Aramark Exclusivity", "entity_type": "CLAUSE",
+         "attributes": {"clause_type": "exclusivity"}, "source_document": "aramark_catering"},
+        {"id": "clause:dessert_scope", "name": "Dessert Vendor Scope", "entity_type": "CLAUSE",
+         "attributes": {"clause_type": "exclusivity"}, "source_document": "dessert_vendor"},
+        {"id": "venue:hall_a", "name": "Hall A", "entity_type": "VENUE",
+         "attributes": {"room_or_space": "Hall A"}, "source_document": "pcc_license"},
+        {"id": "deadline:headcount_a", "name": "Headcount Due", "entity_type": "DEADLINE",
+         "attributes": {"what_is_due": "final headcount", "date": "2026-08-01"}, "source_document": "aramark_catering"},
+        {"id": "deadline:headcount_b", "name": "Headcount Due AV", "entity_type": "DEADLINE",
+         "attributes": {"what_is_due": "final headcount", "date": "2026-07-15"}, "source_document": "av_vendor"},
+    ]
+    links = [
+        {"source": "clause:aramark_exclusive", "target": "venue:hall_a",
+         "relation_type": "RESTRICTS", "source_document": "aramark_catering"},
+        {"source": "clause:dessert_scope", "target": "venue:hall_a",
+         "relation_type": "RESTRICTS", "source_document": "dessert_vendor"},
+    ]
+    rules = {
+        "exclusive_use": {
+            "entity_types": ["CLAUSE", "VENUE"],
+            "match_on": ["attributes.room_or_space", "attributes.clause_type"],
+            "match_value": "exclusivity",
+            "severity": "CRITICAL",
+            "suggested_action_template": "Review {source} against {conflict} for exclusive-use overlap in {space}",
+        },
+        "schedule_contradiction": {
+            "entity_types": ["DEADLINE"],
+            "match_on": ["attributes.what_is_due"],
+            "compare_attribute": "attributes.date",
+            "conflict_condition": "dates_conflict",
+            "severity": "WARNING",
+            "suggested_action_template": "Reconcile {entity_a} with {entity_b} -- dates conflict for {what_is_due}",
+        },
+    }
+    conflicts = detect_conflicts(nodes, links, rules)
+    assert len(conflicts) >= 1, f"Expected at least 1 conflict, got {len(conflicts)}"
+    severities = [c["severity"] for c in conflicts]
+    assert "CRITICAL" in severities or "WARNING" in severities, "Conflicts must have severity"
+    for c in conflicts:
+        assert "suggested_action" in c, f"Conflict {c['id']} missing suggested_action"
+        assert "entities_involved" in c, f"Conflict {c['id']} missing entities_involved"
+
+
+# ========================================================================
+# UT-043: Coverage gap identification (XREF-03)
+# ========================================================================
+def test_ut043_coverage_gaps():
+    """Coverage gaps identified between reference items and contract graph (XREF-03)."""
+    from epistemic_contract import find_coverage_gaps
+    ref_nodes = [
+        {"id": "ref:security_plan", "name": "Security staffing plan for 5000 attendees",
+         "entity_type": "PLANNING_ITEM", "source": "reference",
+         "attributes": {"category": "requirement"}},
+        {"id": "ref:catering_budget", "name": "Catering budget $150,000",
+         "entity_type": "PLANNING_ITEM", "source": "reference",
+         "attributes": {"category": "budget", "amount": "$150,000"}},
+    ]
+    contract_nodes = [
+        {"id": "obligation:catering_service", "name": "Provide catering for event meals",
+         "entity_type": "OBLIGATION", "attributes": {"action": "provide catering services"}},
+        # No security-related obligation -- this should be a gap
+    ]
+    links = []
+    gaps = find_coverage_gaps(ref_nodes, contract_nodes, links)
+    assert len(gaps) >= 1, f"Expected at least 1 gap, got {len(gaps)}"
+    gap_refs = [g["reference_entity"] for g in gaps]
+    assert "ref:security_plan" in gap_refs, "Security plan gap should be detected"
+    for g in gaps:
+        assert "severity" in g
+        assert "suggested_action" in g
+
+
+# ========================================================================
+# UT-044: Risk scoring with severity (XREF-04)
+# ========================================================================
+def test_ut044_risk_scoring():
+    """Risks scored as CRITICAL, WARNING, or INFO with suggested actions (XREF-04)."""
+    from epistemic_contract import score_risks
+    conflicts = [
+        {"id": "conflict:exclusive_use:001", "type": "exclusive_use", "severity": "CRITICAL",
+         "description": "Exclusive-use conflict", "entities_involved": ["a", "b"],
+         "contracts_involved": ["c1", "c2"], "suggested_action": "Review"},
+    ]
+    gaps = [
+        {"id": "gap:001", "type": "coverage_gap", "severity": "WARNING",
+         "description": "Missing coverage", "reference_entity": "ref:x",
+         "suggested_action": "Add coverage"},
+    ]
+    risks = score_risks(conflicts, gaps)
+    assert len(risks) >= 2, f"Expected at least 2 risks, got {len(risks)}"
+    severities = {r["severity"] for r in risks}
+    assert "CRITICAL" in severities, "Should have CRITICAL risks from exclusive-use conflict"
+    assert "WARNING" in severities, "Should have WARNING risks from coverage gap"
+    for r in risks:
+        assert r["severity"] in ("CRITICAL", "WARNING", "INFO")
+        assert "suggested_action" in r
+        assert "source_type" in r
+
+
+# ========================================================================
+# UT-046: claims_layer.json contract schema (output format)
+# ========================================================================
+def test_ut046_claims_layer_schema(tmp_path):
+    """Contract claims_layer.json has correct Super Domain structure."""
+    from epistemic_contract import analyze_contract_epistemic
+    # Create minimal contract graph_data.json
+    graph_data = {
+        "metadata": {"domain": "contract"},
+        "nodes": [
+            {"id": "party:aramark", "name": "Aramark", "entity_type": "PARTY",
+             "confidence": 0.95, "attributes": {}},
+            {"id": "obligation:catering", "name": "Provide catering", "entity_type": "OBLIGATION",
+             "confidence": 0.9, "attributes": {"action": "provide catering"}},
+        ],
+        "links": [
+            {"source": "party:aramark", "target": "obligation:catering",
+             "relation_type": "OBLIGATES", "confidence": 0.9,
+             "evidence": "Aramark shall provide catering", "source_document": "aramark_agreement"},
+        ],
+    }
+    (tmp_path / "graph_data.json").write_text(json.dumps(graph_data, indent=2))
+    result = analyze_contract_epistemic(tmp_path, graph_data)
+    assert "metadata" in result
+    assert "summary" in result
+    assert "base_domain" in result
+    assert "super_domain" in result
+    assert result["super_domain"].get("domain") == "contract"
+    assert "cross_contract_entities" in result["super_domain"]
+    assert "conflicts" in result["super_domain"]
+    assert "risks" in result["super_domain"]
+    summary = result["summary"]
+    assert "risks" in summary
+    assert all(k in summary["risks"] for k in ("CRITICAL", "WARNING", "INFO"))
