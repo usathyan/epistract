@@ -23,8 +23,8 @@ Epistract evolves from a biomedical-specific literature extraction tool into a *
 - [ ] Domain configuration system — pluggable entity/relation type definitions per domain
 - [ ] Contract domain schema — entity types (Party, Obligation, Deadline, Cost, Clause, Venue, Service) and relation types (OBLIGATES, CONFLICTS_WITH, DEPENDS_ON, COSTS, PROVIDES, RESTRICTS)
 - [ ] PDF/XLS/EML document ingestion for contract files
-- [ ] Contract entity extraction using domain-configured prompts
-- [ ] Knowledge graph construction from contract extractions
+- [x] Contract entity extraction using domain-configured prompts — Validated in Phase 3: Entity Extraction & Graph Construction
+- [x] Knowledge graph construction from contract extractions — Validated in Phase 3: Entity Extraction & Graph Construction
 - [ ] Cross-reference analysis — connecting obligations, deadlines, and costs across vendors
 - [ ] Risk and conflict detection — flagging contradictions, missing coverage, timeline conflicts
 - [ ] Dashboard master data as reference layer — import Sample_Conference_Master.md as contextual nodes (not authoritative; contracts override)
@@ -96,4 +96,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-29 after initialization*
+*Last updated: 2026-03-30 after Phase 3 completion — entity extraction pipeline, graph construction, and community labeling operational*
