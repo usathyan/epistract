@@ -60,7 +60,7 @@ Plans:
   2. Variant references to the same entity are resolved to a single canonical node (e.g., "Aramark" / "ARAMARK" / "the Caterer" map to one node)
   3. The knowledge graph is queryable via NetworkX with domain-specific node attributes (deadline dates, cost amounts, clause references)
   4. Graph visualization renders the contract KG with distinguishable entity types and navigable relations
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans
 
 Plans:
 - [x] 03-01-PLAN.md — Clause-aware chunking, entity resolution, and test fixtures (EXTR-01, EXTR-02)
@@ -75,7 +75,12 @@ Plans:
   2. Contradictions between contracts are detected and reported (e.g., overlapping exclusive-use claims, incompatible schedules, conflicting terms)
   3. Coverage gaps are identified where event requirements lack corresponding contract obligations
   4. Risks are flagged by cross-referencing contract terms with dashboard planning data (budget mismatches, timeline conflicts, known venue constraints)
-**Plans**: TBD
+**Plans:** 3 plans
+
+Plans:
+- [ ] 04-01-PLAN.md — Domain-aware epistemic dispatch, biomedical extraction, conflict rules YAML (XREF-01, XREF-02)
+- [ ] 04-02-PLAN.md — Contract epistemic analysis module: cross-contract linking, conflict detection, gap analysis, risk scoring (XREF-01, XREF-02, XREF-03, XREF-04)
+- [ ] 04-03-PLAN.md — Pipeline integration: wire epistemic analysis into extract_contracts.py, --master-doc CLI support (XREF-01, XREF-02, XREF-03, XREF-04)
 
 ### Phase 5: Interactive Dashboard
 **Goal**: Committee chairs can explore the contract knowledge graph through a filterable web interface
@@ -96,6 +101,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 |-------|----------------|--------|-----------|
 | 1. Domain Configuration | 3/3 | Complete | 2026-03-29 |
 | 2. Document Ingestion | 2/2 | Complete | 2026-03-29 |
-| 3. Entity Extraction and Graph Construction | 1/2 | In Progress|  |
-| 4. Cross-Reference Analysis | 0/TBD | Not started | - |
+| 3. Entity Extraction and Graph Construction | 2/2 | Complete | 2026-03-29 |
+| 4. Cross-Reference Analysis | 0/3 | Not started | - |
 | 5. Interactive Dashboard | 0/TBD | Not started | - |
