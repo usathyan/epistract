@@ -1,0 +1,450 @@
+{
+  "nodes": [
+    {
+      "id": "party:pennsylvania_convention_center_authority",
+      "name": "Pennsylvania Convention Center Authority",
+      "entity_type": "PARTY",
+      "confidence": 0.95,
+      "source_documents": ["pcc_license_agreement.pdf"],
+      "community": 0,
+      "attributes": {"role": "Licensor", "legal_name": "Pennsylvania Convention Center Authority"}
+    },
+    {
+      "id": "party:aramark_sports_and_entertainment",
+      "name": "Aramark Sports & Entertainment Services, LLC",
+      "entity_type": "PARTY",
+      "confidence": 0.95,
+      "source_documents": ["aramark_catering_agreement.pdf"],
+      "community": 1,
+      "attributes": {"role": "Exclusive Caterer", "legal_name": "Aramark Sports & Entertainment Services, LLC"}
+    },
+    {
+      "id": "party:psav_presentation_services",
+      "name": "PSAV Presentation Services",
+      "entity_type": "PARTY",
+      "confidence": 0.93,
+      "source_documents": ["av_services_contract.pdf"],
+      "community": 2,
+      "attributes": {"role": "AV Provider", "legal_name": "PSAV Presentation Services, Inc."}
+    },
+    {
+      "id": "obligation:provide_catering_for_all_event_meals",
+      "name": "Provide catering for all event meals",
+      "entity_type": "OBLIGATION",
+      "confidence": 0.92,
+      "source_documents": ["aramark_catering_agreement.pdf"],
+      "community": 1,
+      "attributes": {"responsible_party": "Aramark", "action": "Provide all food and beverage services", "priority": "mandatory", "section_reference": "Section 1"}
+    },
+    {
+      "id": "obligation:exclusive_av_services_in_all_halls",
+      "name": "Exclusive AV services in all halls",
+      "entity_type": "OBLIGATION",
+      "confidence": 0.90,
+      "source_documents": ["av_services_contract.pdf"],
+      "community": 2,
+      "attributes": {"responsible_party": "PSAV", "action": "Provide exclusive AV services", "priority": "mandatory", "section_reference": "Article III"}
+    },
+    {
+      "id": "obligation:security_staffing_for_load_in_days",
+      "name": "Security staffing for load-in days",
+      "entity_type": "OBLIGATION",
+      "confidence": 0.85,
+      "source_documents": ["security_vendor_proposal.pdf"],
+      "community": 0,
+      "attributes": {"responsible_party": "Allied Universal", "action": "Provide security guards during load-in", "priority": "mandatory"}
+    },
+    {
+      "id": "deadline:final_headcount_due_august_1_2026",
+      "name": "Final headcount due August 1, 2026",
+      "entity_type": "DEADLINE",
+      "confidence": 0.95,
+      "source_documents": ["aramark_catering_agreement.pdf"],
+      "community": 1,
+      "attributes": {"date": "2026-08-01", "what_is_due": "Final headcount submission", "responsible_party": "Sample 2026 Planning Committee", "consequence": "Menu reverts to standard package"}
+    },
+    {
+      "id": "deadline:av_equipment_list_due_july_15_2026",
+      "name": "AV equipment list due July 15, 2026",
+      "entity_type": "DEADLINE",
+      "confidence": 0.90,
+      "source_documents": ["av_services_contract.pdf"],
+      "community": 2,
+      "attributes": {"date": "2026-07-15", "what_is_due": "Final AV equipment specifications", "responsible_party": "Sample 2026 Planning Committee"}
+    },
+    {
+      "id": "deadline:insurance_certificates_due_june_1_2026",
+      "name": "Insurance certificates due June 1, 2026",
+      "entity_type": "DEADLINE",
+      "confidence": 0.92,
+      "source_documents": ["pcc_license_agreement.pdf"],
+      "community": 0,
+      "attributes": {"date": "2026-06-01", "what_is_due": "Certificate of Insurance submission", "responsible_party": "Sample 2026"}
+    },
+    {
+      "id": "cost:45_per_person_lunch_service",
+      "name": "$45 per person lunch service",
+      "entity_type": "COST",
+      "confidence": 0.95,
+      "source_documents": ["aramark_catering_agreement.pdf"],
+      "community": 1,
+      "attributes": {"amount": "45.00", "currency": "USD", "unit": "per person", "covers": "Lunch service including setup and cleanup", "payment_terms": "Net 30 days"}
+    },
+    {
+      "id": "cost:12000_av_package_hall_a",
+      "name": "$12,000 AV package Hall A",
+      "entity_type": "COST",
+      "confidence": 0.93,
+      "source_documents": ["av_services_contract.pdf"],
+      "community": 2,
+      "attributes": {"amount": "12000.00", "currency": "USD", "unit": "flat fee", "covers": "Complete AV package for Hall A including sound, lighting, and projection"}
+    },
+    {
+      "id": "cost:85_per_hour_security_guard",
+      "name": "$85 per hour security guard",
+      "entity_type": "COST",
+      "confidence": 0.88,
+      "source_documents": ["security_vendor_proposal.pdf"],
+      "community": 0,
+      "attributes": {"amount": "85.00", "currency": "USD", "unit": "per hour", "covers": "Armed security guard rate"}
+    },
+    {
+      "id": "clause:force_majeure_provision",
+      "name": "Force Majeure provision",
+      "entity_type": "CLAUSE",
+      "confidence": 0.90,
+      "source_documents": ["pcc_license_agreement.pdf"],
+      "community": 0,
+      "attributes": {"clause_type": "force_majeure", "section_number": "Article XII", "key_terms": "Neither party liable for acts of God, government action, or pandemic", "applies_to": "Both parties"}
+    },
+    {
+      "id": "clause:exclusive_catering_rights_section_4_2",
+      "name": "Exclusive catering rights Section 4.2",
+      "entity_type": "CLAUSE",
+      "confidence": 0.95,
+      "source_documents": ["aramark_catering_agreement.pdf"],
+      "community": 1,
+      "attributes": {"clause_type": "exclusivity", "section_number": "Section 4.2", "key_terms": "Aramark has exclusive right to provide all food and beverage within the venue", "applies_to": "All event participants"}
+    },
+    {
+      "id": "service:full_service_catering_500_guests",
+      "name": "Full-service catering 500 guests",
+      "entity_type": "SERVICE",
+      "confidence": 0.92,
+      "source_documents": ["aramark_catering_agreement.pdf"],
+      "community": 1,
+      "attributes": {"provider": "Aramark Sports & Entertainment Services, LLC", "scope": "All food and beverage for 3-day event", "specifications": "Vegetarian and non-vegetarian options required", "category": "catering"}
+    },
+    {
+      "id": "service:audio_visual_production_services",
+      "name": "Audio-visual production services",
+      "entity_type": "SERVICE",
+      "confidence": 0.91,
+      "source_documents": ["av_services_contract.pdf"],
+      "community": 2,
+      "attributes": {"provider": "PSAV Presentation Services", "scope": "Sound, lighting, projection, and rigging for all halls", "category": "av_production"}
+    },
+    {
+      "id": "venue:pennsylvania_convention_center",
+      "name": "Pennsylvania Convention Center",
+      "entity_type": "VENUE",
+      "confidence": 0.98,
+      "source_documents": ["pcc_license_agreement.pdf", "av_services_contract.pdf"],
+      "community": 0,
+      "attributes": {"facility": "Pennsylvania Convention Center", "room_or_space": "Full facility", "capacity": "1,000,000 sq ft total", "address": "1101 Arch Street, Philadelphia, PA 19107"}
+    },
+    {
+      "id": "venue:hall_a",
+      "name": "Hall A",
+      "entity_type": "VENUE",
+      "confidence": 0.95,
+      "source_documents": ["pcc_license_agreement.pdf"],
+      "community": 0,
+      "attributes": {"facility": "Pennsylvania Convention Center", "room_or_space": "Hall A", "capacity": "3,000 theater-style", "dimensions": "108,000 sq ft", "floor_level": "Level 1"}
+    },
+    {
+      "id": "committee:food_committee",
+      "name": "Food Committee",
+      "entity_type": "COMMITTEE",
+      "confidence": 0.90,
+      "source_documents": ["Sample_Conference_Master.md"],
+      "community": 1,
+      "attributes": {"name": "Food Committee", "responsibility_area": "All catering, food service logistics, and dietary requirements", "volunteer_count": "25"}
+    },
+    {
+      "id": "committee:programs_committee",
+      "name": "Programs Committee",
+      "entity_type": "COMMITTEE",
+      "confidence": 0.90,
+      "source_documents": ["Sample_Conference_Master.md"],
+      "community": 2,
+      "attributes": {"name": "Programs Committee", "responsibility_area": "Stage shows, cultural programs, speaker coordination", "volunteer_count": "30"}
+    },
+    {
+      "id": "person:jane_smith_chair_food_committee",
+      "name": "Jane Smith",
+      "entity_type": "PERSON",
+      "confidence": 0.88,
+      "source_documents": ["Sample_Conference_Master.md"],
+      "community": 1,
+      "attributes": {"name": "Jane Smith", "title": "Chair", "role": "Food Committee Chair", "committee": "Food Committee"}
+    },
+    {
+      "id": "person:bob_johnson_chair_programs_committee",
+      "name": "Bob Johnson",
+      "entity_type": "PERSON",
+      "confidence": 0.88,
+      "source_documents": ["Sample_Conference_Master.md"],
+      "community": 2,
+      "attributes": {"name": "Bob Johnson", "title": "Chair", "role": "Programs Committee Chair", "committee": "Programs Committee"}
+    },
+    {
+      "id": "event:main_stage_show_friday_night",
+      "name": "Main Stage Show Friday Night",
+      "entity_type": "EVENT",
+      "confidence": 0.87,
+      "source_documents": ["Sample_Conference_Master.md"],
+      "community": 2,
+      "attributes": {"name": "Main Stage Show Friday Night", "date": "September 5, 2026", "time": "7:00 PM - 10:00 PM", "expected_attendance": "2500", "location": "Hall A, Stage A", "requirements": "AV, lighting, sound, stage crew"}
+    },
+    {
+      "id": "event:vip_reception_thursday_evening",
+      "name": "VIP Reception Thursday Evening",
+      "entity_type": "EVENT",
+      "confidence": 0.85,
+      "source_documents": ["Sample_Conference_Master.md"],
+      "community": 1,
+      "attributes": {"name": "VIP Reception Thursday Evening", "date": "September 4, 2026", "time": "6:00 PM - 9:00 PM", "expected_attendance": "200", "location": "Ballroom B", "requirements": "Catering, bar service, AV for presentations"}
+    },
+    {
+      "id": "stage:stage_a_main_hall",
+      "name": "Stage A Main Hall",
+      "entity_type": "STAGE",
+      "confidence": 0.90,
+      "source_documents": ["av_services_contract.pdf"],
+      "community": 2,
+      "attributes": {"name": "Stage A", "location": "Hall A, north end", "dimensions": "40ft x 24ft x 4ft", "equipment": "16-channel sound board, LED backdrop, 4 follow spots"}
+    },
+    {
+      "id": "room:ballroom_b",
+      "name": "Ballroom B",
+      "entity_type": "ROOM",
+      "confidence": 0.92,
+      "source_documents": ["pcc_license_agreement.pdf"],
+      "community": 0,
+      "attributes": {"name": "Ballroom B", "capacity": "500 theater-style, 300 banquet", "floor": "Level 2", "facility": "Pennsylvania Convention Center"}
+    }
+  ],
+  "edges": [
+    {
+      "source": "party:aramark_sports_and_entertainment",
+      "target": "obligation:provide_catering_for_all_event_meals",
+      "relation_type": "OBLIGATES",
+      "confidence": 0.92,
+      "evidence": "Aramark shall provide catering services for all scheduled meals"
+    },
+    {
+      "source": "party:psav_presentation_services",
+      "target": "obligation:exclusive_av_services_in_all_halls",
+      "relation_type": "OBLIGATES",
+      "confidence": 0.90,
+      "evidence": "PSAV shall provide exclusive audio-visual services in all convention halls"
+    },
+    {
+      "source": "party:pennsylvania_convention_center_authority",
+      "target": "venue:hall_a",
+      "relation_type": "PROVIDES",
+      "confidence": 0.95,
+      "evidence": "Licensor grants Licensee use of Hall A for the event period"
+    },
+    {
+      "source": "party:pennsylvania_convention_center_authority",
+      "target": "venue:pennsylvania_convention_center",
+      "relation_type": "PROVIDES",
+      "confidence": 0.98,
+      "evidence": "Pennsylvania Convention Center Authority makes the facility available"
+    },
+    {
+      "source": "party:aramark_sports_and_entertainment",
+      "target": "service:full_service_catering_500_guests",
+      "relation_type": "PROVIDES",
+      "confidence": 0.92,
+      "evidence": "Caterer shall provide full-service catering for up to 500 guests"
+    },
+    {
+      "source": "party:psav_presentation_services",
+      "target": "service:audio_visual_production_services",
+      "relation_type": "PROVIDES",
+      "confidence": 0.91,
+      "evidence": "PSAV provides complete audio-visual production services"
+    },
+    {
+      "source": "cost:45_per_person_lunch_service",
+      "target": "service:full_service_catering_500_guests",
+      "relation_type": "COSTS",
+      "confidence": 0.95,
+      "evidence": "Lunch service priced at $45 per person"
+    },
+    {
+      "source": "cost:12000_av_package_hall_a",
+      "target": "service:audio_visual_production_services",
+      "relation_type": "COSTS",
+      "confidence": 0.93,
+      "evidence": "Complete AV package for Hall A: $12,000 flat fee"
+    },
+    {
+      "source": "cost:85_per_hour_security_guard",
+      "target": "obligation:security_staffing_for_load_in_days",
+      "relation_type": "COSTS",
+      "confidence": 0.88,
+      "evidence": "Security guard rate: $85 per hour"
+    },
+    {
+      "source": "obligation:provide_catering_for_all_event_meals",
+      "target": "deadline:final_headcount_due_august_1_2026",
+      "relation_type": "DEPENDS_ON",
+      "confidence": 0.90,
+      "evidence": "Final headcount must be submitted by August 1 for menu finalization"
+    },
+    {
+      "source": "obligation:exclusive_av_services_in_all_halls",
+      "target": "deadline:av_equipment_list_due_july_15_2026",
+      "relation_type": "DEPENDS_ON",
+      "confidence": 0.88,
+      "evidence": "Equipment specifications due by July 15 for AV setup planning"
+    },
+    {
+      "source": "clause:exclusive_catering_rights_section_4_2",
+      "target": "party:aramark_sports_and_entertainment",
+      "relation_type": "RESTRICTS",
+      "confidence": 0.95,
+      "evidence": "Exclusive catering provision limits all food service to Aramark"
+    },
+    {
+      "source": "clause:exclusive_catering_rights_section_4_2",
+      "target": "service:full_service_catering_500_guests",
+      "relation_type": "RELATED_TO",
+      "confidence": 0.85,
+      "evidence": "Exclusivity clause directly relates to catering service scope"
+    },
+    {
+      "source": "clause:force_majeure_provision",
+      "target": "party:pennsylvania_convention_center_authority",
+      "relation_type": "RELATED_TO",
+      "confidence": 0.80,
+      "evidence": "Force majeure applies to venue licensor obligations"
+    },
+    {
+      "source": "clause:exclusive_catering_rights_section_4_2",
+      "target": "obligation:provide_catering_for_all_event_meals",
+      "relation_type": "CONFLICTS_WITH",
+      "confidence": 0.75,
+      "evidence": "Exclusive catering clause may conflict with planned external food truck area"
+    },
+    {
+      "source": "committee:food_committee",
+      "target": "person:jane_smith_chair_food_committee",
+      "relation_type": "CHAIRED_BY",
+      "confidence": 0.90,
+      "evidence": "Jane Smith chairs the Food Committee"
+    },
+    {
+      "source": "committee:programs_committee",
+      "target": "person:bob_johnson_chair_programs_committee",
+      "relation_type": "CHAIRED_BY",
+      "confidence": 0.90,
+      "evidence": "Bob Johnson chairs the Programs Committee"
+    },
+    {
+      "source": "committee:food_committee",
+      "target": "obligation:provide_catering_for_all_event_meals",
+      "relation_type": "RESPONSIBLE_FOR",
+      "confidence": 0.85,
+      "evidence": "Food Committee oversees all catering obligations"
+    },
+    {
+      "source": "committee:programs_committee",
+      "target": "event:main_stage_show_friday_night",
+      "relation_type": "RESPONSIBLE_FOR",
+      "confidence": 0.87,
+      "evidence": "Programs Committee manages all stage show programming"
+    },
+    {
+      "source": "committee:food_committee",
+      "target": "event:vip_reception_thursday_evening",
+      "relation_type": "MANAGES_VOLUNTEERS",
+      "confidence": 0.82,
+      "evidence": "Food Committee coordinates volunteer servers for VIP Reception"
+    },
+    {
+      "source": "event:main_stage_show_friday_night",
+      "target": "stage:stage_a_main_hall",
+      "relation_type": "HOSTED_AT",
+      "confidence": 0.92,
+      "evidence": "Main Stage Show takes place on Stage A in Hall A"
+    },
+    {
+      "source": "event:vip_reception_thursday_evening",
+      "target": "room:ballroom_b",
+      "relation_type": "HOSTED_AT",
+      "confidence": 0.90,
+      "evidence": "VIP Reception is held in Ballroom B"
+    },
+    {
+      "source": "event:main_stage_show_friday_night",
+      "target": "service:audio_visual_production_services",
+      "relation_type": "REQUIRES",
+      "confidence": 0.93,
+      "evidence": "Main Stage Show requires full AV production services"
+    },
+    {
+      "source": "event:vip_reception_thursday_evening",
+      "target": "service:full_service_catering_500_guests",
+      "relation_type": "REQUIRES",
+      "confidence": 0.88,
+      "evidence": "VIP Reception requires catering service for attendees"
+    },
+    {
+      "source": "event:main_stage_show_friday_night",
+      "target": "cost:12000_av_package_hall_a",
+      "relation_type": "REQUIRES",
+      "confidence": 0.85,
+      "evidence": "Main Stage Show requires the Hall A AV package"
+    },
+    {
+      "source": "event:main_stage_show_friday_night",
+      "target": "deadline:av_equipment_list_due_july_15_2026",
+      "relation_type": "SCHEDULED",
+      "confidence": 0.80,
+      "evidence": "AV equipment must be finalized by July 15 for the Friday show"
+    },
+    {
+      "source": "obligation:security_staffing_for_load_in_days",
+      "target": "deadline:insurance_certificates_due_june_1_2026",
+      "relation_type": "DEPENDS_ON",
+      "confidence": 0.78,
+      "evidence": "Security vendor requires insurance certificates before staffing begins"
+    },
+    {
+      "source": "venue:hall_a",
+      "target": "venue:pennsylvania_convention_center",
+      "relation_type": "RELATED_TO",
+      "confidence": 0.95,
+      "evidence": "Hall A is part of the Pennsylvania Convention Center"
+    },
+    {
+      "source": "stage:stage_a_main_hall",
+      "target": "venue:hall_a",
+      "relation_type": "RELATED_TO",
+      "confidence": 0.92,
+      "evidence": "Stage A is located in Hall A"
+    },
+    {
+      "source": "room:ballroom_b",
+      "target": "venue:pennsylvania_convention_center",
+      "relation_type": "RELATED_TO",
+      "confidence": 0.90,
+      "evidence": "Ballroom B is within the Pennsylvania Convention Center"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "conflicts": [
+    {
+      "type": "exclusive_use",
+      "severity": "CRITICAL",
+      "entity_a": "clause:exclusive_catering_rights_section_4_2",
+      "entity_b": "obligation:provide_catering_for_all_event_meals",
+      "description": "Exclusive catering clause conflicts with external food truck request",
+      "suggested_action": "Review catering exclusivity against planned food truck area"
+    },
+    {
+      "type": "schedule_contradiction",
+      "severity": "WARNING",
+      "entity_a": "deadline:av_equipment_list_due_july_15_2026",
+      "entity_b": "deadline:final_headcount_due_august_1_2026",
+      "description": "AV equipment list due before headcount finalized -- AV needs may change based on attendance",
+      "suggested_action": "Coordinate AV and catering deadlines to ensure consistent planning assumptions"
+    }
+  ],
+  "gaps": [
+    {
+      "type": "missing_coverage",
+      "severity": "WARNING",
+      "description": "No contract covers overnight security for load-in day (Sep 3)",
+      "affected_entities": ["obligation:security_staffing_for_load_in_days"],
+      "suggested_action": "Confirm security coverage for overnight period Sep 3-4"
+    },
+    {
+      "type": "missing_coverage",
+      "severity": "WARNING",
+      "description": "No contract addresses emergency medical services during event days",
+      "affected_entities": ["venue:pennsylvania_convention_center"],
+      "suggested_action": "Secure EMS provider contract for September 4-6 event period"
+    }
+  ],
+  "risks": [
+    {
+      "type": "cost_budget_mismatch",
+      "severity": "WARNING",
+      "description": "Catering cost estimate ($45/person x 500) exceeds allocated budget line",
+      "affected_entities": ["cost:45_per_person_lunch_service"],
+      "suggested_action": "Review catering budget allocation against projected headcount"
+    },
+    {
+      "type": "timeline_risk",
+      "severity": "WARNING",
+      "description": "Insurance certificates due June 1 but security vendor onboarding may not start until May",
+      "affected_entities": ["deadline:insurance_certificates_due_june_1_2026"],
+      "suggested_action": "Begin security vendor onboarding process by April to meet June 1 insurance deadline"
+    }
+  ],
+  "cross_references": [
+    {
+      "entity": "party:pennsylvania_convention_center_authority",
+      "appears_in": ["pcc_license_agreement.pdf", "av_services_contract.pdf"],
+      "role_variations": ["Licensor", "Venue Provider"]
+    },
+    {
+      "entity": "venue:hall_a",
+      "appears_in": ["pcc_license_agreement.pdf", "av_services_contract.pdf"],
+      "role_variations": ["Licensed Space", "AV Installation Location"]
+    }
+  ]
+}
