@@ -1,0 +1,36 @@
+{
+  "conflicts": [
+    {
+      "type": "timeline_conflict",
+      "severity": "warning",
+      "description": "Marriott cutoff (Aug 4) is one day before Sheraton cutoff (Aug 5) - coordinate communications",
+      "entities": ["deadline:marriott_cutoff", "deadline:sheraton_cutoff"],
+      "source_documents": ["marriott_contract", "sheraton_contract"]
+    }
+  ],
+  "gaps": [
+    {
+      "type": "missing_coverage",
+      "severity": "critical",
+      "description": "No EMS/medical services contract found in extracted documents",
+      "entities": [],
+      "source_documents": []
+    }
+  ],
+  "risks": [
+    {
+      "type": "cost_risk",
+      "severity": "warning",
+      "description": "Labor Day weekend rates (double-time) not reflected in AV labor cost estimates",
+      "entities": ["cost:av_rigging"],
+      "source_documents": ["prime_av_contract"]
+    },
+    {
+      "type": "operational_risk",
+      "severity": "critical",
+      "description": "Union labor jurisdiction at PCC requires all electrical, rigging, plumbing by union trades - volunteer labor prohibited",
+      "entities": ["clause:union_labor", "venue:pcc_main"],
+      "source_documents": ["pcc_license_agreement", "pcc_guidelines"]
+    }
+  ]
+}

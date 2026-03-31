@@ -1,0 +1,24 @@
+{
+  "communities": [
+    {
+      "id": 0,
+      "label": "Hotel Accommodations",
+      "members": ["party:marriott", "party:sheraton", "obligation:room_block_marriott", "obligation:room_block_sheraton", "deadline:marriott_cutoff", "deadline:sheraton_cutoff", "cost:marriott_rate", "cost:sheraton_rate"]
+    },
+    {
+      "id": 1,
+      "label": "Venue & Operations",
+      "members": ["party:pcc", "venue:pcc_main", "clause:union_labor", "service:security", "deadline:pcc_insurance"]
+    },
+    {
+      "id": 2,
+      "label": "Food & Beverage",
+      "members": ["party:aramark", "obligation:catering_exclusive", "cost:aramark_min", "service:catering"]
+    },
+    {
+      "id": 3,
+      "label": "Audio/Visual Production",
+      "members": ["party:prime_av", "obligation:av_setup", "cost:av_rigging", "service:av"]
+    }
+  ]
+}
