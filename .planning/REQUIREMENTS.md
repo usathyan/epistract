@@ -46,8 +46,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Interactive Dashboard
 
-- [ ] **DASH-01**: Interactive web interface displays the contract knowledge graph with filterable views
-- [ ] **DASH-02**: Users can explore entities by type (parties, obligations, deadlines, costs) with tabular and graph views
+- [x] **DASH-01**: Interactive web interface displays the contract knowledge graph with filterable views
+- [x] **DASH-02**: Users can explore entities by type (parties, obligations, deadlines, costs) with tabular and graph views
 
 ## v2 Requirements
 
@@ -120,8 +120,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | XREF-02 | Phase 4 | Complete |
 | XREF-03 | Phase 4 | Complete |
 | XREF-04 | Phase 4 | Complete |
-| DASH-01 | Phase 5 | Pending |
-| DASH-02 | Phase 5 | Pending |
+| DASH-01 | Phase 5 | Complete |
+| DASH-02 | Phase 5 | Complete |
 
 **Coverage:**
 - v1 requirements: 24 total
