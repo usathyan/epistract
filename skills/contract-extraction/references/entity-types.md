@@ -1,6 +1,6 @@
 # Entity Types Quick Reference
 
-7 entity types for the Contract Analysis extraction domain.
+12 entity types for the Contract Analysis extraction domain.
 
 | Type | Description | Naming Standard | Key Attributes | Example |
 |---|---|---|---|---|
@@ -11,6 +11,11 @@
 | CLAUSE | Legal terms, conditions, provisions, and boilerplate | Clause type or section header | clause_type, section_number, key_terms | Force Majeure provision |
 | SERVICE | Services, products, or deliverables being provided | Description of what is provided | provider, scope, exclusions, category | Full-service catering for 500 guests |
 | VENUE | Physical locations, spaces, rooms, and facilities | Specific space name | facility, room_or_space, capacity, dimensions | Hall A, Pennsylvania Convention Center |
+| COMMITTEE | Organizational committees responsible for event planning areas | Committee name | name, responsibility_area, volunteer_count, source_document | Food Committee |
+| PERSON | Named individuals with roles in event planning or contracts | Full name with role | name, title, role, committee, contact | Jane Smith, Chair Food Committee |
+| EVENT | Scheduled programs, shows, forums, dining events, or activities | Event name | name, date, time, expected_attendance, location, requirements | Main Stage Show Friday Night |
+| STAGE | Performance or presentation stages within the venue | Stage name | name, location, dimensions, equipment | Stage A Main Hall |
+| ROOM | Specific rooms, ballrooms, or meeting spaces within the venue | Room name or number | name, number, capacity, floor, facility | Ballroom B |
 
 ## Detailed Attributes
 
@@ -85,6 +90,55 @@
 | `dimensions` | Size | "108,000 sq ft" |
 | `access_restrictions` | Access rules | "Loading Dock B only, union labor required" |
 | `floor_level` | Level | "Level 1" |
+
+### COMMITTEE
+
+| Attribute | Description | Example |
+|---|---|---|
+| `name` | Committee name | "Food Committee" |
+| `responsibility_area` | Area of oversight | "All catering and food service logistics" |
+| `volunteer_count` | Number of volunteers | "25" |
+| `source_document` | Planning document reference | "Sample_Conference_Master.md" |
+
+### PERSON
+
+| Attribute | Description | Example |
+|---|---|---|
+| `name` | Full name | "Jane Smith" |
+| `title` | Formal title | "Chair" |
+| `role` | Functional role | "Food Committee Chair" |
+| `committee` | Committee affiliation | "Food Committee" |
+| `contact` | Contact information | "jsmith@example.com" |
+
+### EVENT
+
+| Attribute | Description | Example |
+|---|---|---|
+| `name` | Event name | "Main Stage Show Friday Night" |
+| `date` | Scheduled date | "September 5, 2026" |
+| `time` | Scheduled time | "7:00 PM - 10:00 PM" |
+| `expected_attendance` | Anticipated attendees | "2,500" |
+| `location` | Where held | "Hall A, Main Stage" |
+| `requirements` | Event needs | "AV, catering, security, stage setup" |
+
+### STAGE
+
+| Attribute | Description | Example |
+|---|---|---|
+| `name` | Stage name | "Stage A" |
+| `location` | Where in venue | "Hall A, north end" |
+| `dimensions` | Stage size | "40ft x 24ft x 4ft" |
+| `equipment` | Technical equipment | "16-channel sound board, LED backdrop, 4 follow spots" |
+
+### ROOM
+
+| Attribute | Description | Example |
+|---|---|---|
+| `name` | Room name | "Ballroom B" |
+| `number` | Room number | "201" |
+| `capacity` | Max occupancy | "500 theater-style, 300 banquet" |
+| `floor` | Floor level | "Level 2" |
+| `facility` | Parent facility | "Pennsylvania Convention Center" |
 
 ## Disambiguation Quick Reference
 
