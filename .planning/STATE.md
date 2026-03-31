@@ -30,7 +30,7 @@ Plan: 2 of 4 complete (Wave 1 done)
 Status: Ready for Wave 2
 Last activity: 2026-03-31
 
-Progress: [████████░░] 80%
+Progress: [████████░░] 79%
 
 ## Performance Metrics
 
