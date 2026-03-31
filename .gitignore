@@ -11,3 +11,4 @@ docs/analysis/EricNotes.md
 lib/
 *.env
 *.mp4
+.claude/worktrees/
