@@ -83,14 +83,20 @@ Plans:
 - [ ] 04-03-PLAN.md — Pipeline integration: wire epistemic analysis into extract_contracts.py, --master-doc CLI support (XREF-01, XREF-02, XREF-03, XREF-04)
 
 ### Phase 5: Interactive Dashboard
-**Goal**: Committee chairs can explore the contract knowledge graph through a filterable web interface
+**Goal**: Sample Contract Analysis Workbench — a FastAPI-powered web application with chat-first interface backed by Claude Sonnet, interactive vis.js knowledge graph browser, and source document viewer for committee chairs
 **Depends on**: Phase 4
 **Requirements**: DASH-01, DASH-02
 **Success Criteria** (what must be TRUE):
   1. A web interface displays the contract knowledge graph with interactive filtering by vendor, date range, and risk level
   2. Users can switch between tabular views (obligations, deadlines, costs) and graph visualization of the same data
-**Plans**: TBD
+**Plans:** 4 plans
 **UI hint**: yes
+
+Plans:
+- [ ] 05-01-PLAN.md — Domain schema expansion (COMMITTEE, PERSON, EVENT, STAGE, ROOM) + synthetic test fixtures
+- [ ] 05-02-PLAN.md — FastAPI backend with data loader, graph API, source API, CLI launcher, and tests
+- [ ] 05-03-PLAN.md — Chat SSE endpoint with Claude Sonnet streaming and SME persona system prompt
+- [ ] 05-04-PLAN.md — Frontend SPA: HTML shell, CSS design system, chat/graph/sources panel modules
 
 ## Progress
 
@@ -103,4 +109,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 2. Document Ingestion | 2/2 | Complete | 2026-03-29 |
 | 3. Entity Extraction and Graph Construction | 2/2 | Complete | 2026-03-29 |
 | 4. Cross-Reference Analysis | 1/3 | In Progress | - |
-| 5. Interactive Dashboard | 0/TBD | Not started | - |
+| 5. Interactive Dashboard | 0/4 | Not started | - |
