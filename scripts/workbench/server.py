@@ -8,6 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
+from scripts.workbench.api_chat import router as chat_router
 from scripts.workbench.api_graph import router as graph_router
 from scripts.workbench.api_sources import router as sources_router
 from scripts.workbench.data_loader import WorkbenchData
@@ -36,6 +37,7 @@ def create_app(output_dir: Path) -> FastAPI:
     # Include API routers
     app.include_router(graph_router)
     app.include_router(sources_router)
+    app.include_router(chat_router)
 
     # Mount static files (create dir if needed for dev)
     if STATIC_DIR.exists():
@@ -54,6 +56,8 @@ def create_app(output_dir: Path) -> FastAPI:
 
     @app.get("/api/health")
     async def health():
+        import os
+
         data = app.state.data
         return {
             "status": "ok",
@@ -62,6 +66,7 @@ def create_app(output_dir: Path) -> FastAPI:
             "edges": len(data.get_edges()),
             "documents": len(data.documents),
             "has_claims": bool(data.claims_layer),
+            "has_api_key": bool(os.environ.get("ANTHROPIC_API_KEY")),
         }
 
     return app

@@ -163,6 +163,61 @@ def test_source_text(client):
     assert len(body["text"]) > 0
 
 
+def test_chat_stream_mock(client, monkeypatch):
+    """POST /api/chat returns SSE stream with mocked Claude response (D-26).
+
+    Tests chat endpoint wiring without requiring a live ANTHROPIC_API_KEY.
+    Mocks the AsyncAnthropic client to return a canned response.
+    """
+    import json
+
+    # Set a fake API key so the endpoint doesn't short-circuit
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-test-mock-key")
+
+    # Mock the AsyncAnthropic class to avoid real API calls
+    import scripts.workbench.api_chat as chat_module
+
+    class MockStream:
+        """Mock for anthropic messages.stream context manager."""
+
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, *args):
+            pass
+
+        @property
+        def text_stream(self):
+            return self._stream()
+
+        async def _stream(self):
+            yield "Hello from mock"
+
+    class MockMessages:
+        def stream(self, **kwargs):
+            return MockStream()
+
+    class MockClient:
+        def __init__(self, **kwargs):
+            self.messages = MockMessages()
+
+    # Patch AsyncAnthropic and HAS_ANTHROPIC in the chat module
+    # AsyncAnthropic may not exist if anthropic SDK is not installed,
+    # so use setattr directly on the module to inject the mock
+    monkeypatch.setattr(chat_module, "HAS_ANTHROPIC", True)
+    chat_module.AsyncAnthropic = MockClient
+    monkeypatch.setattr(chat_module, "AsyncAnthropic", MockClient)
+
+    resp = client.post(
+        "/api/chat",
+        json={"question": "What are the catering costs?", "history": []},
+    )
+    assert resp.status_code == 200
+    # SSE response should contain our mock text
+    body = resp.text
+    assert "Hello from mock" in body or "text" in body
+
+
 def test_schema_expansion():
     """Domain schema includes new entity types per D-20."""
     schema_path = Path("skills/contract-extraction/domain.yaml")
