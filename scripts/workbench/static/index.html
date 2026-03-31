@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sample Contract Analysis Workbench</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h1 class="sidebar-title">STA Workbench</h1>
+    </div>
+
+    <div class="nav-links">
+      <button class="nav-link active" data-panel="chat">
+        <span class="nav-icon">&#x1F4AC;</span> Chat
+      </button>
+      <button class="nav-link" data-panel="graph">
+        <span class="nav-icon">&#x25C9;</span> Graph
+      </button>
+      <button class="nav-link" data-panel="sources">
+        <span class="nav-icon">&#x1F4C4;</span> Sources
+      </button>
+    </div>
+
+    <div class="sidebar-section">
+      <h3 class="sidebar-section-title">Severity</h3>
+      <div class="legend">
+        <div class="legend-item">
+          <span class="legend-dot" style="background:#dc3545"></span>
+          <span class="legend-label">Critical</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background:#d97706"></span>
+          <span class="legend-label">Warning</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background:#2563eb"></span>
+          <span class="legend-label">Info</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <h3 class="sidebar-section-title">Entity Types</h3>
+      <div class="legend">
+        <div class="legend-item">
+          <span class="legend-dot" style="background:#6366f1"></span>
+          <span class="legend-label">Party</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background:#f59e0b"></span>
+          <span class="legend-label">Obligation</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background:#ef4444"></span>
+          <span class="legend-label">Deadline</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background:#10b981"></span>
+          <span class="legend-label">Cost</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background:#8b5cf6"></span>
+          <span class="legend-label">Service</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background:#06b6d4"></span>
+          <span class="legend-label">Venue</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background:#64748b"></span>
+          <span class="legend-label">Clause</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background:#ec4899"></span>
+          <span class="legend-label">Committee</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background:#f97316"></span>
+          <span class="legend-label">Person</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background:#14b8a6"></span>
+          <span class="legend-label">Event</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background:#a855f7"></span>
+          <span class="legend-label">Stage</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background:#0ea5e9"></span>
+          <span class="legend-label">Room</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hamburger toggle for mobile -->
+  <button class="hamburger" id="hamburger" aria-label="Toggle sidebar">&#9776;</button>
+
+  <!-- Chat Panel -->
+  <main class="chat-panel">
+    <div class="messages" id="messages">
+      <div class="welcome" id="welcome">
+        <h2>Welcome to the STA Contract Workbench</h2>
+        <p class="welcome-body">Ask questions about 62+ vendor contracts for Sample 2026. Choose a starter question below or type your own.</p>
+        <div class="starter-cards">
+          <button class="starter-card">What are the top risks across all contracts?</button>
+          <button class="starter-card">Show me all deadlines in the next 30 days before the event</button>
+          <button class="starter-card">Which contracts have union labor requirements?</button>
+          <button class="starter-card">What is the estimated total catering cost?</button>
+          <button class="starter-card">Can volunteers handle load-in for Stage B?</button>
+          <button class="starter-card">Are there any scheduling conflicts between contracts?</button>
+        </div>
+      </div>
+    </div>
+
+    <form class="chat-input" id="chat-form">
+      <textarea id="chat-input" placeholder="Ask about contracts, costs, deadlines, risks..." rows="1"></textarea>
+      <button type="submit" class="send-btn">Send</button>
+    </form>
+  </main>
+
+  <!-- Side Panel (Graph + Sources) -->
+  <aside class="side-panel" id="side-panel">
+    <div class="panel-tabs">
+      <button class="panel-tab active" data-tab="graph">Graph</button>
+      <button class="panel-tab" data-tab="sources">Sources</button>
+    </div>
+
+    <!-- Graph Panel -->
+    <div class="panel-content" id="graph-panel" style="display:flex;flex-direction:column">
+      <div class="graph-controls">
+        <input type="text" id="graph-search" class="graph-search" placeholder="Search nodes...">
+
+        <div class="entity-toggles" id="entity-toggles">
+          <button class="toggle-btn active" data-type="PARTY" style="color:#6366f1">Party</button>
+          <button class="toggle-btn active" data-type="OBLIGATION" style="color:#f59e0b">Obligation</button>
+          <button class="toggle-btn active" data-type="DEADLINE" style="color:#ef4444">Deadline</button>
+          <button class="toggle-btn active" data-type="COST" style="color:#10b981">Cost</button>
+          <button class="toggle-btn active" data-type="SERVICE" style="color:#8b5cf6">Service</button>
+          <button class="toggle-btn active" data-type="VENUE" style="color:#06b6d4">Venue</button>
+          <button class="toggle-btn active" data-type="CLAUSE" style="color:#64748b">Clause</button>
+          <button class="toggle-btn active" data-type="COMMITTEE" style="color:#ec4899">Committee</button>
+          <button class="toggle-btn active" data-type="PERSON" style="color:#f97316">Person</button>
+          <button class="toggle-btn active" data-type="EVENT" style="color:#14b8a6">Event</button>
+          <button class="toggle-btn active" data-type="STAGE" style="color:#a855f7">Stage</button>
+          <button class="toggle-btn active" data-type="ROOM" style="color:#0ea5e9">Room</button>
+        </div>
+
+        <select id="severity-filter" class="severity-filter">
+          <option value="all">All Severities</option>
+          <option value="critical">Critical</option>
+          <option value="warning">Warning</option>
+          <option value="info">Info</option>
+        </select>
+      </div>
+
+      <div id="graph-container" class="graph-container">
+        <p class="graph-placeholder">Building graph visualization...</p>
+      </div>
+    </div>
+
+    <!-- Sources Panel -->
+    <div class="panel-content" id="sources-panel" style="display:none;flex-direction:column">
+      <div class="sources-layout">
+        <div class="doc-list-container">
+          <ul class="doc-list" id="doc-list">
+            <li class="doc-list-empty">Select a document from the list to view its contents.</li>
+          </ul>
+        </div>
+        <div class="source-viewer-container">
+          <div id="source-text" class="source-viewer">
+            <p class="source-empty">Select a document from the list to view its contents.</p>
+          </div>
+          <a id="pdf-link" href="#" class="pdf-link" target="_blank" style="display:none">Open original PDF</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <script src="/static/vis-network.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script type="module" src="/static/app.js"></script>
+</body>
+</html>
