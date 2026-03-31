@@ -1,6 +1,6 @@
 # Relation Types Quick Reference
 
-7 relation types for the Contract Analysis extraction domain, grouped by category.
+14 relation types for the Contract Analysis extraction domain, grouped by category.
 
 ## Party-Action Relations
 
@@ -33,11 +33,28 @@
 |---|---|---|---|---|---|
 | CONFLICTS_WITH | OBLIGATION, CLAUSE, COST, DEADLINE | OBLIGATION, CLAUSE, COST, DEADLINE | Yes | Yes | Aramark exclusivity -> Outside dessert vendor |
 
+## Organizational Relations
+
+| Relation | Source Types | Target Types | Symmetric | Review Required | Example |
+|---|---|---|---|---|---|
+| CHAIRED_BY | COMMITTEE | PERSON | No | No | Food Committee -> Jane Smith |
+| CO_CHAIRED_BY | COMMITTEE | PERSON | No | No | Programs Committee -> Bob Johnson |
+| RESPONSIBLE_FOR | COMMITTEE, PERSON | OBLIGATION, SERVICE, EVENT | No | No | Food Committee -> Provide catering for all meals |
+| MANAGES_VOLUNTEERS | COMMITTEE, PERSON | SERVICE, EVENT | No | No | Food Committee -> VIP Reception Thursday Evening |
+
+## Scheduling Relations
+
+| Relation | Source Types | Target Types | Symmetric | Review Required | Example |
+|---|---|---|---|---|---|
+| HOSTED_AT | EVENT, SERVICE | STAGE, ROOM, VENUE | No | No | Main Stage Show -> Stage A Main Hall |
+| REQUIRES | EVENT | SERVICE, OBLIGATION, COST | No | No | VIP Reception -> Full-service catering 500 guests |
+| SCHEDULED | EVENT, OBLIGATION | DEADLINE | No | No | Main Stage Show -> September 5 2026 7PM |
+
 ## Fallback
 
 | Relation | Source Types | Target Types | Symmetric | Review Required | Example |
 |---|---|---|---|---|---|
-| RELATED_TO | All 7 entity types | All 7 entity types | Yes | No | General association when no specific type fits |
+| RELATED_TO | All 12 entity types | All 12 entity types | Yes | No | General association when no specific type fits |
 
 ---
 
@@ -148,3 +165,105 @@
 - `Hotel room block` RELATED_TO `Event registration deadline`
 
 **Usage note:** Always prefer a specific relation type. Use RELATED_TO only when no other type accurately captures the relationship. This is configured as the `fallback_relation` in domain.yaml.
+
+---
+
+### CHAIRED_BY
+
+**Description:** Committee is chaired by a person.
+
+**Direction:** COMMITTEE -> PERSON
+
+**Trigger phrases:** "chaired by", "chair:", "chairperson", "led by"
+
+**Example triples:**
+- `Food Committee` CHAIRED_BY `Jane Smith`
+- `Programs Committee` CHAIRED_BY `Bob Johnson`
+
+---
+
+### CO_CHAIRED_BY
+
+**Description:** Committee is co-chaired by a person.
+
+**Direction:** COMMITTEE -> PERSON
+
+**Trigger phrases:** "co-chair", "vice chair", "co-chaired by", "deputy chair"
+
+**Example triples:**
+- `Infrastructure Committee` CO_CHAIRED_BY `Sarah Davis`
+- `Food Committee` CO_CHAIRED_BY `Mike Wilson`
+
+---
+
+### RESPONSIBLE_FOR
+
+**Description:** Committee or person is responsible for an obligation, service, or event.
+
+**Direction:** COMMITTEE / PERSON -> OBLIGATION / SERVICE / EVENT
+
+**Trigger phrases:** "responsible for", "oversees", "manages", "in charge of", "accountable for"
+
+**Example triples:**
+- `Food Committee` RESPONSIBLE_FOR `Provide catering for all event meals`
+- `Jane Smith` RESPONSIBLE_FOR `VIP Reception Thursday Evening`
+
+---
+
+### MANAGES_VOLUNTEERS
+
+**Description:** Committee or person manages volunteer staff for a service or event.
+
+**Direction:** COMMITTEE / PERSON -> SERVICE / EVENT
+
+**Trigger phrases:** "volunteer coordination", "staffing", "manages volunteers for", "volunteer team"
+
+**Example triples:**
+- `Food Committee` MANAGES_VOLUNTEERS `VIP Reception Thursday Evening`
+- `Bob Johnson` MANAGES_VOLUNTEERS `Main Stage Show Friday Night`
+
+**Note:** Distinct from union labor obligations -- MANAGES_VOLUNTEERS applies to volunteer staff only.
+
+---
+
+### HOSTED_AT
+
+**Description:** Event or service is hosted at a stage or room.
+
+**Direction:** EVENT / SERVICE -> STAGE / ROOM / VENUE
+
+**Trigger phrases:** "held in", "located at", "hosted at", "takes place in", "assigned to"
+
+**Example triples:**
+- `Main Stage Show Friday Night` HOSTED_AT `Stage A Main Hall`
+- `VIP Reception Thursday Evening` HOSTED_AT `Ballroom B`
+- `Full-service catering 500 guests` HOSTED_AT `Hall A`
+
+---
+
+### REQUIRES
+
+**Description:** Event requires a service, obligation, or resource.
+
+**Direction:** EVENT -> SERVICE / OBLIGATION / COST
+
+**Trigger phrases:** "requires", "needs", "must have", "dependent on", "necessitates"
+
+**Example triples:**
+- `Main Stage Show Friday Night` REQUIRES `Audio-visual production services`
+- `VIP Reception Thursday Evening` REQUIRES `Full-service catering 500 guests`
+- `Main Stage Show Friday Night` REQUIRES `$12000 AV package Hall A`
+
+---
+
+### SCHEDULED
+
+**Description:** Event or obligation is scheduled at a specific deadline/time.
+
+**Direction:** EVENT / OBLIGATION -> DEADLINE
+
+**Trigger phrases:** "scheduled for", "on", "at", "during", "set for"
+
+**Example triples:**
+- `Main Stage Show Friday Night` SCHEDULED `September 5, 2026 at 7:00 PM`
+- `Provide catering for all event meals` SCHEDULED `September 4-6, 2026`

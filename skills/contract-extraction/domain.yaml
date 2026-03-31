@@ -90,6 +90,41 @@ entity_types:
       - "Include capacity, dimensions, and access restrictions when mentioned"
       - "Pennsylvania Convention Center specific: Hall A-F, Room numbers, Loading Docks"
 
+  COMMITTEE:
+    description: "Organizational committees responsible for event planning areas"
+    extraction_hints:
+      - "Look for committee names, responsibility areas, and reporting structures"
+      - "Capture chair, co-chair, and volunteer staff assignments"
+      - "Examples: Food Committee, Programs Committee, Infrastructure Committee"
+
+  PERSON:
+    description: "Named individuals with roles in event planning or contracts"
+    extraction_hints:
+      - "Look for names in committee rosters, contract signature blocks, and role assignments"
+      - "Capture title/role and organizational affiliation"
+      - "Include chairs, co-chairs, coordinators, and key vendor contacts"
+
+  EVENT:
+    description: "Scheduled programs, shows, forums, dining events, or activities"
+    extraction_hints:
+      - "Look for named shows, forums, receptions, meals, and ceremonies"
+      - "Capture date/time, expected attendance, and physical requirements"
+      - "Include AV, catering, infrastructure, and staffing needs per event"
+
+  STAGE:
+    description: "Performance or presentation stages within the venue"
+    extraction_hints:
+      - "Look for stage names, locations, and technical specifications"
+      - "Capture setup/teardown schedules and equipment requirements"
+      - "Examples: Stage A, Stage B, Main Stage, Demo Stage"
+
+  ROOM:
+    description: "Specific rooms, ballrooms, or meeting spaces within the venue"
+    extraction_hints:
+      - "Look for room names, numbers, and capacity"
+      - "Distinct from VENUE which is the overall facility; ROOM is a specific space"
+      - "Examples: Ballroom A, Room 201, Grand Hall, Registration Area"
+
 relation_types:
   OBLIGATES:
     description: "Party is obligated to fulfill an obligation, provide a service, or meet a deadline"
@@ -144,12 +179,63 @@ relation_types:
 
   RELATED_TO:
     description: "General association between entities -- use when a more specific relation does not apply"
-    source_types: [PARTY, OBLIGATION, DEADLINE, COST, CLAUSE, SERVICE, VENUE]
-    target_types: [PARTY, OBLIGATION, DEADLINE, COST, CLAUSE, SERVICE, VENUE]
+    source_types: [PARTY, OBLIGATION, DEADLINE, COST, CLAUSE, SERVICE, VENUE, COMMITTEE, PERSON, EVENT, STAGE, ROOM]
+    target_types: [PARTY, OBLIGATION, DEADLINE, COST, CLAUSE, SERVICE, VENUE, COMMITTEE, PERSON, EVENT, STAGE, ROOM]
     symmetric: true
     extraction_hints:
       - "Use only when a more specific relation type does not apply"
       - "This is the fallback relation for associations that do not fit other categories"
+
+  CHAIRED_BY:
+    description: "Committee is chaired by a person"
+    source_types: [COMMITTEE]
+    target_types: [PERSON]
+    extraction_hints:
+      - "Look for 'chaired by', 'chair:', 'chairperson' assignments"
+
+  CO_CHAIRED_BY:
+    description: "Committee is co-chaired by a person"
+    source_types: [COMMITTEE]
+    target_types: [PERSON]
+    extraction_hints:
+      - "Look for 'co-chair', 'vice chair', 'co-chaired by' assignments"
+
+  RESPONSIBLE_FOR:
+    description: "Committee or person is responsible for an obligation, service, or event"
+    source_types: [COMMITTEE, PERSON]
+    target_types: [OBLIGATION, SERVICE, EVENT]
+    extraction_hints:
+      - "Look for responsibility assignments linking committees to areas of oversight"
+
+  MANAGES_VOLUNTEERS:
+    description: "Committee or person manages volunteer staff for a service or event"
+    source_types: [COMMITTEE, PERSON]
+    target_types: [SERVICE, EVENT]
+    extraction_hints:
+      - "Look for volunteer coordination, staffing assignments"
+      - "Distinguish from union labor obligations"
+
+  HOSTED_AT:
+    description: "Event or service is hosted at a stage or room"
+    source_types: [EVENT, SERVICE]
+    target_types: [STAGE, ROOM, VENUE]
+    extraction_hints:
+      - "Look for location assignments for events and services"
+
+  REQUIRES:
+    description: "Event requires a service, obligation, or resource"
+    source_types: [EVENT]
+    target_types: [SERVICE, OBLIGATION, COST]
+    extraction_hints:
+      - "Look for event needs: AV, catering, security, infrastructure"
+      - "Links events to the contract obligations that support them"
+
+  SCHEDULED:
+    description: "Event or obligation is scheduled at a specific deadline/time"
+    source_types: [EVENT, OBLIGATION]
+    target_types: [DEADLINE]
+    extraction_hints:
+      - "Look for schedule assignments, time slots, date assignments"
 
 conflict_rules:
   exclusive_use:
