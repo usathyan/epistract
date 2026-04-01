@@ -105,6 +105,11 @@ None yet.
 - Large PDFs (12-31 MB) may need OCR fallback -- triage during Phase 2.
 - Entity resolution lacks canonical IDs (unlike biomedical SMILES/InChIKeys) -- seed registry approach planned for Phase 3.
 
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+
 ## Session Continuity
 
 Last session: 2026-03-31T23:53:42.686Z

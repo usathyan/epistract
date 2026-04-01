@@ -4,32 +4,33 @@ import { initGraph } from './graph.js';
 import { initSources } from './sources.js';
 
 // ---------------------------------------------------------------------------
-// Panel State
+// Panel State — only one panel visible at a time
 // ---------------------------------------------------------------------------
-let activeSidePanel = null; // 'graph' | 'sources' | null
+let activePanel = 'chat'; // 'chat' | 'graph' | 'sources'
 
-function toggleSidePanel(panel) {
+function switchPanel(panel) {
+    activePanel = panel;
+
+    const chatPanel = document.querySelector('.chat-panel');
     const sidePanel = document.getElementById('side-panel');
     const graphPanel = document.getElementById('graph-panel');
     const sourcesPanel = document.getElementById('sources-panel');
 
-    if (activeSidePanel === panel) {
-        // Close panel
-        sidePanel.classList.remove('open');
-        activeSidePanel = null;
-        updateNavLinks(null);
-        updatePanelTabs(null);
-        return;
+    if (panel === 'chat') {
+        chatPanel.style.display = 'flex';
+        sidePanel.style.display = 'none';
+    } else {
+        chatPanel.style.display = 'none';
+        sidePanel.style.display = 'flex';
+        sidePanel.classList.add('open');
+        graphPanel.style.display = panel === 'graph' ? 'flex' : 'none';
+        sourcesPanel.style.display = panel === 'sources' ? 'flex' : 'none';
     }
 
-    activeSidePanel = panel;
-    sidePanel.classList.add('open');
-    graphPanel.style.display = panel === 'graph' ? 'flex' : 'none';
-    sourcesPanel.style.display = panel === 'sources' ? 'flex' : 'none';
     updateNavLinks(panel);
     updatePanelTabs(panel);
 
-    // Notify graph panel when opened (vis.js needs resize)
+    // Notify graph panel when shown (vis.js needs resize)
     if (panel === 'graph') {
         window.dispatchEvent(new CustomEvent('graph-panel-opened'));
     }
@@ -37,7 +38,7 @@ function toggleSidePanel(panel) {
 
 function updateNavLinks(active) {
     document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.toggle('active', link.dataset.panel === active || (active === null && link.dataset.panel === 'chat'));
+        link.classList.toggle('active', link.dataset.panel === active);
     });
 }
 
@@ -56,7 +57,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const health = await fetch('/api/health').then(r => r.json());
         console.log('Workbench health:', health);
         if (!health.has_api_key) {
-            console.warn('ANTHROPIC_API_KEY not set - chat will not work');
+            console.warn('No API key set - chat will not work');
         }
     } catch (e) {
         console.error('Server health check failed:', e);
@@ -64,34 +65,26 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Initialize panels
     initChat({ openSources: (docId, section) => {
-        toggleSidePanel('sources');
+        switchPanel('sources');
         window.dispatchEvent(new CustomEvent('navigate-source', { detail: { docId, section } }));
     }});
     initGraph({ openChat: (question) => {
-        if (activeSidePanel) toggleSidePanel(activeSidePanel);
+        switchPanel('chat');
         window.dispatchEvent(new CustomEvent('ask-question', { detail: { question } }));
     }});
     initSources();
 
-    // Wire up sidebar nav
+    // Wire up sidebar nav — each button switches to its panel
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
-            const panel = link.dataset.panel;
-            if (panel === 'chat') {
-                if (activeSidePanel) toggleSidePanel(activeSidePanel);
-            } else {
-                toggleSidePanel(panel);
-            }
+            switchPanel(link.dataset.panel);
         });
     });
 
-    // Wire up panel tabs
+    // Wire up panel tabs (graph/sources toggle within side panel)
     document.querySelectorAll('.panel-tab').forEach(tab => {
         tab.addEventListener('click', () => {
-            const panel = tab.dataset.tab;
-            if (panel !== activeSidePanel) {
-                toggleSidePanel(panel);
-            }
+            switchPanel(tab.dataset.tab);
         });
     });
 
@@ -104,9 +97,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    // Set chat nav as active initially
-    updateNavLinks(null);
+    // Start on chat
+    switchPanel('chat');
 });
 
 // Export for use by other modules
-export { toggleSidePanel };
+export { switchPanel };

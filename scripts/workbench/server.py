@@ -66,7 +66,10 @@ def create_app(output_dir: Path) -> FastAPI:
             "edges": len(data.get_edges()),
             "documents": len(data.documents),
             "has_claims": bool(data.claims_layer),
-            "has_api_key": bool(os.environ.get("ANTHROPIC_API_KEY")),
+            "has_api_key": bool(
+                os.environ.get("ANTHROPIC_API_KEY")
+                or os.environ.get("OPENROUTER_API_KEY")
+            ),
         }
 
     return app

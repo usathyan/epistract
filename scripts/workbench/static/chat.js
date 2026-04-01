@@ -108,7 +108,7 @@ async function sendMessage(question) {
                             assistantDiv.innerHTML = linkifyCitations(renderMarkdown(fullResponse));
                         }
                     } catch (e) {
-                        // Skip malformed SSE data
+                        console.warn('SSE parse error:', line, e);
                     }
                 }
             }
