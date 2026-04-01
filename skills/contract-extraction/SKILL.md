@@ -200,6 +200,94 @@ Return a single JSON object matching the `DocumentExtraction` schema. Do not wra
 - Pennsylvania Convention Center specific: Hall A-F, Room numbers, Loading Docks, Ballrooms.
 - For hotels: specific room blocks, meeting rooms, ballroom names.
 
+### 8. COMMITTEE
+
+**Description:** Organizational committees responsible for event planning areas.
+
+**Naming convention:** Use the committee name as stated. Example: `Food Committee` not "catering group".
+
+**Key attributes to capture:**
+- `name` -- Committee name
+- `responsibility_area` -- What the committee oversees
+- `volunteer_count` -- Number of volunteers if stated
+- `source_document` -- Document where committee is referenced
+
+**Extraction hints:**
+- Look for committee names, responsibility areas, and reporting structures.
+- Capture chair, co-chair, and volunteer staff assignments.
+- Examples: Food Committee, Programs Committee, Infrastructure Committee, Registration Committee.
+
+### 9. PERSON
+
+**Description:** Named individuals with roles in event planning or contracts.
+
+**Naming convention:** Use full name as stated. Example: `Dr. Person 3` not "the chair".
+
+**Key attributes to capture:**
+- `name` -- Full name
+- `title` -- Title or honorific
+- `role` -- Role in the event or contract (Chair, Co-Chair, Coordinator, Contact)
+- `committee` -- Committee affiliation if stated
+- `contact` -- Email or phone if provided
+
+**Extraction hints:**
+- Look for names in committee rosters, contract signature blocks, and role assignments.
+- Include chairs, co-chairs, coordinators, and key vendor contacts.
+- Capture title/role and organizational affiliation.
+
+### 10. EVENT
+
+**Description:** Scheduled programs, shows, forums, dining events, or activities.
+
+**Naming convention:** Include the event name and timing. Example: `Main Stage Show Friday Night` not "evening event".
+
+**Key attributes to capture:**
+- `name` -- Event name
+- `date` -- Date of the event
+- `time` -- Start and end times
+- `expected_attendance` -- Number of attendees expected
+- `location` -- Where the event is held
+- `requirements` -- AV, catering, security, infrastructure needs
+
+**Extraction hints:**
+- Look for named shows, forums, receptions, meals, and ceremonies.
+- Capture date/time, expected attendance, and physical requirements.
+- Include AV, catering, infrastructure, and staffing needs per event.
+
+### 11. STAGE
+
+**Description:** Performance or presentation stages within the venue.
+
+**Naming convention:** Use the stage name or designation. Example: `Stage A Main Hall` not "the stage".
+
+**Key attributes to capture:**
+- `name` -- Stage name or designation
+- `location` -- Where the stage is located
+- `dimensions` -- Physical dimensions
+- `equipment` -- Technical equipment on stage
+
+**Extraction hints:**
+- Look for stage names, locations, and technical specifications.
+- Capture setup/teardown schedules and equipment requirements.
+- Examples: Main Stage, Secondary Stage, Demo Stage.
+
+### 12. ROOM
+
+**Description:** Specific rooms, ballrooms, or meeting spaces within the venue.
+
+**Naming convention:** Use the room name or number. Example: `Ballroom B` not "the ballroom".
+
+**Key attributes to capture:**
+- `name` -- Room name or number
+- `capacity` -- Seating capacity (theater, banquet, classroom)
+- `floor` -- Floor or level
+- `facility` -- Parent facility
+
+**Extraction hints:**
+- Look for room names, numbers, and capacity.
+- Distinct from VENUE (overall facility) — ROOM is a specific space within a venue.
+- Examples: Ballroom A, Room 201, Grand Hall, Registration Area, Terrace Ballroom.
+
 ---
 
 ## Relation Types
@@ -250,6 +338,52 @@ Return a single JSON object matching the `DocumentExtraction` schema. Do not wra
 - **Target types:** OBLIGATION, CLAUSE, COST, DEADLINE
 - **Symmetric:** Yes (if A conflicts with B, then B conflicts with A)
 - **Extraction guidance:** Look for contradictory terms across contracts or within the same contract. Exclusive-use clauses that conflict with other vendor agreements. Overlapping time slots or space allocations. Example: `Aramark exclusivity clause CONFLICTS_WITH Outside dessert vendor agreement`.
+
+### Organizational Relations
+
+#### CHAIRED_BY
+- **Description:** Committee is chaired by a person.
+- **Source types:** COMMITTEE
+- **Target types:** PERSON
+- **Extraction guidance:** Look for "chaired by", "chair:", "chairperson" assignments.
+
+#### CO_CHAIRED_BY
+- **Description:** Committee is co-chaired by a person.
+- **Source types:** COMMITTEE
+- **Target types:** PERSON
+- **Extraction guidance:** Look for "co-chair", "vice chair", "co-chaired by" assignments.
+
+#### RESPONSIBLE_FOR
+- **Description:** Committee or person is responsible for an obligation, service, or event.
+- **Source types:** COMMITTEE, PERSON
+- **Target types:** OBLIGATION, SERVICE, EVENT
+- **Extraction guidance:** Look for responsibility assignments linking committees to areas of oversight.
+
+#### MANAGES_VOLUNTEERS
+- **Description:** Committee or person manages volunteer staff for a service or event.
+- **Source types:** COMMITTEE, PERSON
+- **Target types:** SERVICE, EVENT
+- **Extraction guidance:** Look for volunteer coordination, staffing assignments. Distinguish from union labor obligations.
+
+### Spatial and Scheduling Relations
+
+#### HOSTED_AT
+- **Description:** Event or service is hosted at a stage or room.
+- **Source types:** EVENT, SERVICE
+- **Target types:** STAGE, ROOM, VENUE
+- **Extraction guidance:** Look for location assignments for events and services.
+
+#### REQUIRES
+- **Description:** Event requires a service, obligation, or resource.
+- **Source types:** EVENT
+- **Target types:** SERVICE, OBLIGATION, COST
+- **Extraction guidance:** Look for event needs: AV, catering, security, infrastructure. Links events to contract obligations that support them.
+
+#### SCHEDULED
+- **Description:** Event or obligation is scheduled at a specific deadline/time.
+- **Source types:** EVENT, OBLIGATION
+- **Target types:** DEADLINE
+- **Extraction guidance:** Look for schedule assignments, time slots, date assignments.
 
 ### Fallback Relation
 
