@@ -396,15 +396,18 @@ body {
    --------------------------------------------------------------------------- */
 
 .side-panel {
-  display: none;
-  flex: 1;
+  width: 0;
   overflow: hidden;
+  transition: width 0.2s ease;
+  border-left: 1px solid #e5e7eb;
+  display: flex;
   flex-direction: column;
   background: var(--color-dominant);
+  flex-shrink: 0;
 }
 
 .side-panel.open {
-  display: flex;
+  width: var(--side-panel-width);
 }
 
 /* Panel tabs */
