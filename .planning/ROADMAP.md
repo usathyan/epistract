@@ -12,11 +12,11 @@ This roadmap transforms epistract from a biomedical-only extraction tool into a 
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Domain Configuration** - Pluggable domain config system with contract ontology, preserving biomedical backward compatibility
-- [ ] **Phase 2: Document Ingestion** - Multi-format document parsing and triage for 62+ contract files
-- [ ] **Phase 3: Entity Extraction and Graph Construction** - Extract contract entities, resolve duplicates, and build the knowledge graph
-- [ ] **Phase 4: Cross-Reference Analysis** - Detect conflicts, gaps, and risks across contracts (the killer feature)
-- [ ] **Phase 5: Interactive Dashboard** - Web interface for exploring the contract knowledge graph
+- [x] **Phase 1: Domain Configuration** - Pluggable domain config system with contract ontology, preserving biomedical backward compatibility
+- [x] **Phase 2: Document Ingestion** - Multi-format document parsing and triage for 62+ contract files
+- [x] **Phase 3: Entity Extraction and Graph Construction** - Extract contract entities, resolve duplicates, and build the knowledge graph
+- [x] **Phase 4: Cross-Reference Analysis** - Detect conflicts, gaps, and risks across contracts (the killer feature)
+- [x] **Phase 5: Interactive Dashboard** - Web interface for exploring the contract knowledge graph
 
 ## Phase Details
 
@@ -80,7 +80,7 @@ Plans:
 Plans:
 - [x] 04-01-PLAN.md — Domain-aware epistemic dispatch, biomedical extraction, conflict rules YAML (XREF-01, XREF-02)
 - [x] 04-02-PLAN.md — Contract epistemic analysis module: cross-contract linking, conflict detection, gap analysis, risk scoring (XREF-01, XREF-02, XREF-03, XREF-04)
-- [ ] 04-03-PLAN.md — Pipeline integration: wire epistemic analysis into extract_contracts.py, --master-doc CLI support (XREF-01, XREF-02, XREF-03, XREF-04)
+- [x] 04-03-PLAN.md — Pipeline integration: wire epistemic analysis into extract_contracts.py, --master-doc CLI support (XREF-01, XREF-02, XREF-03, XREF-04)
 
 ### Phase 5: Interactive Dashboard
 **Goal**: Sample Contract Analysis Workbench — a FastAPI-powered web application with chat-first interface backed by Claude Sonnet, interactive vis.js knowledge graph browser, and source document viewer for committee chairs
@@ -95,8 +95,8 @@ Plans:
 Plans:
 - [x] 05-01-PLAN.md — Domain schema expansion (COMMITTEE, PERSON, EVENT, STAGE, ROOM) + synthetic test fixtures
 - [x] 05-02-PLAN.md — FastAPI backend with data loader, graph API, source API, CLI launcher, and tests
-- [ ] 05-03-PLAN.md — Chat SSE endpoint with Claude Sonnet streaming and SME persona system prompt
-- [ ] 05-04-PLAN.md — Frontend SPA: HTML shell, CSS design system, chat/graph/sources panel modules
+- [x] 05-03-PLAN.md — Chat SSE endpoint with Claude Sonnet streaming and SME persona system prompt
+- [x] 05-04-PLAN.md — Frontend SPA: HTML shell, CSS design system, chat/graph/sources panel modules
 
 ## Progress
 
@@ -108,8 +108,8 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 1. Domain Configuration | 3/3 | Complete | 2026-03-29 |
 | 2. Document Ingestion | 2/2 | Complete | 2026-03-29 |
 | 3. Entity Extraction and Graph Construction | 2/2 | Complete | 2026-03-29 |
-| 4. Cross-Reference Analysis | 1/3 | In Progress | - |
-| 5. Interactive Dashboard | 0/4 | Planned    |  |
+| 4. Cross-Reference Analysis | 3/3 | Complete | 2026-03-31 |
+| 5. Interactive Dashboard | 4/4 | Complete | 2026-04-02 |
 
 ## Backlog
 
