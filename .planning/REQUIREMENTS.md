@@ -1,133 +1,134 @@
 # Requirements: Epistract Cross-Domain KG Framework
 
 **Defined:** 2026-03-29
-**Core Value:** Every obligation, deadline, cost, and party relationship across 62+ vendor contracts must be extractable, queryable, and cross-referenced — so event organizers can spot conflicts, gaps, and risks before they become on-site problems.
+**Core Value:** Extract knowledge, not information. Any corpus, any domain — plug in a schema, get a knowledge graph with epistemic layer.
 
-## v1 Requirements
+## v1 Requirements (Complete)
 
-Requirements for initial release. Each maps to roadmap phases.
+All 24 requirements delivered. See v1 traceability below.
 
 ### Domain Configuration
-
-- [x] **DCFG-01**: System supports pluggable domain configurations via YAML schema defining entity types, relation types, and extraction prompts per domain
-- [x] **DCFG-02**: Contract domain ontology defines entity types (Party, Obligation, Deadline, Cost, Clause, Service, Venue) and relation types (OBLIGATES, CONFLICTS_WITH, DEPENDS_ON, COSTS, PROVIDES, RESTRICTS)
-- [x] **DCFG-03**: Domain-specific extraction prompt templates guide Claude to extract contract-relevant entities and relations
-- [x] **DCFG-04**: Existing biomedical extraction pipeline (Scenarios 1-6) continues to work unchanged — biomedical migration to domain config deferred to v2 after contract domain proves the pattern
+- [x] **DCFG-01**: Pluggable domain configurations via YAML schema
+- [x] **DCFG-02**: Contract domain ontology (11 entity types, 11 relation types)
+- [x] **DCFG-03**: Domain-specific extraction prompt templates
+- [x] **DCFG-04**: Biomedical pipeline backward compatibility
 
 ### Document Ingestion
-
-- [x] **INGS-01**: System ingests PDF contract documents from a user-provided local corpus path via CLI argument
-- [x] **INGS-02**: System ingests XLS and EML files through the same Kreuzberg parsing pipeline as PDFs
-- [x] **INGS-03**: Document metadata (filename, file_path, file_size_bytes, page_count, category, parse_type, text_length, parse_errors, extraction_readiness_score) is captured per document in triage.json
-- [x] **INGS-04**: Documents are triaged as text-native, scanned, or mixed; scanned documents are auto-OCR'd via Kreuzberg's Tesseract backend
-- [x] **INGS-05**: Each ingested document produces a per-document text file at `ingested/<doc_id>.txt` in the output directory, where doc_id is the sanitized lowercase filename
-- [x] **INGS-06**: Document category is auto-detected from the top-level folder name under the corpus root (Hotel, PCC, AV, Catering, Security, EMS; unknown folders get "uncategorized")
-- [x] **INGS-07**: Corpus directory is scanned recursively — all files in nested subdirectories are discovered
-- [x] **INGS-08**: Parse failures (corrupted, encrypted, unsupported) are logged in triage.json and skipped; pipeline continues with remaining documents
-- [x] **INGS-09**: A new standalone `scripts/ingest_documents.py` implements the ingestion pipeline following existing script patterns (sys.argv CLI, pathlib, Rich progress bar)
-- [x] **INGS-10**: Development tests use small synthetic contract PDF fixtures in `tests/fixtures/` (no real contract data committed to repo)
+- [x] **INGS-01** through **INGS-10**: PDF/XLS/EML ingestion, triage, OCR, metadata capture
 
 ### Entity Extraction
-
-- [x] **EXTR-01**: System extracts contract entities (parties, obligations, deadlines, costs, clauses, services) from ingested documents using domain-configured prompts
-- [x] **EXTR-02**: Entity resolution deduplicates variant references to the same real-world entity (e.g., "Aramark" / "ARAMARK" / "the Caterer" / "exclusive caterer")
+- [x] **EXTR-01**: Contract entity extraction using domain prompts
+- [x] **EXTR-02**: Entity resolution and deduplication
 
 ### Graph Construction
-
-- [x] **GRPH-01**: Extracted entities and relations are assembled into a NetworkX knowledge graph using the existing sift-kg pipeline
-- [x] **GRPH-02**: Graph nodes carry domain-specific attributes (e.g., obligation deadlines, cost amounts, clause references)
+- [x] **GRPH-01**: NetworkX knowledge graph via sift-kg
+- [x] **GRPH-02**: Domain-specific node attributes
 
 ### Cross-Reference Analysis
-
-- [x] **XREF-01**: System links entities that appear across multiple contracts (same party, same date, same venue space)
-- [x] **XREF-02**: System detects conflicts between contracts (contradictory terms, overlapping exclusive-use claims, incompatible schedules)
-- [x] **XREF-03**: System identifies coverage gaps (expected obligations based on event requirements vs. what contracts actually cover)
-- [x] **XREF-04**: System flags risks based on contract terms cross-referenced with dashboard planning data (budget mismatches, timeline conflicts, known venue constraints)
+- [x] **XREF-01**: Cross-contract entity linking
+- [x] **XREF-02**: Conflict detection (53 conflicts found)
+- [x] **XREF-03**: Coverage gap analysis
+- [x] **XREF-04**: Risk flagging
 
 ### Interactive Dashboard
-
-- [x] **DASH-01**: Interactive web interface displays the contract knowledge graph with filterable views
-- [x] **DASH-02**: Users can explore entities by type (parties, obligations, deadlines, costs) with tabular and graph views
+- [x] **DASH-01**: Interactive web interface with filterable graph
+- [x] **DASH-02**: Entity exploration by type (tabular + graph)
 
 ## v2 Requirements
 
-Deferred to future release. Tracked but not in current roadmap.
+### Repo Architecture
 
-### Telegram Integration
+- [ ] **ARCH-01**: Core pipeline in `core/`, domains in `domains/`, consumers in `examples/`
+- [ ] **ARCH-02**: Core pipeline imports without domain-specific dependencies
+- [ ] **ARCH-03**: New domain = new files in `domains/` only, no core changes
 
-- **TELE-01**: Telegram bot accepts natural language questions about the contract KG
-- **TELE-02**: Bot supports quick lookups (single entity/clause retrieval)
-- **TELE-03**: Bot supports cross-contract reasoning queries
-- **TELE-04**: Multi-turn conversation maintains KG context
+### Domain Wizard
 
-### Enhanced Presentation
+- [ ] **WIZD-01**: `/epistract:domain` analyzes sample docs and proposes domain schema
+- [ ] **WIZD-02**: Wizard generates complete domain package (domain.yaml + SKILL.md + epistemic rules)
+- [ ] **WIZD-03**: Wizard proposes domain-appropriate epistemic layer rules
+- [ ] **WIZD-04**: Generated domain works with standard pipeline without modification
 
-- **PRES-01**: Committee-oriented dashboard views (filter by committee responsibility area)
-- **PRES-02**: Source drill-down from graph nodes to original contract text with page/section reference
-- **PRES-03**: Source provenance tracking (which document, page, section each entity came from)
+### Standalone Install
 
-### Advanced Extraction
+- [ ] **INST-01**: Plugin installs and runs `/epistract:setup` without repo clone
+- [ ] **INST-02**: Pre-built domains (drug-discovery, contracts) available out of the box
+- [ ] **INST-03**: Plugin excludes demo data, test corpora, paper artifacts
 
-- **ADVX-01**: Seed registry pre-populated from Sample_Conference_Master.md for entity normalization
-- **ADVX-02**: Structure-preserving extraction maintaining tables and clause hierarchy
-- **ADVX-03**: Cross-reference-aware chunking for large contracts
+### Documentation
 
-### Biomedical Unification
+- [ ] **DOCS-01**: README reframed as framework with dual-path quick-start
+- [ ] **DOCS-02**: Architecture diagrams show three-layer separation
+- [ ] **DOCS-03**: Domain developer guide covers full adoption workflow
+- [ ] **DOCS-04**: Paper updated to framework framing
 
-- **BIOU-01**: Migrate biomedical extraction (Scenarios 1-6) to domain config pattern — biomedical becomes a YAML domain config like contracts
+### Consumer Decoupling
 
-### Additional Domains
+- [ ] **CONS-01**: Workbench in `examples/`, works with any domain
+- [ ] **CONS-02**: Telegram bot in `examples/`, works with any domain
 
-- **DOMN-01**: Regulatory compliance domain schema for clinical development use case
+### Cleanup
+
+- [ ] **CLEAN-01**: Stale V1 artifacts removed
+- [ ] **CLEAN-02**: V1 requirements marked complete
+
+## Deferred (V3)
+
+- **BIOU-01**: Biomedical domain migrated to V2 architecture with full backward compatibility
+- **DOMN-01**: Domain registry — discover and load domains dynamically
 
 ## Out of Scope
 
 | Feature | Reason |
 |---------|--------|
-| Contract editing or authoring | Read-only analysis tool, not a CLM platform |
-| Real-time contract monitoring | Batch extraction; contracts don't change frequently |
-| Workflow/approval management | Dashboard project handles committee workflows |
-| Contract template generation | Out of scope for analysis tool |
-| Modifying biomedical scenarios 1-6 | Existing scenarios preserved as-is |
-| Mobile app | Telegram (v2) serves as mobile interface |
-| 2016 Atlantic City data as extraction source | Historical reference only |
+| Contract editing or authoring | Read-only analysis tool |
+| Real-time contract monitoring | Batch extraction |
+| New domain implementations | Wizard enables them; V2 doesn't ship new domains beyond existing two |
+| Cloud deployment / Vercel | Local-first tool |
+| Mobile app | Telegram serves as mobile interface |
+| Modifying biomedical scenarios 1-6 | V3 concern |
 
 ## Traceability
 
-Which phases cover which requirements. Updated during roadmap creation.
+### v1 (Complete)
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DCFG-01 | Phase 1 | Complete |
-| DCFG-02 | Phase 1 | Complete |
-| DCFG-03 | Phase 1 | Complete |
-| DCFG-04 | Phase 1 | Complete |
-| INGS-01 | Phase 2 | Complete |
-| INGS-02 | Phase 2 | Complete |
-| INGS-03 | Phase 2 | Complete |
-| INGS-04 | Phase 2 | Complete |
-| INGS-05 | Phase 2 | Complete |
-| INGS-06 | Phase 2 | Complete |
-| INGS-07 | Phase 2 | Complete |
-| INGS-08 | Phase 2 | Complete |
-| INGS-09 | Phase 2 | Complete |
-| INGS-10 | Phase 2 | Complete |
-| EXTR-01 | Phase 3 | Complete |
-| EXTR-02 | Phase 3 | Complete |
-| GRPH-01 | Phase 3 | Complete |
-| GRPH-02 | Phase 3 | Complete |
-| XREF-01 | Phase 4 | Complete |
-| XREF-02 | Phase 4 | Complete |
-| XREF-03 | Phase 4 | Complete |
-| XREF-04 | Phase 4 | Complete |
-| DASH-01 | Phase 5 | Complete |
-| DASH-02 | Phase 5 | Complete |
+| DCFG-01..04 | Phase 1 | Complete |
+| INGS-01..10 | Phase 2 | Complete |
+| EXTR-01..02 | Phase 3 | Complete |
+| GRPH-01..02 | Phase 3 | Complete |
+| XREF-01..04 | Phase 4 | Complete |
+| DASH-01..02 | Phase 5 | Complete |
 
-**Coverage:**
-- v1 requirements: 24 total
-- Mapped to phases: 24
-- Unmapped: 0
+### v2 (Pending — updated during roadmap creation)
+
+| Requirement | Phase | Plan | Status |
+|-------------|-------|------|--------|
+| ARCH-01 | — | — | Pending |
+| ARCH-02 | — | — | Pending |
+| ARCH-03 | — | — | Pending |
+| WIZD-01 | — | — | Pending |
+| WIZD-02 | — | — | Pending |
+| WIZD-03 | — | — | Pending |
+| WIZD-04 | — | — | Pending |
+| INST-01 | — | — | Pending |
+| INST-02 | — | — | Pending |
+| INST-03 | — | — | Pending |
+| DOCS-01 | — | — | Pending |
+| DOCS-02 | — | — | Pending |
+| DOCS-03 | — | — | Pending |
+| DOCS-04 | — | — | Pending |
+| CONS-01 | — | — | Pending |
+| CONS-02 | — | — | Pending |
+| CLEAN-01 | — | — | Pending |
+| CLEAN-02 | — | — | Pending |
+
+**v2 Coverage:**
+- v2 requirements: 18 total
+- Mapped to phases: 0 (pending roadmap)
+- Unmapped: 18
 
 ---
-*Requirements defined: 2026-03-29*
-*Last updated: 2026-03-29 after roadmap creation*
+*Requirements defined: 2026-03-29 (v1), 2026-04-02 (v2)*
+*Last updated: 2026-04-02 — V2 requirements added*
