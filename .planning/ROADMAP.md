@@ -1,8 +1,9 @@
 # Roadmap: Epistract Cross-Domain KG Framework
 
-## Overview
+## Milestones
 
-This roadmap transforms epistract from a biomedical-only extraction tool into a cross-domain knowledge graph framework, proving the pattern with Scenario 7: extracting structured knowledge from 62+ Sample 2026 event contracts. The journey moves from domain abstraction, through document ingestion and extraction, to graph construction, cross-reference analysis (the differentiating value), and finally an interactive dashboard for committee chairs.
+- Complete **v1.0 STA Contract Extraction + Dashboard** - Phases 1-5 (shipped 2026-04-02)
+- Current **v2.0 Framework Architecture & Domain Developer Experience** - Phases 6-9 (in progress)
 
 ## Phases
 
@@ -12,13 +13,14 @@ This roadmap transforms epistract from a biomedical-only extraction tool into a 
 
 Decimal phases appear between their surrounding integers in numeric order.
 
+<details>
+<summary>v1.0 STA Contract Extraction + Dashboard (Phases 1-5) - SHIPPED 2026-04-02</summary>
+
 - [x] **Phase 1: Domain Configuration** - Pluggable domain config system with contract ontology, preserving biomedical backward compatibility
 - [x] **Phase 2: Document Ingestion** - Multi-format document parsing and triage for 62+ contract files
 - [x] **Phase 3: Entity Extraction and Graph Construction** - Extract contract entities, resolve duplicates, and build the knowledge graph
 - [x] **Phase 4: Cross-Reference Analysis** - Detect conflicts, gaps, and risks across contracts (the killer feature)
 - [x] **Phase 5: Interactive Dashboard** - Web interface for exploring the contract knowledge graph
-
-## Phase Details
 
 ### Phase 1: Domain Configuration
 **Goal**: Epistract supports multiple domains via pluggable configuration, with a contract domain ontology ready for extraction
@@ -60,7 +62,7 @@ Plans:
   2. Variant references to the same entity are resolved to a single canonical node (e.g., "Aramark" / "ARAMARK" / "the Caterer" map to one node)
   3. The knowledge graph is queryable via NetworkX with domain-specific node attributes (deadline dates, cost amounts, clause references)
   4. Graph visualization renders the contract KG with distinguishable entity types and navigable relations
-**Plans:** 2/2 plans
+**Plans:** 2 plans
 
 Plans:
 - [x] 03-01-PLAN.md — Clause-aware chunking, entity resolution, and test fixtures (EXTR-01, EXTR-02)
@@ -89,7 +91,7 @@ Plans:
 **Success Criteria** (what must be TRUE):
   1. A web interface displays the contract knowledge graph with interactive filtering by vendor, date range, and risk level
   2. Users can switch between tabular views (obligations, deadlines, costs) and graph visualization of the same data
-**Plans:** 0/4 plans executed
+**Plans:** 4 plans
 **UI hint**: yes
 
 Plans:
@@ -98,26 +100,109 @@ Plans:
 - [x] 05-03-PLAN.md — Chat SSE endpoint with Claude Sonnet streaming and SME persona system prompt
 - [x] 05-04-PLAN.md — Frontend SPA: HTML shell, CSS design system, chat/graph/sources panel modules
 
+</details>
+
+### v2.0 Framework Architecture & Domain Developer Experience (In Progress)
+
+**Milestone Goal:** Transform epistract into a self-sufficient framework where a domain developer can install, create a new domain via wizard, and run the full pipeline -- without touching core code.
+
+- [ ] **Phase 6: Repo Reorganization and Cleanup** - Restructure codebase into core/domains/examples with clean domain-agnostic imports
+- [ ] **Phase 7: Testing Framework** - Comprehensive regression + integration test suite ensuring V1 parity and V2 production readiness
+- [ ] **Phase 8: Domain Creation Wizard** - Auto-generate domain packages from sample documents via /epistract:domain
+- [ ] **Phase 9: Consumer Decoupling and Standalone Install** - Decouple consumers into examples/, enable plugin install without repo clone
+- [ ] **Phase 10: Documentation Refresh** - README, architecture diagrams, domain developer guide, and paper reframed as framework
+
+## Phase Details
+
+### Phase 6: Repo Reorganization and Cleanup
+**Goal**: Codebase is cleanly separated into domain-agnostic core, domain configurations, and example consumers -- with stale V1 artifacts removed
+**Depends on**: Phase 5 (V1 complete)
+**Requirements**: ARCH-01, ARCH-02, ARCH-03, CLEAN-01, CLEAN-02
+**Success Criteria** (what must be TRUE):
+  1. Repository has `core/`, `domains/`, and `examples/` top-level directories with extraction engine, graph builder, and epistemic layer in `core/`
+  2. `import epistract.core` works without any domain-specific dependencies -- no contract or biomedical imports at the core level
+  3. Adding a new domain requires only creating files under `domains/<name>/` -- zero modifications to anything in `core/`
+  4. Stale V1 planning artifacts, scratch files, and orphaned outputs are removed from the repo
+  5. All V1 requirements in REQUIREMENTS.md are marked complete with phase references
+**Plans**: TBD
+
+Plans:
+- [ ] TBD
+
+### Phase 7: Testing Framework
+**Goal**: Comprehensive test suite locks down V1 regression coverage and validates every V2 capability from install through extraction -- production-ready quality gate
+**Depends on**: Phase 6
+**Requirements**: TEST-01, TEST-02, TEST-03, TEST-04, TEST-05, TEST-06, TEST-07
+**Success Criteria** (what must be TRUE):
+  1. V1 regression suite passes -- ingestion, extraction, graph build, epistemic analysis, community labeling all produce correct output against reorganized codebase
+  2. Every `/epistract:*` command (setup, ingest, build, query, export, view, validate, epistemic, ask, dashboard) has an integration test that runs without error
+  3. Every skill and agent produces valid output format against test fixtures
+  4. End-to-end pipeline test proves the full lifecycle: install → domain selection → ingest → extract → graph build → epistemic analysis → export
+  5. KG provenance tests (32 existing) pass against the reorganized codebase
+  6. Both drug-discovery and contract domains produce valid graphs through the same pipeline entry point
+**Plans**: TBD
+
+Plans:
+- [ ] TBD
+
+### Phase 8: Domain Creation Wizard
+**Goal**: A domain developer can point the wizard at sample documents and get a complete, working domain package generated automatically
+**Depends on**: Phase 7 (needs test infrastructure to validate generated domains)
+**Requirements**: WIZD-01, WIZD-02, WIZD-03, WIZD-04
+**Success Criteria** (what must be TRUE):
+  1. Running `/epistract:domain` with a path to sample documents produces a proposed entity/relation schema based on document analysis
+  2. The wizard generates a complete domain package -- domain.yaml, SKILL.md, and epistemic rules -- ready to use without manual editing
+  3. The wizard proposes epistemic layer rules appropriate to the domain (e.g., contradiction patterns, confidence heuristics, gap detection logic)
+  4. A domain generated by the wizard works end-to-end with the standard pipeline: ingest, extract, build graph, run epistemic analysis -- no code changes needed
+**Plans**: TBD
+
+Plans:
+- [ ] TBD
+
+### Phase 9: Consumer Decoupling and Standalone Install
+**Goal**: Framework installs cleanly as a standalone tool, consumers are decoupled examples, and pre-built domains are available out of the box
+**Depends on**: Phase 6
+**Requirements**: CONS-01, CONS-02, INST-01, INST-02, INST-03
+**Success Criteria** (what must be TRUE):
+  1. Workbench lives in `examples/` and works with any domain's graph output -- not hardcoded to contracts
+  2. Telegram bot lives in `examples/` and works with any domain's graph output -- not hardcoded to contracts
+  3. Running `/epistract:setup` on a fresh machine installs the framework without needing to clone the repo or download demo data
+  4. Pre-built domains (drug-discovery, contracts) are available immediately after install without additional setup
+  5. Plugin package excludes demo data, test corpora, and paper artifacts -- clean install footprint
+**Plans**: TBD
+**UI hint**: yes
+
+Plans:
+- [ ] TBD
+
+### Phase 10: Documentation Refresh
+**Goal**: All documentation presents epistract as a domain-agnostic framework with clear paths for both using pre-built domains and creating new ones
+**Depends on**: Phase 8, Phase 9
+**Requirements**: DOCS-01, DOCS-02, DOCS-03, DOCS-04
+**Success Criteria** (what must be TRUE):
+  1. README leads with framework identity and offers dual-path quick-start: "Use a pre-built domain" or "Create your own domain"
+  2. Architecture diagrams show three-layer separation (core pipeline, domain configs, example consumers) and the two-layer KG (brute facts + epistemic)
+  3. Domain developer guide walks through the full workflow: install, create domain via wizard, ingest documents, explore graph, analyze with epistemic layer
+  4. Paper (title, abstract, architecture sections) is reframed around the framework -- not the STA use case
+**Plans**: TBD
+
+Plans:
+- [ ] TBD
+
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
+Phases execute in numeric order: 6 -> 7 -> 8 -> 9 -> 10
 
-| Phase | Plans Complete | Status | Completed |
-|-------|----------------|--------|-----------|
-| 1. Domain Configuration | 3/3 | Complete | 2026-03-29 |
-| 2. Document Ingestion | 2/2 | Complete | 2026-03-29 |
-| 3. Entity Extraction and Graph Construction | 2/2 | Complete | 2026-03-29 |
-| 4. Cross-Reference Analysis | 3/3 | Complete | 2026-03-31 |
-| 5. Interactive Dashboard | 4/4 | Complete | 2026-04-02 |
-
-## Backlog
-
-### Phase 999.1: V2 Documentation & Artifacts Refresh (BACKLOG)
-
-**Goal:** Update all downstream artifacts to reflect epistract's reframing as a domain-agnostic knowledge graph framework. Includes: paper (title, abstract, architecture framing), README reposition, architecture diagrams (two-layer KG, domain-pluggable system), branding update, demo video for cross-domain capability.
-**Requirements:** TBD
-**Plans:** 0 plans
-
-Plans:
-- [ ] TBD (promote with /gsd:review-backlog when ready)
+| Phase | Milestone | Plans Complete | Status | Completed |
+|-------|-----------|----------------|--------|-----------|
+| 1. Domain Configuration | v1.0 | 3/3 | Complete | 2026-03-29 |
+| 2. Document Ingestion | v1.0 | 2/2 | Complete | 2026-03-29 |
+| 3. Entity Extraction and Graph Construction | v1.0 | 2/2 | Complete | 2026-03-29 |
+| 4. Cross-Reference Analysis | v1.0 | 3/3 | Complete | 2026-03-31 |
+| 5. Interactive Dashboard | v1.0 | 4/4 | Complete | 2026-04-02 |
+| 6. Repo Reorganization and Cleanup | v2.0 | 0/? | Not started | - |
+| 7. Testing Framework | v2.0 | 0/? | Not started | - |
+| 8. Domain Creation Wizard | v2.0 | 0/? | Not started | - |
+| 9. Consumer Decoupling and Standalone Install | v2.0 | 0/? | Not started | - |
+| 10. Documentation Refresh | v2.0 | 0/? | Not started | - |

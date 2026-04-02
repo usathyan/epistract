@@ -67,6 +67,16 @@ All 24 requirements delivered. See v1 traceability below.
 - [ ] **CONS-01**: Workbench in `examples/`, works with any domain
 - [ ] **CONS-02**: Telegram bot in `examples/`, works with any domain
 
+### Testing Framework
+
+- [ ] **TEST-01**: V1 regression suite — every V1 capability (ingestion, extraction, graph build, epistemic analysis, community labeling) has automated tests that pass against the reorganized codebase
+- [ ] **TEST-02**: Command coverage — every `/epistract:*` command (setup, ingest, build, query, export, view, validate, epistemic, ask, dashboard) has an integration test verifying it runs without error
+- [ ] **TEST-03**: Skill coverage — every skill (drug-discovery-extraction, contract-extraction, domain wizard) has tests verifying correct output format
+- [ ] **TEST-04**: Agent coverage — extractor and validator agents produce valid DocumentExtraction JSON against test fixtures
+- [ ] **TEST-05**: End-to-end pipeline test — from fresh install through domain selection, document ingestion, extraction, graph build, epistemic analysis, and export — single test proves the full lifecycle
+- [ ] **TEST-06**: KG provenance regression — the 32 existing provenance tests (chat→graph→source tracing) pass against the reorganized codebase
+- [ ] **TEST-07**: Cross-domain verification — both drug-discovery and contract domains produce valid graphs through the same pipeline entry point
+
 ### Cleanup
 
 - [ ] **CLEAN-01**: Stale V1 artifacts removed
@@ -101,34 +111,41 @@ All 24 requirements delivered. See v1 traceability below.
 | XREF-01..04 | Phase 4 | Complete |
 | DASH-01..02 | Phase 5 | Complete |
 
-### v2 (Pending — updated during roadmap creation)
+### v2 (Mapped to Phases 6-10)
 
 | Requirement | Phase | Plan | Status |
 |-------------|-------|------|--------|
-| ARCH-01 | — | — | Pending |
-| ARCH-02 | — | — | Pending |
-| ARCH-03 | — | — | Pending |
-| WIZD-01 | — | — | Pending |
-| WIZD-02 | — | — | Pending |
-| WIZD-03 | — | — | Pending |
-| WIZD-04 | — | — | Pending |
-| INST-01 | — | — | Pending |
-| INST-02 | — | — | Pending |
-| INST-03 | — | — | Pending |
-| DOCS-01 | — | — | Pending |
-| DOCS-02 | — | — | Pending |
-| DOCS-03 | — | — | Pending |
-| DOCS-04 | — | — | Pending |
-| CONS-01 | — | — | Pending |
-| CONS-02 | — | — | Pending |
-| CLEAN-01 | — | — | Pending |
-| CLEAN-02 | — | — | Pending |
+| ARCH-01 | Phase 6 | — | Pending |
+| ARCH-02 | Phase 6 | — | Pending |
+| ARCH-03 | Phase 6 | — | Pending |
+| CLEAN-01 | Phase 6 | — | Pending |
+| CLEAN-02 | Phase 6 | — | Pending |
+| TEST-01 | Phase 7 | — | Pending |
+| TEST-02 | Phase 7 | — | Pending |
+| TEST-03 | Phase 7 | — | Pending |
+| TEST-04 | Phase 7 | — | Pending |
+| TEST-05 | Phase 7 | — | Pending |
+| TEST-06 | Phase 7 | — | Pending |
+| TEST-07 | Phase 7 | — | Pending |
+| WIZD-01 | Phase 8 | — | Pending |
+| WIZD-02 | Phase 8 | — | Pending |
+| WIZD-03 | Phase 8 | — | Pending |
+| WIZD-04 | Phase 8 | — | Pending |
+| CONS-01 | Phase 9 | — | Pending |
+| CONS-02 | Phase 9 | — | Pending |
+| INST-01 | Phase 9 | — | Pending |
+| INST-02 | Phase 9 | — | Pending |
+| INST-03 | Phase 9 | — | Pending |
+| DOCS-01 | Phase 10 | — | Pending |
+| DOCS-02 | Phase 10 | — | Pending |
+| DOCS-03 | Phase 10 | — | Pending |
+| DOCS-04 | Phase 10 | — | Pending |
 
 **v2 Coverage:**
-- v2 requirements: 18 total
-- Mapped to phases: 0 (pending roadmap)
-- Unmapped: 18
+- v2 requirements: 25 total
+- Mapped to phases: 25
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-29 (v1), 2026-04-02 (v2)*
-*Last updated: 2026-04-02 — V2 requirements added*
+*Last updated: 2026-04-02 — V2 roadmap mapped*

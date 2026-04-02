@@ -2,12 +2,12 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Framework Architecture & Domain Developer Experience
-status: planning
+status: ready_to_plan
 stopped_at: null
 last_updated: "2026-04-02"
-last_activity: 2026-04-02 -- Milestone v2.0 started
+last_activity: 2026-04-02 -- Roadmap created for v2.0 (Phases 6-9)
 progress:
-  total_phases: 0
+  total_phases: 5
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -20,15 +20,15 @@ progress:
 
 See: .planning/PROJECT.md (updated 2026-04-02)
 
-**Core value:** Extract knowledge, not information. Any corpus, any domain — plug in a schema, get a knowledge graph with epistemic layer.
-**Current focus:** Defining requirements for v2.0
+**Core value:** Extract knowledge, not information. Any corpus, any domain -- plug in a schema, get a knowledge graph with epistemic layer.
+**Current focus:** Phase 6 - Repo Reorganization and Cleanup
 
 ## Current Position
 
-Phase: Not started (defining requirements)
-Plan: —
-Status: Defining requirements
-Last activity: 2026-04-02 — Milestone v2.0 started
+Phase: 6 of 9 (Repo Reorganization and Cleanup)
+Plan: Ready to plan
+Status: Ready to plan Phase 6
+Last activity: 2026-04-02 -- Roadmap created for v2.0 (Phases 6-9, 18 requirements)
 
 Progress: [░░░░░░░░░░] 0%
 
@@ -36,34 +36,24 @@ Progress: [░░░░░░░░░░] 0%
 
 **Velocity:**
 
-- Total plans completed: 3
-- Average duration: ~6min
-- Total execution time: ~18 min
+- Total plans completed: 14 (v1)
+- Average duration: ~4min
+- Total execution time: ~56 min
 
-**By Phase:**
+**By Phase (v1):**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| - | - | - | - |
+| Phase 01 | 3 | 18min | 6min |
+| Phase 02 | 2 | 7min | 3.5min |
+| Phase 03 | 2 | 11min | 5.5min |
+| Phase 04 | 3 | 11min | 3.7min |
+| Phase 05 | 4 | 16min | 4min |
 
 **Recent Trend:**
 
-- Last 5 plans: --
-- Trend: --
-
-*Updated after each plan completion*
-| Phase 01 P02 | 5min | 2 tasks | 4 files |
-| Phase 01 P03 | 7min | 3 tasks | 8 files |
-| Phase 02 P01 | 3min | 2 tasks | 5 files |
-| Phase 02 P02 | 4min | 2 tasks | 2 files |
-| Phase 03 P01 | 5min | 3 tasks | 5 files |
-| Phase 03 P02 | 6min | 2 tasks | 3 files |
-| Phase 04 P01 | 4min | 2 tasks | 4 files |
-| Phase 04 P02 | 5min | 3 tasks | 2 files |
-| Phase 04 P03 | 2min | 1 tasks | 2 files |
-| Phase 05 P01 | 5min | 2 tasks | 8 files |
-| Phase 05 P02 | 3min | 2 tasks | 13 files |
-| Phase 05 P03 | 3min | 2 tasks | 4 files |
+- Last 5 plans: 5min, 3min, 3min, 5min, 2min
+- Trend: Stable
 
 ## Accumulated Context
 
@@ -72,28 +62,10 @@ Progress: [░░░░░░░░░░] 0%
 Decisions are logged in PROJECT.md Key Decisions table.
 Recent decisions affecting current work:
 
--
-
-- [Phase 01]: Followed research domain.yaml exactly -- verified against sift-kg DomainConfig
-- [Phase 01 P03]: Domain parameter is name string (not path) throughout pipeline
-- [Phase 01 P03]: validate_molecules.py exits gracefully when domain has no validation scripts
-- [Phase 02]: Used lstrip for doc IDs to preserve trailing underscores from parenthesized filenames
-- [Phase 02]: sift-kg read_document as primary parser with plain-text .txt fallback
-- [Phase 02]: Normalized whitespace comparison in txt fidelity test
-- [Phase 02]: CLI path validation in __main__ for proper exit codes
-- [Phase 03]: ARTICLE boundaries always force chunk breaks regardless of section size
-- [Phase 03]: Protected names set prevents suffix stripping on proper names like Pennsylvania Convention Center Authority
-- [Phase 03]: Contract entity types added alongside biomedical types in label_communities.py (additive)
-- [Phase 03]: sift-kg requires relations for entities to appear as graph nodes
-- [Phase 04]: Domain dispatch: dispatcher owns file I/O, passes pre-loaded graph_data to domain modules
-- [Phase 04]: Contract branch uses try/except ImportError returning error dict per project convention
-- [Phase 04]: Conflict detection uses node attributes + link relationships (not just entity names)
-- [Phase 04]: Reference nodes tagged source=reference with confidence=0.5 (contracts override per D-09)
-- [Phase 04]: Step 5 only runs when graph_built is True; epistemic failure is non-fatal
-- [Phase 05]: Added scripts/__init__.py to enable package imports for workbench submodule
-- [Phase 05]: Structured fixture communities to align with functional groupings (Venue, Catering, AV Production)
-- [Phase 05]: Included cross-contract edges and CONFLICTS_WITH in fixtures for conflict detection testing
-- [Phase 05]: AsyncAnthropic with try/except ImportError for optional SDK; 50K token threshold for system prompt JSON; last 10 messages for multi-turn context
+- [v2.0]: Phase numbering continues from 6 (v1 ended at Phase 5)
+- [v2.0]: ARCH + CLEAN grouped in Phase 6 (cleanup depends on knowing new structure)
+- [v2.0]: CONS + INST grouped in Phase 8 (standalone install needs clean consumer separation)
+- [v2.0]: DOCS last (Phase 9) -- documents the final state after all structural changes
 
 ### Pending Todos
 
@@ -101,18 +73,12 @@ None yet.
 
 ### Blockers/Concerns
 
-- Research flags Phase 2 (PDF extraction quality) and Phase 4 (conflict detection novelty) as needing deeper research during planning.
-- Large PDFs (12-31 MB) may need OCR fallback -- triage during Phase 2.
-- Entity resolution lacks canonical IDs (unlike biomedical SMILES/InChIKeys) -- seed registry approach planned for Phase 3.
-
-### Quick Tasks Completed
-
-| # | Description | Date | Commit | Directory |
-|---|-------------|------|--------|-----------|
-| 260401-abj | Build /epistract:ask skill for contract KG Q&A | 2026-04-01 | 9d0cecd | [260401-abj](./quick/260401-abj-build-epistract-ask-skill-for-contract-k/) |
+- Repo reorganization (Phase 6) is the critical path -- everything else depends on it
+- Domain wizard (Phase 7) needs the new `domains/` structure to exist before generating into it
+- Backward compatibility with biomedical scenarios must be preserved through reorganization
 
 ## Session Continuity
 
-Last session: 2026-03-31T23:53:42.686Z
-Stopped at: Completed 05-03-PLAN.md
+Last session: 2026-04-02
+Stopped at: Roadmap created for v2.0
 Resume file: None
