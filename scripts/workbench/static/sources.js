@@ -46,10 +46,11 @@ function renderDocumentList() {
 
     list.innerHTML = documents.map(doc => {
         const safeDocId = doc.doc_id.replace(/'/g, "\\'");
+        const displayName = doc.display_name || doc.filename || doc.doc_id;
         return `
         <li>
             <button class="doc-list-item" data-doc="${doc.doc_id}" onclick="window.dispatchEvent(new CustomEvent('navigate-source', {detail: {docId: '${safeDocId}'}}))">
-                <span class="doc-name">${doc.filename}</span>
+                <span class="doc-name">${displayName}</span>
                 <span class="doc-size">${formatSize(doc.size_bytes)}</span>
             </button>
         </li>`;

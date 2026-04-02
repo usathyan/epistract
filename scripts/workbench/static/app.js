@@ -6,21 +6,27 @@ import { initSources } from './sources.js';
 // ---------------------------------------------------------------------------
 // Panel State — only one panel visible at a time
 // ---------------------------------------------------------------------------
-let activePanel = 'chat'; // 'chat' | 'graph' | 'sources'
+let activePanel = 'chat'; // 'dashboard' | 'chat' | 'graph' | 'sources'
 
 function switchPanel(panel) {
     activePanel = panel;
 
+    const dashboardPanel = document.getElementById('dashboard-panel');
     const chatPanel = document.querySelector('.chat-panel');
     const sidePanel = document.getElementById('side-panel');
     const graphPanel = document.getElementById('graph-panel');
     const sourcesPanel = document.getElementById('sources-panel');
 
-    if (panel === 'chat') {
+    // Hide all panels
+    dashboardPanel.style.display = 'none';
+    chatPanel.style.display = 'none';
+    sidePanel.style.display = 'none';
+
+    if (panel === 'dashboard') {
+        dashboardPanel.style.display = 'block';
+    } else if (panel === 'chat') {
         chatPanel.style.display = 'flex';
-        sidePanel.style.display = 'none';
     } else {
-        chatPanel.style.display = 'none';
         sidePanel.style.display = 'flex';
         sidePanel.classList.add('open');
         graphPanel.style.display = panel === 'graph' ? 'flex' : 'none';

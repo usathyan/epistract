@@ -797,3 +797,161 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Dashboard Panel
+   --------------------------------------------------------------------------- */
+
+.dashboard-panel {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem 3rem;
+  background: #f8f9fa;
+}
+
+.dashboard-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 0.25rem;
+}
+
+.dashboard-subtitle {
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.dashboard-content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 1.5rem 0 0.75rem;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.4rem;
+}
+
+.dashboard-table-wrap {
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.dashboard-table th {
+  background: #1a1a2e;
+  color: white;
+  text-align: left;
+  padding: 0.6rem 0.8rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.dashboard-table td {
+  padding: 0.55rem 0.8rem;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: top;
+}
+
+.dashboard-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.dashboard-table.compact td,
+.dashboard-table.compact th {
+  padding: 0.4rem 0.6rem;
+  font-size: 0.82rem;
+}
+
+.dashboard-table .amount {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-weight: 600;
+  color: #059669;
+  white-space: nowrap;
+}
+
+.dashboard-table .total-row td {
+  background: #f0fdf4;
+  border-top: 2px solid #10b981;
+}
+
+/* Status badges */
+.status-badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.status-signed { background: #d1fae5; color: #065f46; }
+.status-active { background: #dbeafe; color: #1e40af; }
+.status-pending { background: #fef3c7; color: #92400e; }
+.status-negotiation { background: #fce7f3; color: #9d174d; }
+.status-quote { background: #e5e7eb; color: #374151; }
+
+/* Dashboard columns */
+.dashboard-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-columns {
+    grid-template-columns: 1fr;
+  }
+  .dashboard-panel {
+    padding: 1rem;
+  }
+}
+
+/* Decision cards */
+.decision-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.decision-card {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border-left: 4px solid;
+}
+
+.decision-card h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0 0 0.3rem;
+}
+
+.decision-card p {
+  font-size: 0.82rem;
+  color: #475569;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.decision-critical {
+  background: #fef2f2;
+  border-color: #dc3545;
+}
+.decision-critical h4 { color: #991b1b; }
+
+.decision-warning {
+  background: #fffbeb;
+  border-color: #d97706;
+}
+.decision-warning h4 { color: #92400e; }

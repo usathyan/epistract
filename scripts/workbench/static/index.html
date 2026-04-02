@@ -15,6 +15,9 @@
     </div>
 
     <div class="nav-links">
+      <button class="nav-link" data-panel="dashboard">
+        <span class="nav-icon">&#x1F4CA;</span> Dashboard
+      </button>
       <button class="nav-link active" data-panel="chat">
         <span class="nav-icon">&#x1F4AC;</span> Chat
       </button>
@@ -102,6 +105,104 @@
   <!-- Hamburger toggle for mobile -->
   <button class="hamburger" id="hamburger" aria-label="Toggle sidebar">&#9776;</button>
 
+  <!-- Dashboard Panel -->
+  <section class="dashboard-panel" id="dashboard-panel" style="display:none">
+    <div class="dashboard-content">
+      <h2 class="dashboard-title">Sample 2026 Contract Portfolio &amp; Key Financial Commitments</h2>
+      <p class="dashboard-subtitle">8 contract categories covering 57 documents with vendors across venue, catering, hotels, AV, security, decorating, EMS, and event services.</p>
+
+      <h3>Contract Summary</h3>
+      <div class="dashboard-table-wrap">
+        <table class="dashboard-table">
+          <thead>
+            <tr><th>#</th><th>Vendor</th><th>Contract</th><th>Total Value</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Pennsylvania Convention Center Authority</td><td>PCC License Agreement #26741</td><td>$250,000 deposits + $117,520 space rental</td><td><span class="status-badge status-pending">Unexecuted</span></td></tr>
+            <tr><td>2</td><td>Aramark Sports + Entertainment</td><td>Aramark Assessment 2026</td><td>$199,360 caterer fee + $50,000 kitchen buyout</td><td><span class="status-badge status-signed">Signed 1/29/2026</span></td></tr>
+            <tr><td>3</td><td>Philadelphia Marriott Downtown</td><td>Marriott Room Block Agreement</td><td>$169/night x 1,650 nights + $65K F&amp;B + $40K advance</td><td><span class="status-badge status-active">Active</span></td></tr>
+            <tr><td>4</td><td>Sheraton Philadelphia Downtown</td><td>Sheraton Agreement v2 CG Edit</td><td>$149/night x 1,410 nights ($208,600)</td><td><span class="status-badge status-negotiation">Negotiation</span></td></tr>
+            <tr><td>5</td><td>Notary Hotel</td><td>Notary Hotel Room Block</td><td>$219-259/night x 350 rooms, 15% attrition</td><td><span class="status-badge status-active">Active</span></td></tr>
+            <tr><td>6</td><td>Prime AV</td><td>Prime AV Event Quote #1025151</td><td>$186,000 (main + secondary stage + breakouts)</td><td><span class="status-badge status-quote">Quote</span></td></tr>
+            <tr><td>7</td><td>Black &amp; White Productions</td><td>B&amp;W AV Quote 26-0022</td><td>$468,600 (Terrace Ballroom + Hall G + breakouts)</td><td><span class="status-badge status-quote">Quote</span></td></tr>
+            <tr><td>8</td><td>White Exposition, LLC</td><td>White Exposition Quote</td><td>$68,524 (125 booths @ $40/ea)</td><td><span class="status-badge status-signed">Signed 12/16/2025</span></td></tr>
+            <tr><td>9</td><td>CSC (Contemporary Services Corp)</td><td>Security Proposal 01/23/2026</td><td>$29,051 (71 staff, $28.90-42.51/hr)</td><td><span class="status-badge status-quote">Proposal</span></td></tr>
+            <tr><td>10</td><td>Elliott-Lewis Convention Services</td><td>Labor Order Form + Pricing</td><td>$198,295 (Laborers $10K + Stagehands $188K)</td><td><span class="status-badge status-active">Active</span></td></tr>
+            <tr><td>11</td><td>PCC Rigging</td><td>Preliminary Rigging Estimate</td><td>$49,824 rigging labor</td><td><span class="status-badge status-quote">Estimate</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="dashboard-columns">
+        <div class="dashboard-col">
+          <h3>Financial Commitment Summary</h3>
+          <div class="dashboard-table-wrap">
+            <table class="dashboard-table compact">
+              <thead><tr><th>Category</th><th>Amount</th><th>Source</th></tr></thead>
+              <tbody>
+                <tr><td>PCC deposits (7 installments)</td><td class="amount">$250,000</td><td>PCC License Agreement</td></tr>
+                <tr><td>PCC space rental</td><td class="amount">$117,520</td><td>PCC License Agreement</td></tr>
+                <tr><td>Aramark outside caterer assessment</td><td class="amount">$199,360</td><td>Aramark Assessment</td></tr>
+                <tr><td>Aramark kitchen buyout contingency</td><td class="amount">$50,000</td><td>Aramark Assessment</td></tr>
+                <tr><td>Aramark catering labor</td><td class="amount">$213,140</td><td>Aramark Labor Est. Ver 2</td></tr>
+                <tr><td>Marriott advance deposit</td><td class="amount">$40,000</td><td>Marriott Agreement</td></tr>
+                <tr><td>Marriott room block (1,650 nights)</td><td class="amount">~$278,850</td><td>@ $169/night</td></tr>
+                <tr><td>Sheraton room block (1,410 nights)</td><td class="amount">~$208,600</td><td>@ $149/night</td></tr>
+                <tr><td>Notary Hotel (350 rooms)</td><td class="amount">~$80,000+</td><td>@ $219-259/night</td></tr>
+                <tr><td>AV (Prime AV)</td><td class="amount">$186,000</td><td>Prime AV Quote</td></tr>
+                <tr><td>AV (B&amp;W Productions)</td><td class="amount">$468,600</td><td>B&amp;W AV Quote (alt.)</td></tr>
+                <tr><td>AV labor (PCC estimate)</td><td class="amount">$198,295</td><td>AV Labor Pricing</td></tr>
+                <tr><td>Decorating</td><td class="amount">$68,524</td><td>White Exposition</td></tr>
+                <tr><td>Security</td><td class="amount">$29,051</td><td>CSC Proposal</td></tr>
+                <tr><td>Rigging</td><td class="amount">$49,824</td><td>Rigging Estimate</td></tr>
+                <tr class="total-row"><td><strong>TOTAL (Prime AV)</strong></td><td class="amount"><strong>~$1,690,000+</strong></td><td></td></tr>
+                <tr class="total-row"><td><strong>TOTAL (B&amp;W AV)</strong></td><td class="amount"><strong>~$1,973,000+</strong></td><td></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="dashboard-col">
+          <h3>Critical Decisions Open</h3>
+          <div class="decision-cards">
+            <div class="decision-card decision-critical">
+              <h4>AV Vendor Choice</h4>
+              <p>Prime AV ($186K) vs. B&amp;W Productions ($468.6K) &mdash; <strong>$282,600 difference</strong>. Represents fundamentally different event configurations.</p>
+            </div>
+            <div class="decision-card decision-warning">
+              <h4>Marriott F&amp;B Minimum</h4>
+              <p>STA committed to <strong>$65,000 in hotel F&amp;B revenue</strong>. Separate from Aramark catering at PCC.</p>
+            </div>
+            <div class="decision-card decision-warning">
+              <h4>Aramark Overage Risk</h4>
+              <p>$199,360 based on 2,000-3,000 guests/meal. Overages: <strong>$14.66/guest</strong> beyond 10% of guaranteed numbers.</p>
+            </div>
+            <div class="decision-card decision-critical">
+              <h4>Labor Day Double-Time</h4>
+              <p>Sep 7 load-out = Labor Day. All union trades bill at <strong>double-time rates</strong>. Budget teardown accordingly.</p>
+            </div>
+          </div>
+
+          <h3>Key Persons</h3>
+          <div class="dashboard-table-wrap">
+            <table class="dashboard-table compact">
+              <thead><tr><th>Person</th><th>Role</th><th>Contracts</th></tr></thead>
+              <tbody>
+                <tr><td>Person 1</td><td>STA President</td><td>Aramark, PCC License</td></tr>
+                <tr><td>Person 2</td><td>STA Treasurer</td><td>Sheraton, B&amp;W AV, 8 docs</td></tr>
+                <tr><td>Person 3</td><td>STA Contact</td><td>PCC License, Prime AV</td></tr>
+                <tr><td>Jessica Vendor Rep</td><td>Aramark Dir. Catering Sales</td><td>Aramark Assessment</td></tr>
+                <tr><td>Kim Pham</td><td>PCC Contact</td><td>PCC License, CC Auth</td></tr>
+                <tr><td>Gena Schmid</td><td>Marriott Senior Sales</td><td>Marriott Agreement</td></tr>
+                <tr><td>David Sanders</td><td>B&amp;W Account Manager</td><td>B&amp;W AV Quote</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Chat Panel -->
   <main class="chat-panel">
     <div class="messages" id="messages">
@@ -135,7 +236,7 @@
   <!-- Side Panel (Graph + Sources) -->
   <aside class="side-panel" id="side-panel">
     <div class="panel-tabs">
-      <button class="panel-tab active" data-tab="graph">Graph</button>
+      <button class="panel-tab" data-tab="graph">Graph</button>
       <button class="panel-tab" data-tab="sources">Sources</button>
     </div>
 

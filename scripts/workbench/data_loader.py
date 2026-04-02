@@ -32,24 +32,33 @@ class WorkbenchData:
         if cm.exists():
             self.communities = json.loads(cm.read_text(encoding="utf-8"))
 
-        # Build document list from ingested/ directory
-        if self.ingested_dir.exists():
-            for txt_file in sorted(self.ingested_dir.glob("*.txt")):
-                self.documents.append({
-                    "doc_id": txt_file.stem,
-                    "filename": txt_file.name,
-                    "size_bytes": txt_file.stat().st_size,
-                })
-
-        # Try to locate original corpus via triage.json
+        # Load triage.json for original filenames
+        triage_map: dict[str, dict] = {}
         triage_path = self.output_dir / "triage.json"
         if triage_path.exists():
             triage = json.loads(triage_path.read_text(encoding="utf-8"))
+            for doc in triage.get("documents", []):
+                triage_map[doc.get("doc_id", "")] = doc
             if triage.get("documents"):
-                first_doc = triage["documents"][0]
-                fp = first_doc.get("file_path", "")
+                fp = triage["documents"][0].get("file_path", "")
                 if fp:
                     self.corpus_dir = Path(fp).parent
+
+        # Build document list from ingested/ directory
+        if self.ingested_dir.exists():
+            for txt_file in sorted(self.ingested_dir.glob("*.txt")):
+                doc_id = txt_file.stem
+                triage_info = triage_map.get(doc_id, {})
+                original_path = triage_info.get("file_path", "")
+                original_name = Path(original_path).name if original_path else txt_file.name
+                self.documents.append({
+                    "doc_id": doc_id,
+                    "filename": original_name,
+                    "display_name": original_name.rsplit(".", 1)[0] if original_name else doc_id,
+                    "original_path": original_path,
+                    "size_bytes": txt_file.stat().st_size,
+                    "original_size": triage_info.get("chars", txt_file.stat().st_size),
+                })
 
     def get_nodes(self, entity_type: str | None = None) -> list[dict]:
         """Return graph nodes, optionally filtered by entity_type."""
