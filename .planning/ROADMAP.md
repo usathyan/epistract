@@ -110,3 +110,14 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 | 3. Entity Extraction and Graph Construction | 2/2 | Complete | 2026-03-29 |
 | 4. Cross-Reference Analysis | 1/3 | In Progress | - |
 | 5. Interactive Dashboard | 0/4 | Planned    |  |
+
+## Backlog
+
+### Phase 999.1: V2 Documentation & Artifacts Refresh (BACKLOG)
+
+**Goal:** Update all downstream artifacts to reflect epistract's reframing as a domain-agnostic knowledge graph framework. Includes: paper (title, abstract, architecture framing), README reposition, architecture diagrams (two-layer KG, domain-pluggable system), branding update, demo video for cross-domain capability.
+**Requirements:** TBD
+**Plans:** 0 plans
+
+Plans:
+- [ ] TBD (promote with /gsd:review-backlog when ready)
