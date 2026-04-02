@@ -18,8 +18,8 @@ Demonstrated via two use cases: biomedical drug discovery literature and Sample 
 
 | Milestone | Focus | Proves |
 |-----------|-------|--------|
-| **V1** (current) | STA contract extraction + dashboard + Telegram | End-to-end pipeline works for a new domain |
-| **V2** | Framework reorganization + domain abstraction | Pluggable architecture, example consumers, repo structure reflects framework identity |
+| **V1** (complete) | STA contract extraction + dashboard | End-to-end pipeline works for a new domain |
+| **V2** (current) | Framework architecture + domain developer experience | Standalone tool, domain wizard, pluggable architecture |
 | **V3** | Biomedical domain migrated to V2 architecture | Backward compatibility, framework maturity, two production domains |
 
 ### Target Architecture (V2)
@@ -45,23 +45,30 @@ epistract/
 - Epistemic analysis (hypotheses, contradictions, conditional claims)
 - Molecular identifier validation (SMILES, sequences)
 
-### Active (V1 Milestone)
+### Validated (V1 — complete)
 
 - [x] Domain configuration system — pluggable entity/relation type definitions per domain
-- [x] Contract domain schema — entity types (Party, Obligation, Deadline, Cost, Clause, Venue, Service) and relation types (OBLIGATES, CONFLICTS_WITH, DEPENDS_ON, COSTS, PROVIDES, RESTRICTS)
-- [x] PDF/XLS/EML document ingestion for contract files
-- [x] Contract entity extraction using domain-configured prompts — Validated in Phase 3
-- [x] Knowledge graph construction from contract extractions — Validated in Phase 3
-- [x] Cross-reference analysis — connecting obligations, deadlines, and costs across vendors — Validated in Phase 4
-- [x] Risk and conflict detection — flagging contradictions, missing coverage, timeline conflicts — Validated in Phase 4
-- [x] Dashboard master data as reference layer — import Sample_Conference_Master.md as contextual nodes — Validated in Phase 4
-- [ ] Interactive web workbench — chat-first interface with graph visualization and source document viewer
-- [ ] Telegram chat interface — query the contract KG via natural language
+- [x] Contract domain schema — 11 entity types, 11 relation types
+- [x] PDF/XLS/EML document ingestion for 62+ contract files
+- [x] Contract entity extraction → 341 nodes, 663 edges
+- [x] Knowledge graph construction with community detection
+- [x] Cross-reference analysis — 37 cross-contract entities, 53 conflicts detected
+- [x] Risk and conflict detection — epistemic layer with contested/asserted/unverified
+- [x] Interactive web workbench — Dashboard + Chat + Graph panels
+- [x] KG provenance test suite — 32 tests tracing chat→graph→source
 
-### Future (V2/V3)
+### Active (V2 Milestone)
 
-- [ ] Repo reorganization into core/domains/examples structure
-- [ ] Domain-agnostic consumer apps (viewer, telegram-bot) decoupled from specific domains
+- [ ] Repo reorganization — `core/`, `domains/`, `examples/` structure
+- [ ] Domain abstraction — extraction engine, graph builder, epistemic dispatcher as domain-agnostic core
+- [ ] Domain creation wizard (`/epistract:domain`) — analyzes sample corpus, generates domain.yaml + SKILL.md + epistemic rules for both layers
+- [ ] Standalone plugin install — installs cleanly without demo data; pre-built domains available
+- [ ] Domain developer documentation — end-to-end: install → create domain → ingest → graph → analyze
+- [ ] Documentation refresh — README, paper, architecture diagrams reframed as framework
+- [ ] Consumer decoupling — viewer, workbench, telegram as `examples/`
+
+### Future (V3)
+
 - [ ] Biomedical domain migrated to V2 architecture with full backward compatibility
 - [ ] Domain registry — discover and load domains dynamically
 
@@ -74,6 +81,28 @@ epistract/
 - Real-time contract monitoring — batch extraction, not live updates
 - Vercel/cloud deployment — local workbench sufficient for V1
 - 2016 Atlantic City data as source — historical reference only
+
+## Current Milestone: v2.0 Framework Architecture & Domain Developer Experience
+
+**Goal:** Transform epistract into a self-sufficient framework where a domain developer can install, create a new domain via wizard, and run the full pipeline — without touching core code.
+
+**Target features:**
+1. Repo reorganization — `core/`, `domains/`, `examples/` separation
+2. Domain abstraction — pipeline is domain-agnostic, all intelligence in domain config
+3. Domain creation wizard — `/epistract:domain` analyzes corpus, generates brute facts + epistemic configs
+4. Standalone plugin install — works without demo data
+5. Domain developer docs — end-to-end adoption workflow
+6. Documentation refresh — README, paper, diagrams as framework (absorbs backlog 999.1)
+7. Consumer decoupling — viewer, workbench, telegram as examples
+
+**Key architecture:**
+```
+Domain Config (per-domain)         → Brute Facts schema + Epistemic rules
+Core Pipeline (domain-agnostic)    → ingest → extract → build graph → epistemic → export
+Domain Wizard (/epistract:domain)  → analyzes corpus → generates both layers
+```
+
+**Two user paths:** Use pre-built domain (contract, drug-discovery) or create new domain via wizard.
 
 ## Context
 
@@ -126,4 +155,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-02 after vision update — reframed as domain-agnostic knowledge graph framework with V1/V2/V3 milestone arc*
+*Last updated: 2026-04-02 — V1 complete, V2 milestone started (framework architecture + domain developer experience)*

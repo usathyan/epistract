@@ -1,36 +1,36 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.0
-milestone_name: milestone
-status: executing
-stopped_at: Completed 05-03-PLAN.md
-last_updated: "2026-04-02T20:12:43.884Z"
-last_activity: 2026-04-02 -- Phase 05 execution started
+milestone: v2.0
+milestone_name: Framework Architecture & Domain Developer Experience
+status: planning
+stopped_at: null
+last_updated: "2026-04-02"
+last_activity: 2026-04-02 -- Milestone v2.0 started
 progress:
-  total_phases: 7
-  completed_phases: 4
-  total_plans: 14
-  completed_plans: 13
-  percent: 79
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-29)
+See: .planning/PROJECT.md (updated 2026-04-02)
 
-**Core value:** Every obligation, deadline, cost, and party relationship across 62+ vendor contracts must be extractable, queryable, and cross-referenced -- so event organizers can spot conflicts, gaps, and risks before they become on-site problems.
-**Current focus:** Phase 05 — interactive-dashboard
+**Core value:** Extract knowledge, not information. Any corpus, any domain — plug in a schema, get a knowledge graph with epistemic layer.
+**Current focus:** Defining requirements for v2.0
 
 ## Current Position
 
-Phase: 05 (interactive-dashboard) — EXECUTING
-Plan: 1 of 4
-Status: Executing Phase 05
-Last activity: 2026-04-02 -- Phase 05 execution started
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-04-02 — Milestone v2.0 started
 
-Progress: [████████░░] 79%
+Progress: [░░░░░░░░░░] 0%
 
 ## Performance Metrics
 
