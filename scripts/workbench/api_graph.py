@@ -45,9 +45,20 @@ async def get_node(request: Request, node_id: str):
 
 @router.get("/claims")
 async def get_claims(request: Request):
-    """Return claims layer data (conflicts, gaps, risks)."""
+    """Return claims layer data (conflicts, gaps, risks).
+
+    Reshapes the nested claims_layer structure into the flat format
+    the frontend expects: {conflicts, gaps, risks, cross_references}.
+    """
     data = request.app.state.data
-    return data.claims_layer
+    cl = data.claims_layer
+    sd = cl.get("super_domain", {})
+    return {
+        "conflicts": sd.get("conflicts", []),
+        "gaps": sd.get("coverage_gaps", []),
+        "risks": sd.get("risks", []),
+        "cross_references": sd.get("cross_contract_entities", []),
+    }
 
 
 @router.get("/communities")
