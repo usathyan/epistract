@@ -68,8 +68,8 @@ class WorkbenchData:
         return nodes
 
     def get_edges(self) -> list[dict]:
-        """Return all graph edges."""
-        return self.graph_data.get("edges", [])
+        """Return all graph edges (sift-kg uses 'links' key)."""
+        return self.graph_data.get("links", self.graph_data.get("edges", []))
 
     def get_node_by_id(self, node_id: str) -> dict | None:
         """Find a specific node by its ID."""

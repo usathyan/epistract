@@ -1,7 +1,7 @@
 // app.js - Main application coordinator
 import { initChat } from './chat.js';
 import { initGraph } from './graph.js';
-import { initSources } from './sources.js';
+// sources.js removed — source docs now accessed via dashboard links
 
 // ---------------------------------------------------------------------------
 // Panel State — only one panel visible at a time
@@ -15,22 +15,19 @@ function switchPanel(panel) {
     const chatPanel = document.querySelector('.chat-panel');
     const sidePanel = document.getElementById('side-panel');
     const graphPanel = document.getElementById('graph-panel');
-    const sourcesPanel = document.getElementById('sources-panel');
-
     // Hide all panels
     dashboardPanel.style.display = 'none';
     chatPanel.style.display = 'none';
     sidePanel.style.display = 'none';
 
     if (panel === 'dashboard') {
-        dashboardPanel.style.display = 'block';
+        dashboardPanel.style.display = 'flex';
     } else if (panel === 'chat') {
         chatPanel.style.display = 'flex';
-    } else {
+    } else if (panel === 'graph') {
         sidePanel.style.display = 'flex';
         sidePanel.classList.add('open');
-        graphPanel.style.display = panel === 'graph' ? 'flex' : 'none';
-        sourcesPanel.style.display = panel === 'sources' ? 'flex' : 'none';
+        graphPanel.style.display = 'flex';
     }
 
     updateNavLinks(panel);
@@ -78,7 +75,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         switchPanel('chat');
         window.dispatchEvent(new CustomEvent('ask-question', { detail: { question } }));
     }});
-    initSources();
+    // Sources panel removed — docs accessible via dashboard contract links
 
     // Wire up sidebar nav — each button switches to its panel
     document.querySelectorAll('.nav-link').forEach(link => {

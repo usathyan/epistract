@@ -24,9 +24,6 @@
       <button class="nav-link" data-panel="graph">
         <span class="nav-icon">&#x25C9;</span> Graph
       </button>
-      <button class="nav-link" data-panel="sources">
-        <span class="nav-icon">&#x1F4C4;</span> Sources
-      </button>
     </div>
 
     <div class="sidebar-section">
@@ -106,7 +103,7 @@
   <button class="hamburger" id="hamburger" aria-label="Toggle sidebar">&#9776;</button>
 
   <!-- Dashboard Panel -->
-  <section class="dashboard-panel" id="dashboard-panel" style="display:none">
+  <section class="dashboard-panel" id="dashboard-panel">
     <div class="dashboard-content">
       <h2 class="dashboard-title">Sample 2026 Contract Portfolio &amp; Key Financial Commitments</h2>
       <p class="dashboard-subtitle">8 contract categories covering 57 documents with vendors across venue, catering, hotels, AV, security, decorating, EMS, and event services.</p>
@@ -118,17 +115,17 @@
             <tr><th>#</th><th>Vendor</th><th>Contract</th><th>Total Value</th><th>Status</th></tr>
           </thead>
           <tbody>
-            <tr><td>1</td><td>Pennsylvania Convention Center Authority</td><td>PCC License Agreement #26741</td><td>$250,000 deposits + $117,520 space rental</td><td><span class="status-badge status-pending">Unexecuted</span></td></tr>
-            <tr><td>2</td><td>Aramark Sports + Entertainment</td><td>Aramark Assessment 2026</td><td>$199,360 caterer fee + $50,000 kitchen buyout</td><td><span class="status-badge status-signed">Signed 1/29/2026</span></td></tr>
-            <tr><td>3</td><td>Philadelphia Marriott Downtown</td><td>Marriott Room Block Agreement</td><td>$169/night x 1,650 nights + $65K F&amp;B + $40K advance</td><td><span class="status-badge status-active">Active</span></td></tr>
-            <tr><td>4</td><td>Sheraton Philadelphia Downtown</td><td>Sheraton Agreement v2 CG Edit</td><td>$149/night x 1,410 nights ($208,600)</td><td><span class="status-badge status-negotiation">Negotiation</span></td></tr>
-            <tr><td>5</td><td>Notary Hotel</td><td>Notary Hotel Room Block</td><td>$219-259/night x 350 rooms, 15% attrition</td><td><span class="status-badge status-active">Active</span></td></tr>
-            <tr><td>6</td><td>Prime AV</td><td>Prime AV Event Quote #1025151</td><td>$186,000 (main + secondary stage + breakouts)</td><td><span class="status-badge status-quote">Quote</span></td></tr>
-            <tr><td>7</td><td>Black &amp; White Productions</td><td>B&amp;W AV Quote 26-0022</td><td>$468,600 (Terrace Ballroom + Hall G + breakouts)</td><td><span class="status-badge status-quote">Quote</span></td></tr>
-            <tr><td>8</td><td>White Exposition, LLC</td><td>White Exposition Quote</td><td>$68,524 (125 booths @ $40/ea)</td><td><span class="status-badge status-signed">Signed 12/16/2025</span></td></tr>
-            <tr><td>9</td><td>CSC (Contemporary Services Corp)</td><td>Security Proposal 01/23/2026</td><td>$29,051 (71 staff, $28.90-42.51/hr)</td><td><span class="status-badge status-quote">Proposal</span></td></tr>
-            <tr><td>10</td><td>Elliott-Lewis Convention Services</td><td>Labor Order Form + Pricing</td><td>$198,295 (Laborers $10K + Stagehands $188K)</td><td><span class="status-badge status-active">Active</span></td></tr>
-            <tr><td>11</td><td>PCC Rigging</td><td>Preliminary Rigging Estimate</td><td>$49,824 rigging labor</td><td><span class="status-badge status-quote">Estimate</span></td></tr>
+            <tr><td>1</td><td>Pennsylvania Convention Center Authority</td><td><a href="#" class="source-link" data-doc="26741_unexecuted_license_agreement_06">PCC License Agreement #26741</a></td><td>$250,000 deposits + $117,520 space rental</td><td><span class="status-badge status-pending">Unexecuted</span></td></tr>
+            <tr><td>2</td><td>Aramark Sports + Entertainment</td><td><a href="#" class="source-link" data-doc="aramark_akka_agreement_2026_with_signatures_aramark01292026">Aramark Assessment 2026</a></td><td>$199,360 caterer fee + $50,000 kitchen buyout</td><td><span class="status-badge status-signed">Signed 1/29/2026</span></td></tr>
+            <tr><td>3</td><td>Philadelphia Marriott Downtown</td><td><a href="#" class="source-link" data-doc="090226_cr1akkaworldsampleconference_phldtlt501899">Marriott Room Block Agreement</a></td><td>$169/night x 1,650 nights + $65K F&amp;B + $40K advance</td><td><span class="status-badge status-active">Active</span></td></tr>
+            <tr><td>4</td><td>Sheraton Philadelphia Downtown</td><td><a href="#" class="source-link" data-doc="akka_september_2026_sheraton_philadelphia_downtown_version_2_cg_edit">Sheraton Agreement v2 CG Edit</a></td><td>$149/night x 1,410 nights ($208,600)</td><td><span class="status-badge status-negotiation">Negotiation</span></td></tr>
+            <tr><td>5</td><td>Notary Hotel</td><td><a href="#" class="source-link" data-doc="notary_hotel_akka_conference_room_block_phl_2026_m_vlpna02_1391189">Notary Hotel Room Block</a></td><td>$219-259/night x 350 rooms, 15% attrition</td><td><span class="status-badge status-active">Active</span></td></tr>
+            <tr><td>6</td><td>Prime AV</td><td><a href="#" class="source-link" data-doc="job_1025151_prime_av_event_quote">Prime AV Event Quote #1025151</a></td><td>$186,000 (main + secondary stage + breakouts)</td><td><span class="status-badge status-quote">Quote</span></td></tr>
+            <tr><td>7</td><td>Black &amp; White Productions</td><td><a href="#" class="source-link" data-doc="pcc_blackandwhite_av_quote_26_0022_5">B&amp;W AV Quote 26-0022</a></td><td>$468,600 (Terrace Ballroom + Hall G + breakouts)</td><td><span class="status-badge status-quote">Quote</span></td></tr>
+            <tr><td>8</td><td>White Exposition, LLC</td><td><a href="#" class="source-link" data-doc="akka_2026_white_exposition_quote_1162026">White Exposition Quote</a></td><td>$68,524 (125 booths @ $40/ea)</td><td><span class="status-badge status-signed">Signed 12/16/2025</span></td></tr>
+            <tr><td>9</td><td>CSC (Contemporary Services Corp)</td><td><a href="#" class="source-link" data-doc="pcc_security_akka_2026_proposal_01232026">Security Proposal 01/23/2026</a></td><td>$29,051 (71 staff, $28.90-42.51/hr)</td><td><span class="status-badge status-quote">Proposal</span></td></tr>
+            <tr><td>10</td><td>Elliott-Lewis Convention Services</td><td><a href="#" class="source-link" data-doc="2026_labor_pricing_spreadsheet_estimate_for_prime_av_labor_for_akka_2026">Labor Order Form + Pricing</a></td><td>$198,295 (Laborers $10K + Stagehands $188K)</td><td><span class="status-badge status-active">Active</span></td></tr>
+            <tr><td>11</td><td>PCC Rigging</td><td><a href="#" class="source-link" data-doc="sample_koots_preliminary_rigging_estimate_9_24_2025v_1">Preliminary Rigging Estimate</a></td><td>$49,824 rigging labor</td><td><span class="status-badge status-quote">Estimate</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -235,11 +232,6 @@
 
   <!-- Side Panel (Graph + Sources) -->
   <aside class="side-panel" id="side-panel">
-    <div class="panel-tabs">
-      <button class="panel-tab" data-tab="graph">Graph</button>
-      <button class="panel-tab" data-tab="sources">Sources</button>
-    </div>
-
     <!-- Graph Panel -->
     <div class="panel-content" id="graph-panel" style="display:flex;flex-direction:column">
       <div class="graph-controls">
@@ -273,26 +265,51 @@
       </div>
     </div>
 
-    <!-- Sources Panel -->
-    <div class="panel-content" id="sources-panel" style="display:none;flex-direction:column">
-      <div class="sources-layout">
-        <div class="doc-list-container">
-          <ul class="doc-list" id="doc-list">
-            <li class="doc-list-empty">Select a document from the list to view its contents.</li>
-          </ul>
-        </div>
-        <div class="source-viewer-container">
-          <div id="source-text" class="source-viewer">
-            <p class="source-empty">Select a document from the list to view its contents.</p>
-          </div>
-          <a id="pdf-link" href="#" class="pdf-link" target="_blank" style="display:none">Open original PDF</a>
-        </div>
-      </div>
-    </div>
   </aside>
+
+  <!-- Source Document Viewer Modal -->
+  <div class="source-modal" id="source-modal" style="display:none">
+    <div class="source-modal-content">
+      <div class="source-modal-header">
+        <h3 id="source-modal-title">Document</h3>
+        <button class="source-modal-close" onclick="document.getElementById('source-modal').style.display='none'">&times;</button>
+      </div>
+      <pre class="source-modal-text" id="source-modal-text">Loading...</pre>
+    </div>
+  </div>
 
   <script src="/static/vis-network.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script type="module" src="/static/app.js"></script>
+  <script>
+    // Source document modal handler
+    document.addEventListener('click', async (e) => {
+      const link = e.target.closest('.source-link');
+      if (!link) return;
+      e.preventDefault();
+      const docId = link.dataset.doc;
+      const modal = document.getElementById('source-modal');
+      const title = document.getElementById('source-modal-title');
+      const text = document.getElementById('source-modal-text');
+      title.textContent = link.textContent;
+      text.textContent = 'Loading...';
+      modal.style.display = 'flex';
+      try {
+        const resp = await fetch(`/api/sources/${docId}`);
+        const data = await resp.json();
+        text.textContent = data.text || data.error || 'No content found';
+      } catch (err) {
+        text.textContent = 'Failed to load document: ' + err.message;
+      }
+    });
+    // Close modal on backdrop click
+    document.getElementById('source-modal')?.addEventListener('click', (e) => {
+      if (e.target.id === 'source-modal') e.target.style.display = 'none';
+    });
+    // Close modal on Esc
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') document.getElementById('source-modal').style.display = 'none';
+    });
+  </script>
 </body>
 </html>
