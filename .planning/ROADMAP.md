@@ -142,10 +142,12 @@ Plans:
   4. End-to-end pipeline test proves the full lifecycle: install → domain selection → ingest → extract → graph build → epistemic analysis → export
   5. KG provenance tests (32 existing) pass against the reorganized codebase
   6. Both drug-discovery and contract domains produce valid graphs through the same pipeline entry point
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] TBD
+- [ ] 07-01-PLAN.md — Test infrastructure, fixtures, and unit tier (conftest.py, pyproject.toml, markers, schema validation)
+- [ ] 07-02-PLAN.md — Integration tests for command entry points, KG provenance conversion, cross-domain verification
+- [ ] 07-03-PLAN.md — E2E pipeline tests and Makefile tiered test targets
 
 ### Phase 8: Domain Creation Wizard
 **Goal**: A domain developer can point the wizard at sample documents and get a complete, working domain package generated automatically
@@ -204,7 +206,7 @@ Phases execute in numeric order: 6 -> 7 -> 8 -> 9 -> 10
 | 4. Cross-Reference Analysis | v1.0 | 3/3 | Complete | 2026-03-31 |
 | 5. Interactive Dashboard | v1.0 | 4/4 | Complete | 2026-04-02 |
 | 6. Repo Reorganization and Cleanup | v2.0 | 0/3 | Planning | - |
-| 7. Testing Framework | v2.0 | 0/? | Not started | - |
+| 7. Testing Framework | v2.0 | 0/3 | Planning | - |
 | 8. Domain Creation Wizard | v2.0 | 0/? | Not started | - |
 | 9. Consumer Decoupling and Standalone Install | v2.0 | 0/? | Not started | - |
 | 10. Documentation Refresh | v2.0 | 0/? | Not started | - |
