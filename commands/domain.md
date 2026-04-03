@@ -1,0 +1,201 @@
+---
+name: epistract-domain
+description: Create a new domain package from sample documents using guided wizard
+---
+
+# /epistract:domain
+
+Create a new domain package from sample documents. Analyzes documents via multi-pass
+LLM analysis to propose a domain schema, then generates a complete domain package
+(domain.yaml, SKILL.md, epistemic.py, references/) ready for the standard pipeline.
+
+## Prerequisites
+
+- Python environment with epistract dependencies installed
+- 2-5 sample documents from the target domain (PDF, DOCX, HTML, TXT, or any format Kreuzberg supports)
+
+## Usage
+
+```
+/epistract:domain
+```
+
+The wizard will prompt for:
+1. **Domain name** -- short identifier (e.g., "real-estate", "healthcare-records")
+2. **Domain description** -- 1-2 sentences describing the domain (e.g., "Real estate lease agreements between landlords and tenants")
+3. **Sample document paths** -- paths to 2-5 representative documents
+
+## Steps
+
+### Step 1: Gather Inputs
+
+Ask the user for:
+- **Domain name**: A short, hyphenated identifier. Will become the directory name under `domains/`.
+- **Domain description**: 1-2 sentences. This provides context for LLM schema discovery.
+- **Sample document paths**: At least 2 documents (recommend 3-5). Accept any file format.
+
+Validate inputs:
+- Domain name must be lowercase, alphanumeric with hyphens only
+- Check for domain name collision using `core/domain_wizard.py`:
+  ```python
+  from core.domain_wizard import check_domain_exists
+  if check_domain_exists(domain_name):
+      # Warn user: domain already exists. Ask to overwrite or pick new name.
+  ```
+- Verify all document paths exist and are readable files
+- Warn if only 1 document provided (minimum 2 required)
+
+**Input validation rules:**
+- Domain name regex: `^[a-z][a-z0-9-]*[a-z0-9]$` (start with letter, end with letter/digit, hyphens allowed)
+- Reject names shorter than 2 characters
+- Reject names containing double hyphens (`--`)
+- If a domain name collision is detected (per D-16), present options: overwrite existing or choose a new name
+
+### Step 2: Analyze Documents and Propose Schema
+
+Run the multi-pass LLM analysis pipeline:
+
+```python
+from core.domain_wizard import (
+    read_sample_documents, build_schema_discovery_prompt,
+    build_consolidation_prompt, build_final_schema_prompt
+)
+```
+
+**Pass 1 -- Per-document entity/relation discovery:**
+For each sample document:
+1. Read text using `read_sample_documents(doc_paths)`
+2. Build the discovery prompt: `build_schema_discovery_prompt(doc["text"], domain_description)`
+3. Send prompt to Claude (use the Agent tool or direct LLM call)
+4. Parse the JSON response to get candidate entity types and relation types
+
+**Pass 2 -- Cross-document consolidation:**
+1. Merge all Pass 1 candidates into a single list
+2. Build consolidation prompt: `build_consolidation_prompt(all_candidates, domain_description)`
+3. Send to Claude, get deduplicated types with canonical names
+
+**Pass 3 -- Final schema proposal:**
+1. Build final prompt: `build_final_schema_prompt(consolidated, domain_description)`
+2. Send to Claude, get the final entity_types and relation_types dicts
+
+**Present the proposed schema to the user (per D-14):**
+
+Display a formatted schema summary in chat for review:
+```
+## Proposed Domain Schema: {domain_name}
+
+### Entity Types ({count})
+| Type | Description |
+|------|-------------|
+| TYPE_NAME | Description... |
+
+### Relation Types ({count})
+| Type | Description |
+|------|-------------|
+| REL_NAME | Description... |
+
+Does this look good? Say "approved" to generate the full package, or suggest changes.
+```
+
+Wait for user approval or modifications before proceeding. If the user suggests changes:
+- Add/remove/rename entity or relation types as requested
+- Re-display the updated schema for confirmation
+- Repeat until approved
+
+### Step 3: Generate Domain Package
+
+After user approves the schema:
+
+**Generate epistemic parameters:**
+1. Collect short text excerpts from each sample document (first ~500 chars each)
+2. Build epistemic prompt: `build_epistemic_prompt(entity_types, relation_types, domain_description, sample_excerpts)`
+3. Send to Claude to get contradiction_pairs, gap_target_types, confidence_thresholds
+
+**Generate all package files:**
+```python
+from core.domain_wizard import (
+    generate_domain_yaml, generate_skill_md, generate_epistemic_py,
+    generate_reference_docs, validate_generated_epistemic, write_domain_package
+)
+
+# Build system context from domain description
+system_context = f"You are analyzing {domain_description}."
+
+# Build extraction guidelines from entity/relation types
+extraction_guidelines = (
+    f"Extract all {', '.join(entity_types.keys())} entities and "
+    f"{', '.join(relation_types.keys())} relations from the text."
+)
+
+# Generate each artifact
+domain_yaml = generate_domain_yaml(
+    domain_name, domain_description, system_context,
+    entity_types, relation_types
+)
+skill_md = generate_skill_md(
+    domain_name, system_context, entity_types,
+    relation_types, extraction_guidelines
+)
+
+domain_slug = domain_name.replace("-", "_")
+epistemic_py = generate_epistemic_py(
+    domain_slug, entity_types, contradiction_pairs,
+    gap_target_types, confidence_thresholds
+)
+
+# Validate epistemic.py before writing (per D-12)
+validation = validate_generated_epistemic(epistemic_py, domain_slug)
+if not validation["valid"]:
+    # Report the error and retry with error context
+    # Retry up to 2 times, re-generating epistemic_py with error feedback
+    for attempt in range(2):
+        # Re-generate with error context added to prompt
+        epistemic_py = generate_epistemic_py(
+            domain_slug, entity_types, contradiction_pairs,
+            gap_target_types, confidence_thresholds
+        )
+        validation = validate_generated_epistemic(epistemic_py, domain_slug)
+        if validation["valid"]:
+            break
+    if not validation["valid"]:
+        # Warn user that epistemic validation failed; package will still be created
+        # but epistemic.py may need manual fixes
+        pass
+
+entity_types_md, relation_types_md = generate_reference_docs(entity_types, relation_types)
+
+# Write the complete package to domains/<name>/
+domain_dir = write_domain_package(
+    domain_name, domain_yaml, skill_md, epistemic_py,
+    entity_types_md, relation_types_md
+)
+```
+
+**Report success:**
+```
+Domain package created at: domains/{domain_name}/
+Files generated:
+- domain.yaml -- {N} entity types, {M} relation types
+- SKILL.md -- extraction guidelines for Claude agents
+- epistemic.py -- domain-specific epistemic analysis
+- references/entity-types.md -- entity type documentation
+- references/relation-types.md -- relation type documentation
+
+Your domain is ready! Try it with:
+  /epistract:ingest /path/to/documents --domain {domain_name}
+```
+
+## Error Handling
+
+- **Document read failures**: Skip unreadable files, warn user, continue if >= 2 readable remain
+- **LLM returns invalid JSON**: Retry the prompt once with explicit JSON format instructions
+- **Epistemic validation fails**: Retry generation with the error message as context (up to 2 retries)
+- **Domain name collision**: Ask user to overwrite or choose new name (per D-16)
+- **Fewer than 2 documents**: Error with message "At least 2 sample documents required (3-5 recommended)"
+
+## Notes
+
+- Generated packages target contracts-level quality (entity/relation types with descriptions). For richer schemas (extraction_hints, nomenclature rules), manually edit the generated files.
+- No validation scripts are generated -- add domain-specific validators manually if needed.
+- This command creates only. To update an existing domain, edit its files directly.
+- The domain_resolver will auto-discover the generated domain package immediately after creation.
