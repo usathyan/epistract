@@ -57,7 +57,7 @@ See v1 traceability below.
 - [ ] **WIZD-01**: `/epistract:domain` analyzes sample docs and proposes domain schema
 - [ ] **WIZD-02**: Wizard generates complete domain package (domain.yaml + SKILL.md + epistemic rules)
 - [ ] **WIZD-03**: Wizard proposes domain-appropriate epistemic layer rules
-- [ ] **WIZD-04**: Generated domain works with standard pipeline without modification
+- [x] **WIZD-04**: Generated domain works with standard pipeline without modification
 
 ### Standalone Install
 
