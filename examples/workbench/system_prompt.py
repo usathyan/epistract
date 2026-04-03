@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import json
 
-from scripts.workbench.data_loader import WorkbenchData
+from examples.workbench.data_loader import WorkbenchData
 
 # ---------------------------------------------------------------------------
 # Persona (D-13, D-14, D-15, D-24)

@@ -125,9 +125,9 @@ See v1 traceability below.
 
 | Requirement | Phase | Plan | Status |
 |-------------|-------|------|--------|
-| ARCH-01 | Phase 6 | — | Pending |
-| ARCH-02 | Phase 6 | — | Pending |
-| ARCH-03 | Phase 6 | — | Pending |
+| ARCH-01 | Phase 6 | 06-01 | Complete |
+| ARCH-02 | Phase 6 | 06-02 | Complete |
+| ARCH-03 | Phase 6 | 06-01 | Complete |
 | CLEAN-01 | Phase 6 | 06-03 | Complete |
 | CLEAN-02 | Phase 6 | 06-03 | Complete |
 | TEST-01 | Phase 7 | — | Pending |

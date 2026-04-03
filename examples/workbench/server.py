@@ -8,10 +8,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
-from scripts.workbench.api_chat import router as chat_router
-from scripts.workbench.api_graph import router as graph_router
-from scripts.workbench.api_sources import router as sources_router
-from scripts.workbench.data_loader import WorkbenchData
+from examples.workbench.api_chat import router as chat_router
+from examples.workbench.api_graph import router as graph_router
+from examples.workbench.api_sources import router as sources_router
+from examples.workbench.data_loader import WorkbenchData
 
 STATIC_DIR = Path(__file__).parent / "static"
 

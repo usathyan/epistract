@@ -44,7 +44,7 @@ def sample_output_dir(tmp_path):
 @pytest.fixture
 def client(sample_output_dir):
     """Create a FastAPI TestClient."""
-    from scripts.workbench.server import create_app
+    from examples.workbench.server import create_app
     from starlette.testclient import TestClient
 
     app = create_app(sample_output_dir)
@@ -58,7 +58,7 @@ def client(sample_output_dir):
 
 def test_data_loader_loads_graph(sample_output_dir):
     """WorkbenchData loads graph_data.json nodes and edges."""
-    from scripts.workbench.data_loader import WorkbenchData
+    from examples.workbench.data_loader import WorkbenchData
 
     data = WorkbenchData(sample_output_dir)
     assert len(data.get_nodes()) >= 20, f"Expected >= 20 nodes, got {len(data.get_nodes())}"
@@ -67,7 +67,7 @@ def test_data_loader_loads_graph(sample_output_dir):
 
 def test_data_loader_filters_by_type(sample_output_dir):
     """WorkbenchData.get_nodes filters by entity_type."""
-    from scripts.workbench.data_loader import WorkbenchData
+    from examples.workbench.data_loader import WorkbenchData
 
     data = WorkbenchData(sample_output_dir)
     parties = data.get_nodes(entity_type="PARTY")
@@ -77,7 +77,7 @@ def test_data_loader_filters_by_type(sample_output_dir):
 
 def test_data_loader_loads_claims(sample_output_dir):
     """WorkbenchData loads claims_layer.json."""
-    from scripts.workbench.data_loader import WorkbenchData
+    from examples.workbench.data_loader import WorkbenchData
 
     data = WorkbenchData(sample_output_dir)
     assert "conflicts" in data.claims_layer
@@ -87,7 +87,7 @@ def test_data_loader_loads_claims(sample_output_dir):
 
 def test_data_loader_lists_documents(sample_output_dir):
     """WorkbenchData discovers ingested text files."""
-    from scripts.workbench.data_loader import WorkbenchData
+    from examples.workbench.data_loader import WorkbenchData
 
     data = WorkbenchData(sample_output_dir)
     assert len(data.documents) >= 1, f"Expected >= 1 document, got {len(data.documents)}"
@@ -164,21 +164,45 @@ def test_source_text(client):
 
 
 def test_chat_stream_mock(client, monkeypatch):
-    """POST /api/chat returns SSE stream with mocked Claude response (D-26).
+    """POST /api/chat returns SSE stream with mocked response (D-26).
 
-    Tests chat endpoint wiring without requiring a live ANTHROPIC_API_KEY.
-    Mocks the AsyncAnthropic client to return a canned response.
+    Tests chat endpoint wiring without requiring a live API key.
+    Mocks httpx to return a canned SSE stream.
     """
-    import json
+    import httpx
+    import examples.workbench.api_chat as chat_module
 
     # Set a fake API key so the endpoint doesn't short-circuit
     monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-test-mock-key")
 
-    # Mock the AsyncAnthropic class to avoid real API calls
-    import scripts.workbench.api_chat as chat_module
+    # Build a mock httpx response that yields SSE lines
+    mock_lines = [
+        'data: {"type":"content_block_delta","delta":{"type":"text_delta","text":"Hello from mock"}}',
+        "data: [DONE]",
+    ]
 
-    class MockStream:
-        """Mock for anthropic messages.stream context manager."""
+    class MockAsyncByteStream:
+        async def __aiter__(self):
+            for line in mock_lines:
+                yield (line + "\n").encode()
+
+        async def aclose(self):
+            pass
+
+    class MockResponse:
+        status_code = 200
+        headers = {}
+        stream = MockAsyncByteStream()
+
+        async def aiter_lines(self):
+            for line in mock_lines:
+                yield line
+
+        async def aread(self):
+            return b""
+
+        async def aclose(self):
+            pass
 
         async def __aenter__(self):
             return self
@@ -186,34 +210,26 @@ def test_chat_stream_mock(client, monkeypatch):
         async def __aexit__(self, *args):
             pass
 
-        @property
-        def text_stream(self):
-            return self._stream()
-
-        async def _stream(self):
-            yield "Hello from mock"
-
-    class MockMessages:
-        def stream(self, **kwargs):
-            return MockStream()
-
-    class MockClient:
+    class MockAsyncClient:
         def __init__(self, **kwargs):
-            self.messages = MockMessages()
+            pass
 
-    # Patch AsyncAnthropic and HAS_ANTHROPIC in the chat module
-    # AsyncAnthropic may not exist if anthropic SDK is not installed,
-    # so use setattr directly on the module to inject the mock
-    monkeypatch.setattr(chat_module, "HAS_ANTHROPIC", True)
-    chat_module.AsyncAnthropic = MockClient
-    monkeypatch.setattr(chat_module, "AsyncAnthropic", MockClient)
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, *args):
+            pass
+
+        def stream(self, method, url, **kwargs):
+            return MockResponse()
+
+    monkeypatch.setattr(httpx, "AsyncClient", MockAsyncClient)
 
     resp = client.post(
         "/api/chat",
         json={"question": "What are the catering costs?", "history": []},
     )
     assert resp.status_code == 200
-    # SSE response should contain our mock text
     body = resp.text
     assert "Hello from mock" in body or "text" in body
 

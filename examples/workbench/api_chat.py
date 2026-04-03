@@ -10,7 +10,7 @@ from fastapi import APIRouter, Request
 from pydantic import BaseModel
 from sse_starlette.sse import EventSourceResponse
 
-from scripts.workbench.system_prompt import build_system_prompt, get_matched_source_chunks
+from examples.workbench.system_prompt import build_system_prompt, get_matched_source_chunks
 
 router = APIRouter(prefix="/api", tags=["chat"])
 
