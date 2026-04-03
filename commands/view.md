@@ -11,5 +11,5 @@ Arguments:
 - `--top <n>` -- show top N entities by connections
 
 ```bash
-python3 ${CLAUDE_PLUGIN_ROOT}/scripts/run_sift.py view <output_dir> [--neighborhood <entity>] [--top <n>]
+python3 ${CLAUDE_PLUGIN_ROOT}/core/run_sift.py view <output_dir> [--neighborhood <entity>] [--top <n>]
 ```

@@ -49,7 +49,7 @@ For EACH text chunk, extract entities and relations using the domain's SKILL.md 
 
 Write each document's combined extraction to disk:
 ```bash
-python3 ${CLAUDE_PLUGIN_ROOT}/scripts/build_extraction.py <doc_id> <output_dir> --json '<combined_json>'
+python3 ${CLAUDE_PLUGIN_ROOT}/core/build_extraction.py <doc_id> <output_dir> --json '<combined_json>'
 ```
 
 **For 4+ documents:** Use the Agent tool to dispatch parallel extraction agents (one per document) for speed.
@@ -57,7 +57,7 @@ python3 ${CLAUDE_PLUGIN_ROOT}/scripts/build_extraction.py <doc_id> <output_dir> 
 ### Step 4: Validate Molecular Identifiers
 
 ```bash
-python3 ${CLAUDE_PLUGIN_ROOT}/scripts/validate_molecules.py <output_dir>
+python3 ${CLAUDE_PLUGIN_ROOT}/domains/drug-discovery/validate_molecules.py <output_dir>
 ```
 
 ### Step 5: Build Knowledge Graph
@@ -65,13 +65,13 @@ python3 ${CLAUDE_PLUGIN_ROOT}/scripts/validate_molecules.py <output_dir>
 If `--domain` was provided to this command, pass it through. Otherwise omit (defaults to drug-discovery).
 
 ```bash
-python3 ${CLAUDE_PLUGIN_ROOT}/scripts/run_sift.py build <output_dir> --domain <domain_name>
+python3 ${CLAUDE_PLUGIN_ROOT}/core/run_sift.py build <output_dir> --domain ${CLAUDE_PLUGIN_ROOT}/domains/drug-discovery/domain.yaml
 ```
 
 ### Step 6: Open Visualization
 
 ```bash
-python3 ${CLAUDE_PLUGIN_ROOT}/scripts/run_sift.py view <output_dir>
+python3 ${CLAUDE_PLUGIN_ROOT}/core/run_sift.py view <output_dir>
 ```
 
 ### Step 7: Report Summary

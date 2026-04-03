@@ -10,7 +10,7 @@ Build the knowledge graph from extraction JSONs already in the output directory.
 - `--domain` (optional): Domain name (default: drug-discovery). Use `--list-domains` to see available domains.
 
 ```bash
-python3 ${CLAUDE_PLUGIN_ROOT}/scripts/run_sift.py build <output_dir> --domain <domain_name>
+python3 ${CLAUDE_PLUGIN_ROOT}/core/run_sift.py build <output_dir> --domain ${CLAUDE_PLUGIN_ROOT}/domains/drug-discovery/domain.yaml
 ```
 
 If `--domain` is not provided, defaults to drug-discovery for backward compatibility.

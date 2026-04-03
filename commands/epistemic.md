@@ -25,7 +25,7 @@ This command runs **after** the graph is built (after `/epistract-ingest` or `/e
 ### Step 1: Run the epistemic analysis script
 
 ```bash
-python3 ${CLAUDE_PLUGIN_ROOT}/scripts/label_epistemic.py <output_dir>
+python3 ${CLAUDE_PLUGIN_ROOT}/core/label_epistemic.py <output_dir>
 ```
 
 This reads `graph_data.json` and produces:
