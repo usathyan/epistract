@@ -7,6 +7,8 @@ Run: python -m pytest tests/test_unit.py -m unit -v
 import json
 import sys
 import tempfile
+
+import yaml
 from pathlib import Path
 from unittest import mock
 
@@ -365,3 +367,165 @@ def test_wizard_fixtures_exist():
     for sample in samples:
         text = sample.read_text()
         assert len(text) > 100, f"Sample {sample.name} too short ({len(text)} chars)"
+
+
+# ---------------------------------------------------------------------------
+# Domain wizard generation tests (Phase 8, Plan 02)
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.unit
+def test_wizard_read_sample_docs():
+    """read_sample_documents returns doc info for 3 fixture files."""
+    from core.domain_wizard import read_sample_documents
+
+    fixtures = Path(__file__).parent / "fixtures" / "wizard"
+    paths = sorted(fixtures.glob("sample_lease_*.txt"))
+    result = read_sample_documents(paths)
+    assert len(result) == 3
+    for doc in result:
+        assert "path" in doc
+        assert "text" in doc
+        assert "char_count" in doc
+        assert doc["char_count"] > 100
+
+
+@pytest.mark.unit
+def test_wizard_read_sample_docs_too_few():
+    """read_sample_documents raises ValueError with < 2 docs."""
+    from core.domain_wizard import read_sample_documents
+
+    fixtures = Path(__file__).parent / "fixtures" / "wizard"
+    paths = [next(fixtures.glob("sample_lease_1.txt"))]
+    with pytest.raises(ValueError, match="at least 2"):
+        read_sample_documents(paths)
+
+
+@pytest.mark.unit
+def test_wizard_generates_domain_yaml():
+    """generate_domain_yaml produces valid YAML with required keys."""
+    from core.domain_wizard import generate_domain_yaml
+
+    entity_types = {
+        "LANDLORD": {"description": "Property owner"},
+        "TENANT": {"description": "Lessee"},
+    }
+    relation_types = {"LEASES_TO": {"description": "Landlord leases property to tenant"}}
+    result = generate_domain_yaml(
+        "Real Estate Leases",
+        "Lease analysis domain",
+        "You are analyzing lease agreements.",
+        entity_types,
+        relation_types,
+    )
+    parsed = yaml.safe_load(result)
+    assert parsed["name"] == "Real Estate Leases"
+    assert "LANDLORD" in parsed["entity_types"]
+    assert "LEASES_TO" in parsed["relation_types"]
+    assert parsed["version"] == "1.0.0"
+
+
+@pytest.mark.unit
+def test_wizard_generates_skill_md():
+    """generate_skill_md produces markdown with required sections."""
+    from core.domain_wizard import generate_skill_md
+
+    entity_types = {"LANDLORD": {"description": "Property owner"}}
+    relation_types = {"LEASES_TO": {"description": "Leases property"}}
+    result = generate_skill_md(
+        "Real Estate Leases",
+        "Analyzing lease agreements.",
+        entity_types,
+        relation_types,
+        "Extract all parties and obligations.",
+    )
+    assert "## Entity Types" in result
+    assert "## Relation Types" in result
+    assert "LANDLORD" in result
+    assert "LEASES_TO" in result
+
+
+@pytest.mark.unit
+def test_wizard_generates_epistemic_py():
+    """generate_epistemic_py produces valid Python with correct function name."""
+    from core.domain_wizard import generate_epistemic_py
+
+    import ast
+
+    code = generate_epistemic_py(
+        "real_estate",
+        {"LANDLORD": {"description": "Owner"}, "TENANT": {"description": "Lessee"}},
+        [("exclusive", "non-exclusive")],
+        {"coverage": ["LANDLORD"]},
+        {"high": 0.9, "medium": 0.7, "low": 0.5},
+    )
+    ast.parse(code)  # Must not raise
+    assert "def analyze_real_estate_epistemic(" in code
+    assert "metadata" in code
+    assert "summary" in code
+
+
+@pytest.mark.unit
+def test_wizard_validates_epistemic_good():
+    """validate_generated_epistemic returns valid=True for correct code."""
+    from core.domain_wizard import generate_epistemic_py, validate_generated_epistemic
+
+    code = generate_epistemic_py(
+        "test_domain",
+        {"ENTITY_A": {"description": "A"}},
+        [],
+        {},
+        {"high": 0.9},
+    )
+    result = validate_generated_epistemic(code, "test_domain")
+    assert result["valid"] is True, f"Validation failed: {result.get('error')}"
+
+
+@pytest.mark.unit
+def test_wizard_validates_epistemic_bad_syntax():
+    """validate_generated_epistemic catches syntax errors."""
+    from core.domain_wizard import validate_generated_epistemic
+
+    bad_code = "def broken(:\n    pass"
+    result = validate_generated_epistemic(bad_code, "broken")
+    assert result["valid"] is False
+    assert "SyntaxError" in result["error"]
+
+
+@pytest.mark.unit
+def test_wizard_generates_reference_docs():
+    """generate_reference_docs produces markdown with entity/relation headers."""
+    from core.domain_wizard import generate_reference_docs
+
+    entity_types = {
+        "LANDLORD": {"description": "Property owner"},
+        "TENANT": {"description": "Lessee"},
+    }
+    relation_types = {"LEASES_TO": {"description": "Leases property"}}
+    entity_md, relation_md = generate_reference_docs(entity_types, relation_types)
+    assert "## LANDLORD" in entity_md
+    assert "## TENANT" in entity_md
+    assert "## LEASES_TO" in relation_md
+
+
+@pytest.mark.unit
+def test_wizard_check_domain_exists():
+    """check_domain_exists detects existing domains and aliases."""
+    from core.domain_wizard import check_domain_exists
+
+    assert check_domain_exists("contracts") is True
+    assert check_domain_exists("contract") is True  # alias
+    assert check_domain_exists("nonexistent-domain-xyz") is False
+
+
+@pytest.mark.unit
+def test_wizard_schema_discovery_prompt():
+    """build_schema_discovery_prompt includes domain description in prompt."""
+    from core.domain_wizard import build_schema_discovery_prompt
+
+    prompt = build_schema_discovery_prompt(
+        "Sample lease text here...", "Real estate lease agreements"
+    )
+    assert "Real estate lease agreements" in prompt
+    assert "entity" in prompt.lower()
+    assert "relation" in prompt.lower()
