@@ -17,9 +17,12 @@ PROJECT_ROOT = Path(__file__).parent.parent
 VALIDATION_SCRIPTS = PROJECT_ROOT / "domains" / "drug-discovery" / "validation"
 CORE = PROJECT_ROOT / "core"
 DRUG_DISCOVERY_DIR = PROJECT_ROOT / "domains" / "drug-discovery"
+CONTRACTS_DIR = PROJECT_ROOT / "domains" / "contracts"
 DOMAIN_YAML = DRUG_DISCOVERY_DIR / "domain.yaml"
 sys.path.insert(0, str(VALIDATION_SCRIPTS))
 sys.path.insert(0, str(CORE))
+sys.path.insert(0, str(DRUG_DISCOVERY_DIR))
+sys.path.insert(0, str(CONTRACTS_DIR))
 
 # ---------------------------------------------------------------------------
 # Availability flags
@@ -871,7 +874,7 @@ def test_ut039_biomedical_epistemic_backward_compat(tmp_path):
 # ========================================================================
 def test_ut040_cross_contract_entities():
     """Entities appearing in multiple contracts are identified (XREF-01)."""
-    from epistemic_contract import find_cross_contract_entities
+    from epistemic import find_cross_contract_entities
     nodes = [
         {"id": "party:aramark", "name": "Aramark", "entity_type": "PARTY",
          "source_documents": ["aramark_catering", "pcc_vendor_policy"]},
@@ -978,7 +981,7 @@ def test_ut045_domain_dispatch(tmp_path):
 # ========================================================================
 def test_ut041_conflict_detection():
     """Four conflict types detected from graph data (XREF-02)."""
-    from epistemic_contract import detect_conflicts
+    from epistemic import detect_conflicts
     nodes = [
         {"id": "clause:aramark_exclusive", "name": "Aramark Exclusivity", "entity_type": "CLAUSE",
          "attributes": {"clause_type": "exclusivity"}, "source_document": "aramark_catering"},
@@ -1028,7 +1031,7 @@ def test_ut041_conflict_detection():
 # ========================================================================
 def test_ut043_coverage_gaps():
     """Coverage gaps identified between reference items and contract graph (XREF-03)."""
-    from epistemic_contract import find_coverage_gaps
+    from epistemic import find_coverage_gaps
     ref_nodes = [
         {"id": "ref:security_plan", "name": "Security staffing plan for 5000 attendees",
          "entity_type": "PLANNING_ITEM", "source": "reference",
@@ -1057,7 +1060,7 @@ def test_ut043_coverage_gaps():
 # ========================================================================
 def test_ut044_risk_scoring():
     """Risks scored as CRITICAL, WARNING, or INFO with suggested actions (XREF-04)."""
-    from epistemic_contract import score_risks
+    from epistemic import score_risks
     conflicts = [
         {"id": "conflict:exclusive_use:001", "type": "exclusive_use", "severity": "CRITICAL",
          "description": "Exclusive-use conflict", "entities_involved": ["a", "b"],
@@ -1084,7 +1087,7 @@ def test_ut044_risk_scoring():
 # ========================================================================
 def test_ut046_claims_layer_schema(tmp_path):
     """Contract claims_layer.json has correct Super Domain structure."""
-    from epistemic_contract import analyze_contract_epistemic
+    from epistemic import analyze_contract_epistemic
     # Create minimal contract graph_data.json
     graph_data = {
         "metadata": {"domain": "contract"},
