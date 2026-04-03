@@ -22,6 +22,7 @@ Reference:
 """
 
 import importlib.util
+import inspect
 import json
 import re
 import sys
@@ -38,16 +39,28 @@ def _load_domain_epistemic(domain_name: str):
     """Load the epistemic analysis function for a domain.
 
     Domain epistemic modules live at domains/<name>/epistemic.py.
+    Uses domain_resolver aliases for known domains, falls back to
+    using domain_name directly as directory name for wizard-generated domains.
     Returns the loaded module or None if not found.
     """
     domains_dir = Path(__file__).parent.parent / "domains"
-    # Map domain names to directory names
-    dir_map = {"drug-discovery": "drug-discovery", "contract": "contracts", "biomedical": "drug-discovery"}
-    dir_name = dir_map.get(domain_name, domain_name)
-    module_path = domains_dir / dir_name / "epistemic.py"
+
+    # Try domain_resolver aliases first (handles "contract" -> "contracts", etc.)
+    from core.domain_resolver import DOMAIN_ALIASES
+
+    resolved_name = DOMAIN_ALIASES.get(domain_name, domain_name)
+    module_path = domains_dir / resolved_name / "epistemic.py"
+
+    if not module_path.exists():
+        # Fall back to using domain name directly as directory
+        module_path = domains_dir / domain_name / "epistemic.py"
+
     if not module_path.exists():
         return None
-    spec = importlib.util.spec_from_file_location(f"domains.{dir_name}.epistemic", module_path)
+
+    spec = importlib.util.spec_from_file_location(
+        f"domains.{module_path.parent.name}.epistemic", module_path
+    )
     if spec is None or spec.loader is None:
         return None
     mod = importlib.util.module_from_spec(spec)
@@ -398,19 +411,23 @@ def analyze_epistemic(
     effective_domain = domain_name or "drug-discovery"
     domain_mod = _load_domain_epistemic(effective_domain)
 
-    if effective_domain == "contract":
-        if domain_mod is None:
-            return {
-                "error": "Contract epistemic module not found at domains/contracts/epistemic.py.",
-                "summary": {"status": "unavailable"},
-            }
-        claims_layer = domain_mod.analyze_contract_epistemic(
-            output_dir, graph_data, master_doc_path=master_doc_path
-        )
-    elif domain_mod is not None and hasattr(domain_mod, "analyze_biomedical_epistemic"):
-        claims_layer = domain_mod.analyze_biomedical_epistemic(output_dir, graph_data)
+    # Convention-based dispatch: look for analyze_<slug>_epistemic()
+    slug = effective_domain.replace("-", "_")
+    func_name = f"analyze_{slug}_epistemic"
+
+    if domain_mod is not None and hasattr(domain_mod, func_name):
+        func = getattr(domain_mod, func_name)
+        # Check if function accepts master_doc_path
+        sig = inspect.signature(func)
+        if "master_doc_path" in sig.parameters and master_doc_path is not None:
+            claims_layer = func(output_dir, graph_data, master_doc_path=master_doc_path)
+        else:
+            claims_layer = func(output_dir, graph_data)
+    elif domain_mod is not None and hasattr(domain_mod, "analyze_epistemic"):
+        # Generic fallback: domain provides analyze_epistemic() without slug
+        claims_layer = domain_mod.analyze_epistemic(output_dir, graph_data)
     else:
-        # Fallback: use built-in biomedical epistemic analysis
+        # Final fallback: built-in biomedical analysis
         claims_layer = _builtin_biomedical_epistemic(output_dir, graph_data)
 
     # Write claims layer
