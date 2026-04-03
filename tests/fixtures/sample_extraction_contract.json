@@ -1,0 +1,60 @@
+{
+  "document_id": "test_vendor_agreement.pdf",
+  "domain_name": "contracts",
+  "entities": [
+    {
+      "name": "Pennsylvania Convention Center Authority",
+      "entity_type": "PARTY",
+      "confidence": 0.95,
+      "context": "Pennsylvania Convention Center Authority is the Licensor under this agreement."
+    },
+    {
+      "name": "Aramark Sports & Entertainment",
+      "entity_type": "PARTY",
+      "confidence": 0.95,
+      "context": "Aramark Sports & Entertainment is the exclusive caterer for the venue."
+    },
+    {
+      "name": "Provide all food and beverage services",
+      "entity_type": "OBLIGATION",
+      "confidence": 0.92,
+      "context": "Caterer shall provide all food and beverage services for the event period."
+    },
+    {
+      "name": "$45 per person lunch service",
+      "entity_type": "COST",
+      "confidence": 0.95,
+      "context": "Lunch service priced at $45 per person including setup and cleanup."
+    }
+  ],
+  "relations": [
+    {
+      "source_entity": "Aramark Sports & Entertainment",
+      "target_entity": "Provide all food and beverage services",
+      "relation_type": "OBLIGATED_TO",
+      "confidence": 0.92,
+      "evidence": "Aramark shall provide catering services for all scheduled meals."
+    },
+    {
+      "source_entity": "$45 per person lunch service",
+      "target_entity": "Provide all food and beverage services",
+      "relation_type": "COSTS",
+      "confidence": 0.95,
+      "evidence": "Lunch service priced at $45 per person."
+    },
+    {
+      "source_entity": "Aramark Sports & Entertainment",
+      "target_entity": "$45 per person lunch service",
+      "relation_type": "PROVIDES_SERVICE",
+      "confidence": 0.91,
+      "evidence": "Aramark provides full-service catering at contracted rates."
+    }
+  ],
+  "extracted_at": "2026-04-01T12:00:00+00:00",
+  "chunks_processed": 1,
+  "document_path": "",
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "chunk_size": 10000,
+  "error": null
+}

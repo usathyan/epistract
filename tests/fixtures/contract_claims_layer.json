@@ -1,0 +1,39 @@
+{
+  "claims": [
+    {
+      "claim_id": "claim_001",
+      "source_entity": "party:aramark_sports_entertainment",
+      "target_entity": "obligation:provide_catering_all_meals",
+      "relation_type": "OBLIGATED_TO",
+      "evidence": "Aramark shall provide catering services for all scheduled meals during the event period",
+      "confidence": 0.92,
+      "epistemic_status": "asserted"
+    },
+    {
+      "claim_id": "claim_002",
+      "source_entity": "obligation:provide_catering_all_meals",
+      "target_entity": "deadline:final_headcount_aug_1_2026",
+      "relation_type": "HAS_DEADLINE",
+      "evidence": "Final headcount must be submitted by August 1, subject to force majeure provisions",
+      "confidence": 0.85,
+      "epistemic_status": "conditional"
+    },
+    {
+      "claim_id": "claim_003",
+      "source_entity": "party:pennsylvania_convention_center_authority",
+      "target_entity": "cost:45_per_person_lunch",
+      "relation_type": "COSTS",
+      "evidence": "Licensee shall pay the contracted rate of $45 per person for lunch service",
+      "confidence": 0.95,
+      "epistemic_status": "obligatory"
+    }
+  ],
+  "summary": {
+    "total_claims": 3,
+    "by_status": {
+      "asserted": 1,
+      "conditional": 1,
+      "obligatory": 1
+    }
+  }
+}

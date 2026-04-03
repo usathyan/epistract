@@ -10,7 +10,7 @@ Arguments:
 - `output_dir` -- directory with graph_data.json (default: ./epistract-output)
 
 ```bash
-python3 ${CLAUDE_PLUGIN_ROOT}/scripts/run_sift.py export <output_dir> <format>
+python3 ${CLAUDE_PLUGIN_ROOT}/core/run_sift.py export <output_dir> <format>
 ```
 
 Report the export path and format-specific usage tips:

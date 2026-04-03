@@ -10,6 +10,7 @@ You are running the epistract drug discovery knowledge graph pipeline.
 ## Arguments
 - `path` (required): Directory or file path containing documents
 - `--output` (optional): Output directory (default: ./epistract-output)
+- `--domain` (optional): Domain name for extraction (default: drug-discovery). Use 'contract' for event contract analysis.
 - `--validate` (optional): Enable molecular validation (default: true if rdkit installed)
 - `--view` (optional): Open viewer after build (default: true)
 
@@ -33,7 +34,7 @@ Split each document's text into ~10,000 character chunks with overlap. Use your 
 
 ### Step 3: Extract Entities and Relations
 
-For EACH text chunk, use your drug-discovery-extraction skill knowledge to extract entities and relations. Output valid JSON:
+For EACH text chunk, extract entities and relations using the domain's SKILL.md for guidance. When spawning extraction agents, provide the domain name so they load the correct SKILL.md. Output valid JSON:
 
 ```json
 {
@@ -48,7 +49,7 @@ For EACH text chunk, use your drug-discovery-extraction skill knowledge to extra
 
 Write each document's combined extraction to disk:
 ```bash
-python3 ${CLAUDE_PLUGIN_ROOT}/scripts/build_extraction.py <doc_id> <output_dir> --json '<combined_json>'
+python3 ${CLAUDE_PLUGIN_ROOT}/core/build_extraction.py <doc_id> <output_dir> --json '<combined_json>'
 ```
 
 **For 4+ documents:** Use the Agent tool to dispatch parallel extraction agents (one per document) for speed.
@@ -56,19 +57,21 @@ python3 ${CLAUDE_PLUGIN_ROOT}/scripts/build_extraction.py <doc_id> <output_dir> 
 ### Step 4: Validate Molecular Identifiers
 
 ```bash
-python3 ${CLAUDE_PLUGIN_ROOT}/scripts/validate_molecules.py <output_dir>
+python3 ${CLAUDE_PLUGIN_ROOT}/domains/drug-discovery/validate_molecules.py <output_dir>
 ```
 
 ### Step 5: Build Knowledge Graph
 
+If `--domain` was provided to this command, pass it through. Otherwise omit (defaults to drug-discovery).
+
 ```bash
-python3 ${CLAUDE_PLUGIN_ROOT}/scripts/run_sift.py build <output_dir> --domain ${CLAUDE_PLUGIN_ROOT}/skills/drug-discovery-extraction/domain.yaml
+python3 ${CLAUDE_PLUGIN_ROOT}/core/run_sift.py build <output_dir> --domain ${CLAUDE_PLUGIN_ROOT}/domains/drug-discovery/domain.yaml
 ```
 
 ### Step 6: Open Visualization
 
 ```bash
-python3 ${CLAUDE_PLUGIN_ROOT}/scripts/run_sift.py view <output_dir>
+python3 ${CLAUDE_PLUGIN_ROOT}/core/run_sift.py view <output_dir>
 ```
 
 ### Step 7: Report Summary

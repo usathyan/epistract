@@ -1,0 +1,7 @@
+[tool.pytest.ini_options]
+markers = [
+    "unit: Fast tests with no external dependencies",
+    "integration: Tests requiring sift-kg and optional libs",
+    "e2e: End-to-end pipeline tests",
+]
+testpaths = ["tests"]

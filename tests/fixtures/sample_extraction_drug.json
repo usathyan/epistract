@@ -1,0 +1,60 @@
+{
+  "document_id": "test_drug_paper.pdf",
+  "domain_name": "drug-discovery",
+  "entities": [
+    {
+      "name": "sotorasib",
+      "entity_type": "COMPOUND",
+      "confidence": 0.97,
+      "context": "Sotorasib is a first-in-class KRAS G12C covalent inhibitor approved for NSCLC."
+    },
+    {
+      "name": "KRAS",
+      "entity_type": "GENE",
+      "confidence": 0.95,
+      "context": "KRAS G12C is a mutant oncogene found in approximately 13% of NSCLC patients."
+    },
+    {
+      "name": "non-small cell lung cancer",
+      "entity_type": "DISEASE",
+      "confidence": 0.93,
+      "context": "Non-small cell lung cancer accounts for 85% of lung cancer cases."
+    },
+    {
+      "name": "covalent inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "confidence": 0.85,
+      "context": "Sotorasib acts through covalent inhibition of the KRAS G12C mutant protein."
+    }
+  ],
+  "relations": [
+    {
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS",
+      "relation_type": "TARGETS",
+      "confidence": 0.95,
+      "evidence": "Sotorasib selectively targets KRAS G12C mutant protein."
+    },
+    {
+      "source_entity": "sotorasib",
+      "target_entity": "non-small cell lung cancer",
+      "relation_type": "INDICATED_FOR",
+      "confidence": 0.92,
+      "evidence": "Sotorasib is indicated for the treatment of NSCLC with KRAS G12C mutation."
+    },
+    {
+      "source_entity": "sotorasib",
+      "target_entity": "covalent inhibition",
+      "relation_type": "HAS_MECHANISM",
+      "confidence": 0.90,
+      "evidence": "Sotorasib exerts its effect through irreversible covalent binding to KRAS G12C."
+    }
+  ],
+  "extracted_at": "2026-04-01T12:00:00+00:00",
+  "chunks_processed": 1,
+  "document_path": "",
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "chunk_size": 10000,
+  "error": null
+}

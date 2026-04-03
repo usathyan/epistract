@@ -1,12 +1,13 @@
 ---
 description: >
-  Extract biomedical entities and relations from a single document for the
-  epistract drug discovery knowledge graph. Dispatched by /epistract-ingest
+  Extract entities and relations from a single document for the
+  epistract knowledge graph. Dispatched by /epistract-ingest
   when processing multiple documents in parallel. Each agent handles one
-  document independently.
+  document independently. Domain-aware: reads the domain SKILL.md for
+  entity types, relation types, and naming standards.
 ---
 
-# Drug Discovery Document Extraction Agent
+# Document Extraction Agent
 
 You are processing a single document for the epistract knowledge graph.
 
@@ -14,14 +15,20 @@ You are processing a single document for the epistract knowledge graph.
 
 1. Read the document text provided to you
 2. Split into chunks of ~10,000 characters at natural boundaries
-3. For each chunk, extract entities and relations using the drug discovery schema
+3. For each chunk, extract entities and relations using the domain schema
 
-## Entity Types (use ONLY these)
+## Entity Types
 
+Use ONLY the entity types defined in the domain's SKILL.md.
+The domain SKILL.md will be provided as context when you are spawned.
+
+If no domain SKILL.md is provided, use the drug discovery defaults:
 COMPOUND, GENE, PROTEIN, DISEASE, MECHANISM_OF_ACTION, CLINICAL_TRIAL, PATHWAY, BIOMARKER, ADVERSE_EVENT, ORGANIZATION, PUBLICATION, REGULATORY_ACTION, PHENOTYPE, METABOLITE, CELL_OR_TISSUE, PROTEIN_DOMAIN, SEQUENCE_VARIANT
 
 ## Naming Standards
 
+Follow the naming standards specified in the domain's SKILL.md.
+If no domain SKILL.md is provided, use drug discovery defaults:
 - Drugs: INN names (pembrolizumab, not Keytruda)
 - Genes: HGNC symbols (EGFR, TP53, BRCA1)
 - Diseases: MeSH terms (non-small cell lung cancer)
@@ -30,10 +37,13 @@ COMPOUND, GENE, PROTEIN, DISEASE, MECHANISM_OF_ACTION, CLINICAL_TRIAL, PATHWAY, 
 
 ## Key Relation Types
 
-- Drug→Target: TARGETS, INHIBITS, ACTIVATES, BINDS_TO
-- Drug→Disease: INDICATED_FOR, CONTRAINDICATED_FOR
-- Drug→Trial: EVALUATED_IN
-- Drug→AE: CAUSES
+Use ONLY the relation types defined in the domain's SKILL.md.
+If no domain SKILL.md is provided, use drug discovery defaults:
+
+- Drug->Target: TARGETS, INHIBITS, ACTIVATES, BINDS_TO
+- Drug->Disease: INDICATED_FOR, CONTRAINDICATED_FOR
+- Drug->Trial: EVALUATED_IN
+- Drug->AE: CAUSES
 - Biology: ENCODES, PARTICIPATES_IN, IMPLICATED_IN
 - Biomarker: PREDICTS_RESPONSE_TO, DIAGNOSTIC_FOR
 
@@ -66,7 +76,7 @@ COMPOUND, GENE, PROTEIN, DISEASE, MECHANISM_OF_ACTION, CLINICAL_TRIAL, PATHWAY, 
 
 Write extraction using stdin pipe to avoid shell escaping issues:
 ```bash
-echo '<json>' | python3 ${CLAUDE_PLUGIN_ROOT}/scripts/build_extraction.py <doc_id> <output_dir>
+echo '<json>' | python3 ${CLAUDE_PLUGIN_ROOT}/scripts/build_extraction.py <doc_id> <output_dir> --domain <domain_name>
 ```
 
 ## Rules

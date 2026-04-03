@@ -11,7 +11,7 @@ Arguments:
 - `output_dir` -- directory with graph_data.json (default: ./epistract-output)
 
 ```bash
-python3 ${CLAUDE_PLUGIN_ROOT}/scripts/run_sift.py search <output_dir> <query> [--type TYPE]
+python3 ${CLAUDE_PLUGIN_ROOT}/core/run_sift.py search <output_dir> <query> [--type TYPE]
 ```
 
 Present results as a formatted table with entity name, type, and confidence.

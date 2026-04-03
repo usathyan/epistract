@@ -1,0 +1,52 @@
+name: "Contract Analysis"
+version: "1.0.0"
+description: |
+  Domain for extracting structured knowledge graphs from event contracts,
+  vendor agreements, and service-level agreements. Covers obligations,
+  deadlines, costs, parties, and cross-contract dependencies.
+  Optimized for PDF contracts, spreadsheets, and email correspondence.
+
+system_context: |
+  You are analyzing event contracts and vendor agreements to build a
+  knowledge graph of parties, obligations, deadlines, costs, and
+  cross-contract dependencies.
+
+entity_types:
+  PARTY:
+    description: "Organization or individual that is a signatory or referenced entity in a contract"
+  CONTRACT:
+    description: "A formal agreement between parties"
+  OBLIGATION:
+    description: "A required action, delivery, or compliance requirement"
+  DEADLINE:
+    description: "A date or time constraint for an obligation or deliverable"
+  COST:
+    description: "A monetary amount, fee, or payment term"
+  VENUE:
+    description: "A physical location referenced in a contract"
+  SERVICE:
+    description: "A service being provided under contract"
+  INSURANCE:
+    description: "Insurance requirement or coverage specification"
+  PENALTY:
+    description: "A consequence for breach or non-compliance"
+
+relation_types:
+  OBLIGATED_TO:
+    description: "Party is obligated to fulfill an obligation"
+  HAS_DEADLINE:
+    description: "Obligation or deliverable has a deadline"
+  COSTS:
+    description: "Service or obligation has an associated cost"
+  SIGNED_BY:
+    description: "Contract is signed by a party"
+  PROVIDES_SERVICE:
+    description: "Party provides a service"
+  HELD_AT:
+    description: "Event or service is at a venue"
+  REQUIRES_INSURANCE:
+    description: "Contract requires insurance coverage"
+  CROSS_REFERENCES:
+    description: "One contract references another"
+  PENALIZES:
+    description: "Breach triggers a penalty"

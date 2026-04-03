@@ -7,7 +7,15 @@ __pycache__/
 # Allow test corpus outputs (committed for reproducibility)
 !tests/corpora/*/output/
 .DS_Store
-docs/analysis/EricNotes.md
 lib/
 *.env
 *.mp4
+
+# V1 artifacts (removed in v2.0 Phase 6)
+paper/
+medium/
+poster/
+docs/analysis/
+docs/demo/
+docs/plans/
+DEVELOPER.md

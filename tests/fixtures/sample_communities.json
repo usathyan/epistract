@@ -1,0 +1,48 @@
+{
+  "communities": [
+    {
+      "id": 0,
+      "label": "Venue and Facilities",
+      "members": [
+        "party:pennsylvania_convention_center_authority",
+        "venue:pennsylvania_convention_center",
+        "venue:hall_a",
+        "room:ballroom_b",
+        "clause:force_majeure_provision",
+        "deadline:insurance_certificates_due_june_1_2026",
+        "obligation:security_staffing_for_load_in_days",
+        "cost:85_per_hour_security_guard"
+      ]
+    },
+    {
+      "id": 1,
+      "label": "Catering Services",
+      "members": [
+        "party:aramark_sports_and_entertainment",
+        "service:full_service_catering_500_guests",
+        "cost:45_per_person_lunch_service",
+        "obligation:provide_catering_for_all_event_meals",
+        "clause:exclusive_catering_rights_section_4_2",
+        "deadline:final_headcount_due_august_1_2026",
+        "committee:food_committee",
+        "person:jane_smith_chair_food_committee",
+        "event:vip_reception_thursday_evening"
+      ]
+    },
+    {
+      "id": 2,
+      "label": "AV Production and Programming",
+      "members": [
+        "party:psav_presentation_services",
+        "service:audio_visual_production_services",
+        "cost:12000_av_package_hall_a",
+        "obligation:exclusive_av_services_in_all_halls",
+        "deadline:av_equipment_list_due_july_15_2026",
+        "committee:programs_committee",
+        "person:bob_johnson_chair_programs_committee",
+        "event:main_stage_show_friday_night",
+        "stage:stage_a_main_hall"
+      ]
+    }
+  ]
+}

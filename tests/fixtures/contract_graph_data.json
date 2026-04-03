@@ -1,0 +1,85 @@
+{
+  "nodes": [
+    {
+      "id": "party:pennsylvania_convention_center_authority",
+      "name": "Pennsylvania Convention Center Authority",
+      "entity_type": "PARTY",
+      "confidence": 0.95,
+      "source_documents": ["pcc_license_agreement.pdf"],
+      "community": 0,
+      "attributes": {"role": "Licensor", "legal_name": "Pennsylvania Convention Center Authority"}
+    },
+    {
+      "id": "party:aramark_sports_entertainment",
+      "name": "Aramark Sports & Entertainment Services",
+      "entity_type": "PARTY",
+      "confidence": 0.95,
+      "source_documents": ["aramark_catering_agreement.pdf"],
+      "community": 1,
+      "attributes": {"role": "Exclusive Caterer"}
+    },
+    {
+      "id": "obligation:provide_catering_all_meals",
+      "name": "Provide catering for all event meals",
+      "entity_type": "OBLIGATION",
+      "confidence": 0.92,
+      "source_documents": ["aramark_catering_agreement.pdf"],
+      "community": 1,
+      "attributes": {"responsible_party": "Aramark", "priority": "mandatory"}
+    },
+    {
+      "id": "deadline:final_headcount_aug_1_2026",
+      "name": "Final headcount due August 1, 2026",
+      "entity_type": "DEADLINE",
+      "confidence": 0.95,
+      "source_documents": ["aramark_catering_agreement.pdf"],
+      "community": 1,
+      "attributes": {"date": "2026-08-01", "what_is_due": "Final headcount submission"}
+    },
+    {
+      "id": "cost:45_per_person_lunch",
+      "name": "$45 per person lunch service",
+      "entity_type": "COST",
+      "confidence": 0.95,
+      "source_documents": ["aramark_catering_agreement.pdf"],
+      "community": 1,
+      "attributes": {"amount": "45.00", "currency": "USD", "unit": "per person"}
+    }
+  ],
+  "edges": [
+    {
+      "source": "party:aramark_sports_entertainment",
+      "target": "obligation:provide_catering_all_meals",
+      "relation_type": "OBLIGATED_TO",
+      "confidence": 0.92,
+      "evidence": "Aramark shall provide catering services for all scheduled meals"
+    },
+    {
+      "source": "obligation:provide_catering_all_meals",
+      "target": "deadline:final_headcount_aug_1_2026",
+      "relation_type": "HAS_DEADLINE",
+      "confidence": 0.90,
+      "evidence": "Final headcount must be submitted by August 1 for menu finalization"
+    },
+    {
+      "source": "cost:45_per_person_lunch",
+      "target": "obligation:provide_catering_all_meals",
+      "relation_type": "COSTS",
+      "confidence": 0.95,
+      "evidence": "Lunch service priced at $45 per person"
+    },
+    {
+      "source": "party:aramark_sports_entertainment",
+      "target": "cost:45_per_person_lunch",
+      "relation_type": "PROVIDES_SERVICE",
+      "confidence": 0.91,
+      "evidence": "Aramark provides full-service catering at contracted rates"
+    }
+  ],
+  "metadata": {
+    "domain_name": "contracts",
+    "document_count": 2,
+    "entity_count": 5,
+    "relation_count": 4
+  }
+}
