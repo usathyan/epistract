@@ -1,0 +1,52 @@
+name: "Contract Analysis"
+version: "1.0.0"
+description: |
+  Domain for extracting structured knowledge graphs from event contracts,
+  vendor agreements, and service-level agreements. Covers obligations,
+  deadlines, costs, parties, and cross-contract dependencies.
+  Optimized for PDF contracts, spreadsheets, and email correspondence.
+
+system_context: |
+  You are analyzing event contracts and vendor agreements to build a
+  knowledge graph of parties, obligations, deadlines, costs, and
+  cross-contract dependencies.
+
+entity_types:
+  - name: PARTY
+    description: "Organization or individual that is a signatory or referenced entity in a contract"
+  - name: CONTRACT
+    description: "A formal agreement between parties"
+  - name: OBLIGATION
+    description: "A required action, delivery, or compliance requirement"
+  - name: DEADLINE
+    description: "A date or time constraint for an obligation or deliverable"
+  - name: COST
+    description: "A monetary amount, fee, or payment term"
+  - name: VENUE
+    description: "A physical location referenced in a contract"
+  - name: SERVICE
+    description: "A service being provided under contract"
+  - name: INSURANCE
+    description: "Insurance requirement or coverage specification"
+  - name: PENALTY
+    description: "A consequence for breach or non-compliance"
+
+relation_types:
+  - name: OBLIGATED_TO
+    description: "Party is obligated to fulfill an obligation"
+  - name: HAS_DEADLINE
+    description: "Obligation or deliverable has a deadline"
+  - name: COSTS
+    description: "Service or obligation has an associated cost"
+  - name: SIGNED_BY
+    description: "Contract is signed by a party"
+  - name: PROVIDES_SERVICE
+    description: "Party provides a service"
+  - name: HELD_AT
+    description: "Event or service is at a venue"
+  - name: REQUIRES_INSURANCE
+    description: "Contract requires insurance coverage"
+  - name: CROSS_REFERENCES
+    description: "One contract references another"
+  - name: PENALIZES
+    description: "Breach triggers a penalty"

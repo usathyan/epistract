@@ -24,7 +24,8 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 # Import validation helpers via domain resolver
 # ---------------------------------------------------------------------------
-from domain_resolver import get_validation_scripts_dir  # noqa: E402
+VALIDATION_SCRIPTS = Path(__file__).parent / "validation"
+sys.path.insert(0, str(VALIDATION_SCRIPTS))
 
 # Domain-aware validation scripts (default: drug-discovery)
 _domain_name: str | None = None  # Set via --domain flag in __main__
