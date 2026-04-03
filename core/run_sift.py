@@ -37,14 +37,16 @@ def _import_sift(names: list[str]):
 def cmd_build(output_dir: str, domain_name: str | None = None):
     run_build, load_domain = _import_sift(["run_build", "load_domain"])
 
-    domain_path = resolve_domain(domain_name)
-    domain = load_domain(domain_path=domain_path)
+    domain = (
+        load_domain(domain_path=Path(domain_path))
+        if domain_path
+        else load_domain(domain_path=Path(__file__).parent.parent / "domains" / "drug-discovery" / "domain.yaml")
+    )
     kg = run_build(Path(output_dir), domain)
 
     # Auto-label communities with descriptive names
     try:
-        sys.path.insert(0, str(Path(__file__).parent))
-        from label_communities import label_communities
+        from core.label_communities import label_communities
         label_communities(Path(output_dir))
     except Exception as e:
         print(f"Warning: community labeling failed: {e}", file=sys.stderr)
