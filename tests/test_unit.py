@@ -309,3 +309,59 @@ def test_ut014_validation_orchestrator():
         data = json.loads(results_path.read_text())
         total_matches = data["stats"]["total_matches"]
         assert total_matches > 0, f"Expected identifiers_found > 0, got stats: {data['stats']}"
+
+
+# ---------------------------------------------------------------------------
+# Epistemic dispatcher generalization tests (Phase 8)
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.unit
+def test_epistemic_dispatcher_generic_contract():
+    """Verify dispatcher resolves 'contract' to analyze_contract_epistemic via convention."""
+    from core.label_epistemic import _load_domain_epistemic
+
+    mod = _load_domain_epistemic("contract")
+    assert mod is not None, "Failed to load contract epistemic module"
+    assert hasattr(mod, "analyze_contract_epistemic"), "Missing analyze_contract_epistemic function"
+
+
+@pytest.mark.unit
+def test_epistemic_dispatcher_generic_biomedical():
+    """Verify dispatcher resolves 'drug-discovery' to analyze_biomedical_epistemic via convention."""
+    from core.label_epistemic import _load_domain_epistemic
+
+    mod = _load_domain_epistemic("drug-discovery")
+    assert mod is not None, "Failed to load drug-discovery epistemic module"
+    assert hasattr(mod, "analyze_biomedical_epistemic"), "Missing analyze_biomedical_epistemic function"
+
+
+@pytest.mark.unit
+def test_epistemic_dispatcher_alias_resolution():
+    """Verify dispatcher handles aliases like 'biomedical' -> 'drug-discovery'."""
+    from core.label_epistemic import _load_domain_epistemic
+
+    mod = _load_domain_epistemic("biomedical")
+    assert mod is not None, "Failed to load biomedical alias"
+    assert hasattr(mod, "analyze_biomedical_epistemic"), "Alias didn't resolve to drug-discovery module"
+
+
+@pytest.mark.unit
+def test_epistemic_dispatcher_unknown_domain_returns_none():
+    """Verify dispatcher returns None for nonexistent domain (no crash)."""
+    from core.label_epistemic import _load_domain_epistemic
+
+    mod = _load_domain_epistemic("nonexistent-domain-xyz")
+    assert mod is None, "Should return None for unknown domain"
+
+
+@pytest.mark.unit
+def test_wizard_fixtures_exist():
+    """Verify wizard test fixtures are present."""
+    fixtures_dir = Path(__file__).parent / "fixtures" / "wizard"
+    assert fixtures_dir.is_dir(), f"Missing wizard fixtures directory: {fixtures_dir}"
+    samples = list(fixtures_dir.glob("sample_lease_*.txt"))
+    assert len(samples) >= 2, f"Need at least 2 sample docs, found {len(samples)}"
+    for sample in samples:
+        text = sample.read_text()
+        assert len(text) > 100, f"Sample {sample.name} too short ({len(text)} chars)"
