@@ -14,11 +14,11 @@ import pytest
 
 # Add project paths for imports
 PROJECT_ROOT = Path(__file__).parent.parent
-VALIDATION_SCRIPTS = PROJECT_ROOT / "skills" / "drug-discovery-extraction" / "validation-scripts"
-SCRIPTS = PROJECT_ROOT / "scripts"
-DOMAIN_YAML = PROJECT_ROOT / "skills" / "drug-discovery-extraction" / "domain.yaml"
+VALIDATION_SCRIPTS = PROJECT_ROOT / "domains" / "drug-discovery" / "validation"
+CORE = PROJECT_ROOT / "core"
+DOMAIN_YAML = PROJECT_ROOT / "domains" / "drug-discovery" / "domain.yaml"
 sys.path.insert(0, str(VALIDATION_SCRIPTS))
-sys.path.insert(0, str(SCRIPTS))
+sys.path.insert(0, str(CORE))
 
 # ---------------------------------------------------------------------------
 # Availability flags
