@@ -163,7 +163,7 @@ Plans:
 Plans:
 - [x] 08-01-PLAN.md — Generalize epistemic dispatcher + wizard test fixtures (WIZD-04)
 - [x] 08-02-PLAN.md — Core domain wizard module: analysis, generation, validation (WIZD-01, WIZD-02, WIZD-03)
-- [ ] 08-03-PLAN.md — /epistract:domain command + integration tests (WIZD-01, WIZD-02, WIZD-03, WIZD-04)
+- [x] 08-03-PLAN.md — /epistract:domain command + integration tests (WIZD-01, WIZD-02, WIZD-03, WIZD-04)
 
 ### Phase 9: Consumer Decoupling and Standalone Install
 **Goal**: Framework installs cleanly as a standalone tool, consumers are decoupled examples, and pre-built domains are available out of the box
