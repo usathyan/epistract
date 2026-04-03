@@ -147,7 +147,7 @@ Plans:
 Plans:
 - [x] 07-01-PLAN.md — Test infrastructure, fixtures, and unit tier (conftest.py, pyproject.toml, markers, schema validation)
 - [ ] 07-02-PLAN.md — Integration tests for command entry points, KG provenance conversion, cross-domain verification
-- [ ] 07-03-PLAN.md — E2E pipeline tests and Makefile tiered test targets
+- [x] 07-03-PLAN.md — E2E pipeline tests and Makefile tiered test targets
 
 ### Phase 8: Domain Creation Wizard
 **Goal**: A domain developer can point the wizard at sample documents and get a complete, working domain package generated automatically

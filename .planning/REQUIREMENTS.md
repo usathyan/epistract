@@ -83,7 +83,7 @@ See v1 traceability below.
 - [ ] **TEST-02**: Command coverage — every `/epistract:*` command (setup, ingest, build, query, export, view, validate, epistemic, ask, dashboard) has an integration test verifying it runs without error
 - [x] **TEST-03**: Skill coverage — every skill (drug-discovery-extraction, contract-extraction, domain wizard) has tests verifying correct output format
 - [x] **TEST-04**: Agent coverage — extractor and validator agents produce valid DocumentExtraction JSON against test fixtures
-- [ ] **TEST-05**: End-to-end pipeline test — from fresh install through domain selection, document ingestion, extraction, graph build, epistemic analysis, and export — single test proves the full lifecycle
+- [x] **TEST-05**: End-to-end pipeline test — from fresh install through domain selection, document ingestion, extraction, graph build, epistemic analysis, and export — single test proves the full lifecycle
 - [ ] **TEST-06**: KG provenance regression — the 32 existing provenance tests (chat→graph→source tracing) pass against the reorganized codebase
 - [ ] **TEST-07**: Cross-domain verification — both drug-discovery and contract domains produce valid graphs through the same pipeline entry point
 
