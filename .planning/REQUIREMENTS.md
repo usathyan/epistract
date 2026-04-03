@@ -5,7 +5,8 @@
 
 ## v1 Requirements (Complete)
 
-All 24 requirements delivered. See v1 traceability below.
+All 24 requirements delivered across Phases 1-5. Shipped 2026-04-02.
+See v1 traceability below.
 
 ### Domain Configuration
 - [x] **DCFG-01**: Pluggable domain configurations via YAML schema
@@ -14,7 +15,16 @@ All 24 requirements delivered. See v1 traceability below.
 - [x] **DCFG-04**: Biomedical pipeline backward compatibility
 
 ### Document Ingestion
-- [x] **INGS-01** through **INGS-10**: PDF/XLS/EML ingestion, triage, OCR, metadata capture
+- [x] **INGS-01**: PDF document ingestion (60 files)
+- [x] **INGS-02**: XLS document ingestion
+- [x] **INGS-03**: EML document ingestion
+- [x] **INGS-04**: Document triage and prioritization
+- [x] **INGS-05**: OCR for scanned documents
+- [x] **INGS-06**: Metadata capture (dates, parties, amounts)
+- [x] **INGS-07**: Large document handling (12-31 MB PDFs)
+- [x] **INGS-08**: Document deduplication
+- [x] **INGS-09**: Chunk-based extraction for large documents
+- [x] **INGS-10**: Ingestion progress reporting
 
 ### Entity Extraction
 - [x] **EXTR-01**: Contract entity extraction using domain prompts
@@ -38,9 +48,9 @@ All 24 requirements delivered. See v1 traceability below.
 
 ### Repo Architecture
 
-- [ ] **ARCH-01**: Core pipeline in `core/`, domains in `domains/`, consumers in `examples/`
+- [x] **ARCH-01**: Core pipeline in `core/`, domains in `domains/`, consumers in `examples/`
 - [ ] **ARCH-02**: Core pipeline imports without domain-specific dependencies
-- [ ] **ARCH-03**: New domain = new files in `domains/` only, no core changes
+- [x] **ARCH-03**: New domain = new files in `domains/` only, no core changes
 
 ### Domain Wizard
 
@@ -79,8 +89,8 @@ All 24 requirements delivered. See v1 traceability below.
 
 ### Cleanup
 
-- [ ] **CLEAN-01**: Stale V1 artifacts removed
-- [ ] **CLEAN-02**: V1 requirements marked complete
+- [x] **CLEAN-01**: Stale V1 artifacts removed
+- [x] **CLEAN-02**: V1 requirements marked complete
 
 ## Deferred (V3)
 
@@ -118,8 +128,8 @@ All 24 requirements delivered. See v1 traceability below.
 | ARCH-01 | Phase 6 | — | Pending |
 | ARCH-02 | Phase 6 | — | Pending |
 | ARCH-03 | Phase 6 | — | Pending |
-| CLEAN-01 | Phase 6 | — | Pending |
-| CLEAN-02 | Phase 6 | — | Pending |
+| CLEAN-01 | Phase 6 | 06-03 | Complete |
+| CLEAN-02 | Phase 6 | 06-03 | Complete |
 | TEST-01 | Phase 7 | — | Pending |
 | TEST-02 | Phase 7 | — | Pending |
 | TEST-03 | Phase 7 | — | Pending |

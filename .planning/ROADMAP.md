@@ -127,9 +127,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 06-01-PLAN.md — Create core/, domains/, examples/ structure and move all files (ARCH-01, ARCH-03)
+- [x] 06-01-PLAN.md — Create core/, domains/, examples/ structure and move all files (ARCH-01, ARCH-03)
 - [ ] 06-02-PLAN.md — Update test imports and verify core import independence (ARCH-02)
-- [ ] 06-03-PLAN.md — Remove stale V1 artifacts and mark requirements complete (CLEAN-01, CLEAN-02)
+- [x] 06-03-PLAN.md — Remove stale V1 artifacts and mark requirements complete (CLEAN-01, CLEAN-02)
 
 ### Phase 7: Testing Framework
 **Goal**: Comprehensive test suite locks down V1 regression coverage and validates every V2 capability from install through extraction -- production-ready quality gate
