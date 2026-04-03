@@ -124,10 +124,12 @@ Plans:
   3. Adding a new domain requires only creating files under `domains/<name>/` -- zero modifications to anything in `core/`
   4. Stale V1 planning artifacts, scratch files, and orphaned outputs are removed from the repo
   5. All V1 requirements in REQUIREMENTS.md are marked complete with phase references
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] TBD
+- [ ] 06-01-PLAN.md — Create core/, domains/, examples/ structure and move all files (ARCH-01, ARCH-03)
+- [ ] 06-02-PLAN.md — Update test imports and verify core import independence (ARCH-02)
+- [ ] 06-03-PLAN.md — Remove stale V1 artifacts and mark requirements complete (CLEAN-01, CLEAN-02)
 
 ### Phase 7: Testing Framework
 **Goal**: Comprehensive test suite locks down V1 regression coverage and validates every V2 capability from install through extraction -- production-ready quality gate
@@ -201,7 +203,7 @@ Phases execute in numeric order: 6 -> 7 -> 8 -> 9 -> 10
 | 3. Entity Extraction and Graph Construction | v1.0 | 2/2 | Complete | 2026-03-29 |
 | 4. Cross-Reference Analysis | v1.0 | 3/3 | Complete | 2026-03-31 |
 | 5. Interactive Dashboard | v1.0 | 4/4 | Complete | 2026-04-02 |
-| 6. Repo Reorganization and Cleanup | v2.0 | 0/? | Not started | - |
+| 6. Repo Reorganization and Cleanup | v2.0 | 0/3 | Planning | - |
 | 7. Testing Framework | v2.0 | 0/? | Not started | - |
 | 8. Domain Creation Wizard | v2.0 | 0/? | Not started | - |
 | 9. Consumer Decoupling and Standalone Install | v2.0 | 0/? | Not started | - |
