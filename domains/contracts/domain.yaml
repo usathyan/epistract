@@ -12,41 +12,41 @@ system_context: |
   cross-contract dependencies.
 
 entity_types:
-  - name: PARTY
+  PARTY:
     description: "Organization or individual that is a signatory or referenced entity in a contract"
-  - name: CONTRACT
+  CONTRACT:
     description: "A formal agreement between parties"
-  - name: OBLIGATION
+  OBLIGATION:
     description: "A required action, delivery, or compliance requirement"
-  - name: DEADLINE
+  DEADLINE:
     description: "A date or time constraint for an obligation or deliverable"
-  - name: COST
+  COST:
     description: "A monetary amount, fee, or payment term"
-  - name: VENUE
+  VENUE:
     description: "A physical location referenced in a contract"
-  - name: SERVICE
+  SERVICE:
     description: "A service being provided under contract"
-  - name: INSURANCE
+  INSURANCE:
     description: "Insurance requirement or coverage specification"
-  - name: PENALTY
+  PENALTY:
     description: "A consequence for breach or non-compliance"
 
 relation_types:
-  - name: OBLIGATED_TO
+  OBLIGATED_TO:
     description: "Party is obligated to fulfill an obligation"
-  - name: HAS_DEADLINE
+  HAS_DEADLINE:
     description: "Obligation or deliverable has a deadline"
-  - name: COSTS
+  COSTS:
     description: "Service or obligation has an associated cost"
-  - name: SIGNED_BY
+  SIGNED_BY:
     description: "Contract is signed by a party"
-  - name: PROVIDES_SERVICE
+  PROVIDES_SERVICE:
     description: "Party provides a service"
-  - name: HELD_AT
+  HELD_AT:
     description: "Event or service is at a venue"
-  - name: REQUIRES_INSURANCE
+  REQUIRES_INSURANCE:
     description: "Contract requires insurance coverage"
-  - name: CROSS_REFERENCES
+  CROSS_REFERENCES:
     description: "One contract references another"
-  - name: PENALIZES
+  PENALIZES:
     description: "Breach triggers a penalty"
