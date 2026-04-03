@@ -49,7 +49,7 @@ See v1 traceability below.
 ### Repo Architecture
 
 - [x] **ARCH-01**: Core pipeline in `core/`, domains in `domains/`, consumers in `examples/`
-- [ ] **ARCH-02**: Core pipeline imports without domain-specific dependencies
+- [x] **ARCH-02**: Core pipeline imports without domain-specific dependencies
 - [x] **ARCH-03**: New domain = new files in `domains/` only, no core changes
 
 ### Domain Wizard
