@@ -17,7 +17,7 @@ import json
 import sys
 from pathlib import Path
 
-from domain_resolver import resolve_domain, list_domains
+from core.domain_resolver import resolve_domain, list_domains
 
 
 def _import_sift(names: list[str]):
@@ -37,16 +37,16 @@ def _import_sift(names: list[str]):
 def cmd_build(output_dir: str, domain_name: str | None = None):
     run_build, load_domain = _import_sift(["run_build", "load_domain"])
 
-    domain = (
-        load_domain(domain_path=Path(domain_path))
-        if domain_path
-        else load_domain(domain_path=Path(__file__).parent.parent / "domains" / "drug-discovery" / "domain.yaml")
-    )
+    if domain_name:
+        domain_yaml = resolve_domain(domain_name)
+        domain = load_domain(domain_path=domain_yaml)
+    else:
+        domain = load_domain(domain_path=Path(__file__).parent.parent / "domains" / "drug-discovery" / "domain.yaml")
     kg = run_build(Path(output_dir), domain)
 
     # Auto-label communities with descriptive names
     try:
-        from core.label_communities import label_communities
+        from core.label_communities import label_communities  # noqa: E402
         label_communities(Path(output_dir))
     except Exception as e:
         print(f"Warning: community labeling failed: {e}", file=sys.stderr)

@@ -27,9 +27,8 @@ from pathlib import Path
 VALIDATION_SCRIPTS = Path(__file__).parent / "validation"
 sys.path.insert(0, str(VALIDATION_SCRIPTS))
 
-# Domain-aware validation scripts (default: drug-discovery)
-_domain_name: str | None = None  # Set via --domain flag in __main__
-VALIDATION_SCRIPTS_DIR = get_validation_scripts_dir(_domain_name)
+# Validation scripts live alongside this file
+VALIDATION_SCRIPTS_DIR = VALIDATION_SCRIPTS
 
 if VALIDATION_SCRIPTS_DIR:
     sys.path.insert(0, str(VALIDATION_SCRIPTS_DIR))
@@ -395,8 +394,8 @@ def main() -> None:
         args = args[:idx] + args[idx + 2:]
 
         # Re-resolve validation scripts for the specified domain
-        VALIDATION_SCRIPTS_DIR = get_validation_scripts_dir(_domain_name)
-        if VALIDATION_SCRIPTS_DIR:
+        VALIDATION_SCRIPTS_DIR = Path(__file__).parent / "validation"
+        if VALIDATION_SCRIPTS_DIR.exists():
             sys.path.insert(0, str(VALIDATION_SCRIPTS_DIR))
             from scan_patterns import scan_text as _scan_text  # noqa: E402
             scan_text = _scan_text

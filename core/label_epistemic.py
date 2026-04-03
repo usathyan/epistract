@@ -23,7 +23,9 @@ Reference:
 
 import importlib.util
 import json
+import re
 import sys
+from collections import defaultdict
 from pathlib import Path
 
 
@@ -46,6 +48,8 @@ def _load_domain_epistemic(domain_name: str):
     if not module_path.exists():
         return None
     spec = importlib.util.spec_from_file_location(f"domains.{dir_name}.epistemic", module_path)
+    if spec is None or spec.loader is None:
+        return None
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     return mod
@@ -298,6 +302,64 @@ def build_doc_type_profile(links: list[dict]) -> dict:
 # ---------------------------------------------------------------------------
 
 
+def _builtin_biomedical_epistemic(output_dir: Path, graph_data: dict) -> dict:
+    """Built-in biomedical epistemic analysis using hedging patterns."""
+    links = graph_data.get("links", [])
+    nodes = graph_data.get("nodes", [])
+
+    # Step 1: Classify each link
+    for link in links:
+        mentions = link.get("mentions", [])
+        if mentions:
+            doc_type = infer_doc_type(mentions[0].get("source_document", ""))
+            evidence = mentions[0].get("evidence", link.get("evidence", ""))
+        else:
+            doc_type = "unknown"
+            evidence = link.get("evidence", "")
+        confidence = link.get("confidence", 0.5)
+        link["epistemic_status"] = classify_epistemic_status(evidence, confidence, doc_type)
+
+    # Step 2: Detect contradictions
+    contradictions = detect_contradictions(links)
+
+    # Step 3: Group hypotheses
+    hypotheses = group_hypotheses(links, nodes)
+
+    # Step 4: Build document type profile
+    doc_profile = build_doc_type_profile(links)
+
+    # Step 5: Build summary
+    status_counts = defaultdict(int)
+    for link in links:
+        status_counts[link.get("epistemic_status", "unclassified")] += 1
+
+    return {
+        "metadata": {
+            "domain": "drug-discovery",
+            "analysis_type": "biomedical_epistemic",
+        },
+        "summary": {
+            "total_relations": len(links),
+            "epistemic_status_counts": dict(status_counts),
+            "contradictions_found": len(contradictions),
+            "hypotheses_found": len(hypotheses),
+            "document_types": doc_profile,
+        },
+        "base_domain": {
+            "asserted_relations": [
+                l for l in links if l.get("epistemic_status") == "asserted"
+            ],
+        },
+        "super_domain": {
+            "contradictions": contradictions,
+            "hypotheses": hypotheses,
+            "contested_claims": [
+                l for l in links if l.get("epistemic_status") in ("hypothesized", "speculative")
+            ],
+        },
+    }
+
+
 def analyze_epistemic(
     output_dir: Path,
     domain_name: str | None = None,
@@ -332,21 +394,24 @@ def analyze_epistemic(
     if domain_name is None:
         domain_name = graph_data.get("metadata", {}).get("domain", "drug-discovery")
 
-    # Dispatch to domain-specific analysis module
-    if domain_name == "contract":
-        try:
-            from epistemic_contract import analyze_contract_epistemic
-        except ImportError:
+    # Dispatch to domain-specific analysis module via dynamic loading
+    effective_domain = domain_name or "drug-discovery"
+    domain_mod = _load_domain_epistemic(effective_domain)
+
+    if effective_domain == "contract":
+        if domain_mod is None:
             return {
-                "error": "Contract epistemic module not yet available. Run Plan 02 first.",
+                "error": "Contract epistemic module not found at domains/contracts/epistemic.py.",
                 "summary": {"status": "unavailable"},
             }
-        claims_layer = analyze_contract_epistemic(
+        claims_layer = domain_mod.analyze_contract_epistemic(
             output_dir, graph_data, master_doc_path=master_doc_path
         )
+    elif domain_mod is not None and hasattr(domain_mod, "analyze_biomedical_epistemic"):
+        claims_layer = domain_mod.analyze_biomedical_epistemic(output_dir, graph_data)
     else:
-        # Default: biomedical (drug-discovery) or any other domain
-        claims_layer = analyze_biomedical_epistemic(output_dir, graph_data)
+        # Fallback: use built-in biomedical epistemic analysis
+        claims_layer = _builtin_biomedical_epistemic(output_dir, graph_data)
 
     # Write claims layer
     claims_path = output_dir / "claims_layer.json"
