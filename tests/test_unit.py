@@ -16,7 +16,8 @@ import pytest
 PROJECT_ROOT = Path(__file__).parent.parent
 VALIDATION_SCRIPTS = PROJECT_ROOT / "domains" / "drug-discovery" / "validation"
 CORE = PROJECT_ROOT / "core"
-DOMAIN_YAML = PROJECT_ROOT / "domains" / "drug-discovery" / "domain.yaml"
+DRUG_DISCOVERY_DIR = PROJECT_ROOT / "domains" / "drug-discovery"
+DOMAIN_YAML = DRUG_DISCOVERY_DIR / "domain.yaml"
 sys.path.insert(0, str(VALIDATION_SCRIPTS))
 sys.path.insert(0, str(CORE))
 
@@ -304,7 +305,7 @@ def test_ut014_validation_orchestrator():
         # Run validate_molecules via subprocess to avoid import side effects
         import subprocess
         result = subprocess.run(
-            [sys.executable, str(SCRIPTS / "validate_molecules.py"), tmpdir],
+            [sys.executable, str(DRUG_DISCOVERY_DIR / "validate_molecules.py"), tmpdir],
             capture_output=True,
             text=True,
         )

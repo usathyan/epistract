@@ -38,8 +38,8 @@ def cmd_build(output_dir: str, domain_name: str | None = None):
     run_build, load_domain = _import_sift(["run_build", "load_domain"])
 
     if domain_name:
-        domain_yaml = resolve_domain(domain_name)
-        domain = load_domain(domain_path=domain_yaml)
+        domain_info = resolve_domain(domain_name)
+        domain = load_domain(domain_path=Path(domain_info["yaml_path"]))
     else:
         domain = load_domain(domain_path=Path(__file__).parent.parent / "domains" / "drug-discovery" / "domain.yaml")
     kg = run_build(Path(output_dir), domain)
@@ -102,8 +102,10 @@ if __name__ == "__main__":
     # --list-domains: print available domains and exit (no subcommand needed)
     if "--list-domains" in sys.argv:
         domains = list_domains()
-        for d in domains:
-            print(f"  {d['name']:20s} v{d['version']}  {d['description']}")
+        for name in domains:
+            info = resolve_domain(name)
+            schema = info.get("schema") or {}
+            print(f"  {name:20s} v{schema.get('version', '?')}  {schema.get('description', '')}")
         sys.exit(0)
 
     if len(sys.argv) < 3:

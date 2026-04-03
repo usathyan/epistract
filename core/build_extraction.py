@@ -11,7 +11,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import yaml
-from domain_resolver import resolve_domain
+from core.domain_resolver import resolve_domain
 
 
 def _normalize_fields(entities, relations):
@@ -47,9 +47,11 @@ def write_extraction(doc_id, output_dir, entities, relations, document_path="", 
     entities, relations = _normalize_fields(entities, relations)
 
     # Resolve domain name from domain.yaml
-    domain_path = resolve_domain(domain_name)
-    with open(domain_path) as f:
-        domain_data = yaml.safe_load(f)
+    domain_info = resolve_domain(domain_name)
+    domain_data = domain_info.get("schema")
+    if domain_data is None:
+        with open(domain_info["yaml_path"]) as f:
+            domain_data = yaml.safe_load(f)
 
     extraction = {
         "document_id": doc_id,
