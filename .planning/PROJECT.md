@@ -59,8 +59,9 @@ epistract/
 
 ### Active (V2 Milestone)
 
-- [ ] Repo reorganization — `core/`, `domains/`, `examples/` structure
-- [ ] Domain abstraction — extraction engine, graph builder, epistemic dispatcher as domain-agnostic core
+- [x] Repo reorganization — `core/`, `domains/`, `examples/` structure (Validated in Phase 6)
+- [x] Domain abstraction — extraction engine, graph builder, epistemic dispatcher as domain-agnostic core (Validated in Phase 6)
+- [x] Testing framework — 73 tests across 4 tiers (unit, integration, provenance, E2E) with tiered Makefile targets (Validated in Phase 7)
 - [ ] Domain creation wizard (`/epistract:domain`) — analyzes sample corpus, generates domain.yaml + SKILL.md + epistemic rules for both layers
 - [ ] Standalone plugin install — installs cleanly without demo data; pre-built domains available
 - [ ] Domain developer documentation — end-to-end: install → create domain → ingest → graph → analyze
@@ -155,4 +156,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-02 — V1 complete, V2 milestone started (framework architecture + domain developer experience)*
+*Last updated: 2026-04-03 — Phase 7 complete (testing framework), Phase 8 next (domain creation wizard)*
