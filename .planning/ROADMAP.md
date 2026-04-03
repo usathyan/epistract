@@ -145,7 +145,7 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 07-01-PLAN.md — Test infrastructure, fixtures, and unit tier (conftest.py, pyproject.toml, markers, schema validation)
+- [x] 07-01-PLAN.md — Test infrastructure, fixtures, and unit tier (conftest.py, pyproject.toml, markers, schema validation)
 - [ ] 07-02-PLAN.md — Integration tests for command entry points, KG provenance conversion, cross-domain verification
 - [ ] 07-03-PLAN.md — E2E pipeline tests and Makefile tiered test targets
 

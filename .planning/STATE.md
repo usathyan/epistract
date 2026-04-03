@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Framework Architecture & Domain Developer Experience
-status: verifying
-stopped_at: Phase 7 context gathered
-last_updated: "2026-04-03T11:45:18.436Z"
+status: executing
+stopped_at: Completed 07-01-PLAN.md
+last_updated: "2026-04-03T12:20:04.233Z"
 last_activity: 2026-04-03
 progress:
   total_phases: 5
   completed_phases: 1
-  total_plans: 3
-  completed_plans: 3
+  total_plans: 6
+  completed_plans: 4
   percent: 0
 ---
 
@@ -21,13 +21,13 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-02)
 
 **Core value:** Extract knowledge, not information. Any corpus, any domain -- plug in a schema, get a knowledge graph with epistemic layer.
-**Current focus:** Phase 06 — repo-reorganization-and-cleanup
+**Current focus:** Phase 07 — testing-framework
 
 ## Current Position
 
-Phase: 7
-Plan: Not started
-Status: Phase complete — ready for verification
+Phase: 07 (testing-framework) — EXECUTING
+Plan: 2 of 3
+Status: Ready to execute
 Last activity: 2026-04-03
 
 Progress: [░░░░░░░░░░] 0%
@@ -58,6 +58,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 06 P03 | 2min | 2 tasks | 43 files |
 | Phase 06 P01 | 5min | 3 tasks | 25 files |
 | Phase 06 P02 | 3min | 2 tasks | 3 files |
+| Phase 07 P01 | 3min | 2 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -76,6 +77,7 @@ Recent decisions affecting current work:
 - [Phase 06]: Skipped workbench move and missing script moves (files do not exist in branch)
 - [Phase 06]: resolve_domain returns dict (not path) -- callers extract yaml_path key
 - [Phase 06]: Skipped workbench test migration -- scripts/workbench not yet moved to examples/
+- [Phase 07]: Pydantic DocumentExtraction model in test_schemas.py; conftest.py centralizes all path setup
 
 ### Pending Todos
 
@@ -89,6 +91,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-03T11:45:18.433Z
-Stopped at: Phase 7 context gathered
-Resume file: .planning/phases/07-testing-framework/07-CONTEXT.md
+Last session: 2026-04-03T12:20:04.230Z
+Stopped at: Completed 07-01-PLAN.md
+Resume file: None
