@@ -277,3 +277,156 @@ def test_cross_domain_resolver_loads_correct_schemas():
         assert len(data["relation_types"]) > 0, (
             f"Empty relation_types in {domain_name}"
         )
+
+
+# ---------------------------------------------------------------------------
+# Domain wizard integration tests (Phase 8 - WIZD-04)
+# ---------------------------------------------------------------------------
+
+
+@pytest.fixture
+def wizard_test_domain():
+    """Generate a temporary test domain and clean up after."""
+    from domain_wizard import (
+        generate_domain_yaml,
+        generate_skill_md,
+        generate_epistemic_py,
+        generate_reference_docs,
+        validate_generated_epistemic,
+        write_domain_package,
+    )
+    from domain_resolver import DOMAINS_DIR
+
+    domain_name = "test-leases-integration"
+    domain_dir = DOMAINS_DIR / domain_name
+
+    entity_types = {
+        "LANDLORD": {"description": "Property owner or management company"},
+        "TENANT": {"description": "Person or organization leasing property"},
+        "PROPERTY": {"description": "Real estate being leased"},
+        "LEASE_TERM": {"description": "Duration and dates of the lease"},
+        "RENT": {"description": "Monthly payment amount and terms"},
+    }
+    relation_types = {
+        "LEASES_TO": {"description": "Landlord leases property to tenant"},
+        "LOCATED_AT": {"description": "Property is at a physical address"},
+        "HAS_TERM": {"description": "Lease has a term period"},
+        "PAYS_RENT": {"description": "Tenant pays rent amount"},
+    }
+
+    domain_yaml = generate_domain_yaml(
+        "Test Leases Integration",
+        "Integration test domain for lease agreements.",
+        "You are analyzing lease agreements.",
+        entity_types,
+        relation_types,
+    )
+    skill_md = generate_skill_md(
+        "Test Leases Integration",
+        "Analyzing lease agreements.",
+        entity_types,
+        relation_types,
+        "Extract all parties and lease terms.",
+    )
+    epistemic_py = generate_epistemic_py(
+        "test_leases_integration",
+        entity_types,
+        [("exclusive", "non-exclusive")],
+        {"coverage": ["LANDLORD", "TENANT"]},
+        {"high": 0.9, "medium": 0.7, "low": 0.5},
+    )
+    entity_md, relation_md = generate_reference_docs(entity_types, relation_types)
+
+    # Validate epistemic before writing
+    validation = validate_generated_epistemic(epistemic_py, "test_leases_integration")
+    assert validation["valid"], f"Epistemic validation failed: {validation.get('error')}"
+
+    # Write package
+    write_domain_package(
+        domain_name, domain_yaml, skill_md, epistemic_py, entity_md, relation_md
+    )
+
+    yield domain_name, domain_dir
+
+    # Cleanup
+    if domain_dir.exists():
+        shutil.rmtree(domain_dir)
+
+
+@pytest.mark.integration
+def test_wizard_domain_pipeline(wizard_test_domain):
+    """WIZD-04: Generated domain works with domain_resolver and epistemic dispatcher."""
+    domain_name, domain_dir = wizard_test_domain
+
+    # 1. domain_resolver discovers the generated domain
+    from domain_resolver import resolve_domain, list_domains
+
+    domains = list_domains()
+    assert domain_name in domains, f"Generated domain not discovered. Available: {domains}"
+
+    # 2. resolve_domain returns valid schema
+    result = resolve_domain(domain_name)
+    assert "schema" in result, "resolve_domain missing 'schema' key"
+    schema = result["schema"]
+    assert "entity_types" in schema, "Schema missing entity_types"
+    assert "LANDLORD" in schema["entity_types"], (
+        f"Missing LANDLORD in entity_types: {list(schema['entity_types'].keys())}"
+    )
+    assert "relation_types" in schema, "Schema missing relation_types"
+    assert "LEASES_TO" in schema["relation_types"], (
+        f"Missing LEASES_TO in relation_types: {list(schema['relation_types'].keys())}"
+    )
+
+    # 3. Epistemic dispatcher can load the module
+    from label_epistemic import _load_domain_epistemic
+
+    mod = _load_domain_epistemic(domain_name)
+    assert mod is not None, "Epistemic dispatcher failed to load generated domain"
+    func_name = f"analyze_{domain_name.replace('-', '_')}_epistemic"
+    assert hasattr(mod, func_name), f"Module missing {func_name}"
+
+    # 4. Epistemic function runs and returns valid structure
+    func = getattr(mod, func_name)
+    result = func(domain_dir, {"nodes": [], "links": []})
+    assert isinstance(result, dict), f"Expected dict, got {type(result)}"
+    for key in ("metadata", "summary", "base_domain", "super_domain"):
+        assert key in result, f"Missing key '{key}' in epistemic result"
+
+
+@pytest.mark.integration
+def test_wizard_domain_package_structure(wizard_test_domain):
+    """Verify generated package has all expected files."""
+    _, domain_dir = wizard_test_domain
+    expected_files = [
+        "domain.yaml",
+        "SKILL.md",
+        "epistemic.py",
+        "__init__.py",
+        "references/entity-types.md",
+        "references/relation-types.md",
+    ]
+    for filename in expected_files:
+        filepath = domain_dir / filename
+        assert filepath.exists(), f"Missing file: {filepath}"
+        if filename != "__init__.py":
+            assert filepath.stat().st_size > 0, f"Empty file: {filepath}"
+
+
+@pytest.mark.integration
+def test_wizard_generated_domain_yaml_loadable(wizard_test_domain):
+    """Verify generated domain.yaml is valid and loadable by resolve_domain."""
+    domain_name, domain_dir = wizard_test_domain
+    yaml_path = domain_dir / "domain.yaml"
+    schema = yaml.safe_load(yaml_path.read_text())
+    assert schema["name"] == "Test Leases Integration", (
+        f"Expected name 'Test Leases Integration', got {schema['name']}"
+    )
+    assert schema["version"] == "1.0.0", (
+        f"Expected version '1.0.0', got {schema.get('version')}"
+    )
+    assert len(schema["entity_types"]) == 5, (
+        f"Expected 5 entity types, got {len(schema['entity_types'])}"
+    )
+    assert len(schema["relation_types"]) == 4, (
+        f"Expected 4 relation types, got {len(schema['relation_types'])}"
+    )
