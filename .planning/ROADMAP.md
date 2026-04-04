@@ -192,10 +192,13 @@ Plans:
   2. Architecture diagrams show three-layer separation (core pipeline, domain configs, example consumers) and the two-layer KG (brute facts + epistemic)
   3. Domain developer guide walks through the full workflow: install, create domain via wizard, ingest documents, explore graph, analyze with epistemic layer
   4. Paper (title, abstract, architecture sections) is reframed around the framework -- not the STA use case
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] TBD
+- [ ] 10-01-PLAN.md — Architecture diagrams (4 Mermaid + SVG) and gitignore STA audit
+- [ ] 10-02-PLAN.md — README rewrite (framework-first) + showcases + CLAUDE.md update
+- [ ] 10-03-PLAN.md — Domain developer guide rewrite (wizard-first structure)
+- [ ] 10-04-PLAN.md — Paper reframing (title, abstract, architecture, Case Study 2, conclusion)
 
 ## Progress
 
@@ -213,7 +216,7 @@ Phases execute in numeric order: 6 -> 7 -> 8 -> 9 -> 10
 | 7. Testing Framework | v2.0 | 0/3 | Planning | - |
 | 8. Domain Creation Wizard | v2.0 | 0/3 | Planning | - |
 | 9. Consumer Decoupling and Standalone Install | v2.0 | 0/3 | Planning | - |
-| 10. Documentation Refresh | v2.0 | 0/? | Not started | - |
+| 10. Documentation Refresh | v2.0 | 0/4 | Planning | - |
 
 ## Backlog
 
