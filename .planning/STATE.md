@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Framework Architecture & Domain Developer Experience
 status: executing
-stopped_at: Completed 11-01-PLAN.md
-last_updated: "2026-04-04T21:45:42.504Z"
+stopped_at: Completed 11-02-PLAN.md
+last_updated: "2026-04-04T21:43:10.901Z"
 last_activity: 2026-04-04
 progress:
   total_phases: 5
-  completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
+  completed_phases: 5
+  total_plans: 16
+  completed_plans: 16
   percent: 85
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-04-02)
 ## Current Position
 
 Phase: 11 (end-to-end-scenario-validation) — EXECUTING
-Plan: 3 of 4
+Plan: 2 of 4
 Status: Ready to execute
 Last activity: 2026-04-04
 
@@ -72,7 +72,6 @@ Progress: [████████░░] 85%
 | Phase 10 P03 | 2min | 1 tasks | 1 files |
 | Phase 10 P02 | 6min | 2 tasks | 4 files |
 | Phase 11 P02 | 2min | 2 tasks | 3 files |
-| Phase 11 P01 | 3min | 2 tasks | 11 files |
 
 ## Accumulated Context
 
@@ -116,9 +115,6 @@ Recent decisions affecting current work:
 - [Phase 10]: README opens with domain-agnostic pitch; biomedical content only in Showcase and Pre-built Domains
 - [Phase 10]: CLAUDE.md Architecture reframed as three-layer: core/domains/examples with domain resolver
 - [Phase 11]: package.json bin entry deferred (scripts/npx-install.sh) until npm account setup
-- [Phase 11]: Communities counted as unique values in communities.json dict
-- [Phase 11]: Contracts scenario gracefully skipped when STA data unavailable
-- [Phase 11]: V2 baseline update writes to separate tests/baselines/v2/ directory
 
 ### Pending Todos
 
@@ -132,6 +128,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-04T21:45:42.501Z
-Stopped at: Completed 11-01-PLAN.md
+Last session: 2026-04-04T21:43:10.898Z
+Stopped at: Completed 11-02-PLAN.md
 Resume file: None
