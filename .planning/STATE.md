@@ -21,13 +21,13 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-02)
 
 **Core value:** Extract knowledge, not information. Any corpus, any domain -- plug in a schema, get a knowledge graph with epistemic layer.
-**Current focus:** Phase 10 — documentation-refresh
+**Current focus:** Phase 11 — end-to-end-scenario-validation
 
 ## Current Position
 
-Phase: 999.2
+Phase: 11
 Plan: Not started
-Status: Phase complete — ready for verification
+Status: Ready for planning
 Last activity: 2026-04-04
 
 Progress: [████████░░] 85%
@@ -73,6 +73,12 @@ Progress: [████████░░] 85%
 | Phase 10 P02 | 6min | 2 tasks | 4 files |
 
 ## Accumulated Context
+
+### Roadmap Evolution
+
+- Phase 11 added: End-to-End Scenario Validation and v2.0 Release — regenerate all graphs, validate both use cases, repeatable regression, git sync + push
+- Backlog items 999.1 (docs refresh — superseded by Phase 10) and 999.2 (git sync — absorbed into Phase 11) removed
+- Phase 1000 (incorrectly numbered) removed
 
 ### Decisions
 

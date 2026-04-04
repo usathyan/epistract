@@ -3,7 +3,7 @@
 ## Milestones
 
 - Complete **v1.0 STA Contract Extraction + Dashboard** - Phases 1-5 (shipped 2026-04-02)
-- Current **v2.0 Framework Architecture & Domain Developer Experience** - Phases 6-9 (in progress)
+- Current **v2.0 Framework Architecture & Domain Developer Experience** - Phases 6-11 (in progress)
 
 ## Phases
 
@@ -111,6 +111,7 @@ Plans:
 - [ ] **Phase 8: Domain Creation Wizard** - Auto-generate domain packages from sample documents via /epistract:domain
 - [ ] **Phase 9: Consumer Decoupling and Standalone Install** - Decouple consumers into examples/, enable plugin install without repo clone
 - [x] **Phase 10: Documentation Refresh** - README, architecture diagrams, domain developer guide, and paper reframed as framework (completed 2026-04-04)
+- [ ] **Phase 11: End-to-End Scenario Validation and v2.0 Release** - Regenerate all graphs, validate both use cases, repeatable regression suite, git sync + push v2.0
 
 ## Phase Details
 
@@ -200,10 +201,27 @@ Plans:
 - [x] 10-03-PLAN.md — Domain developer guide rewrite (wizard-first structure)
 - [x] 10-04-PLAN.md — Paper reframing (title, abstract, architecture, Case Study 2, conclusion)
 
+### Phase 11: End-to-End Scenario Validation and v2.0 Release
+**Goal**: Both use cases (drug discovery + contracts) produce demonstration-ready knowledge graphs through the new plugin and extraction pipeline, validated against baseline output. Closes with git sync to remote and v2.0 milestone completion.
+**Depends on**: Phase 10
+**Requirements**: TBD
+**Success Criteria** (what must be TRUE):
+  1. Drug discovery scenarios (1-6) regenerate graphs with equivalent or better entity/relation counts, community structure, and epistemic analysis compared to V1 baseline
+  2. Contract scenario regenerates the 341-node, 663-edge graph with 53 conflicts detected — validated against stored baseline
+  3. All extractions run through the installed plugin (not raw scripts) — proving the marketplace install path works end-to-end
+  4. Both epistemic layers (drug discovery molecular validation + contract conflict detection) produce correct output
+  5. A repeatable regression script exists that can re-run all scenarios and diff against baseline snapshots
+  6. Graph visualizations for both use cases are demonstration-ready (viewable, navigable, presentable)
+  7. Feature branch synced with remote main (rebase/merge), pushed, and PR created — closing the v2.0 milestone
+**Plans**: 0 plans
+
+Plans:
+- [ ] TBD (run /gsd:plan-phase 11 to break down)
+
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 6 -> 7 -> 8 -> 9 -> 10
+Phases execute in numeric order: 6 -> 7 -> 8 -> 9 -> 10 -> 11
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
@@ -217,13 +235,4 @@ Phases execute in numeric order: 6 -> 7 -> 8 -> 9 -> 10
 | 8. Domain Creation Wizard | v2.0 | 0/3 | Planning | - |
 | 9. Consumer Decoupling and Standalone Install | v2.0 | 0/3 | Planning | - |
 | 10. Documentation Refresh | v2.0 | 4/4 | Complete    | 2026-04-04 |
-
-## Backlog
-
-### Phase 999.2: Git Remote Sync (BACKLOG)
-**Goal:** Pull latest main and rebase/merge before pushing feature/cross-domain-kg-framework — remote is ahead of local
-**Requirements:** TBD
-**Plans:** 4/4 plans complete
-
-Plans:
-- [ ] TBD (promote with /gsd:review-backlog when ready)
+| 11. End-to-End Scenario Validation | v2.0 | 0/0 | Not Planned | - |
