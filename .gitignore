@@ -11,3 +11,21 @@ docs/analysis/EricNotes.md
 lib/
 *.env
 *.mp4
+node_modules/
+
+# GSD workflow artifacts — development-only, not in remote (per D-14)
+.planning/
+
+# Claude worktrees
+.claude/worktrees/
+
+# Kreuzberg extraction cache
+.kreuzberg/
+
+# Python build artifacts
+*.egg-info/
+dist/
+build/
+
+# Regression output (generated, not tracked)
+tests/baselines/v2/
