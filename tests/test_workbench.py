@@ -234,6 +234,78 @@ def test_chat_stream_mock(client, monkeypatch):
     assert "Hello from mock" in body or "text" in body
 
 
+# ---------------------------------------------------------------------------
+# Template Tests
+# ---------------------------------------------------------------------------
+
+
+def test_template_loading_contracts():
+    """load_template('contracts') returns STA title."""
+    from examples.workbench.template_loader import load_template
+
+    t = load_template("contracts")
+    assert t["title"] == "Sample Contract Analysis Workbench", f"Got: {t['title']}"
+
+
+def test_template_loading_drug_discovery():
+    """load_template('drug-discovery') returns drug discovery title."""
+    from examples.workbench.template_loader import load_template
+
+    t = load_template("drug-discovery")
+    assert "Drug Discovery" in t["title"], f"Got: {t['title']}"
+
+
+def test_template_generic_fallback():
+    """load_template('nonexistent') returns generic defaults."""
+    from examples.workbench.template_loader import load_template
+
+    t = load_template("nonexistent")
+    assert t["title"] == "Knowledge Graph Explorer", f"Got: {t['title']}"
+
+
+def test_template_none_fallback():
+    """load_template(None) returns generic defaults."""
+    from examples.workbench.template_loader import load_template
+
+    t = load_template(None)
+    assert t["title"] == "Knowledge Graph Explorer", f"Got: {t['title']}"
+
+
+def test_auto_generate_starters():
+    """auto_generate_starters with entity types returns 3+ questions."""
+    from examples.workbench.template_loader import auto_generate_starters
+
+    starters = auto_generate_starters(["COMPOUND", "GENE"])
+    assert len(starters) >= 3, f"Expected >= 3, got {len(starters)}"
+    # Should mention entity types
+    combined = " ".join(starters).lower()
+    assert "compound" in combined, "Expected 'compound' in starters"
+
+
+def test_auto_generate_starters_empty():
+    """auto_generate_starters([]) returns single fallback."""
+    from examples.workbench.template_loader import auto_generate_starters
+
+    starters = auto_generate_starters([])
+    assert len(starters) == 1, f"Expected 1, got {len(starters)}"
+
+
+def test_template_schema_validation():
+    """WorkbenchTemplate validates contracts template content."""
+    from examples.workbench.template_schema import WorkbenchTemplate
+
+    import yaml
+    from pathlib import Path
+
+    yaml_path = Path("domains/contracts/workbench/template.yaml")
+    if not yaml_path.exists():
+        pytest.skip("contracts template.yaml not yet created")
+    with open(yaml_path) as f:
+        data = yaml.safe_load(f)
+    model = WorkbenchTemplate(**data)
+    assert model.title == "Sample Contract Analysis Workbench"
+
+
 def test_schema_expansion():
     """Domain schema includes new entity types per D-20."""
     schema_path = Path("skills/contract-extraction/domain.yaml")

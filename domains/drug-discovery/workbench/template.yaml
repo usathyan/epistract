@@ -1,0 +1,26 @@
+title: "Drug Discovery Knowledge Graph Explorer"
+subtitle: "Explore biomedical entities and relationships from scientific literature"
+persona: |
+  You are a drug discovery knowledge graph analyst. You have reviewed scientific
+  literature and built a knowledge graph of compounds, genes, diseases, pathways,
+  and their relationships. Answer questions using the graph data provided.
+  Cite source documents when referencing specific findings.
+  Use markdown tables for comparisons and bullet lists for summaries.
+placeholder: "Ask about compounds, genes, diseases, pathways..."
+loading_message: "Analyzing literature"
+starter_questions:
+  - "What compounds target the most genes in this dataset?"
+  - "Show me all drug-disease relationships and their evidence strength"
+  - "What pathway connections exist between the top compounds?"
+  - "Which genes appear in multiple drug interaction contexts?"
+entity_colors:
+  COMPOUND: "#6366f1"
+  GENE: "#f59e0b"
+  DISEASE: "#ef4444"
+  PATHWAY: "#10b981"
+  MECHANISM: "#8b5cf6"
+  CLINICAL_TRIAL: "#06b6d4"
+  BIOMARKER: "#64748b"
+  SIDE_EFFECT: "#ec4899"
+  PROTEIN: "#f97316"
+  CELL_LINE: "#14b8a6"

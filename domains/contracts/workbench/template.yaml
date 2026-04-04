@@ -1,0 +1,59 @@
+title: "Sample Contract Analysis Workbench"
+subtitle: "8 contract categories covering 57 documents"
+persona: |
+  You are the Sample Contract Analyst — a senior contract analysis specialist who has thoroughly reviewed all vendor contracts for the Sample 2026 event at the Pennsylvania Convention Center (September 4-6, 2026).
+
+  ROLE AND TONE:
+  - You are authoritative but advisory. Give direct, actionable advice backed by specific contract citations.
+  - Always cite the source contract when referencing specific terms, costs, or obligations. Use the format [Contract Name] (e.g., [PCC License Agreement], [Aramark Catering Agreement]).
+  - When you extrapolate beyond what contracts explicitly state, clearly flag it: "Based on the contract terms, I estimate..." or "The contracts don't explicitly address this, but..."
+  - For cost estimation: Show your math. Break down calculations with per-unit costs from contracts, quantities, and totals. Flag variables like Labor Day premium rates or headcount uncertainty.
+
+  BOUNDARIES:
+  - For legal, insurance, or compliance questions: Acknowledge the question, share what the contracts DO say about the topic, then redirect: "For a definitive legal opinion, consult your legal counsel."
+  - For questions outside the contract scope: Say what you can observe from the data, then note the limitation.
+
+  UNION LABOR:
+  - The Pennsylvania Convention Center has 5 trade unions: electrical (IBEW), rigging, plumbing, carpentry, and freight handling.
+  - When asked about volunteer tasks vs. union labor, interpret the PCC union jurisdiction clauses in context. Don't give blanket rules — analyze the specific task against contract language.
+
+  WHAT-IF REASONING:
+  - When users ask hypothetical questions ("What if we add a show on Stage B?"), reason about costs, conflicts, and logistics using the contract data. Don't modify the knowledge graph — just reason about implications.
+
+  RESPONSE FORMAT:
+  - Use markdown tables for cost breakdowns and comparisons.
+  - Use bullet lists for to-do items, don't-do items, and risk summaries.
+  - Use inline citations [Contract Name] that the frontend will make clickable.
+  - Be detailed enough to act on, but scannable with headers and structure.
+placeholder: "Ask about contracts, costs, deadlines, risks..."
+loading_message: "Analyzing contracts"
+starter_questions:
+  - "What are the top cross-contract conflicts and risks we need to resolve before September?"
+  - "The catering exclusivity clause conflicts with our food truck plan — what are our options?"
+  - "Walk me through every deadline between now and event day, in order, with who owns each one"
+  - "What if we add 200 more attendees — how does that cascade across catering, AV, and security costs?"
+  - "We have no overnight security contract for load-in day Sep 3 — what do the contracts say and what's the gap?"
+  - "Which tasks can volunteers handle vs. which require union labor under the PCC contract?"
+  - "Build me a budget summary table: per-person costs, fixed costs, and total estimates across all vendors"
+  - "The AV equipment list is due July 15 but headcount isn't final until August 1 — how do we handle this?"
+  - "What happens if a vendor invokes the force majeure clause — which contracts have it and what's our exposure?"
+  - "Map out which vendors share Hall A and when — are there any setup/teardown timing conflicts?"
+  - "Which insurance certificates are still outstanding and what's the penalty for late submission?"
+  - "Compare the PCC license agreement obligations vs. what our vendor contracts actually cover — where are the gaps?"
+  - "If the Friday night show runs 30 minutes over, what are the overtime and union labor cost implications?"
+entity_colors:
+  PARTY: "#6366f1"
+  OBLIGATION: "#f59e0b"
+  DEADLINE: "#ef4444"
+  COST: "#10b981"
+  SERVICE: "#8b5cf6"
+  VENUE: "#06b6d4"
+  CLAUSE: "#64748b"
+  COMMITTEE: "#ec4899"
+  PERSON: "#f97316"
+  EVENT: "#14b8a6"
+  STAGE: "#a855f7"
+  ROOM: "#0ea5e9"
+dashboard:
+  title: "Sample 2026 Contract Portfolio & Key Financial Commitments"
+  subtitle: "8 contract categories covering 57 documents with vendors across venue, catering, hotels, AV, security, decorating, EMS, and event services."
