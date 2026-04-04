@@ -1,20 +1,23 @@
 <!-- GSD:project-start source:PROJECT.md -->
 ## Project
 
-**Epistract Cross-Domain Knowledge Graph Framework**
+**Epistract — Domain-Agnostic Knowledge Graph Framework**
 
-Epistract evolves from a biomedical-specific literature extraction tool into a **cross-domain knowledge graph framework** with a pluggable domain configuration system. The first cross-domain application (Scenario 7) extracts structured knowledge from 62+ Sample 2026 event contracts (PDFs, XLS, emails) to build an interactive analysis dashboard and Telegram-connected chat interface for event planning intelligence.
+Epistract is a domain-agnostic knowledge graph framework. Plug in a domain schema (YAML + extraction prompts + epistemic rules), point at a document corpus, and get a structured knowledge graph with an epistemic analysis layer. It runs as a [Claude Code](https://claude.ai/claude-code) plugin.
 
-**Core Value:** **Contracts are the source of truth.** Every obligation, deadline, cost, and party relationship across 62+ vendor contracts must be extractable, queryable, and cross-referenced — so event organizers can spot conflicts, gaps, and risks before they become problems on-site at the Pennsylvania Convention Center.
+**Core Value:** **Extract knowledge, not information.** Any corpus, any domain — plug in a schema, get a knowledge graph with epistemic layer that reveals what documents say, what they contradict, and what they are missing.
+
+Two pre-built domains demonstrate the framework:
+- **drug-discovery** — 17 entity types, 30 relation types for biomedical literature analysis
+- **contracts** — 11 entity types, 11 relation types for event/vendor contract analysis
 
 ### Constraints
 
-- **Tech stack**: Python 3.11+, uv for package management, existing epistract architecture
-- **Contract formats**: Primarily PDF (60 files), 1 XLS, 1 EML — need robust document parsing
-- **Large files**: Some contracts are 12-31 MB PDFs — extraction must handle large documents
-- **Telegram**: Bot API integration for chat interface, existing MCP server available
-- **Timeline**: Event is Sep 4-6, 2026 — contract analysis should be actionable well before event
-- **Existing codebase**: Must preserve backward compatibility with biomedical scenarios
+- **Tech stack**: Python 3.11+, uv for package management
+- **Document formats**: PDF, DOCX, HTML, TXT, XLS, EML — 75+ formats via Kreuzberg with OCR fallback
+- **Large files**: Some documents are 12-31 MB — extraction must handle large documents
+- **Domain pluggability**: New domains added via configuration package (domain.yaml + SKILL.md + epistemic.py), no pipeline code changes
+- **Existing codebase**: Must preserve backward compatibility with all existing domains
 <!-- GSD:project-end -->
 
 <!-- GSD:stack-start source:codebase/STACK.md -->
@@ -62,7 +65,8 @@ Epistract evolves from a biomedical-specific literature extraction tool into a *
 - Configured via shell environment variables (not .env file in repository — users set in their environment)
 - **For sift-kg entity resolution:**
 - **For test corpus assembly:**
-- `skills/drug-discovery-extraction/domain.yaml` - YAML schema defining 17 entity types and 30 relation types
+- `domains/drug-discovery/domain.yaml` - YAML schema defining 17 entity types and 30 relation types
+- `domains/contracts/domain.yaml` - YAML schema defining 11 entity types and 11 relation types
 - `Makefile` - Standard targets: `help`, `setup`, `setup-all`, `test`, `lint`, `format`, `clean`
 - `scripts/setup.sh` - Installation script: checks Python ≥3.11, installs sift-kg, optional RDKit/Biopython
 ## Platform Requirements
@@ -87,7 +91,7 @@ Epistract evolves from a biomedical-specific literature extraction tool into a *
 ## Naming Patterns
 - Descriptive snake_case: `validate_smiles.py`, `scan_patterns.py`, `build_extraction.py`
 - Scripts in `scripts/` prefix with action verb: `run_sift.py`, `label_communities.py`, `label_epistemic.py`
-- Validation scripts in `skills/drug-discovery-extraction/validation-scripts/`
+- Validation scripts in `domains/drug-discovery/validation-scripts/`
 - snake_case throughout
 - Descriptive: `write_extraction()`, `validate_smiles()`, `scan_text()`, `detect_type()`
 - Private functions prefixed with single underscore: `_normalize_fields()`, `_import_sift()`, `_generate_label()`, `_clean_name()`
@@ -163,86 +167,85 @@ Epistract evolves from a biomedical-specific literature extraction tool into a *
 ## Architecture
 
 ## Pattern Overview
-- **Claude-as-extractor**: LLM reads documents and produces `DocumentExtraction` JSON format (entities + relations)
-- **Validation-enrichment layer**: Python scripts validate molecular identifiers (SMILES, sequences) and enrich with structural nodes
-- **sift-kg wrapper**: Orchestrates graph building, community detection, epistemic analysis, and visualization via Python API
-- **Schema-driven**: All extraction constrained by drug discovery domain YAML with 17 entity types and 30 relation types
+- **Three-layer architecture**: `core/` (domain-agnostic pipeline engine), `domains/` (pluggable domain configurations), `examples/` (consumer applications)
+- **Claude-as-extractor**: LLM reads documents and produces `DocumentExtraction` JSON format (entities + relations), constrained by domain schema
+- **Two-layer knowledge graph**: Layer 1 (brute facts — entities/relations from documents), Layer 2 (epistemic analysis — conflicts, gaps, risks, confidence)
+- **Domain pluggability**: New domains added via configuration package (domain.yaml + SKILL.md + epistemic.py), no pipeline code changes
+- **sift-kg engine**: Orchestrates graph building, community detection, entity resolution, and visualization via Python API
 - **Multi-document parallel**: Agent dispatcher handles 4+ documents concurrently to reduce latency
 ## Layers
-- Purpose: User-facing interface via `/epistract-*` slash commands
-- Location: `/.claude-plugin/plugin.json`, `/commands/*.md`
-- Contains: Command definitions, agent specifications, skill manifests
+### Core Layer (domain-agnostic pipeline)
+- Purpose: Domain-agnostic extraction engine, graph builder, epistemic dispatcher
+- Location: `core/` — `domain_resolver.py`, `ingest_documents.py`, `build_extraction.py`, `run_sift.py`, `epistemic.py`, `domain_wizard.py`
+- Contains: Document ingestion, extraction orchestration, graph construction, epistemic dispatch, domain resolution
+- Depends on: sift-kg, Kreuzberg, NetworkX, Pydantic, LiteLLM
+- Used by: All `/epistract:*` commands
+### Domain Layer (pluggable configurations)
+- Purpose: Define domain-specific schema, extraction rules, and epistemic analysis
+- Location: `domains/` — each domain is a self-contained package
+  - `domains/drug-discovery/` — domain.yaml (17 entity types, 30 relation types), SKILL.md, epistemic.py, validation-scripts/
+  - `domains/contracts/` — domain.yaml (11 entity types, 11 relation types), SKILL.md, epistemic.py, workbench/
+- Contains: Entity type definitions, relation types, nomenclature rules, epistemic analysis rules
+- Depends on: Domain-specific ontology standards
+- Used by: Core pipeline via domain_resolver.py
+### Consumer Layer (example applications)
+- Purpose: Applications that consume the knowledge graph
+- Location: `examples/`
+  - `examples/workbench/` — Interactive web dashboard with chat + graph panels
+  - `examples/telegram_bot/` — Telegram chat interface via Bot API
+- Contains: UI components, API endpoints, chat handlers
+- Depends on: Core pipeline output (graph_data.json, communities.json)
+- Used by: End users exploring the knowledge graph
+### Plugin Layer (Claude Code interface)
+- Purpose: User-facing interface via `/epistract:*` slash commands
+- Location: `.claude-plugin/plugin.json`, `commands/*.md`
+- Contains: Command definitions, agent specifications
 - Depends on: Claude Code runtime, bash tool, Python environment
-- Used by: Users running `/epistract-ingest`, `/epistract-query`, etc.
-- Purpose: Define domain schema and extraction rules that guide LLM agents
-- Location: `/skills/drug-discovery-extraction/SKILL.md` (detailed prompt), `/skills/drug-discovery-extraction/domain.yaml` (sift-kg schema)
-- Contains: Entity type definitions, relation types, nomenclature rules (HGNC for genes, INN for drugs, MeSH for diseases)
-- Depends on: Biomedical ontology standards (40+ sources: DrugBank, ChEMBL, HGNC, UniProt, MedDRA, etc.)
-- Used by: Extraction agents, sift-kg graph builder
+- Used by: Users running `/epistract:ingest`, `/epistract:query`, etc.
+### Agent Layer (extraction workers)
 - Purpose: Claude instances read documents chunk-by-chunk and extract structured JSON
-- Location: `/agents/extractor.md` (extraction agent), `/agents/validator.md` (validation agent)
+- Location: `agents/extractor.md` (extraction agent), `agents/validator.md` (validation agent)
 - Contains: Agent task definitions, chunking strategy, entity/relation examples
-- Depends on: SKILL.md knowledge, Claude's understanding of drug discovery
-- Used by: `/epistract-ingest` command; spawned 1 per document (4+ → async dispatch via Agent tool)
-- Purpose: Validate molecular identifiers and enrich graph with structural nodes
-- Location: `/scripts/validate_molecules.py` (orchestrator), `/skills/drug-discovery-extraction/validation-scripts/*.py`
-- Contains: Pattern scanning (regex), RDKit validation (SMILES), Biopython validation (DNA/RNA/protein sequences), enrichment logic
-- Depends on: Optional RDKit (~50MB), optional Biopython (~20MB)
-- Used by: `/epistract-ingest` pipeline post-extraction; reads `extractions/*.json`, outputs validated results + CHEMICAL_STRUCTURE/NUCLEOTIDE_SEQUENCE nodes
-- Purpose: Build deduplicated knowledge graph, detect communities, generate labels, analyze epistemics
-- Location: `/scripts/run_sift.py` (wrapper), `/scripts/label_communities.py`, `/scripts/label_epistemic.py`
-- Contains: Graph builder invocation, community labeling logic, epistemic status classification
-- Depends on: sift-kg library (≥0.9.0), NetworkX, Pydantic, LiteLLM
-- Used by: `/epistract-ingest` post-validation; outputs `graph_data.json`, `communities.json`, `claims_layer.json`
-- Purpose: Interactive graph browser in user's browser
-- Location: `/lib/vis-9.1.2/` (vis.js dependency), output HTML generated by sift-kg
-- Contains: JavaScript graph renderer, DOM interaction handlers
-- Depends on: sift-kg's `run_view()` which invokes pyvis + custom HTML
-- Used by: `/epistract-view` command opens HTML in browser
+- Depends on: Domain SKILL.md knowledge, Claude's domain understanding
+- Used by: `/epistract:ingest` command; spawned 1 per document (4+ dispatched concurrently)
 ## Data Flow
 - **Working directory**: User-provided output directory (default: `./epistract-output/`)
-- **Structure**:
+- **Pipeline**: documents → Kreuzberg text extraction → LLM entity/relation extraction → domain-specific validation → sift-kg graph construction → epistemic analysis → visualization/export
 - **Persistence**: All JSON outputs written to disk; graph reloaded for subsequent queries (search, export, view neighborhood)
 ## Key Abstractions
-- Purpose: Interchange format between Claude extraction and sift-kg graph builder
-- Examples: `scripts/build_extraction.py` produces this; `run_sift.py build` consumes it
-- Pattern: `{"document_id": str, "entities": [ExtractedEntity], "relations": [ExtractedRelation], "chunks_processed": int, "extracted_at": ISO timestamp}`
-- Purpose: Represent drug discovery concepts (compounds, genes, diseases, etc.)
-- Examples: Nodes with `id: "compound:sotorasib"`, `entity_type: "COMPOUND"`, `name: "sotorasib"`, `confidence: 0.97`
-- Pattern: Canonicalized names (INN for drugs, HGNC for genes, MeSH for diseases), source_documents tracking provenance, community assignment
-- Purpose: Capture chemical/sequence data with validation status
-- Examples: SMILES structure → validated by RDKit → stored in CHEMICAL_STRUCTURE node; DNA sequence → validated by Biopython → stored in NUCLEOTIDE_SEQUENCE node
-- Pattern: Parent entity links to structural node via HAS_STRUCTURE/HAS_SEQUENCE; node carries validation status (valid/invalid/unvalidated)
-- Purpose: Annotate relations with confidence level and source epistemology
-- Examples: Link has `epistemic_status: "asserted"` if high confidence + no hedging; `"hypothesized"` if text contains "may/might/could"; `"prophetic"` if patent-sourced
-- Pattern: Overlaid on graph_data.json edges; enables filtering by evidence strength + source document type
+- **DocumentExtraction**: Interchange format between Claude extraction and sift-kg graph builder. Pattern: `{"document_id": str, "entities": [ExtractedEntity], "relations": [ExtractedRelation], "chunks_processed": int, "extracted_at": ISO timestamp}`
+- **Domain Package**: Self-contained domain configuration. Contains domain.yaml (schema), SKILL.md (extraction prompt), epistemic.py (analysis rules). Resolved by `core/domain_resolver.py`
+- **Epistemic Layer**: Annotates relations with confidence level and source epistemology. Status values: "asserted" (high confidence), "hypothesized" (hedging language), "prophetic" (patent-sourced)
+- **Domain Resolver**: `core/domain_resolver.py` locates and loads domain packages by name or alias. Returns schema, SKILL path, epistemic module
 ## Entry Points
-- `epistract-setup`: Installs sift-kg + optional molecular validation libraries. Calls `scripts/setup.sh`
-- `epistract-ingest`: Main ingest pipeline. Orchestrates document reading → extraction → validation → graph building → visualization
-- `epistract-query`: Search/filter graph. Uses `run_sift.py search` to find entities by name/type
-- `epistract-export`: Export graph to multiple formats (GraphML, CSV, SQLite, JSON). Uses `run_sift.py export`
-- `epistract-view`: Open existing graph viewer. Uses `run_sift.py view`
-- `epistract-validate`: Run molecular validation on extractions. Uses `scripts/validate_molecules.py`
-- `epistract-build`: Rebuild graph from existing extractions (skips extraction). Uses `run_sift.py build`
-- `epistract-epistemic`: Label epistemic status. Uses `scripts/label_epistemic.py`
-- `scripts/build_extraction.py`: Called by extraction agents via `echo JSON | python build_extraction.py <doc_id> <output_dir>`
-- `scripts/validate_molecules.py`: Called by ingest pipeline; scans extraction JSONs, validates, enriches
-- `scripts/run_sift.py`: Wrapper around sift-kg Python API; dispatches build/view/export/search/info commands
-- `scripts/label_communities.py`: Called during build to auto-label communities with semantic names
-- `scripts/label_epistemic.py`: Called post-build to analyze epistemic status across relations
-- `agents/extractor.md`: Spawned by `/epistract-ingest` for each document (or batch of chunks). Reads document, produces extraction JSON
-- `agents/validator.md`: Runs after extraction; validates molecular identifiers and reports coverage
+- `/epistract:setup`: Installs sift-kg + optional validation libraries
+- `/epistract:ingest`: Main ingest pipeline — document reading, extraction, validation, graph building, visualization
+- `/epistract:query`: Search/filter graph by entity name or type
+- `/epistract:export`: Export graph to GraphML, CSV, SQLite, JSON
+- `/epistract:view`: Open interactive graph viewer in browser
+- `/epistract:validate`: Run molecular validation on extractions
+- `/epistract:build`: Rebuild graph from existing extractions (skip extraction)
+- `/epistract:epistemic`: Run epistemic analysis on graph
+- `/epistract:domain`: Create new domain via interactive wizard — analyzes sample corpus, generates domain.yaml + SKILL.md + epistemic.py
+- `/epistract:dashboard`: Launch web dashboard for a domain
+- `/epistract:ask`: Chat with knowledge graph via natural language
+- `core/build_extraction.py`: Called by extraction agents to write extraction JSON
+- `core/run_sift.py`: Wrapper around sift-kg Python API; dispatches build/view/export/search/info commands
+- `core/epistemic.py`: Dispatches epistemic analysis to domain-specific epistemic module
+- `core/domain_wizard.py`: Analyzes sample corpus and generates domain configuration package
+- `agents/extractor.md`: Spawned by `/epistract:ingest` for each document
+- `agents/validator.md`: Runs after extraction; validates identifiers and reports coverage
 ## Error Handling
 - **Missing optional libraries** (RDKit, Biopython): Validation scripts check availability; if missing, flag as "unvalidated" but continue. User gets install instructions
-- **Extraction JSON validation**: `build_extraction.py` normalizes field names ('type' → 'entity_type'/'relation_type') to tolerate LLM variations
+- **Extraction JSON validation**: `build_extraction.py` normalizes field names ('type' -> 'entity_type'/'relation_type') to tolerate LLM variations
 - **sift-kg import errors**: `run_sift.py` catches ImportError, suggests `uv pip install sift-kg` with clear messaging
 - **Document read errors**: Kreuzberg engine silently skips unreadable files; epistract reports count of successfully read documents
-- **Graph build failures**: `run_sift.py build` exits with JSON error message; `/epistract-ingest` command catches and reports
-- **Validation enrichment**: If HAS_STRUCTURE/HAS_SEQUENCE enrichment fails, falls back to storing identifiers as attributes on parent node rather than creating new nodes
+- **Graph build failures**: `run_sift.py build` exits with JSON error message; command layer catches and reports
+- **Domain resolution**: `domain_resolver.py` raises clear error if domain not found, lists available domains
 ## Cross-Cutting Concerns
 - Domain schema enforced by sift-kg's schema loader (validates against domain.yaml)
-- Entity confidence scores calibrated: 0.9–1.0 = explicit, 0.7–0.89 = supported, 0.5–0.69 = inferred, <0.5 = speculative
-- Molecular validation: RDKit parses SMILES + computes canonical form; Biopython parses sequences + computes properties
+- Entity confidence scores calibrated: 0.9-1.0 = explicit, 0.7-0.89 = supported, 0.5-0.69 = inferred, <0.5 = speculative
+- Domain-specific validation: drug-discovery uses RDKit/Biopython; contracts uses obligation/deadline validation
 <!-- GSD:architecture-end -->
 
 <!-- GSD:workflow-start source:GSD defaults -->
