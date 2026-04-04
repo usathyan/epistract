@@ -2,9 +2,11 @@
 
 let chatHistory = [];  // D-08: session-only
 let callbacks = {};
+let template = {};
 
 export function initChat(opts) {
     callbacks = opts || {};
+    template = opts.template || {};
     const form = document.getElementById('chat-form');
     const input = document.getElementById('chat-input');
 
@@ -64,7 +66,7 @@ async function sendMessage(question) {
     // Add assistant message placeholder
     const assistantDiv = document.createElement('div');
     assistantDiv.className = 'chat-msg chat-msg--assistant';
-    assistantDiv.innerHTML = '<span class="loading-dots">Analyzing contracts</span>';
+    assistantDiv.innerHTML = '<span class="loading-dots">' + (template.loading_message || 'Analyzing') + '</span>';
     messages.appendChild(assistantDiv);
     messages.scrollTop = messages.scrollHeight;
 

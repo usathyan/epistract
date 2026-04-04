@@ -1,22 +1,59 @@
 // graph.js - Graph panel: vis.js network, search, entity type toggles
 
-const ENTITY_COLORS = {
-    PARTY: '#6366f1', OBLIGATION: '#f59e0b', DEADLINE: '#ef4444',
-    COST: '#10b981', SERVICE: '#8b5cf6', VENUE: '#06b6d4',
-    CLAUSE: '#64748b', COMMITTEE: '#ec4899', PERSON: '#f97316',
-    EVENT: '#14b8a6', STAGE: '#a855f7', ROOM: '#0ea5e9',
-};
+const PALETTE = ['#6366f1','#f59e0b','#ef4444','#10b981','#8b5cf6','#06b6d4','#64748b','#ec4899','#f97316','#14b8a6','#a855f7','#0ea5e9'];
 
+let ENTITY_COLORS = {};
 let network = null;
 let allNodes = [];
 let allEdges = [];
 let visNodes = null;
 let visEdges = null;
-let activeTypes = new Set(Object.keys(ENTITY_COLORS));
+let activeTypes = new Set();
 let callbacks = {};
 
-export function initGraph(opts) {
+function getEntityColor(type) {
+    if (ENTITY_COLORS[type]) return ENTITY_COLORS[type];
+    // Assign from palette by alphabetical index
+    const types = [...activeTypes].sort();
+    const idx = types.indexOf(type);
+    return PALETTE[idx >= 0 ? idx % PALETTE.length : 0];
+}
+
+export async function initGraph(opts) {
     callbacks = opts || {};
+    const template = opts.template || {};
+    ENTITY_COLORS = template.entity_colors || {};
+
+    // Build toggle buttons dynamically from entity-types API
+    const toggleContainer = document.getElementById('entity-toggles');
+    if (toggleContainer) {
+        try {
+            const entityResp = await fetch('/api/graph/entity-types');
+            const entityData = await entityResp.json();
+            toggleContainer.innerHTML = '';
+            for (const type of Object.keys(entityData.entity_types || {})) {
+                activeTypes.add(type);
+                const btn = document.createElement('button');
+                btn.className = 'toggle-btn active';
+                btn.dataset.type = type;
+                btn.style.color = getEntityColor(type);
+                btn.textContent = type.charAt(0) + type.slice(1).toLowerCase().replace(/_/g, ' ');
+                btn.addEventListener('click', () => {
+                    if (activeTypes.has(type)) {
+                        activeTypes.delete(type);
+                        btn.classList.remove('active');
+                    } else {
+                        activeTypes.add(type);
+                        btn.classList.add('active');
+                    }
+                    filterGraph();
+                });
+                toggleContainer.appendChild(btn);
+            }
+        } catch (e) {
+            console.warn('Could not load entity types for toggles:', e);
+        }
+    }
 
     // Load graph data
     loadGraphData();
@@ -26,23 +63,6 @@ export function initGraph(opts) {
     if (searchInput) {
         searchInput.addEventListener('input', () => filterGraph());
     }
-
-    // Entity type toggles
-    document.querySelectorAll('.toggle-btn[data-type]').forEach(btn => {
-        const type = btn.dataset.type;
-        btn.classList.add('active');
-        btn.style.color = ENTITY_COLORS[type] || '#666';
-        btn.addEventListener('click', () => {
-            if (activeTypes.has(type)) {
-                activeTypes.delete(type);
-                btn.classList.remove('active');
-            } else {
-                activeTypes.add(type);
-                btn.classList.add('active');
-            }
-            filterGraph();
-        });
-    });
 
     // Severity filter
     const severityFilter = document.getElementById('severity-filter');
@@ -91,7 +111,7 @@ function buildGraph() {
     const nodes = allNodes.map(n => ({
         id: n.id,
         label: n.name || n.id,
-        color: ENTITY_COLORS[n.entity_type] || '#999',
+        color: getEntityColor(n.entity_type),
         title: `${n.entity_type}: ${n.name}`,
         shape: 'dot',
         size: 12,
@@ -222,11 +242,11 @@ function showNodePopover(nodeId, position) {
     popover.innerHTML = `
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
             <strong>${node.name || node.id}</strong>
-            <span class="entity-badge" style="color:${ENTITY_COLORS[node.entity_type] || '#666'}">${node.entity_type}</span>
+            <span class="entity-badge" style="color:${getEntityColor(node.entity_type)}">${node.entity_type}</span>
         </div>
         ${attrHtml ? `<div class="node-attrs">${attrHtml}</div>` : ''}
         ${docs.length ? `<div class="node-docs"><span class="label">Sources:</span> ${docs.join(', ')}</div>` : ''}
-        <button class="ask-about-btn" onclick="window.dispatchEvent(new CustomEvent('ask-question', {detail: {question: 'Tell me about ${safeName}. What contracts mention it and what are the key obligations?'}}))">Ask about this</button>
+        <button class="ask-about-btn" onclick="window.dispatchEvent(new CustomEvent('ask-question', {detail: {question: 'Tell me about ${safeName}. What are the key details and relationships?'}}))">Ask about this</button>
     `;
 
     document.getElementById('graph-panel').appendChild(popover);
