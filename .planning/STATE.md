@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Framework Architecture & Domain Developer Experience
-status: verifying
-stopped_at: Phase 10 context gathered
-last_updated: "2026-04-04T16:27:24.859Z"
+status: executing
+stopped_at: Completed 10-01-PLAN.md
+last_updated: "2026-04-04T17:15:16.297Z"
 last_activity: 2026-04-04
 progress:
   total_phases: 6
   completed_phases: 4
-  total_plans: 12
-  completed_plans: 12
+  total_plans: 16
+  completed_plans: 14
   percent: 85
 ---
 
@@ -21,13 +21,13 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-02)
 
 **Core value:** Extract knowledge, not information. Any corpus, any domain -- plug in a schema, get a knowledge graph with epistemic layer.
-**Current focus:** Phase 09 — consumer-decoupling-and-standalone-install
+**Current focus:** Phase 10 — documentation-refresh
 
 ## Current Position
 
-Phase: 10
-Plan: Not started
-Status: All plans complete — ready for verification
+Phase: 10 (documentation-refresh) — EXECUTING
+Plan: 3 of 4
+Status: Ready to execute
 Last activity: 2026-04-04
 
 Progress: [████████░░] 85%
@@ -67,6 +67,8 @@ Progress: [████████░░] 85%
 | Phase 09 P01 | 4min | 2 tasks | 8 files |
 | Phase 09 P02 | 3min | 2 tasks | 7 files |
 | Phase 09 P03 | 4min | 2 tasks | 7 files |
+| Phase 10 P04 | 3min | 2 tasks | 6 files |
+| Phase 10 P01 | 4min | 2 tasks | 9 files |
 
 ## Accumulated Context
 
@@ -98,6 +100,8 @@ Recent decisions affecting current work:
 - [Phase 09]: Dashboard content via /api/dashboard endpoint (domain HTML or auto-generated stats)
 - [Phase 09]: Entity colors: template.entity_colors first, PALETTE array fallback for unknown types
 - [Phase 09]: Used telegram_bot (underscore) directory for Python module import compat; bot handlers in HAS_TELEGRAM guard
+- [Phase 10]: Paper title: Domain-Agnostic Framework for Agentic KG Construction from Document Corpora
+- [Phase 10]: Used @mermaid-js/mermaid-cli via npx for SVG rendering (beautiful-mermaid had no bin entry)
 
 ### Pending Todos
 
@@ -111,6 +115,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-04T16:27:24.856Z
-Stopped at: Phase 10 context gathered
-Resume file: .planning/phases/10-documentation-refresh/10-CONTEXT.md
+Last session: 2026-04-04T17:15:16.294Z
+Stopped at: Completed 10-01-PLAN.md
+Resume file: None

@@ -68,9 +68,9 @@ See v1 traceability below.
 ### Documentation
 
 - [ ] **DOCS-01**: README reframed as framework with dual-path quick-start
-- [ ] **DOCS-02**: Architecture diagrams show three-layer separation
+- [x] **DOCS-02**: Architecture diagrams show three-layer separation
 - [ ] **DOCS-03**: Domain developer guide covers full adoption workflow
-- [ ] **DOCS-04**: Paper updated to framework framing
+- [x] **DOCS-04**: Paper updated to framework framing
 
 ### Consumer Decoupling
 

@@ -195,10 +195,10 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 10-01-PLAN.md — Architecture diagrams (4 Mermaid + SVG) and gitignore STA audit
+- [x] 10-01-PLAN.md — Architecture diagrams (4 Mermaid + SVG) and gitignore STA audit
 - [ ] 10-02-PLAN.md — README rewrite (framework-first) + showcases + CLAUDE.md update
 - [ ] 10-03-PLAN.md — Domain developer guide rewrite (wizard-first structure)
-- [ ] 10-04-PLAN.md — Paper reframing (title, abstract, architecture, Case Study 2, conclusion)
+- [x] 10-04-PLAN.md — Paper reframing (title, abstract, architecture, Case Study 2, conclusion)
 
 ## Progress
 
@@ -216,14 +216,14 @@ Phases execute in numeric order: 6 -> 7 -> 8 -> 9 -> 10
 | 7. Testing Framework | v2.0 | 0/3 | Planning | - |
 | 8. Domain Creation Wizard | v2.0 | 0/3 | Planning | - |
 | 9. Consumer Decoupling and Standalone Install | v2.0 | 0/3 | Planning | - |
-| 10. Documentation Refresh | v2.0 | 0/4 | Planning | - |
+| 10. Documentation Refresh | v2.0 | 2/4 | In Progress|  |
 
 ## Backlog
 
 ### Phase 999.2: Git Remote Sync (BACKLOG)
 **Goal:** Pull latest main and rebase/merge before pushing feature/cross-domain-kg-framework — remote is ahead of local
 **Requirements:** TBD
-**Plans:** 0 plans
+**Plans:** 2/4 plans executed
 
 Plans:
 - [ ] TBD (promote with /gsd:review-backlog when ready)
