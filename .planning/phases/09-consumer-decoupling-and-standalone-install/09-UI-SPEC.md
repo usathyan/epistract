@@ -48,12 +48,13 @@ Exceptions: Sidebar width fixed at 280px. Chat panel min-width 480px. These are 
 
 | Role | Size | Weight | Line Height |
 |------|------|--------|-------------|
-| Body | 15px | 400 | 1.5 |
-| Label | 13px | 600 | 1.5 |
 | Heading | 20px | 600 | 1.2 |
-| Data | 14px | 400 | 1.5 |
+| Body | 16px | 400 | 1.5 |
+| Label | 13px | 600 | 1.5 |
 
-Font stack: `--font-body` for Body/Label/Heading, `--font-data` for Data role.
+3 sizes with clear differentiation: 13px (compact labels, legend items, metadata captions), 16px (body text, chat messages, data values, table cells), 20px (section headings, panel titles, welcome heading). Adjacent sizes separated by at least 3px.
+
+Font stack: `--font-body` for Body/Label/Heading, `--font-data` (monospace) used only for inline code snippets and node IDs within Body-sized text (rendered at 16px to match surrounding content).
 
 ---
 
@@ -87,6 +88,12 @@ The following 12-color palette is the default auto-assignment palette for domain
 ```
 
 When a domain provides `entity_colors` in `template.yaml`, those override the palette for the specified types. Unlisted types fall back to the palette by index.
+
+---
+
+## Focal Point
+
+When the workbench loads, the **graph visualization panel** is the primary focal point. It occupies the largest viewport area (center-right) and renders an animated force-directed graph with colored entity nodes. The graph draws the eye through motion (node settling) and color contrast against the white dominant background. Secondary attention flows to the sidebar entity legend (left) which provides orientation, then to the chat welcome panel (bottom-right) with starter question cards that invite interaction.
 
 ---
 
@@ -124,7 +131,7 @@ Each domain provides these values. The generic fallback values below are used wh
 | Graph loading | "Building graph visualization..." |
 | Source empty state | "Select a document from the list to view its contents." |
 | Source load error | "Failed to load document: {error}. Check that the source files are accessible." |
-| Chat error | "Something went wrong. Check that the LLM API key is configured and try again." |
+| Chat error | "LLM request failed. Verify your API key is configured and try again." |
 | Chat stream error | "Connection lost. Refresh the page to reconnect." |
 | Node search placeholder | "Search nodes..." |
 | Severity filter default | "All Severities" |
