@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Framework Architecture & Domain Developer Experience
-status: verifying
-stopped_at: Phase 9 context gathered
-last_updated: "2026-04-04T03:52:29.473Z"
-last_activity: 2026-04-03
+status: executing
+stopped_at: Completed 09-01-PLAN.md (domain template system)
+last_updated: "2026-04-04T12:34:43.461Z"
+last_activity: 2026-04-04 -- Completed 09-01 (domain template system)
 progress:
   total_phases: 5
   completed_phases: 3
-  total_plans: 9
-  completed_plans: 9
-  percent: 78
+  total_plans: 12
+  completed_plans: 10
+  percent: 80
 ---
 
 # Project State
@@ -25,12 +25,12 @@ See: .planning/PROJECT.md (updated 2026-04-02)
 
 ## Current Position
 
-Phase: 9
-Plan: Not started
-Status: Phase complete — ready for verification
-Last activity: 2026-04-03
+Phase: 09 (consumer-decoupling-and-standalone-install) -- EXECUTING
+Plan: 1 of 3 -- COMPLETE
+Status: Executing Phase 09
+Last activity: 2026-04-04 -- Completed 09-01 (domain template system)
 
-Progress: [████████░░] 78%
+Progress: [████████░░] 80%
 
 ## Performance Metrics
 
@@ -90,6 +90,8 @@ Recent decisions affecting current work:
 - [Phase 08]: Used textwrap.dedent f-strings for epistemic.py code generation instead of Jinja2
 - [Phase 08]: Validation uses tempfile + importlib.util for isolated import testing of generated code
 - [Phase 08]: Tests use resolve_domain()[schema][entity_types] path since resolver returns nested dict
+- [Phase 09]: Template loader self-contained (no core/ imports), uses CLAUDE_PLUGIN_ROOT for plugin install compat
+- [Phase 09]: PERSONA_PROMPT removed from system_prompt.py; persona text moved verbatim to contracts template.yaml
 
 ### Pending Todos
 
@@ -103,6 +105,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-04T03:52:29.469Z
-Stopped at: Phase 9 context gathered
-Resume file: .planning/phases/09-consumer-decoupling-and-standalone-install/09-CONTEXT.md
+Last session: 2026-04-04T12:34:43.458Z
+Stopped at: Completed 09-01-PLAN.md (domain template system)
+Resume file: None

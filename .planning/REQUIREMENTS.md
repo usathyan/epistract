@@ -62,7 +62,7 @@ See v1 traceability below.
 ### Standalone Install
 
 - [ ] **INST-01**: Plugin installs and runs `/epistract:setup` without repo clone
-- [ ] **INST-02**: Pre-built domains (drug-discovery, contracts) available out of the box
+- [x] **INST-02**: Pre-built domains (drug-discovery, contracts) available out of the box
 - [ ] **INST-03**: Plugin excludes demo data, test corpora, paper artifacts
 
 ### Documentation
@@ -74,7 +74,7 @@ See v1 traceability below.
 
 ### Consumer Decoupling
 
-- [ ] **CONS-01**: Workbench in `examples/`, works with any domain
+- [x] **CONS-01**: Workbench in `examples/`, works with any domain
 - [ ] **CONS-02**: Telegram bot in `examples/`, works with any domain
 
 ### Testing Framework
