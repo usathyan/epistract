@@ -1,0 +1,24 @@
+flowchart TB
+    subgraph L1["Layer 1 -- Brute Facts KG"]
+        direction LR
+        P1["Party\n(vendor)"] -->|OBLIGATED_BY| O1["Obligation\n(deadline)"]
+        P1 -->|SIGNS| C1["Contract\n(agreement)"]
+        O1 -->|REFERENCES| V1["Venue\n(location)"]
+
+        G1["Gene\n(BRCA1)"] -->|ENCODES| PR1["Protein\n(BRCA1)"]
+        G1 -->|HAS_VARIANT| V2["Variant\n(p.C61G)"]
+        D1["Compound\n(olaparib)"] -->|TARGETS| PR1
+    end
+
+    subgraph L2["Layer 2 -- Epistemic Super-Domain"]
+        direction LR
+        CF["Conflict Detection\nContradicting terms across docs"]
+        GA["Gap Analysis\nMissing obligations or coverage"]
+        CS["Confidence Scoring\nasserted / hypothesized / prophetic"]
+        RS["Risk Surfacing\nDeadline overlaps, cost disputes"]
+    end
+
+    L1 -->|"epistemic analysis\n(domain-agnostic)"| L2
+
+    NOTE["Any domain's brute facts\nget the same epistemic layer"]
+    style NOTE fill:none,stroke:none,color:#666

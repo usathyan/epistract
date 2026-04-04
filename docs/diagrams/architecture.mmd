@@ -1,23 +1,21 @@
 flowchart TB
-    subgraph CC["Claude Code Runtime"]
-        subgraph EP["Epistract Plugin"]
-            CMD["Commands<br/>/ingest /build /view<br/>/query /export /validate"]
-            SKL["Drug Discovery<br/>Extraction Skill"]
-            AGT["Agents<br/>extractor · validator"]
-            CMD --> SKL
-            SKL --> AGT
-        end
-        subgraph SK["sift-kg Engine"]
-            ING["Document Ingest<br/>Kreuzberg · OCR"]
-            GRB["Graph Builder<br/>NetworkX · SemHash"]
-            RES["Entity Resolution<br/>LLM-proposed merges"]
-            EXP["Export<br/>JSON · GraphML · GEXF<br/>CSV · SQLite"]
-            VIZ["Interactive Viewer<br/>HTML · Force-directed"]
-            ING --> GRB --> RES --> EXP
-            RES --> VIZ
-        end
-        EP --> SK
+    subgraph CORE["core/ -- Pipeline Engine"]
+        DR["domain_resolver.py\nDomain discovery + loading"]
+        ID["ingest_documents.py\nMulti-format parsing"]
+        BE["build_extraction.py\nEntity/relation assembly"]
+        RS["run_sift.py\nGraph build + export"]
+        EP["epistemic.py\nEpistemic dispatch"]
+        DW["domain_wizard.py\nAuto-generate domains"]
     end
-    USR["Scientist / Researcher"] --> CMD
-    VIZ --> BRW["Browser"]
-    EXP --> EXT["Gephi · Cytoscape<br/>DuckDB · pandas"]
+    subgraph DOMAINS["domains/ -- Pluggable Configs"]
+        DD["drug-discovery/\n17 entities - 30 relations"]
+        DC["contracts/\n11 entities - 11 relations"]
+        DX["your-domain/\nCreated via wizard"]
+    end
+    subgraph EXAMPLES["examples/ -- Consumers"]
+        WB["workbench/\nFastAPI dashboard"]
+        TB["telegram_bot/\nChat interface"]
+    end
+    DOMAINS -->|"schema + prompts"| CORE
+    CORE -->|"graph data"| EXAMPLES
+    USR["User / Developer"] --> CORE
