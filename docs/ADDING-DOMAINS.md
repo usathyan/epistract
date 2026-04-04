@@ -1,323 +1,405 @@
-# Adding New Domains to Epistract
+# Adding a Domain to Epistract
 
-## Executive Summary
-
-Epistract supports pluggable domain configurations. Each domain is a self-contained skill directory under `skills/` that bundles a YAML schema, extraction prompts, and reference documentation. To add a new domain, create a directory following the `skills/drug-discovery-extraction/` reference implementation, define your entity and relation types, write extraction prompts, and pass `--domain <name>` when running the pipeline.
-
-## Technical Summary
-
-A domain package is a directory at `skills/{domain-name}-extraction/` containing three required components:
-
-| File | Purpose | Size Reference |
-|------|---------|---------------|
-| `domain.yaml` | sift-kg schema — entity types, relation types, system context, extraction hints | ~19 KB (biomedical) |
-| `SKILL.md` | Detailed extraction prompt for Claude agents — naming conventions, output format, per-type guidance | ~44 KB (biomedical) |
-| `references/` | Quick-reference docs for entity and relation types | 2 files (biomedical) |
-
-Optional: `validation-scripts/` for domain-specific identifier validation (e.g., SMILES for biomedical). The pipeline skips validation if this directory is absent.
-
-The pipeline resolves `--domain contract` to `skills/contract-extraction/domain.yaml`. Default is `drug-discovery` for backward compatibility.
+Epistract is a domain-agnostic knowledge graph framework. Each domain is a self-contained package that teaches the extraction engine what to look for in your documents. This guide covers two paths: the automated wizard (recommended) and manual creation for power users.
 
 ---
 
-## Detailed Guide
+## Quick Start: Domain Wizard
 
-### 1. Directory Structure
+The fastest path to a working domain. Five steps from sample documents to an interactive knowledge graph.
 
-Create your domain package under `skills/`:
+### Step 1: Gather Sample Documents
+
+Collect 3-5 representative documents from your target corpus. These should cover the range of entity types and relationships you want to extract. Supported formats: PDF, DOCX, HTML, TXT, XLS, EML (75+ formats via Kreuzberg).
 
 ```
-skills/{domain-name}-extraction/
-├── domain.yaml              # REQUIRED: sift-kg schema
-├── SKILL.md                 # REQUIRED: extraction prompt for Claude
-├── references/              # REQUIRED: quick-reference docs
-│   ├── entity-types.md      #   entity type summary table
-│   └── relation-types.md    #   relation type summary table
-└── validation-scripts/      # OPTIONAL: domain-specific validators
-    └── *.py
+mkdir ./sample-docs/
+# Copy 3-5 representative documents here
 ```
 
-The naming convention is `{domain-name}-extraction/`. The domain name (the part before `-extraction`) is what users pass to `--domain`. Examples:
+### Step 2: Run the Wizard
 
-- `skills/drug-discovery-extraction/` → `--domain drug-discovery`
-- `skills/contract-extraction/` → `--domain contract`
-- `skills/regulatory-extraction/` → `--domain regulatory`
+```bash
+/epistract:domain --input ./sample-docs/
+```
 
-### 2. domain.yaml — Schema Definition
+The wizard performs multi-pass LLM analysis on your sample documents:
 
-This is the sift-kg domain schema. It defines what entities and relations the extraction pipeline recognizes.
+1. **Document reading** -- extracts text from all supported formats
+2. **Entity discovery** -- proposes entity types based on what appears in the documents
+3. **Relation discovery** -- proposes relation types based on how entities connect
+4. **Schema generation** -- produces a complete `domain.yaml` with types, descriptions, and extraction hints
+5. **Package generation** -- creates `SKILL.md` extraction prompt and `epistemic.py` analysis rules
 
-**Required top-level fields:**
+The wizard limits schemas to 15 entity types and 20 relation types to keep extraction focused. You can always add more manually after reviewing the output.
+
+### Step 3: Review the Generated Schema
+
+The wizard outputs a complete domain package to `domains/your-domain/`:
+
+```
+domains/your-domain/
+  domain.yaml    # Entity types, relation types, aliases
+  SKILL.md       # LLM extraction prompt with domain knowledge
+  epistemic.py   # Domain-specific analysis rules
+  references/    # Ontology references (if applicable)
+```
+
+Open `domain.yaml` and review the proposed entity and relation types. Adjust descriptions, add or remove types, and refine extraction hints as needed.
+
+### Step 4: Test with Full Corpus
+
+```bash
+/epistract:ingest --domain your-domain --input ./full-corpus/
+```
+
+Run extraction on your full document set. Check entity and relation quality in the output. The pipeline will:
+- Read all documents in the input directory
+- Extract entities and relations using your domain schema
+- Build a deduplicated knowledge graph with community detection
+- Run epistemic analysis (conflicts, gaps, risks)
+
+### Step 5: Explore Your Graph
+
+```bash
+/epistract:view
+```
+
+Open the interactive graph visualization in your browser. Run queries, explore communities, and export to GraphML, CSV, or SQLite.
+
+---
+
+## What Gets Generated
+
+![Domain Package Anatomy](diagrams/domain-package.svg)
+
+A domain package directory contains:
+
+| File | Purpose | Required |
+|------|---------|----------|
+| `domain.yaml` | Entity types, relation types, aliases, system context | Yes |
+| `SKILL.md` | LLM extraction prompt with domain knowledge and examples | Yes |
+| `epistemic.py` | Domain-specific epistemic analysis (conflicts, gaps, risks) | Yes |
+| `references/` | Ontology references, nomenclature guides | Optional |
+| `workbench/` | Dashboard customization (`template.yaml`) | Optional |
+
+The domain resolver discovers domains automatically from the `domains/` directory. You can also register aliases for convenient access (e.g., `--domain contract` resolves to `domains/contracts/`).
+
+---
+
+## Manual Domain Creation
+
+For power users who want full control or need to customize beyond what the wizard generates.
+
+### domain.yaml Reference
+
+The schema file defines what the extraction engine looks for. Every field explained:
 
 ```yaml
-name: "Your Domain Name"          # Human-readable name
-version: "1.0.0"                  # Semver for documentation (not enforced)
-description: |                    # Multi-line description of the domain
-  What documents this domain targets,
-  what knowledge it extracts.
+# Domain metadata
+name: "your-domain"          # Human-readable name, used in output
+version: "1.0.0"             # Semantic version for tracking changes
+description: |               # Multi-line description of the domain
+  What this domain covers and what document types it handles.
 
-system_context: |                 # Prompt context injected into extraction agents
-  You are analyzing [domain] documents to build a knowledge graph of [concepts].
+# System context -- instructions for the LLM extraction agent
+system_context: |
+  You are analyzing [domain] documents to build a knowledge graph
+  of [key concepts]. [Domain-specific disambiguation rules go here.]
 
-  NOMENCLATURE STANDARDS — use canonical names:
-  - [Type A]: prefer [standard], e.g. [example]
-  - [Type B]: prefer [standard], e.g. [example]
+# Entity types -- what to extract from documents
+entity_types:
+  ENTITY_NAME:               # SCREAMING_SNAKE_CASE convention
+    description: "..."       # Guides LLM extraction -- be specific
+    extraction_hints:        # Optional: concrete extraction guidance
+      - "Look for..."
+      - "Include..."
+    attributes:              # Optional: structured fields on entities
+      - name: "field_name"
+        type: "string"
 
-  DISAMBIGUATION RULES — choose the correct entity type:
-  - [Type X] vs [Type Y]: [rule]
+# Relation types -- how entities connect
+relation_types:
+  RELATION_NAME:
+    description: "..."       # What this relationship means
+    source_types: [...]      # Which entity types can be source
+    target_types: [...]      # Which entity types can be target
+    symmetric: false         # Optional: true if A-B implies B-A
+    review_required: false   # Optional: flag for human review
 
-  CONFIDENCE CALIBRATION — assign confidence scores:
-  - 0.9–1.0: Explicitly stated in the text with clear evidence.
-  - 0.7–0.89: Strongly supported by context but not directly quoted.
-  - 0.5–0.69: Inferred from indirect evidence or background knowledge.
-  - Below 0.5: Speculative; flag for review.
+# Aliases for domain resolution (e.g., "contract" -> "contracts")
+aliases: ["alias1", "alias2"]
 
-fallback_relation: RELATED_TO     # Catch-all relation when no specific type fits
+# Fallback relation type when no specific type matches
+fallback_relation: ASSOCIATED_WITH
+```
+
+#### Drug Discovery Example (17 entity types, 30 relation types)
+
+From `domains/drug-discovery/domain.yaml` -- a complex biomedical schema:
+
+```yaml
+name: "Drug Discovery"
+version: "1.0.0"
+description: |
+  Domain for extracting structured knowledge graphs from drug discovery and
+  pharmaceutical research documents. Covers the full pipeline from target
+  identification through clinical development and regulatory approval.
+
+system_context: |
+  You are analyzing drug discovery and pharmaceutical research documents...
+
+  NOMENCLATURE STANDARDS -- use canonical names whenever possible:
+  - Drugs/compounds: prefer International Nonproprietary Names (INN)
+  - Genes: use HGNC-approved symbols (e.g. "BRAF" not full name)
+  - Diseases: prefer MeSH terms
+  - Adverse events: prefer MedDRA Preferred Terms
+
+  DISAMBIGUATION RULES -- choose the correct entity type:
+  - GENE vs PROTEIN: Use GENE for genomic locus/mutation; PROTEIN for
+    translated product/binding/inhibition
+  - COMPOUND vs MECHANISM_OF_ACTION: "nivolumab" is COMPOUND;
+    "PD-1 inhibition" is MECHANISM_OF_ACTION
 
 entity_types:
-  # ... (see below)
+  COMPOUND:
+    description: "Small molecules, biologics, drug candidates, approved drugs"
+    extraction_hints:
+      - "Look for drug names (INN), brand names, compound codes"
+      - "Include biologics such as monoclonal antibodies, ADCs, gene therapies"
+      - "Capture development stage when mentioned"
+  GENE:
+    description: "Genes, genetic loci, alleles, and genomic variants"
+    extraction_hints:
+      - "Use HGNC symbols when available (e.g. 'BRCA1', 'TP53', 'KRAS')"
+      - "Include specific variants and mutations"
+  PROTEIN:
+    description: "Proteins, enzymes, receptors, ion channels, and complexes"
+    extraction_hints:
+      - "Look for drug targets: kinases, GPCRs, nuclear receptors"
+      - "Use PROTEIN when discussing binding or catalytic activity"
+  DISEASE:
+    description: "Medical conditions with established diagnostic criteria"
+    extraction_hints:
+      - "Prefer MeSH disease terms for canonical naming"
+      - "Include disease subtypes and staging"
+  # ... 13 more entity types including MECHANISM_OF_ACTION, CLINICAL_TRIAL,
+  #     PATHWAY, BIOMARKER, ADVERSE_EVENT, ORGANIZATION, PUBLICATION,
+  #     REGULATORY_ACTION, PHENOTYPE, METABOLITE, CELL_OR_TISSUE,
+  #     PROTEIN_DOMAIN, SEQUENCE_VARIANT
 
 relation_types:
-  # ... (see below)
+  TARGETS:
+    description: "Compound acts on a protein or gene target"
+    source_types: [COMPOUND]
+    target_types: [PROTEIN, GENE]
+  INHIBITS:
+    description: "Entity inhibits or blocks the activity of another"
+    source_types: [COMPOUND, PROTEIN]
+    target_types: [PROTEIN, GENE, PATHWAY]
+  INDICATED_FOR:
+    description: "Compound is indicated for or used to treat a disease"
+    source_types: [COMPOUND]
+    target_types: [DISEASE]
+  CONFERS_RESISTANCE_TO:
+    description: "Gene or protein confers resistance to a compound"
+    source_types: [GENE, PROTEIN, PHENOTYPE]
+    target_types: [COMPOUND]
+    review_required: true
+  # ... 26 more relation types
 ```
 
-**Entity type definition:**
+Key patterns: nomenclature standards in `system_context`, disambiguation rules, `extraction_hints` for each type, `review_required` flag for safety-critical relations.
 
-Each entity type is a key under `entity_types:` with these fields:
+#### Contracts Example (9 entity types, 9 relation types)
+
+From `domains/contracts/domain.yaml` -- a simpler but effective schema:
 
 ```yaml
+name: "Contract Analysis"
+version: "1.0.0"
+description: |
+  Domain for extracting structured knowledge graphs from event contracts,
+  vendor agreements, and service-level agreements. Covers obligations,
+  deadlines, costs, parties, and cross-contract dependencies.
+
+system_context: |
+  You are analyzing event contracts and vendor agreements to build a
+  knowledge graph of parties, obligations, deadlines, costs, and
+  cross-contract dependencies.
+
 entity_types:
   PARTY:
-    description: "Organizations, individuals, or legal entities named in contracts"
-    extraction_hints:
-      - "Look for named parties in preambles: 'Licensee', 'Licensor', 'Vendor', 'Client'"
-      - "Include parent companies and subsidiaries when referenced"
-      - "Capture the legal name, not informal references"
-```
+    description: "Organization or individual that is a signatory or referenced entity"
+  CONTRACT:
+    description: "A formal agreement between parties"
+  OBLIGATION:
+    description: "A required action, delivery, or compliance requirement"
+  DEADLINE:
+    description: "A date or time constraint for an obligation or deliverable"
+  COST:
+    description: "A monetary amount, fee, or payment term"
+  VENUE:
+    description: "A physical location referenced in a contract"
+  SERVICE:
+    description: "A service being provided under contract"
+  INSURANCE:
+    description: "Insurance requirement or coverage specification"
+  PENALTY:
+    description: "A consequence for breach or non-compliance"
 
-Required fields per entity type:
-- `description` — One sentence explaining what this type represents
-- `extraction_hints` — List of 2-4 hints guiding the LLM on where and how to find these entities
-
-**Relation type definition:**
-
-Each relation type is a key under `relation_types:` with these fields:
-
-```yaml
 relation_types:
-  OBLIGATES:
-    description: "A party is obligated to perform an action or provide a service"
-    source_types: [PARTY]
-    target_types: [OBLIGATION]
-    extraction_hints:
-      - "Look for 'shall', 'must', 'agrees to', 'is required to', 'will provide'"
-      - "The party is the source; the obligation is the target"
+  OBLIGATED_TO:
+    description: "Party is obligated to fulfill an obligation"
+  HAS_DEADLINE:
+    description: "Obligation or deliverable has a deadline"
+  COSTS:
+    description: "Service or obligation has an associated cost"
+  SIGNED_BY:
+    description: "Contract is signed by a party"
+  PROVIDES_SERVICE:
+    description: "Party provides a service"
+  HELD_AT:
+    description: "Event or service is at a venue"
+  REQUIRES_INSURANCE:
+    description: "Contract requires insurance coverage"
+  CROSS_REFERENCES:
+    description: "One contract references another"
+  PENALIZES:
+    description: "Breach triggers a penalty"
 ```
 
-Required fields per relation type:
-- `description` — One sentence explaining the relationship
-- `source_types` — List of valid source entity types (must reference defined `entity_types`)
-- `target_types` — List of valid target entity types (must reference defined `entity_types`)
+Key patterns: no `extraction_hints` needed for straightforward types, descriptions are the primary guidance, cross-contract references are high-value relation types.
 
-Optional fields:
-- `extraction_hints` — List of hints for the LLM
-- `symmetric: true` — Relation applies in both directions (e.g., CONFLICTS_WITH)
-- `review_required: true` — Flag for human review (safety-critical or ambiguous relations)
+### SKILL.md Guide
 
-**Validation on load:** sift-kg validates the YAML schema when loaded. If `source_types` or `target_types` reference entity types not defined in `entity_types`, the build will fail with a clear error.
+The extraction prompt (`SKILL.md`) teaches the LLM agent how to extract entities and relations from your documents. Structure:
 
-### 3. SKILL.md — Extraction Prompt
+1. **Role definition** -- who the agent is and what it specializes in
+2. **Domain context** -- what documents look like, what to extract
+3. **Entity type descriptions** with examples and disambiguation rules
+4. **Relation type descriptions** with evidence patterns
+5. **Output format** -- DocumentExtraction JSON schema with example
+6. **Confidence scoring** -- calibration guidelines (0.9-1.0 explicit, 0.7-0.89 supported, 0.5-0.69 inferred, <0.5 speculative)
 
-This is the detailed prompt that guides Claude agents during extraction. It's a markdown file with YAML frontmatter.
+**Drug discovery SKILL.md** (detailed, ~44KB): Opens with "You are an expert biomedical knowledge engineer..." and includes nomenclature standards (INN for drugs, HGNC for genes, MeSH for diseases, MedDRA for adverse events), disambiguation rules (GENE vs PROTEIN, COMPOUND vs MECHANISM_OF_ACTION), and per-type extraction examples.
 
-**Frontmatter (required):**
+**Contracts SKILL.md** (concise, ~1KB): Opens with entity and relation type tables, followed by extraction guidelines: "Every obligation must link to a responsible party and a deadline if specified."
+
+The level of detail scales with domain complexity. Drug discovery needs extensive disambiguation rules because biomedical terminology is ambiguous. Contracts are more straightforward and need less guidance.
+
+### epistemic.py Reference
+
+The epistemic module implements domain-specific analysis that runs after graph construction. It must export an `analyze` function (or domain-specific entry point) that takes graph data and returns a claims layer.
+
+**Drug discovery entry point** (`domains/drug-discovery/epistemic.py`):
+
+```python
+def analyze_biomedical_epistemic(output_dir: Path, graph_data: dict) -> dict:
+    """Run full biomedical epistemic analysis on a built graph.
+
+    Args:
+        output_dir: Directory containing graph_data.json.
+        graph_data: Parsed graph_data.json dict with nodes and links.
+
+    Returns:
+        Claims layer dict with keys: metadata, summary, base_domain, super_domain.
+    """
+```
+
+Biomedical epistemic analysis detects:
+- **Hedging language** -- patterns like "suggests", "may inhibit", "preliminary data" classify relations as hypothesized, speculative, or prophetic
+- **Contradictions** -- same relation with opposing evidence across mentions (positive vs negative findings)
+- **Hypothesis clusters** -- connected subgraphs of hedged relations that form proposed hypotheses
+- **Document-type profiles** -- epistemic signatures by source type (paper, patent, preprint)
+
+**Contracts entry point** (`domains/contracts/epistemic.py`):
+
+```python
+def analyze_contract_epistemic(
+    output_dir: Path,
+    graph_data: dict,
+    master_doc_path: Path | None = None,
+) -> dict:
+    """Run contract cross-reference epistemic analysis.
+
+    Args:
+        output_dir: Output directory containing graph_data.json.
+        graph_data: Already-loaded graph data dict with nodes and links.
+        master_doc_path: Optional path to reference document for gap analysis.
+
+    Returns:
+        claims_layer dict with keys: metadata, summary, base_domain, super_domain.
+    """
+```
+
+Contract epistemic analysis detects:
+- **Cross-contract entities** -- parties, venues, and services appearing in 2+ contracts
+- **Conflicts** -- exclusive use disputes, schedule contradictions, term contradictions, cost mismatches
+- **Coverage gaps** -- planning items from a reference document not covered by any contract
+- **Risk scoring** -- aggregates conflicts and gaps into CRITICAL/WARNING/INFO risk items
+
+The contrast illustrates domain-specific epistemic patterns: biomedical analysis focuses on evidence strength and hypothesis detection, while contract analysis focuses on cross-document conflicts and obligation coverage.
+
+### Workbench Customization (Optional)
+
+For domains with a web dashboard, add `workbench/template.yaml` to customize the interface.
+
+From `domains/contracts/workbench/template.yaml`:
 
 ```yaml
----
-name: {domain-name}-extraction
-description: >
-  Use when extracting entities and relations from [domain] documents.
-  Activates for [document types].
-version: 1.0.0
----
+title: "Sample Contract Analysis Workbench"
+subtitle: "8 contract categories covering 57 documents"
+persona: |
+  You are the Sample Contract Analyst -- a senior contract analysis
+  specialist who has thoroughly reviewed all vendor contracts...
+placeholder: "Ask about contracts, costs, deadlines, risks..."
+loading_message: "Analyzing contracts"
+starter_questions:
+  - "What are the top cross-contract conflicts and risks?"
+  - "Walk me through every deadline between now and event day"
+entity_colors:
+  PARTY: "#6366f1"
+  OBLIGATION: "#f59e0b"
+  DEADLINE: "#ef4444"
+  COST: "#10b981"
+  SERVICE: "#8b5cf6"
+  VENUE: "#06b6d4"
+dashboard:
+  title: "Contract Portfolio & Key Financial Commitments"
+  subtitle: "Contract categories and document coverage summary"
 ```
 
-**Body structure** (follow the biomedical reference at `skills/drug-discovery-extraction/SKILL.md`):
-
-1. **Opening paragraph** — Role description for the extraction agent. What expertise it has, what documents it processes, what output it produces.
-
-2. **Output Format** — JSON schema for `DocumentExtraction`. This is the same across all domains:
-
-   ```json
-   {
-     "entities": [
-       {
-         "name": "entity name",
-         "entity_type": "TYPE_NAME",
-         "attributes": {"key": "value"},
-         "confidence": 0.95,
-         "context": "exact quote from text"
-       }
-     ],
-     "relations": [
-       {
-         "relation_type": "RELATION_NAME",
-         "source_entity": "entity name",
-         "target_entity": "entity name",
-         "confidence": 0.95,
-         "evidence": "exact quote from text"
-       }
-     ]
-   }
-   ```
-
-   **Critical field names:** `entity_type` and `relation_type` — NOT `type`. The `build_extraction.py` script normalizes `type` → `entity_type`/`relation_type` as a safety net, but prompts should use the correct names.
-
-3. **Entity Types section** — For each entity type, provide:
-   - Description
-   - Naming convention (what canonical form to use)
-   - Key attributes to capture (flat dictionary — no nested objects)
-   - Extraction hints (domain-specific guidance)
-
-4. **Relation Types section** — For each relation type, provide:
-   - Description with directionality (source → target)
-   - Examples using your domain entities
-   - Edge cases or disambiguation rules
-
-5. **Confidence Calibration** — Domain-specific scoring guidance. Contracts differ from scientific literature — adapt the thresholds to your document type.
-
-6. **Disambiguation Rules** — When two entity types could apply, which to choose and why.
-
-### 4. references/ — Quick-Reference Documentation
-
-Create two markdown files:
-
-**`references/entity-types.md`** — Summary table of all entity types:
-
-```markdown
-# Entity Types Quick Reference
-
-N entity types for the [Domain] extraction domain.
-
-| Type | Description | Naming Standard | Key Attributes | Example |
-|------|-------------|-----------------|----------------|---------|
-| PARTY | Organizations or individuals | Legal name | org_type, role | Pennsylvania Convention Center |
-| OBLIGATION | Required actions or deliverables | Action phrase | deadline, penalty | Provide 500 chairs by Aug 1 |
-```
-
-Include a **Disambiguation Quick Reference** table at the bottom for entity types that could be confused.
-
-**`references/relation-types.md`** — Summary table of all relation types, grouped by category:
-
-```markdown
-# Relation Types Quick Reference
-
-N relation types for the [Domain] extraction domain.
-
-## [Category Name] Relations
-
-| Relation | Source Types | Target Types | Symmetric | Review Required | Example |
-|----------|-------------|--------------|-----------|-----------------|---------|
-| OBLIGATES | PARTY | OBLIGATION | No | No | Aramark → Provide catering |
-```
-
-### 5. validation-scripts/ (Optional)
-
-Domain-specific validation scripts that run post-extraction. The pipeline checks for this directory and skips validation if absent.
-
-**When to include:**
-- Your domain has identifiers with verifiable formats (e.g., SMILES strings, CAS numbers, NCT IDs)
-- You want to validate extracted values against external databases or format rules
-
-**When to skip:**
-- Your domain entities are free-text (names, descriptions, clauses)
-- No canonical format exists for your entity identifiers
-
-If included, scripts should follow the pattern in `skills/drug-discovery-extraction/validation-scripts/`:
-- Each script is standalone with optional dependency guards
-- Returns a dict with validation status, not exceptions
-- Sets availability flags at import time (e.g., `HAS_RDKIT = True`)
-
-### 6. Integration Points
-
-These files in the pipeline interact with domain configuration:
-
-| File | Role | What It Does with Domain Config |
-|------|------|---------------------------------|
-| `scripts/run_sift.py` | Graph builder | Loads `domain.yaml` via sift-kg's `load_domain()`. Accepts `--domain <path>` flag. Defaults to `skills/drug-discovery-extraction/domain.yaml`. |
-| `scripts/build_extraction.py` | Extraction writer | Writes `domain_name` field into extraction JSON (currently hardcoded to `"Drug Discovery"` — update for your domain). |
-| `agents/extractor.md` | Extraction agent | Currently hardcoded to biomedical entity types and naming standards. Domain-aware agents will read the domain's `SKILL.md` instead. |
-| `agents/validator.md` | Validation agent | Runs domain validation scripts if they exist. |
-
-### 7. Testing Your Domain
-
-1. **Validate the YAML loads:**
-   ```bash
-   python -c "
-   from pathlib import Path
-   import sys; sys.path.insert(0, 'scripts')
-   from run_sift import _import_sift
-   load_domain, = _import_sift(['load_domain'])
-   d = load_domain(domain_path=Path('skills/{domain-name}-extraction/domain.yaml'))
-   print(f'Loaded: {d.name}, {len(d.entity_types)} entity types, {len(d.relation_types)} relation types')
-   "
-   ```
-
-2. **Run extraction on a test document:**
-   ```bash
-   # Use /epistract-ingest with --domain flag
-   /epistract-ingest --domain {domain-name} --input path/to/test-doc.pdf --output ./test-output/
-   ```
-
-3. **Verify extraction output:**
-   ```bash
-   # Check that extractions use your entity/relation types
-   python -c "
-   import json
-   from pathlib import Path
-   for f in Path('./test-output/extractions').glob('*.json'):
-       data = json.loads(f.read_text())
-       types = {e['entity_type'] for e in data['entities']}
-       print(f'{f.name}: {len(data[\"entities\"])} entities, types: {types}')
-   "
-   ```
-
-4. **Build the graph:**
-   ```bash
-   python scripts/run_sift.py build ./test-output/ --domain skills/{domain-name}-extraction/domain.yaml
-   ```
-
-### 8. Checklist
-
-Before considering a domain package complete:
-
-- [ ] `domain.yaml` loads without error via sift-kg `load_domain()`
-- [ ] Every entity type has `description` and `extraction_hints` (2-4 hints each)
-- [ ] Every relation type has `description`, `source_types`, `target_types`
-- [ ] All `source_types`/`target_types` reference entity types defined in `entity_types`
-- [ ] `fallback_relation` is defined for uncategorizable associations
-- [ ] `system_context` includes nomenclature standards, disambiguation rules, and confidence calibration
-- [ ] `SKILL.md` has frontmatter (`name`, `description`, `version`)
-- [ ] `SKILL.md` documents output format with `entity_type`/`relation_type` field names (not `type`)
-- [ ] `SKILL.md` covers every entity type with naming convention, key attributes, and extraction hints
-- [ ] `SKILL.md` covers every relation type with directionality and examples
-- [ ] `references/entity-types.md` has summary table with disambiguation reference
-- [ ] `references/relation-types.md` has categorized summary table
-- [ ] Test extraction produces entities matching your defined types
-- [ ] Graph builds successfully with your domain YAML
+Fields: `title`, `subtitle`, `persona` (chat system prompt), `placeholder`, `loading_message`, `starter_questions`, `entity_colors` (hex per entity type), `dashboard` (title/subtitle for overview panel).
 
 ---
 
-## Reference Implementation
+## Testing Your Domain
 
-The biomedical domain at `skills/drug-discovery-extraction/` is the canonical reference:
+```bash
+# Validate domain resolution
+python -c "from core.domain_resolver import resolve_domain; print(resolve_domain('your-domain'))"
 
-| Component | File | Size | Content |
-|-----------|------|------|---------|
-| Schema | `domain.yaml` | 19 KB | 17 entity types, 30 relation types, full system_context |
-| Prompt | `SKILL.md` | 44 KB | Per-type naming conventions, attributes, extraction hints, disambiguation |
-| Entity ref | `references/entity-types.md` | 3.5 KB | Summary table + disambiguation quick reference |
-| Relation ref | `references/relation-types.md` | 3.3 KB | Categorized summary table with examples |
-| Validation | `validation-scripts/` | 3 scripts | SMILES (RDKit), sequences (Biopython), pattern scanning (regex) |
+# Run extraction on test documents
+/epistract:ingest --domain your-domain --input ./test-docs/
 
-When in doubt, read the biomedical implementation and adapt its patterns to your domain.
+# Query the graph
+/epistract:query --domain your-domain --type ENTITY_NAME
+
+# Run epistemic analysis
+/epistract:epistemic --domain your-domain
+
+# Run tests
+python -m pytest tests/ -k "your_domain" -v
+```
+
+---
+
+## Tips
+
+- **Start small** -- 5-10 entity types is plenty. You can always add more after seeing extraction results.
+- **Use the wizard first** -- even if you plan to customize heavily, the wizard output gives you a working starting point and correct file structure.
+- **Study both domains** -- drug-discovery shows complex extraction with disambiguation rules; contracts shows simpler but effective schemas. Pick the pattern closer to your use case.
+- **Epistemic rules are the differentiator** -- every domain should define what conflicts, gaps, and risks mean in its context. This is what makes epistract a knowledge graph framework, not just an extraction tool.
+- **Naming conventions matter** -- use SCREAMING_SNAKE_CASE for entity and relation types. Include `extraction_hints` for ambiguous concepts.
+- **Test incrementally** -- extract from 3-5 documents first, review the graph, then scale to the full corpus.
