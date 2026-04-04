@@ -204,7 +204,7 @@ Plans:
 ### Phase 11: End-to-End Scenario Validation and v2.0 Release
 **Goal**: Both use cases (drug discovery + contracts) produce demonstration-ready knowledge graphs through the new plugin and extraction pipeline, validated against baseline output. Closes with git sync to remote and v2.0 milestone completion.
 **Depends on**: Phase 10
-**Requirements**: TBD
+**Requirements**: E2E-01, E2E-02, E2E-03, E2E-04, E2E-05, E2E-06, REL-01, REL-02, REL-03
 **Success Criteria** (what must be TRUE):
   1. Drug discovery scenarios (1-6) regenerate graphs with equivalent or better entity/relation counts, community structure, and epistemic analysis compared to V1 baseline
   2. Contract scenario regenerates the 341-node, 663-edge graph with 53 conflicts detected — validated against stored baseline
@@ -215,10 +215,13 @@ Plans:
   7. Repository is clean: no junk files, no stale artifacts, no large binaries — only production-necessary files are tracked in git
   8. .gitignore is comprehensive: local-only files (extraction output, contract data, node_modules, .planning/, worktrees) are excluded from remote
   9. Feature branch synced with remote main (rebase/merge), pushed, and PR created — closing the v2.0 milestone
-**Plans**: 0 plans
+**Plans**: 4 plans
 
 Plans:
-- [ ] TBD (run /gsd:plan-phase 11 to break down)
+- [ ] 11-01-PLAN.md — Regression infrastructure: V1 baselines, comparison engine, Makefile targets (E2E-05, E2E-01, E2E-02, E2E-04)
+- [ ] 11-02-PLAN.md — Repo cleanup: gitignore hardening, audit script, npx package.json (REL-01, REL-02)
+- [ ] 11-03-PLAN.md — Scenario validation: run all scenarios via plugin, validate counts, save V2 baselines (E2E-01, E2E-02, E2E-03, E2E-04, E2E-06)
+- [ ] 11-04-PLAN.md — Git squash, PR, merge, v2.0.0 tag, GitHub release (REL-03)
 
 ## Progress
 
@@ -237,4 +240,4 @@ Phases execute in numeric order: 6 -> 7 -> 8 -> 9 -> 10 -> 11
 | 8. Domain Creation Wizard | v2.0 | 0/3 | Planning | - |
 | 9. Consumer Decoupling and Standalone Install | v2.0 | 0/3 | Planning | - |
 | 10. Documentation Refresh | v2.0 | 4/4 | Complete    | 2026-04-04 |
-| 11. End-to-End Scenario Validation | v2.0 | 0/0 | Not Planned | - |
+| 11. End-to-End Scenario Validation | v2.0 | 0/4 | Planned | - |

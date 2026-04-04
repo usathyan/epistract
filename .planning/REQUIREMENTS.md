@@ -92,6 +92,18 @@ See v1 traceability below.
 - [x] **CLEAN-01**: Stale V1 artifacts removed
 - [x] **CLEAN-02**: V1 requirements marked complete
 
+### E2E Validation and Release (Phase 11)
+
+- [ ] **E2E-01**: Drug discovery scenarios (1-6) regenerate graphs with >=80% of V1 baseline entity/relation counts
+- [ ] **E2E-02**: Contract scenario regenerates graph with >=80% of V1 baseline (341 nodes, 663 edges)
+- [ ] **E2E-03**: All extractions run through `/epistract:*` plugin commands (not raw scripts)
+- [ ] **E2E-04**: Both epistemic layers (molecular validation + conflict detection) produce correct output
+- [ ] **E2E-05**: Repeatable regression script exists (`make regression`) that diffs against baseline snapshots
+- [ ] **E2E-06**: Graph visualizations are demonstration-ready for both domains
+- [ ] **REL-01**: Repository clean — no junk files, stale artifacts, or large binaries tracked
+- [ ] **REL-02**: .gitignore comprehensive — .planning/, worktrees, extraction output, contract data excluded
+- [ ] **REL-03**: Feature branch synced, PR merged, v2.0.0 tagged and released on GitHub
+
 ## Deferred (V3)
 
 - **BIOU-01**: Biomedical domain migrated to V2 architecture with full backward compatibility
@@ -121,7 +133,7 @@ See v1 traceability below.
 | XREF-01..04 | Phase 4 | Complete |
 | DASH-01..02 | Phase 5 | Complete |
 
-### v2 (Mapped to Phases 6-10)
+### v2 (Mapped to Phases 6-11)
 
 | Requirement | Phase | Plan | Status |
 |-------------|-------|------|--------|
@@ -150,12 +162,21 @@ See v1 traceability below.
 | DOCS-02 | Phase 10 | — | Pending |
 | DOCS-03 | Phase 10 | — | Pending |
 | DOCS-04 | Phase 10 | — | Pending |
+| E2E-01 | Phase 11 | 11-01, 11-03 | Pending |
+| E2E-02 | Phase 11 | 11-01, 11-03 | Pending |
+| E2E-03 | Phase 11 | 11-03 | Pending |
+| E2E-04 | Phase 11 | 11-01, 11-03 | Pending |
+| E2E-05 | Phase 11 | 11-01 | Pending |
+| E2E-06 | Phase 11 | 11-03 | Pending |
+| REL-01 | Phase 11 | 11-02 | Pending |
+| REL-02 | Phase 11 | 11-02 | Pending |
+| REL-03 | Phase 11 | 11-04 | Pending |
 
 **v2 Coverage:**
-- v2 requirements: 25 total
-- Mapped to phases: 25
+- v2 requirements: 34 total (25 original + 9 Phase 11)
+- Mapped to phases: 34
 - Unmapped: 0
 
 ---
-*Requirements defined: 2026-03-29 (v1), 2026-04-02 (v2)*
-*Last updated: 2026-04-02 — V2 roadmap mapped*
+*Requirements defined: 2026-03-29 (v1), 2026-04-02 (v2), 2026-04-04 (Phase 11)*
+*Last updated: 2026-04-04 — Phase 11 requirements added*
