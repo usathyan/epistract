@@ -1,0 +1,19 @@
+{
+  "scenario": "02_kras_g12c_landscape",
+  "scenario_label": "S2: KRAS G12C Landscape",
+  "version": "v1",
+  "corpora_dir": "tests/corpora/02_kras_g12c_landscape",
+  "documents": 16,
+  "nodes": 108,
+  "edges": 307,
+  "communities": 4,
+  "epistemic": {
+    "claims_layer_exists": true,
+    "molecular_validation": true
+  },
+  "thresholds": {
+    "nodes_pct": 80,
+    "edges_pct": 80,
+    "communities_pct": 50
+  }
+}

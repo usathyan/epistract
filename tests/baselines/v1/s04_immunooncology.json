@@ -1,0 +1,19 @@
+{
+  "scenario": "04_immunooncology",
+  "scenario_label": "S4: Immuno-Oncology",
+  "version": "v1",
+  "corpora_dir": "tests/corpora/04_immunooncology",
+  "documents": 16,
+  "nodes": 132,
+  "edges": 361,
+  "communities": 5,
+  "epistemic": {
+    "claims_layer_exists": true,
+    "molecular_validation": true
+  },
+  "thresholds": {
+    "nodes_pct": 80,
+    "edges_pct": 80,
+    "communities_pct": 50
+  }
+}

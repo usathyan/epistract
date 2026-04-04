@@ -1,0 +1,19 @@
+{
+  "scenario": "05_cardiovascular",
+  "scenario_label": "S5: Cardiovascular",
+  "version": "v1",
+  "corpora_dir": "tests/corpora/05_cardiovascular",
+  "documents": 15,
+  "nodes": 94,
+  "edges": 246,
+  "communities": 5,
+  "epistemic": {
+    "claims_layer_exists": true,
+    "molecular_validation": true
+  },
+  "thresholds": {
+    "nodes_pct": 80,
+    "edges_pct": 80,
+    "communities_pct": 50
+  }
+}

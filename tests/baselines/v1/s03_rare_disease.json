@@ -1,0 +1,19 @@
+{
+  "scenario": "03_rare_disease",
+  "scenario_label": "S3: Rare Disease",
+  "version": "v1",
+  "corpora_dir": "tests/corpora/03_rare_disease",
+  "documents": 15,
+  "nodes": 94,
+  "edges": 229,
+  "communities": 4,
+  "epistemic": {
+    "claims_layer_exists": true,
+    "molecular_validation": true
+  },
+  "thresholds": {
+    "nodes_pct": 80,
+    "edges_pct": 80,
+    "communities_pct": 50
+  }
+}

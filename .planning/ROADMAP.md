@@ -219,7 +219,7 @@ Plans:
 
 Plans:
 - [ ] 11-01-PLAN.md — Regression infrastructure: V1 baselines, comparison engine, Makefile targets (E2E-05, E2E-01, E2E-02, E2E-04)
-- [ ] 11-02-PLAN.md — Repo cleanup: gitignore hardening, audit script, npx package.json (REL-01, REL-02)
+- [x] 11-02-PLAN.md — Repo cleanup: gitignore hardening, audit script, npx package.json (REL-01, REL-02)
 - [ ] 11-03-PLAN.md — Scenario validation: run all scenarios via plugin, validate counts, save V2 baselines (E2E-01, E2E-02, E2E-03, E2E-04, E2E-06)
 - [ ] 11-04-PLAN.md — Git squash, PR, merge, v2.0.0 tag, GitHub release (REL-03)
 
@@ -240,4 +240,4 @@ Phases execute in numeric order: 6 -> 7 -> 8 -> 9 -> 10 -> 11
 | 8. Domain Creation Wizard | v2.0 | 0/3 | Planning | - |
 | 9. Consumer Decoupling and Standalone Install | v2.0 | 0/3 | Planning | - |
 | 10. Documentation Refresh | v2.0 | 4/4 | Complete    | 2026-04-04 |
-| 11. End-to-End Scenario Validation | v2.0 | 0/4 | Planned | - |
+| 11. End-to-End Scenario Validation | v2.0 | 1/4 | In Progress|  |

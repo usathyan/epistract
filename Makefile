@@ -30,3 +30,12 @@ format: ## Format code
 clean: ## Remove build artifacts and caches
 	find . -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null; true
 	rm -rf .pytest_cache .ruff_cache
+
+regression: ## Run regression suite against baselines
+	python tests/regression/run_regression.py
+
+regression-update: ## Update V2 baselines from current output
+	python tests/regression/run_regression.py --update-baselines
+
+regression-check: ## Quick validation of existing output (no extraction)
+	python tests/regression/run_regression.py --skip-extraction

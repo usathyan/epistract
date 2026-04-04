@@ -1,0 +1,21 @@
+{
+  "scenario": "contracts_sample",
+  "scenario_label": "Contracts (STA)",
+  "version": "v1",
+  "corpora_dir": "sample-contracts",
+  "documents": 62,
+  "nodes": 341,
+  "edges": 663,
+  "communities": null,
+  "epistemic": {
+    "claims_layer_exists": true,
+    "conflicts_min": 40,
+    "obligations_detected": true,
+    "deadlines_detected": true
+  },
+  "thresholds": {
+    "nodes_pct": 80,
+    "edges_pct": 80,
+    "conflicts_pct": 75
+  }
+}
