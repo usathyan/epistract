@@ -3,13 +3,26 @@ __pycache__/
 *.pyc
 .env
 /output/
-/epistract-output/
 # Allow test corpus outputs (committed for reproducibility)
 !tests/corpora/*/output/
 .DS_Store
 lib/
 *.env
+
+# STA contract data — private, never commit
+sample-contracts/
+sample-output/
+**/akka-*.json
+**/akka-*.pdf
+
+# Real extraction output — always local
+epistract-output/
+
+# Demo recordings — removed until framework video exists (per D-04)
 *.mp4
+*.mov
+demo/
+recordings/
 
 # V1 artifacts (removed in v2.0 Phase 6)
 paper/
