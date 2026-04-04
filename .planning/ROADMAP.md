@@ -212,7 +212,9 @@ Plans:
   4. Both epistemic layers (drug discovery molecular validation + contract conflict detection) produce correct output
   5. A repeatable regression script exists that can re-run all scenarios and diff against baseline snapshots
   6. Graph visualizations for both use cases are demonstration-ready (viewable, navigable, presentable)
-  7. Feature branch synced with remote main (rebase/merge), pushed, and PR created — closing the v2.0 milestone
+  7. Repository is clean: no junk files, no stale artifacts, no large binaries — only production-necessary files are tracked in git
+  8. .gitignore is comprehensive: local-only files (extraction output, contract data, node_modules, .planning/, worktrees) are excluded from remote
+  9. Feature branch synced with remote main (rebase/merge), pushed, and PR created — closing the v2.0 milestone
 **Plans**: 0 plans
 
 Plans:
