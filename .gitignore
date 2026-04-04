@@ -19,3 +19,12 @@ docs/analysis/
 docs/demo/
 docs/plans/
 DEVELOPER.md
+
+# Plugin packaging exclusions (Phase 9 INST-03)
+# These files are tracked in git but excluded from marketplace plugin install
+# since Claude Code plugin install clones via git respecting .gitignore
+# NOTE: Per research, .gitignore excludes from `git clone` used by marketplace.
+# However, these are tracked files. Research open question 3 concluded:
+# "Do NOT gitignore tracked directories... accept that plugin cache includes
+# these files (they're small text files, not a size concern)."
+# The important exclusions (.venv, __pycache__, output, lib) are already above.
