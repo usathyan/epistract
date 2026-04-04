@@ -1,0 +1,28 @@
+{
+  "name": "epistract",
+  "version": "2.0.0",
+  "description": "Domain-agnostic knowledge graph framework — extract knowledge, not information",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/usathyan/epistract.git"
+  },
+  "bin": {
+    "epistract": "./scripts/npx-install.sh"
+  },
+  "files": [
+    "core/",
+    "domains/",
+    "commands/",
+    ".claude-plugin/",
+    "agents/",
+    "scripts/setup.sh",
+    "scripts/npx-install.sh"
+  ],
+  "keywords": [
+    "knowledge-graph",
+    "epistemic-analysis",
+    "document-extraction",
+    "claude-code-plugin"
+  ]
+}
