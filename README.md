@@ -80,6 +80,19 @@ export AWS_REGION_NAME="us-east-1"
 
 This is separate from Claude Code's own API access, which is handled by your Claude Code subscription.
 
+**PubMed API key (optional)** — if you plan to use `/epistract-acquire` to search and download articles from PubMed, an NCBI API key increases rate limits from 3 to 10 requests/second. The key is free.
+
+To obtain one:
+1. Create a free NCBI account at https://www.ncbi.nlm.nih.gov/account/
+2. Sign in, go to **Settings** > **API Key Management** > **Create an API Key**
+3. Set it in your environment:
+
+```bash
+export NCBI_API_KEY="your-key-here"
+```
+
+> **Note:** The PubMed connector works without this key — it just runs at lower rate limits. For small corpora (<20 articles) you likely won't notice the difference. For larger acquisitions, the key prevents rate-limit pauses.
+
 ### 2. Ingest Documents
 
 ```
@@ -120,6 +133,7 @@ The interactive viewer shows your knowledge graph with labeled community regions
 | Command | Description |
 |---|---|
 | `/epistract-setup` | Install dependencies (sift-kg, optional RDKit/Biopython) |
+| `/epistract-acquire <query>` | Search PubMed and download articles into a local corpus |
 | `/epistract-ingest <path>` | Full pipeline: ingest → extract → validate → build → view |
 | `/epistract-build` | Build graph from existing extractions |
 | `/epistract-validate` | Validate molecular identifiers in extractions |
@@ -294,9 +308,11 @@ See [tests/FINDINGS.md](tests/FINDINGS.md) for the complete engineering findings
 flowchart TB
     subgraph CC["Claude Code Runtime"]
         subgraph EP["Epistract Plugin"]
+            ACQ["Acquire<br/>/acquire"]
             CMD["Commands<br/>/ingest /build /view<br/>/query /export /validate"]
             SKL["Drug Discovery<br/>Extraction Skill"]
-            AGT["Agents<br/>extractor · validator"]
+            AGT["Agents<br/>extractor · validator<br/>acquirer"]
+            ACQ --> CMD
             CMD --> SKL
             SKL --> AGT
         end
@@ -311,7 +327,9 @@ flowchart TB
         end
         EP --> SK
     end
+    PUB["PubMed<br/>NCBI E-utilities"] --> ACQ
     USR["Scientist / Researcher"] --> CMD
+    USR --> ACQ
     VIZ --> BRW["Browser"]
     EXP --> EXT["Gephi · Cytoscape<br/>DuckDB · pandas"]
 ```
@@ -320,6 +338,7 @@ flowchart TB
 
 ```mermaid
 flowchart LR
+    PUB["PubMed Search<br/>/acquire<br/>(optional)"] -.-> DOCS
     DOCS["Documents<br/>PDF · DOCX · HTML<br/>TXT · Patents"] --> ING["Text Extraction<br/>+ Chunking"]
     ING --> EXT["Claude Extraction<br/>Entities + Relations"]
     EXT --> VAL["Molecular Validation<br/>RDKit · Biopython"]
