@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sample Contract Analysis Workbench</title>
+  <title>Knowledge Graph Explorer</title>
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
   <!-- Sidebar -->
   <nav class="sidebar" id="sidebar">
     <div class="sidebar-header">
-      <h1 class="sidebar-title">STA Workbench</h1>
+      <h1 class="sidebar-title" id="sidebar-title">Workbench</h1>
     </div>
 
     <div class="nav-links">
@@ -46,55 +46,8 @@
 
     <div class="sidebar-section">
       <h3 class="sidebar-section-title">Entity Types</h3>
-      <div class="legend">
-        <div class="legend-item">
-          <span class="legend-dot" style="background:#6366f1"></span>
-          <span class="legend-label">Party</span>
-        </div>
-        <div class="legend-item">
-          <span class="legend-dot" style="background:#f59e0b"></span>
-          <span class="legend-label">Obligation</span>
-        </div>
-        <div class="legend-item">
-          <span class="legend-dot" style="background:#ef4444"></span>
-          <span class="legend-label">Deadline</span>
-        </div>
-        <div class="legend-item">
-          <span class="legend-dot" style="background:#10b981"></span>
-          <span class="legend-label">Cost</span>
-        </div>
-        <div class="legend-item">
-          <span class="legend-dot" style="background:#8b5cf6"></span>
-          <span class="legend-label">Service</span>
-        </div>
-        <div class="legend-item">
-          <span class="legend-dot" style="background:#06b6d4"></span>
-          <span class="legend-label">Venue</span>
-        </div>
-        <div class="legend-item">
-          <span class="legend-dot" style="background:#64748b"></span>
-          <span class="legend-label">Clause</span>
-        </div>
-        <div class="legend-item">
-          <span class="legend-dot" style="background:#ec4899"></span>
-          <span class="legend-label">Committee</span>
-        </div>
-        <div class="legend-item">
-          <span class="legend-dot" style="background:#f97316"></span>
-          <span class="legend-label">Person</span>
-        </div>
-        <div class="legend-item">
-          <span class="legend-dot" style="background:#14b8a6"></span>
-          <span class="legend-label">Event</span>
-        </div>
-        <div class="legend-item">
-          <span class="legend-dot" style="background:#a855f7"></span>
-          <span class="legend-label">Stage</span>
-        </div>
-        <div class="legend-item">
-          <span class="legend-dot" style="background:#0ea5e9"></span>
-          <span class="legend-label">Room</span>
-        </div>
+      <div class="legend" id="entity-legend">
+        <!-- Populated dynamically from /api/template + /api/graph/entity-types -->
       </div>
     </div>
   </nav>
@@ -104,99 +57,9 @@
 
   <!-- Dashboard Panel -->
   <section class="dashboard-panel" id="dashboard-panel">
-    <div class="dashboard-content">
-      <h2 class="dashboard-title">Sample 2026 Contract Portfolio &amp; Key Financial Commitments</h2>
-      <p class="dashboard-subtitle">8 contract categories covering 57 documents with vendors across venue, catering, hotels, AV, security, decorating, EMS, and event services.</p>
-
-      <h3>Contract Summary</h3>
-      <div class="dashboard-table-wrap">
-        <table class="dashboard-table">
-          <thead>
-            <tr><th>#</th><th>Vendor</th><th>Contract</th><th>Total Value</th><th>Status</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>1</td><td>Pennsylvania Convention Center Authority</td><td><a href="#" class="source-link" data-doc="26741_unexecuted_license_agreement_06">PCC License Agreement #26741</a></td><td>$250,000 deposits + $117,520 space rental</td><td><span class="status-badge status-pending">Unexecuted</span></td></tr>
-            <tr><td>2</td><td>Aramark Sports + Entertainment</td><td><a href="#" class="source-link" data-doc="aramark_akka_agreement_2026_with_signatures_aramark01292026">Aramark Assessment 2026</a></td><td>$199,360 caterer fee + $50,000 kitchen buyout</td><td><span class="status-badge status-signed">Signed 1/29/2026</span></td></tr>
-            <tr><td>3</td><td>Philadelphia Marriott Downtown</td><td><a href="#" class="source-link" data-doc="090226_cr1akkaworldsampleconference_phldtlt501899">Marriott Room Block Agreement</a></td><td>$169/night x 1,650 nights + $65K F&amp;B + $40K advance</td><td><span class="status-badge status-active">Active</span></td></tr>
-            <tr><td>4</td><td>Sheraton Philadelphia Downtown</td><td><a href="#" class="source-link" data-doc="akka_september_2026_sheraton_philadelphia_downtown_version_2_cg_edit">Sheraton Agreement v2 CG Edit</a></td><td>$149/night x 1,410 nights ($208,600)</td><td><span class="status-badge status-negotiation">Negotiation</span></td></tr>
-            <tr><td>5</td><td>Notary Hotel</td><td><a href="#" class="source-link" data-doc="notary_hotel_akka_conference_room_block_phl_2026_m_vlpna02_1391189">Notary Hotel Room Block</a></td><td>$219-259/night x 350 rooms, 15% attrition</td><td><span class="status-badge status-active">Active</span></td></tr>
-            <tr><td>6</td><td>Prime AV</td><td><a href="#" class="source-link" data-doc="job_1025151_prime_av_event_quote">Prime AV Event Quote #1025151</a></td><td>$186,000 (main + secondary stage + breakouts)</td><td><span class="status-badge status-quote">Quote</span></td></tr>
-            <tr><td>7</td><td>Black &amp; White Productions</td><td><a href="#" class="source-link" data-doc="pcc_blackandwhite_av_quote_26_0022_5">B&amp;W AV Quote 26-0022</a></td><td>$468,600 (Terrace Ballroom + Hall G + breakouts)</td><td><span class="status-badge status-quote">Quote</span></td></tr>
-            <tr><td>8</td><td>White Exposition, LLC</td><td><a href="#" class="source-link" data-doc="akka_2026_white_exposition_quote_1162026">White Exposition Quote</a></td><td>$68,524 (125 booths @ $40/ea)</td><td><span class="status-badge status-signed">Signed 12/16/2025</span></td></tr>
-            <tr><td>9</td><td>CSC (Contemporary Services Corp)</td><td><a href="#" class="source-link" data-doc="pcc_security_akka_2026_proposal_01232026">Security Proposal 01/23/2026</a></td><td>$29,051 (71 staff, $28.90-42.51/hr)</td><td><span class="status-badge status-quote">Proposal</span></td></tr>
-            <tr><td>10</td><td>Elliott-Lewis Convention Services</td><td><a href="#" class="source-link" data-doc="2026_labor_pricing_spreadsheet_estimate_for_prime_av_labor_for_akka_2026">Labor Order Form + Pricing</a></td><td>$198,295 (Laborers $10K + Stagehands $188K)</td><td><span class="status-badge status-active">Active</span></td></tr>
-            <tr><td>11</td><td>PCC Rigging</td><td><a href="#" class="source-link" data-doc="sample_koots_preliminary_rigging_estimate_9_24_2025v_1">Preliminary Rigging Estimate</a></td><td>$49,824 rigging labor</td><td><span class="status-badge status-quote">Estimate</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="dashboard-columns">
-        <div class="dashboard-col">
-          <h3>Financial Commitment Summary</h3>
-          <div class="dashboard-table-wrap">
-            <table class="dashboard-table compact">
-              <thead><tr><th>Category</th><th>Amount</th><th>Source</th></tr></thead>
-              <tbody>
-                <tr><td>PCC deposits (7 installments)</td><td class="amount">$250,000</td><td>PCC License Agreement</td></tr>
-                <tr><td>PCC space rental</td><td class="amount">$117,520</td><td>PCC License Agreement</td></tr>
-                <tr><td>Aramark outside caterer assessment</td><td class="amount">$199,360</td><td>Aramark Assessment</td></tr>
-                <tr><td>Aramark kitchen buyout contingency</td><td class="amount">$50,000</td><td>Aramark Assessment</td></tr>
-                <tr><td>Aramark catering labor</td><td class="amount">$213,140</td><td>Aramark Labor Est. Ver 2</td></tr>
-                <tr><td>Marriott advance deposit</td><td class="amount">$40,000</td><td>Marriott Agreement</td></tr>
-                <tr><td>Marriott room block (1,650 nights)</td><td class="amount">~$278,850</td><td>@ $169/night</td></tr>
-                <tr><td>Sheraton room block (1,410 nights)</td><td class="amount">~$208,600</td><td>@ $149/night</td></tr>
-                <tr><td>Notary Hotel (350 rooms)</td><td class="amount">~$80,000+</td><td>@ $219-259/night</td></tr>
-                <tr><td>AV (Prime AV)</td><td class="amount">$186,000</td><td>Prime AV Quote</td></tr>
-                <tr><td>AV (B&amp;W Productions)</td><td class="amount">$468,600</td><td>B&amp;W AV Quote (alt.)</td></tr>
-                <tr><td>AV labor (PCC estimate)</td><td class="amount">$198,295</td><td>AV Labor Pricing</td></tr>
-                <tr><td>Decorating</td><td class="amount">$68,524</td><td>White Exposition</td></tr>
-                <tr><td>Security</td><td class="amount">$29,051</td><td>CSC Proposal</td></tr>
-                <tr><td>Rigging</td><td class="amount">$49,824</td><td>Rigging Estimate</td></tr>
-                <tr class="total-row"><td><strong>TOTAL (Prime AV)</strong></td><td class="amount"><strong>~$1,690,000+</strong></td><td></td></tr>
-                <tr class="total-row"><td><strong>TOTAL (B&amp;W AV)</strong></td><td class="amount"><strong>~$1,973,000+</strong></td><td></td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div class="dashboard-col">
-          <h3>Critical Decisions Open</h3>
-          <div class="decision-cards">
-            <div class="decision-card decision-critical">
-              <h4>AV Vendor Choice</h4>
-              <p>Prime AV ($186K) vs. B&amp;W Productions ($468.6K) &mdash; <strong>$282,600 difference</strong>. Represents fundamentally different event configurations.</p>
-            </div>
-            <div class="decision-card decision-warning">
-              <h4>Marriott F&amp;B Minimum</h4>
-              <p>STA committed to <strong>$65,000 in hotel F&amp;B revenue</strong>. Separate from Aramark catering at PCC.</p>
-            </div>
-            <div class="decision-card decision-warning">
-              <h4>Aramark Overage Risk</h4>
-              <p>$199,360 based on 2,000-3,000 guests/meal. Overages: <strong>$14.66/guest</strong> beyond 10% of guaranteed numbers.</p>
-            </div>
-            <div class="decision-card decision-critical">
-              <h4>Labor Day Double-Time</h4>
-              <p>Sep 7 load-out = Labor Day. All union trades bill at <strong>double-time rates</strong>. Budget teardown accordingly.</p>
-            </div>
-          </div>
-
-          <h3>Key Persons</h3>
-          <div class="dashboard-table-wrap">
-            <table class="dashboard-table compact">
-              <thead><tr><th>Person</th><th>Role</th><th>Contracts</th></tr></thead>
-              <tbody>
-                <tr><td>Person 1</td><td>STA President</td><td>Aramark, PCC License</td></tr>
-                <tr><td>Person 2</td><td>STA Treasurer</td><td>Sheraton, B&amp;W AV, 8 docs</td></tr>
-                <tr><td>Person 3</td><td>STA Contact</td><td>PCC License, Prime AV</td></tr>
-                <tr><td>Jessica Vendor Rep</td><td>Aramark Dir. Catering Sales</td><td>Aramark Assessment</td></tr>
-                <tr><td>Kim Pham</td><td>PCC Contact</td><td>PCC License, CC Auth</td></tr>
-                <tr><td>Gena Schmid</td><td>Marriott Senior Sales</td><td>Marriott Agreement</td></tr>
-                <tr><td>David Sanders</td><td>B&amp;W Account Manager</td><td>B&amp;W AV Quote</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
+    <div class="dashboard-content" id="dashboard-content">
+      <!-- Loaded from domain template or auto-generated -->
+      <p>Loading dashboard...</p>
     </div>
   </section>
 
@@ -204,28 +67,16 @@
   <main class="chat-panel">
     <div class="messages" id="messages">
       <div class="welcome" id="welcome">
-        <h2>Welcome to the STA Contract Workbench</h2>
-        <p class="welcome-body">Ask questions about 62+ vendor contracts for Sample 2026. Choose a starter question below or type your own.</p>
-        <div class="starter-cards">
-          <button class="starter-card">What are the top cross-contract conflicts and risks we need to resolve before September?</button>
-          <button class="starter-card">The catering exclusivity clause conflicts with our food truck plan — what are our options?</button>
-          <button class="starter-card">Walk me through every deadline between now and event day, in order, with who owns each one</button>
-          <button class="starter-card">What if we add 200 more attendees — how does that cascade across catering, AV, and security costs?</button>
-          <button class="starter-card">We have no overnight security contract for load-in day Sep 3 — what do the contracts say and what's the gap?</button>
-          <button class="starter-card">Which tasks can volunteers handle vs. which require union labor under the PCC contract?</button>
-          <button class="starter-card">Build me a budget summary table: per-person costs, fixed costs, and total estimates across all vendors</button>
-          <button class="starter-card">The AV equipment list is due July 15 but headcount isn't final until August 1 — how do we handle this?</button>
-          <button class="starter-card">What happens if a vendor invokes the force majeure clause — which contracts have it and what's our exposure?</button>
-          <button class="starter-card">Map out which vendors share Hall A and when — are there any setup/teardown timing conflicts?</button>
-          <button class="starter-card">Which insurance certificates are still outstanding and what's the penalty for late submission?</button>
-          <button class="starter-card">Compare the PCC license agreement obligations vs. what our vendor contracts actually cover — where are the gaps?</button>
-          <button class="starter-card">If the Friday night show runs 30 minutes over, what are the overtime and union labor cost implications?</button>
+        <h2 id="welcome-title">Welcome</h2>
+        <p class="welcome-body" id="welcome-body">Choose a starter question below or type your own.</p>
+        <div class="starter-cards" id="starter-cards">
+          <!-- Populated dynamically from template.starter_questions -->
         </div>
       </div>
     </div>
 
     <form class="chat-input" id="chat-form">
-      <textarea id="chat-input" placeholder="Ask about contracts, costs, deadlines, risks..." rows="1"></textarea>
+      <textarea id="chat-input" placeholder="Ask a question..." rows="1"></textarea>
       <button type="submit" class="send-btn">Send</button>
     </form>
   </main>
@@ -238,18 +89,7 @@
         <input type="text" id="graph-search" class="graph-search" placeholder="Search nodes...">
 
         <div class="entity-toggles" id="entity-toggles">
-          <button class="toggle-btn active" data-type="PARTY" style="color:#6366f1">Party</button>
-          <button class="toggle-btn active" data-type="OBLIGATION" style="color:#f59e0b">Obligation</button>
-          <button class="toggle-btn active" data-type="DEADLINE" style="color:#ef4444">Deadline</button>
-          <button class="toggle-btn active" data-type="COST" style="color:#10b981">Cost</button>
-          <button class="toggle-btn active" data-type="SERVICE" style="color:#8b5cf6">Service</button>
-          <button class="toggle-btn active" data-type="VENUE" style="color:#06b6d4">Venue</button>
-          <button class="toggle-btn active" data-type="CLAUSE" style="color:#64748b">Clause</button>
-          <button class="toggle-btn active" data-type="COMMITTEE" style="color:#ec4899">Committee</button>
-          <button class="toggle-btn active" data-type="PERSON" style="color:#f97316">Person</button>
-          <button class="toggle-btn active" data-type="EVENT" style="color:#14b8a6">Event</button>
-          <button class="toggle-btn active" data-type="STAGE" style="color:#a855f7">Stage</button>
-          <button class="toggle-btn active" data-type="ROOM" style="color:#0ea5e9">Room</button>
+          <!-- Populated dynamically from /api/graph/entity-types + template colors -->
         </div>
 
         <select id="severity-filter" class="severity-filter">

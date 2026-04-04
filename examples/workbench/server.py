@@ -12,7 +12,7 @@ from examples.workbench.api_chat import router as chat_router
 from examples.workbench.api_graph import router as graph_router
 from examples.workbench.api_sources import router as sources_router
 from examples.workbench.data_loader import WorkbenchData
-from examples.workbench.template_loader import load_template
+from examples.workbench.template_loader import DOMAINS_DIR, load_template
 
 STATIC_DIR = Path(__file__).parent / "static"
 
@@ -34,8 +34,9 @@ def create_app(output_dir: Path, domain: str | None = None) -> FastAPI:
     app.state.data = WorkbenchData(output_dir)
     app.state.template = template
 
-    # Store output_dir for later use
+    # Store output_dir and domain name for later use
     app.state.output_dir = output_dir
+    app.state._domain_name = domain
 
     # Include API routers
     app.include_router(graph_router)
@@ -60,6 +61,39 @@ def create_app(output_dir: Path, domain: str | None = None) -> FastAPI:
     @app.get("/api/template")
     async def get_template():
         return app.state.template
+
+    @app.get("/api/dashboard")
+    async def get_dashboard():
+        """Return dashboard HTML content for the current domain."""
+        template = app.state.template
+        domain = app.state._domain_name
+        if domain:
+            dashboard_html_path = DOMAINS_DIR / domain / "workbench" / "dashboard.html"
+            if dashboard_html_path.exists():
+                return {"html": dashboard_html_path.read_text(encoding="utf-8")}
+        # Auto-generate from graph stats
+        data = app.state.data
+        nodes = data.get_nodes()
+        edges = data.get_edges()
+        entity_counts: dict[str, int] = {}
+        for n in nodes:
+            t = n.get("entity_type", "UNKNOWN")
+            entity_counts[t] = entity_counts.get(t, 0) + 1
+        title = template.get("dashboard", {}).get(
+            "title", template.get("title", "Knowledge Graph Summary")
+        )
+        subtitle = template.get("dashboard", {}).get(
+            "subtitle", template.get("subtitle", "")
+        )
+        return {
+            "html": None,
+            "auto": True,
+            "title": title,
+            "subtitle": subtitle,
+            "entity_counts": entity_counts,
+            "total_nodes": len(nodes),
+            "total_edges": len(edges),
+        }
 
     @app.get("/api/health")
     async def health():
