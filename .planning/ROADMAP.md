@@ -175,11 +175,13 @@ Plans:
   3. Running `/epistract:setup` on a fresh machine installs the framework without needing to clone the repo or download demo data
   4. Pre-built domains (drug-discovery, contracts) are available immediately after install without additional setup
   5. Plugin package excludes demo data, test corpora, and paper artifacts -- clean install footprint
-**Plans**: TBD
+**Plans**: 3 plans
 **UI hint**: yes
 
 Plans:
-- [ ] TBD
+- [ ] 09-01-PLAN.md — Template system + backend generalization (CONS-01, INST-02)
+- [ ] 09-02-PLAN.md — Frontend generalization for domain-agnostic workbench (CONS-01)
+- [ ] 09-03-PLAN.md — Telegram bot + plugin packaging (CONS-02, INST-01, INST-03)
 
 ### Phase 10: Documentation Refresh
 **Goal**: All documentation presents epistract as a domain-agnostic framework with clear paths for both using pre-built domains and creating new ones
@@ -210,5 +212,5 @@ Phases execute in numeric order: 6 -> 7 -> 8 -> 9 -> 10
 | 6. Repo Reorganization and Cleanup | v2.0 | 0/3 | Planning | - |
 | 7. Testing Framework | v2.0 | 0/3 | Planning | - |
 | 8. Domain Creation Wizard | v2.0 | 0/3 | Planning | - |
-| 9. Consumer Decoupling and Standalone Install | v2.0 | 0/? | Not started | - |
+| 9. Consumer Decoupling and Standalone Install | v2.0 | 0/3 | Planning | - |
 | 10. Documentation Refresh | v2.0 | 0/? | Not started | - |
