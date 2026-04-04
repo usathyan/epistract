@@ -1,4 +1,4 @@
-"""Sample Contract Analysis Workbench - FastAPI server."""
+"""Epistract Workbench - Domain-agnostic knowledge graph explorer."""
 from __future__ import annotations
 
 from pathlib import Path
@@ -12,13 +12,15 @@ from examples.workbench.api_chat import router as chat_router
 from examples.workbench.api_graph import router as graph_router
 from examples.workbench.api_sources import router as sources_router
 from examples.workbench.data_loader import WorkbenchData
+from examples.workbench.template_loader import load_template
 
 STATIC_DIR = Path(__file__).parent / "static"
 
 
-def create_app(output_dir: Path) -> FastAPI:
+def create_app(output_dir: Path, domain: str | None = None) -> FastAPI:
     """Create and configure the FastAPI application."""
-    app = FastAPI(title="Sample Contract Analysis Workbench")
+    template = load_template(domain)
+    app = FastAPI(title=template.get("title", "Knowledge Graph Explorer"))
 
     # CORS for local development (per D-07, localhost only)
     app.add_middleware(
@@ -30,6 +32,7 @@ def create_app(output_dir: Path) -> FastAPI:
 
     # Load data at startup
     app.state.data = WorkbenchData(output_dir)
+    app.state.template = template
 
     # Store output_dir for later use
     app.state.output_dir = output_dir
@@ -49,10 +52,14 @@ def create_app(output_dir: Path) -> FastAPI:
         if index.exists():
             return FileResponse(str(index))
         return {
-            "message": "Sample Contract Analysis Workbench",
+            "message": template.get("title", "Knowledge Graph Explorer"),
             "status": "running",
-            "static_dir": "not found - create scripts/workbench/static/index.html",
+            "static_dir": "not found - create examples/workbench/static/index.html",
         }
+
+    @app.get("/api/template")
+    async def get_template():
+        return app.state.template
 
     @app.get("/api/health")
     async def health():

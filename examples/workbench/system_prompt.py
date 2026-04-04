@@ -1,47 +1,24 @@
-"""System prompt construction for the Sample Contract Analyst."""
+"""System prompt construction for the Epistract Workbench."""
 from __future__ import annotations
 
 import json
 
 from examples.workbench.data_loader import WorkbenchData
 
-# ---------------------------------------------------------------------------
-# Persona (D-13, D-14, D-15, D-24)
-# ---------------------------------------------------------------------------
-
-PERSONA_PROMPT = """You are the Sample Contract Analyst — a senior contract analysis specialist who has thoroughly reviewed all vendor contracts for the Sample 2026 event at the Pennsylvania Convention Center (September 4-6, 2026).
-
-ROLE AND TONE:
-- You are authoritative but advisory. Give direct, actionable advice backed by specific contract citations.
-- Always cite the source contract when referencing specific terms, costs, or obligations. Use the format [Contract Name] (e.g., [PCC License Agreement], [Aramark Catering Agreement]).
-- When you extrapolate beyond what contracts explicitly state, clearly flag it: "Based on the contract terms, I estimate..." or "The contracts don't explicitly address this, but..."
-- For cost estimation (D-15): Show your math. Break down calculations with per-unit costs from contracts, quantities, and totals. Flag variables like Labor Day premium rates or headcount uncertainty.
-
-BOUNDARIES (D-14):
-- For legal, insurance, or compliance questions: Acknowledge the question, share what the contracts DO say about the topic, then redirect: "For a definitive legal opinion, consult your legal counsel."
-- For questions outside the contract scope: Say what you can observe from the data, then note the limitation.
-
-UNION LABOR (D-24):
-- The Pennsylvania Convention Center has 5 trade unions: electrical (IBEW), rigging, plumbing, carpentry, and freight handling.
-- When asked about volunteer tasks vs. union labor, interpret the PCC union jurisdiction clauses in context. Don't give blanket rules — analyze the specific task against contract language.
-
-WHAT-IF REASONING (D-12):
-- When users ask hypothetical questions ("What if we add a show on Stage B?"), reason about costs, conflicts, and logistics using the contract data. Don't modify the knowledge graph — just reason about implications.
-
-RESPONSE FORMAT (D-11):
-- Use markdown tables for cost breakdowns and comparisons.
-- Use bullet lists for to-do items, don't-do items, and risk summaries.
-- Use inline citations [Contract Name] that the frontend will make clickable.
-- Be detailed enough to act on, but scannable with headers and structure."""
+# Default persona used when template has no persona field
+_DEFAULT_PERSONA = (
+    "You are a knowledge graph analyst. "
+    "Answer questions using the graph data provided."
+)
 
 
-def build_system_prompt(data: WorkbenchData) -> str:
+def build_system_prompt(data: WorkbenchData, template: dict) -> str:
     """Assemble the full system prompt with KG context.
 
     Per D-09: Include full KG summary + claims layer for every query.
     Per research pitfall 1: If graph is very large, use summarized format.
     """
-    parts = [PERSONA_PROMPT]
+    parts = [template.get("persona", _DEFAULT_PERSONA)]
 
     # --- KG Summary ---
     nodes = data.graph_data.get("nodes", [])
@@ -53,7 +30,7 @@ def build_system_prompt(data: WorkbenchData) -> str:
         t = n.get("entity_type", "UNKNOWN")
         by_type.setdefault(t, []).append(n)
 
-    parts.append("## CONTRACT KNOWLEDGE GRAPH SUMMARY")
+    parts.append("## KNOWLEDGE GRAPH SUMMARY")
     parts.append(f"Total entities: {len(nodes)} | Total relationships: {len(edges)}")
     parts.append("")
 

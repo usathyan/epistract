@@ -47,7 +47,7 @@ def client(sample_output_dir):
     from examples.workbench.server import create_app
     from starlette.testclient import TestClient
 
-    app = create_app(sample_output_dir)
+    app = create_app(sample_output_dir, domain="contracts")
     return TestClient(app)
 
 
@@ -232,6 +232,34 @@ def test_chat_stream_mock(client, monkeypatch):
     assert resp.status_code == 200
     body = resp.text
     assert "Hello from mock" in body or "text" in body
+
+
+# ---------------------------------------------------------------------------
+# Template API Tests
+# ---------------------------------------------------------------------------
+
+
+def test_template_api_endpoint(client):
+    """GET /api/template returns domain template for contracts."""
+    resp = client.get("/api/template")
+    assert resp.status_code == 200
+    body = resp.json()
+    assert body["title"] == "Sample Contract Analysis Workbench"
+    assert "persona" in body
+    assert "starter_questions" in body
+
+
+def test_template_api_generic(sample_output_dir):
+    """GET /api/template returns generic template when no domain."""
+    from examples.workbench.server import create_app
+    from starlette.testclient import TestClient
+
+    app = create_app(sample_output_dir, domain=None)
+    generic_client = TestClient(app)
+    resp = generic_client.get("/api/template")
+    assert resp.status_code == 200
+    body = resp.json()
+    assert body["title"] == "Knowledge Graph Explorer"
 
 
 # ---------------------------------------------------------------------------

@@ -69,7 +69,7 @@ async def chat(request: Request, body: ChatRequest):
     data = request.app.state.data
 
     # Build system prompt with full KG context
-    system = build_system_prompt(data)
+    system = build_system_prompt(data, request.app.state.template)
 
     # Add matched source chunks to the user's question context
     source_context = get_matched_source_chunks(data, body.question)
@@ -151,7 +151,7 @@ async def _stream_openai_compat(
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json",
         "HTTP-Referer": "https://github.com/epistract",
-        "X-Title": "STA Contract Workbench",
+        "X-Title": "Epistract Workbench",
     }
     # OpenAI format: system message goes in messages array
     oai_messages = [{"role": "system", "content": system}] + messages
