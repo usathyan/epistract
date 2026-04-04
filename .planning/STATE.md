@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Framework Architecture & Domain Developer Experience
 status: executing
-stopped_at: Completed 09-02-PLAN.md (frontend generalization)
-last_updated: "2026-04-04T12:43:14.427Z"
+stopped_at: Completed all 3 plans in phase 09
+last_updated: "2026-04-04T12:45:00.000Z"
 last_activity: 2026-04-04
 progress:
   total_phases: 5
   completed_phases: 3
   total_plans: 12
-  completed_plans: 11
-  percent: 80
+  completed_plans: 12
+  percent: 85
 ---
 
 # Project State
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-02)
 
 **Core value:** Extract knowledge, not information. Any corpus, any domain -- plug in a schema, get a knowledge graph with epistemic layer.
-**Current focus:** Phase 08 — domain-creation-wizard
+**Current focus:** Phase 09 — consumer-decoupling-and-standalone-install
 
 ## Current Position
 
 Phase: 09 (consumer-decoupling-and-standalone-install) -- EXECUTING
-Plan: 2 of 3 -- COMPLETE
-Status: Ready to execute
+Plan: 3 of 3 -- COMPLETE
+Status: All plans complete — ready for verification
 Last activity: 2026-04-04
 
-Progress: [████████░░] 80%
+Progress: [████████░░] 85%
 
 ## Performance Metrics
 
@@ -64,7 +64,9 @@ Progress: [████████░░] 80%
 | Phase 08 P01 | 3min | 2 tasks | 5 files |
 | Phase 08 P02 | 4min | 2 tasks | 2 files |
 | Phase 08 P03 | 3min | 2 tasks | 2 files |
+| Phase 09 P01 | 4min | 2 tasks | 8 files |
 | Phase 09 P02 | 3min | 2 tasks | 7 files |
+| Phase 09 P03 | 4min | 2 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -95,6 +97,7 @@ Recent decisions affecting current work:
 - [Phase 09]: PERSONA_PROMPT removed from system_prompt.py; persona text moved verbatim to contracts template.yaml
 - [Phase 09]: Dashboard content via /api/dashboard endpoint (domain HTML or auto-generated stats)
 - [Phase 09]: Entity colors: template.entity_colors first, PALETTE array fallback for unknown types
+- [Phase 09]: Used telegram_bot (underscore) directory for Python module import compat; bot handlers in HAS_TELEGRAM guard
 
 ### Pending Todos
 
@@ -108,6 +111,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-04T12:43:14.424Z
-Stopped at: Completed 09-02-PLAN.md (frontend generalization)
+Last session: 2026-04-04T12:45:00.000Z
+Stopped at: All 3 plans complete in phase 09 — ready for verification
 Resume file: None

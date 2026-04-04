@@ -181,7 +181,7 @@ Plans:
 Plans:
 - [x] 09-01-PLAN.md — Template system + backend generalization (CONS-01, INST-02)
 - [x] 09-02-PLAN.md — Frontend generalization for domain-agnostic workbench (CONS-01)
-- [ ] 09-03-PLAN.md — Telegram bot + plugin packaging (CONS-02, INST-01, INST-03)
+- [x] 09-03-PLAN.md — Telegram bot + plugin packaging (CONS-02, INST-01, INST-03)
 
 ### Phase 10: Documentation Refresh
 **Goal**: All documentation presents epistract as a domain-agnostic framework with clear paths for both using pre-built domains and creating new ones
