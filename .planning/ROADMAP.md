@@ -214,3 +214,13 @@ Phases execute in numeric order: 6 -> 7 -> 8 -> 9 -> 10
 | 8. Domain Creation Wizard | v2.0 | 0/3 | Planning | - |
 | 9. Consumer Decoupling and Standalone Install | v2.0 | 0/3 | Planning | - |
 | 10. Documentation Refresh | v2.0 | 0/? | Not started | - |
+
+## Backlog
+
+### Phase 999.2: Git Remote Sync (BACKLOG)
+**Goal:** Pull latest main and rebase/merge before pushing feature/cross-domain-kg-framework — remote is ahead of local
+**Requirements:** TBD
+**Plans:** 0 plans
+
+Plans:
+- [ ] TBD (promote with /gsd:review-backlog when ready)
