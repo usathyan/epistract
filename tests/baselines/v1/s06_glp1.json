@@ -1,0 +1,19 @@
+{
+  "scenario": "06_glp1_landscape",
+  "scenario_label": "S6: GLP-1 Landscape",
+  "version": "v1",
+  "corpora_dir": "tests/corpora/06_glp1_landscape",
+  "documents": 34,
+  "nodes": 206,
+  "edges": 630,
+  "communities": 9,
+  "epistemic": {
+    "claims_layer_exists": true,
+    "molecular_validation": true
+  },
+  "thresholds": {
+    "nodes_pct": 80,
+    "edges_pct": 80,
+    "communities_pct": 50
+  }
+}

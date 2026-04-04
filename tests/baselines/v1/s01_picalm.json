@@ -1,0 +1,19 @@
+{
+  "scenario": "01_picalm_alzheimers",
+  "scenario_label": "S1: PICALM/Alzheimer's",
+  "version": "v1",
+  "corpora_dir": "tests/corpora/01_picalm_alzheimers",
+  "documents": 15,
+  "nodes": 149,
+  "edges": 457,
+  "communities": 6,
+  "epistemic": {
+    "claims_layer_exists": true,
+    "molecular_validation": true
+  },
+  "thresholds": {
+    "nodes_pct": 80,
+    "edges_pct": 80,
+    "communities_pct": 50
+  }
+}
