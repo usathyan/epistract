@@ -3,42 +3,29 @@ __pycache__/
 *.pyc
 .env
 /output/
+/epistract-output/
 # Allow test corpus outputs (committed for reproducibility)
 !tests/corpora/*/output/
 .DS_Store
+docs/analysis/EricNotes.md
 lib/
 *.env
-
-# STA contract data — private, never commit
-sample-contracts/
-sample-output/
-**/akka-*.json
-**/akka-*.pdf
-
-# Real extraction output — always local
-epistract-output/
-
-# Demo recordings — removed until framework video exists (per D-04)
 *.mp4
-*.mov
-demo/
-recordings/
-
-# V1 artifacts (removed in v2.0 Phase 6)
-paper/
-medium/
-poster/
-docs/analysis/
-docs/demo/
-docs/plans/
-DEVELOPER.md
-
-# Plugin packaging exclusions (Phase 9 INST-03)
-# These files are tracked in git but excluded from marketplace plugin install
-# since Claude Code plugin install clones via git respecting .gitignore
-# NOTE: Per research, .gitignore excludes from `git clone` used by marketplace.
-# However, these are tracked files. Research open question 3 concluded:
-# "Do NOT gitignore tracked directories... accept that plugin cache includes
-# these files (they're small text files, not a size concern)."
-# The important exclusions (.venv, __pycache__, output, lib) are already above.
 node_modules/
+
+# GSD workflow artifacts — development-only, not in remote (per D-14)
+.planning/
+
+# Claude worktrees
+.claude/worktrees/
+
+# Kreuzberg extraction cache
+.kreuzberg/
+
+# Python build artifacts
+*.egg-info/
+dist/
+build/
+
+# Regression output (generated, not tracked)
+tests/baselines/v2/

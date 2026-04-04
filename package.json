@@ -1,30 +1,28 @@
 {
   "name": "epistract",
-  "version": "1.0.0",
-  "description": "**Turn any document corpus into a structured knowledge graph.**",
-  "main": "generate_report.js",
-  "directories": {
-    "doc": "docs",
-    "example": "examples",
-    "lib": "lib",
-    "test": "tests"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "version": "2.0.0",
+  "description": "Domain-agnostic knowledge graph framework — extract knowledge, not information",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/usathyan/epistract.git"
+    "url": "https://github.com/usathyan/epistract.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/usathyan/epistract/issues"
+  "bin": {
+    "epistract": "./scripts/npx-install.sh"
   },
-  "homepage": "https://github.com/usathyan/epistract#readme",
-  "dependencies": {
-    "beautiful-mermaid": "^1.1.3"
-  }
+  "files": [
+    "core/",
+    "domains/",
+    "commands/",
+    ".claude-plugin/",
+    "agents/",
+    "scripts/setup.sh",
+    "scripts/npx-install.sh"
+  ],
+  "keywords": [
+    "knowledge-graph",
+    "epistemic-analysis",
+    "document-extraction",
+    "claude-code-plugin"
+  ]
 }
