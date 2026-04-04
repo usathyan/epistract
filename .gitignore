@@ -41,3 +41,4 @@ DEVELOPER.md
 # "Do NOT gitignore tracked directories... accept that plugin cache includes
 # these files (they're small text files, not a size concern)."
 # The important exclusions (.venv, __pycache__, output, lib) are already above.
+node_modules/

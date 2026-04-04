@@ -1,0 +1,30 @@
+{
+  "name": "epistract",
+  "version": "1.0.0",
+  "description": "**Turn any document corpus into a structured knowledge graph.**",
+  "main": "generate_report.js",
+  "directories": {
+    "doc": "docs",
+    "example": "examples",
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/usathyan/epistract.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/usathyan/epistract/issues"
+  },
+  "homepage": "https://github.com/usathyan/epistract#readme",
+  "dependencies": {
+    "beautiful-mermaid": "^1.1.3"
+  }
+}
