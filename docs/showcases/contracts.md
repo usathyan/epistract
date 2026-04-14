@@ -1,91 +1,90 @@
-# Event Contract Management
+# Event Contract Management — Cross-Domain Demonstration
 
-Epistract was applied to a corpus of 62 event planning contracts to demonstrate cross-domain capability. The contracts domain extracts structured knowledge about parties, obligations, deadlines, costs, venues, and service relationships — then applies epistemic analysis to detect conflicts, gaps, and risks across the entire contract landscape.
+The `contracts` domain demonstrates that epistract is truly cross-domain: **the same pipeline runs against a different schema and produces a knowledge graph with different epistemic rules**. The drug-discovery and contracts domains share zero extraction or build code — only the YAML configuration, SKILL.md prompt, and `epistemic.py` rules differ.
 
-## Methodology
+This page describes the contracts domain package shipped in this repository (`domains/contracts/`). The package is a **schema scaffold** — it defines the entity types, relation types, extraction prompt, and epistemic rules, but does **not** include a sample corpus. Bring your own contracts to reproduce the cross-domain story.
 
-### Corpus
+## What Ships in `domains/contracts/`
 
-- **62 contracts** across multiple document formats
-- **60 PDF files** (including large documents up to 31 MB), **1 XLS spreadsheet**, **1 EML email**
-- Multi-format parsing via Kreuzberg (75+ format support with OCR fallback for scanned documents)
+```
+domains/contracts/
+├── domain.yaml          # 11 entity types, 11 relation types
+├── SKILL.md             # extraction prompt + naming standards
+├── references/          # entity-type and relation-type reference docs
+├── epistemic.py         # cross-contract conflict detection rules
+└── workbench/
+    └── template.yaml    # workbench title, persona, entity colors, starter questions
+```
 
-### Domain Schema
+## Domain Schema
 
-The contracts domain uses 11 entity types and 11 relation types designed for event planning contract analysis:
+The contracts domain uses 11 entity types and 11 relation types designed for event/vendor contract analysis:
 
 | Category | Entity Types |
 |----------|-------------|
-| Parties | ORGANIZATION, PERSON, VENUE |
-| Obligations | OBLIGATION, DELIVERABLE, SERVICE |
+| Parties | PARTY, PERSON, COMMITTEE |
+| Obligations | OBLIGATION, SERVICE, DELIVERABLE |
 | Temporal | DEADLINE, EVENT |
 | Financial | COST, PAYMENT_TERM |
-| Legal | CONTRACT |
+| Spaces | VENUE, ROOM, STAGE |
+| Legal | CLAUSE |
 
-Relation types capture contractual relationships: provides services to, has obligation, has deadline, specifies cost, governs, and cross-references between contracts.
+Relation types capture contractual structure: **OBLIGATES**, **PROVIDES**, **COSTS**, **DEPENDS_ON**, **RESTRICTS**, **CONFLICTS_WITH**, **RELATED_TO**, plus event-specific links for committees, persons, and physical spaces. See `domains/contracts/references/` for the full reference documentation.
 
-### Extraction Pipeline
+## Pipeline (Same as Drug Discovery)
 
-1. **Document parsing** — Kreuzberg extracts text from all 62 files, handling large PDFs, spreadsheets, and email formats
-2. **Entity extraction** — LLM agents read each contract with domain expertise, extracting parties, obligations, deadlines, costs, and service relationships
-3. **Graph construction** — sift-kg builds a deduplicated knowledge graph with entity resolution across contracts
-4. **Community detection** — Louvain algorithm identifies clusters of related contracts and entities
-5. **Epistemic analysis** — Domain-specific rules detect cross-contract conflicts, obligation gaps, and risk indicators
+```
+/epistract:ingest ./my-contracts/ --output ./contracts-output --domain contracts
+/epistract:epistemic ./contracts-output
+/epistract:dashboard ./contracts-output --domain contracts
+```
 
-## Results
-
-### Extraction Summary
-
-| Metric | Value |
-|--------|-------|
-| Documents processed | 62 |
-| Entity types | 11 |
-| Relation types | 11 |
-| Total nodes | 341 |
-| Total edges | 663 |
-| Cross-contract entities | 37 |
-
-### Epistemic Analysis
-
-The epistemic layer applied contract-specific rules to detect issues across the corpus:
-
-| Finding Type | Count | Description |
-|--------------|-------|-------------|
-| Cross-contract conflicts | 53 | Contradictory terms, overlapping obligations, scheduling conflicts |
-| Obligation gaps | -- | Missing deliverables, unassigned responsibilities |
-| Risk indicators | -- | Tight deadlines, penalty clauses, exclusivity constraints |
-
-The 53 conflicts detected represent cases where terms in one contract contradict or create tension with terms in another — the kind of cross-document insight that is difficult to surface through manual review of individual contracts.
-
-### Knowledge Graph Structure
-
-The graph captures the full contract landscape:
-
-- **Party relationships** — which organizations provide services, who has obligations to whom
-- **Temporal dependencies** — deadline chains, event scheduling, setup/teardown windows
-- **Financial structure** — cost allocations, payment terms, penalty triggers
-- **Cross-references** — 37 entities that appear across multiple contracts, enabling conflict detection
+1. **Document parsing** — Kreuzberg extracts text from PDF, XLS, EML, and 75+ other formats with OCR fallback for scanned documents
+2. **Entity extraction** — `epistract:extractor` subagents read each contract using `domains/contracts/SKILL.md` and emit entities/relations as `DocumentExtraction` JSON
+3. **Graph construction** — `sift-kg` builds a deduplicated knowledge graph with entity resolution across contracts using domain-specific canonical naming
+4. **Community detection** — Louvain algorithm identifies clusters of related vendors, obligations, and deadlines
+5. **Epistemic analysis** — `domains/contracts/epistemic.py` detects cross-contract conflicts, obligation gaps, and risk indicators
 
 ## What the Epistemic Layer Detects
 
-Unlike simple document extraction, epistract's two-layer approach enables higher-order analysis:
+Unlike simple document extraction, epistract's two-layer approach enables higher-order analysis specific to contract portfolios:
 
-1. **Conflicts** — When Contract A says one thing and Contract B says another about the same entity (e.g., overlapping exclusive service windows, contradictory setup requirements)
-2. **Gaps** — Expected obligations or deliverables that are missing from the contract landscape (e.g., no contract covers a required service)
-3. **Risks** — Patterns that indicate potential operational issues (e.g., tight turnaround between teardown and next setup, penalty clauses triggered by dependencies on other vendors)
+1. **Conflicts** — When Contract A says one thing and Contract B says another about the same entity. Examples: overlapping exclusive service windows ("Vendor X has exclusive catering rights" vs. "Vendor Y is approved for premium suite catering"), contradictory setup requirements, scheduling collisions on shared rooms.
+2. **Gaps** — Expected obligations or deliverables that are missing from the contract landscape. Examples: no contract covers a required service, an event date has no labor agreement, a venue requires insurance but no certificate is on file.
+3. **Risks** — Patterns that indicate potential operational issues. Examples: tight turnaround between teardown and next setup, penalty clauses triggered by dependencies on other vendors, missing force majeure language for a critical service.
 
-## Privacy
+## Cross-Domain Story
 
-All results shown here use aggregate statistics only. No vendor names, dollar amounts, specific contract terms, or identifying details are disclosed. The contracts domain demonstrates epistract's capability to analyze contractual relationships — the schema definitions and aggregate metrics are public, while the actual contract content remains private.
+The contracts domain is the proof point that epistract's framework is genuinely domain-agnostic:
 
-## Applicability
+| Layer | Drug Discovery | Contracts | Shared? |
+|---|---|---|---|
+| Document parsing | Kreuzberg | Kreuzberg | ✅ |
+| Extraction agent | `epistract:extractor` | `epistract:extractor` | ✅ |
+| Graph builder | `sift-kg.run_build` | `sift-kg.run_build` | ✅ |
+| Community detection | Louvain | Louvain | ✅ |
+| Viewer | `graph.html` | `graph.html` | ✅ |
+| Workbench | `examples/workbench/` | `examples/workbench/` | ✅ |
+| **Schema** (entity + relation types) | 17 / 30 | 11 / 11 | ❌ — domain-specific |
+| **SKILL.md** (extraction prompt) | drug-discovery domain expertise | contract domain expertise | ❌ — domain-specific |
+| **Epistemic rules** | RDKit/Biopython validation, prophetic-claim detection | Cross-contract conflict detection, obligation gap analysis, risk scoring | ❌ — domain-specific |
+| **Workbench template** | drug-discovery persona | contract-analyst persona | ❌ — domain-specific |
 
-The contracts domain configuration can be adapted to other contract analysis scenarios:
+**Adding a third domain (legal briefs, scientific datasets, regulatory filings, real estate leases, anything) requires only writing the four domain-specific files. Pipeline code is unchanged.**
 
-- Corporate vendor management
-- Real estate lease portfolios
+## Applicability — Where This Schema Reuses
+
+The contracts domain configuration can be adapted to many contractual analysis scenarios with minimal schema changes:
+
+- Corporate vendor management portfolios
+- Real estate lease landscapes
 - Government procurement contracts
-- Construction project contracts
+- Construction project subcontract chains
 - Healthcare provider agreements
+- SaaS terms-of-service comparison
 
-Each application requires only a domain schema update (entity types, relation types, epistemic rules) — the extraction pipeline and graph construction remain unchanged.
+Each application requires only a domain schema update (entity types, relation types, epistemic rules) — the extraction pipeline and graph construction remain unchanged. Use `/epistract:domain --input ./sample-docs/` to auto-generate a starter domain package from a sample corpus.
+
+## Privacy Note
+
+This public branch ships the contracts domain *package* (schema, prompt, rules) but **does not include any sample contract documents or extracted graphs**. The page above describes capabilities, not specific content. To reproduce the cross-domain story, point `/epistract:ingest` at your own contract corpus.

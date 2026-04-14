@@ -6,7 +6,7 @@ Epistract is a domain-agnostic knowledge graph framework that runs as a [Claude 
 
 Ship with a pre-built domain, create your own with the domain wizard, or acquire a fresh corpus from PubMed in one command.
 
-> **v2.0 status (2026-04-13):** All 6 drug-discovery scenarios and the contracts scenario have been re-validated end-to-end through the V2 plugin pipeline. Regression suite passes against V1 baselines. See [V2 Showcase](docs/showcases/drug-discovery-v2.md).
+> **v2.0 status (2026-04-13):** All 6 drug-discovery scenarios have been re-validated end-to-end through the V2 plugin pipeline. Regression suite passes against V1 baselines. The contracts domain ships as a schema scaffold without bundled corpus — bring your own contracts to reproduce the cross-domain story. See [V2 Showcase](docs/showcases/drug-discovery-v2.md).
 
 ## The Name
 
@@ -200,13 +200,19 @@ Each thumbnail links to its per-scenario V2 report with community breakdown, ent
 
 ### Event Contract Management
 
-Applied to a corpus of 62 event planning contracts across multiple formats (PDF, XLS, EML). Extraction produced 341 nodes across 11 entity types and 663 edges across 11 relation types. The epistemic analysis layer detected 53 cross-contract conflicts, identified scheduling gaps, and scored vendor obligation risks — enabling event organizers to spot issues across a complex multi-vendor landscape before they become operational problems.
+The `contracts` domain ships as a schema scaffold demonstrating that epistract is truly cross-domain: the same pipeline runs against a different schema with different epistemic rules. The drug-discovery and contracts domains share zero extraction or build code — only the YAML configuration, SKILL.md prompt, and `epistemic.py` rules differ.
 
-The contracts domain demonstrates that epistract is truly cross-domain: the same pipeline, different schema, different epistemic rules. The drug-discovery and contracts domains share zero extraction or build code — only the configuration differs.
+The contracts domain defines 11 entity types (PARTY, OBLIGATION, DEADLINE, COST, CLAUSE, SERVICE, VENUE, COMMITTEE, PERSON, EVENT, STAGE, ROOM) and 11 relation types capturing contractual relationships. Its epistemic layer detects cross-contract conflicts (contradictory terms, overlapping obligations, scheduling collisions), obligation gaps, and risk indicators (tight deadlines, penalty clauses, exclusivity constraints).
 
-[Read the full contracts evaluation →](docs/showcases/contracts.md)
+This public branch ships the contracts domain package (`domains/contracts/` — domain.yaml, SKILL.md, references/, epistemic.py) but **does not include any contract documents**. Bring your own corpus to reproduce the cross-domain story:
 
-> **Note on the contracts corpus:** The evaluation above used a private corpus for initial validation. This public branch does not include contract documents — the `contracts` domain package (`domains/contracts/`) ships with schema, SKILL.md, and epistemic rules, but no sample corpus. Bring your own contracts to reproduce the results.
+```
+/epistract:ingest ./my-contracts/ --output ./contracts-output --domain contracts
+/epistract:epistemic ./contracts-output
+/epistract:dashboard ./contracts-output --domain contracts
+```
+
+[Browse the contracts domain package →](domains/contracts/) · [Read the cross-domain showcase →](docs/showcases/contracts.md)
 
 ## Commands Reference
 
