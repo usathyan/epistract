@@ -122,6 +122,10 @@ Both domains live in `domains/` as self-contained packages. Inspect `domains/dru
 
 Epistract was evaluated across six drug discovery research scenarios spanning genetic target validation (PICALM/Alzheimer's), competitive intelligence (KRAS G12C), due diligence (rare disease), combinations (immuno-oncology), cardiology, and patent-heavy CI (GLP-1). The v2.0 framework re-ran all six scenarios end-to-end through `/epistract:*` slash commands in April 2026 and passed regression against pinned V1 baselines (≥80% of V1 node/edge counts on all six).
 
+![GLP-1 Competitive Intelligence V2 Knowledge Graph](tests/scenarios/screenshots/scenario-06-graph-v2.png)
+
+*Scenario 6 — GLP-1 Competitive Intelligence. 193 nodes, 619 links, 9 communities built from 34 documents (24 PubMed abstracts + 10 patents). The largest V2 scenario and the only one to produce prophetic epistemic claims from patent forward-looking language.*
+
 **Aggregate V2 results (2026-04-13):** 111 documents → 867 nodes, 2,592 links, 39 communities — **+10.7% nodes, +16.2% edges, +18.2% communities over V1 aggregate totals.**
 
 | # | Scenario | Focus | Docs | V2 Nodes | V2 Edges | V2 Communities | Status |
@@ -132,6 +136,23 @@ Epistract was evaluated across six drug discovery research scenarios spanning ge
 | 4 | Immuno-Oncology Combinations | Checkpoint + validator enrichment | 16 | 151 | 440 | 5 | ✅ PASS |
 | 5 | Cardiovascular & Inflammation | Cardiology + autoimmune | 15 | 90 | 245 | 4 | ✅ PASS |
 | 6 | GLP-1 Competitive Intelligence | Patents + papers multi-source | 34 | 193 | 619 | 9 | ✅ PASS |
+
+#### Scenario Gallery
+
+<table>
+<tr>
+<td width="33%"><a href="tests/scenarios/scenario-01-picalm-alzheimers-v2.md"><img src="tests/scenarios/screenshots/scenario-01-graph-v2.png" alt="S1 PICALM/Alzheimer's"/></a><br/><sub><b>S1:</b> PICALM / Alzheimer's — 183/478/7</sub></td>
+<td width="33%"><a href="tests/scenarios/scenario-02-kras-g12c-landscape-v2.md"><img src="tests/scenarios/screenshots/scenario-02-graph-v2.png" alt="S2 KRAS G12C"/></a><br/><sub><b>S2:</b> KRAS G12C Landscape — 140/432/5</sub></td>
+<td width="33%"><a href="tests/scenarios/scenario-03-rare-disease-v2.md"><img src="tests/scenarios/screenshots/scenario-03-graph-v2.png" alt="S3 Rare Disease"/></a><br/><sub><b>S3:</b> Rare Disease Therapeutics — 110/278/5</sub></td>
+</tr>
+<tr>
+<td width="33%"><a href="tests/scenarios/scenario-04-immunooncology-v2.md"><img src="tests/scenarios/screenshots/scenario-04-graph-v2.png" alt="S4 Immuno-Oncology"/></a><br/><sub><b>S4:</b> Immuno-Oncology Combinations — 151/440/5</sub></td>
+<td width="33%"><a href="tests/scenarios/scenario-05-cardiovascular-v2.md"><img src="tests/scenarios/screenshots/scenario-05-graph-v2.png" alt="S5 Cardiovascular"/></a><br/><sub><b>S5:</b> Cardiovascular & Inflammation — 90/245/4</sub></td>
+<td width="33%"><a href="tests/scenarios/scenario-06-glp1-landscape-v2.md"><img src="tests/scenarios/screenshots/scenario-06-graph-v2.png" alt="S6 GLP-1"/></a><br/><sub><b>S6:</b> GLP-1 Competitive Intelligence — 193/619/9</sub></td>
+</tr>
+</table>
+
+Each thumbnail links to its per-scenario V2 report with community breakdown, entity/relation type distribution, V1→V2 delta, and domain-specific insights.
 
 **V2 uncovered new findings that V1 missed:**
 
