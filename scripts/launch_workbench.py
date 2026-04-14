@@ -1,12 +1,19 @@
 #!/usr/bin/env python3
-"""Launch the Sample Contract Analysis Workbench.
+"""Launch the Epistract Workbench — domain-agnostic knowledge graph explorer.
 
 Usage:
-    python scripts/launch_workbench.py <output_dir> [--port 8000] [--host 127.0.0.1]
+    python scripts/launch_workbench.py <output_dir> [--domain <name>] [--port 8000] [--host 127.0.0.1]
 
-The output_dir should contain graph_data.json from a prior extraction run.
-Launch the extraction pipeline first:
-    python scripts/extract_contracts.py <output_dir> --domain contract
+The output_dir should contain graph_data.json from a prior /epistract:ingest run.
+Optionally pass --domain to load the domain-specific workbench template
+(entity colors, persona prompt, starter questions). If omitted, the workbench
+infers the domain from graph_data.json metadata.
+
+Example:
+    /epistract:ingest ./my-papers/ --output ./graph-output --domain drug-discovery
+    python scripts/launch_workbench.py ./graph-output --domain drug-discovery
+
+Then open http://127.0.0.1:8000 in your browser.
 """
 from __future__ import annotations
 
@@ -33,7 +40,7 @@ except ImportError:
 def main():
     """Parse args and start the workbench server."""
     if "--help" in sys.argv or "-h" in sys.argv or len(sys.argv) < 2:
-        print(__doc__.strip())
+        print((__doc__ or "").strip())
         sys.exit(0)
 
     output_dir = Path(sys.argv[1])

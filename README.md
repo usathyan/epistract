@@ -107,6 +107,29 @@ Slash commands split into two groups — **full-pipeline commands** that do ever
 | `/epistract:ask <question>` | Natural-language Q&A | Ask the graph questions directly |
 | `/epistract:setup` | Dependency installer | First-time setup, re-run after upgrades |
 
+## Interactive Workbench
+
+In addition to the static `graph.html` viewer, epistract ships an interactive web workbench with three synchronized panels: a chat assistant with domain expertise, a force-directed graph canvas, and a source inspector. Launch it with:
+
+```
+/epistract:dashboard <output_dir> --domain <name>
+```
+
+For example, to explore the S6 GLP-1 knowledge graph from the showcase:
+
+```
+/epistract:dashboard tests/corpora/06_glp1_landscape/output-v2 --domain drug-discovery
+```
+
+The workbench opens at `http://127.0.0.1:8000` and lets you:
+
+- **Ask natural-language questions** — e.g., *"What are the resistance mechanisms for sotorasib?"* — answers stream back with citations to source documents.
+- **Explore the graph visually** — pan, zoom, filter by entity type or community, click nodes for neighborhood context.
+- **Drill to source** — every answer links to the exact documents, entities, and relations that support it.
+- **Review the epistemic layer** — contradictions, hypotheses, and prophetic claims are highlighted when `/epistract:epistemic` has been run.
+
+Workbench appearance and persona are domain-configurable via `domains/<name>/workbench/template.yaml` — entity colors, persona prompt, starter questions. The same workbench works for any domain.
+
 ## Pre-built Domains
 
 | Domain | Entity Types | Relation Types | Document Formats | Description |

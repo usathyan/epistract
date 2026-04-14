@@ -1,38 +1,68 @@
 ---
 name: epistract-dashboard
-description: Send the Sample 2026 contract portfolio summary — works via Telegram or direct output
+description: Launch the interactive web workbench for exploring a knowledge graph — chat + force-directed graph + source inspector
 ---
 
-Output the Sample 2026 Contract Portfolio & Key Financial Commitments summary.
+# Epistract Dashboard — Interactive Workbench
 
-If this was triggered from a Telegram message (check for `<channel source="telegram"` in recent messages), reply via the `telegram:reply` tool with the `chat_id` from the message.
+Launch the FastAPI-backed workbench for an existing knowledge graph. The workbench serves three synchronized panels:
 
-## Summary Content
+1. **Chat panel** — ask natural-language questions of the graph, answers streamed with citations back to source documents
+2. **Graph panel** — force-directed interactive visualization with community coloring, entity-type filters, and relation-type toggles
+3. **Sources panel** — drill into the underlying documents, entities, and relations that ground each answer
 
-Reply with this formatted summary:
+## Arguments
 
-**Sample 2026 Contract Portfolio — 8 categories, 57 documents, ~$1.7M-$2.0M total**
+- `<output_dir>` (required) — directory containing `graph_data.json`, `communities.json`, and (optionally) `claims_layer.json` from a prior `/epistract:ingest` + `/epistract:epistemic` run
+- `--domain <name>` (optional) — domain package name (e.g., `drug-discovery`, `contracts`). Loads domain-specific workbench template (title, entity colors, persona prompt). Defaults to reading the domain from the output_dir's graph_data.json metadata.
+- `--port <port>` (optional) — HTTP port (default: 8000)
+- `--host <host>` (optional) — bind host (default: 127.0.0.1 for localhost-only)
 
-**Contracts:**
-1. PCC License #26741 — $250K deposits + $117K rental (Unexecuted)
-2. Aramark Assessment — $199K caterer fee + $50K kitchen buyout (Signed 1/29/26)
-3. Marriott Room Block — $169/night x 1,650 nights + $65K F&B min (Active)
-4. Sheraton Agreement — $149/night x 1,410 nights / $208K (Negotiation, cutoff 8/13/26)
-5. Notary Hotel — $219-259/night x 350 rooms (Active)
-6. Prime AV Quote — $186K main+secondary stage (Quote)
-7. B&W AV Quote — $468K Terrace Ballroom+Hall G (Quote, alternative to #6)
-8. White Exposition — $68K decorating, 125 booths (Signed 12/16/25)
-9. CSC Security — $29K, 71 staff (Proposal)
-10. Elliott-Lewis Labor — $198K stagehands+laborers (Active rates)
-11. PCC Rigging — $50K rigging labor (Estimate)
+## How to Run
 
-**Open Decisions:**
-- AV vendor: Prime ($186K) vs B&W ($469K) = $283K difference
-- Aramark overage: $14.66/guest beyond 10% of guaranteed count
-- Sep 7 load-out = Labor Day = double-time rates for all unions
+```bash
+python3 ${CLAUDE_PLUGIN_ROOT}/scripts/launch_workbench.py <output_dir> [--domain <name>] [--port 8000]
+```
 
-**Key Contacts:** Person 1 (STA President), Person 2 (Treasurer), Kim Pham (PCC), Jessica Vendor Rep (Aramark)
+Then open `http://127.0.0.1:8000` in your browser.
 
-**Total: ~$1.69M (Prime AV) or ~$1.97M (B&W AV)**
+### Example: Drug Discovery
 
-Use `/epistract:ask` for detailed contract questions.
+```
+/epistract:dashboard tests/corpora/01_picalm_alzheimers/output-v2 --domain drug-discovery
+```
+
+### Example: Contracts
+
+```
+/epistract:dashboard ./my-contracts-output --domain contracts
+```
+
+## What You Can Do in the Workbench
+
+- **Explore the graph visually** — pan, zoom, and click nodes to see neighborhood context. Filter by entity type or community to isolate sub-graphs.
+- **Ask questions** — the chat panel uses the domain-specific persona prompt (defined in `domains/<name>/workbench/template.yaml`) and streams Claude's responses with inline citations.
+- **Drill to source** — every answer in the chat panel links to the specific documents, entities, and relations that support it. Click through to see the exact source text.
+- **Review epistemic layer** — if `/epistract:epistemic` has been run, contradictions, hypotheses, and prophetic claims are highlighted in the graph view.
+
+## Configuration
+
+Workbench appearance and behavior is domain-configurable via `domains/<name>/workbench/template.yaml`:
+
+- `title` — browser tab and header title
+- `entity_colors` — color map for node types
+- `persona_prompt` — system prompt for the chat assistant (domain expertise)
+- `dashboard_html` — optional static HTML for a landing page
+- `starter_questions` — suggested queries for new users
+
+## Pre-requisites
+
+- A completed ingest run (`/epistract:ingest` has written `graph_data.json` to `<output_dir>`)
+- Python 3.11+ with FastAPI and sift-kg installed (`/epistract:setup`)
+- The `ANTHROPIC_API_KEY` environment variable if you want the chat panel to stream Claude responses
+
+## Notes
+
+- The workbench binds to `127.0.0.1` by default (localhost only). Use `--host 0.0.0.0` only on trusted networks.
+- Starting the server takes ~2 seconds. The browser tab will show "Loading..." until `graph_data.json` is parsed (larger graphs take longer).
+- To stop the workbench, press `Ctrl+C` in the terminal where it was launched.
