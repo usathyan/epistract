@@ -1,0 +1,127 @@
+{
+  "document_id": "pmid_38958939",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/06_glp1_landscape/docs/pmid_38958939.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "class": "GLP-1 receptor agonist"
+      },
+      "confidence": 0.98,
+      "context": "semaglutide, a glucagon-like peptide 1 receptor agonist (GLP-1 RA)"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide 1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "glucagon-like peptide 1 receptor agonist (GLP-1 RA)"
+    },
+    {
+      "name": "nonarteritic anterior ischemic optic neuropathy",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "abbreviation": "NAION",
+        "icd10": "H47.01"
+      },
+      "confidence": 0.98,
+      "context": "nonarteritic anterior ischemic optic neuropathy (NAION)"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "T2D"
+      },
+      "confidence": 0.98,
+      "context": "patients with type 2 diabetes (T2D)"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "overweight/obesity"
+    },
+    {
+      "name": "obstructive sleep apnea",
+      "entity_type": "DISEASE",
+      "confidence": 0.9,
+      "context": "obstructive sleep apnea"
+    },
+    {
+      "name": "systemic hypertension",
+      "entity_type": "DISEASE",
+      "confidence": 0.85,
+      "context": "systemic hypertension"
+    },
+    {
+      "name": "hyperlipidemia",
+      "entity_type": "DISEASE",
+      "confidence": 0.85,
+      "context": "hyperlipidemia"
+    },
+    {
+      "name": "coronary artery disease",
+      "entity_type": "DISEASE",
+      "confidence": 0.85,
+      "context": "coronary artery disease"
+    },
+    {
+      "name": "ischemic optic neuropathy",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "icd10": "H47.01"
+      },
+      "confidence": 0.9,
+      "context": "code H47.01 (ischemic optic neuropathy)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP1R",
+      "confidence": 0.98,
+      "evidence": "semaglutide, a glucagon-like peptide 1 receptor agonist (GLP-1 RA)"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP1R",
+      "confidence": 0.95,
+      "evidence": "glucagon-like peptide 1 receptor agonist"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.95,
+      "evidence": "semaglutide vs non-GLP-1 RA medications to manage either T2D"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "obesity",
+      "confidence": 0.9,
+      "evidence": "non-GLP-1 RA weight-loss medications"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "semaglutide",
+      "target_entity": "nonarteritic anterior ischemic optic neuropathy",
+      "confidence": 0.75,
+      "evidence": "higher risk of NAION for patients receiving semaglutide (hazard ratio [HR], 4.28; 95% CI, 1.62-11.29); P < .001)"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:09:22.724945+00:00",
+  "error": null
+}

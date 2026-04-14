@@ -1,0 +1,161 @@
+{
+  "document_id": "pmid_39196032",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/05_cardiovascular/docs/pmid_39196032.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "aficamten",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "cardiac myosin inhibitor"
+      },
+      "confidence": 0.98,
+      "context": "aficamten, a selective small-molecule inhibitor of cardiac myosin"
+    },
+    {
+      "name": "mavacamten",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "cardiac myosin inhibitor"
+      },
+      "confidence": 0.98,
+      "context": "The first-in-class cardiac myosin inhibitor, mavacamten, improves symptoms in obstructive HCM"
+    },
+    {
+      "name": "cardiac myosin",
+      "entity_type": "PROTEIN",
+      "confidence": 0.97,
+      "context": "selective small-molecule inhibitor of cardiac myosin"
+    },
+    {
+      "name": "MYH7",
+      "entity_type": "GENE",
+      "attributes": {
+        "note": "encodes beta-cardiac myosin heavy chain"
+      },
+      "confidence": 0.7,
+      "context": "R403Q cardiac myosin mutation"
+    },
+    {
+      "name": "actin",
+      "entity_type": "PROTEIN",
+      "confidence": 0.9,
+      "context": "stabilizing a weak actin-binding state"
+    },
+    {
+      "name": "hypertrophic cardiomyopathy",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "HCM"
+      },
+      "confidence": 0.98,
+      "context": "Hypertrophic cardiomyopathy (HCM) is an inherited disease of the sarcomere"
+    },
+    {
+      "name": "obstructive hypertrophic cardiomyopathy",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "mavacamten, improves symptoms in obstructive HCM"
+    },
+    {
+      "name": "MYH7 R403Q",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "hgvs_protein": "p.Arg403Gln",
+        "gene": "MYH7"
+      },
+      "confidence": 0.95,
+      "context": "mice bearing the hypertrophic R403Q cardiac myosin mutation"
+    },
+    {
+      "name": "ATPase inhibition of cardiac myosin",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "confidence": 0.97,
+      "context": "diminishes ATPase activity by strongly slowing phosphate release, stabilizing a weak actin-binding state"
+    },
+    {
+      "name": "sarcomere",
+      "entity_type": "CELL_OR_TISSUE",
+      "confidence": 0.9,
+      "context": "inherited disease of the sarcomere"
+    },
+    {
+      "name": "myosin catalytic domain",
+      "entity_type": "PROTEIN_DOMAIN",
+      "confidence": 0.95,
+      "context": "Binding to an allosteric site on the myosin catalytic domain"
+    },
+    {
+      "name": "cardiac myocytes",
+      "entity_type": "CELL_OR_TISSUE",
+      "confidence": 0.95,
+      "context": "in cardiac myocytes and in mice"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "aficamten",
+      "target_entity": "cardiac myosin",
+      "confidence": 0.98,
+      "evidence": "aficamten, a selective small-molecule inhibitor of cardiac myosin"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "mavacamten",
+      "target_entity": "cardiac myosin",
+      "confidence": 0.97,
+      "evidence": "The first-in-class cardiac myosin inhibitor, mavacamten"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "aficamten",
+      "target_entity": "myosin catalytic domain",
+      "confidence": 0.97,
+      "evidence": "Binding to an allosteric site on the myosin catalytic domain distinct from mavacamten"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "mavacamten",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.95,
+      "evidence": "mavacamten, improves symptoms in obstructive HCM"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "aficamten",
+      "target_entity": "hypertrophic cardiomyopathy",
+      "confidence": 0.85,
+      "evidence": "aficamten holds promise as a therapy for HCM"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "aficamten",
+      "target_entity": "ATPase inhibition of cardiac myosin",
+      "confidence": 0.97,
+      "evidence": "diminishes ATPase activity by strongly slowing phosphate release"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "MYH7 R403Q",
+      "target_entity": "hypertrophic cardiomyopathy",
+      "confidence": 0.9,
+      "evidence": "mice bearing the hypertrophic R403Q cardiac myosin mutation"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "MYH7",
+      "target_entity": "cardiac myosin",
+      "confidence": 0.7,
+      "evidence": "R403Q cardiac myosin mutation"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:03:08.335697+00:00",
+  "error": null
+}

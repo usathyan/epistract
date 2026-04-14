@@ -1,0 +1,187 @@
+{
+  "document_id": "pmid_21300948",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/01_picalm_alzheimers/docs/pmid_21300948.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "clusterin",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene_symbol": "CLU"
+      },
+      "confidence": 0.98,
+      "context": "clusterin (CLU)"
+    },
+    {
+      "name": "CLU",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "CLU"
+      },
+      "confidence": 0.98,
+      "context": "clusterin (CLU)"
+    },
+    {
+      "name": "complement receptor 1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene_symbol": "CR1"
+      },
+      "confidence": 0.98,
+      "context": "complement receptor 1 (CR1)"
+    },
+    {
+      "name": "CR1",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "CR1"
+      },
+      "confidence": 0.98,
+      "context": "complement receptor 1 (CR1)"
+    },
+    {
+      "name": "phosphatidylinositol binding clathrin assembly protein",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene_symbol": "PICALM"
+      },
+      "confidence": 0.98,
+      "context": "phosphatidylinositol binding clathrin assembly protein (PICALM)"
+    },
+    {
+      "name": "PICALM",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "PICALM"
+      },
+      "confidence": 0.98,
+      "context": "phosphatidylinositol binding clathrin assembly protein (PICALM)"
+    },
+    {
+      "name": "Alzheimer disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Alzheimer Disease",
+        "abbreviation": "AD"
+      },
+      "confidence": 0.99,
+      "context": "putative novel Alzheimer disease (AD) risk loci"
+    },
+    {
+      "name": "amyloid beta 42",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "matrix": "cerebrospinal fluid",
+        "alias": "CSF-Abeta42"
+      },
+      "confidence": 0.97,
+      "context": "CSF-Abeta42 and total-tau protein levels"
+    },
+    {
+      "name": "total tau protein",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "matrix": "cerebrospinal fluid"
+      },
+      "confidence": 0.97,
+      "context": "CSF-Abeta42 and total-tau protein levels"
+    },
+    {
+      "name": "rs541458",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "PICALM",
+        "type": "SNP"
+      },
+      "confidence": 0.98,
+      "context": "rs541458 in PICALM was shown to have an effect on CSF protein levels"
+    },
+    {
+      "name": "cerebrospinal fluid",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {
+        "abbreviation": "CSF"
+      },
+      "confidence": 0.95,
+      "context": "cerebrospinal fluid (CSF)-Abeta42"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "CLU",
+      "target_entity": "clusterin",
+      "confidence": 0.98,
+      "evidence": "clusterin (CLU)"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "CR1",
+      "target_entity": "complement receptor 1",
+      "confidence": 0.98,
+      "evidence": "complement receptor 1 (CR1)"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "PICALM",
+      "target_entity": "phosphatidylinositol binding clathrin assembly protein",
+      "confidence": 0.98,
+      "evidence": "phosphatidylinositol binding clathrin assembly protein (PICALM)"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "CLU",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.95,
+      "evidence": "genetic variants in CLU, CR1, and PICALM are genetically associated with risk for AD"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "CR1",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.95,
+      "evidence": "genetic variants in CLU, CR1, and PICALM are genetically associated with risk for AD"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PICALM",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.95,
+      "evidence": "genetic variants in CLU, CR1, and PICALM are genetically associated with risk for AD"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "amyloid beta 42",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.85,
+      "evidence": "impact of these markers on cerebrospinal fluid (CSF)-Abeta42 and total-tau protein levels"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "total tau protein",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.85,
+      "evidence": "impact of these markers on cerebrospinal fluid (CSF)-Abeta42 and total-tau protein levels"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "rs541458",
+      "target_entity": "amyloid beta 42",
+      "confidence": 0.9,
+      "evidence": "AD risk allele is associated with decreased CSF Abeta42 levels"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "rs541458",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "AD risk allele is associated with decreased CSF Abeta42 levels"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T19:00:36.228532+00:00",
+  "error": null
+}

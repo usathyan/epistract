@@ -112,6 +112,7 @@ Plans:
 - [ ] **Phase 9: Consumer Decoupling and Standalone Install** - Decouple consumers into examples/, enable plugin install without repo clone
 - [x] **Phase 10: Documentation Refresh** - README, architecture diagrams, domain developer guide, and paper reframed as framework (completed 2026-04-04)
 - [ ] **Phase 11: End-to-End Scenario Validation and v2.0 Release** - Regenerate all graphs, validate both use cases, repeatable regression suite, git sync + push v2.0
+- [ ] **Phase 12: Extend epistemic classifier with structural biology document signature** - Add structural doctype class so X-ray/PDB papers stop registering as unknown (surfaced during Phase 11 S2 KRAS run)
 
 ## Phase Details
 
@@ -241,3 +242,13 @@ Phases execute in numeric order: 6 -> 7 -> 8 -> 9 -> 10 -> 11
 | 9. Consumer Decoupling and Standalone Install | v2.0 | 0/3 | Planning | - |
 | 10. Documentation Refresh | v2.0 | 4/4 | Complete    | 2026-04-04 |
 | 11. End-to-End Scenario Validation | v2.0 | 1/4 | In Progress|  |
+
+### Phase 12: Extend epistemic classifier with structural biology document signature
+
+**Goal:** Add a `structural` document-type signature to `domains/drug-discovery/epistemic.py` so X-ray crystal structures, PDB entries, and related methods papers are classified correctly instead of registering as `document_type: unknown` in the claims layer.
+**Requirements**: TBD (low severity — surfaced during Phase 11 S2 KRAS G12C run; no wrong classifications, just a missing doctype class)
+**Depends on:** Phase 11 (need finished V2 validation to know what corpora look like in practice)
+**Plans:** 0 plans
+
+Plans:
+- [ ] TBD (run /gsd:plan-phase 12 to break down)

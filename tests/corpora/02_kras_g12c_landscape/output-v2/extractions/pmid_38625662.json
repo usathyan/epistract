@@ -1,0 +1,296 @@
+{
+  "document_id": "pmid_38625662",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/02_kras_g12c_landscape/docs/pmid_38625662.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "KRAS",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "KRAS",
+        "gene_family": "RAS GTPase",
+        "aliases": [
+          "Kristen Rat Sarcoma viral oncogene homolog"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "Among the most common molecular alterations detected in non-small-cell lung cancer (NSCLC) are mutations in Kristen Rat Sarcoma viral oncogene homolog (KRAS)."
+    },
+    {
+      "name": "KRAS G12C",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "KRAS",
+        "variant": "G12C",
+        "variant_type": "missense"
+      },
+      "confidence": 0.98,
+      "context": "The discovery of a small pocket in the binding switch II region of KRASG12C has revolutionized the treatment of KRASG12C-mutated NSCLC patients."
+    },
+    {
+      "name": "KRAS G12C protein",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GTPase",
+        "domain": "switch II region"
+      },
+      "confidence": 0.92,
+      "context": "The discovery of a small pocket in the binding switch II region of KRASG12C has revolutionized the treatment of KRASG12C-mutated NSCLC patients."
+    },
+    {
+      "name": "Non-Small Cell Lung Carcinoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Carcinoma, Non-Small-Cell Lung",
+        "aliases": [
+          "NSCLC"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "Among the most common molecular alterations detected in non-small-cell lung cancer (NSCLC) are mutations in Kristen Rat Sarcoma viral oncogene homolog (KRAS)."
+    },
+    {
+      "name": "KRAS G12C-mutated Non-Small Cell Lung Carcinoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Carcinoma, Non-Small-Cell Lung",
+        "disease_subtype": "KRAS G12C-mutated"
+      },
+      "confidence": 0.95,
+      "context": "Sotorasib and adagrasib, direct KRASG12C inhibitors, have been approved by the US Food and Drug Administration (FDA) and other regulatory agencies for patients with previously treated KRASG12C-mutated NSCLC"
+    },
+    {
+      "name": "sotorasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "inn": "sotorasib",
+        "drug_class": "KRAS G12C inhibitor",
+        "development_stage": "approved"
+      },
+      "confidence": 0.98,
+      "context": "Sotorasib and adagrasib, direct KRASG12C inhibitors, have been approved by the US Food and Drug Administration (FDA) and other regulatory agencies for patients with previously treated KRASG12C-mutated NSCLC"
+    },
+    {
+      "name": "adagrasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "inn": "adagrasib",
+        "drug_class": "KRAS G12C inhibitor",
+        "development_stage": "approved"
+      },
+      "confidence": 0.98,
+      "context": "Sotorasib and adagrasib, direct KRASG12C inhibitors, have been approved by the US Food and Drug Administration (FDA) and other regulatory agencies for patients with previously treated KRASG12C-mutated NSCLC"
+    },
+    {
+      "name": "direct KRAS G12C inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "inhibition",
+        "selectivity": "selective",
+        "target": "KRAS G12C"
+      },
+      "confidence": 0.95,
+      "context": "Sotorasib and adagrasib, direct KRASG12C inhibitors, have been approved"
+    },
+    {
+      "name": "immune checkpoint blockade",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "blockade"
+      },
+      "confidence": 0.85,
+      "context": "New KRASG12C inhibitors and several combination therapy strategies, including with immune checkpoint inhibitors, are being studied in clinical trials."
+    },
+    {
+      "name": "immune checkpoint inhibitors",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "immune checkpoint inhibitor"
+      },
+      "confidence": 0.8,
+      "context": "several combination therapy strategies, including with immune checkpoint inhibitors, are being studied in clinical trials"
+    },
+    {
+      "name": "FDA",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "regulatory_agency",
+        "country": "United States",
+        "aliases": [
+          "US Food and Drug Administration"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "have been approved by the US Food and Drug Administration (FDA) and other regulatory agencies"
+    },
+    {
+      "name": "FDA approval of sotorasib for KRAS G12C NSCLC",
+      "entity_type": "REGULATORY_ACTION",
+      "attributes": {
+        "agency": "FDA",
+        "action_type": "approval",
+        "indication": "previously treated KRAS G12C-mutated NSCLC"
+      },
+      "confidence": 0.95,
+      "context": "Sotorasib and adagrasib, direct KRASG12C inhibitors, have been approved by the US Food and Drug Administration (FDA) and other regulatory agencies for patients with previously treated KRASG12C-mutated NSCLC"
+    },
+    {
+      "name": "FDA approval of adagrasib for KRAS G12C NSCLC",
+      "entity_type": "REGULATORY_ACTION",
+      "attributes": {
+        "agency": "FDA",
+        "action_type": "approval",
+        "indication": "previously treated KRAS G12C-mutated NSCLC"
+      },
+      "confidence": 0.95,
+      "context": "Sotorasib and adagrasib, direct KRASG12C inhibitors, have been approved by the US Food and Drug Administration (FDA) and other regulatory agencies for patients with previously treated KRASG12C-mutated NSCLC"
+    },
+    {
+      "name": "acquired resistance to KRAS G12C inhibitors",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "molecular",
+        "clinical_relevance": "mechanism"
+      },
+      "confidence": 0.8,
+      "context": "Treatment with KRASG12C inhibitors is not curative and patients develop progressive disease, so understanding associated mechanisms of drug resistance is key."
+    },
+    {
+      "name": "progressive disease",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "physiological",
+        "clinical_relevance": "prognosis"
+      },
+      "confidence": 0.85,
+      "context": "Treatment with KRASG12C inhibitors is not curative and patients develop progressive disease"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS",
+      "target_entity": "Non-Small Cell Lung Carcinoma",
+      "confidence": 0.95,
+      "evidence": "Among the most common molecular alterations detected in non-small-cell lung cancer (NSCLC) are mutations in Kristen Rat Sarcoma viral oncogene homolog (KRAS)."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "KRAS G12C-mutated Non-Small Cell Lung Carcinoma",
+      "confidence": 0.95,
+      "evidence": "The discovery of a small pocket in the binding switch II region of KRASG12C has revolutionized the treatment of KRASG12C-mutated NSCLC patients."
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "KRAS G12C",
+      "target_entity": "KRAS G12C protein",
+      "confidence": 0.9,
+      "evidence": "mutations in Kristen Rat Sarcoma viral oncogene homolog (KRAS)... switch II region of KRASG12C"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS G12C protein",
+      "confidence": 0.97,
+      "evidence": "Sotorasib and adagrasib, direct KRASG12C inhibitors, have been approved"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS G12C protein",
+      "confidence": 0.97,
+      "evidence": "Sotorasib and adagrasib, direct KRASG12C inhibitors, have been approved"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS G12C protein",
+      "confidence": 0.97,
+      "evidence": "Sotorasib and adagrasib, direct KRASG12C inhibitors"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS G12C protein",
+      "confidence": 0.97,
+      "evidence": "Sotorasib and adagrasib, direct KRASG12C inhibitors"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "sotorasib",
+      "target_entity": "direct KRAS G12C inhibition",
+      "confidence": 0.95,
+      "evidence": "Sotorasib and adagrasib, direct KRASG12C inhibitors"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "adagrasib",
+      "target_entity": "direct KRAS G12C inhibition",
+      "confidence": 0.95,
+      "evidence": "Sotorasib and adagrasib, direct KRASG12C inhibitors"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS G12C-mutated Non-Small Cell Lung Carcinoma",
+      "confidence": 0.97,
+      "evidence": "approved by the US Food and Drug Administration (FDA) and other regulatory agencies for patients with previously treated KRASG12C-mutated NSCLC"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS G12C-mutated Non-Small Cell Lung Carcinoma",
+      "confidence": 0.97,
+      "evidence": "approved by the US Food and Drug Administration (FDA) and other regulatory agencies for patients with previously treated KRASG12C-mutated NSCLC"
+    },
+    {
+      "relation_type": "GRANTS_APPROVAL_FOR",
+      "source_entity": "FDA approval of sotorasib for KRAS G12C NSCLC",
+      "target_entity": "sotorasib",
+      "confidence": 0.97,
+      "evidence": "Sotorasib and adagrasib, direct KRASG12C inhibitors, have been approved by the US Food and Drug Administration (FDA)"
+    },
+    {
+      "relation_type": "GRANTS_APPROVAL_FOR",
+      "source_entity": "FDA approval of adagrasib for KRAS G12C NSCLC",
+      "target_entity": "adagrasib",
+      "confidence": 0.97,
+      "evidence": "Sotorasib and adagrasib, direct KRASG12C inhibitors, have been approved by the US Food and Drug Administration (FDA)"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "acquired resistance to KRAS G12C inhibitors",
+      "target_entity": "sotorasib",
+      "confidence": 0.75,
+      "evidence": "Treatment with KRASG12C inhibitors is not curative and patients develop progressive disease, so understanding associated mechanisms of drug resistance is key."
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "acquired resistance to KRAS G12C inhibitors",
+      "target_entity": "adagrasib",
+      "confidence": 0.75,
+      "evidence": "Treatment with KRASG12C inhibitors is not curative and patients develop progressive disease, so understanding associated mechanisms of drug resistance is key."
+    },
+    {
+      "relation_type": "COMBINED_WITH",
+      "source_entity": "sotorasib",
+      "target_entity": "immune checkpoint inhibitors",
+      "confidence": 0.7,
+      "evidence": "New KRASG12C inhibitors and several combination therapy strategies, including with immune checkpoint inhibitors, are being studied in clinical trials."
+    },
+    {
+      "relation_type": "COMBINED_WITH",
+      "source_entity": "adagrasib",
+      "target_entity": "immune checkpoint inhibitors",
+      "confidence": 0.7,
+      "evidence": "New KRASG12C inhibitors and several combination therapy strategies, including with immune checkpoint inhibitors, are being studied in clinical trials."
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T21:04:03.193962+00:00",
+  "error": null
+}

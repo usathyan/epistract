@@ -1,0 +1,142 @@
+{
+  "document_id": "pmid_31385771",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/01_picalm_alzheimers/docs/pmid_31385771.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "PICALM",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "PICALM",
+        "full_name": "Phosphatidylinositol Binding Clathrin Assembly Protein"
+      },
+      "confidence": 0.98,
+      "context": "Previous studies have examined the roles of three polymorphisms (rs3851179, rs541458, and rs592297) of the PICALM gene in susceptibility to Alzheimer's disease"
+    },
+    {
+      "name": "PICALM protein",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "description": "Monomeric Clathrin Assembly Protein"
+      },
+      "confidence": 0.9,
+      "context": "MeSH Terms: ... Monomeric Clathrin Assembly Proteins"
+    },
+    {
+      "name": "Alzheimer disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Alzheimer Disease",
+        "abbreviation": "AD"
+      },
+      "confidence": 0.98,
+      "context": "Association of PICALM Gene Polymorphisms with Alzheimer's Disease"
+    },
+    {
+      "name": "rs3851179",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "PICALM",
+        "variant_type": "SNP",
+        "rsid": "rs3851179"
+      },
+      "confidence": 0.98,
+      "context": "three polymorphisms (rs3851179, rs541458, and rs592297) of the PICALM gene"
+    },
+    {
+      "name": "rs541458",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "PICALM",
+        "variant_type": "SNP",
+        "rsid": "rs541458"
+      },
+      "confidence": 0.98,
+      "context": "three polymorphisms (rs3851179, rs541458, and rs592297) of the PICALM gene"
+    },
+    {
+      "name": "rs592297",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "PICALM",
+        "variant_type": "SNP",
+        "rsid": "rs592297"
+      },
+      "confidence": 0.98,
+      "context": "three polymorphisms (rs3851179, rs541458, and rs592297) of the PICALM gene"
+    },
+    {
+      "name": "rs3851179 A allele",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "gene": "PICALM",
+        "allele": "A",
+        "effect": "protective"
+      },
+      "confidence": 0.95,
+      "context": "Compared with G carriers, A carriers of rs3851179 were associated with a decreased risk of AD"
+    },
+    {
+      "name": "rs541458 C allele",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "gene": "PICALM",
+        "allele": "C",
+        "effect": "protective",
+        "population": "Caucasians"
+      },
+      "confidence": 0.95,
+      "context": "Compared with T carriers, C carriers of rs541458 were inversely associated with AD risk"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "PICALM",
+      "target_entity": "PICALM protein",
+      "confidence": 0.85,
+      "evidence": "PICALM gene ... Monomeric Clathrin Assembly Proteins"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PICALM",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.95,
+      "evidence": "polymorphisms ... of the PICALM gene in susceptibility to Alzheimer's disease (AD)"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "rs3851179",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.97,
+      "evidence": "A carriers of rs3851179 were associated with a decreased risk of AD (OR = 0.88; 95% CI 0.84, 0.91, P for Z-test <0.001)"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "rs541458",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.95,
+      "evidence": "C carriers of rs541458 were inversely associated with AD risk (OR = 0.86; 95% CI 0.81, 0.92)"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "rs3851179 A allele",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "A carriers of rs3851179 were associated with a decreased risk of AD"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "rs541458 C allele",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "the protective effect of the rs541458 C allele was observed only among Caucasians"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T19:01:04.445601+00:00",
+  "error": null
+}

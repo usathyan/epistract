@@ -1,0 +1,135 @@
+{
+  "document_id": "pmid_37351564",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/06_glp1_landscape/docs/pmid_37351564.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "orforglipron",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "nonpeptide GLP-1 receptor agonist",
+        "route": "oral"
+      },
+      "confidence": 0.98,
+      "context": "nonpeptide glucagon-like peptide-1 (GLP-1) receptor agonist orforglipron as a once-daily oral therapy"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "Glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "GLP-1 receptor agonist orforglipron"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "confidence": 0.98,
+      "context": "adults with obesity"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "confidence": 0.9,
+      "context": "MeSH: Diabetes Mellitus, Type 2"
+    },
+    {
+      "name": "overweight",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.9,
+      "context": "adults with obesity, or with overweight plus at least one weight-related coexisting condition"
+    },
+    {
+      "name": "weight loss",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.95,
+      "context": "weight reduction in adults with obesity"
+    },
+    {
+      "name": "gastrointestinal adverse events",
+      "entity_type": "ADVERSE_EVENT",
+      "confidence": 0.95,
+      "context": "most common adverse events reported with orforglipron were gastrointestinal events, which were mild to moderate"
+    },
+    {
+      "name": "NCT05051579",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "phase 2",
+        "design": "randomized, double-blind, placebo-controlled",
+        "n": 272,
+        "duration_weeks": 36
+      },
+      "confidence": 0.99,
+      "context": "phase 2, randomized, double-blind trial... ClinicalTrials.gov number, NCT05051579"
+    },
+    {
+      "name": "Eli Lilly",
+      "entity_type": "ORGANIZATION",
+      "confidence": 0.99,
+      "context": "Funded by Eli Lilly"
+    },
+    {
+      "name": "PMID:37351564",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "journal": "New England Journal of Medicine",
+        "year": 2023
+      },
+      "confidence": 0.99,
+      "context": "The New England journal of medicine (2023) PMID: 37351564"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "orforglipron",
+      "target_entity": "GLP1R",
+      "confidence": 0.98,
+      "evidence": "nonpeptide glucagon-like peptide-1 (GLP-1) receptor agonist orforglipron"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "orforglipron",
+      "target_entity": "GLP1R",
+      "confidence": 0.95,
+      "evidence": "GLP-1 receptor agonist orforglipron"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "orforglipron",
+      "target_entity": "obesity",
+      "confidence": 0.9,
+      "evidence": "once-daily oral therapy for weight reduction in adults with obesity"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "orforglipron",
+      "target_entity": "NCT05051579",
+      "confidence": 0.99,
+      "evidence": "phase 2, randomized, double-blind trial... orforglipron at one of four doses... NCT05051579"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "orforglipron",
+      "target_entity": "gastrointestinal adverse events",
+      "confidence": 0.95,
+      "evidence": "most common adverse events reported with orforglipron were gastrointestinal events"
+    },
+    {
+      "relation_type": "SPONSORED_BY",
+      "source_entity": "NCT05051579",
+      "target_entity": "Eli Lilly",
+      "confidence": 0.99,
+      "evidence": "Funded by Eli Lilly"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:09:01.417963+00:00",
+  "error": null
+}

@@ -1,0 +1,175 @@
+{
+  "document_id": "pmid_36552756",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/01_picalm_alzheimers/docs/pmid_36552756.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "PICALM",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "Phosphatidylinositol binding clathrin-assembly protein"
+      },
+      "confidence": 0.98,
+      "context": "PICALM (Phosphatidylinositol binding clathrin-assembly protein) gene as the most significant genetic susceptibility locus after APOE and BIN1"
+    },
+    {
+      "name": "PICALM",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "function": "clathrin-adaptor protein"
+      },
+      "confidence": 0.97,
+      "context": "PICALM is a clathrin-adaptor protein that plays a critical role in clathrin-mediated endocytosis and autophagy"
+    },
+    {
+      "name": "APOE",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.98,
+      "context": "the most significant genetic susceptibility locus after APOE and BIN1"
+    },
+    {
+      "name": "BIN1",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.98,
+      "context": "the most significant genetic susceptibility locus after APOE and BIN1"
+    },
+    {
+      "name": "APP",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "Amyloid precursor protein"
+      },
+      "confidence": 0.95,
+      "context": "differential modulation of APP processing and A\u03b2 transcytosis by PICALM has been reported"
+    },
+    {
+      "name": "Alzheimer disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Alzheimer Disease",
+        "abbreviation": "AD"
+      },
+      "confidence": 0.98,
+      "context": "PICALM and Alzheimer's Disease: An Update and Perspectives"
+    },
+    {
+      "name": "clathrin-mediated endocytosis",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "plays a critical role in clathrin-mediated endocytosis and autophagy"
+    },
+    {
+      "name": "autophagy",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "plays a critical role in clathrin-mediated endocytosis and autophagy"
+    },
+    {
+      "name": "amyloid beta",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "symbol": "A\u03b2"
+      },
+      "confidence": 0.9,
+      "context": "differential modulation of APP processing and A\u03b2 transcytosis by PICALM"
+    },
+    {
+      "name": "tau pathology",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.88,
+      "context": "significant effects of PICALM modulation of tau pathology progression have also been evidenced in Alzheimer's disease models"
+    },
+    {
+      "name": "clathrin",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "mesh_term": "Clathrin"
+      },
+      "confidence": 0.9,
+      "context": "MeSH Terms: Humans, Alzheimer Disease, Clathrin"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "PICALM",
+      "target_entity": "PICALM",
+      "confidence": 0.9,
+      "evidence": "PICALM (Phosphatidylinositol binding clathrin-assembly protein) gene"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PICALM",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.97,
+      "evidence": "GWAS have identified the PICALM gene as the most significant genetic susceptibility locus after APOE and BIN1"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "APOE",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.97,
+      "evidence": "the most significant genetic susceptibility locus after APOE and BIN1"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "BIN1",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.97,
+      "evidence": "the most significant genetic susceptibility locus after APOE and BIN1"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "PICALM",
+      "target_entity": "clathrin-mediated endocytosis",
+      "confidence": 0.95,
+      "evidence": "PICALM is a clathrin-adaptor protein that plays a critical role in clathrin-mediated endocytosis"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "PICALM",
+      "target_entity": "autophagy",
+      "confidence": 0.92,
+      "evidence": "plays a critical role in clathrin-mediated endocytosis and autophagy"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "PICALM",
+      "target_entity": "clathrin",
+      "confidence": 0.9,
+      "evidence": "PICALM is a clathrin-adaptor protein"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "APP",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.85,
+      "evidence": "differential modulation of APP processing and A\u03b2 transcytosis by PICALM has been reported"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "amyloid beta",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.88,
+      "evidence": "differential modulation of APP processing and A\u03b2 transcytosis by PICALM"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "tau pathology",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "significant effects of PICALM modulation of tau pathology progression have also been evidenced in Alzheimer's disease models"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T17:07:00.053476+00:00",
+  "error": null
+}

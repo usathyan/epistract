@@ -1,0 +1,355 @@
+{
+  "document_id": "patent_09_US11111285B2_zealand_triple_agonist",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/06_glp1_landscape/docs/patent_09_US11111285B2_zealand_triple_agonist.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "glucagon-GLP-1-GIP triple agonist",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "developer": "Zealand Pharma",
+        "patent": "US11111285B2"
+      },
+      "confidence": 0.95,
+      "context": "Glucagon-GLP-1-GIP triple agonist compounds"
+    },
+    {
+      "name": "SEQ ID NO: 52",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "type": "general formula I backbone"
+      },
+      "confidence": 0.9,
+      "context": "The core peptide backbone follows General Formula I (SEQ ID NO: 52)"
+    },
+    {
+      "name": "SEQ ID NO: 1",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "sequence": "YSQGTFTSDYSKYLDSKAAHDFVEWLLRA",
+        "type": "wild-type reference",
+        "requires_validation": true
+      },
+      "confidence": 0.95,
+      "context": "SEQ ID NO: 1 (wild-type reference): YSQGTFTSDYSKYLDSKAAHDFVEWLLRA"
+    },
+    {
+      "name": "SEQ ID NO: 5",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "sequence": "Y-Aib-QGTFTSDYSIYLDSKAAHDFVEWLLSA",
+        "requires_validation": true
+      },
+      "confidence": 0.95,
+      "context": "SEQ ID NO: 5: Y-Aib-QGTFTSDYSIYLDSKAAHDFVEWLLSA"
+    },
+    {
+      "name": "SEQ ID NO: 53",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "sequence": "Gly-Pro-Ser-Ser-Gly-Ala-Pro-Pro-Pro-Ser",
+        "type": "C-terminal extension",
+        "requires_validation": true
+      },
+      "confidence": 0.95,
+      "context": "Gly-Pro-Ser-Ser-Gly-Ala-Pro-Pro-Pro-Ser (SEQ ID NO: 53)"
+    },
+    {
+      "name": "Exendin-4",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide"
+      },
+      "confidence": 0.95,
+      "context": "Six C-terminal extension sequences (Y1, SEQ ID NOs 53-58) are derived from Exendin-4"
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "class": "GPCR"
+      },
+      "confidence": 0.98,
+      "context": "agonist activity at glucagon, GIP, and GLP-1 receptors"
+    },
+    {
+      "name": "GIP receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "class": "GPCR"
+      },
+      "confidence": 0.98,
+      "context": "agonist activity at glucagon, GIP, and GLP-1 receptors"
+    },
+    {
+      "name": "glucagon receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "class": "GPCR"
+      },
+      "confidence": 0.98,
+      "context": "agonist activity at glucagon, GIP, and GLP-1 receptors"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "GENE",
+      "confidence": 0.9,
+      "context": "GLP-1 receptor"
+    },
+    {
+      "name": "GIPR",
+      "entity_type": "GENE",
+      "confidence": 0.9,
+      "context": "GIP receptor"
+    },
+    {
+      "name": "GCGR",
+      "entity_type": "GENE",
+      "confidence": 0.9,
+      "context": "glucagon receptor"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "confidence": 0.98,
+      "context": "treating metabolic disorders including obesity"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "confidence": 0.98,
+      "context": "type 2 diabetes"
+    },
+    {
+      "name": "dyslipidemia",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "dyslipidemia"
+    },
+    {
+      "name": "non-alcoholic fatty liver disease",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "non-alcoholic fatty liver disease"
+    },
+    {
+      "name": "metabolic syndrome",
+      "entity_type": "DISEASE",
+      "confidence": 0.9,
+      "context": "potential best-in-class treatments for obesity and metabolic syndrome"
+    },
+    {
+      "name": "triple agonism at GLP-1/GIP/glucagon receptors",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "confidence": 0.95,
+      "context": "The triple agonist mechanism simultaneously engages: GLP-1 receptor... GIP receptor... glucagon receptor"
+    },
+    {
+      "name": "glucose-dependent insulin secretion",
+      "entity_type": "PATHWAY",
+      "confidence": 0.9,
+      "context": "GLP-1 receptor for glucose-dependent insulin secretion and appetite suppression"
+    },
+    {
+      "name": "hepatic lipid oxidation",
+      "entity_type": "PATHWAY",
+      "confidence": 0.85,
+      "context": "glucagon receptor for increased energy expenditure and hepatic lipid oxidation"
+    },
+    {
+      "name": "Zealand Pharma AS",
+      "entity_type": "ORGANIZATION",
+      "confidence": 0.98,
+      "context": "Assignee: Zealand Pharma AS"
+    },
+    {
+      "name": "US11111285B2",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "type": "patent",
+        "filing_date": "2018-10-04"
+      },
+      "confidence": 0.98,
+      "context": "Patent ID: US11111285B2"
+    },
+    {
+      "name": "peptide_29aa",
+      "entity_type": "PEPTIDE_SEQUENCE",
+      "attributes": {
+        "sequence": "YSQGTFTSDYSKYLDSKAAHDFVEWLLRA",
+        "sequence_type": "protein",
+        "length": 29,
+        "validated": true,
+        "molecular_weight": 3399.67
+      },
+      "confidence": 1.0,
+      "context": "SEQ ID NO: 1 (wild-type reference): YSQGTFTSDYSKYLDSKAAHDFVEWLLRA"
+    },
+    {
+      "name": "peptide_27aa",
+      "entity_type": "PEPTIDE_SEQUENCE",
+      "attributes": {
+        "sequence": "QGTFTSDYSIYLDSKAAHDFVEWLLSA",
+        "sequence_type": "protein",
+        "length": 27,
+        "validated": true,
+        "molecular_weight": 3065.3
+      },
+      "confidence": 1.0,
+      "context": "SEQ ID NO: 5: Y-Aib-QGTFTSDYSIYLDSKAAHDFVEWLLSA"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.95,
+      "evidence": "compounds possessing agonist activity at glucagon, GIP, and GLP-1 receptors"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "GIP receptor",
+      "confidence": 0.95,
+      "evidence": "compounds possessing agonist activity at glucagon, GIP, and GLP-1 receptors"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "glucagon receptor",
+      "confidence": 0.95,
+      "evidence": "compounds possessing agonist activity at glucagon, GIP, and GLP-1 receptors"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "obesity",
+      "confidence": 0.9,
+      "evidence": "treating metabolic disorders including obesity"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.9,
+      "evidence": "treating metabolic disorders including... type 2 diabetes"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "dyslipidemia",
+      "confidence": 0.9,
+      "evidence": "treating metabolic disorders including... dyslipidemia"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "non-alcoholic fatty liver disease",
+      "confidence": 0.9,
+      "evidence": "treating metabolic disorders including... non-alcoholic fatty liver disease"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "metabolic syndrome",
+      "confidence": 0.85,
+      "evidence": "best-in-class treatments for obesity and metabolic syndrome"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "triple agonism at GLP-1/GIP/glucagon receptors",
+      "confidence": 0.95,
+      "evidence": "The triple agonist mechanism simultaneously engages"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "GLP1R",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.9,
+      "evidence": "GLP-1 receptor"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "GIPR",
+      "target_entity": "GIP receptor",
+      "confidence": 0.9,
+      "evidence": "GIP receptor"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "GCGR",
+      "target_entity": "glucagon receptor",
+      "confidence": 0.9,
+      "evidence": "glucagon receptor"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "GLP-1 receptor",
+      "target_entity": "glucose-dependent insulin secretion",
+      "confidence": 0.9,
+      "evidence": "GLP-1 receptor for glucose-dependent insulin secretion and appetite suppression"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "glucagon receptor",
+      "target_entity": "hepatic lipid oxidation",
+      "confidence": 0.85,
+      "evidence": "glucagon receptor for increased energy expenditure and hepatic lipid oxidation"
+    },
+    {
+      "relation_type": "DEVELOPS",
+      "source_entity": "Zealand Pharma AS",
+      "target_entity": "glucagon-GLP-1-GIP triple agonist",
+      "confidence": 0.95,
+      "evidence": "Zealand Pharma is developing these compounds"
+    },
+    {
+      "relation_type": "DESCRIBED_IN",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "US11111285B2",
+      "confidence": 0.98,
+      "evidence": "Patent ID: US11111285B2"
+    },
+    {
+      "relation_type": "HAS_SEQUENCE",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "SEQ ID NO: 52",
+      "confidence": 0.95,
+      "evidence": "General Formula I (SEQ ID NO: 52)"
+    },
+    {
+      "relation_type": "DERIVED_FROM",
+      "source_entity": "SEQ ID NO: 53",
+      "target_entity": "Exendin-4",
+      "confidence": 0.95,
+      "evidence": "Six C-terminal extension sequences (Y1, SEQ ID NOs 53-58) are derived from Exendin-4"
+    },
+    {
+      "relation_type": "HAS_SEQUENCE",
+      "source_entity": "SEQ ID NO: 1",
+      "target_entity": "peptide_29aa",
+      "confidence": 0.95,
+      "evidence": "SEQ ID NO: 1 (wild-type reference): YSQGTFTSDYSKYLDSKAAHDFVEWLLRA"
+    },
+    {
+      "relation_type": "HAS_SEQUENCE",
+      "source_entity": "SEQ ID NO: 5",
+      "target_entity": "peptide_27aa",
+      "confidence": 0.95,
+      "evidence": "SEQ ID NO: 5: Y-Aib-QGTFTSDYSIYLDSKAAHDFVEWLLSA"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:09:08.239726+00:00",
+  "error": null
+}

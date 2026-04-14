@@ -1,0 +1,194 @@
+review_threshold: 0.7
+relations:
+- source_id: sequence_variant:kras_g12c
+  source_name: KRAS G12C
+  target_id: compound:adagrasib
+  target_name: adagrasib
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.9
+  evidence: KRASG12C -mutated non-small-cell lung cancer...had a confirmed objective
+    response
+  source_document: pmid_35658005
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:kras_g12c_positivity
+  source_name: KRAS G12C positivity
+  target_id: compound:adagrasib
+  target_name: adagrasib
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.92
+  evidence: pronounced tumor regression in 17 of 26 (65%) KRASG12C-positive cell line-
+    and patient-derived xenograft models
+  source_document: pmid_31658955
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: sequence_variant:kras_r68s
+  source_name: KRAS R68S
+  target_id: compound:sotorasib
+  target_name: sotorasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.9
+  evidence: 'R68S: alters drug-protein interface'
+  source_document: structural_sotorasib
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: sequence_variant:kras_h95q
+  source_name: KRAS H95Q
+  target_id: compound:sotorasib
+  target_name: sotorasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.85
+  evidence: 'H95Q/R: affects binding cavity geometry'
+  source_document: structural_sotorasib
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: sequence_variant:kras_h95r
+  source_name: KRAS H95R
+  target_id: compound:sotorasib
+  target_name: sotorasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.85
+  evidence: 'H95Q/R: affects binding cavity geometry'
+  source_document: structural_sotorasib
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: gene:met
+  source_name: MET
+  target_id: compound:sotorasib
+  target_name: sotorasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.85
+  evidence: 'Other bypass mechanisms: MET amplification'
+  source_document: structural_sotorasib
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: biomarker:kras_g12c_mutation
+  source_name: KRAS G12C mutation
+  target_id: compound:sotorasib
+  target_name: sotorasib
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.9974999999999999
+  evidence: KRASG12C-mutant non-small cell lung cancer
+  source_document: pmid_39725152
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:kras_g12c_mutation
+  source_name: KRAS G12C mutation
+  target_id: disease:non_small_cell_lung_cancer
+  target_name: non-small cell lung cancer
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.85
+  evidence: KRASG12C-mutated advanced NSCLC
+  source_document: pmid_36764316
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:kras_g12c_mutation
+  source_name: KRAS G12C mutation
+  target_id: compound:adagrasib
+  target_name: adagrasib
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.95
+  evidence: KRASG12C-mutant non-small cell lung cancer
+  source_document: pmid_39725152
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: protein:egfr
+  source_name: EGFR
+  target_id: compound:sotorasib
+  target_name: sotorasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.85
+  evidence: early adaptive resistance occurs due to rewiring of signaling pathways,
+    activating receptor tyrosine kinases, primarily EGFR
+  source_document: pmid_38072173
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: protein:met
+  source_name: MET
+  target_id: compound:sotorasib
+  target_name: sotorasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.8
+  evidence: activating receptor tyrosine kinases, primarily EGFR, but also MET and
+    ligands
+  source_document: pmid_38072173
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: gene:stk11
+  source_name: STK11
+  target_id: mechanism_of_action:pd_1_checkpoint_blockade
+  target_name: PD-1 checkpoint blockade
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.85
+  evidence: Comutations in STK11/LKB1 often co-occur with KRAS G12C, jeopardizing
+    the effect of immune checkpoint (anti-PD1/PDL1) inhibitors.
+  source_document: pmid_38072173
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: phenotype:acquired_resistance_to_kras_g12c_inhibitors
+  source_name: acquired resistance to KRAS G12C inhibitors
+  target_id: compound:sotorasib
+  target_name: sotorasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.75
+  evidence: Treatment with KRASG12C inhibitors is not curative and patients develop
+    progressive disease, so understanding associated mechanisms of drug resistance
+    is key.
+  source_document: pmid_38625662
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: phenotype:acquired_resistance_to_kras_g12c_inhibitors
+  source_name: acquired resistance to KRAS G12C inhibitors
+  target_id: compound:adagrasib
+  target_name: adagrasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.75
+  evidence: Treatment with KRASG12C inhibitors is not curative and patients develop
+    progressive disease, so understanding associated mechanisms of drug resistance
+    is key.
+  source_document: pmid_38625662
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review
+- source_id: biomarker:krasg12c_mutated_nsclc
+  source_name: KRASG12C-mutated NSCLC
+  target_id: compound:sotorasib
+  target_name: sotorasib
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.95
+  evidence: approved for the treatment of adult patients with KRASG12C-mutated previously
+    treated advanced non-small cell lung cancer
+  source_document: pmid_39215000
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:krasg12c_mutated_nsclc
+  source_name: KRASG12C-mutated NSCLC
+  target_id: compound:adagrasib
+  target_name: adagrasib
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.95
+  evidence: approved for the treatment of adult patients with KRASG12C-mutated previously
+    treated advanced non-small cell lung cancer
+  source_document: pmid_39215000
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:kras_mutation
+  source_name: KRAS mutation
+  target_id: compound:sotorasib
+  target_name: sotorasib
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.8
+  evidence: KRAS G12C inhibitors ... a targeted approach for a specific subset of
+    these mutations
+  source_document: pmid_40116975
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: sequence_variant:kras_y96d
+  source_name: KRAS Y96D
+  target_id: compound:sotorasib
+  target_name: sotorasib
+  relation_type: CONFERS_RESISTANCE_TO
+  confidence: 0.95
+  evidence: 'Y96D: disrupts drug binding in the Switch II pocket'
+  source_document: structural_sotorasib
+  status: DRAFT
+  flag_reason: Type 'CONFERS_RESISTANCE_TO' requires review

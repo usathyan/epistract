@@ -1,0 +1,324 @@
+{
+  "document_id": "pmid_39215000",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/02_kras_g12c_landscape/docs/pmid_39215000.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "sotorasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "inn": "sotorasib",
+        "drug_class": "KRAS G12C inhibitor",
+        "development_stage": "approved",
+        "mechanism_state": "OFF-state covalent inhibitor"
+      },
+      "confidence": 0.98,
+      "context": "Two of these molecules, sotorasib and adagrasib, are approved for the treatment of adult patients with KRASG12C-mutated previously treated advanced non-small cell lung cancer."
+    },
+    {
+      "name": "adagrasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "inn": "adagrasib",
+        "drug_class": "KRAS G12C inhibitor",
+        "development_stage": "approved",
+        "mechanism_state": "OFF-state covalent inhibitor"
+      },
+      "confidence": 0.98,
+      "context": "Two of these molecules, sotorasib and adagrasib, are approved for the treatment of adult patients with KRASG12C-mutated previously treated advanced non-small cell lung cancer."
+    },
+    {
+      "name": "RMC-4998",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "compound_code": "RMC-4998",
+        "aliases": "RM-029",
+        "drug_class": "tri-complex KRAS G12C(ON) covalent inhibitor",
+        "development_stage": "preclinical"
+      },
+      "confidence": 0.97,
+      "context": "the preclinical tool tri-complex KRASG12C-selective covalent inhibitor, RMC-4998 (also known as RM-029), that targets the active GTP-bound (ON) state of the oncogene"
+    },
+    {
+      "name": "RMC-6291",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "compound_code": "RMC-6291",
+        "drug_class": "tri-complex KRAS G12C(ON) covalent inhibitor",
+        "development_stage": "clinical"
+      },
+      "confidence": 0.97,
+      "context": "the clinical stage KRASG12C(ON) inhibitor RMC-6291 alone or in combination with KRASG12C(OFF) drugs"
+    },
+    {
+      "name": "KRAS",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "KRAS",
+        "gene_family": "RAS GTPase oncogene",
+        "organism": "Homo sapiens"
+      },
+      "confidence": 0.98,
+      "context": "Selective KRASG12C inhibitors have been developed to covalently lock the oncogene in the inactive GDP-bound state."
+    },
+    {
+      "name": "KRAS G12C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "variant": "G12C",
+        "variant_type": "missense",
+        "hgvs_p": "p.Gly12Cys"
+      },
+      "confidence": 0.98,
+      "context": "sotorasib and adagrasib, are approved for the treatment of adult patients with KRASG12C-mutated previously treated advanced non-small cell lung cancer"
+    },
+    {
+      "name": "KRAS protein",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "small GTPase",
+        "uniprot_name": "RASK_HUMAN",
+        "states": "GDP-bound (OFF), GTP-bound (ON)"
+      },
+      "confidence": 0.95,
+      "context": "Selective KRASG12C inhibitors have been developed to covalently lock the oncogene in the inactive GDP-bound state."
+    },
+    {
+      "name": "non-small cell lung cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Carcinoma, Non-Small-Cell Lung",
+        "aliases": "NSCLC",
+        "stage": "advanced"
+      },
+      "confidence": 0.98,
+      "context": "approved for the treatment of adult patients with KRASG12C-mutated previously treated advanced non-small cell lung cancer"
+    },
+    {
+      "name": "lung neoplasms",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Lung Neoplasms"
+      },
+      "confidence": 0.9,
+      "context": "MeSH Terms: ... Lung Neoplasms"
+    },
+    {
+      "name": "KRAS G12C OFF-state covalent inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "inhibition",
+        "selectivity": "selective for KRAS G12C",
+        "reversibility": "irreversible (covalent)",
+        "target": "KRAS G12C (GDP-bound/OFF state)"
+      },
+      "confidence": 0.97,
+      "context": "Selective KRASG12C inhibitors have been developed to covalently lock the oncogene in the inactive GDP-bound state."
+    },
+    {
+      "name": "KRAS G12C ON-state covalent inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "inhibition",
+        "selectivity": "selective for KRAS G12C",
+        "reversibility": "irreversible (covalent)",
+        "target": "KRAS G12C (GTP-bound/ON state)",
+        "modality": "tri-complex inhibitor"
+      },
+      "confidence": 0.96,
+      "context": "tri-complex KRASG12C-selective covalent inhibitor, RMC-4998 ... that targets the active GTP-bound (ON) state of the oncogene"
+    },
+    {
+      "name": "acquired KRAS mutations (cis and trans)",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "variant_type": "acquired resistance mutations",
+        "configuration": "cis and trans"
+      },
+      "confidence": 0.9,
+      "context": "Mass sequencing from patients biopsies identified a number of acquired KRAS mutations -both in cis and in trans- in resistant tumors."
+    },
+    {
+      "name": "drug resistance to KRAS G12C inhibitors",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "molecular",
+        "clinical_relevance": "mechanism of resistance",
+        "mesh_term": "Drug Resistance, Neoplasm"
+      },
+      "confidence": 0.95,
+      "context": "Drug treatment imposes selective pressures leading to the outgrowth of drug-resistant variants."
+    },
+    {
+      "name": "increased KRAS-GTP loading",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "molecular",
+        "clinical_relevance": "adaptive resistance mechanism"
+      },
+      "confidence": 0.93,
+      "context": "disease progression in vivo can also occur due to adaptive mechanisms and increased KRAS-GTP loading."
+    },
+    {
+      "name": "KRASG12C-mutated NSCLC",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "predictive",
+        "analyte": "DNA",
+        "assay": "sequencing",
+        "tissue": "tumor"
+      },
+      "confidence": 0.9,
+      "context": "approved for the treatment of adult patients with KRASG12C-mutated previously treated advanced non-small cell lung cancer"
+    },
+    {
+      "name": "Nokin et al., Nature Communications 2024",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "39215000",
+        "journal": "Nature Communications",
+        "year": "2024",
+        "first_author": "Nokin",
+        "publication_type": "original_research"
+      },
+      "confidence": 0.98,
+      "context": "Title: RAS-ON inhibition overcomes clinical resistance to KRAS G12C-OFF covalent blockade. Authors: Nokin Marie-Julie ... Journal: Nature communications (2024) PMID: 39215000"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.98,
+      "evidence": "Selective KRASG12C inhibitors have been developed to covalently lock the oncogene in the inactive GDP-bound state. Two of these molecules, sotorasib and adagrasib, are approved"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.98,
+      "evidence": "Two of these molecules, sotorasib and adagrasib, are approved for the treatment of adult patients with KRASG12C-mutated previously treated advanced non-small cell lung cancer."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "sotorasib",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.98,
+      "evidence": "sotorasib and adagrasib, are approved for the treatment of adult patients with KRASG12C-mutated previously treated advanced non-small cell lung cancer"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "adagrasib",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.98,
+      "evidence": "sotorasib and adagrasib, are approved for the treatment of adult patients with KRASG12C-mutated previously treated advanced non-small cell lung cancer"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS G12C OFF-state covalent inhibition",
+      "confidence": 0.95,
+      "evidence": "Selective KRASG12C inhibitors have been developed to covalently lock the oncogene in the inactive GDP-bound state. Two of these molecules, sotorasib and adagrasib"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS G12C OFF-state covalent inhibition",
+      "confidence": 0.95,
+      "evidence": "Selective KRASG12C inhibitors have been developed to covalently lock the oncogene in the inactive GDP-bound state. Two of these molecules, sotorasib and adagrasib"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "RMC-4998",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.97,
+      "evidence": "tri-complex KRASG12C-selective covalent inhibitor, RMC-4998 (also known as RM-029), that targets the active GTP-bound (ON) state of the oncogene"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "RMC-4998",
+      "target_entity": "KRAS G12C ON-state covalent inhibition",
+      "confidence": 0.97,
+      "evidence": "tri-complex KRASG12C-selective covalent inhibitor, RMC-4998 ... that targets the active GTP-bound (ON) state of the oncogene"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "RMC-6291",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.95,
+      "evidence": "the clinical stage KRASG12C(ON) inhibitor RMC-6291 alone or in combination with KRASG12C(OFF) drugs"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "RMC-6291",
+      "target_entity": "KRAS G12C ON-state covalent inhibition",
+      "confidence": 0.95,
+      "evidence": "the clinical stage KRASG12C(ON) inhibitor RMC-6291"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS protein",
+      "confidence": 0.95,
+      "evidence": "Selective KRASG12C inhibitors have been developed to covalently lock the oncogene in the inactive GDP-bound state."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.97,
+      "evidence": "approved for the treatment of adult patients with KRASG12C-mutated previously treated advanced non-small cell lung cancer"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "KRASG12C-mutated NSCLC",
+      "target_entity": "sotorasib",
+      "confidence": 0.95,
+      "evidence": "approved for the treatment of adult patients with KRASG12C-mutated previously treated advanced non-small cell lung cancer"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "KRASG12C-mutated NSCLC",
+      "target_entity": "adagrasib",
+      "confidence": 0.95,
+      "evidence": "approved for the treatment of adult patients with KRASG12C-mutated previously treated advanced non-small cell lung cancer"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "sotorasib",
+      "target_entity": "drug resistance to KRAS G12C inhibitors",
+      "confidence": 0.85,
+      "evidence": "Drug treatment imposes selective pressures leading to the outgrowth of drug-resistant variants."
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "adagrasib",
+      "target_entity": "drug resistance to KRAS G12C inhibitors",
+      "confidence": 0.85,
+      "evidence": "Drug treatment imposes selective pressures leading to the outgrowth of drug-resistant variants."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "acquired KRAS mutations (cis and trans)",
+      "target_entity": "drug resistance to KRAS G12C inhibitors",
+      "confidence": 0.95,
+      "evidence": "Mass sequencing from patients biopsies identified a number of acquired KRAS mutations -both in cis and in trans- in resistant tumors."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "increased KRAS-GTP loading",
+      "target_entity": "drug resistance to KRAS G12C inhibitors",
+      "confidence": 0.95,
+      "evidence": "disease progression in vivo can also occur due to adaptive mechanisms and increased KRAS-GTP loading."
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T21:02:40.487608+00:00",
+  "error": null
+}

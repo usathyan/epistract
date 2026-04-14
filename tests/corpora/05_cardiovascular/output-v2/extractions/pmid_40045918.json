@@ -1,0 +1,246 @@
+{
+  "document_id": "pmid_40045918",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/05_cardiovascular/docs/pmid_40045918.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "deucravacitinib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "route": "oral",
+        "mechanism": "allosteric TYK2 inhibitor"
+      },
+      "confidence": 0.98,
+      "context": "Deucravacitinib, an oral, selective, allosteric tyrosine kinase 2 (TYK2) inhibitor"
+    },
+    {
+      "name": "apremilast",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "route": "oral",
+        "dose": "30 mg twice daily"
+      },
+      "confidence": 0.98,
+      "context": "apremilast 30 mg twice daily"
+    },
+    {
+      "name": "TYK2",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "tyrosine kinase 2"
+      },
+      "confidence": 0.98,
+      "context": "allosteric tyrosine kinase 2 (TYK2) inhibitor"
+    },
+    {
+      "name": "TYK2 protein",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "family": "JAK family kinase"
+      },
+      "confidence": 0.98,
+      "context": "allosteric tyrosine kinase 2 (TYK2) inhibitor"
+    },
+    {
+      "name": "plaque psoriasis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "severity": "moderate to severe"
+      },
+      "confidence": 0.98,
+      "context": "adults with moderate to severe plaque psoriasis"
+    },
+    {
+      "name": "allosteric TYK2 inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "confidence": 0.97,
+      "context": "oral, selective, allosteric tyrosine kinase 2 (TYK2) inhibitor"
+    },
+    {
+      "name": "POETYK PSO-1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "Phase 3",
+        "design": "randomized double-blind"
+      },
+      "confidence": 0.98,
+      "context": "Phase 3 POETYK PSO-1, PSO-2 and long-term extension (LTE) trials"
+    },
+    {
+      "name": "POETYK PSO-2",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "Phase 3",
+        "design": "randomized double-blind"
+      },
+      "confidence": 0.98,
+      "context": "Phase 3 POETYK PSO-1, PSO-2 and long-term extension (LTE) trials"
+    },
+    {
+      "name": "POETYK long-term extension",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "design": "open-label extension"
+      },
+      "confidence": 0.95,
+      "context": "long-term extension (LTE) trials in psoriasis"
+    },
+    {
+      "name": "COVID-19",
+      "entity_type": "ADVERSE_EVENT",
+      "confidence": 0.9,
+      "context": "serious AEs (including COVID-19)"
+    },
+    {
+      "name": "herpes zoster",
+      "entity_type": "ADVERSE_EVENT",
+      "confidence": 0.95,
+      "context": "herpes zoster (0.81, 0.55)"
+    },
+    {
+      "name": "malignancies",
+      "entity_type": "ADVERSE_EVENT",
+      "confidence": 0.9,
+      "context": "malignancies (1.02, 0.89)"
+    },
+    {
+      "name": "major adverse cardiovascular events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "abbreviation": "MACE"
+      },
+      "confidence": 0.95,
+      "context": "major adverse cardiovascular events (0.30, 0.32)"
+    },
+    {
+      "name": "venous thromboembolism",
+      "entity_type": "ADVERSE_EVENT",
+      "confidence": 0.95,
+      "context": "venous thromboembolism (0.20, 0.07)"
+    },
+    {
+      "name": "death",
+      "entity_type": "ADVERSE_EVENT",
+      "confidence": 0.9,
+      "context": "deaths (0.20, 0.25)"
+    },
+    {
+      "name": "PASI 90",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "clinical efficacy endpoint"
+      },
+      "confidence": 0.9,
+      "context": "PASI 90, 1 year, 45.6%"
+    },
+    {
+      "name": "DLQI 0/1",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "patient-reported outcome"
+      },
+      "confidence": 0.9,
+      "context": "DLQI 0/1, 1 year, 51.5%"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "deucravacitinib",
+      "target_entity": "TYK2 protein",
+      "confidence": 0.98,
+      "evidence": "Deucravacitinib, an oral, selective, allosteric tyrosine kinase 2 (TYK2) inhibitor"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "deucravacitinib",
+      "target_entity": "TYK2",
+      "confidence": 0.98,
+      "evidence": "selective, allosteric tyrosine kinase 2 (TYK2) inhibitor"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "deucravacitinib",
+      "target_entity": "plaque psoriasis",
+      "confidence": 0.98,
+      "evidence": "approved in multiple countries for treatment of adults with moderate to severe plaque psoriasis"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "deucravacitinib",
+      "target_entity": "POETYK PSO-1",
+      "confidence": 0.98,
+      "evidence": "evaluate the safety and efficacy of deucravacitinib through 4 years in the Phase 3 POETYK PSO-1"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "deucravacitinib",
+      "target_entity": "POETYK PSO-2",
+      "confidence": 0.98,
+      "evidence": "POETYK PSO-1, PSO-2 and long-term extension (LTE) trials"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "deucravacitinib",
+      "target_entity": "POETYK long-term extension",
+      "confidence": 0.95,
+      "evidence": "patients enrolled in the LTE trial received open-label deucravacitinib 6 mg QD"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "apremilast",
+      "target_entity": "POETYK PSO-1",
+      "confidence": 0.95,
+      "evidence": "randomized patients 1:2:1 to oral placebo, deucravacitinib 6 mg once daily (QD) or apremilast 30 mg twice daily"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "apremilast",
+      "target_entity": "POETYK PSO-2",
+      "confidence": 0.95,
+      "evidence": "PSO-1 and PSO-2 parent trials"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "herpes zoster",
+      "confidence": 0.75,
+      "evidence": "herpes zoster (0.81, 0.55)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "major adverse cardiovascular events",
+      "confidence": 0.7,
+      "evidence": "major adverse cardiovascular events (0.30, 0.32)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "venous thromboembolism",
+      "confidence": 0.7,
+      "evidence": "venous thromboembolism (0.20, 0.07)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "malignancies",
+      "confidence": 0.7,
+      "evidence": "malignancies (1.02, 0.89)"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "TYK2",
+      "target_entity": "TYK2 protein",
+      "confidence": 0.95,
+      "evidence": "tyrosine kinase 2 (TYK2)"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:04:20.544944+00:00",
+  "error": null
+}

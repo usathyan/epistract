@@ -1,0 +1,150 @@
+{
+  "document_id": "pmid_38718139",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/05_cardiovascular/docs/pmid_38718139.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "Hypertrophic Cardiomyopathy",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Cardiomyopathy, Hypertrophic",
+        "aliases": [
+          "HCM"
+        ],
+        "disease_subtype": "genetic heart disease"
+      },
+      "confidence": 0.98,
+      "context": "2024 AHA/ACC/AMSSM/HRS/PACES/SCMR Guideline for the Management of Hypertrophic Cardiomyopathy"
+    },
+    {
+      "name": "American Heart Association",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "professional society",
+        "aliases": [
+          "AHA"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "A Report of the American Heart Association/American College of Cardiology Joint Committee on Clinical Practice Guidelines"
+    },
+    {
+      "name": "American College of Cardiology",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "professional society",
+        "aliases": [
+          "ACC"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "A Report of the American Heart Association/American College of Cardiology Joint Committee on Clinical Practice Guidelines"
+    },
+    {
+      "name": "American Medical Society for Sports Medicine",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "professional society",
+        "aliases": [
+          "AMSSM"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "2024 AHA/ACC/AMSSM/HRS/PACES/SCMR Guideline"
+    },
+    {
+      "name": "Heart Rhythm Society",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "professional society",
+        "aliases": [
+          "HRS"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "2024 AHA/ACC/AMSSM/HRS/PACES/SCMR Guideline"
+    },
+    {
+      "name": "Pediatric and Congenital Electrophysiology Society",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "professional society",
+        "aliases": [
+          "PACES"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "2024 AHA/ACC/AMSSM/HRS/PACES/SCMR Guideline"
+    },
+    {
+      "name": "Society for Cardiovascular Magnetic Resonance",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "professional society",
+        "aliases": [
+          "SCMR"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "2024 AHA/ACC/AMSSM/HRS/PACES/SCMR Guideline"
+    },
+    {
+      "name": "2024 AHA/ACC/AMSSM/HRS/PACES/SCMR Guideline for the Management of Hypertrophic Cardiomyopathy",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "publication_type": "clinical practice guideline",
+        "journal": "Circulation",
+        "year": "2024",
+        "pmid": "38718139"
+      },
+      "confidence": 0.98,
+      "context": "2024 AHA/ACC/AMSSM/HRS/PACES/SCMR Guideline for the Management of Hypertrophic Cardiomyopathy: A Report of the American Heart Association/American College of Cardiology Joint Committee on Clinical Practice Guidelines"
+    },
+    {
+      "name": "2020 AHA/ACC Guideline for the Diagnosis and Treatment of Patients With Hypertrophic Cardiomyopathy",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "publication_type": "clinical practice guideline",
+        "year": "2020"
+      },
+      "confidence": 0.95,
+      "context": "Recommendations from the 2020 AHA/ACC Guideline for the Diagnosis and Treatment of Patients With Hypertrophic Cardiomyopathy have been updated with new evidence"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "PUBLISHED_BY",
+      "source_entity": "2024 AHA/ACC/AMSSM/HRS/PACES/SCMR Guideline for the Management of Hypertrophic Cardiomyopathy",
+      "target_entity": "American Heart Association",
+      "confidence": 0.95,
+      "evidence": "A Report of the American Heart Association/American College of Cardiology Joint Committee on Clinical Practice Guidelines"
+    },
+    {
+      "relation_type": "PUBLISHED_BY",
+      "source_entity": "2024 AHA/ACC/AMSSM/HRS/PACES/SCMR Guideline for the Management of Hypertrophic Cardiomyopathy",
+      "target_entity": "American College of Cardiology",
+      "confidence": 0.95,
+      "evidence": "A Report of the American Heart Association/American College of Cardiology Joint Committee on Clinical Practice Guidelines"
+    },
+    {
+      "relation_type": "DESCRIBES",
+      "source_entity": "2024 AHA/ACC/AMSSM/HRS/PACES/SCMR Guideline for the Management of Hypertrophic Cardiomyopathy",
+      "target_entity": "Hypertrophic Cardiomyopathy",
+      "confidence": 0.98,
+      "evidence": "provides recommendations to guide clinicians in the management of patients with hypertrophic cardiomyopathy"
+    },
+    {
+      "relation_type": "SUPERSEDES",
+      "source_entity": "2024 AHA/ACC/AMSSM/HRS/PACES/SCMR Guideline for the Management of Hypertrophic Cardiomyopathy",
+      "target_entity": "2020 AHA/ACC Guideline for the Diagnosis and Treatment of Patients With Hypertrophic Cardiomyopathy",
+      "confidence": 0.9,
+      "evidence": "Recommendations from the 2020 AHA/ACC Guideline... have been updated with new evidence"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:03:04.770728+00:00",
+  "error": null
+}

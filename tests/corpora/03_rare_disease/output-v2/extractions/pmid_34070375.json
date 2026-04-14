@@ -1,0 +1,198 @@
+{
+  "document_id": "pmid_34070375",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/03_rare_disease/docs/pmid_34070375.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "achondroplasia",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Achondroplasia",
+        "aliases": "ACH",
+        "prevalence": "most common cause of short stature in humans"
+      },
+      "confidence": 0.98,
+      "context": "Achondroplasia (ACH) is a disease caused by a missense mutation in the FGFR3 (fibroblast growth factor receptor 3) gene, which is the most common cause of short stature in humans."
+    },
+    {
+      "name": "FGFR3",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "FGFR3",
+        "variant_type": "missense",
+        "gene_family": "receptor tyrosine kinase"
+      },
+      "confidence": 0.98,
+      "context": "Achondroplasia (ACH) is a disease caused by a missense mutation in the FGFR3 (fibroblast growth factor receptor 3) gene"
+    },
+    {
+      "name": "fibroblast growth factor receptor 3",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "receptor tyrosine kinase",
+        "protein_family": "FGFR family"
+      },
+      "confidence": 0.95,
+      "context": "a missense mutation in the FGFR3 (fibroblast growth factor receptor 3) gene"
+    },
+    {
+      "name": "recombinant human growth hormone",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "recombinant protein hormone",
+        "development_stage": "approved"
+      },
+      "confidence": 0.95,
+      "context": "The criteria for a good drug for achondroplasia are best met by recombinant human growth hormone at present"
+    },
+    {
+      "name": "vosoritide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "inn": "vosoritide",
+        "drug_class": "C-type natriuretic peptide analog",
+        "development_stage": "clinical trials"
+      },
+      "confidence": 0.95,
+      "context": "will potentially be met by vosoritide in the future"
+    },
+    {
+      "name": "C-type natriuretic peptide",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "mesh_term": "Natriuretic Peptide, C-Type"
+      },
+      "confidence": 0.85,
+      "context": "MeSH Terms: Achondroplasia, Animals, Human Growth Hormone, Humans, Mutation, Missense, Natriuretic Peptide, C-Type, Receptor, Fibroblast Growth Factor, Type 3"
+    },
+    {
+      "name": "human growth hormone",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "mesh_term": "Human Growth Hormone"
+      },
+      "confidence": 0.9,
+      "context": "MeSH Terms: Achondroplasia, Animals, Human Growth Hormone, Humans, Mutation, Missense, Natriuretic Peptide, C-Type, Receptor, Fibroblast Growth Factor, Type 3"
+    },
+    {
+      "name": "short stature",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "the most common cause of short stature in humans"
+    },
+    {
+      "name": "spinal canal stenosis",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_class": "orthopedic complication"
+      },
+      "confidence": 0.95,
+      "context": "their effects on spinal canal stenosis, the narrowing of the foramen magnum and the proportionality of body structure"
+    },
+    {
+      "name": "foramen magnum stenosis",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_class": "neurological complication"
+      },
+      "confidence": 0.9,
+      "context": "the narrowing of the foramen magnum"
+    },
+    {
+      "name": "disproportionate body structure",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.8,
+      "context": "their effects on spinal canal stenosis, the narrowing of the foramen magnum and the proportionality of body structure"
+    },
+    {
+      "name": "FGFR3 missense mutation",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "variant_type": "missense",
+        "gene": "FGFR3"
+      },
+      "confidence": 0.95,
+      "context": "Achondroplasia (ACH) is a disease caused by a missense mutation in the FGFR3 (fibroblast growth factor receptor 3) gene"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "FGFR3",
+      "target_entity": "achondroplasia",
+      "confidence": 0.98,
+      "evidence": "Achondroplasia (ACH) is a disease caused by a missense mutation in the FGFR3 (fibroblast growth factor receptor 3) gene"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "FGFR3",
+      "target_entity": "fibroblast growth factor receptor 3",
+      "confidence": 0.95,
+      "evidence": "a missense mutation in the FGFR3 (fibroblast growth factor receptor 3) gene"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "FGFR3 missense mutation",
+      "target_entity": "achondroplasia",
+      "confidence": 0.98,
+      "evidence": "Achondroplasia (ACH) is a disease caused by a missense mutation in the FGFR3 (fibroblast growth factor receptor 3) gene"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "recombinant human growth hormone",
+      "target_entity": "achondroplasia",
+      "confidence": 0.92,
+      "evidence": "The criteria for a good drug for achondroplasia are best met by recombinant human growth hormone at present"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "vosoritide",
+      "target_entity": "achondroplasia",
+      "confidence": 0.88,
+      "evidence": "will potentially be met by vosoritide in the future"
+    },
+    {
+      "relation_type": "HAS_PHENOTYPE",
+      "source_entity": "achondroplasia",
+      "target_entity": "short stature",
+      "confidence": 0.95,
+      "evidence": "the most common cause of short stature in humans"
+    },
+    {
+      "relation_type": "HAS_PHENOTYPE",
+      "source_entity": "achondroplasia",
+      "target_entity": "spinal canal stenosis",
+      "confidence": 0.9,
+      "evidence": "the potential impacts of drugs on achondroplasia symptoms other than short stature, including their effects on spinal canal stenosis"
+    },
+    {
+      "relation_type": "HAS_PHENOTYPE",
+      "source_entity": "achondroplasia",
+      "target_entity": "foramen magnum stenosis",
+      "confidence": 0.9,
+      "evidence": "their effects on spinal canal stenosis, the narrowing of the foramen magnum"
+    },
+    {
+      "relation_type": "HAS_PHENOTYPE",
+      "source_entity": "achondroplasia",
+      "target_entity": "disproportionate body structure",
+      "confidence": 0.8,
+      "evidence": "the proportionality of body structure"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "vosoritide",
+      "target_entity": "achondroplasia",
+      "confidence": 0.8,
+      "evidence": "the drugs that have been demonstrated in human and animal studies in different stages of clinical trials"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T22:53:53.762554+00:00",
+  "error": null
+}

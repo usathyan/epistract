@@ -1,0 +1,106 @@
+{
+  "document_id": "pmid_35441470",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/06_glp1_landscape/docs/pmid_35441470.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "GLP-1 receptor agonist peptide",
+        "route": "subcutaneous",
+        "dose": "2.4 mg once-weekly"
+      },
+      "confidence": 0.98,
+      "context": "once-weekly subcutaneous semaglutide 2.4 mg"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "chronicity of obesity"
+    },
+    {
+      "name": "STEP 1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT03548935",
+        "phase": "3",
+        "n_randomized": 1961,
+        "extension_n": 327,
+        "duration_weeks": 120
+      },
+      "confidence": 0.99,
+      "context": "STEP 1 (NCT03548935) randomized 1961 adults"
+    },
+    {
+      "name": "weight regain",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "participants regained two-thirds of their prior weight loss"
+    },
+    {
+      "name": "cardiovascular diseases",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.8,
+      "context": "MeSH Terms: Cardiovascular Diseases"
+    },
+    {
+      "name": "diabetes mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.8,
+      "context": "MeSH Terms: Diabetes Mellitus"
+    },
+    {
+      "name": "body mass index",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "threshold": "\u226530 kg/m2"
+      },
+      "confidence": 0.85,
+      "context": "body mass index \u2265 30 kg/m"
+    },
+    {
+      "name": "GLP-1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "synonym": "Glucagon-Like Peptide-1"
+      },
+      "confidence": 0.85,
+      "context": "MeSH Terms: Glucagon-Like Peptides"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "obesity",
+      "confidence": 0.95,
+      "evidence": "weight loss was 17.3% with semaglutide ... chronicity of obesity"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "semaglutide",
+      "target_entity": "STEP 1",
+      "confidence": 0.99,
+      "evidence": "STEP 1 trial extension ... semaglutide and placebo participants"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "semaglutide",
+      "target_entity": "weight regain",
+      "confidence": 0.85,
+      "evidence": "Following treatment withdrawal, semaglutide ... participants regained 11.6 ... percentage points of lost weight"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:08:40.362082+00:00",
+  "error": null
+}

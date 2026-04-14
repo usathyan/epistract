@@ -1,0 +1,199 @@
+{
+  "document_id": "pmid_36453809",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/05_cardiovascular/docs/pmid_36453809.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "deucravacitinib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "route": "oral"
+      },
+      "confidence": 0.98,
+      "context": "deucravacitinib, a new oral drug which selectively inhibits TYK2"
+    },
+    {
+      "name": "apremilast",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule"
+      },
+      "confidence": 0.95,
+      "context": "evaluated deucravacitinib 6 mg against placebo and apremilast"
+    },
+    {
+      "name": "TYK2",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "Tyrosine kinase 2 (TYK2) mediates immune signaling"
+    },
+    {
+      "name": "TYK2 protein",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "Tyrosine kinase 2"
+      },
+      "confidence": 0.98,
+      "context": "Tyrosine kinase 2 (TYK2) mediates immune signaling of IL-12, IL-23, and type I interferons"
+    },
+    {
+      "name": "IL12",
+      "entity_type": "GENE",
+      "confidence": 0.9,
+      "context": "TYK2 mediates immune signaling of IL-12, IL-23"
+    },
+    {
+      "name": "IL23A",
+      "entity_type": "GENE",
+      "confidence": 0.9,
+      "context": "TYK2 mediates immune signaling of IL-12, IL-23"
+    },
+    {
+      "name": "type I interferon",
+      "entity_type": "PROTEIN",
+      "confidence": 0.9,
+      "context": "TYK2 mediates immune signaling of IL-12, IL-23, and type I interferons"
+    },
+    {
+      "name": "psoriasis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Psoriasis"
+      },
+      "confidence": 0.98,
+      "context": "Psoriasis is a chronic, immune-mediated, skin disease"
+    },
+    {
+      "name": "moderate-to-severe psoriasis",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "1688 patients with moderate-to-severe psoriasis"
+    },
+    {
+      "name": "TYK2 inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "confidence": 0.98,
+      "context": "selectively inhibits TYK2, granting it a low risk of off-target effects"
+    },
+    {
+      "name": "POETYK PSO-1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "3",
+        "duration_weeks": 52
+      },
+      "confidence": 0.98,
+      "context": "Two phase 3, 52-week trials evaluated deucravacitinib 6 mg against placebo and apremilast - POETYK PSO-1 and PSO-2"
+    },
+    {
+      "name": "POETYK PSO-2",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "3",
+        "duration_weeks": 52
+      },
+      "confidence": 0.98,
+      "context": "POETYK PSO-1 and PSO-2, enrolling 1688 patients"
+    },
+    {
+      "name": "PASI75",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "clinical_endpoint"
+      },
+      "confidence": 0.95,
+      "context": "over 50% of patients treated with deucravacitinib reached PASI75"
+    },
+    {
+      "name": "pruritus",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.85,
+      "context": "Symptomatic improvement was also reported, with greater impact on itch"
+    },
+    {
+      "name": "IL-12/IL-23 signaling",
+      "entity_type": "PATHWAY",
+      "confidence": 0.9,
+      "context": "TYK2 mediates immune signaling of IL-12, IL-23, and type I interferons"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "deucravacitinib",
+      "target_entity": "TYK2",
+      "confidence": 0.98,
+      "evidence": "deucravacitinib, a new oral drug which selectively inhibits TYK2"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "deucravacitinib",
+      "target_entity": "psoriasis",
+      "confidence": 0.95,
+      "evidence": "deucravacitinib for the treatment of psoriasis"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "deucravacitinib",
+      "target_entity": "moderate-to-severe psoriasis",
+      "confidence": 0.95,
+      "evidence": "potential to become a safe, effective, and well-tolerated treatment for patients with moderate-to-severe disease"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "deucravacitinib",
+      "target_entity": "POETYK PSO-1",
+      "confidence": 0.98,
+      "evidence": "Two phase 3, 52-week trials evaluated deucravacitinib 6 mg"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "deucravacitinib",
+      "target_entity": "POETYK PSO-2",
+      "confidence": 0.98,
+      "evidence": "POETYK PSO-1 and PSO-2, enrolling 1688 patients"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "apremilast",
+      "target_entity": "POETYK PSO-1",
+      "confidence": 0.95,
+      "evidence": "evaluated deucravacitinib 6 mg against placebo and apremilast"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "apremilast",
+      "target_entity": "POETYK PSO-2",
+      "confidence": 0.95,
+      "evidence": "evaluated deucravacitinib 6 mg against placebo and apremilast"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "TYK2",
+      "target_entity": "TYK2 protein",
+      "confidence": 0.9,
+      "evidence": "Tyrosine kinase 2 (TYK2)"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "TYK2 protein",
+      "target_entity": "IL-12/IL-23 signaling",
+      "confidence": 0.95,
+      "evidence": "TYK2 mediates immune signaling of IL-12, IL-23, and type I interferons"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "deucravacitinib",
+      "target_entity": "TYK2 protein",
+      "confidence": 0.98,
+      "evidence": "selectively inhibits TYK2"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:02:50.810403+00:00",
+  "error": null
+}

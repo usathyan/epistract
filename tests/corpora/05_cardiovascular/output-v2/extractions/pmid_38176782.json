@@ -1,0 +1,219 @@
+{
+  "document_id": "pmid_38176782",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/05_cardiovascular/docs/pmid_38176782.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "mavacamten",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "code": "MYK-461"
+      },
+      "confidence": 0.98,
+      "context": "Mavacamten Treatment for Symptomatic Obstructive Hypertrophic Cardiomyopathy"
+    },
+    {
+      "name": "MYK-461",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "synonym_of": "mavacamten"
+      },
+      "confidence": 0.95,
+      "context": "Mavacamten [MYK-461]"
+    },
+    {
+      "name": "obstructive hypertrophic cardiomyopathy",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Cardiomyopathy, Hypertrophic"
+      },
+      "confidence": 0.98,
+      "context": "Symptomatic Obstructive Hypertrophic Cardiomyopathy"
+    },
+    {
+      "name": "atrial fibrillation",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "21 patients had an adverse event of atrial fibrillation"
+    },
+    {
+      "name": "cardiac failure",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "8 patients experienced an adverse event of cardiac failure"
+    },
+    {
+      "name": "reduced left ventricular ejection fraction",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "threshold": "<50%"
+      },
+      "confidence": 0.9,
+      "context": "Twelve patients (5.2%) developed transient reductions in site-read echocardiogram left ventricular ejection fraction of <50%"
+    },
+    {
+      "name": "heart failure",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Heart Failure"
+      },
+      "confidence": 0.9,
+      "context": "MeSH Terms: ... Heart Failure"
+    },
+    {
+      "name": "NT-proBNP",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "full_name": "N-terminal pro-B-type natriuretic peptide"
+      },
+      "confidence": 0.97,
+      "context": "N-terminal pro-B-type natriuretic peptide (NT-proBNP) levels"
+    },
+    {
+      "name": "left ventricular outflow tract gradient",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "LVOT gradient"
+      },
+      "confidence": 0.95,
+      "context": "improvements in left ventricular outflow tract (LVOT) gradients"
+    },
+    {
+      "name": "NYHA functional class",
+      "entity_type": "BIOMARKER",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "NYHA functional class (67.5% improved by >=1 class)"
+    },
+    {
+      "name": "left ventricular ejection fraction",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "LVEF"
+      },
+      "confidence": 0.95,
+      "context": "site-read echocardiogram left ventricular ejection fraction"
+    },
+    {
+      "name": "MAVA-LTE",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT03723655",
+        "phase": "long-term extension",
+        "full_name": "A Long-Term Safety Extension Study of Mavacamten"
+      },
+      "confidence": 0.98,
+      "context": "MAVA-LTE (A Long-Term Safety Extension Study of Mavacamten in Adults Who Have Completed EXPLORER-HCM; NCT03723655)"
+    },
+    {
+      "name": "EXPLORER-HCM",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT03470545",
+        "full_name": "Clinical Study to Evaluate Mavacamten in Adults With Symptomatic Obstructive Hypertrophic Cardiomyopathy"
+      },
+      "confidence": 0.98,
+      "context": "EXPLORER-HCM (Clinical Study to Evaluate Mavacamten [MYK-461] in Adults With Symptomatic Obstructive Hypertrophic Cardiomyopathy; NCT03470545)"
+    },
+    {
+      "name": "EXPLORER-LTE",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "parent": "MAVA-LTE"
+      },
+      "confidence": 0.95,
+      "context": "EXPLORER-Long Term Extension (LTE) cohort of MAVA-LTE"
+    },
+    {
+      "name": "JACC Heart Failure",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "year": "2024",
+        "pmid": "38176782"
+      },
+      "confidence": 0.98,
+      "context": "JACC. Heart failure (2024)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "mavacamten",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.98,
+      "evidence": "Mavacamten Treatment for Symptomatic Obstructive Hypertrophic Cardiomyopathy"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "mavacamten",
+      "target_entity": "MAVA-LTE",
+      "confidence": 0.98,
+      "evidence": "A Long-Term Safety Extension Study of Mavacamten"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "mavacamten",
+      "target_entity": "EXPLORER-HCM",
+      "confidence": 0.98,
+      "evidence": "Clinical Study to Evaluate Mavacamten [MYK-461] in Adults With Symptomatic Obstructive Hypertrophic Cardiomyopathy"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "mavacamten",
+      "target_entity": "atrial fibrillation",
+      "confidence": 0.8,
+      "evidence": "21 patients had an adverse event of atrial fibrillation, including 11 with no prior history"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "mavacamten",
+      "target_entity": "cardiac failure",
+      "confidence": 0.75,
+      "evidence": "8 patients experienced an adverse event of cardiac failure"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "mavacamten",
+      "target_entity": "reduced left ventricular ejection fraction",
+      "confidence": 0.9,
+      "evidence": "Twelve patients (5.2%) developed transient reductions in site-read echocardiogram left ventricular ejection fraction of <50%, resulting in temporary treatment interruption"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "NT-proBNP",
+      "target_entity": "mavacamten",
+      "confidence": 0.85,
+      "evidence": "NT-proBNP reductions were sustained through 84 weeks"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "left ventricular outflow tract gradient",
+      "target_entity": "mavacamten",
+      "confidence": 0.85,
+      "evidence": "patients showed improvements in left ventricular outflow tract (LVOT) gradients"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "NT-proBNP",
+      "target_entity": "heart failure",
+      "confidence": 0.85,
+      "evidence": "N-terminal pro-B-type natriuretic peptide (NT-proBNP) levels"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "left ventricular outflow tract gradient",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.9,
+      "evidence": "LVOT gradients ... obstructive hypertrophic cardiomyopathy"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:03:05.439608+00:00",
+  "error": null
+}

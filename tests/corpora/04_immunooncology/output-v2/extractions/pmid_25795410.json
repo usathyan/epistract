@@ -1,0 +1,458 @@
+{
+  "document_id": "pmid_25795410",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/04_immunooncology/docs/pmid_25795410.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "nivolumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "isotype": "IgG4",
+        "target": "PD-1"
+      },
+      "confidence": 0.98,
+      "context": "Nivolumab, a fully human IgG4 PD-1 immune checkpoint inhibitor antibody"
+    },
+    {
+      "name": "ipilimumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "CTLA-4"
+      },
+      "confidence": 0.98,
+      "context": "patients with melanoma who have progressed after ipilimumab and BRAF inhibitors"
+    },
+    {
+      "name": "dacarbazine",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "alkylating agent"
+      },
+      "confidence": 0.98,
+      "context": "dacarbazine 1000 mg/m(2) every 3 weeks"
+    },
+    {
+      "name": "paclitaxel",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "taxane"
+      },
+      "confidence": 0.98,
+      "context": "paclitaxel 175 mg/m(2) combined with carboplatin"
+    },
+    {
+      "name": "carboplatin",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "platinum"
+      },
+      "confidence": 0.98,
+      "context": "paclitaxel 175 mg/m(2) combined with carboplatin area under the curve 6"
+    },
+    {
+      "name": "PDCD1",
+      "entity_type": "GENE",
+      "attributes": {
+        "alias": "PD-1"
+      },
+      "confidence": 0.95,
+      "context": "PD-1 immune checkpoint inhibitor antibody"
+    },
+    {
+      "name": "CD274",
+      "entity_type": "GENE",
+      "attributes": {
+        "alias": "PD-L1"
+      },
+      "confidence": 0.95,
+      "context": "tumour expression of PD-L1"
+    },
+    {
+      "name": "CTLA4",
+      "entity_type": "GENE",
+      "attributes": {
+        "alias": "CTLA-4"
+      },
+      "confidence": 0.95,
+      "context": "CTLA-4 Antigen"
+    },
+    {
+      "name": "BRAF",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.98,
+      "context": "progressed after ipilimumab and BRAF inhibitors"
+    },
+    {
+      "name": "PD-1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "function": "immune checkpoint receptor"
+      },
+      "confidence": 0.98,
+      "context": "fully human IgG4 PD-1 immune checkpoint inhibitor antibody"
+    },
+    {
+      "name": "PD-L1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "function": "immune checkpoint ligand"
+      },
+      "confidence": 0.95,
+      "context": "tumour expression of PD-L1"
+    },
+    {
+      "name": "CTLA-4",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "function": "immune checkpoint receptor"
+      },
+      "confidence": 0.95,
+      "context": "patients with advanced melanoma who progressed after anti-CTLA-4 treatment"
+    },
+    {
+      "name": "melanoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Melanoma"
+      },
+      "confidence": 0.98,
+      "context": "patients with advanced melanoma who progressed after anti-CTLA-4 treatment"
+    },
+    {
+      "name": "metastatic melanoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "stage": "metastatic"
+      },
+      "confidence": 0.95,
+      "context": "had unresectable or metastatic melanoma"
+    },
+    {
+      "name": "BRAF V600 mutation",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "BRAF",
+        "notation": "V600"
+      },
+      "confidence": 0.95,
+      "context": "if they were BRAF(V 600) mutation-positive"
+    },
+    {
+      "name": "PD-1 blockade",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "target": "PD-1"
+      },
+      "confidence": 0.95,
+      "context": "fully human IgG4 PD-1 immune checkpoint inhibitor antibody"
+    },
+    {
+      "name": "CTLA-4 blockade",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "target": "CTLA-4"
+      },
+      "confidence": 0.9,
+      "context": "progressed after anti-CTLA-4 treatment"
+    },
+    {
+      "name": "immune checkpoint inhibition",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "PD-1 immune checkpoint inhibitor antibody"
+    },
+    {
+      "name": "CheckMate 037",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "3",
+        "nct": "NCT01721746",
+        "design": "randomised, controlled, open-label"
+      },
+      "confidence": 0.98,
+      "context": "(CheckMate 037): a randomised, controlled, open-label, phase 3 trial"
+    },
+    {
+      "name": "NCT01721746",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "registry": "ClinicalTrials.gov"
+      },
+      "confidence": 0.98,
+      "context": "registered with ClinicalTrials.gov, number NCT01721746"
+    },
+    {
+      "name": "PD-L1 tumor expression",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "protein expression"
+      },
+      "confidence": 0.9,
+      "context": "tumour expression of PD-L1"
+    },
+    {
+      "name": "BRAF mutation status",
+      "entity_type": "BIOMARKER",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "stratified randomisation by BRAF mutation status"
+    },
+    {
+      "name": "increased lipase",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "grade": "3-4"
+      },
+      "confidence": 0.95,
+      "context": "Grade 3-4 adverse events related to nivolumab included increased lipase"
+    },
+    {
+      "name": "increased alanine aminotransferase",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "grade": "3-4"
+      },
+      "confidence": 0.95,
+      "context": "adverse events related to nivolumab included increased alanine aminotransferase"
+    },
+    {
+      "name": "anaemia",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "grade": "3-4"
+      },
+      "confidence": 0.95,
+      "context": "increased alanine aminotransferase, anaemia, and fatigue"
+    },
+    {
+      "name": "fatigue",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "grade": "3-4"
+      },
+      "confidence": 0.95,
+      "context": "increased alanine aminotransferase, anaemia, and fatigue"
+    },
+    {
+      "name": "neutropenia",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "grade": "3-4"
+      },
+      "confidence": 0.95,
+      "context": "for ICC, these included neutropenia (14 [14%] of 102)"
+    },
+    {
+      "name": "thrombocytopenia",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "grade": "3-4"
+      },
+      "confidence": 0.95,
+      "context": "thrombocytopenia (six [6%])"
+    },
+    {
+      "name": "Bristol-Myers Squibb",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "type": "sponsor"
+      },
+      "confidence": 0.98,
+      "context": "FUNDING: Bristol-Myers Squibb"
+    },
+    {
+      "name": "objective response",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "metric": "ORR"
+      },
+      "confidence": 0.9,
+      "context": "Primary endpoints were the proportion of patients who had an objective response"
+    },
+    {
+      "name": "overall survival",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "metric": "OS"
+      },
+      "confidence": 0.9,
+      "context": "Primary endpoints were the proportion of patients who had an objective response and overall survival"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "nivolumab",
+      "target_entity": "PD-1",
+      "confidence": 0.98,
+      "evidence": "Nivolumab, a fully human IgG4 PD-1 immune checkpoint inhibitor antibody"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "nivolumab",
+      "target_entity": "PD-1",
+      "confidence": 0.98,
+      "evidence": "PD-1 immune checkpoint inhibitor antibody"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "ipilimumab",
+      "target_entity": "CTLA-4",
+      "confidence": 0.95,
+      "evidence": "progressed after anti-CTLA-4 treatment"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "nivolumab",
+      "target_entity": "melanoma",
+      "confidence": 0.95,
+      "evidence": "Nivolumab led to a greater proportion of patients achieving an objective response for patients with advanced melanoma"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "ipilimumab",
+      "target_entity": "melanoma",
+      "confidence": 0.9,
+      "evidence": "patients with advanced melanoma who progressed after anti-CTLA-4 treatment"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "nivolumab",
+      "target_entity": "CheckMate 037",
+      "confidence": 0.98,
+      "evidence": "Nivolumab versus chemotherapy in patients with advanced melanoma (CheckMate 037)"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "dacarbazine",
+      "target_entity": "CheckMate 037",
+      "confidence": 0.95,
+      "evidence": "ICC (dacarbazine 1000 mg/m(2) every 3 weeks"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "paclitaxel",
+      "target_entity": "CheckMate 037",
+      "confidence": 0.95,
+      "evidence": "paclitaxel 175 mg/m(2) combined with carboplatin area under the curve 6"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "carboplatin",
+      "target_entity": "CheckMate 037",
+      "confidence": 0.95,
+      "evidence": "paclitaxel 175 mg/m(2) combined with carboplatin area under the curve 6"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "nivolumab",
+      "target_entity": "increased lipase",
+      "confidence": 0.95,
+      "evidence": "Grade 3-4 adverse events related to nivolumab included increased lipase"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "nivolumab",
+      "target_entity": "increased alanine aminotransferase",
+      "confidence": 0.95,
+      "evidence": "Grade 3-4 adverse events related to nivolumab included increased alanine aminotransferase"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "nivolumab",
+      "target_entity": "anaemia",
+      "confidence": 0.9,
+      "evidence": "adverse events related to nivolumab included anaemia"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "nivolumab",
+      "target_entity": "fatigue",
+      "confidence": 0.9,
+      "evidence": "adverse events related to nivolumab included fatigue"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "carboplatin",
+      "target_entity": "neutropenia",
+      "confidence": 0.9,
+      "evidence": "for ICC, these included neutropenia"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "paclitaxel",
+      "target_entity": "neutropenia",
+      "confidence": 0.9,
+      "evidence": "for ICC, these included neutropenia"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "carboplatin",
+      "target_entity": "thrombocytopenia",
+      "confidence": 0.9,
+      "evidence": "thrombocytopenia (six [6%])"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "PDCD1",
+      "target_entity": "PD-1",
+      "confidence": 0.95,
+      "evidence": "PD-1 immune checkpoint inhibitor"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "CD274",
+      "target_entity": "PD-L1",
+      "confidence": 0.95,
+      "evidence": "tumour expression of PD-L1"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "CTLA4",
+      "target_entity": "CTLA-4",
+      "confidence": 0.95,
+      "evidence": "CTLA-4 Antigen"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "PD-L1 tumor expression",
+      "target_entity": "nivolumab",
+      "confidence": 0.85,
+      "evidence": "stratified randomisation by tumour expression of PD-L1"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "BRAF mutation status",
+      "target_entity": "nivolumab",
+      "confidence": 0.8,
+      "evidence": "stratified randomisation by BRAF mutation status"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "BRAF",
+      "target_entity": "melanoma",
+      "confidence": 0.9,
+      "evidence": "if they were BRAF(V 600) mutation-positive"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "BRAF V600 mutation",
+      "target_entity": "melanoma",
+      "confidence": 0.95,
+      "evidence": "BRAF(V 600) mutation-positive"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T23:00:47.822650+00:00",
+  "error": null
+}

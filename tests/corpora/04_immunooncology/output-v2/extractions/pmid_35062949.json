@@ -1,0 +1,461 @@
+{
+  "document_id": "pmid_35062949",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/04_immunooncology/docs/pmid_35062949.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "PD-1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "programmed cell death protein-1"
+      },
+      "confidence": 0.98,
+      "context": "Antibodies targeting programmed cell death protein-1 (PD-1) or its ligand PD-L1"
+    },
+    {
+      "name": "PD-L1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "programmed death-ligand 1",
+        "alias": "B7-H1"
+      },
+      "confidence": 0.98,
+      "context": "programmed cell death protein-1 (PD-1) or its ligand PD-L1"
+    },
+    {
+      "name": "PDCD1",
+      "entity_type": "GENE",
+      "attributes": {
+        "encodes": "PD-1"
+      },
+      "confidence": 0.85,
+      "context": "programmed cell death protein-1 (PD-1)"
+    },
+    {
+      "name": "CD274",
+      "entity_type": "GENE",
+      "attributes": {
+        "encodes": "PD-L1"
+      },
+      "confidence": 0.85,
+      "context": "ligand PD-L1"
+    },
+    {
+      "name": "PD-1/PD-L1 pathway",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "PD-1/PD-L1 pathway is not the sole speed-limiting factor of antitumor immunity"
+    },
+    {
+      "name": "nivolumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "class": "anti-PD-1"
+      },
+      "confidence": 0.98,
+      "context": "ten a-PD-1 (nivolumab, pembrolizumab, cemiplimab, sintilimab, camrelizumab, toripalimab, tislelizumab, zimberelimab, prolgolimab, and dostarlimab)"
+    },
+    {
+      "name": "pembrolizumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "class": "anti-PD-1"
+      },
+      "confidence": 0.98,
+      "context": "ten a-PD-1 (nivolumab, pembrolizumab, cemiplimab..."
+    },
+    {
+      "name": "cemiplimab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "class": "anti-PD-1"
+      },
+      "confidence": 0.98,
+      "context": "nivolumab, pembrolizumab, cemiplimab, sintilimab"
+    },
+    {
+      "name": "sintilimab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "class": "anti-PD-1"
+      },
+      "confidence": 0.98,
+      "context": "cemiplimab, sintilimab, camrelizumab"
+    },
+    {
+      "name": "camrelizumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "class": "anti-PD-1"
+      },
+      "confidence": 0.98,
+      "context": "sintilimab, camrelizumab, toripalimab"
+    },
+    {
+      "name": "toripalimab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "class": "anti-PD-1"
+      },
+      "confidence": 0.98,
+      "context": "camrelizumab, toripalimab, tislelizumab"
+    },
+    {
+      "name": "tislelizumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "class": "anti-PD-1"
+      },
+      "confidence": 0.98,
+      "context": "toripalimab, tislelizumab, zimberelimab"
+    },
+    {
+      "name": "zimberelimab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "class": "anti-PD-1"
+      },
+      "confidence": 0.98,
+      "context": "tislelizumab, zimberelimab, prolgolimab"
+    },
+    {
+      "name": "prolgolimab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "class": "anti-PD-1"
+      },
+      "confidence": 0.98,
+      "context": "zimberelimab, prolgolimab, and dostarlimab"
+    },
+    {
+      "name": "dostarlimab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "class": "anti-PD-1"
+      },
+      "confidence": 0.98,
+      "context": "prolgolimab, and dostarlimab"
+    },
+    {
+      "name": "atezolizumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "class": "anti-PD-L1"
+      },
+      "confidence": 0.98,
+      "context": "three a-PD-L1 antibodies (atezolizumab, durvalumab, and avelumab)"
+    },
+    {
+      "name": "durvalumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "class": "anti-PD-L1"
+      },
+      "confidence": 0.98,
+      "context": "atezolizumab, durvalumab, and avelumab"
+    },
+    {
+      "name": "avelumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "class": "anti-PD-L1"
+      },
+      "confidence": 0.98,
+      "context": "atezolizumab, durvalumab, and avelumab"
+    },
+    {
+      "name": "immune checkpoint inhibitors",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Immune Checkpoint Inhibitors"
+    },
+    {
+      "name": "PD-1/PD-L1 blockade",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.97,
+      "context": "Combination strategies with PD-1/PD-L1 blockade"
+    },
+    {
+      "name": "T cell exhaustion",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "rescue T cells from exhausted status"
+    },
+    {
+      "name": "neoplasms",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "D009369"
+      },
+      "confidence": 0.9,
+      "context": "revive immune response against cancer cells"
+    },
+    {
+      "name": "tumor microenvironment",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "orchestrate an immunosupportive tumor microenvironment"
+    },
+    {
+      "name": "T cell",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "rescue T cells from exhausted status"
+    },
+    {
+      "name": "angiogenesis inhibitors",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "plus chemotherapy, radiotherapy, angiogenesis inhibitors"
+    },
+    {
+      "name": "chemotherapy",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "plus chemotherapy"
+    },
+    {
+      "name": "radiotherapy",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "plus chemotherapy, radiotherapy"
+    },
+    {
+      "name": "STING agonists",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "full_name": "stimulator of interferon genes agonists"
+      },
+      "confidence": 0.92,
+      "context": "stimulator of interferon genes agonists"
+    },
+    {
+      "name": "fecal microbiota transplantation",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.92,
+      "context": "fecal microbiota transplantation"
+    },
+    {
+      "name": "epigenetic modulators",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "epigenetic modulators, or metabolic modulators"
+    },
+    {
+      "name": "PD-L1 expression",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "mesh": "Biomarkers, Tumor"
+      },
+      "confidence": 0.85,
+      "context": "Biomarkers, Tumor"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "PDCD1",
+      "target_entity": "PD-1",
+      "confidence": 0.9,
+      "evidence": "programmed cell death protein-1 (PD-1)"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "CD274",
+      "target_entity": "PD-L1",
+      "confidence": 0.9,
+      "evidence": "its ligand PD-L1"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "PD-L1",
+      "target_entity": "PD-1",
+      "confidence": 0.95,
+      "evidence": "programmed cell death protein-1 (PD-1) or its ligand PD-L1"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "PD-1",
+      "target_entity": "PD-1/PD-L1 pathway",
+      "confidence": 0.97,
+      "evidence": "PD-1/PD-L1 pathway"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "PD-L1",
+      "target_entity": "PD-1/PD-L1 pathway",
+      "confidence": 0.97,
+      "evidence": "PD-1/PD-L1 pathway"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "nivolumab",
+      "target_entity": "PD-1",
+      "confidence": 0.98,
+      "evidence": "ten a-PD-1 (nivolumab, pembrolizumab...)"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "pembrolizumab",
+      "target_entity": "PD-1",
+      "confidence": 0.98,
+      "evidence": "ten a-PD-1 (nivolumab, pembrolizumab...)"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "cemiplimab",
+      "target_entity": "PD-1",
+      "confidence": 0.98,
+      "evidence": "ten a-PD-1 (cemiplimab)"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "sintilimab",
+      "target_entity": "PD-1",
+      "confidence": 0.98,
+      "evidence": "ten a-PD-1 (sintilimab)"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "camrelizumab",
+      "target_entity": "PD-1",
+      "confidence": 0.98,
+      "evidence": "ten a-PD-1 (camrelizumab)"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "toripalimab",
+      "target_entity": "PD-1",
+      "confidence": 0.98,
+      "evidence": "ten a-PD-1 (toripalimab)"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "tislelizumab",
+      "target_entity": "PD-1",
+      "confidence": 0.98,
+      "evidence": "ten a-PD-1 (tislelizumab)"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "zimberelimab",
+      "target_entity": "PD-1",
+      "confidence": 0.98,
+      "evidence": "ten a-PD-1 (zimberelimab)"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "prolgolimab",
+      "target_entity": "PD-1",
+      "confidence": 0.98,
+      "evidence": "ten a-PD-1 (prolgolimab)"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "dostarlimab",
+      "target_entity": "PD-1",
+      "confidence": 0.98,
+      "evidence": "ten a-PD-1 (dostarlimab)"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "atezolizumab",
+      "target_entity": "PD-L1",
+      "confidence": 0.98,
+      "evidence": "three a-PD-L1 antibodies (atezolizumab, durvalumab, and avelumab)"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "durvalumab",
+      "target_entity": "PD-L1",
+      "confidence": 0.98,
+      "evidence": "three a-PD-L1 antibodies (atezolizumab, durvalumab, and avelumab)"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "avelumab",
+      "target_entity": "PD-L1",
+      "confidence": 0.98,
+      "evidence": "three a-PD-L1 antibodies (atezolizumab, durvalumab, and avelumab)"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "nivolumab",
+      "target_entity": "PD-1",
+      "confidence": 0.98,
+      "evidence": "a-PD-1"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "pembrolizumab",
+      "target_entity": "PD-1",
+      "confidence": 0.98,
+      "evidence": "a-PD-1"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "atezolizumab",
+      "target_entity": "PD-L1",
+      "confidence": 0.98,
+      "evidence": "a-PD-L1"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "pembrolizumab",
+      "target_entity": "neoplasms",
+      "confidence": 0.92,
+      "evidence": "have been approved for various types of cancers"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "nivolumab",
+      "target_entity": "neoplasms",
+      "confidence": 0.92,
+      "evidence": "have been approved for various types of cancers"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "atezolizumab",
+      "target_entity": "neoplasms",
+      "confidence": 0.92,
+      "evidence": "have been approved for various types of cancers"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PD-1/PD-L1 pathway",
+      "target_entity": "neoplasms",
+      "confidence": 0.9,
+      "evidence": "revive immune response against cancer cells"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T23:00:43.179878+00:00",
+  "error": null
+}

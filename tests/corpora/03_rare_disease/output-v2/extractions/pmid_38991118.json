@@ -1,0 +1,206 @@
+{
+  "document_id": "pmid_38991118",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/03_rare_disease/docs/pmid_38991118.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "valoctocogene roxaparvovec",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "AAV gene therapy",
+        "brand_name": "Roctavian",
+        "manufacturer": "BioMarin"
+      },
+      "confidence": 0.98,
+      "context": "the development of valoctocogene roxaparvovec (Roctavian; Biomarin)"
+    },
+    {
+      "name": "hemophilia A",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Hemophilia A"
+      },
+      "confidence": 0.98,
+      "context": "a potential new hemophilia A (HA) treatment paradigm"
+    },
+    {
+      "name": "hemophilia B",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "successful efforts in adeno-associated virus (AAV) gene addition for hemophilia B gene therapy"
+    },
+    {
+      "name": "F8",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc": "F8",
+        "encodes": "coagulation factor VIII"
+      },
+      "confidence": 0.9,
+      "context": "year-over-year declines in factor VIII (FVIII) expression after Roctavian treatment"
+    },
+    {
+      "name": "coagulation factor VIII",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "symbol": "FVIII"
+      },
+      "confidence": 0.98,
+      "context": "factor VIII (FVIII) expression after Roctavian treatment"
+    },
+    {
+      "name": "adeno-associated virus vector",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "viral vector",
+        "abbreviation": "AAV"
+      },
+      "confidence": 0.95,
+      "context": "adeno-associated virus (AAV) gene addition for hemophilia B gene therapy"
+    },
+    {
+      "name": "AAV gene therapy",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "approach": "gene addition"
+      },
+      "confidence": 0.92,
+      "context": "AAV gene addition for hemophilia B gene therapy"
+    },
+    {
+      "name": "BioMarin",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "type": "biopharmaceutical company"
+      },
+      "confidence": 0.98,
+      "context": "valoctocogene roxaparvovec (Roctavian; Biomarin)"
+    },
+    {
+      "name": "European Medicines Agency approval of Roctavian (August 2022)",
+      "entity_type": "REGULATORY_ACTION",
+      "attributes": {
+        "region": "Europe",
+        "date": "2022-08",
+        "status": "conditional approval"
+      },
+      "confidence": 0.98,
+      "context": "the first licensed HA gene therapy that was conditionally approved in Europe in August 2022"
+    },
+    {
+      "name": "FDA approval of Roctavian (June 2023)",
+      "entity_type": "REGULATORY_ACTION",
+      "attributes": {
+        "region": "United States",
+        "date": "2023-06"
+      },
+      "confidence": 0.98,
+      "context": "approved in the United States in June 2023"
+    },
+    {
+      "name": "FVIII expression",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "protein expression",
+        "use": "efficacy marker"
+      },
+      "confidence": 0.9,
+      "context": "unexplained year-over-year declines in factor VIII (FVIII) expression after Roctavian treatment"
+    },
+    {
+      "name": "declining FVIII expression",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "trend": "year-over-year decline"
+      },
+      "confidence": 0.9,
+      "context": "unexplained year-over-year declines in factor VIII (FVIII) expression after Roctavian treatment"
+    },
+    {
+      "name": "hemostasis normalization",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "stable FVIII expression that normalizes hemostasis"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "hemophilia A",
+      "confidence": 0.98,
+      "evidence": "the first licensed HA gene therapy"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "F8",
+      "confidence": 0.9,
+      "evidence": "gene addition ... factor VIII (FVIII) expression after Roctavian treatment"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "F8",
+      "target_entity": "coagulation factor VIII",
+      "confidence": 0.95,
+      "evidence": "factor VIII (FVIII) expression"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "AAV gene therapy",
+      "confidence": 0.95,
+      "evidence": "AAV gene addition for hemophilia B gene therapy ... development of valoctocogene roxaparvovec"
+    },
+    {
+      "relation_type": "MANUFACTURED_BY",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "BioMarin",
+      "confidence": 0.98,
+      "evidence": "valoctocogene roxaparvovec (Roctavian; Biomarin)"
+    },
+    {
+      "relation_type": "APPROVED_BY",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "European Medicines Agency approval of Roctavian (August 2022)",
+      "confidence": 0.98,
+      "evidence": "conditionally approved in Europe in August 2022"
+    },
+    {
+      "relation_type": "APPROVED_BY",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "FDA approval of Roctavian (June 2023)",
+      "confidence": 0.98,
+      "evidence": "approved in the United States in June 2023"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "FVIII expression",
+      "target_entity": "valoctocogene roxaparvovec",
+      "confidence": 0.85,
+      "evidence": "declines in factor VIII (FVIII) expression after Roctavian treatment"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "declining FVIII expression",
+      "confidence": 0.8,
+      "evidence": "unexplained year-over-year declines in factor VIII (FVIII) expression after Roctavian treatment"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "coagulation factor VIII",
+      "target_entity": "hemophilia A",
+      "confidence": 0.95,
+      "evidence": "hemophilia A ... factor VIII (FVIII) expression"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T22:54:59.878955+00:00",
+  "error": null
+}

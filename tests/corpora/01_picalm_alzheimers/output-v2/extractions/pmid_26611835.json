@@ -1,0 +1,228 @@
+{
+  "document_id": "pmid_26611835",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/01_picalm_alzheimers/docs/pmid_26611835.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "Alzheimer disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Alzheimer Disease"
+      },
+      "confidence": 0.99,
+      "context": "The genetic variants play a crucial role in the pathogenesis of Alzheimer's disease (AD)"
+    },
+    {
+      "name": "GAB2",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "growth factor receptor-bound protein-associated binding protein 2"
+      },
+      "confidence": 0.99,
+      "context": "growth factor receptor-bound protein-associated binding protein 2 (GAB2)"
+    },
+    {
+      "name": "PICALM",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "phosphatidylinositol binding clathrin assembly protein"
+      },
+      "confidence": 0.99,
+      "context": "phosphatidylinositol binding clathrin assembly protein (PICALM)"
+    },
+    {
+      "name": "SORL1",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "sortilin-related receptor"
+      },
+      "confidence": 0.99,
+      "context": "sortilin-related receptor (SORL1)"
+    },
+    {
+      "name": "GAB2 rs2373115",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "GAB2",
+        "allele_change": "G>T"
+      },
+      "confidence": 0.98,
+      "context": "SNPs of GAB2 rs2373115 (G > T)"
+    },
+    {
+      "name": "PICALM rs541458",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "PICALM",
+        "allele_change": "C>T"
+      },
+      "confidence": 0.98,
+      "context": "PICALM rs541458 (C > T) and AD"
+    },
+    {
+      "name": "PICALM rs3851179",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "PICALM",
+        "risk_allele": "T"
+      },
+      "confidence": 0.98,
+      "context": "The allele T of rs3851179 in PICALM was associated with a 13 % increase in the risk of AD"
+    },
+    {
+      "name": "SORL1 rs1010159",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "SORL1",
+        "allele": "T"
+      },
+      "confidence": 0.98,
+      "context": "rs1010159*T ... associated with a decreased risk of AD"
+    },
+    {
+      "name": "SORL1 rs641120",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "SORL1",
+        "allele": "A"
+      },
+      "confidence": 0.98,
+      "context": "rs641120*A ... associated with a decreased risk of AD"
+    },
+    {
+      "name": "SORL1 rs668387",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "SORL1",
+        "allele": "T"
+      },
+      "confidence": 0.98,
+      "context": "rs668387*T ... associated with a decreased risk of AD"
+    },
+    {
+      "name": "SORL1 rs689021",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "SORL1",
+        "allele": "A"
+      },
+      "confidence": 0.98,
+      "context": "rs689021*A, were associated with a decreased risk of AD"
+    },
+    {
+      "name": "SORL1 rs12285364",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "SORL1",
+        "allele": "T"
+      },
+      "confidence": 0.98,
+      "context": "rs12285364*T ... associated with an increased risk of AD"
+    },
+    {
+      "name": "SORL1 rs2070045",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "SORL1",
+        "allele": "G"
+      },
+      "confidence": 0.98,
+      "context": "rs2070045*G ... associated with an increased risk of AD"
+    },
+    {
+      "name": "SORL1 rs2282649",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "SORL1",
+        "allele": "T"
+      },
+      "confidence": 0.98,
+      "context": "rs2282649*T, were all associated with an increased risk of AD"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PICALM rs3851179",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.95,
+      "evidence": "The allele T of rs3851179 in PICALM was associated with a 13 % increase in the risk of AD"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "SORL1 rs12285364",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.95,
+      "evidence": "rs12285364*T ... associated with an increased risk of AD"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "SORL1 rs2070045",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.95,
+      "evidence": "rs2070045*G ... associated with an increased risk of AD"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "SORL1 rs2282649",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.95,
+      "evidence": "rs2282649*T, were all associated with an increased risk of AD"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "SORL1 rs1010159",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "rs1010159*T ... associated with a decreased risk of AD"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "SORL1 rs641120",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "rs641120*A ... associated with a decreased risk of AD"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "SORL1 rs668387",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "rs668387*T ... associated with a decreased risk of AD"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "SORL1 rs689021",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "rs689021*A, were associated with a decreased risk of AD"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "GAB2",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.8,
+      "evidence": "whether growth factor receptor-bound protein-associated binding protein 2 (GAB2) ... variants are associated with AD"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PICALM",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "multiple gene variants were associated with AD. The SNP of rs3851179 (PICALM)"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "SORL1",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.95,
+      "evidence": "Seven SNPs on SORL1 were significantly associated with AD"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T19:01:29.004475+00:00",
+  "error": null
+}

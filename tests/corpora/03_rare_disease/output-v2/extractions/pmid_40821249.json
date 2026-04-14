@@ -1,0 +1,248 @@
+{
+  "document_id": "pmid_40821249",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/03_rare_disease/docs/pmid_40821249.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "vosoritide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide analog",
+        "brand_name": "Voxzogo",
+        "dose": "15 ug/kg subcutaneous daily"
+      },
+      "confidence": 0.98,
+      "context": "Vosoritide (VOXZOGO), a C-type natriuretic peptide analog, is the first targeted therapy approved for achondroplasia"
+    },
+    {
+      "name": "C-type natriuretic peptide",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "role": "parent molecule of vosoritide"
+      },
+      "confidence": 0.95,
+      "context": "Vosoritide (VOXZOGO), a C-type natriuretic peptide analog"
+    },
+    {
+      "name": "FGFR3",
+      "entity_type": "GENE",
+      "attributes": {
+        "role": "disease driver"
+      },
+      "confidence": 0.98,
+      "context": "caused by activating mutations in the FGFR3 gene that impair endochondral ossification"
+    },
+    {
+      "name": "FGFR3 protein",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "role": "signaling receptor"
+      },
+      "confidence": 0.95,
+      "context": "acts by antagonizing FGFR3 signaling to promote bone growth"
+    },
+    {
+      "name": "achondroplasia",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "category": "genetic skeletal dysplasia",
+        "mesh": "Achondroplasia"
+      },
+      "confidence": 0.99,
+      "context": "Achondroplasia is the most common genetic skeletal dysplasia"
+    },
+    {
+      "name": "disproportionate short stature",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.95,
+      "context": "impair endochondral ossification and result in disproportionate short stature"
+    },
+    {
+      "name": "impaired endochondral ossification",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.9,
+      "context": "activating mutations in the FGFR3 gene that impair endochondral ossification"
+    },
+    {
+      "name": "lumbar lordosis",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.9,
+      "context": "retrospective studies have shown a reduction in lumbar lordosis and leg bowing"
+    },
+    {
+      "name": "leg bowing",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.9,
+      "context": "reduction in lumbar lordosis and leg bowing"
+    },
+    {
+      "name": "FGFR3 signaling pathway",
+      "entity_type": "PATHWAY",
+      "confidence": 0.9,
+      "context": "acts by antagonizing FGFR3 signaling to promote bone growth"
+    },
+    {
+      "name": "endochondral ossification",
+      "entity_type": "PATHWAY",
+      "confidence": 0.9,
+      "context": "impair endochondral ossification"
+    },
+    {
+      "name": "FGFR3 antagonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "confidence": 0.95,
+      "context": "acts by antagonizing FGFR3 signaling to promote bone growth"
+    },
+    {
+      "name": "annualized growth velocity",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "unit": "cm/year",
+        "effect_size": "+1.5-2.0 cm/year vs placebo"
+      },
+      "confidence": 0.95,
+      "context": "daily subcutaneous vosoritide (15 ug/kg) increases annualized growth velocity (AGV) by approximately 1.5-2.0 cm/year compared to placebo"
+    },
+    {
+      "name": "six-minute walk distance",
+      "entity_type": "BIOMARKER",
+      "confidence": 0.9,
+      "context": "improvement in six-minute walk distance and potential benefit in daily function"
+    },
+    {
+      "name": "injection site reaction",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "severity": "mild"
+      },
+      "confidence": 0.95,
+      "context": "Common adverse effects include mild injection site reactions"
+    },
+    {
+      "name": "transient hypotension",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "population": "infants"
+      },
+      "confidence": 0.95,
+      "context": "Common adverse effects include mild injection site reactions and transient hypotension in infants"
+    },
+    {
+      "name": "FGFR3 activating mutation",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "effect": "gain of function"
+      },
+      "confidence": 0.9,
+      "context": "caused by activating mutations in the FGFR3 gene"
+    },
+    {
+      "name": "PubMed",
+      "entity_type": "ORGANIZATION",
+      "confidence": 0.9,
+      "context": "A structured literature search of PubMed and Embase was conducted"
+    },
+    {
+      "name": "Embase",
+      "entity_type": "ORGANIZATION",
+      "confidence": 0.9,
+      "context": "A structured literature search of PubMed and Embase was conducted"
+    },
+    {
+      "name": "Phase II vosoritide trial",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "II"
+      },
+      "confidence": 0.85,
+      "context": "Phase II and III trials indicate that daily subcutaneous vosoritide (15 ug/kg) increases annualized growth velocity"
+    },
+    {
+      "name": "Phase III vosoritide trial",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "III"
+      },
+      "confidence": 0.85,
+      "context": "Phase II and III trials indicate that daily subcutaneous vosoritide (15 ug/kg) increases annualized growth velocity"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "vosoritide",
+      "target_entity": "achondroplasia",
+      "confidence": 0.98,
+      "evidence": "Vosoritide (VOXZOGO), a C-type natriuretic peptide analog, is the first targeted therapy approved for achondroplasia"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "vosoritide",
+      "target_entity": "FGFR3 protein",
+      "confidence": 0.95,
+      "evidence": "acts by antagonizing FGFR3 signaling to promote bone growth"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "vosoritide",
+      "target_entity": "FGFR3 protein",
+      "confidence": 0.95,
+      "evidence": "acts by antagonizing FGFR3 signaling to promote bone growth"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "FGFR3",
+      "target_entity": "achondroplasia",
+      "confidence": 0.98,
+      "evidence": "Achondroplasia...caused by activating mutations in the FGFR3 gene"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "FGFR3 activating mutation",
+      "target_entity": "achondroplasia",
+      "confidence": 0.98,
+      "evidence": "caused by activating mutations in the FGFR3 gene that impair endochondral ossification"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "FGFR3 protein",
+      "target_entity": "endochondral ossification",
+      "confidence": 0.9,
+      "evidence": "activating mutations in the FGFR3 gene that impair endochondral ossification"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "vosoritide",
+      "target_entity": "Phase II vosoritide trial",
+      "confidence": 0.9,
+      "evidence": "Phase II and III trials indicate that daily subcutaneous vosoritide"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "vosoritide",
+      "target_entity": "Phase III vosoritide trial",
+      "confidence": 0.9,
+      "evidence": "Phase II and III trials indicate that daily subcutaneous vosoritide"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "vosoritide",
+      "target_entity": "injection site reaction",
+      "confidence": 0.9,
+      "evidence": "Common adverse effects include mild injection site reactions"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "vosoritide",
+      "target_entity": "transient hypotension",
+      "confidence": 0.9,
+      "evidence": "transient hypotension in infants"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T22:55:01.875711+00:00",
+  "error": null
+}

@@ -1,0 +1,239 @@
+{
+  "document_id": "pmid_40903578",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/01_picalm_alzheimers/docs/pmid_40903578.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "PICALM",
+      "entity_type": "GENE",
+      "attributes": {
+        "role": "LOAD risk gene",
+        "cell_type": "microglia"
+      },
+      "confidence": 0.98,
+      "context": "linked a PICALM LOAD-risk allele to a microglial-specific role of PICALM in lipid droplet (LD) accumulation"
+    },
+    {
+      "name": "PICALM",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "function": "clathrin assembly, phagocytosis"
+      },
+      "confidence": 0.95,
+      "context": "reduced PU.1 binding and PICALM expression, impairing the uptake of amyloid beta (A\u03b2) and myelin debris"
+    },
+    {
+      "name": "SPI1",
+      "entity_type": "GENE",
+      "attributes": {
+        "alias": "PU.1",
+        "role": "transcription factor"
+      },
+      "confidence": 0.9,
+      "context": "reduced transcription factor (PU.1) binding"
+    },
+    {
+      "name": "PU.1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene": "SPI1",
+        "function": "transcription factor"
+      },
+      "confidence": 0.95,
+      "context": "reduced transcription factor (PU.1) binding and PICALM expression"
+    },
+    {
+      "name": "rs10792832",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "PICALM",
+        "type": "SNP",
+        "risk": "LOAD"
+      },
+      "confidence": 0.98,
+      "context": "the LOAD-risk allele of the single-nucleotide polymorphism rs10792832"
+    },
+    {
+      "name": "late-onset Alzheimer disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbrev": "LOAD",
+        "mesh": "Alzheimer Disease"
+      },
+      "confidence": 0.98,
+      "context": "genome-wide association studies (GWAS) of late-onset Alzheimer disease (LOAD)"
+    },
+    {
+      "name": "amyloid beta",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "abbrev": "A\u03b2",
+        "role": "phagocytic substrate"
+      },
+      "confidence": 0.95,
+      "context": "impairing the uptake of amyloid beta (A\u03b2) and myelin debris"
+    },
+    {
+      "name": "cholesterol",
+      "entity_type": "METABOLITE",
+      "attributes": {
+        "pathway": "cholesterol synthesis"
+      },
+      "confidence": 0.9,
+      "context": "transcriptional enrichment of pathways for cholesterol synthesis and LD formation"
+    },
+    {
+      "name": "cholesterol biosynthesis",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "transcriptional enrichment of pathways for cholesterol synthesis"
+    },
+    {
+      "name": "lipid droplet formation",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "pathways for cholesterol synthesis and LD formation"
+    },
+    {
+      "name": "lipid droplet accumulation",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "cell_type": "microglia"
+      },
+      "confidence": 0.95,
+      "context": "aberrant lipid droplets in microglia"
+    },
+    {
+      "name": "phagocytosis deficit",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "cell_type": "microglia"
+      },
+      "confidence": 0.95,
+      "context": "causal link between reduced PICALM expression, LD accumulation and phagocytosis deficits"
+    },
+    {
+      "name": "microglia",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {
+        "source": "iPSC-derived"
+      },
+      "confidence": 0.98,
+      "context": "human induced pluripotent stem (iPS)-cell-derived neurons, astrocytes and microglia"
+    },
+    {
+      "name": "astrocyte",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {
+        "source": "iPSC-derived"
+      },
+      "confidence": 0.95,
+      "context": "iPS-cell-derived neurons, astrocytes and microglia"
+    },
+    {
+      "name": "neuron",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {
+        "source": "iPSC-derived"
+      },
+      "confidence": 0.95,
+      "context": "iPS-cell-derived neurons, astrocytes and microglia"
+    },
+    {
+      "name": "myelin debris",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {
+        "role": "phagocytic substrate"
+      },
+      "confidence": 0.85,
+      "context": "impairing the uptake of amyloid beta (A\u03b2) and myelin debris"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PICALM",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.98,
+      "evidence": "linked a PICALM LOAD-risk allele to a microglial-specific role of PICALM"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "PICALM",
+      "target_entity": "PICALM",
+      "confidence": 0.95,
+      "evidence": "PICALM expression"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "SPI1",
+      "target_entity": "PU.1",
+      "confidence": 0.9,
+      "evidence": "transcription factor (PU.1)"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "rs10792832",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.98,
+      "evidence": "the LOAD-risk allele of the single-nucleotide polymorphism rs10792832"
+    },
+    {
+      "relation_type": "REGULATES",
+      "source_entity": "PU.1",
+      "target_entity": "PICALM",
+      "confidence": 0.95,
+      "evidence": "reduced transcription factor (PU.1) binding and PICALM expression"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "PICALM",
+      "target_entity": "phagocytosis deficit",
+      "confidence": 0.9,
+      "evidence": "causal link between reduced PICALM expression, LD accumulation and phagocytosis deficits"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "PICALM",
+      "target_entity": "lipid droplet accumulation",
+      "confidence": 0.95,
+      "evidence": "causal link between reduced PICALM expression, LD accumulation"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "lipid droplet accumulation",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "selective LOAD vulnerability in microglia at the PICALM locus through detrimental LD accumulation"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "cholesterol biosynthesis",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.8,
+      "evidence": "microglia carrying the PICALM risk allele showed transcriptional enrichment of pathways for cholesterol synthesis"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "lipid droplet formation",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.85,
+      "evidence": "transcriptional enrichment of pathways for cholesterol synthesis and LD formation"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "PICALM",
+      "target_entity": "cholesterol biosynthesis",
+      "confidence": 0.75,
+      "evidence": "microglia carrying the PICALM risk allele showed transcriptional enrichment of pathways for cholesterol synthesis"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T17:07:49.341580+00:00",
+  "error": null
+}

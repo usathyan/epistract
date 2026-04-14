@@ -1,0 +1,179 @@
+{
+  "document_id": "pmid_40544435",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/06_glp1_landscape/docs/pmid_40544435.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "orforglipron",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "route": "oral",
+        "mechanism": "nonpeptide GLP-1 receptor agonist"
+      },
+      "confidence": 0.98,
+      "context": "Orforglipron is a small-molecule, nonpeptide glucagon-like peptide-1 (GLP-1) receptor agonist"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.98,
+      "context": "small-molecule, nonpeptide glucagon-like peptide-1 (GLP-1) receptor agonist"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Diabetes Mellitus, Type 2"
+      },
+      "confidence": 0.98,
+      "context": "in clinical development for type 2 diabetes and weight management"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "note": "weight management indication"
+      },
+      "confidence": 0.8,
+      "context": "in clinical development for type 2 diabetes and weight management"
+    },
+    {
+      "name": "glycated hemoglobin",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "alias": "HbA1c"
+      },
+      "confidence": 0.98,
+      "context": "The primary end point was the change from baseline to week 40 in the glycated hemoglobin level"
+    },
+    {
+      "name": "body weight",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "anthropometric"
+      },
+      "confidence": 0.9,
+      "context": "A key secondary end point was the percent change in body weight from baseline to week 40"
+    },
+    {
+      "name": "ACHIEVE-1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT05971940",
+        "phase": "3",
+        "design": "randomized, double-blind, placebo-controlled",
+        "duration_weeks": 40,
+        "n": 559
+      },
+      "confidence": 0.99,
+      "context": "ACHIEVE-1 ClinicalTrials.gov number, NCT05971940"
+    },
+    {
+      "name": "gastrointestinal adverse events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "severity": "mild-to-moderate",
+        "timing": "during dose escalation"
+      },
+      "confidence": 0.95,
+      "context": "The most common adverse events were mild-to-moderate gastrointestinal events, most of which occurred during dose escalation"
+    },
+    {
+      "name": "severe hypoglycemia",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "observed": false
+      },
+      "confidence": 0.95,
+      "context": "No episodes of severe hypoglycemia were reported"
+    },
+    {
+      "name": "Eli Lilly",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "sponsor"
+      },
+      "confidence": 0.99,
+      "context": "Supported by Eli Lilly"
+    },
+    {
+      "name": "PMID:40544435",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "journal": "The New England journal of medicine",
+        "year": "2025",
+        "first_author": "Rosenstock Julio"
+      },
+      "confidence": 0.99,
+      "context": "The New England journal of medicine (2025) PMID: 40544435"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "orforglipron",
+      "target_entity": "GLP1R",
+      "confidence": 0.98,
+      "evidence": "Orforglipron is a small-molecule, nonpeptide glucagon-like peptide-1 (GLP-1) receptor agonist"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "orforglipron",
+      "target_entity": "GLP1R",
+      "confidence": 0.98,
+      "evidence": "nonpeptide glucagon-like peptide-1 (GLP-1) receptor agonist"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "orforglipron",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.95,
+      "evidence": "in clinical development for type 2 diabetes and weight management"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "orforglipron",
+      "target_entity": "obesity",
+      "confidence": 0.8,
+      "evidence": "in clinical development for type 2 diabetes and weight management"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "orforglipron",
+      "target_entity": "ACHIEVE-1",
+      "confidence": 0.99,
+      "evidence": "ACHIEVE-1 ClinicalTrials.gov number, NCT05971940"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "orforglipron",
+      "target_entity": "gastrointestinal adverse events",
+      "confidence": 0.9,
+      "evidence": "The most common adverse events were mild-to-moderate gastrointestinal events"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "glycated hemoglobin",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.85,
+      "evidence": "a glycated hemoglobin level of at least 7.0% but no more than 9.5%"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "ACHIEVE-1",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.95,
+      "evidence": "Participants had type 2 diabetes treated only with diet and exercise"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:09:55.224800+00:00",
+  "error": null
+}

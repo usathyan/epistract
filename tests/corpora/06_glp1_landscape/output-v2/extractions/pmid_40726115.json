@@ -1,0 +1,250 @@
+{
+  "document_id": "pmid_40726115",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/06_glp1_landscape/docs/pmid_40726115.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "GLP-1 receptor agonists",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "class": "drug class",
+        "modality": "peptide"
+      },
+      "confidence": 0.98,
+      "context": "glucagon-like peptide-1 receptor agonists (GLP-1RAs), developed for diabetes and obesity"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.9,
+      "context": "glucagon-like peptide-1 receptor agonists (GLP-1RAs)"
+    },
+    {
+      "name": "chronic pain",
+      "entity_type": "DISEASE",
+      "confidence": 0.98,
+      "context": "Chronic pain imposes a significant healthcare burden"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "confidence": 0.9,
+      "context": "developed for diabetes and obesity"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "developed for diabetes and obesity"
+    },
+    {
+      "name": "osteoarthritis",
+      "entity_type": "DISEASE",
+      "confidence": 0.98,
+      "context": "identifying studies on GLP-1RA and pain in headaches, osteoarthritis, diabetic neuropathy"
+    },
+    {
+      "name": "diabetic neuropathy",
+      "entity_type": "DISEASE",
+      "confidence": 0.98,
+      "context": "studies on GLP-1RA and pain in headaches, osteoarthritis, diabetic neuropathy"
+    },
+    {
+      "name": "migraine",
+      "entity_type": "DISEASE",
+      "confidence": 0.9,
+      "context": "Preclinical data support GLP-1RAs signaling in migraines"
+    },
+    {
+      "name": "headache",
+      "entity_type": "DISEASE",
+      "confidence": 0.9,
+      "context": "studies on GLP-1RA and pain in headaches"
+    },
+    {
+      "name": "substance use disorder",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "dopaminergic pathways in substance use disorders"
+    },
+    {
+      "name": "alcohol use disorder",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "Trials in alcohol addiction show promise"
+    },
+    {
+      "name": "opioid use disorder",
+      "entity_type": "DISEASE",
+      "confidence": 0.8,
+      "context": "opioid dependency... reducing opioid dependence"
+    },
+    {
+      "name": "inflammation",
+      "entity_type": "PATHWAY",
+      "confidence": 0.9,
+      "context": "focusing on inflammation, macrophage repolarization, oxidative stress"
+    },
+    {
+      "name": "macrophage repolarization",
+      "entity_type": "PATHWAY",
+      "confidence": 0.9,
+      "context": "inflammation, macrophage repolarization, oxidative stress"
+    },
+    {
+      "name": "oxidative stress",
+      "entity_type": "PATHWAY",
+      "confidence": 0.9,
+      "context": "macrophage repolarization, oxidative stress, and dopaminergic pathways"
+    },
+    {
+      "name": "dopaminergic signaling",
+      "entity_type": "PATHWAY",
+      "confidence": 0.9,
+      "context": "dopaminergic pathways in substance use disorders"
+    },
+    {
+      "name": "analgesia",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "confidence": 0.85,
+      "context": "may offer novel analgesia and treat drug-seeking behavior"
+    },
+    {
+      "name": "nerve repair",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "confidence": 0.85,
+      "context": "GLP-1RAs show potential for nerve repair"
+    },
+    {
+      "name": "cartilage degradation reduction",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "confidence": 0.8,
+      "context": "they appear to reduce inflammation and cartilage degradation"
+    },
+    {
+      "name": "opioids",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "class": "drug class"
+      },
+      "confidence": 0.95,
+      "context": "current treatments like opioids often come with serious risks, including addiction"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.95,
+      "evidence": "developed for diabetes and obesity"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "obesity",
+      "confidence": 0.95,
+      "evidence": "developed for diabetes and obesity"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "GLP1R",
+      "confidence": 0.98,
+      "evidence": "glucagon-like peptide-1 receptor agonists (GLP-1RAs)"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "chronic pain",
+      "confidence": 0.85,
+      "evidence": "role of GLP-1RAs in pain management"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "osteoarthritis",
+      "confidence": 0.85,
+      "evidence": "In osteoarthritis, they appear to reduce inflammation and cartilage degradation"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "diabetic neuropathy",
+      "confidence": 0.85,
+      "evidence": "In diabetic neuropathy, GLP-1RAs show potential for nerve repair"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "migraine",
+      "confidence": 0.7,
+      "evidence": "Preclinical data support GLP-1RAs signaling in migraines, but human studies are lacking"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "alcohol use disorder",
+      "confidence": 0.8,
+      "evidence": "Trials in alcohol addiction show promise"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "substance use disorder",
+      "confidence": 0.8,
+      "evidence": "dopaminergic pathways in substance use disorders"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "inflammation",
+      "confidence": 0.85,
+      "evidence": "focusing on inflammation, macrophage repolarization"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "macrophage repolarization",
+      "confidence": 0.85,
+      "evidence": "inflammation, macrophage repolarization, oxidative stress"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "oxidative stress",
+      "confidence": 0.8,
+      "evidence": "macrophage repolarization, oxidative stress"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "dopaminergic signaling",
+      "confidence": 0.8,
+      "evidence": "dopaminergic pathways in substance use disorders"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "opioids",
+      "target_entity": "opioid use disorder",
+      "confidence": 0.9,
+      "evidence": "opioids often come with serious risks, including addiction"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "opioids",
+      "target_entity": "chronic pain",
+      "confidence": 0.9,
+      "evidence": "current treatments like opioids"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:10:12.228296+00:00",
+  "error": null
+}

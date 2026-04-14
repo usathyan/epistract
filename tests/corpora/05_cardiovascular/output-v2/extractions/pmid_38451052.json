@@ -1,0 +1,204 @@
+{
+  "document_id": "pmid_38451052",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/05_cardiovascular/docs/pmid_38451052.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "deucravacitinib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "route": "oral",
+        "mechanism": "allosteric TYK2 inhibitor"
+      },
+      "confidence": 0.98,
+      "context": "deucravacitinib, an oral, selective, allosteric tyrosine kinase 2 (TYK2) inhibitor"
+    },
+    {
+      "name": "apremilast",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "route": "oral"
+      },
+      "confidence": 0.95,
+      "context": "randomized 1:2:1 to receive oral placebo, deucravacitinib or apremilast"
+    },
+    {
+      "name": "TYK2",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "tyrosine kinase 2"
+      },
+      "confidence": 0.98,
+      "context": "allosteric tyrosine kinase 2 (TYK2) inhibitor"
+    },
+    {
+      "name": "TYK2",
+      "entity_type": "GENE",
+      "confidence": 0.9,
+      "context": "tyrosine kinase 2 (TYK2)"
+    },
+    {
+      "name": "plaque psoriasis",
+      "entity_type": "DISEASE",
+      "confidence": 0.98,
+      "context": "moderate-to-severe plaque psoriasis"
+    },
+    {
+      "name": "POETYK PSO-1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "3"
+      },
+      "confidence": 0.98,
+      "context": "Two phase 3 trials, POETYK PSO-1 and PSO-2"
+    },
+    {
+      "name": "POETYK PSO-2",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "3"
+      },
+      "confidence": 0.98,
+      "context": "Two phase 3 trials, POETYK PSO-1 and PSO-2"
+    },
+    {
+      "name": "serious infection",
+      "entity_type": "ADVERSE_EVENT",
+      "confidence": 0.92,
+      "context": "serious infections (0.8/100 person-years [PY], 1.7/100 PY, and 1.8/100 PY)"
+    },
+    {
+      "name": "major adverse cardiovascular events",
+      "entity_type": "ADVERSE_EVENT",
+      "confidence": 0.95,
+      "context": "major adverse cardiovascular events (1.2/100 PY, 0.3/100 PY, and 0.9/100 PY)"
+    },
+    {
+      "name": "venous thromboembolic events",
+      "entity_type": "ADVERSE_EVENT",
+      "confidence": 0.95,
+      "context": "venous thromboembolic events (0, 0.2/100 PY, and 0)"
+    },
+    {
+      "name": "malignancies",
+      "entity_type": "ADVERSE_EVENT",
+      "confidence": 0.9,
+      "context": "malignancies (0, 1.0/100 PY and 0.9/100 PY)"
+    },
+    {
+      "name": "herpes zoster",
+      "entity_type": "ADVERSE_EVENT",
+      "confidence": 0.95,
+      "context": "herpes zoster (0.4/100 PY, 0.8/100 PY, and 0)"
+    },
+    {
+      "name": "acne",
+      "entity_type": "ADVERSE_EVENT",
+      "confidence": 0.95,
+      "context": "acne (0.4/100 PY, 2.9/100 PY, and 0)"
+    },
+    {
+      "name": "folliculitis",
+      "entity_type": "ADVERSE_EVENT",
+      "confidence": 0.95,
+      "context": "folliculitis (0, 2.8/100 PY, and 0.9/100 PY)"
+    },
+    {
+      "name": "Journal of the European Academy of Dermatology and Venereology",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "year": "2024",
+        "pmid": "38451052"
+      },
+      "confidence": 0.98,
+      "context": "Journal of the European Academy of Dermatology and Venereology : JEADV (2024)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "deucravacitinib",
+      "target_entity": "TYK2",
+      "confidence": 0.98,
+      "evidence": "deucravacitinib, an oral, selective, allosteric tyrosine kinase 2 (TYK2) inhibitor"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "deucravacitinib",
+      "target_entity": "TYK2",
+      "confidence": 0.98,
+      "evidence": "selective, allosteric tyrosine kinase 2 (TYK2) inhibitor"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "deucravacitinib",
+      "target_entity": "plaque psoriasis",
+      "confidence": 0.95,
+      "evidence": "efficacy and overall safety of deucravacitinib... in plaque psoriasis"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "deucravacitinib",
+      "target_entity": "POETYK PSO-1",
+      "confidence": 0.98,
+      "evidence": "Two phase 3 trials, POETYK PSO-1 and PSO-2, previously established the efficacy and overall safety of deucravacitinib"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "deucravacitinib",
+      "target_entity": "POETYK PSO-2",
+      "confidence": 0.98,
+      "evidence": "Two phase 3 trials, POETYK PSO-1 and PSO-2, previously established the efficacy and overall safety of deucravacitinib"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "apremilast",
+      "target_entity": "POETYK PSO-1",
+      "confidence": 0.95,
+      "evidence": "randomized 1:2:1 to receive oral placebo, deucravacitinib or apremilast"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "apremilast",
+      "target_entity": "POETYK PSO-2",
+      "confidence": 0.95,
+      "evidence": "randomized 1:2:1 to receive oral placebo, deucravacitinib or apremilast"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "acne",
+      "confidence": 0.85,
+      "evidence": "acne (0.4/100 PY, 2.9/100 PY, and 0)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "folliculitis",
+      "confidence": 0.85,
+      "evidence": "folliculitis (0, 2.8/100 PY, and 0.9/100 PY)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "herpes zoster",
+      "confidence": 0.8,
+      "evidence": "herpes zoster (0.4/100 PY, 0.8/100 PY, and 0)"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "TYK2",
+      "target_entity": "TYK2",
+      "confidence": 0.9,
+      "evidence": "tyrosine kinase 2 (TYK2)"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:03:06.549539+00:00",
+  "error": null
+}

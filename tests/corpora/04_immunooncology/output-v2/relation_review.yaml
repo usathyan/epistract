@@ -1,0 +1,138 @@
+review_threshold: 0.7
+relations:
+- source_id: biomarker:pd_l1_tumor_expression
+  source_name: PD-L1 tumor expression
+  target_id: compound:nivolumab
+  target_name: nivolumab
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.85
+  evidence: stratified randomisation by tumour expression of PD-L1
+  source_document: pmid_25795410
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:braf_mutation_status
+  source_name: BRAF mutation status
+  target_id: compound:nivolumab
+  target_name: nivolumab
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.96
+  evidence: Randomization was stratified according to BRAF mutation status
+  source_document: pmid_28889792
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:pd_l1_expression
+  source_name: PD-L1 expression
+  target_id: compound:nivolumab
+  target_name: nivolumab
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.9924999999999999
+  evidence: 'PD-L1 expression (TPS >= 1% or >= 50%): predictive of nivolumab response'
+  source_document: structural_nivolumab_sequence
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:human_endogenous_retrovirus
+  source_name: human endogenous retrovirus
+  target_id: compound:nivolumab
+  target_name: nivolumab
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.88
+  evidence: ccRCC-specific human endogenous retrovirus expression indirectly correlates
+    with clinical response
+  source_document: pmid_34715028
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:expanded_tcr_clones
+  source_name: expanded TCR clones
+  target_id: compound:nivolumab
+  target_name: nivolumab
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.92
+  evidence: a significantly higher number of expanded TCR clones pre-treatment in
+    responders suggesting pre-existing immunity
+  source_document: pmid_34715028
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:inflamed_hcc_class
+  source_name: inflamed HCC class
+  target_id: mechanism_of_action:immune_checkpoint_inhibition
+  target_name: immune checkpoint inhibition
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.85
+  evidence: Inflamed and non-inflamed classes of HCC... have been associated with
+    response to immune-checkpoint inhibitors
+  source_document: pmid_34764464
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:braf_mutant
+  source_name: BRAF-mutant
+  target_id: compound:nivolumab
+  target_name: nivolumab
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.85
+  evidence: 6.5-year OS rates were 57%, 43%, and 25% in patients with BRAF-mutant
+    tumors
+  source_document: pmid_34818112
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:braf_wild_type
+  source_name: BRAF-wild-type
+  target_id: compound:nivolumab
+  target_name: nivolumab
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.85
+  evidence: 46%, 42%, and 22% in those with BRAF-wild-type tumors
+  source_document: pmid_34818112
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:lag_3_expression
+  source_name: LAG-3 expression
+  target_id: compound:relatlimab
+  target_name: relatlimab
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.85
+  evidence: primary end point was objective response rate...in patients whose tumors
+    had LAG-3 expression >=1%
+  source_document: pmid_38723227
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:recurrence_free_survival
+  source_name: recurrence-free survival
+  target_id: disease:melanoma
+  target_name: melanoma
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.85
+  evidence: primary endpoint was recurrence-free survival (RFS)
+  source_document: pmid_41109920
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:circulating_lag_3_t_cells
+  source_name: circulating LAG-3+ T cells
+  target_id: compound:relatlimab
+  target_name: relatlimab
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.8
+  evidence: reduced peripheral LAG-3+ T cells may explain the lack of added benefit
+  source_document: pmid_41109920
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:tmb_high
+  source_name: TMB-high
+  target_id: compound:nivolumab
+  target_name: nivolumab
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.93
+  evidence: 'TMB-high (>= 10 mut/Mb): associated with improved response across tumor
+    types'
+  source_document: structural_nivolumab_sequence
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:msi_h_dmmr
+  source_name: MSI-H/dMMR
+  target_id: compound:nivolumab
+  target_name: nivolumab
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.95
+  evidence: 'MSI-H/dMMR: FDA-approved biomarker for nivolumab in certain settings'
+  source_document: structural_nivolumab_sequence
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review

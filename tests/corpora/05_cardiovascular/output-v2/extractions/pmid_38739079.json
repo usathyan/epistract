@@ -1,0 +1,191 @@
+{
+  "document_id": "pmid_38739079",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/05_cardiovascular/docs/pmid_38739079.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "aficamten",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "route": "oral",
+        "starting_dose": "5 mg",
+        "max_dose": "20 mg"
+      },
+      "confidence": 0.98,
+      "context": "Aficamten is an oral selective cardiac myosin inhibitor"
+    },
+    {
+      "name": "cardiac myosin",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "oral selective cardiac myosin inhibitor"
+    },
+    {
+      "name": "obstructive hypertrophic cardiomyopathy",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "obstructive HCM"
+      },
+      "confidence": 0.98,
+      "context": "Aficamten for Symptomatic Obstructive Hypertrophic Cardiomyopathy"
+    },
+    {
+      "name": "left ventricular outflow tract obstruction",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "elevated intracardiac pressure resulting from left ventricular outflow tract obstruction"
+    },
+    {
+      "name": "cardiac hypercontractility",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "reduces left ventricular outflow tract gradients by mitigating cardiac hypercontractility"
+    },
+    {
+      "name": "exercise intolerance",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "One of the major determinants of exercise intolerance and limiting symptoms"
+    },
+    {
+      "name": "SEQUOIA-HCM",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "3",
+        "nct_id": "NCT05186818",
+        "design": "randomized double-blind placebo-controlled",
+        "duration_weeks": 24,
+        "participants": 282,
+        "sponsor": "Cytokinetics"
+      },
+      "confidence": 0.99,
+      "context": "SEQUOIA-HCM ClinicalTrials.gov number, NCT05186818"
+    },
+    {
+      "name": "Cytokinetics",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "sponsor"
+      },
+      "confidence": 0.99,
+      "context": "Funded by Cytokinetics"
+    },
+    {
+      "name": "peak oxygen uptake",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "assessment": "cardiopulmonary exercise testing"
+      },
+      "confidence": 0.95,
+      "context": "change from baseline to week 24 in the peak oxygen uptake as assessed by cardiopulmonary exercise testing"
+    },
+    {
+      "name": "Kansas City Cardiomyopathy Questionnaire clinical summary score",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "KCCQ-CSS"
+      },
+      "confidence": 0.9,
+      "context": "change in the Kansas City Cardiomyopathy Questionnaire clinical summary score (KCCQ-CSS)"
+    },
+    {
+      "name": "New York Heart Association functional class",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "NYHA"
+      },
+      "confidence": 0.9,
+      "context": "improvement in the New York Heart Association (NYHA) functional class"
+    },
+    {
+      "name": "left ventricular outflow tract gradient",
+      "entity_type": "BIOMARKER",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "baseline mean resting left ventricular outflow tract gradient was 55.1 mm Hg"
+    },
+    {
+      "name": "left ventricular ejection fraction",
+      "entity_type": "BIOMARKER",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "baseline mean left ventricular ejection fraction was 74.8%"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "aficamten",
+      "target_entity": "cardiac myosin",
+      "confidence": 0.98,
+      "evidence": "Aficamten is an oral selective cardiac myosin inhibitor"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "aficamten",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.95,
+      "evidence": "adults with symptomatic obstructive HCM to receive aficamten"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "aficamten",
+      "target_entity": "SEQUOIA-HCM",
+      "confidence": 0.99,
+      "evidence": "SEQUOIA-HCM ClinicalTrials.gov number, NCT05186818"
+    },
+    {
+      "relation_type": "SPONSORED_BY",
+      "source_entity": "SEQUOIA-HCM",
+      "target_entity": "Cytokinetics",
+      "confidence": 0.99,
+      "evidence": "Funded by Cytokinetics"
+    },
+    {
+      "relation_type": "IMPROVES",
+      "source_entity": "aficamten",
+      "target_entity": "peak oxygen uptake",
+      "confidence": 0.95,
+      "evidence": "treatment with aficamten resulted in a significantly greater improvement in peak oxygen uptake than placebo"
+    },
+    {
+      "relation_type": "IMPROVES",
+      "source_entity": "aficamten",
+      "target_entity": "Kansas City Cardiomyopathy Questionnaire clinical summary score",
+      "confidence": 0.9,
+      "evidence": "results for all 10 secondary end points were significantly improved with aficamten"
+    },
+    {
+      "relation_type": "IMPROVES",
+      "source_entity": "aficamten",
+      "target_entity": "New York Heart Association functional class",
+      "confidence": 0.9,
+      "evidence": "improvement in the New York Heart Association (NYHA) functional class"
+    },
+    {
+      "relation_type": "REDUCES",
+      "source_entity": "aficamten",
+      "target_entity": "left ventricular outflow tract gradient",
+      "confidence": 0.9,
+      "evidence": "reduces left ventricular outflow tract gradients by mitigating cardiac hypercontractility"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "left ventricular outflow tract obstruction",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.9,
+      "evidence": "obstructive hypertrophic cardiomyopathy (HCM) is an elevated intracardiac pressure resulting from left ventricular outflow tract obstruction"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:03:11.142618+00:00",
+  "error": null
+}

@@ -1,0 +1,198 @@
+{
+  "document_id": "pmid_32498620",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/05_cardiovascular/docs/pmid_32498620.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "mavacamten",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "cardiac myosin inhibitor"
+      },
+      "confidence": 0.98,
+      "context": "Mavacamten is a first-in-class targeted inhibitor of cardiac myosin"
+    },
+    {
+      "name": "cardiac myosin",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.97,
+      "context": "first-in-class targeted inhibitor of cardiac myosin"
+    },
+    {
+      "name": "obstructive hypertrophic cardiomyopathy",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "oHCM",
+        "mesh": "Cardiomyopathy, Hypertrophic"
+      },
+      "confidence": 0.98,
+      "context": "Obstructive hypertrophic cardiomyopathy (oHCM) is characterized by unexplained left ventricular (LV) hypertrophy"
+    },
+    {
+      "name": "hypertrophic cardiomyopathy",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "HCM"
+      },
+      "confidence": 0.95,
+      "context": "first disease-specific treatment for HCM"
+    },
+    {
+      "name": "left ventricular hypertrophy",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "unexplained left ventricular (LV) hypertrophy"
+    },
+    {
+      "name": "left ventricular outflow tract obstruction",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "abbreviation": "LVOT obstruction"
+      },
+      "confidence": 0.97,
+      "context": "dynamic LV outflow tract obstruction"
+    },
+    {
+      "name": "myosin inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.97,
+      "context": "targeted strategy of myosin inhibition to improve symptom burden"
+    },
+    {
+      "name": "EXPLORER-HCM",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "3",
+        "nct_id": "NCT03470545",
+        "design": "multicenter, randomized, double-blind, placebo-controlled"
+      },
+      "confidence": 0.99,
+      "context": "EXPLORER-HCM is a multicenter, phase 3, randomized, double-blind, placebo-controlled trial"
+    },
+    {
+      "name": "PIONEER-HCM",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "2"
+      },
+      "confidence": 0.97,
+      "context": "PIONEER-HCM phase 2 study"
+    },
+    {
+      "name": "peak oxygen consumption",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "functional endpoint"
+      },
+      "confidence": 0.93,
+      "context": "increase in peak oxygen consumption >=1.5 mL/kg/min"
+    },
+    {
+      "name": "New York Heart Association class",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "functional classification"
+      },
+      "confidence": 0.9,
+      "context": "reduction of at least one New York Heart Association class"
+    },
+    {
+      "name": "LV outflow tract gradient",
+      "entity_type": "BIOMARKER",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "change in postexercise LV outflow tract gradient"
+    },
+    {
+      "name": "Kansas City Cardiomyopathy Questionnaire",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "patient-reported outcome"
+      },
+      "confidence": 0.9,
+      "context": "patient-reported outcomes assessed by the Kansas City Cardiomyopathy Questionnaire"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "mavacamten",
+      "target_entity": "cardiac myosin",
+      "confidence": 0.98,
+      "evidence": "Mavacamten is a first-in-class targeted inhibitor of cardiac myosin"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "mavacamten",
+      "target_entity": "myosin inhibition",
+      "confidence": 0.97,
+      "evidence": "first-in-class, targeted strategy of myosin inhibition"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "mavacamten",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.97,
+      "evidence": "investigate the efficacy and safety of mavacamten in treating symptomatic oHCM"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "mavacamten",
+      "target_entity": "EXPLORER-HCM",
+      "confidence": 0.99,
+      "evidence": "EXPLORER-HCM is a multicenter, phase 3, randomized, double-blind, placebo-controlled trial to investigate the efficacy and safety of mavacamten"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "mavacamten",
+      "target_entity": "PIONEER-HCM",
+      "confidence": 0.95,
+      "evidence": "shown to reduce LV outflow tract obstruction... in the PIONEER-HCM phase 2 study"
+    },
+    {
+      "relation_type": "STUDIES",
+      "source_entity": "EXPLORER-HCM",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.98,
+      "evidence": "EXPLORER-HCM is a phase 3 trial in oHCM"
+    },
+    {
+      "relation_type": "STUDIES",
+      "source_entity": "PIONEER-HCM",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.95,
+      "evidence": "relieve symptoms of oHCM in the PIONEER-HCM phase 2 study"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "obstructive hypertrophic cardiomyopathy",
+      "target_entity": "left ventricular hypertrophy",
+      "confidence": 0.97,
+      "evidence": "oHCM is characterized by unexplained left ventricular (LV) hypertrophy"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "obstructive hypertrophic cardiomyopathy",
+      "target_entity": "left ventricular outflow tract obstruction",
+      "confidence": 0.97,
+      "evidence": "associated with dynamic LV outflow tract obstruction"
+    },
+    {
+      "relation_type": "REDUCES",
+      "source_entity": "mavacamten",
+      "target_entity": "left ventricular outflow tract obstruction",
+      "confidence": 0.95,
+      "evidence": "shown to reduce LV outflow tract obstruction, improve exercise capacity"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:03:07.668250+00:00",
+  "error": null
+}

@@ -1,0 +1,255 @@
+{
+  "document_id": "pmid_40544432",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/06_glp1_landscape/docs/pmid_40544432.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "cagrilintide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "target_class": "amylin analogue"
+      },
+      "confidence": 0.98,
+      "context": "Cagrilintide and semaglutide have each been shown to induce weight loss as monotherapies"
+    },
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "target_class": "GLP-1 receptor agonist"
+      },
+      "confidence": 0.98,
+      "context": "coadministration of cagrilintide and semaglutide (called CagriSema)"
+    },
+    {
+      "name": "cagrilintide-semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "fixed-dose peptide combination",
+        "also_known_as": "CagriSema",
+        "dose": "2.4 mg each once-weekly"
+      },
+      "confidence": 0.98,
+      "context": "once-weekly cagrilintide-semaglutide (2.4 mg each)"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.9,
+      "context": "Glucagon-Like Peptide-1 Receptor Agonists"
+    },
+    {
+      "name": "glucagon-like peptide-1 receptor",
+      "entity_type": "PROTEIN",
+      "confidence": 0.9,
+      "context": "Glucagon-Like Peptide-1 Receptor Agonists"
+    },
+    {
+      "name": "islet amyloid polypeptide",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "also_known_as": "amylin"
+      },
+      "confidence": 0.9,
+      "context": "Islet Amyloid Polypeptide"
+    },
+    {
+      "name": "glucagon-like peptide 1",
+      "entity_type": "PROTEIN",
+      "confidence": 0.9,
+      "context": "Glucagon-Like Peptide 1"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "confidence": 0.98,
+      "context": "adults with obesity and type 2 diabetes"
+    },
+    {
+      "name": "overweight",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "Adults with Overweight or Obesity"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "confidence": 0.98,
+      "context": "adults with type 2 diabetes"
+    },
+    {
+      "name": "hypoglycemia",
+      "entity_type": "ADVERSE_EVENT",
+      "confidence": 0.8,
+      "context": "MeSH Terms: ... Hypoglycemia"
+    },
+    {
+      "name": "gastrointestinal adverse events",
+      "entity_type": "ADVERSE_EVENT",
+      "confidence": 0.95,
+      "context": "Gastrointestinal adverse events were reported by 72.5% of the patients in the cagrilintide-semaglutide group"
+    },
+    {
+      "name": "glycated hemoglobin",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "also_known_as": "HbA1c"
+      },
+      "confidence": 0.95,
+      "context": "glycated hemoglobin level of 7 to 10%"
+    },
+    {
+      "name": "body weight",
+      "entity_type": "BIOMARKER",
+      "confidence": 0.9,
+      "context": "percent change in body weight"
+    },
+    {
+      "name": "body-mass index",
+      "entity_type": "BIOMARKER",
+      "confidence": 0.9,
+      "context": "body-mass index of 27 or more"
+    },
+    {
+      "name": "blood glucose",
+      "entity_type": "BIOMARKER",
+      "confidence": 0.85,
+      "context": "MeSH Terms: ... Blood Glucose"
+    },
+    {
+      "name": "REDEFINE 2",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT05394519",
+        "phase": "3a",
+        "design": "double-blind, randomized, placebo-controlled",
+        "n": 1206,
+        "duration_weeks": 68,
+        "countries": 12
+      },
+      "confidence": 0.99,
+      "context": "REDEFINE 2 ClinicalTrials.gov number, NCT05394519"
+    },
+    {
+      "name": "Novo Nordisk",
+      "entity_type": "ORGANIZATION",
+      "confidence": 0.99,
+      "context": "Funded by Novo Nordisk"
+    },
+    {
+      "name": "pmid_40544432",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "journal": "The New England journal of medicine",
+        "year": 2025,
+        "pmid": "40544432"
+      },
+      "confidence": 0.99,
+      "context": "PMID: 40544432"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "COMPONENT_OF",
+      "source_entity": "cagrilintide",
+      "target_entity": "cagrilintide-semaglutide",
+      "confidence": 0.98,
+      "evidence": "coadministration of cagrilintide and semaglutide (called CagriSema)"
+    },
+    {
+      "relation_type": "COMPONENT_OF",
+      "source_entity": "semaglutide",
+      "target_entity": "cagrilintide-semaglutide",
+      "confidence": 0.98,
+      "evidence": "coadministration of cagrilintide and semaglutide (called CagriSema)"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "semaglutide",
+      "target_entity": "glucagon-like peptide-1 receptor",
+      "confidence": 0.9,
+      "evidence": "Glucagon-Like Peptide-1 Receptor Agonists ... Semaglutide"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "glucagon-like peptide-1 receptor",
+      "confidence": 0.9,
+      "evidence": "Glucagon-Like Peptide-1 Receptor Agonists"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "cagrilintide",
+      "target_entity": "islet amyloid polypeptide",
+      "confidence": 0.7,
+      "evidence": "Islet Amyloid Polypeptide MeSH term associated with cagrilintide amylin analogue"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "cagrilintide-semaglutide",
+      "target_entity": "obesity",
+      "confidence": 0.95,
+      "evidence": "resulted in a significantly lower body weight than placebo in adults with obesity and type 2 diabetes"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "cagrilintide-semaglutide",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.95,
+      "evidence": "adults with obesity and type 2 diabetes"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "cagrilintide-semaglutide",
+      "target_entity": "REDEFINE 2",
+      "confidence": 0.99,
+      "evidence": "REDEFINE 2 ClinicalTrials.gov number, NCT05394519"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "cagrilintide-semaglutide",
+      "target_entity": "gastrointestinal adverse events",
+      "confidence": 0.95,
+      "evidence": "Gastrointestinal adverse events were reported by 72.5% of the patients in the cagrilintide-semaglutide group"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "GLP1R",
+      "target_entity": "glucagon-like peptide-1 receptor",
+      "confidence": 0.9,
+      "evidence": "Glucagon-Like Peptide-1 Receptor"
+    },
+    {
+      "relation_type": "SPONSORED_BY",
+      "source_entity": "REDEFINE 2",
+      "target_entity": "Novo Nordisk",
+      "confidence": 0.99,
+      "evidence": "Funded by Novo Nordisk; REDEFINE 2"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "glycated hemoglobin",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.9,
+      "evidence": "glycated hemoglobin level of 7 to 10%, and type 2 diabetes"
+    },
+    {
+      "relation_type": "REPORTED_IN",
+      "source_entity": "REDEFINE 2",
+      "target_entity": "pmid_40544432",
+      "confidence": 0.95,
+      "evidence": "PMID: 40544432 ... REDEFINE 2"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:10:06.767118+00:00",
+  "error": null
+}

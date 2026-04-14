@@ -1,0 +1,94 @@
+review_threshold: 0.7
+relations:
+- source_id: biomarker:kansas_city_cardiomyopathy_questionnaire
+  source_name: Kansas City Cardiomyopathy Questionnaire
+  target_id: disease:obstructive_hypertrophic_cardiomyopathy
+  target_name: obstructive hypertrophic cardiomyopathy
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.8
+  evidence: KCCQ, a well validated disease-specific measure
+  source_document: pmid_34004177
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:post_exercise_lvot_gradient
+  source_name: post-exercise LVOT gradient
+  target_id: disease:obstructive_hypertrophic_cardiomyopathy
+  target_name: obstructive hypertrophic cardiomyopathy
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.85
+  evidence: LVOT gradient of 50 mm Hg or greater
+  source_document: pmid_32871100
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: compound:deucravacitinib
+  source_name: deucravacitinib
+  target_id: adverse_event:covid_19
+  target_name: COVID-19
+  relation_type: CAUSES
+  confidence: 0.5
+  evidence: EAIRs for COVID-19 infections were higher at 2 years than at 1 year
+  source_document: pmid_38226713
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: biomarker:psoriasis_area_and_severity_index
+  source_name: Psoriasis Area and Severity Index
+  target_id: disease:plaque_psoriasis
+  target_name: plaque psoriasis
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.9
+  evidence: ≥75% reduction from baseline in Psoriasis Area and Severity Index
+  source_document: pmid_36115523
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:left_ventricular_outflow_tract_gradient
+  source_name: left ventricular outflow tract gradient
+  target_id: compound:mavacamten
+  target_name: mavacamten
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.9625
+  evidence: patients showed improvements in left ventricular outflow tract (LVOT)
+    gradients
+  source_document: pmid_38176782
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:left_ventricular_outflow_tract_gradient
+  source_name: left ventricular outflow tract gradient
+  target_id: disease:obstructive_hypertrophic_cardiomyopathy
+  target_name: obstructive hypertrophic cardiomyopathy
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.9
+  evidence: LVOT gradients ... obstructive hypertrophic cardiomyopathy
+  source_document: pmid_38176782
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:nt_probnp
+  source_name: NT-proBNP
+  target_id: compound:mavacamten
+  target_name: mavacamten
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.85
+  evidence: NT-proBNP reductions were sustained through 84 weeks
+  source_document: pmid_38176782
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:nt_probnp
+  source_name: NT-proBNP
+  target_id: disease:heart_failure
+  target_name: heart failure
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.85
+  evidence: N-terminal pro-B-type natriuretic peptide (NT-proBNP) levels
+  source_document: pmid_38176782
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:n_terminal_pro_b_type_natriuretic_peptide
+  source_name: N-terminal pro B-type natriuretic peptide
+  target_id: disease:obstructive_hypertrophic_cardiomyopathy
+  target_name: obstructive hypertrophic cardiomyopathy
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.85
+  evidence: NT-proBNP tracked as disease severity biomarker; sustained reductions
+    from baseline
+  source_document: pmid_39217450
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review

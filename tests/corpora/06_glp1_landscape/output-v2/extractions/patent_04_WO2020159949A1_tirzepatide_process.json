@@ -1,0 +1,218 @@
+{
+  "document_id": "patent_04_WO2020159949A1_tirzepatide_process",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/06_glp1_landscape/docs/patent_04_WO2020159949A1_tirzepatide_process.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "tirzepatide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "cas": "2023788-19-2",
+        "length": "39 aa",
+        "amidation": "C-terminal"
+      },
+      "confidence": 0.98,
+      "context": "tirzepatide, a GIP/GLP-1 dual agonist peptide"
+    },
+    {
+      "name": "GIP receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucose-dependent insulinotropic polypeptide receptor"
+      },
+      "confidence": 0.97,
+      "context": "activates both the glucose-dependent insulinotropic polypeptide (GIP) receptor"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.97,
+      "context": "and the glucagon-like peptide-1 (GLP-1) receptor"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "confidence": 0.98,
+      "context": "for the treatment of type 2 diabetes mellitus and obesity"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "confidence": 0.98,
+      "context": "for the treatment of type 2 diabetes mellitus and obesity"
+    },
+    {
+      "name": "dual GIP/GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "bias": "imbalanced potency favoring GIP"
+      },
+      "confidence": 0.97,
+      "context": "dual GIP/GLP-1 receptor agonist ... imbalanced potency favoring GIP receptor activation"
+    },
+    {
+      "name": "SURPASS",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "indication": "type 2 diabetes"
+      },
+      "confidence": 0.9,
+      "context": "Clinical development includes the SURPASS and SURMOUNT trial programs"
+    },
+    {
+      "name": "SURMOUNT",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "indication": "obesity"
+      },
+      "confidence": 0.9,
+      "context": "Clinical development includes the SURPASS and SURMOUNT trial programs"
+    },
+    {
+      "name": "Eli Lilly and Company",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "assignee"
+      },
+      "confidence": 0.99,
+      "context": "Assignee: Eli Lilly and Company"
+    },
+    {
+      "name": "WO2020159949A1",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "type": "patent",
+        "title": "Process for preparing a GIP/GLP1 dual agonist",
+        "filing_date": "2020-01-28"
+      },
+      "confidence": 0.99,
+      "context": "Patent ID: WO2020159949A1"
+    },
+    {
+      "name": "YX1EGTFTSDYSIX2LDKIAQKAFVQWLMGGPSSGAPPPS",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "seq_type": "protein",
+        "length": 39,
+        "notes": "X1/X2=Aib; Lys20 acylated with C20 diacid linker",
+        "requires_validation": true
+      },
+      "confidence": 0.95,
+      "context": "39-amino-acid synthetic peptide with the sequence YX1EGTFTSDYSIX2LDKIAQKAFVQWLMGGPSSGAPPPS"
+    },
+    {
+      "name": "2-aminoisobutyric acid",
+      "entity_type": "METABOLITE",
+      "attributes": {
+        "abbr": "Aib"
+      },
+      "confidence": 0.9,
+      "context": "X1 and X2 are Aib (2-aminoisobutyric acid)"
+    },
+    {
+      "name": "Fmoc solid-phase peptide synthesis",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "category": "manufacturing process"
+      },
+      "confidence": 0.9,
+      "context": "solid-phase peptide synthesis (SPPS) using Fmoc chemistry"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "tirzepatide",
+      "target_entity": "GIP receptor",
+      "confidence": 0.98,
+      "evidence": "activates both the glucose-dependent insulinotropic polypeptide (GIP) receptor"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "tirzepatide",
+      "target_entity": "GLP1R",
+      "confidence": 0.98,
+      "evidence": "and the glucagon-like peptide-1 (GLP-1) receptor"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "tirzepatide",
+      "target_entity": "GIP receptor",
+      "confidence": 0.97,
+      "evidence": "activates both the glucose-dependent insulinotropic polypeptide (GIP) receptor"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "tirzepatide",
+      "target_entity": "GLP1R",
+      "confidence": 0.97,
+      "evidence": "activates both ... the glucagon-like peptide-1 (GLP-1) receptor"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.95,
+      "evidence": "developed by Eli Lilly for the treatment of type 2 diabetes mellitus"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "obesity",
+      "confidence": 0.95,
+      "evidence": "for the treatment of type 2 diabetes mellitus and obesity"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "tirzepatide",
+      "target_entity": "SURPASS",
+      "confidence": 0.9,
+      "evidence": "Clinical development includes the SURPASS and SURMOUNT trial programs"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "tirzepatide",
+      "target_entity": "SURMOUNT",
+      "confidence": 0.9,
+      "evidence": "SURPASS and SURMOUNT trial programs demonstrating superior glycemic control and weight loss"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "tirzepatide",
+      "target_entity": "dual GIP/GLP-1 receptor agonism",
+      "confidence": 0.97,
+      "evidence": "dual GIP/GLP-1 receptor agonist"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "tirzepatide",
+      "target_entity": "Eli Lilly and Company",
+      "confidence": 0.98,
+      "evidence": "developed by Eli Lilly"
+    },
+    {
+      "relation_type": "DESCRIBED_IN",
+      "source_entity": "tirzepatide",
+      "target_entity": "WO2020159949A1",
+      "confidence": 0.99,
+      "evidence": "The invention describes manufacturing processes and intermediates for producing tirzepatide"
+    },
+    {
+      "relation_type": "HAS_SEQUENCE",
+      "source_entity": "tirzepatide",
+      "target_entity": "YX1EGTFTSDYSIX2LDKIAQKAFVQWLMGGPSSGAPPPS",
+      "confidence": 0.98,
+      "evidence": "39-amino-acid synthetic peptide with the sequence YX1EGTFTSDYSIX2LDKIAQKAFVQWLMGGPSSGAPPPS"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:08:44.654077+00:00",
+  "error": null
+}

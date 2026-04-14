@@ -1,0 +1,254 @@
+{
+  "document_id": "pmid_38226713",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/05_cardiovascular/docs/pmid_38226713.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "deucravacitinib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "route": "oral",
+        "class": "allosteric TYK2 inhibitor",
+        "dose": "6 mg once daily"
+      },
+      "confidence": 0.98,
+      "context": "deucravacitinib, an oral selective allosteric tyrosine kinase 2 inhibitor"
+    },
+    {
+      "name": "TYK2",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.98,
+      "context": "tyrosine kinase 2 (TYK2)"
+    },
+    {
+      "name": "tyrosine kinase 2",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.98,
+      "context": "an enzyme involved in inflammation called tyrosine kinase 2 (TYK2)"
+    },
+    {
+      "name": "plaque psoriasis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "severity": "moderate-to-severe"
+      },
+      "confidence": 0.98,
+      "context": "adults with moderate-to-severe plaque psoriasis"
+    },
+    {
+      "name": "psoriasis",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.98,
+      "context": "Psoriasis is a chronic inflammatory skin condition"
+    },
+    {
+      "name": "POETYK PSO-1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "III"
+      },
+      "confidence": 0.98,
+      "context": "phase III POETYK PSO-1 and PSO-2 trials"
+    },
+    {
+      "name": "POETYK PSO-2",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "III"
+      },
+      "confidence": 0.98,
+      "context": "phase III POETYK PSO-1 and PSO-2 trials"
+    },
+    {
+      "name": "POETYK LTE",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "IIIb",
+        "design": "open-label long-term extension"
+      },
+      "confidence": 0.98,
+      "context": "POETYK long-term extension (LTE), an ongoing phase IIIb open-label trial"
+    },
+    {
+      "name": "allosteric TYK2 inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "oral selective allosteric tyrosine kinase 2 inhibitor"
+    },
+    {
+      "name": "PASI 75",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "definition": "at least 75% reduction from baseline Psoriasis Area and Severity Index"
+      },
+      "confidence": 0.9,
+      "context": "at least 75% reduction from baseline Psoriasis Area and Severity Index score (PASI 75)"
+    },
+    {
+      "name": "sPGA 0/1",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "definition": "static Physician Global Assessment score of 0 or 1 (clear/almost clear)"
+      },
+      "confidence": 0.9,
+      "context": "static Physicians Global Assessment (sPGA) score of 0/1 (clear/almost clear)"
+    },
+    {
+      "name": "serious infections",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "EAIR_yr1": "1.7",
+        "EAIR_yr2": "2.6"
+      },
+      "confidence": 0.95,
+      "context": "serious infections (1.7 vs. 2.6)"
+    },
+    {
+      "name": "herpes zoster",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "EAIR_yr1": "0.9",
+        "EAIR_yr2": "0.8"
+      },
+      "confidence": 0.95,
+      "context": "herpes zoster (0.9 vs. 0.8)"
+    },
+    {
+      "name": "major adverse cardiovascular events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "EAIR_yr1": "0.3",
+        "EAIR_yr2": "0.4"
+      },
+      "confidence": 0.95,
+      "context": "major adverse cardiovascular events (0.3 vs. 0.4)"
+    },
+    {
+      "name": "venous thromboembolic events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "EAIR_yr1": "0.2",
+        "EAIR_yr2": "0.1"
+      },
+      "confidence": 0.95,
+      "context": "venous thromboembolic events (0.2 vs. 0.1)"
+    },
+    {
+      "name": "malignancies",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "EAIR_yr1": "1.0",
+        "EAIR_yr2": "0.9"
+      },
+      "confidence": 0.9,
+      "context": "malignancies (1.0 vs. 0.9)"
+    },
+    {
+      "name": "COVID-19",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "EAIR_yr1": "0.5",
+        "EAIR_yr2": "5.1"
+      },
+      "confidence": 0.95,
+      "context": "EAIRs for COVID-19 infections were higher at 2 years than at 1 year (5.1 vs. 0.5)"
+    },
+    {
+      "name": "itching",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "improve psoriatic patches and symptoms (such as itching)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "deucravacitinib",
+      "target_entity": "tyrosine kinase 2",
+      "confidence": 0.98,
+      "evidence": "deucravacitinib, an oral selective allosteric tyrosine kinase 2 inhibitor"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "deucravacitinib",
+      "target_entity": "TYK2",
+      "confidence": 0.98,
+      "evidence": "interferes with an enzyme involved in inflammation called tyrosine kinase 2 (TYK2)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "deucravacitinib",
+      "target_entity": "plaque psoriasis",
+      "confidence": 0.95,
+      "evidence": "adults with moderate-to-severe plaque psoriasis who completed PSO-1 or PSO-2 receive deucravacitinib"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "deucravacitinib",
+      "target_entity": "POETYK PSO-1",
+      "confidence": 0.98,
+      "evidence": "phase III POETYK PSO-1 and PSO-2 trials, deucravacitinib ... was well tolerated and efficacious"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "deucravacitinib",
+      "target_entity": "POETYK PSO-2",
+      "confidence": 0.98,
+      "evidence": "phase III POETYK PSO-1 and PSO-2 trials, deucravacitinib ... was well tolerated and efficacious"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "deucravacitinib",
+      "target_entity": "POETYK LTE",
+      "confidence": 0.98,
+      "evidence": "In the POETYK long-term extension (LTE) ... receive deucravacitinib 6 mg once daily"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "TYK2",
+      "target_entity": "tyrosine kinase 2",
+      "confidence": 0.95,
+      "evidence": "tyrosine kinase 2 (TYK2)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "serious infections",
+      "confidence": 0.7,
+      "evidence": "serious infections (1.7 vs. 2.6)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "herpes zoster",
+      "confidence": 0.7,
+      "evidence": "herpes zoster (0.9 vs. 0.8)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "COVID-19",
+      "confidence": 0.5,
+      "evidence": "EAIRs for COVID-19 infections were higher at 2 years than at 1 year"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "tyrosine kinase 2",
+      "target_entity": "psoriasis",
+      "confidence": 0.85,
+      "evidence": "an enzyme involved in inflammation called tyrosine kinase 2 (TYK2)"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:03:12.660074+00:00",
+  "error": null
+}

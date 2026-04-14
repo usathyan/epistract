@@ -1,0 +1,357 @@
+{
+  "document_id": "pmid_36764316",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/02_kras_g12c_landscape/docs/pmid_36764316.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "sotorasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "route": "oral",
+        "dose": "960 mg once daily"
+      },
+      "confidence": 0.98,
+      "context": "Sotorasib is a specific, irreversible inhibitor of the GTPase protein, KRASG12C"
+    },
+    {
+      "name": "docetaxel",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "route": "intravenous",
+        "dose": "75 mg/m2 once every 3 weeks"
+      },
+      "confidence": 0.98,
+      "context": "intravenous docetaxel (75 mg/m2 once every 3 weeks)"
+    },
+    {
+      "name": "KRAS",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "KRAS"
+      },
+      "confidence": 0.98,
+      "context": "KRASG12C mutation"
+    },
+    {
+      "name": "EGFR",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "EGFR"
+      },
+      "confidence": 0.95,
+      "context": "oncogenic driver mutation other than KRASG12C for which an approved therapy is available (eg EGFR or ALK)"
+    },
+    {
+      "name": "ALK",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "ALK"
+      },
+      "confidence": 0.95,
+      "context": "oncogenic driver mutation other than KRASG12C for which an approved therapy is available (eg EGFR or ALK)"
+    },
+    {
+      "name": "KRAS protein",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "family": "GTPase",
+        "also_known_as": "p21 ras"
+      },
+      "confidence": 0.95,
+      "context": "Sotorasib is a specific, irreversible inhibitor of the GTPase protein, KRASG12C"
+    },
+    {
+      "name": "PD-1",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "progressed after previous platinum-based chemotherapy and a PD-1 or PD-L1 inhibitor"
+    },
+    {
+      "name": "PD-L1",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "progressed after previous platinum-based chemotherapy and a PD-1 or PD-L1 inhibitor"
+    },
+    {
+      "name": "KRAS G12C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "hgvs_protein": "p.G12C",
+        "gene": "KRAS"
+      },
+      "confidence": 0.98,
+      "context": "KRASG12C-mutated advanced NSCLC"
+    },
+    {
+      "name": "non-small cell lung cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Carcinoma, Non-Small-Cell Lung",
+        "stage": "advanced"
+      },
+      "confidence": 0.98,
+      "context": "patients with non-small-cell lung cancer (NSCLC) with the KRASG12C mutation"
+    },
+    {
+      "name": "lung neoplasms",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Lung Neoplasms"
+      },
+      "confidence": 0.85,
+      "context": "MeSH Terms: ... Lung Neoplasms"
+    },
+    {
+      "name": "brain metastases",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "history of CNS metastases (present or absent)"
+    },
+    {
+      "name": "KRAS G12C inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "type": "irreversible covalent inhibitor"
+      },
+      "confidence": 0.95,
+      "context": "Sotorasib is a specific, irreversible inhibitor of the GTPase protein, KRASG12C"
+    },
+    {
+      "name": "KRAS G12C mutation",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "predictive",
+        "gene": "KRAS"
+      },
+      "confidence": 0.95,
+      "context": "patients with non-small-cell lung cancer (NSCLC) with the KRASG12C mutation"
+    },
+    {
+      "name": "NCT04303780",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "phase 3",
+        "design": "randomised, open-label",
+        "n_patients": 345,
+        "centres": 148,
+        "countries": 22,
+        "primary_endpoint": "progression-free survival",
+        "registry": "ClinicalTrials.gov"
+      },
+      "confidence": 0.98,
+      "context": "This trial is registered at ClinicalTrials.gov, NCT04303780"
+    },
+    {
+      "name": "diarrhoea",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "grade": ">=3",
+        "incidence": "12%",
+        "drug": "sotorasib"
+      },
+      "confidence": 0.95,
+      "context": "most common treatment-related adverse events of grade 3 or worse were diarrhoea (n= 20 [12%])"
+    },
+    {
+      "name": "alanine aminotransferase increased",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "grade": ">=3",
+        "incidence": "8%",
+        "drug": "sotorasib"
+      },
+      "confidence": 0.95,
+      "context": "alanine aminotransferase increase (n=13 [8%])"
+    },
+    {
+      "name": "aspartate aminotransferase increased",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "grade": ">=3",
+        "incidence": "5%",
+        "drug": "sotorasib"
+      },
+      "confidence": 0.95,
+      "context": "aspartate aminotransferase increase (n=9 [5%])"
+    },
+    {
+      "name": "neutropenia",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "grade": ">=3",
+        "incidence": "9%",
+        "drug": "docetaxel"
+      },
+      "confidence": 0.95,
+      "context": "the most common treatment-related adverse events of grade 3 or worse were neutropenia (n=13 [9%])"
+    },
+    {
+      "name": "fatigue",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "grade": ">=3",
+        "incidence": "6%",
+        "drug": "docetaxel"
+      },
+      "confidence": 0.95,
+      "context": "fatigue (n=9 [6%])"
+    },
+    {
+      "name": "febrile neutropenia",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "grade": ">=3",
+        "incidence": "5%",
+        "drug": "docetaxel"
+      },
+      "confidence": 0.95,
+      "context": "febrile neutropenia (n=8 [5%])"
+    },
+    {
+      "name": "Amgen",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "funder/sponsor"
+      },
+      "confidence": 0.98,
+      "context": "FUNDING: Amgen"
+    },
+    {
+      "name": "PMID:36764316",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "journal": "Lancet",
+        "year": 2023,
+        "pmid": "36764316",
+        "title": "Sotorasib versus docetaxel for previously treated non-small-cell lung cancer with KRAS"
+      },
+      "confidence": 0.98,
+      "context": "Journal: Lancet (London, England) (2023) PMID: 36764316"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.98,
+      "evidence": "Sotorasib is a specific, irreversible inhibitor of the GTPase protein, KRASG12C"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS",
+      "confidence": 0.98,
+      "evidence": "Sotorasib is a specific, irreversible inhibitor of the GTPase protein, KRASG12C"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "sotorasib",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.95,
+      "evidence": "patients with non-small-cell lung cancer (NSCLC) with the KRASG12C mutation"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "sotorasib",
+      "target_entity": "NCT04303780",
+      "confidence": 0.98,
+      "evidence": "randomly assigned (1:1) patients to oral sotorasib (960 mg once daily) or intravenous docetaxel"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "docetaxel",
+      "target_entity": "NCT04303780",
+      "confidence": 0.98,
+      "evidence": "randomly assigned (1:1) patients to oral sotorasib (960 mg once daily) or intravenous docetaxel"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "sotorasib",
+      "target_entity": "diarrhoea",
+      "confidence": 0.95,
+      "evidence": "For sotorasib, the most common treatment-related adverse events of grade 3 or worse were diarrhoea (n= 20 [12%])"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "sotorasib",
+      "target_entity": "alanine aminotransferase increased",
+      "confidence": 0.95,
+      "evidence": "alanine aminotransferase increase (n=13 [8%])"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "sotorasib",
+      "target_entity": "aspartate aminotransferase increased",
+      "confidence": 0.95,
+      "evidence": "aspartate aminotransferase increase (n=9 [5%])"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "docetaxel",
+      "target_entity": "neutropenia",
+      "confidence": 0.95,
+      "evidence": "For docetaxel, the most common treatment-related adverse events of grade 3 or worse were neutropenia (n=13 [9%])"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "docetaxel",
+      "target_entity": "fatigue",
+      "confidence": 0.95,
+      "evidence": "fatigue (n=9 [6%])"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "docetaxel",
+      "target_entity": "febrile neutropenia",
+      "confidence": 0.95,
+      "evidence": "febrile neutropenia (n=8 [5%])"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS protein",
+      "confidence": 0.9,
+      "evidence": "GTPase protein, KRASG12C"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.95,
+      "evidence": "KRASG12C-mutated advanced NSCLC"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "KRAS G12C mutation",
+      "target_entity": "sotorasib",
+      "confidence": 0.95,
+      "evidence": "patients with KRASG12C mutation ... sotorasib significantly increased progression-free survival"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "KRAS G12C mutation",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.85,
+      "evidence": "KRASG12C-mutated advanced NSCLC"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS G12C inhibition",
+      "confidence": 0.95,
+      "evidence": "Sotorasib is a specific, irreversible inhibitor of the GTPase protein, KRASG12C"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T20:23:01.647202+00:00",
+  "error": null
+}

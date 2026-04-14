@@ -1,0 +1,176 @@
+{
+  "document_id": "pmid_38813446",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/03_rare_disease/docs/pmid_38813446.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "vosoritide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "class": "C-type natriuretic peptide analog",
+        "route": "subcutaneous"
+      },
+      "confidence": 0.98,
+      "context": "Vosoritide is a C-type natriuretic peptide analog that was recently approved for improving growth in children with achondroplasia."
+    },
+    {
+      "name": "hypochondroplasia",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "inheritance": "autosomal dominant",
+        "category": "skeletal dysplasia"
+      },
+      "confidence": 0.98,
+      "context": "Hypochondroplasia is a rare autosomal dominant skeletal dysplasia due to activating variants in FGFR3."
+    },
+    {
+      "name": "achondroplasia",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "recently approved for improving growth in children with achondroplasia"
+    },
+    {
+      "name": "FGFR3",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "autosomal dominant skeletal dysplasia due to activating variants in FGFR3"
+    },
+    {
+      "name": "FGFR3 protein",
+      "entity_type": "PROTEIN",
+      "confidence": 0.9,
+      "context": "activating variants in FGFR3"
+    },
+    {
+      "name": "C-type natriuretic peptide",
+      "entity_type": "PROTEIN",
+      "confidence": 0.9,
+      "context": "Vosoritide is a C-type natriuretic peptide analog"
+    },
+    {
+      "name": "disproportionate short stature",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.95,
+      "context": "presents with disproportionate short stature with a wide range of clinical severity"
+    },
+    {
+      "name": "injection site reaction",
+      "entity_type": "ADVERSE_EVENT",
+      "confidence": 0.98,
+      "context": "Injection site reactions occurred in 83.3% of participants."
+    },
+    {
+      "name": "NCT04219007",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "2",
+        "design": "single-arm open-label",
+        "n_enrolled": 26,
+        "n_treated": 24,
+        "dose": "15 ug/kg/day subcutaneous",
+        "duration_months": 12
+      },
+      "confidence": 0.99,
+      "context": "This trial is registered with ClinicalTrials.gov (NCT04219007)."
+    },
+    {
+      "name": "annualized growth velocity",
+      "entity_type": "BIOMARKER",
+      "confidence": 0.9,
+      "context": "co-primary endpoints included... change from baseline in age-sex standardized annualized growth velocity"
+    },
+    {
+      "name": "height standardized deviation score",
+      "entity_type": "BIOMARKER",
+      "confidence": 0.9,
+      "context": "height standardized deviation score (SDS) after 12 months of treatment"
+    },
+    {
+      "name": "FGFR3 activation",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "confidence": 0.85,
+      "context": "activating variants in FGFR3"
+    },
+    {
+      "name": "BioMarin Pharmaceutical",
+      "entity_type": "ORGANIZATION",
+      "confidence": 0.98,
+      "context": "supported by an investigator-initiated grant from BioMarin Pharmaceutical"
+    },
+    {
+      "name": "EClinicalMedicine",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "year": 2024,
+        "pmid": "38813446"
+      },
+      "confidence": 0.98,
+      "context": "Journal: EClinicalMedicine (2024) PMID: 38813446"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "vosoritide",
+      "target_entity": "achondroplasia",
+      "confidence": 0.95,
+      "evidence": "Vosoritide is a C-type natriuretic peptide analog that was recently approved for improving growth in children with achondroplasia."
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "vosoritide",
+      "target_entity": "NCT04219007",
+      "confidence": 0.98,
+      "evidence": "evaluate the safety and efficacy of vosoritide in children with hypochondroplasia... registered with ClinicalTrials.gov (NCT04219007)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "vosoritide",
+      "target_entity": "injection site reaction",
+      "confidence": 0.95,
+      "evidence": "Injection site reactions occurred in 83.3% of participants."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "FGFR3",
+      "target_entity": "hypochondroplasia",
+      "confidence": 0.98,
+      "evidence": "Hypochondroplasia is a rare autosomal dominant skeletal dysplasia due to activating variants in FGFR3."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "FGFR3",
+      "target_entity": "achondroplasia",
+      "confidence": 0.8,
+      "evidence": "Efficacy was similar to what has been reported in children with achondroplasia (FGFR3 disorder)"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "FGFR3",
+      "target_entity": "FGFR3 protein",
+      "confidence": 0.9,
+      "evidence": "activating variants in FGFR3"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "annualized growth velocity",
+      "target_entity": "vosoritide",
+      "confidence": 0.85,
+      "evidence": "Annualized growth velocity increased by 2.26 standard deviations (SD)... during the treatment period versus the observation period."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "vosoritide",
+      "target_entity": "hypochondroplasia",
+      "confidence": 0.9,
+      "evidence": "Vosoritide was safe and effective in increasing growth velocity in children with hypochondroplasia."
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T22:54:45.598743+00:00",
+  "error": null
+}

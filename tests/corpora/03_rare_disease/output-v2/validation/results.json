@@ -1,0 +1,979 @@
+{
+  "generated_at": "2026-04-13T22:55:57.411563+00:00",
+  "output_dir": "tests/corpora/03_rare_disease/output-v2",
+  "stats": {
+    "files_scanned": 15,
+    "total_matches": 64,
+    "valid": 0,
+    "invalid": 53,
+    "unvalidated": 0,
+    "found": 11,
+    "by_type": {
+      "SMILES": 53,
+      "NCT_NUMBER": 11
+    },
+    "rdkit_available": true,
+    "biopython_available": true,
+    "enrichment": {
+      "entities_added": 0,
+      "relations_added": 0
+    }
+  },
+  "files": [
+    {
+      "file": "pmid_26684019.json",
+      "document_id": "pmid_26684019",
+      "matches_found": 4,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(BMN111)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "the C-type natriuretic peptide (CNP) analog (BMN111)",
+          "validation": {
+            "valid": false,
+            "input": "(BMN111)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_26684019.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(BMN111)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "C-type natriuretic peptide (CNP) analog (BMN111)",
+          "validation": {
+            "valid": false,
+            "input": "(BMN111)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_26684019.json",
+          "source_field": "entities[1].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "Fgfr3Y367C/+",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Fgfr3Y367C/+ mice mimicking ACH",
+          "validation": {
+            "valid": false,
+            "input": "Fgfr3Y367C/+",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_26684019.json",
+          "source_field": "entities[16].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(BMN111)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "the C-type natriuretic peptide (CNP) analog (BMN111)",
+          "validation": {
+            "valid": false,
+            "input": "(BMN111)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_26684019.json",
+          "source_field": "relations[13].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_29653686.json",
+      "document_id": "pmid_29653686",
+      "matches_found": 0,
+      "results": []
+    },
+    {
+      "file": "pmid_31258325.json",
+      "document_id": "pmid_31258325",
+      "matches_found": 6,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(1946-September",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Searches of MEDLINE (1946-September 1, 2018) were conducted using the terms pegvalias",
+          "validation": {
+            "valid": false,
+            "input": "(1946-September",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31258325.json",
+          "source_field": "entities[1].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(FDA)-approved",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "jection is the first Food and Drug Administration (FDA)-approved enzyme substitution therapy for patients with PKU",
+          "validation": {
+            "valid": false,
+            "input": "(FDA)-approved",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31258325.json",
+          "source_field": "entities[6].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(FDA)-approved",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "jection is the first Food and Drug Administration (FDA)-approved enzyme substitution therapy for patients with PKU",
+          "validation": {
+            "valid": false,
+            "input": "(FDA)-approved",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31258325.json",
+          "source_field": "entities[9].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(FDA)-approved",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "jection is the first Food and Drug Administration (FDA)-approved enzyme substitution therapy for patients with PKU",
+          "validation": {
+            "valid": false,
+            "input": "(FDA)-approved",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31258325.json",
+          "source_field": "relations[0].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(FDA)-approved",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "the first Food and Drug Administration (FDA)-approved enzyme substitution therapy for patients with PKU",
+          "validation": {
+            "valid": false,
+            "input": "(FDA)-approved",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31258325.json",
+          "source_field": "relations[1].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(FDA)-approved",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "the first Food and Drug Administration (FDA)-approved enzyme substitution therapy for patients with PKU",
+          "validation": {
+            "valid": false,
+            "input": "(FDA)-approved",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31258325.json",
+          "source_field": "relations[7].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_31375398.json",
+      "document_id": "pmid_31375398",
+      "matches_found": 4,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(epinephrine)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "requirement to carry auto-injectable adrenaline (epinephrine)",
+          "validation": {
+            "valid": false,
+            "input": "(epinephrine)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31375398.json",
+          "source_field": "entities[3].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(pegvaliase",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "an injectable enzyme substitution therapy (pegvaliase, a PEGylated phenylalanine ammonia lyase enzyme)",
+          "validation": {
+            "valid": false,
+            "input": "(pegvaliase",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31375398.json",
+          "source_field": "entities[8].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(pegvaliase)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "AEs) to an injectable enzyme substitution therapy (pegvaliase) in adult patients with phenylketonuria (PKU)",
+          "validation": {
+            "valid": false,
+            "input": "(pegvaliase)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31375398.json",
+          "source_field": "relations[0].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(pegvaliase",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "an injectable enzyme substitution therapy (pegvaliase, a PEGylated phenylalanine ammonia lyase enzyme)",
+          "validation": {
+            "valid": false,
+            "input": "(pegvaliase",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31375398.json",
+          "source_field": "relations[2].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_34070375.json",
+      "document_id": "pmid_34070375",
+      "matches_found": 7,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(fibroblast",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "isease caused by a missense mutation in the FGFR3 (fibroblast growth factor receptor 3) gene, which is the most",
+          "validation": {
+            "valid": false,
+            "input": "(fibroblast",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34070375.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(fibroblast",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "isease caused by a missense mutation in the FGFR3 (fibroblast growth factor receptor 3) gene",
+          "validation": {
+            "valid": false,
+            "input": "(fibroblast",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34070375.json",
+          "source_field": "entities[1].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(fibroblast",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "a missense mutation in the FGFR3 (fibroblast growth factor receptor 3) gene",
+          "validation": {
+            "valid": false,
+            "input": "(fibroblast",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34070375.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(fibroblast",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "isease caused by a missense mutation in the FGFR3 (fibroblast growth factor receptor 3) gene",
+          "validation": {
+            "valid": false,
+            "input": "(fibroblast",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34070375.json",
+          "source_field": "entities[11].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(fibroblast",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "isease caused by a missense mutation in the FGFR3 (fibroblast growth factor receptor 3) gene",
+          "validation": {
+            "valid": false,
+            "input": "(fibroblast",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34070375.json",
+          "source_field": "relations[0].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(fibroblast",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "a missense mutation in the FGFR3 (fibroblast growth factor receptor 3) gene",
+          "validation": {
+            "valid": false,
+            "input": "(fibroblast",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34070375.json",
+          "source_field": "relations[1].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(fibroblast",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "isease caused by a missense mutation in the FGFR3 (fibroblast growth factor receptor 3) gene",
+          "validation": {
+            "valid": false,
+            "input": "(fibroblast",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34070375.json",
+          "source_field": "relations[2].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_34694597.json",
+      "document_id": "pmid_34694597",
+      "matches_found": 3,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(VOXZOGO)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Vosoritide (VOXZOGO) is a modified recombinant human C-type natriureti",
+          "validation": {
+            "valid": false,
+            "input": "(VOXZOGO)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34694597.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(VOXZOGO)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Vosoritide (VOXZOGO) is a modified recombinant human C-type natriureti",
+          "validation": {
+            "valid": false,
+            "input": "(VOXZOGO)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34694597.json",
+          "source_field": "entities[1].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(VOXZOGO)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Vosoritide (VOXZOGO) is a modified recombinant human C-type natriureti",
+          "validation": {
+            "valid": false,
+            "input": "(VOXZOGO)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34694597.json",
+          "source_field": "relations[1].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_35294811.json",
+      "document_id": "pmid_35294811",
+      "matches_found": 6,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(AAV5-hFVIII-SQ)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Valoctocogene roxaparvovec (AAV5-hFVIII-SQ) is an adeno-associated virus 5 (AAV5)-based gene-",
+          "validation": {
+            "valid": false,
+            "input": "(AAV5-hFVIII-SQ)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35294811.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(AAV5)-based",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "c (AAV5-hFVIII-SQ) is an adeno-associated virus 5 (AAV5)-based gene-therapy vector containing a coagulation fact",
+          "validation": {
+            "valid": false,
+            "input": "(AAV5)-based",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35294811.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(measured",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "the change from baseline in factor VIII activity (measured with a chromogenic substrate assay)",
+          "validation": {
+            "valid": false,
+            "input": "(measured",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35294811.json",
+          "source_field": "entities[11].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(AAV5)-based",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "adeno-associated virus 5 (AAV5)-based gene-therapy vector containing a coagulation fact",
+          "validation": {
+            "valid": false,
+            "input": "(AAV5)-based",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35294811.json",
+          "source_field": "entities[17].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03370913",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "GENEr8-1 ClinicalTrials.gov number, NCT03370913",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_35294811.json",
+          "source_field": "entities[18].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(AAV5)-based",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "adeno-associated virus 5 (AAV5)-based gene-therapy vector containing a coagulation fact",
+          "validation": {
+            "valid": false,
+            "input": "(AAV5)-based",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35294811.json",
+          "source_field": "relations[8].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_36812433.json",
+      "document_id": "pmid_36812433",
+      "matches_found": 2,
+      "results": [
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03370913",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "GENEr8-1 ClinicalTrials.gov number, NCT03370913",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_36812433.json",
+          "source_field": "entities[10].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03370913",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "armaceutical; GENEr8-1 ClinicalTrials.gov number, NCT03370913",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_36812433.json",
+          "source_field": "relations[7].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_38522180.json",
+      "document_id": "pmid_38522180",
+      "matches_found": 0,
+      "results": []
+    },
+    {
+      "file": "pmid_38614387.json",
+      "document_id": "pmid_38614387",
+      "matches_found": 3,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "participants)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "mained the most common AE during year 3 (23.7% of participants)",
+          "validation": {
+            "valid": false,
+            "input": "participants)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38614387.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(chromogenic",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "FVIII activity (chromogenic substrate assay; imputed as 1 IU/dL at baseline",
+          "validation": {
+            "valid": false,
+            "input": "(chromogenic",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38614387.json",
+          "source_field": "entities[10].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(chromogenic",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "FVIII activity (chromogenic substrate assay; imputed as 1 IU/dL at baseline",
+          "validation": {
+            "valid": false,
+            "input": "(chromogenic",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38614387.json",
+          "source_field": "relations[5].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_38694233.json",
+      "document_id": "pmid_38694233",
+      "matches_found": 12,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT01819727)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "randomized trials PRISM-1 (NCT01819727)",
+          "validation": {
+            "valid": false,
+            "input": "(NCT01819727)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38694233.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT01819727",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "randomized trials PRISM-1 (NCT01819727)",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38694233.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT01889862)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "PRISM-2 (NCT01889862)",
+          "validation": {
+            "valid": false,
+            "input": "(NCT01889862)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38694233.json",
+          "source_field": "entities[6].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT01889862",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "PRISM-2 (NCT01889862)",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38694233.json",
+          "source_field": "entities[6].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT03694353)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "open-label extension study 165-304 (NCT03694353)",
+          "validation": {
+            "valid": false,
+            "input": "(NCT03694353)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38694233.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03694353",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "open-label extension study 165-304 (NCT03694353)",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38694233.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT01819727)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "final data from the randomized trials PRISM-1 (NCT01819727)",
+          "validation": {
+            "valid": false,
+            "input": "(NCT01819727)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38694233.json",
+          "source_field": "relations[1].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT01819727",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "final data from the randomized trials PRISM-1 (NCT01819727)",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38694233.json",
+          "source_field": "relations[1].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT01889862)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "PRISM-2 (NCT01889862)",
+          "validation": {
+            "valid": false,
+            "input": "(NCT01889862)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38694233.json",
+          "source_field": "relations[2].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT01889862",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "PRISM-2 (NCT01889862)",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38694233.json",
+          "source_field": "relations[2].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT03694353)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "open-label extension study 165-304 (NCT03694353)",
+          "validation": {
+            "valid": false,
+            "input": "(NCT03694353)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38694233.json",
+          "source_field": "relations[3].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03694353",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "open-label extension study 165-304 (NCT03694353)",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38694233.json",
+          "source_field": "relations[3].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_38813446.json",
+      "document_id": "pmid_38813446",
+      "matches_found": 5,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT04219007)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "This trial is registered with ClinicalTrials.gov (NCT04219007).",
+          "validation": {
+            "valid": false,
+            "input": "(NCT04219007)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38813446.json",
+          "source_field": "entities[8].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT04219007",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "This trial is registered with ClinicalTrials.gov (NCT04219007).",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38813446.json",
+          "source_field": "entities[8].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT04219007)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ondroplasia... registered with ClinicalTrials.gov (NCT04219007)",
+          "validation": {
+            "valid": false,
+            "input": "(NCT04219007)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38813446.json",
+          "source_field": "relations[1].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT04219007",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "ndroplasia... registered with ClinicalTrials.gov (NCT04219007)",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38813446.json",
+          "source_field": "relations[1].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "disorder)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "n reported in children with achondroplasia (FGFR3 disorder)",
+          "validation": {
+            "valid": false,
+            "input": "disorder)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38813446.json",
+          "source_field": "relations[4].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_38991118.json",
+      "document_id": "pmid_38991118",
+      "matches_found": 6,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(Roctavian",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "the development of valoctocogene roxaparvovec (Roctavian; Biomarin)",
+          "validation": {
+            "valid": false,
+            "input": "(Roctavian",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38991118.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "Biomarin)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "lopment of valoctocogene roxaparvovec (Roctavian; Biomarin)",
+          "validation": {
+            "valid": false,
+            "input": "Biomarin)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38991118.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(Roctavian",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "valoctocogene roxaparvovec (Roctavian; Biomarin)",
+          "validation": {
+            "valid": false,
+            "input": "(Roctavian",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38991118.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "Biomarin)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "valoctocogene roxaparvovec (Roctavian; Biomarin)",
+          "validation": {
+            "valid": false,
+            "input": "Biomarin)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38991118.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(Roctavian",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "valoctocogene roxaparvovec (Roctavian; Biomarin)",
+          "validation": {
+            "valid": false,
+            "input": "(Roctavian",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38991118.json",
+          "source_field": "relations[4].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "Biomarin)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "valoctocogene roxaparvovec (Roctavian; Biomarin)",
+          "validation": {
+            "valid": false,
+            "input": "Biomarin)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38991118.json",
+          "source_field": "relations[4].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_39226466.json",
+      "document_id": "pmid_39226466",
+      "matches_found": 3,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(valoctocogene",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Adeno-associated virus-based gene therapy (valoctocogene roxaparvovec) is an attractive treatment for hemo",
+          "validation": {
+            "valid": false,
+            "input": "(valoctocogene",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_39226466.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "roxaparvovec)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ssociated virus-based gene therapy (valoctocogene roxaparvovec) is an attractive treatment for hemophilia A.",
+          "validation": {
+            "valid": false,
+            "input": "roxaparvovec)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_39226466.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "roxaparvovec)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "valoctocogene roxaparvovec) is an attractive treatment for hemophilia A",
+          "validation": {
+            "valid": false,
+            "input": "roxaparvovec)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_39226466.json",
+          "source_field": "relations[0].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_40821249.json",
+      "document_id": "pmid_40821249",
+      "matches_found": 3,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(VOXZOGO)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Vosoritide (VOXZOGO), a C-type natriuretic peptide analog, is the firs",
+          "validation": {
+            "valid": false,
+            "input": "(VOXZOGO)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_40821249.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(VOXZOGO)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Vosoritide (VOXZOGO), a C-type natriuretic peptide analog",
+          "validation": {
+            "valid": false,
+            "input": "(VOXZOGO)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_40821249.json",
+          "source_field": "entities[1].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(VOXZOGO)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Vosoritide (VOXZOGO), a C-type natriuretic peptide analog, is the firs",
+          "validation": {
+            "valid": false,
+            "input": "(VOXZOGO)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_40821249.json",
+          "source_field": "relations[0].evidence"
+        }
+      ]
+    }
+  ]
+}

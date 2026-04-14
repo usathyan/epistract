@@ -1,0 +1,170 @@
+{
+  "document_id": "pmid_40305708",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/06_glp1_landscape/docs/pmid_40305708.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "class": "GLP-1 receptor agonist",
+        "dose": "2.4 mg once-weekly subcutaneous"
+      },
+      "confidence": 0.98,
+      "context": "Semaglutide, a glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "name": "glucagon-like peptide-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Semaglutide, a glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "name": "metabolic dysfunction-associated steatohepatitis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "MASH"
+      },
+      "confidence": 0.98,
+      "context": "metabolic dysfunction-associated steatohepatitis (MASH)"
+    },
+    {
+      "name": "liver fibrosis",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "stages": "stage 2 or 3"
+      },
+      "confidence": 0.95,
+      "context": "biopsy-defined MASH and fibrosis stage 2 or 3"
+    },
+    {
+      "name": "steatohepatitis",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "resolution of steatohepatitis without worsening of liver fibrosis"
+    },
+    {
+      "name": "GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "name": "NCT04822181",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "Phase 3",
+        "design": "multicenter, randomized, double-blind, placebo-controlled",
+        "n": "1197",
+        "duration": "240 weeks",
+        "randomization": "2:1"
+      },
+      "confidence": 0.99,
+      "context": "phase 3, multicenter, randomized, double-blind, placebo-controlled trial...ClinicalTrials.gov number, NCT04822181"
+    },
+    {
+      "name": "gastrointestinal adverse events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Gastrointestinal adverse events were more common in the semaglutide group"
+    },
+    {
+      "name": "Novo Nordisk",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "funder"
+      },
+      "confidence": 0.99,
+      "context": "Funded by Novo Nordisk"
+    },
+    {
+      "name": "liver",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "improved liver histologic results"
+    },
+    {
+      "name": "PMID:40305708",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "journal": "New England Journal of Medicine",
+        "year": "2025",
+        "title": "Phase 3 Trial of Semaglutide in Metabolic Dysfunction-Associated Steatohepatitis"
+      },
+      "confidence": 0.99,
+      "context": "The New England journal of medicine (2025) PMID: 40305708"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "semaglutide",
+      "target_entity": "glucagon-like peptide-1 receptor",
+      "confidence": 0.98,
+      "evidence": "Semaglutide, a glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "glucagon-like peptide-1 receptor",
+      "confidence": 0.95,
+      "evidence": "glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "metabolic dysfunction-associated steatohepatitis",
+      "confidence": 0.9,
+      "evidence": "Semaglutide...is a candidate for the treatment of metabolic dysfunction-associated steatohepatitis (MASH)"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "semaglutide",
+      "target_entity": "NCT04822181",
+      "confidence": 0.99,
+      "evidence": "assigned 1197 patients with biopsy-defined MASH...to receive once-weekly subcutaneous semaglutide at a dose of 2.4 mg or placebo"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "semaglutide",
+      "target_entity": "gastrointestinal adverse events",
+      "confidence": 0.9,
+      "evidence": "Gastrointestinal adverse events were more common in the semaglutide group"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "GLP1R",
+      "target_entity": "glucagon-like peptide-1 receptor",
+      "confidence": 0.95,
+      "evidence": "glucagon-like peptide-1 receptor"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "glucagon-like peptide-1 receptor",
+      "target_entity": "metabolic dysfunction-associated steatohepatitis",
+      "confidence": 0.75,
+      "evidence": "glucagon-like peptide-1 receptor agonist...candidate for the treatment of metabolic dysfunction-associated steatohepatitis"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:09:46.399259+00:00",
+  "error": null
+}

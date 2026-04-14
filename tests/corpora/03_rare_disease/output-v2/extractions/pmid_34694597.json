@@ -1,0 +1,224 @@
+{
+  "document_id": "pmid_34694597",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/03_rare_disease/docs/pmid_34694597.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "vosoritide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "inn": "vosoritide",
+        "brand_name": "VOXZOGO",
+        "drug_class": "modified recombinant human C-type natriuretic peptide (CNP) analogue",
+        "development_stage": "approved",
+        "modality": "biologic"
+      },
+      "confidence": 0.98,
+      "context": "Vosoritide (VOXZOGO) is a modified recombinant human C-type natriuretic peptide (CNP) analogue, being developed by BioMarin Pharmaceutical for the treatment of achondroplasia."
+    },
+    {
+      "name": "C-type natriuretic peptide",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "aliases": "CNP",
+        "protein_class": "peptide hormone"
+      },
+      "confidence": 0.95,
+      "context": "Vosoritide (VOXZOGO) is a modified recombinant human C-type natriuretic peptide (CNP) analogue"
+    },
+    {
+      "name": "Achondroplasia",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Achondroplasia",
+        "prevalence": "rare disease",
+        "cause": "gain-of-function mutation in FGFR3"
+      },
+      "confidence": 0.98,
+      "context": "being developed by BioMarin Pharmaceutical for the treatment of achondroplasia. Achondroplasia is caused by a gain-of-function mutation in the fibroblast growth factor receptor 3 gene (FGFR3)"
+    },
+    {
+      "name": "FGFR3",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "FGFR3",
+        "full_name": "fibroblast growth factor receptor 3",
+        "variant_type": "gain-of-function",
+        "gene_family": "receptor tyrosine kinase",
+        "function": "negative regulator of bone growth"
+      },
+      "confidence": 0.98,
+      "context": "Achondroplasia is caused by a gain-of-function mutation in the fibroblast growth factor receptor 3 gene (FGFR3), which is a negative regulator of bone growth."
+    },
+    {
+      "name": "FGFR3 protein",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "receptor tyrosine kinase",
+        "protein_family": "fibroblast growth factor receptor family",
+        "function": "negative regulator of bone growth"
+      },
+      "confidence": 0.9,
+      "context": "the fibroblast growth factor receptor 3 gene (FGFR3), which is a negative regulator of bone growth."
+    },
+    {
+      "name": "NPR-B",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "natriuretic peptide receptor B",
+        "protein_class": "receptor",
+        "aliases": "NPR2"
+      },
+      "confidence": 0.98,
+      "context": "Vosoritide acts to restore chondrogenesis through its binding to natriuretic peptide receptor B (NPR-B)"
+    },
+    {
+      "name": "NPR-B agonism restoring chondrogenesis via FGFR3 pathway inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "agonism",
+        "target": "NPR-B",
+        "downstream_effect": "inhibition of FGFR3 downstream signalling"
+      },
+      "confidence": 0.95,
+      "context": "Vosoritide acts to restore chondrogenesis through its binding to natriuretic peptide receptor B (NPR-B), resulting in the inhibition of downstream signalling pathways of the overactive FGFR3 gene."
+    },
+    {
+      "name": "FGFR3 downstream signalling pathway",
+      "entity_type": "PATHWAY",
+      "attributes": {
+        "pathway_class": "signaling",
+        "key_components": "FGFR3",
+        "role_in_disease": "overactive in achondroplasia"
+      },
+      "confidence": 0.9,
+      "context": "resulting in the inhibition of downstream signalling pathways of the overactive FGFR3 gene"
+    },
+    {
+      "name": "BioMarin Pharmaceutical",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "pharmaceutical company",
+        "role": "developer"
+      },
+      "confidence": 0.98,
+      "context": "being developed by BioMarin Pharmaceutical for the treatment of achondroplasia"
+    },
+    {
+      "name": "EU approval of vosoritide for achondroplasia (August 2021)",
+      "entity_type": "REGULATORY_ACTION",
+      "attributes": {
+        "action_type": "approval",
+        "jurisdiction": "European Union",
+        "date": "August 2021",
+        "indication": "achondroplasia in patients aged >= 2 years whose epiphyses are not closed"
+      },
+      "confidence": 0.98,
+      "context": "Vosoritide was approved in August 2021 in the EU for the treatment of achondroplasia in patients aged >= 2 years whose epiphyses are not closed"
+    },
+    {
+      "name": "US regulatory review of vosoritide",
+      "entity_type": "REGULATORY_ACTION",
+      "attributes": {
+        "action_type": "regulatory review",
+        "jurisdiction": "USA",
+        "status": "under review",
+        "indication": "achondroplasia"
+      },
+      "confidence": 0.9,
+      "context": "The drug is also under regulatory review in the USA for the treatment of achondroplasia"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "vosoritide",
+      "target_entity": "Achondroplasia",
+      "confidence": 0.98,
+      "evidence": "Vosoritide was approved in August 2021 in the EU for the treatment of achondroplasia in patients aged >= 2 years whose epiphyses are not closed"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "vosoritide",
+      "target_entity": "BioMarin Pharmaceutical",
+      "confidence": 0.98,
+      "evidence": "Vosoritide (VOXZOGO) is a modified recombinant human C-type natriuretic peptide (CNP) analogue, being developed by BioMarin Pharmaceutical for the treatment of achondroplasia."
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "vosoritide",
+      "target_entity": "NPR-B",
+      "confidence": 0.98,
+      "evidence": "Vosoritide acts to restore chondrogenesis through its binding to natriuretic peptide receptor B (NPR-B)"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "vosoritide",
+      "target_entity": "NPR-B",
+      "confidence": 0.9,
+      "evidence": "Vosoritide acts to restore chondrogenesis through its binding to natriuretic peptide receptor B (NPR-B), resulting in the inhibition of downstream signalling pathways of the overactive FGFR3 gene."
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "vosoritide",
+      "target_entity": "FGFR3 downstream signalling pathway",
+      "confidence": 0.95,
+      "evidence": "resulting in the inhibition of downstream signalling pathways of the overactive FGFR3 gene"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "vosoritide",
+      "target_entity": "NPR-B agonism restoring chondrogenesis via FGFR3 pathway inhibition",
+      "confidence": 0.95,
+      "evidence": "Vosoritide acts to restore chondrogenesis through its binding to natriuretic peptide receptor B (NPR-B), resulting in the inhibition of downstream signalling pathways of the overactive FGFR3 gene."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "FGFR3",
+      "target_entity": "Achondroplasia",
+      "confidence": 0.98,
+      "evidence": "Achondroplasia is caused by a gain-of-function mutation in the fibroblast growth factor receptor 3 gene (FGFR3)"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "FGFR3",
+      "target_entity": "FGFR3 protein",
+      "confidence": 0.95,
+      "evidence": "the fibroblast growth factor receptor 3 gene (FGFR3), which is a negative regulator of bone growth"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "FGFR3 protein",
+      "target_entity": "FGFR3 downstream signalling pathway",
+      "confidence": 0.9,
+      "evidence": "inhibition of downstream signalling pathways of the overactive FGFR3 gene"
+    },
+    {
+      "relation_type": "APPROVED_FOR",
+      "source_entity": "vosoritide",
+      "target_entity": "Achondroplasia",
+      "confidence": 0.98,
+      "evidence": "Vosoritide was approved in August 2021 in the EU for the treatment of achondroplasia in patients aged >= 2 years whose epiphyses are not closed"
+    },
+    {
+      "relation_type": "SUBJECT_OF",
+      "source_entity": "vosoritide",
+      "target_entity": "EU approval of vosoritide for achondroplasia (August 2021)",
+      "confidence": 0.98,
+      "evidence": "Vosoritide was approved in August 2021 in the EU for the treatment of achondroplasia"
+    },
+    {
+      "relation_type": "SUBJECT_OF",
+      "source_entity": "vosoritide",
+      "target_entity": "US regulatory review of vosoritide",
+      "confidence": 0.9,
+      "evidence": "The drug is also under regulatory review in the USA for the treatment of achondroplasia"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T22:54:55.383072+00:00",
+  "error": null
+}

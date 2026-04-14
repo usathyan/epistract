@@ -1,0 +1,151 @@
+{
+  "document_id": "pmid_36945734",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/06_glp1_landscape/docs/pmid_36945734.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "route": "oral",
+        "dose": "14 mg once daily",
+        "class": "GLP-1 receptor agonist"
+      },
+      "confidence": 0.98,
+      "context": "the effects of oral semaglutide, the first oral glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "the first oral glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "confidence": 0.98,
+      "context": "individuals with type 2 diabetes and established atherosclerotic CV disease"
+    },
+    {
+      "name": "atherosclerotic cardiovascular disease",
+      "entity_type": "DISEASE",
+      "confidence": 0.98,
+      "context": "established atherosclerotic CV disease (ASCVD)"
+    },
+    {
+      "name": "chronic kidney disease",
+      "entity_type": "DISEASE",
+      "confidence": 0.98,
+      "context": "and/or chronic kidney disease (CKD)"
+    },
+    {
+      "name": "coronary artery disease",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "evidence of ASCVD (coronary artery disease [CAD]"
+    },
+    {
+      "name": "cerebrovascular disease",
+      "entity_type": "DISEASE",
+      "confidence": 0.9,
+      "context": "coronary artery disease [CAD], cerebrovascular disease"
+    },
+    {
+      "name": "peripheral arterial disease",
+      "entity_type": "DISEASE",
+      "confidence": 0.9,
+      "context": "symptomatic peripheral arterial disease [PAD]"
+    },
+    {
+      "name": "cardiovascular events",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.9,
+      "context": "the risk of cardiovascular (CV) events"
+    },
+    {
+      "name": "estimated glomerular filtration rate",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "threshold": "<60 mL/min/1.73 m2"
+      },
+      "confidence": 0.9,
+      "context": "estimated glomerular filtration rate <60 mL/min/1.73 m"
+    },
+    {
+      "name": "SOUL",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "full_name": "Semaglutide cardiOvascular oUtcomes triaL",
+        "design": "randomized, double-blind, parallel-group, placebo-controlled",
+        "participants": 9650,
+        "enrollment_period": "June 17, 2019 - March 24, 2021"
+      },
+      "confidence": 0.99,
+      "context": "SOUL trial (Semaglutide cardiOvascular oUtcomes triaL)"
+    },
+    {
+      "name": "Diabetes, obesity & metabolism",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "year": "2023",
+        "pmid": "36945734"
+      },
+      "confidence": 0.99,
+      "context": "Journal: Diabetes, obesity & metabolism (2023)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP1R",
+      "confidence": 0.98,
+      "evidence": "oral semaglutide, the first oral glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.95,
+      "evidence": "effects of oral semaglutide... in individuals with type 2 diabetes"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "semaglutide",
+      "target_entity": "SOUL",
+      "confidence": 0.99,
+      "evidence": "comparing oral semaglutide (14 mg once daily) with placebo"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "type 2 diabetes mellitus",
+      "target_entity": "atherosclerotic cardiovascular disease",
+      "confidence": 0.85,
+      "evidence": "individuals with type 2 diabetes and established atherosclerotic CV disease"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "type 2 diabetes mellitus",
+      "target_entity": "chronic kidney disease",
+      "confidence": 0.85,
+      "evidence": "type 2 diabetes and... chronic kidney disease (CKD)"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "estimated glomerular filtration rate",
+      "target_entity": "chronic kidney disease",
+      "confidence": 0.9,
+      "evidence": "CKD (estimated glomerular filtration rate <60 mL/min/1.73 m"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:09:00.040311+00:00",
+  "error": null
+}

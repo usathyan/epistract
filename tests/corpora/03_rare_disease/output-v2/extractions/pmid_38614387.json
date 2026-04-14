@@ -1,0 +1,202 @@
+{
+  "document_id": "pmid_38614387",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/03_rare_disease/docs/pmid_38614387.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "valoctocogene roxaparvovec",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "gene therapy",
+        "vector": "AAV"
+      },
+      "confidence": 0.98,
+      "context": "Valoctocogene roxaparvovec transfers a human factor (F)VIII coding sequence into hepatocytes"
+    },
+    {
+      "name": "F8",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "F8"
+      },
+      "confidence": 0.95,
+      "context": "transfers a human factor (F)VIII coding sequence into hepatocytes"
+    },
+    {
+      "name": "Factor VIII",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "uniprot_name": "FA8"
+      },
+      "confidence": 0.98,
+      "context": "human factor (F)VIII coding sequence"
+    },
+    {
+      "name": "hemophilia A",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Hemophilia A"
+      },
+      "confidence": 0.99,
+      "context": "people with severe hemophilia A"
+    },
+    {
+      "name": "severe hemophilia A",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "severity": "severe"
+      },
+      "confidence": 0.98,
+      "context": "134 adult males with severe hemophilia A"
+    },
+    {
+      "name": "hemorrhage",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "mesh_term": "Hemorrhage"
+      },
+      "confidence": 0.9,
+      "context": "to provide bleeding protection"
+    },
+    {
+      "name": "GENEr8-1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "3",
+        "design": "multicenter, open-label, single-arm",
+        "enrollment": "134"
+      },
+      "confidence": 0.99,
+      "context": "phase 3 GENEr8-1 trial"
+    },
+    {
+      "name": "alanine aminotransferase elevation",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "severity": "mild",
+        "frequency": "23.7%"
+      },
+      "confidence": 0.95,
+      "context": "Mild alanine aminotransferase elevations remained the most common AE during year 3 (23.7% of participants)"
+    },
+    {
+      "name": "B-cell acute lymphoblastic leukemia",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "severity": "serious",
+        "relatedness": "unrelated to treatment"
+      },
+      "confidence": 0.95,
+      "context": "A serious AE of B-cell acute lymphoblastic leukemia was considered unrelated to treatment"
+    },
+    {
+      "name": "ALT",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "full_name": "alanine aminotransferase"
+      },
+      "confidence": 0.9,
+      "context": "Mild alanine aminotransferase elevations"
+    },
+    {
+      "name": "FVIII activity",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "assay": "chromogenic substrate assay",
+        "unit": "IU/dL"
+      },
+      "confidence": 0.95,
+      "context": "FVIII activity (chromogenic substrate assay; imputed as 1 IU/dL at baseline"
+    },
+    {
+      "name": "annualized bleeding rate",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "baseline": "4.8 bleeds/y",
+        "post_treatment": "0.8 bleeds/y"
+      },
+      "confidence": 0.95,
+      "context": "Mean annualized bleeding rate for treated bleeds decreased from 4.8"
+    },
+    {
+      "name": "hepatocyte gene transfer",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "transfers a human factor (F)VIII coding sequence into hepatocytes"
+    },
+    {
+      "name": "hepatocyte",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "transfers a human factor (F)VIII coding sequence into hepatocytes"
+    },
+    {
+      "name": "Haemophilia-Specific Quality of Life Questionnaire for Adults",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "patient-reported outcome"
+      },
+      "confidence": 0.9,
+      "context": "Haemophilia-Specific Quality of Life Questionnaire for Adults"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "severe hemophilia A",
+      "confidence": 0.98,
+      "evidence": "Valoctocogene roxaparvovec transfers a human factor (F)VIII coding sequence into hepatocytes of people with severe hemophilia A to provide bleeding protection"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "GENEr8-1",
+      "confidence": 0.99,
+      "evidence": "3-year efficacy and safety in the multicenter, open-label, single-arm, phase 3 GENEr8-1 trial"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "F8",
+      "target_entity": "Factor VIII",
+      "confidence": 0.95,
+      "evidence": "human factor (F)VIII coding sequence"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "Factor VIII",
+      "target_entity": "hemophilia A",
+      "confidence": 0.95,
+      "evidence": "factor (F)VIII coding sequence into hepatocytes of people with severe hemophilia A"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "alanine aminotransferase elevation",
+      "confidence": 0.9,
+      "evidence": "Mild alanine aminotransferase elevations remained the most common AE during year 3"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "FVIII activity",
+      "target_entity": "hemophilia A",
+      "confidence": 0.85,
+      "evidence": "FVIII activity (chromogenic substrate assay; imputed as 1 IU/dL at baseline"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "Factor VIII",
+      "target_entity": "hepatocyte gene transfer",
+      "confidence": 0.85,
+      "evidence": "transfers a human factor (F)VIII coding sequence into hepatocytes"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T22:54:45.598406+00:00",
+  "error": null
+}

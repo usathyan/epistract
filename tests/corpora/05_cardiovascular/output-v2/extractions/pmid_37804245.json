@@ -1,0 +1,193 @@
+{
+  "document_id": "pmid_37804245",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/05_cardiovascular/docs/pmid_37804245.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "mavacamten",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "cardiac myosin inhibitor",
+        "first_in_class": true
+      },
+      "confidence": 0.98,
+      "context": "Mavacamten is a first-in-class, targeted, cardiac-specific myosin inhibitor"
+    },
+    {
+      "name": "cardiac myosin",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "role": "target"
+      },
+      "confidence": 0.95,
+      "context": "cardiac-specific myosin inhibitor"
+    },
+    {
+      "name": "obstructive hypertrophic cardiomyopathy",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "oHCM",
+        "nyha_class": "II and III"
+      },
+      "confidence": 0.98,
+      "context": "treatment of adults with symptomatic New York Heart Association Classes II and III obstructive hypertrophic cardiomyopathy (oHCM)"
+    },
+    {
+      "name": "hypertrophic cardiomyopathy",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "obstructive hypertrophic cardiomyopathy"
+    },
+    {
+      "name": "myosin inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "target": "cardiac myosin",
+        "effect": "reduces hyper-contractility"
+      },
+      "confidence": 0.95,
+      "context": "Mavacamten was developed to target the hyper-contractile phenotype"
+    },
+    {
+      "name": "hyper-contractile phenotype",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "target the hyper-contractile phenotype, which plays a critical role in the pathophysiology of the disease"
+    },
+    {
+      "name": "left ventricular outflow tract obstruction",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "reduced left ventricular outflow tract gradients"
+    },
+    {
+      "name": "left ventricular outflow tract gradient",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "hemodynamic"
+      },
+      "confidence": 0.9,
+      "context": "reduced left ventricular outflow tract gradients"
+    },
+    {
+      "name": "US Food and Drug Administration",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "abbreviation": "FDA",
+        "country": "United States"
+      },
+      "confidence": 0.98,
+      "context": "approved by the US Food and Drug Administration"
+    },
+    {
+      "name": "FDA approval of mavacamten for oHCM",
+      "entity_type": "REGULATORY_ACTION",
+      "attributes": {
+        "agency": "FDA",
+        "drug": "mavacamten",
+        "indication": "symptomatic NYHA II-III obstructive hypertrophic cardiomyopathy"
+      },
+      "confidence": 0.98,
+      "context": "approved by the US Food and Drug Administration for the treatment of adults with symptomatic New York Heart Association Classes II and III obstructive hypertrophic cardiomyopathy"
+    },
+    {
+      "name": "Phase 2 clinical trials of mavacamten in oHCM",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "2",
+        "drug": "mavacamten",
+        "indication": "oHCM"
+      },
+      "confidence": 0.9,
+      "context": "In Phase 2 and 3 clinical trials, mavacamten was well tolerated"
+    },
+    {
+      "name": "Phase 3 clinical trials of mavacamten in oHCM",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "3",
+        "drug": "mavacamten",
+        "indication": "oHCM"
+      },
+      "confidence": 0.9,
+      "context": "In Phase 2 and 3 clinical trials, mavacamten was well tolerated"
+    },
+    {
+      "name": "septal reduction therapy",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "type": "procedure"
+      },
+      "confidence": 0.85,
+      "context": "Mavacamten substantially reduced guideline eligibility for septal reduction therapy candidates"
+    },
+    {
+      "name": "heart",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "MeSH Terms: ... Heart"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "mavacamten",
+      "target_entity": "cardiac myosin",
+      "confidence": 0.98,
+      "evidence": "Mavacamten is a first-in-class, targeted, cardiac-specific myosin inhibitor"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "mavacamten",
+      "target_entity": "cardiac myosin",
+      "confidence": 0.98,
+      "evidence": "cardiac-specific myosin inhibitor"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "mavacamten",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.98,
+      "evidence": "approved by the US Food and Drug Administration for the treatment of adults with symptomatic ... obstructive hypertrophic cardiomyopathy (oHCM)"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "mavacamten",
+      "target_entity": "Phase 2 clinical trials of mavacamten in oHCM",
+      "confidence": 0.95,
+      "evidence": "In Phase 2 and 3 clinical trials, mavacamten was well tolerated"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "mavacamten",
+      "target_entity": "Phase 3 clinical trials of mavacamten in oHCM",
+      "confidence": 0.95,
+      "evidence": "In Phase 2 and 3 clinical trials, mavacamten was well tolerated"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "hyper-contractile phenotype",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.9,
+      "evidence": "the hyper-contractile phenotype, which plays a critical role in the pathophysiology of the disease"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "left ventricular outflow tract gradient",
+      "target_entity": "mavacamten",
+      "confidence": 0.75,
+      "evidence": "reduced left ventricular outflow tract gradients, improved exercise capacity and symptoms"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:03:19.153501+00:00",
+  "error": null
+}

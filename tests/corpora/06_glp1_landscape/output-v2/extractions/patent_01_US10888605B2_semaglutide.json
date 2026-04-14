@@ -1,0 +1,332 @@
+{
+  "document_id": "patent_01_US10888605B2_semaglutide",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/06_glp1_landscape/docs/patent_01_US10888605B2_semaglutide.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "inn": "semaglutide",
+        "concentration_range": "0.5-5.0 mg/ml",
+        "chemical_name": "N6.26-{18-[N-(17-carboxyheptadecanoyl)-L-gamma-glutamyl]-10-oxo-3,6,12,15-tetraoxa-9,18-diazaoctadecanoyl}-[8-(2-amino-2-propanoic acid),34-L-arginine]human glucagon-like peptide 1(7-37)",
+        "requires_validation": true
+      },
+      "confidence": 0.98,
+      "context": "pharmaceutical formulations containing the GLP-1 peptide semaglutide"
+    },
+    {
+      "name": "GLP-1(7-37)",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "sequence": "HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG",
+        "requires_validation": true,
+        "note": "native peptide"
+      },
+      "confidence": 0.97,
+      "context": "The native GLP-1(7-37) peptide sequence is HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "GLP1R",
+        "note": "GLP-1 receptor"
+      },
+      "confidence": 0.9,
+      "context": "Semaglutide is a GLP-1 receptor agonist"
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "aliases": [
+          "GLP1R"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "Semaglutide is a GLP-1 receptor agonist"
+    },
+    {
+      "name": "GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "class": "incretin mimetic"
+      },
+      "confidence": 0.97,
+      "context": "Semaglutide is a GLP-1 receptor agonist indicated for the treatment of type 2 diabetes mellitus"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Diabetes Mellitus, Type 2"
+      },
+      "confidence": 0.98,
+      "context": "indicated for the treatment of type 2 diabetes mellitus"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Obesity"
+      },
+      "confidence": 0.97,
+      "context": "prevention and treatment of obesity"
+    },
+    {
+      "name": "cardiovascular risk",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "related metabolic disorders including cardiovascular risk reduction"
+    },
+    {
+      "name": "metabolic disorders",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.8,
+      "context": "related metabolic disorders including cardiovascular risk reduction"
+    },
+    {
+      "name": "phenol",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "role": "preservative",
+        "cas": "108-95-2",
+        "requires_validation": true
+      },
+      "confidence": 0.95,
+      "context": "phenol content not exceeding 0.01% (w/w)"
+    },
+    {
+      "name": "disodium hydrogen phosphate",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "role": "buffer",
+        "concentration": "1.42 mg/ml"
+      },
+      "confidence": 0.95,
+      "context": "The buffer system uses disodium hydrogen phosphate at 1.42 mg/ml"
+    },
+    {
+      "name": "propylene glycol",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "role": "isotonic agent",
+        "concentration": "14 mg/ml",
+        "cas": "57-55-6",
+        "requires_validation": true
+      },
+      "confidence": 0.95,
+      "context": "propylene glycol (14 mg/ml) or sodium chloride as isotonic agent"
+    },
+    {
+      "name": "sodium chloride",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "role": "isotonic agent",
+        "cas": "7647-14-5",
+        "requires_validation": true
+      },
+      "confidence": 0.95,
+      "context": "propylene glycol (14 mg/ml) or sodium chloride as isotonic agent"
+    },
+    {
+      "name": "alpha-aminoisobutyric acid",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "amino acid",
+        "abbreviation": "Aib",
+        "role": "modification at position 8"
+      },
+      "confidence": 0.95,
+      "context": "alpha-aminoisobutyric acid (Aib) at position 8"
+    },
+    {
+      "name": "C18 fatty diacid",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "lipid",
+        "role": "acylation moiety"
+      },
+      "confidence": 0.9,
+      "context": "acylated with a C18 fatty diacid via a linker at lysine 26"
+    },
+    {
+      "name": "albumin",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "role": "binding partner for half-life extension"
+      },
+      "confidence": 0.9,
+      "context": "promoting albumin binding"
+    },
+    {
+      "name": "semaglutide Aib8 substitution",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "position": 8,
+        "substitution": "Ala8Aib",
+        "note": "alpha-aminoisobutyric acid at position 8"
+      },
+      "confidence": 0.92,
+      "context": "alpha-aminoisobutyric acid (Aib) at position 8"
+    },
+    {
+      "name": "semaglutide Arg34 substitution",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "position": 34,
+        "substitution": "Lys34Arg"
+      },
+      "confidence": 0.92,
+      "context": "arginine at position 34"
+    },
+    {
+      "name": "Novo Nordisk AS",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "assignee",
+        "patent": "US10888605B2"
+      },
+      "confidence": 0.99,
+      "context": "Assignee: Novo Nordisk AS"
+    },
+    {
+      "name": "US10888605B2",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "type": "patent",
+        "filing_date": "2020-01-28",
+        "title": "GLP-1 compositions and uses thereof"
+      },
+      "confidence": 0.99,
+      "context": "Patent ID: US10888605B2"
+    },
+    {
+      "name": "peptide_31aa",
+      "entity_type": "PEPTIDE_SEQUENCE",
+      "attributes": {
+        "sequence": "HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG",
+        "sequence_type": "protein",
+        "length": 31,
+        "validated": true,
+        "molecular_weight": 3355.67
+      },
+      "confidence": 1.0,
+      "context": "The native GLP-1(7-37) peptide sequence is HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.98,
+      "evidence": "Semaglutide is a GLP-1 receptor agonist"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.97,
+      "evidence": "Semaglutide is a GLP-1 receptor agonist"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.98,
+      "evidence": "indicated for the treatment of type 2 diabetes mellitus"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "obesity",
+      "confidence": 0.95,
+      "evidence": "prevention and treatment of obesity"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "metabolic disorders",
+      "confidence": 0.8,
+      "evidence": "related metabolic disorders including cardiovascular risk reduction"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "GLP1R",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.9,
+      "evidence": "GLP-1 receptor agonist"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor agonism",
+      "confidence": 0.97,
+      "evidence": "Semaglutide is a GLP-1 receptor agonist"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "semaglutide",
+      "target_entity": "albumin",
+      "confidence": 0.9,
+      "evidence": "extends the half-life by promoting albumin binding"
+    },
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "semaglutide",
+      "target_entity": "semaglutide Aib8 substitution",
+      "confidence": 0.92,
+      "evidence": "alpha-aminoisobutyric acid (Aib) at position 8"
+    },
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "semaglutide",
+      "target_entity": "semaglutide Arg34 substitution",
+      "confidence": 0.92,
+      "evidence": "arginine at position 34"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "semaglutide",
+      "target_entity": "Novo Nordisk AS",
+      "confidence": 0.95,
+      "evidence": "Assignee: Novo Nordisk AS"
+    },
+    {
+      "relation_type": "DESCRIBED_IN",
+      "source_entity": "semaglutide",
+      "target_entity": "US10888605B2",
+      "confidence": 0.99,
+      "evidence": "Patent ID: US10888605B2"
+    },
+    {
+      "relation_type": "ASSIGNEE_OF",
+      "source_entity": "Novo Nordisk AS",
+      "target_entity": "US10888605B2",
+      "confidence": 0.99,
+      "evidence": "Assignee: Novo Nordisk AS"
+    },
+    {
+      "relation_type": "HAS_SEQUENCE",
+      "source_entity": "GLP-1(7-37)",
+      "target_entity": "peptide_31aa",
+      "confidence": 0.95,
+      "evidence": "The native GLP-1(7-37) peptide sequence is HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:08:50.111237+00:00",
+  "error": null
+}

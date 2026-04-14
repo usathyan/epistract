@@ -1,0 +1,149 @@
+{
+  "document_id": "pmid_38632474",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/06_glp1_landscape/docs/pmid_38632474.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "confidence": 0.98,
+      "context": "Obesity and type 2 diabetes mellitus (T2DM) are widespread, non-communicable diseases"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "confidence": 0.98,
+      "context": "Obesity and type 2 diabetes mellitus (T2DM) are widespread, non-communicable diseases"
+    },
+    {
+      "name": "cardiovascular disease",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "considerable levels of morbidity and mortality globally, primarily in the form of cardiovascular disease (CVD)"
+    },
+    {
+      "name": "glucagon-like peptide 1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "abbreviation": "GLP1",
+        "role": "incretin hormone"
+      },
+      "confidence": 0.97,
+      "context": "therapies based on incretin hormones, spearheaded by glucagon-like peptide 1 (GLP1) receptor agonists"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "Glucagon-Like Peptide-1 Receptor"
+      },
+      "confidence": 0.95,
+      "context": "MeSH Terms: ... Glucagon-Like Peptide-1 Receptor"
+    },
+    {
+      "name": "glucose-dependent insulinotropic peptide",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "abbreviation": "GIP",
+        "role": "incretin hormone"
+      },
+      "confidence": 0.93,
+      "context": "combine the known advantages of GLP1RAs with the activity of additional hormones, such as glucose-dependent insulinotropic peptide, glucagon and amylin"
+    },
+    {
+      "name": "glucagon",
+      "entity_type": "PROTEIN",
+      "confidence": 0.93,
+      "context": "such as glucose-dependent insulinotropic peptide, glucagon and amylin"
+    },
+    {
+      "name": "amylin",
+      "entity_type": "PROTEIN",
+      "confidence": 0.93,
+      "context": "such as glucose-dependent insulinotropic peptide, glucagon and amylin"
+    },
+    {
+      "name": "GLP-1 receptor agonists",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "abbreviation": "GLP1RAs",
+        "class": "incretin-based pharmacotherapy"
+      },
+      "confidence": 0.96,
+      "context": "glucagon-like peptide 1 (GLP1) receptor agonists (GLP1RAs), have become the treatment of choice for obesity and T2DM"
+    },
+    {
+      "name": "second-generation non-peptidic oral GLP1RAs",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "modality": "small molecule",
+        "route": "oral"
+      },
+      "confidence": 0.9,
+      "context": "Second-generation non-peptidic oral GLP1RAs promise to extend the benefits of GLP1 therapy"
+    },
+    {
+      "name": "metabolic surgery",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "confidence": 0.85,
+      "context": "metabolic surgery, although effective, is not practically deliverable on the scale that is required"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.97,
+      "evidence": "GLP1 receptor agonists (GLP1RAs), have become the treatment of choice for obesity and T2DM"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "obesity",
+      "confidence": 0.97,
+      "evidence": "GLP1 receptor agonists (GLP1RAs), have become the treatment of choice for obesity and T2DM"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "GLP1R",
+      "confidence": 0.98,
+      "evidence": "glucagon-like peptide 1 (GLP1) receptor agonists (GLP1RAs)"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "type 2 diabetes mellitus",
+      "target_entity": "cardiovascular disease",
+      "confidence": 0.9,
+      "evidence": "considerable levels of morbidity and mortality globally, primarily in the form of cardiovascular disease (CVD)"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "obesity",
+      "target_entity": "cardiovascular disease",
+      "confidence": 0.9,
+      "evidence": "considerable levels of morbidity and mortality globally, primarily in the form of cardiovascular disease (CVD)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "cardiovascular disease",
+      "confidence": 0.8,
+      "evidence": "clinical evidence now suggests that these agents have benefits for CVD"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "second-generation non-peptidic oral GLP1RAs",
+      "target_entity": "GLP1R",
+      "confidence": 0.9,
+      "evidence": "Second-generation non-peptidic oral GLP1RAs promise to extend the benefits of GLP1 therapy"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:09:16.893074+00:00",
+  "error": null
+}

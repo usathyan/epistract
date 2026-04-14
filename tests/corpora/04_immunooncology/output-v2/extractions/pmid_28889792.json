@@ -1,0 +1,285 @@
+{
+  "document_id": "pmid_28889792",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/04_immunooncology/docs/pmid_28889792.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "nivolumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "PD-1"
+      },
+      "confidence": 0.98,
+      "context": "Nivolumab combined with ipilimumab resulted in longer progression-free survival"
+    },
+    {
+      "name": "ipilimumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "CTLA-4"
+      },
+      "confidence": 0.98,
+      "context": "Nivolumab combined with ipilimumab"
+    },
+    {
+      "name": "PDCD1",
+      "entity_type": "GENE",
+      "attributes": {
+        "protein": "PD-1"
+      },
+      "confidence": 0.85,
+      "context": "programmed death ligand 1 (PD-L1) status"
+    },
+    {
+      "name": "CD274",
+      "entity_type": "GENE",
+      "attributes": {
+        "protein": "PD-L1"
+      },
+      "confidence": 0.92,
+      "context": "programmed death ligand 1 (PD-L1) status"
+    },
+    {
+      "name": "PD-L1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "programmed death ligand 1"
+      },
+      "confidence": 0.95,
+      "context": "Randomization was stratified according to programmed death ligand 1 (PD-L1) status"
+    },
+    {
+      "name": "PD-1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "programmed cell death protein 1"
+      },
+      "confidence": 0.9,
+      "context": "Nivolumab (anti-PD-1)"
+    },
+    {
+      "name": "CTLA-4",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "cytotoxic T-lymphocyte-associated protein 4"
+      },
+      "confidence": 0.85,
+      "context": "ipilimumab targets CTLA-4"
+    },
+    {
+      "name": "BRAF",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.98,
+      "context": "BRAF mutation status"
+    },
+    {
+      "name": "melanoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Melanoma"
+      },
+      "confidence": 0.98,
+      "context": "patients with previously untreated advanced melanoma"
+    },
+    {
+      "name": "advanced melanoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "stage": "advanced/metastatic"
+      },
+      "confidence": 0.98,
+      "context": "patients with previously untreated advanced melanoma"
+    },
+    {
+      "name": "CheckMate 067",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "3",
+        "nct_id": "NCT01844505"
+      },
+      "confidence": 0.98,
+      "context": "CheckMate 067 ClinicalTrials.gov number, NCT01844505"
+    },
+    {
+      "name": "NCT01844505",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "3"
+      },
+      "confidence": 0.98,
+      "context": "ClinicalTrials.gov number, NCT01844505"
+    },
+    {
+      "name": "immune checkpoint inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "targets": "PD-1, CTLA-4"
+      },
+      "confidence": 0.9,
+      "context": "anti-PD-1 and anti-CTLA-4 combination immunotherapy"
+    },
+    {
+      "name": "PD-L1 expression",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "predictive"
+      },
+      "confidence": 0.92,
+      "context": "stratified according to programmed death ligand 1 (PD-L1) status"
+    },
+    {
+      "name": "BRAF mutation status",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "stratification"
+      },
+      "confidence": 0.95,
+      "context": "stratified according to BRAF mutation status"
+    },
+    {
+      "name": "grade 3 or 4 treatment-related adverse events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "severity": "grade 3-4"
+      },
+      "confidence": 0.95,
+      "context": "Treatment-related adverse events of grade 3 or 4 occurred in 59% of the patients"
+    },
+    {
+      "name": "progression-free survival",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "type": "efficacy endpoint"
+      },
+      "confidence": 0.95,
+      "context": "primary end points were progression-free survival and overall survival"
+    },
+    {
+      "name": "overall survival",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "type": "efficacy endpoint"
+      },
+      "confidence": 0.95,
+      "context": "overall survival in the nivolumab-plus-ipilimumab group"
+    },
+    {
+      "name": "Bristol-Myers Squibb",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "sponsor"
+      },
+      "confidence": 0.98,
+      "context": "Funded by Bristol-Myers Squibb and others"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "nivolumab",
+      "target_entity": "PD-1",
+      "confidence": 0.9,
+      "evidence": "Nivolumab is an anti-PD-1 antibody"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "ipilimumab",
+      "target_entity": "CTLA-4",
+      "confidence": 0.9,
+      "evidence": "Ipilimumab is an anti-CTLA-4 antibody"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "nivolumab",
+      "target_entity": "advanced melanoma",
+      "confidence": 0.98,
+      "evidence": "patients with previously untreated advanced melanoma to receive nivolumab"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "ipilimumab",
+      "target_entity": "advanced melanoma",
+      "confidence": 0.98,
+      "evidence": "patients with previously untreated advanced melanoma to receive ipilimumab"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "nivolumab",
+      "target_entity": "CheckMate 067",
+      "confidence": 0.98,
+      "evidence": "CheckMate 067 ClinicalTrials.gov number, NCT01844505"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "ipilimumab",
+      "target_entity": "CheckMate 067",
+      "confidence": 0.98,
+      "evidence": "CheckMate 067 ClinicalTrials.gov number, NCT01844505"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "nivolumab",
+      "target_entity": "NCT01844505",
+      "confidence": 0.98,
+      "evidence": "ClinicalTrials.gov number, NCT01844505"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "ipilimumab",
+      "target_entity": "NCT01844505",
+      "confidence": 0.98,
+      "evidence": "ClinicalTrials.gov number, NCT01844505"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "nivolumab",
+      "target_entity": "grade 3 or 4 treatment-related adverse events",
+      "confidence": 0.95,
+      "evidence": "grade 3 or 4 occurred in 21% of those in the nivolumab group"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "ipilimumab",
+      "target_entity": "grade 3 or 4 treatment-related adverse events",
+      "confidence": 0.95,
+      "evidence": "grade 3 or 4 occurred in 28% of those in the ipilimumab group"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "CD274",
+      "target_entity": "PD-L1",
+      "confidence": 0.95,
+      "evidence": "CD274 encodes PD-L1 protein"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "PDCD1",
+      "target_entity": "PD-1",
+      "confidence": 0.9,
+      "evidence": "PDCD1 gene encodes PD-1 protein"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "PD-L1 expression",
+      "target_entity": "nivolumab",
+      "confidence": 0.85,
+      "evidence": "Randomization was stratified according to programmed death ligand 1 (PD-L1) status"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "BRAF mutation status",
+      "target_entity": "nivolumab",
+      "confidence": 0.8,
+      "evidence": "Randomization was stratified according to BRAF mutation status"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T22:59:16.131103+00:00",
+  "error": null
+}

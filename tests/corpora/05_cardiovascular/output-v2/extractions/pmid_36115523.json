@@ -1,0 +1,203 @@
+{
+  "document_id": "pmid_36115523",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/05_cardiovascular/docs/pmid_36115523.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "deucravacitinib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "route": "oral",
+        "mechanism": "allosteric TYK2 inhibitor"
+      },
+      "confidence": 0.98,
+      "context": "Deucravacitinib, an oral, selective, allosteric tyrosine kinase 2 inhibitor, inhibits cytokine signaling in psoriasis pathogenesis."
+    },
+    {
+      "name": "apremilast",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "dose": "30 mg twice a day"
+      },
+      "confidence": 0.98,
+      "context": "apremilast 30 mg twice a day (n = 254)"
+    },
+    {
+      "name": "TYK2",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "tyrosine kinase 2"
+      },
+      "confidence": 0.97,
+      "context": "allosteric tyrosine kinase 2 inhibitor"
+    },
+    {
+      "name": "TYK2",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "family": "JAK kinase family"
+      },
+      "confidence": 0.97,
+      "context": "TYK2 Kinase"
+    },
+    {
+      "name": "plaque psoriasis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "severity": "moderate to severe"
+      },
+      "confidence": 0.98,
+      "context": "moderate to severe plaque psoriasis"
+    },
+    {
+      "name": "POETYK PSO-2",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT03611751",
+        "phase": "3",
+        "design": "randomized, double-blinded, placebo-controlled",
+        "duration": "52 weeks",
+        "n_total": 1020
+      },
+      "confidence": 0.98,
+      "context": "POETYK psoriasis second trial (NCT03611751), a 52-week, double-blinded, phase 3 trial"
+    },
+    {
+      "name": "allosteric TYK2 inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.97,
+      "context": "selective, allosteric tyrosine kinase 2 inhibitor, inhibits cytokine signaling"
+    },
+    {
+      "name": "cytokine signaling",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "inhibits cytokine signaling in psoriasis pathogenesis"
+    },
+    {
+      "name": "nasopharyngitis",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "frequency": "most frequent"
+      },
+      "confidence": 0.95,
+      "context": "The most frequent adverse event with deucravacitinib was nasopharyngitis."
+    },
+    {
+      "name": "Psoriasis Area and Severity Index",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "clinical endpoint",
+        "threshold": "PASI 75"
+      },
+      "confidence": 0.92,
+      "context": "\u226575% reduction from baseline in Psoriasis Area and Severity Index"
+    },
+    {
+      "name": "static Physician Global Assessment",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "clinical endpoint",
+        "threshold": "sPGA 0/1"
+      },
+      "confidence": 0.92,
+      "context": "static Physician's Global Assessment score of 0 (clear) or 1 (almost clear)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "deucravacitinib",
+      "target_entity": "TYK2",
+      "confidence": 0.98,
+      "evidence": "Deucravacitinib, an oral, selective, allosteric tyrosine kinase 2 inhibitor"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "deucravacitinib",
+      "target_entity": "TYK2",
+      "confidence": 0.98,
+      "evidence": "allosteric tyrosine kinase 2 inhibitor"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "deucravacitinib",
+      "target_entity": "allosteric TYK2 inhibition",
+      "confidence": 0.97,
+      "evidence": "selective, allosteric tyrosine kinase 2 inhibitor"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "deucravacitinib",
+      "target_entity": "plaque psoriasis",
+      "confidence": 0.95,
+      "evidence": "Deucravacitinib demonstrated superiority versus placebo and apremilast and was well tolerated in adults with moderate to severe plaque psoriasis"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "apremilast",
+      "target_entity": "plaque psoriasis",
+      "confidence": 0.9,
+      "evidence": "apremilast 30 mg twice a day (n = 254)"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "deucravacitinib",
+      "target_entity": "POETYK PSO-2",
+      "confidence": 0.98,
+      "evidence": "POETYK psoriasis second trial (NCT03611751)... randomized patients 2:1:1 to deucravacitinib 6 mg every day"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "apremilast",
+      "target_entity": "POETYK PSO-2",
+      "confidence": 0.98,
+      "evidence": "randomized patients 2:1:1 to deucravacitinib 6 mg every day (n = 511), placebo (n = 255), or apremilast 30 mg twice a day (n = 254)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "deucravacitinib",
+      "target_entity": "nasopharyngitis",
+      "confidence": 0.9,
+      "evidence": "The most frequent adverse event with deucravacitinib was nasopharyngitis"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "TYK2",
+      "target_entity": "TYK2",
+      "confidence": 0.9,
+      "evidence": "TYK2 Kinase"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "TYK2",
+      "target_entity": "cytokine signaling",
+      "confidence": 0.9,
+      "evidence": "tyrosine kinase 2 inhibitor, inhibits cytokine signaling in psoriasis pathogenesis"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "cytokine signaling",
+      "target_entity": "plaque psoriasis",
+      "confidence": 0.9,
+      "evidence": "inhibits cytokine signaling in psoriasis pathogenesis"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "Psoriasis Area and Severity Index",
+      "target_entity": "plaque psoriasis",
+      "confidence": 0.9,
+      "evidence": "\u226575% reduction from baseline in Psoriasis Area and Severity Index"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:02:51.808182+00:00",
+  "error": null
+}

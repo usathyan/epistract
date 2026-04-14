@@ -1,0 +1,415 @@
+{
+  "document_id": "pmid_34764464",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/04_immunooncology/docs/pmid_34764464.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "hepatocellular carcinoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Carcinoma, Hepatocellular"
+      },
+      "confidence": 0.99,
+      "context": "Liver cancer, more specifically hepatocellular carcinoma (HCC)"
+    },
+    {
+      "name": "liver cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Liver Neoplasms"
+      },
+      "confidence": 0.98,
+      "context": "Liver cancer, more specifically hepatocellular carcinoma"
+    },
+    {
+      "name": "sorafenib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "multikinase inhibitor"
+      },
+      "confidence": 0.99,
+      "context": "traditionally sorafenib or lenvatinib in the first line"
+    },
+    {
+      "name": "lenvatinib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "multikinase inhibitor"
+      },
+      "confidence": 0.99,
+      "context": "traditionally sorafenib or lenvatinib in the first line"
+    },
+    {
+      "name": "regorafenib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "multikinase inhibitor"
+      },
+      "confidence": 0.99,
+      "context": "regorafenib, cabozantinib or ramucirumab in the second line"
+    },
+    {
+      "name": "cabozantinib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "multikinase inhibitor"
+      },
+      "confidence": 0.99,
+      "context": "regorafenib, cabozantinib or ramucirumab in the second line"
+    },
+    {
+      "name": "ramucirumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody"
+      },
+      "confidence": 0.99,
+      "context": "regorafenib, cabozantinib or ramucirumab in the second line"
+    },
+    {
+      "name": "atezolizumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "class": "PD-L1 inhibitor"
+      },
+      "confidence": 0.99,
+      "context": "The combination of atezolizumab and bevacizumab"
+    },
+    {
+      "name": "bevacizumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "class": "VEGF inhibitor"
+      },
+      "confidence": 0.99,
+      "context": "The combination of atezolizumab and bevacizumab"
+    },
+    {
+      "name": "durvalumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "class": "PD-L1 inhibitor"
+      },
+      "confidence": 0.99,
+      "context": "durvalumab plus tremelimumab yielded superior overall survival"
+    },
+    {
+      "name": "tremelimumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "class": "CTLA-4 inhibitor"
+      },
+      "confidence": 0.99,
+      "context": "durvalumab plus tremelimumab yielded superior overall survival"
+    },
+    {
+      "name": "pembrolizumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "class": "PD-1 inhibitor"
+      },
+      "confidence": 0.99,
+      "context": "pembrolizumab monotherapy"
+    },
+    {
+      "name": "nivolumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "class": "PD-1 inhibitor"
+      },
+      "confidence": 0.99,
+      "context": "the combination of nivolumab plus ipilimumab"
+    },
+    {
+      "name": "ipilimumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "class": "CTLA-4 inhibitor"
+      },
+      "confidence": 0.99,
+      "context": "the combination of nivolumab plus ipilimumab"
+    },
+    {
+      "name": "immune checkpoint inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.98,
+      "context": "immune-checkpoint inhibitors have revolutionized the management of HCC"
+    },
+    {
+      "name": "PD-1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene": "PDCD1"
+      },
+      "confidence": 0.9,
+      "context": "pembrolizumab monotherapy... nivolumab"
+    },
+    {
+      "name": "PD-L1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene": "CD274"
+      },
+      "confidence": 0.9,
+      "context": "atezolizumab... durvalumab"
+    },
+    {
+      "name": "CTLA-4",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene": "CTLA4"
+      },
+      "confidence": 0.9,
+      "context": "tremelimumab... ipilimumab"
+    },
+    {
+      "name": "VEGF",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "bevacizumab (VEGF inhibitor)"
+    },
+    {
+      "name": "tumor microenvironment",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "mesh": "Tumor Microenvironment"
+      },
+      "confidence": 0.95,
+      "context": "The immune microenvironment has crucial roles in the development and progression of HCC"
+    },
+    {
+      "name": "immune-related adverse events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "current evidence from phase III trials on the efficacy, immune-related adverse events"
+    },
+    {
+      "name": "FDA",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "type": "regulator"
+      },
+      "confidence": 0.99,
+      "context": "resulting in FDA approval of this regimen"
+    },
+    {
+      "name": "FDA approval of atezolizumab plus bevacizumab for HCC",
+      "entity_type": "REGULATORY_ACTION",
+      "attributes": {
+        "agency": "FDA",
+        "status": "approved"
+      },
+      "confidence": 0.98,
+      "context": "improve overall survival relative to sorafenib, resulting in FDA approval of this regimen"
+    },
+    {
+      "name": "FDA Accelerated Approval of pembrolizumab for HCC",
+      "entity_type": "REGULATORY_ACTION",
+      "attributes": {
+        "agency": "FDA",
+        "status": "accelerated approval",
+        "line": "second-line"
+      },
+      "confidence": 0.97,
+      "context": "pembrolizumab monotherapy... have received FDA Accelerated Approval in the second-line setting"
+    },
+    {
+      "name": "FDA Accelerated Approval of nivolumab plus ipilimumab for HCC",
+      "entity_type": "REGULATORY_ACTION",
+      "attributes": {
+        "agency": "FDA",
+        "status": "accelerated approval",
+        "line": "second-line"
+      },
+      "confidence": 0.97,
+      "context": "combination of nivolumab plus ipilimumab have received FDA Accelerated Approval in the second-line setting"
+    },
+    {
+      "name": "inflamed HCC class",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "molecular signature"
+      },
+      "confidence": 0.85,
+      "context": "Inflamed and non-inflamed classes of HCC and genomic signatures have been associated with response to immune-checkpoint inhibitors"
+    },
+    {
+      "name": "non-inflamed HCC class",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "molecular signature"
+      },
+      "confidence": 0.85,
+      "context": "Inflamed and non-inflamed classes of HCC and genomic signatures have been associated with response to immune-checkpoint inhibitors"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "sorafenib",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.98,
+      "evidence": "traditionally sorafenib or lenvatinib in the first line"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "lenvatinib",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.98,
+      "evidence": "traditionally sorafenib or lenvatinib in the first line"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "regorafenib",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.95,
+      "evidence": "regorafenib, cabozantinib or ramucirumab in the second line"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "cabozantinib",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.95,
+      "evidence": "regorafenib, cabozantinib or ramucirumab in the second line"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "ramucirumab",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.95,
+      "evidence": "regorafenib, cabozantinib or ramucirumab in the second line"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "atezolizumab",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.98,
+      "evidence": "The combination of atezolizumab and bevacizumab has been shown to improve overall survival"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "bevacizumab",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.97,
+      "evidence": "The combination of atezolizumab and bevacizumab has been shown to improve overall survival"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "pembrolizumab",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.97,
+      "evidence": "pembrolizumab monotherapy... have received FDA Accelerated Approval"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "nivolumab",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.97,
+      "evidence": "combination of nivolumab plus ipilimumab have received FDA Accelerated Approval"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "ipilimumab",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.97,
+      "evidence": "combination of nivolumab plus ipilimumab have received FDA Accelerated Approval"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "durvalumab",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.97,
+      "evidence": "durvalumab plus tremelimumab yielded superior overall survival versus sorafenib"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tremelimumab",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.97,
+      "evidence": "durvalumab plus tremelimumab yielded superior overall survival versus sorafenib"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "pembrolizumab",
+      "target_entity": "PD-1",
+      "confidence": 0.95,
+      "evidence": "pembrolizumab monotherapy (PD-1 inhibitor)"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "nivolumab",
+      "target_entity": "PD-1",
+      "confidence": 0.95,
+      "evidence": "nivolumab (PD-1 inhibitor class)"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "atezolizumab",
+      "target_entity": "PD-L1",
+      "confidence": 0.95,
+      "evidence": "atezolizumab (PD-L1 inhibitor)"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "durvalumab",
+      "target_entity": "PD-L1",
+      "confidence": 0.95,
+      "evidence": "durvalumab (PD-L1 inhibitor)"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "ipilimumab",
+      "target_entity": "CTLA-4",
+      "confidence": 0.95,
+      "evidence": "ipilimumab (CTLA-4 inhibitor)"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "tremelimumab",
+      "target_entity": "CTLA-4",
+      "confidence": 0.95,
+      "evidence": "tremelimumab (CTLA-4 inhibitor)"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "bevacizumab",
+      "target_entity": "VEGF",
+      "confidence": 0.9,
+      "evidence": "bevacizumab VEGF-targeted agent"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "atezolizumab",
+      "target_entity": "immune-related adverse events",
+      "confidence": 0.85,
+      "evidence": "current evidence from phase III trials on the efficacy, immune-related adverse events"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "inflamed HCC class",
+      "target_entity": "immune checkpoint inhibition",
+      "confidence": 0.85,
+      "evidence": "Inflamed and non-inflamed classes of HCC... have been associated with response to immune-checkpoint inhibitors"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T23:00:17.882804+00:00",
+  "error": null
+}

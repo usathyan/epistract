@@ -1,0 +1,220 @@
+{
+  "document_id": "pmid_39226466",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/03_rare_disease/docs/pmid_39226466.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "valoctocogene roxaparvovec",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "AAV gene therapy"
+      },
+      "confidence": 0.98,
+      "context": "Adeno-associated virus-based gene therapy (valoctocogene roxaparvovec) is an attractive treatment for hemophilia A."
+    },
+    {
+      "name": "hemophilia A",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Hemophilia A"
+      },
+      "confidence": 0.98,
+      "context": "treatment for hemophilia A"
+    },
+    {
+      "name": "adeno-associated virus",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "role": "vector"
+      },
+      "confidence": 0.95,
+      "context": "Adeno-associated virus-based gene therapy"
+    },
+    {
+      "name": "hepatotoxicity",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "meddra": "hepatotoxicity"
+      },
+      "confidence": 0.95,
+      "context": "minimize the risk of hepatotoxicity"
+    },
+    {
+      "name": "autoimmune hepatitis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Hepatitis, Autoimmune"
+      },
+      "confidence": 0.95,
+      "context": "gene therapy is contraindicated in patients with uncontrolled liver infections, autoimmune hepatitis"
+    },
+    {
+      "name": "cirrhosis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Liver Cirrhosis"
+      },
+      "confidence": 0.95,
+      "context": "liver stiffness \u22658 kPa, or cirrhosis"
+    },
+    {
+      "name": "liver steatosis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Fatty Liver"
+      },
+      "confidence": 0.9,
+      "context": "Before using gene therapy in patients with liver steatosis or other liver disorders"
+    },
+    {
+      "name": "liver infection",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "contraindicated in patients with uncontrolled liver infections"
+    },
+    {
+      "name": "liver stiffness",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "threshold": "\u22658 kPa",
+        "method": "transient elastography"
+      },
+      "confidence": 0.95,
+      "context": "liver stiffness \u22658 kPa"
+    },
+    {
+      "name": "alanine aminotransferase",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "ALT",
+        "threshold": "\u22651.5\u00d7 ULN"
+      },
+      "confidence": 0.98,
+      "context": "alanine aminotransferase (ALT) at any level above the upper limit of normal (ULN)"
+    },
+    {
+      "name": "transient elastography",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "TE",
+        "type": "imaging modality"
+      },
+      "confidence": 0.9,
+      "context": "liver stiffness measurements by transient elastography (TE)"
+    },
+    {
+      "name": "abdominal ultrasound",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "imaging modality"
+      },
+      "confidence": 0.85,
+      "context": "pretreatment assessment of liver health should include laboratory tests, abdominal ultrasound, and liver stiffness measurements"
+    },
+    {
+      "name": "prednisone",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule corticosteroid",
+        "dose": "60 mg/d"
+      },
+      "confidence": 0.98,
+      "context": "Patients with ALT elevation should receive prednisone 60 mg/d for 2 weeks"
+    },
+    {
+      "name": "ALT elevation",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "meddra": "alanine aminotransferase increased"
+      },
+      "confidence": 0.95,
+      "context": "ALT elevations can be promptly treated"
+    },
+    {
+      "name": "liver",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "assessment of baseline liver condition"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "hemophilia A",
+      "confidence": 0.98,
+      "evidence": "valoctocogene roxaparvovec) is an attractive treatment for hemophilia A"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "hepatotoxicity",
+      "confidence": 0.9,
+      "evidence": "Careful clinical management is required to minimize the risk of hepatotoxicity"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "ALT elevation",
+      "confidence": 0.9,
+      "evidence": "In the first year after therapy, ALT levels should be monitored 1 to 2 times per week to detect elevations \u22651.5\u00d7 ULN"
+    },
+    {
+      "relation_type": "CONTRAINDICATED_FOR",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "autoimmune hepatitis",
+      "confidence": 0.98,
+      "evidence": "gene therapy is contraindicated in patients with uncontrolled liver infections, autoimmune hepatitis"
+    },
+    {
+      "relation_type": "CONTRAINDICATED_FOR",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "cirrhosis",
+      "confidence": 0.98,
+      "evidence": "gene therapy is contraindicated in patients with ... cirrhosis"
+    },
+    {
+      "relation_type": "CONTRAINDICATED_FOR",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "liver infection",
+      "confidence": 0.95,
+      "evidence": "contraindicated in patients with uncontrolled liver infections"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "prednisone",
+      "target_entity": "ALT elevation",
+      "confidence": 0.95,
+      "evidence": "Patients with ALT elevation should receive prednisone 60 mg/d for 2 weeks"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "alanine aminotransferase",
+      "target_entity": "hepatotoxicity",
+      "confidence": 0.9,
+      "evidence": "ALT levels should be monitored 1 to 2 times per week to detect elevations"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "liver stiffness",
+      "target_entity": "cirrhosis",
+      "confidence": 0.85,
+      "evidence": "liver stiffness \u22658 kPa, or cirrhosis"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "transient elastography",
+      "target_entity": "liver stiffness",
+      "confidence": 0.9,
+      "evidence": "liver stiffness measurements by transient elastography (TE)"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T22:54:44.972637+00:00",
+  "error": null
+}

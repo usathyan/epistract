@@ -1,0 +1,190 @@
+{
+  "document_id": "pmid_25186232",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/01_picalm_alzheimers/docs/pmid_25186232.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "Alzheimer disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Alzheimer Disease"
+      },
+      "confidence": 0.98,
+      "context": "Alzheimer's disease (AD) is a highly heritable disease"
+    },
+    {
+      "name": "late-onset Alzheimer disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "LOAD"
+      },
+      "confidence": 0.98,
+      "context": "susceptibility locus for late-onset Alzheimer's disease (LOAD) incidence"
+    },
+    {
+      "name": "PICALM",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "phosphatidylinositol-binding clathrin assembly protein",
+        "hgnc_symbol": "PICALM"
+      },
+      "confidence": 0.98,
+      "context": "phosphatidylinositol-binding clathrin assembly protein (PICALM) gene as a susceptibility locus"
+    },
+    {
+      "name": "PICALM protein",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "function": "clathrin assembly"
+      },
+      "confidence": 0.95,
+      "context": "phosphatidylinositol-binding clathrin assembly protein (PICALM)"
+    },
+    {
+      "name": "amyloid beta",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "aliases": [
+          "Abeta",
+          "A-beta",
+          "beta-amyloid"
+        ],
+        "mesh": "Amyloid beta-Peptides"
+      },
+      "confidence": 0.98,
+      "context": "modulating production, transportation, and clearance of \u03b2-amyloid (A\u03b2) peptide"
+    },
+    {
+      "name": "tauopathy",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.9,
+      "context": "other A\u03b2-independent pathways are discussed, including tauopathy"
+    },
+    {
+      "name": "synaptic dysfunction",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.9,
+      "context": "tauopathy, synaptic dysfunction, disorganized lipid metabolism"
+    },
+    {
+      "name": "disorganized lipid metabolism",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.85,
+      "context": "synaptic dysfunction, disorganized lipid metabolism, immune disorder"
+    },
+    {
+      "name": "immune disorder",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.8,
+      "context": "disorganized lipid metabolism, immune disorder, and disrupted iron homeostasis"
+    },
+    {
+      "name": "disrupted iron homeostasis",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.85,
+      "context": "immune disorder, and disrupted iron homeostasis"
+    },
+    {
+      "name": "lipid metabolism",
+      "entity_type": "PATHWAY",
+      "confidence": 0.8,
+      "context": "disorganized lipid metabolism"
+    },
+    {
+      "name": "iron homeostasis",
+      "entity_type": "PATHWAY",
+      "confidence": 0.8,
+      "context": "disrupted iron homeostasis"
+    },
+    {
+      "name": "amyloid beta clearance",
+      "entity_type": "PATHWAY",
+      "confidence": 0.9,
+      "context": "modulating production, transportation, and clearance of \u03b2-amyloid (A\u03b2) peptide"
+    },
+    {
+      "name": "clathrin-mediated endocytosis",
+      "entity_type": "PATHWAY",
+      "confidence": 0.75,
+      "context": "phosphatidylinositol-binding clathrin assembly protein (PICALM)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PICALM",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.98,
+      "evidence": "PICALM gene as a susceptibility locus for late-onset Alzheimer's disease (LOAD) incidence"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PICALM",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.98,
+      "evidence": "PICALM affects AD risk primarily by modulating production, transportation, and clearance of \u03b2-amyloid"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "PICALM protein",
+      "target_entity": "amyloid beta clearance",
+      "confidence": 0.95,
+      "evidence": "PICALM affects AD risk primarily by modulating production, transportation, and clearance of \u03b2-amyloid (A\u03b2) peptide"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "amyloid beta",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.95,
+      "evidence": "modulating production, transportation, and clearance of \u03b2-amyloid (A\u03b2) peptide"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "tauopathy",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.85,
+      "evidence": "other A\u03b2-independent pathways are discussed, including tauopathy"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "synaptic dysfunction",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.85,
+      "evidence": "A\u03b2-independent pathways are discussed, including tauopathy, synaptic dysfunction"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "disorganized lipid metabolism",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.8,
+      "evidence": "A\u03b2-independent pathways... including... disorganized lipid metabolism"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "immune disorder",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.75,
+      "evidence": "A\u03b2-independent pathways... including... immune disorder"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "disrupted iron homeostasis",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.8,
+      "evidence": "A\u03b2-independent pathways... and disrupted iron homeostasis"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "PICALM",
+      "target_entity": "PICALM protein",
+      "confidence": 0.9,
+      "evidence": "phosphatidylinositol-binding clathrin assembly protein (PICALM) gene"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T19:00:37.881969+00:00",
+  "error": null
+}

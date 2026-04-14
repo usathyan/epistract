@@ -1,0 +1,277 @@
+{
+  "document_id": "pmid_39732595",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/02_kras_g12c_landscape/docs/pmid_39732595.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "sotorasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "inn": "sotorasib",
+        "drug_class": "KRAS G12C covalent inhibitor",
+        "development_stage": "approved",
+        "mechanism": "covalent binding"
+      },
+      "confidence": 0.98,
+      "context": "FDA approval of the first covalently binding KRASG12C inhibitors, sotorasib and adagrasib, in 2021 and 2022, respectively."
+    },
+    {
+      "name": "adagrasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "inn": "adagrasib",
+        "drug_class": "KRAS G12C covalent inhibitor",
+        "development_stage": "approved",
+        "mechanism": "covalent binding"
+      },
+      "confidence": 0.98,
+      "context": "FDA approval of the first covalently binding KRASG12C inhibitors, sotorasib and adagrasib, in 2021 and 2022, respectively."
+    },
+    {
+      "name": "KRAS",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "KRAS",
+        "gene_family": "RAS GTPase",
+        "organism": "Homo sapiens"
+      },
+      "confidence": 0.98,
+      "context": "the RAS genes HRAS and KRAS were discovered as the first human cancer genes, with KRAS later identified as one of the most frequently mutated oncogenes."
+    },
+    {
+      "name": "HRAS",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "HRAS",
+        "gene_family": "RAS GTPase",
+        "organism": "Homo sapiens"
+      },
+      "confidence": 0.95,
+      "context": "the RAS genes HRAS and KRAS were discovered as the first human cancer genes"
+    },
+    {
+      "name": "KRAS G12C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "variant": "G12C",
+        "variant_type": "missense",
+        "hgvs_protein": "p.Gly12Cys"
+      },
+      "confidence": 0.97,
+      "context": "FDA approval of the first covalently binding KRASG12C inhibitors, sotorasib and adagrasib"
+    },
+    {
+      "name": "KRAS protein",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GTPase",
+        "protein_family": "RAS family",
+        "uniprot_id": "P01116"
+      },
+      "confidence": 0.9,
+      "context": "The discovery in 2013 by Shokat and colleagues of a druggable pocket in KRAS paved the way to FDA approval of the first covalently binding KRASG12C inhibitors"
+    },
+    {
+      "name": "RAS-mutant cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Neoplasms",
+        "disease_subtype": "RAS-mutant"
+      },
+      "confidence": 0.95,
+      "context": "it took nearly 40 years to develop clinically effective inhibitors for RAS-mutant cancers."
+    },
+    {
+      "name": "Neoplasms",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Neoplasms",
+        "aliases": [
+          "cancer",
+          "tumor"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "MeSH Terms: Humans, Drug Resistance, Neoplasm, Proto-Oncogene Proteins p21(ras), Neoplasms"
+    },
+    {
+      "name": "covalent KRAS G12C inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "inhibition",
+        "selectivity": "selective",
+        "reversibility": "irreversible",
+        "target": "KRAS G12C"
+      },
+      "confidence": 0.97,
+      "context": "the first covalently binding KRASG12C inhibitors, sotorasib and adagrasib"
+    },
+    {
+      "name": "drug resistance to KRAS inhibitors",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "molecular",
+        "clinical_relevance": "mechanism",
+        "associated_genes": [
+          "KRAS"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "we highlight the progress on defining resistance mechanisms and developing combination treatment strategies to improve patient responses to KRAS therapies."
+    },
+    {
+      "name": "FDA",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "regulatory_agency",
+        "country": "USA"
+      },
+      "confidence": 0.98,
+      "context": "FDA approval of the first covalently binding KRASG12C inhibitors, sotorasib and adagrasib, in 2021 and 2022, respectively."
+    },
+    {
+      "name": "FDA approval of sotorasib (2021)",
+      "entity_type": "REGULATORY_ACTION",
+      "attributes": {
+        "agency": "FDA",
+        "action_type": "approval",
+        "date": "2021",
+        "indication": "KRAS G12C-mutant cancer"
+      },
+      "confidence": 0.97,
+      "context": "FDA approval of the first covalently binding KRASG12C inhibitors, sotorasib and adagrasib, in 2021 and 2022, respectively."
+    },
+    {
+      "name": "FDA approval of adagrasib (2022)",
+      "entity_type": "REGULATORY_ACTION",
+      "attributes": {
+        "agency": "FDA",
+        "action_type": "approval",
+        "date": "2022",
+        "indication": "KRAS G12C-mutant cancer"
+      },
+      "confidence": 0.97,
+      "context": "FDA approval of the first covalently binding KRASG12C inhibitors, sotorasib and adagrasib, in 2021 and 2022, respectively."
+    },
+    {
+      "name": "Isermann et al., Trends in Cancer 2025",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "39732595",
+        "journal": "Trends in cancer",
+        "year": "2025",
+        "first_author": "Isermann",
+        "publication_type": "review"
+      },
+      "confidence": 0.98,
+      "context": "Title: KRAS inhibitors: resistance drivers and combinatorial strategies. Authors: Isermann Tamara, Sers Christine, Der Channing J, Papke Bjoern Journal: Trends in cancer (2025)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.98,
+      "evidence": "the first covalently binding KRASG12C inhibitors, sotorasib and adagrasib"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.98,
+      "evidence": "the first covalently binding KRASG12C inhibitors, sotorasib and adagrasib"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS protein",
+      "confidence": 0.95,
+      "evidence": "the first covalently binding KRASG12C inhibitors, sotorasib and adagrasib"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS protein",
+      "confidence": 0.95,
+      "evidence": "the first covalently binding KRASG12C inhibitors, sotorasib and adagrasib"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "sotorasib",
+      "target_entity": "covalent KRAS G12C inhibition",
+      "confidence": 0.97,
+      "evidence": "the first covalently binding KRASG12C inhibitors, sotorasib and adagrasib"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "adagrasib",
+      "target_entity": "covalent KRAS G12C inhibition",
+      "confidence": 0.97,
+      "evidence": "the first covalently binding KRASG12C inhibitors, sotorasib and adagrasib"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "sotorasib",
+      "target_entity": "RAS-mutant cancer",
+      "confidence": 0.9,
+      "evidence": "clinically effective inhibitors for RAS-mutant cancers ... FDA approval of the first covalently binding KRASG12C inhibitors, sotorasib and adagrasib"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "adagrasib",
+      "target_entity": "RAS-mutant cancer",
+      "confidence": 0.9,
+      "evidence": "clinically effective inhibitors for RAS-mutant cancers ... FDA approval of the first covalently binding KRASG12C inhibitors, sotorasib and adagrasib"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS protein",
+      "confidence": 0.95,
+      "evidence": "a druggable pocket in KRAS"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS",
+      "target_entity": "Neoplasms",
+      "confidence": 0.95,
+      "evidence": "KRAS later identified as one of the most frequently mutated oncogenes."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "HRAS",
+      "target_entity": "Neoplasms",
+      "confidence": 0.9,
+      "evidence": "the RAS genes HRAS and KRAS were discovered as the first human cancer genes"
+    },
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.97,
+      "evidence": "the first covalently binding KRASG12C inhibitors"
+    },
+    {
+      "relation_type": "APPROVED_BY",
+      "source_entity": "sotorasib",
+      "target_entity": "FDA approval of sotorasib (2021)",
+      "confidence": 0.97,
+      "evidence": "FDA approval of the first covalently binding KRASG12C inhibitors, sotorasib and adagrasib, in 2021 and 2022, respectively."
+    },
+    {
+      "relation_type": "APPROVED_BY",
+      "source_entity": "adagrasib",
+      "target_entity": "FDA approval of adagrasib (2022)",
+      "confidence": 0.97,
+      "evidence": "FDA approval of the first covalently binding KRASG12C inhibitors, sotorasib and adagrasib, in 2021 and 2022, respectively."
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T20:22:56.311516+00:00",
+  "error": null
+}

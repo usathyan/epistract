@@ -1,0 +1,401 @@
+{
+  "document_id": "pmid_38915309",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/01_picalm_alzheimers/docs/pmid_38915309.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "Alzheimer's Disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Alzheimer Disease",
+        "aliases": [
+          "AD"
+        ],
+        "disease_class": "dementia"
+      },
+      "confidence": 0.98,
+      "context": "Alzheimer's disease (AD) is the most common form of dementia"
+    },
+    {
+      "name": "Dementia",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Dementia"
+      },
+      "confidence": 0.9,
+      "context": "Alzheimer's disease (AD) is the most common form of dementia"
+    },
+    {
+      "name": "amyloid-beta",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "aliases": [
+          "Abeta",
+          "A-beta"
+        ],
+        "protein_class": "peptide"
+      },
+      "confidence": 0.97,
+      "context": "characterized by the accumulation of amyloid-beta (A\u03b2) plaques and neurofibrillary Tau tangles"
+    },
+    {
+      "name": "MAPT",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "aliases": [
+          "Tau"
+        ],
+        "protein_class": "microtubule-associated protein"
+      },
+      "confidence": 0.95,
+      "context": "accumulation of amyloid-beta (A\u03b2) plaques and neurofibrillary Tau tangles in the brain"
+    },
+    {
+      "name": "ITSN1",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "ITSN1",
+        "aliases": [
+          "Intersectin 1"
+        ],
+        "isoforms": [
+          "ITSN1-long",
+          "ITSN1-short"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "Intersectin 1 (ITSN1)"
+    },
+    {
+      "name": "Intersectin 1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "aliases": [
+          "ITSN1"
+        ],
+        "protein_class": "scaffolding protein",
+        "function": "clathrin mediated endocytosis scaffolding"
+      },
+      "confidence": 0.98,
+      "context": "A clathrin mediated endocytosis scaffolding protein, Intersectin 1"
+    },
+    {
+      "name": "ITSN1-long",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "aliases": [
+          "ITSN1-L"
+        ],
+        "parent_gene": "ITSN1",
+        "isoform": "long"
+      },
+      "confidence": 0.97,
+      "context": "ITSN1-long (ITSN1-L) was decreased in the FC of males and HP of females"
+    },
+    {
+      "name": "ITSN1-short",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "parent_gene": "ITSN1",
+        "isoform": "short"
+      },
+      "confidence": 0.97,
+      "context": "ITSN1-short was increased in the HP of both males and females"
+    },
+    {
+      "name": "PICALM",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "PICALM",
+        "full_name": "Phosphatidylinositol Binding Clathrin Assembly Protein"
+      },
+      "confidence": 0.98,
+      "context": "Phosphatidylinositol Binding Clathrin Assembly Protein gene (PICALM)"
+    },
+    {
+      "name": "CLTA",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "aliases": [
+          "Clathrin Light Chain",
+          "CLT"
+        ],
+        "protein_class": "coat protein"
+      },
+      "confidence": 0.9,
+      "context": "Clathrin Light Chain (CLT)"
+    },
+    {
+      "name": "FCHO1",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "FCHO1",
+        "full_name": "FCH and Mu Domain Containing Endocytic Adaptor 1"
+      },
+      "confidence": 0.97,
+      "context": "FCH and Mu Domain Containing Endocytic Adaptor 1 (FCHO1)"
+    },
+    {
+      "name": "AP2A1",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "AP2A1",
+        "full_name": "Adaptor Related Protein Complex 2 Subunit Alpha 1"
+      },
+      "confidence": 0.97,
+      "context": "Adaptor Related Protein Complex 2 (AP2) Subunit Alpha 1 (AP2A1)"
+    },
+    {
+      "name": "DNM2",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "DNM2",
+        "full_name": "Dynamin 2"
+      },
+      "confidence": 0.97,
+      "context": "Dynamin 2 (DNM2)"
+    },
+    {
+      "name": "clathrin mediated endocytosis",
+      "entity_type": "PATHWAY",
+      "attributes": {
+        "aliases": [
+          "CME"
+        ],
+        "pathway_class": "cellular trafficking",
+        "key_components": [
+          "ITSN1",
+          "PICALM",
+          "CLTA",
+          "FCHO1",
+          "AP2A1",
+          "DNM2"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "clathrin mediated endocytosis (CME) was selected for further investigation"
+    },
+    {
+      "name": "amyloid-beta plaques",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "pathology_type": "protein aggregate"
+      },
+      "confidence": 0.95,
+      "context": "accumulation of amyloid-beta (A\u03b2) plaques"
+    },
+    {
+      "name": "neurofibrillary tangles",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "pathology_type": "protein aggregate",
+        "component": "Tau"
+      },
+      "confidence": 0.95,
+      "context": "neurofibrillary Tau tangles in the brain"
+    },
+    {
+      "name": "enlarged early endosomes",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "pathology_type": "early cellular phenotype"
+      },
+      "confidence": 0.92,
+      "context": "early cellular phenotypes such as enlarged early endosomes and pathogenic processing of A\u03b2"
+    },
+    {
+      "name": "cerebrospinal fluid microRNAs",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "sample_type": "CSF",
+        "analyte": "miRNA"
+      },
+      "confidence": 0.88,
+      "context": "candidate AD microRNAs (miRNAs) in human cerebrospinal fluid (CSF)"
+    },
+    {
+      "name": "frontal cortex",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {
+        "tissue_type": "brain region",
+        "aliases": [
+          "FC"
+        ]
+      },
+      "confidence": 0.97,
+      "context": "human post-mortem AD and control (CTL) frontal cortex (FC; AD n = 22, CTL n = 23)"
+    },
+    {
+      "name": "hippocampus",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {
+        "tissue_type": "brain region",
+        "aliases": [
+          "HP"
+        ]
+      },
+      "confidence": 0.97,
+      "context": "hippocampus (HP; AD n = 34, CTL n = 22)"
+    },
+    {
+      "name": "cortex",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {
+        "tissue_type": "brain region",
+        "aliases": [
+          "CTX"
+        ],
+        "organism": "mouse"
+      },
+      "confidence": 0.9,
+      "context": "cortex (CTX) and HP of the 5xFAD mouse model"
+    },
+    {
+      "name": "primary hippocampal neurons",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {
+        "cell_type": "neuron",
+        "source": "5xFAD mouse hippocampus"
+      },
+      "confidence": 0.9,
+      "context": "immunofluorescent staining of 5xFAD primary HP neurons"
+    },
+    {
+      "name": "5xFAD mouse model",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {
+        "model_type": "transgenic mouse",
+        "disease_model": "amyloid-beta pathology"
+      },
+      "confidence": 0.95,
+      "context": "5xFAD mouse model of A\u03b2 pathology"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "amyloid-beta plaques",
+      "target_entity": "Alzheimer's Disease",
+      "confidence": 0.97,
+      "evidence": "Alzheimer's disease (AD) ... is characterized by the accumulation of amyloid-beta (A\u03b2) plaques"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "neurofibrillary tangles",
+      "target_entity": "Alzheimer's Disease",
+      "confidence": 0.97,
+      "evidence": "characterized by the accumulation of amyloid-beta (A\u03b2) plaques and neurofibrillary Tau tangles"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "clathrin mediated endocytosis",
+      "target_entity": "Alzheimer's Disease",
+      "confidence": 0.9,
+      "evidence": "CME is altered in multiple brain cell types in AD and is implicated in early cellular phenotypes such as enlarged early endosomes and pathogenic processing of A\u03b2"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "Intersectin 1",
+      "target_entity": "clathrin mediated endocytosis",
+      "confidence": 0.97,
+      "evidence": "A clathrin mediated endocytosis scaffolding protein, Intersectin 1"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "PICALM",
+      "target_entity": "clathrin mediated endocytosis",
+      "confidence": 0.92,
+      "evidence": "major CME hub proteins ... Phosphatidylinositol Binding Clathrin Assembly Protein gene (PICALM)"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "CLTA",
+      "target_entity": "clathrin mediated endocytosis",
+      "confidence": 0.92,
+      "evidence": "major CME hub proteins ... Clathrin Light Chain (CLT)"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "FCHO1",
+      "target_entity": "clathrin mediated endocytosis",
+      "confidence": 0.92,
+      "evidence": "major CME hub proteins ... FCH and Mu Domain Containing Endocytic Adaptor 1 (FCHO1)"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "AP2A1",
+      "target_entity": "clathrin mediated endocytosis",
+      "confidence": 0.92,
+      "evidence": "major CME hub proteins ... Adaptor Related Protein Complex 2 (AP2) Subunit Alpha 1 (AP2A1)"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "DNM2",
+      "target_entity": "clathrin mediated endocytosis",
+      "confidence": 0.92,
+      "evidence": "major CME hub proteins ... Dynamin 2 (DNM2)"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "ITSN1",
+      "target_entity": "Intersectin 1",
+      "confidence": 0.95,
+      "evidence": "Intersectin 1 (ITSN1)"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "ITSN1",
+      "target_entity": "ITSN1-long",
+      "confidence": 0.95,
+      "evidence": "isoforms of ITSN1 change in a brain region-and sex-dependent manner"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "ITSN1",
+      "target_entity": "ITSN1-short",
+      "confidence": 0.95,
+      "evidence": "ITSN1-short was increased in the HP"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "ITSN1-long",
+      "target_entity": "Alzheimer's Disease",
+      "confidence": 0.93,
+      "evidence": "in AD, ITSN1-long (ITSN1-L) was decreased in the FC of males and HP of females"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "ITSN1-short",
+      "target_entity": "Alzheimer's Disease",
+      "confidence": 0.93,
+      "evidence": "ITSN1-short was increased in the HP of both males and females"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "Intersectin 1",
+      "target_entity": "Alzheimer's Disease",
+      "confidence": 0.9,
+      "evidence": "Intersectin 1, changes in an isoform, brain region, and sex specific manner in Alzheimer's disease"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "cerebrospinal fluid microRNAs",
+      "target_entity": "Alzheimer's Disease",
+      "confidence": 0.75,
+      "evidence": "we previously identified a set of candidate AD microRNAs (miRNAs) in human cerebrospinal fluid (CSF)"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "enlarged early endosomes",
+      "target_entity": "Alzheimer's Disease",
+      "confidence": 0.88,
+      "evidence": "CME is altered in multiple brain cell types in AD and is implicated in early cellular phenotypes such as enlarged early endosomes"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T19:00:51.008708+00:00",
+  "error": null
+}

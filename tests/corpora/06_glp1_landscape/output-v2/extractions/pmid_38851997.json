@@ -1,0 +1,212 @@
+{
+  "document_id": "pmid_38851997",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/06_glp1_landscape/docs/pmid_38851997.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "metabolic dysfunction-associated steatotic liver disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "aliases": [
+          "MASLD",
+          "NAFLD",
+          "non-alcoholic fatty liver disease"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "Metabolic dysfunction-associated steatotic liver disease (MASLD), previously termed non-alcoholic fatty liver disease (NAFLD)"
+    },
+    {
+      "name": "metabolic dysfunction-associated steatohepatitis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "aliases": [
+          "MASH",
+          "NASH"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "metabolic dysfunction-associated steatohepatitis (MASH, previously NASH)"
+    },
+    {
+      "name": "liver fibrosis",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "fibrosis, cirrhosis and MASH-related hepatocellular carcinoma"
+    },
+    {
+      "name": "cirrhosis",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "fibrosis, cirrhosis and MASH-related hepatocellular carcinoma"
+    },
+    {
+      "name": "hepatocellular carcinoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "aliases": [
+          "HCC"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "MASH-related hepatocellular carcinoma (HCC)"
+    },
+    {
+      "name": "type 2 diabetes",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "aliases": [
+          "T2D"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "particularly in the presence of type 2 diabetes (T2D) or obesity"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "confidence": 0.98,
+      "context": "type 2 diabetes (T2D) or obesity with additional metabolic risk factor(s)"
+    },
+    {
+      "name": "portal hypertension",
+      "entity_type": "DISEASE",
+      "confidence": 0.9,
+      "context": "surveillance for portal hypertension and HCC"
+    },
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "GLP-1 receptor agonist"
+      },
+      "confidence": 0.98,
+      "context": "incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity"
+    },
+    {
+      "name": "tirzepatide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "GLP-1/GIP dual receptor agonist"
+      },
+      "confidence": 0.98,
+      "context": "incretin-based therapies (e.g. semaglutide, tirzepatide)"
+    },
+    {
+      "name": "resmetirom",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "THR-beta agonist"
+      },
+      "confidence": 0.98,
+      "context": "MASH-targeted treatment with resmetirom, which demonstrated histological effectiveness on steatohepatitis and fibrosis"
+    },
+    {
+      "name": "FIB-4",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "blood-based fibrosis score"
+      },
+      "confidence": 0.95,
+      "context": "blood-based scores (such as FIB-4)"
+    },
+    {
+      "name": "transient elastography",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "imaging"
+      },
+      "confidence": 0.9,
+      "context": "imaging techniques (such as transient elastography)"
+    },
+    {
+      "name": "EASL",
+      "entity_type": "ORGANIZATION",
+      "confidence": 0.95,
+      "context": "joint EASL-EASD-EASO guideline"
+    },
+    {
+      "name": "EASD",
+      "entity_type": "ORGANIZATION",
+      "confidence": 0.95,
+      "context": "joint EASL-EASD-EASO guideline"
+    },
+    {
+      "name": "EASO",
+      "entity_type": "ORGANIZATION",
+      "confidence": 0.95,
+      "context": "joint EASL-EASD-EASO guideline"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "type 2 diabetes",
+      "confidence": 0.95,
+      "evidence": "use of incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "obesity",
+      "confidence": 0.95,
+      "evidence": "incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "type 2 diabetes",
+      "confidence": 0.95,
+      "evidence": "incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "obesity",
+      "confidence": 0.95,
+      "evidence": "incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "resmetirom",
+      "target_entity": "metabolic dysfunction-associated steatohepatitis",
+      "confidence": 0.95,
+      "evidence": "adults with non-cirrhotic MASH and significant liver fibrosis (stage >=2) should be considered for a MASH-targeted treatment with resmetirom"
+    },
+    {
+      "relation_type": "CONTRAINDICATED_FOR",
+      "source_entity": "resmetirom",
+      "target_entity": "cirrhosis",
+      "confidence": 0.85,
+      "evidence": "No MASH-targeted pharmacotherapy can currently be recommended for the cirrhotic stage"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "FIB-4",
+      "target_entity": "liver fibrosis",
+      "confidence": 0.9,
+      "evidence": "blood-based scores (such as FIB-4) ... to rule-out/in advanced fibrosis"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "transient elastography",
+      "target_entity": "liver fibrosis",
+      "confidence": 0.9,
+      "evidence": "imaging techniques (such as transient elastography) is suitable to rule-out/in advanced fibrosis"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "metabolic dysfunction-associated steatohepatitis",
+      "target_entity": "hepatocellular carcinoma",
+      "confidence": 0.9,
+      "evidence": "MASH-related hepatocellular carcinoma (HCC)"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:09:31.272442+00:00",
+  "error": null
+}

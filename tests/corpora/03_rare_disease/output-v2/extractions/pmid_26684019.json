@@ -1,0 +1,299 @@
+{
+  "document_id": "pmid_26684019",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/03_rare_disease/docs/pmid_26684019.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "BMN111",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide analog",
+        "class": "CNP analog",
+        "synonyms": [
+          "vosoritide",
+          "C-type natriuretic peptide analog"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "the C-type natriuretic peptide (CNP) analog (BMN111)"
+    },
+    {
+      "name": "C-type natriuretic peptide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "abbreviation": "CNP",
+        "modality": "peptide"
+      },
+      "confidence": 0.98,
+      "context": "C-type natriuretic peptide (CNP) analog (BMN111)"
+    },
+    {
+      "name": "parathyroid hormone",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide"
+      },
+      "confidence": 0.95,
+      "context": "intermittent parathyroid hormone injections"
+    },
+    {
+      "name": "meclozine",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule"
+      },
+      "confidence": 0.95,
+      "context": "meclozine and statin treatments"
+    },
+    {
+      "name": "statins",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule class"
+      },
+      "confidence": 0.9,
+      "context": "meclozine and statin treatments"
+    },
+    {
+      "name": "soluble FGFR3",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "recombinant decoy receptor"
+      },
+      "confidence": 0.92,
+      "context": "soluble FGFR3 therapy"
+    },
+    {
+      "name": "FGFR3",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "Fibroblast growth factor receptor 3"
+      },
+      "confidence": 0.99,
+      "context": "Fibroblast growth factor receptor 3 (FGFR3) is an important regulator of bone formation"
+    },
+    {
+      "name": "FGFR3",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "class": "tyrosine kinase receptor"
+      },
+      "confidence": 0.99,
+      "context": "increased phosphorylation of the tyrosine kinase receptor FGFR3"
+    },
+    {
+      "name": "achondroplasia",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "ACH",
+        "category": "chondrodysplasia",
+        "mesh": "Achondroplasia"
+      },
+      "confidence": 0.99,
+      "context": "achondroplasia (ACH), the most common form of dwarfism"
+    },
+    {
+      "name": "chondrodysplasias",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "category": "skeletal dysplasia"
+      },
+      "confidence": 0.95,
+      "context": "Gain-of-function mutations in the FGFR3 gene result in chondrodysplasias"
+    },
+    {
+      "name": "dwarfism",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.95,
+      "context": "the most common form of dwarfism"
+    },
+    {
+      "name": "defective chondrocyte proliferation and differentiation",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.9,
+      "context": "defective proliferation and differentiation of the chondrocytes in the growth plate cartilage"
+    },
+    {
+      "name": "disrupted endochondral ossification",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.9,
+      "context": "Both endochondral and membranous ossification processes are disrupted during development"
+    },
+    {
+      "name": "MAPK pathway",
+      "entity_type": "PATHWAY",
+      "attributes": {
+        "full_name": "mitogen-activated protein kinase pathway"
+      },
+      "confidence": 0.97,
+      "context": "downregulating the mitogen-activated protein kinase pathway"
+    },
+    {
+      "name": "FGFR3 signaling pathway",
+      "entity_type": "PATHWAY",
+      "confidence": 0.9,
+      "context": "antagonize FGFR3 signaling"
+    },
+    {
+      "name": "FGFR3 gain-of-function mutation",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "effect": "gain-of-function"
+      },
+      "confidence": 0.95,
+      "context": "Gain-of-function mutations in the FGFR3 gene"
+    },
+    {
+      "name": "Fgfr3 Y367C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "organism": "mouse",
+        "hgvs_protein": "p.Y367C",
+        "model": "Fgfr3Y367C/+ mice"
+      },
+      "confidence": 0.95,
+      "context": "Fgfr3Y367C/+ mice mimicking ACH"
+    },
+    {
+      "name": "FGFR3 inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "confidence": 0.9,
+      "context": "putative targets to antagonize FGFR3 signaling"
+    },
+    {
+      "name": "MAPK pathway downregulation",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "confidence": 0.95,
+      "context": "downregulating the mitogen-activated protein kinase pathway"
+    },
+    {
+      "name": "chondrocyte",
+      "entity_type": "CELL_OR_TISSUE",
+      "confidence": 0.95,
+      "context": "proliferation and differentiation of the chondrocytes in the growth plate cartilage"
+    },
+    {
+      "name": "growth plate cartilage",
+      "entity_type": "CELL_OR_TISSUE",
+      "confidence": 0.95,
+      "context": "chondrocytes in the growth plate cartilage"
+    },
+    {
+      "name": "BMN111 phase 2 pediatric achondroplasia trial",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "2",
+        "year": "2014",
+        "population": "pediatric ACH patients"
+      },
+      "confidence": 0.95,
+      "context": "In 2014, a clinical trial (phase 2) of BMN111 in pediatric patients with ACH has started"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "FGFR3",
+      "target_entity": "achondroplasia",
+      "confidence": 0.98,
+      "evidence": "Gain-of-function mutations in the FGFR3 gene result in chondrodysplasias which include achondroplasia"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "FGFR3 gain-of-function mutation",
+      "target_entity": "achondroplasia",
+      "confidence": 0.98,
+      "evidence": "Gain-of-function mutations in the FGFR3 gene result in chondrodysplasias which include achondroplasia"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "FGFR3",
+      "target_entity": "FGFR3",
+      "confidence": 0.95,
+      "evidence": "the tyrosine kinase receptor FGFR3"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "FGFR3",
+      "target_entity": "MAPK pathway",
+      "confidence": 0.95,
+      "evidence": "enhanced activation of its downstream signaling pathways ... mitogen-activated protein kinase pathway, which is activated as a result of a FGFR3 gain-of-function mutation"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "BMN111",
+      "target_entity": "achondroplasia",
+      "confidence": 0.95,
+      "evidence": "CNP (or BMN111) is one of the most promising strategies ... clinical trial (phase 2) of BMN111 in pediatric patients with ACH"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "BMN111",
+      "target_entity": "MAPK pathway",
+      "confidence": 0.95,
+      "evidence": "BMN111 acts as a key regulator of longitudinal bone growth by downregulating the mitogen-activated protein kinase pathway"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "BMN111",
+      "target_entity": "FGFR3",
+      "confidence": 0.8,
+      "evidence": "putative targets to antagonize FGFR3 signaling, CNP (or BMN111) is one of the most promising strategies"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "BMN111",
+      "target_entity": "BMN111 phase 2 pediatric achondroplasia trial",
+      "confidence": 0.98,
+      "evidence": "In 2014, a clinical trial (phase 2) of BMN111 in pediatric patients with ACH has started"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "parathyroid hormone",
+      "target_entity": "achondroplasia",
+      "confidence": 0.8,
+      "evidence": "Several preclinical studies have been conducted such as ... intermittent parathyroid hormone injections"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "soluble FGFR3",
+      "target_entity": "achondroplasia",
+      "confidence": 0.85,
+      "evidence": "Several preclinical studies have been conducted such as ... soluble FGFR3 therapy"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "meclozine",
+      "target_entity": "achondroplasia",
+      "confidence": 0.8,
+      "evidence": "meclozine and statin treatments"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "statins",
+      "target_entity": "achondroplasia",
+      "confidence": 0.75,
+      "evidence": "meclozine and statin treatments"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "soluble FGFR3",
+      "target_entity": "FGFR3",
+      "confidence": 0.85,
+      "evidence": "soluble FGFR3 therapy ... putative targets to antagonize FGFR3 signaling"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "BMN111",
+      "target_entity": "C-type natriuretic peptide",
+      "confidence": 0.7,
+      "evidence": "the C-type natriuretic peptide (CNP) analog (BMN111)"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T22:54:03.333843+00:00",
+  "error": null
+}

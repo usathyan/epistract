@@ -1,0 +1,269 @@
+{
+  "document_id": "pmid_39903735",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/06_glp1_landscape/docs/pmid_39903735.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "metabolic dysfunction-associated steatohepatitis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "MASH"
+      },
+      "confidence": 0.98,
+      "context": "Metabolic dysfunction-associated steatohepatitis (MASH) is a leading cause of liver disease."
+    },
+    {
+      "name": "liver fibrosis",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "fibrosis regression and MASH resolution"
+    },
+    {
+      "name": "pegozafermin",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "FGF21 analog"
+      },
+      "confidence": 0.98,
+      "context": "Pegozafermin, cilofexor + firsocostat, denifanstat, survodutide"
+    },
+    {
+      "name": "cilofexor",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "FXR agonist"
+      },
+      "confidence": 0.98,
+      "context": "cilofexor + firsocostat"
+    },
+    {
+      "name": "firsocostat",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "ACC inhibitor"
+      },
+      "confidence": 0.98,
+      "context": "cilofexor + firsocostat"
+    },
+    {
+      "name": "denifanstat",
+      "entity_type": "COMPOUND",
+      "confidence": 0.97,
+      "context": "denifanstat, survodutide, obeticholic acid"
+    },
+    {
+      "name": "survodutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "GLP-1/glucagon dual agonist"
+      },
+      "confidence": 0.98,
+      "context": "survodutide, obeticholic acid, tirzepatide"
+    },
+    {
+      "name": "obeticholic acid",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "FXR agonist"
+      },
+      "confidence": 0.98,
+      "context": "obeticholic acid, tirzepatide, resmetirom"
+    },
+    {
+      "name": "tirzepatide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "GLP-1/GIP dual agonist"
+      },
+      "confidence": 0.98,
+      "context": "tirzepatide, resmetirom, and semaglutide"
+    },
+    {
+      "name": "resmetirom",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "THR-beta agonist"
+      },
+      "confidence": 0.98,
+      "context": "resmetirom, and semaglutide"
+    },
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "GLP-1 receptor agonist"
+      },
+      "confidence": 0.98,
+      "context": "semaglutide were significantly better than placebo"
+    },
+    {
+      "name": "selonsertib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "ASK1 inhibitor"
+      },
+      "confidence": 0.97,
+      "context": "cilofexor + selonsertib"
+    },
+    {
+      "name": "efruxifermin",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "FGF21 analog"
+      },
+      "confidence": 0.97,
+      "context": "tirzepatide, efruxifermin, liraglutide"
+    },
+    {
+      "name": "liraglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "GLP-1 receptor agonist"
+      },
+      "confidence": 0.98,
+      "context": "efruxifermin, liraglutide, vitamin E + pioglitazone"
+    },
+    {
+      "name": "vitamin E",
+      "entity_type": "COMPOUND",
+      "confidence": 0.95,
+      "context": "vitamin E + pioglitazone"
+    },
+    {
+      "name": "pioglitazone",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "PPAR-gamma agonist"
+      },
+      "confidence": 0.97,
+      "context": "vitamin E + pioglitazone, resmetirom"
+    },
+    {
+      "name": "lanifibranor",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "pan-PPAR agonist"
+      },
+      "confidence": 0.97,
+      "context": "semaglutide, and lanifibranor were significantly better than placebo"
+    },
+    {
+      "name": "PubMed",
+      "entity_type": "ORGANIZATION",
+      "confidence": 0.9,
+      "context": "We searched PubMed and Embase databases"
+    },
+    {
+      "name": "Embase",
+      "entity_type": "ORGANIZATION",
+      "confidence": 0.9,
+      "context": "We searched PubMed and Embase databases"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "pegozafermin",
+      "target_entity": "metabolic dysfunction-associated steatohepatitis",
+      "confidence": 0.9,
+      "evidence": "Pegozafermin... significantly better than placebo in achieving fibrosis regression without worsening MASH"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "denifanstat",
+      "target_entity": "metabolic dysfunction-associated steatohepatitis",
+      "confidence": 0.88,
+      "evidence": "denifanstat... significantly better than placebo in achieving fibrosis regression"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "survodutide",
+      "target_entity": "metabolic dysfunction-associated steatohepatitis",
+      "confidence": 0.9,
+      "evidence": "survodutide... significantly better than placebo"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "obeticholic acid",
+      "target_entity": "metabolic dysfunction-associated steatohepatitis",
+      "confidence": 0.9,
+      "evidence": "obeticholic acid, tirzepatide, resmetirom, and semaglutide were significantly better than placebo"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "metabolic dysfunction-associated steatohepatitis",
+      "confidence": 0.9,
+      "evidence": "tirzepatide... significantly better than placebo in achieving fibrosis regression"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "resmetirom",
+      "target_entity": "metabolic dysfunction-associated steatohepatitis",
+      "confidence": 0.92,
+      "evidence": "resmetirom, and semaglutide were significantly better than placebo"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "metabolic dysfunction-associated steatohepatitis",
+      "confidence": 0.92,
+      "evidence": "semaglutide were significantly better than placebo"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "efruxifermin",
+      "target_entity": "metabolic dysfunction-associated steatohepatitis",
+      "confidence": 0.88,
+      "evidence": "efruxifermin... significantly better than placebo in achieving MASH resolution"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "liraglutide",
+      "target_entity": "metabolic dysfunction-associated steatohepatitis",
+      "confidence": 0.88,
+      "evidence": "liraglutide... significantly better than placebo in achieving MASH resolution"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "pioglitazone",
+      "target_entity": "metabolic dysfunction-associated steatohepatitis",
+      "confidence": 0.88,
+      "evidence": "pioglitazone... significantly better than placebo in achieving MASH resolution"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "lanifibranor",
+      "target_entity": "metabolic dysfunction-associated steatohepatitis",
+      "confidence": 0.88,
+      "evidence": "lanifibranor were significantly better than placebo in achieving MASH resolution"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "cilofexor",
+      "target_entity": "metabolic dysfunction-associated steatohepatitis",
+      "confidence": 0.87,
+      "evidence": "cilofexor + firsocostat... significantly better than placebo"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "firsocostat",
+      "target_entity": "metabolic dysfunction-associated steatohepatitis",
+      "confidence": 0.87,
+      "evidence": "cilofexor + firsocostat... significantly better than placebo"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "selonsertib",
+      "target_entity": "metabolic dysfunction-associated steatohepatitis",
+      "confidence": 0.85,
+      "evidence": "cilofexor + selonsertib were ranked the most effective interventions"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:10:01.893243+00:00",
+  "error": null
+}

@@ -1,0 +1,239 @@
+{
+  "document_id": "pmid_38367045",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/06_glp1_landscape/docs/pmid_38367045.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "retatrutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "status": "investigational",
+        "class": "triple receptor agonist"
+      },
+      "confidence": 0.98,
+      "context": "Retatrutide is a novel triple receptor agonist peptide that targets the glucagon receptor (GCGR), glucose-dependent insulinotropic polypeptide receptor (GIPR), and glucagon-like peptide-1 receptor (GLP-1R)."
+    },
+    {
+      "name": "GCGR",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "glucagon receptor"
+      },
+      "confidence": 0.95,
+      "context": "targets the glucagon receptor (GCGR)"
+    },
+    {
+      "name": "GIPR",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "glucose-dependent insulinotropic polypeptide receptor"
+      },
+      "confidence": 0.95,
+      "context": "glucose-dependent insulinotropic polypeptide receptor (GIPR)"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor",
+        "aliases": [
+          "GLP-1R"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "glucagon-like peptide-1 receptor (GLP-1R)"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "confidence": 0.98,
+      "context": "for the treatment of obesity"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "confidence": 0.98,
+      "context": "type 2 diabetes mellitus"
+    },
+    {
+      "name": "non-alcoholic fatty liver disease",
+      "entity_type": "DISEASE",
+      "confidence": 0.98,
+      "context": "non-alcoholic fatty liver disease"
+    },
+    {
+      "name": "cardiovascular disease",
+      "entity_type": "DISEASE",
+      "confidence": 0.9,
+      "context": "type 2 diabetes mellitus, cardiovascular disease, hypertension, dyslipidaemia"
+    },
+    {
+      "name": "hypertension",
+      "entity_type": "DISEASE",
+      "confidence": 0.9,
+      "context": "cardiovascular disease, hypertension, dyslipidaemia"
+    },
+    {
+      "name": "dyslipidaemia",
+      "entity_type": "DISEASE",
+      "confidence": 0.9,
+      "context": "hypertension, dyslipidaemia"
+    },
+    {
+      "name": "triple receptor agonism (GCGR/GIPR/GLP-1R)",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "confidence": 0.97,
+      "context": "novel triple receptor agonist peptide that targets the glucagon receptor (GCGR), glucose-dependent insulinotropic polypeptide receptor (GIPR), and glucagon-like peptide-1 receptor (GLP-1R)"
+    },
+    {
+      "name": "Retatrutide Phase III trial (T2DM/NAFLD/obesity)",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "III",
+        "start_date": "2023-08-28",
+        "indications": [
+          "type 2 diabetes mellitus",
+          "non-alcoholic fatty liver disease",
+          "obesity"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "The Phase III trial of this pipeline drug for treating type 2 diabetes mellitus, non-alcoholic fatty liver disease, and obesity started on August 28, 2023."
+    },
+    {
+      "name": "Retatrutide Phase II obesity trial",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "II",
+        "population": "overweight and obese adults",
+        "endpoints": [
+          "17.5% weight loss at 24 weeks",
+          "24.4% weight loss at 48 weeks"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "The results of a Phase II clinical trial have demonstrated significant weight reduction in overweight and obese adults. Specifically, the trial reported an average weight loss of 17.5% and 24.4% at 24 and 48 weeks, respectively."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "retatrutide",
+      "target_entity": "GCGR",
+      "confidence": 0.97,
+      "evidence": "triple receptor agonist peptide that targets the glucagon receptor (GCGR)"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "retatrutide",
+      "target_entity": "GIPR",
+      "confidence": 0.97,
+      "evidence": "targets... glucose-dependent insulinotropic polypeptide receptor (GIPR)"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "retatrutide",
+      "target_entity": "GLP1R",
+      "confidence": 0.97,
+      "evidence": "targets... glucagon-like peptide-1 receptor (GLP-1R)"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "retatrutide",
+      "target_entity": "GCGR",
+      "confidence": 0.97,
+      "evidence": "targets the glucagon receptor (GCGR)"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "retatrutide",
+      "target_entity": "GIPR",
+      "confidence": 0.97,
+      "evidence": "targets... GIPR"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "retatrutide",
+      "target_entity": "GLP1R",
+      "confidence": 0.97,
+      "evidence": "targets... GLP-1R"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "retatrutide",
+      "target_entity": "obesity",
+      "confidence": 0.95,
+      "evidence": "A review of an investigational drug retatrutide... for the treatment of obesity"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "retatrutide",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.9,
+      "evidence": "Phase III trial of this pipeline drug for treating type 2 diabetes mellitus"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "retatrutide",
+      "target_entity": "non-alcoholic fatty liver disease",
+      "confidence": 0.9,
+      "evidence": "Phase III trial... non-alcoholic fatty liver disease"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "retatrutide",
+      "target_entity": "Retatrutide Phase III trial (T2DM/NAFLD/obesity)",
+      "confidence": 0.97,
+      "evidence": "The Phase III trial of this pipeline drug... started on August 28, 2023."
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "retatrutide",
+      "target_entity": "Retatrutide Phase II obesity trial",
+      "confidence": 0.97,
+      "evidence": "The results of a Phase II clinical trial have demonstrated significant weight reduction"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "obesity",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.85,
+      "evidence": "It leads to various health conditions, such as type 2 diabetes mellitus"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "obesity",
+      "target_entity": "cardiovascular disease",
+      "confidence": 0.85,
+      "evidence": "It leads to various health conditions, such as... cardiovascular disease"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "obesity",
+      "target_entity": "hypertension",
+      "confidence": 0.85,
+      "evidence": "leads to various health conditions, such as... hypertension"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "obesity",
+      "target_entity": "dyslipidaemia",
+      "confidence": 0.85,
+      "evidence": "leads to various health conditions, such as... dyslipidaemia"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "obesity",
+      "target_entity": "non-alcoholic fatty liver disease",
+      "confidence": 0.85,
+      "evidence": "leads to various health conditions, such as... non-alcoholic fatty liver disease"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:09:24.842741+00:00",
+  "error": null
+}

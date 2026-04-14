@@ -1,0 +1,111 @@
+{
+  "document_id": "pmid_38522180",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/03_rare_disease/docs/pmid_38522180.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "pegvaliase",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "enzyme substitution therapy",
+        "class": "PEGylated recombinant phenylalanine ammonia-lyase"
+      },
+      "confidence": 0.98,
+      "context": "the real-life use of pegvaliase in Italy in managing patients affected by phenylketonuria"
+    },
+    {
+      "name": "phenylketonuria",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "PKU",
+        "category": "inborn error of metabolism"
+      },
+      "confidence": 0.98,
+      "context": "managing patients affected by phenylketonuria (PKU)"
+    },
+    {
+      "name": "phenylalanine",
+      "entity_type": "METABOLITE",
+      "attributes": {
+        "abbreviation": "Phe"
+      },
+      "confidence": 0.98,
+      "context": "reached Phe levels below 600 \u03bcmol/l"
+    },
+    {
+      "name": "phenylalanine ammonia-lyase",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "abbreviation": "PAL",
+        "role": "enzyme"
+      },
+      "confidence": 0.95,
+      "context": "MeSH Terms: ... Phenylalanine Ammonia-Lyase"
+    },
+    {
+      "name": "enzyme substitution therapy",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "confidence": 0.9,
+      "context": "this novel enzyme substitution therapy"
+    },
+    {
+      "name": "elevated phenylalanine",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "threshold": "600 \u03bcmol/l",
+        "direction": "reduction"
+      },
+      "confidence": 0.9,
+      "context": "11 out of 18 patients (61%) reached Phe levels below 600 \u03bcmol/l"
+    },
+    {
+      "name": "injection site reactions",
+      "entity_type": "ADVERSE_EVENT",
+      "confidence": 0.6,
+      "context": "challenges associated with pegvaliase therapy, including managing adverse events"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "pegvaliase",
+      "target_entity": "phenylketonuria",
+      "confidence": 0.98,
+      "evidence": "real-life use of pegvaliase in Italy in managing patients affected by phenylketonuria (PKU)"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "pegvaliase",
+      "target_entity": "phenylalanine",
+      "confidence": 0.95,
+      "evidence": "potential of pegvaliase in reducing Phe levels"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "pegvaliase",
+      "target_entity": "enzyme substitution therapy",
+      "confidence": 0.9,
+      "evidence": "this novel enzyme substitution therapy"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "elevated phenylalanine",
+      "target_entity": "phenylketonuria",
+      "confidence": 0.9,
+      "evidence": "Phe levels below 600 \u03bcmol/l ... managing patients affected by phenylketonuria"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "pegvaliase",
+      "target_entity": "injection site reactions",
+      "confidence": 0.55,
+      "evidence": "challenges associated with pegvaliase therapy, including managing adverse events"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T22:53:59.134102+00:00",
+  "error": null
+}

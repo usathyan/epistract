@@ -1,0 +1,635 @@
+{
+  "document_id": "pmid_34130600",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/01_picalm_alzheimers/docs/pmid_34130600.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "autophagy",
+      "entity_type": "PATHWAY",
+      "confidence": 0.98,
+      "context": "Primary dysfunction of autophagy due to Mendelian defects"
+    },
+    {
+      "name": "chaperone-mediated autophagy",
+      "entity_type": "PATHWAY",
+      "confidence": 0.95,
+      "context": "CMA: chaperone-mediated autophagy"
+    },
+    {
+      "name": "autophagic lysosomal reformation",
+      "entity_type": "PATHWAY",
+      "confidence": 0.9,
+      "context": "ALR: autophagic lysosomal reformation"
+    },
+    {
+      "name": "Alzheimer disease",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "AD: Alzheimer disease"
+    },
+    {
+      "name": "amyotrophic lateral sclerosis",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "ALS: amyotrophic lateral sclerosis"
+    },
+    {
+      "name": "autism spectrum disorder",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "ASD: autism spectrum disorder"
+    },
+    {
+      "name": "frontotemporal dementia",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "FTD: frontotemporal dementia"
+    },
+    {
+      "name": "Huntington disease",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "HD: Huntington disease"
+    },
+    {
+      "name": "Parkinson disease",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "PD: Parkinson disease"
+    },
+    {
+      "name": "Gaucher disease",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "GD: Gaucher disease"
+    },
+    {
+      "name": "Chediak-Higashi syndrome",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "CHS: Chediak-Higashi syndrome"
+    },
+    {
+      "name": "Charcot-Marie-Tooth disease",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "CMT: Charcot-Marie-Tooth disease"
+    },
+    {
+      "name": "centronuclear myopathy",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "CNM: centronuclear myopathy"
+    },
+    {
+      "name": "beta-propeller protein associated neurodegeneration",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "BPAN"
+    },
+    {
+      "name": "X-linked myopathy with excessive autophagy",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "MEAX"
+    },
+    {
+      "name": "Marinesco-Sjoegren syndrome",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "MSS"
+    },
+    {
+      "name": "neurodegeneration with brain iron accumulation",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "NBIA"
+    },
+    {
+      "name": "neuronal ceroid lipofuscinosis",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "NCL"
+    },
+    {
+      "name": "Niemann-Pick disease type 1",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "NPC1"
+    },
+    {
+      "name": "static encephalopathy of childhood with neurodegeneration in adulthood",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "SENDA"
+    },
+    {
+      "name": "SNX14-related ataxia",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "SCAR20"
+    },
+    {
+      "name": "hereditary spastic paraparesis",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "HSPP"
+    },
+    {
+      "name": "Warburg Micro syndrome",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "WMS"
+    },
+    {
+      "name": "X-linked myotubular myopathy",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "XLMTM"
+    },
+    {
+      "name": "glycogen storage disorder",
+      "entity_type": "DISEASE",
+      "confidence": 0.9,
+      "context": "GSD"
+    },
+    {
+      "name": "AMBRA1",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "AMBRA1: autophagy and beclin 1 regulator 1"
+    },
+    {
+      "name": "PRKAA1",
+      "entity_type": "GENE",
+      "confidence": 0.8,
+      "context": "AMPK: AMP-activated protein kinase"
+    },
+    {
+      "name": "BIN1",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "BIN1: bridging integrator 1"
+    },
+    {
+      "name": "CHMP2B",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "CHMP2B"
+    },
+    {
+      "name": "DNM2",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "DNM2: dynamin 2"
+    },
+    {
+      "name": "DVL3",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "DVL3"
+    },
+    {
+      "name": "EPG5",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "EPG5"
+    },
+    {
+      "name": "FIG4",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "FIG4"
+    },
+    {
+      "name": "GBA",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "GBA: glucocerebrosidase"
+    },
+    {
+      "name": "GRN",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "GRN: progranulin"
+    },
+    {
+      "name": "LAMP2",
+      "entity_type": "GENE",
+      "confidence": 0.95,
+      "context": "LAMP2A"
+    },
+    {
+      "name": "MTM1",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "MTM1: myotubularin 1"
+    },
+    {
+      "name": "MTOR",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "MTOR"
+    },
+    {
+      "name": "RAB3GAP1",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "RAB3GAP1"
+    },
+    {
+      "name": "RAB3GAP2",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "RAB3GAP2"
+    },
+    {
+      "name": "RB1CC1",
+      "entity_type": "GENE",
+      "confidence": 0.9,
+      "context": "RB1"
+    },
+    {
+      "name": "RHEB",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "RHEB"
+    },
+    {
+      "name": "SNX14",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "SNX14"
+    },
+    {
+      "name": "SPG11",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "SPG11"
+    },
+    {
+      "name": "SQSTM1",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "SQSTM1"
+    },
+    {
+      "name": "TBC1D20",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "TBC1D20"
+    },
+    {
+      "name": "TECPR2",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "TECPR2"
+    },
+    {
+      "name": "TSC1",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "TSC1"
+    },
+    {
+      "name": "TSC2",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "TSC2"
+    },
+    {
+      "name": "UBQLN2",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "UBQLN2"
+    },
+    {
+      "name": "VCP",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "VCP"
+    },
+    {
+      "name": "VMA21",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "VMA21"
+    },
+    {
+      "name": "WDFY3",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "WDFY3/ALFY"
+    },
+    {
+      "name": "WDR45",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "WDR45"
+    },
+    {
+      "name": "WDR47",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "WDR47"
+    },
+    {
+      "name": "ZFYVE26",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "ZFYVE26"
+    },
+    {
+      "name": "HTT",
+      "entity_type": "GENE",
+      "confidence": 0.9,
+      "context": "mHTT: mutant huntingtin"
+    },
+    {
+      "name": "mutant huntingtin",
+      "entity_type": "PROTEIN",
+      "confidence": 0.9,
+      "context": "mHTT"
+    },
+    {
+      "name": "dipeptide repeat protein",
+      "entity_type": "PROTEIN",
+      "confidence": 0.85,
+      "context": "DPR"
+    },
+    {
+      "name": "phosphatidylinositol-3-phosphate",
+      "entity_type": "METABOLITE",
+      "confidence": 0.95,
+      "context": "PtdIns3P"
+    },
+    {
+      "name": "endoplasmic reticulum",
+      "entity_type": "CELL_OR_TISSUE",
+      "confidence": 0.9,
+      "context": "ER"
+    },
+    {
+      "name": "central nervous system",
+      "entity_type": "CELL_OR_TISSUE",
+      "confidence": 0.9,
+      "context": "CNS"
+    },
+    {
+      "name": "spasticity",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.95,
+      "context": "spasticity and peripheral nerve pathology"
+    },
+    {
+      "name": "peripheral nerve pathology",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.9,
+      "context": "peripheral nerve pathology"
+    },
+    {
+      "name": "myopathy",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.9,
+      "context": "an associated myopathy"
+    },
+    {
+      "name": "cerebellar involvement",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.9,
+      "context": "cerebellar involvement"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "autophagy",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.85,
+      "evidence": "close connection with adult-onset neurodegenerative disorders"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "autophagy",
+      "target_entity": "amyotrophic lateral sclerosis",
+      "confidence": 0.85,
+      "evidence": "adult-onset neurodegenerative disorders"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "autophagy",
+      "target_entity": "frontotemporal dementia",
+      "confidence": 0.85,
+      "evidence": "adult-onset neurodegenerative disorders"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "autophagy",
+      "target_entity": "Huntington disease",
+      "confidence": 0.85,
+      "evidence": "adult-onset neurodegenerative disorders"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "autophagy",
+      "target_entity": "Parkinson disease",
+      "confidence": 0.85,
+      "evidence": "adult-onset neurodegenerative disorders"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "AMBRA1",
+      "target_entity": "autophagy",
+      "confidence": 0.95,
+      "evidence": "AMBRA1: autophagy and beclin 1 regulator 1"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "MTOR",
+      "target_entity": "autophagy",
+      "confidence": 0.9,
+      "evidence": "core components of autophagy machinery"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "WDR45",
+      "target_entity": "beta-propeller protein associated neurodegeneration",
+      "confidence": 0.9,
+      "evidence": "BPAN; WDR45"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "SNX14",
+      "target_entity": "SNX14-related ataxia",
+      "confidence": 0.95,
+      "evidence": "SCAR20: SNX14-related ataxia"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "GBA",
+      "target_entity": "Gaucher disease",
+      "confidence": 0.9,
+      "evidence": "GBA: glucocerebrosidase; GD: Gaucher disease"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "MTM1",
+      "target_entity": "X-linked myotubular myopathy",
+      "confidence": 0.9,
+      "evidence": "MTM1: myotubularin 1"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "VMA21",
+      "target_entity": "X-linked myopathy with excessive autophagy",
+      "confidence": 0.9,
+      "evidence": "MEAX; VMA21"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "HTT",
+      "target_entity": "Huntington disease",
+      "confidence": 0.9,
+      "evidence": "mHTT: mutant huntingtin"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "GRN",
+      "target_entity": "frontotemporal dementia",
+      "confidence": 0.85,
+      "evidence": "GRN: progranulin"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "CHMP2B",
+      "target_entity": "frontotemporal dementia",
+      "confidence": 0.85,
+      "evidence": "CHMP2B"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "UBQLN2",
+      "target_entity": "amyotrophic lateral sclerosis",
+      "confidence": 0.85,
+      "evidence": "UBQLN2"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "VCP",
+      "target_entity": "amyotrophic lateral sclerosis",
+      "confidence": 0.85,
+      "evidence": "VCP"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "SPG11",
+      "target_entity": "hereditary spastic paraparesis",
+      "confidence": 0.9,
+      "evidence": "SPG11: spatacsin"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "ZFYVE26",
+      "target_entity": "hereditary spastic paraparesis",
+      "confidence": 0.85,
+      "evidence": "ZFYVE26"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "TECPR2",
+      "target_entity": "hereditary spastic paraparesis",
+      "confidence": 0.85,
+      "evidence": "TECPR2"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "EPG5",
+      "target_entity": "autophagy",
+      "confidence": 0.9,
+      "evidence": "EPG5: ectopic P-granules autophagy protein 5 homolog"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "DNM2",
+      "target_entity": "centronuclear myopathy",
+      "confidence": 0.85,
+      "evidence": "DNM2; CNM"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "BIN1",
+      "target_entity": "centronuclear myopathy",
+      "confidence": 0.85,
+      "evidence": "BIN1"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "FIG4",
+      "target_entity": "Charcot-Marie-Tooth disease",
+      "confidence": 0.8,
+      "evidence": "FIG4; CMT"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "RHEB",
+      "target_entity": "autophagy",
+      "confidence": 0.85,
+      "evidence": "RHEB: ras homolog, mTORC1 binding"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "TSC1",
+      "target_entity": "autophagy",
+      "confidence": 0.85,
+      "evidence": "TSC1"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "TSC2",
+      "target_entity": "autophagy",
+      "confidence": 0.85,
+      "evidence": "TSC2"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "SQSTM1",
+      "target_entity": "autophagy",
+      "confidence": 0.9,
+      "evidence": "SQSTM1: sequestosome 1"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "LAMP2",
+      "target_entity": "chaperone-mediated autophagy",
+      "confidence": 0.9,
+      "evidence": "LAMP2A"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "RAB3GAP1",
+      "target_entity": "Warburg Micro syndrome",
+      "confidence": 0.85,
+      "evidence": "RAB3GAP1"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "RAB3GAP2",
+      "target_entity": "Warburg Micro syndrome",
+      "confidence": 0.85,
+      "evidence": "RAB3GAP2"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "TBC1D20",
+      "target_entity": "Warburg Micro syndrome",
+      "confidence": 0.8,
+      "evidence": "TBC1D20"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T19:07:48.379107+00:00",
+  "error": null
+}

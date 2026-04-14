@@ -1,0 +1,171 @@
+{
+  "document_id": "pmid_32871100",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/05_cardiovascular/docs/pmid_32871100.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "mavacamten",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "cardiac myosin inhibitor",
+        "first_in_class": true
+      },
+      "confidence": 0.98,
+      "context": "mavacamten, a first-in-class cardiac myosin inhibitor"
+    },
+    {
+      "name": "obstructive hypertrophic cardiomyopathy",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Cardiomyopathy, Hypertrophic"
+      },
+      "confidence": 0.98,
+      "context": "symptomatic obstructive hypertrophic cardiomyopathy"
+    },
+    {
+      "name": "hypertrophic cardiomyopathy",
+      "entity_type": "DISEASE",
+      "confidence": 0.98,
+      "context": "hypertrophic cardiomyopathy"
+    },
+    {
+      "name": "cardiac myosin",
+      "entity_type": "PROTEIN",
+      "confidence": 0.95,
+      "context": "cardiac myosin inhibitor"
+    },
+    {
+      "name": "left ventricular outflow tract obstruction",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.95,
+      "context": "dynamic left ventricular outflow tract (LVOT) obstruction"
+    },
+    {
+      "name": "cardiac muscle hypercontractility",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.95,
+      "context": "Cardiac muscle hypercontractility is a key pathophysiological abnormality"
+    },
+    {
+      "name": "EXPLORER-HCM",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "3",
+        "nct_id": "NCT03470545",
+        "design": "randomised, double-blind, placebo-controlled",
+        "n": 251,
+        "duration_weeks": 30
+      },
+      "confidence": 0.99,
+      "context": "phase 3, randomised, double-blind, placebo-controlled trial (EXPLORER-HCM)"
+    },
+    {
+      "name": "NCT03470545",
+      "entity_type": "CLINICAL_TRIAL",
+      "confidence": 0.99,
+      "context": "registered with ClinicalTrials.gov, NCT03470545"
+    },
+    {
+      "name": "peak oxygen consumption",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "pVO2"
+      },
+      "confidence": 0.95,
+      "context": "increase in peak oxygen consumption (pVO2)"
+    },
+    {
+      "name": "post-exercise LVOT gradient",
+      "entity_type": "BIOMARKER",
+      "confidence": 0.9,
+      "context": "changes in post-exercise LVOT gradient"
+    },
+    {
+      "name": "NYHA functional class",
+      "entity_type": "BIOMARKER",
+      "confidence": 0.9,
+      "context": "NYHA class reduction"
+    },
+    {
+      "name": "KCCQ-CSS",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "full_name": "Kansas City Cardiomyopathy Questionnaire-Clinical Summary Score"
+      },
+      "confidence": 0.9,
+      "context": "Kansas City Cardiomyopathy Questionnaire-Clinical Summary Score (KCCQ-CSS)"
+    },
+    {
+      "name": "HCMSQ-SoB",
+      "entity_type": "BIOMARKER",
+      "confidence": 0.9,
+      "context": "Hypertrophic Cardiomyopathy Symptom Questionnaire Shortness-of-Breath subscore (HCMSQ-SoB)"
+    },
+    {
+      "name": "MyoKardia",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "sponsor"
+      },
+      "confidence": 0.99,
+      "context": "FUNDING: MyoKardia"
+    },
+    {
+      "name": "sudden death",
+      "entity_type": "ADVERSE_EVENT",
+      "confidence": 0.85,
+      "context": "One patient died by sudden death in the placebo group"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "mavacamten",
+      "target_entity": "cardiac myosin",
+      "confidence": 0.98,
+      "evidence": "mavacamten, a first-in-class cardiac myosin inhibitor"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "mavacamten",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.95,
+      "evidence": "assess the efficacy and safety of mavacamten...in symptomatic obstructive hypertrophic cardiomyopathy"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "mavacamten",
+      "target_entity": "EXPLORER-HCM",
+      "confidence": 0.99,
+      "evidence": "assigned (1:1) to receive mavacamten (starting at 5 mg) or placebo"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "cardiac muscle hypercontractility",
+      "target_entity": "hypertrophic cardiomyopathy",
+      "confidence": 0.95,
+      "evidence": "Cardiac muscle hypercontractility is a key pathophysiological abnormality in hypertrophic cardiomyopathy"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "left ventricular outflow tract obstruction",
+      "target_entity": "hypertrophic cardiomyopathy",
+      "confidence": 0.9,
+      "evidence": "major determinant of dynamic left ventricular outflow tract (LVOT) obstruction"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "post-exercise LVOT gradient",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.85,
+      "evidence": "LVOT gradient of 50 mm Hg or greater"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:02:39.216717+00:00",
+  "error": null
+}

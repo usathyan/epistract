@@ -1,0 +1,372 @@
+{
+  "document_id": "pmid_34953682",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/02_kras_g12c_landscape/docs/pmid_34953682.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "adagrasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "inn": "adagrasib",
+        "compound_code": "MRTX849",
+        "drug_class": "covalent KRAS G12C inhibitor",
+        "development_stage": "experimental"
+      },
+      "confidence": 0.95,
+      "context": "Resistance to adagrasib, an experimental antitumor agent exerting its cytotoxic effect as a covalent inhibitor of the G12C KRas"
+    },
+    {
+      "name": "KRAS",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "KRAS",
+        "gene_family": "RAS GTPase"
+      },
+      "confidence": 0.98,
+      "context": "multiple copies of KRAS G12C which lead to higher expression level of the mutant protein"
+    },
+    {
+      "name": "KRAS G12C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "variant_type": "missense",
+        "hgvs_protein": "p.G12C"
+      },
+      "confidence": 0.98,
+      "context": "the common KRasG12C driver mutation emerges in different cancers"
+    },
+    {
+      "name": "NRAS",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "NRAS",
+        "gene_family": "RAS GTPase"
+      },
+      "confidence": 0.95,
+      "context": "emerging driver mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "name": "BRAF",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "BRAF",
+        "gene_family": "RAF kinase"
+      },
+      "confidence": 0.95,
+      "context": "emerging driver mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "name": "MAP2K1",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "MAP2K1",
+        "gene_family": "MAP2K"
+      },
+      "confidence": 0.95,
+      "context": "emerging driver mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "name": "RET",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "RET",
+        "gene_family": "receptor tyrosine kinase"
+      },
+      "confidence": 0.95,
+      "context": "emerging driver mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "name": "MET",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "MET",
+        "variant_type": "amplification",
+        "gene_family": "receptor tyrosine kinase"
+      },
+      "confidence": 0.95,
+      "context": "Redundant or parallel pathways included MET amplification"
+    },
+    {
+      "name": "ALK",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "ALK",
+        "variant_type": "fusion"
+      },
+      "confidence": 0.95,
+      "context": "gene fusion events in ALK, RET, BRAF, RAF1, and FGFR3"
+    },
+    {
+      "name": "RAF1",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "RAF1",
+        "variant_type": "fusion"
+      },
+      "confidence": 0.95,
+      "context": "gene fusion events in ALK, RET, BRAF, RAF1, and FGFR3"
+    },
+    {
+      "name": "FGFR3",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "FGFR3",
+        "variant_type": "fusion"
+      },
+      "confidence": 0.95,
+      "context": "gene fusion events in ALK, RET, BRAF, RAF1, and FGFR3"
+    },
+    {
+      "name": "NF1",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "NF1",
+        "gene_family": "tumor suppressor",
+        "variant_type": "loss-of-function"
+      },
+      "confidence": 0.95,
+      "context": "loss-of-function mutations in NF1 and PTEN tumor suppressors"
+    },
+    {
+      "name": "PTEN",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "PTEN",
+        "gene_family": "tumor suppressor",
+        "variant_type": "loss-of-function"
+      },
+      "confidence": 0.95,
+      "context": "loss-of-function mutations in NF1 and PTEN tumor suppressors"
+    },
+    {
+      "name": "KRAS G12C protein",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GTPase",
+        "mutation": "G12C"
+      },
+      "confidence": 0.9,
+      "context": "a covalent inhibitor of the G12C KRas"
+    },
+    {
+      "name": "Non-Small Cell Lung Carcinoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "aliases": "NSCLC",
+        "mesh_term": "Carcinoma, Non-Small-Cell Lung"
+      },
+      "confidence": 0.95,
+      "context": "Most occur in NSCLC, but some occur, albeit to a lower extent, in colorectal cancer and pancreatic ductal carcinoma"
+    },
+    {
+      "name": "Colorectal Cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Colorectal Neoplasms"
+      },
+      "confidence": 0.9,
+      "context": "some occur, albeit to a lower extent, in colorectal cancer and pancreatic ductal carcinoma"
+    },
+    {
+      "name": "Pancreatic Ductal Carcinoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Carcinoma, Pancreatic Ductal"
+      },
+      "confidence": 0.9,
+      "context": "some occur, albeit to a lower extent, in colorectal cancer and pancreatic ductal carcinoma"
+    },
+    {
+      "name": "covalent KRAS G12C inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "inhibition",
+        "reversibility": "irreversible",
+        "target": "KRAS G12C"
+      },
+      "confidence": 0.95,
+      "context": "an experimental antitumor agent exerting its cytotoxic effect as a covalent inhibitor of the G12C KRas"
+    },
+    {
+      "name": "anticancer drug resistance",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "context": "acquired resistance to targeted therapy"
+      },
+      "confidence": 0.95,
+      "context": "Pharmacological treatment can inhibit the action of the mutant protein; however, drug resistance almost invariably emerges"
+    },
+    {
+      "name": "tumor microenvironment alterations",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.8,
+      "context": "alterations in the tumor microenvironment that facilitate cancer cell proliferation"
+    },
+    {
+      "name": "KRAS allele amplification",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "variant_type": "amplification"
+      },
+      "confidence": 0.9,
+      "context": "half of the cases present multiple KRas mutations as well as allele amplification"
+    },
+    {
+      "name": "Nussinov et al. 2021",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "34953682",
+        "journal": "Drug Resistance Updates",
+        "year": "2021",
+        "title": "Anticancer drug resistance: An update and perspective",
+        "authors": "Nussinov R, Tsai CJ, Jang H"
+      },
+      "confidence": 1.0,
+      "context": "Nussinov Ruth, Tsai Chung-Jung, Jang Hyunbum; Drug resistance updates (2021); PMID: 34953682"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.98,
+      "evidence": "the common KRasG12C driver mutation emerges in different cancers"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "Non-Small Cell Lung Carcinoma",
+      "confidence": 0.95,
+      "evidence": "the common KRasG12C driver mutation emerges in different cancers. Most occur in NSCLC"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "Colorectal Cancer",
+      "confidence": 0.9,
+      "evidence": "some occur, albeit to a lower extent, in colorectal cancer and pancreatic ductal carcinoma"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "Pancreatic Ductal Carcinoma",
+      "confidence": 0.9,
+      "evidence": "some occur, albeit to a lower extent, in colorectal cancer and pancreatic ductal carcinoma"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS G12C protein",
+      "confidence": 0.98,
+      "evidence": "adagrasib, an experimental antitumor agent exerting its cytotoxic effect as a covalent inhibitor of the G12C KRas"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.95,
+      "evidence": "Resistance to adagrasib, an experimental antitumor agent exerting its cytotoxic effect as a covalent inhibitor of the G12C KRas"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "adagrasib",
+      "target_entity": "covalent KRAS G12C inhibition",
+      "confidence": 0.95,
+      "evidence": "exerting its cytotoxic effect as a covalent inhibitor of the G12C KRas"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS G12C protein",
+      "confidence": 0.9,
+      "evidence": "multiple copies of KRAS G12C which lead to higher expression level of the mutant protein"
+    },
+    {
+      "relation_type": "CAUSES_RESISTANCE_TO",
+      "source_entity": "KRAS allele amplification",
+      "target_entity": "adagrasib",
+      "confidence": 0.9,
+      "evidence": "Resistance to adagrasib... half of the cases present multiple KRas mutations as well as allele amplification"
+    },
+    {
+      "relation_type": "CAUSES_RESISTANCE_TO",
+      "source_entity": "MET",
+      "target_entity": "adagrasib",
+      "confidence": 0.85,
+      "evidence": "Redundant or parallel pathways included MET amplification"
+    },
+    {
+      "relation_type": "CAUSES_RESISTANCE_TO",
+      "source_entity": "NRAS",
+      "target_entity": "adagrasib",
+      "confidence": 0.85,
+      "evidence": "emerging driver mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "relation_type": "CAUSES_RESISTANCE_TO",
+      "source_entity": "BRAF",
+      "target_entity": "adagrasib",
+      "confidence": 0.85,
+      "evidence": "emerging driver mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "relation_type": "CAUSES_RESISTANCE_TO",
+      "source_entity": "MAP2K1",
+      "target_entity": "adagrasib",
+      "confidence": 0.85,
+      "evidence": "emerging driver mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "relation_type": "CAUSES_RESISTANCE_TO",
+      "source_entity": "RET",
+      "target_entity": "adagrasib",
+      "confidence": 0.85,
+      "evidence": "emerging driver mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "relation_type": "CAUSES_RESISTANCE_TO",
+      "source_entity": "ALK",
+      "target_entity": "adagrasib",
+      "confidence": 0.8,
+      "evidence": "gene fusion events in ALK, RET, BRAF, RAF1, and FGFR3"
+    },
+    {
+      "relation_type": "CAUSES_RESISTANCE_TO",
+      "source_entity": "RAF1",
+      "target_entity": "adagrasib",
+      "confidence": 0.8,
+      "evidence": "gene fusion events in ALK, RET, BRAF, RAF1, and FGFR3"
+    },
+    {
+      "relation_type": "CAUSES_RESISTANCE_TO",
+      "source_entity": "FGFR3",
+      "target_entity": "adagrasib",
+      "confidence": 0.8,
+      "evidence": "gene fusion events in ALK, RET, BRAF, RAF1, and FGFR3"
+    },
+    {
+      "relation_type": "CAUSES_RESISTANCE_TO",
+      "source_entity": "NF1",
+      "target_entity": "adagrasib",
+      "confidence": 0.8,
+      "evidence": "loss-of-function mutations in NF1 and PTEN tumor suppressors"
+    },
+    {
+      "relation_type": "CAUSES_RESISTANCE_TO",
+      "source_entity": "PTEN",
+      "target_entity": "adagrasib",
+      "confidence": 0.8,
+      "evidence": "loss-of-function mutations in NF1 and PTEN tumor suppressors"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T21:02:29.203361+00:00",
+  "error": null
+}

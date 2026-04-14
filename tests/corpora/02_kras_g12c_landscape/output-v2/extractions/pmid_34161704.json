@@ -1,0 +1,627 @@
+{
+  "document_id": "pmid_34161704",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/02_kras_g12c_landscape/docs/pmid_34161704.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "adagrasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "inn": "adagrasib",
+        "compound_code": "MRTX849",
+        "drug_class": "KRAS G12C inhibitor",
+        "development_stage": "clinical"
+      },
+      "confidence": 0.98,
+      "context": "Clinical trials of the KRAS inhibitors adagrasib and sotorasib have shown promising activity in cancers harboring KRAS glycine-to-cysteine amino acid substitutions at codon 12 (KRASG12C)."
+    },
+    {
+      "name": "sotorasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "inn": "sotorasib",
+        "compound_code": "AMG510",
+        "drug_class": "KRAS G12C inhibitor",
+        "development_stage": "clinical"
+      },
+      "confidence": 0.98,
+      "context": "Clinical trials of the KRAS inhibitors adagrasib and sotorasib have shown promising activity in cancers harboring KRAS glycine-to-cysteine amino acid substitutions at codon 12 (KRASG12C)."
+    },
+    {
+      "name": "KRAS",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "KRAS",
+        "gene_family": "RAS GTPase"
+      },
+      "confidence": 0.98,
+      "context": "Clinical trials of the KRAS inhibitors adagrasib and sotorasib"
+    },
+    {
+      "name": "KRAS G12C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "variant_type": "missense",
+        "hgvs_protein": "p.G12C"
+      },
+      "confidence": 0.98,
+      "context": "KRAS glycine-to-cysteine amino acid substitutions at codon 12 (KRASG12C)"
+    },
+    {
+      "name": "KRAS G12D",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "variant_type": "missense"
+      },
+      "confidence": 0.95,
+      "context": "Acquired KRAS alterations included G12D/R/V/W, G13D, Q61H, R68S, H95D/Q/R, Y96C"
+    },
+    {
+      "name": "KRAS G12R",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "variant_type": "missense"
+      },
+      "confidence": 0.95,
+      "context": "Acquired KRAS alterations included G12D/R/V/W"
+    },
+    {
+      "name": "KRAS G12V",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "variant_type": "missense"
+      },
+      "confidence": 0.95,
+      "context": "Acquired KRAS alterations included G12D/R/V/W"
+    },
+    {
+      "name": "KRAS G12W",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "variant_type": "missense"
+      },
+      "confidence": 0.95,
+      "context": "Acquired KRAS alterations included G12D/R/V/W"
+    },
+    {
+      "name": "KRAS G13D",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "variant_type": "missense"
+      },
+      "confidence": 0.95,
+      "context": "Acquired KRAS alterations included G12D/R/V/W, G13D"
+    },
+    {
+      "name": "KRAS Q61H",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "variant_type": "missense"
+      },
+      "confidence": 0.95,
+      "context": "G13D, Q61H, R68S"
+    },
+    {
+      "name": "KRAS R68S",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "variant_type": "missense"
+      },
+      "confidence": 0.95,
+      "context": "Q61H, R68S, H95D/Q/R"
+    },
+    {
+      "name": "KRAS H95D",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "variant_type": "missense"
+      },
+      "confidence": 0.9,
+      "context": "R68S, H95D/Q/R, Y96C"
+    },
+    {
+      "name": "KRAS H95Q",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "variant_type": "missense"
+      },
+      "confidence": 0.9,
+      "context": "R68S, H95D/Q/R, Y96C"
+    },
+    {
+      "name": "KRAS H95R",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "variant_type": "missense"
+      },
+      "confidence": 0.9,
+      "context": "R68S, H95D/Q/R, Y96C"
+    },
+    {
+      "name": "KRAS Y96C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "variant_type": "missense"
+      },
+      "confidence": 0.95,
+      "context": "H95D/Q/R, Y96C, and high-level amplification of the KRASG12C allele"
+    },
+    {
+      "name": "KRAS G12C amplification",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "variant_type": "amplification"
+      },
+      "confidence": 0.95,
+      "context": "high-level amplification of the KRASG12C allele"
+    },
+    {
+      "name": "MET",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "MET",
+        "variant_type": "amplification"
+      },
+      "confidence": 0.95,
+      "context": "Acquired bypass mechanisms of resistance included MET amplification"
+    },
+    {
+      "name": "NRAS",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "NRAS",
+        "gene_family": "RAS GTPase"
+      },
+      "confidence": 0.95,
+      "context": "activating mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "name": "BRAF",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "BRAF"
+      },
+      "confidence": 0.95,
+      "context": "activating mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "name": "MAP2K1",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "MAP2K1"
+      },
+      "confidence": 0.95,
+      "context": "activating mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "name": "RET",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "RET"
+      },
+      "confidence": 0.95,
+      "context": "activating mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "name": "ALK",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "ALK",
+        "variant_type": "fusion"
+      },
+      "confidence": 0.95,
+      "context": "oncogenic fusions involving ALK, RET, BRAF, RAF1, and FGFR3"
+    },
+    {
+      "name": "RAF1",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "RAF1",
+        "variant_type": "fusion"
+      },
+      "confidence": 0.95,
+      "context": "oncogenic fusions involving ALK, RET, BRAF, RAF1, and FGFR3"
+    },
+    {
+      "name": "FGFR3",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "FGFR3",
+        "variant_type": "fusion"
+      },
+      "confidence": 0.95,
+      "context": "oncogenic fusions involving ALK, RET, BRAF, RAF1, and FGFR3"
+    },
+    {
+      "name": "NF1",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "NF1",
+        "gene_family": "tumor suppressor",
+        "variant_type": "loss-of-function"
+      },
+      "confidence": 0.95,
+      "context": "loss-of-function mutations in NF1 and PTEN"
+    },
+    {
+      "name": "PTEN",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "PTEN",
+        "gene_family": "tumor suppressor",
+        "variant_type": "loss-of-function"
+      },
+      "confidence": 0.95,
+      "context": "loss-of-function mutations in NF1 and PTEN"
+    },
+    {
+      "name": "Non-Small Cell Lung Carcinoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Carcinoma, Non-Small-Cell Lung",
+        "aliases": [
+          "NSCLC"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "27 with non-small-cell lung cancer"
+    },
+    {
+      "name": "Colorectal Neoplasms",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Colorectal Neoplasms"
+      },
+      "confidence": 0.98,
+      "context": "10 with colorectal cancer"
+    },
+    {
+      "name": "Appendiceal Neoplasms",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Appendiceal Neoplasms"
+      },
+      "confidence": 0.98,
+      "context": "1 with appendiceal cancer"
+    },
+    {
+      "name": "Lung Adenocarcinoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Adenocarcinoma of Lung",
+        "disease_subtype": "adenocarcinoma"
+      },
+      "confidence": 0.95,
+      "context": "In two of nine patients with lung adenocarcinoma for whom paired tissue-biopsy samples were available"
+    },
+    {
+      "name": "Squamous Cell Carcinoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "disease_subtype": "squamous-cell"
+      },
+      "confidence": 0.9,
+      "context": "histologic transformation to squamous-cell carcinoma was observed"
+    },
+    {
+      "name": "covalent KRAS G12C inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "inhibition",
+        "selectivity": "selective",
+        "reversibility": "irreversible"
+      },
+      "confidence": 0.95,
+      "context": "Diverse genomic and histologic mechanisms impart resistance to covalent KRASG12C inhibitors"
+    },
+    {
+      "name": "acquired drug resistance",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "mesh_term": "Drug Resistance, Neoplasm"
+      },
+      "confidence": 0.95,
+      "context": "The mechanisms of acquired resistance to these therapies are currently unknown."
+    },
+    {
+      "name": "histologic transformation",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "histologic transformation to squamous-cell carcinoma was observed without identification of any other resistance mechanisms"
+    },
+    {
+      "name": "NCT03785249",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT03785249",
+        "sponsor": "Mirati Therapeutics",
+        "intervention": "adagrasib"
+      },
+      "confidence": 0.98,
+      "context": "Funded by Mirati Therapeutics and others; ClinicalTrials.gov number, NCT03785249"
+    },
+    {
+      "name": "Mirati Therapeutics",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "pharmaceutical company"
+      },
+      "confidence": 0.98,
+      "context": "Funded by Mirati Therapeutics and others"
+    },
+    {
+      "name": "Awad et al. 2021 NEJM",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "34161704",
+        "journal": "The New England Journal of Medicine",
+        "year": "2021",
+        "title": "Acquired Resistance to KRAS"
+      },
+      "confidence": 0.98,
+      "context": "Title: Acquired Resistance to KRAS ... Journal: The New England journal of medicine (2021) PMID: 34161704"
+    },
+    {
+      "name": "deep mutational scanning",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "screening assay"
+      },
+      "confidence": 0.85,
+      "context": "Using an in vitro deep mutational scanning screen, we systematically defined the landscape of KRAS mutations that confer resistance to KRASG12C inhibitors"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.98,
+      "evidence": "Clinical trials of the KRAS inhibitors adagrasib and sotorasib have shown promising activity in cancers harboring KRAS glycine-to-cysteine amino acid substitutions at codon 12 (KRASG12C)"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.98,
+      "evidence": "Clinical trials of the KRAS inhibitors adagrasib and sotorasib have shown promising activity in cancers harboring KRAS glycine-to-cysteine amino acid substitutions at codon 12 (KRASG12C)"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS",
+      "confidence": 0.95,
+      "evidence": "Clinical trials of the KRAS inhibitors adagrasib and sotorasib"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS",
+      "confidence": 0.95,
+      "evidence": "Clinical trials of the KRAS inhibitors adagrasib and sotorasib"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "adagrasib",
+      "target_entity": "Non-Small Cell Lung Carcinoma",
+      "confidence": 0.9,
+      "evidence": "Among patients with KRASG12C-mutant cancers treated with adagrasib monotherapy ... 27 with non-small-cell lung cancer"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "adagrasib",
+      "target_entity": "Colorectal Neoplasms",
+      "confidence": 0.9,
+      "evidence": "patients with KRASG12C-mutant cancers treated with adagrasib monotherapy ... 10 with colorectal cancer"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "adagrasib",
+      "target_entity": "Appendiceal Neoplasms",
+      "confidence": 0.85,
+      "evidence": "patients with KRASG12C-mutant cancers treated with adagrasib monotherapy ... 1 with appendiceal cancer"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "adagrasib",
+      "target_entity": "NCT03785249",
+      "confidence": 0.95,
+      "evidence": "Funded by Mirati Therapeutics and others; ClinicalTrials.gov number, NCT03785249"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "Non-Small Cell Lung Carcinoma",
+      "confidence": 0.95,
+      "evidence": "cancers harboring KRAS glycine-to-cysteine amino acid substitutions at codon 12 (KRASG12C) ... 27 with non-small-cell lung cancer"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "Colorectal Neoplasms",
+      "confidence": 0.9,
+      "evidence": "KRASG12C-mutant cancers ... 10 with colorectal cancer"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12D",
+      "target_entity": "acquired drug resistance",
+      "confidence": 0.95,
+      "evidence": "Acquired KRAS alterations included G12D/R/V/W, G13D, Q61H, R68S, H95D/Q/R, Y96C"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12R",
+      "target_entity": "acquired drug resistance",
+      "confidence": 0.95,
+      "evidence": "Acquired KRAS alterations included G12D/R/V/W"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12V",
+      "target_entity": "acquired drug resistance",
+      "confidence": 0.95,
+      "evidence": "Acquired KRAS alterations included G12D/R/V/W"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12W",
+      "target_entity": "acquired drug resistance",
+      "confidence": 0.95,
+      "evidence": "Acquired KRAS alterations included G12D/R/V/W"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G13D",
+      "target_entity": "acquired drug resistance",
+      "confidence": 0.95,
+      "evidence": "Acquired KRAS alterations included G12D/R/V/W, G13D"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS Q61H",
+      "target_entity": "acquired drug resistance",
+      "confidence": 0.95,
+      "evidence": "G13D, Q61H, R68S"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS R68S",
+      "target_entity": "acquired drug resistance",
+      "confidence": 0.95,
+      "evidence": "Q61H, R68S, H95D/Q/R"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS H95D",
+      "target_entity": "acquired drug resistance",
+      "confidence": 0.9,
+      "evidence": "H95D/Q/R, Y96C"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS H95Q",
+      "target_entity": "acquired drug resistance",
+      "confidence": 0.9,
+      "evidence": "H95D/Q/R, Y96C"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS H95R",
+      "target_entity": "acquired drug resistance",
+      "confidence": 0.9,
+      "evidence": "H95D/Q/R, Y96C"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS Y96C",
+      "target_entity": "acquired drug resistance",
+      "confidence": 0.95,
+      "evidence": "H95D/Q/R, Y96C, and high-level amplification"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C amplification",
+      "target_entity": "acquired drug resistance",
+      "confidence": 0.95,
+      "evidence": "high-level amplification of the KRASG12C allele"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "MET",
+      "target_entity": "acquired drug resistance",
+      "confidence": 0.95,
+      "evidence": "Acquired bypass mechanisms of resistance included MET amplification"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "NRAS",
+      "target_entity": "acquired drug resistance",
+      "confidence": 0.95,
+      "evidence": "activating mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "BRAF",
+      "target_entity": "acquired drug resistance",
+      "confidence": 0.95,
+      "evidence": "activating mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "MAP2K1",
+      "target_entity": "acquired drug resistance",
+      "confidence": 0.95,
+      "evidence": "activating mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "RET",
+      "target_entity": "acquired drug resistance",
+      "confidence": 0.95,
+      "evidence": "activating mutations in NRAS, BRAF, MAP2K1, and RET"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "ALK",
+      "target_entity": "acquired drug resistance",
+      "confidence": 0.95,
+      "evidence": "oncogenic fusions involving ALK, RET, BRAF, RAF1, and FGFR3"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "RAF1",
+      "target_entity": "acquired drug resistance",
+      "confidence": 0.95,
+      "evidence": "oncogenic fusions involving ALK, RET, BRAF, RAF1, and FGFR3"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "FGFR3",
+      "target_entity": "acquired drug resistance",
+      "confidence": 0.95,
+      "evidence": "oncogenic fusions involving ALK, RET, BRAF, RAF1, and FGFR3"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "NF1",
+      "target_entity": "acquired drug resistance",
+      "confidence": 0.95,
+      "evidence": "loss-of-function mutations in NF1 and PTEN"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PTEN",
+      "target_entity": "acquired drug resistance",
+      "confidence": 0.95,
+      "evidence": "loss-of-function mutations in NF1 and PTEN"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "histologic transformation",
+      "target_entity": "acquired drug resistance",
+      "confidence": 0.9,
+      "evidence": "histologic transformation to squamous-cell carcinoma was observed without identification of any other resistance mechanisms"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T21:02:35.130557+00:00",
+  "error": null
+}

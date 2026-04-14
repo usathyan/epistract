@@ -1,0 +1,377 @@
+{
+  "document_id": "pmid_21167244",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/01_picalm_alzheimers/docs/pmid_21167244.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "Alzheimer disease",
+      "entity_type": "DISEASE",
+      "confidence": 0.98,
+      "context": "the core pathologies of Alzheimer's disease"
+    },
+    {
+      "name": "herpes simplex encephalitis",
+      "entity_type": "DISEASE",
+      "confidence": 0.85,
+      "context": "Encephalitis, Herpes Simplex"
+    },
+    {
+      "name": "HSV-1",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "note": "pathogen - Herpes simplex virus type 1"
+      },
+      "confidence": 0.95,
+      "context": "herpes simplex (HSV-1) binding proteins"
+    },
+    {
+      "name": "amyloid plaque",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.95,
+      "context": "Plaque, Amyloid"
+    },
+    {
+      "name": "neurofibrillary tangle",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.97,
+      "context": "Neurofibrillary Tangles"
+    },
+    {
+      "name": "neuronal loss",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.9,
+      "context": "cortical and hippocampal neuronal loss"
+    },
+    {
+      "name": "cerebral shrinkage",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.9,
+      "context": "cerebral shrinkage and memory deficits in mice"
+    },
+    {
+      "name": "memory deficit",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.9,
+      "context": "cerebral shrinkage and memory deficits in mice"
+    },
+    {
+      "name": "mitochondrial DNA deletion",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.88,
+      "context": "the virus deletes mitochondrial DNA"
+    },
+    {
+      "name": "beta-amyloid deposition",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.92,
+      "context": "HSV-1 infection is known to increase beta-amyloid deposition"
+    },
+    {
+      "name": "tau phosphorylation",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.92,
+      "context": "increase beta-amyloid deposition and tau phosphorylation"
+    },
+    {
+      "name": "complement-mediated neuronal lysis",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.8,
+      "context": "complement mediated neuronal lysis may be a consequence of this struggle"
+    },
+    {
+      "name": "ADNP",
+      "entity_type": "GENE",
+      "attributes": {
+        "note": "activity-dependent neuroprotector homeobox"
+      },
+      "confidence": 0.95,
+      "context": "sequesters the neuroprotective peptide, ADNP"
+    },
+    {
+      "name": "APOE",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "apolipoprotein E"
+      },
+      "confidence": 0.98,
+      "context": "major risk promoting genes ... apolipoprotein E"
+    },
+    {
+      "name": "CLU",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "clusterin"
+      },
+      "confidence": 0.97,
+      "context": "apolipoprotein E, clusterin, complement receptor 1"
+    },
+    {
+      "name": "CR1",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "complement receptor 1"
+      },
+      "confidence": 0.97,
+      "context": "clusterin, complement receptor 1 and the phosphatidylinositol binding clathrin assembly protein PICALM"
+    },
+    {
+      "name": "PICALM",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "phosphatidylinositol binding clathrin assembly protein"
+      },
+      "confidence": 0.98,
+      "context": "the phosphatidylinositol binding clathrin assembly protein PICALM"
+    },
+    {
+      "name": "APP",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "amyloid precursor protein"
+      },
+      "confidence": 0.95,
+      "context": "amyloid precursor protein processing and signalling"
+    },
+    {
+      "name": "amyloid precursor protein processing",
+      "entity_type": "PATHWAY",
+      "confidence": 0.9,
+      "context": "amyloid precursor protein processing and signalling"
+    },
+    {
+      "name": "beta-amyloid processing",
+      "entity_type": "PATHWAY",
+      "confidence": 0.9,
+      "context": "beta-amyloid processing, microtubule stability and tau phosphorylation"
+    },
+    {
+      "name": "ubiquitin-proteasome system",
+      "entity_type": "PATHWAY",
+      "confidence": 0.95,
+      "context": "the ubiquitin/proteasome system and the immune network"
+    },
+    {
+      "name": "endocytosis",
+      "entity_type": "PATHWAY",
+      "confidence": 0.92,
+      "context": "viral associated proteins involved in endocytosis"
+    },
+    {
+      "name": "intracellular transport",
+      "entity_type": "PATHWAY",
+      "confidence": 0.88,
+      "context": "endocytosis, intracellular transport and exocytosis"
+    },
+    {
+      "name": "exocytosis",
+      "entity_type": "PATHWAY",
+      "confidence": 0.9,
+      "context": "endocytosis, intracellular transport and exocytosis"
+    },
+    {
+      "name": "apoptosis",
+      "entity_type": "PATHWAY",
+      "confidence": 0.95,
+      "context": "plaque or tangle components involved in apoptosis"
+    },
+    {
+      "name": "DNA transcription",
+      "entity_type": "PATHWAY",
+      "confidence": 0.9,
+      "context": "involved in apoptosis, DNA transcription, translation initiation"
+    },
+    {
+      "name": "translation initiation",
+      "entity_type": "PATHWAY",
+      "confidence": 0.9,
+      "context": "DNA transcription, translation initiation, protein chaperoning"
+    },
+    {
+      "name": "protein chaperoning",
+      "entity_type": "PATHWAY",
+      "confidence": 0.88,
+      "context": "translation initiation, protein chaperoning"
+    },
+    {
+      "name": "complement system",
+      "entity_type": "PATHWAY",
+      "confidence": 0.95,
+      "context": "Complement System Proteins"
+    },
+    {
+      "name": "microtubule stability",
+      "entity_type": "PATHWAY",
+      "confidence": 0.88,
+      "context": "beta-amyloid processing, microtubule stability"
+    },
+    {
+      "name": "complement membrane attack complex",
+      "entity_type": "PROTEIN",
+      "confidence": 0.95,
+      "context": "The presence of the complement membrane attack complex in Alzheimer's disease neurones"
+    },
+    {
+      "name": "neuron",
+      "entity_type": "CELL_OR_TISSUE",
+      "confidence": 0.97,
+      "context": "complement membrane attack complex in Alzheimer's disease neurones"
+    },
+    {
+      "name": "cortex",
+      "entity_type": "CELL_OR_TISSUE",
+      "confidence": 0.88,
+      "context": "cortical and hippocampal neuronal loss"
+    },
+    {
+      "name": "hippocampus",
+      "entity_type": "CELL_OR_TISSUE",
+      "confidence": 0.9,
+      "context": "cortical and hippocampal neuronal loss"
+    },
+    {
+      "name": "antiviral agent",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "class"
+      },
+      "confidence": 0.85,
+      "context": "Vaccination or antiviral agents and immune suppressants"
+    },
+    {
+      "name": "immune suppressant",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "class"
+      },
+      "confidence": 0.85,
+      "context": "antiviral agents and immune suppressants should therefore perhaps be considered as viable therapeutic options"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "HSV-1",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "herpes simplex viral infection contributes to Alzheimer's disease"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PICALM",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.95,
+      "evidence": "major risk promoting genes in Alzheimer's disease ... PICALM"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "APOE",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.95,
+      "evidence": "major risk promoting genes in Alzheimer's disease (apolipoprotein E"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "CLU",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.95,
+      "evidence": "major risk promoting genes ... clusterin"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "CR1",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.95,
+      "evidence": "clusterin, complement receptor 1 and ... PICALM"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "APP",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "amyloid precursor protein processing ... the core pathologies of Alzheimer's disease"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "APP",
+      "target_entity": "amyloid precursor protein processing",
+      "confidence": 0.95,
+      "evidence": "amyloid precursor protein processing and signalling"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "HSV-1",
+      "target_entity": "beta-amyloid deposition",
+      "confidence": 0.92,
+      "evidence": "HSV-1 infection is known to increase beta-amyloid deposition"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "HSV-1",
+      "target_entity": "tau phosphorylation",
+      "confidence": 0.92,
+      "evidence": "increase beta-amyloid deposition and tau phosphorylation"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "HSV-1",
+      "target_entity": "neuronal loss",
+      "confidence": 0.9,
+      "evidence": "results in cortical and hippocampal neuronal loss"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "HSV-1",
+      "target_entity": "cerebral shrinkage",
+      "confidence": 0.9,
+      "evidence": "cerebral shrinkage and memory deficits in mice"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "HSV-1",
+      "target_entity": "memory deficit",
+      "confidence": 0.9,
+      "evidence": "cerebral shrinkage and memory deficits in mice"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "HSV-1",
+      "target_entity": "mitochondrial DNA deletion",
+      "confidence": 0.85,
+      "evidence": "the virus deletes mitochondrial DNA"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "HSV-1",
+      "target_entity": "ADNP",
+      "confidence": 0.9,
+      "evidence": "sequesters the neuroprotective peptide, ADNP"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "antiviral agent",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.6,
+      "evidence": "antiviral agents ... as viable therapeutic options"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "immune suppressant",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.55,
+      "evidence": "immune suppressants ... as viable therapeutic options"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "complement membrane attack complex",
+      "target_entity": "complement system",
+      "confidence": 0.95,
+      "evidence": "complement membrane attack complex in Alzheimer's disease neurones"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T19:00:41.211855+00:00",
+  "error": null
+}

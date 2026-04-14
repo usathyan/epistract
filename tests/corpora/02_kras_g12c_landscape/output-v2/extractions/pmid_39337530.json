@@ -1,0 +1,224 @@
+{
+  "document_id": "pmid_39337530",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/02_kras_g12c_landscape/docs/pmid_39337530.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "Non-Small Cell Lung Carcinoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Carcinoma, Non-Small-Cell Lung",
+        "aliases": [
+          "NSCLC",
+          "advanced NSCLC"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "the treatment landscape for early-stage and advanced non-small cell lung cancer (NSCLC)"
+    },
+    {
+      "name": "Lung Neoplasms",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Lung Neoplasms"
+      },
+      "confidence": 0.95,
+      "context": "Lung cancer is responsible for a high burden of disease globally"
+    },
+    {
+      "name": "KRAS",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "KRAS",
+        "variant": "non-G12C",
+        "gene_family": "small GTPase / oncogene"
+      },
+      "confidence": 0.95,
+      "context": "New molecular drivers continue to emerge as promising therapeutic targets, including KRAS non-G12C"
+    },
+    {
+      "name": "BRAF",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "BRAF",
+        "gene_family": "serine/threonine kinase"
+      },
+      "confidence": 0.85,
+      "context": "including KRAS non-G12C, RAF/MEK, HER3, Nectin-4, folate receptor alpha, ITGB6, and PRMT5"
+    },
+    {
+      "name": "MAP2K1",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "MAP2K1",
+        "aliases": [
+          "MEK",
+          "MEK1"
+        ]
+      },
+      "confidence": 0.8,
+      "context": "RAF/MEK"
+    },
+    {
+      "name": "ERBB3",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "ERBB3",
+        "aliases": [
+          "HER3"
+        ],
+        "gene_family": "receptor tyrosine kinase / ErbB family"
+      },
+      "confidence": 0.9,
+      "context": "HER3"
+    },
+    {
+      "name": "NECTIN4",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "NECTIN4",
+        "aliases": [
+          "Nectin-4"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "Nectin-4"
+    },
+    {
+      "name": "FOLR1",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "FOLR1",
+        "aliases": [
+          "folate receptor alpha",
+          "FR\u03b1"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "folate receptor alpha"
+    },
+    {
+      "name": "ITGB6",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "ITGB6",
+        "gene_family": "integrin"
+      },
+      "confidence": 0.95,
+      "context": "ITGB6"
+    },
+    {
+      "name": "PRMT5",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "PRMT5",
+        "gene_family": "protein arginine methyltransferase"
+      },
+      "confidence": 0.95,
+      "context": "PRMT5"
+    },
+    {
+      "name": "KRAS G12C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "variant_type": "missense",
+        "hgvs_protein": "p.G12C"
+      },
+      "confidence": 0.9,
+      "context": "KRAS non-G12C"
+    },
+    {
+      "name": "Molecular Targeted Therapy",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "targeted therapy"
+      },
+      "confidence": 0.9,
+      "context": "the discovery of targetable oncogenic genomic alterations has revolutionized the treatment landscape"
+    },
+    {
+      "name": "International Journal of Molecular Sciences",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "publication_type": "journal",
+        "year": "2024",
+        "pmid": "39337530",
+        "title": "Emerging Targets in Non-Small Cell Lung Cancer"
+      },
+      "confidence": 0.99,
+      "context": "Journal: International journal of molecular sciences (2024) PMID: 39337530"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS",
+      "target_entity": "Non-Small Cell Lung Carcinoma",
+      "confidence": 0.9,
+      "evidence": "New molecular drivers continue to emerge as promising therapeutic targets, including KRAS non-G12C"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "BRAF",
+      "target_entity": "Non-Small Cell Lung Carcinoma",
+      "confidence": 0.8,
+      "evidence": "New molecular drivers continue to emerge as promising therapeutic targets, including KRAS non-G12C, RAF/MEK"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "MAP2K1",
+      "target_entity": "Non-Small Cell Lung Carcinoma",
+      "confidence": 0.8,
+      "evidence": "RAF/MEK"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "ERBB3",
+      "target_entity": "Non-Small Cell Lung Carcinoma",
+      "confidence": 0.9,
+      "evidence": "New molecular drivers continue to emerge as promising therapeutic targets, including ... HER3"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "NECTIN4",
+      "target_entity": "Non-Small Cell Lung Carcinoma",
+      "confidence": 0.9,
+      "evidence": "including KRAS non-G12C, RAF/MEK, HER3, Nectin-4"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "FOLR1",
+      "target_entity": "Non-Small Cell Lung Carcinoma",
+      "confidence": 0.9,
+      "evidence": "folate receptor alpha"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "ITGB6",
+      "target_entity": "Non-Small Cell Lung Carcinoma",
+      "confidence": 0.9,
+      "evidence": "ITGB6"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PRMT5",
+      "target_entity": "Non-Small Cell Lung Carcinoma",
+      "confidence": 0.9,
+      "evidence": "PRMT5"
+    },
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.9,
+      "evidence": "KRAS non-G12C"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T20:22:22.952982+00:00",
+  "error": null
+}

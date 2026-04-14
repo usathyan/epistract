@@ -1,0 +1,267 @@
+{
+  "document_id": "pmid_24067654",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/01_picalm_alzheimers/docs/pmid_24067654.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "PICALM",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "phosphatidylinositol binding clathrin assembly protein"
+      },
+      "confidence": 0.98,
+      "context": "phosphatidylinositol clathrin assembly lymphoid-myeloid leukemia (PICALM)"
+    },
+    {
+      "name": "PICALM",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "AP2 and PICALM cross-link LC3 with APP-CTF"
+    },
+    {
+      "name": "AP2",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "aliases": [
+          "Adaptor Protein Complex 2",
+          "Adaptor complex AP2"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "adaptor protein (AP) 2"
+    },
+    {
+      "name": "MAP1LC3",
+      "entity_type": "GENE",
+      "attributes": {
+        "aliases": [
+          "LC3"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "microtubule-associated protein 1 light chain 3 (LC3)"
+    },
+    {
+      "name": "MAP1LC3",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "aliases": [
+          "LC3"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "microtubule-associated protein 1 light chain 3 (LC3)"
+    },
+    {
+      "name": "APP",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "amyloid precursor protein"
+      },
+      "confidence": 0.98,
+      "context": "amyloid precursor protein cleaved C-terminal fragment (APP-CTF)"
+    },
+    {
+      "name": "APP",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "aliases": [
+          "Amyloid beta-Protein Precursor"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "Amyloid beta-Protein Precursor"
+    },
+    {
+      "name": "APP-CTF",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "description": "amyloid precursor protein cleaved C-terminal fragment"
+      },
+      "confidence": 0.98,
+      "context": "amyloid precursor protein cleaved C-terminal fragment (APP-CTF)"
+    },
+    {
+      "name": "amyloid beta",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "aliases": [
+          "A\u03b2",
+          "amyloid-\u03b2"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "the aggregates of amyloid-\u03b2 (A\u03b2) peptides"
+    },
+    {
+      "name": "tau",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "amyloid-\u03b2 (A\u03b2) peptides and tau protein"
+    },
+    {
+      "name": "ATG5",
+      "entity_type": "GENE",
+      "attributes": {
+        "aliases": [
+          "Atg5",
+          "Autophagy-Related Protein 5"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "amyloid \u03b2 clearance in an Atg5-dependent manner"
+    },
+    {
+      "name": "ATG5",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "aliases": [
+          "Autophagy-Related Protein 5"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "Autophagy-Related Protein 5"
+    },
+    {
+      "name": "Alzheimer disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "aliases": [
+          "AD",
+          "Alzheimer's disease"
+        ]
+      },
+      "confidence": 0.99,
+      "context": "The hallmarks of Alzheimer's disease (AD)"
+    },
+    {
+      "name": "autophagy",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.98,
+      "context": "Autophagy is a major cellular pathway leading to the removal of aggregated proteins"
+    },
+    {
+      "name": "endocytic pathway",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "shipment of APP-CTF from the endocytic pathway"
+    },
+    {
+      "name": "HeLa cells",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "HeLa Cells"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "amyloid beta",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.98,
+      "evidence": "The hallmarks of Alzheimer's disease (AD) are the aggregates of amyloid-\u03b2 (A\u03b2) peptides and tau protein"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "tau",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.98,
+      "evidence": "The hallmarks of Alzheimer's disease (AD) are the aggregates of amyloid-\u03b2 (A\u03b2) peptides and tau protein"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PICALM",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.95,
+      "evidence": "genetic evidence indicating a role for PICALM as a risk factor for AD"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "APP-CTF",
+      "target_entity": "autophagy",
+      "confidence": 0.95,
+      "evidence": "autophagy was responsible for amyloid precursor protein cleaved C-terminal fragment (APP-CTF) degradation"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "ATG5",
+      "target_entity": "autophagy",
+      "confidence": 0.95,
+      "evidence": "amyloid \u03b2 clearance in an Atg5-dependent manner"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "PICALM",
+      "target_entity": "autophagy",
+      "confidence": 0.9,
+      "evidence": "AP-2/PICALM complex functions as an autophagic cargo receptor"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "AP2",
+      "target_entity": "autophagy",
+      "confidence": 0.9,
+      "evidence": "AP-2/PICALM complex functions as an autophagic cargo receptor"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "MAP1LC3",
+      "target_entity": "autophagy",
+      "confidence": 0.95,
+      "evidence": "LC3-marked autophagic degradation pathway"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "AP2",
+      "target_entity": "MAP1LC3",
+      "confidence": 0.95,
+      "evidence": "identified adaptor protein (AP) 2 together with PICALM as binding proteins of microtubule-associated protein 1 light chain 3 (LC3)"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "PICALM",
+      "target_entity": "MAP1LC3",
+      "confidence": 0.95,
+      "evidence": "identified adaptor protein (AP) 2 together with PICALM as binding proteins of microtubule-associated protein 1 light chain 3 (LC3)"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "AP2",
+      "target_entity": "APP-CTF",
+      "confidence": 0.9,
+      "evidence": "AP2 and PICALM cross-link LC3 with APP-CTF"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "PICALM",
+      "target_entity": "APP-CTF",
+      "confidence": 0.9,
+      "evidence": "AP2 and PICALM cross-link LC3 with APP-CTF"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "APP",
+      "target_entity": "APP-CTF",
+      "confidence": 0.9,
+      "evidence": "amyloid precursor protein cleaved C-terminal fragment (APP-CTF)"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "APP",
+      "target_entity": "amyloid beta",
+      "confidence": 0.9,
+      "evidence": "Amyloid beta-Protein Precursor"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T19:00:56.532347+00:00",
+  "error": null
+}

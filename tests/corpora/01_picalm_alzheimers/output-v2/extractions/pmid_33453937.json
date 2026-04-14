@@ -1,0 +1,215 @@
+{
+  "document_id": "pmid_33453937",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/01_picalm_alzheimers/docs/pmid_33453937.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "amyloid precursor protein",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene_symbol": "APP"
+      },
+      "confidence": 0.98,
+      "context": "post-endocytic trafficking of amyloid precursor protein (APP) in neurons"
+    },
+    {
+      "name": "APP",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "APP"
+      },
+      "confidence": 0.95,
+      "context": "post-endocytic trafficking of amyloid precursor protein (APP)"
+    },
+    {
+      "name": "amyloid beta",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "aliases": [
+          "Abeta",
+          "A-beta"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "deficits in amyloid beta (A\u03b2) clearance, increases in intracellular A\u03b2"
+    },
+    {
+      "name": "tau",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene_symbol": "MAPT"
+      },
+      "confidence": 0.9,
+      "context": "endosomal dysfunctions preceding A\u03b2 pathology and tau phosphorylation"
+    },
+    {
+      "name": "Alzheimer disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Alzheimer Disease",
+        "aliases": [
+          "AD"
+        ]
+      },
+      "confidence": 0.99,
+      "context": "neurodegenerative disorders, including Alzheimer's disease (AD)"
+    },
+    {
+      "name": "neurodegenerative disorders",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "early events initiating various neurodegenerative disorders"
+    },
+    {
+      "name": "endocytosis",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.92,
+      "context": "multiple defects in endocytic functions as early events"
+    },
+    {
+      "name": "post-endocytic trafficking",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "changes in post-endocytic trafficking of amyloid precursor protein"
+    },
+    {
+      "name": "amyloidogenic processing",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "leading to an increase in amyloidogenic processing"
+    },
+    {
+      "name": "amyloid beta clearance",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "deficits in amyloid beta (A\u03b2) clearance"
+    },
+    {
+      "name": "endosome",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "MeSH Terms: Endosomes"
+    },
+    {
+      "name": "neuron",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "post-endocytic trafficking of amyloid precursor protein (APP) in neurons"
+    },
+    {
+      "name": "tau phosphorylation",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "endosomal dysfunctions preceding A\u03b2 pathology and tau phosphorylation"
+    },
+    {
+      "name": "intracellular amyloid beta accumulation",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.88,
+      "context": "increases in intracellular A\u03b2"
+    },
+    {
+      "name": "endosomal dysfunction",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "several studies indicate endosomal dysfunctions preceding A\u03b2 pathology"
+    },
+    {
+      "name": "genome-wide association study",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "type": "methodology"
+      },
+      "confidence": 0.85,
+      "context": "genetic landscape resulting from genome-wide association studies (GWAS)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "APP",
+      "target_entity": "amyloid precursor protein",
+      "confidence": 0.95,
+      "evidence": "amyloid precursor protein (APP)"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "amyloid precursor protein",
+      "target_entity": "post-endocytic trafficking",
+      "confidence": 0.95,
+      "evidence": "changes in post-endocytic trafficking of amyloid precursor protein (APP) in neurons"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "amyloid precursor protein",
+      "target_entity": "amyloidogenic processing",
+      "confidence": 0.92,
+      "evidence": "post-endocytic trafficking of APP ... leading to an increase in amyloidogenic processing"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "amyloid precursor protein",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.95,
+      "evidence": "GWAS reveals changes in post-endocytic trafficking of amyloid precursor protein (APP) in neurons leading to ... endosomal pathogenic phenotypes"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "amyloid beta",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.95,
+      "evidence": "deficits in amyloid beta (A\u03b2) clearance, increases in intracellular A\u03b2"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "tau",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "endosomal dysfunctions preceding A\u03b2 pathology and tau phosphorylation"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "endocytosis",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.92,
+      "evidence": "multiple defects in endocytic functions as early events initiating ... Alzheimer's disease"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "post-endocytic trafficking",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.92,
+      "evidence": "GWAS-identified endosomal and post-endosomal gene products in initiating AD pathologies"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "endosomal dysfunction",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.92,
+      "evidence": "endosomal dysfunctions preceding A\u03b2 pathology"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "amyloid beta",
+      "target_entity": "amyloid beta clearance",
+      "confidence": 0.9,
+      "evidence": "deficits in amyloid beta (A\u03b2) clearance"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T19:00:55.494550+00:00",
+  "error": null
+}

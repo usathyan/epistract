@@ -1,0 +1,466 @@
+{
+  "document_id": "structural_sotorasib",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/02_kras_g12c_landscape/docs/structural_sotorasib.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "sotorasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "synonyms": [
+          "AMG 510",
+          "Lumakras"
+        ],
+        "cas": "2252403-56-6",
+        "smiles": "CC1CC(C(O1)N1C=NC2=C(C=C(C=C21)F)NC(=O)C1=CC(=NN1C)C(F)(F)F)OC1=C(C=C(C=C1)F)Cl",
+        "molecular_formula": "C23H25ClF4N4O3",
+        "molecular_weight": "560.92 g/mol",
+        "inchikey": "LFEWXACJFKQYHQ-XKBHBSJNSA-N",
+        "drugbank_id": "DB15569",
+        "pubchem_cid": "137278711",
+        "first_in_class": true,
+        "covalent": true,
+        "requires_validation": true
+      },
+      "confidence": 0.98,
+      "context": "Sotorasib (AMG 510, Lumakras) is a first-in-class KRAS G12C covalent inhibitor."
+    },
+    {
+      "name": "KRAS",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "KRAS"
+      },
+      "confidence": 0.98,
+      "context": "KRAS G12C covalent inhibitor"
+    },
+    {
+      "name": "KRAS protein",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "uniprot": "P01116"
+      },
+      "confidence": 0.98,
+      "context": "Target: KRAS protein (UniProt: P01116)"
+    },
+    {
+      "name": "KRAS G12C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "hgvs_p": "p.Gly12Cys",
+        "gene": "KRAS",
+        "acquired_cysteine": true
+      },
+      "confidence": 0.98,
+      "context": "specifically the G12C mutant"
+    },
+    {
+      "name": "KRAS G12D",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "hgvs_p": "p.Gly12Asp",
+        "gene": "KRAS"
+      },
+      "confidence": 0.95,
+      "context": "It does not inhibit KRAS G12D or KRAS G12V."
+    },
+    {
+      "name": "KRAS G12V",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "hgvs_p": "p.Gly12Val",
+        "gene": "KRAS"
+      },
+      "confidence": 0.95,
+      "context": "It does not inhibit KRAS G12D or KRAS G12V."
+    },
+    {
+      "name": "KRAS Y96D",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "hgvs_p": "p.Tyr96Asp",
+        "gene": "KRAS",
+        "role": "resistance"
+      },
+      "confidence": 0.95,
+      "context": "Y96D: disrupts drug binding in the Switch II pocket"
+    },
+    {
+      "name": "KRAS R68S",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "hgvs_p": "p.Arg68Ser",
+        "gene": "KRAS",
+        "role": "resistance"
+      },
+      "confidence": 0.95,
+      "context": "R68S: alters drug-protein interface"
+    },
+    {
+      "name": "KRAS H95Q",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "hgvs_p": "p.His95Gln",
+        "gene": "KRAS",
+        "role": "resistance"
+      },
+      "confidence": 0.9,
+      "context": "H95Q/R: affects binding cavity geometry"
+    },
+    {
+      "name": "KRAS H95R",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "hgvs_p": "p.His95Arg",
+        "gene": "KRAS",
+        "role": "resistance"
+      },
+      "confidence": 0.9,
+      "context": "H95Q/R: affects binding cavity geometry"
+    },
+    {
+      "name": "NRAS",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "NRAS"
+      },
+      "confidence": 0.95,
+      "context": "other RAS family members (NRAS, HRAS)"
+    },
+    {
+      "name": "HRAS",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "HRAS"
+      },
+      "confidence": 0.95,
+      "context": "other RAS family members (NRAS, HRAS)"
+    },
+    {
+      "name": "Switch II pocket",
+      "entity_type": "PROTEIN_DOMAIN",
+      "attributes": {
+        "aliases": [
+          "P2 pocket"
+        ],
+        "parent_protein": "KRAS",
+        "location": "adjacent to effector-binding region"
+      },
+      "confidence": 0.95,
+      "context": "Binding site: Switch II pocket (P2 pocket) adjacent to the effector-binding region"
+    },
+    {
+      "name": "cysteine-12",
+      "entity_type": "PROTEIN_DOMAIN",
+      "attributes": {
+        "residue": "Cys12",
+        "parent_protein": "KRAS G12C"
+      },
+      "confidence": 0.9,
+      "context": "irreversibly and covalently binds to the cysteine-12 residue of KRAS G12C"
+    },
+    {
+      "name": "covalent KRAS G12C inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "type": "irreversible covalent",
+        "conformational_lock": "GDP-bound inactive"
+      },
+      "confidence": 0.98,
+      "context": "irreversibly and covalently binds to the cysteine-12 residue of KRAS G12C, locking the protein in its inactive GDP-bound conformation"
+    },
+    {
+      "name": "non-small cell lung cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "aliases": [
+          "NSCLC"
+        ],
+        "stage": "locally advanced or metastatic",
+        "biomarker": "KRAS G12C"
+      },
+      "confidence": 0.98,
+      "context": "KRAS G12C-mutant locally advanced or metastatic NSCLC"
+    },
+    {
+      "name": "MAPK pathway",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "MAPK pathway reactivation via RAF or MEK"
+    },
+    {
+      "name": "RAF",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.8,
+      "context": "MAPK pathway reactivation via RAF or MEK"
+    },
+    {
+      "name": "MEK",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.8,
+      "context": "MAPK pathway reactivation via RAF or MEK"
+    },
+    {
+      "name": "MET",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "MET",
+        "alteration": "amplification"
+      },
+      "confidence": 0.9,
+      "context": "bypass mechanisms: MET amplification"
+    },
+    {
+      "name": "H358",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {
+        "type": "NSCLC cell line"
+      },
+      "confidence": 0.9,
+      "context": "EC50: 38 nM (H358 cells, p-ERK inhibition)"
+    },
+    {
+      "name": "p-ERK",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "phosphoprotein",
+        "role": "pharmacodynamic"
+      },
+      "confidence": 0.9,
+      "context": "EC50: 38 nM (H358 cells, p-ERK inhibition)"
+    },
+    {
+      "name": "CodeBreaK 100",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT03600883",
+        "phase": "I/II",
+        "orr": "37.1%",
+        "median_pfs": "6.8 months"
+      },
+      "confidence": 0.98,
+      "context": "CodeBreaK 100 (NCT03600883): Phase I/II, ORR 37.1%, median PFS 6.8 months"
+    },
+    {
+      "name": "CodeBreaK 200",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT04303780",
+        "phase": "III",
+        "comparator": "docetaxel",
+        "pfs_hr": "0.66"
+      },
+      "confidence": 0.98,
+      "context": "CodeBreaK 200 (NCT04303780): Phase III vs docetaxel, PFS HR 0.66"
+    },
+    {
+      "name": "docetaxel",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "role": "comparator"
+      },
+      "confidence": 0.95,
+      "context": "Phase III vs docetaxel"
+    },
+    {
+      "name": "FDA accelerated approval of sotorasib",
+      "entity_type": "REGULATORY_ACTION",
+      "attributes": {
+        "agency": "FDA",
+        "date": "2021-05-28",
+        "type": "accelerated approval",
+        "indication": "KRAS G12C-mutant locally advanced or metastatic NSCLC after prior systemic therapy"
+      },
+      "confidence": 0.98,
+      "context": "Approved by FDA on May 28, 2021 under accelerated approval"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.98,
+      "evidence": "Sotorasib ... is a first-in-class KRAS G12C covalent inhibitor."
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "sotorasib",
+      "target_entity": "cysteine-12",
+      "confidence": 0.98,
+      "evidence": "Sotorasib irreversibly and covalently binds to the cysteine-12 residue of KRAS G12C"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "sotorasib",
+      "target_entity": "Switch II pocket",
+      "confidence": 0.95,
+      "evidence": "Binding site: Switch II pocket (P2 pocket) adjacent to the effector-binding region"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS protein",
+      "confidence": 0.98,
+      "evidence": "Target: KRAS protein (UniProt: P01116), specifically the G12C mutant"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "sotorasib",
+      "target_entity": "covalent KRAS G12C inhibition",
+      "confidence": 0.98,
+      "evidence": "irreversibly and covalently binds to the cysteine-12 residue of KRAS G12C, locking the protein in its inactive GDP-bound conformation"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS protein",
+      "confidence": 0.95,
+      "evidence": "KRAS protein (UniProt: P01116)"
+    },
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.98,
+      "evidence": "the G12C mutant (not wild-type KRAS)"
+    },
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS G12D",
+      "confidence": 0.9,
+      "evidence": "It does not inhibit KRAS G12D or KRAS G12V."
+    },
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS G12V",
+      "confidence": 0.9,
+      "evidence": "It does not inhibit KRAS G12D or KRAS G12V."
+    },
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS Y96D",
+      "confidence": 0.9,
+      "evidence": "secondary KRAS mutations: Y96D"
+    },
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS R68S",
+      "confidence": 0.9,
+      "evidence": "secondary KRAS mutations: ... R68S"
+    },
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS H95Q",
+      "confidence": 0.85,
+      "evidence": "H95Q/R: affects binding cavity geometry"
+    },
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS H95R",
+      "confidence": 0.85,
+      "evidence": "H95Q/R: affects binding cavity geometry"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "KRAS Y96D",
+      "target_entity": "sotorasib",
+      "confidence": 0.95,
+      "evidence": "Y96D: disrupts drug binding in the Switch II pocket"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "KRAS R68S",
+      "target_entity": "sotorasib",
+      "confidence": 0.9,
+      "evidence": "R68S: alters drug-protein interface"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "KRAS H95Q",
+      "target_entity": "sotorasib",
+      "confidence": 0.85,
+      "evidence": "H95Q/R: affects binding cavity geometry"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "KRAS H95R",
+      "target_entity": "sotorasib",
+      "confidence": 0.85,
+      "evidence": "H95Q/R: affects binding cavity geometry"
+    },
+    {
+      "relation_type": "CONFERS_RESISTANCE_TO",
+      "source_entity": "MET",
+      "target_entity": "sotorasib",
+      "confidence": 0.85,
+      "evidence": "Other bypass mechanisms: MET amplification"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "sotorasib",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.98,
+      "evidence": "accelerated approval for KRAS G12C-mutant locally advanced or metastatic NSCLC after prior systemic therapy"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "sotorasib",
+      "target_entity": "CodeBreaK 100",
+      "confidence": 0.98,
+      "evidence": "CodeBreaK 100 (NCT03600883): Phase I/II, ORR 37.1%, median PFS 6.8 months"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "sotorasib",
+      "target_entity": "CodeBreaK 200",
+      "confidence": 0.98,
+      "evidence": "CodeBreaK 200 (NCT04303780): Phase III vs docetaxel, PFS HR 0.66"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "KRAS protein",
+      "target_entity": "MAPK pathway",
+      "confidence": 0.9,
+      "evidence": "MAPK pathway reactivation via RAF or MEK"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "RAF",
+      "target_entity": "MAPK pathway",
+      "confidence": 0.9,
+      "evidence": "MAPK pathway reactivation via RAF or MEK"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "MEK",
+      "target_entity": "MAPK pathway",
+      "confidence": 0.9,
+      "evidence": "MAPK pathway reactivation via RAF or MEK"
+    },
+    {
+      "relation_type": "REGULATORY_ACTION_FOR",
+      "source_entity": "FDA accelerated approval of sotorasib",
+      "target_entity": "sotorasib",
+      "confidence": 0.98,
+      "evidence": "Approved by FDA on May 28, 2021 under accelerated approval"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T21:02:36.811586+00:00",
+  "error": null
+}

@@ -1,0 +1,241 @@
+{
+  "document_id": "patent_06_US10370426B2_triple_agonist",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/06_glp1_landscape/docs/patent_06_US10370426B2_triple_agonist.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "triple agonist peptide (SEQ ID NO: 103)",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "class": "triple receptor agonist",
+        "assignee": "Hanmi Pharmaceutical"
+      },
+      "confidence": 0.95,
+      "context": "The invention concerns a triple agonist peptide possessing activities to all of glucagon, GLP-1, and GIP receptors"
+    },
+    {
+      "name": "retatrutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "code": "LY3437943",
+        "developer": "Eli Lilly"
+      },
+      "confidence": 0.98,
+      "context": "Retatrutide (LY3437943), developed by Eli Lilly, is a related triple GIP/GLP-1/glucagon receptor agonist"
+    },
+    {
+      "name": "GLP-1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide-1 receptor",
+        "class": "GPCR"
+      },
+      "confidence": 0.98,
+      "context": "glucagon-like peptide-1 (GLP-1) receptor for glucose-dependent insulin secretion and appetite suppression"
+    },
+    {
+      "name": "GIPR",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucose-dependent insulinotropic polypeptide receptor",
+        "class": "GPCR"
+      },
+      "confidence": 0.98,
+      "context": "glucose-dependent insulinotropic polypeptide (GIP) receptor for enhanced insulin response and lipid metabolism"
+    },
+    {
+      "name": "GCGR",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon receptor",
+        "class": "GPCR"
+      },
+      "confidence": 0.98,
+      "context": "glucagon receptor (GCGR) for increased energy expenditure and hepatic lipid oxidation"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "confidence": 0.98,
+      "context": "treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "confidence": 0.98,
+      "context": "treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia"
+    },
+    {
+      "name": "dyslipidemia",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "obesity, type 2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease"
+    },
+    {
+      "name": "non-alcoholic fatty liver disease",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "obesity, type 2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease"
+    },
+    {
+      "name": "triple GLP-1/GIP/glucagon receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "confidence": 0.98,
+      "context": "This multi-receptor mechanism produces synergistic weight loss and metabolic improvement beyond what single or dual agonists achieve"
+    },
+    {
+      "name": "glucose-dependent insulin secretion",
+      "entity_type": "PATHWAY",
+      "confidence": 0.9,
+      "context": "glucagon-like peptide-1 (GLP-1) receptor for glucose-dependent insulin secretion and appetite suppression"
+    },
+    {
+      "name": "hepatic lipid oxidation",
+      "entity_type": "PATHWAY",
+      "confidence": 0.85,
+      "context": "glucagon receptor (GCGR) for increased energy expenditure and hepatic lipid oxidation"
+    },
+    {
+      "name": "Hanmi Pharmaceutical Co Ltd",
+      "entity_type": "ORGANIZATION",
+      "confidence": 0.99,
+      "context": "Assignee: Hanmi Pharmaceutical Co Ltd"
+    },
+    {
+      "name": "Eli Lilly",
+      "entity_type": "ORGANIZATION",
+      "confidence": 0.99,
+      "context": "Retatrutide (LY3437943), developed by Eli Lilly"
+    },
+    {
+      "name": "US10370426B2",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "type": "patent",
+        "filing_date": "2018-06-29"
+      },
+      "confidence": 1.0,
+      "context": "Patent ID: US10370426B2"
+    },
+    {
+      "name": "Retatrutide Phase 3 Trial",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "3"
+      },
+      "confidence": 0.85,
+      "context": "Retatrutide (LY3437943)... currently in Phase 3 clinical trials"
+    },
+    {
+      "name": "Retatrutide Phase 2 Weight Loss Study",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "2",
+        "result": "up to 24% body weight reduction"
+      },
+      "confidence": 0.85,
+      "context": "demonstrated up to 24% body weight reduction in Phase 2 studies"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "triple agonist peptide (SEQ ID NO: 103)",
+      "target_entity": "GLP-1R",
+      "confidence": 0.98,
+      "evidence": "triple agonist peptide possessing activities to all of glucagon, GLP-1, and GIP receptors"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "triple agonist peptide (SEQ ID NO: 103)",
+      "target_entity": "GIPR",
+      "confidence": 0.98,
+      "evidence": "triple agonist peptide possessing activities to all of glucagon, GLP-1, and GIP receptors"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "triple agonist peptide (SEQ ID NO: 103)",
+      "target_entity": "GCGR",
+      "confidence": 0.98,
+      "evidence": "triple agonist peptide possessing activities to all of glucagon, GLP-1, and GIP receptors"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "triple agonist peptide (SEQ ID NO: 103)",
+      "target_entity": "obesity",
+      "confidence": 0.9,
+      "evidence": "applications in treating metabolic disorders including obesity"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "triple agonist peptide (SEQ ID NO: 103)",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.9,
+      "evidence": "treating metabolic disorders including obesity, type 2 diabetes"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "triple agonist peptide (SEQ ID NO: 103)",
+      "target_entity": "dyslipidemia",
+      "confidence": 0.85,
+      "evidence": "treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "triple agonist peptide (SEQ ID NO: 103)",
+      "target_entity": "non-alcoholic fatty liver disease",
+      "confidence": 0.85,
+      "evidence": "treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "retatrutide",
+      "target_entity": "GLP-1R",
+      "confidence": 0.98,
+      "evidence": "triple GIP/GLP-1/glucagon receptor agonist"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "retatrutide",
+      "target_entity": "GIPR",
+      "confidence": 0.98,
+      "evidence": "triple GIP/GLP-1/glucagon receptor agonist"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "retatrutide",
+      "target_entity": "GCGR",
+      "confidence": 0.98,
+      "evidence": "triple GIP/GLP-1/glucagon receptor agonist"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "retatrutide",
+      "target_entity": "Retatrutide Phase 3 Trial",
+      "confidence": 0.95,
+      "evidence": "Retatrutide (LY3437943)... currently in Phase 3 clinical trials"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "retatrutide",
+      "target_entity": "Retatrutide Phase 2 Weight Loss Study",
+      "confidence": 0.95,
+      "evidence": "demonstrated up to 24% body weight reduction in Phase 2 studies"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "retatrutide",
+      "target_entity": "obesity",
+      "confidence": 0.85,
+      "evidence": "demonstrated up to 24% body weight reduction in Phase 2 studies"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:08:52.642222+00:00",
+  "error": null
+}

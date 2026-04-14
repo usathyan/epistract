@@ -1,0 +1,171 @@
+{
+  "document_id": "pmid_31258325",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/03_rare_disease/docs/pmid_31258325.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "pegvaliase",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "pegylated enzyme",
+        "drug_class": "enzyme substitution therapy"
+      },
+      "confidence": 0.98,
+      "context": "Pegvaliase is a pegylated PAL enzyme that converts phenylalanine to ammonia and trans-cinnamic acid."
+    },
+    {
+      "name": "phenylalanine ammonia lyase",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "abbreviation": "PAL"
+      },
+      "confidence": 0.98,
+      "context": "Searches of MEDLINE (1946-September 1, 2018) were conducted using the terms pegvaliase and phenylalanine ammonia lyase (PAL)."
+    },
+    {
+      "name": "phenylalanine",
+      "entity_type": "METABOLITE",
+      "attributes": {
+        "role": "amino acid substrate"
+      },
+      "confidence": 0.98,
+      "context": "a phenylalanine-metabolizing enzyme indicated to reduce blood phenylalanine concentrations"
+    },
+    {
+      "name": "ammonia",
+      "entity_type": "METABOLITE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "pegylated PAL enzyme that converts phenylalanine to ammonia and trans-cinnamic acid"
+    },
+    {
+      "name": "trans-cinnamic acid",
+      "entity_type": "METABOLITE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "pegylated PAL enzyme that converts phenylalanine to ammonia and trans-cinnamic acid"
+    },
+    {
+      "name": "phenylketonuria",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "PKU",
+        "category": "rare inborn error of metabolism"
+      },
+      "confidence": 0.98,
+      "context": "The mainstay of therapy in phenylketonuria (PKU) has historically consisted of dietary restriction of phenylalanine."
+    },
+    {
+      "name": "enzyme substitution therapy",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Pegvaliase injection is the first Food and Drug Administration (FDA)-approved enzyme substitution therapy for patients with PKU."
+    },
+    {
+      "name": "elevated blood phenylalanine",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "threshold": ">600 \u00b5mol/L",
+        "sample": "blood"
+      },
+      "confidence": 0.9,
+      "context": "patients with documented blood phenylalanine >600 \u00b5mol/L who have failed existing management strategies"
+    },
+    {
+      "name": "dietary phenylalanine restriction",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "The mainstay of therapy in phenylketonuria (PKU) has historically consisted of dietary restriction of phenylalanine."
+    },
+    {
+      "name": "Food and Drug Administration",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "abbreviation": "FDA",
+        "type": "regulatory agency"
+      },
+      "confidence": 0.98,
+      "context": "Pegvaliase injection is the first Food and Drug Administration (FDA)-approved enzyme substitution therapy for patients with PKU."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "pegvaliase",
+      "target_entity": "phenylketonuria",
+      "confidence": 0.98,
+      "evidence": "Pegvaliase injection is the first Food and Drug Administration (FDA)-approved enzyme substitution therapy for patients with PKU."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "pegvaliase",
+      "target_entity": "enzyme substitution therapy",
+      "confidence": 0.95,
+      "evidence": "the first Food and Drug Administration (FDA)-approved enzyme substitution therapy for patients with PKU"
+    },
+    {
+      "relation_type": "METABOLIZES",
+      "source_entity": "pegvaliase",
+      "target_entity": "phenylalanine",
+      "confidence": 0.98,
+      "evidence": "Pegvaliase is a pegylated PAL enzyme that converts phenylalanine to ammonia and trans-cinnamic acid."
+    },
+    {
+      "relation_type": "PRODUCES",
+      "source_entity": "pegvaliase",
+      "target_entity": "ammonia",
+      "confidence": 0.95,
+      "evidence": "converts phenylalanine to ammonia and trans-cinnamic acid"
+    },
+    {
+      "relation_type": "PRODUCES",
+      "source_entity": "pegvaliase",
+      "target_entity": "trans-cinnamic acid",
+      "confidence": 0.95,
+      "evidence": "converts phenylalanine to ammonia and trans-cinnamic acid"
+    },
+    {
+      "relation_type": "REDUCES",
+      "source_entity": "pegvaliase",
+      "target_entity": "elevated blood phenylalanine",
+      "confidence": 0.95,
+      "evidence": "Blood phenylalanine levels were reduced by approximately 50% to 70% in patients receiving therapeutic doses of pegvaliase."
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "elevated blood phenylalanine",
+      "target_entity": "phenylketonuria",
+      "confidence": 0.9,
+      "evidence": "patients with documented blood phenylalanine >600 \u00b5mol/L"
+    },
+    {
+      "relation_type": "APPROVED_BY",
+      "source_entity": "pegvaliase",
+      "target_entity": "Food and Drug Administration",
+      "confidence": 0.98,
+      "evidence": "the first Food and Drug Administration (FDA)-approved enzyme substitution therapy for patients with PKU"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "dietary phenylalanine restriction",
+      "target_entity": "phenylketonuria",
+      "confidence": 0.9,
+      "evidence": "The mainstay of therapy in phenylketonuria (PKU) has historically consisted of dietary restriction of phenylalanine."
+    },
+    {
+      "relation_type": "IS_A",
+      "source_entity": "pegvaliase",
+      "target_entity": "phenylalanine ammonia lyase",
+      "confidence": 0.95,
+      "evidence": "Pegvaliase is a pegylated PAL enzyme"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T22:54:03.505566+00:00",
+  "error": null
+}

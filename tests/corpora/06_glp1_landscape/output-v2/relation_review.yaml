@@ -1,0 +1,97 @@
+review_threshold: 0.7
+relations:
+- source_id: biomarker:hba1c
+  source_name: HbA1c
+  target_id: compound:tirzepatide
+  target_name: tirzepatide
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.85
+  evidence: superior efficacy in glycemic control (HbA1c reduction)
+  source_document: patent_02_US11357820B2_tirzepatide
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:hba1c
+  source_name: HbA1c
+  target_id: compound:semaglutide
+  target_name: semaglutide
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.85
+  evidence: weekly semaglutide at doses of 0.5 mg and 1.0 mg achieved significant
+    reductions in HbA1c
+  source_document: patent_03_US10335462B2_semaglutide_longacting
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:hba1c
+  source_name: HbA1c
+  target_id: compound:orforglipron
+  target_name: orforglipron
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.8
+  evidence: significant weight loss and HbA1c reduction in Phase 3 trials
+  source_document: patent_05_WO2018109607A1_pfizer_oral_glp1
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:estimated_glomerular_filtration_rate
+  source_name: estimated glomerular filtration rate
+  target_id: disease:chronic_kidney_disease
+  target_name: chronic kidney disease
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.99
+  evidence: chronic kidney disease (defined by an estimated glomerular filtration
+    rate [eGFR] of 50 to 75 ml per minute per 1.73 m
+  source_document: pmid_38785209
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:cerebral_glucose_metabolism
+  source_name: cerebral glucose metabolism
+  target_id: compound:glp_1_receptor_agonists
+  target_name: GLP-1 receptor agonists
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.7
+  evidence: improvement in some brain markers (e.g. hippocampal connections, cerebral
+    glucose metabolism, hippocampal activation
+  source_document: pmid_37657738
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: compound:resmetirom
+  source_name: resmetirom
+  target_id: disease:cirrhosis
+  target_name: cirrhosis
+  relation_type: CONTRAINDICATED_FOR
+  confidence: 0.85
+  evidence: No MASH-targeted pharmacotherapy can currently be recommended for the
+    cirrhotic stage
+  source_document: pmid_38851997
+  status: DRAFT
+  flag_reason: Type 'CONTRAINDICATED_FOR' requires review
+- source_id: biomarker:fib_4
+  source_name: FIB-4
+  target_id: disease:liver_fibrosis
+  target_name: liver fibrosis
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.9
+  evidence: blood-based scores (such as FIB-4) ... to rule-out/in advanced fibrosis
+  source_document: pmid_38851997
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:transient_elastography
+  source_name: transient elastography
+  target_id: disease:liver_fibrosis
+  target_name: liver fibrosis
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.9
+  evidence: imaging techniques (such as transient elastography) is suitable to rule-out/in
+    advanced fibrosis
+  source_document: pmid_38851997
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:glycated_hemoglobin
+  source_name: glycated hemoglobin
+  target_id: disease:type_2_diabetes_mellitus
+  target_name: type 2 diabetes mellitus
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.985
+  evidence: glycated hemoglobin level of 7 to 10%, and type 2 diabetes
+  source_document: pmid_40544432
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review

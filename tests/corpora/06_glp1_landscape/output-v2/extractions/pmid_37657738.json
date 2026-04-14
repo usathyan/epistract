@@ -1,0 +1,181 @@
+{
+  "document_id": "pmid_37657738",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/06_glp1_landscape/docs/pmid_37657738.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "glucagon-like peptide 1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "family": "incretin hormone"
+      },
+      "confidence": 0.98,
+      "context": "Glucagon-like peptide 1 (GLP-1) is a hormone of the incretin family"
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "role": "target"
+      },
+      "confidence": 0.95,
+      "context": "GLP-1 receptor agonist has a peripheral and a central action"
+    },
+    {
+      "name": "GLP-1 receptor agonists",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "incretin mimetic"
+      },
+      "confidence": 0.97,
+      "context": "GLP-1 receptor agonists may offer a protective effect"
+    },
+    {
+      "name": "insulin",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "stimulation of glucose-dependent insulin secretion and insulin biosynthesis"
+    },
+    {
+      "name": "glucagon",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "inhibition of glucagon secretion"
+    },
+    {
+      "name": "type 2 diabetes",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Diabetes Mellitus, Type 2"
+      },
+      "confidence": 0.99,
+      "context": "use in the treatment of type 2 diabetes"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.97,
+      "context": "extended to the management of obesity"
+    },
+    {
+      "name": "Alzheimer disease",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.98,
+      "context": "cognitive disorders, such as Alzheimer's and Parkinson's disease"
+    },
+    {
+      "name": "Parkinson disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Parkinson Disease"
+      },
+      "confidence": 0.98,
+      "context": "Alzheimer's and Parkinson's disease"
+    },
+    {
+      "name": "dementia",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.97,
+      "context": "delaying progression to dementia"
+    },
+    {
+      "name": "insulin resistance",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.93,
+      "context": "cognitive disorders...related to insulin resistance"
+    },
+    {
+      "name": "cognitive dysfunction",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "effect of GLP-1 analogs on cognitive function"
+    },
+    {
+      "name": "hippocampus",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {
+        "type": "brain region"
+      },
+      "confidence": 0.9,
+      "context": "hippocampal connections...hippocampal activation on functional magnetic resonance imaging"
+    },
+    {
+      "name": "cerebral glucose metabolism",
+      "entity_type": "BIOMARKER",
+      "attributes": {},
+      "confidence": 0.88,
+      "context": "improvement in some brain markers (e.g. hippocampal connections, cerebral glucose metabolism"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "type 2 diabetes",
+      "confidence": 0.98,
+      "evidence": "their use in the treatment of type 2 diabetes"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "obesity",
+      "confidence": 0.95,
+      "evidence": "extended to the management of obesity"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.98,
+      "evidence": "GLP-1 receptor agonist has a peripheral and a central action"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.98,
+      "evidence": "GLP-1 receptor agonist"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "insulin resistance",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.8,
+      "evidence": "cognitive disorders, such as Alzheimer's and Parkinson's disease, related to insulin resistance"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "insulin resistance",
+      "target_entity": "Parkinson disease",
+      "confidence": 0.8,
+      "evidence": "cognitive disorders, such as Alzheimer's and Parkinson's disease, related to insulin resistance"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "cerebral glucose metabolism",
+      "target_entity": "GLP-1 receptor agonists",
+      "confidence": 0.7,
+      "evidence": "improvement in some brain markers (e.g. hippocampal connections, cerebral glucose metabolism, hippocampal activation"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "dementia",
+      "confidence": 0.75,
+      "evidence": "delaying progression to dementia when diabetic patients are treated with GLP-1 receptor agonists"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:09:12.559870+00:00",
+  "error": null
+}

@@ -1,0 +1,334 @@
+{
+  "document_id": "pmid_40030000",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/04_immunooncology/docs/pmid_40030000.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "nivolumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "PD-1"
+      },
+      "confidence": 0.98,
+      "context": "Nivolumab plus relatlimab for patients with relapsed or progressed B-cell malignancies"
+    },
+    {
+      "name": "relatlimab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "LAG-3"
+      },
+      "confidence": 0.98,
+      "context": "the anti-LAG-3 antibody relatlimab"
+    },
+    {
+      "name": "PDCD1",
+      "entity_type": "GENE",
+      "attributes": {
+        "protein": "PD-1"
+      },
+      "confidence": 0.9,
+      "context": "anti-programmed death 1 (anti-PD-1) monotherapy"
+    },
+    {
+      "name": "LAG3",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "lymphocyte activation gene 3"
+      },
+      "confidence": 0.98,
+      "context": "The lymphocyte activation gene 3 (LAG-3) cell-surface receptor"
+    },
+    {
+      "name": "CD274",
+      "entity_type": "GENE",
+      "attributes": {
+        "protein": "PD-L1"
+      },
+      "confidence": 0.85,
+      "context": "anti-programmed death ligand 1 (anti-PD-[L]1)"
+    },
+    {
+      "name": "PD-1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "aliases": [
+          "programmed death 1"
+        ],
+        "type": "immune checkpoint receptor"
+      },
+      "confidence": 0.98,
+      "context": "anti-programmed death 1 (anti-PD-1) monotherapy"
+    },
+    {
+      "name": "LAG-3",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "aliases": [
+          "lymphocyte activation gene 3"
+        ],
+        "type": "immune checkpoint receptor"
+      },
+      "confidence": 0.98,
+      "context": "The lymphocyte activation gene 3 (LAG-3) cell-surface receptor represents another immune checkpoint"
+    },
+    {
+      "name": "PD-L1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "aliases": [
+          "programmed death ligand 1"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "anti-programmed death ligand 1 (anti-PD-[L]1)"
+    },
+    {
+      "name": "Hodgkin lymphoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Hodgkin Disease",
+        "abbreviation": "HL"
+      },
+      "confidence": 0.98,
+      "context": "relapsed/refractory (R/R) Hodgkin lymphoma (HL)"
+    },
+    {
+      "name": "B-cell malignancies",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "category": "hematologic malignancy"
+      },
+      "confidence": 0.95,
+      "context": "patients with R/R B-cell malignancies"
+    },
+    {
+      "name": "diffuse large B-cell lymphoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Lymphoma, Large B-Cell, Diffuse",
+        "abbreviation": "DLBCL"
+      },
+      "confidence": 0.98,
+      "context": "In diffuse large B-cell lymphoma, ORR was 7%"
+    },
+    {
+      "name": "melanoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Melanoma",
+        "stage": "advanced"
+      },
+      "confidence": 0.95,
+      "context": "dual inhibition of PD-1 and LAG-3 is approved in advanced melanoma"
+    },
+    {
+      "name": "immune checkpoint inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "targets": [
+          "PD-1",
+          "LAG-3"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "dual inhibition of PD-1 and LAG-3"
+    },
+    {
+      "name": "RELATIVITY-022",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "1/2a",
+        "design": "multicenter open-label",
+        "nct_id": "NCT02061761",
+        "enrollment": 106
+      },
+      "confidence": 0.98,
+      "context": "multicenter phase 1/2a open-label study... (RELATIVITY-022)"
+    },
+    {
+      "name": "NCT02061761",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "registry": "ClinicalTrials.gov"
+      },
+      "confidence": 0.98,
+      "context": "registered at www.ClinicalTrials.gov as #NCT02061761"
+    },
+    {
+      "name": "objective response rate",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "ORR",
+        "type": "efficacy endpoint"
+      },
+      "confidence": 0.9,
+      "context": "objective response rate (ORR) was 62%"
+    },
+    {
+      "name": "complete response rate",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "CRR",
+        "type": "efficacy endpoint"
+      },
+      "confidence": 0.9,
+      "context": "complete response rate (CRR) was 19%"
+    },
+    {
+      "name": "progression-free survival",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "PFS",
+        "type": "efficacy endpoint"
+      },
+      "confidence": 0.9,
+      "context": "median progression-free survival (PFS) of 19 months"
+    },
+    {
+      "name": "Blood Advances",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "year": 2025,
+        "pmid": "40030000"
+      },
+      "confidence": 0.98,
+      "context": "Journal: Blood advances (2025)"
+    },
+    {
+      "name": "peptide_10aa",
+      "entity_type": "PEPTIDE_SEQUENCE",
+      "attributes": {
+        "sequence": "RELATIVITY",
+        "sequence_type": "protein",
+        "length": 10,
+        "validated": true,
+        "molecular_weight": 1178.38
+      },
+      "confidence": 1.0,
+      "context": "multicenter phase 1/2a open-label study... (RELATIVITY-022)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "relatlimab",
+      "target_entity": "LAG-3",
+      "confidence": 0.98,
+      "evidence": "the anti-LAG-3 antibody relatlimab"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "nivolumab",
+      "target_entity": "PD-1",
+      "confidence": 0.98,
+      "evidence": "anti-programmed death 1 (anti-PD-1) monotherapy... nivolumab"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "relatlimab",
+      "target_entity": "LAG-3",
+      "confidence": 0.98,
+      "evidence": "the anti-LAG-3 antibody relatlimab"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "nivolumab",
+      "target_entity": "PD-1",
+      "confidence": 0.98,
+      "evidence": "nivolumab (anti-PD-1)"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "LAG3",
+      "target_entity": "LAG-3",
+      "confidence": 0.95,
+      "evidence": "lymphocyte activation gene 3 (LAG-3) cell-surface receptor"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "PDCD1",
+      "target_entity": "PD-1",
+      "confidence": 0.9,
+      "evidence": "programmed death 1 (anti-PD-1)"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "CD274",
+      "target_entity": "PD-L1",
+      "confidence": 0.85,
+      "evidence": "programmed death ligand 1 (anti-PD-[L]1)"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "relatlimab",
+      "target_entity": "RELATIVITY-022",
+      "confidence": 0.98,
+      "evidence": "phase 1/2a open-label study of the anti-LAG-3 antibody relatlimab (RELATIVITY-022)"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "nivolumab",
+      "target_entity": "RELATIVITY-022",
+      "confidence": 0.98,
+      "evidence": "relatlimab administered as monotherapy or in combination with nivolumab"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "relatlimab",
+      "target_entity": "Hodgkin lymphoma",
+      "confidence": 0.85,
+      "evidence": "Responses in patients with anti-PD-(L)1-naive HL was encouraging"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "nivolumab",
+      "target_entity": "Hodgkin lymphoma",
+      "confidence": 0.85,
+      "evidence": "HL expansion cohorts, objective response rate (ORR) was 62%"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "relatlimab",
+      "target_entity": "melanoma",
+      "confidence": 0.95,
+      "evidence": "dual inhibition of PD-1 and LAG-3 is approved in advanced melanoma"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "nivolumab",
+      "target_entity": "melanoma",
+      "confidence": 0.95,
+      "evidence": "dual inhibition of PD-1 and LAG-3 is approved in advanced melanoma"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "relatlimab",
+      "target_entity": "diffuse large B-cell lymphoma",
+      "confidence": 0.9,
+      "evidence": "In diffuse large B-cell lymphoma, ORR was 7%"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "relatlimab",
+      "target_entity": "B-cell malignancies",
+      "confidence": 0.95,
+      "evidence": "patients with R/R B-cell malignancies"
+    },
+    {
+      "relation_type": "HAS_SEQUENCE",
+      "source_entity": "nivolumab",
+      "target_entity": "peptide_10aa",
+      "confidence": 0.95,
+      "evidence": "multicenter phase 1/2a open-label study... (RELATIVITY-022)"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T23:00:51.876576+00:00",
+  "error": null
+}

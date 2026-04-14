@@ -1,0 +1,276 @@
+{
+  "document_id": "pmid_35658005",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/02_kras_g12c_landscape/docs/pmid_35658005.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "adagrasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "dosing": "600 mg orally twice daily"
+      },
+      "confidence": 0.98,
+      "context": "Adagrasib, a KRASG12C inhibitor, irreversibly and selectively binds KRASG12C"
+    },
+    {
+      "name": "KRAS",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.98,
+      "context": "Proto-Oncogene Proteins p21(ras)"
+    },
+    {
+      "name": "KRAS",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "irreversibly and selectively binds KRASG12C, locking it in its inactive state"
+    },
+    {
+      "name": "KRAS G12C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "hgvs": "p.G12C"
+      },
+      "confidence": 0.98,
+      "context": "KRASG12C -mutated non-small-cell lung cancer"
+    },
+    {
+      "name": "non-small-cell lung cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Carcinoma, Non-Small-Cell Lung"
+      },
+      "confidence": 0.98,
+      "context": "patients with KRASG12C -mutated non-small-cell lung cancer (NSCLC)"
+    },
+    {
+      "name": "central nervous system metastases",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "33 patients with previously treated, stable central nervous system metastases"
+    },
+    {
+      "name": "KRYSTAL-1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "1-2",
+        "nct_id": "NCT03785249"
+      },
+      "confidence": 0.98,
+      "context": "the KRYSTAL-1 phase 1-2 study"
+    },
+    {
+      "name": "NCT03785249",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {},
+      "confidence": 0.98,
+      "context": "ClinicalTrials.gov number, NCT03785249"
+    },
+    {
+      "name": "KRAS G12C inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "binding": "irreversible covalent",
+        "state": "locks inactive GDP-bound state"
+      },
+      "confidence": 0.98,
+      "context": "KRASG12C inhibitor, irreversibly and selectively binds KRASG12C, locking it in its inactive state"
+    },
+    {
+      "name": "platinum-based chemotherapy",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "class": "chemotherapy"
+      },
+      "confidence": 0.9,
+      "context": "previously treated with platinum-based chemotherapy"
+    },
+    {
+      "name": "anti-PD-1 therapy",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "anti-programmed death 1 or programmed death ligand 1 therapy"
+    },
+    {
+      "name": "anti-PD-L1 therapy",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "anti-programmed death 1 or programmed death ligand 1 therapy"
+    },
+    {
+      "name": "PDCD1",
+      "entity_type": "GENE",
+      "attributes": {
+        "aka": "PD-1"
+      },
+      "confidence": 0.85,
+      "context": "anti-programmed death 1"
+    },
+    {
+      "name": "CD274",
+      "entity_type": "GENE",
+      "attributes": {
+        "aka": "PD-L1"
+      },
+      "confidence": 0.85,
+      "context": "programmed death ligand 1"
+    },
+    {
+      "name": "objective response",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "rate": "42.9%"
+      },
+      "confidence": 0.95,
+      "context": "48 (42.9%) had a confirmed objective response"
+    },
+    {
+      "name": "progression-free survival",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "median": "6.5 months"
+      },
+      "confidence": 0.95,
+      "context": "median progression-free survival was 6.5 months"
+    },
+    {
+      "name": "overall survival",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "median": "12.6 months"
+      },
+      "confidence": 0.95,
+      "context": "median overall survival was 12.6 months"
+    },
+    {
+      "name": "duration of response",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "median": "8.5 months"
+      },
+      "confidence": 0.95,
+      "context": "median duration of response was 8.5 months"
+    },
+    {
+      "name": "treatment-related adverse events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "incidence": "97.4%",
+        "grade_3_plus": "44.8%"
+      },
+      "confidence": 0.98,
+      "context": "Treatment-related adverse events occurred in 97.4% of the patients"
+    },
+    {
+      "name": "Mirati Therapeutics",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "sponsor"
+      },
+      "confidence": 0.98,
+      "context": "Funded by Mirati Therapeutics"
+    },
+    {
+      "name": "Janne Pasi A",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "author"
+      },
+      "confidence": 0.9,
+      "context": "Authors: Janne Pasi A"
+    },
+    {
+      "name": "PMID:35658005",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "journal": "New England Journal of Medicine",
+        "year": "2022"
+      },
+      "confidence": 0.98,
+      "context": "The New England journal of medicine (2022) PMID: 35658005"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS",
+      "confidence": 0.98,
+      "evidence": "Adagrasib, a KRASG12C inhibitor, irreversibly and selectively binds KRASG12C, locking it in its inactive state"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS",
+      "confidence": 0.98,
+      "evidence": "irreversibly and selectively binds KRASG12C"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.98,
+      "evidence": "a KRASG12C inhibitor"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "adagrasib",
+      "target_entity": "non-small-cell lung cancer",
+      "confidence": 0.95,
+      "evidence": "evaluated adagrasib (600 mg orally twice daily) in patients with KRASG12C -mutated non-small-cell lung cancer (NSCLC)"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "adagrasib",
+      "target_entity": "KRYSTAL-1",
+      "confidence": 0.98,
+      "evidence": "Adagrasib showed clinical activity...in the phase 1-1b part of the KRYSTAL-1 phase 1-2 study"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "adagrasib",
+      "target_entity": "NCT03785249",
+      "confidence": 0.98,
+      "evidence": "ClinicalTrials.gov number, NCT03785249"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "adagrasib",
+      "target_entity": "treatment-related adverse events",
+      "confidence": 0.95,
+      "evidence": "Treatment-related adverse events occurred in 97.4% of the patients"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "non-small-cell lung cancer",
+      "confidence": 0.95,
+      "evidence": "KRASG12C -mutated non-small-cell lung cancer"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS",
+      "confidence": 0.9,
+      "evidence": "Proto-Oncogene Proteins p21(ras)"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "KRAS G12C",
+      "target_entity": "adagrasib",
+      "confidence": 0.9,
+      "evidence": "KRASG12C -mutated non-small-cell lung cancer...had a confirmed objective response"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T20:21:51.905796+00:00",
+  "error": null
+}

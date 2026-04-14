@@ -1,0 +1,312 @@
+{
+  "document_id": "pmid_40116975",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/02_kras_g12c_landscape/docs/pmid_40116975.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "sotorasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "KRAS G12C inhibitor"
+      },
+      "confidence": 0.98,
+      "context": "When sotorasib was used alone, the objective response rate (ORR) ranged from 7.1 to 9.7%"
+    },
+    {
+      "name": "adagrasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "KRAS G12C inhibitor"
+      },
+      "confidence": 0.98,
+      "context": "pairing adagrasib with cetuximab led to a 42% ORR"
+    },
+    {
+      "name": "divarasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "KRAS G12C inhibitor"
+      },
+      "confidence": 0.98,
+      "context": "Divarasib monotherapy produced a 36% ORR"
+    },
+    {
+      "name": "panitumumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "class": "EGFR inhibitor"
+      },
+      "confidence": 0.98,
+      "context": "Combining sotorasib with panitumumab, especially at higher doses"
+    },
+    {
+      "name": "cetuximab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "class": "EGFR inhibitor"
+      },
+      "confidence": 0.98,
+      "context": "pairing adagrasib with cetuximab led to a 42% ORR"
+    },
+    {
+      "name": "KRAS",
+      "entity_type": "GENE",
+      "attributes": {
+        "symbol": "KRAS"
+      },
+      "confidence": 0.98,
+      "context": "Patients with colorectal cancer (CRC) who have KRAS mutations"
+    },
+    {
+      "name": "EGFR",
+      "entity_type": "GENE",
+      "attributes": {
+        "symbol": "EGFR"
+      },
+      "confidence": 0.95,
+      "context": "particularly when used alongside EGFR inhibitors like cetuximab or panitumumab"
+    },
+    {
+      "name": "KRAS G12C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "hgvs_protein": "p.G12C"
+      },
+      "confidence": 0.98,
+      "context": "new KRAS G12C inhibitors have emerged as a targeted approach"
+    },
+    {
+      "name": "colorectal cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Colorectal Neoplasms"
+      },
+      "confidence": 0.98,
+      "context": "Patients with colorectal cancer (CRC) who have KRAS mutations"
+    },
+    {
+      "name": "advanced colorectal cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "stage": "advanced"
+      },
+      "confidence": 0.9,
+      "context": "their effectiveness and safety in advanced CRC remain areas of ongoing research"
+    },
+    {
+      "name": "KRAS G12C inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "new KRAS G12C inhibitors have emerged as a targeted approach"
+    },
+    {
+      "name": "EGFR inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "particularly when used alongside EGFR inhibitors like cetuximab or panitumumab"
+    },
+    {
+      "name": "KRAS mutation",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "gene": "KRAS"
+      },
+      "confidence": 0.95,
+      "context": "Patients with colorectal cancer (CRC) who have KRAS mutations often see poor results with standard treatments"
+    },
+    {
+      "name": "diarrhea",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Common side effects across these trials included diarrhea, nausea, fatigue, and various skin reactions"
+    },
+    {
+      "name": "nausea",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Common side effects across these trials included diarrhea, nausea, fatigue, and various skin reactions"
+    },
+    {
+      "name": "fatigue",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Common side effects across these trials included diarrhea, nausea, fatigue, and various skin reactions"
+    },
+    {
+      "name": "skin reactions",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "Common side effects across these trials included diarrhea, nausea, fatigue, and various skin reactions"
+    },
+    {
+      "name": "objective response rate",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "abbrev": "ORR"
+      },
+      "confidence": 0.85,
+      "context": "the objective response rate (ORR) ranged from 7.1 to 9.7%"
+    },
+    {
+      "name": "disease control rate",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "abbrev": "DC"
+      },
+      "confidence": 0.85,
+      "context": "disease control (DC) rates of 73.8 to 82.3%"
+    },
+    {
+      "name": "progression-free survival",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "abbrev": "PFS"
+      },
+      "confidence": 0.85,
+      "context": "a median progression-free survival (PFS) spanning 4-5.6 months"
+    },
+    {
+      "name": "Saad et al. 2025 systematic review of KRAS G12C inhibitors in CRC",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "40116975",
+        "journal": "Medical Oncology",
+        "year": "2025"
+      },
+      "confidence": 0.98,
+      "context": "Journal: Medical oncology (Northwood, London, England) (2025) PMID: 40116975"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.95,
+      "evidence": "new KRAS G12C inhibitors have emerged ... When sotorasib was used alone"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.95,
+      "evidence": "new KRAS G12C inhibitors ... pairing adagrasib with cetuximab"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "divarasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.95,
+      "evidence": "Divarasib monotherapy produced a 36% ORR"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "cetuximab",
+      "target_entity": "EGFR",
+      "confidence": 0.95,
+      "evidence": "EGFR inhibitors like cetuximab or panitumumab"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "panitumumab",
+      "target_entity": "EGFR",
+      "confidence": 0.95,
+      "evidence": "EGFR inhibitors like cetuximab or panitumumab"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "sotorasib",
+      "target_entity": "colorectal cancer",
+      "confidence": 0.9,
+      "evidence": "When sotorasib was used alone, the objective response rate (ORR) ranged from 7.1 to 9.7%"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "adagrasib",
+      "target_entity": "colorectal cancer",
+      "confidence": 0.9,
+      "evidence": "pairing adagrasib with cetuximab led to a 42% ORR"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "divarasib",
+      "target_entity": "colorectal cancer",
+      "confidence": 0.9,
+      "evidence": "Divarasib monotherapy produced a 36% ORR and an 85.5% DC rate"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "sotorasib",
+      "target_entity": "diarrhea",
+      "confidence": 0.75,
+      "evidence": "Common side effects across these trials included diarrhea, nausea, fatigue"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "sotorasib",
+      "target_entity": "nausea",
+      "confidence": 0.75,
+      "evidence": "Common side effects across these trials included diarrhea, nausea, fatigue"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "sotorasib",
+      "target_entity": "fatigue",
+      "confidence": 0.75,
+      "evidence": "Common side effects across these trials included diarrhea, nausea, fatigue"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "adagrasib",
+      "target_entity": "diarrhea",
+      "confidence": 0.75,
+      "evidence": "Common side effects across these trials included diarrhea, nausea, fatigue"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "divarasib",
+      "target_entity": "diarrhea",
+      "confidence": 0.75,
+      "evidence": "Common side effects across these trials included diarrhea, nausea, fatigue"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS",
+      "target_entity": "colorectal cancer",
+      "confidence": 0.95,
+      "evidence": "Patients with colorectal cancer (CRC) who have KRAS mutations often see poor results"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "colorectal cancer",
+      "confidence": 0.9,
+      "evidence": "new KRAS G12C inhibitors have emerged as a targeted approach for a specific subset of these mutations"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "KRAS mutation",
+      "target_entity": "sotorasib",
+      "confidence": 0.8,
+      "evidence": "KRAS G12C inhibitors ... a targeted approach for a specific subset of these mutations"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T21:02:29.938260+00:00",
+  "error": null
+}

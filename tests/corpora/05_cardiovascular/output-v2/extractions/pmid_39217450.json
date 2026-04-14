@@ -1,0 +1,173 @@
+{
+  "document_id": "pmid_39217450",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/05_cardiovascular/docs/pmid_39217450.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "mavacamten",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "mechanism": "cardiac myosin inhibitor"
+      },
+      "confidence": 0.98,
+      "context": "Long-term effect of mavacamten in obstructive hypertrophic cardiomyopathy"
+    },
+    {
+      "name": "obstructive hypertrophic cardiomyopathy",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "HCM"
+      },
+      "confidence": 0.98,
+      "context": "patients with obstructive hypertrophic cardiomyopathy (HCM)"
+    },
+    {
+      "name": "MAVA-LTE",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT03723655",
+        "phase": "extension",
+        "duration": "5-year",
+        "design": "open-label extension"
+      },
+      "confidence": 0.99,
+      "context": "MAVA-LTE (NCT03723655) is an ongoing, 5-year, open-label extension study"
+    },
+    {
+      "name": "EXPLORER-HCM",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT03470545"
+      },
+      "confidence": 0.99,
+      "context": "Participants from EXPLORER-HCM (NCT03470545) could enrol in MAVA-LTE"
+    },
+    {
+      "name": "left ventricular outflow tract gradient",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "hemodynamic"
+      },
+      "confidence": 0.95,
+      "context": "Sustained reductions from baseline to Week 180 occurred in left ventricular outflow tract gradients"
+    },
+    {
+      "name": "N-terminal pro B-type natriuretic peptide",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "NT-proBNP",
+        "type": "cardiac biomarker"
+      },
+      "confidence": 0.98,
+      "context": "N-terminal pro B-type natriuretic peptide [median (interquartile range): -562"
+    },
+    {
+      "name": "left ventricular ejection fraction",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "LVEF"
+      },
+      "confidence": 0.98,
+      "context": "Mean left ventricular ejection fraction (LVEF) decreased from 73.9% (baseline) to 66.6%"
+    },
+    {
+      "name": "EQ-5D-5L score",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "quality-of-life measure"
+      },
+      "confidence": 0.9,
+      "context": "EQ-5D-5L score [mean (standard deviation): 0.09 (0.17)]"
+    },
+    {
+      "name": "New York Heart Association class",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "NYHA",
+        "type": "functional classification"
+      },
+      "confidence": 0.95,
+      "context": "77.9%) of the 95 patients improved by at least one New York Heart Association class from baseline"
+    },
+    {
+      "name": "reduced left ventricular ejection fraction",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "severity": "transient",
+        "threshold": "<50%"
+      },
+      "confidence": 0.95,
+      "context": "20 patients (8.7%; exposure-adjusted incidence: 2.77/100 patient-years) experienced 22 transient reductions in LVEF to <50%"
+    },
+    {
+      "name": "cardiac myosin",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "role": "drug target"
+      },
+      "confidence": 0.85,
+      "context": "mavacamten is a cardiac myosin inhibitor (implicit from HCM indication)"
+    },
+    {
+      "name": "European Heart Journal",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "year": "2024",
+        "pmid": "39217450"
+      },
+      "confidence": 0.99,
+      "context": "Journal: European heart journal (2024) PMID: 39217450"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "mavacamten",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.98,
+      "evidence": "Long-term mavacamten treatment resulted in sustained improvements in cardiac function and symptoms in patients with obstructive HCM"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "mavacamten",
+      "target_entity": "MAVA-LTE",
+      "confidence": 0.99,
+      "evidence": "MAVA-LTE (NCT03723655) is an ongoing, 5-year, open-label extension study designed to evaluate the long-term effects of mavacamten"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "mavacamten",
+      "target_entity": "EXPLORER-HCM",
+      "confidence": 0.95,
+      "evidence": "Participants from EXPLORER-HCM (NCT03470545) could enrol in MAVA-LTE"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "mavacamten",
+      "target_entity": "reduced left ventricular ejection fraction",
+      "confidence": 0.9,
+      "evidence": "20 patients (8.7%) experienced 22 transient reductions in LVEF to <50% resulting in temporary treatment interruption"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "mavacamten",
+      "target_entity": "cardiac myosin",
+      "confidence": 0.75,
+      "evidence": "mavacamten is a cardiac myosin inhibitor used in HCM"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "N-terminal pro B-type natriuretic peptide",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.85,
+      "evidence": "NT-proBNP tracked as disease severity biomarker; sustained reductions from baseline"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:03:17.472824+00:00",
+  "error": null
+}

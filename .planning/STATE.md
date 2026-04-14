@@ -80,6 +80,7 @@ Progress: [████████░░] 85%
 - Phase 11 added: End-to-End Scenario Validation and v2.0 Release — regenerate all graphs, validate both use cases, repeatable regression, git sync + push
 - Backlog items 999.1 (docs refresh — superseded by Phase 10) and 999.2 (git sync — absorbed into Phase 11) removed
 - Phase 1000 (incorrectly numbered) removed
+- Phase 12 added (2026-04-13): Extend epistemic classifier with structural biology document signature — surfaced during Phase 11 S2 KRAS run where `structural_sotorasib.txt` registered as `document_type: unknown`. gsd-tool bug note: `phase add` assigned 11 instead of 12 on first attempt because the scanner missed the existing 11-end-to-end-scenario-validation dir; renamed manually.
 
 ### Decisions
 
@@ -118,7 +119,7 @@ Recent decisions affecting current work:
 
 ### Pending Todos
 
-None yet.
+- [2026-04-13] Auto-approve permissions for V2 scenario runs and document the recipe (`tooling`) — capture Bash/Write/Edit command patterns per scenario, harden `.claude/settings.local.json` incrementally, document recipe in `docs/showcases/drug-discovery-v2.md`
 
 ### Blockers/Concerns
 

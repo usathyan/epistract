@@ -1,0 +1,448 @@
+{
+  "document_id": "pmid_25311924",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/01_picalm_alzheimers/docs/pmid_25311924.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "Alzheimer disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Alzheimer Disease"
+      },
+      "confidence": 0.98,
+      "context": "Alzheimer's disease (AD) represents the main form of dementia"
+    },
+    {
+      "name": "dementia",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "AD represents the main form of dementia"
+    },
+    {
+      "name": "late-onset Alzheimer disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "LOAD"
+      },
+      "confidence": 0.95,
+      "context": "late-onset, \"sporadic\" forms of AD (LOAD)"
+    },
+    {
+      "name": "early-onset autosomal dominant Alzheimer disease",
+      "entity_type": "DISEASE",
+      "confidence": 0.9,
+      "context": "rare early-onset, autosomal dominant forms of AD"
+    },
+    {
+      "name": "APP",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "mutations in three major genes, APP, PSEN1, and PSEN2"
+    },
+    {
+      "name": "PSEN1",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "mutations in three major genes, APP, PSEN1, and PSEN2"
+    },
+    {
+      "name": "PSEN2",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "mutations in three major genes, APP, PSEN1, and PSEN2"
+    },
+    {
+      "name": "APOE",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "Apolipoprotein E"
+      },
+      "confidence": 0.98,
+      "context": "variants in Apolipoprotein E (APOE) as the major genetic risk factor"
+    },
+    {
+      "name": "SORL1",
+      "entity_type": "GENE",
+      "confidence": 0.97,
+      "context": "failed to robustly identify other genetic risk factors, with the exception of variants in SORL1"
+    },
+    {
+      "name": "BIN1",
+      "entity_type": "GENE",
+      "confidence": 0.97,
+      "context": "novel AD genes including BIN1"
+    },
+    {
+      "name": "CR1",
+      "entity_type": "GENE",
+      "confidence": 0.97,
+      "context": "novel AD genes including BIN1, CR1"
+    },
+    {
+      "name": "CLU",
+      "entity_type": "GENE",
+      "confidence": 0.97,
+      "context": "BIN1, CR1, CLU"
+    },
+    {
+      "name": "PICALM",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "phosphatidylinositol-binding clathrin assembly protein"
+      },
+      "confidence": 0.98,
+      "context": "phosphatidylinositol-binding clathrin assembly protein (PICALM)"
+    },
+    {
+      "name": "CD33",
+      "entity_type": "GENE",
+      "confidence": 0.97,
+      "context": "PICALM, CD33"
+    },
+    {
+      "name": "EPHA1",
+      "entity_type": "GENE",
+      "confidence": 0.97,
+      "context": "CD33, EPHA1"
+    },
+    {
+      "name": "MS4A4",
+      "entity_type": "GENE",
+      "confidence": 0.95,
+      "context": "MS4A4/MS4A6"
+    },
+    {
+      "name": "MS4A6",
+      "entity_type": "GENE",
+      "confidence": 0.95,
+      "context": "MS4A4/MS4A6"
+    },
+    {
+      "name": "ABCA7",
+      "entity_type": "GENE",
+      "confidence": 0.97,
+      "context": "MS4A4/MS4A6, ABCA7"
+    },
+    {
+      "name": "CD2AP",
+      "entity_type": "GENE",
+      "confidence": 0.97,
+      "context": "ABCA7, CD2AP"
+    },
+    {
+      "name": "HLA-DRB5",
+      "entity_type": "GENE",
+      "confidence": 0.95,
+      "context": "HLA-DRB5/DRB1"
+    },
+    {
+      "name": "HLA-DRB1",
+      "entity_type": "GENE",
+      "confidence": 0.95,
+      "context": "HLA-DRB5/DRB1"
+    },
+    {
+      "name": "PTK2B",
+      "entity_type": "GENE",
+      "confidence": 0.97,
+      "context": "HLA-DRB5/DRB1, PTK2B"
+    },
+    {
+      "name": "SLC24A4",
+      "entity_type": "GENE",
+      "confidence": 0.95,
+      "context": "SLC24A4-RIN3"
+    },
+    {
+      "name": "RIN3",
+      "entity_type": "GENE",
+      "confidence": 0.95,
+      "context": "SLC24A4-RIN3"
+    },
+    {
+      "name": "INPP5D",
+      "entity_type": "GENE",
+      "confidence": 0.97,
+      "context": "SLC24A4-RIN3, INPP5D"
+    },
+    {
+      "name": "MEF2C",
+      "entity_type": "GENE",
+      "confidence": 0.97,
+      "context": "INPP5D, MEF2C"
+    },
+    {
+      "name": "NME8",
+      "entity_type": "GENE",
+      "confidence": 0.97,
+      "context": "MEF2C, NME8"
+    },
+    {
+      "name": "ZCWPW1",
+      "entity_type": "GENE",
+      "confidence": 0.97,
+      "context": "NME8, ZCWPW1"
+    },
+    {
+      "name": "CELF1",
+      "entity_type": "GENE",
+      "confidence": 0.97,
+      "context": "ZCWPW1, CELF1"
+    },
+    {
+      "name": "FERMT2",
+      "entity_type": "GENE",
+      "confidence": 0.97,
+      "context": "CELF1, FERMT2"
+    },
+    {
+      "name": "CASS4",
+      "entity_type": "GENE",
+      "confidence": 0.97,
+      "context": "FERMT2, CASS4"
+    },
+    {
+      "name": "TRIP4",
+      "entity_type": "GENE",
+      "confidence": 0.97,
+      "context": "CASS4, and TRIP4"
+    },
+    {
+      "name": "TREM2",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "identified two novel genes, TREM2 and PLD3"
+    },
+    {
+      "name": "PLD3",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "identified two novel genes, TREM2 and PLD3"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "APP",
+      "target_entity": "early-onset autosomal dominant Alzheimer disease",
+      "confidence": 0.95,
+      "evidence": "rare early-onset, autosomal dominant forms of AD that led to the discovery of mutations in three major genes, APP, PSEN1, and PSEN2"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PSEN1",
+      "target_entity": "early-onset autosomal dominant Alzheimer disease",
+      "confidence": 0.95,
+      "evidence": "autosomal dominant forms of AD ... mutations in three major genes, APP, PSEN1, and PSEN2"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PSEN2",
+      "target_entity": "early-onset autosomal dominant Alzheimer disease",
+      "confidence": 0.95,
+      "evidence": "autosomal dominant forms of AD ... mutations in three major genes, APP, PSEN1, and PSEN2"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "APOE",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.98,
+      "evidence": "variants in Apolipoprotein E (APOE) as the major genetic risk factor for late-onset, \"sporadic\" forms of AD (LOAD)"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "SORL1",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "failed to robustly identify other genetic risk factors, with the exception of variants in SORL1"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "BIN1",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "common genetic variations at over 20 loci associated with LOAD ... novel AD genes including BIN1"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "CR1",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "loci associated with LOAD ... BIN1, CR1"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "CLU",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "loci associated with LOAD ... CR1, CLU"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PICALM",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.92,
+      "evidence": "loci ... in or near-novel AD genes including ... phosphatidylinositol-binding clathrin assembly protein (PICALM)"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "CD33",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "loci associated with LOAD ... PICALM, CD33"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "EPHA1",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "CD33, EPHA1"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "MS4A4",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.88,
+      "evidence": "EPHA1, MS4A4/MS4A6"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "MS4A6",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.88,
+      "evidence": "EPHA1, MS4A4/MS4A6"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "ABCA7",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "MS4A4/MS4A6, ABCA7"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "CD2AP",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "ABCA7, CD2AP"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "HLA-DRB5",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.88,
+      "evidence": "SORL1, HLA-DRB5/DRB1"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "HLA-DRB1",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.88,
+      "evidence": "HLA-DRB5/DRB1"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PTK2B",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "HLA-DRB5/DRB1, PTK2B"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "SLC24A4",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.88,
+      "evidence": "PTK2B, SLC24A4-RIN3"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "RIN3",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.88,
+      "evidence": "SLC24A4-RIN3"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "INPP5D",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "SLC24A4-RIN3, INPP5D"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "MEF2C",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "INPP5D, MEF2C"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "NME8",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "MEF2C, NME8"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "ZCWPW1",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "NME8, ZCWPW1"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "CELF1",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "ZCWPW1, CELF1"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "FERMT2",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "CELF1, FERMT2"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "CASS4",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "FERMT2, CASS4"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "TRIP4",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "CASS4, and TRIP4"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "TREM2",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.95,
+      "evidence": "identified two novel genes, TREM2 and PLD3"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PLD3",
+      "target_entity": "Alzheimer disease",
+      "confidence": 0.95,
+      "evidence": "identified two novel genes, TREM2 and PLD3"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "APP",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.85,
+      "evidence": "shown a role for APP in LOAD"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T19:01:16.888096+00:00",
+  "error": null
+}

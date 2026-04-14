@@ -1,0 +1,331 @@
+{
+  "document_id": "pmid_41109920",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/04_immunooncology/docs/pmid_41109920.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "nivolumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "PD-1",
+        "dose": "480 mg"
+      },
+      "confidence": 0.98,
+      "context": "nivolumab 480 mg plus relatlimab 160 mg"
+    },
+    {
+      "name": "relatlimab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "LAG-3",
+        "dose": "160 mg"
+      },
+      "confidence": 0.98,
+      "context": "nivolumab 480 mg plus relatlimab 160 mg"
+    },
+    {
+      "name": "PDCD1",
+      "entity_type": "GENE",
+      "attributes": {
+        "protein": "PD-1"
+      },
+      "confidence": 0.85,
+      "context": "nivolumab (anti-PD-1)"
+    },
+    {
+      "name": "LAG3",
+      "entity_type": "GENE",
+      "attributes": {
+        "protein": "LAG-3"
+      },
+      "confidence": 0.95,
+      "context": "circulating LAG-3+ T cells"
+    },
+    {
+      "name": "PD-1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene": "PDCD1",
+        "role": "immune checkpoint"
+      },
+      "confidence": 0.9,
+      "context": "nivolumab is an anti-PD-1 antibody"
+    },
+    {
+      "name": "LAG-3",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene": "LAG3",
+        "role": "immune checkpoint"
+      },
+      "confidence": 0.98,
+      "context": "circulating LAG-3+ T cells in the adjuvant setting"
+    },
+    {
+      "name": "melanoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Melanoma"
+      },
+      "confidence": 0.99,
+      "context": "stage III/IV melanoma"
+    },
+    {
+      "name": "stage III melanoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "stage": "III"
+      },
+      "confidence": 0.98,
+      "context": "complete resection of stage III/IV melanoma"
+    },
+    {
+      "name": "stage IV melanoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "stage": "IV"
+      },
+      "confidence": 0.98,
+      "context": "complete resection of stage III/IV melanoma"
+    },
+    {
+      "name": "advanced melanoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "stage": "advanced/metastatic"
+      },
+      "confidence": 0.98,
+      "context": "nivolumab plus relatlimab is approved for advanced melanoma"
+    },
+    {
+      "name": "RELATIVITY-098",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "3",
+        "design": "randomized double-blind",
+        "nct": "NCT05002569",
+        "n_arm1": 547,
+        "n_arm2": 546,
+        "primary_endpoint": "recurrence-free survival"
+      },
+      "confidence": 0.99,
+      "context": "the phase 3, double-blind RELATIVITY-098 trial"
+    },
+    {
+      "name": "RELATIVITY-047",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "indication": "advanced melanoma"
+      },
+      "confidence": 0.98,
+      "context": "Based on RELATIVITY-047, nivolumab plus relatlimab is approved for advanced melanoma"
+    },
+    {
+      "name": "NCT05002569",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "registry": "ClinicalTrials.gov",
+        "linked_trial": "RELATIVITY-098"
+      },
+      "confidence": 0.99,
+      "context": "ClinicalTrials.gov identifier: NCT05002569"
+    },
+    {
+      "name": "recurrence-free survival",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "clinical endpoint",
+        "hazard_ratio": "1.01",
+        "ci": "0.83-1.22",
+        "p_value": "0.928"
+      },
+      "confidence": 0.98,
+      "context": "The primary endpoint was recurrence-free survival (RFS)"
+    },
+    {
+      "name": "overall survival",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "clinical endpoint",
+        "role": "key secondary"
+      },
+      "confidence": 0.98,
+      "context": "the key secondary was overall survival"
+    },
+    {
+      "name": "circulating LAG-3+ T cells",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "translational",
+        "compartment": "peripheral blood"
+      },
+      "confidence": 0.95,
+      "context": "lower circulating LAG-3+ T cells in the adjuvant setting"
+    },
+    {
+      "name": "LAG-3 inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "class": "immune checkpoint inhibitor"
+      },
+      "confidence": 0.95,
+      "context": "relatlimab targets LAG-3"
+    },
+    {
+      "name": "PD-1 inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "class": "immune checkpoint inhibitor"
+      },
+      "confidence": 0.95,
+      "context": "nivolumab targets PD-1"
+    },
+    {
+      "name": "Long Georgina V",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "first author"
+      },
+      "confidence": 0.7,
+      "context": "Authors: Long Georgina V"
+    },
+    {
+      "name": "Nature medicine",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "type": "journal",
+        "year": "2025"
+      },
+      "confidence": 0.95,
+      "context": "Journal: Nature medicine (2025)"
+    },
+    {
+      "name": "peptide_10aa",
+      "entity_type": "PEPTIDE_SEQUENCE",
+      "attributes": {
+        "sequence": "RELATIVITY",
+        "sequence_type": "protein",
+        "length": 10,
+        "validated": true,
+        "molecular_weight": 1178.38
+      },
+      "confidence": 1.0,
+      "context": "the phase 3, double-blind RELATIVITY-098 trial"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "nivolumab",
+      "target_entity": "PD-1",
+      "confidence": 0.95,
+      "evidence": "nivolumab (anti-PD-1)"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "relatlimab",
+      "target_entity": "LAG-3",
+      "confidence": 0.95,
+      "evidence": "relatlimab targets LAG-3"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "nivolumab",
+      "target_entity": "PD-1",
+      "confidence": 0.95,
+      "evidence": "nivolumab is an anti-PD-1 antibody"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "relatlimab",
+      "target_entity": "LAG-3",
+      "confidence": 0.95,
+      "evidence": "relatlimab targets LAG-3"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "nivolumab",
+      "target_entity": "advanced melanoma",
+      "confidence": 0.95,
+      "evidence": "nivolumab plus relatlimab is approved for advanced melanoma"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "relatlimab",
+      "target_entity": "advanced melanoma",
+      "confidence": 0.95,
+      "evidence": "nivolumab plus relatlimab is approved for advanced melanoma"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "nivolumab",
+      "target_entity": "RELATIVITY-098",
+      "confidence": 0.99,
+      "evidence": "the RELATIVITY-098 trial compared adjuvant nivolumab plus relatlimab to nivolumab"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "relatlimab",
+      "target_entity": "RELATIVITY-098",
+      "confidence": 0.99,
+      "evidence": "the RELATIVITY-098 trial compared adjuvant nivolumab plus relatlimab to nivolumab"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "nivolumab",
+      "target_entity": "RELATIVITY-047",
+      "confidence": 0.9,
+      "evidence": "Based on RELATIVITY-047, nivolumab plus relatlimab is approved"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "relatlimab",
+      "target_entity": "RELATIVITY-047",
+      "confidence": 0.9,
+      "evidence": "Based on RELATIVITY-047, nivolumab plus relatlimab is approved"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "PDCD1",
+      "target_entity": "PD-1",
+      "confidence": 0.9,
+      "evidence": "PD-1 protein is encoded by PDCD1"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "LAG3",
+      "target_entity": "LAG-3",
+      "confidence": 0.95,
+      "evidence": "LAG-3 protein encoded by LAG3 gene"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "circulating LAG-3+ T cells",
+      "target_entity": "relatlimab",
+      "confidence": 0.8,
+      "evidence": "reduced peripheral LAG-3+ T cells may explain the lack of added benefit"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "recurrence-free survival",
+      "target_entity": "melanoma",
+      "confidence": 0.85,
+      "evidence": "primary endpoint was recurrence-free survival (RFS)"
+    },
+    {
+      "relation_type": "HAS_SEQUENCE",
+      "source_entity": "nivolumab",
+      "target_entity": "peptide_10aa",
+      "confidence": 0.95,
+      "evidence": "the phase 3, double-blind RELATIVITY-098 trial"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T23:00:27.989349+00:00",
+  "error": null
+}

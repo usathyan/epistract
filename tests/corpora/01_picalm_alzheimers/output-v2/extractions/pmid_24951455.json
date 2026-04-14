@@ -1,0 +1,409 @@
+{
+  "document_id": "pmid_24951455",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/01_picalm_alzheimers/docs/pmid_24951455.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "late-onset Alzheimer disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Alzheimer Disease"
+      },
+      "confidence": 0.98,
+      "context": "genetic risk factors for late-onset Alzheimer disease (AD)"
+    },
+    {
+      "name": "ABCA7",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "new genes associated with AD risk, including ABCA7"
+    },
+    {
+      "name": "BIN1",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "ABCA7, BIN1, CASS4"
+    },
+    {
+      "name": "CASS4",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "BIN1, CASS4, CD33"
+    },
+    {
+      "name": "CD33",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "CASS4, CD33, CD2AP"
+    },
+    {
+      "name": "CD2AP",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "CD33, CD2AP, CELF1"
+    },
+    {
+      "name": "CELF1",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "CD2AP, CELF1, CLU"
+    },
+    {
+      "name": "CLU",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "CELF1, CLU, CR1"
+    },
+    {
+      "name": "CR1",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "CLU, CR1, DSG2"
+    },
+    {
+      "name": "DSG2",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "CR1, DSG2, EPHA1"
+    },
+    {
+      "name": "EPHA1",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "DSG2, EPHA1, FERMT2"
+    },
+    {
+      "name": "FERMT2",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "EPHA1, FERMT2"
+    },
+    {
+      "name": "HLA-DRB5",
+      "entity_type": "GENE",
+      "confidence": 0.9,
+      "context": "FERMT2, HLA-DRB5-DBR1"
+    },
+    {
+      "name": "HLA-DRB1",
+      "entity_type": "GENE",
+      "confidence": 0.85,
+      "context": "HLA-DRB5-DBR1 locus"
+    },
+    {
+      "name": "INPP5D",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "HLA-DRB5-DBR1, INPP5D, MS4A"
+    },
+    {
+      "name": "MS4A",
+      "entity_type": "GENE",
+      "confidence": 0.9,
+      "context": "INPP5D, MS4A, MEF2C"
+    },
+    {
+      "name": "MEF2C",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "MS4A, MEF2C, NME8"
+    },
+    {
+      "name": "NME8",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "MEF2C, NME8, PICALM"
+    },
+    {
+      "name": "PICALM",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "NME8, PICALM, PTK2B"
+    },
+    {
+      "name": "PTK2B",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "PICALM, PTK2B"
+    },
+    {
+      "name": "SLC24A4",
+      "entity_type": "GENE",
+      "confidence": 0.9,
+      "context": "PTK2B, SLC24H4-RIN3"
+    },
+    {
+      "name": "RIN3",
+      "entity_type": "GENE",
+      "confidence": 0.95,
+      "context": "SLC24H4-RIN3, SORL1"
+    },
+    {
+      "name": "SORL1",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "SLC24H4-RIN3, SORL1"
+    },
+    {
+      "name": "ZCWPW1",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "SORL1, and ZCWPW1"
+    },
+    {
+      "name": "PLD3",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "coding variants that increase AD risk: PLD3 and TREM2"
+    },
+    {
+      "name": "TREM2",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "coding variants that increase AD risk: PLD3 and TREM2"
+    },
+    {
+      "name": "APP",
+      "entity_type": "GENE",
+      "attributes": {
+        "mesh": "Amyloid beta-Protein Precursor"
+      },
+      "confidence": 0.9,
+      "context": "MeSH: Amyloid beta-Protein Precursor"
+    },
+    {
+      "name": "PSEN1",
+      "entity_type": "GENE",
+      "attributes": {
+        "mesh": "Presenilin-1"
+      },
+      "confidence": 0.9,
+      "context": "MeSH: Presenilin-1"
+    },
+    {
+      "name": "PSEN2",
+      "entity_type": "GENE",
+      "attributes": {
+        "mesh": "Presenilin-2"
+      },
+      "confidence": 0.9,
+      "context": "MeSH: Presenilin-2"
+    },
+    {
+      "name": "cholesterol",
+      "entity_type": "METABOLITE",
+      "confidence": 0.85,
+      "context": "MeSH: Cholesterol"
+    },
+    {
+      "name": "endocytosis",
+      "entity_type": "PATHWAY",
+      "confidence": 0.85,
+      "context": "MeSH: Endocytosis"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "ABCA7",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.97,
+      "evidence": "genes associated with AD risk, including ABCA7"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "BIN1",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.97,
+      "evidence": "BIN1"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "CASS4",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.97,
+      "evidence": "CASS4"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "CD33",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.97,
+      "evidence": "CD33"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "CD2AP",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.97,
+      "evidence": "CD2AP"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "CELF1",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.97,
+      "evidence": "CELF1"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "CLU",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.97,
+      "evidence": "CLU"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "CR1",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.97,
+      "evidence": "CR1"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "DSG2",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.97,
+      "evidence": "DSG2"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "EPHA1",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.97,
+      "evidence": "EPHA1"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "FERMT2",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.97,
+      "evidence": "FERMT2"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "HLA-DRB5",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "HLA-DRB5-DBR1"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "INPP5D",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.97,
+      "evidence": "INPP5D"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "MS4A",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "MS4A"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "MEF2C",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.97,
+      "evidence": "MEF2C"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "NME8",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.97,
+      "evidence": "NME8"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PICALM",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.97,
+      "evidence": "PICALM"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PTK2B",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.97,
+      "evidence": "PTK2B"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "SLC24A4",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.9,
+      "evidence": "SLC24H4-RIN3"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "RIN3",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.95,
+      "evidence": "SLC24H4-RIN3"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "SORL1",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.97,
+      "evidence": "SORL1"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "ZCWPW1",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.97,
+      "evidence": "ZCWPW1"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PLD3",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.97,
+      "evidence": "PLD3 and TREM2"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "TREM2",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.97,
+      "evidence": "PLD3 and TREM2"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "APP",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.85,
+      "evidence": "MeSH indexing"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PSEN1",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.85,
+      "evidence": "MeSH indexing"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PSEN2",
+      "target_entity": "late-onset Alzheimer disease",
+      "confidence": 0.85,
+      "evidence": "MeSH indexing"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "PICALM",
+      "target_entity": "endocytosis",
+      "confidence": 0.6,
+      "evidence": "MeSH Endocytosis co-indexed"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T19:00:42.514858+00:00",
+  "error": null
+}

@@ -1,0 +1,2532 @@
+{
+  "generated_at": "2026-04-14T02:11:20.604429+00:00",
+  "output_dir": "tests/corpora/06_glp1_landscape/output-v2",
+  "stats": {
+    "files_scanned": 34,
+    "total_matches": 171,
+    "valid": 4,
+    "invalid": 131,
+    "unvalidated": 0,
+    "found": 36,
+    "by_type": {
+      "SMILES": 131,
+      "AMINO_ACID_SEQ": 4,
+      "US_PATENT": 10,
+      "CAS_NUMBER": 1,
+      "SEQ_ID_NO": 8,
+      "InChIKey": 1,
+      "NCT_NUMBER": 16
+    },
+    "rdkit_available": true,
+    "biopython_available": true,
+    "enrichment": {
+      "entities_added": 4,
+      "relations_added": 4
+    }
+  },
+  "files": [
+    {
+      "file": "patent_01_US10888605B2_semaglutide.json",
+      "document_id": "patent_01_US10888605B2_semaglutide",
+      "matches_found": 4,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "GLP-1(7-37)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "The native GLP-1(7-37) peptide sequence is HAEGTFTSDVSSYLEGQAAKEFIAWLVKG",
+          "validation": {
+            "valid": false,
+            "input": "GLP-1(7-37)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_01_US10888605B2_semaglutide.json",
+          "source_field": "entities[1].context"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "The native GLP-1(7-37) peptide sequence is HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 31,
+            "molecular_weight": 3355.67,
+            "isoelectric_point": 5.5302,
+            "aromaticity": 0.129,
+            "instability_index": 14.7065,
+            "gravy": -0.2355
+          },
+          "status": "valid",
+          "source_file": "patent_01_US10888605B2_semaglutide.json",
+          "source_field": "entities[1].context"
+        },
+        {
+          "pattern_type": "US_PATENT",
+          "value": "US10888605B2",
+          "entity_type": "PATENT",
+          "context": "Patent ID: US10888605B2",
+          "validation": null,
+          "status": "found",
+          "source_file": "patent_01_US10888605B2_semaglutide.json",
+          "source_field": "entities[19].context"
+        },
+        {
+          "pattern_type": "US_PATENT",
+          "value": "US10888605B2",
+          "entity_type": "PATENT",
+          "context": "Patent ID: US10888605B2",
+          "validation": null,
+          "status": "found",
+          "source_file": "patent_01_US10888605B2_semaglutide.json",
+          "source_field": "relations[11].evidence"
+        }
+      ]
+    },
+    {
+      "file": "patent_02_US11357820B2_tirzepatide.json",
+      "document_id": "patent_02_US11357820B2_tirzepatide",
+      "matches_found": 20,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "GIP/GLP-1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "mposition of tirzepatide... Tirzepatide is a dual GIP/GLP-1 receptor agonist peptide with CAS Registry Number",
+          "validation": {
+            "valid": false,
+            "input": "GIP/GLP-1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_02_US11357820B2_tirzepatide.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "CAS_NUMBER",
+          "value": "2023788-19-2",
+          "entity_type": "CHEMICAL_IDENTIFIER",
+          "context": "receptor agonist peptide with CAS Registry Number 2023788-19-2.",
+          "validation": null,
+          "status": "found",
+          "source_file": "patent_02_US11357820B2_tirzepatide.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SEQ_ID_NO",
+          "value": "SEQ ID NO: 1",
+          "entity_type": "SEQUENCE_REFERENCE",
+          "context": "The tirzepatide peptide sequence (SEQ ID NO: 1) is: YX1EGTFTSDYSIX2LDKIAQKAFVQWLMGGPSSGAPPPS, wh",
+          "validation": null,
+          "status": "found",
+          "source_file": "patent_02_US11357820B2_tirzepatide.json",
+          "source_field": "entities[1].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(2-aminoisobutyric",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "TSDYSIX2LDKIAQKAFVQWLMGGPSSGAPPPS, where X1 = Aib (2-aminoisobutyric acid) and X2 = Aib.",
+          "validation": {
+            "valid": false,
+            "input": "(2-aminoisobutyric",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_02_US11357820B2_tirzepatide.json",
+          "source_field": "entities[1].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(2-aminoisobutyric",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "X1 = Aib (2-aminoisobutyric acid)",
+          "validation": {
+            "valid": false,
+            "input": "(2-aminoisobutyric",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_02_US11357820B2_tirzepatide.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(primary)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "agonist mechanism activates both the GIP receptor (primary) and the GLP-1 receptor",
+          "validation": {
+            "valid": false,
+            "input": "(primary)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_02_US11357820B2_tirzepatide.json",
+          "source_field": "entities[6].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "GIP/GLP-1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "dual GIP/GLP-1 receptor agonist peptide",
+          "validation": {
+            "valid": false,
+            "input": "GIP/GLP-1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_02_US11357820B2_tirzepatide.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "reduction)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "superior efficacy in glycemic control (HbA1c reduction)",
+          "validation": {
+            "valid": false,
+            "input": "reduction)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_02_US11357820B2_tirzepatide.json",
+          "source_field": "entities[9].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "reduction)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "superior efficacy in glycemic control (HbA1c reduction)",
+          "validation": {
+            "valid": false,
+            "input": "reduction)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_02_US11357820B2_tirzepatide.json",
+          "source_field": "entities[11].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "GIP/GLP-1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Tirzepatide is a dual GIP/GLP-1 receptor agonist peptide",
+          "validation": {
+            "valid": false,
+            "input": "GIP/GLP-1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_02_US11357820B2_tirzepatide.json",
+          "source_field": "entities[13].context"
+        },
+        {
+          "pattern_type": "US_PATENT",
+          "value": "US11357820B2",
+          "entity_type": "PATENT",
+          "context": "Patent ID: US11357820B2",
+          "validation": null,
+          "status": "found",
+          "source_file": "patent_02_US11357820B2_tirzepatide.json",
+          "source_field": "entities[15].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(primary)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "agonist mechanism activates both the GIP receptor (primary) and the GLP-1 receptor",
+          "validation": {
+            "valid": false,
+            "input": "(primary)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_02_US11357820B2_tirzepatide.json",
+          "source_field": "relations[0].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(primary)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "activates both the GIP receptor (primary) and the GLP-1 receptor",
+          "validation": {
+            "valid": false,
+            "input": "(primary)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_02_US11357820B2_tirzepatide.json",
+          "source_field": "relations[1].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "GIP/GLP-1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "dual GIP/GLP-1 receptor agonist peptide",
+          "validation": {
+            "valid": false,
+            "input": "GIP/GLP-1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_02_US11357820B2_tirzepatide.json",
+          "source_field": "relations[2].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "GIP/GLP-1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "dual GIP/GLP-1 receptor agonist peptide",
+          "validation": {
+            "valid": false,
+            "input": "GIP/GLP-1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_02_US11357820B2_tirzepatide.json",
+          "source_field": "relations[3].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "reduction)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "superior efficacy in glycemic control (HbA1c reduction)",
+          "validation": {
+            "valid": false,
+            "input": "reduction)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_02_US11357820B2_tirzepatide.json",
+          "source_field": "relations[5].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "GIP/GLP-1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Tirzepatide is a dual GIP/GLP-1 receptor agonist peptide",
+          "validation": {
+            "valid": false,
+            "input": "GIP/GLP-1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_02_US11357820B2_tirzepatide.json",
+          "source_field": "relations[8].evidence"
+        },
+        {
+          "pattern_type": "SEQ_ID_NO",
+          "value": "SEQ ID NO: 1",
+          "entity_type": "SEQUENCE_REFERENCE",
+          "context": "The tirzepatide peptide sequence (SEQ ID NO: 1) is: YX1EGTFTSDYSIX2LDKIAQKAFVQWLMGGPSSGAPPPS",
+          "validation": null,
+          "status": "found",
+          "source_file": "patent_02_US11357820B2_tirzepatide.json",
+          "source_field": "relations[9].evidence"
+        },
+        {
+          "pattern_type": "US_PATENT",
+          "value": "US11357820B2",
+          "entity_type": "PATENT",
+          "context": "Patent ID: US11357820B2 ... A pharmaceutical composition of tirzepatide",
+          "validation": null,
+          "status": "found",
+          "source_file": "patent_02_US11357820B2_tirzepatide.json",
+          "source_field": "relations[11].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "reduction)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "superior efficacy in glycemic control (HbA1c reduction)",
+          "validation": {
+            "valid": false,
+            "input": "reduction)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_02_US11357820B2_tirzepatide.json",
+          "source_field": "relations[12].evidence"
+        }
+      ]
+    },
+    {
+      "file": "patent_03_US10335462B2_semaglutide_longacting.json",
+      "document_id": "patent_03_US10335462B2_semaglutide_longacting",
+      "matches_found": 6,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(half-life",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "liraglutide (half-life approximately 13 hours)",
+          "validation": {
+            "valid": false,
+            "input": "(half-life",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_03_US10335462B2_semaglutide_longacting.json",
+          "source_field": "entities[1].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "GLP-1(7-37)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "The native GLP-1(7-37) peptide sequence is HAEGTFTSDVSSYLEGQAAKEFIAWLVKG",
+          "validation": {
+            "valid": false,
+            "input": "GLP-1(7-37)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_03_US10335462B2_semaglutide_longacting.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "The native GLP-1(7-37) peptide sequence is HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG (SEQ ID NO: 1)",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 31,
+            "molecular_weight": 3355.67,
+            "isoelectric_point": 5.5302,
+            "aromaticity": 0.129,
+            "instability_index": 14.7065,
+            "gravy": -0.2355
+          },
+          "status": "valid",
+          "source_file": "patent_03_US10335462B2_semaglutide_longacting.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "SEQ_ID_NO",
+          "value": "SEQ ID NO: 1",
+          "entity_type": "SEQUENCE_REFERENCE",
+          "context": "tide sequence is HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG (SEQ ID NO: 1)",
+          "validation": null,
+          "status": "found",
+          "source_file": "patent_03_US10335462B2_semaglutide_longacting.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "US_PATENT",
+          "value": "US10335462B2",
+          "entity_type": "PATENT",
+          "context": "Patent ID: US10335462B2",
+          "validation": null,
+          "status": "found",
+          "source_file": "patent_03_US10335462B2_semaglutide_longacting.json",
+          "source_field": "entities[12].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "WO2006/097537",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "prepared per Example 4 of WO2006/097537",
+          "validation": {
+            "valid": false,
+            "input": "WO2006/097537",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_03_US10335462B2_semaglutide_longacting.json",
+          "source_field": "entities[13].context"
+        }
+      ]
+    },
+    {
+      "file": "patent_04_WO2020159949A1_tirzepatide_process.json",
+      "document_id": "patent_04_WO2020159949A1_tirzepatide_process",
+      "matches_found": 4,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "GIP/GLP-1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "tirzepatide, a GIP/GLP-1 dual agonist peptide",
+          "validation": {
+            "valid": false,
+            "input": "GIP/GLP-1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_04_WO2020159949A1_tirzepatide_process.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "GIP/GLP-1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "dual GIP/GLP-1 receptor agonist ... imbalanced potency favoring ",
+          "validation": {
+            "valid": false,
+            "input": "GIP/GLP-1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_04_WO2020159949A1_tirzepatide_process.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(2-aminoisobutyric",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "X1 and X2 are Aib (2-aminoisobutyric acid)",
+          "validation": {
+            "valid": false,
+            "input": "(2-aminoisobutyric",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_04_WO2020159949A1_tirzepatide_process.json",
+          "source_field": "entities[11].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "GIP/GLP-1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "dual GIP/GLP-1 receptor agonist",
+          "validation": {
+            "valid": false,
+            "input": "GIP/GLP-1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_04_WO2020159949A1_tirzepatide_process.json",
+          "source_field": "relations[8].evidence"
+        }
+      ]
+    },
+    {
+      "file": "patent_05_WO2018109607A1_pfizer_oral_glp1.json",
+      "document_id": "patent_05_WO2018109607A1_pfizer_oral_glp1",
+      "matches_found": 22,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(PF-06882961)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": " covers the chemical class from which danuglipron (PF-06882961) was developed.",
+          "validation": {
+            "valid": false,
+            "input": "(PF-06882961)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_05_WO2018109607A1_pfizer_oral_glp1.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(semaglutide",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Unlike peptide-based GLP-1 receptor agonists (semaglutide, liraglutide, tirzepatide)",
+          "validation": {
+            "valid": false,
+            "input": "(semaglutide",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_05_WO2018109607A1_pfizer_oral_glp1.json",
+          "source_field": "entities[1].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "tirzepatide)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "LP-1 receptor agonists (semaglutide, liraglutide, tirzepatide)",
+          "validation": {
+            "valid": false,
+            "input": "tirzepatide)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_05_WO2018109607A1_pfizer_oral_glp1.json",
+          "source_field": "entities[1].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(semaglutide",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Unlike peptide-based GLP-1 receptor agonists (semaglutide, liraglutide, tirzepatide)",
+          "validation": {
+            "valid": false,
+            "input": "(semaglutide",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_05_WO2018109607A1_pfizer_oral_glp1.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "tirzepatide)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "LP-1 receptor agonists (semaglutide, liraglutide, tirzepatide)",
+          "validation": {
+            "valid": false,
+            "input": "tirzepatide)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_05_WO2018109607A1_pfizer_oral_glp1.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(semaglutide",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Unlike peptide-based GLP-1 receptor agonists (semaglutide, liraglutide, tirzepatide)",
+          "validation": {
+            "valid": false,
+            "input": "(semaglutide",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_05_WO2018109607A1_pfizer_oral_glp1.json",
+          "source_field": "entities[3].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "tirzepatide)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "LP-1 receptor agonists (semaglutide, liraglutide, tirzepatide)",
+          "validation": {
+            "valid": false,
+            "input": "tirzepatide)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_05_WO2018109607A1_pfizer_oral_glp1.json",
+          "source_field": "entities[3].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(LY3502970",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "orforglipron (LY3502970, originally OWL-833), is being developed by Eli L",
+          "validation": {
+            "valid": false,
+            "input": "(LY3502970",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_05_WO2018109607A1_pfizer_oral_glp1.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "OWL-833)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "orforglipron (LY3502970, originally OWL-833), is being developed by Eli Lilly with the molecul",
+          "validation": {
+            "valid": false,
+            "input": "OWL-833)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_05_WO2018109607A1_pfizer_oral_glp1.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(ACHIEVE",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "weight loss and HbA1c reduction in Phase 3 trials (ACHIEVE program)",
+          "validation": {
+            "valid": false,
+            "input": "(ACHIEVE",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_05_WO2018109607A1_pfizer_oral_glp1.json",
+          "source_field": "entities[16].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "program)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ss and HbA1c reduction in Phase 3 trials (ACHIEVE program)",
+          "validation": {
+            "valid": false,
+            "input": "program)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_05_WO2018109607A1_pfizer_oral_glp1.json",
+          "source_field": "entities[16].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(PF-06882961)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": " covers the chemical class from which danuglipron (PF-06882961) was developed ... small-molecule GLP-1 receptor a",
+          "validation": {
+            "valid": false,
+            "input": "(PF-06882961)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_05_WO2018109607A1_pfizer_oral_glp1.json",
+          "source_field": "relations[0].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(semaglutide",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "peptide-based GLP-1 receptor agonists (semaglutide, liraglutide, tirzepatide)",
+          "validation": {
+            "valid": false,
+            "input": "(semaglutide",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_05_WO2018109607A1_pfizer_oral_glp1.json",
+          "source_field": "relations[2].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "tirzepatide)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "LP-1 receptor agonists (semaglutide, liraglutide, tirzepatide)",
+          "validation": {
+            "valid": false,
+            "input": "tirzepatide)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_05_WO2018109607A1_pfizer_oral_glp1.json",
+          "source_field": "relations[2].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(semaglutide",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "peptide-based GLP-1 receptor agonists (semaglutide, liraglutide, tirzepatide)",
+          "validation": {
+            "valid": false,
+            "input": "(semaglutide",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_05_WO2018109607A1_pfizer_oral_glp1.json",
+          "source_field": "relations[3].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "tirzepatide)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "LP-1 receptor agonists (semaglutide, liraglutide, tirzepatide)",
+          "validation": {
+            "valid": false,
+            "input": "tirzepatide)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_05_WO2018109607A1_pfizer_oral_glp1.json",
+          "source_field": "relations[3].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(semaglutide",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "peptide-based GLP-1 receptor agonists (semaglutide, liraglutide, tirzepatide)",
+          "validation": {
+            "valid": false,
+            "input": "(semaglutide",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_05_WO2018109607A1_pfizer_oral_glp1.json",
+          "source_field": "relations[4].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "tirzepatide)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "LP-1 receptor agonists (semaglutide, liraglutide, tirzepatide)",
+          "validation": {
+            "valid": false,
+            "input": "tirzepatide)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_05_WO2018109607A1_pfizer_oral_glp1.json",
+          "source_field": "relations[4].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(ACHIEVE",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Phase 3 trials (ACHIEVE program)",
+          "validation": {
+            "valid": false,
+            "input": "(ACHIEVE",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_05_WO2018109607A1_pfizer_oral_glp1.json",
+          "source_field": "relations[10].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "program)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Phase 3 trials (ACHIEVE program)",
+          "validation": {
+            "valid": false,
+            "input": "program)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_05_WO2018109607A1_pfizer_oral_glp1.json",
+          "source_field": "relations[10].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(PF-06882961)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Assignee: Pfizer Inc ... danuglipron (PF-06882961) was developed",
+          "validation": {
+            "valid": false,
+            "input": "(PF-06882961)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_05_WO2018109607A1_pfizer_oral_glp1.json",
+          "source_field": "relations[11].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(PF-06882961)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": " covers the chemical class from which danuglipron (PF-06882961) was developed",
+          "validation": {
+            "valid": false,
+            "input": "(PF-06882961)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_05_WO2018109607A1_pfizer_oral_glp1.json",
+          "source_field": "relations[13].evidence"
+        }
+      ]
+    },
+    {
+      "file": "patent_06_US10370426B2_triple_agonist.json",
+      "document_id": "patent_06_US10370426B2_triple_agonist",
+      "matches_found": 9,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(LY3437943)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Retatrutide (LY3437943), developed by Eli Lilly, is a related triple GIP/",
+          "validation": {
+            "valid": false,
+            "input": "(LY3437943)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_06_US10370426B2_triple_agonist.json",
+          "source_field": "entities[1].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "GIP/GLP-1/glucagon",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "943), developed by Eli Lilly, is a related triple GIP/GLP-1/glucagon receptor agonist",
+          "validation": {
+            "valid": false,
+            "input": "GIP/GLP-1/glucagon",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_06_US10370426B2_triple_agonist.json",
+          "source_field": "entities[1].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(LY3437943)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Retatrutide (LY3437943), developed by Eli Lilly",
+          "validation": {
+            "valid": false,
+            "input": "(LY3437943)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_06_US10370426B2_triple_agonist.json",
+          "source_field": "entities[13].context"
+        },
+        {
+          "pattern_type": "US_PATENT",
+          "value": "US10370426B2",
+          "entity_type": "PATENT",
+          "context": "Patent ID: US10370426B2",
+          "validation": null,
+          "status": "found",
+          "source_file": "patent_06_US10370426B2_triple_agonist.json",
+          "source_field": "entities[14].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(LY3437943)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Retatrutide (LY3437943)... currently in Phase 3 clinical trials",
+          "validation": {
+            "valid": false,
+            "input": "(LY3437943)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_06_US10370426B2_triple_agonist.json",
+          "source_field": "entities[15].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "GIP/GLP-1/glucagon",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "triple GIP/GLP-1/glucagon receptor agonist",
+          "validation": {
+            "valid": false,
+            "input": "GIP/GLP-1/glucagon",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_06_US10370426B2_triple_agonist.json",
+          "source_field": "relations[7].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "GIP/GLP-1/glucagon",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "triple GIP/GLP-1/glucagon receptor agonist",
+          "validation": {
+            "valid": false,
+            "input": "GIP/GLP-1/glucagon",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_06_US10370426B2_triple_agonist.json",
+          "source_field": "relations[8].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "GIP/GLP-1/glucagon",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "triple GIP/GLP-1/glucagon receptor agonist",
+          "validation": {
+            "valid": false,
+            "input": "GIP/GLP-1/glucagon",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_06_US10370426B2_triple_agonist.json",
+          "source_field": "relations[9].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(LY3437943)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Retatrutide (LY3437943)... currently in Phase 3 clinical trials",
+          "validation": {
+            "valid": false,
+            "input": "(LY3437943)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_06_US10370426B2_triple_agonist.json",
+          "source_field": "relations[10].evidence"
+        }
+      ]
+    },
+    {
+      "file": "patent_07_WO2019239319A1_pfizer_danuglipron.json",
+      "document_id": "patent_07_WO2019239319A1_pfizer_danuglipron",
+      "matches_found": 8,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(PF-06882961)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "art of the chemical series from which danuglipron (PF-06882961) was developed by Pfizer.",
+          "validation": {
+            "valid": false,
+            "input": "(PF-06882961)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_07_WO2019239319A1_pfizer_danuglipron.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(PF-06882961)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "danuglipron (PF-06882961) was developed by Pfizer",
+          "validation": {
+            "valid": false,
+            "input": "(PF-06882961)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_07_WO2019239319A1_pfizer_danuglipron.json",
+          "source_field": "entities[1].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "4-[2-(4-chloro-2-fluorophenyl)-1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Compound 1: 2-({4-[2-(4-chloro-2-fluorophenyl)-1,3-benzodioxol-4-yl]piperidin-1-yl}methyl)-1-[(2S)",
+          "validation": {
+            "valid": false,
+            "input": "4-[2-(4-chloro-2-fluorophenyl)-1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_07_WO2019239319A1_pfizer_danuglipron.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "3-benzodioxol-4-yl]piperidin-1-yl",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Compound 1: 2-({4-[2-(4-chloro-2-fluorophenyl)-1,3-benzodioxol-4-yl]piperidin-1-yl}methyl)-1-[(2S)-oxetan-2-ylmethyl]-1H-benzimidazo",
+          "validation": {
+            "valid": false,
+            "input": "3-benzodioxol-4-yl]piperidin-1-yl",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_07_WO2019239319A1_pfizer_danuglipron.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "methyl)-1-[(2S)-oxetan-2-ylmethyl]-1H-benzimidazole-6-carboxylic",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "fluorophenyl)-1,3-benzodioxol-4-yl]piperidin-1-yl}methyl)-1-[(2S)-oxetan-2-ylmethyl]-1H-benzimidazole-6-carboxylic acid",
+          "validation": {
+            "valid": false,
+            "input": "methyl)-1-[(2S)-oxetan-2-ylmethyl]-1H-benzimidazole-6-carboxylic",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_07_WO2019239319A1_pfizer_danuglipron.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(DIAST-X2)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Compound 3 ... (DIAST-X2)",
+          "validation": {
+            "valid": false,
+            "input": "(DIAST-X2)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_07_WO2019239319A1_pfizer_danuglipron.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(PF-06882961)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "danuglipron (PF-06882961) was developed by Pfizer",
+          "validation": {
+            "valid": false,
+            "input": "(PF-06882961)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_07_WO2019239319A1_pfizer_danuglipron.json",
+          "source_field": "relations[8].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(PF-06882961)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "art of the chemical series from which danuglipron (PF-06882961) was developed",
+          "validation": {
+            "valid": false,
+            "input": "(PF-06882961)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_07_WO2019239319A1_pfizer_danuglipron.json",
+          "source_field": "relations[9].evidence"
+        }
+      ]
+    },
+    {
+      "file": "patent_08_US12054528B2_glp1_amylin_coagonist.json",
+      "document_id": "patent_08_US12054528B2_glp1_amylin_coagonist",
+      "matches_found": 7,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "GLP-1(7-37)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Human GLP-1(7-37) reference sequence",
+          "validation": {
+            "valid": false,
+            "input": "GLP-1(7-37)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_08_US12054528B2_glp1_amylin_coagonist.json",
+          "source_field": "entities[3].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "pramlintide/cagrilintide",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Amylin agonist variants derived from pramlintide/cagrilintide",
+          "validation": {
+            "valid": false,
+            "input": "pramlintide/cagrilintide",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_08_US12054528B2_glp1_amylin_coagonist.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "pramlintide/cagrilintide",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Amylin agonist variants derived from pramlintide/cagrilintide",
+          "validation": {
+            "valid": false,
+            "input": "pramlintide/cagrilintide",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_08_US12054528B2_glp1_amylin_coagonist.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "agonist)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "semaglutide (a GLP-1 receptor agonist)",
+          "validation": {
+            "valid": false,
+            "input": "agonist)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_08_US12054528B2_glp1_amylin_coagonist.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "US_PATENT",
+          "value": "US12054528B2",
+          "entity_type": "PATENT",
+          "context": "Patent ID: US12054528B2",
+          "validation": null,
+          "status": "found",
+          "source_file": "patent_08_US12054528B2_glp1_amylin_coagonist.json",
+          "source_field": "entities[13].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "agonist)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "semaglutide (a GLP-1 receptor agonist)",
+          "validation": {
+            "valid": false,
+            "input": "agonist)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_08_US12054528B2_glp1_amylin_coagonist.json",
+          "source_field": "relations[7].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "agonist)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "semaglutide (a GLP-1 receptor agonist)",
+          "validation": {
+            "valid": false,
+            "input": "agonist)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_08_US12054528B2_glp1_amylin_coagonist.json",
+          "source_field": "relations[8].evidence"
+        }
+      ]
+    },
+    {
+      "file": "patent_09_US11111285B2_zealand_triple_agonist.json",
+      "document_id": "patent_09_US11111285B2_zealand_triple_agonist",
+      "matches_found": 11,
+      "results": [
+        {
+          "pattern_type": "SEQ_ID_NO",
+          "value": "SEQ ID NO: 52",
+          "entity_type": "SEQUENCE_REFERENCE",
+          "context": " core peptide backbone follows General Formula I (SEQ ID NO: 52)",
+          "validation": null,
+          "status": "found",
+          "source_file": "patent_09_US11111285B2_zealand_triple_agonist.json",
+          "source_field": "entities[1].context"
+        },
+        {
+          "pattern_type": "SEQ_ID_NO",
+          "value": "SEQ ID NO: 1",
+          "entity_type": "SEQUENCE_REFERENCE",
+          "context": "SEQ ID NO: 1 (wild-type reference): YSQGTFTSDYSKYLDSKAAHDFVEWL",
+          "validation": null,
+          "status": "found",
+          "source_file": "patent_09_US11111285B2_zealand_triple_agonist.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(wild-type",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "SEQ ID NO: 1 (wild-type reference): YSQGTFTSDYSKYLDSKAAHDFVEWLLRA",
+          "validation": {
+            "valid": false,
+            "input": "(wild-type",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_09_US11111285B2_zealand_triple_agonist.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "reference)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "SEQ ID NO: 1 (wild-type reference): YSQGTFTSDYSKYLDSKAAHDFVEWLLRA",
+          "validation": {
+            "valid": false,
+            "input": "reference)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_09_US11111285B2_zealand_triple_agonist.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "YSQGTFTSDYSKYLDSKAAHDFVEWLLRA",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "SEQ ID NO: 1 (wild-type reference): YSQGTFTSDYSKYLDSKAAHDFVEWLLRA",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 29,
+            "molecular_weight": 3399.67,
+            "isoelectric_point": 5.4293,
+            "aromaticity": 0.2069,
+            "instability_index": 24.4517,
+            "gravy": -0.5586
+          },
+          "status": "valid",
+          "source_file": "patent_09_US11111285B2_zealand_triple_agonist.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "SEQ_ID_NO",
+          "value": "SEQ ID NO: 5",
+          "entity_type": "SEQUENCE_REFERENCE",
+          "context": "SEQ ID NO: 5: Y-Aib-QGTFTSDYSIYLDSKAAHDFVEWLLSA",
+          "validation": null,
+          "status": "found",
+          "source_file": "patent_09_US11111285B2_zealand_triple_agonist.json",
+          "source_field": "entities[3].context"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "QGTFTSDYSIYLDSKAAHDFVEWLLSA",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "SEQ ID NO: 5: Y-Aib-QGTFTSDYSIYLDSKAAHDFVEWLLSA",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 27,
+            "molecular_weight": 3065.3,
+            "isoelectric_point": 4.2192,
+            "aromaticity": 0.1852,
+            "instability_index": 11.2556,
+            "gravy": -0.0741
+          },
+          "status": "valid",
+          "source_file": "patent_09_US11111285B2_zealand_triple_agonist.json",
+          "source_field": "entities[3].context"
+        },
+        {
+          "pattern_type": "SEQ_ID_NO",
+          "value": "SEQ ID NO: 53",
+          "entity_type": "SEQUENCE_REFERENCE",
+          "context": "Gly-Pro-Ser-Ser-Gly-Ala-Pro-Pro-Pro-Ser (SEQ ID NO: 53)",
+          "validation": null,
+          "status": "found",
+          "source_file": "patent_09_US11111285B2_zealand_triple_agonist.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "US_PATENT",
+          "value": "US11111285B2",
+          "entity_type": "PATENT",
+          "context": "Patent ID: US11111285B2",
+          "validation": null,
+          "status": "found",
+          "source_file": "patent_09_US11111285B2_zealand_triple_agonist.json",
+          "source_field": "entities[21].context"
+        },
+        {
+          "pattern_type": "US_PATENT",
+          "value": "US11111285B2",
+          "entity_type": "PATENT",
+          "context": "Patent ID: US11111285B2",
+          "validation": null,
+          "status": "found",
+          "source_file": "patent_09_US11111285B2_zealand_triple_agonist.json",
+          "source_field": "relations[15].evidence"
+        },
+        {
+          "pattern_type": "SEQ_ID_NO",
+          "value": "SEQ ID NO: 52",
+          "entity_type": "SEQUENCE_REFERENCE",
+          "context": "General Formula I (SEQ ID NO: 52)",
+          "validation": null,
+          "status": "found",
+          "source_file": "patent_09_US11111285B2_zealand_triple_agonist.json",
+          "source_field": "relations[16].evidence"
+        }
+      ]
+    },
+    {
+      "file": "patent_10_US11622996B2_oral_semaglutide_snac.json",
+      "document_id": "patent_10_US11622996B2_oral_semaglutide_snac",
+      "matches_found": 18,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "N-(8-(2-hydroxybenzoyl)amino)caprylate",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "sodium N-(8-(2-hydroxybenzoyl)amino)caprylate (SNAC) ... SNAC is also known as salcaprozate sod",
+          "validation": {
+            "valid": false,
+            "input": "N-(8-(2-hydroxybenzoyl)amino)caprylate",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_10_US11622996B2_oral_semaglutide_snac.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "InChIKey",
+          "value": "WWZKQHOCKIZLMA-UHFFFAOYSA-N",
+          "entity_type": "CHEMICAL_IDENTIFIER",
+          "context": "related caprylic acid backbone has the identifier WWZKQHOCKIZLMA-UHFFFAOYSA-N (octanoic acid).",
+          "validation": null,
+          "status": "found",
+          "source_file": "patent_10_US11622996B2_oral_semaglutide_snac.json",
+          "source_field": "entities[3].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(octanoic",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ne has the identifier WWZKQHOCKIZLMA-UHFFFAOYSA-N (octanoic acid).",
+          "validation": {
+            "valid": false,
+            "input": "(octanoic",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_10_US11622996B2_oral_semaglutide_snac.json",
+          "source_field": "entities[3].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(orforglipron",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "small-molecule nonpeptide GLP-1 agonists (orforglipron, danuglipron)",
+          "validation": {
+            "valid": false,
+            "input": "(orforglipron",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_10_US11622996B2_oral_semaglutide_snac.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "danuglipron)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "molecule nonpeptide GLP-1 agonists (orforglipron, danuglipron)",
+          "validation": {
+            "valid": false,
+            "input": "danuglipron)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_10_US11622996B2_oral_semaglutide_snac.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(orforglipron",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "small-molecule nonpeptide GLP-1 agonists (orforglipron, danuglipron)",
+          "validation": {
+            "valid": false,
+            "input": "(orforglipron",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_10_US11622996B2_oral_semaglutide_snac.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "danuglipron)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "molecule nonpeptide GLP-1 agonists (orforglipron, danuglipron)",
+          "validation": {
+            "valid": false,
+            "input": "danuglipron)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_10_US11622996B2_oral_semaglutide_snac.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "N-(8-(2-hydroxybenzoyl)amino)caprylate",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ns combining a GLP-1 receptor agonist with sodium N-(8-(2-hydroxybenzoyl)amino)caprylate",
+          "validation": {
+            "valid": false,
+            "input": "N-(8-(2-hydroxybenzoyl)amino)caprylate",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_10_US11622996B2_oral_semaglutide_snac.json",
+          "source_field": "entities[6].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(implied",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "GLP-1 receptor agonist delivery (implied indication)",
+          "validation": {
+            "valid": false,
+            "input": "(implied",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_10_US11622996B2_oral_semaglutide_snac.json",
+          "source_field": "entities[10].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "indication)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "GLP-1 receptor agonist delivery (implied indication)",
+          "validation": {
+            "valid": false,
+            "input": "indication)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_10_US11622996B2_oral_semaglutide_snac.json",
+          "source_field": "entities[10].context"
+        },
+        {
+          "pattern_type": "US_PATENT",
+          "value": "US11622996B2",
+          "entity_type": "PATENT",
+          "context": "Patent ID: US11622996B2",
+          "validation": null,
+          "status": "found",
+          "source_file": "patent_10_US11622996B2_oral_semaglutide_snac.json",
+          "source_field": "entities[12].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(orforglipron",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "small-molecule nonpeptide GLP-1 agonists (orforglipron, danuglipron)",
+          "validation": {
+            "valid": false,
+            "input": "(orforglipron",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_10_US11622996B2_oral_semaglutide_snac.json",
+          "source_field": "relations[3].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "danuglipron)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "molecule nonpeptide GLP-1 agonists (orforglipron, danuglipron)",
+          "validation": {
+            "valid": false,
+            "input": "danuglipron)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_10_US11622996B2_oral_semaglutide_snac.json",
+          "source_field": "relations[3].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(orforglipron",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "small-molecule nonpeptide GLP-1 agonists (orforglipron, danuglipron)",
+          "validation": {
+            "valid": false,
+            "input": "(orforglipron",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_10_US11622996B2_oral_semaglutide_snac.json",
+          "source_field": "relations[4].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "danuglipron)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "molecule nonpeptide GLP-1 agonists (orforglipron, danuglipron)",
+          "validation": {
+            "valid": false,
+            "input": "danuglipron)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_10_US11622996B2_oral_semaglutide_snac.json",
+          "source_field": "relations[4].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(implied",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "GLP-1 receptor agonist (implied indication)",
+          "validation": {
+            "valid": false,
+            "input": "(implied",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_10_US11622996B2_oral_semaglutide_snac.json",
+          "source_field": "relations[5].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "indication)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "GLP-1 receptor agonist (implied indication)",
+          "validation": {
+            "valid": false,
+            "input": "indication)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_10_US11622996B2_oral_semaglutide_snac.json",
+          "source_field": "relations[5].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "N-(8-(2-hydroxybenzoyl)amino)caprylate",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ns combining a GLP-1 receptor agonist with sodium N-(8-(2-hydroxybenzoyl)amino)caprylate (SNAC)",
+          "validation": {
+            "valid": false,
+            "input": "N-(8-(2-hydroxybenzoyl)amino)caprylate",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "patent_10_US11622996B2_oral_semaglutide_snac.json",
+          "source_field": "relations[7].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_32442310.json",
+      "document_id": "pmid_32442310",
+      "matches_found": 2,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "liraglutide)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "the administration of GLP-1 RA (mainly liraglutide) alone or in combination with metformin",
+          "validation": {
+            "valid": false,
+            "input": "liraglutide)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_32442310.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "liraglutide)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "administration of GLP-1 RA (mainly liraglutide) ... has been investigated in women with obesity a",
+          "validation": {
+            "valid": false,
+            "input": "liraglutide)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_32442310.json",
+          "source_field": "relations[3].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_35441470.json",
+      "document_id": "pmid_35441470",
+      "matches_found": 2,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT03548935)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "STEP 1 (NCT03548935) randomized 1961 adults",
+          "validation": {
+            "valid": false,
+            "input": "(NCT03548935)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35441470.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03548935",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "STEP 1 (NCT03548935) randomized 1961 adults",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_35441470.json",
+          "source_field": "entities[2].context"
+        }
+      ]
+    },
+    {
+      "file": "pmid_35650449.json",
+      "document_id": "pmid_35650449",
+      "matches_found": 0,
+      "results": []
+    },
+    {
+      "file": "pmid_35658024.json",
+      "document_id": "pmid_35658024",
+      "matches_found": 2,
+      "results": [
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT04184622",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "SURMOUNT-1 ClinicalTrials.gov number, NCT04184622",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_35658024.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT04184622",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "SURMOUNT-1 ClinicalTrials.gov number, NCT04184622",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_35658024.json",
+          "source_field": "relations[3].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_36945734.json",
+      "document_id": "pmid_36945734",
+      "matches_found": 5,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(coronary",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "evidence of ASCVD (coronary artery disease [CAD]",
+          "validation": {
+            "valid": false,
+            "input": "(coronary",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_36945734.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "mL/min/1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "estimated glomerular filtration rate <60 mL/min/1.73 m",
+          "validation": {
+            "valid": false,
+            "input": "mL/min/1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_36945734.json",
+          "source_field": "entities[9].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(Semaglutide",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "SOUL trial (Semaglutide cardiOvascular oUtcomes triaL)",
+          "validation": {
+            "valid": false,
+            "input": "(Semaglutide",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_36945734.json",
+          "source_field": "entities[10].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(estimated",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "CKD (estimated glomerular filtration rate <60 mL/min/1.73 m",
+          "validation": {
+            "valid": false,
+            "input": "(estimated",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_36945734.json",
+          "source_field": "relations[5].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "mL/min/1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "CKD (estimated glomerular filtration rate <60 mL/min/1.73 m",
+          "validation": {
+            "valid": false,
+            "input": "mL/min/1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_36945734.json",
+          "source_field": "relations[5].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_37192005.json",
+      "document_id": "pmid_37192005",
+      "matches_found": 2,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(sIPSCs)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "spontaneous inhibitory postsynaptic currents (sIPSCs) from central amygdala (CeA)",
+          "validation": {
+            "valid": false,
+            "input": "(sIPSCs)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_37192005.json",
+          "source_field": "entities[6].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(sIPSCs)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "e on spontaneous inhibitory postsynaptic currents (sIPSCs)",
+          "validation": {
+            "valid": false,
+            "input": "(sIPSCs)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_37192005.json",
+          "source_field": "entities[10].context"
+        }
+      ]
+    },
+    {
+      "file": "pmid_37351564.json",
+      "document_id": "pmid_37351564",
+      "matches_found": 2,
+      "results": [
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT05051579",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": " double-blind trial... ClinicalTrials.gov number, NCT05051579",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_37351564.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT05051579",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "ind trial... orforglipron at one of four doses... NCT05051579",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_37351564.json",
+          "source_field": "relations[3].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_37657738.json",
+      "document_id": "pmid_37657738",
+      "matches_found": 0,
+      "results": []
+    },
+    {
+      "file": "pmid_38367045.json",
+      "document_id": "pmid_38367045",
+      "matches_found": 4,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(GLP-1R)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ptor (GIPR), and glucagon-like peptide-1 receptor (GLP-1R).",
+          "validation": {
+            "valid": false,
+            "input": "(GLP-1R)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38367045.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(GLP-1R)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "glucagon-like peptide-1 receptor (GLP-1R)",
+          "validation": {
+            "valid": false,
+            "input": "(GLP-1R)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38367045.json",
+          "source_field": "entities[3].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(GLP-1R)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ptor (GIPR), and glucagon-like peptide-1 receptor (GLP-1R)",
+          "validation": {
+            "valid": false,
+            "input": "(GLP-1R)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38367045.json",
+          "source_field": "entities[10].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(GLP-1R)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "targets... glucagon-like peptide-1 receptor (GLP-1R)",
+          "validation": {
+            "valid": false,
+            "input": "(GLP-1R)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38367045.json",
+          "source_field": "relations[2].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_38632474.json",
+      "document_id": "pmid_38632474",
+      "matches_found": 4,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(GLP1RAs)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "glucagon-like peptide 1 (GLP1) receptor agonists (GLP1RAs), have become the treatment of choice for obesity ",
+          "validation": {
+            "valid": false,
+            "input": "(GLP1RAs)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38632474.json",
+          "source_field": "entities[8].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(GLP1RAs)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "GLP1 receptor agonists (GLP1RAs), have become the treatment of choice for obesity ",
+          "validation": {
+            "valid": false,
+            "input": "(GLP1RAs)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38632474.json",
+          "source_field": "relations[0].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(GLP1RAs)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "GLP1 receptor agonists (GLP1RAs), have become the treatment of choice for obesity ",
+          "validation": {
+            "valid": false,
+            "input": "(GLP1RAs)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38632474.json",
+          "source_field": "relations[1].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(GLP1RAs)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "glucagon-like peptide 1 (GLP1) receptor agonists (GLP1RAs)",
+          "validation": {
+            "valid": false,
+            "input": "(GLP1RAs)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38632474.json",
+          "source_field": "relations[2].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_38785209.json",
+      "document_id": "pmid_38785209",
+      "matches_found": 3,
+      "results": [
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03819153",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "FLOW ClinicalTrials.gov number, NCT03819153",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38785209.json",
+          "source_field": "entities[9].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03819153",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "FLOW ClinicalTrials.gov number, NCT03819153",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38785209.json",
+          "source_field": "relations[3].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(defined",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "chronic kidney disease (defined by an estimated glomerular filtration rate [eGFR]",
+          "validation": {
+            "valid": false,
+            "input": "(defined",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38785209.json",
+          "source_field": "relations[4].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_38851997.json",
+      "document_id": "pmid_38851997",
+      "matches_found": 11,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "factor(s)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "s (T2D) or obesity with additional metabolic risk factor(s)",
+          "validation": {
+            "valid": false,
+            "input": "factor(s)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38851997.json",
+          "source_field": "entities[6].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "tirzepatide)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity",
+          "validation": {
+            "valid": false,
+            "input": "tirzepatide)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38851997.json",
+          "source_field": "entities[8].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "tirzepatide)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "incretin-based therapies (e.g. semaglutide, tirzepatide)",
+          "validation": {
+            "valid": false,
+            "input": "tirzepatide)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38851997.json",
+          "source_field": "entities[9].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "elastography)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "imaging techniques (such as transient elastography)",
+          "validation": {
+            "valid": false,
+            "input": "elastography)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38851997.json",
+          "source_field": "entities[12].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "tirzepatide)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "se of incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity",
+          "validation": {
+            "valid": false,
+            "input": "tirzepatide)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38851997.json",
+          "source_field": "relations[0].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "tirzepatide)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity",
+          "validation": {
+            "valid": false,
+            "input": "tirzepatide)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38851997.json",
+          "source_field": "relations[1].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "tirzepatide)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity",
+          "validation": {
+            "valid": false,
+            "input": "tirzepatide)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38851997.json",
+          "source_field": "relations[2].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "tirzepatide)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity",
+          "validation": {
+            "valid": false,
+            "input": "tirzepatide)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38851997.json",
+          "source_field": "relations[3].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "rule-out/in",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "blood-based scores (such as FIB-4) ... to rule-out/in advanced fibrosis",
+          "validation": {
+            "valid": false,
+            "input": "rule-out/in",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38851997.json",
+          "source_field": "relations[6].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "elastography)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "imaging techniques (such as transient elastography) is suitable to rule-out/in advanced fibrosis",
+          "validation": {
+            "valid": false,
+            "input": "elastography)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38851997.json",
+          "source_field": "relations[7].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "rule-out/in",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "s (such as transient elastography) is suitable to rule-out/in advanced fibrosis",
+          "validation": {
+            "valid": false,
+            "input": "rule-out/in",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38851997.json",
+          "source_field": "relations[7].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_38858523.json",
+      "document_id": "pmid_38858523",
+      "matches_found": 2,
+      "results": [
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT04881760",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "The ClinicalTrials.gov registration is NCT04881760",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38858523.json",
+          "source_field": "entities[6].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT04881760",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "or placebo ... ClinicalTrials.gov registration is NCT04881760",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_38858523.json",
+          "source_field": "relations[5].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_38958939.json",
+      "document_id": "pmid_38958939",
+      "matches_found": 3,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "overweight/obesity",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "overweight/obesity",
+          "validation": {
+            "valid": false,
+            "input": "overweight/obesity",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38958939.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(ischemic",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "code H47.01 (ischemic optic neuropathy)",
+          "validation": {
+            "valid": false,
+            "input": "(ischemic",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38958939.json",
+          "source_field": "entities[9].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "neuropathy)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "code H47.01 (ischemic optic neuropathy)",
+          "validation": {
+            "valid": false,
+            "input": "neuropathy)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38958939.json",
+          "source_field": "entities[9].context"
+        }
+      ]
+    },
+    {
+      "file": "pmid_39357509.json",
+      "document_id": "pmid_39357509",
+      "matches_found": 5,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(GLP-1R)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "e development of glucagon-like peptide-1 receptor (GLP-1R) agonists reveals our ability to pharmacologically",
+          "validation": {
+            "valid": false,
+            "input": "(GLP-1R)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_39357509.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(GLP-1R)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "glucagon-like peptide-1 receptor (GLP-1R) agonists",
+          "validation": {
+            "valid": false,
+            "input": "(GLP-1R)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_39357509.json",
+          "source_field": "entities[1].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(GLP-1R)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "glucagon-like peptide-1 receptor (GLP-1R) agonists",
+          "validation": {
+            "valid": false,
+            "input": "(GLP-1R)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_39357509.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(GLP-1R)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "glucagon-like peptide-1 receptor (GLP-1R) agonists",
+          "validation": {
+            "valid": false,
+            "input": "(GLP-1R)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_39357509.json",
+          "source_field": "relations[0].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(GLP-1R)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "glucagon-like peptide-1 receptor (GLP-1R)",
+          "validation": {
+            "valid": false,
+            "input": "(GLP-1R)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_39357509.json",
+          "source_field": "relations[2].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_39536238.json",
+      "document_id": "pmid_39536238",
+      "matches_found": 1,
+      "results": [
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT04184622",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "SURMOUNT-1 ClinicalTrials.gov number, NCT04184622",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_39536238.json",
+          "source_field": "entities[5].context"
+        }
+      ]
+    },
+    {
+      "file": "pmid_39663847.json",
+      "document_id": "pmid_39663847",
+      "matches_found": 0,
+      "results": []
+    },
+    {
+      "file": "pmid_39903735.json",
+      "document_id": "pmid_39903735",
+      "matches_found": 0,
+      "results": []
+    },
+    {
+      "file": "pmid_40305708.json",
+      "document_id": "pmid_40305708",
+      "matches_found": 1,
+      "results": [
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT04822181",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "ebo-controlled trial...ClinicalTrials.gov number, NCT04822181",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_40305708.json",
+          "source_field": "entities[7].context"
+        }
+      ]
+    },
+    {
+      "file": "pmid_40544432.json",
+      "document_id": "pmid_40544432",
+      "matches_found": 5,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "CagriSema)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "istration of cagrilintide and semaglutide (called CagriSema)",
+          "validation": {
+            "valid": false,
+            "input": "CagriSema)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_40544432.json",
+          "source_field": "entities[1].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT05394519",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "REDEFINE 2 ClinicalTrials.gov number, NCT05394519",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_40544432.json",
+          "source_field": "entities[16].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "CagriSema)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "istration of cagrilintide and semaglutide (called CagriSema)",
+          "validation": {
+            "valid": false,
+            "input": "CagriSema)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_40544432.json",
+          "source_field": "relations[0].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "CagriSema)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "istration of cagrilintide and semaglutide (called CagriSema)",
+          "validation": {
+            "valid": false,
+            "input": "CagriSema)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_40544432.json",
+          "source_field": "relations[1].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT05394519",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "REDEFINE 2 ClinicalTrials.gov number, NCT05394519",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_40544432.json",
+          "source_field": "relations[7].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_40544433.json",
+      "document_id": "pmid_40544433",
+      "matches_found": 3,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "CagriSema)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "the combination (known as CagriSema)",
+          "validation": {
+            "valid": false,
+            "input": "CagriSema)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_40544433.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT05567796",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "REDEFINE 1 ClinicalTrials.gov number, NCT05567796",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_40544433.json",
+          "source_field": "entities[9].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "analogue)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "slet Amyloid Polypeptide ... cagrilintide (amylin analogue)",
+          "validation": {
+            "valid": false,
+            "input": "analogue)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_40544433.json",
+          "source_field": "relations[1].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_40544435.json",
+      "document_id": "pmid_40544435",
+      "matches_found": 2,
+      "results": [
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT05971940",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "ACHIEVE-1 ClinicalTrials.gov number, NCT05971940",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_40544435.json",
+          "source_field": "entities[6].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT05971940",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "ACHIEVE-1 ClinicalTrials.gov number, NCT05971940",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_40544435.json",
+          "source_field": "relations[4].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_40726115.json",
+      "document_id": "pmid_40726115",
+      "matches_found": 3,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(GLP-1RAs)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "glucagon-like peptide-1 receptor agonists (GLP-1RAs), developed for diabetes and obesity",
+          "validation": {
+            "valid": false,
+            "input": "(GLP-1RAs)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_40726115.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(GLP-1RAs)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "glucagon-like peptide-1 receptor agonists (GLP-1RAs)",
+          "validation": {
+            "valid": false,
+            "input": "(GLP-1RAs)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_40726115.json",
+          "source_field": "entities[1].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(GLP-1RAs)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "glucagon-like peptide-1 receptor agonists (GLP-1RAs)",
+          "validation": {
+            "valid": false,
+            "input": "(GLP-1RAs)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_40726115.json",
+          "source_field": "relations[2].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_41523559.json",
+      "document_id": "pmid_41523559",
+      "matches_found": 0,
+      "results": []
+    }
+  ]
+}

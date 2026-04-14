@@ -1,0 +1,199 @@
+{
+  "document_id": "pmid_36812433",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/03_rare_disease/docs/pmid_36812433.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "valoctocogene roxaparvovec",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "AAV gene therapy",
+        "payload": "B-domain-deleted factor VIII coding sequence"
+      },
+      "confidence": 0.98,
+      "context": "Valoctocogene roxaparvovec delivers a B-domain-deleted factor VIII coding sequence with an adeno-associated virus vector"
+    },
+    {
+      "name": "factor VIII",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "role": "coagulation factor"
+      },
+      "confidence": 0.98,
+      "context": "delivers a B-domain-deleted factor VIII coding sequence"
+    },
+    {
+      "name": "F8",
+      "entity_type": "GENE",
+      "attributes": {
+        "encodes": "factor VIII"
+      },
+      "confidence": 0.85,
+      "context": "B-domain-deleted factor VIII coding sequence"
+    },
+    {
+      "name": "hemophilia A",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "severity": "severe",
+        "mesh": "Hemophilia A"
+      },
+      "confidence": 0.98,
+      "context": "to prevent bleeding in persons with severe hemophilia A"
+    },
+    {
+      "name": "adeno-associated virus vector",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "type": "AAV vector delivery"
+      },
+      "confidence": 0.95,
+      "context": "delivers a B-domain-deleted factor VIII coding sequence with an adeno-associated virus vector"
+    },
+    {
+      "name": "gene transfer",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "confidence": 0.9,
+      "context": "at least 2 years after the gene transfer"
+    },
+    {
+      "name": "bleeding",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "mesh": "Hemorrhage"
+      },
+      "confidence": 0.95,
+      "context": "to prevent bleeding in persons with severe hemophilia A"
+    },
+    {
+      "name": "joint bleeding",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.95,
+      "context": "The risk of joint bleeding was estimated among the trial participants"
+    },
+    {
+      "name": "annualized bleeding rate",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "clinical endpoint"
+      },
+      "confidence": 0.9,
+      "context": "change from baseline in the annualized rate of treated bleeding events"
+    },
+    {
+      "name": "transgene-derived factor VIII activity",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "assay": "chromogenic assay",
+        "units": "IU per deciliter"
+      },
+      "confidence": 0.95,
+      "context": "transgene-derived factor VIII level of 5 IU per deciliter measured with chromogenic assay"
+    },
+    {
+      "name": "NCT03370913",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "name": "GENEr8-1",
+        "phase": "phase 3",
+        "design": "open-label, single-group, multicenter",
+        "n_participants": 134,
+        "dose": "6e13 vg/kg"
+      },
+      "confidence": 0.99,
+      "context": "GENEr8-1 ClinicalTrials.gov number, NCT03370913"
+    },
+    {
+      "name": "BioMarin Pharmaceutical",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "sponsor"
+      },
+      "confidence": 0.98,
+      "context": "Funded by BioMarin Pharmaceutical"
+    },
+    {
+      "name": "factor VIII prophylaxis",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "recombinant protein replacement"
+      },
+      "confidence": 0.9,
+      "context": "134 men with severe hemophilia A who were receiving factor VIII prophylaxis"
+    },
+    {
+      "name": "The New England Journal of Medicine",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "year": "2023",
+        "pmid": "36812433"
+      },
+      "confidence": 0.99,
+      "context": "The New England journal of medicine (2023)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "hemophilia A",
+      "confidence": 0.98,
+      "evidence": "valoctocogene roxaparvovec therapy ... in men with severe hemophilia A"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "NCT03370913",
+      "confidence": 0.99,
+      "evidence": "phase 3 trial in which 134 men with severe hemophilia A received a single infusion of valoctocogene roxaparvovec"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "F8",
+      "target_entity": "factor VIII",
+      "confidence": 0.9,
+      "evidence": "B-domain-deleted factor VIII coding sequence"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "valoctocogene roxaparvovec",
+      "target_entity": "factor VIII",
+      "confidence": 0.95,
+      "evidence": "delivers a B-domain-deleted factor VIII coding sequence"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "factor VIII",
+      "target_entity": "hemophilia A",
+      "confidence": 0.95,
+      "evidence": "factor VIII prophylaxis ... severe hemophilia A"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "transgene-derived factor VIII activity",
+      "target_entity": "valoctocogene roxaparvovec",
+      "confidence": 0.9,
+      "evidence": "the relationship between transgene-derived factor VIII activity and bleeding episodes"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "annualized bleeding rate",
+      "target_entity": "hemophilia A",
+      "confidence": 0.8,
+      "evidence": "mean annualized treated bleeding rate decreased by 84.5% from baseline"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "BioMarin Pharmaceutical",
+      "target_entity": "NCT03370913",
+      "confidence": 0.98,
+      "evidence": "Funded by BioMarin Pharmaceutical; GENEr8-1 ClinicalTrials.gov number, NCT03370913"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T22:54:54.679675+00:00",
+  "error": null
+}

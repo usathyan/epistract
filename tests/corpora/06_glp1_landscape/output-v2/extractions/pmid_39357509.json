@@ -1,0 +1,136 @@
+{
+  "document_id": "pmid_39357509",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/06_glp1_landscape/docs/pmid_39357509.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "glucagon-like peptide-1 receptor agonists",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "class": "GLP-1R agonist"
+      },
+      "confidence": 0.95,
+      "context": "The development of glucagon-like peptide-1 receptor (GLP-1R) agonists reveals our ability to pharmacologically manage weight"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "GENE",
+      "attributes": {
+        "protein": "GLP-1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "glucagon-like peptide-1 receptor (GLP-1R) agonists"
+    },
+    {
+      "name": "glucagon-like peptide-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "symbol": "GLP-1R"
+      },
+      "confidence": 0.95,
+      "context": "glucagon-like peptide-1 receptor (GLP-1R) agonists"
+    },
+    {
+      "name": "glucagon-like peptide 1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "symbol": "GLP-1"
+      },
+      "confidence": 0.9,
+      "context": "MeSH Terms: Glucagon-Like Peptide 1"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "confidence": 0.98,
+      "context": "persistent health issues, such as obesity and metabolic syndrome"
+    },
+    {
+      "name": "metabolic syndrome",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "persistent health issues, such as obesity and metabolic syndrome"
+    },
+    {
+      "name": "chronic low-grade inflammation",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.9,
+      "context": "Obesity is directly linked to chronic low-grade inflammation"
+    },
+    {
+      "name": "neurodegenerative diseases",
+      "entity_type": "DISEASE",
+      "confidence": 0.9,
+      "context": "connecting our metabolic environment to neurodegenerative diseases"
+    },
+    {
+      "name": "brain",
+      "entity_type": "CELL_OR_TISSUE",
+      "confidence": 0.9,
+      "context": "MeSH Terms: Brain"
+    },
+    {
+      "name": "GLP-1R agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "confidence": 0.95,
+      "context": "GLP-1R agonism in curbing obesity, achieved by impacting appetite"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "glucagon-like peptide-1 receptor agonists",
+      "target_entity": "glucagon-like peptide-1 receptor",
+      "confidence": 0.98,
+      "evidence": "glucagon-like peptide-1 receptor (GLP-1R) agonists"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "glucagon-like peptide-1 receptor agonists",
+      "target_entity": "glucagon-like peptide-1 receptor",
+      "confidence": 0.95,
+      "evidence": "GLP-1R agonism in curbing obesity"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "GLP1R",
+      "target_entity": "glucagon-like peptide-1 receptor",
+      "confidence": 0.9,
+      "evidence": "glucagon-like peptide-1 receptor (GLP-1R)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "glucagon-like peptide-1 receptor agonists",
+      "target_entity": "obesity",
+      "confidence": 0.95,
+      "evidence": "GLP-1R agonism in curbing obesity"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "glucagon-like peptide-1 receptor agonists",
+      "target_entity": "metabolic syndrome",
+      "confidence": 0.85,
+      "evidence": "pharmacologically manage weight and address metabolic conditions"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "obesity",
+      "target_entity": "chronic low-grade inflammation",
+      "confidence": 0.9,
+      "evidence": "Obesity is directly linked to chronic low-grade inflammation"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "chronic low-grade inflammation",
+      "target_entity": "neurodegenerative diseases",
+      "confidence": 0.75,
+      "evidence": "connecting our metabolic environment to neurodegenerative diseases"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:09:27.064727+00:00",
+  "error": null
+}

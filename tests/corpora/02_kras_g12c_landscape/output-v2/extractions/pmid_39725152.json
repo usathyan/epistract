@@ -1,0 +1,250 @@
+{
+  "document_id": "pmid_39725152",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/02_kras_g12c_landscape/docs/pmid_39725152.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "sotorasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "target": "KRAS G12C"
+      },
+      "confidence": 0.98,
+      "context": "KRASG12C inhibitors sotorasib and adagrasib have been approved for the treatment of KRASG12C-mutant non-small cell lung cancer"
+    },
+    {
+      "name": "adagrasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "target": "KRAS G12C"
+      },
+      "confidence": 0.98,
+      "context": "KRASG12C inhibitors sotorasib and adagrasib have been approved"
+    },
+    {
+      "name": "adavosertib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "target": "WEE1"
+      },
+      "confidence": 0.98,
+      "context": "we identified adavosertib, a WEE1 inhibitor, as a promising combination partner of sotorasib"
+    },
+    {
+      "name": "KRAS",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "KRASG12C-mutant non-small cell lung cancer"
+    },
+    {
+      "name": "WEE1",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "adavosertib, a WEE1 inhibitor"
+    },
+    {
+      "name": "MCL1",
+      "entity_type": "GENE",
+      "confidence": 0.95,
+      "context": "WEE1 inhibition potentiated MCL-1-mediated apoptosis"
+    },
+    {
+      "name": "TP53",
+      "entity_type": "GENE",
+      "confidence": 0.95,
+      "context": "irrespective of TP53, STK11, and KEAP1 co-mutation profiles"
+    },
+    {
+      "name": "STK11",
+      "entity_type": "GENE",
+      "confidence": 0.95,
+      "context": "irrespective of TP53, STK11, and KEAP1 co-mutation profiles"
+    },
+    {
+      "name": "KEAP1",
+      "entity_type": "GENE",
+      "confidence": 0.95,
+      "context": "irrespective of TP53, STK11, and KEAP1 co-mutation profiles"
+    },
+    {
+      "name": "KRAS G12C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "hgvs_p": "p.G12C"
+      },
+      "confidence": 0.98,
+      "context": "KRASG12C-mutant non-small cell lung cancer"
+    },
+    {
+      "name": "WEE1 kinase",
+      "entity_type": "PROTEIN",
+      "confidence": 0.95,
+      "context": "adavosertib, a WEE1 inhibitor"
+    },
+    {
+      "name": "MCL-1",
+      "entity_type": "PROTEIN",
+      "confidence": 0.95,
+      "context": "the combination downregulated MCL-1 protein levels"
+    },
+    {
+      "name": "non-small cell lung cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "NSCLC"
+      },
+      "confidence": 0.98,
+      "context": "KRASG12C-mutant non-small cell lung cancer (NSCLC)"
+    },
+    {
+      "name": "WEE1 inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "confidence": 0.95,
+      "context": "WEE1 inhibition potentiated MCL-1-mediated apoptosis in sotorasib-treated cancer cells"
+    },
+    {
+      "name": "KRAS G12C inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "confidence": 0.95,
+      "context": "KRASG12C inhibitors sotorasib and adagrasib"
+    },
+    {
+      "name": "MCL-1-mediated apoptosis",
+      "entity_type": "PATHWAY",
+      "confidence": 0.9,
+      "context": "WEE1 inhibition potentiated MCL-1-mediated apoptosis"
+    },
+    {
+      "name": "sotorasib resistance",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.95,
+      "context": "cells that acquired sotorasib resistance profoundly upregulated both WEE1 and MCL-1 proteins"
+    },
+    {
+      "name": "KRAS G12C mutation",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_class": "predictive"
+      },
+      "confidence": 0.95,
+      "context": "KRASG12C-mutant non-small cell lung cancer"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.98,
+      "evidence": "KRASG12C inhibitors sotorasib and adagrasib"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.98,
+      "evidence": "KRASG12C inhibitors sotorasib and adagrasib"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "adavosertib",
+      "target_entity": "WEE1",
+      "confidence": 0.98,
+      "evidence": "adavosertib, a WEE1 inhibitor"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "sotorasib",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.95,
+      "evidence": "approved for the treatment of KRASG12C-mutant non-small cell lung cancer (NSCLC)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "adagrasib",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.95,
+      "evidence": "approved for the treatment of KRASG12C-mutant non-small cell lung cancer (NSCLC)"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS",
+      "confidence": 0.95,
+      "evidence": "KRASG12C inhibitors sotorasib"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS",
+      "confidence": 0.95,
+      "evidence": "KRASG12C inhibitors ... adagrasib"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "adavosertib",
+      "target_entity": "WEE1 kinase",
+      "confidence": 0.95,
+      "evidence": "adavosertib, a WEE1 inhibitor"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "MCL1",
+      "target_entity": "MCL-1",
+      "confidence": 0.9,
+      "evidence": "MCL-1 protein levels"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "WEE1",
+      "target_entity": "WEE1 kinase",
+      "confidence": 0.9,
+      "evidence": "WEE1 inhibitor"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "WEE1",
+      "target_entity": "sotorasib resistance",
+      "confidence": 0.95,
+      "evidence": "highlighting WEE1 as a crucial driver of sotorasib resistance"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "MCL-1",
+      "target_entity": "sotorasib resistance",
+      "confidence": 0.9,
+      "evidence": "WEE1 overexpression conferred resistance against sotorasib via MCL-1 upregulation"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "KRAS G12C mutation",
+      "target_entity": "sotorasib",
+      "confidence": 0.95,
+      "evidence": "KRASG12C-mutant non-small cell lung cancer"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "KRAS G12C mutation",
+      "target_entity": "adagrasib",
+      "confidence": 0.95,
+      "evidence": "KRASG12C-mutant non-small cell lung cancer"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "MCL-1",
+      "target_entity": "MCL-1-mediated apoptosis",
+      "confidence": 0.9,
+      "evidence": "WEE1 inhibition potentiated MCL-1-mediated apoptosis"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T21:02:28.859610+00:00",
+  "error": null
+}

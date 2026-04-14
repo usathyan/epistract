@@ -1,0 +1,2401 @@
+{
+  "generated_at": "2026-04-13T23:06:51.281060+00:00",
+  "output_dir": "tests/corpora/04_immunooncology/output-v2",
+  "stats": {
+    "files_scanned": 16,
+    "total_matches": 162,
+    "valid": 25,
+    "invalid": 105,
+    "unvalidated": 0,
+    "found": 32,
+    "by_type": {
+      "SMILES": 105,
+      "NCT_NUMBER": 32,
+      "AMINO_ACID_SEQ": 25
+    },
+    "rdkit_available": true,
+    "biopython_available": true,
+    "enrichment": {
+      "entities_added": 11,
+      "relations_added": 11
+    }
+  },
+  "files": [
+    {
+      "file": "pmid_25795410.json",
+      "document_id": "pmid_25795410",
+      "matches_found": 4,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(CheckMate",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "(CheckMate 037): a randomised, controlled, open-label, phase",
+          "validation": {
+            "valid": false,
+            "input": "(CheckMate",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_25795410.json",
+          "source_field": "entities[18].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT01721746",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "registered with ClinicalTrials.gov, number NCT01721746",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_25795410.json",
+          "source_field": "entities[19].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(CheckMate",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "s chemotherapy in patients with advanced melanoma (CheckMate 037)",
+          "validation": {
+            "valid": false,
+            "input": "(CheckMate",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_25795410.json",
+          "source_field": "relations[5].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(dacarbazine",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ICC (dacarbazine 1000 mg/m(2) every 3 weeks",
+          "validation": {
+            "valid": false,
+            "input": "(dacarbazine",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_25795410.json",
+          "source_field": "relations[6].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_28889792.json",
+      "document_id": "pmid_28889792",
+      "matches_found": 7,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(anti-PD-1)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Nivolumab (anti-PD-1)",
+          "validation": {
+            "valid": false,
+            "input": "(anti-PD-1)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_28889792.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT01844505",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "CheckMate 067 ClinicalTrials.gov number, NCT01844505",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_28889792.json",
+          "source_field": "entities[10].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT01844505",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "ClinicalTrials.gov number, NCT01844505",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_28889792.json",
+          "source_field": "entities[11].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT01844505",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "CheckMate 067 ClinicalTrials.gov number, NCT01844505",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_28889792.json",
+          "source_field": "relations[4].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT01844505",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "CheckMate 067 ClinicalTrials.gov number, NCT01844505",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_28889792.json",
+          "source_field": "relations[5].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT01844505",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "ClinicalTrials.gov number, NCT01844505",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_28889792.json",
+          "source_field": "relations[6].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT01844505",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "ClinicalTrials.gov number, NCT01844505",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_28889792.json",
+          "source_field": "relations[7].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_30134131.json",
+      "document_id": "pmid_30134131",
+      "matches_found": 9,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(anti-PD-1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "nivolumab (anti-PD-1 antibody)",
+          "validation": {
+            "valid": false,
+            "input": "(anti-PD-1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_30134131.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "antibody)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "nivolumab (anti-PD-1 antibody)",
+          "validation": {
+            "valid": false,
+            "input": "antibody)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_30134131.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(anti-CTLA-4",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ipilimumab (anti-CTLA-4 antibody)",
+          "validation": {
+            "valid": false,
+            "input": "(anti-CTLA-4",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_30134131.json",
+          "source_field": "entities[3].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "antibody)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ipilimumab (anti-CTLA-4 antibody)",
+          "validation": {
+            "valid": false,
+            "input": "antibody)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_30134131.json",
+          "source_field": "entities[3].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT02320058",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "CheckMate 204 ClinicalTrials.gov number, NCT02320058",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_30134131.json",
+          "source_field": "entities[8].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT02320058",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "ClinicalTrials.gov number, NCT02320058",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_30134131.json",
+          "source_field": "entities[9].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(combined",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "nivolumab combined with ipilimumab (combined PD-1/CTLA-4 checkpoint blockade)",
+          "validation": {
+            "valid": false,
+            "input": "(combined",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_30134131.json",
+          "source_field": "entities[13].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "PD-1/CTLA-4",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "nivolumab combined with ipilimumab (combined PD-1/CTLA-4 checkpoint blockade)",
+          "validation": {
+            "valid": false,
+            "input": "PD-1/CTLA-4",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_30134131.json",
+          "source_field": "entities[13].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "blockade)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": " with ipilimumab (combined PD-1/CTLA-4 checkpoint blockade)",
+          "validation": {
+            "valid": false,
+            "input": "blockade)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_30134131.json",
+          "source_field": "entities[13].context"
+        }
+      ]
+    },
+    {
+      "file": "pmid_31562797.json",
+      "document_id": "pmid_31562797",
+      "matches_found": 9,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(anti-PD-1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "nivolumab (anti-PD-1 antibody implied by drug class)",
+          "validation": {
+            "valid": false,
+            "input": "(anti-PD-1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31562797.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(anti-CTLA-4",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ipilimumab (anti-CTLA-4 antibody implied by drug class)",
+          "validation": {
+            "valid": false,
+            "input": "(anti-CTLA-4",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31562797.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT01844505",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "CheckMate 067 ClinicalTrials.gov number, NCT01844505",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_31562797.json",
+          "source_field": "entities[6].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT01844505",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "ClinicalTrials.gov number, NCT01844505",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_31562797.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "inhibitor)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "nivolumab (PD-1 immune checkpoint inhibitor)",
+          "validation": {
+            "valid": false,
+            "input": "inhibitor)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31562797.json",
+          "source_field": "entities[9].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "inhibitor)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ipilimumab (CTLA-4 immune checkpoint inhibitor)",
+          "validation": {
+            "valid": false,
+            "input": "inhibitor)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31562797.json",
+          "source_field": "entities[10].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT01844505",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "alone... CheckMate 067 ClinicalTrials.gov number, NCT01844505",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_31562797.json",
+          "source_field": "relations[0].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT01844505",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "CheckMate 067 ClinicalTrials.gov number, NCT01844505",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_31562797.json",
+          "source_field": "relations[8].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT01844505",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "CheckMate 067 ClinicalTrials.gov number, NCT01844505",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_31562797.json",
+          "source_field": "relations[9].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_34359884.json",
+      "document_id": "pmid_34359884",
+      "matches_found": 2,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(HIF)-mediated",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "the roles of hypoxia-inducible factor (HIF)-mediated metabolic reprogramming in drug resistance in HCC",
+          "validation": {
+            "valid": false,
+            "input": "(HIF)-mediated",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34359884.json",
+          "source_field": "entities[3].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(HIF)-mediated",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "the roles of hypoxia-inducible factor (HIF)-mediated metabolic reprogramming in drug resistance in HCC",
+          "validation": {
+            "valid": false,
+            "input": "(HIF)-mediated",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34359884.json",
+          "source_field": "relations[3].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_34715028.json",
+      "document_id": "pmid_34715028",
+      "matches_found": 7,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(anti-PD-1)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "TeR is a prospective, phase II study of nivolumab (anti-PD-1) in 15 treatment-naive patients",
+          "validation": {
+            "valid": false,
+            "input": "(anti-PD-1)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34715028.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(anti-PD-1)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "nivolumab (anti-PD-1)",
+          "validation": {
+            "valid": false,
+            "input": "(anti-PD-1)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34715028.json",
+          "source_field": "entities[1].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "samples)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "5 treatment-naive patients (115 multiregion tumor samples) with metastatic clear cell renal cell carcinoma (",
+          "validation": {
+            "valid": false,
+            "input": "samples)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34715028.json",
+          "source_field": "entities[3].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(anti-PD-1)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "TeR is a prospective, phase II study of nivolumab (anti-PD-1) in 15 treatment-naive patients",
+          "validation": {
+            "valid": false,
+            "input": "(anti-PD-1)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34715028.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(anti-PD-1)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "nivolumab (anti-PD-1) ... anti-PD-1 mode of action",
+          "validation": {
+            "valid": false,
+            "input": "(anti-PD-1)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34715028.json",
+          "source_field": "entities[14].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(anti-PD-1)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "nivolumab (anti-PD-1)",
+          "validation": {
+            "valid": false,
+            "input": "(anti-PD-1)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34715028.json",
+          "source_field": "relations[0].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(anti-PD-1)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "phase II study of nivolumab (anti-PD-1) in 15 treatment-naive patients ... with metastati",
+          "validation": {
+            "valid": false,
+            "input": "(anti-PD-1)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34715028.json",
+          "source_field": "relations[1].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_34764464.json",
+      "document_id": "pmid_34764464",
+      "matches_found": 6,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "inhibitor)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "bevacizumab (VEGF inhibitor)",
+          "validation": {
+            "valid": false,
+            "input": "inhibitor)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34764464.json",
+          "source_field": "entities[18].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "inhibitor)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "pembrolizumab monotherapy (PD-1 inhibitor)",
+          "validation": {
+            "valid": false,
+            "input": "inhibitor)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34764464.json",
+          "source_field": "relations[12].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "inhibitor)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "atezolizumab (PD-L1 inhibitor)",
+          "validation": {
+            "valid": false,
+            "input": "inhibitor)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34764464.json",
+          "source_field": "relations[14].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "inhibitor)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "durvalumab (PD-L1 inhibitor)",
+          "validation": {
+            "valid": false,
+            "input": "inhibitor)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34764464.json",
+          "source_field": "relations[15].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "inhibitor)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ipilimumab (CTLA-4 inhibitor)",
+          "validation": {
+            "valid": false,
+            "input": "inhibitor)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34764464.json",
+          "source_field": "relations[16].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "inhibitor)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "tremelimumab (CTLA-4 inhibitor)",
+          "validation": {
+            "valid": false,
+            "input": "inhibitor)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34764464.json",
+          "source_field": "relations[17].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_34818112.json",
+      "document_id": "pmid_34818112",
+      "matches_found": 1,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "analysis)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Melanoma-specific survival (MSS; descriptive analysis)",
+          "validation": {
+            "valid": false,
+            "input": "analysis)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34818112.json",
+          "source_field": "entities[12].context"
+        }
+      ]
+    },
+    {
+      "file": "pmid_34986285.json",
+      "document_id": "pmid_34986285",
+      "matches_found": 7,
+      "results": [
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "RELATIVITY",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "RELATIVITY-047 ClinicalTrials.gov number, NCT03470922",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 10,
+            "molecular_weight": 1178.38,
+            "isoelectric_point": 6.0014,
+            "aromaticity": 0.1,
+            "instability_index": 0.51,
+            "gravy": 0.81
+          },
+          "status": "valid",
+          "source_file": "pmid_34986285.json",
+          "source_field": "entities[13].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03470922",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "RELATIVITY-047 ClinicalTrials.gov number, NCT03470922",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_34986285.json",
+          "source_field": "entities[13].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03470922",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "ClinicalTrials.gov number, NCT03470922",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_34986285.json",
+          "source_field": "entities[14].context"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "RELATIVITY",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "RELATIVITY-047 ClinicalTrials.gov number, NCT03470922",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 10,
+            "molecular_weight": 1178.38,
+            "isoelectric_point": 6.0014,
+            "aromaticity": 0.1,
+            "instability_index": 0.51,
+            "gravy": 0.81
+          },
+          "status": "valid",
+          "source_file": "pmid_34986285.json",
+          "source_field": "relations[8].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03470922",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "RELATIVITY-047 ClinicalTrials.gov number, NCT03470922",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_34986285.json",
+          "source_field": "relations[8].evidence"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "RELATIVITY",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "RELATIVITY-047 ClinicalTrials.gov number, NCT03470922",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 10,
+            "molecular_weight": 1178.38,
+            "isoelectric_point": 6.0014,
+            "aromaticity": 0.1,
+            "instability_index": 0.51,
+            "gravy": 0.81
+          },
+          "status": "valid",
+          "source_file": "pmid_34986285.json",
+          "source_field": "relations[9].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03470922",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "RELATIVITY-047 ClinicalTrials.gov number, NCT03470922",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_34986285.json",
+          "source_field": "relations[9].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_35062949.json",
+      "document_id": "pmid_35062949",
+      "matches_found": 25,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "PD-1/PD-L1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "PD-1/PD-L1 pathway is not the sole speed-limiting factor of ",
+          "validation": {
+            "valid": false,
+            "input": "PD-1/PD-L1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35062949.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(nivolumab",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ten a-PD-1 (nivolumab, pembrolizumab, cemiplimab, sintilimab, camrelizu",
+          "validation": {
+            "valid": false,
+            "input": "(nivolumab",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35062949.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "dostarlimab)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "mab, tislelizumab, zimberelimab, prolgolimab, and dostarlimab)",
+          "validation": {
+            "valid": false,
+            "input": "dostarlimab)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35062949.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(nivolumab",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ten a-PD-1 (nivolumab, pembrolizumab, cemiplimab...",
+          "validation": {
+            "valid": false,
+            "input": "(nivolumab",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35062949.json",
+          "source_field": "entities[6].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(atezolizumab",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "three a-PD-L1 antibodies (atezolizumab, durvalumab, and avelumab)",
+          "validation": {
+            "valid": false,
+            "input": "(atezolizumab",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35062949.json",
+          "source_field": "entities[15].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "avelumab)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "a-PD-L1 antibodies (atezolizumab, durvalumab, and avelumab)",
+          "validation": {
+            "valid": false,
+            "input": "avelumab)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35062949.json",
+          "source_field": "entities[15].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "PD-1/PD-L1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Combination strategies with PD-1/PD-L1 blockade",
+          "validation": {
+            "valid": false,
+            "input": "PD-1/PD-L1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35062949.json",
+          "source_field": "entities[19].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "PD-1/PD-L1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "PD-1/PD-L1 pathway",
+          "validation": {
+            "valid": false,
+            "input": "PD-1/PD-L1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35062949.json",
+          "source_field": "relations[3].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "PD-1/PD-L1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "PD-1/PD-L1 pathway",
+          "validation": {
+            "valid": false,
+            "input": "PD-1/PD-L1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35062949.json",
+          "source_field": "relations[4].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(nivolumab",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ten a-PD-1 (nivolumab, pembrolizumab...)",
+          "validation": {
+            "valid": false,
+            "input": "(nivolumab",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35062949.json",
+          "source_field": "relations[5].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(nivolumab",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ten a-PD-1 (nivolumab, pembrolizumab...)",
+          "validation": {
+            "valid": false,
+            "input": "(nivolumab",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35062949.json",
+          "source_field": "relations[6].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(cemiplimab)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ten a-PD-1 (cemiplimab)",
+          "validation": {
+            "valid": false,
+            "input": "(cemiplimab)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35062949.json",
+          "source_field": "relations[7].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(sintilimab)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ten a-PD-1 (sintilimab)",
+          "validation": {
+            "valid": false,
+            "input": "(sintilimab)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35062949.json",
+          "source_field": "relations[8].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(camrelizumab)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ten a-PD-1 (camrelizumab)",
+          "validation": {
+            "valid": false,
+            "input": "(camrelizumab)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35062949.json",
+          "source_field": "relations[9].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(toripalimab)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ten a-PD-1 (toripalimab)",
+          "validation": {
+            "valid": false,
+            "input": "(toripalimab)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35062949.json",
+          "source_field": "relations[10].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(tislelizumab)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ten a-PD-1 (tislelizumab)",
+          "validation": {
+            "valid": false,
+            "input": "(tislelizumab)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35062949.json",
+          "source_field": "relations[11].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(zimberelimab)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ten a-PD-1 (zimberelimab)",
+          "validation": {
+            "valid": false,
+            "input": "(zimberelimab)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35062949.json",
+          "source_field": "relations[12].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(prolgolimab)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ten a-PD-1 (prolgolimab)",
+          "validation": {
+            "valid": false,
+            "input": "(prolgolimab)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35062949.json",
+          "source_field": "relations[13].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(dostarlimab)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ten a-PD-1 (dostarlimab)",
+          "validation": {
+            "valid": false,
+            "input": "(dostarlimab)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35062949.json",
+          "source_field": "relations[14].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(atezolizumab",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "three a-PD-L1 antibodies (atezolizumab, durvalumab, and avelumab)",
+          "validation": {
+            "valid": false,
+            "input": "(atezolizumab",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35062949.json",
+          "source_field": "relations[15].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "avelumab)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "a-PD-L1 antibodies (atezolizumab, durvalumab, and avelumab)",
+          "validation": {
+            "valid": false,
+            "input": "avelumab)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35062949.json",
+          "source_field": "relations[15].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(atezolizumab",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "three a-PD-L1 antibodies (atezolizumab, durvalumab, and avelumab)",
+          "validation": {
+            "valid": false,
+            "input": "(atezolizumab",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35062949.json",
+          "source_field": "relations[16].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "avelumab)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "a-PD-L1 antibodies (atezolizumab, durvalumab, and avelumab)",
+          "validation": {
+            "valid": false,
+            "input": "avelumab)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35062949.json",
+          "source_field": "relations[16].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(atezolizumab",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "three a-PD-L1 antibodies (atezolizumab, durvalumab, and avelumab)",
+          "validation": {
+            "valid": false,
+            "input": "(atezolizumab",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35062949.json",
+          "source_field": "relations[17].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "avelumab)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "a-PD-L1 antibodies (atezolizumab, durvalumab, and avelumab)",
+          "validation": {
+            "valid": false,
+            "input": "avelumab)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35062949.json",
+          "source_field": "relations[17].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_35981087.json",
+      "document_id": "pmid_35981087",
+      "matches_found": 6,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(CTLA-4)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "cytotoxic T-lymphocyte-associated antigen-4 (CTLA-4)",
+          "validation": {
+            "valid": false,
+            "input": "(CTLA-4)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35981087.json",
+          "source_field": "entities[6].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(CTLA-4)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "cytotoxic T-lymphocyte-associated antigen-4 (CTLA-4)",
+          "validation": {
+            "valid": false,
+            "input": "(CTLA-4)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35981087.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "RELATIVITY",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "RELATIVITY-047 phase II/III trial",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 10,
+            "molecular_weight": 1178.38,
+            "isoelectric_point": 6.0014,
+            "aromaticity": 0.1,
+            "instability_index": 0.51,
+            "gravy": 0.81
+          },
+          "status": "valid",
+          "source_file": "pmid_35981087.json",
+          "source_field": "entities[13].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(CTLA-4)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "cytotoxic T-lymphocyte-associated antigen-4 (CTLA-4)",
+          "validation": {
+            "valid": false,
+            "input": "(CTLA-4)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_35981087.json",
+          "source_field": "relations[7].evidence"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "RELATIVITY",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "findings from the RELATIVITY-047 phase II/III trial showing that relatlimab co",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 10,
+            "molecular_weight": 1178.38,
+            "isoelectric_point": 6.0014,
+            "aromaticity": 0.1,
+            "instability_index": 0.51,
+            "gravy": 0.81
+          },
+          "status": "valid",
+          "source_file": "pmid_35981087.json",
+          "source_field": "relations[9].evidence"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "RELATIVITY",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "RELATIVITY-047 phase II/III trial showing that relatlimab co",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 10,
+            "molecular_weight": 1178.38,
+            "isoelectric_point": 6.0014,
+            "aromaticity": 0.1,
+            "instability_index": 0.51,
+            "gravy": 0.81
+          },
+          "status": "valid",
+          "source_file": "pmid_35981087.json",
+          "source_field": "relations[10].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_37723590.json",
+      "document_id": "pmid_37723590",
+      "matches_found": 0,
+      "results": []
+    },
+    {
+      "file": "pmid_38723227.json",
+      "document_id": "pmid_38723227",
+      "matches_found": 6,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(LAG-3)-blocking",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "relatlimab, a lymphocyte-activation gene 3 (LAG-3)-blocking antibody",
+          "validation": {
+            "valid": false,
+            "input": "(LAG-3)-blocking",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38723227.json",
+          "source_field": "entities[1].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(LAG-3)-blocking",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "lymphocyte-activation gene 3 (LAG-3)-blocking antibody",
+          "validation": {
+            "valid": false,
+            "input": "(LAG-3)-blocking",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38723227.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(RELATIVITY-060)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Open-label phase II study (RELATIVITY-060)",
+          "validation": {
+            "valid": false,
+            "input": "(RELATIVITY-060)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38723227.json",
+          "source_field": "entities[9].context"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "RELATIVITY",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "Open-label phase II study (RELATIVITY-060)",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 10,
+            "molecular_weight": 1178.38,
+            "isoelectric_point": 6.0014,
+            "aromaticity": 0.1,
+            "instability_index": 0.51,
+            "gravy": 0.81
+          },
+          "status": "valid",
+          "source_file": "pmid_38723227.json",
+          "source_field": "entities[9].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(LAG-3)-blocking",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "relatlimab, a lymphocyte-activation gene 3 (LAG-3)-blocking antibody",
+          "validation": {
+            "valid": false,
+            "input": "(LAG-3)-blocking",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38723227.json",
+          "source_field": "relations[2].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(LAG-3)-blocking",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "relatlimab, a lymphocyte-activation gene 3 (LAG-3)-blocking antibody",
+          "validation": {
+            "valid": false,
+            "input": "(LAG-3)-blocking",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38723227.json",
+          "source_field": "relations[3].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_40030000.json",
+      "document_id": "pmid_40030000",
+      "matches_found": 15,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(anti-PD-1)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "anti-programmed death 1 (anti-PD-1) monotherapy",
+          "validation": {
+            "valid": false,
+            "input": "(anti-PD-1)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_40030000.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(anti-PD-[L]1)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "anti-programmed death ligand 1 (anti-PD-[L]1)",
+          "validation": {
+            "valid": false,
+            "input": "(anti-PD-[L]1)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_40030000.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(anti-PD-1)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "anti-programmed death 1 (anti-PD-1) monotherapy",
+          "validation": {
+            "valid": false,
+            "input": "(anti-PD-1)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_40030000.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(anti-PD-[L]1)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "anti-programmed death ligand 1 (anti-PD-[L]1)",
+          "validation": {
+            "valid": false,
+            "input": "(anti-PD-[L]1)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_40030000.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "relapsed/refractory",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "relapsed/refractory (R/R) Hodgkin lymphoma (HL)",
+          "validation": {
+            "valid": false,
+            "input": "relapsed/refractory",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_40030000.json",
+          "source_field": "entities[8].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(RELATIVITY-022)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "multicenter phase 1/2a open-label study... (RELATIVITY-022)",
+          "validation": {
+            "valid": false,
+            "input": "(RELATIVITY-022)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_40030000.json",
+          "source_field": "entities[13].context"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "RELATIVITY",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "multicenter phase 1/2a open-label study... (RELATIVITY-022)",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 10,
+            "molecular_weight": 1178.38,
+            "isoelectric_point": 6.0014,
+            "aromaticity": 0.1,
+            "instability_index": 0.51,
+            "gravy": 0.81
+          },
+          "status": "valid",
+          "source_file": "pmid_40030000.json",
+          "source_field": "entities[13].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT02061761",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "registered at www.ClinicalTrials.gov as #NCT02061761",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_40030000.json",
+          "source_field": "entities[14].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(anti-PD-1)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "anti-programmed death 1 (anti-PD-1) monotherapy... nivolumab",
+          "validation": {
+            "valid": false,
+            "input": "(anti-PD-1)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_40030000.json",
+          "source_field": "relations[1].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(anti-PD-1)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "nivolumab (anti-PD-1)",
+          "validation": {
+            "valid": false,
+            "input": "(anti-PD-1)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_40030000.json",
+          "source_field": "relations[3].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(anti-PD-1)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "programmed death 1 (anti-PD-1)",
+          "validation": {
+            "valid": false,
+            "input": "(anti-PD-1)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_40030000.json",
+          "source_field": "relations[5].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(anti-PD-[L]1)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "programmed death ligand 1 (anti-PD-[L]1)",
+          "validation": {
+            "valid": false,
+            "input": "(anti-PD-[L]1)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_40030000.json",
+          "source_field": "relations[6].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(RELATIVITY-022)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "label study of the anti-LAG-3 antibody relatlimab (RELATIVITY-022)",
+          "validation": {
+            "valid": false,
+            "input": "(RELATIVITY-022)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_40030000.json",
+          "source_field": "relations[7].evidence"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "RELATIVITY",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "abel study of the anti-LAG-3 antibody relatlimab (RELATIVITY-022)",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 10,
+            "molecular_weight": 1178.38,
+            "isoelectric_point": 6.0014,
+            "aromaticity": 0.1,
+            "instability_index": 0.51,
+            "gravy": 0.81
+          },
+          "status": "valid",
+          "source_file": "pmid_40030000.json",
+          "source_field": "relations[7].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "anti-PD-(L)1-naive",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Responses in patients with anti-PD-(L)1-naive HL was encouraging",
+          "validation": {
+            "valid": false,
+            "input": "anti-PD-(L)1-naive",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_40030000.json",
+          "source_field": "relations[9].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_41109920.json",
+      "document_id": "pmid_41109920",
+      "matches_found": 9,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(anti-PD-1)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "nivolumab (anti-PD-1)",
+          "validation": {
+            "valid": false,
+            "input": "(anti-PD-1)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_41109920.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "RELATIVITY",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "the phase 3, double-blind RELATIVITY-098 trial",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 10,
+            "molecular_weight": 1178.38,
+            "isoelectric_point": 6.0014,
+            "aromaticity": 0.1,
+            "instability_index": 0.51,
+            "gravy": 0.81
+          },
+          "status": "valid",
+          "source_file": "pmid_41109920.json",
+          "source_field": "entities[10].context"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "RELATIVITY",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "Based on RELATIVITY-047, nivolumab plus relatlimab is approved for ad",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 10,
+            "molecular_weight": 1178.38,
+            "isoelectric_point": 6.0014,
+            "aromaticity": 0.1,
+            "instability_index": 0.51,
+            "gravy": 0.81
+          },
+          "status": "valid",
+          "source_file": "pmid_41109920.json",
+          "source_field": "entities[11].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT05002569",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "ClinicalTrials.gov identifier: NCT05002569",
+          "validation": null,
+          "status": "found",
+          "source_file": "pmid_41109920.json",
+          "source_field": "entities[12].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(anti-PD-1)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "nivolumab (anti-PD-1)",
+          "validation": {
+            "valid": false,
+            "input": "(anti-PD-1)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_41109920.json",
+          "source_field": "relations[0].evidence"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "RELATIVITY",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "the RELATIVITY-098 trial compared adjuvant nivolumab plus relatl",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 10,
+            "molecular_weight": 1178.38,
+            "isoelectric_point": 6.0014,
+            "aromaticity": 0.1,
+            "instability_index": 0.51,
+            "gravy": 0.81
+          },
+          "status": "valid",
+          "source_file": "pmid_41109920.json",
+          "source_field": "relations[6].evidence"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "RELATIVITY",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "the RELATIVITY-098 trial compared adjuvant nivolumab plus relatl",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 10,
+            "molecular_weight": 1178.38,
+            "isoelectric_point": 6.0014,
+            "aromaticity": 0.1,
+            "instability_index": 0.51,
+            "gravy": 0.81
+          },
+          "status": "valid",
+          "source_file": "pmid_41109920.json",
+          "source_field": "relations[7].evidence"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "RELATIVITY",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "Based on RELATIVITY-047, nivolumab plus relatlimab is approved",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 10,
+            "molecular_weight": 1178.38,
+            "isoelectric_point": 6.0014,
+            "aromaticity": 0.1,
+            "instability_index": 0.51,
+            "gravy": 0.81
+          },
+          "status": "valid",
+          "source_file": "pmid_41109920.json",
+          "source_field": "relations[8].evidence"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "RELATIVITY",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "Based on RELATIVITY-047, nivolumab plus relatlimab is approved",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 10,
+            "molecular_weight": 1178.38,
+            "isoelectric_point": 6.0014,
+            "aromaticity": 0.1,
+            "instability_index": 0.51,
+            "gravy": 0.81
+          },
+          "status": "valid",
+          "source_file": "pmid_41109920.json",
+          "source_field": "relations[9].evidence"
+        }
+      ]
+    },
+    {
+      "file": "structural_nivolumab_sequence.json",
+      "document_id": "structural_nivolumab_sequence",
+      "matches_found": 49,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(BMS-936558",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Nivolumab (BMS-936558, MDX-1106, ONO-4538, Opdivo) is a fully human IgG",
+          "validation": {
+            "valid": false,
+            "input": "(BMS-936558",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(programmed",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "targeting PD-1 (programmed death-1, CD279)",
+          "validation": {
+            "valid": false,
+            "input": "(programmed",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[1].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(PDCD1LG2)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Binding of PD-L1 (CD274) or PD-L2 (PDCD1LG2) to PD-1",
+          "validation": {
+            "valid": false,
+            "input": "(PDCD1LG2)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[3].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(PDCD1LG2)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "PD-L2 (PDCD1LG2) to PD-1",
+          "validation": {
+            "valid": false,
+            "input": "(PDCD1LG2)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(PDCD1LG2)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "PD-L2 (PDCD1LG2)",
+          "validation": {
+            "valid": false,
+            "input": "(PDCD1LG2)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[6].context"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "QVQLVESGGGVVQPGRSLRLDCKASGITFSNSGMHWVRQAPGKGLEWVAVIWYDGSKRYYADSVKGRFTISRDNSKNTLFLQMNSLRAEDTAVYYCATNDDYWGQGTLVTVSS",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "Heavy Chain Variable Region (VH): QVQLVESGGGVVQPGRSLRLDCKASGITFSNSGMHWVRQAPGKGLEWVAVIWYDGSKRYYADSVKGRFTISRDNSKNTLFLQMNSLRAEDTAVYYCATNDDYWGQGTLVTVSS",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 113,
+            "molecular_weight": 12519.86,
+            "isoelectric_point": 8.6396,
+            "aromaticity": 0.115,
+            "instability_index": 35.4841,
+            "gravy": -0.369
+          },
+          "status": "valid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "EIVLTQSPATLSLSPGERATLSCRASQSVSSYLAWYQQKPGQAPRLLIYDASNRATGIPARFSGSGSGTDFTLTISSLEPEDFAVYYCQQSSNWPRTFGQGTKVEIK",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "Light Chain Variable Region (VL): EIVLTQSPATLSLSPGERATLSCRASQSVSSYLAWYQQKPGQAPRLLIYDASNRATGIPARFSGSGSGTDFTLTISSLEPEDFAVYYCQQSSNWPRTFGQGTKVEIK",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 107,
+            "molecular_weight": 11626.8,
+            "isoelectric_point": 8.0671,
+            "aromaticity": 0.1028,
+            "instability_index": 49.8953,
+            "gravy": -0.3514
+          },
+          "status": "valid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[8].context"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "VIWYDGSKRYYADSVKG",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "CDR-H2: VIWYDGSKRYYADSVKG",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 17,
+            "molecular_weight": 2007.2,
+            "isoelectric_point": 8.3499,
+            "aromaticity": 0.2353,
+            "instability_index": 58.9176,
+            "gravy": -0.6941
+          },
+          "status": "valid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[10].context"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "NDDYWGQGTLVTVSS",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "CDR-H3: NDDYWGQGTLVTVSS",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 15,
+            "molecular_weight": 1641.69,
+            "isoelectric_point": 4.05,
+            "aromaticity": 0.1333,
+            "instability_index": -2.9733,
+            "gravy": -0.52
+          },
+          "status": "valid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[11].context"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "RASQSVSSYLA",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "CDR-L1: RASQSVSSYLA",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 11,
+            "molecular_weight": 1168.26,
+            "isoelectric_point": 8.7476,
+            "aromaticity": 0.0909,
+            "instability_index": 84.0545,
+            "gravy": -0.0818
+          },
+          "status": "valid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[12].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "PD-1/PD-L1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Nivolumab blocks the PD-1/PD-L1 interaction with KD = 2.6 nM (BIAcore SPR assay).",
+          "validation": {
+            "valid": false,
+            "input": "PD-1/PD-L1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[15].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(BIAcore",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "locks the PD-1/PD-L1 interaction with KD = 2.6 nM (BIAcore SPR assay). By blocking PD-1, nivolumab prevents ",
+          "validation": {
+            "valid": false,
+            "input": "(BIAcore",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[15].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT01721746)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "CheckMate 037 (NCT01721746): Phase III, melanoma post-CTLA-4",
+          "validation": {
+            "valid": false,
+            "input": "(NCT01721746)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[19].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT01721746",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "CheckMate 037 (NCT01721746): Phase III, melanoma post-CTLA-4",
+          "validation": null,
+          "status": "found",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[19].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT02477826)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "CheckMate 227 (NCT02477826): Phase III, nivo+ipi vs chemo, NSCLC",
+          "validation": {
+            "valid": false,
+            "input": "(NCT02477826)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[20].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT02477826",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "CheckMate 227 (NCT02477826): Phase III, nivo+ipi vs chemo, NSCLC",
+          "validation": null,
+          "status": "found",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[20].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT01721746)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "CheckMate 037 (NCT01721746): Phase III, melanoma post-CTLA-4",
+          "validation": {
+            "valid": false,
+            "input": "(NCT01721746)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[21].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT01721746",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "CheckMate 037 (NCT01721746): Phase III, melanoma post-CTLA-4",
+          "validation": null,
+          "status": "found",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[21].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT01844505)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "CheckMate 067 (NCT01844505): Phase III, nivo+ipi vs nivo vs ipi, melanoma 5-y",
+          "validation": {
+            "valid": false,
+            "input": "(NCT01844505)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[22].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT01844505",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "CheckMate 067 (NCT01844505): Phase III, nivo+ipi vs nivo vs ipi, melanoma 5-",
+          "validation": null,
+          "status": "found",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[22].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(nivo+ipi)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": " nivo+ipi vs nivo vs ipi, melanoma 5-year OS: 52% (nivo+ipi), 44% (nivo), 26% (ipi)",
+          "validation": {
+            "valid": false,
+            "input": "(nivo+ipi)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[22].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT02477826)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "CheckMate 227 (NCT02477826): Phase III, nivo+ipi vs chemo, NSCLC",
+          "validation": {
+            "valid": false,
+            "input": "(NCT02477826)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[23].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT02477826",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "CheckMate 227 (NCT02477826): Phase III, nivo+ipi vs chemo, NSCLC",
+          "validation": null,
+          "status": "found",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[23].context"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "RELATIVITY",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "RELATIVITY-047 (NCT03470922): Phase II/III, nivo+relatlimab ",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 10,
+            "molecular_weight": 1178.38,
+            "isoelectric_point": 6.0014,
+            "aromaticity": 0.1,
+            "instability_index": 0.51,
+            "gravy": 0.81
+          },
+          "status": "valid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[24].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT03470922)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "RELATIVITY-047 (NCT03470922): Phase II/III, nivo+relatlimab vs nivo, melanoma ",
+          "validation": {
+            "valid": false,
+            "input": "(NCT03470922)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[24].context"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03470922",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "RELATIVITY-047 (NCT03470922): Phase II/III, nivo+relatlimab vs nivo, melanoma",
+          "validation": null,
+          "status": "found",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[24].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "MSI-H/dMMR",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "MSI-H/dMMR: FDA-approved biomarker for nivolumab in certain ",
+          "validation": {
+            "valid": false,
+            "input": "MSI-H/dMMR",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "entities[30].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "PD-1/PD-L1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Nivolumab blocks the PD-1/PD-L1 interaction with KD = 2.6 nM (BIAcore SPR assay)",
+          "validation": {
+            "valid": false,
+            "input": "PD-1/PD-L1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "relations[2].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(BIAcore",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "locks the PD-1/PD-L1 interaction with KD = 2.6 nM (BIAcore SPR assay)",
+          "validation": {
+            "valid": false,
+            "input": "(BIAcore",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "relations[2].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(PDCD1LG2)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "PD-L2 (PDCD1LG2)",
+          "validation": {
+            "valid": false,
+            "input": "(PDCD1LG2)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "relations[5].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(PDCD1LG2)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Binding of PD-L1 (CD274) or PD-L2 (PDCD1LG2) to PD-1 delivers inhibitory signals",
+          "validation": {
+            "valid": false,
+            "input": "(PDCD1LG2)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "relations[6].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(PDCD1LG2)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "Binding of PD-L1 (CD274) or PD-L2 (PDCD1LG2) to PD-1",
+          "validation": {
+            "valid": false,
+            "input": "(PDCD1LG2)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "relations[7].evidence"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "VIWYDGSKRYYADSVKG",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "CDR-H2: VIWYDGSKRYYADSVKG",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 17,
+            "molecular_weight": 2007.2,
+            "isoelectric_point": 8.3499,
+            "aromaticity": 0.2353,
+            "instability_index": 58.9176,
+            "gravy": -0.6941
+          },
+          "status": "valid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "relations[11].evidence"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "NDDYWGQGTLVTVSS",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "CDR-H3: NDDYWGQGTLVTVSS",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 15,
+            "molecular_weight": 1641.69,
+            "isoelectric_point": 4.05,
+            "aromaticity": 0.1333,
+            "instability_index": -2.9733,
+            "gravy": -0.52
+          },
+          "status": "valid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "relations[12].evidence"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "RASQSVSSYLA",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "Light Chain CDR Regions (Kabat): CDR-L1: RASQSVSSYLA",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 11,
+            "molecular_weight": 1168.26,
+            "isoelectric_point": 8.7476,
+            "aromaticity": 0.0909,
+            "instability_index": 84.0545,
+            "gravy": -0.0818
+          },
+          "status": "valid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "relations[13].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT01721746)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "CheckMate 037 (NCT01721746): Phase III, melanoma post-CTLA-4",
+          "validation": {
+            "valid": false,
+            "input": "(NCT01721746)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "relations[17].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT01721746",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "CheckMate 037 (NCT01721746): Phase III, melanoma post-CTLA-4",
+          "validation": null,
+          "status": "found",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "relations[17].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT01844505)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "CheckMate 067 (NCT01844505): Phase III, nivo+ipi vs nivo vs ipi, melanoma",
+          "validation": {
+            "valid": false,
+            "input": "(NCT01844505)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "relations[18].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT01844505",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "CheckMate 067 (NCT01844505): Phase III, nivo+ipi vs nivo vs ipi, melanoma",
+          "validation": null,
+          "status": "found",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "relations[18].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT02477826)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "CheckMate 227 (NCT02477826): Phase III, nivo+ipi vs chemo, NSCLC",
+          "validation": {
+            "valid": false,
+            "input": "(NCT02477826)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "relations[19].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT02477826",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "CheckMate 227 (NCT02477826): Phase III, nivo+ipi vs chemo, NSCLC",
+          "validation": null,
+          "status": "found",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "relations[19].evidence"
+        },
+        {
+          "pattern_type": "AMINO_ACID_SEQ",
+          "value": "RELATIVITY",
+          "entity_type": "PROTEIN_SEQUENCE",
+          "context": "RELATIVITY-047 (NCT03470922): Phase II/III, nivo+relatlimab ",
+          "validation": {
+            "valid": true,
+            "type": "protein",
+            "length": 10,
+            "molecular_weight": 1178.38,
+            "isoelectric_point": 6.0014,
+            "aromaticity": 0.1,
+            "instability_index": 0.51,
+            "gravy": 0.81
+          },
+          "status": "valid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "relations[20].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT03470922)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "RELATIVITY-047 (NCT03470922): Phase II/III, nivo+relatlimab vs nivo, melanoma",
+          "validation": {
+            "valid": false,
+            "input": "(NCT03470922)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "relations[20].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT03470922",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "RELATIVITY-047 (NCT03470922): Phase II/III, nivo+relatlimab vs nivo, melanoma",
+          "validation": null,
+          "status": "found",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "relations[20].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT01721746)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "CheckMate 037 (NCT01721746): Phase III, melanoma post-CTLA-4",
+          "validation": {
+            "valid": false,
+            "input": "(NCT01721746)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "relations[24].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT01721746",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "CheckMate 037 (NCT01721746): Phase III, melanoma post-CTLA-4",
+          "validation": null,
+          "status": "found",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "relations[24].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(NCT02477826)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "CheckMate 227 (NCT02477826): Phase III, nivo+ipi vs chemo, NSCLC",
+          "validation": {
+            "valid": false,
+            "input": "(NCT02477826)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "relations[25].evidence"
+        },
+        {
+          "pattern_type": "NCT_NUMBER",
+          "value": "NCT02477826",
+          "entity_type": "CLINICAL_TRIAL",
+          "context": "CheckMate 227 (NCT02477826): Phase III, nivo+ipi vs chemo, NSCLC",
+          "validation": null,
+          "status": "found",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "relations[25].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "MSI-H/dMMR",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "MSI-H/dMMR: FDA-approved biomarker for nivolumab in certain ",
+          "validation": {
+            "valid": false,
+            "input": "MSI-H/dMMR",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "structural_nivolumab_sequence.json",
+          "source_field": "relations[29].evidence"
+        }
+      ]
+    }
+  ]
+}

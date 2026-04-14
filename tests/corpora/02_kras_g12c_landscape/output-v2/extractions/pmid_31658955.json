@@ -1,0 +1,259 @@
+{
+  "document_id": "pmid_31658955",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/02_kras_g12c_landscape/docs/pmid_31658955.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "adagrasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "alias": "MRTX849",
+        "mechanism": "covalent KRAS G12C inhibitor"
+      },
+      "confidence": 0.98,
+      "context": "MRTX849 was identified as a potent, selective, and covalent KRASG12C inhibitor"
+    },
+    {
+      "name": "KRAS",
+      "entity_type": "GENE",
+      "attributes": {
+        "standard": "HGNC"
+      },
+      "confidence": 0.98,
+      "context": "efforts to directly target KRAS have been challenging"
+    },
+    {
+      "name": "KRAS G12C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "hgvs_p": "p.Gly12Cys"
+      },
+      "confidence": 0.98,
+      "context": "selectively modifies mutant cysteine 12 in GDP-bound KRASG12C"
+    },
+    {
+      "name": "KRAS protein",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "gene": "KRAS"
+      },
+      "confidence": 0.95,
+      "context": "selectively modifies mutant cysteine 12 in GDP-bound KRASG12C"
+    },
+    {
+      "name": "lung adenocarcinoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "standard": "MeSH",
+        "mesh": "Adenocarcinoma of Lung"
+      },
+      "confidence": 0.97,
+      "context": "objective responses have been observed in patients with KRASG12C-positive lung and colon adenocarcinomas"
+    },
+    {
+      "name": "colon adenocarcinoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "standard": "MeSH"
+      },
+      "confidence": 0.95,
+      "context": "objective responses have been observed in patients with KRASG12C-positive lung and colon adenocarcinomas"
+    },
+    {
+      "name": "covalent KRAS G12C inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "target": "KRAS G12C",
+        "binding": "covalent, GDP-bound state"
+      },
+      "confidence": 0.97,
+      "context": "potent, selective, and covalent KRASG12C inhibitor that exhibits favorable drug-like properties, selectively modifies mutant cysteine 12 in GDP-bound KRASG12C"
+    },
+    {
+      "name": "KRAS signaling pathway",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "inhibits KRAS-dependent signaling"
+    },
+    {
+      "name": "receptor tyrosine kinase signaling",
+      "entity_type": "PATHWAY",
+      "attributes": {
+        "abbrev": "RTK"
+      },
+      "confidence": 0.9,
+      "context": "activation of receptor tyrosine kinases (RTK)"
+    },
+    {
+      "name": "mTOR pathway",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "Combinations of MRTX849 with agents that target RTKs, mTOR, or cell cycle"
+    },
+    {
+      "name": "cell cycle",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.88,
+      "context": "genetic dysregulation of cell cycle"
+    },
+    {
+      "name": "KRAS G12C positivity",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "measurement": "mutation status"
+      },
+      "confidence": 0.95,
+      "context": "KRASG12C-positive cell line- and patient-derived xenograft models"
+    },
+    {
+      "name": "tumor regression",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "MRTX849 demonstrated pronounced tumor regression in 17 of 26 (65%) KRASG12C-positive"
+    },
+    {
+      "name": "apoptosis",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "mesh": "Apoptosis"
+      },
+      "confidence": 0.7,
+      "context": "MeSH Terms: Acetonitriles, Adenocarcinoma of Lung, Animals, Antineoplastic Agents, Apoptosis"
+    },
+    {
+      "name": "cell proliferation",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "mesh": "Cell Proliferation"
+      },
+      "confidence": 0.7,
+      "context": "MeSH Terms: ... Cell Proliferation"
+    },
+    {
+      "name": "Phase I clinical trial",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "I",
+        "mesh": "Clinical Trials, Phase I as Topic"
+      },
+      "confidence": 0.75,
+      "context": "MeSH Terms: ... Clinical Trials, Phase I as Topic"
+    },
+    {
+      "name": "Hallin et al. 2020 Cancer Discovery",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "31658955",
+        "journal": "Cancer Discovery",
+        "year": "2020"
+      },
+      "confidence": 0.98,
+      "context": "Journal: Cancer discovery (2020) PMID: 31658955"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.98,
+      "evidence": "MRTX849 was identified as a potent, selective, and covalent KRASG12C inhibitor"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.98,
+      "evidence": "covalent KRASG12C inhibitor ... selectively modifies mutant cysteine 12 in GDP-bound KRASG12C"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS protein",
+      "confidence": 0.95,
+      "evidence": "selectively modifies mutant cysteine 12 in GDP-bound KRASG12C"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "adagrasib",
+      "target_entity": "covalent KRAS G12C inhibition",
+      "confidence": 0.97,
+      "evidence": "potent, selective, and covalent KRASG12C inhibitor"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "adagrasib",
+      "target_entity": "lung adenocarcinoma",
+      "confidence": 0.9,
+      "evidence": "objective responses have been observed in patients with KRASG12C-positive lung and colon adenocarcinomas"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "adagrasib",
+      "target_entity": "colon adenocarcinoma",
+      "confidence": 0.88,
+      "evidence": "objective responses have been observed in patients with KRASG12C-positive lung and colon adenocarcinomas"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "adagrasib",
+      "target_entity": "Phase I clinical trial",
+      "confidence": 0.75,
+      "evidence": "MeSH Terms: ... Clinical Trials, Phase I as Topic"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS protein",
+      "confidence": 0.95,
+      "evidence": "KRASG12C inhibitor ... modifies mutant cysteine 12 in GDP-bound KRASG12C"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "lung adenocarcinoma",
+      "confidence": 0.92,
+      "evidence": "KRASG12C-positive lung and colon adenocarcinomas"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "colon adenocarcinoma",
+      "confidence": 0.9,
+      "evidence": "KRASG12C-positive lung and colon adenocarcinomas"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "KRAS G12C positivity",
+      "target_entity": "adagrasib",
+      "confidence": 0.92,
+      "evidence": "pronounced tumor regression in 17 of 26 (65%) KRASG12C-positive cell line- and patient-derived xenograft models"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "KRAS protein",
+      "target_entity": "KRAS signaling pathway",
+      "confidence": 0.95,
+      "evidence": "inhibits KRAS-dependent signaling"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "adagrasib",
+      "target_entity": "tumor regression",
+      "confidence": 0.95,
+      "evidence": "MRTX849 demonstrated pronounced tumor regression in 17 of 26 (65%) KRASG12C-positive"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T20:21:28.046774+00:00",
+  "error": null
+}

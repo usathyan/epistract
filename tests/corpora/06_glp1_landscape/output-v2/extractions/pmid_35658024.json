@@ -1,0 +1,122 @@
+{
+  "document_id": "pmid_35658024",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/06_glp1_landscape/docs/pmid_35658024.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "tirzepatide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "route": "subcutaneous",
+        "dosing": "once weekly"
+      },
+      "confidence": 0.99,
+      "context": "tirzepatide, a novel glucose-dependent insulinotropic polypeptide and glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "confidence": 0.99,
+      "context": "In this 72-week trial in participants with obesity"
+    },
+    {
+      "name": "glucose-dependent insulinotropic polypeptide receptor",
+      "entity_type": "PROTEIN",
+      "confidence": 0.95,
+      "context": "glucose-dependent insulinotropic polypeptide and glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "name": "glucagon-like peptide-1 receptor",
+      "entity_type": "PROTEIN",
+      "confidence": 0.98,
+      "context": "glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "name": "GIP/GLP-1 receptor dual agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "confidence": 0.95,
+      "context": "novel glucose-dependent insulinotropic polypeptide and glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "name": "SURMOUNT-1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "3",
+        "design": "double-blind randomized controlled",
+        "nct_id": "NCT04184622",
+        "participants": 2539,
+        "duration": "72 weeks"
+      },
+      "confidence": 0.99,
+      "context": "SURMOUNT-1 ClinicalTrials.gov number, NCT04184622"
+    },
+    {
+      "name": "Eli Lilly",
+      "entity_type": "ORGANIZATION",
+      "confidence": 0.99,
+      "context": "Supported by Eli Lilly"
+    },
+    {
+      "name": "gastrointestinal adverse events",
+      "entity_type": "ADVERSE_EVENT",
+      "confidence": 0.95,
+      "context": "The most common adverse events with tirzepatide were gastrointestinal, and most were mild to moderate"
+    },
+    {
+      "name": "body-mass index",
+      "entity_type": "BIOMARKER",
+      "confidence": 0.85,
+      "context": "body-mass index (BMI; the weight in kilograms divided by the square of the height in meters)"
+    },
+    {
+      "name": "body weight",
+      "entity_type": "BIOMARKER",
+      "confidence": 0.9,
+      "context": "percentage change in weight from baseline"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "tirzepatide",
+      "target_entity": "glucagon-like peptide-1 receptor",
+      "confidence": 0.98,
+      "evidence": "tirzepatide, a novel glucose-dependent insulinotropic polypeptide and glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "tirzepatide",
+      "target_entity": "glucose-dependent insulinotropic polypeptide receptor",
+      "confidence": 0.95,
+      "evidence": "novel glucose-dependent insulinotropic polypeptide ... receptor agonist"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "obesity",
+      "confidence": 0.95,
+      "evidence": "Tirzepatide Once Weekly for the Treatment of Obesity"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "tirzepatide",
+      "target_entity": "SURMOUNT-1",
+      "confidence": 0.99,
+      "evidence": "SURMOUNT-1 ClinicalTrials.gov number, NCT04184622"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "tirzepatide",
+      "target_entity": "gastrointestinal adverse events",
+      "confidence": 0.95,
+      "evidence": "The most common adverse events with tirzepatide were gastrointestinal"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:08:54.828676+00:00",
+  "error": null
+}

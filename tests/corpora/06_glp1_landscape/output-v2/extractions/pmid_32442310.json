@@ -1,0 +1,156 @@
+{
+  "document_id": "pmid_32442310",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/06_glp1_landscape/docs/pmid_32442310.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "liraglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "class": "GLP-1 receptor agonist"
+      },
+      "confidence": 0.98,
+      "context": "the administration of GLP-1 RA (mainly liraglutide) alone or in combination with metformin"
+    },
+    {
+      "name": "metformin",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule"
+      },
+      "confidence": 0.98,
+      "context": "in combination with metformin has been investigated in women with obesity and PCOS"
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "family": "class B GPCR"
+      },
+      "confidence": 0.98,
+      "context": "glucagon-like peptide-1 (GLP-1) receptor agonists (GLP-1 RAs)"
+    },
+    {
+      "name": "glucagon-like peptide-1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "type": "incretin hormone"
+      },
+      "confidence": 0.95,
+      "context": "glucagon-like peptide-1 (GLP-1) receptor agonists"
+    },
+    {
+      "name": "testosterone",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "hormone"
+      },
+      "confidence": 0.95,
+      "context": "Several studies demonstrated significant weight loss and testosterone reduction"
+    },
+    {
+      "name": "polycystic ovary syndrome",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Polycystic Ovary Syndrome"
+      },
+      "confidence": 0.98,
+      "context": "Polycystic ovary syndrome (PCOS) is one of the leading causes of infertility"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Obesity"
+      },
+      "confidence": 0.98,
+      "context": "Obesity is responsible for an increased risk of sub-fecundity and infertility"
+    },
+    {
+      "name": "female infertility",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Infertility, Female"
+      },
+      "confidence": 0.95,
+      "context": "Obesity, Polycystic Ovary Syndrome, and Infertility"
+    },
+    {
+      "name": "insulin resistance",
+      "entity_type": "PHENOTYPE",
+      "confidence": 0.9,
+      "context": "mixed results relative to improvements in insulin resistance parameters"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "confidence": 0.85,
+      "context": "positive results in patients affected by obesity, with or without diabetes"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "liraglutide",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.98,
+      "evidence": "GLP-1 receptor agonists (GLP-1 RAs) ... mainly liraglutide"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "liraglutide",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.95,
+      "evidence": "glucagon-like peptide-1 (GLP-1) receptor agonists (GLP-1 RAs)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "liraglutide",
+      "target_entity": "obesity",
+      "confidence": 0.95,
+      "evidence": "positive results in patients affected by obesity"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "liraglutide",
+      "target_entity": "polycystic ovary syndrome",
+      "confidence": 0.8,
+      "evidence": "administration of GLP-1 RA (mainly liraglutide) ... has been investigated in women with obesity and PCOS"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "metformin",
+      "target_entity": "polycystic ovary syndrome",
+      "confidence": 0.85,
+      "evidence": "in combination with metformin has been investigated in women with obesity and PCOS"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "obesity",
+      "target_entity": "female infertility",
+      "confidence": 0.95,
+      "evidence": "Obesity is responsible for an increased risk of sub-fecundity and infertility"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "polycystic ovary syndrome",
+      "target_entity": "female infertility",
+      "confidence": 0.95,
+      "evidence": "PCOS is one of the leading causes of infertility"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "obesity",
+      "target_entity": "polycystic ovary syndrome",
+      "confidence": 0.85,
+      "evidence": "underlying pathophysiological link between obesity, GLP-1 kinetic alterations, and PCOS pathogenesis"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:08:47.812924+00:00",
+  "error": null
+}

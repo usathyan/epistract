@@ -1,0 +1,253 @@
+{
+  "document_id": "pmid_37101895",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/02_kras_g12c_landscape/docs/pmid_37101895.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "sotorasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "target": "KRAS G12C"
+      },
+      "confidence": 0.98,
+      "context": "Sotorasib is a novel KRAS G12C inhibitor"
+    },
+    {
+      "name": "adagrasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "target": "KRAS G12C"
+      },
+      "confidence": 0.98,
+      "context": "adagrasib, another G12C inhibitor just recently gained FDA accelerated approval"
+    },
+    {
+      "name": "docetaxel",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "taxane chemotherapy"
+      },
+      "confidence": 0.98,
+      "context": "compared to that of standard docetaxel of 4.5 months"
+    },
+    {
+      "name": "KRAS",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "KRAS"
+      },
+      "confidence": 0.98,
+      "context": "KRAS G12C mutation"
+    },
+    {
+      "name": "KRAS G12C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "hgvs_protein": "p.G12C"
+      },
+      "confidence": 0.98,
+      "context": "have the KRAS G12C mutation"
+    },
+    {
+      "name": "non-small cell lung cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "non-small cell lung cancer",
+        "abbreviation": "NSCLC"
+      },
+      "confidence": 0.98,
+      "context": "non-small cell lung cancer (NSCLC) patients"
+    },
+    {
+      "name": "KRAS G12C inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Sotorasib is a novel KRAS G12C inhibitor"
+    },
+    {
+      "name": "CodeBreaK 200",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "III",
+        "drug": "sotorasib",
+        "comparator": "docetaxel"
+      },
+      "confidence": 0.98,
+      "context": "The CodeBreaK 200 phase III trial data have recently resulted"
+    },
+    {
+      "name": "KRYSTAL-1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "drug": "adagrasib"
+      },
+      "confidence": 0.98,
+      "context": "based on the KRYSTAL-1 study where the response rate was 43%"
+    },
+    {
+      "name": "diarrhea",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "grade": "1-2"
+      },
+      "confidence": 0.95,
+      "context": "most commonly diarrhea and nausea"
+    },
+    {
+      "name": "nausea",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "grade": "1-2"
+      },
+      "confidence": 0.95,
+      "context": "most commonly diarrhea and nausea"
+    },
+    {
+      "name": "FDA",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "full_name": "U.S. Food and Drug Administration"
+      },
+      "confidence": 0.98,
+      "context": "granting its conditional approval by the FDA in May 2021"
+    },
+    {
+      "name": "FDA conditional approval of sotorasib (May 2021)",
+      "entity_type": "REGULATORY_ACTION",
+      "attributes": {
+        "agency": "FDA",
+        "drug": "sotorasib",
+        "type": "conditional approval",
+        "date": "2021-05"
+      },
+      "confidence": 0.98,
+      "context": "granting its conditional approval by the FDA in May 2021"
+    },
+    {
+      "name": "FDA accelerated approval of adagrasib",
+      "entity_type": "REGULATORY_ACTION",
+      "attributes": {
+        "agency": "FDA",
+        "drug": "adagrasib",
+        "type": "accelerated approval"
+      },
+      "confidence": 0.95,
+      "context": "adagrasib... just recently gained FDA accelerated approval in NSCLC patients"
+    },
+    {
+      "name": "platinum-based chemotherapy",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "class": "platinum chemotherapy"
+      },
+      "confidence": 0.9,
+      "context": "previously treated with at least one platinum-based chemotherapy"
+    },
+    {
+      "name": "checkpoint inhibitor",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "class": "immune checkpoint inhibitor"
+      },
+      "confidence": 0.9,
+      "context": "previously treated with at least one platinum-based chemotherapy and checkpoint inhibitor"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.98,
+      "evidence": "Sotorasib is a novel KRAS G12C inhibitor"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.98,
+      "evidence": "adagrasib, another G12C inhibitor"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "sotorasib",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.95,
+      "evidence": "locally advanced or unresectable metastatic KRAS G12C NSCLC... use of sotorasib"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "adagrasib",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.95,
+      "evidence": "adagrasib... gained FDA accelerated approval in NSCLC patients"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "sotorasib",
+      "target_entity": "CodeBreaK 200",
+      "confidence": 0.98,
+      "evidence": "CodeBreaK 200 phase III trial data... showed an improved PFS with the use of sotorasib"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "adagrasib",
+      "target_entity": "KRYSTAL-1",
+      "confidence": 0.98,
+      "evidence": "based on the KRYSTAL-1 study where the response rate was 43%"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "docetaxel",
+      "target_entity": "CodeBreaK 200",
+      "confidence": 0.95,
+      "evidence": "compared to that of standard docetaxel of 4.5 months"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "sotorasib",
+      "target_entity": "diarrhea",
+      "confidence": 0.9,
+      "evidence": "most subjects experiencing grade one or two adverse events, most commonly diarrhea and nausea"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "sotorasib",
+      "target_entity": "nausea",
+      "confidence": 0.9,
+      "evidence": "most subjects experiencing grade one or two adverse events, most commonly diarrhea and nausea"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.95,
+      "evidence": "Thirteen percent of non-small cell lung cancer (NSCLC) patients are estimated to have the KRAS G12C mutation"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS",
+      "confidence": 0.95,
+      "evidence": "Sotorasib is a novel KRAS G12C inhibitor"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS",
+      "confidence": 0.95,
+      "evidence": "adagrasib, another G12C inhibitor"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T20:21:57.597504+00:00",
+  "error": null
+}

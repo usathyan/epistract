@@ -1,0 +1,106 @@
+review_threshold: 0.7
+relations:
+- source_id: gene:picalm
+  source_name: PICALM
+  target_id: pathway:endocytosis
+  target_name: endocytosis
+  relation_type: PARTICIPATES_IN
+  confidence: 0.6
+  evidence: MeSH Endocytosis co-indexed
+  source_document: pmid_24951455
+  status: DRAFT
+  flag_reason: Low confidence (0.60 < 0.7)
+- source_id: compound:antiviral_agent
+  source_name: antiviral agent
+  target_id: disease:alzheimer_disease
+  target_name: Alzheimer disease
+  relation_type: INDICATED_FOR
+  confidence: 0.6
+  evidence: antiviral agents ... as viable therapeutic options
+  source_document: pmid_21167244
+  status: DRAFT
+  flag_reason: Low confidence (0.60 < 0.7)
+- source_id: compound:immune_suppressant
+  source_name: immune suppressant
+  target_id: disease:alzheimer_disease
+  target_name: Alzheimer disease
+  relation_type: INDICATED_FOR
+  confidence: 0.55
+  evidence: immune suppressants ... as viable therapeutic options
+  source_document: pmid_21167244
+  status: DRAFT
+  flag_reason: Low confidence (0.55 < 0.7)
+- source_id: biomarker:amyloid_beta_42
+  source_name: amyloid beta 42
+  target_id: disease:alzheimer_disease
+  target_name: Alzheimer disease
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.85
+  evidence: impact of these markers on cerebrospinal fluid (CSF)-Abeta42 and total-tau
+    protein levels
+  source_document: pmid_21300948
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:total_tau_protein
+  source_name: total tau protein
+  target_id: disease:alzheimer_disease
+  target_name: Alzheimer disease
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.85
+  evidence: impact of these markers on cerebrospinal fluid (CSF)-Abeta42 and total-tau
+    protein levels
+  source_document: pmid_21300948
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: sequence_variant:rs541458
+  source_name: rs541458
+  target_id: biomarker:amyloid_beta_42
+  target_name: amyloid beta 42
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.9
+  evidence: AD risk allele is associated with decreased CSF Abeta42 levels
+  source_document: pmid_21300948
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:apoe_e4_allele
+  source_name: APOE E4 allele
+  target_id: disease:late_onset_alzheimer_disease
+  target_name: late-onset Alzheimer disease
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.7
+  evidence: main risk factor for late-onset Alzheimer's disease
+  source_document: pmid_24729694
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:rs3851179_a_allele
+  source_name: rs3851179 A allele
+  target_id: disease:alzheimer_disease
+  target_name: Alzheimer disease
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.9
+  evidence: A carriers of rs3851179 were associated with a decreased risk of AD
+  source_document: pmid_31385771
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:rs541458_c_allele
+  source_name: rs541458 C allele
+  target_id: disease:alzheimer_disease
+  target_name: Alzheimer disease
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.9
+  evidence: the protective effect of the rs541458 C allele was observed only among
+    Caucasians
+  source_document: pmid_31385771
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:cerebrospinal_fluid_micrornas
+  source_name: cerebrospinal fluid microRNAs
+  target_id: disease:alzheimer_disease
+  target_name: Alzheimer disease
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.75
+  evidence: we previously identified a set of candidate AD microRNAs (miRNAs) in human
+    cerebrospinal fluid (CSF)
+  source_document: pmid_38915309
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review

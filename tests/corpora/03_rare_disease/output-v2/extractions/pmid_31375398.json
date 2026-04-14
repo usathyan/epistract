@@ -1,0 +1,212 @@
+{
+  "document_id": "pmid_31375398",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/03_rare_disease/docs/pmid_31375398.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "pegvaliase",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "PEGylated recombinant enzyme",
+        "brand_association": "Palynziq"
+      },
+      "confidence": 0.98,
+      "context": "pegvaliase, a PEGylated phenylalanine ammonia lyase enzyme"
+    },
+    {
+      "name": "phenylalanine ammonia-lyase",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "enzyme_class": "EC 4.3.1.24"
+      },
+      "confidence": 0.95,
+      "context": "pegvaliase, a PEGylated phenylalanine ammonia lyase enzyme"
+    },
+    {
+      "name": "phenylalanine",
+      "entity_type": "METABOLITE",
+      "attributes": {
+        "role": "substrate/biomarker"
+      },
+      "confidence": 0.95,
+      "context": "normalize diet, while maintaining blood phenylalanine within the recommended therapeutic range"
+    },
+    {
+      "name": "epinephrine",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "synonym": "adrenaline",
+        "use": "rescue medication"
+      },
+      "confidence": 0.95,
+      "context": "requirement to carry auto-injectable adrenaline (epinephrine)"
+    },
+    {
+      "name": "phenylketonuria",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Phenylketonurias",
+        "inheritance": "autosomal recessive",
+        "category": "inborn error of metabolism"
+      },
+      "confidence": 0.98,
+      "context": "adult patients with phenylketonuria (PKU)"
+    },
+    {
+      "name": "hypersensitivity adverse events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "mechanism": "Type III hypersensitivity",
+        "abbreviation": "HAE"
+      },
+      "confidence": 0.97,
+      "context": "hypersensitivity adverse events (HAEs) to an injectable enzyme substitution therapy"
+    },
+    {
+      "name": "anaphylaxis",
+      "entity_type": "ADVERSE_EVENT",
+      "confidence": 0.9,
+      "context": "experience in hypersensitivity, anaphylaxis, and/or drug reactions"
+    },
+    {
+      "name": "Type III hypersensitivity reaction",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "description": "immune complex-mediated hypersensitivity"
+      },
+      "confidence": 0.95,
+      "context": "pegvaliase induces a Type III hypersensitivity reaction"
+    },
+    {
+      "name": "enzyme substitution therapy",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "synonym": "enzyme replacement therapy"
+      },
+      "confidence": 0.95,
+      "context": "an injectable enzyme substitution therapy (pegvaliase, a PEGylated phenylalanine ammonia lyase enzyme)"
+    },
+    {
+      "name": "anti-drug antibodies",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "role": "immunogenicity marker"
+      },
+      "confidence": 0.9,
+      "context": "likely be driven by anti-drug antibody affinity maturation"
+    },
+    {
+      "name": "immune complex",
+      "entity_type": "BIOMARKER",
+      "confidence": 0.85,
+      "context": "reduced immune complex formation, and decreased complement activation over time"
+    },
+    {
+      "name": "complement activation",
+      "entity_type": "PATHWAY",
+      "confidence": 0.9,
+      "context": "reduced immune complex formation, and decreased complement activation over time"
+    },
+    {
+      "name": "H1-receptor antagonists",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "antihistamine",
+        "use": "premedication"
+      },
+      "confidence": 0.95,
+      "context": "premedication with H1-receptor antagonists"
+    },
+    {
+      "name": "Phase 3 clinical trials",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "3",
+        "indication": "phenylketonuria",
+        "drug": "pegvaliase"
+      },
+      "confidence": 0.9,
+      "context": "Key risk mitigation strategies utilized in the Phase 3 clinical trials"
+    },
+    {
+      "name": "blood phenylalanine",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "role": "efficacy biomarker for PKU"
+      },
+      "confidence": 0.95,
+      "context": "maintaining blood phenylalanine within the recommended therapeutic range"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "pegvaliase",
+      "target_entity": "phenylketonuria",
+      "confidence": 0.98,
+      "evidence": "managing hypersensitivity adverse events (HAEs) to an injectable enzyme substitution therapy (pegvaliase) in adult patients with phenylketonuria (PKU)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "pegvaliase",
+      "target_entity": "hypersensitivity adverse events",
+      "confidence": 0.97,
+      "evidence": "pegvaliase induces a Type III hypersensitivity reaction, causing HAEs"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "pegvaliase",
+      "target_entity": "enzyme substitution therapy",
+      "confidence": 0.95,
+      "evidence": "an injectable enzyme substitution therapy (pegvaliase, a PEGylated phenylalanine ammonia lyase enzyme)"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "pegvaliase",
+      "target_entity": "Type III hypersensitivity reaction",
+      "confidence": 0.95,
+      "evidence": "pegvaliase induces a Type III hypersensitivity reaction"
+    },
+    {
+      "relation_type": "METABOLIZES",
+      "source_entity": "phenylalanine ammonia-lyase",
+      "target_entity": "phenylalanine",
+      "confidence": 0.9,
+      "evidence": "pegvaliase, a PEGylated phenylalanine ammonia lyase enzyme ... maintaining blood phenylalanine within the recommended therapeutic range"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "pegvaliase",
+      "target_entity": "Phase 3 clinical trials",
+      "confidence": 0.9,
+      "evidence": "Key risk mitigation strategies utilized in the Phase 3 clinical trials"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "immune complex",
+      "target_entity": "complement activation",
+      "confidence": 0.85,
+      "evidence": "reduced immune complex formation, and decreased complement activation over time"
+    },
+    {
+      "relation_type": "BIOMARKER_FOR",
+      "source_entity": "blood phenylalanine",
+      "target_entity": "phenylketonuria",
+      "confidence": 0.9,
+      "evidence": "maintaining blood phenylalanine within the recommended therapeutic range"
+    },
+    {
+      "relation_type": "BIOMARKER_FOR",
+      "source_entity": "anti-drug antibodies",
+      "target_entity": "hypersensitivity adverse events",
+      "confidence": 0.85,
+      "evidence": "driven by anti-drug antibody affinity maturation, reduced immune complex formation"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T22:54:21.353925+00:00",
+  "error": null
+}

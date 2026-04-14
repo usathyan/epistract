@@ -1,0 +1,293 @@
+{
+  "document_id": "patent_08_US12054528B2_glp1_amylin_coagonist",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/06_glp1_landscape/docs/patent_08_US12054528B2_glp1_amylin_coagonist.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "GLP-1/amylin co-agonist (US12054528B2)",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "single-chain polypeptide",
+        "patent_id": "US12054528B2",
+        "status": "prophetic"
+      },
+      "confidence": 0.95,
+      "context": "compounds functioning as dual receptor agonists that bind to and activate both GLP-1 and amylin receptors"
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.98,
+      "context": "bind to and activate both GLP-1 and amylin receptors"
+    },
+    {
+      "name": "amylin receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.98,
+      "context": "bind to and activate both GLP-1 and amylin receptors"
+    },
+    {
+      "name": "GLP-1",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Human GLP-1(7-37) reference sequence"
+    },
+    {
+      "name": "amylin",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Amylin agonist variants derived from pramlintide/cagrilintide"
+    },
+    {
+      "name": "pramlintide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide"
+      },
+      "confidence": 0.95,
+      "context": "Amylin agonist variants derived from pramlintide/cagrilintide"
+    },
+    {
+      "name": "cagrilintide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "long-acting amylin analog"
+      },
+      "confidence": 0.98,
+      "context": "cagrilintide (a long-acting amylin analog)"
+    },
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "GLP-1 receptor agonist peptide"
+      },
+      "confidence": 0.98,
+      "context": "semaglutide (a GLP-1 receptor agonist)"
+    },
+    {
+      "name": "CagriSema",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "co-administered combination"
+      },
+      "confidence": 0.95,
+      "context": "CagriSema is a co-administered combination of cagrilintide and semaglutide"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.98,
+      "context": "designed for treating obesity, type 2 diabetes mellitus"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.98,
+      "context": "designed for treating obesity, type 2 diabetes mellitus"
+    },
+    {
+      "name": "cardiovascular disease",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "cardiovascular disease, and related metabolic conditions"
+    },
+    {
+      "name": "Novo Nordisk AS",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "assignee"
+      },
+      "confidence": 0.99,
+      "context": "Assignee: Novo Nordisk AS"
+    },
+    {
+      "name": "US12054528B2",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "type": "patent",
+        "filing_date": "2022-12-19"
+      },
+      "confidence": 0.99,
+      "context": "Patent ID: US12054528B2"
+    },
+    {
+      "name": "CagriSema Phase 3 trial",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "Phase 3"
+      },
+      "confidence": 0.9,
+      "context": "currently in Phase 3 clinical trials"
+    },
+    {
+      "name": "glucose-dependent insulin secretion",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "GLP-1-mediated glucose-dependent insulin secretion"
+    },
+    {
+      "name": "appetite suppression",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.8,
+      "context": "GLP-1-mediated glucose-dependent insulin secretion and appetite suppression"
+    },
+    {
+      "name": "gastric emptying delay",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.8,
+      "context": "amylin-mediated gastric emptying delay"
+    },
+    {
+      "name": "central satiety signaling",
+      "entity_type": "PATHWAY",
+      "attributes": {},
+      "confidence": 0.8,
+      "context": "amylin-mediated gastric emptying delay and central satiety signaling"
+    },
+    {
+      "name": "dual GLP-1/amylin receptor co-agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "dual receptor agonists that bind to and activate both GLP-1 and amylin receptors"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "GLP-1/amylin co-agonist (US12054528B2)",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.95,
+      "evidence": "dual receptor agonists that bind to and activate both GLP-1 and amylin receptors"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "GLP-1/amylin co-agonist (US12054528B2)",
+      "target_entity": "amylin receptor",
+      "confidence": 0.95,
+      "evidence": "dual receptor agonists that bind to and activate both GLP-1 and amylin receptors"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "GLP-1/amylin co-agonist (US12054528B2)",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.9,
+      "evidence": "bind to and activate both GLP-1 and amylin receptors"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "GLP-1/amylin co-agonist (US12054528B2)",
+      "target_entity": "amylin receptor",
+      "confidence": 0.9,
+      "evidence": "bind to and activate both GLP-1 and amylin receptors"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1/amylin co-agonist (US12054528B2)",
+      "target_entity": "obesity",
+      "confidence": 0.9,
+      "evidence": "designed for treating obesity, type 2 diabetes mellitus"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1/amylin co-agonist (US12054528B2)",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.9,
+      "evidence": "designed for treating obesity, type 2 diabetes mellitus"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1/amylin co-agonist (US12054528B2)",
+      "target_entity": "cardiovascular disease",
+      "confidence": 0.75,
+      "evidence": "cardiovascular disease, and related metabolic conditions"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.98,
+      "evidence": "semaglutide (a GLP-1 receptor agonist)"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.98,
+      "evidence": "semaglutide (a GLP-1 receptor agonist)"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "cagrilintide",
+      "target_entity": "amylin receptor",
+      "confidence": 0.95,
+      "evidence": "cagrilintide (a long-acting amylin analog)"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "cagrilintide",
+      "target_entity": "amylin receptor",
+      "confidence": 0.9,
+      "evidence": "cagrilintide (a long-acting amylin analog)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "CagriSema",
+      "target_entity": "obesity",
+      "confidence": 0.9,
+      "evidence": "Phase 2 data showed the combination achieved superior weight loss"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "CagriSema",
+      "target_entity": "CagriSema Phase 3 trial",
+      "confidence": 0.95,
+      "evidence": "currently in Phase 3 clinical trials"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "GLP-1",
+      "target_entity": "glucose-dependent insulin secretion",
+      "confidence": 0.85,
+      "evidence": "GLP-1-mediated glucose-dependent insulin secretion"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "GLP-1",
+      "target_entity": "appetite suppression",
+      "confidence": 0.8,
+      "evidence": "GLP-1-mediated glucose-dependent insulin secretion and appetite suppression"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "amylin",
+      "target_entity": "gastric emptying delay",
+      "confidence": 0.85,
+      "evidence": "amylin-mediated gastric emptying delay"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "amylin",
+      "target_entity": "central satiety signaling",
+      "confidence": 0.8,
+      "evidence": "amylin-mediated gastric emptying delay and central satiety signaling"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:09:00.633654+00:00",
+  "error": null
+}

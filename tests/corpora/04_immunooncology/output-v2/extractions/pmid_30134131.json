@@ -1,0 +1,286 @@
+{
+  "document_id": "pmid_30134131",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/04_immunooncology/docs/pmid_30134131.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "nivolumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "PD-1"
+      },
+      "confidence": 0.99,
+      "context": "Combined Nivolumab and Ipilimumab in Melanoma Metastatic to the Brain"
+    },
+    {
+      "name": "ipilimumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "CTLA-4"
+      },
+      "confidence": 0.99,
+      "context": "Combined Nivolumab and Ipilimumab in Melanoma Metastatic to the Brain"
+    },
+    {
+      "name": "PDCD1",
+      "entity_type": "GENE",
+      "attributes": {
+        "protein_alias": "PD-1"
+      },
+      "confidence": 0.9,
+      "context": "nivolumab (anti-PD-1 antibody)"
+    },
+    {
+      "name": "CTLA4",
+      "entity_type": "GENE",
+      "attributes": {
+        "protein_alias": "CTLA-4"
+      },
+      "confidence": 0.9,
+      "context": "ipilimumab (anti-CTLA-4 antibody)"
+    },
+    {
+      "name": "melanoma",
+      "entity_type": "DISEASE",
+      "confidence": 0.99,
+      "context": "patients with metastatic melanoma"
+    },
+    {
+      "name": "metastatic melanoma",
+      "entity_type": "DISEASE",
+      "confidence": 0.99,
+      "context": "patients with metastatic melanoma"
+    },
+    {
+      "name": "brain metastases",
+      "entity_type": "DISEASE",
+      "confidence": 0.99,
+      "context": "Brain metastases are a common cause of disabling neurologic complications and death in patients with metastatic melanoma"
+    },
+    {
+      "name": "brain neoplasms",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "MeSH Terms: ... Brain Neoplasms"
+    },
+    {
+      "name": "CheckMate 204",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "phase 2",
+        "nct_id": "NCT02320058",
+        "design": "open-label, multicenter"
+      },
+      "confidence": 0.99,
+      "context": "CheckMate 204 ClinicalTrials.gov number, NCT02320058"
+    },
+    {
+      "name": "NCT02320058",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "alias": "CheckMate 204"
+      },
+      "confidence": 0.99,
+      "context": "ClinicalTrials.gov number, NCT02320058"
+    },
+    {
+      "name": "immune-related myocarditis",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "severity": "fatal",
+        "immune_related": true
+      },
+      "confidence": 0.99,
+      "context": "One patient died from immune-related myocarditis"
+    },
+    {
+      "name": "grade 3 or 4 treatment-related adverse events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "grade": "3 or 4",
+        "frequency": "55%"
+      },
+      "confidence": 0.95,
+      "context": "Treatment-related grade 3 or 4 adverse events were reported in 55% of patients"
+    },
+    {
+      "name": "central nervous system adverse events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "grade": "3 or 4",
+        "frequency": "7%"
+      },
+      "confidence": 0.9,
+      "context": "including events involving the central nervous system in 7%"
+    },
+    {
+      "name": "immune checkpoint inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "confidence": 0.9,
+      "context": "nivolumab combined with ipilimumab (combined PD-1/CTLA-4 checkpoint blockade)"
+    },
+    {
+      "name": "Bristol-Myers Squibb",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "sponsor"
+      },
+      "confidence": 0.99,
+      "context": "Funded by Bristol-Myers Squibb and the National Cancer Institute"
+    },
+    {
+      "name": "National Cancer Institute",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "funder"
+      },
+      "confidence": 0.99,
+      "context": "Funded by Bristol-Myers Squibb and the National Cancer Institute"
+    },
+    {
+      "name": "intracranial clinical benefit",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "rate": "57%",
+        "definition": "stable disease >=6 months, complete response, or partial response"
+      },
+      "confidence": 0.95,
+      "context": "the rate of intracranial clinical benefit was 57%"
+    },
+    {
+      "name": "complete response",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "rate": "26%"
+      },
+      "confidence": 0.95,
+      "context": "the rate of complete response was 26%"
+    },
+    {
+      "name": "partial response",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "rate": "30%"
+      },
+      "confidence": 0.95,
+      "context": "the rate of partial response was 30%"
+    },
+    {
+      "name": "extracranial clinical benefit",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "rate": "56%"
+      },
+      "confidence": 0.95,
+      "context": "The rate of extracranial clinical benefit was 56%"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "nivolumab",
+      "target_entity": "PDCD1",
+      "confidence": 0.95,
+      "evidence": "nivolumab is an anti-PD-1 checkpoint inhibitor"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "ipilimumab",
+      "target_entity": "CTLA4",
+      "confidence": 0.95,
+      "evidence": "ipilimumab is an anti-CTLA-4 checkpoint inhibitor"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "PDCD1",
+      "target_entity": "PD-1",
+      "confidence": 0.9,
+      "evidence": "PDCD1 gene encodes PD-1 protein"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "CTLA4",
+      "target_entity": "CTLA-4",
+      "confidence": 0.9,
+      "evidence": "CTLA4 gene encodes CTLA-4 protein"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "nivolumab",
+      "target_entity": "metastatic melanoma",
+      "confidence": 0.95,
+      "evidence": "Previous studies of nivolumab combined with ipilimumab in metastatic melanoma"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "ipilimumab",
+      "target_entity": "metastatic melanoma",
+      "confidence": 0.95,
+      "evidence": "Previous studies of nivolumab combined with ipilimumab in metastatic melanoma"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "nivolumab",
+      "target_entity": "CheckMate 204",
+      "confidence": 0.99,
+      "evidence": "We evaluated the efficacy and safety of nivolumab plus ipilimumab"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "ipilimumab",
+      "target_entity": "CheckMate 204",
+      "confidence": 0.99,
+      "evidence": "We evaluated the efficacy and safety of nivolumab plus ipilimumab"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "nivolumab",
+      "target_entity": "immune-related myocarditis",
+      "confidence": 0.9,
+      "evidence": "One patient died from immune-related myocarditis"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "ipilimumab",
+      "target_entity": "immune-related myocarditis",
+      "confidence": 0.9,
+      "evidence": "One patient died from immune-related myocarditis"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "nivolumab",
+      "target_entity": "grade 3 or 4 treatment-related adverse events",
+      "confidence": 0.95,
+      "evidence": "grade 3 or 4 adverse events were reported in 55% of patients"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "ipilimumab",
+      "target_entity": "grade 3 or 4 treatment-related adverse events",
+      "confidence": 0.95,
+      "evidence": "grade 3 or 4 adverse events were reported in 55% of patients"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "nivolumab",
+      "target_entity": "brain metastases",
+      "confidence": 0.9,
+      "evidence": "Nivolumab combined with ipilimumab had clinically meaningful intracranial efficacy"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "ipilimumab",
+      "target_entity": "brain metastases",
+      "confidence": 0.9,
+      "evidence": "Nivolumab combined with ipilimumab had clinically meaningful intracranial efficacy"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T22:59:29.277330+00:00",
+  "error": null
+}

@@ -1,0 +1,299 @@
+{
+  "document_id": "patent_05_WO2018109607A1_pfizer_oral_glp1",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/06_glp1_landscape/docs/patent_05_WO2018109607A1_pfizer_oral_glp1.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "danuglipron",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "alias": "PF-06882961",
+        "route": "oral",
+        "scaffold": "benzimidazole"
+      },
+      "confidence": 0.98,
+      "context": "This patent covers the chemical class from which danuglipron (PF-06882961) was developed."
+    },
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide"
+      },
+      "confidence": 0.95,
+      "context": "Unlike peptide-based GLP-1 receptor agonists (semaglutide, liraglutide, tirzepatide)"
+    },
+    {
+      "name": "liraglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide"
+      },
+      "confidence": 0.95,
+      "context": "Unlike peptide-based GLP-1 receptor agonists (semaglutide, liraglutide, tirzepatide)"
+    },
+    {
+      "name": "tirzepatide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide"
+      },
+      "confidence": 0.95,
+      "context": "Unlike peptide-based GLP-1 receptor agonists (semaglutide, liraglutide, tirzepatide)"
+    },
+    {
+      "name": "orforglipron",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "alias": "LY3502970; OWL-833",
+        "molecular_formula": "C48H48F2N10O5",
+        "molecular_weight": "882.96",
+        "cas": "2212020-52-3",
+        "route": "oral"
+      },
+      "confidence": 0.98,
+      "context": "orforglipron (LY3502970, originally OWL-833), is being developed by Eli Lilly with the molecular formula C48H48F2N10O5 and molecular weight 882.96"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "GLP-1 receptor",
+        "family": "GPCR"
+      },
+      "confidence": 0.98,
+      "context": "small-molecule GLP-1 receptor agonists"
+    },
+    {
+      "name": "Gs protein",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "role": "G-protein alpha subunit"
+      },
+      "confidence": 0.9,
+      "context": "stabilizing an active receptor conformation that couples to Gs proteins"
+    },
+    {
+      "name": "cAMP",
+      "entity_type": "METABOLITE",
+      "attributes": {
+        "full_name": "cyclic adenosine monophosphate",
+        "role": "second messenger"
+      },
+      "confidence": 0.95,
+      "context": "drives intracellular cAMP accumulation"
+    },
+    {
+      "name": "DPP4",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "dipeptidyl peptidase-4",
+        "role": "protease"
+      },
+      "confidence": 0.95,
+      "context": "proteolytic degradation by enzymes such as dipeptidyl peptidase-4 (DPP-4)"
+    },
+    {
+      "name": "neutral endopeptidase",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "role": "protease"
+      },
+      "confidence": 0.85,
+      "context": "proteolytic degradation by enzymes such as dipeptidyl peptidase-4 (DPP-4) and neutral endopeptidases"
+    },
+    {
+      "name": "type 2 diabetes",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Diabetes Mellitus, Type 2"
+      },
+      "confidence": 0.98,
+      "context": "Danuglipron, derived from this chemical series, reached Phase 2/3 clinical trials for type 2 diabetes and obesity"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Obesity"
+      },
+      "confidence": 0.98,
+      "context": "reached Phase 2/3 clinical trials for type 2 diabetes and obesity"
+    },
+    {
+      "name": "GLP-1 receptor allosteric activation",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "binding_site": "transmembrane pocket",
+        "downstream": "Gs coupling, cAMP accumulation"
+      },
+      "confidence": 0.95,
+      "context": "activate the GLP-1 receptor through an allosteric mechanism. The compounds bind within a transmembrane pocket distinct from the orthosteric peptide-binding domain"
+    },
+    {
+      "name": "Pfizer Inc",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "assignee"
+      },
+      "confidence": 0.99,
+      "context": "Assignee: Pfizer Inc"
+    },
+    {
+      "name": "Eli Lilly",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "developer"
+      },
+      "confidence": 0.98,
+      "context": "being developed by Eli Lilly"
+    },
+    {
+      "name": "WO2018109607A1",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "type": "patent",
+        "title": "GLP-1 receptor agonists and uses thereof (small molecule)",
+        "filing_date": "2017-12-01",
+        "assignee": "Pfizer Inc"
+      },
+      "confidence": 0.99,
+      "context": "Patent ID: WO2018109607A1"
+    },
+    {
+      "name": "ACHIEVE program",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "Phase 3",
+        "compound": "orforglipron",
+        "sponsor": "Eli Lilly"
+      },
+      "confidence": 0.9,
+      "context": "demonstrated significant weight loss and HbA1c reduction in Phase 3 trials (ACHIEVE program)"
+    },
+    {
+      "name": "HbA1c",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "glycemic"
+      },
+      "confidence": 0.95,
+      "context": "demonstrated significant weight loss and HbA1c reduction"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "danuglipron",
+      "target_entity": "GLP1R",
+      "confidence": 0.95,
+      "evidence": "This patent covers the chemical class from which danuglipron (PF-06882961) was developed ... small-molecule GLP-1 receptor agonists"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "orforglipron",
+      "target_entity": "GLP1R",
+      "confidence": 0.95,
+      "evidence": "A separate oral small-molecule GLP-1 agonist, orforglipron"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP1R",
+      "confidence": 0.9,
+      "evidence": "peptide-based GLP-1 receptor agonists (semaglutide, liraglutide, tirzepatide)"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "liraglutide",
+      "target_entity": "GLP1R",
+      "confidence": 0.9,
+      "evidence": "peptide-based GLP-1 receptor agonists (semaglutide, liraglutide, tirzepatide)"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "tirzepatide",
+      "target_entity": "GLP1R",
+      "confidence": 0.85,
+      "evidence": "peptide-based GLP-1 receptor agonists (semaglutide, liraglutide, tirzepatide)"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "danuglipron",
+      "target_entity": "GLP-1 receptor allosteric activation",
+      "confidence": 0.95,
+      "evidence": "activate the GLP-1 receptor through an allosteric mechanism. The compounds bind within a transmembrane pocket distinct from the orthosteric peptide-binding domain"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "danuglipron",
+      "target_entity": "type 2 diabetes",
+      "confidence": 0.95,
+      "evidence": "Danuglipron ... reached Phase 2/3 clinical trials for type 2 diabetes and obesity"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "danuglipron",
+      "target_entity": "obesity",
+      "confidence": 0.95,
+      "evidence": "reached Phase 2/3 clinical trials for type 2 diabetes and obesity"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "orforglipron",
+      "target_entity": "type 2 diabetes",
+      "confidence": 0.9,
+      "evidence": "demonstrated significant weight loss and HbA1c reduction in Phase 3 trials"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "orforglipron",
+      "target_entity": "obesity",
+      "confidence": 0.9,
+      "evidence": "demonstrated significant weight loss and HbA1c reduction in Phase 3 trials"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "orforglipron",
+      "target_entity": "ACHIEVE program",
+      "confidence": 0.95,
+      "evidence": "Phase 3 trials (ACHIEVE program)"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "danuglipron",
+      "target_entity": "Pfizer Inc",
+      "confidence": 0.98,
+      "evidence": "Assignee: Pfizer Inc ... danuglipron (PF-06882961) was developed"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "orforglipron",
+      "target_entity": "Eli Lilly",
+      "confidence": 0.98,
+      "evidence": "orforglipron ... is being developed by Eli Lilly"
+    },
+    {
+      "relation_type": "DISCLOSED_IN",
+      "source_entity": "danuglipron",
+      "target_entity": "WO2018109607A1",
+      "confidence": 0.95,
+      "evidence": "This patent covers the chemical class from which danuglipron (PF-06882961) was developed"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "HbA1c",
+      "target_entity": "orforglipron",
+      "confidence": 0.8,
+      "evidence": "significant weight loss and HbA1c reduction in Phase 3 trials"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:08:59.779515+00:00",
+  "error": null
+}

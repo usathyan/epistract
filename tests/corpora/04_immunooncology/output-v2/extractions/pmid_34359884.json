@@ -1,0 +1,150 @@
+{
+  "document_id": "pmid_34359884",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/04_immunooncology/docs/pmid_34359884.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "Hepatocellular Carcinoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Carcinoma, Hepatocellular",
+        "aliases": [
+          "HCC",
+          "liver cancer"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "hepatocellular carcinoma (HCC), one of the most common and fatal cancers worldwide"
+    },
+    {
+      "name": "Hypoxia",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "description": "low oxygen level, hallmark of solid cancers"
+      },
+      "confidence": 0.98,
+      "context": "Hypoxia, low oxygen (O2) level, is a hallmark of solid cancers"
+    },
+    {
+      "name": "HIF1A",
+      "entity_type": "GENE",
+      "attributes": {
+        "hgnc_symbol": "HIF1A",
+        "full_name": "Hypoxia-Inducible Factor 1 alpha Subunit"
+      },
+      "confidence": 0.95,
+      "context": "MeSH Terms: ... Hypoxia-Inducible Factor 1, alpha Subunit"
+    },
+    {
+      "name": "hypoxia-inducible factor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "transcription factor",
+        "aliases": [
+          "HIF"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "the roles of hypoxia-inducible factor (HIF)-mediated metabolic reprogramming in drug resistance in HCC"
+    },
+    {
+      "name": "HIF-mediated metabolic reprogramming",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "metabolic reprogramming",
+        "target": "metabolic enzymes"
+      },
+      "confidence": 0.9,
+      "context": "HIF-mediated metabolic reprogramming in drug resistance in HCC"
+    },
+    {
+      "name": "Drug Resistance, Neoplasm",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "mesh_term": "Drug Resistance, Neoplasm"
+      },
+      "confidence": 0.95,
+      "context": "Hypoxia contributes to drug resistance in cancer through various molecular mechanisms"
+    },
+    {
+      "name": "Immune Checkpoint Inhibitors",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "checkpoint blockade",
+        "mesh_term": "Immune Checkpoint Inhibitors"
+      },
+      "confidence": 0.9,
+      "context": "MeSH Terms: ... Immune Checkpoint Inhibitors"
+    },
+    {
+      "name": "Antineoplastic Agents",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "antineoplastic",
+        "mesh_term": "Antineoplastic Agents"
+      },
+      "confidence": 0.85,
+      "context": "MeSH Terms: Antibodies, Monoclonal, Humanized, Antineoplastic Agents"
+    },
+    {
+      "name": "Monoclonal Antibodies, Humanized",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "humanized monoclonal antibody",
+        "mesh_term": "Antibodies, Monoclonal, Humanized"
+      },
+      "confidence": 0.85,
+      "context": "MeSH Terms: Antibodies, Monoclonal, Humanized"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "Hypoxia",
+      "target_entity": "Drug Resistance, Neoplasm",
+      "confidence": 0.95,
+      "evidence": "Hypoxia contributes to drug resistance in cancer through various molecular mechanisms"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "Hypoxia",
+      "target_entity": "Hepatocellular Carcinoma",
+      "confidence": 0.95,
+      "evidence": "Hypoxia, low oxygen (O2) level, is a hallmark of solid cancers, especially hepatocellular carcinoma (HCC)"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "HIF1A",
+      "target_entity": "hypoxia-inducible factor",
+      "confidence": 0.9,
+      "evidence": "Hypoxia-Inducible Factor 1, alpha Subunit"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "hypoxia-inducible factor",
+      "target_entity": "HIF-mediated metabolic reprogramming",
+      "confidence": 0.95,
+      "evidence": "the roles of hypoxia-inducible factor (HIF)-mediated metabolic reprogramming in drug resistance in HCC"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "HIF-mediated metabolic reprogramming",
+      "target_entity": "Drug Resistance, Neoplasm",
+      "confidence": 0.9,
+      "evidence": "HIF-mediated metabolic reprogramming in drug resistance in HCC"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "Immune Checkpoint Inhibitors",
+      "target_entity": "Hepatocellular Carcinoma",
+      "confidence": 0.7,
+      "evidence": "MeSH Terms: ... Carcinoma, Hepatocellular ... Immune Checkpoint Inhibitors"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T22:59:28.789249+00:00",
+  "error": null
+}

@@ -1,0 +1,236 @@
+{
+  "document_id": "pmid_34607583",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/02_kras_g12c_landscape/docs/pmid_34607583.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "sotorasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "aliases": [
+          "AMG 510"
+        ],
+        "mechanism": "irreversible covalent inhibitor"
+      },
+      "confidence": 0.98,
+      "context": "Two such inhibitors, sotorasib (AMG 510) and adagrasib (MRTX849), were recently evaluated in phase I-III trials"
+    },
+    {
+      "name": "adagrasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "aliases": [
+          "MRTX849"
+        ],
+        "mechanism": "irreversible covalent inhibitor"
+      },
+      "confidence": 0.98,
+      "context": "sotorasib (AMG 510) and adagrasib (MRTX849), were recently evaluated in phase I-III trials"
+    },
+    {
+      "name": "KRAS",
+      "entity_type": "GENE",
+      "attributes": {
+        "family": "RAS",
+        "role": "oncogene"
+      },
+      "confidence": 0.98,
+      "context": "gain-of-function mutations in RAS genes (HRAS, NRAS, and KRAS)"
+    },
+    {
+      "name": "HRAS",
+      "entity_type": "GENE",
+      "attributes": {
+        "family": "RAS"
+      },
+      "confidence": 0.98,
+      "context": "RAS genes (HRAS, NRAS, and KRAS)"
+    },
+    {
+      "name": "NRAS",
+      "entity_type": "GENE",
+      "attributes": {
+        "family": "RAS"
+      },
+      "confidence": 0.98,
+      "context": "RAS genes (HRAS, NRAS, and KRAS)"
+    },
+    {
+      "name": "KRAS G12C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "type": "missense",
+        "notation": "p.G12C"
+      },
+      "confidence": 0.98,
+      "context": "the KRAS-G12C variant contains a druggable pocket below the switch-II loop region"
+    },
+    {
+      "name": "non-small cell lung cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "NSCLC"
+      },
+      "confidence": 0.98,
+      "context": "evaluated in phase I-III trials for the treatment of non-small cell lung cancer with KRAS-G12C mutations"
+    },
+    {
+      "name": "switch-II loop pocket",
+      "entity_type": "PROTEIN_DOMAIN",
+      "attributes": {
+        "protein": "KRAS G12C",
+        "description": "druggable pocket below switch-II loop region"
+      },
+      "confidence": 0.92,
+      "context": "the KRAS-G12C variant contains a druggable pocket below the switch-II loop region"
+    },
+    {
+      "name": "irreversible covalent KRAS G12C inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "type": "covalent inhibition",
+        "target": "KRAS G12C"
+      },
+      "confidence": 0.95,
+      "context": "it has become possible to design irreversible covalent inhibitors for the variant"
+    },
+    {
+      "name": "KRAS signaling pathway",
+      "entity_type": "PATHWAY",
+      "attributes": {
+        "description": "oncogenic KRAS network including upstream regulators and downstream effectors"
+      },
+      "confidence": 0.9,
+      "context": "indirect and direct approaches to shut down the oncogenic KRAS network"
+    },
+    {
+      "name": "Molecular cancer",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "year": "2021",
+        "pmid": "34607583",
+        "title": "Oncogenic KRAS blockade therapy: renewed enthusiasm and persistent challenges",
+        "authors": [
+          "Tang Daolin",
+          "Kroemer Guido",
+          "Kang Rui"
+        ]
+      },
+      "confidence": 0.99,
+      "context": "Journal: Molecular cancer (2021) PMID: 34607583"
+    },
+    {
+      "name": "primary or secondary resistance to KRAS-G12C blockade",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "description": "resistance mechanisms to KRAS G12C inhibitors"
+      },
+      "confidence": 0.9,
+      "context": "strategies for overcoming primary or secondary resistance to KRAS-G12C blockade"
+    },
+    {
+      "name": "cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "description": "human cancers with RAS mutations"
+      },
+      "confidence": 0.95,
+      "context": "Across a broad range of human cancers, gain-of-function mutations in RAS genes"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.98,
+      "evidence": "sotorasib (AMG 510) and adagrasib (MRTX849), were recently evaluated in phase I-III trials for the treatment of non-small cell lung cancer with KRAS-G12C mutations"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.98,
+      "evidence": "sotorasib (AMG 510) and adagrasib (MRTX849), were recently evaluated in phase I-III trials for the treatment of non-small cell lung cancer with KRAS-G12C mutations"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "sotorasib",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.95,
+      "evidence": "evaluated in phase I-III trials for the treatment of non-small cell lung cancer with KRAS-G12C mutations"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "adagrasib",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.95,
+      "evidence": "evaluated in phase I-III trials for the treatment of non-small cell lung cancer with KRAS-G12C mutations"
+    },
+    {
+      "relation_type": "HAS_VARIANT",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.98,
+      "evidence": "the KRAS-G12C variant contains a druggable pocket"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS",
+      "target_entity": "cancer",
+      "confidence": 0.95,
+      "evidence": "gain-of-function mutations in RAS genes (HRAS, NRAS, and KRAS) lead to constitutive activity of oncoproteins responsible for tumorigenesis and cancer progression"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "HRAS",
+      "target_entity": "cancer",
+      "confidence": 0.9,
+      "evidence": "gain-of-function mutations in RAS genes (HRAS, NRAS, and KRAS) lead to constitutive activity of oncoproteins responsible for tumorigenesis"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "NRAS",
+      "target_entity": "cancer",
+      "confidence": 0.9,
+      "evidence": "gain-of-function mutations in RAS genes (HRAS, NRAS, and KRAS) lead to constitutive activity of oncoproteins responsible for tumorigenesis"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.95,
+      "evidence": "non-small cell lung cancer with KRAS-G12C mutations"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "sotorasib",
+      "target_entity": "irreversible covalent KRAS G12C inhibition",
+      "confidence": 0.95,
+      "evidence": "irreversible covalent inhibitors for the variant with improved potency, selectivity and bioavailability"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "adagrasib",
+      "target_entity": "irreversible covalent KRAS G12C inhibition",
+      "confidence": 0.95,
+      "evidence": "irreversible covalent inhibitors for the variant"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "KRAS",
+      "target_entity": "KRAS signaling pathway",
+      "confidence": 0.92,
+      "evidence": "indirect and direct approaches to shut down the oncogenic KRAS network"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T20:21:40.940268+00:00",
+  "error": null
+}

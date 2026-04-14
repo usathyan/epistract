@@ -1,0 +1,194 @@
+{
+  "document_id": "pmid_35837349",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/02_kras_g12c_landscape/docs/pmid_35837349.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "sotorasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "aliases": [
+          "AMG510"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "KRAS G12C inhibitors, sotorasib (AMG510) and adagrasib (MRTX849)"
+    },
+    {
+      "name": "adagrasib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "aliases": [
+          "MRTX849"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "KRAS G12C inhibitors, sotorasib (AMG510) and adagrasib (MRTX849)"
+    },
+    {
+      "name": "KRAS",
+      "entity_type": "GENE",
+      "confidence": 0.98,
+      "context": "Identifying mutations in the KRAS gene"
+    },
+    {
+      "name": "EGFR",
+      "entity_type": "GENE",
+      "confidence": 0.95,
+      "context": "increased epidermal growth factor receptor (EGFR) signaling"
+    },
+    {
+      "name": "EGFR protein",
+      "entity_type": "PROTEIN",
+      "confidence": 0.9,
+      "context": "epidermal growth factor receptor (EGFR) signaling"
+    },
+    {
+      "name": "KRAS G12C",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "gene": "KRAS",
+        "hgvs_p": "p.Gly12Cys"
+      },
+      "confidence": 0.98,
+      "context": "tumor types harboring the KRAS G12C mutation"
+    },
+    {
+      "name": "colorectal cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "aliases": [
+          "CRC"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "treatment of colorectal cancer"
+    },
+    {
+      "name": "non-small cell lung cancer",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "aliases": [
+          "NSCLC"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "those with non-small cell lung cancer (NSCLC)"
+    },
+    {
+      "name": "KRAS G12C inhibition",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "confidence": 0.9,
+      "context": "KRAS G12C inhibitors, sotorasib (AMG510) and adagrasib (MRTX849)"
+    },
+    {
+      "name": "EGFR signaling",
+      "entity_type": "PATHWAY",
+      "confidence": 0.9,
+      "context": "rapid treatment-induced resistance through increased epidermal growth factor receptor (EGFR) signaling"
+    },
+    {
+      "name": "EGFR-mediated resistance to KRAS G12C inhibitors",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "confidence": 0.85,
+      "context": "rapid treatment-induced resistance through increased epidermal growth factor receptor (EGFR) signaling"
+    },
+    {
+      "name": "OncoTargets and therapy",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "year": "2022",
+        "pmid": "35837349"
+      },
+      "confidence": 0.98,
+      "context": "Journal: OncoTargets and therapy (2022) PMID: 35837349"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.98,
+      "evidence": "KRAS G12C inhibitors, sotorasib (AMG510) and adagrasib (MRTX849)"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS G12C",
+      "confidence": 0.98,
+      "evidence": "KRAS G12C inhibitors, sotorasib (AMG510) and adagrasib (MRTX849)"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "sotorasib",
+      "target_entity": "KRAS",
+      "confidence": 0.95,
+      "evidence": "KRAS G12C inhibitors, sotorasib (AMG510)"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "adagrasib",
+      "target_entity": "KRAS",
+      "confidence": 0.95,
+      "evidence": "KRAS G12C inhibitors... adagrasib (MRTX849)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "sotorasib",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.8,
+      "evidence": "patients with colorectal cancer (CRC) derive less benefit compared to those with non-small cell lung cancer (NSCLC)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "adagrasib",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.75,
+      "evidence": "patients with colorectal cancer (CRC) derive less benefit compared to those with non-small cell lung cancer (NSCLC)"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "colorectal cancer",
+      "confidence": 0.95,
+      "evidence": "KRAS G12C-mutated CRC"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS G12C",
+      "target_entity": "non-small cell lung cancer",
+      "confidence": 0.9,
+      "evidence": "tumor types harboring the KRAS G12C mutation... NSCLC"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "KRAS",
+      "target_entity": "colorectal cancer",
+      "confidence": 0.95,
+      "evidence": "Identifying mutations in the KRAS gene has become increasingly important in the treatment of colorectal cancer"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "EGFR",
+      "target_entity": "EGFR protein",
+      "confidence": 0.9,
+      "evidence": "epidermal growth factor receptor (EGFR) signaling"
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "EGFR protein",
+      "target_entity": "EGFR signaling",
+      "confidence": 0.9,
+      "evidence": "increased epidermal growth factor receptor (EGFR) signaling"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T20:21:48.787287+00:00",
+  "error": null
+}

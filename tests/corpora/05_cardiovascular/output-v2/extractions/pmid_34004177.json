@@ -1,0 +1,120 @@
+{
+  "document_id": "pmid_34004177",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/05_cardiovascular/docs/pmid_34004177.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "mavacamten",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "small molecule",
+        "class": "cardiac myosin inhibitor",
+        "first_in_class": true
+      },
+      "confidence": 0.98,
+      "context": "mavacamten, a first-in-class cardiac myosin inhibitor"
+    },
+    {
+      "name": "obstructive hypertrophic cardiomyopathy",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.98,
+      "context": "symptomatic obstructive hypertrophic cardiomyopathy"
+    },
+    {
+      "name": "cardiac myosin",
+      "entity_type": "PROTEIN",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "cardiac myosin inhibitor"
+    },
+    {
+      "name": "EXPLORER-HCM",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT03470545",
+        "phase": "3",
+        "design": "randomised, double-blind, placebo-controlled",
+        "n_enrolled": 251
+      },
+      "confidence": 0.99,
+      "context": "EXPLORER-HCM, a phase 3, double-blind, randomised, placebo-controlled trial"
+    },
+    {
+      "name": "NCT03470545",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {},
+      "confidence": 0.99,
+      "context": "registered with ClinicalTrials.gov, NCT03470545"
+    },
+    {
+      "name": "Kansas City Cardiomyopathy Questionnaire",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "type": "patient-reported outcome",
+        "abbreviation": "KCCQ"
+      },
+      "confidence": 0.9,
+      "context": "Kansas City Cardiomyopathy Questionnaire (KCCQ), a well validated disease-specific measure"
+    },
+    {
+      "name": "MyoKardia",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "parent": "Bristol Myers Squibb"
+      },
+      "confidence": 0.98,
+      "context": "MyoKardia, a Bristol Myers Squibb company"
+    },
+    {
+      "name": "Bristol Myers Squibb",
+      "entity_type": "ORGANIZATION",
+      "attributes": {},
+      "confidence": 0.98,
+      "context": "MyoKardia, a Bristol Myers Squibb company"
+    },
+    {
+      "name": "New York Heart Association class II-III",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "New York Heart Association class II-III"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "mavacamten",
+      "target_entity": "cardiac myosin",
+      "confidence": 0.98,
+      "evidence": "mavacamten, a first-in-class cardiac myosin inhibitor"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "mavacamten",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.95,
+      "evidence": "Mavacamten for treatment of symptomatic obstructive hypertrophic cardiomyopathy"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "mavacamten",
+      "target_entity": "EXPLORER-HCM",
+      "confidence": 0.99,
+      "evidence": "randomly assigned (1:1) to mavacamten or placebo"
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "Kansas City Cardiomyopathy Questionnaire",
+      "target_entity": "obstructive hypertrophic cardiomyopathy",
+      "confidence": 0.8,
+      "evidence": "KCCQ, a well validated disease-specific measure"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:02:30.677972+00:00",
+  "error": null
+}

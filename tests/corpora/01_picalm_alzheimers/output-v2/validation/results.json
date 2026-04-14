@@ -1,0 +1,909 @@
+{
+  "generated_at": "2026-04-13T19:08:18.057524+00:00",
+  "output_dir": "tests/corpora/01_picalm_alzheimers/output-v2",
+  "stats": {
+    "files_scanned": 15,
+    "total_matches": 56,
+    "valid": 0,
+    "invalid": 56,
+    "unvalidated": 0,
+    "found": 0,
+    "by_type": {
+      "SMILES": 56
+    },
+    "rdkit_available": true,
+    "biopython_available": true,
+    "enrichment": {
+      "entities_added": 0,
+      "relations_added": 0
+    }
+  },
+  "files": [
+    {
+      "file": "pmid_21167244.json",
+      "document_id": "pmid_21167244",
+      "matches_found": 2,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "ubiquitin/proteasome",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "the ubiquitin/proteasome system and the immune network",
+          "validation": {
+            "valid": false,
+            "input": "ubiquitin/proteasome",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_21167244.json",
+          "source_field": "entities[20].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(apolipoprotein",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "major risk promoting genes in Alzheimer's disease (apolipoprotein E",
+          "validation": {
+            "valid": false,
+            "input": "(apolipoprotein",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_21167244.json",
+          "source_field": "relations[2].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_21300948.json",
+      "document_id": "pmid_21300948",
+      "matches_found": 6,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(PICALM)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "hatidylinositol binding clathrin assembly protein (PICALM)",
+          "validation": {
+            "valid": false,
+            "input": "(PICALM)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_21300948.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(PICALM)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "hatidylinositol binding clathrin assembly protein (PICALM)",
+          "validation": {
+            "valid": false,
+            "input": "(PICALM)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_21300948.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(CSF)-Abeta42",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "cerebrospinal fluid (CSF)-Abeta42",
+          "validation": {
+            "valid": false,
+            "input": "(CSF)-Abeta42",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_21300948.json",
+          "source_field": "entities[10].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(PICALM)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "hatidylinositol binding clathrin assembly protein (PICALM)",
+          "validation": {
+            "valid": false,
+            "input": "(PICALM)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_21300948.json",
+          "source_field": "relations[2].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(CSF)-Abeta42",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "impact of these markers on cerebrospinal fluid (CSF)-Abeta42 and total-tau protein levels",
+          "validation": {
+            "valid": false,
+            "input": "(CSF)-Abeta42",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_21300948.json",
+          "source_field": "relations[6].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(CSF)-Abeta42",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "impact of these markers on cerebrospinal fluid (CSF)-Abeta42 and total-tau protein levels",
+          "validation": {
+            "valid": false,
+            "input": "(CSF)-Abeta42",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_21300948.json",
+          "source_field": "relations[7].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_24067654.json",
+      "document_id": "pmid_24067654",
+      "matches_found": 7,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(PICALM)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "sitol clathrin assembly lymphoid-myeloid leukemia (PICALM)",
+          "validation": {
+            "valid": false,
+            "input": "(PICALM)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_24067654.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(APP-CTF)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "oid precursor protein cleaved C-terminal fragment (APP-CTF)",
+          "validation": {
+            "valid": false,
+            "input": "(APP-CTF)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_24067654.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(APP-CTF)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "oid precursor protein cleaved C-terminal fragment (APP-CTF)",
+          "validation": {
+            "valid": false,
+            "input": "(APP-CTF)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_24067654.json",
+          "source_field": "entities[7].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(APP-CTF)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "oid precursor protein cleaved C-terminal fragment (APP-CTF) degradation",
+          "validation": {
+            "valid": false,
+            "input": "(APP-CTF)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_24067654.json",
+          "source_field": "relations[3].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "AP-2/PICALM",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "AP-2/PICALM complex functions as an autophagic cargo receptor",
+          "validation": {
+            "valid": false,
+            "input": "AP-2/PICALM",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_24067654.json",
+          "source_field": "relations[5].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "AP-2/PICALM",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "AP-2/PICALM complex functions as an autophagic cargo receptor",
+          "validation": {
+            "valid": false,
+            "input": "AP-2/PICALM",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_24067654.json",
+          "source_field": "relations[6].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(APP-CTF)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "oid precursor protein cleaved C-terminal fragment (APP-CTF)",
+          "validation": {
+            "valid": false,
+            "input": "(APP-CTF)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_24067654.json",
+          "source_field": "relations[12].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_24729694.json",
+      "document_id": "pmid_24729694",
+      "matches_found": 1,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(PICALM)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "hatidylinositol binding clathrin assembly protein (PICALM)",
+          "validation": {
+            "valid": false,
+            "input": "(PICALM)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_24729694.json",
+          "source_field": "entities[10].context"
+        }
+      ]
+    },
+    {
+      "file": "pmid_24951455.json",
+      "document_id": "pmid_24951455",
+      "matches_found": 0,
+      "results": []
+    },
+    {
+      "file": "pmid_25186232.json",
+      "document_id": "pmid_25186232",
+      "matches_found": 4,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(PICALM)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "hatidylinositol-binding clathrin assembly protein (PICALM) gene as a susceptibility locus",
+          "validation": {
+            "valid": false,
+            "input": "(PICALM)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_25186232.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(PICALM)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "hatidylinositol-binding clathrin assembly protein (PICALM)",
+          "validation": {
+            "valid": false,
+            "input": "(PICALM)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_25186232.json",
+          "source_field": "entities[3].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(PICALM)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "hatidylinositol-binding clathrin assembly protein (PICALM)",
+          "validation": {
+            "valid": false,
+            "input": "(PICALM)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_25186232.json",
+          "source_field": "entities[13].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(PICALM)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "hatidylinositol-binding clathrin assembly protein (PICALM) gene",
+          "validation": {
+            "valid": false,
+            "input": "(PICALM)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_25186232.json",
+          "source_field": "relations[9].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_25311924.json",
+      "document_id": "pmid_25311924",
+      "matches_found": 14,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(PICALM)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "hatidylinositol-binding clathrin assembly protein (PICALM)",
+          "validation": {
+            "valid": false,
+            "input": "(PICALM)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_25311924.json",
+          "source_field": "entities[12].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "MS4A4/MS4A6",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "MS4A4/MS4A6",
+          "validation": {
+            "valid": false,
+            "input": "MS4A4/MS4A6",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_25311924.json",
+          "source_field": "entities[15].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "MS4A4/MS4A6",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "MS4A4/MS4A6",
+          "validation": {
+            "valid": false,
+            "input": "MS4A4/MS4A6",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_25311924.json",
+          "source_field": "entities[16].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "MS4A4/MS4A6",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "MS4A4/MS4A6, ABCA7",
+          "validation": {
+            "valid": false,
+            "input": "MS4A4/MS4A6",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_25311924.json",
+          "source_field": "entities[17].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "HLA-DRB5/DRB1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "HLA-DRB5/DRB1",
+          "validation": {
+            "valid": false,
+            "input": "HLA-DRB5/DRB1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_25311924.json",
+          "source_field": "entities[19].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "HLA-DRB5/DRB1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "HLA-DRB5/DRB1",
+          "validation": {
+            "valid": false,
+            "input": "HLA-DRB5/DRB1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_25311924.json",
+          "source_field": "entities[20].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "HLA-DRB5/DRB1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "HLA-DRB5/DRB1, PTK2B",
+          "validation": {
+            "valid": false,
+            "input": "HLA-DRB5/DRB1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_25311924.json",
+          "source_field": "entities[21].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(PICALM)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "hatidylinositol-binding clathrin assembly protein (PICALM)",
+          "validation": {
+            "valid": false,
+            "input": "(PICALM)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_25311924.json",
+          "source_field": "relations[8].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "MS4A4/MS4A6",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "EPHA1, MS4A4/MS4A6",
+          "validation": {
+            "valid": false,
+            "input": "MS4A4/MS4A6",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_25311924.json",
+          "source_field": "relations[11].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "MS4A4/MS4A6",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "EPHA1, MS4A4/MS4A6",
+          "validation": {
+            "valid": false,
+            "input": "MS4A4/MS4A6",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_25311924.json",
+          "source_field": "relations[12].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "MS4A4/MS4A6",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "MS4A4/MS4A6, ABCA7",
+          "validation": {
+            "valid": false,
+            "input": "MS4A4/MS4A6",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_25311924.json",
+          "source_field": "relations[13].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "HLA-DRB5/DRB1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "SORL1, HLA-DRB5/DRB1",
+          "validation": {
+            "valid": false,
+            "input": "HLA-DRB5/DRB1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_25311924.json",
+          "source_field": "relations[15].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "HLA-DRB5/DRB1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "HLA-DRB5/DRB1",
+          "validation": {
+            "valid": false,
+            "input": "HLA-DRB5/DRB1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_25311924.json",
+          "source_field": "relations[16].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "HLA-DRB5/DRB1",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "HLA-DRB5/DRB1, PTK2B",
+          "validation": {
+            "valid": false,
+            "input": "HLA-DRB5/DRB1",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_25311924.json",
+          "source_field": "relations[17].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_26611835.json",
+      "document_id": "pmid_26611835",
+      "matches_found": 2,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(PICALM)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "hatidylinositol binding clathrin assembly protein (PICALM)",
+          "validation": {
+            "valid": false,
+            "input": "(PICALM)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_26611835.json",
+          "source_field": "entities[2].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(PICALM)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "nts were associated with AD. The SNP of rs3851179 (PICALM)",
+          "validation": {
+            "valid": false,
+            "input": "(PICALM)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_26611835.json",
+          "source_field": "relations[9].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_31385771.json",
+      "document_id": "pmid_31385771",
+      "matches_found": 8,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(rs3851179",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "es have examined the roles of three polymorphisms (rs3851179, rs541458, and rs592297) of the PICALM gene in su",
+          "validation": {
+            "valid": false,
+            "input": "(rs3851179",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31385771.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "rs592297)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": " of three polymorphisms (rs3851179, rs541458, and rs592297) of the PICALM gene in susceptibility to Alzheimer",
+          "validation": {
+            "valid": false,
+            "input": "rs592297)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31385771.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(rs3851179",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "three polymorphisms (rs3851179, rs541458, and rs592297) of the PICALM gene",
+          "validation": {
+            "valid": false,
+            "input": "(rs3851179",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31385771.json",
+          "source_field": "entities[3].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "rs592297)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "three polymorphisms (rs3851179, rs541458, and rs592297) of the PICALM gene",
+          "validation": {
+            "valid": false,
+            "input": "rs592297)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31385771.json",
+          "source_field": "entities[3].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(rs3851179",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "three polymorphisms (rs3851179, rs541458, and rs592297) of the PICALM gene",
+          "validation": {
+            "valid": false,
+            "input": "(rs3851179",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31385771.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "rs592297)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "three polymorphisms (rs3851179, rs541458, and rs592297) of the PICALM gene",
+          "validation": {
+            "valid": false,
+            "input": "rs592297)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31385771.json",
+          "source_field": "entities[4].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(rs3851179",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "three polymorphisms (rs3851179, rs541458, and rs592297) of the PICALM gene",
+          "validation": {
+            "valid": false,
+            "input": "(rs3851179",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31385771.json",
+          "source_field": "entities[5].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "rs592297)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "three polymorphisms (rs3851179, rs541458, and rs592297) of the PICALM gene",
+          "validation": {
+            "valid": false,
+            "input": "rs592297)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_31385771.json",
+          "source_field": "entities[5].context"
+        }
+      ]
+    },
+    {
+      "file": "pmid_33453937.json",
+      "document_id": "pmid_33453937",
+      "matches_found": 0,
+      "results": []
+    },
+    {
+      "file": "pmid_34130600.json",
+      "document_id": "pmid_34130600",
+      "matches_found": 1,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "WDFY3/ALFY",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "WDFY3/ALFY",
+          "validation": {
+            "valid": false,
+            "input": "WDFY3/ALFY",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_34130600.json",
+          "source_field": "entities[52].context"
+        }
+      ]
+    },
+    {
+      "file": "pmid_36552756.json",
+      "document_id": "pmid_36552756",
+      "matches_found": 4,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(Phosphatidylinositol",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "PICALM (Phosphatidylinositol binding clathrin-assembly protein) gene as the mo",
+          "validation": {
+            "valid": false,
+            "input": "(Phosphatidylinositol",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_36552756.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "protein)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "M (Phosphatidylinositol binding clathrin-assembly protein) gene as the most significant genetic susceptibili",
+          "validation": {
+            "valid": false,
+            "input": "protein)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_36552756.json",
+          "source_field": "entities[0].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(Phosphatidylinositol",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "PICALM (Phosphatidylinositol binding clathrin-assembly protein) gene",
+          "validation": {
+            "valid": false,
+            "input": "(Phosphatidylinositol",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_36552756.json",
+          "source_field": "relations[0].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "protein)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "M (Phosphatidylinositol binding clathrin-assembly protein) gene",
+          "validation": {
+            "valid": false,
+            "input": "protein)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_36552756.json",
+          "source_field": "relations[0].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_38915309.json",
+      "document_id": "pmid_38915309",
+      "matches_found": 6,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(ITSN1-L)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ITSN1-long (ITSN1-L) was decreased in the FC of males and HP of female",
+          "validation": {
+            "valid": false,
+            "input": "(ITSN1-L)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38915309.json",
+          "source_field": "entities[6].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(PICALM)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ylinositol Binding Clathrin Assembly Protein gene (PICALM)",
+          "validation": {
+            "valid": false,
+            "input": "(PICALM)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38915309.json",
+          "source_field": "entities[8].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(miRNAs)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "candidate AD microRNAs (miRNAs) in human cerebrospinal fluid (CSF)",
+          "validation": {
+            "valid": false,
+            "input": "(miRNAs)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38915309.json",
+          "source_field": "entities[17].context"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(PICALM)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "ylinositol Binding Clathrin Assembly Protein gene (PICALM)",
+          "validation": {
+            "valid": false,
+            "input": "(PICALM)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38915309.json",
+          "source_field": "relations[4].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(ITSN1-L)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "in AD, ITSN1-long (ITSN1-L) was decreased in the FC of males and HP of female",
+          "validation": {
+            "valid": false,
+            "input": "(ITSN1-L)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38915309.json",
+          "source_field": "relations[12].evidence"
+        },
+        {
+          "pattern_type": "SMILES",
+          "value": "(miRNAs)",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "iously identified a set of candidate AD microRNAs (miRNAs) in human cerebrospinal fluid (CSF)",
+          "validation": {
+            "valid": false,
+            "input": "(miRNAs)",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_38915309.json",
+          "source_field": "relations[15].evidence"
+        }
+      ]
+    },
+    {
+      "file": "pmid_40903578.json",
+      "document_id": "pmid_40903578",
+      "matches_found": 1,
+      "results": [
+        {
+          "pattern_type": "SMILES",
+          "value": "(iPS)-cell-derived",
+          "entity_type": "CHEMICAL_STRUCTURE",
+          "context": "human induced pluripotent stem (iPS)-cell-derived neurons, astrocytes and microglia",
+          "validation": {
+            "valid": false,
+            "input": "(iPS)-cell-derived",
+            "error": "Invalid SMILES"
+          },
+          "status": "invalid",
+          "source_file": "pmid_40903578.json",
+          "source_field": "entities[12].context"
+        }
+      ]
+    },
+    {
+      "file": "pmid_41315858.json",
+      "document_id": "pmid_41315858",
+      "matches_found": 0,
+      "results": []
+    }
+  ]
+}

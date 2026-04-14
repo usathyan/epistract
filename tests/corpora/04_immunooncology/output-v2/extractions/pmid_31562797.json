@@ -1,0 +1,213 @@
+{
+  "document_id": "pmid_31562797",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/04_immunooncology/docs/pmid_31562797.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "nivolumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "PD-1"
+      },
+      "confidence": 0.99,
+      "context": "Nivolumab plus ipilimumab or nivolumab alone resulted in longer progression-free and overall survival than ipilimumab alone"
+    },
+    {
+      "name": "ipilimumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "CTLA-4"
+      },
+      "confidence": 0.99,
+      "context": "Nivolumab plus ipilimumab or nivolumab alone resulted in longer progression-free and overall survival than ipilimumab alone"
+    },
+    {
+      "name": "advanced melanoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Melanoma"
+      },
+      "confidence": 0.99,
+      "context": "patients with advanced melanoma"
+    },
+    {
+      "name": "melanoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh": "Melanoma"
+      },
+      "confidence": 0.99,
+      "context": "MeSH Terms: ... Melanoma"
+    },
+    {
+      "name": "PDCD1",
+      "entity_type": "GENE",
+      "attributes": {
+        "protein": "PD-1",
+        "hgnc": "PDCD1"
+      },
+      "confidence": 0.85,
+      "context": "nivolumab (anti-PD-1 antibody implied by drug class)"
+    },
+    {
+      "name": "CTLA4",
+      "entity_type": "GENE",
+      "attributes": {
+        "protein": "CTLA-4",
+        "hgnc": "CTLA4"
+      },
+      "confidence": 0.85,
+      "context": "ipilimumab (anti-CTLA-4 antibody implied by drug class)"
+    },
+    {
+      "name": "CheckMate 067",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT01844505",
+        "phase": "3",
+        "design": "randomized"
+      },
+      "confidence": 0.99,
+      "context": "CheckMate 067 ClinicalTrials.gov number, NCT01844505"
+    },
+    {
+      "name": "NCT01844505",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT01844505"
+      },
+      "confidence": 0.99,
+      "context": "ClinicalTrials.gov number, NCT01844505"
+    },
+    {
+      "name": "Bristol-Myers Squibb",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "sponsor"
+      },
+      "confidence": 0.99,
+      "context": "Funded by Bristol-Myers Squibb and others"
+    },
+    {
+      "name": "PD-1 blockade",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "nivolumab (PD-1 immune checkpoint inhibitor)"
+    },
+    {
+      "name": "CTLA-4 blockade",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "ipilimumab (CTLA-4 immune checkpoint inhibitor)"
+    },
+    {
+      "name": "progression-free survival",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "type": "clinical endpoint"
+      },
+      "confidence": 0.95,
+      "context": "The two primary end points were progression-free survival and overall survival"
+    },
+    {
+      "name": "overall survival",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "type": "clinical endpoint"
+      },
+      "confidence": 0.95,
+      "context": "median overall survival was more than 60.0 months"
+    },
+    {
+      "name": "mutation",
+      "entity_type": "SEQUENCE_VARIANT",
+      "attributes": {
+        "source": "mesh"
+      },
+      "confidence": 0.6,
+      "context": "MeSH Terms: ... Mutation"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "nivolumab",
+      "target_entity": "CheckMate 067",
+      "confidence": 0.99,
+      "evidence": "Nivolumab plus ipilimumab or nivolumab alone... CheckMate 067 ClinicalTrials.gov number, NCT01844505"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "ipilimumab",
+      "target_entity": "CheckMate 067",
+      "confidence": 0.99,
+      "evidence": "ipilimumab (3 mg per kilogram every 3 weeks for four doses)... CheckMate 067"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "nivolumab",
+      "target_entity": "advanced melanoma",
+      "confidence": 0.95,
+      "evidence": "patients with previously untreated advanced melanoma to receive... nivolumab"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "ipilimumab",
+      "target_entity": "advanced melanoma",
+      "confidence": 0.95,
+      "evidence": "patients with previously untreated advanced melanoma to receive... ipilimumab"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "nivolumab",
+      "target_entity": "PDCD1",
+      "confidence": 0.9,
+      "evidence": "nivolumab is an anti-PD-1 monoclonal antibody"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "ipilimumab",
+      "target_entity": "CTLA4",
+      "confidence": 0.9,
+      "evidence": "ipilimumab is an anti-CTLA-4 monoclonal antibody"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "PDCD1",
+      "target_entity": "PD-1 blockade",
+      "confidence": 0.7,
+      "evidence": "PDCD1 encodes PD-1 which is blocked by nivolumab"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "CTLA4",
+      "target_entity": "CTLA-4 blockade",
+      "confidence": 0.7,
+      "evidence": "CTLA4 encodes CTLA-4 which is blocked by ipilimumab"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "nivolumab",
+      "target_entity": "NCT01844505",
+      "confidence": 0.99,
+      "evidence": "CheckMate 067 ClinicalTrials.gov number, NCT01844505"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "ipilimumab",
+      "target_entity": "NCT01844505",
+      "confidence": 0.99,
+      "evidence": "CheckMate 067 ClinicalTrials.gov number, NCT01844505"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T22:59:08.707971+00:00",
+  "error": null
+}

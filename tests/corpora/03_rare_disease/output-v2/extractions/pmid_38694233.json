@@ -1,0 +1,219 @@
+{
+  "document_id": "pmid_38694233",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/03_rare_disease/docs/pmid_38694233.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "pegvaliase",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "enzyme substitution therapy"
+      },
+      "confidence": 0.98,
+      "context": "Pegvaliase is an enzyme-substitution therapy approved for individuals with PKU"
+    },
+    {
+      "name": "phenylalanine",
+      "entity_type": "METABOLITE",
+      "attributes": {
+        "abbreviation": "Phe"
+      },
+      "confidence": 0.98,
+      "context": "phenylalanine (Phe) accumulation in the blood and brain"
+    },
+    {
+      "name": "phenylalanine hydroxylase",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "abbreviation": "PAH"
+      },
+      "confidence": 0.98,
+      "context": "deficiency of the enzyme phenylalanine hydroxylase (PAH)"
+    },
+    {
+      "name": "PAH",
+      "entity_type": "GENE",
+      "confidence": 0.9,
+      "context": "deficiency of the enzyme phenylalanine hydroxylase (PAH)"
+    },
+    {
+      "name": "phenylketonuria",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "PKU",
+        "category": "rare genetic disorder"
+      },
+      "confidence": 0.99,
+      "context": "Phenylketonuria (PKU) is a genetic disorder caused by deficiency of the enzyme phenylalanine hydroxylase"
+    },
+    {
+      "name": "PRISM-1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT01819727",
+        "phase": "3",
+        "design": "randomized"
+      },
+      "confidence": 0.99,
+      "context": "randomized trials PRISM-1 (NCT01819727)"
+    },
+    {
+      "name": "PRISM-2",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT01889862",
+        "phase": "3",
+        "design": "randomized"
+      },
+      "confidence": 0.99,
+      "context": "PRISM-2 (NCT01889862)"
+    },
+    {
+      "name": "165-304",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT03694353",
+        "design": "open-label extension"
+      },
+      "confidence": 0.99,
+      "context": "open-label extension study 165-304 (NCT03694353)"
+    },
+    {
+      "name": "arthralgia",
+      "entity_type": "ADVERSE_EVENT",
+      "confidence": 0.95,
+      "context": "most common adverse events (AEs) being arthralgia"
+    },
+    {
+      "name": "injection site reaction",
+      "entity_type": "ADVERSE_EVENT",
+      "confidence": 0.95,
+      "context": "injection site reactions"
+    },
+    {
+      "name": "headache",
+      "entity_type": "ADVERSE_EVENT",
+      "confidence": 0.95,
+      "context": "arthralgia, injection site reactions, headache"
+    },
+    {
+      "name": "injection site erythema",
+      "entity_type": "ADVERSE_EVENT",
+      "confidence": 0.95,
+      "context": "injection site erythema"
+    },
+    {
+      "name": "hypersensitivity reaction",
+      "entity_type": "ADVERSE_EVENT",
+      "confidence": 0.9,
+      "context": "The incidence of most AEs, including hypersensitivity AEs"
+    },
+    {
+      "name": "enzyme substitution therapy",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "confidence": 0.95,
+      "context": "Pegvaliase is an enzyme-substitution therapy"
+    },
+    {
+      "name": "blood phenylalanine level",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "thresholds_umol_L": "120, 360, 600"
+      },
+      "confidence": 0.95,
+      "context": "clinically significant blood Phe levels"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "pegvaliase",
+      "target_entity": "phenylketonuria",
+      "confidence": 0.98,
+      "evidence": "Pegvaliase is an enzyme-substitution therapy approved for individuals with PKU"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "pegvaliase",
+      "target_entity": "PRISM-1",
+      "confidence": 0.99,
+      "evidence": "final data from the randomized trials PRISM-1 (NCT01819727)"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "pegvaliase",
+      "target_entity": "PRISM-2",
+      "confidence": 0.99,
+      "evidence": "PRISM-2 (NCT01889862)"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "pegvaliase",
+      "target_entity": "165-304",
+      "confidence": 0.99,
+      "evidence": "open-label extension study 165-304 (NCT03694353)"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "pegvaliase",
+      "target_entity": "arthralgia",
+      "confidence": 0.9,
+      "evidence": "most common adverse events (AEs) being arthralgia"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "pegvaliase",
+      "target_entity": "injection site reaction",
+      "confidence": 0.9,
+      "evidence": "arthralgia, injection site reactions"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "pegvaliase",
+      "target_entity": "headache",
+      "confidence": 0.9,
+      "evidence": "arthralgia, injection site reactions, headache"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "pegvaliase",
+      "target_entity": "injection site erythema",
+      "confidence": 0.9,
+      "evidence": "injection site erythema"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "pegvaliase",
+      "target_entity": "hypersensitivity reaction",
+      "confidence": 0.85,
+      "evidence": "hypersensitivity AEs, was higher during the early treatment phase"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "PAH",
+      "target_entity": "phenylketonuria",
+      "confidence": 0.98,
+      "evidence": "PKU is a genetic disorder caused by deficiency of the enzyme phenylalanine hydroxylase (PAH)"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "PAH",
+      "target_entity": "phenylalanine hydroxylase",
+      "confidence": 0.95,
+      "evidence": "the enzyme phenylalanine hydroxylase (PAH)"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "blood phenylalanine level",
+      "target_entity": "pegvaliase",
+      "confidence": 0.9,
+      "evidence": "achieved clinically significant blood Phe levels"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T22:54:49.687775+00:00",
+  "error": null
+}

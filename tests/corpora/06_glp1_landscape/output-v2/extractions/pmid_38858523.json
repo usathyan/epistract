@@ -1,0 +1,142 @@
+{
+  "document_id": "pmid_38858523",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/06_glp1_landscape/docs/pmid_38858523.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "retatrutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "mechanism": "triple agonist GIP/GLP-1/glucagon receptors"
+      },
+      "confidence": 0.98,
+      "context": "Retatrutide is a novel triple agonist of the glucose-dependent insulinotropic polypeptide, glucagon-like peptide 1 and glucagon receptors."
+    },
+    {
+      "name": "GIPR",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucose-dependent insulinotropic polypeptide receptor"
+      },
+      "confidence": 0.95,
+      "context": "triple agonist of the glucose-dependent insulinotropic polypeptide, glucagon-like peptide 1 and glucagon receptors"
+    },
+    {
+      "name": "GLP1R",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon-like peptide 1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "glucagon-like peptide 1 and glucagon receptors"
+    },
+    {
+      "name": "GCGR",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "glucagon receptor"
+      },
+      "confidence": 0.95,
+      "context": "glucagon-like peptide 1 and glucagon receptors"
+    },
+    {
+      "name": "metabolic dysfunction-associated steatotic liver disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "MASLD"
+      },
+      "confidence": 0.98,
+      "context": "participants from that study with metabolic dysfunction-associated steatotic liver disease and \u226510% of LF"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "confidence": 0.95,
+      "context": "A 48-week phase 2 obesity study demonstrated weight reductions"
+    },
+    {
+      "name": "NCT04881760",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "2a",
+        "design": "randomized, double-blind, placebo-controlled",
+        "duration_weeks": 48,
+        "n": 98
+      },
+      "confidence": 0.99,
+      "context": "The ClinicalTrials.gov registration is NCT04881760"
+    },
+    {
+      "name": "liver fat",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "abbreviation": "LF"
+      },
+      "confidence": 0.9,
+      "context": "mean relative change from baseline in liver fat (LF) at 24 weeks"
+    },
+    {
+      "name": "insulin sensitivity",
+      "entity_type": "BIOMARKER",
+      "confidence": 0.85,
+      "context": "metabolic measures associated with improved insulin sensitivity and lipid metabolism"
+    },
+    {
+      "name": "body weight",
+      "entity_type": "BIOMARKER",
+      "confidence": 0.85,
+      "context": "LF reductions were significantly related to changes in body weight, abdominal fat"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "retatrutide",
+      "target_entity": "GIPR",
+      "confidence": 0.98,
+      "evidence": "Retatrutide is a novel triple agonist of the glucose-dependent insulinotropic polypeptide, glucagon-like peptide 1 and glucagon receptors."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "retatrutide",
+      "target_entity": "GLP1R",
+      "confidence": 0.98,
+      "evidence": "Retatrutide is a novel triple agonist of the glucose-dependent insulinotropic polypeptide, glucagon-like peptide 1 and glucagon receptors."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "retatrutide",
+      "target_entity": "GCGR",
+      "confidence": 0.98,
+      "evidence": "Retatrutide is a novel triple agonist of the glucose-dependent insulinotropic polypeptide, glucagon-like peptide 1 and glucagon receptors."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "retatrutide",
+      "target_entity": "metabolic dysfunction-associated steatotic liver disease",
+      "confidence": 0.85,
+      "evidence": "Triple hormone receptor agonist retatrutide for metabolic dysfunction-associated steatotic liver disease: a randomized phase 2a trial."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "retatrutide",
+      "target_entity": "obesity",
+      "confidence": 0.9,
+      "evidence": "A 48-week phase 2 obesity study demonstrated weight reductions of 22.8% and 24.2% with retatrutide 8 and 12 mg"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "retatrutide",
+      "target_entity": "NCT04881760",
+      "confidence": 0.99,
+      "evidence": "participants (n = 98) were randomly assigned to 48 weeks of once-weekly subcutaneous retatrutide (1, 4, 8 or 12 mg dose) or placebo ... ClinicalTrials.gov registration is NCT04881760"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:09:26.583230+00:00",
+  "error": null
+}

@@ -45,6 +45,10 @@ _DRUG_DISCOVERY_SCENARIOS = {
 def _resolve_output_dir(baseline: dict, corpora_root: Path) -> Path | None:
     """Resolve the output directory for a given baseline scenario.
 
+    Prefers `output-v2/` when present so Phase 11 V2 validation runs
+    can coexist with V1 output that remains pinned as the canonical
+    baseline input. Falls back to `output/` once V2 is canonical.
+
     Args:
         baseline: Baseline dict with scenario and corpora_dir keys.
         corpora_root: Root directory for corpora (e.g., tests/corpora/).
@@ -55,17 +59,19 @@ def _resolve_output_dir(baseline: dict, corpora_root: Path) -> Path | None:
     scenario = baseline.get("scenario", "")
 
     if scenario in _DRUG_DISCOVERY_SCENARIOS:
-        output_dir = corpora_root / scenario / "output"
-        if output_dir.exists():
-            return output_dir
+        for subdir in ("output-v2", "output"):
+            candidate = corpora_root / scenario / subdir
+            if candidate.exists():
+                return candidate
         return None
 
-    # Contracts scenario — check sample-output/ at repo root
     if "contracts" in scenario:
-        # Try common locations for contracts output
         for candidate in [
+            Path("sample-output-v2"),
             Path("sample-output"),
+            corpora_root / "contracts" / "output-v2",
             corpora_root / "contracts" / "output",
+            corpora_root.parent / "sample-output-v2",
             corpora_root.parent / "sample-output",
         ]:
             if candidate.exists():

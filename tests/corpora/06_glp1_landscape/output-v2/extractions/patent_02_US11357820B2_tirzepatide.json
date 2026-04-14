@@ -1,0 +1,241 @@
+{
+  "document_id": "patent_02_US11357820B2_tirzepatide",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/06_glp1_landscape/docs/patent_02_US11357820B2_tirzepatide.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "tirzepatide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "peptide",
+        "cas": "2023788-19-2",
+        "length_aa": 39,
+        "salt_form": "trifluoroacetate",
+        "requires_validation": true
+      },
+      "confidence": 0.99,
+      "context": "A pharmaceutical composition of tirzepatide... Tirzepatide is a dual GIP/GLP-1 receptor agonist peptide with CAS Registry Number 2023788-19-2."
+    },
+    {
+      "name": "YX1EGTFTSDYSIX2LDKIAQKAFVQWLMGGPSSGAPPPS",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "seq_id": "SEQ ID NO: 1",
+        "X1": "Aib",
+        "X2": "Aib",
+        "modifications": "K20 C20 fatty diacid conjugation; C-terminal amide",
+        "requires_validation": true
+      },
+      "confidence": 0.95,
+      "context": "The tirzepatide peptide sequence (SEQ ID NO: 1) is: YX1EGTFTSDYSIX2LDKIAQKAFVQWLMGGPSSGAPPPS, where X1 = Aib (2-aminoisobutyric acid) and X2 = Aib."
+    },
+    {
+      "name": "2-aminoisobutyric acid",
+      "entity_type": "METABOLITE",
+      "attributes": {
+        "abbreviation": "Aib"
+      },
+      "confidence": 0.9,
+      "context": "X1 = Aib (2-aminoisobutyric acid)"
+    },
+    {
+      "name": "NaCl",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "role": "isotonic agent"
+      },
+      "confidence": 0.95,
+      "context": "comprising an agent selected from NaCl and propylene glycol"
+    },
+    {
+      "name": "propylene glycol",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "role": "isotonic agent"
+      },
+      "confidence": 0.95,
+      "context": "an agent selected from NaCl and propylene glycol"
+    },
+    {
+      "name": "dibasic sodium phosphate",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "role": "buffer"
+      },
+      "confidence": 0.95,
+      "context": "and dibasic sodium phosphate is provided"
+    },
+    {
+      "name": "GIP receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "role": "primary target"
+      },
+      "confidence": 0.98,
+      "context": "The dual agonist mechanism activates both the GIP receptor (primary) and the GLP-1 receptor"
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "confidence": 0.98,
+      "context": "dual GIP/GLP-1 receptor agonist peptide"
+    },
+    {
+      "name": "albumin",
+      "entity_type": "PROTEIN",
+      "confidence": 0.9,
+      "context": "The fatty diacid moiety enables albumin binding"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "confidence": 0.7,
+      "context": "superior efficacy in glycemic control (HbA1c reduction)"
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "confidence": 0.7,
+      "context": "weight loss compared to selective GLP-1 receptor agonists"
+    },
+    {
+      "name": "HbA1c",
+      "entity_type": "BIOMARKER",
+      "confidence": 0.95,
+      "context": "superior efficacy in glycemic control (HbA1c reduction)"
+    },
+    {
+      "name": "SURPASS",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "type": "trial program"
+      },
+      "confidence": 0.95,
+      "context": "compared to selective GLP-1 receptor agonists in the SURPASS clinical trial program"
+    },
+    {
+      "name": "dual GIP/GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "confidence": 0.98,
+      "context": "Tirzepatide is a dual GIP/GLP-1 receptor agonist peptide"
+    },
+    {
+      "name": "Eli Lilly and Company",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "role": "assignee"
+      },
+      "confidence": 0.99,
+      "context": "Assignee: Eli Lilly and Company"
+    },
+    {
+      "name": "US11357820B2",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "type": "patent",
+        "filing_date": "2019-06-14"
+      },
+      "confidence": 0.99,
+      "context": "Patent ID: US11357820B2"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "tirzepatide",
+      "target_entity": "GIP receptor",
+      "confidence": 0.98,
+      "evidence": "dual agonist mechanism activates both the GIP receptor (primary) and the GLP-1 receptor"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "tirzepatide",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.98,
+      "evidence": "activates both the GIP receptor (primary) and the GLP-1 receptor"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "tirzepatide",
+      "target_entity": "GIP receptor",
+      "confidence": 0.98,
+      "evidence": "dual GIP/GLP-1 receptor agonist peptide"
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "tirzepatide",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.98,
+      "evidence": "dual GIP/GLP-1 receptor agonist peptide"
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "tirzepatide",
+      "target_entity": "albumin",
+      "confidence": 0.9,
+      "evidence": "The fatty diacid moiety enables albumin binding, extending the plasma half-life to approximately 5 days"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.75,
+      "evidence": "superior efficacy in glycemic control (HbA1c reduction)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "obesity",
+      "confidence": 0.75,
+      "evidence": "weight loss compared to selective GLP-1 receptor agonists"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "tirzepatide",
+      "target_entity": "SURPASS",
+      "confidence": 0.98,
+      "evidence": "Tirzepatide has demonstrated superior efficacy... in the SURPASS clinical trial program"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "tirzepatide",
+      "target_entity": "dual GIP/GLP-1 receptor agonism",
+      "confidence": 0.98,
+      "evidence": "Tirzepatide is a dual GIP/GLP-1 receptor agonist peptide"
+    },
+    {
+      "relation_type": "HAS_SEQUENCE",
+      "source_entity": "tirzepatide",
+      "target_entity": "YX1EGTFTSDYSIX2LDKIAQKAFVQWLMGGPSSGAPPPS",
+      "confidence": 0.99,
+      "evidence": "The tirzepatide peptide sequence (SEQ ID NO: 1) is: YX1EGTFTSDYSIX2LDKIAQKAFVQWLMGGPSSGAPPPS"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "tirzepatide",
+      "target_entity": "Eli Lilly and Company",
+      "confidence": 0.95,
+      "evidence": "Assignee: Eli Lilly and Company"
+    },
+    {
+      "relation_type": "DESCRIBED_IN",
+      "source_entity": "tirzepatide",
+      "target_entity": "US11357820B2",
+      "confidence": 0.99,
+      "evidence": "Patent ID: US11357820B2 ... A pharmaceutical composition of tirzepatide"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "HbA1c",
+      "target_entity": "tirzepatide",
+      "confidence": 0.85,
+      "evidence": "superior efficacy in glycemic control (HbA1c reduction)"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-14T02:08:37.075788+00:00",
+  "error": null
+}

@@ -1,0 +1,215 @@
+{
+  "document_id": "pmid_34715028",
+  "document_path": "/Users/umeshbhatt/code/epistract/tests/corpora/04_immunooncology/docs/pmid_34715028.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "nivolumab",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "monoclonal antibody",
+        "target": "PD-1"
+      },
+      "confidence": 0.98,
+      "context": "ADAPTeR is a prospective, phase II study of nivolumab (anti-PD-1) in 15 treatment-naive patients"
+    },
+    {
+      "name": "PD-1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "full_name": "Programmed cell death protein 1"
+      },
+      "confidence": 0.98,
+      "context": "nivolumab (anti-PD-1)"
+    },
+    {
+      "name": "PDCD1",
+      "entity_type": "GENE",
+      "attributes": {
+        "encodes": "PD-1"
+      },
+      "confidence": 0.85,
+      "context": "anti-PD-1"
+    },
+    {
+      "name": "clear cell renal cell carcinoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "ccRCC",
+        "stage": "metastatic"
+      },
+      "confidence": 0.98,
+      "context": "15 treatment-naive patients (115 multiregion tumor samples) with metastatic clear cell renal cell carcinoma (ccRCC)"
+    },
+    {
+      "name": "ADAPTeR",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "II",
+        "design": "prospective",
+        "n_patients": 15,
+        "treatment": "nivolumab"
+      },
+      "confidence": 0.98,
+      "context": "ADAPTeR is a prospective, phase II study of nivolumab (anti-PD-1) in 15 treatment-naive patients"
+    },
+    {
+      "name": "GZMK",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "Granzyme K"
+      },
+      "confidence": 0.95,
+      "context": "nivolumab-bound CD8+ T cells are expanded and express GZMK/B"
+    },
+    {
+      "name": "GZMB",
+      "entity_type": "GENE",
+      "attributes": {
+        "full_name": "Granzyme B"
+      },
+      "confidence": 0.95,
+      "context": "nivolumab-bound CD8+ T cells are expanded and express GZMK/B"
+    },
+    {
+      "name": "CD8+ T cells",
+      "entity_type": "CELL_OR_TISSUE",
+      "attributes": {
+        "subtype": "cytotoxic T lymphocyte"
+      },
+      "confidence": 0.95,
+      "context": "nivolumab-bound CD8+ T cells are expanded"
+    },
+    {
+      "name": "T cell receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "abbreviation": "TCR"
+      },
+      "confidence": 0.95,
+      "context": "T cell receptor (TCR) analysis reveals"
+    },
+    {
+      "name": "human endogenous retrovirus",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "context": "ccRCC-specific",
+        "type": "expression"
+      },
+      "confidence": 0.9,
+      "context": "ccRCC-specific human endogenous retrovirus expression indirectly correlates with clinical response"
+    },
+    {
+      "name": "expanded TCR clones",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "timing": "pre-treatment"
+      },
+      "confidence": 0.9,
+      "context": "a significantly higher number of expanded TCR clones pre-treatment in responders"
+    },
+    {
+      "name": "pre-existing immunity",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "suggesting pre-existing immunity"
+    },
+    {
+      "name": "drug resistance",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "type": "neoplasm"
+      },
+      "confidence": 0.9,
+      "context": "MeSH Terms: ... Drug Resistance, Neoplasm"
+    },
+    {
+      "name": "anti-PD-1 response",
+      "entity_type": "PHENOTYPE",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "Determinants of anti-PD-1 response and resistance in clear cell renal cell carcinoma"
+    },
+    {
+      "name": "immune checkpoint blockade",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "target": "PD-1"
+      },
+      "confidence": 0.95,
+      "context": "nivolumab (anti-PD-1) ... anti-PD-1 mode of action"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "nivolumab",
+      "target_entity": "PD-1",
+      "confidence": 0.98,
+      "evidence": "nivolumab (anti-PD-1)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "nivolumab",
+      "target_entity": "clear cell renal cell carcinoma",
+      "confidence": 0.95,
+      "evidence": "phase II study of nivolumab (anti-PD-1) in 15 treatment-naive patients ... with metastatic clear cell renal cell carcinoma"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "nivolumab",
+      "target_entity": "ADAPTeR",
+      "confidence": 0.98,
+      "evidence": "ADAPTeR is a prospective, phase II study of nivolumab"
+    },
+    {
+      "relation_type": "ENCODES",
+      "source_entity": "PDCD1",
+      "target_entity": "PD-1",
+      "confidence": 0.85,
+      "evidence": "anti-PD-1"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "expanded TCR clones",
+      "target_entity": "nivolumab",
+      "confidence": 0.92,
+      "evidence": "a significantly higher number of expanded TCR clones pre-treatment in responders suggesting pre-existing immunity"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "human endogenous retrovirus",
+      "target_entity": "nivolumab",
+      "confidence": 0.88,
+      "evidence": "ccRCC-specific human endogenous retrovirus expression indirectly correlates with clinical response"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "GZMK",
+      "target_entity": "anti-PD-1 response",
+      "confidence": 0.9,
+      "evidence": "In responders, nivolumab-bound CD8+ T cells are expanded and express GZMK/B"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "GZMB",
+      "target_entity": "anti-PD-1 response",
+      "confidence": 0.9,
+      "evidence": "In responders, nivolumab-bound CD8+ T cells are expanded and express GZMK/B"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "CD8+ T cells",
+      "target_entity": "anti-PD-1 response",
+      "confidence": 0.92,
+      "evidence": "nivolumab-bound CD8+ T cells are expanded"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-13T23:06:32.650235+00:00",
+  "error": null
+}
