@@ -36,9 +36,33 @@ def _resolve_api_config() -> tuple[str | None, str, str, str]:
     """Return (api_key, base_url, model, provider) from available env vars.
 
     Priority:
-    1. ANTHROPIC_API_KEY -> direct Anthropic API (native format)
-    2. OPENROUTER_API_KEY -> OpenRouter (OpenAI-compatible format)
+    1. AZURE_FOUNDRY_API_KEY -> Azure AI Foundry (Anthropic-native format)
+       Requires AZURE_FOUNDRY_RESOURCE. Optional AZURE_FOUNDRY_DEPLOYMENT
+       (defaults to claude-sonnet-4-6).
+    2. ANTHROPIC_API_KEY -> direct Anthropic API (native format)
+    3. OPENROUTER_API_KEY -> OpenRouter (OpenAI-compatible format)
+
+    Azure Foundry uses the Anthropic-compatible endpoint at
+    https://<resource>.services.ai.azure.com/anthropic/v1/messages
+    so the native-format streaming path is reused verbatim — only the
+    URL and model string change.
     """
+    azure_key = os.environ.get("AZURE_FOUNDRY_API_KEY")
+    if azure_key:
+        resource = os.environ.get("AZURE_FOUNDRY_RESOURCE", "").strip()
+        if not resource:
+            # Fail loud: key set but resource missing is a config error,
+            # not a silent fall-through to another provider.
+            raise RuntimeError(
+                "AZURE_FOUNDRY_API_KEY is set but AZURE_FOUNDRY_RESOURCE is missing. "
+                "Set AZURE_FOUNDRY_RESOURCE to your Azure resource name "
+                "(e.g. my-company-ai) or unset AZURE_FOUNDRY_API_KEY to fall "
+                "back to ANTHROPIC_API_KEY / OPENROUTER_API_KEY."
+            )
+        deployment = os.environ.get("AZURE_FOUNDRY_DEPLOYMENT", "claude-sonnet-4-6")
+        base_url = f"https://{resource}.services.ai.azure.com/anthropic/v1/messages"
+        return azure_key, base_url, deployment, "anthropic"
+
     anthropic_key = os.environ.get("ANTHROPIC_API_KEY")
     if anthropic_key:
         return anthropic_key, "https://api.anthropic.com/v1/messages", "claude-sonnet-4-20250514", "anthropic"
@@ -58,11 +82,15 @@ def _resolve_api_config() -> tuple[str | None, str, str, str]:
 @router.post("/chat")
 async def chat(request: Request, body: ChatRequest):
     """Stream an LLM response as SSE events."""
-    api_key, base_url, model, provider = _resolve_api_config()
+    try:
+        api_key, base_url, model, provider = _resolve_api_config()
+    except RuntimeError as exc:
+        return EventSourceResponse(_error_stream(str(exc)))
     if not api_key:
         return EventSourceResponse(
             _error_stream(
-                "No API key found. Set ANTHROPIC_API_KEY or OPENROUTER_API_KEY."
+                "No API key found. Set one of: AZURE_FOUNDRY_API_KEY (+ AZURE_FOUNDRY_RESOURCE), "
+                "ANTHROPIC_API_KEY, or OPENROUTER_API_KEY."
             )
         )
 

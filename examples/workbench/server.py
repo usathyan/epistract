@@ -111,6 +111,16 @@ def create_app(output_dir: Path, domain: str | None = None) -> FastAPI:
         import os
 
         data = app.state.data
+        # Which LLM provider the chat panel will use on the next request.
+        # Order mirrors api_chat._resolve_api_config().
+        if os.environ.get("AZURE_FOUNDRY_API_KEY"):
+            provider = "azure-foundry"
+        elif os.environ.get("ANTHROPIC_API_KEY"):
+            provider = "anthropic"
+        elif os.environ.get("OPENROUTER_API_KEY"):
+            provider = "openrouter"
+        else:
+            provider = None
         return {
             "status": "ok",
             "output_dir": str(data.output_dir),
@@ -119,9 +129,11 @@ def create_app(output_dir: Path, domain: str | None = None) -> FastAPI:
             "documents": len(data.documents),
             "has_claims": bool(data.claims_layer),
             "has_api_key": bool(
-                os.environ.get("ANTHROPIC_API_KEY")
+                os.environ.get("AZURE_FOUNDRY_API_KEY")
+                or os.environ.get("ANTHROPIC_API_KEY")
                 or os.environ.get("OPENROUTER_API_KEY")
             ),
+            "llm_provider": provider,
         }
 
     return app

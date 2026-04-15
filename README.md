@@ -19,13 +19,13 @@ Epistract runs as a [Claude Code](https://claude.ai/claude-code) plugin. Getting
 ### Prerequisites
 
 - **[Claude Code](https://claude.ai/claude-code)** — the CLI/IDE host for the plugin
-- **Python 3.11 or later** — checked by `scripts/setup.sh`
-- **[uv](https://docs.astral.sh/uv/)** (recommended) or pip — for installing Python dependencies
+- **Python 3.11, 3.12, or 3.13** — `scripts/setup.sh` enforces `>= 3.11` and warns on 3.14+. Tested primarily on 3.13. Python 3.14 may or may not have prebuilt `sift-kg` wheels yet.
+- **[uv](https://docs.astral.sh/uv/)** — required. Handles the project `.venv`, dependency resolution, and lockfile in one tool. Install with `curl -LsSf https://astral.sh/uv/install.sh | sh`.
 
 Optional (enabled automatically when detected):
 - **RDKit** — molecular validation for drug-discovery SMILES / InChIKeys
 - **Biopython** — sequence validation for DNA/RNA/protein sequences
-- **OpenRouter or Anthropic API key** — only needed for the interactive workbench chat panel (graph + extraction work without any LLM credentials)
+- **Azure AI Foundry, Anthropic, or OpenRouter API key** — only needed for the interactive workbench chat panel (graph + extraction work without any LLM credentials)
 
 ### Step 1 — Install the plugin in Claude Code
 
@@ -38,14 +38,16 @@ git clone https://github.com/usathyan/epistract.git
 cd epistract
 ```
 
-Then from inside Claude Code:
+Then from inside Claude Code, register the local clone as a marketplace and install the plugin:
 
 ```
-/plugin marketplace add .
+/plugin marketplace add ./
 /plugin install epistract@epistract
 ```
 
-The `/plugin marketplace add .` registers the repo's `.claude-plugin/marketplace.json` as a local source. The `/plugin install epistract@epistract` pulls the `epistract` plugin from the `epistract` marketplace you just registered.
+> Claude Code requires the `./` prefix for local path marketplaces — a bare `.` fails with a "source not found" error. If you're registering from a different directory, use the absolute path to the epistract clone instead.
+
+The `/plugin marketplace add ./` registers the repo's `.claude-plugin/marketplace.json` as a local source. The `/plugin install epistract@epistract` pulls the `epistract` plugin from the `epistract` marketplace you just registered.
 
 **Option B: Install directly from GitHub** (when Claude Code's GitHub marketplace support matures)
 
@@ -62,7 +64,9 @@ After either option, verify the plugin is loaded:
 
 You should see `epistract` (version 2.0.0) in the installed list, and the `/epistract:*` commands should autocomplete in your Claude Code prompt (`setup`, `ingest`, `build`, `view`, `validate`, `epistemic`, `query`, `export`, `domain`, `dashboard`, `ask`, `acquire`).
 
-### Step 2 — Install Python dependencies
+### Step 2 — Create the project `.venv` and install Python dependencies
+
+Epistract uses a **project-local `.venv`** (via `uv venv`) rather than your system Python. This isolates `sift-kg`, `rdkit`, and `biopython` from your other Python tooling and matches how the plugin runs at runtime (Claude Code subprocesses inherit the `.venv` from the project root).
 
 With the plugin loaded, run:
 
@@ -70,7 +74,15 @@ With the plugin loaded, run:
 /epistract:setup
 ```
 
-This shells out to `scripts/setup.sh`, which checks Python ≥3.11 and installs `sift-kg` (the knowledge-graph engine) plus optional `rdkit` and `biopython` for molecular validation. It's idempotent — safe to re-run after upgrades.
+This shells out to `scripts/setup.sh`, which:
+
+1. Verifies `uv` is installed (errors out with install instructions if not)
+2. Creates `.venv/` via `uv venv` if it doesn't already exist
+3. Checks Python 3.11–3.13 in that venv
+4. Installs `sift-kg` via `uv pip install` (targets the project `.venv` automatically)
+5. Optionally installs `rdkit-pypi` + `biopython` with `--all`
+
+The script is idempotent — safe to re-run after upgrades. It does **not** fall back to plain `pip` on failure: if `uv pip install` can't reach PyPI (corporate SSL proxies are the usual culprit), it prints a clear error with remediation steps instead of silently installing into the wrong environment.
 
 Verify the install:
 
@@ -78,7 +90,22 @@ Verify the install:
 /epistract:setup --check
 ```
 
-Expected output: Python version, sift-kg version, RDKit status, Biopython status. You're ready to ingest documents.
+Expected output: uv version, Python version, sift-kg version, RDKit status, Biopython status, and "Setup check complete." If anything is missing it'll say `MISSING: <package>` with the install command.
+
+**When running commands manually** (outside Claude Code's `/epistract:*` dispatch), activate the venv first:
+
+```bash
+source .venv/bin/activate
+```
+
+or prefix commands with the venv Python: `.venv/bin/python3 -m epistract`.
+
+### Troubleshooting
+
+- **`uv pip install sift-kg` fails with SSL errors** — you're behind a corporate SSL-inspection proxy. Export `SSL_CERT_FILE` or `REQUESTS_CA_BUNDLE` pointing at your corporate CA bundle, then re-run `/epistract:setup`.
+- **`/plugin marketplace add .` says "source not found"** — use `/plugin marketplace add ./` (note the trailing `/`). Claude Code needs the `./` prefix to distinguish a local path from a marketplace name.
+- **`sift-kg` says "already installed" but the viewer errors out** — you probably have `sift-kg` in your system Python instead of the project `.venv`. Delete `.venv`, re-run `/epistract:setup`, and the script will recreate it cleanly.
+- **Python 3.14 complaints** — epistract supports 3.11–3.13. If you're on 3.14, either use `uv venv --python 3.13` to pin the venv to 3.13, or accept the "may not have prebuilt wheels" warning and see if your platform still has a compatible `sift-kg` wheel.
 
 ### Upgrading
 
@@ -237,12 +264,26 @@ Workbench appearance and persona are domain-configurable via `domains/<name>/wor
 
 ### LLM Provider
 
-The chat panel auto-detects credentials in this order (`examples/workbench/api_chat.py:42`):
+The chat panel auto-detects credentials in this order (`examples/workbench/api_chat.py:_resolve_api_config()`):
 
-1. `ANTHROPIC_API_KEY` → calls Anthropic directly with `claude-sonnet-4-20250514`
-2. `OPENROUTER_API_KEY` → calls OpenRouter with `anthropic/claude-sonnet-4`
+1. **`AZURE_FOUNDRY_API_KEY`** + **`AZURE_FOUNDRY_RESOURCE`** (required together) + optional **`AZURE_FOUNDRY_DEPLOYMENT`** → calls Azure AI Foundry's Anthropic-native endpoint at `https://<resource>.services.ai.azure.com/anthropic/v1/messages` with `claude-sonnet-4-6` (or whatever deployment name you set). **Fails loud** if the API key is set but the resource name is missing — no silent fall-through.
+2. **`ANTHROPIC_API_KEY`** → calls Anthropic directly with `claude-sonnet-4-20250514`
+3. **`OPENROUTER_API_KEY`** → calls OpenRouter with `anthropic/claude-sonnet-4`
 
-Set one of these in your shell before launching. The graph and search panels work without any LLM credentials — only the chat panel needs them.
+Set one of these in your shell before launching. The graph and sources panels work without any LLM credentials — only the chat panel needs them.
+
+**Azure AI Foundry example:**
+
+```bash
+export AZURE_FOUNDRY_API_KEY="your-foundry-api-key"
+export AZURE_FOUNDRY_RESOURCE="my-company-ai"                # your Azure resource name
+export AZURE_FOUNDRY_DEPLOYMENT="claude-sonnet-4-6"          # optional; this is the default
+/epistract:dashboard ./my-graph-output --domain drug-discovery
+```
+
+Azure Foundry uses the Anthropic-compatible API format, so no new streaming code path is needed — the workbench reuses `_stream_anthropic()` for both Anthropic-direct and Azure-Foundry providers. If you're already using Anthropic in the workbench, switching to Foundry is a single env-var swap with no code changes.
+
+Why Azure Foundry? Enterprise customers with Azure commitments can route chat traffic through their existing Azure billing and compliance controls (private networking, VNet integration, content filters, audit logs) while still using Claude Sonnet. For everyone else, `ANTHROPIC_API_KEY` or `OPENROUTER_API_KEY` is simpler.
 
 ## Pre-built Domains
 
