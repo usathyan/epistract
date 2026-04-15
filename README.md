@@ -109,26 +109,57 @@ Slash commands split into two groups — **full-pipeline commands** that do ever
 
 ## Interactive Workbench
 
-In addition to the static `graph.html` viewer, epistract ships an interactive web workbench with three synchronized panels: a chat assistant with domain expertise, a force-directed graph canvas, and a source inspector. Launch it with:
+In addition to the static `graph.html` viewer, epistract ships an interactive FastAPI-backed workbench with two live panels: a force-directed graph canvas and a chat assistant powered by Claude (via direct Anthropic API or OpenRouter). Launch it with:
 
 ```
 /epistract:dashboard <output_dir> --domain <name>
 ```
 
-For example, to explore the S6 GLP-1 knowledge graph from the showcase:
+For example, to explore the Scenario 6 GLP-1 knowledge graph from the showcase (193 nodes, 619 edges, 9 communities, 15 prophetic patent claims):
 
 ```
 /epistract:dashboard tests/corpora/06_glp1_landscape/output-v2 --domain drug-discovery
 ```
 
-The workbench opens at `http://127.0.0.1:8000` and lets you:
+The workbench opens at `http://127.0.0.1:8000`.
 
-- **Ask natural-language questions** — e.g., *"What are the resistance mechanisms for sotorasib?"* — answers stream back with citations to source documents.
-- **Explore the graph visually** — pan, zoom, filter by entity type or community, click nodes for neighborhood context.
-- **Drill to source** — every answer links to the exact documents, entities, and relations that support it.
-- **Review the epistemic layer** — contradictions, hypotheses, and prophetic claims are highlighted when `/epistract:epistemic` has been run.
+### Graph Panel — Visual Exploration
 
-Workbench appearance and persona are domain-configurable via `domains/<name>/workbench/template.yaml` — entity colors, persona prompt, starter questions. The same workbench works for any domain.
+![Workbench Graph Panel — S6 GLP-1](docs/screenshots/workbench-02-graph-glp1.png)
+
+*The full S6 GLP-1 knowledge graph rendered in the workbench: 193 nodes color-coded by entity type, 9 community clusters, entity-type filter pills at the top, search bar for direct entity lookup. Pan, zoom, click any node to see neighborhood context; toggle entity types on and off to isolate sub-graphs.*
+
+### Chat Panel — Natural Language Q&A with Citations
+
+![Workbench Chat — GLP-1 agonists by company](docs/screenshots/workbench-03-chat-companies.png)
+
+*Asking "List all GLP-1 receptor agonists in this corpus, grouped by company" — Claude streams back a structured answer with company groupings (Pfizer's danuglipron, Zealand Pharma's triple agonists, Hanmi's HM15211, Novo Nordisk's CagriSema/liraglutide combinations) drawn from the underlying graph. Every claim is grounded to the documents the workbench loaded.*
+
+### Chat Panel — Epistemic Layer in Action
+
+![Workbench Chat — prophetic patent claims](docs/screenshots/workbench-04-chat-epistemic.png)
+
+*Asking "Which patents make prophetic claims about new indications?" — the chat panel surfaces the **15 prophetic claims** the epistemic layer identified across 10 GLP-1 patents. Hanmi's triple agonist patent for dyslipidemia/NAFLD/CV risk, Pfizer's danuglipron patent for NASH/CVD/metabolic disorders, plus the cross-patent pattern that liver disease (NAFLD/MASH) is the next frontier. Claude even flags that Pfizer discontinued danuglipron, making those claims particularly speculative — exactly the cross-document synthesis the chat panel was designed for.*
+
+### What You Can Do
+
+- **Ask natural-language questions** — e.g., *"What are the resistance mechanisms for sotorasib?"* or *"Compare semaglutide vs tirzepatide adverse events"* — answers stream back via SSE with citations to source documents.
+- **Explore the graph visually** — pan, zoom, filter by entity type, search by name, click any node for neighborhood context.
+- **Drill to source** — every answer links to the documents, entities, and relations that support it (sources panel).
+- **Review the epistemic layer** — contradictions, hypotheses, and prophetic claims surface in the chat answers when `/epistract:epistemic` has been run.
+
+### Configuration
+
+Workbench appearance and persona are domain-configurable via `domains/<name>/workbench/template.yaml` — title, entity colors, persona prompt, starter questions. The same workbench code works for any domain.
+
+### LLM Provider
+
+The chat panel auto-detects credentials in this order (`examples/workbench/api_chat.py:42`):
+
+1. `ANTHROPIC_API_KEY` → calls Anthropic directly with `claude-sonnet-4-20250514`
+2. `OPENROUTER_API_KEY` → calls OpenRouter with `anthropic/claude-sonnet-4`
+
+Set one of these in your shell before launching. The graph and search panels work without any LLM credentials — only the chat panel needs them.
 
 ## Pre-built Domains
 
