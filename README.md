@@ -12,19 +12,97 @@ Ship with a pre-built domain, create your own with the domain wizard, or acquire
 
 From Greek **episteme** (ἐπιστήμη) — structured scientific knowledge, the highest form of knowledge in Aristotle's epistemological hierarchy — combined with **extract**. Episteme is not opinion or belief; it is knowledge grounded in evidence, demonstration, and systematic understanding. That is what this tool produces: not a bag of keywords, but a structured representation of how concepts relate to each other, traceable back to the source text.
 
-## Quick Start
+## Installation
 
-Requires [Claude Code](https://claude.ai/claude-code) and Python 3.11+.
+Epistract runs as a [Claude Code](https://claude.ai/claude-code) plugin. Getting it into your Claude Code is a two-step process: install the plugin, then install its Python dependencies.
 
-### Path A: Use a Pre-Built Domain
+### Prerequisites
 
-Three commands to your first graph:
+- **[Claude Code](https://claude.ai/claude-code)** — the CLI/IDE host for the plugin
+- **Python 3.11 or later** — checked by `scripts/setup.sh`
+- **[uv](https://docs.astral.sh/uv/)** (recommended) or pip — for installing Python dependencies
+
+Optional (enabled automatically when detected):
+- **RDKit** — molecular validation for drug-discovery SMILES / InChIKeys
+- **Biopython** — sequence validation for DNA/RNA/protein sequences
+- **OpenRouter or Anthropic API key** — only needed for the interactive workbench chat panel (graph + extraction work without any LLM credentials)
+
+### Step 1 — Install the plugin in Claude Code
+
+Choose one path:
+
+**Option A: Clone and install as local marketplace** (recommended while the plugin is not yet in a public marketplace)
+
+```bash
+git clone https://github.com/usathyan/epistract.git
+cd epistract
+```
+
+Then from inside Claude Code:
+
+```
+/plugin marketplace add .
+/plugin install epistract@epistract
+```
+
+The `/plugin marketplace add .` registers the repo's `.claude-plugin/marketplace.json` as a local source. The `/plugin install epistract@epistract` pulls the `epistract` plugin from the `epistract` marketplace you just registered.
+
+**Option B: Install directly from GitHub** (when Claude Code's GitHub marketplace support matures)
+
+```
+/plugin marketplace add https://github.com/usathyan/epistract
+/plugin install epistract@epistract
+```
+
+After either option, verify the plugin is loaded:
+
+```
+/plugin list
+```
+
+You should see `epistract` (version 2.0.0) in the installed list, and the `/epistract:*` commands should autocomplete in your Claude Code prompt (`setup`, `ingest`, `build`, `view`, `validate`, `epistemic`, `query`, `export`, `domain`, `dashboard`, `ask`, `acquire`).
+
+### Step 2 — Install Python dependencies
+
+With the plugin loaded, run:
 
 ```
 /epistract:setup
 ```
 
-Install the framework and dependencies.
+This shells out to `scripts/setup.sh`, which checks Python ≥3.11 and installs `sift-kg` (the knowledge-graph engine) plus optional `rdkit` and `biopython` for molecular validation. It's idempotent — safe to re-run after upgrades.
+
+Verify the install:
+
+```
+/epistract:setup --check
+```
+
+Expected output: Python version, sift-kg version, RDKit status, Biopython status. You're ready to ingest documents.
+
+### Upgrading
+
+To upgrade to a newer version:
+
+```bash
+cd /path/to/epistract && git pull
+```
+
+Then in Claude Code:
+
+```
+/plugin marketplace update epistract
+/plugin install epistract@epistract
+/epistract:setup
+```
+
+## Quick Start
+
+With the plugin installed and `/epistract:setup` completed, you have three quick-start paths depending on what you want to do.
+
+### Path A: Use a Pre-Built Domain
+
+Two commands to your first graph:
 
 ```
 /epistract:ingest ./my-papers/ --output ./graph-output --domain drug-discovery
@@ -57,13 +135,12 @@ New in v2 — fetch articles directly from PubMed and ingest in two commands:
 
 ### Path C: Create Your Own Domain
 
-Five steps from zero to a custom knowledge graph:
+Four steps from zero to a custom knowledge graph (assumes plugin + `/epistract:setup` are already done):
 
-1. **Install** — `/epistract:setup`
-2. **Create domain** — `/epistract:domain --input ./sample-docs/` — the wizard analyzes your documents, proposes entity types, relation types, and epistemic rules, and generates a full domain package (`domain.yaml` + `SKILL.md` + `epistemic.py`)
-3. **Review** — confirm the generated domain configuration; edit type definitions or naming standards if needed
-4. **Ingest** — `/epistract:ingest ./corpus/ --output ./graph-output --domain your-domain`
-5. **Explore** — `/epistract:view ./graph-output`
+1. **Create domain** — `/epistract:domain --input ./sample-docs/` — the wizard analyzes your documents, proposes entity types, relation types, and epistemic rules, and generates a full domain package (`domain.yaml` + `SKILL.md` + `epistemic.py`)
+2. **Review** — confirm the generated domain configuration; edit type definitions or naming standards if needed
+3. **Ingest** — `/epistract:ingest ./corpus/ --output ./graph-output --domain your-domain`
+4. **Explore** — `/epistract:view ./graph-output`
 
 See [Adding New Domains](docs/ADDING-DOMAINS.md) for the wizard-first guide and [the domain developer guide](docs/DEVELOPER.md) if it exists for a deeper walkthrough.
 
