@@ -32,36 +32,99 @@ class ChatRequest(BaseModel):
 # ---------------------------------------------------------------------------
 
 
+def _ensure_messages_suffix(url: str) -> str:
+    """Normalize a Foundry base URL so it ends in /v1/messages.
+
+    Users paste base URLs in several shapes depending on which docs they
+    followed:
+
+      - https://my-gw.acme.internal/anthropic
+      - https://my-gw.acme.internal/anthropic/v1
+      - https://my-gw.acme.internal/anthropic/v1/messages
+
+    We only want one canonical form for httpx.post(), so strip any trailing
+    slash and append /v1/messages when it isn't already present.
+    """
+    url = url.rstrip("/")
+    if url.endswith("/v1/messages"):
+        return url
+    if url.endswith("/v1"):
+        return url + "/messages"
+    return url + "/v1/messages"
+
+
 def _resolve_api_config() -> tuple[str | None, str, str, str]:
     """Return (api_key, base_url, model, provider) from available env vars.
 
     Priority:
-    1. AZURE_FOUNDRY_API_KEY -> Azure AI Foundry (Anthropic-native format)
-       Requires AZURE_FOUNDRY_RESOURCE. Optional AZURE_FOUNDRY_DEPLOYMENT
-       (defaults to claude-sonnet-4-6).
+    1. AZURE_FOUNDRY_API_KEY (or ANTHROPIC_FOUNDRY_API_KEY as alias)
+       -> Azure AI Foundry / custom Anthropic gateway (Anthropic-native format)
+
+       Endpoint resolution inside the Foundry block:
+         a. If AZURE_FOUNDRY_BASE_URL (or ANTHROPIC_FOUNDRY_BASE_URL) is set,
+            use it directly — supports custom API gateways, private
+            endpoints, and non-standard hostnames. /v1/messages is
+            auto-appended when missing.
+         b. Otherwise, build the standard Azure URL from
+            AZURE_FOUNDRY_RESOURCE:
+            https://<resource>.services.ai.azure.com/anthropic/v1/messages
+
+       Either AZURE_FOUNDRY_BASE_URL OR AZURE_FOUNDRY_RESOURCE is
+       required when the API key is set — otherwise we raise RuntimeError
+       instead of silently falling through to a different provider.
+
+       Optional: AZURE_FOUNDRY_DEPLOYMENT (or ANTHROPIC_FOUNDRY_DEPLOYMENT)
+       — defaults to claude-sonnet-4-6.
+
     2. ANTHROPIC_API_KEY -> direct Anthropic API (native format)
     3. OPENROUTER_API_KEY -> OpenRouter (OpenAI-compatible format)
 
-    Azure Foundry uses the Anthropic-compatible endpoint at
-    https://<resource>.services.ai.azure.com/anthropic/v1/messages
-    so the native-format streaming path is reused verbatim — only the
-    URL and model string change.
+    All Foundry paths reuse the native-format _stream_anthropic() streamer
+    verbatim — only the URL and model string change. Some enterprise
+    environments standardize env vars around the provider name
+    (ANTHROPIC_FOUNDRY_*) rather than the cloud (AZURE_FOUNDRY_*); both
+    prefixes are accepted as synonyms throughout the Foundry block.
     """
-    azure_key = os.environ.get("AZURE_FOUNDRY_API_KEY")
-    if azure_key:
+    # --- Foundry block ---
+    # Accept either AZURE_FOUNDRY_* or ANTHROPIC_FOUNDRY_* naming. We look
+    # up both for every field and prefer AZURE_* when both are set (the
+    # original naming from the initial Foundry integration).
+    foundry_key = (
+        os.environ.get("AZURE_FOUNDRY_API_KEY")
+        or os.environ.get("ANTHROPIC_FOUNDRY_API_KEY")
+    )
+    if foundry_key:
+        custom_base = (
+            os.environ.get("AZURE_FOUNDRY_BASE_URL")
+            or os.environ.get("ANTHROPIC_FOUNDRY_BASE_URL")
+            or ""
+        ).strip()
         resource = os.environ.get("AZURE_FOUNDRY_RESOURCE", "").strip()
-        if not resource:
-            # Fail loud: key set but resource missing is a config error,
-            # not a silent fall-through to another provider.
+        deployment = (
+            os.environ.get("AZURE_FOUNDRY_DEPLOYMENT")
+            or os.environ.get("ANTHROPIC_FOUNDRY_DEPLOYMENT")
+            or "claude-sonnet-4-6"
+        )
+
+        if custom_base:
+            # Direct gateway URL — bypass the Azure hostname convention.
+            base_url = _ensure_messages_suffix(custom_base)
+        elif resource:
+            # Standard Azure AI Foundry endpoint.
+            base_url = f"https://{resource}.services.ai.azure.com/anthropic/v1/messages"
+        else:
+            # Fail loud: key set but neither a custom base URL nor a
+            # resource name is available. This is a config error, not a
+            # silent fall-through to another provider.
             raise RuntimeError(
-                "AZURE_FOUNDRY_API_KEY is set but AZURE_FOUNDRY_RESOURCE is missing. "
-                "Set AZURE_FOUNDRY_RESOURCE to your Azure resource name "
-                "(e.g. my-company-ai) or unset AZURE_FOUNDRY_API_KEY to fall "
-                "back to ANTHROPIC_API_KEY / OPENROUTER_API_KEY."
+                "Foundry API key is set but neither AZURE_FOUNDRY_BASE_URL "
+                "(or ANTHROPIC_FOUNDRY_BASE_URL) nor AZURE_FOUNDRY_RESOURCE "
+                "is configured. Set one of:\n"
+                "  AZURE_FOUNDRY_BASE_URL=https://<gateway>/anthropic\n"
+                "  AZURE_FOUNDRY_RESOURCE=<azure-resource-name>\n"
+                "Or unset the API key to fall back to ANTHROPIC_API_KEY / OPENROUTER_API_KEY."
             )
-        deployment = os.environ.get("AZURE_FOUNDRY_DEPLOYMENT", "claude-sonnet-4-6")
-        base_url = f"https://{resource}.services.ai.azure.com/anthropic/v1/messages"
-        return azure_key, base_url, deployment, "anthropic"
+        return foundry_key, base_url, deployment, "anthropic"
 
     anthropic_key = os.environ.get("ANTHROPIC_API_KEY")
     if anthropic_key:
@@ -89,8 +152,10 @@ async def chat(request: Request, body: ChatRequest):
     if not api_key:
         return EventSourceResponse(
             _error_stream(
-                "No API key found. Set one of: AZURE_FOUNDRY_API_KEY (+ AZURE_FOUNDRY_RESOURCE), "
-                "ANTHROPIC_API_KEY, or OPENROUTER_API_KEY."
+                "No API key found. Set one of: "
+                "AZURE_FOUNDRY_API_KEY (or ANTHROPIC_FOUNDRY_API_KEY) with either "
+                "AZURE_FOUNDRY_BASE_URL or AZURE_FOUNDRY_RESOURCE; "
+                "ANTHROPIC_API_KEY; or OPENROUTER_API_KEY."
             )
         )
 

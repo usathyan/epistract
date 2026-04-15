@@ -112,9 +112,18 @@ def create_app(output_dir: Path, domain: str | None = None) -> FastAPI:
 
         data = app.state.data
         # Which LLM provider the chat panel will use on the next request.
-        # Order mirrors api_chat._resolve_api_config().
-        if os.environ.get("AZURE_FOUNDRY_API_KEY"):
-            provider = "azure-foundry"
+        # Order mirrors api_chat._resolve_api_config(). AZURE_FOUNDRY_* and
+        # ANTHROPIC_FOUNDRY_* are accepted as aliases.
+        has_foundry = bool(
+            os.environ.get("AZURE_FOUNDRY_API_KEY")
+            or os.environ.get("ANTHROPIC_FOUNDRY_API_KEY")
+        )
+        if has_foundry:
+            has_custom_base = bool(
+                os.environ.get("AZURE_FOUNDRY_BASE_URL")
+                or os.environ.get("ANTHROPIC_FOUNDRY_BASE_URL")
+            )
+            provider = "azure-foundry-custom" if has_custom_base else "azure-foundry"
         elif os.environ.get("ANTHROPIC_API_KEY"):
             provider = "anthropic"
         elif os.environ.get("OPENROUTER_API_KEY"):
@@ -129,7 +138,7 @@ def create_app(output_dir: Path, domain: str | None = None) -> FastAPI:
             "documents": len(data.documents),
             "has_claims": bool(data.claims_layer),
             "has_api_key": bool(
-                os.environ.get("AZURE_FOUNDRY_API_KEY")
+                has_foundry
                 or os.environ.get("ANTHROPIC_API_KEY")
                 or os.environ.get("OPENROUTER_API_KEY")
             ),

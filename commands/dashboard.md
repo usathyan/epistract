@@ -60,11 +60,14 @@ Workbench appearance and behavior is domain-configurable via `domains/<name>/wor
 - A completed ingest run (`/epistract:ingest` has written `graph_data.json` to `<output_dir>`)
 - Python 3.11–3.13 with FastAPI and sift-kg installed (`/epistract:setup`)
 - **One** of the following LLM credentials set in the shell (only needed for the chat panel — graph + sources work without any):
-  - `AZURE_FOUNDRY_API_KEY` + `AZURE_FOUNDRY_RESOURCE` (+ optional `AZURE_FOUNDRY_DEPLOYMENT`, defaults to `claude-sonnet-4-6`) — Azure AI Foundry Anthropic-native endpoint
-  - `ANTHROPIC_API_KEY` — direct Anthropic API (uses `claude-sonnet-4-20250514`)
-  - `OPENROUTER_API_KEY` — OpenRouter (uses `anthropic/claude-sonnet-4`)
+  - **Azure AI Foundry** — `AZURE_FOUNDRY_API_KEY` (or alias `ANTHROPIC_FOUNDRY_API_KEY`) plus **one** endpoint selector:
+    - `AZURE_FOUNDRY_BASE_URL` (or alias `ANTHROPIC_FOUNDRY_BASE_URL`) — full custom gateway URL. Use this when you route through an API management gateway, private endpoint, or reverse proxy with a non-standard hostname. `/v1/messages` is appended automatically if missing.
+    - `AZURE_FOUNDRY_RESOURCE` — standard Azure resource name. The workbench builds `https://<resource>.services.ai.azure.com/anthropic/v1/messages`.
+    - Optional: `AZURE_FOUNDRY_DEPLOYMENT` (or alias `ANTHROPIC_FOUNDRY_DEPLOYMENT`) — deployment/model name, defaults to `claude-sonnet-4-6`.
+  - **Anthropic direct** — `ANTHROPIC_API_KEY` (uses `claude-sonnet-4-20250514`)
+  - **OpenRouter** — `OPENROUTER_API_KEY` (uses `anthropic/claude-sonnet-4`)
 
-Provider detection runs in that order — whichever key is set first wins. If `AZURE_FOUNDRY_API_KEY` is set without `AZURE_FOUNDRY_RESOURCE`, the chat panel returns a clear error instead of falling through to a different provider (fails loud on misconfiguration).
+Provider detection runs in that order — whichever key is set first wins. If a Foundry API key is set without **either** `AZURE_FOUNDRY_BASE_URL` or `AZURE_FOUNDRY_RESOURCE`, the chat panel returns a clear error listing both options instead of falling through to a different provider (fails loud on misconfiguration).
 
 ## Notes
 

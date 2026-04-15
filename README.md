@@ -266,13 +266,17 @@ Workbench appearance and persona are domain-configurable via `domains/<name>/wor
 
 The chat panel auto-detects credentials in this order (`examples/workbench/api_chat.py:_resolve_api_config()`):
 
-1. **`AZURE_FOUNDRY_API_KEY`** + **`AZURE_FOUNDRY_RESOURCE`** (required together) + optional **`AZURE_FOUNDRY_DEPLOYMENT`** → calls Azure AI Foundry's Anthropic-native endpoint at `https://<resource>.services.ai.azure.com/anthropic/v1/messages` with `claude-sonnet-4-6` (or whatever deployment name you set). **Fails loud** if the API key is set but the resource name is missing — no silent fall-through.
+1. **Azure AI Foundry** — `AZURE_FOUNDRY_API_KEY` (or alias `ANTHROPIC_FOUNDRY_API_KEY`) plus **one** endpoint selector:
+   - `AZURE_FOUNDRY_BASE_URL` (or alias `ANTHROPIC_FOUNDRY_BASE_URL`) — full custom gateway URL for enterprise deployments behind API management, private endpoints, or reverse proxies. `/v1/messages` is auto-appended if missing, so `https://gw.acme.internal/anthropic` and `https://gw.acme.internal/anthropic/v1/messages` both work.
+   - `AZURE_FOUNDRY_RESOURCE` — standard Azure resource name. The workbench builds `https://<resource>.services.ai.azure.com/anthropic/v1/messages`.
+   - Optional: `AZURE_FOUNDRY_DEPLOYMENT` (or alias `ANTHROPIC_FOUNDRY_DEPLOYMENT`) — deployment/model name, defaults to `claude-sonnet-4-6`.
+   - **Fails loud** if the API key is set but neither `AZURE_FOUNDRY_BASE_URL` nor `AZURE_FOUNDRY_RESOURCE` is configured — prints a clear error listing both options instead of falling through to another provider.
 2. **`ANTHROPIC_API_KEY`** → calls Anthropic directly with `claude-sonnet-4-20250514`
 3. **`OPENROUTER_API_KEY`** → calls OpenRouter with `anthropic/claude-sonnet-4`
 
 Set one of these in your shell before launching. The graph and sources panels work without any LLM credentials — only the chat panel needs them.
 
-**Azure AI Foundry example:**
+**Azure AI Foundry — standard endpoint:**
 
 ```bash
 export AZURE_FOUNDRY_API_KEY="your-foundry-api-key"
@@ -281,9 +285,28 @@ export AZURE_FOUNDRY_DEPLOYMENT="claude-sonnet-4-6"          # optional; this is
 /epistract:dashboard ./my-graph-output --domain drug-discovery
 ```
 
-Azure Foundry uses the Anthropic-compatible API format, so no new streaming code path is needed — the workbench reuses `_stream_anthropic()` for both Anthropic-direct and Azure-Foundry providers. If you're already using Anthropic in the workbench, switching to Foundry is a single env-var swap with no code changes.
+The workbench builds `https://my-company-ai.services.ai.azure.com/anthropic/v1/messages` and calls it with the native Anthropic format.
 
-Why Azure Foundry? Enterprise customers with Azure commitments can route chat traffic through their existing Azure billing and compliance controls (private networking, VNet integration, content filters, audit logs) while still using Claude Sonnet. For everyone else, `ANTHROPIC_API_KEY` or `OPENROUTER_API_KEY` is simpler.
+**Azure AI Foundry — custom gateway (enterprise):**
+
+When your Foundry endpoint sits behind an API management gateway, VNet-integrated private endpoint, or corporate reverse proxy on a non-standard hostname, set the full URL directly:
+
+```bash
+export AZURE_FOUNDRY_API_KEY="your-foundry-api-key"
+export AZURE_FOUNDRY_BASE_URL="https://ai-gateway.acme.internal/anthropic"
+/epistract:dashboard ./my-graph-output --domain drug-discovery
+```
+
+Or using the provider-first naming convention that some enterprise environments prefer:
+
+```bash
+export ANTHROPIC_FOUNDRY_API_KEY="your-foundry-api-key"
+export ANTHROPIC_FOUNDRY_BASE_URL="https://ai-gateway.acme.internal/anthropic/v1/messages"
+```
+
+`AZURE_FOUNDRY_*` and `ANTHROPIC_FOUNDRY_*` are accepted as aliases for the same set of env vars — use whichever naming convention matches your existing secrets management. `AZURE_FOUNDRY_*` wins if both are set.
+
+Why Azure Foundry? Enterprise customers with Azure commitments can route chat traffic through their existing Azure billing and compliance controls (private networking, VNet integration, content filters, audit logs) while still using Claude Sonnet. Azure Foundry uses the Anthropic-compatible API format, so no new streaming code path is needed — the workbench reuses `_stream_anthropic()` for Foundry, Foundry-custom-gateway, and Anthropic-direct. Switching between them is an env-var swap with zero code changes. For everyone else, `ANTHROPIC_API_KEY` or `OPENROUTER_API_KEY` is simpler.
 
 ## Pre-built Domains
 
