@@ -15,8 +15,10 @@ All notable changes to epistract are documented here. This project follows [Sema
 - **`/epistract:domain` wizard** — auto-generates a starter domain package from a sample corpus. Analyzes documents, proposes entity/relation types, writes `domain.yaml` + `SKILL.md` + `epistemic.py`.
 - **`/epistract:acquire` PubMed pipeline** — search PubMed and download articles into a local corpus in one command (Chris Davidson, PR #2).
 - **Interactive workbench** — FastAPI-backed three-panel UI (dashboard / chat / graph) with domain-aware persona, entity-type filter pills, natural-language chat grounded to source documents, domain-specific starter questions, and a force-directed graph canvas.
+- **Three-provider LLM chat panel** — workbench auto-detects credentials for **Azure AI Foundry** (standard resource endpoint OR custom gateway URL), **Anthropic direct**, or **OpenRouter**. Supports both `AZURE_FOUNDRY_*` and `ANTHROPIC_FOUNDRY_*` env var naming conventions for enterprise environments.
 - **End-to-end V2 validation** — 6 drug-discovery scenarios re-validated through `/epistract:*` slash commands. Aggregate: **111 documents → 867 nodes, 2,592 links, 39 communities** (+10.7% nodes, +16.2% edges, +18.2% communities vs V1 baseline). All 6 pass regression at the ≥80% threshold. See `docs/showcases/drug-discovery-v2.md`.
 - **Pinned regression suite** — `tests/regression/run_regression.py` compares each scenario's output against pinned V1 baselines and reports PASS/FAIL per scenario. V2 baselines written on demand via `--update-baselines`.
+- **uv-first install with project-local `.venv`** — `scripts/setup.sh` requires uv, auto-creates `.venv` via `uv venv`, installs `sift-kg` into the project venv (not system Python), and fails loud with remediation steps if PyPI is unreachable.
 
 ### Added
 
@@ -43,6 +45,14 @@ All notable changes to epistract are documented here. This project follows [Sema
 - `docs/screenshots/workbench-0[1-4]-*.png` — 4 live workbench screenshots (dashboard, chat welcome, graph view, epistemic query)
 - `docs/diagrams/` — architecture SVGs (Mermaid-rendered)
 - `docs/ADDING-DOMAINS.md` — wizard-first guide to creating new domain packages
+- **Azure AI Foundry** as a third LLM provider for the workbench chat panel. Auto-detected when `AZURE_FOUNDRY_API_KEY` (or alias `ANTHROPIC_FOUNDRY_API_KEY`) is set. Supports two endpoint patterns:
+  - **Standard Azure hostname** via `AZURE_FOUNDRY_RESOURCE` → `https://<resource>.services.ai.azure.com/anthropic/v1/messages`
+  - **Custom gateway** via `AZURE_FOUNDRY_BASE_URL` (or alias `ANTHROPIC_FOUNDRY_BASE_URL`) for enterprise deployments behind API management, VNet-integrated private endpoints, or reverse proxies on non-standard hostnames. `/v1/messages` is auto-appended if missing.
+  - Optional `AZURE_FOUNDRY_DEPLOYMENT` (or alias `ANTHROPIC_FOUNDRY_DEPLOYMENT`) — deployment/model name, defaults to `claude-sonnet-4-6`.
+  - Accepts both `AZURE_FOUNDRY_*` and `ANTHROPIC_FOUNDRY_*` env var prefixes for environments that standardize naming around the provider rather than the cloud.
+  - Reuses the native Anthropic streaming path (`_stream_anthropic()`) — zero new code paths, same SSE protocol. Foundry's Anthropic-compatible endpoint uses identical headers (`x-api-key`, `anthropic-version`) and request/response shapes.
+- `_ensure_messages_suffix()` helper in `api_chat.py` — normalizes Foundry base URLs so `.../anthropic`, `.../anthropic/v1`, and `.../anthropic/v1/messages` all resolve to the canonical form.
+- `/api/health` now reports `llm_provider` field (`azure-foundry` | `azure-foundry-custom` | `anthropic` | `openrouter` | `null`) for ops visibility.
 
 ### Changed
 
@@ -53,6 +63,9 @@ All notable changes to epistract are documented here. This project follows [Sema
 - **Regression runner transition support** — `tests/regression/run_regression.py` prefers `output-v2/` when present and falls back to `output/`, allowing V1 baselines to remain pinned while V2 validation runs in parallel.
 - **`scripts/launch_workbench.py`** — now parses `--domain` and passes it through to `create_app()` (was previously ignored). Boot banner reads the domain title from `load_template(domain)` instead of hardcoding "Sample Contract Analysis Workbench".
 - **Workbench sidebar legend** is now data-driven from `claims_layer.json` — the Severity section only shows when the current domain emits severity-tagged claims (contracts). Drug-discovery never sees it.
+- **`scripts/setup.sh` rewritten** — now requires `uv` up front (errors with install instructions if missing), auto-creates project-local `.venv` via `uv venv`, resolves Python from the venv via `BASH_SOURCE`-based project root detection (works from any cwd), and no longer falls back to plain `pip` on failure. Supports `--check` mode for non-mutating verification. Warns on Python 3.14+ (untested).
+- **README Installation section** — rewritten with explicit two-step plugin install flow (`/plugin marketplace add ./` + `/plugin install epistract@epistract`), project `.venv` rationale, supported Python version range (3.11–3.13), and a Troubleshooting subsection covering the four most common failure modes (SSL proxy, missing `./` prefix, wrong-env sift-kg, Python 3.14).
+- **README LLM Provider section** — documents all three providers with Azure Foundry standard + custom gateway examples, both env var naming conventions, and the fail-loud behavior on missing resource/base-URL.
 
 ### Fixed
 
@@ -61,6 +74,11 @@ All notable changes to epistract are documented here. This project follows [Sema
 - **Severity sidebar legend visually clashed with entity-type colors** — hardcoded Critical/Warning/Info dots (red/orange/blue) looked identical to entity-type dots (Disease red, Gene orange, Document blue). Fixed by default-hiding `#severity-section` and `#severity-filter` in `index.html` and revealing them via `configureSeverityVisibility()` in `app.js` only when `/api/graph/claims` returns items with a `severity` field.
 - **`/epistract:dashboard` command was a static AKKA portfolio summary** — had been repurposed during a demo session and never restored to its intended workbench launcher role. Rewrote `commands/dashboard.md` as a proper generic workbench launcher that shells out to `scripts/launch_workbench.py` with domain forwarding.
 - **`tests/regression/run_regression.py._resolve_output_dir` hardcoded `scenario/output/`** — blocked V2 validation runs that wrote to `scenario/output-v2/`. Fixed with a fallback list `(output-v2, output)` for drug-discovery scenarios and a parallel fallback list for the contracts scenario.
+- **`scripts/setup.sh` checked wrong module name** — line 26 did `import sift` instead of `import sift_kg`, so the script always thought `sift-kg` was missing and tried to reinstall on every run. Fixed with `import sift_kg`.
+- **`scripts/setup.sh` used bare `python3`** — resolved to system Python (often 3.14) rather than the project `.venv` (3.13). Packages got installed to the wrong environment, causing "sift-kg is installed but the viewer can't find it" confusion. Fixed by explicitly using `.venv/bin/python3` after `cd PROJECT_ROOT`.
+- **`scripts/setup.sh` silently fell back to plain `pip` on uv failure** — on corporate networks with SSL-inspection proxies, `uv pip install sift-kg` would fail, the error was swallowed by `2>/dev/null`, and plain `pip` installed into the wrong Python environment. Fixed by removing the pip fallback entirely — the script now exits non-zero with three remediation options (SSL cert bundle, network check, Python version) so users can see the real failure.
+- **README `/plugin marketplace add .` instruction failed** — Claude Code requires the `./` prefix for local paths (a bare `.` fails with "source not found"). Fixed in the README and called out in a blockquote + troubleshooting entry.
+- **README didn't document Python version range or `.venv` setup** — users cloning fresh had no idea where the venv would come from or which Python versions were supported. README now says "3.11, 3.12, or 3.13 — tested primarily on 3.13" and Step 2 explains the project-local venv flow end-to-end.
 
 ### Security
 
@@ -85,6 +103,8 @@ All notable changes to epistract are documented here. This project follows [Sema
 - **Contract domain users:** `domains/contracts/` no longer ships with `dashboard.html` or sample fixtures. The schema, SKILL.md, references, and epistemic rules remain. To reproduce the workbench dashboard view, ship a private `dashboard.local.html` alongside the tracked files (now ignored by `.gitignore`'s `*.local.<ext>` rule).
 - **OpenRouter users:** If you had `OPENROUTER_API_KEY` set in a previous `.claude/settings.local.json`, re-export it from `~/.zshrc` or an equivalent location — `.claude/` is now entirely gitignored.
 - **Regression baselines:** V2 baselines are written on demand by `run_regression.py --update-baselines` to `tests/baselines/v2/`. The V2 baselines directory is gitignored (it's a generated artifact). V1 baselines in `tests/baselines/v1/` remain pinned for regression comparison.
+- **Python version:** epistract supports 3.11–3.13. If you're on 3.14, pin the venv to 3.13 with `uv venv --python 3.13` or expect `WARN: Python 3.14.x is newer than the tested range` during setup.
+- **Setup script now fails loud on corporate proxies:** if `uv pip install sift-kg` can't reach PyPI through an SSL-inspection proxy, the script exits non-zero with three remediation steps instead of silently falling through to plain `pip`. Set `SSL_CERT_FILE` or `REQUESTS_CA_BUNDLE` to your corporate CA bundle and re-run.
 
 ### Known Gaps (deferred to v2.1)
 
