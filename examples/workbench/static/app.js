@@ -136,6 +136,41 @@ async function populateEntityLegend(template) {
     }
 }
 
+/**
+ * Reveal the Severity sidebar legend and graph-panel filter dropdown only
+ * if the current domain's epistemic layer actually produces severity-tagged
+ * claims. The contracts domain (Critical/Warning/Info) does; the
+ * drug-discovery domain (asserted/hypothesized/prophetic) does not.
+ *
+ * Default state in index.html is `display: none` for both elements, so this
+ * function is purely additive — no side effects when claims_layer.json is
+ * absent or has no `severity` field.
+ */
+async function configureSeverityVisibility() {
+    const sidebarSection = document.getElementById('severity-section');
+    const filterSelect = document.getElementById('severity-filter');
+    if (!sidebarSection && !filterSelect) return;
+    try {
+        const resp = await fetch('/api/graph/claims');
+        if (!resp.ok) return;
+        const claims = await resp.json();
+        // Walk every section of the claims payload and check whether any
+        // item carries a `severity` field. Sections vary by domain
+        // (conflicts/gaps/risks for contracts; hypotheses/contradictions
+        // for drug-discovery), so iterate over every array we find.
+        const hasSeverity = Object.values(claims || {}).some(section => {
+            if (!Array.isArray(section)) return false;
+            return section.some(item => item && typeof item === 'object' && 'severity' in item);
+        });
+        if (hasSeverity) {
+            if (sidebarSection) sidebarSection.style.display = '';
+            if (filterSelect) filterSelect.style.display = '';
+        }
+    } catch (e) {
+        console.warn('Could not check claims for severity field:', e);
+    }
+}
+
 // ---------------------------------------------------------------------------
 // Init
 // ---------------------------------------------------------------------------
@@ -165,6 +200,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     populateStarterCards(template);
     populateDashboard(template);
     populateEntityLegend(template);
+    configureSeverityVisibility();
 
     // Initialize panels with template
     initChat({ template, openSources: (docId, section) => {

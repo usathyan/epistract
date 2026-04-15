@@ -64,7 +64,13 @@ def create_app(output_dir: Path, domain: str | None = None) -> FastAPI:
 
     @app.get("/api/dashboard")
     async def get_dashboard():
-        """Return dashboard HTML content for the current domain."""
+        """Return dashboard HTML content for the current domain.
+
+        Two paths:
+          1. If domains/<domain>/workbench/dashboard.html exists, serve it directly.
+          2. Otherwise, auto-generate a summary from graph stats (entity counts
+             by type, total nodes, total edges, top communities).
+        """
         template = app.state.template
         domain = app.state._domain_name
         if domain:
@@ -79,10 +85,15 @@ def create_app(output_dir: Path, domain: str | None = None) -> FastAPI:
         for n in nodes:
             t = n.get("entity_type", "UNKNOWN")
             entity_counts[t] = entity_counts.get(t, 0) + 1
-        title = template.get("dashboard", {}).get(
+        # `template.get("dashboard")` may return None (Pydantic default) when
+        # the domain template has no `dashboard:` block. `dict.get(k, default)`
+        # only honors the default when the key is missing, not when the value
+        # is None — so we explicitly coalesce.
+        dashboard_block = template.get("dashboard") or {}
+        title = dashboard_block.get(
             "title", template.get("title", "Knowledge Graph Summary")
         )
-        subtitle = template.get("dashboard", {}).get(
+        subtitle = dashboard_block.get(
             "subtitle", template.get("subtitle", "")
         )
         return {

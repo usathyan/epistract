@@ -121,25 +121,31 @@ For example, to explore the Scenario 6 GLP-1 knowledge graph from the showcase (
 /epistract:dashboard tests/corpora/06_glp1_landscape/output-v2 --domain drug-discovery
 ```
 
-The workbench opens at `http://127.0.0.1:8000`.
+The workbench opens at `http://127.0.0.1:8000` with three panels — Dashboard, Chat, and Graph — wired to the same loaded knowledge graph.
+
+### Dashboard Panel — Auto-Generated Summary
+
+![Workbench Dashboard — drug-discovery summary](docs/screenshots/workbench-01-dashboard.png)
+
+*Auto-generated entity summary for the S6 GLP-1 graph: 16 entity types with deduplicated counts, totals at the bottom (193 nodes / 619 edges). The dashboard renders even without a domain-specific HTML template — `/api/dashboard` builds the summary from `graph_data.json` whenever no `dashboard.html` exists for the current domain. Domains can ship a custom dashboard.html for richer layouts (the contracts domain originally did, before being scrubbed for the public release).*
+
+### Chat Panel — Domain-Aware Welcome
+
+![Workbench Chat welcome](docs/screenshots/workbench-02-chat-welcome.png)
+
+*The chat panel landing screen reads its title, body text, placeholder, and starter questions from `domains/drug-discovery/workbench/template.yaml`. Drug-discovery starters surface immediately ("What compounds target the most genes in this dataset?", "Show me all drug-disease relationships and their evidence strength", etc.) without any user configuration. Switch domains and the entire chat persona changes.*
 
 ### Graph Panel — Visual Exploration
 
-![Workbench Graph Panel — S6 GLP-1](docs/screenshots/workbench-02-graph-glp1.png)
+![Workbench Graph Panel — S6 GLP-1](docs/screenshots/workbench-03-graph-glp1.png)
 
 *The full S6 GLP-1 knowledge graph rendered in the workbench: 193 nodes color-coded by entity type, 9 community clusters, entity-type filter pills at the top, search bar for direct entity lookup. Pan, zoom, click any node to see neighborhood context; toggle entity types on and off to isolate sub-graphs.*
-
-### Chat Panel — Natural Language Q&A with Citations
-
-![Workbench Chat — GLP-1 agonists by company](docs/screenshots/workbench-03-chat-companies.png)
-
-*Asking "List all GLP-1 receptor agonists in this corpus, grouped by company" — Claude streams back a structured answer with company groupings (Pfizer's danuglipron, Zealand Pharma's triple agonists, Hanmi's HM15211, Novo Nordisk's CagriSema/liraglutide combinations) drawn from the underlying graph. Every claim is grounded to the documents the workbench loaded.*
 
 ### Chat Panel — Epistemic Layer in Action
 
 ![Workbench Chat — prophetic patent claims](docs/screenshots/workbench-04-chat-epistemic.png)
 
-*Asking "Which patents make prophetic claims about new indications?" — the chat panel surfaces the **15 prophetic claims** the epistemic layer identified across 10 GLP-1 patents. Hanmi's triple agonist patent for dyslipidemia/NAFLD/CV risk, Pfizer's danuglipron patent for NASH/CVD/metabolic disorders, plus the cross-patent pattern that liver disease (NAFLD/MASH) is the next frontier. Claude even flags that Pfizer discontinued danuglipron, making those claims particularly speculative — exactly the cross-document synthesis the chat panel was designed for.*
+*Asking "Which patents make prophetic claims about new indications?" — the chat panel surfaces the **15 prophetic claims** the epistemic layer identified across 10 GLP-1 patents. With the drug-discovery persona active, Claude produces a structured analysis: per-patent prophetic claims, status flags (✅ Active / 🔴 DISCONTINUED / ✅ Commercialized), a "Summary by Prophetic Nature" table grouping patents by speculation level (High/Medium/Low), and a meta-analysis identifying the most speculative patent (US12054528B2) and the biggest gap between prophetic claims and commercial reality (Pfizer's discontinued danuglipron program). This is the cross-document synthesis the workbench is designed for.*
 
 ### What You Can Do
 

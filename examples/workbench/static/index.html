@@ -26,7 +26,11 @@
       </button>
     </div>
 
-    <div class="sidebar-section">
+    <!-- Severity section: only meaningful when the domain epistemic layer
+         emits items with a `severity` field (e.g., contracts: Critical /
+         Warning / Info). Hidden by app.js at startup if /api/graph/claims
+         contains no severity-tagged items. -->
+    <div class="sidebar-section" id="severity-section" style="display:none">
       <h3 class="sidebar-section-title">Severity</h3>
       <div class="legend">
         <div class="legend-item">
@@ -92,7 +96,9 @@
           <!-- Populated dynamically from /api/graph/entity-types + template colors -->
         </div>
 
-        <select id="severity-filter" class="severity-filter">
+        <!-- Severity filter: hidden by default; app.js shows it when the
+             current domain emits severity-tagged claims. -->
+        <select id="severity-filter" class="severity-filter" style="display:none">
           <option value="all">All Severities</option>
           <option value="critical">Critical</option>
           <option value="warning">Warning</option>

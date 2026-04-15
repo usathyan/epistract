@@ -51,12 +51,16 @@ def main():
     # Parse optional flags
     port = 8000
     host = "127.0.0.1"
+    domain: str | None = None
     if "--port" in sys.argv:
         idx = sys.argv.index("--port")
         port = int(sys.argv[idx + 1])
     if "--host" in sys.argv:
         idx = sys.argv.index("--host")
         host = sys.argv[idx + 1]
+    if "--domain" in sys.argv:
+        idx = sys.argv.index("--domain")
+        domain = sys.argv[idx + 1]
 
     # Check for graph data
     graph_path = output_dir / "graph_data.json"
@@ -65,24 +69,30 @@ def main():
             f"Warning: No graph_data.json found in {output_dir}", file=sys.stderr
         )
         print(
-            "Run extraction pipeline first: python scripts/extract_contracts.py <output_dir>",
+            "Run /epistract:ingest first to produce graph_data.json",
             file=sys.stderr,
         )
 
     # Import and create app
     from examples.workbench.server import create_app
+    from examples.workbench.template_loader import load_template
 
-    app = create_app(output_dir)
+    app = create_app(output_dir, domain=domain)
+    title = load_template(domain).get("title", "Epistract Workbench")
 
     if HAS_RICH:
-        _console.print("[bold green]Sample Contract Analysis Workbench[/]")
+        _console.print(f"[bold green]{title}[/]")
         _console.print(f"  Output dir: {output_dir}")
-        _console.print(f"  Server: http://{host}:{port}")
+        if domain:
+            _console.print(f"  Domain:     {domain}")
+        _console.print(f"  Server:     http://{host}:{port}")
         _console.print("  Press Ctrl+C to stop\n")
     else:
-        print("Sample Contract Analysis Workbench")
+        print(title)
         print(f"  Output dir: {output_dir}")
-        print(f"  Server: http://{host}:{port}")
+        if domain:
+            print(f"  Domain:     {domain}")
+        print(f"  Server:     http://{host}:{port}")
         print("  Press Ctrl+C to stop\n")
 
     import uvicorn
