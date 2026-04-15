@@ -1,0 +1,39 @@
+\section{Human-AI Collaboration Process}
+
+The epistract system was not generated autonomously by an AI agent. It was built through intensive, interactive human-AI collaboration using Claude Code as both the development environment and the runtime platform. This section documents that process with specificity, because the collaboration model itself is a methodological contribution.
+
+\subsection{Session Structure}
+
+The entire system---plugin architecture, domain schema, five test scenarios, extraction pipeline, documentation, and this paper---was constructed in collaborative Claude Code sessions. These were power sessions: multi-hour, high-intensity interactive work where the human and the AI operated as a team with complementary responsibilities. The human drove scientific strategy, corpus curation, and acceptance criteria. Claude Code drove implementation, parallelization across extraction agents, defensive error handling, and documentation generation. A typical session followed a recurring pattern: the human would define a goal (e.g., ``validate the pipeline against a rare disease corpus''), Claude Code would implement the extraction run, surface intermediate results, and propose next steps, and the human would evaluate outputs against domain expectations before accepting or redirecting.
+
+This workflow differs fundamentally from prompt-and-wait paradigms. The feedback loop operated at the granularity of individual function calls and schema decisions, not at the granularity of complete artifacts. The result was a system that reflects both the AI's capacity for rapid, parallel implementation and the human's capacity for scientific judgment and quality control.
+
+\subsection{Course Corrections}
+
+Several instances during development required human judgment to redirect the AI's approach, illustrating that the collaboration was genuinely bidirectional rather than merely generative.
+
+\textbf{Branding and framing.} The human proposed the ``latent knowledge graphs'' framing that became central to the project's positioning. The project title went through multiple iterations before settling on ``Beyond RAG,'' sharpening the thesis from an architecture comparison to an epistemological distinction---comprehension versus similarity, not simply agents versus embeddings.
+
+\textbf{Tooling decisions.} An early attempt to capture graph screenshots using Chrome DevTools Protocol proved cumbersome and brittle. The human redirected to Playwright, which provided reliable, headless screenshot capture in a single command. This saved significant debugging time and improved reproducibility.
+
+\textbf{Documentation completeness.} The human caught several gaps that the AI had not flagged: scenario results that were generated but not pushed to the repository, a README that still displayed ``Pending'' status for completed scenarios, and a status column that became redundant once all scenarios were validated. Each correction required the human to hold the full project state in mind---a task that remains difficult to delegate to current AI systems.
+
+\textbf{Disclaimer wording.} The test scenario disclaimer went through multiple iterations to find the right tone. The final version---``This project explores how AI-assisted tooling can accelerate scientific literature analysis''---was chosen to be honest about the system's capabilities without overclaiming clinical or regulatory applicability.
+
+\subsection{Division of Decisions}
+
+The collaboration exhibited a clear division of labor that emerged organically rather than being prescribed. Human decisions included: which therapeutic domains to test (immuno-oncology, targeted therapy, rare disease, antibody engineering, epigenetics), which PubMed abstracts to include in each corpus, what constituted a passing UAT, how to brand and position the project, the paper's structure and target audience, and what to exclude from the final system. AI decisions included: the extraction JSON schema structure and field naming, the parallel agent dispatch architecture, defensive normalization patterns for handling LLM output variability, community labeling heuristics for graph visualization, documentation formatting conventions, and commit message style.
+
+This division maps onto a recognizable pattern: the human controlled \textit{what} and \textit{why}; the AI controlled \textit{how}. Neither party could have produced the final system alone. The human lacked the implementation velocity to build, test, and document six scenarios in the available time. The AI lacked the domain judgment to select meaningful corpora, evaluate extraction quality, or frame the scientific contribution.
+
+\subsection{Engineering Findings}
+
+Three bugs were discovered through live testing during collaborative sessions, each illustrative of failure modes specific to LLM-in-the-loop systems.
+
+\textbf{F-001: Entity type field naming.} LLM extraction agents inconsistently used \texttt{"type"} instead of the schema-specified \texttt{"entity\_type"} for the entity classification field. This is a class of bug unique to systems where the data producer is a language model: the schema was correctly specified in the prompt, but the LLM occasionally substituted a semantically similar field name. The fix employed a two-layer defense---prompt improvement to reinforce the correct field name, plus runtime normalization to detect and correct the substitution transparently.
+
+\textbf{F-002: Numeric community labels.} The graph community detection algorithm assigned numeric identifiers to communities, producing labels like ``Community 0'' and ``Community 1'' that conveyed no scientific meaning. A custom semantic labeling engine was implemented to inspect community membership and generate descriptive labels (e.g., ``PD-1/PD-L1 Checkpoint Signaling'') based on the dominant entity and relation types within each community.
+
+\textbf{F-003: Version number propagation.} Plugin version numbers were hardcoded across six files with no propagation mechanism, creating a maintenance hazard where version updates required manual synchronization. This was identified during a routine documentation review and addressed by establishing a single source of truth for version metadata.
+
+Full details, including root cause analysis and resolution status for each finding, are documented in the project's \texttt{FINDINGS.md}.

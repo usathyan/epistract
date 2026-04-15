@@ -35,20 +35,6 @@ Epistract is packaged as a Claude Code plugin. A scientist installs it with a si
 
 This delivery model is a deliberate departure from the dominant paradigms for computational biology tools: Jupyter notebooks that require environment configuration, cloud services that require data upload, and command-line pipelines that require dependency management. A Claude Code plugin encapsulates the entire dependency tree and execution logic, exposing a single entry point that handles corpus discovery, agent dispatch, result aggregation, and output generation.
 
-\subsection{Domain Pluggability}
-
-Epistract's architecture separates the extraction pipeline from domain-specific knowledge through a three-layer design:
-
-\begin{enumerate}
-  \item \textbf{Core Pipeline} (\texttt{core/}): Domain-agnostic document ingestion, entity extraction orchestration, graph construction (via sift-kg), and epistemic analysis dispatch. This layer contains no domain-specific logic.
-  \item \textbf{Domain Configurations} (\texttt{domains/}): Pluggable packages containing entity/relation schemas (YAML), extraction prompts (SKILL.md), and domain-specific epistemic rules (Python). Each domain package defines what to extract and how to analyze it.
-  \item \textbf{Example Consumers} (\texttt{examples/}): Application frontends (web dashboard, Telegram bot) that work with any domain's graph output, demonstrating how extracted knowledge can be presented and queried.
-\end{enumerate}
-
-Adding a new domain requires creating a configuration package --- no modifications to the core pipeline. A domain creation wizard (\texttt{/epistract:domain}) automates this process by analyzing sample documents and generating a complete domain package including the entity/relation schema, extraction prompt, and epistemic analysis rules for both the brute facts and epistemic super-domain layers.
-
-This separation enables two distinct user paths: domain \emph{users} who install a pre-built domain and run the pipeline immediately, and domain \emph{developers} who create new domain packages for their specific document corpora.
-
 \subsection{Claude Code as Development Environment}
 
 For readers unfamiliar with the platform, Claude Code is an agentic coding CLI from Anthropic that orchestrates large language model agents as subprocesses within a developer's terminal. Epistract relies on four capabilities of this environment. First, the plugin system provides installable tools with named commands, skills, and agent definitions that integrate into the Claude Code session. Second, parallel agent dispatch allows Epistract to launch one extraction agent per document, with the runtime managing subprocess lifecycles and resource allocation. Third, a permission model gives the user explicit control over what agents can execute---file reads, file writes, shell commands---preventing unintended side effects. Fourth, the bash and file tools allow agents to read source documents, write extraction JSON, and invoke Python validation scripts (RDKit, Biopython) as part of their execution flow, bridging LLM reasoning and deterministic computation within a single agent turn.

@@ -90,15 +90,3 @@ Figure~\ref{fig:scenarios} presents multi-panel graph visualizations for all six
 All 25 user acceptance tests (UATs) passed across the six scenarios.
 Each UAT verifies that a specific expected relationship appears in the constructed graph---for example, ``Does \texttt{COMPOUND}(nivolumab) connect to \texttt{CLINICAL\_TRIAL}(CheckMate-067) via \texttt{EVALUATED\_IN}?''
 UATs serve as functional regression tests: they confirm that the extraction prompt, schema enforcement, and graph construction pipeline jointly produce the relationships a domain scientist would expect from a given literature set.
-
-\subsection{Case Study 2: Event Contract Management}
-
-To validate Epistract's domain-agnostic capabilities, I applied the framework to a corpus of 62 event planning contracts for a multi-day convention (PDFs, spreadsheets, and email correspondence). This corpus is structurally and semantically distinct from biomedical literature, requiring a completely different domain schema and epistemic analysis layer.
-
-\textbf{Domain Configuration.} I defined a contract domain schema with 11 entity types (Party, Obligation, Deadline, Cost, Clause, Service, Venue, Committee, Person, Event, Stage) and 11 relation types (OBLIGATES, CONFLICTS\_WITH, DEPENDS\_ON, COSTS, PROVIDES, RESTRICTS, ASSIGNS, CHAIRS, SCHEDULES, LOCATED\_AT, STAGES). The schema was created as a new domain configuration package using the same infrastructure built for drug discovery.
-
-\textbf{Extraction Results.} The pipeline extracted 341 nodes and 663 edges from the 62-document corpus. Entity resolution merged variant references (e.g., different name spellings for the same vendor, abbreviations and full legal names for the same party) into canonical nodes. Community detection identified functional clusters organized around venue logistics, catering and food service, audiovisual and staging, and administrative committees.
-
-\textbf{Epistemic Analysis.} Domain-specific epistemic rules detected 53 cross-contract conflicts --- including overlapping exclusive-use claims for venue spaces, incompatible scheduling requirements, and contradictory terms between related contracts. Gap analysis identified event requirements lacking corresponding contract coverage, surfacing planning risks before they could become operational failures.
-
-\textbf{Framework Validation.} The contract domain was created using the same pipeline infrastructure built for drug discovery, requiring only a new domain configuration package. No core pipeline modifications were necessary --- the same document ingestion, entity extraction orchestration, graph construction, and epistemic analysis dispatch code processed contracts as effectively as it had processed biomedical literature. This confirms the framework's domain-agnostic design: the intelligence resides in the domain configuration, not the pipeline.
