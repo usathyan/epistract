@@ -1,3 +1,4 @@
+epistract-corpus/
 .venv/
 __pycache__/
 *.pyc
