@@ -293,7 +293,7 @@ python -m pytest tests/test_unit.py::test_ut003_scan_nct -v
 python -m pytest tests/test_unit.py::test_ut011_detect_type -v
 
 # Run with optional dependencies
-uv pip install rdkit-pypi biopython sift-kg
+uv pip install rdkit biopython sift-kg
 make test
 ```
 

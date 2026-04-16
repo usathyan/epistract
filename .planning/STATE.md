@@ -28,7 +28,7 @@ See: .planning/PROJECT.md (updated 2026-04-02)
 Phase: 11 (end-to-end-scenario-validation) — EXECUTING
 Plan: 2 of 4
 Status: Ready to execute
-Last activity: 2026-04-04
+Last activity: 2026-04-16 - Completed quick task 260416-fkc: rdkit-pypi -> rdkit + SOCKS proxy bypass
 
 Progress: [████████░░] 85%
 
@@ -126,6 +126,12 @@ Recent decisions affecting current work:
 - Repo reorganization (Phase 6) is the critical path -- everything else depends on it
 - Domain wizard (Phase 7) needs the new `domains/` structure to exist before generating into it
 - Backward compatibility with biomedical scenarios must be preserved through reorganization
+
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 260416-fkc | Fix rdkit-pypi -> rdkit (Py3.13+) and bypass SOCKS proxy in workbench api_chat.py | 2026-04-16 | 2fef783 | [260416-fkc-fix-rdkit-pypi-to-rdkit-python-3-13-and-](./quick/260416-fkc-fix-rdkit-pypi-to-rdkit-python-3-13-and-/) |
 
 ## Session Continuity
 

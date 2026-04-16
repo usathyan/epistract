@@ -20,7 +20,7 @@
 - New contributors have no documented installation instructions
 
 **Fix approach:**
-1. Create `pyproject.toml` with optional dependency groups: `[project.optional-dependencies]` for `dev = ["rdkit-pypi>=2023.9", "biopython>=1.83"]`
+1. Create `pyproject.toml` with optional dependency groups: `[project.optional-dependencies]` for `dev = ["rdkit>=2023.9", "biopython>=1.83"]`
 2. Document installation: `uv pip install -e ".[dev]"` or `uv sync`
 3. Update CI/CD to verify dependencies are available during test runs
 4. Consider switching from graceful degradation to explicit validation: fail fast if validator is called without dependencies installed
@@ -484,7 +484,7 @@ dedup_report = build_dedup_report(dict(inchikey_map), output_dir)  # O(n) scan
 **Risk:** Scenario reproducibility: running the same extraction with RDKit 2023.9 vs. 2024.3 could produce different canonical SMILES, breaking dedup.
 
 **Mitigation approach:**
-1. Pin RDKit version in dependency manifest (once created): `rdkit-pypi==2023.9.1`
+1. Pin RDKit version in dependency manifest (once created): `rdkit==2023.9.1`
 2. Document version requirement in DEVELOPER.md: "Validated with RDKit 2023.9.1; other versions may produce different canonicalization"
 3. Add CI test: verify RDKit version matches pinned version before validation runs
 4. Create migration guide: if RDKit is upgraded, re-run validation pipeline and compare InChIKey output

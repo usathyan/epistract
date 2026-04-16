@@ -75,7 +75,7 @@
 **Optional: Molecular Validation**
 
 Install with `make setup-all` or `bash scripts/setup.sh --all`:
-- **RDKit** (rdkit-pypi) ~50MB - SMILES validation, canonicalization, molecular properties (Lipinski analysis)
+- **RDKit** (rdkit) ~50MB - SMILES validation, canonicalization, molecular properties (Lipinski analysis)
   - Provides: canonical SMILES, InChI, InChIKey, molecular formula, MW, LogP, HBD, HBA, TPSA
 - **Biopython** ~20MB - DNA/RNA/protein sequence validation, GC content, isoelectric point, molecular weight
   - Provides: sequence validation, type detection, reverse complement, translation, physiochemical properties

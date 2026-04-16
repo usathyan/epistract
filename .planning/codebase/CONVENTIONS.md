@@ -118,7 +118,7 @@ sys.path.insert(0, str(VALIDATION_SCRIPTS))
   if not RDKIT_AVAILABLE:
       return {
           "valid": None,
-          "error": "RDKit not installed. Run: uv pip install rdkit-pypi",
+          "error": "RDKit not installed. Run: uv pip install rdkit",
       }
   ```
 
