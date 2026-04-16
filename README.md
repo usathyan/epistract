@@ -80,7 +80,7 @@ This shells out to `scripts/setup.sh`, which:
 2. Creates `.venv/` via `uv venv` if it doesn't already exist
 3. Checks Python 3.11–3.13 in that venv
 4. Installs `sift-kg` via `uv pip install` (targets the project `.venv` automatically)
-5. Optionally installs `rdkit-pypi` + `biopython` with `--all`
+5. Optionally installs `rdkit` + `biopython` with `--all`
 
 The script is idempotent — safe to re-run after upgrades. It does **not** fall back to plain `pip` on failure: if `uv pip install` can't reach PyPI (corporate SSL proxies are the usual culprit), it prints a clear error with remediation steps instead of silently installing into the wrong environment.
 

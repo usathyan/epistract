@@ -98,7 +98,7 @@ This document is for developers extending, debugging, or integrating with Epistr
 
 | Dependency | Size | Purpose | Project |
 |---|---|---|---|
-| **RDKit** (rdkit-pypi) | ~50MB | SMILES validation, canonicalization, molecular properties, Lipinski analysis | [rdkit.org](https://www.rdkit.org/) |
+| **RDKit** (rdkit) | ~50MB | SMILES validation, canonicalization, molecular properties, Lipinski analysis | [rdkit.org](https://www.rdkit.org/) |
 | **Biopython** | ~20MB | Sequence validation (DNA/RNA/protein), GC content, isoelectric point, BLAST | [biopython.org](https://biopython.org/) |
 
 ### Optional: sift-kg Extras
@@ -397,7 +397,7 @@ The skill file contains the full domain schema and extraction prompt template. W
 | Script | Location | Dependencies | Purpose |
 |---|---|---|---|
 | `scan_patterns.py` | `skills/drug-discovery-extraction/validation-scripts/` | None (stdlib re) | Regex pattern scanning for SMILES, sequences, identifiers |
-| `validate_smiles.py` | Same | rdkit-pypi (optional) | SMILES validation, canonicalization, property computation |
+| `validate_smiles.py` | Same | rdkit (optional) | SMILES validation, canonicalization, property computation |
 | `validate_sequences.py` | Same | biopython (optional) | DNA/RNA/protein sequence validation and analysis |
 | `validate_molecules.py` | `scripts/` | Both optional | Orchestrator: scan → validate → enrich extraction JSONs |
 

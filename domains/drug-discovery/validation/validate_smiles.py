@@ -29,7 +29,7 @@ def validate_smiles(smiles: str) -> dict:
     if not RDKIT_AVAILABLE:
         return {
             "valid": None,
-            "error": "RDKit not installed. Run: uv pip install rdkit-pypi",
+            "error": "RDKit not installed. Run: uv pip install rdkit",
         }
 
     mol = Chem.MolFromSmiles(smiles)

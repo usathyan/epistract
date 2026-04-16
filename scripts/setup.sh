@@ -146,13 +146,13 @@ elif [ "$CHECK_ONLY" = true ]; then
   echo "MISSING: RDKit (optional — run 'scripts/setup.sh --all' to install)"
 elif [ "$INSTALL_ALL" = true ]; then
   echo "Installing RDKit via uv..."
-  if uv pip install rdkit-pypi; then
+  if uv pip install rdkit; then
     echo "RDKit installed"
   else
     echo "WARN: RDKit install failed (optional — continuing)"
   fi
 else
-  echo "RDKit not available (optional — install with: uv pip install rdkit-pypi  or re-run with --all)"
+  echo "RDKit not available (optional — install with: uv pip install rdkit  or re-run with --all)"
 fi
 
 # ---------------------------------------------------------------------------

@@ -11,7 +11,7 @@ bash ${CLAUDE_PLUGIN_ROOT}/scripts/setup.sh
 
 If any dependency is missing, install it:
 - sift-kg: `uv pip install sift-kg`
-- RDKit (SMILES validation): `uv pip install rdkit-pypi`
+- RDKit (SMILES validation): `uv pip install rdkit`
 - Biopython (sequence validation): `uv pip install biopython`
 
 Report the status of each dependency to the user after running.

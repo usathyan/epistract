@@ -57,7 +57,7 @@ Two pre-built domains demonstrate the framework:
 - **Typer** ≥0.9 - CLI framework for sift-kg command-line tools
 - **PyYAML** ≥6.0 - YAML parsing for domain schemas
 - **requests** - HTTP library used in test corpus assembly (PubMed E-utilities, SerpAPI calls)
-- **RDKit** (rdkit-pypi) ~50MB - SMILES validation, canonicalization, molecular properties (Lipinski analysis)
+- **RDKit** (rdkit) ~50MB - SMILES validation, canonicalization, molecular properties (Lipinski analysis)
 - **Biopython** ~20MB - DNA/RNA/protein sequence validation, GC content, isoelectric point, molecular weight
 - **sentence-transformers** ~2GB (PyTorch) - Semantic clustering for entity resolution (`sift-kg[embeddings]`)
 - **google-cloud-vision** ~20MB - Google Cloud Vision OCR (`sift-kg[ocr]`)
