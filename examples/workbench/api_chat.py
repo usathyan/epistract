@@ -207,7 +207,7 @@ async def _stream_anthropic(
     }
 
     try:
-        async with httpx.AsyncClient(timeout=120.0) as client:
+        async with httpx.AsyncClient(timeout=120.0, proxy=None) as client:
             async with client.stream("POST", base_url, json=payload, headers=headers) as resp:
                 if resp.status_code != 200:
                     body = await resp.aread()
@@ -256,7 +256,7 @@ async def _stream_openai_compat(
     }
 
     try:
-        async with httpx.AsyncClient(timeout=120.0) as client:
+        async with httpx.AsyncClient(timeout=120.0, proxy=None) as client:
             async with client.stream("POST", base_url, json=payload, headers=headers) as resp:
                 if resp.status_code != 200:
                     body = await resp.aread()
