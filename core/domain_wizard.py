@@ -29,6 +29,15 @@ from pathlib import Path
 
 from core.domain_resolver import DOMAINS_DIR, DOMAIN_ALIASES, list_domains
 
+# Optional sift-kg reader — used to extract text from binary formats (PDF, DOCX, etc.).
+# Matches the guard pattern at core/ingest_documents.py:20-25.
+try:
+    from sift_kg.ingest.reader import read_document
+
+    HAS_SIFT_READER = True
+except ImportError:
+    HAS_SIFT_READER = False
+
 
 # ---------------------------------------------------------------------------
 # Constants
@@ -47,6 +56,11 @@ MAX_RELATION_TYPES = 20
 def read_sample_documents(doc_paths: list[Path]) -> list[dict]:
     """Read sample documents for wizard analysis.
 
+    Uses sift_kg.ingest.reader.read_document when available so PDFs, DOCX,
+    and other binary formats produce extracted text rather than raw bytes.
+    Falls back to plain-text read for .txt files when sift-kg is absent.
+    Binary formats without sift-kg are skipped (not silently read as garbage).
+
     Args:
         doc_paths: List of paths to sample documents.
 
@@ -59,15 +73,36 @@ def read_sample_documents(doc_paths: list[Path]) -> list[dict]:
     results: list[dict] = []
     for p in doc_paths:
         p = Path(p)
-        try:
-            text = p.read_text(errors="replace")
-            results.append({
+        text: str | None = None
+
+        if HAS_SIFT_READER:
+            try:
+                raw = read_document(p)
+                text = raw if isinstance(raw, str) else str(raw)
+            except Exception:
+                # Mirrors core/ingest_documents.py parse_document:
+                # skip unreadable docs; caller enforces MIN_SAMPLE_DOCS.
+                continue
+        elif p.suffix.lower() == ".txt":
+            try:
+                text = p.read_text(encoding="utf-8")
+            except (OSError, UnicodeDecodeError):
+                continue
+        else:
+            # No sift-kg and not a plain-text file: skip rather than
+            # silently read binary bytes (Bug 3 — FIDL-01).
+            continue
+
+        if text is None:
+            continue
+
+        results.append(
+            {
                 "path": str(p),
                 "text": text,
                 "char_count": len(text),
-            })
-        except (OSError, UnicodeDecodeError):
-            continue
+            }
+        )
 
     if len(results) < MIN_SAMPLE_DOCS:
         raise ValueError(
