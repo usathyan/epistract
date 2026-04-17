@@ -288,12 +288,12 @@ Plans:
 **Scope:** Bug 4 + Enh 2 + Enh 3 (extractor prompt enforcement) + Part 1 Item 4 (provenance accuracy). Bug 4 is the observed failure; Enhs 2/3 are the belt-and-suspenders fix; Item 4 rides along since it touches the same `build_extraction.py` file.
 
 **Depends on:** Phase 11 baselines.
-**Plans:** 2/5 plans executed
+**Plans:** 3/5 plans executed
 
 Plans:
 - [x] 13-00-PLAN.md — Wave 0 scaffolding: register FIDL-02a/b/c in REQUIREMENTS.md, add 13 test rows to TEST_REQUIREMENTS.md, create 24-file Bug-4 reproducer + 10-file below-threshold fixture corpora (FIDL-02a, FIDL-02b, FIDL-02c)
 - [x] 13-01-PLAN.md — Contract enforcement at write time: extend _normalize_fields for schema drift, add sift-kg DocumentExtraction Pydantic validation in build_extraction.py, replace hardcoded claude-opus-4-6/0.0 with --model/--cost flags + EPISTRACT_MODEL env var (FIDL-02c)
-- [ ] 13-02-PLAN.md — Normalization module: create core/normalize_extractions.py with rename/infer/dedupe/coerce/report + CLI entry-point with --fail-threshold gate (FIDL-02b)
+- [x] 13-02-PLAN.md — Normalization module: create core/normalize_extractions.py with rename/infer/dedupe/coerce/report + CLI entry-point with --fail-threshold gate (FIDL-02b)
 - [ ] 13-03-PLAN.md — Agent + command wiring: update agents/extractor.md with Required-Fields block + stdin fallback + fix /scripts/ path bug; insert Step 3.5 in commands/ingest.md + document --fail-threshold flag + EPISTRACT_MODEL export (FIDL-02a)
 - [ ] 13-04-PLAN.md — End-to-end regression: FT-009 24-file reproducer ≥95% pass rate + graph builds, FT-010 below-threshold abort before build (FIDL-02b)
 
