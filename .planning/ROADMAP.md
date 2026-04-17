@@ -120,7 +120,7 @@ Plans:
 Phase priority is **blocking-ness first, silent quality second, polish last**. See `.planning/phases/12-*/SCOPE-ADDITIONS.md` for the full item analysis.
 
 - [x] **Phase 12: Fix wizard PDF binary read (Bug 3)** - `core/domain_wizard.py:63` reads PDFs as raw binary via `Path.read_text(errors="replace")`, sending `%PDF-1.4` bytes to the LLM. Wizard produces garbage schemas for the most common document format. Swap to `sift_kg.ingest.reader.read_document()`. Single-function fix; unblocks the "create your own domain" path. (completed 2026-04-17)
-- [ ] **Phase 13: Extraction pipeline reliability** - Addresses Bug 4 (30% extraction drop rate in 23-doc axmp-compliance build). Add post-extraction normalization step (Enh 2), enforce required JSON schema in extractor prompt (Enh 3), and capture accurate `model_used` + `cost_usd` in extraction metadata (Part 1 Item 4).
+- [x] **Phase 13: Extraction pipeline reliability** - Addresses Bug 4 (30% extraction drop rate in 23-doc axmp-compliance build). Add post-extraction normalization step (Enh 2), enforce required JSON schema in extractor prompt (Enh 3), and capture accurate `model_used` + `cost_usd` in extraction metadata (Part 1 Item 4). (completed 2026-04-17)
 - [ ] **Phase 14: Chunk overlap** - `commands/ingest.md` promises overlap, `core/chunk_document.py` implements none. Silent recall loss on every graph built. Implement sliding-window overlap (character or sentence based).
 - [ ] **Phase 15: Format discovery parity** - `core/ingest_documents.py:SUPPORTED_EXTENSIONS` discovers 9 extensions but README claims "75+ via Kreuzberg." PPTX/EPUB/MD/RTF/ODT/CSV silently skipped. Expand allowlist or probe at runtime.
 - [ ] **Phase 16: Wizard sample window beyond 8KB** - `core/domain_wizard.py:105` truncates each sample to `doc_text[:8000]`. Tail vocabulary ignored. Multi-excerpt or summarize-then-analyze. **Depends on Phase 12** (wizard must read real text first).
@@ -288,14 +288,14 @@ Plans:
 **Scope:** Bug 4 + Enh 2 + Enh 3 (extractor prompt enforcement) + Part 1 Item 4 (provenance accuracy). Bug 4 is the observed failure; Enhs 2/3 are the belt-and-suspenders fix; Item 4 rides along since it touches the same `build_extraction.py` file.
 
 **Depends on:** Phase 11 baselines.
-**Plans:** 4/5 plans executed
+**Plans:** 5/5 plans complete
 
 Plans:
 - [x] 13-00-PLAN.md — Wave 0 scaffolding: register FIDL-02a/b/c in REQUIREMENTS.md, add 13 test rows to TEST_REQUIREMENTS.md, create 24-file Bug-4 reproducer + 10-file below-threshold fixture corpora (FIDL-02a, FIDL-02b, FIDL-02c)
 - [x] 13-01-PLAN.md — Contract enforcement at write time: extend _normalize_fields for schema drift, add sift-kg DocumentExtraction Pydantic validation in build_extraction.py, replace hardcoded claude-opus-4-6/0.0 with --model/--cost flags + EPISTRACT_MODEL env var (FIDL-02c)
 - [x] 13-02-PLAN.md — Normalization module: create core/normalize_extractions.py with rename/infer/dedupe/coerce/report + CLI entry-point with --fail-threshold gate (FIDL-02b)
 - [x] 13-03-PLAN.md — Agent + command wiring: update agents/extractor.md with Required-Fields block + stdin fallback + fix /scripts/ path bug; insert Step 3.5 in commands/ingest.md + document --fail-threshold flag + EPISTRACT_MODEL export (FIDL-02a)
-- [ ] 13-04-PLAN.md — End-to-end regression: FT-009 24-file reproducer ≥95% pass rate + graph builds, FT-010 below-threshold abort before build (FIDL-02b)
+- [x] 13-04-PLAN.md — End-to-end regression: FT-009 24-file reproducer ≥95% pass rate + graph builds, FT-010 below-threshold abort before build (FIDL-02b)
 
 ### Phase 14: Chunk overlap
 

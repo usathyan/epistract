@@ -97,7 +97,7 @@ Each task was committed atomically:
 3. **Task 3: Create normalization fixture corpus (24 files → 23 logical docs)** - `bfa62a7` (test)
 4. **Task 4: Create below-threshold fixture corpus** - `7d9526c` (test)
 
-**Plan metadata:** `<pending>` (will be appended after SUMMARY.md write)
+**Plan metadata:** `4bd2fed` (docs: complete Wave 0 scaffolding plan)
 
 ## Files Created/Modified
 

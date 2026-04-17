@@ -70,6 +70,7 @@ epistract/
 
 ### Future (V3)
 
+- [x] Wizard PDF binary read fixed (FIDL-01) — `read_sample_documents` routes through `sift_kg.ingest.reader.read_document` (Validated in Phase 12)
 - [ ] Biomedical domain migrated to V2 architecture with full backward compatibility
 - [ ] Domain registry — discover and load domains dynamically
 
@@ -156,4 +157,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-03 — Phase 7 complete (testing framework), Phase 8 next (domain creation wizard)*
+*Last updated: 2026-04-17 — Phase 12 complete (FIDL-01: wizard PDF binary read fixed), Phase 13 next (extraction pipeline reliability)*
