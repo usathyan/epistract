@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Framework Architecture & Domain Developer Experience
 status: executing
-stopped_at: Completed 13-02-PLAN.md (normalize_extractions module + UT-019..UT-023)
-last_updated: "2026-04-17T12:33:01.525Z"
+stopped_at: "Completed 13-03-PLAN.md (extractor.md contract + /epistract:ingest Step 3.5 wiring + UT-017/018)"
+last_updated: "2026-04-17T12:39:00.103Z"
 last_activity: 2026-04-17
 progress:
   total_phases: 22
   completed_phases: 12
   total_plans: 40
-  completed_plans: 38
+  completed_plans: 39
   percent: 85
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-04-02)
 ## Current Position
 
 Phase: 13 (Extraction Pipeline Reliability) — EXECUTING
-Plan: 4 of 5
+Plan: 5 of 5
 Status: Ready to execute
 Last activity: 2026-04-17
 
@@ -76,6 +76,7 @@ Progress: [████████░░] 85%
 | Phase 13 P00 | 4 | 4 tasks | 38 files |
 | Phase 13 P01 | 6min | 3 tasks | 2 files |
 | Phase 13 P02 | 3min | 2 tasks | 2 files |
+| Phase 13 P03 | 3min | 3 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -129,6 +130,9 @@ Recent decisions affecting current work:
 - [Phase 13]: [Phase 13-02]: normalize_extractions reuses sift-kg default substitution (0.0/"") during Pydantic validation — same reconciliation as Plan 13-01. Ensures honest-null provenance on disk while enforcing required-field contract.
 - [Phase 13]: [Phase 13-02]: Composite dedupe score (has_document_id*1000 + len(entities) + len(relations)) with lexicographic filename tie-break; 1000-weight dominance guarantees intact-but-smaller records always beat lossy-but-richer ones.
 - [Phase 13]: [Phase 13-02]: Added isinstance(record, dict) guard in _load_and_coerce so malformed non-dict JSON (arrays, strings) classifies as unrecoverable_load instead of crashing _normalize_fields — belt-and-suspenders for Plan 13-04 below-threshold fixture.
+- [Phase 13]: [Phase 13-03]: Dual-path provenance threading — BOTH EPISTRACT_MODEL env export AND --model flag literally in dispatch-prompt Bash. D-07 cascade (flag > env > null) guarantees correctness under either Agent-tool env-inheritance behavior; no runtime test-and-flip needed.
+- [Phase 13]: [Phase 13-03]: Fixed latent path bug in agents/extractor.md — /scripts/build_extraction.py -> /core/build_extraction.py (post-reorg drift from Phase 06). UT-018 now asserts the old path is absent to guard against regression.
+- [Phase 13]: [Phase 13-03]: Grep-style agent-prompt regression tests (UT-017/018) use pure file-read + substring assertions. Runs in <1ms each; locks the prompt contract into CI so Write-tool escape hatches or path-bug regressions fail fast.
 
 ### Pending Todos
 
@@ -148,6 +152,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-04-17T12:33:01.522Z
-Stopped at: Completed 13-02-PLAN.md (normalize_extractions module + UT-019..UT-023)
+Last session: 2026-04-17T12:39:00.099Z
+Stopped at: Completed 13-03-PLAN.md (extractor.md contract + /epistract:ingest Step 3.5 wiring + UT-017/018)
 Resume file: None
