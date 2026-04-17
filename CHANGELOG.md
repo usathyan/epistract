@@ -2,6 +2,54 @@
 
 All notable changes to epistract are documented here. This project follows [Semantic Versioning](https://semver.org/).
 
+## [2.1.0] — 2026-04-17
+
+**Graph Fidelity & Extraction Pipeline Reliability.** Two reliability phases close silent-data-loss holes in the extraction pipeline. The extraction-load rate jumped from ~70% (axmp-compliance 23-doc run lost 7 documents) to ≥95%, proven end-to-end on a 24-file Bug-4 reproducer (FT-009 at 100%). The `/epistract:domain` wizard now reads PDFs correctly instead of leaking binary headers into generated schemas.
+
+### Highlights
+
+- **Phase 12 — FIDL-01 wizard PDF binary read fix.** `/epistract:domain` was reading PDFs as raw binary (null bytes and `%PDF-` headers leaked into the proposed schema). Wizard now routes sample reads through `sift_kg.ingest.reader.read_document` — the same reader the main ingest pipeline uses — so generated entity type names are derived from real document content.
+- **Phase 13 — FIDL-02a/b/c extraction pipeline reliability.** Three-layer defense against silent extraction drop:
+  - **Write-time Pydantic validation** in `core/build_extraction.py` catches malformed extractions immediately (missing `document_id`, invalid `entity_type`, schema drift). Honest `--model` / `--cost` / `EPISTRACT_MODEL` provenance threading replaces the hardcoded `claude-opus-4-6` / `0.0` fabrication.
+  - **`core/normalize_extractions.py`** — new post-extraction Step 3.5 that renames variant filenames (`*_raw.json`, `*-extraction.json`), infers missing `document_id` from filename stems, dedupes same-doc variants via composite score, coerces schema drift (numeric-string confidence, missing context/evidence/attributes), and emits `_normalization_report.json`. CLI entry-point with `--fail-threshold` (default 0.95) aborts the pipeline before graph build if recovery rate is too low.
+  - **`agents/extractor.md` Required-Fields enforcement** — explicit REQUIRED top-level fields block (`document_id`, `entities`, `relations`), stdin fallback for large payloads, ban on direct `Write` tool use, and a `/scripts/`→`/core/` path bug fix.
+- **End-to-end acceptance loop** — `tests/test_e2e.py` adds FT-009 (24-file Bug-4 reproducer achieves ≥95% load rate through normalize → build) and FT-010 (10-file below-threshold fixture aborts with exit 1 before `graph_data.json` is written).
+
+### Added
+
+- `core/normalize_extractions.py` — post-extraction normalization module (334 lines) + CLI entry-point with `--fail-threshold` abort gate
+- `tests/test_e2e.py` — new end-to-end regression module (FT-009 + FT-010)
+- `tests/fixtures/normalization/` — 24-file Bug-4 reproducer corpus (23 logical docs post-dedupe) with variant filenames, missing `document_id` fields, schema drift, and orphan extractions
+- `tests/fixtures/normalization_below_threshold/` — 10-file corpus (2 survivors + 8 unrecoverable) for the `--fail-threshold` abort gate
+- `tests/fixtures/wizard/` — sample PDFs for the FIDL-01 wizard regression test
+- **Requirements**: FIDL-01 (wizard PDF binary read), FIDL-02a (extractor contract enforcement), FIDL-02b (post-extraction normalization + abort gate), FIDL-02c (honest extraction provenance + write-time validation) registered in `.planning/REQUIREMENTS.md`
+- **Test IDs**: UT-017..UT-030 (14 new unit tests) + FT-009, FT-010 (2 e2e tests) registered in `tests/TEST_REQUIREMENTS.md`
+
+### Changed
+
+- `core/build_extraction.py` — validates against `sift_kg.extract.models.DocumentExtraction` at write time; accepts `--model` / `--cost` CLI flags and `EPISTRACT_MODEL` environment variable; substitutes sift-kg defaults (`cost_usd=0.0`, `model_used=""`) on disk so direct `write → build` invocation remains sift-kg-loadable without a prior normalize pass
+- `core/normalize_extractions.py` — internal `_normalize_fields` helper extended to coerce numeric-string confidence values, missing `context` / `evidence`, and missing `attributes` dictionaries
+- `agents/extractor.md` — Required-Fields block enforces the JSON contract; stdin-pipe fallback for payloads exceeding Bash argv limits; corrects the `/scripts/` → `/core/` path reference
+- `commands/ingest.md` — inserts Step 3.5 (normalization) between extraction dispatch and `run_sift.py build`; documents the `--fail-threshold` pass-rate gate; exports `EPISTRACT_MODEL` and threads `--model` / `--cost` into `build_extraction.py` invocations
+- `core/chunk_document.py` — wizard sample reader routes through sift-kg reader (no more raw binary)
+- `scripts/setup.sh` — updated for Python 3.13+ wheel support (`rdkit-pypi` → `rdkit`)
+- `examples/workbench` — bypass SOCKS proxy in `httpx.AsyncClient` for enterprise proxy environments
+
+### Fixed
+
+- Wizard extracting null bytes and PDF/EPUB binary headers as candidate entity type names (FIDL-01)
+- `sift_kg.graph.builder.load_extractions` silently dropping files with inconsistent filenames or missing `document_id` (FIDL-02a/b)
+- Hardcoded `claude-opus-4-6` / `0.0` provenance in written extractions (FIDL-02c)
+- UT-013 regression introduced mid-phase by the honest-null-on-disk contract; resolved by symmetric sift-kg default substitution in `write_extraction` so direct `write → build` calls remain sift-kg-loadable
+
+### Test suite
+
+- `.venv/bin/python -m pytest tests/test_unit.py tests/test_e2e.py` — **47 passed + 4 skipped** (RDKit/Biopython optional deps)
+- Phase 13 acceptance (FT-009): 24-file reproducer flows through normalize → build at 100% pass_rate with non-empty `graph_data.json`
+- Phase 13 abort gate (FT-010): below-threshold fixture aborts with exit 1, no `graph_data.json` created
+
+---
+
 ## [2.0.0] — 2026-04-14
 
 **Cross-Domain Knowledge Graph Framework.** The v1.0 drug-discovery / contracts codebase is refactored into a domain-agnostic framework. Plug in a domain schema (YAML + extraction prompt + epistemic rules), point at a document corpus, and get a structured two-layer knowledge graph. Ships with pre-built drug-discovery and contracts domain packages, a domain creation wizard, and an interactive web workbench.

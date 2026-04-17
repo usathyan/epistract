@@ -62,7 +62,7 @@ After either option, verify the plugin is loaded:
 /plugin list
 ```
 
-You should see `epistract` (version 2.0.0) in the installed list, and the `/epistract:*` commands should autocomplete in your Claude Code prompt (`setup`, `ingest`, `build`, `view`, `validate`, `epistemic`, `query`, `export`, `domain`, `dashboard`, `ask`, `acquire`).
+You should see `epistract` (version 2.1.0) in the installed list, and the `/epistract:*` commands should autocomplete in your Claude Code prompt (`setup`, `ingest`, `build`, `view`, `validate`, `epistemic`, `query`, `export`, `domain`, `dashboard`, `ask`, `acquire`).
 
 ### Step 2 — Create the project `.venv` and install Python dependencies
 

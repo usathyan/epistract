@@ -1,6 +1,6 @@
 {
   "name": "epistract",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Cross-domain knowledge graph framework. Extract structured knowledge from any document corpus. Pre-built domains: drug discovery (biomedical literature) and contract analysis (vendor contracts). Includes interactive workbench, domain creation wizard, and conversational Q&A.",
   "author": {
     "name": "Umesh Bhatt"
