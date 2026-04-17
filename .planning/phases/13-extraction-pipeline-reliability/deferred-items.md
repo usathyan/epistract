@@ -33,6 +33,6 @@ if extraction.get("model_used") is None:
 
 This mirrors what Plan 13-04 applied in `core/normalize_extractions.py`.
 
-**Status:** Pre-existing — UT-013 was already failing on HEAD before Plan 13-04 began (verified via `git stash` + re-run). Plan 13-01 self-check did not flag it.
+**Status:** RESOLVED in commit `2898571` (fix(13-01): apply sift-kg defaults on disk in write_extraction). Applied symmetric substitution in `write_extraction` mirroring the fix in `normalize_extractions`. UT-029 / UT-030 updated to assert the new on-disk contract (sift-kg defaults, not null). All 47 unit+e2e tests pass. Option A chosen during phase verification: preserves direct-path backward compatibility over "honest null" on disk.
 
-**Impact:** Low in practice — the documented user path (`/epistract:ingest`) always runs normalize, so the phase acceptance goal (≥95% load rate) is met end-to-end. Direct `build_extraction` invocation without normalize is not a documented user path. A standalone `/epistract:build` future command would need this fix.
+**Impact (pre-resolution):** The documented user path (`/epistract:ingest`) always ran normalize, so the phase acceptance goal (≥95% load rate) was met end-to-end. Direct `build_extraction` invocation without normalize was broken. Post-resolution, both paths work.
