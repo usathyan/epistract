@@ -658,3 +658,109 @@ def test_build_extraction_raises_on_invalid_entity():
         # Must mention the Pydantic model + the offending field
         assert "DocumentExtraction" in str(exc_info.value)
         assert "entity_type" in str(exc_info.value)
+
+
+@pytest.mark.unit
+@pytest.mark.skipif(not HAS_SIFTKG, reason="sift-kg not installed")
+def test_build_extraction_threads_model_flag(tmp_path):
+    """UT-026: --model flag threads into output JSON model_used field."""
+    import subprocess
+
+    script = PROJECT_ROOT / "core" / "build_extraction.py"
+    payload = json.dumps({
+        "entities": [{"name": "x", "entity_type": "COMPOUND"}],
+        "relations": [],
+    })
+    result = subprocess.run(
+        ["python3", str(script), "test_doc", str(tmp_path),
+         "--model", "claude-sonnet-4-5", "--json", payload],
+        capture_output=True, text=True, cwd=str(PROJECT_ROOT),
+    )
+    assert result.returncode == 0, f"stderr: {result.stderr}"
+    out = json.loads((tmp_path / "extractions" / "test_doc.json").read_text())
+    assert out["model_used"] == "claude-sonnet-4-5"
+
+
+@pytest.mark.unit
+@pytest.mark.skipif(not HAS_SIFTKG, reason="sift-kg not installed")
+def test_build_extraction_reads_model_env(tmp_path):
+    """UT-027: EPISTRACT_MODEL env var is used when --model is absent."""
+    import subprocess, os as _os
+
+    script = PROJECT_ROOT / "core" / "build_extraction.py"
+    payload = json.dumps({
+        "entities": [{"name": "x", "entity_type": "COMPOUND"}],
+        "relations": [],
+    })
+    env = dict(_os.environ)
+    env["EPISTRACT_MODEL"] = "claude-opus-4-7"
+    result = subprocess.run(
+        ["python3", str(script), "test_doc", str(tmp_path), "--json", payload],
+        capture_output=True, text=True, env=env, cwd=str(PROJECT_ROOT),
+    )
+    assert result.returncode == 0, f"stderr: {result.stderr}"
+    out = json.loads((tmp_path / "extractions" / "test_doc.json").read_text())
+    assert out["model_used"] == "claude-opus-4-7"
+
+
+@pytest.mark.unit
+@pytest.mark.skipif(not HAS_SIFTKG, reason="sift-kg not installed")
+def test_build_extraction_threads_cost_flag(tmp_path):
+    """UT-028: --cost flag threads into output JSON cost_usd field (float via pytest.approx)."""
+    import subprocess
+
+    script = PROJECT_ROOT / "core" / "build_extraction.py"
+    payload = json.dumps({
+        "entities": [{"name": "x", "entity_type": "COMPOUND"}],
+        "relations": [],
+    })
+    result = subprocess.run(
+        ["python3", str(script), "test_doc", str(tmp_path),
+         "--cost", "0.0123", "--json", payload],
+        capture_output=True, text=True, cwd=str(PROJECT_ROOT),
+    )
+    assert result.returncode == 0, f"stderr: {result.stderr}"
+    out = json.loads((tmp_path / "extractions" / "test_doc.json").read_text())
+    # pytest.approx avoids direct float-equality fragility across round-trip JSON serialization
+    assert out["cost_usd"] == pytest.approx(0.0123)
+
+
+@pytest.mark.unit
+@pytest.mark.skipif(not HAS_SIFTKG, reason="sift-kg not installed")
+def test_build_extraction_no_hardcoded_model(tmp_path):
+    """UT-029: model_used defaults to null when no --model and no EPISTRACT_MODEL."""
+    import subprocess, os as _os
+
+    script = PROJECT_ROOT / "core" / "build_extraction.py"
+    payload = json.dumps({
+        "entities": [{"name": "x", "entity_type": "COMPOUND"}],
+        "relations": [],
+    })
+    env = {k: v for k, v in _os.environ.items() if k != "EPISTRACT_MODEL"}
+    result = subprocess.run(
+        ["python3", str(script), "test_doc", str(tmp_path), "--json", payload],
+        capture_output=True, text=True, env=env, cwd=str(PROJECT_ROOT),
+    )
+    assert result.returncode == 0, f"stderr: {result.stderr}"
+    out = json.loads((tmp_path / "extractions" / "test_doc.json").read_text())
+    assert out["model_used"] is None, f"Expected null, got {out['model_used']!r}"
+
+
+@pytest.mark.unit
+@pytest.mark.skipif(not HAS_SIFTKG, reason="sift-kg not installed")
+def test_build_extraction_no_hardcoded_cost(tmp_path):
+    """UT-030: cost_usd defaults to null when no --cost flag provided."""
+    import subprocess
+
+    script = PROJECT_ROOT / "core" / "build_extraction.py"
+    payload = json.dumps({
+        "entities": [{"name": "x", "entity_type": "COMPOUND"}],
+        "relations": [],
+    })
+    result = subprocess.run(
+        ["python3", str(script), "test_doc", str(tmp_path), "--json", payload],
+        capture_output=True, text=True, cwd=str(PROJECT_ROOT),
+    )
+    assert result.returncode == 0, f"stderr: {result.stderr}"
+    out = json.loads((tmp_path / "extractions" / "test_doc.json").read_text())
+    assert out["cost_usd"] is None, f"Expected null, got {out['cost_usd']!r}"

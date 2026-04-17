@@ -15,6 +15,13 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+# Allow running as a plain script (python3 core/build_extraction.py ...) in addition
+# to module import. Agents invoke this directly via an absolute path, so the package
+# root must be on sys.path for the `core.domain_resolver` import below.
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(_PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(_PROJECT_ROOT))
+
 import yaml
 from core.domain_resolver import resolve_domain
 
@@ -59,7 +66,18 @@ def _normalize_fields(entities, relations):
     return entities, relations
 
 
-def write_extraction(doc_id, output_dir, entities, relations, document_path="", chunks_processed=1, chunk_size=10000, domain_name=None):
+def write_extraction(
+    doc_id,
+    output_dir,
+    entities,
+    relations,
+    document_path="",
+    chunks_processed=1,
+    chunk_size=10000,
+    domain_name=None,
+    model_used: str | None = None,
+    cost_usd: float | None = None,
+):
     """Write extraction JSON to disk in sift-kg DocumentExtraction format.
 
     Args:
@@ -71,6 +89,8 @@ def write_extraction(doc_id, output_dir, entities, relations, document_path="", 
         chunks_processed: Number of chunks processed.
         chunk_size: Size of each chunk.
         domain_name: Domain name for resolution (default: drug-discovery).
+        model_used: Actual model id that produced the extraction (None if unknown).
+        cost_usd: Actual cost of the extraction in USD (None if unknown).
 
     Returns:
         Path to written extraction JSON file.
@@ -90,16 +110,27 @@ def write_extraction(doc_id, output_dir, entities, relations, document_path="", 
         "chunks_processed": chunks_processed,
         "entities": entities,
         "relations": relations,
-        "cost_usd": 0.0,
-        "model_used": "claude-opus-4-6",
+        "cost_usd": cost_usd,
+        "model_used": model_used,
         "domain_name": domain_data["name"],
         "chunk_size": chunk_size,
         "extracted_at": datetime.now(timezone.utc).isoformat(),
         "error": None,
     }
     if HAS_SIFT_EXTRACTION_MODEL:
+        # Validate a copy where honest `None` provenance is substituted with the
+        # sift-kg model's defaults — the sift-kg DocumentExtraction declares
+        # `cost_usd: float = 0.0` and `model_used: str = ""`, which would reject
+        # None even though our on-disk contract allows null. The validation's
+        # purpose is to catch missing document_id / entity_type / etc., not to
+        # dictate provenance nullability.
+        _validation_payload = dict(extraction)
+        if _validation_payload.get("cost_usd") is None:
+            _validation_payload["cost_usd"] = 0.0
+        if _validation_payload.get("model_used") is None:
+            _validation_payload["model_used"] = ""
         try:
-            DocumentExtraction(**extraction)
+            DocumentExtraction(**_validation_payload)
         except Exception as exc:
             raise ValueError(
                 f"Extraction for doc_id={doc_id!r} failed DocumentExtraction validation: {exc}"
@@ -120,11 +151,27 @@ if __name__ == "__main__":
     if "--domain" in sys.argv:
         domain_name = sys.argv[sys.argv.index("--domain") + 1]
 
+    model_used: str | None = None
+    if "--model" in sys.argv:
+        model_used = sys.argv[sys.argv.index("--model") + 1]
+    elif os.environ.get("EPISTRACT_MODEL"):
+        model_used = os.environ["EPISTRACT_MODEL"]
+
+    cost_usd: float | None = None
+    if "--cost" in sys.argv:
+        cost_usd = float(sys.argv[sys.argv.index("--cost") + 1])
+
     if "--json" in sys.argv:
         data = json.loads(sys.argv[sys.argv.index("--json") + 1])
     else:
         data = json.load(sys.stdin)
-    path = write_extraction(doc_id, output_dir, data.get("entities", []), data.get("relations", []),
-                            data.get("document_path", ""), data.get("chunks_processed", 1),
-                            domain_name=domain_name)
+    path = write_extraction(
+        doc_id, output_dir,
+        data.get("entities", []), data.get("relations", []),
+        data.get("document_path", ""),
+        data.get("chunks_processed", 1),
+        domain_name=domain_name,
+        model_used=model_used,
+        cost_usd=cost_usd,
+    )
     print(f"Written: {path}")
