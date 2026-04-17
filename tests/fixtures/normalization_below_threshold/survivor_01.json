@@ -1,0 +1,36 @@
+{
+  "document_id": "survivor_01",
+  "document_path": "corpus/survivor_01.txt",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "Entity A",
+      "entity_type": "COMPOUND",
+      "attributes": {},
+      "confidence": 0.9,
+      "context": "placeholder"
+    },
+    {
+      "name": "Entity B",
+      "entity_type": "GENE",
+      "attributes": {},
+      "confidence": 0.85,
+      "context": "placeholder"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "Entity A",
+      "target_entity": "Entity B",
+      "confidence": 0.88,
+      "evidence": "placeholder"
+    }
+  ],
+  "cost_usd": null,
+  "model_used": null,
+  "domain_name": "drug-discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-17T00:00:00+00:00",
+  "error": null
+}

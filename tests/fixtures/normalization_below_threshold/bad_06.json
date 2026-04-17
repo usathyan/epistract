@@ -1,0 +1,11 @@
+{
+  "document_id": "bad_06",
+  "document_path": "",
+  "entities": [],
+  "relations": [
+    {
+      "relation_type": "X",
+      "target_entity": "Y"
+    }
+  ]
+}

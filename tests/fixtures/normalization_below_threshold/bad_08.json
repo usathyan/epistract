@@ -1,0 +1,12 @@
+{
+  "document_id": "bad_08",
+  "document_path": "",
+  "entities": [
+    {
+      "name": "x",
+      "entity_type": "Y",
+      "confidence": 5.0
+    }
+  ],
+  "relations": []
+}

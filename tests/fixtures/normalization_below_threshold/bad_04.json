@@ -1,0 +1,10 @@
+{
+  "document_id": "bad_04",
+  "document_path": "",
+  "entities": [
+    {
+      "name": "foo"
+    }
+  ],
+  "relations": []
+}
