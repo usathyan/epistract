@@ -49,6 +49,30 @@ If no domain SKILL.md is provided, use drug discovery defaults:
 
 ## Output Format
 
+## REQUIRED top-level fields in every extraction JSON
+
+- **`document_id`** (string) — Must match the filename stem. Required by sift-kg's `DocumentExtraction` Pydantic model; extractions missing this field are silently dropped during graph build.
+- **`entities`** (array) — List of extracted entities (may be empty).
+- **`relations`** (array) — List of extracted relations (may be empty).
+
+## HOW to write extractions
+
+Write extractions ONLY via `build_extraction.py`. Never use the Write tool directly — doing so bypasses Pydantic validation and field normalization, which silently drops 30% of documents in real runs (observed: 7/23 files dropped in axmp-compliance build).
+
+**Primary path** (JSON flag):
+
+```bash
+python3 ${CLAUDE_PLUGIN_ROOT}/core/build_extraction.py <doc_id> <output_dir> --domain <domain_name> --json '<combined_json>'
+```
+
+**Fallback path** (stdin pipe — use if Bash permissions deny the `--json` form):
+
+```bash
+echo '<combined_json>' | python3 ${CLAUDE_PLUGIN_ROOT}/core/build_extraction.py <doc_id> <output_dir> --domain <domain_name>
+```
+
+If BOTH paths fail (e.g., both Bash invocations denied), report the failure in your summary with the exact error message. **DO NOT fall back to the Write tool** — it produces extractions that will be silently dropped, and the dispatcher's `N/M agents failed` counter depends on you reporting failure honestly.
+
 **CRITICAL: Use `entity_type` and `relation_type` as field names, NOT `type`.**
 
 ```json
@@ -72,11 +96,6 @@ If no domain SKILL.md is provided, use drug discovery defaults:
     }
   ]
 }
-```
-
-Write extraction using stdin pipe to avoid shell escaping issues:
-```bash
-echo '<json>' | python3 ${CLAUDE_PLUGIN_ROOT}/scripts/build_extraction.py <doc_id> <output_dir> --domain <domain_name>
 ```
 
 ## Rules
