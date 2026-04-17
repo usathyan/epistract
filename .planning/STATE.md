@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Framework Architecture & Domain Developer Experience
-status: verifying
-stopped_at: Completed 12-01-PLAN.md
-last_updated: "2026-04-17T01:04:52.747Z"
+status: executing
+stopped_at: Completed 13-00-PLAN.md
+last_updated: "2026-04-17T12:22:08.541Z"
 last_activity: 2026-04-17
 progress:
   total_phases: 22
-  completed_phases: 11
-  total_plans: 35
-  completed_plans: 34
+  completed_phases: 12
+  total_plans: 40
+  completed_plans: 36
   percent: 85
 ---
 
@@ -21,13 +21,13 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-02)
 
 **Core value:** Extract knowledge, not information. Any corpus, any domain -- plug in a schema, get a knowledge graph with epistemic layer.
-**Current focus:** Phase 12 — extend-epistemic-classifier-with-structural-biology-document-signature
+**Current focus:** Phase 13 — Extraction Pipeline Reliability
 
 ## Current Position
 
-Phase: 12 (extend-epistemic-classifier-with-structural-biology-document-signature) — EXECUTING
-Plan: 1 of 1
-Status: Phase complete — ready for verification
+Phase: 13 (Extraction Pipeline Reliability) — EXECUTING
+Plan: 2 of 5
+Status: Ready to execute
 Last activity: 2026-04-17
 
 Progress: [████████░░] 85%
@@ -73,6 +73,7 @@ Progress: [████████░░] 85%
 | Phase 10 P02 | 6min | 2 tasks | 4 files |
 | Phase 11 P02 | 2min | 2 tasks | 3 files |
 | Phase 12 P01 | 3min | 2 tasks | 3 files |
+| Phase 13 P00 | 4 | 4 tasks | 38 files |
 
 ## Accumulated Context
 
@@ -119,6 +120,8 @@ Recent decisions affecting current work:
 - [Phase 11]: package.json bin entry deferred (scripts/npx-install.sh) until npm account setup
 - [Phase 12]: [Phase 12]: Wizard read_sample_documents now routes through sift_kg.ingest.reader.read_document (HAS_SIFT_READER guard mirrors core/ingest_documents.py:20-25). Dropped errors='replace' fallback entirely — binary-as-text IS the bug.
 - [Phase 12]: [Phase 12]: When sift-kg is missing, wizard skips non-.txt inputs rather than silently reading binary; caller hits MIN_SAMPLE_DOCS ValueError — loud failure over silent-garbage schemas.
+- [Phase 13]: [Phase 13 Plan 00]: FIDL-02a/b/c registered. Plan IDs mapped — 02a→13-03, 02b→13-02+13-04, 02c→13-01.
+- [Phase 13]: [Phase 13 Plan 00]: UT-022 split into UT-022a (build_extraction._normalize_fields unit) + UT-022b (normalize_extractions module-level) — one requirement, two enforcement layers, two test IDs.
 
 ### Pending Todos
 
@@ -138,6 +141,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-04-17T01:04:52.743Z
-Stopped at: Completed 12-01-PLAN.md
+Last session: 2026-04-17T12:22:08.537Z
+Stopped at: Completed 13-00-PLAN.md
 Resume file: None

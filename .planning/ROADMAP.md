@@ -111,7 +111,7 @@ Plans:
 - [ ] **Phase 8: Domain Creation Wizard** - Auto-generate domain packages from sample documents via /epistract:domain
 - [ ] **Phase 9: Consumer Decoupling and Standalone Install** - Decouple consumers into examples/, enable plugin install without repo clone
 - [x] **Phase 10: Documentation Refresh** - README, architecture diagrams, domain developer guide, and paper reframed as framework (completed 2026-04-04)
-- [ ] **Phase 11: End-to-End Scenario Validation and v2.0 Release** - Regenerate all graphs, validate both use cases, repeatable regression suite, git sync + push v2.0
+- [x] **Phase 11: End-to-End Scenario Validation and v2.0 Release** - Regenerate all graphs, validate both use cases, repeatable regression suite, git sync + push v2.0 (completed 2026-04-17)
 
 ### v3.0 Graph Fidelity & Honest Limits (Planned)
 
@@ -234,10 +234,10 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 11-01-PLAN.md — Regression infrastructure: V1 baselines, comparison engine, Makefile targets (E2E-05, E2E-01, E2E-02, E2E-04)
+- [x] 11-01-PLAN.md — Regression infrastructure: V1 baselines, comparison engine, Makefile targets (E2E-05, E2E-01, E2E-02, E2E-04)
 - [x] 11-02-PLAN.md — Repo cleanup: gitignore hardening, audit script, npx package.json (REL-01, REL-02)
-- [ ] 11-03-PLAN.md — Scenario validation: run all scenarios via plugin, validate counts, save V2 baselines (E2E-01, E2E-02, E2E-03, E2E-04, E2E-06)
-- [ ] 11-04-PLAN.md — Git squash, PR, merge, v2.0.0 tag, GitHub release (REL-03)
+- [x] 11-03-PLAN.md — Scenario validation: run all scenarios via plugin, validate counts, save V2 baselines (E2E-01, E2E-02, E2E-03, E2E-04, E2E-06)
+- [x] 11-04-PLAN.md — Git squash, PR, merge, v2.0.0 tag, GitHub release (REL-03)
 
 ## Progress
 
@@ -256,7 +256,7 @@ Phases execute in numeric order: 6 -> 7 -> 8 -> 9 -> 10 -> 11
 | 8. Domain Creation Wizard | v2.0 | 0/3 | Planning | - |
 | 9. Consumer Decoupling and Standalone Install | v2.0 | 0/3 | Planning | - |
 | 10. Documentation Refresh | v2.0 | 4/4 | Complete    | 2026-04-04 |
-| 11. End-to-End Scenario Validation | v2.0 | 1/4 | In Progress|  |
+| 11. End-to-End Scenario Validation | v2.0 | 4/4 | Complete    | 2026-04-17 |
 
 ### Phase 12: Fix wizard PDF binary read (Bug 3)
 
@@ -269,7 +269,7 @@ Phases execute in numeric order: 6 -> 7 -> 8 -> 9 -> 10 -> 11
 
 **Requirements:** FIDL-01 — Wizard reads sample documents via sift-kg reader (see `.planning/REQUIREMENTS.md` v3 section).
 **Depends on:** Phase 11 (V2 baselines stable).
-**Plans:** 1/1 plans complete
+**Plans:** 4/4 plans complete
 
 **Success criteria sketch:**
 1. `/epistract:domain` run on a corpus of 3 PDF samples produces a schema whose entity type names are derived from real document content, not binary headers.
@@ -288,7 +288,14 @@ Plans:
 **Scope:** Bug 4 + Enh 2 + Enh 3 (extractor prompt enforcement) + Part 1 Item 4 (provenance accuracy). Bug 4 is the observed failure; Enhs 2/3 are the belt-and-suspenders fix; Item 4 rides along since it touches the same `build_extraction.py` file.
 
 **Depends on:** Phase 11 baselines.
-**Plans:** 0 plans — run /gsd:plan-phase 13.
+**Plans:** 1/5 plans executed
+
+Plans:
+- [x] 13-00-PLAN.md — Wave 0 scaffolding: register FIDL-02a/b/c in REQUIREMENTS.md, add 13 test rows to TEST_REQUIREMENTS.md, create 24-file Bug-4 reproducer + 10-file below-threshold fixture corpora (FIDL-02a, FIDL-02b, FIDL-02c)
+- [ ] 13-01-PLAN.md — Contract enforcement at write time: extend _normalize_fields for schema drift, add sift-kg DocumentExtraction Pydantic validation in build_extraction.py, replace hardcoded claude-opus-4-6/0.0 with --model/--cost flags + EPISTRACT_MODEL env var (FIDL-02c)
+- [ ] 13-02-PLAN.md — Normalization module: create core/normalize_extractions.py with rename/infer/dedupe/coerce/report + CLI entry-point with --fail-threshold gate (FIDL-02b)
+- [ ] 13-03-PLAN.md — Agent + command wiring: update agents/extractor.md with Required-Fields block + stdin fallback + fix /scripts/ path bug; insert Step 3.5 in commands/ingest.md + document --fail-threshold flag + EPISTRACT_MODEL export (FIDL-02a)
+- [ ] 13-04-PLAN.md — End-to-end regression: FT-009 24-file reproducer ≥95% pass rate + graph builds, FT-010 below-threshold abort before build (FIDL-02b)
 
 ### Phase 14: Chunk overlap
 

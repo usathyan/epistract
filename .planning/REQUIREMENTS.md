@@ -112,9 +112,9 @@ See v1 traceability below.
 
 ### Extraction Pipeline Reliability (Phase 13)
 
-- [ ] **FIDL-02a**: Extractor agent prompt enforces the DocumentExtraction JSON contract — `document_id`, `entities`, `relations` declared as REQUIRED top-level fields; agents write ONLY via `build_extraction.py` (never direct Write); stdin-pipe retry on Bash permission denial; report failure in summary if both paths fail.
-- [ ] **FIDL-02b**: Post-extraction normalization runs automatically as Step 3.5 of `/epistract:ingest`, standardizing filenames, inferring `document_id`, deduping, coercing schema drift, and emitting `_normalization_report.json`. Pipeline aborts before graph build if pass-rate < `--fail-threshold` (default 0.95).
-- [ ] **FIDL-02c**: Extraction metadata is honest: `model_used` and `cost_usd` sourced from CLI flags / env var / `null` — never hardcoded. `build_extraction.py` validates payload against `DocumentExtraction` Pydantic model at write time; raises on malformed input.
+- [x] **FIDL-02a**: Extractor agent prompt enforces the DocumentExtraction JSON contract — `document_id`, `entities`, `relations` declared as REQUIRED top-level fields; agents write ONLY via `build_extraction.py` (never direct Write); stdin-pipe retry on Bash permission denial; report failure in summary if both paths fail.
+- [x] **FIDL-02b**: Post-extraction normalization runs automatically as Step 3.5 of `/epistract:ingest`, standardizing filenames, inferring `document_id`, deduping, coercing schema drift, and emitting `_normalization_report.json`. Pipeline aborts before graph build if pass-rate < `--fail-threshold` (default 0.95).
+- [x] **FIDL-02c**: Extraction metadata is honest: `model_used` and `cost_usd` sourced from CLI flags / env var / `null` — never hardcoded. `build_extraction.py` validates payload against `DocumentExtraction` Pydantic model at write time; raises on malformed input.
 
 ## Deferred (V3)
 
