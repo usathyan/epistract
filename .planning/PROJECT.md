@@ -71,6 +71,7 @@ epistract/
 ### Future (V3)
 
 - [x] Wizard PDF binary read fixed (FIDL-01) — `read_sample_documents` routes through `sift_kg.ingest.reader.read_document` (Validated in Phase 12)
+- [x] Extraction pipeline reliability (FIDL-02a/b/c) — write-time `DocumentExtraction` validation, post-extraction `normalize_extractions` step with `--fail-threshold` gate, extractor-agent Required-Fields enforcement; ≥95% load rate on 20+ doc corpora proven by FT-009 / FT-010 (Validated in Phase 13)
 - [ ] Biomedical domain migrated to V2 architecture with full backward compatibility
 - [ ] Domain registry — discover and load domains dynamically
 
@@ -157,4 +158,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-17 — Phase 12 complete (FIDL-01: wizard PDF binary read fixed), Phase 13 next (extraction pipeline reliability)*
+*Last updated: 2026-04-17 — Phase 13 complete (FIDL-02a/b/c: extraction pipeline reliability, ≥95% load rate), Phase 14 next (chunk overlap)*
