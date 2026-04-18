@@ -136,6 +136,38 @@ EOF
 fi
 
 # ---------------------------------------------------------------------------
+# blingfire (required — sentence tokenizer for chunk overlap, Phase 14 FIDL-03)
+# ---------------------------------------------------------------------------
+
+if "$VENV_PYTHON" -c "import blingfire" 2>/dev/null; then
+  BLINGFIRE_VERSION=$("$VENV_PYTHON" -c "import importlib.metadata; print(importlib.metadata.version('blingfire'))" 2>/dev/null || echo "unknown")
+  echo "blingfire $BLINGFIRE_VERSION"
+else
+  if [ "$CHECK_ONLY" = true ]; then
+    echo "MISSING: blingfire (run without --check to install)"
+  else
+    echo "blingfire not found, installing via uv..."
+    if ! uv pip install blingfire; then
+      cat <<'EOF'
+
+ERROR: uv pip install blingfire failed.
+
+blingfire is required — core/chunk_document.py imports it at module load and
+the whole ingest pipeline cannot run without it. Common causes:
+  1. Corporate SSL inspection proxy — set SSL_CERT_FILE or REQUESTS_CA_BUNDLE.
+  2. Network / DNS — check that pypi.org is reachable.
+  3. Python version — blingfire supports 3.11-3.13.
+
+Re-run this script after fixing the underlying issue.
+EOF
+    exit 1
+  fi
+    BLINGFIRE_VERSION=$("$VENV_PYTHON" -c "import importlib.metadata; print(importlib.metadata.version('blingfire'))" 2>/dev/null || echo "unknown")
+    echo "blingfire $BLINGFIRE_VERSION (installed)"
+  fi
+fi
+
+# ---------------------------------------------------------------------------
 # RDKit (optional)
 # ---------------------------------------------------------------------------
 
