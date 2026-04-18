@@ -49,7 +49,7 @@ Two pre-built domains demonstrate the framework:
 - **BeautifulSoup4** ≥4.12 - HTML parsing
 - **pdfplumber** ≥0.10 - PDF text extraction fallback
 - **NetworkX** ≥3.2 - Graph operations (MultiDiGraph)
-- **blingfire** ≥0.1.8 - Sentence tokenizer with bundled models (no runtime download); used by `core/chunk_document.py` to emit last-N-sentence overlap at every chunk boundary (Phase 14 FIDL-03)
+- **chonkie** ≥1.0 - Pure-Python sentence-aware chunker with built-in overlap; used by `core/chunk_document.py` for character-tokenized chunking at chunk boundaries (Phase 14 FIDL-03)
 - **SemHash** ≥0.4 - Fuzzy string deduplication for entity matching
 - **pyvis** ≥0.3 - Interactive HTML graph visualization
 - **Unidecode** ≥1.3 - Unicode normalization for entity names
@@ -76,7 +76,7 @@ Two pre-built domains demonstrate the framework:
 - Claude Code runtime (latest)
 - Python 3.11+ with pip/uv
 - Network access for:
-- Disk space: ~100MB for sift-kg + dependencies, ~10MB for blingfire, ~50MB additional for RDKit, ~20MB for Biopython
+- Disk space: ~100MB for sift-kg + dependencies, ~5MB for chonkie, ~50MB additional for RDKit, ~20MB for Biopython
 <!-- GSD:stack-end -->
 
 <!-- GSD:conventions-start source:CONVENTIONS.md -->

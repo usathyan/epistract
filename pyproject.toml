@@ -1,10 +1,10 @@
 # ---------------------------------------------------------------------------
-# NOTE: This declares ONLY the phase-14 blingfire requirement because the
+# NOTE: This declares ONLY the phase-14 chonkie requirement because the
 # full dep graph is provisioned by scripts/setup.sh (sift-kg, kreuzberg,
 # pydantic, etc.) per CLAUDE.md §Key Dependencies. Declaring every runtime
 # dep in [project].dependencies is a future migration (post-v3.0). For now,
 # running `uv pip install -e .` alone will NOT produce a working install —
-# always use `scripts/setup.sh` or `make setup`. The blingfire entry is here
+# always use `scripts/setup.sh` or `make setup`. The chonkie entry is here
 # so CI linters and `uv pip install -e .` users discover the addition; it
 # is the canonical source of truth for Phase 14 FIDL-03 (partial declaration).
 # ---------------------------------------------------------------------------
@@ -15,7 +15,7 @@ version = "3.0.0"
 description = "Domain-agnostic knowledge graph framework"
 requires-python = ">=3.11"
 dependencies = [
-    "blingfire>=0.1.8",
+    "chonkie>=1.0",
 ]
 
 [tool.pytest.ini_options]
