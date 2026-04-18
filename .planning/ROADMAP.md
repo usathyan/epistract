@@ -306,11 +306,24 @@ Plans:
 
 ### Phase 14: Chunk overlap
 
-**Goal:** Entities and relations that span a chunk boundary are extracted. Currently `core/chunk_document.py` splits without overlap, silently losing recall on every graph.
+**Goal:** Entities and relations that span a chunk boundary are extracted. `core/chunk_document.py` currently splits without overlap, silently losing recall on every graph built since v1. After this phase, a synthetic boundary-straddling relation (`INHIBITS(sotorasib, KRAS G12C)` spanning char 10000) is recovered, the 6 drug-discovery + 1 contract V2 baselines are not regressed (contract stays >=341 nodes / >=663 edges per D-14), and `commands/ingest.md:34`'s "chunks with overlap" prose finally matches behavior.
 
-**Scope:** Part 1 Item 1. Implement character-based or sentence-based sliding window overlap; decide on size (500 char / 3 sentence / etc.) during planning.
+**Scope:** Sentence-aware overlap via `blingfire` (bundled-model tokenizer, no runtime download) at every split point: `_split_at_paragraphs` sub-chunks, `_merge_small_sections` ARTICLE-boundary flushes, `_split_fixed` fallback. Last 3 sentences capped at 1500 chars. `blingfire` promoted to required runtime dep (installed by `/epistract:setup`). Fail-loud ImportError when missing — no silent fallback. Chunk JSON gains `overlap_prev_chars`, `overlap_next_chars`, `is_overlap_region`, honest per-sub-chunk `char_offset`. No CLI flag, no env var — pit-of-success default (D-06, D-07).
 
-**Plans:** 0 plans.
+**Requirements:** FIDL-03 — Chunk boundaries emit sentence-aware overlap (see `.planning/REQUIREMENTS.md` v3 section).
+**Depends on:** Phase 11 baselines, Phase 13 complete (extraction reliability is not a confound for the V2 regression gate).
+**Plans:** 4 plans
+
+**Success criteria:**
+1. Synthetic fixture where `INHIBITS(sotorasib, KRAS G12C)` straddles char 10000 produces a chunk containing BOTH mentions (FT-011 GREEN). Same test with overlap monkey-patched off fails (FT-011 RED).
+2. V2 baseline regression: 6 drug-discovery scenarios + 1 contract scenario pass `tests/regression/run_regression.py --baselines tests/baselines/v2/`. Contract >=341 nodes / >=663 edges (FT-012, D-14).
+3. `commands/ingest.md:34` still carries "~10,000 character chunks with overlap" — prose matches implementation.
+
+Plans:
+- [ ] 14-01-PLAN.md — Register FIDL-03 in REQUIREMENTS.md + TEST_REQUIREMENTS.md; declare `blingfire` in `pyproject.toml`, `scripts/setup.sh` (required-install block), and CLAUDE.md §Key Dependencies (FIDL-03)
+- [ ] 14-02-PLAN.md — Overlap primitive: `OVERLAP_SENTENCES=3`/`OVERLAP_MAX_CHARS=1500` constants + fail-loud `blingfire` guard + pure `_sentence_overlap(text)` helper in `core/chunk_document.py`; UT-031..UT-035 (FIDL-03)
+- [ ] 14-03-PLAN.md — Wire overlap into `_split_at_paragraphs` sub-chunks, `_merge_small_sections` ARTICLE-boundary flush, and `_split_fixed` fallback; emit new chunk JSON fields; recompute honest per-sub-chunk `char_offset` (D-11); UT-036..UT-038 (FIDL-03)
+- [ ] 14-04-PLAN.md — FT-011 RED+GREEN boundary-straddle e2e test + FT-012 V2 baseline regression; synthetic 20KB fixture; doc alignment check on `commands/ingest.md:34`; human checkpoint on ARTICLE-boundary acceptance (FIDL-03)
 
 ### Phase 15: Format discovery parity with Kreuzberg
 
