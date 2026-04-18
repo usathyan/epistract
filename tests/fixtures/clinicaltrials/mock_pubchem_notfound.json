@@ -1,0 +1,7 @@
+{
+  "Fault": {
+    "Code": "PUGREST.NotFound",
+    "Message": "No CID found",
+    "Details": ["No matching compound found for supplied name"]
+  }
+}

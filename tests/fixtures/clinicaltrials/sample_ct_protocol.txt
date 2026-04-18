@@ -1,0 +1,38 @@
+CodeBreaK 200: A Phase 3, Randomized, Open-Label Study of Sotorasib vs Docetaxel
+
+ClinicalTrials.gov Identifier: NCT04303780
+Sponsor: Amgen
+Phase: Phase 3
+Condition: Non-Small Cell Lung Cancer (NSCLC) with KRAS G12C Mutation
+Enrollment: 345 participants
+Status: Active, Not Recruiting
+Start Date: 2020-06-04
+Completion Date: 2026-05-29
+
+This trial evaluates the efficacy and safety of sotorasib (AMG 510) in patients
+with KRAS G12C-mutated NSCLC. Comparator arm receives docetaxel. Supportive
+care may include ibuprofen for pain management and remdesivir if concurrent
+COVID-19 infection is identified. Trial registration on ClinicalTrials.gov as
+NCT04303780.
+
+Primary Endpoint: Progression-free survival.
+Secondary Endpoints: Overall response rate, overall survival, safety.
+
+Study Design:
+- Randomized 1:1 allocation
+- Open-label design
+- Multi-center international study
+- Approximately 345 patients with KRAS G12C-mutant NSCLC who have received
+  at least one prior systemic therapy
+
+Intervention:
+- Arm A: Sotorasib (AMG 510) 960 mg orally once daily
+- Arm B: Docetaxel 75 mg/m2 intravenously every 21 days
+
+Eligibility Criteria:
+- Adults with confirmed KRAS G12C-mutated NSCLC
+- Received prior platinum-based chemotherapy and anti-PD-1/L1 therapy
+- ECOG performance status 0 or 1
+- Adequate organ function
+
+Sponsor Contact: Amgen Inc., Thousand Oaks, California
