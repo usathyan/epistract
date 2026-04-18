@@ -394,50 +394,54 @@ def _merge_small_sections(
     return chunks
 
 
-def _split_at_paragraphs(text: str, max_size: int) -> list[str]:
-    """Split text at paragraph boundaries (double newline) up to max_size."""
-    paragraphs = re.split(r"\n\n+", text)
-    result: list[str] = []
-    current = ""
-
-    for para in paragraphs:
-        if current and len(current) + len(para) + 2 > max_size:
-            result.append(current.strip())
-            current = para
-        else:
-            current = current + "\n\n" + para if current else para
-
-    if current.strip():
-        result.append(current.strip())
-
-    return result if result else [text]
-
-
 def _split_fixed(text: str, doc_id: str, max_size: int) -> list[dict]:
-    """Split text at paragraph boundaries into fixed-size chunks.
+    """Split text at sentence boundaries into ~max_size chunks with overlap.
 
-    Used as fallback when no clause structure is detected.
+    Fallback when no clause structure is detected. Uses the same
+    SentenceChunker (Phase 14 D-05 — one library reused) as the clause-aware
+    path, so boundary-straddling entities and relations are recovered here too.
 
     Args:
         text: Full document text.
         doc_id: Document identifier.
-        max_size: Maximum chunk size in characters.
+        max_size: Maximum chunk size in characters (before overlap prefix).
 
     Returns:
-        List of chunk dicts with section_header="".
+        List of chunk dicts with keys: chunk_id, text, section_header (""),
+        char_offset (honest per-chunk), overlap_prev_chars, overlap_next_chars,
+        is_overlap_region.
     """
-    parts = _split_at_paragraphs(text, max_size)
-    chunks: list[dict] = []
-    offset = 0
+    if not text.strip():
+        return []
 
-    for part in parts:
+    chunker = _make_chunker(max_size)
+    sub_chunks = chunker.chunk(text)
+    if not sub_chunks:
+        return []
+
+    chunks: list[dict] = []
+    for i, cc in enumerate(sub_chunks):
+        if i == 0:
+            overlap_prev = 0
+        else:
+            overlap_prev = max(0, sub_chunks[i - 1].end_index - cc.start_index)
+
+        if i < len(sub_chunks) - 1:
+            overlap_next = max(0, cc.end_index - sub_chunks[i + 1].start_index)
+        else:
+            overlap_next = 0  # final chunk
+
         chunks.append({
             "chunk_id": f"{doc_id}_chunk_{len(chunks):03d}",
-            "text": part,
+            "text": cc.text,
             "section_header": "",
-            "char_offset": offset,
+            "char_offset": cc.start_index,
+            "overlap_prev_chars": overlap_prev,
+            "overlap_next_chars": overlap_next,
+            # is_overlap_region reserved for sub-region annotation
+            # (D-10, Deferred Ideas §5). Always False at chunk level.
+            "is_overlap_region": False,
         })
-        offset += len(part)
 
     return chunks
 
