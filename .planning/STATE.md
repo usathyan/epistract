@@ -3,11 +3,11 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Framework Architecture & Domain Developer Experience
 status: verifying
-stopped_at: Completed 13-04-PLAN.md (FT-009 + FT-010 e2e acceptance + normalize_extractions on-disk provenance fix; Phase 13 complete)
-last_updated: "2026-04-17T16:53:26.251Z"
+stopped_at: Phase 14 context gathered
+last_updated: "2026-04-18T12:30:43.635Z"
 last_activity: 2026-04-17
 progress:
-  total_phases: 22
+  total_phases: 24
   completed_phases: 13
   total_plans: 40
   completed_plans: 40
@@ -156,6 +156,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-04-17T12:48:01.939Z
-Stopped at: Completed 13-04-PLAN.md (FT-009 + FT-010 e2e acceptance + normalize_extractions on-disk provenance fix; Phase 13 complete)
-Resume file: None
+Last session: 2026-04-18T12:30:43.631Z
+Stopped at: Phase 14 context gathered
+Resume file: .planning/phases/14-chunk-overlap/14-CONTEXT.md
