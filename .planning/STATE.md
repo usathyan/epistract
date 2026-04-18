@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Framework Architecture & Domain Developer Experience
 status: executing
-stopped_at: Completed 14-01-PLAN.md
-last_updated: "2026-04-18T14:21:35.275Z"
+stopped_at: Completed 14-02-PLAN.md
+last_updated: "2026-04-18T18:47:51.414Z"
 last_activity: 2026-04-18
 progress:
   total_phases: 24
   completed_phases: 13
   total_plans: 44
-  completed_plans: 41
+  completed_plans: 42
   percent: 85
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-04-02)
 ## Current Position
 
 Phase: 14 (chunk-overlap) — EXECUTING
-Plan: 2 of 4
+Plan: 3 of 4
 Status: Ready to execute
 Last activity: 2026-04-18
 
@@ -79,6 +79,7 @@ Progress: [████████░░] 85%
 | Phase 13 P03 | 3min | 3 tasks | 3 files |
 | Phase 13 P04 | 5min | 2 tasks | 2 files |
 | Phase 14 P01 | 4min | 2 tasks | 5 files |
+| Phase 14 P02 | 10min | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -140,6 +141,9 @@ Recent decisions affecting current work:
 - [Phase 13]: [Phase 13-04]: Goal-backward e2e acceptance test pattern established — copy fixture corpus, run full normalize -> build chain, assert both pass_rate AND graph_data.json existence + node count. FT-009 caught a silent-drop symptom that Plans 13-01..13-03 individually passed but collectively did not deliver, validating the separate-acceptance-plan approach.
 - [Phase 14]: [Phase 14-01]: pyproject.toml [project].dependencies is PARTIAL (only blingfire>=0.1.8); canonical install path remains scripts/setup.sh per M-4 header comment. Full dep-graph declaration in pyproject.toml is post-v3.0 migration work.
 - [Phase 14]: [Phase 14-01]: blingfire install NOT gated on INSTALL_ALL — required dep (unlike RDKit/Biopython). Mirrors sift-kg required-install pattern: column-0 heredoc, fail-loud exit 1 on install failure.
+- [Phase 14]: [Phase 14-02]: Pivoted from blingfire to chonkie.SentenceChunker — blingfire 0.1.8 ships x86_64-only dylib (no arm64). chonkie is pure Python, owns intra-chunk overlap natively, supplies honest start_index/end_index per sub-chunk (D-11 fix becomes free). Original _sentence_overlap primitive shrank to _tail_sentences (cross-flush only) + _make_chunker factory.
+- [Phase 14]: [Phase 14-02]: Substrate-before-wire plan decomposition — Plan 14-02 lands helpers + contract tests; Plan 14-03 wires them into _split_at_paragraphs / _merge_small_sections::_flush / _split_fixed. Helpers live in core/chunk_document.py under '# Internal helpers' before _split_at_sections. UT-031 pins the four Chunk attributes Plan 14-03 will consume (.text, .start_index, .end_index, .token_count).
+- [Phase 14]: [Phase 14-02]: _tail_sentences is pure regex-based (not chonkie-backed) — chonkie SentenceChunker instantiation has non-trivial cost; helper runs on short tails in hot paths. Intentional approximation documented in docstring with three rationales (structured-prose input, minor wobble not bug, hot-path pure helper). UT-033b pins the D-02 ∩ D-03 partial-fit intersection boundary.
 
 ### Pending Todos
 
@@ -159,6 +163,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-04-18T14:21:35.271Z
-Stopped at: Completed 14-01-PLAN.md
+Last session: 2026-04-18T18:47:38.926Z
+Stopped at: Completed 14-02-PLAN.md
 Resume file: None

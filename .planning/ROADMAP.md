@@ -312,7 +312,7 @@ Plans:
 
 **Requirements:** FIDL-03 — Chunk boundaries emit sentence-aware overlap (see `.planning/REQUIREMENTS.md` v3 section).
 **Depends on:** Phase 11 baselines, Phase 13 complete (extraction reliability is not a confound for the V2 regression gate).
-**Plans:** 1/4 plans executed
+**Plans:** 2/4 plans executed
 
 **Success criteria:**
 1. Synthetic fixture where `INHIBITS(sotorasib, KRAS G12C)` straddles char 10000 produces a chunk containing BOTH mentions (FT-011 GREEN). Same test with overlap monkey-patched off fails (FT-011 RED).
@@ -321,7 +321,7 @@ Plans:
 
 Plans:
 - [x] 14-01-PLAN.md — Register FIDL-03 in REQUIREMENTS.md + TEST_REQUIREMENTS.md; declare `blingfire` in `pyproject.toml`, `scripts/setup.sh` (required-install block), and CLAUDE.md §Key Dependencies (FIDL-03)
-- [ ] 14-02-PLAN.md — Overlap primitive: `OVERLAP_SENTENCES=3`/`OVERLAP_MAX_CHARS=1500` constants + fail-loud `blingfire` guard + pure `_sentence_overlap(text)` helper in `core/chunk_document.py`; UT-031..UT-035 (FIDL-03)
+- [x] 14-02-PLAN.md — Overlap primitive: `OVERLAP_SENTENCES=3`/`OVERLAP_MAX_CHARS=1500` constants + fail-loud `blingfire` guard + pure `_sentence_overlap(text)` helper in `core/chunk_document.py`; UT-031..UT-035 (FIDL-03)
 - [ ] 14-03-PLAN.md — Wire overlap into `_split_at_paragraphs` sub-chunks, `_merge_small_sections` ARTICLE-boundary flush, and `_split_fixed` fallback; emit new chunk JSON fields; recompute honest per-sub-chunk `char_offset` (D-11); UT-036..UT-038 (FIDL-03)
 - [ ] 14-04-PLAN.md — FT-011 RED+GREEN boundary-straddle e2e test + FT-012 V2 baseline regression; synthetic 20KB fixture; doc alignment check on `commands/ingest.md:34`; human checkpoint on ARTICLE-boundary acceptance (FIDL-03)
 
