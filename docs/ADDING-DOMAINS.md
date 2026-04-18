@@ -374,6 +374,225 @@ Fields: `title`, `subtitle`, `persona` (chat system prompt), `placeholder`, `loa
 
 ---
 
+## Domain Enrichment (Optional)
+
+For domains where external APIs can add value after graph construction, add an `enrich.py` module to your domain package. The enrichment step runs *after* the graph is built, patches node attributes with API data, and writes an `_enrichment_report.json` summary. It is **opt-in via the `--enrich` flag** on `/epistract:ingest` — omitting it leaves the graph unchanged.
+
+The `clinicaltrials` domain is the canonical reference implementation. See `domains/clinicaltrials/enrich.py` for the complete source.
+
+### When to Use Enrichment
+
+Use enrichment when:
+
+- Your entity types map to stable external identifiers (NCT IDs, PubChem CIDs, ChEMBL IDs, PDB accessions, ORCID, etc.)
+- The API is public and machine-queryable
+- Enrichment adds computable attributes (status, molecular weight, dates, organization metadata) that are not extractable from documents alone
+- API failures MUST NOT abort the pipeline (non-blocking is required)
+
+Do **not** use enrichment for:
+
+- Data that belongs in the extraction prompt (enrichment runs post-build, not during extraction)
+- Slow or unreliable APIs where failures would significantly degrade user experience
+- Anything that would require authentication the user has not configured — enrichment must work with public credentials or not at all
+
+### The `enrich_graph()` Contract
+
+The enrichment module MUST export a single public function with this exact signature:
+
+```python
+from pathlib import Path
+
+def enrich_graph(output_dir: Path, domain: str = "your-domain") -> dict:
+    """Load graph, enrich nodes, save, write report.
+
+    Args:
+        output_dir: Directory containing graph_data.json.
+        domain: Domain name stamped into the report.
+
+    Returns:
+        Report dict with per-entity-type counts and hit rates.
+    """
+```
+
+The function is invoked by `commands/ingest.md` Step 5.5 when `--enrich` is passed and `--domain` matches your domain name (or any of its aliases). See `domains/clinicaltrials/enrich.py` for the full implementation.
+
+**Canonical skeleton:**
+
+```python
+from __future__ import annotations
+
+import json
+import time
+from pathlib import Path
+
+def enrich_graph(output_dir: Path, domain: str = "your-domain") -> dict:
+    output_dir = Path(output_dir)
+    graph_path = output_dir / "graph_data.json"
+    if not graph_path.exists():
+        report = _build_report(domain, 0, 0, 0, 0)
+        _write_report(output_dir, report)
+        return report
+
+    # Load via sift-kg; fall back to raw JSON if sift-kg is unavailable
+    try:
+        from sift_kg import KnowledgeGraph
+        kg = KnowledgeGraph.load(graph_path)
+        node_iter = list(kg.graph.nodes(data=True))
+    except ImportError:
+        kg = None
+        raw = json.loads(graph_path.read_text())
+        node_iter = [(n.get("id"), n) for n in raw.get("nodes", [])]
+
+    total = enriched = not_found = failed = 0
+    for _node_id, data in node_iter:
+        etype = str(data.get("entity_type", "")).lower()
+        if etype == "your-entity-type":
+            total += 1
+            time.sleep(0.1)  # courtesy delay
+            result = _fetch_your_api(str(data.get("name", "")))
+            if result is None:
+                not_found += 1
+                continue
+            data.update(result)
+            enriched += 1
+
+    # Persist mutations
+    if kg is not None:
+        kg.save(graph_path)
+    else:
+        raw_data = json.loads(graph_path.read_text())
+        raw_data["nodes"] = [d for _, d in node_iter]
+        graph_path.write_text(json.dumps(raw_data, indent=2))
+
+    report = _build_report(domain, total, enriched, not_found, failed)
+    _write_report(output_dir, report)
+    return report
+```
+
+### The `_fetch_*` Non-Blocking Pattern
+
+Helper functions that call external APIs MUST return `None` on any failure (404, timeout, rate-limit exhaustion, parse error) — **never raise**. The parent `enrich_graph()` counts failures but continues to the next node:
+
+```python
+import requests
+
+def _fetch_your_api(identifier: str) -> dict | None:
+    """Fetch metadata for identifier. Returns None on any error."""
+    if not identifier:
+        return None
+    try:
+        resp = requests.get(YOUR_URL.format(id=identifier), timeout=15)
+        if resp.status_code == 404:
+            return None
+        resp.raise_for_status()
+        body = resp.json()
+    except (requests.RequestException, ValueError):
+        return None
+    # parse and return a flat dict of attributes
+    return {"attr_a": body.get("fieldA"), "attr_b": body.get("fieldB")}
+```
+
+For rate-limited APIs (e.g., PubChem's official 5 req/sec), add exponential backoff on 429:
+
+```python
+PUBCHEM_MAX_RETRIES = 3
+
+def _fetch_pubchem(compound_name: str) -> dict | None:
+    """Fetch PubChem data. Retries on 429 with exponential backoff.
+
+    PUBCHEM QUIRK: the REST property parameter asks for `CanonicalSMILES`,
+    but the JSON response returns that value under the key
+    `ConnectivitySMILES`. Read from `ConnectivitySMILES`, not
+    `CanonicalSMILES`.
+    """
+    url = PUBCHEM_URL.format(name=compound_name, props="MolecularFormula,MolecularWeight,CanonicalSMILES,InChI")
+    for attempt in range(PUBCHEM_MAX_RETRIES):
+        try:
+            resp = requests.get(url, timeout=30)
+            if resp.status_code == 404:
+                return None
+            if resp.status_code == 429:
+                time.sleep(2 ** attempt)
+                continue
+            resp.raise_for_status()
+            body = resp.json()
+        except (requests.RequestException, ValueError):
+            if attempt == PUBCHEM_MAX_RETRIES - 1:
+                return None
+            time.sleep(2 ** attempt)
+            continue
+
+        props = (body.get("PropertyTable") or {}).get("Properties") or []
+        if not props:
+            return None
+        p = props[0]
+        return {
+            "pubchem_cid": p.get("CID"),
+            "molecular_formula": p.get("MolecularFormula"),
+            "molecular_weight": p.get("MolecularWeight"),
+            # CRITICAL: PubChem returns this under ConnectivitySMILES, not CanonicalSMILES
+            "canonical_smiles": p.get("ConnectivitySMILES"),
+            "inchi": p.get("InChI"),
+        }
+    return None
+```
+
+### The `_enrichment_report.json` Output
+
+The report is written to `<output_dir>/extractions/_enrichment_report.json`. `/epistract:ingest` reads it in Step 7 and surfaces hit rates to the user. Follow this schema (mirrored from `domains/clinicaltrials/enrich.py`):
+
+```json
+{
+  "generated_at": "2026-04-18T12:00:00+00:00",
+  "domain": "your-domain",
+  "your_entity_type": {
+    "total": 15,
+    "enriched": 12,
+    "not_found": 2,
+    "failed": 1
+  },
+  "hit_rate": {
+    "your_entity_type": 0.8
+  }
+}
+```
+
+`total` = nodes of this type seen; `enriched` = successfully patched; `not_found` = missing required identifier (e.g., no NCT ID on a Trial node) or 404 from API; `failed` = network/parse failure after retries exhausted; `hit_rate` = `enriched / total` rounded to 3 decimals (or `0.0` when `total == 0`). Multiple entity types are represented as sibling keys at the top level alongside `trials` / `compounds` / etc.
+
+### Wiring the `--enrich` Flag
+
+Step 5.5 in `commands/ingest.md` handles `--enrich` dispatch. It is already wired for the `clinicaltrials` domain. To wire a new domain, update Step 5.5's domain-gate check:
+
+> Skip this step unless BOTH of the following hold:
+> 1. The user passed `--enrich` to the command.
+> 2. The resolved `--domain` is `your-domain` (or one of its aliases).
+
+Then invoke your module:
+
+```bash
+python3 ${CLAUDE_PLUGIN_ROOT}/domains/your-domain/enrich.py <output_dir>
+```
+
+Enrichment is **non-blocking**: if the Python process exits non-zero, report the failure to the user and continue to Step 6. Do NOT abort the pipeline — the un-enriched graph is still valid output.
+
+### ClinicalTrials Reference Implementation
+
+`domains/clinicaltrials/enrich.py` demonstrates the full pattern against two APIs:
+
+| API | Targets | Attached Attributes |
+|-----|---------|---------------------|
+| ClinicalTrials.gov v2 (`/api/v2/studies/{nctId}`) | Trial nodes whose name contains an `NCT\d{8}` match | `ct_overall_status`, `ct_phase`, `ct_enrollment`, `ct_start_date`, `ct_completion_date`, `ct_brief_title` |
+| PubChem PUG REST (`/rest/pug/compound/name/{name}/property/.../JSON`) | Compound nodes | `pubchem_cid`, `molecular_formula`, `molecular_weight`, `canonical_smiles`, `inchi` |
+
+**Rate limits used by the reference implementation:**
+
+- ClinicalTrials.gov: no documented limit; `enrich.py` sleeps 0.1s per request as courtesy.
+- PubChem: 5 req/sec official limit; `enrich.py` sleeps 0.2s per request and retries up to 3× with exponential backoff on HTTP 429.
+
+**Known quirk (PubChem `ConnectivitySMILES`).** The PUG REST API accepts `CanonicalSMILES` as a requested property but returns the value under the JSON key `ConnectivitySMILES`. Always read `body["PropertyTable"]["Properties"][0].get("ConnectivitySMILES")` — reading `CanonicalSMILES` from the response will silently yield `None` and leave the graph un-enriched without raising an error.
+
+---
+
 ## Testing Your Domain
 
 ```bash
