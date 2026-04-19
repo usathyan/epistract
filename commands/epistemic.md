@@ -7,6 +7,21 @@ description: Analyze epistemic patterns (hypotheses, contradictions, conditional
 
 Analyze a built knowledge graph for epistemic patterns — hypotheses, contradictions, conditional claims, negative results, and patent vs. paper epistemic signatures. Produces a `claims_layer.json` overlay complementing the existing community structure.
 
+## Usage Guard
+
+**If invoked with no arguments or with `--help`:** Display the following usage block verbatim and stop — do not run any pipeline steps.
+
+```
+Usage: /epistract:epistemic <output-dir>
+
+Required:
+  <output-dir>    Path to directory containing graph_data.json from a prior /epistract:ingest or /epistract:build run
+
+Examples:
+  /epistract:epistemic ./epistract-output
+  /epistract:epistemic ./clinical-output
+```
+
 ## Arguments
 - `path` (required): Output directory containing `graph_data.json` (from a prior `/epistract-ingest` or `/epistract-build`)
 

@@ -112,7 +112,7 @@ This document is for developers extending, debugging, or integrating with Epistr
 
 ## Domain Schema Reference
 
-The drug discovery domain schema defines 23 entity types and 46 relation types. The full specification is in `docs/drug-discovery-domain-spec.md`.
+The drug discovery domain schema defines 17 entity types and 30 relation types. The contracts domain defines 9 entity types and 9 relation types. The clinicaltrials domain defines 12 entity types and 10 relation types, with a post-build enrichment module (`enrich.py`) that patches Trial nodes from the ClinicalTrials.gov v2 API and Compound nodes from PubChem PUG REST when `/epistract:ingest` is invoked with `--enrich`. The full drug-discovery specification is in `docs/drug-discovery-domain-spec.md`.
 
 ### Entity Type Hierarchy
 

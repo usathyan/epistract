@@ -5,6 +5,26 @@ description: Export knowledge graph to GraphML, GEXF, CSV, SQLite, or JSON
 
 Export the knowledge graph to an external format.
 
+## Usage Guard
+
+**If invoked with no format argument or with `--help`:** Display the following usage block verbatim and stop — do not run any pipeline steps.
+
+```
+Usage: /epistract:export <format> [output-dir]
+
+Required:
+  <format>       Export format: json, graphml, gexf, csv, or sqlite
+
+Options:
+  <output-dir>   Path to extraction output containing graph_data.json  (default: ./epistract-output)
+
+Examples:
+  /epistract:export graphml
+  /epistract:export csv ./my-output
+  /epistract:export sqlite
+  /epistract:export json ./clinical-output
+```
+
 Arguments:
 - `format` -- one of: json, graphml, gexf, csv, sqlite
 - `output_dir` -- directory with graph_data.json (default: ./epistract-output)

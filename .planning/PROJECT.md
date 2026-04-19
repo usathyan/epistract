@@ -158,4 +158,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-17 — Phase 13 complete (FIDL-02a/b/c: extraction pipeline reliability, ≥95% load rate), Phase 14 next (chunk overlap)*
+*Last updated: 2026-04-19 — Phase 21 complete (clinicaltrials-pubchem-domain: 12-entity/10-relation clinical trials domain, ClinicalTrials.gov v2 + PubChem PUG REST enrichment, Usage Guards for all 12 /epistract:* commands — 12/12 must-haves verified). Next: Phase 999.1 or next planned phase.*

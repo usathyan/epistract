@@ -9,6 +9,24 @@ Create a new domain package from sample documents. Analyzes documents via multi-
 LLM analysis to propose a domain schema, then generates a complete domain package
 (domain.yaml, SKILL.md, epistemic.py, references/) ready for the standard pipeline.
 
+## Usage Guard
+
+**If invoked with `--help`:** Display the following and stop. Otherwise start the wizard.
+
+```
+Usage: /epistract:domain
+
+Launches the interactive domain creation wizard. No arguments needed up front — the wizard will ask you for:
+  1. Domain name (e.g., "legal-contracts", "genomics")
+  2. A brief domain description (1-2 sentences)
+  3. Paths to 2–5 sample documents representative of the domain
+
+Output:
+  domains/<domain-name>/domain.yaml   — entity and relation type schema
+  domains/<domain-name>/SKILL.md      — extraction prompt for the domain
+  domains/<domain-name>/epistemic.py  — epistemic analysis rules
+```
+
 ## Prerequisites
 
 - Python environment with epistract dependencies installed

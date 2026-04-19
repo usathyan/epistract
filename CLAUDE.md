@@ -7,9 +7,10 @@ Epistract is a domain-agnostic knowledge graph framework. Plug in a domain schem
 
 **Core Value:** **Extract knowledge, not information.** Any corpus, any domain — plug in a schema, get a knowledge graph with epistemic layer that reveals what documents say, what they contradict, and what they are missing.
 
-Two pre-built domains demonstrate the framework:
+Three pre-built domains demonstrate the framework:
 - **drug-discovery** — 17 entity types, 30 relation types for biomedical literature analysis
 - **contracts** — 11 entity types, 11 relation types for event/vendor contract analysis
+- **clinicaltrials** — 12 entity types, 10 relation types for clinical trial protocol analysis with post-build ClinicalTrials.gov v2 + PubChem PUG REST enrichment via `--enrich`
 
 ### Constraints
 
@@ -67,6 +68,7 @@ Two pre-built domains demonstrate the framework:
 - **For test corpus assembly:**
 - `domains/drug-discovery/domain.yaml` - YAML schema defining 17 entity types and 30 relation types
 - `domains/contracts/domain.yaml` - YAML schema defining 11 entity types and 11 relation types
+- `domains/clinicaltrials/domain.yaml` - YAML schema defining 12 entity types and 10 relation types
 - `Makefile` - Standard targets: `help`, `setup`, `setup-all`, `test`, `lint`, `format`, `clean`
 - `scripts/setup.sh` - Installation script: checks Python ≥3.11, installs sift-kg, optional RDKit/Biopython
 ## Platform Requirements
@@ -185,6 +187,7 @@ Two pre-built domains demonstrate the framework:
 - Location: `domains/` — each domain is a self-contained package
   - `domains/drug-discovery/` — domain.yaml (17 entity types, 30 relation types), SKILL.md, epistemic.py, validation-scripts/
   - `domains/contracts/` — domain.yaml (11 entity types, 11 relation types), SKILL.md, epistemic.py, workbench/
+  - `domains/clinicaltrials/` — domain.yaml (12 entity types, 10 relation types), SKILL.md, epistemic.py, enrich.py
 - Contains: Entity type definitions, relation types, nomenclature rules, epistemic analysis rules
 - Depends on: Domain-specific ontology standards
 - Used by: Core pipeline via domain_resolver.py

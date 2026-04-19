@@ -7,6 +7,31 @@ description: Ingest scientific documents and build a drug discovery knowledge gr
 
 You are running the epistract drug discovery knowledge graph pipeline.
 
+## Usage Guard
+
+**If invoked with no arguments or with `--help`:** Display the following usage block verbatim and stop — do not run any pipeline steps.
+
+```
+Usage: /epistract:ingest <corpus-dir> [options]
+
+Required:
+  <corpus-dir>    Directory or file path containing documents to ingest (PDF, DOCX, HTML, TXT, and 75+ formats)
+
+Options:
+  --domain <name>           Domain schema to use  (default: drug-discovery; choices: drug-discovery, contracts, clinicaltrials)
+  --output <dir>            Output directory       (default: ./epistract-output)
+  --validate                Enable molecular validation (auto-enabled if RDKit is installed)
+  --view                    Open graph viewer after build (default: true)
+  --fail-threshold <float>  Minimum extraction pass rate before graph build (default: 0.95, range: 0.0–1.0)
+  --enrich                  Enrich graph via external APIs after build — clinicaltrials domain only
+                            (Trial nodes → ClinicalTrials.gov v2; Compound nodes → PubChem PUG REST)
+
+Examples:
+  /epistract:ingest ./my-papers
+  /epistract:ingest ./papers --domain clinicaltrials --enrich
+  /epistract:ingest ./papers --domain contracts --output ./out --fail-threshold 0.9
+```
+
 ## Arguments
 - `path` (required): Directory or file path containing documents
 - `--output` (optional): Output directory (default: ./epistract-output)
@@ -14,6 +39,7 @@ You are running the epistract drug discovery knowledge graph pipeline.
 - `--validate` (optional): Enable molecular validation (default: true if rdkit installed)
 - `--view` (optional): Open viewer after build (default: true)
 - `--fail-threshold <float>` (optional): Minimum post-normalization pass rate required before graph build (default: 0.95, range: [0.0, 1.0]). Pipeline aborts with a clear error if the pass rate falls below this threshold.
+- `--enrich` (optional flag): When present AND `--domain` is `clinicaltrials` (or aliases `clinicaltrial` / `clinical_trials`), triggers post-build enrichment against ClinicalTrials.gov v2 and PubChem PUG REST APIs. Trial nodes with NCT IDs get trial metadata; Compound nodes get molecular data. Non-blocking: API failures log counts but do not abort the pipeline.
 
 ## Pipeline Steps
 
@@ -96,6 +122,31 @@ If `--domain` was provided to this command, pass it through. Otherwise omit (def
 python3 ${CLAUDE_PLUGIN_ROOT}/core/run_sift.py build <output_dir> --domain ${CLAUDE_PLUGIN_ROOT}/domains/drug-discovery/domain.yaml
 ```
 
+### Step 5.5: Enrich Knowledge Graph (if --enrich flag provided)
+
+Skip this step entirely unless BOTH of these are true:
+1. The user passed `--enrich` to the command.
+2. The resolved `--domain` is `clinicaltrials` (or one of its aliases: `clinicaltrial`, `clinical_trials`).
+
+When both conditions hold, invoke the domain's enrichment module:
+
+```bash
+python3 ${CLAUDE_PLUGIN_ROOT}/domains/clinicaltrials/enrich.py <output_dir>
+```
+
+What this step does:
+- Loads `<output_dir>/graph_data.json` via `sift_kg.KnowledgeGraph.load()`.
+- For every Trial node whose name matches `NCT\d{8}`, calls the ClinicalTrials.gov v2 API (`/api/v2/studies/{nctId}`) and attaches `ct_overall_status`, `ct_phase`, `ct_enrollment`, `ct_start_date`, `ct_completion_date`, `ct_brief_title` as node attributes.
+- For every Compound node, calls PubChem PUG REST (`/rest/pug/compound/name/{name}/property/.../JSON`) and attaches `pubchem_cid`, `molecular_formula`, `molecular_weight`, `canonical_smiles`, `inchi` as node attributes.
+- Saves the mutated graph back to `graph_data.json`.
+- Writes a summary to `<output_dir>/extractions/_enrichment_report.json` containing per-entity-type counts (total / enriched / not_found / failed) and hit rates.
+
+Enrichment is **non-blocking**. If the Python process exits non-zero, report the failure to the user and continue to Step 6. Do NOT abort the pipeline — the unenriched graph is still valid output.
+
+Rate-limit considerations:
+- ClinicalTrials.gov: undocumented limit; enrich.py sleeps 0.1s between requests as a courtesy.
+- PubChem: 5 req/sec official limit; enrich.py sleeps 0.2s between requests and retries up to 3x with exponential backoff on 429.
+
 ### Step 6: Open Visualization
 
 ```bash
@@ -113,3 +164,4 @@ Tell the user:
 - Communities detected
 - Output directory location
 - How to explore further (/epistract-query, /epistract-export)
+- If `--enrich` was used: enrichment hit rates (read from `<output_dir>/extractions/_enrichment_report.json`, e.g., "Trials: 12/15 enriched (80%), Compounds: 20/23 enriched (87%)")
