@@ -158,4 +158,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-18 — Phase 999.1 complete (v2-docs-artifacts-refresh: plugin manifests, CHANGELOG, README, CLAUDE.md, DEVELOPER.md, and ADDING-DOMAINS.md updated to v2.2.0 with clinicaltrials domain — 14/14 must-haves verified). Next: Phase 999.2 (git-remote-sync).*
+*Last updated: 2026-04-19 — Phase 21 complete (clinicaltrials-pubchem-domain: 12-entity/10-relation clinical trials domain, ClinicalTrials.gov v2 + PubChem PUG REST enrichment, Usage Guards for all 12 /epistract:* commands — 12/12 must-haves verified). Next: Phase 999.1 or next planned phase.*
