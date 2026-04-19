@@ -7,8 +7,8 @@
     {
       "name": "epistract",
       "source": "./",
-      "version": "2.2.0",
-      "description": "Cross-domain knowledge graph framework for extracting structured knowledge from documents. Pre-built domains: drug-discovery, contracts, clinicaltrials."
+      "version": "2.0.0",
+      "description": "Cross-domain knowledge graph framework for extracting structured knowledge from documents"
     }
   ]
 }

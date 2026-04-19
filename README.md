@@ -6,7 +6,7 @@ Epistract is a domain-agnostic knowledge graph framework that runs as a [Claude 
 
 Ship with a pre-built domain, create your own with the domain wizard, or acquire a fresh corpus from PubMed in one command.
 
-> **v2.2.0 status (2026-04-18):** Three pre-built domains now ship: drug-discovery (re-validated end-to-end across 6 scenarios against pinned V1 baselines), contracts (schema scaffold — bring your own corpus), and clinicaltrials (12 entity types, 10 relation types with ClinicalTrials.gov v2 + PubChem PUG REST enrichment via `--enrich`). See [V2 Showcase](docs/showcases/drug-discovery-v2.md).
+> **v2.0 status (2026-04-13):** All 6 drug-discovery scenarios have been re-validated end-to-end through the V2 plugin pipeline. Regression suite passes against V1 baselines. The contracts domain ships as a schema scaffold without bundled corpus — bring your own contracts to reproduce the cross-domain story. See [V2 Showcase](docs/showcases/drug-discovery-v2.md).
 
 ## The Name
 
@@ -62,7 +62,7 @@ After either option, verify the plugin is loaded:
 /plugin list
 ```
 
-You should see `epistract` (version 2.2.0) in the installed list, and the `/epistract:*` commands should autocomplete in your Claude Code prompt (`setup`, `ingest`, `build`, `view`, `validate`, `epistemic`, `query`, `export`, `domain`, `dashboard`, `ask`, `acquire`).
+You should see `epistract` (version 2.1.0) in the installed list, and the `/epistract:*` commands should autocomplete in your Claude Code prompt (`setup`, `ingest`, `build`, `view`, `validate`, `epistemic`, `query`, `export`, `domain`, `dashboard`, `ask`, `acquire`).
 
 ### Step 2 — Create the project `.venv` and install Python dependencies
 
@@ -314,9 +314,8 @@ Why Azure Foundry? Enterprise customers with Azure commitments can route chat tr
 |--------|-------------|----------------|------------------|-------------|
 | drug-discovery | 17 | 30 | PDF, DOCX, HTML, TXT, 75+ more | Biomedical literature analysis with molecular validation, patent epistemic classification, and integration with RDKit / Biopython |
 | contracts | 11 | 11 | PDF, XLS, EML, 75+ more | Event/vendor contract analysis with cross-contract conflict detection, obligation gap scoring, and risk indicators |
-| clinicaltrials | 12 | 10 | PDF, DOCX, HTML, TXT, 75+ more | Clinical trial protocol analysis (ClinicalTrials.gov, IRB submissions, study reports) with post-build enrichment for Trial nodes (ClinicalTrials.gov v2 API) and Compound nodes (PubChem PUG REST) via the `--enrich` flag |
 
-All three domains live in `domains/` as self-contained packages. Inspect `domains/drug-discovery/domain.yaml`, `domains/contracts/domain.yaml`, and `domains/clinicaltrials/domain.yaml` to see how schemas are declared.
+Both domains live in `domains/` as self-contained packages. Inspect `domains/drug-discovery/domain.yaml` and `domains/contracts/domain.yaml` to see how schemas are declared.
 
 ## Showcase
 
@@ -442,7 +441,6 @@ core/                  # Domain-agnostic pipeline engine
 domains/               # Pluggable domain configurations
   drug-discovery/      # 17 entity types, 30 relation types, molecular validation
   contracts/           # 11 entity types, 11 relation types, conflict detection
-  clinicaltrials/      # 12 entity types, 10 relation types, CT.gov + PubChem enrichment
 examples/              # Consumer applications
   workbench/           # FastAPI dashboard with chat + graph panels
   telegram_bot/        # Telegram chat interface

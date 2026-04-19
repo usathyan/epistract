@@ -2,44 +2,6 @@
 
 All notable changes to epistract are documented here. This project follows [Semantic Versioning](https://semver.org/).
 
-## [2.2.0] — 2026-04-18
-
-**Clinical Trials Domain + External API Enrichment.** A third pre-built domain ships: `clinicaltrials` — 12 entity types and 10 relation types for ClinicalTrials.gov protocol documents, IRB submissions, clinical study reports, and trial publications. New post-build enrichment hook pulls authoritative metadata from the ClinicalTrials.gov v2 API (Trial nodes) and PubChem PUG REST (Compound nodes) when `/epistract:ingest` is invoked with `--enrich`. Non-blocking by design — API failures log counts but never abort the pipeline.
-
-### Highlights
-
-- **Phase 21 — CTDM-01..06 clinicaltrials domain package.** `domains/clinicaltrials/` ships with `domain.yaml` (12 entity types: Trial, Intervention, Condition, Sponsor, Investigator, Outcome, Compound, Biomarker, Cohort, Population, TrialPhase, Site; 10 relation types: tests, treats, sponsored_by, has_outcome, uses_biomarker, enrolls, investigates, targets, is_phase, co_intervention), `SKILL.md` (NCT ID capture, trial phase classification, intervention/condition disambiguation, arm/cohort structure), and `epistemic.py` (trial-phase-based confidence grading, blinding status, enrollment-size epistemic signals).
-- **Post-build enrichment via `--enrich` flag (CTDM-04, CTDM-05, CTDM-06).** When `/epistract:ingest` is invoked with `--enrich` and `--domain clinicaltrials` (or aliases `clinicaltrial` / `clinical_trials`), the pipeline runs `domains/clinicaltrials/enrich.py` after graph build. Trial nodes matching `NCT\d{8}` get `ct_overall_status`, `ct_phase`, `ct_enrollment`, `ct_start_date`, `ct_completion_date`, `ct_brief_title`. Compound nodes get `pubchem_cid`, `molecular_formula`, `molecular_weight`, `canonical_smiles`, `inchi`. Results summarized in `<output_dir>/extractions/_enrichment_report.json` with per-entity-type counts and hit rates.
-- **Non-blocking by contract.** Enrichment is opt-in (omit `--enrich` and the graph is unchanged). API failures (404, 429 rate limits, timeouts, JSON parse errors) log per-node counts but never raise — the pipeline continues to the viewer step regardless of enrichment success.
-
-### Added
-
-- `domains/clinicaltrials/domain.yaml` — 12 entity types, 10 relation types, clinical-trial nomenclature standards (NCT IDs canonical, INN for drugs, MeSH for conditions)
-- `domains/clinicaltrials/SKILL.md` — extraction prompt specialized for ClinicalTrials.gov protocol documents with NCT ID directive and arm/cohort disambiguation
-- `domains/clinicaltrials/epistemic.py` — trial-phase confidence grading (Phase III > Phase II > Phase I/observational), blinding status, enrollment-size signals
-- `domains/clinicaltrials/enrich.py` — post-build enrichment module (286 lines) with `enrich_graph(output_dir, domain)` entry point, `_fetch_ct_gov()` / `_fetch_pubchem()` non-blocking helpers, exponential backoff on PubChem 429, and `_enrichment_report.json` output
-- `--enrich` flag documented in `commands/ingest.md` Step 5.5 with domain-gate check and rate-limit notes
-- **Requirements**: CTDM-01 (package), CTDM-02 (SKILL.md), CTDM-03 (epistemic.py), CTDM-04 (CT.gov v2 enrichment), CTDM-05 (PubChem PUG REST enrichment), CTDM-06 (optional non-blocking flag) registered in `.planning/REQUIREMENTS.md`
-
-### Changed
-
-- `.claude-plugin/plugin.json` — version `2.1.0` → `2.2.0`; description lists all three pre-built domains; keywords gain `clinical-trials`, `clinicaltrials`, `pubchem`
-- `.claude-plugin/marketplace.json` — version `2.0.0` → `2.2.0` (skipped 2.1.0, which was missed); description names all three domains
-- `README.md` — status callout refreshed for v2.2.0; installation section cites version 2.2.0; Pre-built Domains table adds clinicaltrials as the third row (12 entity types, 10 relation types, PDF/DOCX/HTML/TXT/75+ more, CT.gov v2 + PubChem enrichment via `--enrich`)
-- `CLAUDE.md` — Project section counts three pre-built domains instead of two; Configuration and Architecture Domain Layer lists add `domains/clinicaltrials/` with 12/10 counts
-- `DEVELOPER.md` — Domain Schema Reference intro corrected to list drug-discovery (17/30), contracts (9/9), clinicaltrials (12/10); pre-existing stale 23/46 claim retired
-- `docs/ADDING-DOMAINS.md` — new "Domain Enrichment (Optional)" section inserted between the Manual Domain Creation section and the Testing Your Domain section, with clinicaltrials as the worked example
-
-### Fixed
-
-- `DEVELOPER.md` Domain Schema Reference intro — previous claim of "23 entity types and 46 relation types" for drug-discovery was stale (actual YAML: 17/30). Corrected while touching the section for the clinicaltrials addition.
-
-### Test suite
-
-- No new automated tests land in this documentation-refresh release. Validation is manual grep-based consistency check: every surface that lists pre-built domains names clinicaltrials with counts 12/10 and cites the `--enrich` flag.
-
----
-
 ## [2.1.0] — 2026-04-17
 
 **Graph Fidelity & Extraction Pipeline Reliability.** Two reliability phases close silent-data-loss holes in the extraction pipeline. The extraction-load rate jumped from ~70% (axmp-compliance 23-doc run lost 7 documents) to ≥95%, proven end-to-end on a 24-file Bug-4 reproducer (FT-009 at 100%). The `/epistract:domain` wizard now reads PDFs correctly instead of leaking binary headers into generated schemas.

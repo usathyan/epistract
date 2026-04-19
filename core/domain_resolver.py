@@ -31,8 +31,6 @@ DOMAIN_ALIASES: dict[str, str] = {
     "biomedical": "drug-discovery",
     "drug_discovery": "drug-discovery",
     "pharma": "drug-discovery",
-    "clinicaltrial": "clinicaltrials",
-    "clinical_trials": "clinicaltrials",
 }
 
 

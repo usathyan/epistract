@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: Framework Architecture & Domain Developer Experience
 status: verifying
-stopped_at: Phase 999.1 context gathered
-last_updated: "2026-04-18T21:36:03.710Z"
-last_activity: 2026-04-18
+stopped_at: Completed 13-04-PLAN.md (FT-009 + FT-010 e2e acceptance + normalize_extractions on-disk provenance fix; Phase 13 complete)
+last_updated: "2026-04-17T16:53:26.251Z"
+last_activity: 2026-04-17
 progress:
-  total_phases: 16
-  completed_phases: 12
+  total_phases: 22
+  completed_phases: 13
   total_plans: 40
-  completed_plans: 45
-  percent: 100
+  completed_plans: 40
+  percent: 85
 ---
 
 # Project State
@@ -25,10 +25,10 @@ See: .planning/PROJECT.md (updated 2026-04-02)
 
 ## Current Position
 
-Phase: 999.2
+Phase: 14
 Plan: Not started
 Status: Phase complete — ready for verification
-Last activity: 2026-04-18
+Last activity: 2026-04-17
 
 Progress: [████████░░] 85%
 
@@ -36,7 +36,7 @@ Progress: [████████░░] 85%
 
 **Velocity:**
 
-- Total plans completed: 20 (v1)
+- Total plans completed: 14 (v1)
 - Average duration: ~4min
 - Total execution time: ~56 min
 
@@ -49,8 +49,6 @@ Progress: [████████░░] 85%
 | Phase 03 | 2 | 11min | 5.5min |
 | Phase 04 | 3 | 11min | 3.7min |
 | Phase 05 | 4 | 16min | 4min |
-| 21 | 3 | - | - |
-| 999.1 | 3 | - | - |
 
 **Recent Trend:**
 
@@ -158,6 +156,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-04-18T13:07:02.772Z
-Stopped at: Phase 999.1 context gathered
-Resume file: .planning/phases/999.1-v2-docs-artifacts-refresh/999.1-CONTEXT.md
+Last session: 2026-04-17T12:48:01.939Z
+Stopped at: Completed 13-04-PLAN.md (FT-009 + FT-010 e2e acceptance + normalize_extractions on-disk provenance fix; Phase 13 complete)
+Resume file: None
