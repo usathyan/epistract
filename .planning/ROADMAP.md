@@ -134,7 +134,7 @@ Phase priority is **blocking-ness first, silent quality second, polish last**. S
 - [ ] **Phase 999.1: v2-docs-artifacts-refresh** - Refresh post-v2.0 doc artifacts (placeholder, no scope yet)
 - [ ] **Phase 999.2: git-remote-sync recipe** - Pull latest main before pushing a feature branch (placeholder, no scope yet)
 - [ ] **Phase 999.3: V2 Automation Hardening** - Finalize `.claude/settings.local.json` allow-list for zero-prompt V2 scenario runs; document copy-paste recipe in `docs/showcases/drug-discovery-v2.md`; remove dead pre-v2.0 allow-list entries. Promoted from the 2026-04-13 automation friction + auto-approve todos. See `phases/999.3-v2-automation-hardening/SCOPE.md`.
-- [ ] **Phase 999.4: Evaluate opendataloader-pdf vs Kreuzberg** - Side-by-side bakeoff of `opendataloader-pdf` against the current Kreuzberg-based PDF reader on a mixed contract + biomedical + edge-case corpus. Decide adopt / supplement / reject. Promoted from a 2026-04-18 Phase 14 discussion deferral. Depends on Phase 14 + 15 complete. See `phases/999.4-evaluate-opendataloader-pdf-vs-kreuzberg/SCOPE.md`.
+- [x] **Phase 999.4: Evaluate opendataloader-pdf vs Kreuzberg** - Side-by-side bakeoff of `opendataloader-pdf` against the current Kreuzberg-based PDF reader on a mixed contract + biomedical + edge-case corpus. Decide adopt / supplement / reject. Promoted from a 2026-04-18 Phase 14 discussion deferral. Depends on Phase 14 + 15 complete. See `phases/999.4-evaluate-opendataloader-pdf-vs-kreuzberg/SCOPE.md`. (completed 2026-04-20)
 
 ## Phase Details
 

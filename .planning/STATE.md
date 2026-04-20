@@ -4,7 +4,7 @@ milestone: v2.0
 milestone_name: Framework Architecture & Domain Developer Experience
 status: verifying
 stopped_at: Completed 14-04-PLAN.md (plan-04 closeout via continuation agent)
-last_updated: "2026-04-20T02:15:53.670Z"
+last_updated: "2026-04-20T22:16:14.703Z"
 last_activity: 2026-04-20
 progress:
   total_phases: 24
@@ -25,8 +25,8 @@ See: .planning/PROJECT.md (updated 2026-04-02)
 
 ## Current Position
 
-Phase: 14 (chunk-overlap) — EXECUTING
-Plan: 4 of 4
+Phase: 15
+Plan: Not started
 Status: Phase complete — ready for verification
 Last activity: 2026-04-20
 
