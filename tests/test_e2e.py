@@ -6,6 +6,8 @@ for both drug-discovery and contracts domains.
 """
 import json
 import shutil
+import sys
+from pathlib import Path
 
 import pytest
 
@@ -229,4 +231,193 @@ def test_e2e_fail_threshold_aborts(tmp_path):
     assert not graph_path.exists(), (
         "graph_data.json was created despite --fail-threshold abort; "
         "pipeline does not gate graph build on normalization pass-rate"
+    )
+
+
+# ========================================================================
+# FT-011, FT-012: Phase 14 chunk overlap acceptance (FIDL-03)
+# ========================================================================
+
+
+@pytest.mark.e2e
+def test_ft011_boundary_straddle_chunk_level_colocation(monkeypatch):
+    """FT-011 (M-3 Option A): chunk-level co-location of boundary-straddling mentions.
+
+    Single test, two modes:
+      GREEN — real chunker produces a chunk containing both mention strings.
+      RED   — with overlap disabled (both the chonkie SentenceChunker's
+              intra-chunk overlap AND the _tail_sentences cross-flush helper
+              monkey-patched out), no chunk contains both mentions.
+
+    Chunk-level co-location is the CAUSE the overlap fix addresses. LLM
+    relation extraction (INHIBITS(sotorasib, KRAS G12C)) is the downstream
+    effect we cannot assert without a real LLM; the chunk-level test honestly
+    captures the necessary precondition instead.
+
+    RED-first proof is in-function: pytest's monkeypatch auto-restores at
+    teardown, so no git-stash choreography — a fresh clone can run pytest
+    and see that the fix matters.
+
+    Implementation note (Phase 14 chonkie pivot): the plan was drafted
+    pre-pivot referencing `_sentence_overlap`. Post-pivot the fixture's
+    text routes through `_split_fixed` where chonkie handles overlap
+    natively via `_make_chunker`; cross-flush hops (ARTICLE boundaries,
+    merge transitions) use `_tail_sentences`. RED mode patches BOTH so
+    overlap is disabled end-to-end regardless of which path the chunker
+    dispatches through.
+    """
+    sys.path.insert(0, str(PROJECT_ROOT / "core"))
+    import chunk_document as cd
+    from chonkie import SentenceChunker
+
+    fixture = FIXTURES_DIR / "phase14_boundary_straddle.txt"
+    text = fixture.read_text()
+
+    # --- GREEN: real overlap ---
+    chunks = cd.chunk_document(text, "straddle_green")
+    both_in = [
+        i for i, c in enumerate(chunks)
+        if "sotorasib" in c["text"].lower() and "kras g12c" in c["text"].lower()
+    ]
+    assert both_in, (
+        "GREEN assertion failed: no chunk contains both 'sotorasib' and "
+        "'KRAS G12C' after Phase 14 overlap. Chunk map: "
+        + repr([
+            (i, "sotorasib" in c["text"].lower(), "kras g12c" in c["text"].lower())
+            for i, c in enumerate(chunks)
+        ])
+    )
+
+    # --- RED: disable overlap, reassert failure ---
+    # Patch both the chonkie chunker factory (intra-chunk overlap) and the
+    # cross-flush tail helper. Either alone leaves one path unpatched.
+    zero_overlap_chunker = SentenceChunker(
+        tokenizer="character",
+        chunk_size=cd.MAX_CHUNK_SIZE,
+        chunk_overlap=0,
+        min_sentences_per_chunk=1,
+    )
+    monkeypatch.setattr(cd, "_make_chunker", lambda max_size=cd.MAX_CHUNK_SIZE: zero_overlap_chunker)
+    monkeypatch.setattr(cd, "_tail_sentences", lambda *_args, **_kwargs: "")
+
+    chunks_no_overlap = cd.chunk_document(text, "straddle_red")
+    both_in_no = [
+        i for i, c in enumerate(chunks_no_overlap)
+        if "sotorasib" in c["text"].lower() and "kras g12c" in c["text"].lower()
+    ]
+    assert not both_in_no, (
+        "RED assertion failed: a chunk contains both mentions even with "
+        "overlap disabled — either the fixture accidentally co-locates "
+        "them or the chunker is cheating. Chunk map: "
+        + repr([
+            (i, "sotorasib" in c["text"].lower(), "kras g12c" in c["text"].lower())
+            for i, c in enumerate(chunks_no_overlap)
+        ])
+    )
+
+
+@pytest.mark.e2e
+def test_ft012_v2_baseline_regression():
+    """FT-012 (B-2): V2 regression gated by committed tests/baselines/v2/expected.json.
+
+    File-backed floor. Missing expected.json is a HARD FAILURE, not a skip —
+    a skippable gate is no gate at all. The expected.json contains small
+    summary counts (nodes/edges per scenario); the full graph_data.json
+    dumps remain gitignored.
+
+    Reads `graph_data.json` from each scenario's output directory directly
+    (same resolution logic as tests/regression/run_regression.py). This is
+    a deliberate deviation from the plan's subprocess+stdout-parsing design
+    — the actual runner output format (`label N1/N2 E1/E2 C1/C2`) does not
+    match the plan's assumed `"contract: N nodes, E edges"` format, and
+    direct graph_data.json reading is both more robust and equivalent in
+    intent.
+
+    If a scenario's output directory is missing (e.g., contract_events on
+    machines without sample-output-v2/), FT-012 records SKIP for that
+    scenario — mirrors run_regression.py's skip behavior. A missing output
+    directory is NOT a regression; the gate is floor comparison against
+    existing output.
+
+    The human checkpoint (Task 3) records actual observed counts during
+    the contract-gate verification and commits the updated expected.json
+    alongside the Phase-14 PR.
+    """
+    expected_path = PROJECT_ROOT / "tests" / "baselines" / "v2" / "expected.json"
+    assert expected_path.exists(), (
+        f"V2 acceptance floor file missing: {expected_path}\n"
+        f"This file is committed to git (small summary counts, NOT full graph dumps).\n"
+        f"If it was deleted, restore it from the Phase 14 PR. "
+        f"If it has never existed, the human checkpoint (Plan 14-04 Task 3) "
+        f"must seed it: run `python3 tests/regression/run_regression.py`, "
+        f"capture per-scenario node/edge counts, and write them into "
+        f"tests/baselines/v2/expected.json using the schema documented in "
+        f"Plan 14-04. FT-012 cannot pass without this file."
+    )
+
+    expected = json.loads(expected_path.read_text())
+    assert "scenarios" in expected, f"expected.json missing 'scenarios' key: {list(expected.keys())}"
+
+    # Scenario name -> output directory resolution. Mirrors
+    # tests/regression/run_regression.py::_resolve_output_dir but operates on
+    # expected.json's scenario keys directly.
+    drug_discovery_scenarios = {
+        "01_picalm_alzheimers",
+        "02_kras_g12c_landscape",
+        "03_rare_disease",
+        "04_immunooncology",
+        "05_cardiovascular",
+        "06_glp1_landscape",
+    }
+    contract_scenarios = {"contract_events", "contracts", "contracts_sample"}
+
+    def _resolve_output(scenario: str) -> Path | None:
+        if scenario in drug_discovery_scenarios:
+            for subdir in ("output-v2", "output"):
+                candidate = PROJECT_ROOT / "tests" / "corpora" / scenario / subdir
+                if candidate.exists():
+                    return candidate
+            return None
+        if scenario in contract_scenarios:
+            for candidate in (
+                PROJECT_ROOT / "sample-output-v2",
+                PROJECT_ROOT / "sample-output",
+                PROJECT_ROOT / "tests" / "corpora" / "contracts" / "output-v2",
+                PROJECT_ROOT / "tests" / "corpora" / "contracts" / "output",
+            ):
+                if candidate.exists():
+                    return candidate
+            return None
+        return None
+
+    failures: list[str] = []
+    for scenario, expect in expected["scenarios"].items():
+        exp_nodes = int(expect["nodes"])
+        exp_edges = int(expect["edges"])
+
+        output_dir = _resolve_output(scenario)
+        if output_dir is None:
+            # No current output for this scenario — treat as SKIP. If the floor
+            # is > 0 this is operator attention needed (e.g., contract floor
+            # stays committed but contract output hasn't been regenerated yet).
+            continue
+
+        graph_path = output_dir / "graph_data.json"
+        if not graph_path.exists():
+            continue
+
+        graph = json.loads(graph_path.read_text())
+        obs_nodes = len(graph.get("nodes", []))
+        obs_edges = len(graph.get("links", graph.get("edges", [])))
+
+        if obs_nodes < exp_nodes or obs_edges < exp_edges:
+            failures.append(
+                f"{scenario}: observed {obs_nodes} nodes / {obs_edges} edges "
+                f"< floor {exp_nodes} nodes / {exp_edges} edges "
+                f"(graph: {graph_path})"
+            )
+
+    assert not failures, (
+        "V2 regression failed (scenarios below committed floor):\n"
+        + "\n".join(f"  - {f}" for f in failures)
     )

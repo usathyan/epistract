@@ -44,5 +44,8 @@ private-corpus/
 dist/
 build/
 
-# Regression output (generated, not tracked)
-tests/baselines/v2/
+# Regression output (generated, not tracked) — scenario baseline JSONs
+# are regenerated per run. The V2 acceptance floor (Phase 14 FT-012, B-2)
+# lives at tests/baselines/v2/expected.json and IS committed.
+tests/baselines/v2/*
+!tests/baselines/v2/expected.json

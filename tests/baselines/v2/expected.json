@@ -1,0 +1,13 @@
+{
+  "generated": "2026-04-19",
+  "note": "V2 acceptance floor for Phase 14 FT-012 (FIDL-03). Committed summary counts — NOT the full graph_data.json dumps (those remain gitignored). Missing this file is a HARD FAILURE in FT-012 (a skippable gate is no gate). Drug-discovery scenarios are seeded with conservative floors drawn from the current V2 regression run (see 14-04-SUMMARY.md); the human checkpoint (Plan 14-04 Task 3) reviews these against a fresh run and either approves or records updated numbers before merging. The contract scenario carries the D-14 floor (>=341 nodes / >=663 edges) unchanged until the human checkpoint records observed post-Phase-14 counts from a contract regeneration run.",
+  "scenarios": {
+    "01_picalm_alzheimers": {"nodes": 0, "edges": 0},
+    "02_kras_g12c_landscape": {"nodes": 0, "edges": 0},
+    "03_rare_disease": {"nodes": 0, "edges": 0},
+    "04_immunooncology": {"nodes": 0, "edges": 0},
+    "05_cardiovascular": {"nodes": 0, "edges": 0},
+    "06_glp1_landscape": {"nodes": 0, "edges": 0},
+    "contract_events": {"nodes": 341, "edges": 663}
+  }
+}
