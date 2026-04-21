@@ -359,9 +359,11 @@ Plans:
 
 **Goal:** When a user passes `--domain <name>` to ingest or dashboard, every downstream consumer (workbench, graph.html, chat system prompt) reflects that domain. Currently they default to drug-discovery branding regardless.
 
-**Scope:** Bug 1 (workbench wrong template), Bug 2 (graph.html empty title), Enh 7 (graph.html entity colors from template), Enh 9 (workbench system prompt domain patterns), Enh 10 (dashboard auto-detect from graph_data.json metadata).
+**Scope:** Persist `domain` in `graph_data.json` metadata at build time; consumers read it as single source of truth. Precedence: explicit `--domain` > metadata > hardcoded default. Fixes Bug 1 (workbench wrong template), Bug 2 (graph.html empty title), Enh 7 (graph.html entity colors from template), Enh 9 (workbench system prompt analysis_patterns), Enh 10 (dashboard auto-detect).
 
-**Plans:** 0 plans.
+**Requirements**: FIDL-06
+
+**Plans:** 1/2 plans executed
 
 ### Phase 18: Per-domain epistemic & validator extensibility
 
