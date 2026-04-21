@@ -130,7 +130,7 @@ See v1 traceability below.
 
 ### Domain Awareness in Consumers (Phase 17)
 
-- [ ] **FIDL-06**: `graph_data.json` metadata persists the `domain` used at build time. Every downstream consumer (workbench server, chat system prompt, standalone `graph.html`, `/epistract:dashboard` skill) reads `graph_data.json["metadata"]["domain"]` as the source of truth when no explicit `--domain` arg is provided. Precedence: explicit `--domain` flag > metadata > hardcoded default. `graph.html` `<h1>` populated with domain name; pyvis entity colors loaded from `domains/<name>/workbench/template.yaml:entity_colors`. Workbench system prompt loads per-domain `analysis_patterns` block from the template instead of hardcoding contracts vocabulary. Legacy graphs (no metadata.domain) fall back to current default behavior with a visible warning.
+- [x] **FIDL-06**: `graph_data.json` metadata persists the `domain` used at build time. Every downstream consumer (workbench server, chat system prompt, standalone `graph.html`, `/epistract:dashboard` skill) reads `graph_data.json["metadata"]["domain"]` as the source of truth when no explicit `--domain` arg is provided. Precedence: explicit `--domain` flag > metadata > hardcoded default. `graph.html` `<h1>` populated with domain name; pyvis entity colors loaded from `domains/<name>/workbench/template.yaml:entity_colors`. Workbench system prompt loads per-domain `analysis_patterns` block from the template instead of hardcoding contracts vocabulary. Legacy graphs (no metadata.domain) fall back to current default behavior with a visible warning.
 
 ## Deferred (V3)
 
@@ -216,8 +216,8 @@ See v1 traceability below.
 | FIDL-03 | Phase 14 | 14-01, 14-02, 14-03, 14-04 | Complete |
 | FIDL-04 | Phase 15 | 15-01, 15-02 | Complete |
 | FIDL-05 | Phase 16 | 16-01, 16-02 | Complete |
-| FIDL-06 | Phase 17 | 17-01 | Pending |
+| FIDL-06 | Phase 17 | 17-01, 17-02 | Complete |
 
 ---
 *Requirements defined: 2026-03-29 (v1), 2026-04-02 (v2), 2026-04-04 (Phase 11)*
-*Last updated: 2026-04-21 — FIDL-06 registered for Phase 17 (Domain Awareness in Consumers, Plan 17-01)*
+*Last updated: 2026-04-21 — FIDL-06 Phase 17 complete (Domain Awareness in Consumers)*

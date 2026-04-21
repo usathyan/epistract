@@ -495,6 +495,26 @@ These are real research questions a PhD scientist would ask. Each tests whether 
 - **Pass criteria:** All four branches return the expected (resolved_domain, source) tuple; branch 3 emits a warning to stderr or log.
 - **Dependency:** None — pure stub JSON, no sift-kg.
 
+### UT-046: build_system_prompt reads analysis_patterns from template with fallback-plus-warning
+- **Traces to:** FIDL-06 (D-06)
+- **Test:** Four branches (see tests/test_unit.py::test_build_system_prompt_loads_analysis_patterns):
+  1. Contracts template → cross-references section uses "CROSS-CONTRACT REFERENCES"
+  2. Drug-discovery template → same section uses "CROSS-STUDY REFERENCES"
+  3. Legacy template with no analysis_patterns → falls back to "CROSS-CONTRACT REFERENCES" AND emits a one-shot stderr warning mentioning `analysis_patterns`
+  4. Claims layer with no cross_references → section is omitted entirely regardless of template.
+- **Pass criteria:** All four branches produce the expected prompt substring. Warning is emitted exactly in branch 3.
+- **Dependency:** None — uses a minimal _StubData class; no sift-kg, no FastAPI.
+
+### FT-018: End-to-end domain auto-detection through /api/template
+- **Traces to:** FIDL-06 (D-03, D-07, D-08, D-09, D-13)
+- **Test:** Four sub-tests (all in tests/test_workbench.py):
+  1. `test_ft018_domain_autodetect_through_api_contracts`: build stub graph_data.json with metadata.domain="contracts"; create_app(out, domain=None); GET /api/template; assert title == "Sample Contract Analysis Workbench" AND analysis_patterns.cross_references_heading == "CROSS-CONTRACT REFERENCES".
+  2. `test_ft018_domain_autodetect_through_api_drug_discovery`: same pattern with metadata.domain="drug-discovery"; assert "Drug Discovery" in title AND analysis_patterns.cross_references_heading == "CROSS-STUDY REFERENCES".
+  3. `test_ft018_explicit_beats_metadata`: metadata.domain="contracts" + create_app(out, domain="drug-discovery") → title reflects drug-discovery (D-09).
+  4. `test_ft018_legacy_graph_no_metadata_domain`: metadata.domain is null → title is generic "Knowledge Graph Explorer" (D-08 fallback).
+- **Pass criteria:** All four sub-tests pass; existing /api/template endpoint behavior preserved (D-14 — no regression on test_template_api_endpoint or test_template_api_generic).
+- **Dependency:** FastAPI TestClient (already used by other tests in test_workbench.py), no sift-kg, no external LLM.
+
 ---
 
 ## 4. Traceability Matrix
@@ -526,3 +546,5 @@ These are real research questions a PhD scientist would ask. Each tests whether 
 | FT-017 | FIDL-05 (D-12) | N/A | N/A | tests/fixtures/wizard/sample_lease_{1,2,3}.txt |
 | UT-044 | FIDL-06 (D-01, D-02, D-10) | N/A (metadata write) | N/A | Stub graph_data.json |
 | UT-045 | FIDL-06 (D-03, D-07, D-08, D-09, D-11) | N/A (resolver) | N/A | Stub graph_data.json |
+| UT-046 | FIDL-06 (D-06) | N/A (system prompt) | N/A | Stub WorkbenchData |
+| FT-018 | FIDL-06 (D-03, D-07, D-08, D-09, D-13) | N/A (e2e) | N/A | Stub graph_data.json |

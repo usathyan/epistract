@@ -58,4 +58,69 @@ Phase 16's acceptance is prompt-level, not LLM-level: for the synthetic fixture 
 
 ---
 
-*Last updated: 2026-04-21 — Phase 16 FIDL-05 (Wizard Sample Window) initial entry; token cost measured.*
+## Domain awareness propagation (FIDL-06)
+
+**Scope:** How the domain selected at build time (`/epistract:ingest --domain <name>`) propagates to every downstream consumer — workbench server, chat system prompt, standalone `graph.html` viewer, `/epistract:dashboard` skill — so that a contracts graph shows contracts branding and a drug-discovery graph shows drug-discovery branding, without the user passing `--domain` again at each consumer.
+
+**Source:** `.planning/phases/17-domain-awareness-in-consumers/17-CONTEXT.md` (D-01..D-16). Implemented in Phase 17 Plans 17-01 + 17-02.
+
+### Single source of truth
+
+`graph_data.json.metadata.domain: str | None` — written by `core.run_sift.cmd_build` after sift-kg's `run_build` emits the file. This is the ONE place the domain name is persisted post-build. Every consumer reads from here.
+
+- `null` value: user built without `--domain` flag (generic build). Consumers fall back to their generic defaults.
+- Missing key entirely: legacy graph (built before Phase 17). Consumers fall back with a one-shot stderr warning pointing to `/epistract:ingest --domain <name>`.
+
+### Precedence rule
+
+Consumers resolve the effective domain via `examples.workbench.template_loader.resolve_domain(output_dir, explicit_domain)`:
+
+1. **Explicit arg wins** — if the caller passes `--domain <name>`, that value is used regardless of metadata. Rationale: experimenting with a contracts graph under the drug-discovery template should be possible without rebuilding.
+2. **Metadata fallback** — when no explicit arg, read `graph_data.json.metadata.domain`.
+3. **Generic fallback** — when neither present, fall through to `template_loader.GENERIC_TEMPLATE` and emit a one-shot warning.
+
+The `resolve_domain` helper returns a `(resolved_domain: str | None, source: str)` tuple; `source` is `"explicit" | "metadata" | "fallback"` for debugging and banner display.
+
+### Propagation points
+
+- **Workbench server (`examples/workbench/server.py::create_app`)** — calls `resolve_domain` then `load_template`; `GET /api/template` returns the resolved template.
+- **Launcher (`scripts/launch_workbench.py`)** — calls `resolve_domain` for the console banner (so users can see which source won); passes the raw `--domain` into `create_app` (which re-resolves — the helper is idempotent).
+- **Standalone graph viewer (`core/run_sift.py::cmd_view`)** — post-processes `graph.html` to replace the empty `<h1></h1>` with `<h1>{domain title}</h1>` and append a `<script>` block that overlays `template.yaml:entity_colors` onto vis.js nodes on DOMContentLoaded.
+- **Chat system prompt (`examples/workbench/system_prompt.py::build_system_prompt`)** — reads `template.analysis_patterns.cross_references_heading` (and `appears_in_phrase`) to customize the cross-references section for the domain. Contracts uses "CROSS-CONTRACT REFERENCES"; drug-discovery uses "CROSS-STUDY REFERENCES".
+
+### Legacy-graph behavior (D-08)
+
+Graphs built before Phase 17 have no `metadata.domain` key. When such a graph is opened:
+- Workbench: falls back to the generic `Knowledge Graph Explorer` template with a one-shot stderr warning.
+- `graph.html`: gets `<h1>Knowledge Graph</h1>` (generic) and keeps sift-kg's default entity palette (no overlay).
+- Chat system prompt: keeps the hardcoded "CROSS-CONTRACT REFERENCES" (the pre-Phase-17 behavior) with a one-shot stderr warning.
+
+No migration script is provided — users rebuild their graphs to get the new metadata. Rebuilds are fast enough (typically < 1 minute for a 60-doc corpus) that a migration script would cost more than it saves.
+
+### What propagation does NOT do
+
+- **No live chat re-parse** — if `template.yaml:analysis_patterns` changes, users must restart the workbench to pick it up. The template is loaded once at `create_app` time.
+- **No browser-side fetch of metadata** — `graph.html` reads nothing from the network; the `<h1>` and color overlay are baked into the HTML at `cmd_view` time.
+- **No per-user overrides** — the template is per-domain, not per-user. Future scope.
+- **No DomainContext object** — explicitly rejected in 17-CONTEXT.md §deferred item 1. The metadata-field approach is simpler and covers the current consumer set; revisit if a second cross-cutting field (e.g., `ocr_mode`, `extensions`) needs the same propagation.
+
+### Acceptance gate
+
+- UT-044 (cmd_build writes metadata.domain)
+- UT-045 (resolve_domain precedence — explicit > metadata > fallback, 4 branches)
+- UT-046 (build_system_prompt reads analysis_patterns with fallback + warning)
+- FT-018 (end-to-end: stub contracts graph + stub drug-discovery graph → GET /api/template returns the right template; D-09 explicit-beats-metadata; D-08 legacy fallback)
+
+### Related
+
+- `core/run_sift.cmd_build` — persists metadata.domain.
+- `core/run_sift.cmd_view` — post-processes graph.html with domain title + entity colors.
+- `examples/workbench/template_loader.resolve_domain` — precedence resolver.
+- `examples/workbench/template_schema.AnalysisPatterns` — Pydantic model for domain-specific chat vocabulary.
+- `domains/contracts/workbench/template.yaml:analysis_patterns` — "CROSS-CONTRACT REFERENCES".
+- `domains/drug-discovery/workbench/template.yaml:analysis_patterns` — "CROSS-STUDY REFERENCES".
+- Phase 20 README "Pipeline Capacity & Limits" section cites this doc for the domain-awareness propagation contract.
+
+---
+
+*Last updated: 2026-04-21 — Phase 17 FIDL-06 (Domain Awareness in Consumers) added; Phase 16 FIDL-05 entry preserved.*
