@@ -578,6 +578,132 @@ def test_wizard_skips_binary_when_sift_reader_missing():
 
 
 # ========================================================================
+# Phase 16 — FIDL-05: Wizard Sample Window Beyond 8KB
+# ========================================================================
+
+
+@pytest.mark.unit
+def test_build_excerpts():
+    """UT-042: _build_excerpts returns [] for ≤12K docs and 3 slices for >12K docs (D-01, D-02, D-03)."""
+    from core.domain_wizard import (
+        EXCERPT_CHARS,
+        MULTI_EXCERPT_THRESHOLD,
+        _build_excerpts,
+    )
+
+    # Sanity-check constants
+    assert EXCERPT_CHARS == 4000, f"EXCERPT_CHARS should be 4000, got {EXCERPT_CHARS}"
+    assert MULTI_EXCERPT_THRESHOLD == 12000, (
+        f"MULTI_EXCERPT_THRESHOLD should be 12000, got {MULTI_EXCERPT_THRESHOLD}"
+    )
+
+    # Short-doc branch: strictly ≤ threshold returns []
+    assert _build_excerpts("x" * 11999) == [], "len=11999 must be short-doc path"
+    assert _build_excerpts("x" * 12000) == [], (
+        "len=12000 is boundary — must still be short-doc (uses > threshold, not >=)"
+    )
+
+    # Long-doc branch: 3 slices of 4000 chars each
+    long_result = _build_excerpts("x" * 12001)
+    assert isinstance(long_result, list), f"Expected list, got {type(long_result)}"
+    assert len(long_result) == 3, f"Expected 3 excerpts, got {len(long_result)}"
+    assert all(isinstance(s, str) for s in long_result), "All excerpts must be str"
+    assert all(len(s) == 4000 for s in long_result[:1]), (
+        "Head must be exactly 4000 chars"
+    )
+
+    # D-01 + D-03 — explicit offsets for a 30000-char doc
+    payload_30k = "a" * 30000
+    slices = _build_excerpts(payload_30k)
+    assert slices[0] == "a" * 4000, "Head slice must equal doc_text[:4000] (D-01)"
+    assert slices[1] == "a" * 4000, (
+        "Middle slice must equal doc_text[13000:17000] for 30K doc (D-03: centered)"
+    )
+    assert slices[2] == "a" * 4000, "Tail slice must equal doc_text[-4000:] (D-01)"
+
+    # Structural markers — head / middle / tail each pick up their own sentinel
+    head_mark = "HEAD_MARK"
+    mid_mark = "MID_MARK"
+    tail_mark = "TAIL_MARK"
+    structured = head_mark + ("." * 20000) + mid_mark + ("." * 20000) + tail_mark
+    struct_slices = _build_excerpts(structured)
+    assert head_mark in struct_slices[0], (
+        f"Head slice missing {head_mark!r}: {struct_slices[0][:100]!r}"
+    )
+    assert mid_mark in struct_slices[1], (
+        f"Middle slice missing {mid_mark!r}: {struct_slices[1][:100]!r}"
+    )
+    assert tail_mark in struct_slices[2], (
+        f"Tail slice missing {tail_mark!r}: {struct_slices[2][-100:]!r}"
+    )
+
+
+@pytest.mark.unit
+def test_multi_excerpt_prompt_contains_markers():
+    """UT-043: build_schema_discovery_prompt emits 3 excerpt markers + 3 sentinels for long docs (D-04, D-05, D-10, D-11).
+
+    Fixture dependency — tests/fixtures/wizard_sample_window/long_contract.txt is created in
+    Plan 16-02 Task 1. This test is RED until that task lands and GREEN thereafter.
+    """
+    from core.domain_wizard import build_schema_discovery_prompt
+
+    fixture_path = (
+        PROJECT_ROOT / "tests" / "fixtures" / "wizard_sample_window" / "long_contract.txt"
+    )
+    fixture_text = fixture_path.read_text(encoding="utf-8")
+    assert len(fixture_text) > 12000, (
+        f"Fixture must be >12K chars to trigger multi-excerpt path, got {len(fixture_text)}"
+    )
+
+    prompt = build_schema_discovery_prompt(fixture_text, "Synthetic long contract domain")
+
+    # D-04: three explicit excerpt markers on their own lines
+    assert "[EXCERPT 1/3 — chars 0 to 4000 (head)]" in prompt, (
+        "Head marker missing or wrong format (D-04 requires em-dash and exact phrasing)"
+    )
+    assert "[EXCERPT 2/3 — chars " in prompt, "Middle marker prefix missing"
+    assert "[EXCERPT 3/3 — chars " in prompt, "Tail marker prefix missing"
+
+    # D-05: preface + plural header
+    assert (
+        "The following are three excerpts from a larger document. "
+        "Treat them as non-contiguous samples of the same document, "
+        "not as a single continuous passage." in prompt
+    ), "D-05 preface missing or altered"
+    assert "**Document excerpts:**" in prompt, "Plural header missing (D-05 long-doc path)"
+    assert "**Document text:**" not in prompt, (
+        "Singular header leaked into long-doc path (D-05 violation)"
+    )
+
+    # D-10: all three sentinel phrases from the Plan 16-02 fixture appear
+    assert "PARTY_SENTINEL_HEAD" in prompt, "Head sentinel missing from rendered prompt"
+    assert "OBLIGATION_SENTINEL_MIDDLE" in prompt, "Middle sentinel missing from rendered prompt"
+    assert "TERMINATION_SENTINEL_TAIL" in prompt, "Tail sentinel missing from rendered prompt"
+
+    # Domain description still interpolated
+    assert "Synthetic long contract domain" in prompt, "Domain description missing"
+
+    # -------------------------------------------------------------------
+    # Short-doc path: backward compat (D-02) — no fixture needed
+    # -------------------------------------------------------------------
+    short_prompt = build_schema_discovery_prompt(
+        "Sample lease text here...", "Real estate lease agreements"
+    )
+    assert "**Document text:**" in short_prompt, (
+        "Short-doc path must use singular header (D-02 backward compat)"
+    )
+    assert "Sample lease text here..." in short_prompt, (
+        "Short-doc path must include full doc_text verbatim"
+    )
+    assert "[EXCERPT" not in short_prompt, (
+        "Short-doc path must NOT emit excerpt markers"
+    )
+    assert "three excerpts from a larger document" not in short_prompt, (
+        "Short-doc path must NOT emit the multi-excerpt preface"
+    )
+
+
+# ========================================================================
 # Phase 13 — FIDL-02c: write-time validation + provenance threading
 # ========================================================================
 
