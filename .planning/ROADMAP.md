@@ -2,8 +2,9 @@
 
 ## Milestones
 
-- Complete **v1.0 STA Contract Extraction + Dashboard** - Phases 1-5 (shipped 2026-04-02)
-- Current **v2.0 Framework Architecture & Domain Developer Experience** - Phases 6-11 (in progress)
+- ✅ **v1.0 STA Contract Extraction + Dashboard** — Phases 1-5 (shipped 2026-04-02)
+- ✅ **v2.0 Framework Architecture & Domain Developer Experience** — Phases 6-11 (shipped 2026-04-17)
+- 🚧 **v3.0 Graph Fidelity & Honest Limits** — Phases 12-20 (in progress; 12-14 complete)
 
 ## Phases
 
@@ -224,7 +225,7 @@ Plans:
 - [x] 10-03-PLAN.md — Domain developer guide rewrite (wizard-first structure)
 - [x] 10-04-PLAN.md — Paper reframing (title, abstract, architecture, Case Study 2, conclusion)
 
-### Phase 11: End-to-End Scenario Validation and v2.0 Release
+### Phase 11: End-to-End Scenario Validation and v-2-0 Release
 **Goal**: Both use cases (drug discovery + contracts) produce demonstration-ready knowledge graphs through the new plugin and extraction pipeline, validated against baseline output. Closes with git sync to remote and v2.0 milestone completion.
 **Depends on**: Phase 10
 **Requirements**: E2E-01, E2E-02, E2E-03, E2E-04, E2E-05, E2E-06, REL-01, REL-02, REL-03
@@ -325,13 +326,19 @@ Plans:
 - [x] 14-03-PLAN.md — Wire overlap into `_split_at_paragraphs` sub-chunks, `_merge_small_sections` ARTICLE-boundary flush, and `_split_fixed` fallback; emit new chunk JSON fields; recompute honest per-sub-chunk `char_offset` (D-11); UT-036..UT-038 (FIDL-03)
 - [x] 14-04-PLAN.md — FT-011 RED+GREEN boundary-straddle e2e test + FT-012 V2 baseline regression; synthetic 20KB fixture; doc alignment check on `commands/ingest.md:34`; human checkpoint on ARTICLE-boundary acceptance (FIDL-03)
 
-### Phase 15: Format discovery parity with Kreuzberg
+### Phase 15: Format discovery parity
 
 **Goal:** Every file format Kreuzberg can parse is actually discovered by `discover_corpus`. Currently only 9 extensions survive the `SUPPORTED_EXTENSIONS` filter; PPTX/EPUB/MD/RTF/ODT/CSV and others are silently skipped.
 
-**Scope:** Part 1 Item 3. Expand allowlist, or query Kreuzberg at runtime if possible.
+**Scope:** Part 1 Item 3. Delegate to `sift_kg.ingest.reader.discover_documents` / `create_extractor(...).supported_extensions()` — runtime-resolved extension set. `.zip` archives excluded. Images OCR-gated. `triage.json` gains `warnings[]` for post-discovery extraction failures.
 
-**Plans:** 0 plans.
+**Requirements**: FIDL-04
+
+**Plans:** 1/2 plans executed
+
+Plans:
+- [x] 15-01-PLAN.md — Delegate discover_corpus to sift-kg; SUPPORTED_EXTENSIONS lazy __getattr__ accessor; OCR gate for images; .zip exclusion; triage warnings[] field; commands/ingest.md category summary; UT-039/UT-040/UT-041 (FIDL-04)
+- [ ] 15-02-PLAN.md — format_parity fixtures (sample.md + corrupted.pptx); FT-013 new-format ingest; FT-014 corrupted-file triage warning; FT-015 V2 baseline floor guard (≥341 nodes / ≥663 edges contract) (FIDL-04)
 
 ### Phase 16: Wizard sample window beyond 8KB
 

@@ -1,17 +1,17 @@
 ---
 gsd_state_version: 1.0
-milestone: v2.0
-milestone_name: Framework Architecture & Domain Developer Experience
-status: verifying
-stopped_at: Completed 14-04-PLAN.md (plan-04 closeout via continuation agent)
-last_updated: "2026-04-20T22:16:14.703Z"
-last_activity: 2026-04-20
+milestone: v3.0
+milestone_name: Graph Fidelity & Honest Limits
+status: executing
+stopped_at: Completed 15-01-PLAN.md (FIDL-04 discover_corpus delegation + warnings[] field)
+last_updated: "2026-04-21T12:36:54.297Z"
+last_activity: 2026-04-21
 progress:
-  total_phases: 24
-  completed_phases: 14
-  total_plans: 44
-  completed_plans: 44
-  percent: 100
+  total_phases: 15
+  completed_phases: 9
+  total_plans: 32
+  completed_plans: 31
+  percent: 58
 ---
 
 # Project State
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-02)
 
 **Core value:** Extract knowledge, not information. Any corpus, any domain -- plug in a schema, get a knowledge graph with epistemic layer.
-**Current focus:** Phase 14 — chunk-overlap
+**Current focus:** Phase 15 — format-discovery-parity
 
 ## Current Position
 
-Phase: 15
-Plan: Not started
-Status: Phase complete — ready for verification
-Last activity: 2026-04-20
+Phase: 15 (format-discovery-parity) — EXECUTING
+Plan: 2 of 2
+Status: Ready to execute
+Last activity: 2026-04-21
 
-Progress: [██████████] 100%
+Progress: [█████░░░░░] 58%
 
 ## Performance Metrics
 
@@ -82,6 +82,7 @@ Progress: [██████████] 100%
 | Phase 14 P02 | 10min | 2 tasks | 2 files |
 | Phase 14 P03 | 85min | 3 tasks | 2 files |
 | Phase 14-chunk-overlap P04 | 75min | 3 tasks | 3 files |
+| Phase 15-format-discovery-parity P01 | 6min | 3 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -156,6 +157,11 @@ Recent decisions affecting current work:
 - [Phase 14-chunk-overlap]: [Phase 14-04]: FT-011 RED mode monkey-patches BOTH _make_chunker (chonkie intra-chunk overlap) AND _tail_sentences (cross-flush overlap). Post-pivot topology has two orthogonal overlap paths; patching either alone leaves one active.
 - [Phase 14-chunk-overlap]: [Phase 14-04]: FT-012 reads graph_data.json directly per scenario (mirroring run_regression.py::_resolve_output_dir) rather than subprocess-ing run_regression.py and parsing stdout. Runner's actual output format (label N1/N2 E1/E2) does not match plan's assumed 'label: N nodes, E edges'. Direct graph read is equivalent in intent, more robust, avoids stdout-parsing fragility.
 - [Phase 14-chunk-overlap]: [Phase 14-04]: Human checkpoint resolved 2026-04-20 via Option 3a — adopt pre-Phase-14 observed counts (from 2026-04-13 tests/corpora/*/output-v2/graph_data.json artifacts) as V2 regression floors. Contract scenario keeps D-14 hard floor (341/663). Rationale: Phase 14 acceptance is proven by unit tests UT-031..UT-038 + UT-033b + UT-036b and E2E test FT-011; FT-012 is a forward-regression guardrail, not a Phase 14 acceptance test.
+- [Phase 15-format-discovery-parity]: [Phase 15-01]: PEP 562 __getattr__ idiom over functools.lru_cache for SUPPORTED_EXTENSIONS — transparent back-compat with 'from core.ingest_documents import SUPPORTED_EXTENSIONS' consumers, no caller rewrites required.
+- [Phase 15-format-discovery-parity]: [Phase 15-01]: Tuple-cache (text_class, ocr_class) in single module-level var — one computation serves both OCR modes via set-difference over the Kreuzberg-supported extension set.
+- [Phase 15-format-discovery-parity]: [Phase 15-01]: Runtime set is 29 text-class extensions on sift-kg 0.9.x (Kreuzberg's 37 minus 1 zip minus 8 images); UT-039 asserts >=28 for forward-compat tolerance, not the literal 29 (CONTEXT.md said >=29 — corrected to >=28 against the actual set).
+- [Phase 15-format-discovery-parity]: [Phase 15-01]: ingest_corpus wraps discover_corpus in try/ImportError so CLI users see a clean error-dict path; raw traceback never surfaces. Aligns with existing print(..., file=sys.stderr) error convention in the same function.
+- [Phase 15-format-discovery-parity]: [Phase 15-01]: triage.json warnings[] field is additive — no schema version bump. examples/workbench/data_loader.py reads documents[] keys it knows about; new field is invisible to existing consumers.
 
 ### Pending Todos
 
@@ -175,6 +181,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-04-20T02:15:21.467Z
-Stopped at: Completed 14-04-PLAN.md (plan-04 closeout via continuation agent)
+Last session: 2026-04-21T12:36:54.293Z
+Stopped at: Completed 15-01-PLAN.md (FIDL-04 discover_corpus delegation + warnings[] field)
 Resume file: None
