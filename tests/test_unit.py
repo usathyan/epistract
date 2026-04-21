@@ -1738,3 +1738,71 @@ def test_resolve_domain_precedence(tmp_path, capsys):
     dir3.mkdir()
     resolved, source = resolve_domain(dir3, None)
     assert (resolved, source) == (None, "fallback")
+
+
+@pytest.mark.unit
+def test_build_system_prompt_loads_analysis_patterns(capsys, monkeypatch):
+    """UT-046: build_system_prompt reads template['analysis_patterns'] and falls back with a warning (FIDL-06 D-06)."""
+    import sys as _sys
+
+    _sys.path.insert(0, str(PROJECT_ROOT))
+    import examples.workbench.system_prompt as sp
+    from examples.workbench.system_prompt import build_system_prompt
+
+    class _StubData:
+        def __init__(self, claims):
+            self.graph_data = {"nodes": [], "edges": []}
+            self.claims_layer = claims
+            self.communities = {}
+
+    xref_claims = {
+        "cross_references": [
+            {"entity": "Aramark", "appears_in": ["PCC", "Catering"]},
+        ],
+        "conflicts": [],
+        "gaps": [],
+        "risks": [],
+    }
+
+    # Branch 1: contracts template uses contracts heading
+    contracts_template = {
+        "persona": "stub persona",
+        "analysis_patterns": {
+            "cross_references_heading": "CROSS-CONTRACT REFERENCES",
+            "appears_in_phrase": "appears in",
+        },
+    }
+    prompt = build_system_prompt(_StubData(xref_claims), contracts_template)
+    assert "### CROSS-CONTRACT REFERENCES (1 entities)" in prompt
+    assert "Aramark appears in: PCC, Catering" in prompt
+
+    # Branch 2: drug-discovery template uses drug-discovery heading
+    dd_template = {
+        "persona": "stub persona",
+        "analysis_patterns": {
+            "cross_references_heading": "CROSS-STUDY REFERENCES",
+            "appears_in_phrase": "appears in",
+        },
+    }
+    prompt = build_system_prompt(_StubData(xref_claims), dd_template)
+    assert "### CROSS-STUDY REFERENCES (1 entities)" in prompt
+    assert "### CROSS-CONTRACT REFERENCES" not in prompt
+
+    # Branch 3: legacy template (no analysis_patterns) — fallback with warning
+    monkeypatch.setattr(sp, "_warned_about_missing_analysis_patterns", False)
+    capsys.readouterr()  # clear prior output
+    legacy_template = {"persona": "stub persona"}  # no analysis_patterns key
+    prompt = build_system_prompt(_StubData(xref_claims), legacy_template)
+    assert "### CROSS-CONTRACT REFERENCES (1 entities)" in prompt, (
+        "Fallback must use contracts-default heading per D-06"
+    )
+    captured = capsys.readouterr()
+    assert "analysis_patterns" in captured.err, (
+        f"D-06 visible warning expected on stderr, got: {captured.err!r}"
+    )
+
+    # Branch 4: no cross_references in claims → no heading regardless of template
+    empty_claims = {"conflicts": [], "gaps": [], "risks": []}
+    prompt = build_system_prompt(_StubData(empty_claims), legacy_template)
+    assert "CROSS-CONTRACT REFERENCES" not in prompt
+    assert "CROSS-STUDY REFERENCES" not in prompt
