@@ -24,3 +24,6 @@ entity_colors:
   SIDE_EFFECT: "#ec4899"
   PROTEIN: "#f97316"
   CELL_LINE: "#14b8a6"
+analysis_patterns:
+  cross_references_heading: "CROSS-STUDY REFERENCES"
+  appears_in_phrase: "appears in"
