@@ -1622,3 +1622,119 @@ def test_discover_corpus_raises_when_sift_reader_missing(tmp_path):
             ingest_documents.discover_corpus(tmp_path)
         with pytest.raises(ImportError, match=r"sift.?kg|/epistract:setup"):
             _ = ingest_documents.SUPPORTED_EXTENSIONS
+
+
+# ---------------------------------------------------------------------------
+# FIDL-06 — Domain Awareness in Consumers (Phase 17)
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.unit
+def test_cmd_build_writes_domain_metadata(tmp_path, monkeypatch):
+    """UT-044: cmd_build persists metadata.domain into graph_data.json (D-01, D-02)."""
+    import json as _json
+    import sys as _sys
+
+    # Ensure `run_sift` imports cleanly from the tests/conftest-configured sys.path.
+    _sys.path.insert(0, str(PROJECT_ROOT))  # for examples.workbench and core.*
+    import run_sift  # from core/ on sys.path (per conftest line 20)
+
+    def _stub_import_sift(names):
+        def stub_run_build(output_dir, domain):
+            gp = Path(output_dir) / "graph_data.json"
+            gp.parent.mkdir(parents=True, exist_ok=True)
+            gp.write_text(_json.dumps({
+                "metadata": {
+                    "created_at": "2026-04-21T00:00:00+00:00",
+                    "updated_at": "2026-04-21T00:00:00+00:00",
+                    "entity_count": 0,
+                    "relation_count": 0,
+                    "document_count": 0,
+                    "entity_type_summary": {},
+                    "sift_kg_version": "0.9.0-stub",
+                },
+                "nodes": [],
+                "links": [],
+            }))
+
+            class _Stub:
+                entity_count = 0
+                relation_count = 0
+
+            return _Stub()
+
+        def stub_load_domain(domain_path=None):
+            return None
+
+        table = {"run_build": stub_run_build, "load_domain": stub_load_domain}
+        return tuple(table[n] for n in names)
+
+    monkeypatch.setattr(run_sift, "_import_sift", _stub_import_sift)
+
+    # Also stub the community-labeling import path so the try/except doesn't
+    # crash when label_communities can't run against a zero-node graph.
+    import core.label_communities as lc
+    monkeypatch.setattr(lc, "label_communities", lambda _p: None)
+
+    # Branch 1: explicit domain
+    out1 = tmp_path / "out1"
+    run_sift.cmd_build(str(out1), domain_name="contracts")
+    graph1 = _json.loads((out1 / "graph_data.json").read_text(encoding="utf-8"))
+    assert graph1["metadata"]["domain"] == "contracts"
+    # D-02: all pre-existing metadata keys preserved
+    for key in (
+        "created_at", "updated_at", "entity_count", "relation_count",
+        "document_count", "entity_type_summary", "sift_kg_version",
+    ):
+        assert key in graph1["metadata"], f"metadata key {key!r} was dropped"
+    assert graph1["nodes"] == [] and graph1["links"] == []
+
+    # Branch 2: domain_name=None → metadata.domain is JSON null (None in Python)
+    out2 = tmp_path / "out2"
+    run_sift.cmd_build(str(out2), domain_name=None)
+    graph2 = _json.loads((out2 / "graph_data.json").read_text(encoding="utf-8"))
+    assert graph2["metadata"]["domain"] is None, (
+        "cmd_build(None) must write JSON null, not the string 'None'"
+    )
+
+
+@pytest.mark.unit
+def test_resolve_domain_precedence(tmp_path, capsys):
+    """UT-045: resolve_domain honors explicit > metadata > fallback (D-03, D-07, D-08, D-09, D-11)."""
+    import json as _json
+    import sys as _sys
+
+    _sys.path.insert(0, str(PROJECT_ROOT))
+    from examples.workbench.template_loader import resolve_domain
+
+    def _write(path, metadata):
+        path.mkdir(parents=True, exist_ok=True)
+        (path / "graph_data.json").write_text(_json.dumps({
+            "metadata": metadata, "nodes": [], "links": [],
+        }))
+
+    # Branch 1: explicit wins over metadata (D-09)
+    dir1 = tmp_path / "dir1"
+    _write(dir1, {"domain": "contracts"})
+    resolved, source = resolve_domain(dir1, "drug-discovery")
+    assert (resolved, source) == ("drug-discovery", "explicit")
+
+    # Branch 2: metadata happy path (D-03)
+    resolved, source = resolve_domain(dir1, None)
+    assert (resolved, source) == ("contracts", "metadata")
+
+    # Branch 3: legacy graph — metadata dict present but no `domain` key (D-08)
+    dir2 = tmp_path / "dir2"
+    _write(dir2, {"created_at": "2026-04-21T00:00:00+00:00"})
+    capsys.readouterr()  # clear any prior output
+    resolved, source = resolve_domain(dir2, None)
+    assert (resolved, source) == (None, "fallback")
+    captured = capsys.readouterr()
+    assert "graph_data.json" in captured.err
+    assert "domain" in captured.err.lower()
+
+    # Branch 4: graph_data.json missing entirely
+    dir3 = tmp_path / "dir3"
+    dir3.mkdir()
+    resolved, source = resolve_domain(dir3, None)
+    assert (resolved, source) == (None, "fallback")
