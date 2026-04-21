@@ -128,6 +128,10 @@ See v1 traceability below.
 
 - [x] **FIDL-05**: Domain wizard Pass-1 schema discovery sees beyond the first 8KB of each sample document. `core/domain_wizard.build_schema_discovery_prompt` replaces `doc_text[:8000]` with a multi-excerpt strategy: head (first 4K) + middle (4K centered on `len/2`) + tail (last 4K), joined with explicit `[EXCERPT N/3]` markers, for documents >12K chars. Documents ≤12K pass through as full text. Pass-2 consolidation and Pass-3 naming are unchanged. Known limitations (12K effective window, middle-centered slice, shoulder regions may still be missed, ~4.5K token cost per Pass-1 call) documented in `docs/known-limitations.md` for Phase 20 README to cite.
 
+### Domain Awareness in Consumers (Phase 17)
+
+- [ ] **FIDL-06**: `graph_data.json` metadata persists the `domain` used at build time. Every downstream consumer (workbench server, chat system prompt, standalone `graph.html`, `/epistract:dashboard` skill) reads `graph_data.json["metadata"]["domain"]` as the source of truth when no explicit `--domain` arg is provided. Precedence: explicit `--domain` flag > metadata > hardcoded default. `graph.html` `<h1>` populated with domain name; pyvis entity colors loaded from `domains/<name>/workbench/template.yaml:entity_colors`. Workbench system prompt loads per-domain `analysis_patterns` block from the template instead of hardcoding contracts vocabulary. Legacy graphs (no metadata.domain) fall back to current default behavior with a visible warning.
+
 ## Deferred (V3)
 
 - **BIOU-01**: Biomedical domain migrated to V2 architecture with full backward compatibility
@@ -212,7 +216,8 @@ See v1 traceability below.
 | FIDL-03 | Phase 14 | 14-01, 14-02, 14-03, 14-04 | Complete |
 | FIDL-04 | Phase 15 | 15-01, 15-02 | Complete |
 | FIDL-05 | Phase 16 | 16-01, 16-02 | Complete |
+| FIDL-06 | Phase 17 | 17-01 | Pending |
 
 ---
 *Requirements defined: 2026-03-29 (v1), 2026-04-02 (v2), 2026-04-04 (Phase 11)*
-*Last updated: 2026-04-21 — FIDL-05 Phase 16 complete (Wizard Sample Window)*
+*Last updated: 2026-04-21 — FIDL-06 registered for Phase 17 (Domain Awareness in Consumers, Plan 17-01)*

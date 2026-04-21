@@ -477,6 +477,26 @@ These are real research questions a PhD scientist would ask. Each tests whether 
 
 ---
 
+## Phase 17 — Domain Awareness in Consumers (FIDL-06)
+
+### UT-044: cmd_build persists domain into graph_data.json metadata
+- **Traces to:** FIDL-06 (D-01, D-02, D-10)
+- **Test:** Monkeypatch `core.run_sift._import_sift` to return a stub `run_build` that writes a minimal valid `graph_data.json` (with `metadata` dict containing `created_at`, `updated_at`, `entity_count`, `relation_count`) and a stub `load_domain`. Call `cmd_build(tmp_output_dir, domain_name="contracts")`. Read `graph_data.json` and assert `metadata["domain"] == "contracts"`. Also assert all pre-existing metadata keys (`created_at`, `updated_at`, `entity_count`, `relation_count`) are preserved byte-identically (D-02 additive guarantee). Then call `cmd_build(tmp_output_dir2, domain_name=None)` and assert `metadata["domain"] is None` (explicit None → None in file, not the string `"None"`).
+- **Pass criteria:** graph_data.json.metadata.domain equals the passed domain_name for both "contracts" and None; all other metadata keys unchanged.
+- **Dependency:** None — uses a stub run_build via monkeypatch so sift-kg's real extraction pipeline is not invoked.
+
+### UT-045: resolve_domain honors explicit > metadata > fallback precedence
+- **Traces to:** FIDL-06 (D-03, D-07, D-08, D-09, D-11)
+- **Test:** Three sub-assertions in a single parametrized or straight-line test:
+  1. **Explicit wins over metadata** (D-09): Write a stub `graph_data.json` with `metadata.domain = "contracts"` into tmp_output_dir. Call `resolve_domain(tmp_output_dir, explicit_domain="drug-discovery")`. Assert the return is `("drug-discovery", "explicit")`.
+  2. **Metadata used when no explicit** (D-03 happy path): Same tmp_output_dir. Call `resolve_domain(tmp_output_dir, explicit_domain=None)`. Assert return is `("contracts", "metadata")`.
+  3. **Fallback on missing metadata.domain** (D-08 legacy): Write a second stub `graph_data.json` with metadata lacking the `domain` key. Call `resolve_domain(tmp2, explicit_domain=None)`. Assert return is `(None, "fallback")` AND that a warning was emitted (capture via `capsys` or `caplog` — match the substring `graph_data.json` and `domain`).
+  4. **Fallback on absent graph_data.json** (extra robustness): Call `resolve_domain(empty_tmpdir, explicit_domain=None)`. Assert return is `(None, "fallback")` — no warning required for this branch since the missing-graph case is also covered by the launcher's existing "Warning: No graph_data.json found" path.
+- **Pass criteria:** All four branches return the expected (resolved_domain, source) tuple; branch 3 emits a warning to stderr or log.
+- **Dependency:** None — pure stub JSON, no sift-kg.
+
+---
+
 ## 4. Traceability Matrix
 
 | Requirement | Domain Spec Section | Entity Types Tested | Relation Types Tested | Test Corpus |
@@ -504,3 +524,5 @@ These are real research questions a PhD scientist would ask. Each tests whether 
 | UT-043 | FIDL-05 (D-04, D-05, D-10, D-11) | N/A | N/A | tests/fixtures/wizard_sample_window/long_contract.txt |
 | FT-016 | FIDL-05 (D-10, D-11) | N/A (prompt-layer) | N/A | tests/fixtures/wizard_sample_window/long_contract.txt |
 | FT-017 | FIDL-05 (D-12) | N/A | N/A | tests/fixtures/wizard/sample_lease_{1,2,3}.txt |
+| UT-044 | FIDL-06 (D-01, D-02, D-10) | N/A (metadata write) | N/A | Stub graph_data.json |
+| UT-045 | FIDL-06 (D-03, D-07, D-08, D-09, D-11) | N/A (resolver) | N/A | Stub graph_data.json |
