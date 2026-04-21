@@ -421,6 +421,24 @@ These are real research questions a PhD scientist would ask. Each tests whether 
 - **Pass criteria:** Both `discover_corpus(dir)` and `SUPPORTED_EXTENSIONS` access raise `ImportError` whose message contains "sift-kg" or "/epistract:setup".
 - **Dependency:** None (pure mock test, runs without sift-kg paths executed).
 
+### FT-013: New-format ingest round-trip — markdown (.md) discovered and extracted end-to-end
+- **Traces to:** FIDL-04 (D-01, D-09)
+- **Test:** Copy `tests/fixtures/format_parity/sample.md` into a tmp corpus, run `ingest_corpus(corpus, output)`, assert discovery found 1 file, extraction succeeded, `parse_type="text"`, `warnings==[]`, the ingested `.txt` exists and contains the phrase `Phase 15 FT-013`, and `triage.json` reflects the clean result.
+- **Pass criteria:** `total_files==1, successful==1, failed==0`; `documents[0].warnings==[]`; ingested text file contains `Phase 15 FT-013`.
+- **Dependency:** sift-kg installed (skipped otherwise).
+
+### FT-014: Corrupted file discovered, extraction-failure recorded in triage warnings[]
+- **Traces to:** FIDL-04 (D-06, D-07)
+- **Test:** Copy `tests/fixtures/format_parity/corrupted.pptx` into a tmp corpus, run `ingest_corpus(corpus, output)`, assert discovery found 1 file (pure extension-match), warnings[] has an entry starting with `extraction_failed` OR equal to `empty_text` (parse_document return-shape disjunction per revised plan — both satisfy D-06/D-07 as long as the failure is SURFACED in warnings[]), and `triage.json` persists the warning.
+- **Pass criteria:** `total_files==1`; `documents[0].warnings` contains at least one element satisfying `startswith("extraction_failed") or == "empty_text"`; triage.json on disk reflects the warning.
+- **Dependency:** sift-kg installed (skipped otherwise).
+
+### FT-015: V2 baseline floor holds after FIDL-04 discovery-layer change (D-13)
+- **Traces to:** FIDL-04 (D-13), Phase 14 D-14
+- **Test:** Read `tests/baselines/v2/expected.json`. For each scenario whose output directory exists (resolved via the same logic as tests/test_e2e.py FT-012), assert `graph_data.json` nodes ≥ floor AND edges ≥ floor. If `contract_events` has an output directory, assert nodes ≥341 AND edges ≥663 (Phase 14 D-14 hard floor). `expected.json` missing is a HARD FAILURE.
+- **Pass criteria:** All resolvable scenarios satisfy their committed floor; contract floor 341/663 is absolute when its output exists; missing `expected.json` fails (not skips).
+- **Dependency:** `tests/baselines/v2/expected.json` present (guaranteed by Phase 14 commit).
+
 ---
 
 ## 4. Traceability Matrix
@@ -443,3 +461,6 @@ These are real research questions a PhD scientist would ask. Each tests whether 
 | UT-039 | FIDL-04 (D-01, D-09) | N/A (discovery layer) | N/A | Synthetic tmpdir |
 | UT-040 | FIDL-04 (D-04) | N/A | N/A | Synthetic tmpdir |
 | UT-041 | FIDL-04 (D-02) | N/A | N/A | Synthetic tmpdir |
+| FT-013 | FIDL-04 (D-01, D-09) | N/A (ingest-layer) | N/A | tests/fixtures/format_parity/sample.md |
+| FT-014 | FIDL-04 (D-06, D-07) | N/A | N/A | tests/fixtures/format_parity/corrupted.pptx |
+| FT-015 | FIDL-04 (D-13), Phase 14 D-14 | All (existing V2 scenarios) | All | tests/baselines/v2/expected.json |
