@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v3.0
 milestone_name: Graph Fidelity & Honest Limits
-status: executing
-stopped_at: Completed 16-01-PLAN.md (FIDL-05 multi-excerpt wizard prompt — UT-042 GREEN, UT-043 RED pending 16-02 fixture)
-last_updated: "2026-04-21T13:59:25.390Z"
+status: verifying
+stopped_at: Completed 16-02-PLAN.md
+last_updated: "2026-04-21T14:09:16.730Z"
 last_activity: 2026-04-21
 progress:
   total_phases: 15
-  completed_phases: 10
+  completed_phases: 11
   total_plans: 34
-  completed_plans: 33
+  completed_plans: 34
   percent: 58
 ---
 
@@ -25,9 +25,9 @@ See: .planning/PROJECT.md (updated 2026-04-02)
 
 ## Current Position
 
-Phase: 16 (wizard-sample-window-beyond-8kb) — EXECUTING
+Phase: 16 (wizard-sample-window-beyond-8kb) — VERIFYING
 Plan: 2 of 2
-Status: Ready to execute
+Status: Phase complete — ready for verification
 Last activity: 2026-04-21
 
 Progress: [█████░░░░░] 58%
@@ -85,6 +85,7 @@ Progress: [█████░░░░░] 58%
 | Phase 15-format-discovery-parity P01 | 6min | 3 tasks | 5 files |
 | Phase 15-format-discovery-parity P02 | 3m 25s | 2 tasks | 4 files |
 | Phase 16-wizard-sample-window-beyond-8kb P01 | 10min | 3 tasks | 6 files |
+| Phase 16 P02 | ~15min | 3 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -171,6 +172,7 @@ Recent decisions affecting current work:
 - [Phase 16-wizard-sample-window-beyond-8kb]: [Phase 16-01]: Em-dash U+2014 in [EXCERPT N/3 — chars X to Y] markers is load-bearing; UT-043 asserts literal match. ASCII hyphen would fail. D-04 format verbatim.
 - [Phase 16-wizard-sample-window-beyond-8kb]: [Phase 16-01]: Short-doc path retains **Document text:** singular header to keep pre-Phase-16 prompt shape byte-compatible for existing 24-char test_wizard_schema_discovery_prompt fixture. Long-doc path uses **Document excerpts:** plural header per D-05.
 - [Phase 16-wizard-sample-window-beyond-8kb]: [Phase 16-01]: UT-043 intentionally RED at end of 16-01 — fixture tests/fixtures/wizard_sample_window/long_contract.txt is Plan 16-02 Task 1 dependency. Documented cross-plan handoff, not a regression.
+- [Phase 16]: Plan 16-02: Synthetic 60,200-char fixture with 3 head/middle/tail sentinels; FT-016/FT-017 GREEN; measured 2,631 tokens via tiktoken cl100k_base.
 
 ### Pending Todos
 
@@ -190,6 +192,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-04-21T13:59:25.385Z
-Stopped at: Completed 16-01-PLAN.md (FIDL-05 multi-excerpt wizard prompt — UT-042 GREEN, UT-043 RED pending 16-02 fixture)
+Last session: 2026-04-21T14:09:16.730Z
+Stopped at: Completed 16-02-PLAN.md
 Resume file: None
