@@ -14,6 +14,7 @@ not a file path. Use --list-domains to see available domains.
 """
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -266,11 +267,20 @@ def cmd_view(output_dir: str, **kwargs):
         return
 
     # FIDL-06 D-04: replace pyvis's empty <h1></h1> with our domain-aware title.
-    # pyvis emits <h1></h1> (possibly twice — both in <center> blocks).
-    # Replace all occurrences; a double-titled page is still better than
-    # an empty one, and pyvis's template quirk is not our contract to fix.
+    # pyvis emits <h1></h1> twice — both inside <center> blocks, and rendering
+    # both produces the title visibly twice. Fill the first occurrence with
+    # the domain title; strip the second centered empty block so the visible
+    # page shows the title exactly once.
     new_h1 = f"<h1>{title_text}</h1>"
-    html = html.replace("<h1></h1>", new_h1)
+    html = html.replace("<h1></h1>", new_h1, 1)
+    html = re.sub(
+        r"[\t ]*<center>\s*<h1>\s*</h1>\s*</center>[\t ]*\n?",
+        "",
+        html,
+        count=1,
+    )
+    # Safety net: any remaining <h1></h1> (unusual pyvis versions) — drop them.
+    html = html.replace("<h1></h1>", "")
 
     # FIDL-06 D-05: entity_colors overlay — append a <script> block right before
     # </body> that iterates the existing vis.js `nodes` DataSet on DOMContentLoaded
