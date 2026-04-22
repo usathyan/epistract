@@ -1074,3 +1074,116 @@ def generate_domain_package(
             str(domain_dir / "workbench" / "template.yaml"),
         ],
     }
+
+
+# ---------------------------------------------------------------------------
+# FIDL-08 Phase 19 Plan 19-02 — --schema bypass (D-09, D-10, D-11)
+# ---------------------------------------------------------------------------
+
+
+def main(argv: list[str] | None = None) -> int:
+    """Wizard CLI entry point supporting the --schema bypass.
+
+    Usage:
+        python -m core.domain_wizard --schema <file.json> --name <slug>
+
+    The --schema flag skips the 3-pass LLM discovery entirely (D-11) and
+    generates a domain package directly from the user-supplied JSON schema.
+    --name is required (D-10) since there is no sample corpus to derive a
+    name from.
+
+    The interactive wizard flow (sample-document analysis) is NOT invoked
+    here — it is orchestrated by the Claude command agent in
+    commands/domain.md, which calls analyze_documents() and
+    generate_domain_package() directly.
+
+    Args:
+        argv: Optional list of CLI args (excluding program name). When None,
+              defaults to sys.argv[1:]. Tests pass an explicit list for
+              deterministic invocation.
+
+    Returns:
+        Exit code: 0 on success, non-zero on error.
+    """
+    import sys as _sys
+    argv = argv if argv is not None else _sys.argv[1:]
+
+    if "--schema" not in argv:
+        print(
+            "Usage: python -m core.domain_wizard --schema <file.json> --name <slug>\n"
+            "       (Interactive wizard flow is invoked via /epistract:domain.)",
+            file=_sys.stderr,
+        )
+        return 1
+
+    # Parse --schema <file>
+    try:
+        schema_path = argv[argv.index("--schema") + 1]
+    except IndexError:
+        print("Error: --schema requires a file path argument", file=_sys.stderr)
+        return 1
+
+    # Parse --name <slug> (D-10 required)
+    if "--name" not in argv:
+        print(
+            "Error: --schema requires --name <slug> (no sample corpus to derive a name from)",
+            file=_sys.stderr,
+        )
+        return 1
+    try:
+        domain_name = argv[argv.index("--name") + 1]
+    except IndexError:
+        print("Error: --name requires a slug argument", file=_sys.stderr)
+        return 1
+
+    # Load + validate schema (D-09)
+    try:
+        schema = json.loads(Path(schema_path).read_text())
+    except (OSError, json.JSONDecodeError) as e:
+        print(f"Error: cannot load schema file {schema_path}: {e}", file=_sys.stderr)
+        return 1
+
+    for required_key in ("entity_types", "relation_types"):
+        if required_key not in schema or not isinstance(schema[required_key], dict):
+            print(
+                f"Error: schema file missing required key '{required_key}' "
+                f"(required: entity_types, relation_types — must be dicts)",
+                file=_sys.stderr,
+            )
+            return 1
+
+    # Defaults for optional keys
+    description = schema.get("description", "")
+    system_context = schema.get("system_context", "Domain extraction pipeline")
+    extraction_guidelines = schema.get("extraction_guidelines", "Follow domain schema.")
+    contradiction_pairs = schema.get("contradiction_pairs", [])
+    gap_target_types = schema.get("gap_target_types", {})
+    confidence_thresholds = schema.get("confidence_thresholds", {
+        "high": 0.9, "medium": 0.7, "low": 0.5,
+    })
+
+    # D-11: bypass the 3-pass LLM discovery — call generate_domain_package directly.
+    # Mirror commands/domain.md:140 slug convention (hyphens → underscores for function names).
+    domain_slug = domain_name.replace("-", "_")
+    result = generate_domain_package(
+        domain_name=domain_name,
+        domain_slug=domain_slug,
+        description=description,
+        system_context=system_context,
+        entity_types=schema["entity_types"],
+        relation_types=schema["relation_types"],
+        extraction_guidelines=extraction_guidelines,
+        contradiction_pairs=contradiction_pairs,
+        gap_target_types=gap_target_types,
+        confidence_thresholds=confidence_thresholds,
+    )
+
+    print(f"Domain package created at: {result['domain_dir']}")
+    print("Files written:")
+    for f in result["files_written"]:
+        print(f"  - {f}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
