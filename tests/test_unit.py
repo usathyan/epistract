@@ -464,6 +464,44 @@ def test_wizard_generates_epistemic_py():
     assert "def analyze_real_estate_epistemic(" in code
     assert "metadata" in code
     assert "summary" in code
+    # FIDL-07 D-10: wizard emits CUSTOM_RULES stub + pointer to canonical doc.
+    assert "CUSTOM_RULES" in code, \
+        "Wizard must emit CUSTOM_RULES stub (FIDL-07 D-10)"
+    assert "docs/known-limitations.md" in code, \
+        "Wizard must link to canonical extensibility doc"
+
+
+@pytest.mark.unit
+def test_wizard_generates_custom_rules_stub():
+    """FIDL-07 D-10: generate_epistemic_py output ends with a no-op CUSTOM_RULES stub.
+
+    Separate test function (not just an extended existing one) so the
+    D-10 contract is independently traceable. Asserts both the literal
+    stub line and the rule-signature comment referenced by the FIDL-07
+    known-limitations section.
+    """
+    from core.domain_wizard import generate_epistemic_py
+
+    import ast
+
+    code = generate_epistemic_py(
+        "fake_domain",
+        {"ENTITY_A": {"description": "A"}},
+        [],
+        {},
+        {"high": 0.9, "medium": 0.7, "low": 0.5},
+    )
+    # Generated code must remain syntactically valid Python.
+    ast.parse(code)
+    # The stub itself
+    assert "CUSTOM_RULES: list = []" in code, \
+        "Wizard must emit literal CUSTOM_RULES stub (FIDL-07 D-10)"
+    # The rule-signature comment
+    assert "(nodes, links, context)" in code, \
+        "Wizard must document rule callable signature in a comment"
+    # The canonical-doc pointer
+    assert "docs/known-limitations.md" in code, \
+        "Wizard must point at canonical extensibility doc"
 
 
 @pytest.mark.unit

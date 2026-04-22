@@ -653,6 +653,27 @@ def generate_epistemic_py(
             }}
 
             return claims_layer
+
+
+        # ------------------------------------------------------------------
+        # CUSTOM_RULES -- domain-specific epistemic rules (FIDL-07 opt-in)
+        # ------------------------------------------------------------------
+        # Each rule is a callable with signature:
+        #     rule(nodes: list[dict], links: list[dict], context: dict) -> list[dict]
+        # where context = {{"output_dir", "graph_data", "domain_name"}}.
+        # Rule failures are isolated (one exception logs status='error' but
+        # does NOT abort the phase). Findings merge into
+        # claims_layer["super_domain"]["custom_findings"][rule.__name__].
+        # See docs/known-limitations.md (Per-Domain Extensibility, FIDL-07)
+        # for the full contract. Example:
+        #
+        #     def my_rule(nodes, links, context):
+        #         return [{{"rule_name": "my_rule", "type": "example",
+        #                   "severity": "INFO", "description": "x",
+        #                   "evidence": {{}}}}]
+        #     CUSTOM_RULES.append(my_rule)
+
+        CUSTOM_RULES: list = []
     ''')
     return code
 
