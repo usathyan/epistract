@@ -2180,3 +2180,96 @@ def test_generate_workbench_template_shape():
     # (6) Determinism — second call byte-identical
     emitted_again = generate_workbench_template("test-domain", entity_types)
     assert emitted == emitted_again, "generate_workbench_template is not deterministic"
+
+
+def test_resolve_domain_arg_path_shim(tmp_path, capsys):
+    """UT-053: --domain shim accepts name, extracts from path, errors on outside paths.
+
+    FIDL-08 D-07, D-08:
+      - Bare name (no slash, no .yaml) → passthrough (filesystem never touched).
+      - Path inside DOMAINS_DIR matching <DOMAINS_DIR>/<name>/domain.yaml → return <name>.
+      - Path outside DOMAINS_DIR → stderr error + SystemExit(non-zero).
+    """
+    from core.run_sift import resolve_domain_arg
+    from core.domain_resolver import DOMAINS_DIR
+
+    # (a) bare name passthrough — no filesystem touch
+    assert resolve_domain_arg("contracts") == "contracts"
+    assert resolve_domain_arg("drug-discovery") == "drug-discovery"
+
+    # (b) valid path → name extraction (uses real domains/ layout)
+    contracts_yaml = DOMAINS_DIR / "contracts" / "domain.yaml"
+    assert contracts_yaml.exists(), "test prerequisite: contracts domain must exist"
+    assert resolve_domain_arg(str(contracts_yaml)) == "contracts"
+
+    dd_yaml = DOMAINS_DIR / "drug-discovery" / "domain.yaml"
+    assert dd_yaml.exists(), "test prerequisite: drug-discovery domain must exist"
+    assert resolve_domain_arg(str(dd_yaml)) == "drug-discovery"
+
+    # (c) outside-domains path → SystemExit with clear stderr message
+    alien_dir = tmp_path / "alien"
+    alien_dir.mkdir()
+    alien_yaml = alien_dir / "domain.yaml"
+    alien_yaml.write_text("# synthetic outside-domains/ file\n")
+
+    with pytest.raises(SystemExit) as exc_info:
+        resolve_domain_arg(str(alien_yaml))
+    assert exc_info.value.code != 0, f"expected non-zero exit, got {exc_info.value.code}"
+
+    captured = capsys.readouterr()
+    assert "--domain expects a name registered under domains/" in captured.err, (
+        f"error message missing expected text; stderr was: {captured.err!r}"
+    )
+
+
+def test_wizard_schema_bypass_skips_llm(tmp_path, monkeypatch):
+    """UT-054: --schema bypass skips LLM discovery entirely.
+
+    Monkeypatches litellm to fail on import. If the bypass accidentally
+    takes the 3-pass LLM path, the import failure surfaces and the test
+    fails. Also monkeypatches DOMAINS_DIR → tmp_path/domains so no
+    permanent pollution of the real domains/ dir.
+
+    FIDL-08 D-09, D-10, D-11, D-18.
+    """
+    # (a) block litellm import — any accidental LLM call path raises
+    monkeypatch.setitem(sys.modules, "litellm", None)
+
+    # (b) synthetic schema
+    schema = {
+        "entity_types": {
+            "FOO": {"description": "test entity foo"},
+            "BAR": {"description": "test entity bar"},
+        },
+        "relation_types": {
+            "REL_A": {"description": "test relation a"},
+        },
+        "description": "UT-054 test schema",
+        "system_context": "test",
+        "extraction_guidelines": "test",
+    }
+    schema_path = tmp_path / "schema.json"
+    schema_path.write_text(json.dumps(schema, indent=2))
+
+    # (c) redirect DOMAINS_DIR so the generated domain lands in tmp_path
+    # (CRITICAL: prevents permanent ut054-test-domain pollution of real domains/)
+    fake_domains = tmp_path / "domains"
+    fake_domains.mkdir()
+    monkeypatch.setattr("core.domain_wizard.DOMAINS_DIR", fake_domains)
+
+    # (d) invoke wizard main() directly with synthetic argv
+    from core.domain_wizard import main
+    exit_code = main([
+        "--schema", str(schema_path),
+        "--name", "ut054-test-domain",
+    ])
+
+    # (e) bypass completed successfully
+    assert exit_code == 0, f"expected exit 0, got {exit_code}"
+
+    # (f) domain package written to tmp/domains/ut054-test-domain/
+    domain_dir = fake_domains / "ut054-test-domain"
+    assert (domain_dir / "domain.yaml").exists()
+    assert (domain_dir / "SKILL.md").exists()
+    assert (domain_dir / "epistemic.py").exists()
+    assert (domain_dir / "workbench" / "template.yaml").exists()
