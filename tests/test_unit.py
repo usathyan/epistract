@@ -2085,3 +2085,98 @@ def test_ut049_structural_doctype_detection():
             "suggests mechanism", 0.7, "structural"
         ) == "hypothesized", \
             f"{name}: low-conf structural falls through to hedging detection"
+
+
+# ---------------------------------------------------------------------------
+# FIDL-08 — Wizard & CLI Ergonomics (Phase 19)
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "raw,expected",
+    [
+        ("Q&A Analysis (v2)", "q-a-analysis-v2"),
+        ("  Hello World  ", "hello-world"),
+        ("multi--dash", "multi-dash"),
+        ("drug-discovery", "drug-discovery"),  # D-14 backward-compat invariant
+        ("contracts", "contracts"),  # D-14 backward-compat invariant
+        ("中文 Analysis", "analysis"),  # NFKD + ASCII-ignore strips non-Latin
+    ],
+)
+def test_generate_slug_edge_cases(raw, expected):
+    """UT-051: generate_slug produces safe directory names across edge cases.
+
+    Covers D-15 lock table (Q&A, whitespace, double-dash, existing domains,
+    non-ASCII). Both existing domains (drug-discovery, contracts) are
+    byte-identical under the new helper — Phase 19 introduces no drift for
+    already-clean slugs (D-14 backward-compat gate).
+    """
+    from core.domain_wizard import generate_slug
+
+    result = generate_slug(raw)
+    assert result == expected, f"generate_slug({raw!r}) -> {result!r}, expected {expected!r}"
+    # Post-condition invariants (D-01 + D-03)
+    assert result == result.strip("-"), f"slug has leading/trailing hyphen: {result!r}"
+    assert "--" not in result, f"slug has double hyphen: {result!r}"
+    assert all(c in "abcdefghijklmnopqrstuvwxyz0123456789-" for c in result), (
+        f"slug has invalid char: {result!r}"
+    )
+    assert result != "", "slug is empty (should have raised)"
+
+
+@pytest.mark.parametrize("raw", ["", "   ", "\t\n"])
+def test_generate_slug_rejects_empty(raw):
+    """UT-051 (cont.): generate_slug raises ValueError for empty/whitespace-only input."""
+    from core.domain_wizard import generate_slug
+
+    with pytest.raises(ValueError):
+        generate_slug(raw)
+
+
+def test_generate_workbench_template_shape():
+    """UT-052: generate_workbench_template emits WorkbenchTemplate-valid YAML.
+
+    Validates the Phase 17 Pydantic contract (D-16), deterministic palette
+    rotation (alphabetical sort → modulo cycle), and required analysis_patterns
+    + dashboard keys. Determinism gate: two calls with same inputs produce
+    byte-identical output.
+    """
+    from core.domain_wizard import generate_workbench_template
+    from examples.workbench.template_schema import WorkbenchTemplate
+
+    entity_types = {
+        "Foo": {"description": "x"},
+        "Bar": {"description": "y"},
+        "Baz": {"description": "z"},
+    }
+
+    emitted = generate_workbench_template("test-domain", entity_types)
+    assert isinstance(emitted, str)
+
+    parsed = yaml.safe_load(emitted)
+    assert isinstance(parsed, dict)
+
+    # (1) Phase 17 Pydantic contract — shape gate
+    WorkbenchTemplate.model_validate(parsed)  # raises ValidationError on mismatch
+
+    # (2) entity_colors cardinality
+    assert set(parsed["entity_colors"].keys()) == {"Foo", "Bar", "Baz"}
+
+    # (3) Deterministic palette rotation — alphabetical sort: Bar, Baz, Foo
+    # First three DEFAULT_ENTITY_COLORS entries:
+    assert parsed["entity_colors"]["Bar"] == "#97c2fc"
+    assert parsed["entity_colors"]["Baz"] == "#ffa07a"
+    assert parsed["entity_colors"]["Foo"] == "#90ee90"
+
+    # (4) analysis_patterns required keys
+    assert "cross_references_heading" in parsed["analysis_patterns"]
+    assert "appears_in_phrase" in parsed["analysis_patterns"]
+
+    # (5) dashboard shape
+    assert isinstance(parsed["dashboard"], dict)
+    assert "title" in parsed["dashboard"]
+    assert "subtitle" in parsed["dashboard"]
+
+    # (6) Determinism — second call byte-identical
+    emitted_again = generate_workbench_template("test-domain", entity_types)
+    assert emitted == emitted_again, "generate_workbench_template is not deterministic"
