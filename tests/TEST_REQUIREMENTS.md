@@ -546,6 +546,15 @@ These are real research questions a PhD scientist would ask. Each tests whether 
 - **Pass criteria:** All six assertions pass for both modules (12+ asserts total). `grep -c "PDB_PATTERN"` returns 1 in each file (mirror invariant).
 - **Dependency:** None — pure function tests; no sift-kg, no fixtures, no tmp dirs.
 
+### FT-019: End-to-end — baseline invariance + structural doctype propagation + validator report presence
+- **Traces to:** FIDL-07 (D-05, D-06, D-16)
+- **Test:** Three split sub-tests in `tests/test_e2e.py` (each a separate function for per-sub-test failure isolation, mirroring FT-018's split in `test_workbench.py`):
+  - **Sub-test A (`test_ft019_baseline_invariance_contracts`):** Copy `sample_extraction_contract.json` into `tmp_path/extractions/`. Call `cmd_build(tmp_path, domain_name="contracts")`. Call `analyze_epistemic(tmp_path, domain_name="contracts")`. Assert `claims_layer["super_domain"].get("custom_findings", {}) == {}` OR the `"custom_findings"` key is absent from `super_domain` (D-07 backward-compat contract — contracts ships no CUSTOM_RULES).
+  - **Sub-test B (`test_ft019_structural_doctype_propagation`):** `_write_synthetic_pdb_extraction(tmp_path)` helper writes a minimal DocumentExtraction JSON with `document_id: "pdb_1abc"`, one GENE + one COMPOUND entity, one relation with `evidence: "crystal structure of KRAS resolved at 2.1 Å"`. `cmd_build(tmp_path, domain_name="drug-discovery")` builds the graph. `analyze_epistemic(tmp_path, domain_name="drug-discovery")` runs. Assert `"structural" in claims_layer["summary"]["document_types"]` — the `pdb_1abc` mention's `source_document` propagates through `build_doc_type_profile` → `infer_doc_type` → the `structural` bucket in `doc_profile`.
+  - **Sub-test C (`test_ft019_validator_report_exists`):** After the same synthetic build as Sub-test B, assert `(tmp_path / "validation_report.json").exists()` AND the loaded JSON has a `"status"` key. Both `"ok"` and `"skipped"` (RDKit-absent environments) satisfy the assertion — the presence of the report + its schema shape is the gate, not the validation outcome.
+- **Pass criteria:** All three sub-tests pass (or skip module-wide when HAS_SIFTKG is False). No claims_layer regression on contracts; structural doctype surfaces end-to-end; validator report lands.
+- **Dependency:** sift-kg (enforced by module-level `pytest.mark.skipif`); fixtures dir for contracts sample; no external LLM.
+
 ### UT-050: Rule-failure isolation — one broken rule does not abort others
 - **Traces to:** FIDL-07 (D-02, D-09, D-15)
 - **Test:** Same synthetic-testdomain pattern as UT-047. `CUSTOM_RULES = [good_rule_a, broken_rule, good_rule_b]`. `good_rule_a` returns one INFO finding. `broken_rule` does `raise ValueError("boom")` as its first line. `good_rule_b` returns one INFO finding. Call `analyze_epistemic` as in UT-047. Assert:
@@ -594,3 +603,4 @@ These are real research questions a PhD scientist would ask. Each tests whether 
 | UT-048 | FIDL-07 (D-03, D-13) | N/A (resolver) | N/A | N/A (real domains/ dir) |
 | UT-049 | FIDL-07 (D-05, D-06, D-14) | N/A (doctype + status) | N/A | Inline assertions |
 | UT-050 | FIDL-07 (D-02, D-09, D-15) | N/A (rule isolation) | N/A | Synthetic tmpdir |
+| FT-019 | FIDL-07 (D-05, D-06, D-16) | GENE, COMPOUND | TARGETS | Synthetic pdb_1abc + contracts fixture |

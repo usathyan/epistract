@@ -421,3 +421,123 @@ def test_ft012_v2_baseline_regression():
         "V2 regression failed (scenarios below committed floor):\n"
         + "\n".join(f"  - {f}" for f in failures)
     )
+
+
+# ===========================================================================
+# Phase 18 Plan 18-02 — FT-019 end-to-end (FIDL-07 D-05, D-06, D-16)
+# ===========================================================================
+
+
+def _write_synthetic_pdb_extraction(tmp_path):
+    """Write a minimal valid DocumentExtraction JSON with a PDB document_id.
+
+    Used by FT-019 Sub-tests B and C. Mirrors the shape of fixtures in
+    FIXTURES_DIR/sample_extraction_drug.json but with a structural doc_id
+    and crystallography evidence.
+    """
+    extractions_dir = tmp_path / "extractions"
+    extractions_dir.mkdir(exist_ok=True)
+    extraction = {
+        "document_id": "pdb_1abc",
+        "domain_name": "drug-discovery",
+        "entities": [
+            {
+                "name": "KRAS",
+                "entity_type": "GENE",
+                "confidence": 0.95,
+                "context": "crystal structure of KRAS resolved at 2.1 Å",
+            },
+            {
+                "name": "BI-2865",
+                "entity_type": "COMPOUND",
+                "confidence": 0.9,
+                "context": "co-crystal with KRAS at 2.1 Å",
+            },
+        ],
+        "relations": [
+            {
+                "source_entity": "BI-2865",
+                "target_entity": "KRAS",
+                "relation_type": "TARGETS",
+                "confidence": 0.95,
+                "evidence": "crystal structure of KRAS resolved at 2.1 Å",
+            }
+        ],
+        "extracted_at": "2026-04-22T00:00:00+00:00",
+        "chunks_processed": 1,
+        "document_path": "",
+        "cost_usd": 0.0,
+        "model_used": "claude-opus-4-6",
+        "chunk_size": 10000,
+        "error": None,
+    }
+    (extractions_dir / "pdb_1abc.json").write_text(json.dumps(extraction, indent=2))
+
+
+@pytest.mark.e2e
+def test_ft019_baseline_invariance_contracts(tmp_path):
+    """FT-019 Sub-test A: contracts has no CUSTOM_RULES → custom_findings empty/absent.
+
+    Regression gate for D-07: absent CUSTOM_RULES means claims_layer stays
+    byte-identical to pre-18-01 output (the custom_findings key is omitted
+    entirely, not set to an empty dict).
+    """
+    from run_sift import cmd_build
+    from label_epistemic import analyze_epistemic
+
+    _setup_extraction(tmp_path, "sample_extraction_contract.json", "test_vendor.pdf.json")
+    cmd_build(str(tmp_path), domain_name="contracts")
+    claims_layer = analyze_epistemic(tmp_path, domain_name="contracts")
+    super_domain = claims_layer.get("super_domain", {})
+    custom = super_domain.get("custom_findings", {})
+    # Accept empty-dict OR key-absent — either matches D-07 backward-compat.
+    assert custom == {} or "custom_findings" not in super_domain, (
+        f"Contracts has no CUSTOM_RULES — expected empty/absent custom_findings, "
+        f"got {custom!r}"
+    )
+
+
+@pytest.mark.e2e
+def test_ft019_structural_doctype_propagation(tmp_path):
+    """FT-019 Sub-test B: synthetic pdb_1abc doc → claims_layer.summary.document_types['structural'] ≥ 1.
+
+    Exercises Task 2's PDB_PATTERN + infer_doc_type branch end-to-end
+    through cmd_build → analyze_epistemic → summary aggregation.
+    """
+    from run_sift import cmd_build
+    from label_epistemic import analyze_epistemic
+
+    _write_synthetic_pdb_extraction(tmp_path)
+    cmd_build(str(tmp_path), domain_name="drug-discovery")
+    claims_layer = analyze_epistemic(tmp_path, domain_name="drug-discovery")
+    doc_types = claims_layer.get("summary", {}).get("document_types", {})
+    # doc_profile is keyed by doctype; each value is a status-count dict.
+    # Presence of the "structural" key means infer_doc_type classified the
+    # pdb_1abc mention's source_document as structural.
+    assert "structural" in doc_types, (
+        f"pdb_1abc should classify as structural; got doc_types={doc_types}"
+    )
+
+
+@pytest.mark.e2e
+def test_ft019_validator_report_exists(tmp_path):
+    """FT-019 Sub-test C: cmd_build auto-dispatch writes validation_report.json with a status key.
+
+    Exercises Plan 18-01's validator hook end-to-end. Both 'ok' and
+    'skipped' (RDKit-absent) satisfy the status-key assertion — the
+    presence of the report + its schema shape is the gate, not the
+    validation outcome.
+    """
+    from run_sift import cmd_build
+
+    _write_synthetic_pdb_extraction(tmp_path)
+    cmd_build(str(tmp_path), domain_name="drug-discovery")
+    report_path = tmp_path / "validation_report.json"
+    assert report_path.exists(), (
+        f"validation_report.json not written after cmd_build; "
+        f"tmp_path contents: {list(tmp_path.iterdir())}"
+    )
+    report = json.loads(report_path.read_text())
+    assert "status" in report, (
+        f"Expected 'status' key in report, got keys={list(report.keys())}"
+    )
