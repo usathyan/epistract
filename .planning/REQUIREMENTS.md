@@ -134,7 +134,7 @@ See v1 traceability below.
 
 ### Per-Domain Epistemic & Validator Extensibility (Phase 18)
 
-- [ ] **FIDL-07**: Domains can ship (a) custom epistemic rules as a `CUSTOM_RULES: list[callable]` in their `epistemic.py` — each rule signature `(nodes, links, context) -> list[finding]` merged into `claims_layer["super_domain"]["custom_findings"]` keyed by `rule_name`; and (b) optional `validation/run_validation.py:run_validation(output_dir) -> dict` post-extraction validator discovered by `core/domain_resolver.get_validation_dir(domain)` and auto-invoked by `cmd_build`, writing `validation_report.json`. Rule and validator failures are isolated (one failure logs `{status: error}` but does not abort). Drug-discovery `epistemic.py:infer_doc_type` gains a `"structural"` doc type covering PDB-prefixed IDs and X-ray/cryo-EM content signals; high-confidence (≥0.9) structural claims short-circuit to `"asserted"` regardless of hedging. Wizard `generate_epistemic_py` emits a no-op `CUSTOM_RULES: list = []` stub with example comment. Legacy domains without CUSTOM_RULES or validation/ dir behave identically (V2 baseline byte-identical).
+- [x] **FIDL-07**: Domains can ship (a) custom epistemic rules as a `CUSTOM_RULES: list[callable]` in their `epistemic.py` — each rule signature `(nodes, links, context) -> list[finding]` merged into `claims_layer["super_domain"]["custom_findings"]` keyed by `rule_name`; and (b) optional `validation/run_validation.py:run_validation(output_dir) -> dict` post-extraction validator discovered by `core/domain_resolver.get_validation_dir(domain)` and auto-invoked by `cmd_build`, writing `validation_report.json`. Rule and validator failures are isolated (one failure logs `{status: error}` but does not abort). Drug-discovery `epistemic.py:infer_doc_type` gains a `"structural"` doc type covering PDB-prefixed IDs and X-ray/cryo-EM content signals; high-confidence (≥0.9) structural claims short-circuit to `"asserted"` regardless of hedging. Wizard `generate_epistemic_py` emits a no-op `CUSTOM_RULES: list = []` stub with example comment. Legacy domains without CUSTOM_RULES or validation/ dir behave identically (V2 baseline byte-identical).
 
 ## Deferred (V3)
 
@@ -221,8 +221,8 @@ See v1 traceability below.
 | FIDL-04 | Phase 15 | 15-01, 15-02 | Complete |
 | FIDL-05 | Phase 16 | 16-01, 16-02 | Complete |
 | FIDL-06 | Phase 17 | 17-01, 17-02 | Complete |
-| FIDL-07 | Phase 18 | 18-01, 18-02 | Pending |
+| FIDL-07 | Phase 18 | 18-01, 18-02 | Complete |
 
 ---
 *Requirements defined: 2026-03-29 (v1), 2026-04-02 (v2), 2026-04-04 (Phase 11)*
-*Last updated: 2026-04-22 — FIDL-07 registered for Phase 18 (Per-Domain Epistemic & Validator Extensibility, Plan 18-01 infra + tests)*
+*Last updated: 2026-04-22 — FIDL-07 Phase 18 complete (Per-Domain Epistemic & Validator Extensibility)*
