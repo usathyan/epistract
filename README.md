@@ -262,6 +262,8 @@ The workbench opens at `http://127.0.0.1:8000` with three panels — Dashboard, 
 
 Workbench appearance and persona are domain-configurable via `domains/<name>/workbench/template.yaml` — title, entity colors, persona prompt, starter questions. The same workbench code works for any domain.
 
+The `persona` field serves **both** surfaces: the workbench chat uses it as its system prompt (reactive — fires on user questions), and `/epistract:epistemic` feeds the same persona to the LLM narrator that writes `epistemic_narrative.md` (proactive — fires after the graph is built). Upgrade the persona once; both surfaces improve together. A strong persona names a profession, describes depth of expertise, and commits to the epistemic-status vocabulary (`asserted` / `prophetic` / `hypothesized` / `contested` / `contradictions` / `negative`) — see `domains/drug-discovery/workbench/template.yaml` for a reference implementation.
+
 ### LLM Provider
 
 The chat panel auto-detects credentials in this order (`examples/workbench/api_chat.py:_resolve_api_config()`):
@@ -359,8 +361,10 @@ This section reflects the post-v3.0 state of the pipeline (Phases 12–19). For 
 | Custom rules | `CUSTOM_RULES: list[callable]` in domain `epistemic.py` | Per-rule try/except isolates failures; one bad rule cannot break the layer (FIDL-07) |
 | Per-domain validators | `domains/<name>/validation/run_validation.py` auto-invoked post-build | Writes `validation_report.json`; failure is non-fatal (FIDL-07) |
 | Workbench per-domain template | `domains/<name>/workbench/template.yaml` | Emitted automatically by the wizard; Pydantic-validated against `WorkbenchTemplate` (FIDL-08) |
+| Automatic analyst narrator | `/epistract:epistemic` runs the rule engine → then calls LLM with the domain `persona` → writes `epistemic_narrative.md` alongside `claims_layer.json` | Opt-out via `--no-narrate`; non-fatal on API/credential error (claims_layer.json is authoritative) |
+| Persona = single source of truth | `domains/<name>/workbench/template.yaml:persona` | Same string drives the narrator (proactive) and the workbench chat prompt (reactive); upgrade once, both improve |
 
-**Known limits:** `CUSTOM_RULES` execute in list order with no dependency graph. Validator failures log but do not abort `cmd_build` (build health > validator health). Structural doctype signals live in drug-discovery only for v3.0. For the full propagation contract, see [docs/known-limitations.md](docs/known-limitations.md).
+**Known limits:** `CUSTOM_RULES` execute in list order with no dependency graph. Validator failures log but do not abort `cmd_build` (build health > validator health). Structural doctype signals live in drug-discovery only for v3.0. The narrator is LLM-non-deterministic; the rule-based `claims_layer.json` is the reproducible artifact. For the full propagation contract, see [docs/known-limitations.md](docs/known-limitations.md).
 
 ## Pre-built Domains
 

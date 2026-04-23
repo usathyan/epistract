@@ -102,9 +102,29 @@ Wait for user approval or modifications before proceeding. If the user suggests 
 - Re-display the updated schema for confirmation
 - Repeat until approved
 
+**Elicit the analyst persona:**
+
+Before generating epistemic parameters, ask the user for a persona paragraph. This text serves BOTH the workbench chat prompt (reactive) AND the automatic narrator that runs after `/epistract:epistemic` (proactive — produces `epistemic_narrative.md`). A good persona names a profession, describes depth of expertise, and commits to the epistemic-status vocabulary (`asserted` / `prophetic` / `hypothesized` / `contested` / `contradictions` / `negative`).
+
+Prompt the user something like:
+
+```
+Who should the workbench/narrator behave as for this domain?
+- Profession / title (e.g., "senior drug discovery competitive intelligence
+  analyst", "procurement contracts analyst", "ESG investment researcher")
+- Depth signals (what body of knowledge do they draw on?)
+- Formatting preferences (tables? inline citations?)
+
+Paste a paragraph, or type "default" to use the analyst-shaped template.
+```
+
+If the user types "default" or provides nothing, pass `persona=None` to
+`generate_domain_package()` — the wizard will emit the analyst-shaped
+default template that includes epistemic-status vocabulary automatically.
+
 ### Step 3: Generate Domain Package
 
-After user approves the schema:
+After user approves the schema and persona:
 
 **Generate epistemic parameters:**
 1. Collect short text excerpts from each sample document (first ~500 chars each)
@@ -222,6 +242,7 @@ This flag skips the 3-pass LLM discovery entirely (see `docs/known-limitations.m
 - `contradiction_pairs` — epistemic contradiction pairs; default `[]`.
 - `gap_target_types` — gap detection targets; default `{}`.
 - `confidence_thresholds` — confidence cutoffs; default `{"high": 0.9, "medium": 0.7, "low": 0.5}`.
+- `persona` — analyst persona paragraph(s) used by BOTH the workbench chat prompt AND the automatic narrator in `/epistract:epistemic`. When omitted, the wizard emits an analyst-shaped default template with the domain name substituted. For best narrator quality, supply a domain-specific persona that names a profession, describes expertise depth, and commits to the epistemic-status vocabulary (`asserted` / `prophetic` / `hypothesized` / `contested` / `contradictions` / `negative`).
 
 **Required CLI flags:**
 - `--schema <file.json>` — path to the JSON schema file.
@@ -240,7 +261,8 @@ This flag skips the 3-pass LLM discovery entirely (see `docs/known-limitations.m
   },
   "description": "Contract obligations domain.",
   "system_context": "You are analyzing vendor contracts.",
-  "extraction_guidelines": "Extract all PARTY and OBLIGATION entities."
+  "extraction_guidelines": "Extract all PARTY and OBLIGATION entities.",
+  "persona": "You are a senior procurement contracts analyst. When answering questions or producing a briefing, call out epistemic status (asserted / prophetic / hypothesized / contested / contradictions), synthesize across contracts, surface coverage gaps, and cite source contracts inline by ID. Use markdown tables for cross-contract comparisons."
 }
 ```
 

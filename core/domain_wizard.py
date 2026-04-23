@@ -855,41 +855,94 @@ def generate_slug(name: str) -> str:
     return slug
 
 
-def generate_workbench_template(domain_slug: str, entity_types: dict) -> str:
+def generate_workbench_template(
+    domain_slug: str,
+    entity_types: dict,
+    persona_override: str | None = None,
+) -> str:
     """Emit a Pydantic-valid workbench/template.yaml for a new domain (D-04).
 
+    The ``persona`` field serves DUAL purposes — single source of truth:
+      1. Workbench chat system prompt (reactive: fires on user questions).
+      2. ``core.label_epistemic`` automatic narrator (proactive: fires after
+         ``/epistract:epistemic`` runs, produces epistemic_narrative.md).
+
+    Callers who want a custom-tailored persona can supply ``persona_override``
+    — typically elicited from the user during ``/epistract:domain`` interactive
+    wizard, or synthesized by the wizard LLM from the domain description. When
+    omitted, an analyst-shaped template is used with the domain slug substituted
+    in — richer than a one-liner, weaker than a hand-crafted persona, and
+    immediately usable.
+
     Produces a complete override (not a partial) — every field of
-    `examples.workbench.template_schema.WorkbenchTemplate` is populated so
+    ``examples.workbench.template_schema.WorkbenchTemplate`` is populated so
     downstream consumers never fall back to defaults. Colors assigned
     deterministically by sorting entity_types keys alphabetically and cycling
-    through `DEFAULT_ENTITY_COLORS` via modulo (D-04 + D-16).
+    through ``DEFAULT_ENTITY_COLORS`` via modulo (D-04 + D-16).
 
     Args:
         domain_slug: The normalized slug (from generate_slug) — used to seed
-            stub title/subtitle text.
+            stub title/subtitle/persona text.
         entity_types: Mapping of entity-type name -> {description: ...}.
             Insertion order is NOT honored — keys are sorted alphabetically
             before palette assignment to guarantee determinism (UT-052 gate).
+        persona_override: Optional full persona paragraph(s). When provided,
+            used verbatim. When None, falls back to the default analyst
+            template below.
 
     Returns:
         YAML string (from yaml.safe_dump, sort_keys=False) ready to write to
-        `domains/<slug>/workbench/template.yaml`.
+        ``domains/<slug>/workbench/template.yaml``.
     """
     pretty_name = domain_slug.replace("-", " ").replace("_", " ").title()
+    pretty_lower = pretty_name.lower()
     sorted_entity_types = sorted(entity_types.keys())
     entity_colors = {
         entity_type: DEFAULT_ENTITY_COLORS[i % len(DEFAULT_ENTITY_COLORS)]
         for i, entity_type in enumerate(sorted_entity_types)
     }
 
+    default_persona = textwrap.dedent(f"""\
+        You are a senior {pretty_lower} analyst. You have reviewed the corpus
+        summarized below and built a knowledge graph of the entities and
+        relationships defined in this domain's schema.
+
+        Your role is to ANALYZE, not just retrieve. When answering questions or
+        producing a briefing:
+
+        EPISTEMIC STATUS IS PART OF THE ANSWER.
+        The graph annotates each relation with a status: asserted (stated with
+        definitive / quantitative evidence), prophetic (forward-looking language
+        such as "is expected to" / "may be prepared by"; claims not yet
+        demonstrated), hypothesized (hedged wording like "suggests" / "may" /
+        "appears to"), speculative (single-source conjecture), negative
+        (explicit absence of effect), and contested (same relation with
+        conflicting confidence across sources). Call out status whenever it
+        changes interpretation.
+
+        SYNTHESIZE ACROSS DOCUMENTS. Note convergence and divergence. Group
+        related claims into named clusters. Don't repeat raw counts — interpret
+        them.
+
+        SURFACE GAPS. Silence is a finding. If the graph is missing something a
+        domain analyst would expect, say so explicitly.
+
+        CITATION DISCIPLINE. Every factual claim must reference its source
+        document(s) by ID. When sources disagree, show both sides.
+
+        FORMAT. Markdown tables for cross-entity comparisons, bullet lists for
+        summaries, inline code for entity names, block quotes for verbatim
+        source evidence.
+
+        TONE. Direct and precise. Hedge only when the evidence is hedged.
+        Never fabricate — if a question is outside the graph's coverage, say
+        so and explain what data would close the gap.
+        """)
+
     data = {
         "title": f"{pretty_name} Knowledge Graph Explorer",
-        "subtitle": f"Explore {pretty_name.lower()} entities and relationships",
-        "persona": (
-            f"You are a {pretty_name.lower()} knowledge graph analyst. "
-            "Answer questions using the graph data provided. Cite source "
-            "documents when referencing specific findings."
-        ),
+        "subtitle": f"Explore {pretty_lower} entities and relationships",
+        "persona": persona_override.strip() if persona_override else default_persona.strip(),
         "placeholder": "Ask a question about the knowledge graph...",
         "loading_message": "Analyzing",
         "starter_questions": [],
@@ -1007,6 +1060,7 @@ def generate_domain_package(
     contradiction_pairs: list[tuple[str, str]] | None = None,
     gap_target_types: dict | None = None,
     confidence_thresholds: dict | None = None,
+    persona: str | None = None,
 ) -> dict:
     """Generate and write a complete domain package.
 
@@ -1021,6 +1075,13 @@ def generate_domain_package(
         contradiction_pairs: Optional epistemic contradiction pairs.
         gap_target_types: Optional gap detection targets.
         confidence_thresholds: Optional confidence thresholds.
+        persona: Optional custom workbench/narrator persona paragraph. When
+            None, ``generate_workbench_template`` emits an analyst-shaped
+            default template with the domain slug substituted — richer than
+            a one-liner and immediately usable, but users are encouraged to
+            hand-tailor for best narrator output. Persona serves BOTH the
+            workbench chat prompt (reactive) and the ``/epistract:epistemic``
+            narrator (proactive, writes ``epistemic_narrative.md``).
 
     Returns:
         Dict with keys: domain_dir, validation_result, files_written.
@@ -1054,7 +1115,9 @@ def generate_domain_package(
 
     # Write package (FIDL-08 D-02 + D-06 — slug via generate_slug, workbench template auto-emit)
     dir_name = generate_slug(domain_name)
-    workbench_yaml = generate_workbench_template(dir_name, entity_types)
+    workbench_yaml = generate_workbench_template(
+        dir_name, entity_types, persona_override=persona,
+    )
     domain_dir = write_domain_package(
         dir_name, domain_yaml, skill_md, epistemic_py,
         entity_types_md, relation_types_md,
@@ -1161,6 +1224,10 @@ def main(argv: list[str] | None = None) -> int:
     confidence_thresholds = schema.get("confidence_thresholds", {
         "high": 0.9, "medium": 0.7, "low": 0.5,
     })
+    # Persona: optional; surfaces in workbench chat AND epistemic narrator.
+    # When absent, generate_workbench_template falls back to the analyst-shaped
+    # default with the domain slug substituted.
+    persona = schema.get("persona")
 
     # D-11: bypass the 3-pass LLM discovery — call generate_domain_package directly.
     # Mirror commands/domain.md:140 slug convention (hyphens → underscores for function names).
@@ -1176,6 +1243,7 @@ def main(argv: list[str] | None = None) -> int:
         contradiction_pairs=contradiction_pairs,
         gap_target_types=gap_target_types,
         confidence_thresholds=confidence_thresholds,
+        persona=persona,
     )
 
     print(f"Domain package created at: {result['domain_dir']}")

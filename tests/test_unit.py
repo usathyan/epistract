@@ -2273,3 +2273,146 @@ def test_wizard_schema_bypass_skips_llm(tmp_path, monkeypatch):
     assert (domain_dir / "SKILL.md").exists()
     assert (domain_dir / "epistemic.py").exists()
     assert (domain_dir / "workbench" / "template.yaml").exists()
+
+
+def test_ut055_narrator_load_domain_persona():
+    """UT-055: _load_domain_persona reads the persona from workbench template.yaml.
+
+    Validates the single-source-of-truth contract: the same persona used by
+    the workbench chat (reactive) is what the label_epistemic narrator reads
+    (proactive). A drug-discovery persona is always present after Phase 21
+    and must include the epistemic-status vocabulary ('asserted', 'prophetic').
+    """
+    from core.label_epistemic import _load_domain_persona
+
+    persona = _load_domain_persona("drug-discovery")
+    assert isinstance(persona, str) and persona
+    # Epistemic vocabulary commitments — these must live in the persona so the
+    # narrator knows to classify relations using this language.
+    for token in ("asserted", "prophetic", "hypothesized", "contested"):
+        assert token in persona.lower(), (
+            f"drug-discovery persona must commit to epistemic status '{token}'"
+        )
+
+    # Missing domain → None (not raise)
+    assert _load_domain_persona("this-domain-does-not-exist") is None
+
+    # Unknown alias also → None
+    assert _load_domain_persona("") is None
+    assert _load_domain_persona(None) is None
+
+
+def test_ut056_narrator_summarize_graph_shape():
+    """UT-056: _summarize_graph_for_narrator produces markdown with all sections.
+
+    The summary is the sole factual payload passed to the LLM. If a section is
+    silently dropped the narrative will hallucinate — so each expected heading
+    must appear when the corresponding data is present.
+    """
+    from core.label_epistemic import _summarize_graph_for_narrator
+
+    graph_data = {
+        "nodes": [
+            {"entity_type": "COMPOUND", "name": "semaglutide"},
+            {"entity_type": "DISEASE", "name": "obesity"},
+        ],
+        "links": [
+            {
+                "source_entity": "semaglutide",
+                "target_entity": "obesity",
+                "relation_type": "INDICATED_FOR",
+                "epistemic_status": "prophetic",
+                "source_documents": ["patent_01"],
+                "evidence": "is expected to reduce weight in obese patients",
+            },
+            {
+                "source_entity": "semaglutide",
+                "target_entity": "obesity",
+                "relation_type": "INDICATED_FOR",
+                "epistemic_status": "hypothesized",
+            },
+        ],
+    }
+    claims_layer = {
+        "summary": {
+            "epistemic_status_counts": {"prophetic": 1, "hypothesized": 1},
+        },
+        "super_domain": {
+            "contradictions": [{"source": "x", "target": "y"}],
+            "hypotheses": [{"label": "H1", "members": [1, 2]}],
+            "contested_claims": [
+                {
+                    "source_entity": "semaglutide",
+                    "target_entity": "obesity",
+                    "relation_type": "INDICATED_FOR",
+                    "epistemic_status": "hypothesized",
+                }
+            ],
+        },
+    }
+    summary = _summarize_graph_for_narrator(graph_data, claims_layer)
+
+    # Structural gates — every non-empty section must produce a heading
+    assert "## GRAPH SUMMARY" in summary
+    assert "Entities: 2" in summary
+    assert "Relations: 2" in summary
+    assert "COMPOUND: 1" in summary
+    assert "## EPISTEMIC STATUS COUNTS" in summary
+    assert "## CONTRADICTIONS" in summary
+    assert "## HYPOTHESIS GROUPS" in summary
+    assert "## PROPHETIC CLAIMS" in summary
+    assert "## CONTESTED CLAIMS" in summary
+    # Verify the prophetic claim made it into the text
+    assert "is expected to reduce weight" in summary
+
+
+def test_ut057_narrator_non_blocking_on_missing_credentials(tmp_path, monkeypatch):
+    """UT-057: narrator failure never blocks claims_layer.json.
+
+    The narrator is ADDITIVE — if credentials are absent or the LLM call
+    fails, `/epistract:epistemic` must still succeed and write the rule-based
+    claims_layer.json. This is the core reliability contract.
+    """
+    from core import label_epistemic
+
+    # Clear all LLM credentials so resolve_api_config returns None
+    for var in (
+        "AZURE_FOUNDRY_API_KEY",
+        "ANTHROPIC_FOUNDRY_API_KEY",
+        "ANTHROPIC_API_KEY",
+        "OPENROUTER_API_KEY",
+    ):
+        monkeypatch.delenv(var, raising=False)
+
+    # Minimal graph: one node, one asserted relation
+    graph_data = {
+        "metadata": {"domain": "drug-discovery"},
+        "nodes": [{"id": "x", "name": "x", "entity_type": "COMPOUND"}],
+        "links": [
+            {
+                "source": "x",
+                "target": "x",
+                "source_entity": "x",
+                "target_entity": "x",
+                "relation_type": "ACTIVATES",
+                "evidence": "activates x",
+                "confidence": 0.9,
+            }
+        ],
+    }
+    (tmp_path / "graph_data.json").write_text(json.dumps(graph_data))
+
+    # Run with narrate=True — should SUCCEED despite missing credentials
+    result = label_epistemic.analyze_epistemic(
+        tmp_path,
+        domain_name="drug-discovery",
+        narrate=True,
+    )
+
+    # claims_layer.json must exist regardless of narrator outcome
+    claims_path = tmp_path / "claims_layer.json"
+    assert claims_path.exists(), "claims_layer.json must ship even when narrator fails"
+    # No narrative file should have been created
+    assert not (tmp_path / "epistemic_narrative.md").exists()
+    # Returned claims layer is well-formed
+    assert "summary" in result
