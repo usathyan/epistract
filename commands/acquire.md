@@ -7,6 +7,29 @@ description: Search PubMed and download articles into a local corpus for epistra
 
 You are building a document corpus from PubMed for the epistract knowledge graph pipeline.
 
+## Usage Guard
+
+**If invoked with no arguments or with `--help`:** Display the following usage block verbatim and stop — do not run any pipeline steps.
+
+```
+Usage: /epistract:acquire <query> [options]
+
+Required:
+  <query>    PubMed search query (standard PubMed syntax; enclose multi-word queries in quotes)
+
+Options:
+  --max <n>        Maximum articles to fetch  (default: 20)
+  --output <dir>   Output directory for downloaded corpus  (default: ./epistract-corpus)
+  --full-text      Attempt full-text fetch from PMC when available  (default: true)
+
+Examples:
+  /epistract:acquire "remdesivir COVID-19 clinical trial"
+  /epistract:acquire "KRAS inhibitor" --max 50
+  /epistract:acquire "sotorasib NSCLC" --max 100 --output ./kras-corpus
+```
+
+## Prerequisites
+
 ## Prerequisites
 
 The **PubMed connector** must be available. If it is not connected, tell the user:

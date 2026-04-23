@@ -1,0 +1,24 @@
+review_threshold: 0.7
+relations:
+- source_id: compound:tirzepatide
+  source_name: tirzepatide
+  target_id: compound:semaglutide
+  target_name: semaglutide
+  relation_type: co_intervention
+  confidence: 0.5
+  evidence: Tirzepatide and semaglutide are compared in separate arms; not co-administered
+    but both tested in the same trial
+  source_document: nct05822830_surmount_5
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: intervention:intensive_training_for_endocrinologists_in_t2dm_management
+  source_name: Intensive training for endocrinologists in T2DM management
+  target_id: intervention:regular_training_for_endocrinologists_in_t2dm_management
+  target_name: Regular training for endocrinologists in T2DM management
+  relation_type: co_intervention
+  confidence: 0.55
+  evidence: Both interventions are administered in parallel arms of the same trial;
+    not co-administered but compared as alternative training modalities
+  source_document: nct05715307_achieve_1
+  status: DRAFT
+  flag_reason: Low confidence (0.55 < 0.7)

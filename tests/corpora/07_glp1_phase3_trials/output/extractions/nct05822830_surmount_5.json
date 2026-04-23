@@ -1,0 +1,466 @@
+{
+  "document_id": "nct05822830_surmount_5",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "NCT05822830",
+      "entity_type": "Trial",
+      "confidence": 0.99,
+      "context": "SURMOUNT-5 (NCT05822830): Phase 3b study evaluating tirzepatide vs semaglutide in obesity/overweight without Type 2 Diabetes",
+      "attributes": {
+        "trial_acronym": "SURMOUNT-5",
+        "descriptive_title": "A Study of Tirzepatide (LY3298176) in Participants With Obesity or Overweight With Weight Related Comorbidities",
+        "study_type": "Interventional",
+        "status": "Completed",
+        "enrollment": 751,
+        "start_date": "2023-04-21",
+        "completion_date": "2024-11-13"
+      }
+    },
+    {
+      "name": "Phase 3",
+      "entity_type": "TrialPhase",
+      "confidence": 0.99,
+      "context": "Phase 3b study evaluating efficacy and safety of tirzepatide compared with semaglutide",
+      "attributes": {
+        "sub_phase": "3b",
+        "design": "Randomized controlled trial",
+        "comparator_type": "Active comparator"
+      }
+    },
+    {
+      "name": "Eli Lilly and Company",
+      "entity_type": "Sponsor",
+      "confidence": 0.99,
+      "context": "Lead Sponsor: Eli Lilly and Company",
+      "attributes": {
+        "role": "Lead Sponsor",
+        "country": "United States"
+      }
+    },
+    {
+      "name": "tirzepatide",
+      "entity_type": "Compound",
+      "confidence": 0.99,
+      "context": "Tirzepatide (LY3298176) administered SC QW, evaluated as experimental arm",
+      "attributes": {
+        "inn": "tirzepatide",
+        "sponsor_code": "LY3298176",
+        "route": "Subcutaneous"
+      }
+    },
+    {
+      "name": "semaglutide",
+      "entity_type": "Compound",
+      "confidence": 0.99,
+      "context": "Semaglutide administered SC QW as active comparator arm",
+      "attributes": {
+        "inn": "semaglutide",
+        "route": "Subcutaneous"
+      }
+    },
+    {
+      "name": "15 mg or MTD - Tirzepatide",
+      "entity_type": "Intervention",
+      "confidence": 0.97,
+      "context": "Experimental arm: tirzepatide starting at 2.5 mg SC QW, escalated up to 15 mg QW or MTD until Week 72",
+      "attributes": {
+        "starting_dose": "2.5 mg",
+        "target_dose": "15 mg",
+        "schedule": "QW",
+        "route": "Subcutaneous",
+        "arm_type": "Experimental"
+      }
+    },
+    {
+      "name": "2.4 mg or MTD - Semaglutide",
+      "entity_type": "Intervention",
+      "confidence": 0.97,
+      "context": "Active comparator arm: semaglutide starting at 0.25 mg SC QW, escalated up to 2.4 mg QW or MTD until Week 72",
+      "attributes": {
+        "starting_dose": "0.25 mg",
+        "target_dose": "2.4 mg",
+        "schedule": "QW",
+        "route": "Subcutaneous",
+        "arm_type": "Active Comparator"
+      }
+    },
+    {
+      "name": "Arm A: tirzepatide 15 mg or MTD",
+      "entity_type": "Cohort",
+      "confidence": 0.95,
+      "context": "Experimental arm: tirzepatide dose escalation to 15 mg QW or MTD (10 mg or 15 mg) until Week 72",
+      "attributes": {
+        "arm_label": "15 mg or MTD - Tirzepatide",
+        "arm_type": "Experimental",
+        "dose": "Up to 15 mg",
+        "schedule": "QW",
+        "route": "Subcutaneous"
+      }
+    },
+    {
+      "name": "Arm B: semaglutide 2.4 mg or MTD",
+      "entity_type": "Cohort",
+      "confidence": 0.95,
+      "context": "Active comparator arm: semaglutide dose escalation to 2.4 mg QW or MTD (1.7 mg or 2.4 mg) until Week 72",
+      "attributes": {
+        "arm_label": "2.4 mg or MTD - Semaglutide",
+        "arm_type": "Active Comparator",
+        "dose": "Up to 2.4 mg",
+        "schedule": "QW",
+        "route": "Subcutaneous"
+      }
+    },
+    {
+      "name": "Obesity",
+      "entity_type": "Condition",
+      "confidence": 0.99,
+      "context": "Participants with obesity (BMI \u226530 kg/m\u00b2) or overweight with weight-related comorbidities without Type 2 Diabetes",
+      "attributes": {
+        "mesh_term": "Obesity",
+        "bmi_threshold": "\u226530 kg/m\u00b2"
+      }
+    },
+    {
+      "name": "Overweight",
+      "entity_type": "Condition",
+      "confidence": 0.99,
+      "context": "Participants with overweight (BMI \u226527 kg/m\u00b2) with at least one weight-related comorbidity",
+      "attributes": {
+        "mesh_term": "Overweight",
+        "bmi_threshold": "\u226527 kg/m\u00b2"
+      }
+    },
+    {
+      "name": "percent change from baseline in body weight",
+      "entity_type": "Outcome",
+      "confidence": 0.99,
+      "context": "Primary endpoint: percent change from baseline in body weight at Week 72, assessed by ANCOVA model",
+      "attributes": {
+        "endpoint_type": "Primary",
+        "time_frame": "Baseline, Week 72",
+        "assessment_method": "ANCOVA with LS mean"
+      }
+    },
+    {
+      "name": "percentage of participants achieving \u226510% body weight reduction",
+      "entity_type": "Outcome",
+      "confidence": 0.97,
+      "context": "Secondary endpoint: percentage of participants who achieve \u226510% body weight reduction at Week 72",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Week 72",
+        "threshold": "\u226510%"
+      }
+    },
+    {
+      "name": "percentage of participants achieving \u226515% body weight reduction",
+      "entity_type": "Outcome",
+      "confidence": 0.97,
+      "context": "Secondary endpoint: percentage of participants who achieve \u226515% body weight reduction at Week 72",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Week 72",
+        "threshold": "\u226515%"
+      }
+    },
+    {
+      "name": "percentage of participants achieving \u226520% body weight reduction",
+      "entity_type": "Outcome",
+      "confidence": 0.97,
+      "context": "Secondary endpoint: percentage of participants who achieve \u226520% body weight reduction at Week 72",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Week 72",
+        "threshold": "\u226520%"
+      }
+    },
+    {
+      "name": "percentage of participants achieving \u226525% body weight reduction",
+      "entity_type": "Outcome",
+      "confidence": 0.97,
+      "context": "Secondary endpoint: percentage of participants who achieve \u226525% body weight reduction at Week 72",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Week 72",
+        "threshold": "\u226525%"
+      }
+    },
+    {
+      "name": "percentage of participants achieving \u226530% body weight reduction",
+      "entity_type": "Outcome",
+      "confidence": 0.97,
+      "context": "Secondary endpoint: percentage of participants who achieve \u226530% body weight reduction at Week 72",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Week 72",
+        "threshold": "\u226530%"
+      }
+    },
+    {
+      "name": "change from baseline in waist circumference",
+      "entity_type": "Outcome",
+      "confidence": 0.97,
+      "context": "Secondary endpoint: change from baseline in waist circumference in centimeters at Week 72",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Baseline, Week 72",
+        "unit": "centimeters"
+      }
+    },
+    {
+      "name": "change from baseline in body mass index",
+      "entity_type": "Outcome",
+      "confidence": 0.97,
+      "context": "Secondary endpoint: change from baseline in BMI at Week 72",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Baseline, Week 72"
+      }
+    },
+    {
+      "name": "percent change from baseline in body weight comparing 15 mg tirzepatide and 2.4 mg semaglutide",
+      "entity_type": "Outcome",
+      "confidence": 0.97,
+      "context": "Secondary endpoint: percent change from baseline in body weight comparing 15 mg tirzepatide and 2.4 mg semaglutide at Week 72",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Baseline, Week 72",
+        "comparison": "15 mg tirzepatide vs 2.4 mg semaglutide"
+      }
+    },
+    {
+      "name": "Adults with obesity or overweight and weight-related comorbidities without Type 2 Diabetes",
+      "entity_type": "Population",
+      "confidence": 0.95,
+      "context": "Adults \u226518 years with BMI \u226530 or \u226527 kg/m\u00b2 with comorbidities (hypertension, dyslipidemia, OSA, CVD), no diabetes mellitus",
+      "attributes": {
+        "age_group": "Adult",
+        "min_age": "18 Years",
+        "sex": "All",
+        "bmi_criteria": "\u226530 kg/m\u00b2 or \u226527 kg/m\u00b2 with comorbidity",
+        "exclusion": "Diabetes mellitus",
+        "comorbidities": "hypertension, dyslipidemia, obstructive sleep apnea, cardiovascular disease"
+      }
+    },
+    {
+      "name": "BMI",
+      "entity_type": "Biomarker",
+      "confidence": 0.92,
+      "context": "BMI \u226530 kg/m\u00b2 or \u226527 kg/m\u00b2 required for enrollment; also used as secondary endpoint",
+      "attributes": {
+        "biomarker_type": "Anthropometric",
+        "use": "Patient selection (inclusion criterion) and secondary endpoint",
+        "threshold": "\u226530 kg/m\u00b2 or \u226527 kg/m\u00b2 with comorbidity"
+      }
+    },
+    {
+      "name": "prediabetes status",
+      "entity_type": "Biomarker",
+      "confidence": 0.88,
+      "context": "Prediabetes status at randomization used as stratification variable in ANCOVA model for primary endpoint",
+      "attributes": {
+        "biomarker_type": "Metabolic",
+        "use": "Stratification variable"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "source_entity": "NCT05822830",
+      "target_entity": "Phase 3",
+      "relation_type": "is_phase",
+      "confidence": 0.99,
+      "evidence": "Phase 3b study evaluating efficacy and safety of tirzepatide compared with semaglutide"
+    },
+    {
+      "source_entity": "NCT05822830",
+      "target_entity": "Eli Lilly and Company",
+      "relation_type": "sponsored_by",
+      "confidence": 0.99,
+      "evidence": "Lead Sponsor: Eli Lilly and Company"
+    },
+    {
+      "source_entity": "NCT05822830",
+      "target_entity": "tirzepatide",
+      "relation_type": "tests",
+      "confidence": 0.99,
+      "evidence": "Experimental arm: tirzepatide (LY3298176) administered SC QW up to 15 mg"
+    },
+    {
+      "source_entity": "NCT05822830",
+      "target_entity": "15 mg or MTD - Tirzepatide",
+      "relation_type": "tests",
+      "confidence": 0.97,
+      "evidence": "Experimental arm: tirzepatide dose escalation to 15 mg QW or MTD until Week 72"
+    },
+    {
+      "source_entity": "NCT05822830",
+      "target_entity": "semaglutide",
+      "relation_type": "tests",
+      "confidence": 0.99,
+      "evidence": "Active comparator arm: semaglutide administered SC QW up to 2.4 mg"
+    },
+    {
+      "source_entity": "NCT05822830",
+      "target_entity": "2.4 mg or MTD - Semaglutide",
+      "relation_type": "tests",
+      "confidence": 0.97,
+      "evidence": "Active comparator arm: semaglutide dose escalation to 2.4 mg QW or MTD until Week 72"
+    },
+    {
+      "source_entity": "NCT05822830",
+      "target_entity": "Obesity",
+      "relation_type": "investigates",
+      "confidence": 0.99,
+      "evidence": "Study evaluates tirzepatide vs semaglutide in participants with obesity or overweight"
+    },
+    {
+      "source_entity": "NCT05822830",
+      "target_entity": "Overweight",
+      "relation_type": "investigates",
+      "confidence": 0.99,
+      "evidence": "Study evaluates tirzepatide vs semaglutide in participants with obesity or overweight with weight-related comorbidities"
+    },
+    {
+      "source_entity": "tirzepatide",
+      "target_entity": "Obesity",
+      "relation_type": "treats",
+      "confidence": 0.95,
+      "evidence": "Tirzepatide evaluated for treatment of obesity/overweight in SURMOUNT-5"
+    },
+    {
+      "source_entity": "semaglutide",
+      "target_entity": "Obesity",
+      "relation_type": "treats",
+      "confidence": 0.95,
+      "evidence": "Semaglutide evaluated as active comparator for treatment of obesity/overweight"
+    },
+    {
+      "source_entity": "tirzepatide",
+      "target_entity": "Overweight",
+      "relation_type": "treats",
+      "confidence": 0.93,
+      "evidence": "Tirzepatide evaluated for treatment of overweight with comorbidities in SURMOUNT-5"
+    },
+    {
+      "source_entity": "semaglutide",
+      "target_entity": "Overweight",
+      "relation_type": "treats",
+      "confidence": 0.93,
+      "evidence": "Semaglutide evaluated as active comparator for overweight with comorbidities"
+    },
+    {
+      "source_entity": "NCT05822830",
+      "target_entity": "percent change from baseline in body weight",
+      "relation_type": "has_outcome",
+      "confidence": 0.99,
+      "evidence": "Primary endpoint: percent change from baseline in body weight at Week 72"
+    },
+    {
+      "source_entity": "NCT05822830",
+      "target_entity": "percentage of participants achieving \u226510% body weight reduction",
+      "relation_type": "has_outcome",
+      "confidence": 0.97,
+      "evidence": "Secondary endpoint: percentage of participants achieving \u226510% body weight reduction at Week 72"
+    },
+    {
+      "source_entity": "NCT05822830",
+      "target_entity": "percentage of participants achieving \u226515% body weight reduction",
+      "relation_type": "has_outcome",
+      "confidence": 0.97,
+      "evidence": "Secondary endpoint: percentage of participants achieving \u226515% body weight reduction at Week 72"
+    },
+    {
+      "source_entity": "NCT05822830",
+      "target_entity": "percentage of participants achieving \u226520% body weight reduction",
+      "relation_type": "has_outcome",
+      "confidence": 0.97,
+      "evidence": "Secondary endpoint: percentage of participants achieving \u226520% body weight reduction at Week 72"
+    },
+    {
+      "source_entity": "NCT05822830",
+      "target_entity": "percentage of participants achieving \u226525% body weight reduction",
+      "relation_type": "has_outcome",
+      "confidence": 0.97,
+      "evidence": "Secondary endpoint: percentage of participants achieving \u226525% body weight reduction at Week 72"
+    },
+    {
+      "source_entity": "NCT05822830",
+      "target_entity": "percentage of participants achieving \u226530% body weight reduction",
+      "relation_type": "has_outcome",
+      "confidence": 0.97,
+      "evidence": "Secondary endpoint: percentage of participants achieving \u226530% body weight reduction at Week 72"
+    },
+    {
+      "source_entity": "NCT05822830",
+      "target_entity": "change from baseline in waist circumference",
+      "relation_type": "has_outcome",
+      "confidence": 0.97,
+      "evidence": "Secondary endpoint: change from baseline in waist circumference in centimeters at Week 72"
+    },
+    {
+      "source_entity": "NCT05822830",
+      "target_entity": "change from baseline in body mass index",
+      "relation_type": "has_outcome",
+      "confidence": 0.97,
+      "evidence": "Secondary endpoint: change from baseline in BMI at Week 72"
+    },
+    {
+      "source_entity": "NCT05822830",
+      "target_entity": "percent change from baseline in body weight comparing 15 mg tirzepatide and 2.4 mg semaglutide",
+      "relation_type": "has_outcome",
+      "confidence": 0.97,
+      "evidence": "Secondary endpoint: percent change from baseline in body weight comparing 15 mg tirzepatide and 2.4 mg semaglutide at Week 72"
+    },
+    {
+      "source_entity": "NCT05822830",
+      "target_entity": "Adults with obesity or overweight and weight-related comorbidities without Type 2 Diabetes",
+      "relation_type": "enrolls",
+      "confidence": 0.97,
+      "evidence": "Adults \u226518 years with BMI \u226530 or \u226527 kg/m\u00b2 with comorbidities, no diabetes mellitus; n=751"
+    },
+    {
+      "source_entity": "NCT05822830",
+      "target_entity": "Arm A: tirzepatide 15 mg or MTD",
+      "relation_type": "enrolls",
+      "confidence": 0.95,
+      "evidence": "Experimental arm: participants received tirzepatide dose escalation to 15 mg QW or MTD"
+    },
+    {
+      "source_entity": "NCT05822830",
+      "target_entity": "Arm B: semaglutide 2.4 mg or MTD",
+      "relation_type": "enrolls",
+      "confidence": 0.95,
+      "evidence": "Active comparator arm: participants received semaglutide dose escalation to 2.4 mg QW or MTD"
+    },
+    {
+      "source_entity": "NCT05822830",
+      "target_entity": "BMI",
+      "relation_type": "uses_biomarker",
+      "confidence": 0.95,
+      "evidence": "BMI \u226530 kg/m\u00b2 or \u226527 kg/m\u00b2 with comorbidity required for enrollment; BMI also used as stratification variable"
+    },
+    {
+      "source_entity": "NCT05822830",
+      "target_entity": "prediabetes status",
+      "relation_type": "uses_biomarker",
+      "confidence": 0.9,
+      "evidence": "Prediabetes status at randomization used as stratification variable in ANCOVA model for primary endpoint"
+    },
+    {
+      "source_entity": "tirzepatide",
+      "target_entity": "semaglutide",
+      "relation_type": "co_intervention",
+      "confidence": 0.5,
+      "evidence": "Tirzepatide and semaglutide are compared in separate arms; not co-administered but both tested in the same trial"
+    }
+  ],
+  "cost_usd": 0.100944,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Clinical Trials",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-23T12:34:29.978873+00:00",
+  "error": null
+}

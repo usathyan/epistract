@@ -1,0 +1,535 @@
+{
+  "document_id": "nct04184622_surmount_1",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "NCT04184622",
+      "entity_type": "Trial",
+      "confidence": 0.99,
+      "context": "SURMOUNT-1 (NCT04184622): Phase 3 interventional study of tirzepatide in participants with obesity or overweight",
+      "attributes": {
+        "trial_acronym": "SURMOUNT-1",
+        "descriptive_title": "A Study of Tirzepatide (LY3298176) in Participants With Obesity or Overweight",
+        "study_type": "Interventional",
+        "status": "Completed",
+        "enrollment": 2539,
+        "start_date": "2019-12-04",
+        "completion_date": "2024-07-06"
+      }
+    },
+    {
+      "name": "tirzepatide",
+      "entity_type": "Compound",
+      "confidence": 0.99,
+      "context": "Tirzepatide (LY3298176), administered subcutaneously, evaluated for weight reduction in obesity/overweight",
+      "attributes": {
+        "inn": "tirzepatide",
+        "sponsor_code": "LY3298176",
+        "route": "subcutaneous"
+      }
+    },
+    {
+      "name": "Obesity",
+      "entity_type": "Condition",
+      "confidence": 0.98,
+      "context": "Participants with obesity (BMI \u226530 kg/m\u00b2) enrolled in SURMOUNT-1",
+      "attributes": {
+        "mesh_term": "Obesity"
+      }
+    },
+    {
+      "name": "Overweight",
+      "entity_type": "Condition",
+      "confidence": 0.97,
+      "context": "Participants with overweight (BMI \u226527 kg/m\u00b2 with comorbidities) enrolled in SURMOUNT-1",
+      "attributes": {
+        "mesh_term": "Overweight"
+      }
+    },
+    {
+      "name": "Eli Lilly and Company",
+      "entity_type": "Sponsor",
+      "confidence": 0.99,
+      "context": "Lead Sponsor: Eli Lilly and Company",
+      "attributes": {
+        "role": "Lead Sponsor",
+        "country": "United States"
+      }
+    },
+    {
+      "name": "Phase 3",
+      "entity_type": "TrialPhase",
+      "confidence": 0.99,
+      "context": "Phase: PHASE3 \u2014 Phase 3 interventional study",
+      "attributes": {
+        "design": "Randomized controlled trial",
+        "blinding": "Placebo-controlled"
+      }
+    },
+    {
+      "name": "Placebo arm SC QW",
+      "entity_type": "Intervention",
+      "confidence": 0.95,
+      "context": "Placebo comparator arm: matching placebo administered subcutaneously once weekly for 72 weeks (primary period) and up to week 176 for prediabetes participants",
+      "attributes": {
+        "arm_label": "Placebo",
+        "arm_type": "PLACEBO_COMPARATOR",
+        "schedule": "QW",
+        "route": "subcutaneous"
+      }
+    },
+    {
+      "name": "Tirzepatide 5 mg SC QW",
+      "entity_type": "Intervention",
+      "confidence": 0.95,
+      "context": "Experimental arm: tirzepatide starting at 2.5 mg, escalating to 5 mg QW SC, maintained to week 72",
+      "attributes": {
+        "arm_label": "5 mg Tirzepatide",
+        "arm_type": "EXPERIMENTAL",
+        "dose": "5 mg",
+        "schedule": "QW",
+        "route": "subcutaneous",
+        "escalation": "2.5 mg increments every 4 weeks"
+      }
+    },
+    {
+      "name": "Tirzepatide 10 mg SC QW",
+      "entity_type": "Intervention",
+      "confidence": 0.95,
+      "context": "Experimental arm: tirzepatide starting at 2.5 mg, escalating to 10 mg QW SC, maintained to week 72",
+      "attributes": {
+        "arm_label": "10 mg Tirzepatide",
+        "arm_type": "EXPERIMENTAL",
+        "dose": "10 mg",
+        "schedule": "QW",
+        "route": "subcutaneous",
+        "escalation": "2.5 mg increments every 4 weeks"
+      }
+    },
+    {
+      "name": "Tirzepatide 15 mg SC QW",
+      "entity_type": "Intervention",
+      "confidence": 0.95,
+      "context": "Experimental arm: tirzepatide starting at 2.5 mg, escalating to 15 mg QW SC, maintained to week 72",
+      "attributes": {
+        "arm_label": "15 mg Tirzepatide",
+        "arm_type": "EXPERIMENTAL",
+        "dose": "15 mg",
+        "schedule": "QW",
+        "route": "subcutaneous",
+        "escalation": "2.5 mg increments every 4 weeks"
+      }
+    },
+    {
+      "name": "Arm: Placebo",
+      "entity_type": "Cohort",
+      "confidence": 0.93,
+      "context": "Placebo comparator cohort: SC QW placebo for 72 weeks (primary) and up to week 176 for prediabetes participants",
+      "attributes": {
+        "arm_label": "Placebo",
+        "arm_type": "PLACEBO_COMPARATOR",
+        "schedule": "QW",
+        "route": "subcutaneous"
+      }
+    },
+    {
+      "name": "Arm: 5 mg Tirzepatide",
+      "entity_type": "Cohort",
+      "confidence": 0.93,
+      "context": "Experimental cohort receiving tirzepatide 5 mg QW SC",
+      "attributes": {
+        "arm_label": "5 mg Tirzepatide",
+        "dose": "5 mg",
+        "schedule": "QW",
+        "route": "subcutaneous"
+      }
+    },
+    {
+      "name": "Arm: 10 mg Tirzepatide",
+      "entity_type": "Cohort",
+      "confidence": 0.93,
+      "context": "Experimental cohort receiving tirzepatide 10 mg QW SC",
+      "attributes": {
+        "arm_label": "10 mg Tirzepatide",
+        "dose": "10 mg",
+        "schedule": "QW",
+        "route": "subcutaneous"
+      }
+    },
+    {
+      "name": "Arm: 15 mg Tirzepatide",
+      "entity_type": "Cohort",
+      "confidence": 0.93,
+      "context": "Experimental cohort receiving tirzepatide 15 mg QW SC",
+      "attributes": {
+        "arm_label": "15 mg Tirzepatide",
+        "dose": "15 mg",
+        "schedule": "QW",
+        "route": "subcutaneous"
+      }
+    },
+    {
+      "name": "Adults with obesity or overweight without diabetes",
+      "entity_type": "Population",
+      "confidence": 0.92,
+      "context": "Adults \u226518 years with BMI \u226530 kg/m\u00b2 or \u226527 kg/m\u00b2 with comorbidities, without diabetes mellitus, history of unsuccessful dietary weight loss effort",
+      "attributes": {
+        "age_group": "Adult",
+        "min_age": "18 Years",
+        "bmi_criteria": "\u226530 kg/m\u00b2 or \u226527 kg/m\u00b2 with comorbidities",
+        "exclusion": "Diabetes mellitus",
+        "sex": "ALL",
+        "healthy_volunteers": false
+      }
+    },
+    {
+      "name": "percent change from baseline in body weight at week 72",
+      "entity_type": "Outcome",
+      "confidence": 0.98,
+      "context": "Primary endpoint: Percent Change From Baseline in Body Weight at Week 72 (Primary Treatment Period), assessed by MMRM",
+      "attributes": {
+        "endpoint_type": "Primary",
+        "time_frame": "Baseline, Week 72",
+        "assessment_method": "MMRM (mixed-model repeated measures)"
+      }
+    },
+    {
+      "name": "percentage of participants achieving \u22655% body weight reduction at week 72",
+      "entity_type": "Outcome",
+      "confidence": 0.98,
+      "context": "Primary endpoint: Percentage of Participants Who Achieve \u22655% Body Weight Reduction at Week 72",
+      "attributes": {
+        "endpoint_type": "Primary",
+        "time_frame": "Week 72",
+        "threshold": "\u22655% body weight reduction"
+      }
+    },
+    {
+      "name": "percentage of participants achieving \u226510% body weight reduction at week 72",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary endpoint: Percentage of Participants Who Achieve \u226510% Body Weight Reduction at Week 72",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Week 72",
+        "threshold": "\u226510% body weight reduction"
+      }
+    },
+    {
+      "name": "percentage of participants achieving \u226515% body weight reduction at week 72",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary endpoint: Percentage of Participants Who Achieve \u226515% Body Weight Reduction at Week 72",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Week 72",
+        "threshold": "\u226515% body weight reduction"
+      }
+    },
+    {
+      "name": "percentage of participants achieving \u226520% body weight reduction at week 72",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary endpoint: Percentage of Participants Who Achieve \u226520% Body Weight Reduction at Week 72",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Week 72",
+        "threshold": "\u226520% body weight reduction"
+      }
+    },
+    {
+      "name": "change from baseline in waist circumference at week 72",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary endpoint: Change From Baseline in Waist Circumference at Week 72",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Baseline, Week 72"
+      }
+    },
+    {
+      "name": "change from baseline in SF-36v2 physical functioning domain score at week 72",
+      "entity_type": "Outcome",
+      "confidence": 0.93,
+      "context": "Secondary endpoint: Change From Baseline in SF-36v2 Acute Form Physical Functioning Domain Score at Week 72 (pooled tirzepatide 10 mg and 15 mg)",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Baseline, Week 72",
+        "instrument": "SF-36v2 Acute Form"
+      }
+    },
+    {
+      "name": "percent change from baseline in triglycerides at week 72",
+      "entity_type": "Outcome",
+      "confidence": 0.93,
+      "context": "Secondary endpoint: Percent Change From Baseline in Triglycerides at Week 72 (pooled tirzepatide 5 mg, 10 mg, 15 mg)",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Baseline, Week 72"
+      }
+    },
+    {
+      "name": "percent change from baseline in total cholesterol at week 72",
+      "entity_type": "Outcome",
+      "confidence": 0.93,
+      "context": "Secondary endpoint: Percent Change From Baseline in Total Cholesterol at Week 72 (pooled tirzepatide 5 mg, 10 mg, 15 mg)",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Baseline, Week 72"
+      }
+    },
+    {
+      "name": "percent change from baseline in HDL cholesterol at week 72",
+      "entity_type": "Outcome",
+      "confidence": 0.93,
+      "context": "Secondary endpoint: Percent Change From Baseline in HDL Cholesterol at Week 72 (pooled tirzepatide 5 mg, 10 mg, 15 mg)",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Baseline, Week 72"
+      }
+    },
+    {
+      "name": "change from baseline in systolic blood pressure at week 72",
+      "entity_type": "Outcome",
+      "confidence": 0.93,
+      "context": "Secondary endpoint: Change From Baseline in Systolic Blood Pressure at Week 72 (pooled tirzepatide 5 mg, 10 mg, 15 mg)",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Baseline, Week 72"
+      }
+    },
+    {
+      "name": "BMI",
+      "entity_type": "Biomarker",
+      "confidence": 0.9,
+      "context": "Inclusion criterion: BMI \u226530 kg/m\u00b2 or \u226527 kg/m\u00b2 with comorbidities used for patient selection",
+      "attributes": {
+        "biomarker_type": "Anthropometric",
+        "use": "Patient selection (inclusion criterion)",
+        "threshold": "\u226530 kg/m\u00b2 or \u226527 kg/m\u00b2 with comorbidities"
+      }
+    },
+    {
+      "name": "prediabetes status",
+      "entity_type": "Biomarker",
+      "confidence": 0.9,
+      "context": "Prediabetes status at randomization used for stratification and to determine eligibility for extension phase",
+      "attributes": {
+        "biomarker_type": "Metabolic",
+        "use": "Stratification and extension eligibility"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "Eli Lilly and Company",
+      "relation_type": "sponsored_by",
+      "confidence": 0.99,
+      "evidence": "Lead Sponsor: Eli Lilly and Company"
+    },
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "Phase 3",
+      "relation_type": "is_phase",
+      "confidence": 0.99,
+      "evidence": "Phase: PHASE3"
+    },
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "tirzepatide",
+      "relation_type": "tests",
+      "confidence": 0.99,
+      "evidence": "SURMOUNT-1 evaluates tirzepatide (LY3298176) in participants with obesity or overweight"
+    },
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "Tirzepatide 5 mg SC QW",
+      "relation_type": "tests",
+      "confidence": 0.97,
+      "evidence": "Experimental arm: tirzepatide 5 mg QW SC administered in primary and extension treatment periods"
+    },
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "Tirzepatide 10 mg SC QW",
+      "relation_type": "tests",
+      "confidence": 0.97,
+      "evidence": "Experimental arm: tirzepatide 10 mg QW SC administered in primary and extension treatment periods"
+    },
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "Tirzepatide 15 mg SC QW",
+      "relation_type": "tests",
+      "confidence": 0.97,
+      "evidence": "Experimental arm: tirzepatide 15 mg QW SC administered in primary and extension treatment periods"
+    },
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "Placebo arm SC QW",
+      "relation_type": "tests",
+      "confidence": 0.95,
+      "evidence": "Placebo comparator arm: matching placebo SC QW for 72 weeks"
+    },
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "Obesity",
+      "relation_type": "investigates",
+      "confidence": 0.99,
+      "evidence": "SURMOUNT-1 investigates tirzepatide in participants with obesity"
+    },
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "Overweight",
+      "relation_type": "investigates",
+      "confidence": 0.97,
+      "evidence": "SURMOUNT-1 investigates tirzepatide in participants with overweight"
+    },
+    {
+      "source_entity": "tirzepatide",
+      "target_entity": "Obesity",
+      "relation_type": "treats",
+      "confidence": 0.93,
+      "evidence": "Tirzepatide evaluated for treatment of obesity in SURMOUNT-1"
+    },
+    {
+      "source_entity": "tirzepatide",
+      "target_entity": "Overweight",
+      "relation_type": "treats",
+      "confidence": 0.9,
+      "evidence": "Tirzepatide evaluated for treatment of overweight in SURMOUNT-1"
+    },
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "percent change from baseline in body weight at week 72",
+      "relation_type": "has_outcome",
+      "confidence": 0.99,
+      "evidence": "Primary endpoint: Percent Change From Baseline in Body Weight at Week 72"
+    },
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "percentage of participants achieving \u22655% body weight reduction at week 72",
+      "relation_type": "has_outcome",
+      "confidence": 0.99,
+      "evidence": "Primary endpoint: Percentage of Participants Who Achieve \u22655% Body Weight Reduction at Week 72"
+    },
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "percentage of participants achieving \u226510% body weight reduction at week 72",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary endpoint: Percentage of Participants Who Achieve \u226510% Body Weight Reduction at Week 72"
+    },
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "percentage of participants achieving \u226515% body weight reduction at week 72",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary endpoint: Percentage of Participants Who Achieve \u226515% Body Weight Reduction at Week 72"
+    },
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "percentage of participants achieving \u226520% body weight reduction at week 72",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary endpoint: Percentage of Participants Who Achieve \u226520% Body Weight Reduction at Week 72"
+    },
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "change from baseline in waist circumference at week 72",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary endpoint: Change From Baseline in Waist Circumference at Week 72"
+    },
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "change from baseline in SF-36v2 physical functioning domain score at week 72",
+      "relation_type": "has_outcome",
+      "confidence": 0.93,
+      "evidence": "Secondary endpoint: Change From Baseline in SF-36v2 Acute Form Physical Functioning Domain Score at Week 72"
+    },
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "percent change from baseline in triglycerides at week 72",
+      "relation_type": "has_outcome",
+      "confidence": 0.93,
+      "evidence": "Secondary endpoint: Percent Change From Baseline in Triglycerides at Week 72"
+    },
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "percent change from baseline in total cholesterol at week 72",
+      "relation_type": "has_outcome",
+      "confidence": 0.93,
+      "evidence": "Secondary endpoint: Percent Change From Baseline in Total Cholesterol at Week 72"
+    },
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "percent change from baseline in HDL cholesterol at week 72",
+      "relation_type": "has_outcome",
+      "confidence": 0.93,
+      "evidence": "Secondary endpoint: Percent Change From Baseline in HDL Cholesterol at Week 72"
+    },
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "change from baseline in systolic blood pressure at week 72",
+      "relation_type": "has_outcome",
+      "confidence": 0.93,
+      "evidence": "Secondary endpoint: Change From Baseline in Systolic Blood Pressure at Week 72"
+    },
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "BMI",
+      "relation_type": "uses_biomarker",
+      "confidence": 0.92,
+      "evidence": "Inclusion criterion: BMI \u226530 kg/m\u00b2 or \u226527 kg/m\u00b2 with comorbidities for patient selection"
+    },
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "prediabetes status",
+      "relation_type": "uses_biomarker",
+      "confidence": 0.92,
+      "evidence": "Prediabetes status at randomization used for stratification and extension phase eligibility"
+    },
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "Adults with obesity or overweight without diabetes",
+      "relation_type": "enrolls",
+      "confidence": 0.95,
+      "evidence": "Adults \u226518 years with BMI \u226530 or \u226527 with comorbidities, without diabetes mellitus"
+    },
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "Arm: Placebo",
+      "relation_type": "enrolls",
+      "confidence": 0.93,
+      "evidence": "Placebo comparator cohort enrolled in primary and extension treatment periods"
+    },
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "Arm: 5 mg Tirzepatide",
+      "relation_type": "enrolls",
+      "confidence": 0.93,
+      "evidence": "5 mg tirzepatide experimental cohort enrolled in primary and extension treatment periods"
+    },
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "Arm: 10 mg Tirzepatide",
+      "relation_type": "enrolls",
+      "confidence": 0.93,
+      "evidence": "10 mg tirzepatide experimental cohort enrolled in primary and extension treatment periods"
+    },
+    {
+      "source_entity": "NCT04184622",
+      "target_entity": "Arm: 15 mg Tirzepatide",
+      "relation_type": "enrolls",
+      "confidence": 0.93,
+      "evidence": "15 mg tirzepatide experimental cohort enrolled in primary and extension treatment periods"
+    }
+  ],
+  "cost_usd": 0.115308,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Clinical Trials",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-23T12:31:23.847669+00:00",
+  "error": null
+}

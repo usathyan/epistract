@@ -131,8 +131,9 @@ More: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 |---|---:|---:|---|
 | drug-discovery | 13 | 22 | Biomedical literature, patents, clinical trial reports — molecular validation (RDKit / Biopython), patent prophetic-claim detection, regulatory / adverse-event capture |
 | contracts | 11 | 11 | Event/vendor contract analysis — cross-contract conflict detection, obligation gap scoring, risk indicators, SLA/force-majeure reasoning |
+| clinicaltrials | 12 | 10 | ClinicalTrials.gov protocols + IRB submissions + clinical study reports — NCT ID capture, Phase-based evidence grading, blinding/enrollment signals. Optional `--enrich` flag pulls live metadata from ClinicalTrials.gov v2 + PubChem PUG REST APIs |
 
-Both live in `domains/` as self-contained packages. Schemas are human-readable YAML; inspect `domains/drug-discovery/domain.yaml` or `domains/contracts/domain.yaml`.
+All three live in `domains/` as self-contained packages. Schemas are human-readable YAML; inspect `domains/drug-discovery/domain.yaml`, `domains/contracts/domain.yaml`, or `domains/clinicaltrials/domain.yaml`.
 
 ---
 
@@ -143,7 +144,8 @@ Both live in `domains/` as self-contained packages. Schemas are human-readable Y
 - [docs/COMMANDS.md](docs/COMMANDS.md) — full `/epistract:*` command reference
 - [docs/ADDING-DOMAINS.md](docs/ADDING-DOMAINS.md) — domain wizard walk-through + manual creation
 - [docs/PIPELINE-CAPACITY.md](docs/PIPELINE-CAPACITY.md) — formats, limits, what the pipeline will and won't do
-- [docs/SHOWCASE-GLP1.md](docs/SHOWCASE-GLP1.md) — GLP-1 competitive-intelligence story, V2 → V3 comparison, full narrator output
+- [docs/SHOWCASE-GLP1.md](docs/SHOWCASE-GLP1.md) — GLP-1 competitive-intelligence story (drug-discovery domain), V2 → V3 comparison, full narrator output
+- [docs/SHOWCASE-CLINICALTRIALS.md](docs/SHOWCASE-CLINICALTRIALS.md) — Clinical Trials GLP-1 Phase 3 landscape (clinicaltrials domain, v3.1), paired with the S6 literature showcase above
 - [docs/showcases/contracts.md](docs/showcases/contracts.md) — contracts-domain showcase
 - [docs/known-limitations.md](docs/known-limitations.md) — current propagation contracts and known gaps
 - [DEVELOPER.md](DEVELOPER.md) — contributing, internals, extending the pipeline

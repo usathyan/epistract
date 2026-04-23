@@ -1,0 +1,76 @@
+Title: STEP 1: Research Study Investigating How Well Semaglutide Works in People Suffering From Overweight or Obesity
+NCT ID: NCT03548935
+Acronym: STEP 1
+Status: COMPLETED
+Phase: PHASE3
+Study Type: INTERVENTIONAL
+Enrollment: 1961
+Start Date: 2018-06-04
+Completion Date: 2021-03-05
+Lead Sponsor: Novo Nordisk A/S
+Conditions: Metabolism and Nutrition Disorder; Overweight or Obesity
+
+=== BRIEF SUMMARY ===
+This study will look at the change in participants' body weight from the start to the end of the study. The weight loss in participants taking semaglutide (a new medicine) will be compared to the weight loss of participants taking "dummy" medicine. In addition to taking the medicine, participants will have talks with study staff about healthy food choices, how to be more physically active and what you can do to lose weight. Participants will either get semaglutide or "dummy" medicine - which treatment participants get, is decided by chance. Participants will need to take 1 injection once a week. The study medicine is injected with a thin needle in a skin fold in the stomach, thigh or upper arm. The study has two phases: A main phase and an extension phase.The main phase will last for about 1.5 years. Participants will have 15 clinic visits and 10 phone calls with the study doctor. Extension phase: Approximately 300 participants will continue in the extension phase in the following countries only: Canada, Germany, the UK and selected sites in the US and Japan. These participants will be in the study for about 2.5 years.They will not receive treatment, but will attend another 5 follow-up visits with the study doctor.
+
+=== STUDY ARMS / COHORTS ===
+- Semaglutide s.c. 2.4 mg once weekly (EXPERIMENTAL)
+    Participants will receive semaglutide for 68 weeks.
+    Interventions: Drug: Semaglutide
+- Semaglutide placebo (PLACEBO_COMPARATOR)
+    Participants will receive semaglutide matching placebo for 68 weeks.
+    Interventions: Drug: Placebo (semaglutide)
+
+=== INTERVENTIONS ===
+- Semaglutide [DRUG]
+    Participants will receive semaglutide subcutaneous (s.c.; under the skin) injection(s) once-weekly as well as diet and physical activity counselling for 68 weeks. Dose escalation of semaglutide will take place as follows: 0.25 mg from week 1 to 4, 0.5 mg from week 5 to 8, 1.0 mg from week 9 to 12, 1.7 mg from week 13 to 16 and 2.4 mg from week 17 to week 68.
+- Placebo (semaglutide) [DRUG]
+    Participants will receive semaglutide matching placebo s.c. injection(s) once-weekly as well as diet and physical activity counselling for 68 weeks.
+
+=== PRIMARY OUTCOMES ===
+- Change in Body Weight (%)
+    Change in body weight from baseline (week 0) to week 68 is presented. The endpoint was evaluated based on the data from both in-trial and on-treatment observation periods. In-trial observation period: the uninterrupted time interval from date of randomization (week 0) to date of last contact with trial site (week 75). On-treatment observation period: includes all time intervals in which participants are considered to be on treatment from the first (week 0) to last trial product administration (week 68), including 2 weeks of follow-up. It excludes any period of temporary treatment interruption. Temporary treatment interruption is defined as more than 2 consecutive missed doses (off-treatment period).
+    Time Frame: Baseline (week 0) to week 68
+- Participants Who Achieve 5 or More Percent Body Weight Reduction (Yes/no)
+    Number of participants who achieved weight loss more than or equal to 5% (yes/no) at week 68 are presented. The endpoint was evaluated based on the data from both in-trial and on-treatment observation periods. In-trial observation period: the uninterrupted time interval from start of randomization (week 0) to last trial-related subject-site contact (week 75). On-treatment observation period: includes all time intervals in which participants are considered to be on treatment from the first (week 0) to last trial product administration (week 68), including 2 weeks of follow-up. It excludes any period of temporary treatment interruption.
+    Time Frame: After week 68
+
+=== SECONDARY OUTCOMES ===
+- Subjects Who Achieve 10 or More Percent Body Weight Reduction (Yes/no) (Time Frame: Week 68)
+- Participants Who Achieve 15 or More Percent Body Weight Reduction (Yes/no) (Time Frame: Week 68)
+- Participants Who Achieve 20 or More Percent Body Weight Reduction (Yes/no) (Time Frame: Week 68)
+- Change in Waist Circumference (cm) (Time Frame: Baseline (week 0) to week 68)
+- Change in Systolic Blood Pressure (mmHg) (Time Frame: Baseline (week 0) to week 68)
+- Change in Short Form 36 (SF-36) (Time Frame: Baseline (week 0) to week 68)
+- Change in Impact of Weight on Quality of Life-Lite for Clinical Trial (IWQoL-Lite for CT) Score (Time Frame: Baseline (week 0) to week 68)
+- Change in Body Weight (kg) (Time Frame: Baseline (week 0) to week 68)
+- Change in Body Mass Index (BMI) (kg/m2) (Time Frame: Baseline (week 0) to week 68)
+- Change in HbA1C (%) (Time Frame: Baseline (week 0) to week 68)
+
+=== ELIGIBILITY CRITERIA ===
+Inclusion Criteria:
+
+Main phase:
+
+* Male or female, age greater than or equal to 18 years at the time of signing informed consent
+* Body mass index (BMI) greater than or equal to 30.0 kg/sqm or greater than or equal to 27.0 kg/sqm with the presence of at least one of the following weight-related comorbidities (treated or untreated): hypertension, dyslipidaemia, obstructive sleep apnoea or cardiovascular disease
+* History of at least one self-reported unsuccessful dietary effort to lose body weight
+
+Extension phase:
+
+* Informed consent for the extension phase obtained before any trial related activities for the extension phase
+* On randomised treatment on the target dose at week 68, i.e. treated with 2.4 mg semaglutide once-weekly or semaglutide placebo
+
+Exclusion Criteria:
+
+Main phase:
+
+* Glycated haemoglobin (HbA1C) greater than or equal to 48 mmol/mol (6.5%) as measured by the central laboratory at screening
+* A self-reported change in body weight greater than 5 kg (11 lbs) within 90 days before screening irrespective of medical records
+
+Extension phase:
+
+* Female who is pregnant or intends to become pregnant during the extension phase
+* Any disorder, unwillingness or inability, not covered by any of the other exclusion criteria, which in the investigator's opinion, might jeopardise the subject's compliance with the extension of the trial
+
+Population: Sex: ALL; Min Age: 18 Years; Healthy Volunteers: False

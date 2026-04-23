@@ -11,6 +11,33 @@ Launch the FastAPI-backed workbench for an existing knowledge graph. The workben
 2. **Graph panel** — force-directed interactive visualization with community coloring, entity-type filters, and relation-type toggles
 3. **Sources panel** — drill into the underlying documents, entities, and relations that ground each answer
 
+## Usage Guard
+
+**If invoked with no arguments or with `--help`:** Display the following usage block verbatim and stop — do not run any pipeline steps.
+
+```
+Usage: /epistract:dashboard <output-dir> [options]
+
+Required:
+  <output-dir>    Path to directory containing graph_data.json
+
+Options:
+  --domain <name>    Domain for branding and entity colors  (default: auto-detected from graph_data.json)
+  --port <n>         Port to serve on  (default: 8000)
+  --host <addr>      Host address      (default: 127.0.0.1)
+
+Examples:
+  /epistract:dashboard ./epistract-output
+  /epistract:dashboard ./out --domain clinicaltrials --port 8080
+  /epistract:dashboard ./out --host 0.0.0.0 --port 3000
+```
+
+1. **Chat panel** — ask natural-language questions of the graph, answers streamed with citations back to source documents
+2. **Graph panel** — force-directed interactive visualization with community coloring, entity-type filters, and relation-type toggles
+3. **Sources panel** — drill into the underlying documents, entities, and relations that ground each answer
+
+## Arguments
+
 ## Arguments
 
 - `<output_dir>` (required) — directory containing `graph_data.json`, `communities.json`, and (optionally) `claims_layer.json` from a prior `/epistract:ingest` + `/epistract:epistemic` run

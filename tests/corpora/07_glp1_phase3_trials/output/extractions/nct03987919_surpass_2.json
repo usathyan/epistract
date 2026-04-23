@@ -1,0 +1,446 @@
+{
+  "document_id": "nct03987919_surpass_2",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "NCT03987919",
+      "entity_type": "Trial",
+      "confidence": 0.99,
+      "context": "SURPASS-2 (NCT03987919): Phase 3 interventional study comparing tirzepatide vs semaglutide in T2DM patients on metformin",
+      "attributes": {
+        "trial_acronym": "SURPASS-2",
+        "descriptive_title": "A Study of Tirzepatide (LY3298176) Versus Semaglutide Once Weekly as Add-on Therapy to Metformin in Participants With Type 2 Diabetes",
+        "study_type": "Interventional",
+        "status": "Completed",
+        "enrollment": 1879,
+        "start_date": "2019-07-30",
+        "completion_date": "2021-02-15"
+      }
+    },
+    {
+      "name": "tirzepatide",
+      "entity_type": "Compound",
+      "confidence": 0.99,
+      "context": "Tirzepatide (LY3298176), a GIP/GLP-1 dual receptor agonist administered subcutaneously once weekly",
+      "attributes": {
+        "inn": "tirzepatide",
+        "sponsor_code": "LY3298176",
+        "drug_class": "GIP/GLP-1 dual receptor agonist",
+        "mechanism": "Dual agonism of glucose-dependent insulinotropic polypeptide (GIP) and glucagon-like peptide-1 (GLP-1) receptors",
+        "route": "Subcutaneous"
+      }
+    },
+    {
+      "name": "semaglutide",
+      "entity_type": "Compound",
+      "confidence": 0.99,
+      "context": "Semaglutide 1 mg administered SC once a week as active comparator",
+      "attributes": {
+        "inn": "semaglutide",
+        "drug_class": "GLP-1 receptor agonist",
+        "route": "Subcutaneous"
+      }
+    },
+    {
+      "name": "metformin",
+      "entity_type": "Compound",
+      "confidence": 0.95,
+      "context": "Stable background therapy with metformin >1500 mg/day required for at least 3 months prior to screening",
+      "attributes": {
+        "inn": "metformin",
+        "drug_class": "Biguanide",
+        "role": "Background therapy"
+      }
+    },
+    {
+      "name": "5 mg Tirzepatide SC QW",
+      "entity_type": "Intervention",
+      "confidence": 0.95,
+      "context": "5 mg tirzepatide administered subcutaneously once a week (experimental arm)",
+      "attributes": {
+        "dose": "5 mg",
+        "schedule": "QW",
+        "route": "Subcutaneous",
+        "arm_type": "Experimental"
+      }
+    },
+    {
+      "name": "10 mg Tirzepatide SC QW",
+      "entity_type": "Intervention",
+      "confidence": 0.95,
+      "context": "10 mg tirzepatide administered subcutaneously once a week (experimental arm)",
+      "attributes": {
+        "dose": "10 mg",
+        "schedule": "QW",
+        "route": "Subcutaneous",
+        "arm_type": "Experimental"
+      }
+    },
+    {
+      "name": "15 mg Tirzepatide SC QW",
+      "entity_type": "Intervention",
+      "confidence": 0.95,
+      "context": "15 mg tirzepatide administered subcutaneously once a week (experimental arm)",
+      "attributes": {
+        "dose": "15 mg",
+        "schedule": "QW",
+        "route": "Subcutaneous",
+        "arm_type": "Experimental"
+      }
+    },
+    {
+      "name": "1 mg Semaglutide SC QW",
+      "entity_type": "Intervention",
+      "confidence": 0.95,
+      "context": "1 mg semaglutide administered subcutaneously once a week (active comparator arm)",
+      "attributes": {
+        "dose": "1 mg",
+        "schedule": "QW",
+        "route": "Subcutaneous",
+        "arm_type": "Active comparator"
+      }
+    },
+    {
+      "name": "Arm: 5 mg Tirzepatide",
+      "entity_type": "Cohort",
+      "confidence": 0.93,
+      "context": "Experimental arm: 5 mg tirzepatide administered SC once a week",
+      "attributes": {
+        "arm_label": "5 mg Tirzepatide",
+        "arm_type": "Experimental",
+        "dose": "5 mg",
+        "schedule": "QW",
+        "route": "Subcutaneous"
+      }
+    },
+    {
+      "name": "Arm: 10 mg Tirzepatide",
+      "entity_type": "Cohort",
+      "confidence": 0.93,
+      "context": "Experimental arm: 10 mg tirzepatide administered SC once a week",
+      "attributes": {
+        "arm_label": "10 mg Tirzepatide",
+        "arm_type": "Experimental",
+        "dose": "10 mg",
+        "schedule": "QW",
+        "route": "Subcutaneous"
+      }
+    },
+    {
+      "name": "Arm: 15 mg Tirzepatide",
+      "entity_type": "Cohort",
+      "confidence": 0.93,
+      "context": "Experimental arm: 15 mg tirzepatide administered SC once a week",
+      "attributes": {
+        "arm_label": "15 mg Tirzepatide",
+        "arm_type": "Experimental",
+        "dose": "15 mg",
+        "schedule": "QW",
+        "route": "Subcutaneous"
+      }
+    },
+    {
+      "name": "Arm: 1 mg Semaglutide",
+      "entity_type": "Cohort",
+      "confidence": 0.93,
+      "context": "Active comparator arm: 1 mg semaglutide administered SC once a week",
+      "attributes": {
+        "arm_label": "1 mg Semaglutide",
+        "arm_type": "Active comparator",
+        "dose": "1 mg",
+        "schedule": "QW",
+        "route": "Subcutaneous"
+      }
+    },
+    {
+      "name": "Type 2 Diabetes Mellitus",
+      "entity_type": "Condition",
+      "confidence": 0.99,
+      "context": "Participants with type 2 diabetes mellitus (T2DM) on stable metformin therapy",
+      "attributes": {
+        "mesh_term": "Diabetes Mellitus, Type 2",
+        "abbreviation": "T2DM"
+      }
+    },
+    {
+      "name": "Eli Lilly and Company",
+      "entity_type": "Sponsor",
+      "confidence": 0.99,
+      "context": "Lead Sponsor: Eli Lilly and Company",
+      "attributes": {
+        "role": "Lead sponsor",
+        "country": "United States"
+      }
+    },
+    {
+      "name": "Phase 3",
+      "entity_type": "TrialPhase",
+      "confidence": 0.99,
+      "context": "Phase: PHASE3 interventional study",
+      "attributes": {
+        "design": "Randomized controlled trial",
+        "comparator_type": "Active comparator"
+      }
+    },
+    {
+      "name": "Change from Baseline in HbA1c at Week 40",
+      "entity_type": "Outcome",
+      "confidence": 0.97,
+      "context": "Primary endpoint: Change From Baseline in Hemoglobin A1c (HbA1c) at Week 40 for 10 mg and 15 mg tirzepatide arms",
+      "attributes": {
+        "endpoint_type": "Primary",
+        "time_frame": "Baseline, Week 40",
+        "assessment_method": "MMRM with LS mean",
+        "biomarker": "HbA1c"
+      }
+    },
+    {
+      "name": "Change from Baseline in Body Weight at Week 40",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary endpoint: Change From Baseline in Body Weight at Week 40",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Baseline, Week 40"
+      }
+    },
+    {
+      "name": "Percentage of Participants Achieving HbA1c <7%",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary endpoint: Percentage of Participants Achieving an HbA1c Target Value of <7% at Week 40",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Week 40",
+        "threshold": "<7%"
+      }
+    },
+    {
+      "name": "Change from Baseline in Fasting Serum Glucose",
+      "entity_type": "Outcome",
+      "confidence": 0.93,
+      "context": "Secondary endpoint: Change From Baseline in Fasting Serum Glucose (FSG) at Week 40",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Baseline, Week 40"
+      }
+    },
+    {
+      "name": "Rate of Hypoglycemia",
+      "entity_type": "Outcome",
+      "confidence": 0.93,
+      "context": "Secondary endpoint: Rate of Hypoglycemia with blood glucose <54 mg/dL or severe hypoglycemia through safety follow-up",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Baseline through Safety Follow-Up (Up to Week 44)",
+        "threshold": "Blood glucose <54 mg/dL or severe hypoglycemia"
+      }
+    },
+    {
+      "name": "Percentage of Participants Achieving Weight Loss \u22655%",
+      "entity_type": "Outcome",
+      "confidence": 0.93,
+      "context": "Secondary endpoint: Percentage of Participants Who Achieved Weight Loss \u22655% at Week 40",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Week 40"
+      }
+    },
+    {
+      "name": "HbA1c",
+      "entity_type": "Biomarker",
+      "confidence": 0.97,
+      "context": "HbA1c used for patient selection (eligibility: \u22657.0% and \u226410.5%) and as primary endpoint",
+      "attributes": {
+        "biomarker_type": "Clinical laboratory",
+        "full_name": "Hemoglobin A1c",
+        "use": "Patient selection and primary efficacy endpoint",
+        "eligibility_range": "\u22657.0% and \u226410.5%"
+      }
+    },
+    {
+      "name": "Adults with T2DM on stable metformin therapy",
+      "entity_type": "Population",
+      "confidence": 0.92,
+      "context": "Adults \u226518 years with T2DM, HbA1c \u22657.0%\u2013\u226410.5%, on stable metformin >1500 mg/day for \u22653 months, BMI \u226525 kg/m\u00b2",
+      "attributes": {
+        "age_group": "Adult (\u226518 years)",
+        "sex": "All",
+        "background_therapy": "Metformin >1500 mg/day",
+        "bmi_criterion": "\u226525 kg/m\u00b2",
+        "hba1c_range": "\u22657.0% and \u226410.5%",
+        "healthy_volunteers": false
+      }
+    }
+  ],
+  "relations": [
+    {
+      "source_entity": "NCT03987919",
+      "target_entity": "Eli Lilly and Company",
+      "relation_type": "sponsored_by",
+      "confidence": 0.99,
+      "evidence": "Lead Sponsor: Eli Lilly and Company"
+    },
+    {
+      "source_entity": "NCT03987919",
+      "target_entity": "Phase 3",
+      "relation_type": "is_phase",
+      "confidence": 0.99,
+      "evidence": "Phase: PHASE3 interventional study"
+    },
+    {
+      "source_entity": "NCT03987919",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "relation_type": "investigates",
+      "confidence": 0.99,
+      "evidence": "Study of tirzepatide versus semaglutide in participants with Type 2 Diabetes"
+    },
+    {
+      "source_entity": "NCT03987919",
+      "target_entity": "tirzepatide",
+      "relation_type": "tests",
+      "confidence": 0.99,
+      "evidence": "Tirzepatide (LY3298176) evaluated in three dose arms (5 mg, 10 mg, 15 mg) as experimental treatment"
+    },
+    {
+      "source_entity": "NCT03987919",
+      "target_entity": "semaglutide",
+      "relation_type": "tests",
+      "confidence": 0.99,
+      "evidence": "Semaglutide 1 mg SC QW evaluated as active comparator arm"
+    },
+    {
+      "source_entity": "NCT03987919",
+      "target_entity": "5 mg Tirzepatide SC QW",
+      "relation_type": "tests",
+      "confidence": 0.95,
+      "evidence": "Experimental arm: 5 mg tirzepatide administered SC once a week"
+    },
+    {
+      "source_entity": "NCT03987919",
+      "target_entity": "10 mg Tirzepatide SC QW",
+      "relation_type": "tests",
+      "confidence": 0.95,
+      "evidence": "Experimental arm: 10 mg tirzepatide administered SC once a week"
+    },
+    {
+      "source_entity": "NCT03987919",
+      "target_entity": "15 mg Tirzepatide SC QW",
+      "relation_type": "tests",
+      "confidence": 0.95,
+      "evidence": "Experimental arm: 15 mg tirzepatide administered SC once a week"
+    },
+    {
+      "source_entity": "NCT03987919",
+      "target_entity": "1 mg Semaglutide SC QW",
+      "relation_type": "tests",
+      "confidence": 0.95,
+      "evidence": "Active comparator arm: 1 mg semaglutide administered SC once a week"
+    },
+    {
+      "source_entity": "NCT03987919",
+      "target_entity": "Change from Baseline in HbA1c at Week 40",
+      "relation_type": "has_outcome",
+      "confidence": 0.97,
+      "evidence": "Primary endpoint: Change From Baseline in HbA1c at Week 40 (10 mg and 15 mg arms)"
+    },
+    {
+      "source_entity": "NCT03987919",
+      "target_entity": "Change from Baseline in Body Weight at Week 40",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary endpoint: Change From Baseline in Body Weight at Week 40"
+    },
+    {
+      "source_entity": "NCT03987919",
+      "target_entity": "Percentage of Participants Achieving HbA1c <7%",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary endpoint: Percentage of Participants Achieving an HbA1c Target Value of <7% at Week 40"
+    },
+    {
+      "source_entity": "NCT03987919",
+      "target_entity": "Change from Baseline in Fasting Serum Glucose",
+      "relation_type": "has_outcome",
+      "confidence": 0.93,
+      "evidence": "Secondary endpoint: Change From Baseline in Fasting Serum Glucose (FSG) at Week 40"
+    },
+    {
+      "source_entity": "NCT03987919",
+      "target_entity": "Rate of Hypoglycemia",
+      "relation_type": "has_outcome",
+      "confidence": 0.93,
+      "evidence": "Secondary endpoint: Rate of Hypoglycemia with blood glucose <54 mg/dL or severe hypoglycemia"
+    },
+    {
+      "source_entity": "NCT03987919",
+      "target_entity": "Percentage of Participants Achieving Weight Loss \u22655%",
+      "relation_type": "has_outcome",
+      "confidence": 0.93,
+      "evidence": "Secondary endpoint: Percentage of Participants Who Achieved Weight Loss \u22655% at Week 40"
+    },
+    {
+      "source_entity": "NCT03987919",
+      "target_entity": "HbA1c",
+      "relation_type": "uses_biomarker",
+      "confidence": 0.97,
+      "evidence": "HbA1c \u22657.0% and \u226410.5% required for enrollment; also used as primary efficacy endpoint"
+    },
+    {
+      "source_entity": "NCT03987919",
+      "target_entity": "Adults with T2DM on stable metformin therapy",
+      "relation_type": "enrolls",
+      "confidence": 0.95,
+      "evidence": "Enrolled adults \u226518 years with T2DM, HbA1c \u22657.0%\u2013\u226410.5%, on stable metformin >1500 mg/day"
+    },
+    {
+      "source_entity": "NCT03987919",
+      "target_entity": "Arm: 5 mg Tirzepatide",
+      "relation_type": "enrolls",
+      "confidence": 0.93,
+      "evidence": "Experimental arm enrolling participants to receive 5 mg tirzepatide SC QW"
+    },
+    {
+      "source_entity": "NCT03987919",
+      "target_entity": "Arm: 10 mg Tirzepatide",
+      "relation_type": "enrolls",
+      "confidence": 0.93,
+      "evidence": "Experimental arm enrolling participants to receive 10 mg tirzepatide SC QW"
+    },
+    {
+      "source_entity": "NCT03987919",
+      "target_entity": "Arm: 15 mg Tirzepatide",
+      "relation_type": "enrolls",
+      "confidence": 0.93,
+      "evidence": "Experimental arm enrolling participants to receive 15 mg tirzepatide SC QW"
+    },
+    {
+      "source_entity": "NCT03987919",
+      "target_entity": "Arm: 1 mg Semaglutide",
+      "relation_type": "enrolls",
+      "confidence": 0.93,
+      "evidence": "Active comparator arm enrolling participants to receive 1 mg semaglutide SC QW"
+    },
+    {
+      "source_entity": "tirzepatide",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "relation_type": "treats",
+      "confidence": 0.93,
+      "evidence": "Tirzepatide evaluated for treatment of type 2 diabetes mellitus as add-on to metformin"
+    },
+    {
+      "source_entity": "semaglutide",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "relation_type": "treats",
+      "confidence": 0.93,
+      "evidence": "Semaglutide evaluated as active comparator for treatment of type 2 diabetes mellitus"
+    }
+  ],
+  "cost_usd": 0.097269,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Clinical Trials",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-23T12:30:14.959283+00:00",
+  "error": null
+}

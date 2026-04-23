@@ -1,0 +1,76 @@
+Title: A Study of Tirzepatide (LY3298176) Versus Semaglutide Once Weekly as Add-on Therapy to Metformin in Participants With Type 2 Diabetes
+NCT ID: NCT03987919
+Acronym: SURPASS-2
+Status: COMPLETED
+Phase: PHASE3
+Study Type: INTERVENTIONAL
+Enrollment: 1879
+Start Date: 2019-07-30
+Completion Date: 2021-02-15
+Lead Sponsor: Eli Lilly and Company
+Conditions: Type 2 Diabetes
+Keywords: T2DM; GLP-1 RA; Glucose-dependent insulinotropic polypeptide (GIP); glucagon-like peptide-1 (GLP-1); GIP/GLP-1 dual receptor agonist
+
+=== BRIEF SUMMARY ===
+The reason for this study is to compare the effect of the study drug tirzepatide to semaglutide on blood sugar levels in participants with type 2 diabetes. The study will last approximately 47 weeks and may include about 12 visits.
+
+=== STUDY ARMS / COHORTS ===
+- 5 mg Tirzepatide (EXPERIMENTAL)
+    5 milligrams (mg) tirzepatide administered subcutaneously (SC) once a week.
+    Interventions: Drug: Tirzepatide
+- 10 mg Tirzepatide (EXPERIMENTAL)
+    10 mg tirzepatide administered SC once a week.
+    Interventions: Drug: Tirzepatide
+- 15 mg Tirzepatide (EXPERIMENTAL)
+    15 mg tirzepatide administered SC once a week.
+    Interventions: Drug: Tirzepatide
+- 1 mg Semaglutide (ACTIVE_COMPARATOR)
+    1 mg semaglutide administered SC once a week.
+    Interventions: Drug: Semaglutide
+
+=== INTERVENTIONS ===
+- Tirzepatide [DRUG]
+    Administered SC
+    Also known as: LY3298176
+- Semaglutide [DRUG]
+    Administered SC
+
+=== PRIMARY OUTCOMES ===
+- Change From Baseline in Hemoglobin A1c (HbA1c) (10 mg and 15 mg)
+    HbA1c is the glycosylated fraction of hemoglobin A. HbA1c is measured primarily to identify average plasma glucose concentration over prolonged periods of time. Least Squares (LS) mean was determined by mixed-model repeated measures (MMRM) model with Baseline + Pooled Country + Treatment + Time + Treatment\*Time (Type III sum of squares).
+    Time Frame: Baseline, Week 40
+
+=== SECONDARY OUTCOMES ===
+- Change From Baseline in HbA1c (5 mg) (Time Frame: Baseline, Week 40)
+- Change From Baseline in Body Weight (Time Frame: Baseline, Week 40)
+- Percentage of Participants Achieving an HbA1c Target Value of <7% (Time Frame: Week 40)
+- Change From Baseline in Fasting Serum Glucose (FSG) (Time Frame: Baseline, Week 40)
+- Mean Change From Baseline in Daily Average 7-Point Self-Monitored Blood Glucose (SMBG) Values (Time Frame: Baseline, Week 40)
+- Percentage of Participants Who Achieved Weight Loss ≥5% (Time Frame: Week 40)
+- Diabetes Treatment Satisfaction as Measured by the Diabetes Treatment Satisfaction Questionnaire, Change Version (DTSQc) Hyperglycemia, Hypoglycemia and Total Score (Time Frame: Baseline, Week 40)
+- Rate of Hypoglycemia With Blood Glucose <54 Milligram/Deciliter (mg/dL) [<3.0 Millimole/Liter (mmol/L)] or Severe Hypoglycemia (Time Frame: Baseline through Safety Follow-Up (Up to Week 44))
+- Percentage of Participants Achieving an HbA1c Target Value of <5.7% (Time Frame: Week 40)
+
+=== ELIGIBILITY CRITERIA ===
+Inclusion Criteria:
+
+* Have been diagnosed with type 2 diabetes mellitus (T2DM)
+* Have HbA1c between ≥7.0% and ≤10.5%
+* Be on stable treatment with unchanged dose of metformin \>1500 mg/day for at least 3 months prior to screening
+* Be of stable weight (±5%) for at least 3 months before screening
+* Have a body mass index (BMI) ≥25 kilograms per meter squared (kg/m²) at screening
+
+Exclusion Criteria:
+
+* Have type 1 diabetes mellitus
+* Have had chronic or acute pancreatitis any time prior to study entry
+* Have proliferative diabetic retinopathy or diabetic maculopathy or nonproliferative diabetic retinopathy requiring acute treatment
+* Have disorders associated with slowed emptying of the stomach, or have had any stomach surgeries for the purpose of weight loss
+* Have acute or chronic hepatitis, signs and symptoms of any other liver disease, or blood alanine transaminase (ALT) enzyme level \>3.0 times the upper limit of normal (ULN) for the reference range, as determined by the central laboratory. Participants with nonalcoholic fatty liver disease (NAFLD) are eligible for participation in this trial only if there ALT level is ≤3.0 the ULN for the reference range
+* Have an estimated glomerular filtration rate \<45 milliliters/minute/1.73 m² (or lower than the country specific threshold for using the protocol required dose of metformin per local label)
+* Have had a heart attack, stroke, or hospitalization for congestive heart failure in the past 2 months
+* Have a personal or family history of medullary thyroid carcinoma or personal history of multiple endocrine neoplasia syndrome type 2
+* Have been taking any other diabetes medicines other than metformin during the last 3 months
+* Have been taking weight loss drugs, including over-the-counter medications during the last 3 months
+
+Population: Sex: ALL; Min Age: 18 Years; Healthy Volunteers: False

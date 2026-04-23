@@ -14,7 +14,8 @@ from unittest import mock
 
 import pytest
 
-from conftest import HAS_BIOPYTHON, HAS_RDKIT, HAS_SIFTKG, PROJECT_ROOT
+from conftest import FIXTURES_DIR, HAS_BIOPYTHON, HAS_RDKIT, HAS_SIFTKG, PROJECT_ROOT
+from unittest.mock import patch, MagicMock  # noqa: E402 — CTDM tests require patch/MagicMock
 
 # ---------------------------------------------------------------------------
 # Always-available imports from the project itself
@@ -2416,3 +2417,175 @@ def test_ut057_narrator_non_blocking_on_missing_credentials(tmp_path, monkeypatc
     assert not (tmp_path / "epistemic_narrative.md").exists()
     # Returned claims layer is well-formed
     assert "summary" in result
+# ========================================================================
+# Phase 21: ClinicalTrials + PubChem Domain (CTDM-01..CTDM-06)
+# Wave 0 stub tests — expected RED until Plans 21-01 and 21-02 land.
+# ========================================================================
+
+CLINICALTRIALS_DIR = PROJECT_ROOT / "domains" / "clinicaltrials"
+CT_FIXTURES = FIXTURES_DIR / "clinicaltrials"
+
+
+@pytest.mark.unit
+@pytest.mark.skipif(not HAS_SIFTKG, reason="sift-kg not installed")
+def test_ctdm01_clinicaltrials_domain_yaml():
+    """CTDM-01: domain.yaml declares 12 entity types and 10 relation types."""
+    from sift_kg import load_domain
+    yaml_path = CLINICALTRIALS_DIR / "domain.yaml"
+    assert yaml_path.exists(), f"Missing {yaml_path}"
+    domain = load_domain(domain_path=yaml_path)
+    assert len(domain.entity_types) == 12, f"Expected 12 entity types, got {len(domain.entity_types)}"
+    assert len(domain.relation_types) == 10, f"Expected 10 relation types, got {len(domain.relation_types)}"
+
+
+@pytest.mark.unit
+def test_ctdm01_clinicaltrials_in_list_domains():
+    """CTDM-01: domain is discovered by domain_resolver."""
+    from core.domain_resolver import list_domains
+    assert "clinicaltrials" in list_domains()
+
+
+@pytest.mark.unit
+def test_ctdm01_clinicaltrials_alias_resolves():
+    """CTDM-01: 'clinicaltrial' (singular) alias resolves to clinicaltrials directory."""
+    from core.domain_resolver import resolve_domain
+    info = resolve_domain("clinicaltrial")
+    assert info["name"] == "clinicaltrial"
+    assert "clinicaltrials" in info["dir"]
+
+
+@pytest.mark.unit
+def test_ctdm02_clinicaltrials_skill_md():
+    """CTDM-02: SKILL.md contains NCT ID directive and Phase classification guidance."""
+    skill_path = CLINICALTRIALS_DIR / "SKILL.md"
+    assert skill_path.exists(), f"Missing {skill_path}"
+    text = skill_path.read_text()
+    assert "NCT" in text, "SKILL.md must mention NCT ID capture"
+    assert "Phase" in text, "SKILL.md must mention trial phase classification"
+
+
+@pytest.mark.unit
+def test_ctdm03_clinicaltrials_epistemic_module():
+    """CTDM-03: dispatcher finds analyze_clinicaltrials_epistemic (exact name per Pitfall 1)."""
+    from core.label_epistemic import _load_domain_epistemic
+    mod = _load_domain_epistemic("clinicaltrials")
+    assert mod is not None, "Failed to load clinicaltrials epistemic module"
+    assert hasattr(mod, "analyze_clinicaltrials_epistemic"), (
+        "Missing analyze_clinicaltrials_epistemic — dispatcher derives this from domain slug"
+    )
+
+
+@pytest.mark.unit
+def test_ctdm03_clinicaltrials_epistemic_callable(tmp_path):
+    """CTDM-03: analyze_clinicaltrials_epistemic returns the claims layer schema."""
+    from core.label_epistemic import _load_domain_epistemic
+    mod = _load_domain_epistemic("clinicaltrials")
+    result = mod.analyze_clinicaltrials_epistemic(tmp_path, {"nodes": [], "links": []})
+    assert isinstance(result, dict)
+    for key in ("metadata", "summary", "base_domain", "super_domain"):
+        assert key in result, f"claims layer missing '{key}'"
+
+
+@pytest.mark.unit
+def test_ctdm04_ctgov_enrich_mock():
+    """CTDM-04: _fetch_ct_gov returns trial metadata from CT.gov v2 response."""
+    sys.path.insert(0, str(CLINICALTRIALS_DIR))
+    import importlib
+    enrich = importlib.import_module("enrich")
+    mock_body = json.loads((CT_FIXTURES / "mock_ctgov_NCT04303780.json").read_text())
+    with patch.object(enrich.requests, "get") as m:
+        resp = MagicMock()
+        resp.status_code = 200
+        resp.json.return_value = mock_body
+        m.return_value = resp
+        result = enrich._fetch_ct_gov("NCT04303780")
+    assert result is not None
+    assert result["ct_overall_status"] == "ACTIVE_NOT_RECRUITING"
+    assert result["ct_enrollment"] == 345
+    assert result["ct_phase"] == "PHASE3"
+
+
+@pytest.mark.unit
+def test_ctdm04_ctgov_404_returns_none():
+    """CTDM-04: 404 response yields None, not exception."""
+    sys.path.insert(0, str(CLINICALTRIALS_DIR))
+    import importlib
+    enrich = importlib.import_module("enrich")
+    with patch.object(enrich.requests, "get") as m:
+        resp = MagicMock()
+        resp.status_code = 404
+        m.return_value = resp
+        assert enrich._fetch_ct_gov("NCT99999999") is None
+
+
+@pytest.mark.unit
+def test_ctdm05_pubchem_enrich_mock():
+    """CTDM-05: _fetch_pubchem reads ConnectivitySMILES (Pitfall 2)."""
+    sys.path.insert(0, str(CLINICALTRIALS_DIR))
+    import importlib
+    enrich = importlib.import_module("enrich")
+    mock_body = json.loads((CT_FIXTURES / "mock_pubchem_remdesivir.json").read_text())
+    with patch.object(enrich.requests, "get") as m:
+        resp = MagicMock()
+        resp.status_code = 200
+        resp.json.return_value = mock_body
+        m.return_value = resp
+        result = enrich._fetch_pubchem("remdesivir")
+    assert result is not None
+    assert result["pubchem_cid"] == 121304016
+    assert result["molecular_formula"] == "C27H35N6O8P"
+    assert result["canonical_smiles"] and result["canonical_smiles"].startswith("CCC"), (
+        "canonical_smiles must be populated from ConnectivitySMILES response key"
+    )
+
+
+@pytest.mark.unit
+def test_ctdm05_pubchem_404_returns_none():
+    """CTDM-05: PubChem 404 yields None without raising."""
+    sys.path.insert(0, str(CLINICALTRIALS_DIR))
+    import importlib
+    enrich = importlib.import_module("enrich")
+    with patch.object(enrich.requests, "get") as m:
+        resp = MagicMock()
+        resp.status_code = 404
+        m.return_value = resp
+        assert enrich._fetch_pubchem("unobtanium-xyz") is None
+
+
+@pytest.mark.unit
+def test_ctdm06_enrich_report_written(tmp_path):
+    """CTDM-06: enrich_graph writes _enrichment_report.json in the output dir."""
+    sys.path.insert(0, str(CLINICALTRIALS_DIR))
+    import importlib
+    enrich = importlib.import_module("enrich")
+    # Minimal fake graph — one Trial node, one Compound node
+    graph_data = {
+        "nodes": [
+            {"id": "trial:nct04303780", "name": "NCT04303780", "entity_type": "Trial"},
+            {"id": "compound:remdesivir", "name": "remdesivir", "entity_type": "Compound"},
+        ],
+        "links": [],
+    }
+    (tmp_path / "graph_data.json").write_text(json.dumps(graph_data))
+    with patch.object(enrich.requests, "get") as m:
+        m.return_value = MagicMock(status_code=404)
+        enrich.enrich_graph(tmp_path)
+    report_path = tmp_path / "extractions" / "_enrichment_report.json"
+    assert report_path.exists(), f"report not written at {report_path}"
+    report = json.loads(report_path.read_text())
+    assert "trials" in report and "compounds" in report
+    assert report["domain"] == "clinicaltrials"
+
+
+@pytest.mark.unit
+def test_ctdm06_enrich_non_blocking():
+    """CTDM-06: ConnectionError during enrichment does NOT raise — logged as failure count."""
+    sys.path.insert(0, str(CLINICALTRIALS_DIR))
+    import importlib
+    import requests as _requests
+    enrich = importlib.import_module("enrich")
+    with patch.object(enrich.requests, "get") as m:
+        m.side_effect = _requests.exceptions.ConnectionError("network down")
+        # Must return None, not raise
+        assert enrich._fetch_ct_gov("NCT04303780") is None
+        assert enrich._fetch_pubchem("remdesivir") is None

@@ -1,0 +1,52 @@
+{
+  "total": 10,
+  "passed": 10,
+  "recovered": 0,
+  "unrecoverable": 0,
+  "pass_rate": 1.0,
+  "fail_threshold": 0.95,
+  "above_threshold": true,
+  "generated_at": "2026-04-23T12:34:47.826011+00:00",
+  "actions": [
+    {
+      "file": "nct01720446_sustain_6.json",
+      "action": "passed"
+    },
+    {
+      "file": "nct02692716_pioneer_6.json",
+      "action": "passed"
+    },
+    {
+      "file": "nct02906930_pioneer_1.json",
+      "action": "passed"
+    },
+    {
+      "file": "nct03548935_step_1.json",
+      "action": "passed"
+    },
+    {
+      "file": "nct03552757_step_2.json",
+      "action": "passed"
+    },
+    {
+      "file": "nct03611582_step_3.json",
+      "action": "passed"
+    },
+    {
+      "file": "nct03987919_surpass_2.json",
+      "action": "passed"
+    },
+    {
+      "file": "nct04184622_surmount_1.json",
+      "action": "passed"
+    },
+    {
+      "file": "nct05715307_achieve_1.json",
+      "action": "passed"
+    },
+    {
+      "file": "nct05822830_surmount_5.json",
+      "action": "passed"
+    }
+  ]
+}

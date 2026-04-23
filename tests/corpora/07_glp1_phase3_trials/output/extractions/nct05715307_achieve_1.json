@@ -1,0 +1,387 @@
+{
+  "document_id": "nct05715307_achieve_1",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "NCT05715307",
+      "entity_type": "Trial",
+      "confidence": 0.99,
+      "context": "Chinese Endocrinologists Health Education Study (CREATION), NCT05715307, prospective multicenter cluster randomized control study",
+      "attributes": {
+        "trial_acronym": "CREATION",
+        "descriptive_title": "Chinese Endocrinologists Health Education Study",
+        "study_type": "Interventional",
+        "status": "Active, not recruiting",
+        "enrollment": 2017,
+        "start_date": "2023-02-09",
+        "completion_date": "2025-10-31"
+      }
+    },
+    {
+      "name": "Observational",
+      "entity_type": "TrialPhase",
+      "confidence": 0.75,
+      "context": "Phase listed as NA for this interventional behavioral/educational study",
+      "attributes": {
+        "design": "Cluster randomized controlled trial",
+        "blinding": "Open-label",
+        "note": "Phase designated NA; mapped to Observational as closest normalized value"
+      }
+    },
+    {
+      "name": "Type 2 Diabetes Mellitus",
+      "entity_type": "Condition",
+      "confidence": 0.99,
+      "context": "Study evaluates T2DM treatment ability in Chinese endocrinologists and patient HbA1c control in T2DM patients",
+      "attributes": {
+        "mesh_term": "Diabetes Mellitus, Type 2",
+        "abbreviation": "T2DM"
+      }
+    },
+    {
+      "name": "Shanghai Jiao Tong University School of Medicine",
+      "entity_type": "Sponsor",
+      "confidence": 0.99,
+      "context": "Lead Sponsor: Shanghai Jiao Tong University School of Medicine",
+      "attributes": {
+        "role": "Lead Sponsor",
+        "country": "China"
+      }
+    },
+    {
+      "name": "Intensive training for endocrinologists in T2DM management",
+      "entity_type": "Intervention",
+      "confidence": 0.97,
+      "context": "One-week intensive experiential training for endocrinologists including hospitalization experience at Ruijin Hospital, health examinations, results interpretation, and integrated training courses for T2DM management",
+      "attributes": {
+        "intervention_type": "Other",
+        "duration": "1 week",
+        "location": "Ruijin Hospital",
+        "components": "Hospitalization experience, health examinations, results interpretation, integrated courses"
+      }
+    },
+    {
+      "name": "Regular training for endocrinologists in T2DM management",
+      "entity_type": "Intervention",
+      "confidence": 0.97,
+      "context": "Regular training and communication implemented by Ruijin Hospital under the guidance of T2DM management",
+      "attributes": {
+        "intervention_type": "Other",
+        "comparator_type": "Active comparator"
+      }
+    },
+    {
+      "name": "Intensive training group",
+      "entity_type": "Cohort",
+      "confidence": 0.96,
+      "context": "Intensive training group (EXPERIMENTAL): endocrinologists receive 1-week intensive training in T2DM health care at Ruijin Hospital; approximately 1000 patients managed",
+      "attributes": {
+        "arm_label": "Intensive training group",
+        "arm_type": "Experimental",
+        "population_size": 1000,
+        "endocrinologist_count": 100
+      }
+    },
+    {
+      "name": "Control group",
+      "entity_type": "Cohort",
+      "confidence": 0.96,
+      "context": "Control group (ACTIVE_COMPARATOR): endocrinologists receive regular training from MMC; approximately 1000 patients managed",
+      "attributes": {
+        "arm_label": "Control group",
+        "arm_type": "Active comparator",
+        "population_size": 1000,
+        "endocrinologist_count": 100
+      }
+    },
+    {
+      "name": "T2DM patients aged 40-65 with poorly controlled blood glucose at MMC",
+      "entity_type": "Population",
+      "confidence": 0.92,
+      "context": "Adults aged 40-65 with T2DM, BMI 24-35, HbA1c 7.5-10%, fasting glucose 8.0-13.3 mmol/L, first visit to MMC, diabetes duration <10 years, on 1-2 non-insulin hypoglycemic drugs",
+      "attributes": {
+        "age_group": "Adult",
+        "min_age": "40 Years",
+        "max_age": "65 Years",
+        "bmi_range": "24.0-35.0 kg/m2",
+        "hba1c_range": "7.5%-10.0%",
+        "prior_treatment": "1-2 non-insulin hypoglycemic drugs for \u22652 months",
+        "diabetes_duration": "<10 years",
+        "healthy_volunteers": false
+      }
+    },
+    {
+      "name": "HbA1c control rate",
+      "entity_type": "Outcome",
+      "confidence": 0.98,
+      "context": "Primary endpoint: percentage of patients achieving HbA1c <7.0% at 6 months",
+      "attributes": {
+        "endpoint_type": "Primary",
+        "definition": "Percentage of patients achieving HbA1c <7.0%",
+        "time_frame": "6 months"
+      }
+    },
+    {
+      "name": "glycated haemoglobin (HbA1c)",
+      "entity_type": "Outcome",
+      "confidence": 0.97,
+      "context": "Secondary outcome: HbA1c levels at 6 and 12 months",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "6 and 12 months"
+      }
+    },
+    {
+      "name": "systolic and diastolic blood pressure",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary outcome: systolic and diastolic blood pressure at 6 and 12 months",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "6 and 12 months"
+      }
+    },
+    {
+      "name": "body weight",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary outcome: body weight at 6 and 12 months",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "6 and 12 months"
+      }
+    },
+    {
+      "name": "waist circumference",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary outcome: waist circumference at 6 and 12 months",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "6 and 12 months"
+      }
+    },
+    {
+      "name": "fasting blood glucose",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary outcome: fasting blood glucose levels at 6 and 12 months",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "6 and 12 months"
+      }
+    },
+    {
+      "name": "2-hour post-prandial blood glucose",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary outcome: 2-hour post-prandial blood glucose levels at 6 and 12 months",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "6 and 12 months"
+      }
+    },
+    {
+      "name": "fasting serum insulin",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary outcome: fasting serum insulin levels at 6 and 12 months",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "6 and 12 months"
+      }
+    },
+    {
+      "name": "2-hour post-prandial serum insulin",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary outcome: 2-hour post-prandial serum insulin levels at 6 and 12 months",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "6 and 12 months"
+      }
+    },
+    {
+      "name": "serum triglycerides",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary outcome: serum triglycerides at 6 and 12 months",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "6 and 12 months"
+      }
+    },
+    {
+      "name": "HbA1c",
+      "entity_type": "Biomarker",
+      "confidence": 0.97,
+      "context": "Screening HbA1c \u22657.5% and \u226410.0% required for inclusion; primary endpoint is HbA1c control rate <7.0%",
+      "attributes": {
+        "biomarker_type": "Metabolic",
+        "full_name": "Glycated haemoglobin",
+        "use": "Patient selection (inclusion criterion) and primary efficacy endpoint",
+        "inclusion_threshold": "7.5%-10.0%",
+        "target_threshold": "<7.0%"
+      }
+    },
+    {
+      "name": "Ruijin Hospital",
+      "entity_type": "Site",
+      "confidence": 0.95,
+      "context": "Intensive training conducted at Ruijin Hospital (MMC leading center); regular training also guided by Ruijin Hospital",
+      "attributes": {
+        "role": "MMC leading center",
+        "country": "China"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "source_entity": "NCT05715307",
+      "target_entity": "Shanghai Jiao Tong University School of Medicine",
+      "relation_type": "sponsored_by",
+      "confidence": 0.99,
+      "evidence": "Lead Sponsor: Shanghai Jiao Tong University School of Medicine"
+    },
+    {
+      "source_entity": "NCT05715307",
+      "target_entity": "Observational",
+      "relation_type": "is_phase",
+      "confidence": 0.7,
+      "evidence": "Phase listed as NA for this interventional educational/behavioral study; no standard drug phase applies"
+    },
+    {
+      "source_entity": "NCT05715307",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "relation_type": "investigates",
+      "confidence": 0.99,
+      "evidence": "Study evaluates improvement in T2DM treatment ability and patient outcomes in T2DM"
+    },
+    {
+      "source_entity": "NCT05715307",
+      "target_entity": "Intensive training for endocrinologists in T2DM management",
+      "relation_type": "tests",
+      "confidence": 0.97,
+      "evidence": "Experimental arm tests 1-week intensive experiential training for endocrinologists in T2DM management"
+    },
+    {
+      "source_entity": "NCT05715307",
+      "target_entity": "Regular training for endocrinologists in T2DM management",
+      "relation_type": "tests",
+      "confidence": 0.97,
+      "evidence": "Control arm tests regular MMC training for endocrinologists in T2DM management"
+    },
+    {
+      "source_entity": "NCT05715307",
+      "target_entity": "HbA1c control rate",
+      "relation_type": "has_outcome",
+      "confidence": 0.98,
+      "evidence": "Primary endpoint: percentage of patients achieving HbA1c <7.0% at 6 months"
+    },
+    {
+      "source_entity": "NCT05715307",
+      "target_entity": "glycated haemoglobin (HbA1c)",
+      "relation_type": "has_outcome",
+      "confidence": 0.97,
+      "evidence": "Secondary outcome: HbA1c levels at 6 and 12 months"
+    },
+    {
+      "source_entity": "NCT05715307",
+      "target_entity": "systolic and diastolic blood pressure",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary outcome: systolic and diastolic blood pressure at 6 and 12 months"
+    },
+    {
+      "source_entity": "NCT05715307",
+      "target_entity": "body weight",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary outcome: body weight at 6 and 12 months"
+    },
+    {
+      "source_entity": "NCT05715307",
+      "target_entity": "waist circumference",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary outcome: waist circumference at 6 and 12 months"
+    },
+    {
+      "source_entity": "NCT05715307",
+      "target_entity": "fasting blood glucose",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary outcome: fasting blood glucose levels at 6 and 12 months"
+    },
+    {
+      "source_entity": "NCT05715307",
+      "target_entity": "2-hour post-prandial blood glucose",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary outcome: 2-hour post-prandial blood glucose levels at 6 and 12 months"
+    },
+    {
+      "source_entity": "NCT05715307",
+      "target_entity": "fasting serum insulin",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary outcome: fasting serum insulin levels at 6 and 12 months"
+    },
+    {
+      "source_entity": "NCT05715307",
+      "target_entity": "2-hour post-prandial serum insulin",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary outcome: 2-hour post-prandial serum insulin levels at 6 and 12 months"
+    },
+    {
+      "source_entity": "NCT05715307",
+      "target_entity": "serum triglycerides",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary outcome: serum triglycerides at 6 and 12 months"
+    },
+    {
+      "source_entity": "NCT05715307",
+      "target_entity": "HbA1c",
+      "relation_type": "uses_biomarker",
+      "confidence": 0.97,
+      "evidence": "Screening HbA1c \u22657.5% and \u226410.0% required for patient inclusion; primary endpoint is HbA1c control rate <7.0%"
+    },
+    {
+      "source_entity": "NCT05715307",
+      "target_entity": "T2DM patients aged 40-65 with poorly controlled blood glucose at MMC",
+      "relation_type": "enrolls",
+      "confidence": 0.95,
+      "evidence": "Enrolled adults aged 40-65 with T2DM, HbA1c 7.5-10%, first visit to MMC, on 1-2 non-insulin hypoglycemic drugs"
+    },
+    {
+      "source_entity": "NCT05715307",
+      "target_entity": "Intensive training group",
+      "relation_type": "enrolls",
+      "confidence": 0.96,
+      "evidence": "Intensive training group: approximately 100 endocrinologists and 1000 T2DM patients"
+    },
+    {
+      "source_entity": "NCT05715307",
+      "target_entity": "Control group",
+      "relation_type": "enrolls",
+      "confidence": 0.96,
+      "evidence": "Control group: approximately 100 endocrinologists and 1000 T2DM patients"
+    },
+    {
+      "source_entity": "Intensive training for endocrinologists in T2DM management",
+      "target_entity": "Regular training for endocrinologists in T2DM management",
+      "relation_type": "co_intervention",
+      "confidence": 0.55,
+      "evidence": "Both interventions are administered in parallel arms of the same trial; not co-administered but compared as alternative training modalities"
+    }
+  ],
+  "cost_usd": 0.086688,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Clinical Trials",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-23T12:33:29.806708+00:00",
+  "error": null
+}

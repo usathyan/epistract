@@ -1,0 +1,63 @@
+Title: A Trial Investigating the Cardiovascular Safety of Oral Semaglutide in Subjects With Type 2 Diabetes
+NCT ID: NCT02692716
+Acronym: PIONEER 6
+Status: COMPLETED
+Phase: PHASE3
+Study Type: INTERVENTIONAL
+Enrollment: 3183
+Start Date: 2017-01-17
+Completion Date: 2018-09-25
+Lead Sponsor: Novo Nordisk A/S
+Conditions: Diabetes; Diabetes Mellitus, Type 2
+
+=== BRIEF SUMMARY ===
+This trial is conducted globally. The aim of the trial is to investigate the cardiovascular safety of oral semaglutide in subjects with type 2 diabetes.
+
+=== STUDY ARMS / COHORTS ===
+- Oral semaglutide (EXPERIMENTAL)
+    Interventions: Drug: semaglutide
+- Placebo (PLACEBO_COMPARATOR)
+    Interventions: Drug: placebo
+
+=== INTERVENTIONS ===
+- semaglutide [DRUG]
+    For oral use once daily.
+- placebo [DRUG]
+    For oral use once daily.
+
+=== PRIMARY OUTCOMES ===
+- Time From Randomisation to First Occurrence of a Major Adverse Cardiovascular Event (MACE) Composite Endpoint Consisting of: Cardiovascular Death, Non-fatal Myocardial Infarction or Non-fatal Stroke
+    Number of participants experiencing a first event of a MACE, defined as cardiovascular death, non-fatal myocardial infarction, or non-fatal stroke are presented. Results are based on the in-trial observation period which started at the date of randomisation, included the period after permanent trial product discontinuation, if any and ended at the date of the follow-up visit regardless of adherence to treatment.
+    Time Frame: Maximum treatment duration is dependent on event rates and is estimated to be no longer than 19 months + 5 weeks of follow-up period.
+
+=== SECONDARY OUTCOMES ===
+- Time From Randomisation to First Occurrence of an Expanded Composite Cardiovascular Endpoint Consisting of: Cardiovascular Death, Non-fatal Myocardial Infarction, Non-fatal Stroke, UAP Requiring Hospitalisation or Hospitalisation for Heart Failure (Time Frame: Maximum treatment duration is dependent on event rates and is estimated to be no longer than 19 months + 5 weeks of follow-up period.)
+- Time From Randomisation to First Occurrence of Each of the Individual Components in the Expanded Composite Cardiovascular Endpoint (Time Frame: Maximum treatment duration is dependent on event rates and is estimated to be no longer than 19 months + 5 weeks of follow-up period.)
+- Time From Randomisation to First Occurrence of a Composite Endpoint Consisting of: All-cause Death, Non-fatal Myocardial Infarction or Nonfatal Stroke (Time Frame: Maximum treatment duration is dependent on event rates and is estimated to be no longer than 19 months + 5 weeks of follow-up period.)
+- Time From Randomisation to First Occurrence of Fatal or Non-fatal Myocardial Infarction (Time Frame: Maximum treatment duration is dependent on event rates and is estimated to be no longer than 19 months + 5 weeks of follow-up period.)
+- Time From Randomisation to First Occurrence of Fatal or Non-fatal Stroke (Time Frame: Maximum treatment duration is dependent on event rates and is estimated to be no longer than 19 months + 5 weeks of follow-up period.)
+- Time From Randomisation to All-cause Death (Time Frame: Maximum treatment duration is dependent on event rates and is expected to be no longer than 19 months + 5 weeks of follow-up period.)
+- Time to First AE Leading to Permanent Trial Product Discontinuation (Time Frame: Maximum treatment duration is dependent on event rates and is expected to be no longer than 19 months + 38 days of ascertainment window.)
+- Number of Serious Adverse Events (Time Frame: Maximum treatment duration is dependent on event rates and is expected to be no longer than 19 months + 38 days of ascertainment window.)
+- Change in Eye Examination Category (Time Frame: Week -3, End of treatment)
+- Change in Pulse Rate (Time Frame: Week 0, End of treatment)
+
+=== ELIGIBILITY CRITERIA ===
+Inclusion Criteria:
+
+* Male or female diagnosed with type 2 diabetes
+* Age at least 50 years at screening and presence of cardiovascular disease, or age at least 60 years at screening and presence of at least one cardiovascular risk factor
+
+Exclusion Criteria:
+
+* Current or previous (within 90 days prior to screening) treatment with any GLP-1 (glucagon-like peptide-1) receptor agonist, DPP-4 (dipeptidyl peptidase-4) inhibitor or pramlintide
+* Family or personal history of multiple endocrine neoplasia type 2 (MEN 2) or medullary thyroid carcinoma (MTC)
+* History of pancreatitis (acute or chronic)
+* History of major surgical procedures involving the stomach potentially affecting absorption of trial product (e.g. subtotal and total gastrectomy, sleeve gastrectomy, gastric bypass surgery)
+* Subjects presently classified as being in New York Heart Association (NYHA) Class IV heart failure
+* Planned coronary, carotid or peripheral artery revascularisation known on the day of screening
+* Any of the following: myocardial infarction, stroke or hospitalisation for unstable angina or transient ischaemic attack within the past 60 days prior to screening
+* Chronic or intermittent hemodialysis or peritoneal dialysis or severe renal impairment (corresponding to eGFR (glomerular filtration rate, estimated) below 30 mL/min/1.73 m\^2)
+* History or presence of malignant neoplasms within the last 5 years (except basal and squamous cell skin cancer and carcinoma in situ)
+
+Population: Sex: ALL; Min Age: 50 Years; Healthy Volunteers: False

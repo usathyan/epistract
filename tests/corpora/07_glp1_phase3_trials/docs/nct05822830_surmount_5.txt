@@ -1,0 +1,62 @@
+Title: A Study of Tirzepatide (LY3298176) in Participants With Obesity or Overweight With Weight Related Comorbidities
+NCT ID: NCT05822830
+Acronym: SURMOUNT-5
+Status: COMPLETED
+Phase: PHASE3
+Study Type: INTERVENTIONAL
+Enrollment: 751
+Start Date: 2023-04-21
+Completion Date: 2024-11-13
+Lead Sponsor: Eli Lilly and Company
+Conditions: Obesity; Overweight
+Keywords: Metabolism and Nutrition; Disorder; Prediabetes; Diet; Exercise
+
+=== BRIEF SUMMARY ===
+The main purpose of this phase 3b study is to evaluate the efficacy and safety of tirzepatide compared with semaglutide in adult participants who have obesity or overweight with weight related comorbidities without Type 2 Diabetes. The study will last around 74 weeks.
+
+=== STUDY ARMS / COHORTS ===
+- 15 mg or MTD - Tirzepatide (EXPERIMENTAL)
+    Participants received a starting dose of 2.5 milligrams (mg) tirzepatide administered subcutaneously (SC) once weekly (QW) for 4 weeks, then the dose was increased by 2.5 mg every 4 weeks (2.5 to 5 to 7.5 to 10 to 12.5 to 15 mg) up to 15 mg QW or maximum tolerated dose \[MTD (10 mg or 15 mg)\] until Week 72.
+    Interventions: Drug: Tirzepatide
+- 2.4 mg or MTD - Semaglutide (ACTIVE_COMPARATOR)
+    Participants received a starting dose of 0.25 mg semaglutide administered SC QW for 4 weeks, then the dose was increased every 4 weeks (0.25 to 0.5 to 1.0 to 1.7 to 2.4 mg) up to 2.4 mg QW or MTD (1.7 mg or 2.4 mg) until Week 72.
+    Interventions: Drug: Semaglutide
+
+=== INTERVENTIONS ===
+- Tirzepatide [DRUG]
+    Administered SC
+    Also known as: LY3298176
+- Semaglutide [DRUG]
+    Administered SC
+
+=== PRIMARY OUTCOMES ===
+- Percent Change From Baseline in Body Weight
+    Percent change from baseline in body weight was reported. Least Squares (LS) mean was determined using ANCOVA model with Baseline + Baseline BMI Group 1 + Sex + Pre diabetes status at randomization + Treatment (Type III sum of squares) as variables.
+    Time Frame: Baseline, Week 72
+
+=== SECONDARY OUTCOMES ===
+- Percentage of Participants Who Achieve ≥10% Body Weight Reduction (Time Frame: Week 72)
+- Percentage of Participants Who Achieve ≥15% Body Weight Reduction (Time Frame: Week 72)
+- Percentage of Participants Who Achieve ≥20% Body Weight Reduction (Time Frame: Week 72)
+- Percentage of Participants Who Achieve ≥25% Body Weight Reduction (Time Frame: Week 72)
+- Change From Baseline in Waist Circumference in Centimeter (Time Frame: Baseline, Week 72)
+- Percentage of Participants Who Achieve ≥30% Body Weight Reduction (Time Frame: Week 72)
+- Change From Baseline in Body Mass Index (BMI) (Time Frame: Baseline, Week 72)
+- Percent Change From Baseline in Body Weight Comparing 15 mg Tirzepatide and 2.4 mg Semaglutide (Time Frame: Baseline, Week 72)
+
+=== ELIGIBILITY CRITERIA ===
+Inclusion Criteria:
+
+* Have a body mass index (BMI) of ≥30 kilogram per square meter (kg/m²) or ≥27 kg/m² and previously diagnosed with at least one of the following weight related comorbidities: hypertension, dyslipidemia, obstructive sleep apnea, cardiovascular disease
+* Have a history of at least 1 unsuccessful dietary effort to lose body weight
+
+Exclusion Criteria:
+
+* Diabetes mellitus
+* Change in body weight greater than 5 kg within 3 months prior to starting study
+* Obesity induced by other endocrinologic disorders or monogenetic or syndromic forms of obesity
+* History of pancreatitis
+* Family or personal history of medullary thyroid carcinoma (MTC) or multiple endocrine neoplasia syndrome type 2 (MEN-2)
+* History of significant active or unstable major depressive disorder (MDD) or other severe psychiatric disorder within the last 2 years
+
+Population: Sex: ALL; Min Age: 18 Years; Healthy Volunteers: False

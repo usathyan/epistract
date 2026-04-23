@@ -1,0 +1,52 @@
+Title: Efficacy and Safety of Oral Semaglutide Versus Placebo in Subjects With Type 2 Diabetes Mellitus Treated With Diet and Exercise Only
+NCT ID: NCT02906930
+Acronym: PIONEER 1
+Status: COMPLETED
+Phase: PHASE3
+Study Type: INTERVENTIONAL
+Enrollment: 703
+Start Date: 2016-09-20
+Completion Date: 2017-12-08
+Lead Sponsor: Novo Nordisk A/S
+Conditions: Diabetes; Diabetes Mellitus, Type 2
+
+=== BRIEF SUMMARY ===
+This trial is conducted globally. The aim of this trial is to investigate efficacy and safety of oral semaglutide versus placebo in subjects with type 2 diabetes mellitus treated with diet and exercise only.
+
+=== STUDY ARMS / COHORTS ===
+- 3 mg oral semaglutide (EXPERIMENTAL)
+    Interventions: Drug: semaglutide
+- 7 mg oral semaglutide (EXPERIMENTAL)
+    Interventions: Drug: semaglutide
+- 14 mg oral semaglutide (EXPERIMENTAL)
+    Interventions: Drug: semaglutide
+- Placebo (PLACEBO_COMPARATOR)
+    Interventions: Drug: placebo
+
+=== INTERVENTIONS ===
+- semaglutide [DRUG]
+    Oral administration once daily.
+- placebo [DRUG]
+    Oral administration once daily.
+
+=== PRIMARY OUTCOMES ===
+- Change in HbA1c
+    Change from baseline (week 0) to week 26 in glycosylated haemoglobin (HbA1c). The endpoint was evaluated based on data from the in-trial observation period. The in-trial observation period - time period from when a subject was randomised until the final scheduled visit, including any period after initiation of rescue medication or premature discontinuation of trial product. The primary endpoint was also analysed based on data from the on-treatment without rescue medication observation period. The on-treatment without rescue medication observation period - time period when a subject was on treatment with trial product, excluding any period after initiation of rescue medication.
+    Time Frame: Week 0, week 26
+
+=== SECONDARY OUTCOMES ===
+- Change in Body Weight (kg) (Time Frame: Week 0, week 26)
+- Change in Fasting Plasma Glucose (Time Frame: Week 0, week 26)
+- Change in Mean 7-point SMPG Profile (Time Frame: Week 0, week 26)
+- Change in Mean Postprandial Increment Over All Meals in SMPG (Time Frame: Week 0, week 26)
+- Change in Fasting Insulin - Ratio to Baseline (Time Frame: Week 0, week 26)
+- Change in Fasting Pro-insulin - Ratio to Baseline (Time Frame: Week 0, week 26)
+- Change in Fasting Glucagon - Ratio to Baseline (Time Frame: Week 0, week 26)
+- Change in HOMA-IR (Insulin Resistance) - Ratio to Baseline (Time Frame: Week 0, week 26)
+- Change in HOMA-B (Beta-cell Function) - Ratio to Baseline (Time Frame: Week 0, week 26)
+- Change in CRP - Ratio to Baseline (Time Frame: Week 0, week 26)
+
+=== ELIGIBILITY CRITERIA ===
+Inclusion Criteria: - Informed consent obtained before any trial-related activities. Trial-related activities are any procedures that are carried out as part of the trial, including activities to determine suitability for the trial - Male or female, age above or equal to 18 years at the time of signing informed consent.For Japan only: Male or female, age above or equal to 20 years at the time of signing informed consent. For Algeria only: Male or female, age above or equal to 19 years at the time of signing informed consent - Diagnosed with type 2 diabetes mellitus for at least 30 days prior to day of screening - HbA1c (glycosylated haemoglobin) between 7.0-9.5% (53-80 mmol/mol) (both inclusive) - Treatment with diet and exercise for at least 30 days prior to day of screening Exclusion Criteria: - Female who is pregnant, breast-feeding or intends to become pregnant or is of child-bearing potential and not using an adequate contraceptive method (adequate contraceptive measure as required by local regulation or practice) For Japan only: Adequate contraceptive measures are abstinence (not having sex), diaphragm, condom (by the partner), intrauterine device, sponge, spermicide or oral contraceptives.For Czech Republic only: Adequate contraceptive measures are always one highly reliable method (such as intrauterine device, sterilisation of one of the partners, hormonal birth control methods) plus one supplementary barrier method (such as condom, diaphragm) with a spermicide. In justified cases, this combination may be replaced with a double-barrier method with a spermicide. Total sexual abstinence may also be considered contraception. (Please note: hormonal contraception should always be discussed with a gynaecologist) - Any disorder, which in the investigator's opinion might jeopardise subject's safety or compliance with the protocol - Family or personal history of multiple endocrine neoplasia type 2 or medullary thyroid carcinomas - History of pancreatitis (acute or chronic) - History of major surgical procedures involving the stomach potentially affecting absorption of trial product (e.g. subtotal and total gastrectomy, sleeve gastrectomy, gastric bypass surgery) - Any of the following: myocardial infarction, stroke or hospitalisation for unstable angina or transient ischaemic attack within the past 180 days prior to the day of screening and randomisation - Subjects presently classified as being in New York Heart Association Class IV. - Planned coronary, carotid or peripheral artery revascularisation known on the day of screening - Subjects with alanine aminotransferase above 2.5 x upper normal limit - Renal impairment defined as estimated glomerular filtration rate below 60 mL/min/1.73 m\^2 as per Chronic Kidney Disease Epidemiology Collaboration formula - Treatment with any medication for the indication of diabetes or obesity in a period of 90 days before the day of screening. An exception is short-term insulin treatment for acute illness for a total of below or equal to 14 days - Proliferative retinopathy or maculopathy requiring acute treatment. Verified by fundus photography or dilated fundoscopy performed within 90 days prior to randomisation - History or presence of malignant neoplasms within the last 5 years (except basal and squamous cell skin cancer and in-situ carcinomas)
+
+Population: Sex: ALL; Min Age: 18 Years; Healthy Volunteers: False

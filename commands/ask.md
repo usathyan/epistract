@@ -9,6 +9,31 @@ Answer a natural language question about the contract knowledge graph using the 
 - First argument: the question (required)
 - `--output-dir` or second positional: path to extraction output directory (default: `./epistract-output`)
 
+## Usage Guard
+
+**If invoked with no arguments or with `--help`:** Display the following usage block verbatim and stop — do not run any pipeline steps.
+
+```
+Usage: /epistract:ask <question> [options]
+
+Required:
+  <question>    Natural language question about the knowledge graph (enclose in quotes)
+
+Options:
+  --output-dir <dir>    Path to extraction output containing graph_data.json  (default: ./epistract-output)
+
+Examples:
+  /epistract:ask "What trials involve remdesivir?"
+  /epistract:ask "Summarize key findings" --output-dir ./my-output
+  /epistract:ask "Which compounds target KRAS G12C?" --output-dir ./drug-output
+```
+
+**Arguments:**
+- First argument: the question (required)
+- `--output-dir` or second positional: path to extraction output directory (default: `./epistract-output`)
+
+## Step 1: Resolve output directory
+
 ## Step 1: Resolve output directory
 
 ```bash

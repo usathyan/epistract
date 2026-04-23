@@ -1,0 +1,302 @@
+{
+  "document_id": "nct02692716_pioneer_6",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "NCT02692716",
+      "entity_type": "Trial",
+      "confidence": 0.99,
+      "context": "PIONEER 6 (NCT02692716): A global Phase 3 interventional trial investigating cardiovascular safety of oral semaglutide in type 2 diabetes",
+      "attributes": {
+        "trial_acronym": "PIONEER 6",
+        "descriptive_title": "A Trial Investigating the Cardiovascular Safety of Oral Semaglutide in Subjects With Type 2 Diabetes",
+        "study_type": "Interventional",
+        "status": "Completed",
+        "enrollment": 3183,
+        "start_date": "2017-01-17",
+        "completion_date": "2018-09-25"
+      }
+    },
+    {
+      "name": "Phase 3",
+      "entity_type": "TrialPhase",
+      "confidence": 0.99,
+      "context": "Phase: PHASE3 as listed in the trial record",
+      "attributes": {
+        "design": "Randomized controlled trial",
+        "blinding": "Placebo-controlled"
+      }
+    },
+    {
+      "name": "Novo Nordisk A/S",
+      "entity_type": "Sponsor",
+      "confidence": 0.99,
+      "context": "Lead Sponsor: Novo Nordisk A/S",
+      "attributes": {
+        "role": "Industry sponsor",
+        "country": "Denmark"
+      }
+    },
+    {
+      "name": "semaglutide",
+      "entity_type": "Compound",
+      "confidence": 0.99,
+      "context": "Semaglutide, a GLP-1 receptor agonist formulated for oral use once daily, evaluated in PIONEER 6",
+      "attributes": {
+        "inn": "semaglutide",
+        "route": "oral",
+        "drug_class": "GLP-1 receptor agonist",
+        "formulation": "oral"
+      }
+    },
+    {
+      "name": "Oral semaglutide (experimental arm)",
+      "entity_type": "Intervention",
+      "confidence": 0.95,
+      "context": "Experimental arm: oral semaglutide administered once daily",
+      "attributes": {
+        "arm_label": "Oral semaglutide",
+        "arm_type": "EXPERIMENTAL",
+        "route": "oral",
+        "schedule": "once daily"
+      }
+    },
+    {
+      "name": "Placebo (oral, once daily)",
+      "entity_type": "Intervention",
+      "confidence": 0.95,
+      "context": "Placebo comparator arm: placebo for oral use once daily",
+      "attributes": {
+        "arm_label": "Placebo",
+        "arm_type": "PLACEBO_COMPARATOR",
+        "route": "oral",
+        "schedule": "once daily"
+      }
+    },
+    {
+      "name": "Arm: Oral semaglutide",
+      "entity_type": "Cohort",
+      "confidence": 0.93,
+      "context": "Experimental arm: oral semaglutide once daily; part of NCT02692716",
+      "attributes": {
+        "arm_label": "Oral semaglutide",
+        "arm_type": "EXPERIMENTAL",
+        "route": "oral",
+        "schedule": "QD"
+      }
+    },
+    {
+      "name": "Arm: Placebo",
+      "entity_type": "Cohort",
+      "confidence": 0.93,
+      "context": "Placebo comparator arm: placebo oral once daily; part of NCT02692716",
+      "attributes": {
+        "arm_label": "Placebo",
+        "arm_type": "PLACEBO_COMPARATOR",
+        "route": "oral",
+        "schedule": "QD"
+      }
+    },
+    {
+      "name": "Diabetes Mellitus, Type 2",
+      "entity_type": "Condition",
+      "confidence": 0.99,
+      "context": "Subjects with type 2 diabetes enrolled in cardiovascular outcomes trial",
+      "attributes": {
+        "mesh_term": "Diabetes Mellitus, Type 2"
+      }
+    },
+    {
+      "name": "major adverse cardiovascular events (MACE)",
+      "entity_type": "Outcome",
+      "confidence": 0.98,
+      "context": "Primary endpoint: time from randomisation to first occurrence of MACE composite (cardiovascular death, non-fatal MI, or non-fatal stroke)",
+      "attributes": {
+        "endpoint_type": "Primary",
+        "components": "Cardiovascular death, non-fatal myocardial infarction, non-fatal stroke",
+        "time_frame": "Maximum ~19 months + 5 weeks follow-up"
+      }
+    },
+    {
+      "name": "expanded composite cardiovascular endpoint",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary endpoint: time to first occurrence of expanded composite CV endpoint (CV death, non-fatal MI, non-fatal stroke, UAP requiring hospitalisation, or hospitalisation for heart failure)",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "components": "CV death, non-fatal MI, non-fatal stroke, UAP requiring hospitalisation, hospitalisation for heart failure"
+      }
+    },
+    {
+      "name": "all-cause death, non-fatal MI, or non-fatal stroke composite",
+      "entity_type": "Outcome",
+      "confidence": 0.93,
+      "context": "Secondary endpoint: time to first occurrence of composite of all-cause death, non-fatal MI, or non-fatal stroke",
+      "attributes": {
+        "endpoint_type": "Secondary"
+      }
+    },
+    {
+      "name": "fatal or non-fatal myocardial infarction",
+      "entity_type": "Outcome",
+      "confidence": 0.93,
+      "context": "Secondary endpoint: time to first occurrence of fatal or non-fatal myocardial infarction",
+      "attributes": {
+        "endpoint_type": "Secondary"
+      }
+    },
+    {
+      "name": "fatal or non-fatal stroke",
+      "entity_type": "Outcome",
+      "confidence": 0.93,
+      "context": "Secondary endpoint: time to first occurrence of fatal or non-fatal stroke",
+      "attributes": {
+        "endpoint_type": "Secondary"
+      }
+    },
+    {
+      "name": "all-cause death",
+      "entity_type": "Outcome",
+      "confidence": 0.93,
+      "context": "Secondary endpoint: time from randomisation to all-cause death",
+      "attributes": {
+        "endpoint_type": "Secondary"
+      }
+    },
+    {
+      "name": "Adults with type 2 diabetes and cardiovascular risk (PIONEER 6 population)",
+      "entity_type": "Population",
+      "confidence": 0.92,
+      "context": "Male or female, age \u226550 with established CV disease or \u226560 with CV risk factor, diagnosed with type 2 diabetes; n=3183",
+      "attributes": {
+        "age_group": "Adult",
+        "min_age": "50 years",
+        "sex": "All",
+        "healthy_volunteers": false,
+        "key_inclusion": "Type 2 diabetes; age \u226550 with CV disease or \u226560 with CV risk factor",
+        "key_exclusion": "Prior GLP-1 RA or DPP-4i use, NYHA Class IV HF, severe renal impairment (eGFR <30)"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "source_entity": "NCT02692716",
+      "target_entity": "Phase 3",
+      "relation_type": "is_phase",
+      "confidence": 0.99,
+      "evidence": "Phase: PHASE3 as listed in the trial registry record"
+    },
+    {
+      "source_entity": "NCT02692716",
+      "target_entity": "Novo Nordisk A/S",
+      "relation_type": "sponsored_by",
+      "confidence": 0.99,
+      "evidence": "Lead Sponsor: Novo Nordisk A/S"
+    },
+    {
+      "source_entity": "NCT02692716",
+      "target_entity": "semaglutide",
+      "relation_type": "tests",
+      "confidence": 0.99,
+      "evidence": "Experimental arm evaluates oral semaglutide once daily in NCT02692716"
+    },
+    {
+      "source_entity": "NCT02692716",
+      "target_entity": "Oral semaglutide (experimental arm)",
+      "relation_type": "tests",
+      "confidence": 0.97,
+      "evidence": "Experimental arm: oral semaglutide administered once daily"
+    },
+    {
+      "source_entity": "NCT02692716",
+      "target_entity": "Placebo (oral, once daily)",
+      "relation_type": "tests",
+      "confidence": 0.95,
+      "evidence": "Placebo comparator arm: placebo for oral use once daily"
+    },
+    {
+      "source_entity": "NCT02692716",
+      "target_entity": "Diabetes Mellitus, Type 2",
+      "relation_type": "investigates",
+      "confidence": 0.99,
+      "evidence": "Trial investigates cardiovascular safety of oral semaglutide in subjects with type 2 diabetes"
+    },
+    {
+      "source_entity": "semaglutide",
+      "target_entity": "Diabetes Mellitus, Type 2",
+      "relation_type": "treats",
+      "confidence": 0.95,
+      "evidence": "Semaglutide evaluated as treatment in subjects with type 2 diabetes"
+    },
+    {
+      "source_entity": "NCT02692716",
+      "target_entity": "major adverse cardiovascular events (MACE)",
+      "relation_type": "has_outcome",
+      "confidence": 0.98,
+      "evidence": "Primary endpoint: time from randomisation to first occurrence of MACE composite"
+    },
+    {
+      "source_entity": "NCT02692716",
+      "target_entity": "expanded composite cardiovascular endpoint",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary endpoint: time to first occurrence of expanded composite CV endpoint"
+    },
+    {
+      "source_entity": "NCT02692716",
+      "target_entity": "all-cause death, non-fatal MI, or non-fatal stroke composite",
+      "relation_type": "has_outcome",
+      "confidence": 0.93,
+      "evidence": "Secondary endpoint: time to first occurrence of composite of all-cause death, non-fatal MI, or non-fatal stroke"
+    },
+    {
+      "source_entity": "NCT02692716",
+      "target_entity": "fatal or non-fatal myocardial infarction",
+      "relation_type": "has_outcome",
+      "confidence": 0.93,
+      "evidence": "Secondary endpoint: time to first occurrence of fatal or non-fatal myocardial infarction"
+    },
+    {
+      "source_entity": "NCT02692716",
+      "target_entity": "fatal or non-fatal stroke",
+      "relation_type": "has_outcome",
+      "confidence": 0.93,
+      "evidence": "Secondary endpoint: time to first occurrence of fatal or non-fatal stroke"
+    },
+    {
+      "source_entity": "NCT02692716",
+      "target_entity": "all-cause death",
+      "relation_type": "has_outcome",
+      "confidence": 0.93,
+      "evidence": "Secondary endpoint: time from randomisation to all-cause death"
+    },
+    {
+      "source_entity": "NCT02692716",
+      "target_entity": "Adults with type 2 diabetes and cardiovascular risk (PIONEER 6 population)",
+      "relation_type": "enrolls",
+      "confidence": 0.95,
+      "evidence": "Enrolled 3183 adults with type 2 diabetes aged \u226550 with CV disease or \u226560 with CV risk factor"
+    },
+    {
+      "source_entity": "NCT02692716",
+      "target_entity": "Arm: Oral semaglutide",
+      "relation_type": "enrolls",
+      "confidence": 0.93,
+      "evidence": "Experimental arm: oral semaglutide once daily cohort within NCT02692716"
+    },
+    {
+      "source_entity": "NCT02692716",
+      "target_entity": "Arm: Placebo",
+      "relation_type": "enrolls",
+      "confidence": 0.93,
+      "evidence": "Placebo comparator arm cohort within NCT02692716"
+    }
+  ],
+  "cost_usd": 0.068961,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Clinical Trials",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-23T12:23:26.994940+00:00",
+  "error": null
+}

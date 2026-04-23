@@ -1,0 +1,509 @@
+{
+  "document_id": "nct02906930_pioneer_1",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "NCT02906930",
+      "entity_type": "Trial",
+      "confidence": 0.99,
+      "context": "PIONEER 1 (NCT02906930): Phase 3 interventional trial of oral semaglutide versus placebo in type 2 diabetes mellitus treated with diet and exercise only",
+      "attributes": {
+        "trial_acronym": "PIONEER 1",
+        "descriptive_title": "Efficacy and Safety of Oral Semaglutide Versus Placebo in Subjects With Type 2 Diabetes Mellitus Treated With Diet and Exercise Only",
+        "study_type": "Interventional",
+        "status": "Completed",
+        "enrollment": 703,
+        "start_date": "2016-09-20",
+        "completion_date": "2017-12-08"
+      }
+    },
+    {
+      "name": "semaglutide",
+      "entity_type": "Compound",
+      "confidence": 0.99,
+      "context": "Oral semaglutide administered once daily at doses of 3 mg, 7 mg, and 14 mg as experimental intervention",
+      "attributes": {
+        "inn": "semaglutide",
+        "route": "oral",
+        "schedule": "once daily",
+        "drug_class": "GLP-1 receptor agonist"
+      }
+    },
+    {
+      "name": "placebo",
+      "entity_type": "Compound",
+      "confidence": 0.95,
+      "context": "Oral placebo administered once daily as comparator arm",
+      "attributes": {
+        "route": "oral",
+        "schedule": "once daily"
+      }
+    },
+    {
+      "name": "3 mg oral semaglutide QD",
+      "entity_type": "Intervention",
+      "confidence": 0.97,
+      "context": "Experimental arm: semaglutide 3 mg administered orally once daily",
+      "attributes": {
+        "arm_label": "3 mg oral semaglutide",
+        "arm_type": "EXPERIMENTAL",
+        "dose": "3 mg",
+        "route": "oral",
+        "schedule": "QD"
+      }
+    },
+    {
+      "name": "7 mg oral semaglutide QD",
+      "entity_type": "Intervention",
+      "confidence": 0.97,
+      "context": "Experimental arm: semaglutide 7 mg administered orally once daily",
+      "attributes": {
+        "arm_label": "7 mg oral semaglutide",
+        "arm_type": "EXPERIMENTAL",
+        "dose": "7 mg",
+        "route": "oral",
+        "schedule": "QD"
+      }
+    },
+    {
+      "name": "14 mg oral semaglutide QD",
+      "entity_type": "Intervention",
+      "confidence": 0.97,
+      "context": "Experimental arm: semaglutide 14 mg administered orally once daily",
+      "attributes": {
+        "arm_label": "14 mg oral semaglutide",
+        "arm_type": "EXPERIMENTAL",
+        "dose": "14 mg",
+        "route": "oral",
+        "schedule": "QD"
+      }
+    },
+    {
+      "name": "Placebo oral QD",
+      "entity_type": "Intervention",
+      "confidence": 0.95,
+      "context": "Placebo comparator arm: oral placebo administered once daily",
+      "attributes": {
+        "arm_label": "Placebo",
+        "arm_type": "PLACEBO_COMPARATOR",
+        "route": "oral",
+        "schedule": "QD"
+      }
+    },
+    {
+      "name": "Arm: 3 mg oral semaglutide",
+      "entity_type": "Cohort",
+      "confidence": 0.95,
+      "context": "Experimental cohort receiving semaglutide 3 mg orally once daily",
+      "attributes": {
+        "arm_label": "3 mg oral semaglutide",
+        "arm_type": "EXPERIMENTAL",
+        "dose": "3 mg",
+        "route": "oral",
+        "schedule": "QD"
+      }
+    },
+    {
+      "name": "Arm: 7 mg oral semaglutide",
+      "entity_type": "Cohort",
+      "confidence": 0.95,
+      "context": "Experimental cohort receiving semaglutide 7 mg orally once daily",
+      "attributes": {
+        "arm_label": "7 mg oral semaglutide",
+        "arm_type": "EXPERIMENTAL",
+        "dose": "7 mg",
+        "route": "oral",
+        "schedule": "QD"
+      }
+    },
+    {
+      "name": "Arm: 14 mg oral semaglutide",
+      "entity_type": "Cohort",
+      "confidence": 0.95,
+      "context": "Experimental cohort receiving semaglutide 14 mg orally once daily",
+      "attributes": {
+        "arm_label": "14 mg oral semaglutide",
+        "arm_type": "EXPERIMENTAL",
+        "dose": "14 mg",
+        "route": "oral",
+        "schedule": "QD"
+      }
+    },
+    {
+      "name": "Arm: Placebo",
+      "entity_type": "Cohort",
+      "confidence": 0.95,
+      "context": "Placebo comparator cohort receiving oral placebo once daily",
+      "attributes": {
+        "arm_label": "Placebo",
+        "arm_type": "PLACEBO_COMPARATOR",
+        "route": "oral",
+        "schedule": "QD"
+      }
+    },
+    {
+      "name": "Diabetes Mellitus, Type 2",
+      "entity_type": "Condition",
+      "confidence": 0.99,
+      "context": "Subjects with type 2 diabetes mellitus treated with diet and exercise only, HbA1c 7.0-9.5%",
+      "attributes": {
+        "mesh_term": "Diabetes Mellitus, Type 2",
+        "treatment_background": "Diet and exercise only"
+      }
+    },
+    {
+      "name": "Novo Nordisk A/S",
+      "entity_type": "Sponsor",
+      "confidence": 0.99,
+      "context": "Lead Sponsor: Novo Nordisk A/S",
+      "attributes": {
+        "role": "Lead Sponsor",
+        "country": "Denmark"
+      }
+    },
+    {
+      "name": "Change in HbA1c",
+      "entity_type": "Outcome",
+      "confidence": 0.99,
+      "context": "Primary endpoint: change from baseline (week 0) to week 26 in glycosylated haemoglobin (HbA1c)",
+      "attributes": {
+        "endpoint_type": "Primary",
+        "time_frame": "Week 0 to Week 26",
+        "assessment_method": "In-trial observation period and on-treatment without rescue medication observation period"
+      }
+    },
+    {
+      "name": "Change in Body Weight (kg)",
+      "entity_type": "Outcome",
+      "confidence": 0.97,
+      "context": "Secondary endpoint: change in body weight (kg) from week 0 to week 26",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Week 0 to Week 26"
+      }
+    },
+    {
+      "name": "Change in Fasting Plasma Glucose",
+      "entity_type": "Outcome",
+      "confidence": 0.97,
+      "context": "Secondary endpoint: change in fasting plasma glucose from week 0 to week 26",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Week 0 to Week 26"
+      }
+    },
+    {
+      "name": "Change in Mean 7-point SMPG Profile",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary endpoint: change in mean 7-point self-monitored plasma glucose profile from week 0 to week 26",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Week 0 to Week 26"
+      }
+    },
+    {
+      "name": "Change in Mean Postprandial Increment Over All Meals in SMPG",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary endpoint: change in mean postprandial increment over all meals in SMPG from week 0 to week 26",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Week 0 to Week 26"
+      }
+    },
+    {
+      "name": "Change in Fasting Insulin",
+      "entity_type": "Outcome",
+      "confidence": 0.93,
+      "context": "Secondary endpoint: change in fasting insulin (ratio to baseline) from week 0 to week 26",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Week 0 to Week 26",
+        "measure": "Ratio to baseline"
+      }
+    },
+    {
+      "name": "Change in Fasting Pro-insulin",
+      "entity_type": "Outcome",
+      "confidence": 0.93,
+      "context": "Secondary endpoint: change in fasting pro-insulin (ratio to baseline) from week 0 to week 26",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Week 0 to Week 26",
+        "measure": "Ratio to baseline"
+      }
+    },
+    {
+      "name": "Change in Fasting Glucagon",
+      "entity_type": "Outcome",
+      "confidence": 0.93,
+      "context": "Secondary endpoint: change in fasting glucagon (ratio to baseline) from week 0 to week 26",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Week 0 to Week 26",
+        "measure": "Ratio to baseline"
+      }
+    },
+    {
+      "name": "Change in HOMA-IR",
+      "entity_type": "Outcome",
+      "confidence": 0.93,
+      "context": "Secondary endpoint: change in HOMA-IR (insulin resistance, ratio to baseline) from week 0 to week 26",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Week 0 to Week 26",
+        "measure": "Ratio to baseline"
+      }
+    },
+    {
+      "name": "Change in HOMA-B",
+      "entity_type": "Outcome",
+      "confidence": 0.93,
+      "context": "Secondary endpoint: change in HOMA-B (beta-cell function, ratio to baseline) from week 0 to week 26",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Week 0 to Week 26",
+        "measure": "Ratio to baseline"
+      }
+    },
+    {
+      "name": "Change in CRP",
+      "entity_type": "Outcome",
+      "confidence": 0.93,
+      "context": "Secondary endpoint: change in CRP (ratio to baseline) from week 0 to week 26",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Week 0 to Week 26",
+        "measure": "Ratio to baseline"
+      }
+    },
+    {
+      "name": "HbA1c",
+      "entity_type": "Biomarker",
+      "confidence": 0.97,
+      "context": "HbA1c between 7.0-9.5% required for inclusion; also the primary efficacy endpoint",
+      "attributes": {
+        "biomarker_type": "Glycemic",
+        "full_name": "Glycosylated haemoglobin",
+        "threshold": "7.0-9.5% (53-80 mmol/mol)",
+        "use": "Patient selection (inclusion criterion) and primary endpoint"
+      }
+    },
+    {
+      "name": "Adults with type 2 diabetes mellitus on diet and exercise only",
+      "entity_type": "Population",
+      "confidence": 0.93,
+      "context": "Male or female, age \u226518 years, diagnosed with type 2 diabetes for \u226530 days, HbA1c 7.0-9.5%, treated with diet and exercise only for \u226530 days prior to screening",
+      "attributes": {
+        "age_group": "Adult",
+        "min_age": "18 years",
+        "sex": "All",
+        "prior_treatment": "Diet and exercise only",
+        "hba1c_range": "7.0-9.5%",
+        "healthy_volunteers": false
+      }
+    },
+    {
+      "name": "Phase 3",
+      "entity_type": "TrialPhase",
+      "confidence": 0.99,
+      "context": "Phase 3 interventional study of oral semaglutide versus placebo",
+      "attributes": {
+        "design": "Randomized controlled trial",
+        "comparator": "Placebo"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "source_entity": "NCT02906930",
+      "target_entity": "Novo Nordisk A/S",
+      "relation_type": "sponsored_by",
+      "confidence": 0.99,
+      "evidence": "Lead Sponsor: Novo Nordisk A/S"
+    },
+    {
+      "source_entity": "NCT02906930",
+      "target_entity": "Phase 3",
+      "relation_type": "is_phase",
+      "confidence": 0.99,
+      "evidence": "Phase: PHASE3"
+    },
+    {
+      "source_entity": "NCT02906930",
+      "target_entity": "Diabetes Mellitus, Type 2",
+      "relation_type": "investigates",
+      "confidence": 0.99,
+      "evidence": "Trial investigates efficacy and safety of oral semaglutide in subjects with type 2 diabetes mellitus"
+    },
+    {
+      "source_entity": "NCT02906930",
+      "target_entity": "semaglutide",
+      "relation_type": "tests",
+      "confidence": 0.99,
+      "evidence": "Experimental arms test oral semaglutide at 3 mg, 7 mg, and 14 mg doses"
+    },
+    {
+      "source_entity": "NCT02906930",
+      "target_entity": "3 mg oral semaglutide QD",
+      "relation_type": "tests",
+      "confidence": 0.97,
+      "evidence": "Experimental arm: 3 mg oral semaglutide administered once daily"
+    },
+    {
+      "source_entity": "NCT02906930",
+      "target_entity": "7 mg oral semaglutide QD",
+      "relation_type": "tests",
+      "confidence": 0.97,
+      "evidence": "Experimental arm: 7 mg oral semaglutide administered once daily"
+    },
+    {
+      "source_entity": "NCT02906930",
+      "target_entity": "14 mg oral semaglutide QD",
+      "relation_type": "tests",
+      "confidence": 0.97,
+      "evidence": "Experimental arm: 14 mg oral semaglutide administered once daily"
+    },
+    {
+      "source_entity": "NCT02906930",
+      "target_entity": "Placebo oral QD",
+      "relation_type": "tests",
+      "confidence": 0.95,
+      "evidence": "Placebo comparator arm: oral placebo administered once daily"
+    },
+    {
+      "source_entity": "semaglutide",
+      "target_entity": "Diabetes Mellitus, Type 2",
+      "relation_type": "treats",
+      "confidence": 0.95,
+      "evidence": "Semaglutide evaluated for treatment of type 2 diabetes mellitus in subjects on diet and exercise only"
+    },
+    {
+      "source_entity": "NCT02906930",
+      "target_entity": "Change in HbA1c",
+      "relation_type": "has_outcome",
+      "confidence": 0.99,
+      "evidence": "Primary endpoint: change from baseline (week 0) to week 26 in HbA1c"
+    },
+    {
+      "source_entity": "NCT02906930",
+      "target_entity": "Change in Body Weight (kg)",
+      "relation_type": "has_outcome",
+      "confidence": 0.97,
+      "evidence": "Secondary endpoint: change in body weight (kg) from week 0 to week 26"
+    },
+    {
+      "source_entity": "NCT02906930",
+      "target_entity": "Change in Fasting Plasma Glucose",
+      "relation_type": "has_outcome",
+      "confidence": 0.97,
+      "evidence": "Secondary endpoint: change in fasting plasma glucose from week 0 to week 26"
+    },
+    {
+      "source_entity": "NCT02906930",
+      "target_entity": "Change in Mean 7-point SMPG Profile",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary endpoint: change in mean 7-point SMPG profile from week 0 to week 26"
+    },
+    {
+      "source_entity": "NCT02906930",
+      "target_entity": "Change in Mean Postprandial Increment Over All Meals in SMPG",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary endpoint: change in mean postprandial increment over all meals in SMPG from week 0 to week 26"
+    },
+    {
+      "source_entity": "NCT02906930",
+      "target_entity": "Change in Fasting Insulin",
+      "relation_type": "has_outcome",
+      "confidence": 0.93,
+      "evidence": "Secondary endpoint: change in fasting insulin (ratio to baseline) from week 0 to week 26"
+    },
+    {
+      "source_entity": "NCT02906930",
+      "target_entity": "Change in Fasting Pro-insulin",
+      "relation_type": "has_outcome",
+      "confidence": 0.93,
+      "evidence": "Secondary endpoint: change in fasting pro-insulin (ratio to baseline) from week 0 to week 26"
+    },
+    {
+      "source_entity": "NCT02906930",
+      "target_entity": "Change in Fasting Glucagon",
+      "relation_type": "has_outcome",
+      "confidence": 0.93,
+      "evidence": "Secondary endpoint: change in fasting glucagon (ratio to baseline) from week 0 to week 26"
+    },
+    {
+      "source_entity": "NCT02906930",
+      "target_entity": "Change in HOMA-IR",
+      "relation_type": "has_outcome",
+      "confidence": 0.93,
+      "evidence": "Secondary endpoint: change in HOMA-IR (insulin resistance, ratio to baseline) from week 0 to week 26"
+    },
+    {
+      "source_entity": "NCT02906930",
+      "target_entity": "Change in HOMA-B",
+      "relation_type": "has_outcome",
+      "confidence": 0.93,
+      "evidence": "Secondary endpoint: change in HOMA-B (beta-cell function, ratio to baseline) from week 0 to week 26"
+    },
+    {
+      "source_entity": "NCT02906930",
+      "target_entity": "Change in CRP",
+      "relation_type": "has_outcome",
+      "confidence": 0.93,
+      "evidence": "Secondary endpoint: change in CRP (ratio to baseline) from week 0 to week 26"
+    },
+    {
+      "source_entity": "NCT02906930",
+      "target_entity": "HbA1c",
+      "relation_type": "uses_biomarker",
+      "confidence": 0.97,
+      "evidence": "HbA1c 7.0-9.5% required for inclusion; also used as primary efficacy endpoint"
+    },
+    {
+      "source_entity": "NCT02906930",
+      "target_entity": "Adults with type 2 diabetes mellitus on diet and exercise only",
+      "relation_type": "enrolls",
+      "confidence": 0.95,
+      "evidence": "Enrolled adults \u226518 years with type 2 diabetes, HbA1c 7.0-9.5%, treated with diet and exercise only"
+    },
+    {
+      "source_entity": "NCT02906930",
+      "target_entity": "Arm: 3 mg oral semaglutide",
+      "relation_type": "enrolls",
+      "confidence": 0.95,
+      "evidence": "Experimental arm: 3 mg oral semaglutide once daily"
+    },
+    {
+      "source_entity": "NCT02906930",
+      "target_entity": "Arm: 7 mg oral semaglutide",
+      "relation_type": "enrolls",
+      "confidence": 0.95,
+      "evidence": "Experimental arm: 7 mg oral semaglutide once daily"
+    },
+    {
+      "source_entity": "NCT02906930",
+      "target_entity": "Arm: 14 mg oral semaglutide",
+      "relation_type": "enrolls",
+      "confidence": 0.95,
+      "evidence": "Experimental arm: 14 mg oral semaglutide once daily"
+    },
+    {
+      "source_entity": "NCT02906930",
+      "target_entity": "Arm: Placebo",
+      "relation_type": "enrolls",
+      "confidence": 0.95,
+      "evidence": "Placebo comparator arm: oral placebo once daily"
+    }
+  ],
+  "cost_usd": 0.105774,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Clinical Trials",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-23T12:25:15.100184+00:00",
+  "error": null
+}

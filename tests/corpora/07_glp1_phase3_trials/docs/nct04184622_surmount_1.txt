@@ -1,0 +1,82 @@
+Title: A Study of Tirzepatide (LY3298176) in Participants With Obesity or Overweight
+NCT ID: NCT04184622
+Acronym: SURMOUNT-1
+Status: COMPLETED
+Phase: PHASE3
+Study Type: INTERVENTIONAL
+Enrollment: 2539
+Start Date: 2019-12-04
+Completion Date: 2024-07-06
+Lead Sponsor: Eli Lilly and Company
+Conditions: Overweight; Obesity
+Keywords: Metabolism and Nutrition Disorder; Prediabetes
+
+=== BRIEF SUMMARY ===
+This is a study of tirzepatide in participants with overweight and obesity. The main purpose is to learn more about how tirzepatide affects body weight. The study has two phases: A main phase and an extension phase. The main phase of the study will last 72 weeks. Participants with prediabetes will continue in the extension for another 2 years.
+
+=== STUDY ARMS / COHORTS ===
+- Placebo (PLACEBO_COMPARATOR)
+    * Primary Treatment Period (Week 0-Week 72): Participants with normoglycemia or prediabetes at the time of randomization received once weekly (QW) subcutaneous (SC) doses of a matching placebo, administered over a period of 72 weeks.
+* Additional Treatment Period (Week 72-Week 176): At week 72, only participants who had prediabetes at the time of randomization and had completed the primary treatment period continued receiving the placebo dose SC QW until week 176.
+* Safety Follow-up Period: Participants who had completed or discontinued the primary treatment period were followed for safety for 4 weeks (weeks 72 - week 76), and those who had completed or discontinued the additional treatment period (prediabetes at randomization) were followed for 17 weeks (week 176 - week 193). No treatment was administered during this period.
+    Interventions: Drug: Placebo
+- 5 mg Tirzepatide (EXPERIMENTAL)
+    * Primary Treatment Period (Week 0-Week 72): Participants with normoglycemia or prediabetes at the time of randomization received QW SC doses of tirzepatide, starting at 2.5 milligrams (mg) and increasing by 2.5 mg every 4 weeks until reaching a dose of 5 mg, which was then maintained up to week 72.
+* Additional Treatment Period (Week 72-Week 176): At week 72, only participants who had prediabetes at the time of randomization and had completed the primary treatment period continued receiving the 5 mg tirzepatide dose SC QW until week 176.
+* Safety Follow-up Period: Participants who had completed or discontinued the primary treatment period were followed for safety for 4 weeks (weeks 72 - week 76), and those who had completed or discontinued the additional treatment period (prediabetes at randomization) were followed for 17 weeks (week 176 - week 193). No treatment was administered during this period.
+    Interventions: Drug: Tirzepatide
+- 10 mg Tirzepatide (EXPERIMENTAL)
+    * Primary Treatment Period (Week 0-Week 72): Participants with normoglycemia or prediabetes at the time of randomization received QW SC doses of tirzepatide, starting at 2.5 mg and increasing by 2.5 mg every 4 weeks until reaching a dose of 10 mg, which was then maintained up to week 72.
+* Additional Treatment Period (Week 72-Week 176): At week 72, only participants who had prediabetes at the time of randomization and had completed the primary treatment period continued receiving the 10 mg tirzepatide dose SC QW until week 176.
+* Safety Follow-up Period: Participants who had completed or discontinued the primary treatment period were followed for safety for 4 weeks (weeks 72 - week 76), and those who had completed or discontinued the additional treatment period (prediabetes at randomization) were followed for 17 weeks (week 176 - week 193). No treatment was administered during this period.
+    Interventions: Drug: Tirzepatide
+- 15 mg Tirzepatide (EXPERIMENTAL)
+    * Primary Treatment Period (Week 0-Week 72): Participants with normoglycemia or prediabetes at the time of randomization received QW SC doses of tirzepatide, starting at 2.5 mg and increasing by 2.5 mg every 4 weeks until reaching a dose of 15 mg, which was then maintained up to week 72.
+* Additional Treatment Period (Week 72-Week 176): At week 72, only participants who had prediabetes at the time of randomization and had completed the primary treatment period continued receiving the 15 mg tirzepatide dose SC QW until week 176.
+* Safety Follow-up Period: Participants who had completed or discontinued the primary treatment period were followed for safety for 4 weeks (weeks 72 - week 76), and those who had completed or discontinued the additional treatment period (prediabetes at randomization) were followed for 17 weeks (week 176 - week 193). No treatment was administered during this period.
+    Interventions: Drug: Tirzepatide
+
+=== INTERVENTIONS ===
+- Tirzepatide [DRUG]
+    Administered SC
+    Also known as: LY3298176
+- Placebo [DRUG]
+    Administered SC
+
+=== PRIMARY OUTCOMES ===
+- Percent Change From Baseline in Body Weight (Primary Treatment Period)
+    Least Squares (LS) Mean was calculated using mixed-model repeated measures (MMRM) with baseline, analysis country, sex, prediabetes status at randomization, treatment, time, treatment\*time (Type III sum of squares) in the model.
+    Time Frame: Baseline, Week 72
+- Percentage of Participants Who Achieve ≥5% Body Weight Reduction (Primary Treatment Period)
+    Percentage of participants who achieve greater than or equal to( ≥) 5% body weight reduction.
+    Time Frame: Week 72
+
+=== SECONDARY OUTCOMES ===
+- Change From Baseline in Body Weight (Pooled Doses of Tirzepatide 10 mg and 15 mg) - Primary Treatment Period (Time Frame: Baseline, Week 20)
+- Percentage of Participants Who Achieve ≥10% Body Weight Reduction (Primary Treatment Period) (Time Frame: Week 72)
+- Percentage of Participants Who Achieve ≥15% Body Weight Reduction (Primary Treatment Period) (Time Frame: Week 72)
+- Percentage of Participants Who Achieve ≥20% Body Weight Reduction (Primary Treatment Period) (Time Frame: Week 72)
+- Change From Baseline in Waist Circumference (Primary Treatment Period) (Time Frame: Baseline, Week 72)
+- Change From Baseline in Short Form Survey-36 Version 2 (SF-36v2) Acute Form Physical Functioning Domain Score at Week 72 (Pooled Doses of Tirzepatide 10 mg and 15 mg) - Primary Treatment Period (Time Frame: Baseline, Week 72)
+- Percent Change From Baseline in Triglycerides (Pooled Doses of Tirzepatide 5 mg, 10 mg and 15 mg) - Primary Treatment Period (Time Frame: Baseline, Week 72)
+- Percent Change From Baseline in Total Cholesterol (Pooled Doses of Tirzepatide 5 mg, 10 mg and 15 mg) - Primary Treatment Period (Time Frame: Baseline, Week 72)
+- Percent Change From Baseline in High-Density Lipoprotein (HDL) Cholesterol at Week 72 (Pooled Doses of Tirzepatide 5 mg, 10 mg and 15 mg) - Primary Treatment Period (Time Frame: Baseline, Week 72)
+- Change From Baseline in Systolic Blood Pressure (SBP) (Pooled Doses of Tirzepatide 5 mg, 10 mg and 15 mg) - Primary Treatment Period (Time Frame: Baseline, Week 72)
+
+=== ELIGIBILITY CRITERIA ===
+Inclusion Criteria:
+
+* Body mass Index (BMI) ≥30 kilograms per square meter (kg/m²), or ≥27 kg/m² and previous diagnosis with at least one of the following comorbidities: hypertension, dyslipidemia, obstructive sleep apnea, cardiovascular disease
+* History of at least one unsuccessful dietary effort to lose body weight
+
+Exclusion Criteria:
+
+* Diabetes mellitus
+* Change in body weight greater than 5 kg within 3 months prior to starting study
+* Obesity induced by other endocrinologic disorders or monogenetic or syndromic forms of obesity
+* History of pancreatitis
+* Family or personal history of medullary thyroid carcinoma (MTC) or multiple endocrine neoplasia syndrome type 2 (MEN-2)
+* History of significant active or unstable major depressive disorder (MDD) or other severe psychiatric disorder within the last 2 years
+* Any lifetime history of a suicide attempt
+
+Population: Sex: ALL; Min Age: 18 Years; Healthy Volunteers: False

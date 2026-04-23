@@ -387,6 +387,70 @@ When you create a domain with `/epistract:domain`, the wizard asks for a persona
 
 ---
 
+## Domain Enrichment (Optional)
+
+For domains where external APIs can add value after graph construction, add an `enrich.py` module to your domain package. The enrichment step runs *after* the graph is built, patches node attributes with API data, and writes an `_enrichment_report.json` summary. It is **opt-in via the `--enrich` flag** on `/epistract:ingest` — omitting it leaves the graph unchanged.
+
+The `clinicaltrials` domain is the canonical reference implementation. See `domains/clinicaltrials/enrich.py` for the complete source.
+
+### When to Use Enrichment
+
+Use enrichment when:
+- Your entity types map to stable external identifiers (NCT IDs, PubChem CIDs, ChEMBL IDs, PDB accessions, ORCID, etc.)
+- The API is public and machine-queryable
+- Enrichment adds computable attributes (status, molecular weight, dates, organization metadata) not extractable from documents alone
+- API failures MUST NOT abort the pipeline — non-blocking is required
+
+Do NOT use enrichment for:
+- Data that belongs in the extraction prompt (enrichment runs post-build, not during extraction)
+- Slow or unreliable APIs where failures would significantly degrade user experience
+- Anything requiring authentication the user has not configured — enrichment must work with public credentials or not at all
+
+### The `enrich_graph()` Contract
+
+The enrichment module MUST export a single public function:
+
+```python
+from pathlib import Path
+
+def enrich_graph(output_dir: Path, domain: str = "your-domain") -> dict:
+    """Load graph, enrich nodes, save, write report.
+
+    Non-blocking: API failures log counts in the return dict but never raise.
+    Saves mutated graph back to output_dir/graph_data.json.
+    Writes output_dir/extractions/_enrichment_report.json with per-type hit rates.
+    Returns the report dict for programmatic use.
+    """
+```
+
+See the clinicaltrials reference for the full pattern: `_fetch_ct_gov()` and `_fetch_pubchem()` non-blocking helpers (return `None` on 404/timeout/connection-error rather than raising), exponential backoff on 429, `requests.utils.quote` for URL safety.
+
+### Wiring into the Ingest Pipeline
+
+`commands/ingest.md` Step 5.5 handles `--enrich` dispatch. It is already wired for the `clinicaltrials` domain. To wire a new domain, update Step 5.5's domain-gate check:
+
+```markdown
+Skip this step unless BOTH are true:
+1. The user passed `--enrich`
+2. The resolved `--domain` is `clinicaltrials` OR `your-domain` (or their aliases)
+```
+
+And add a parallel invocation block pointing at `${CLAUDE_PLUGIN_ROOT}/domains/your-domain/enrich.py <output_dir>`.
+
+### The `_enrichment_report.json` Schema
+
+```json
+{
+  "domain": "your-domain",
+  "trials": {"total": 10, "enriched": 8, "not_found": 1, "failed": 1, "hit_rate": 0.8},
+  "compounds": {"total": 20, "enriched": 15, "not_found": 3, "failed": 2, "hit_rate": 0.75}
+}
+```
+
+`/epistract:ingest` Step 7 reads this file and surfaces hit rates to the user.
+
+---
+
 ## Testing Your Domain
 
 ```bash

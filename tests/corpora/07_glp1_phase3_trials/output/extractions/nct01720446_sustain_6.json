@@ -1,0 +1,415 @@
+{
+  "document_id": "nct01720446_sustain_6",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "NCT01720446",
+      "entity_type": "Trial",
+      "confidence": 0.99,
+      "context": "Trial to Evaluate Cardiovascular and Other Long-term Outcomes With Semaglutide in Subjects With Type 2 Diabetes (NCT01720446), SUSTAIN 6",
+      "attributes": {
+        "trial_acronym": "SUSTAIN 6",
+        "descriptive_title": "Trial to Evaluate Cardiovascular and Other Long-term Outcomes With Semaglutide in Subjects With Type 2 Diabetes",
+        "study_type": "Interventional",
+        "status": "Completed",
+        "enrollment": 3297,
+        "start_date": "2013-02-21",
+        "completion_date": "2016-03-15"
+      }
+    },
+    {
+      "name": "Phase 3",
+      "entity_type": "TrialPhase",
+      "confidence": 0.99,
+      "context": "Phase: PHASE3 as listed in the trial record",
+      "attributes": {
+        "design": "Randomized controlled trial",
+        "blinding": "Placebo-controlled"
+      }
+    },
+    {
+      "name": "Novo Nordisk A/S",
+      "entity_type": "Sponsor",
+      "confidence": 0.99,
+      "context": "Lead Sponsor: Novo Nordisk A/S",
+      "attributes": {
+        "role": "Industry sponsor",
+        "country": "Denmark"
+      }
+    },
+    {
+      "name": "semaglutide",
+      "entity_type": "Compound",
+      "confidence": 0.99,
+      "context": "Semaglutide, a GLP-1 receptor agonist, administered subcutaneously once weekly at 0.5 mg or 1.0 mg doses",
+      "attributes": {
+        "inn": "semaglutide",
+        "drug_class": "GLP-1 receptor agonist",
+        "route": "subcutaneous",
+        "schedule": "once weekly"
+      }
+    },
+    {
+      "name": "Semaglutide 0.5 mg QW SC",
+      "entity_type": "Intervention",
+      "confidence": 0.95,
+      "context": "Experimental arm: semaglutide 0.5 mg once weekly subcutaneously after dose escalation from 0.25 mg",
+      "attributes": {
+        "dose": "0.5 mg",
+        "schedule": "QW",
+        "route": "subcutaneous",
+        "escalation": "0.25 mg initial dose"
+      }
+    },
+    {
+      "name": "Semaglutide 1.0 mg QW SC",
+      "entity_type": "Intervention",
+      "confidence": 0.95,
+      "context": "Experimental arm: semaglutide 1.0 mg once weekly subcutaneously after dose escalation from 0.25 mg then 0.5 mg",
+      "attributes": {
+        "dose": "1.0 mg",
+        "schedule": "QW",
+        "route": "subcutaneous",
+        "escalation": "0.25 mg then 0.5 mg"
+      }
+    },
+    {
+      "name": "Placebo QW SC",
+      "entity_type": "Intervention",
+      "confidence": 0.95,
+      "context": "Placebo comparator arms: volume-matched placebo administered subcutaneously once weekly",
+      "attributes": {
+        "schedule": "QW",
+        "route": "subcutaneous",
+        "description": "Volume-matched placebo"
+      }
+    },
+    {
+      "name": "Diabetes Mellitus, Type 2",
+      "entity_type": "Condition",
+      "confidence": 0.99,
+      "context": "Subjects with type 2 diabetes mellitus enrolled in the trial",
+      "attributes": {
+        "mesh_term": "Diabetes Mellitus, Type 2"
+      }
+    },
+    {
+      "name": "Arm A: Semaglutide 0.5 mg",
+      "entity_type": "Cohort",
+      "confidence": 0.95,
+      "context": "Experimental arm: Semaglutide 0.5 mg once weekly subcutaneously",
+      "attributes": {
+        "arm_label": "Semaglutide 0.5 mg",
+        "arm_type": "EXPERIMENTAL",
+        "dose": "0.5 mg",
+        "schedule": "QW",
+        "route": "subcutaneous"
+      }
+    },
+    {
+      "name": "Arm B: Semaglutide 1.0 mg",
+      "entity_type": "Cohort",
+      "confidence": 0.95,
+      "context": "Experimental arm: Semaglutide 1.0 mg once weekly subcutaneously",
+      "attributes": {
+        "arm_label": "Semaglutide 1.0 mg",
+        "arm_type": "EXPERIMENTAL",
+        "dose": "1.0 mg",
+        "schedule": "QW",
+        "route": "subcutaneous"
+      }
+    },
+    {
+      "name": "Arm C: Semaglutide placebo 0.5 mg",
+      "entity_type": "Cohort",
+      "confidence": 0.95,
+      "context": "Placebo comparator arm volume-matched to 0.5 mg semaglutide",
+      "attributes": {
+        "arm_label": "Semaglutide placebo 0.5 mg",
+        "arm_type": "PLACEBO_COMPARATOR",
+        "route": "subcutaneous",
+        "schedule": "QW"
+      }
+    },
+    {
+      "name": "Arm D: Semaglutide placebo 1.0 mg",
+      "entity_type": "Cohort",
+      "confidence": 0.95,
+      "context": "Placebo comparator arm volume-matched to 1.0 mg semaglutide",
+      "attributes": {
+        "arm_label": "Semaglutide placebo 1.0 mg",
+        "arm_type": "PLACEBO_COMPARATOR",
+        "route": "subcutaneous",
+        "schedule": "QW"
+      }
+    },
+    {
+      "name": "Adults with type 2 diabetes and cardiovascular risk aged 50+ or 60+",
+      "entity_type": "Population",
+      "confidence": 0.92,
+      "context": "Men and women with type 2 diabetes, age \u226550 with clinical CV disease or age \u226560 with subclinical CV disease, HbA1c \u22657.0%",
+      "attributes": {
+        "age_group": "Adult",
+        "min_age": "50 years",
+        "sex": "All",
+        "healthy_volunteers": false,
+        "key_inclusion": "Type 2 diabetes, cardiovascular disease evidence, HbA1c \u22657.0%"
+      }
+    },
+    {
+      "name": "major adverse cardiovascular events",
+      "entity_type": "Outcome",
+      "confidence": 0.98,
+      "context": "Primary endpoint: time from randomisation to first occurrence of MACE (CV death, non-fatal MI, or non-fatal stroke)",
+      "attributes": {
+        "endpoint_type": "Primary",
+        "components": "cardiovascular death, non-fatal myocardial infarction, non-fatal stroke",
+        "time_frame": "Up to end of follow-up (scheduled at week 109)"
+      }
+    },
+    {
+      "name": "expanded composite cardiovascular outcome",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary endpoint: time from randomisation to first occurrence of an expanded composite cardiovascular outcome",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Up to end of follow-up (scheduled at week 109)"
+      }
+    },
+    {
+      "name": "all-cause death, non-fatal MI, or non-fatal stroke",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary endpoint: time from randomisation to first occurrence of all-cause death, non-fatal MI, or non-fatal stroke",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Up to end of follow-up (scheduled at week 109)"
+      }
+    },
+    {
+      "name": "glycosylated haemoglobin (HbA1c)",
+      "entity_type": "Outcome",
+      "confidence": 0.93,
+      "context": "Secondary endpoint: change from baseline in HbA1c up to week 104",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Week 0 to week 104"
+      }
+    },
+    {
+      "name": "fasting plasma glucose",
+      "entity_type": "Outcome",
+      "confidence": 0.93,
+      "context": "Secondary endpoint: change from baseline in fasting plasma glucose up to week 104",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Week 0 to week 104"
+      }
+    },
+    {
+      "name": "body weight",
+      "entity_type": "Outcome",
+      "confidence": 0.93,
+      "context": "Secondary endpoint: change from baseline in body weight up to week 104",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Week 0 to week 104"
+      }
+    },
+    {
+      "name": "urinary albumin to creatinine ratio",
+      "entity_type": "Outcome",
+      "confidence": 0.92,
+      "context": "Secondary endpoint: change from baseline in urinary albumin to creatinine ratio up to week 104",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Week 0 to week 104"
+      }
+    },
+    {
+      "name": "hypoglycaemic events",
+      "entity_type": "Outcome",
+      "confidence": 0.92,
+      "context": "Secondary endpoint: incidence of hypoglycaemic events during the trial (week 0-109)",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Week 0 to week 109"
+      }
+    },
+    {
+      "name": "HbA1c",
+      "entity_type": "Biomarker",
+      "confidence": 0.93,
+      "context": "HbA1c \u22657.0% required at screening as inclusion criterion; also measured as secondary outcome",
+      "attributes": {
+        "biomarker_type": "Laboratory",
+        "use": "Patient selection (inclusion criterion) and efficacy assessment",
+        "threshold": "\u22657.0% at screening"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "source_entity": "NCT01720446",
+      "target_entity": "Phase 3",
+      "relation_type": "is_phase",
+      "confidence": 0.99,
+      "evidence": "Phase: PHASE3 as listed in the trial record"
+    },
+    {
+      "source_entity": "NCT01720446",
+      "target_entity": "Novo Nordisk A/S",
+      "relation_type": "sponsored_by",
+      "confidence": 0.99,
+      "evidence": "Lead Sponsor: Novo Nordisk A/S"
+    },
+    {
+      "source_entity": "NCT01720446",
+      "target_entity": "semaglutide",
+      "relation_type": "tests",
+      "confidence": 0.99,
+      "evidence": "Trial evaluates semaglutide 0.5 mg and 1.0 mg subcutaneously once weekly in experimental arms"
+    },
+    {
+      "source_entity": "NCT01720446",
+      "target_entity": "Semaglutide 0.5 mg QW SC",
+      "relation_type": "tests",
+      "confidence": 0.97,
+      "evidence": "Experimental arm: semaglutide 0.5 mg once weekly subcutaneously"
+    },
+    {
+      "source_entity": "NCT01720446",
+      "target_entity": "Semaglutide 1.0 mg QW SC",
+      "relation_type": "tests",
+      "confidence": 0.97,
+      "evidence": "Experimental arm: semaglutide 1.0 mg once weekly subcutaneously"
+    },
+    {
+      "source_entity": "NCT01720446",
+      "target_entity": "Placebo QW SC",
+      "relation_type": "tests",
+      "confidence": 0.95,
+      "evidence": "Placebo comparator arms: volume-matched placebo administered subcutaneously once weekly"
+    },
+    {
+      "source_entity": "NCT01720446",
+      "target_entity": "Diabetes Mellitus, Type 2",
+      "relation_type": "investigates",
+      "confidence": 0.99,
+      "evidence": "Trial evaluates cardiovascular and other long-term outcomes with semaglutide in subjects with type 2 diabetes"
+    },
+    {
+      "source_entity": "semaglutide",
+      "target_entity": "Diabetes Mellitus, Type 2",
+      "relation_type": "treats",
+      "confidence": 0.95,
+      "evidence": "Semaglutide evaluated as treatment for type 2 diabetes mellitus in SUSTAIN 6"
+    },
+    {
+      "source_entity": "NCT01720446",
+      "target_entity": "major adverse cardiovascular events",
+      "relation_type": "has_outcome",
+      "confidence": 0.99,
+      "evidence": "Primary endpoint: time from randomisation to first occurrence of MACE (CV death, non-fatal MI, or non-fatal stroke)"
+    },
+    {
+      "source_entity": "NCT01720446",
+      "target_entity": "expanded composite cardiovascular outcome",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary endpoint: time from randomisation to first occurrence of an expanded composite cardiovascular outcome"
+    },
+    {
+      "source_entity": "NCT01720446",
+      "target_entity": "all-cause death, non-fatal MI, or non-fatal stroke",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary endpoint: time from randomisation to first occurrence of all-cause death, non-fatal MI, or non-fatal stroke"
+    },
+    {
+      "source_entity": "NCT01720446",
+      "target_entity": "glycosylated haemoglobin (HbA1c)",
+      "relation_type": "has_outcome",
+      "confidence": 0.93,
+      "evidence": "Secondary endpoint: change from baseline in HbA1c up to week 104"
+    },
+    {
+      "source_entity": "NCT01720446",
+      "target_entity": "fasting plasma glucose",
+      "relation_type": "has_outcome",
+      "confidence": 0.93,
+      "evidence": "Secondary endpoint: change from baseline in fasting plasma glucose up to week 104"
+    },
+    {
+      "source_entity": "NCT01720446",
+      "target_entity": "body weight",
+      "relation_type": "has_outcome",
+      "confidence": 0.93,
+      "evidence": "Secondary endpoint: change from baseline in body weight up to week 104"
+    },
+    {
+      "source_entity": "NCT01720446",
+      "target_entity": "urinary albumin to creatinine ratio",
+      "relation_type": "has_outcome",
+      "confidence": 0.92,
+      "evidence": "Secondary endpoint: change from baseline in urinary albumin to creatinine ratio up to week 104"
+    },
+    {
+      "source_entity": "NCT01720446",
+      "target_entity": "hypoglycaemic events",
+      "relation_type": "has_outcome",
+      "confidence": 0.92,
+      "evidence": "Secondary endpoint: incidence of hypoglycaemic events during the trial (week 0-109)"
+    },
+    {
+      "source_entity": "NCT01720446",
+      "target_entity": "HbA1c",
+      "relation_type": "uses_biomarker",
+      "confidence": 0.93,
+      "evidence": "HbA1c \u22657.0% required at screening as inclusion criterion"
+    },
+    {
+      "source_entity": "NCT01720446",
+      "target_entity": "Adults with type 2 diabetes and cardiovascular risk aged 50+ or 60+",
+      "relation_type": "enrolls",
+      "confidence": 0.95,
+      "evidence": "Men and women with type 2 diabetes, age \u226550 with clinical CV disease or age \u226560 with subclinical CV disease, HbA1c \u22657.0%"
+    },
+    {
+      "source_entity": "NCT01720446",
+      "target_entity": "Arm A: Semaglutide 0.5 mg",
+      "relation_type": "enrolls",
+      "confidence": 0.95,
+      "evidence": "Experimental arm: Semaglutide 0.5 mg once weekly subcutaneously"
+    },
+    {
+      "source_entity": "NCT01720446",
+      "target_entity": "Arm B: Semaglutide 1.0 mg",
+      "relation_type": "enrolls",
+      "confidence": 0.95,
+      "evidence": "Experimental arm: Semaglutide 1.0 mg once weekly subcutaneously"
+    },
+    {
+      "source_entity": "NCT01720446",
+      "target_entity": "Arm C: Semaglutide placebo 0.5 mg",
+      "relation_type": "enrolls",
+      "confidence": 0.95,
+      "evidence": "Placebo comparator arm volume-matched to 0.5 mg semaglutide"
+    },
+    {
+      "source_entity": "NCT01720446",
+      "target_entity": "Arm D: Semaglutide placebo 1.0 mg",
+      "relation_type": "enrolls",
+      "confidence": 0.95,
+      "evidence": "Placebo comparator arm volume-matched to 1.0 mg semaglutide"
+    }
+  ],
+  "cost_usd": 0.092148,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Clinical Trials",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-23T12:22:23.672073+00:00",
+  "error": null
+}

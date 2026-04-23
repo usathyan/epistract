@@ -1,0 +1,82 @@
+Title: Chinese Endocrinologists Health Education Study
+NCT ID: NCT05715307
+Acronym: CREATION
+Status: ACTIVE_NOT_RECRUITING
+Phase: NA
+Study Type: INTERVENTIONAL
+Enrollment: 2017
+Start Date: 2023-02-09
+Completion Date: 2025-10-31
+Lead Sponsor: Shanghai Jiao Tong University School of Medicine
+Conditions: Type 2 Diabetes
+
+=== BRIEF SUMMARY ===
+The purpose of this study is to conduct a prospective, multicenter, cluster randomized control study, to evaluate the improvement for T2DM treatment ability in Chinese endocrinologists after 1-week intensive experiential diabetes management training in Ruijin Hospital.
+
+=== DETAILED DESCRIPTION ===
+The primary objective is to determine whether a 1-week intensive experiential training in T2DM management for MMC endocrinologists has a positive effect on patients' HbA1c control rate (percentage of patients achieving HbA1c \<7.0%) after 6-month management. The secondary objective is to explore the effect of intensive experiential training on other metabolic parameters, patients' quality of life and endocrinologists' prescribing habits after 6-month and 12-month management.
+
+In the first phase (Phase I), about 200 eligible endocrinologists from National Metabolic Management Centers (MMC) (one endocrinologist in each center) will be randomized (1:1) into two groups. Intensive training group will receive a 1-week intensive experiential training in the MMC leading center (Ruijin Hospital) for T2DM management, and control group will receive regular MMC working training. In the second phase (Phase II) , each endocrinologist will be required to manage a certain number of T2DM patients (n≈10). The total number of patients in the intensive training group and the control group will be approximately 1000:1000. Metabolic parameters including weight, body mass index (BMI), waist circumference, hip circumference, glycosylated hemoglobin (HbA1c), fasting plasma glucose (FPG), postprandial plasma glucose (PPG), fasting and postprandial insulin, blood pressure and lipid levels will be measured. Furthermore, the change of patients' quality of life and endocrinologists' prescribing habits will be evaluated.
+
+=== STUDY ARMS / COHORTS ===
+- Intensive training group (EXPERIMENTAL)
+    Endocrinologists will receive a 1-week intensive training in T2DM health care at Ruijin Hospital. This training includes a 1-week hospitalization experience, health examinations, results interpretation, and integrated courses for T2DM management.
+    Interventions: Other: Intensive training for endocrinologists in T2DM management
+- Control group (ACTIVE_COMPARATOR)
+    Endocrinologists will receive regular training from MMC under the guidance of T2DM management.
+    Interventions: Other: Regular training for endocrinologists in T2DM management
+
+=== INTERVENTIONS ===
+- Intensive training for endocrinologists in T2DM management [OTHER]
+    One-week intensive experiential training for endocrinologists includes a 1-week hospitalization experience at Ruijin Hospital, involving health examinations, results interpretation, and integrated training courses for T2DM management.
+
+During the patient intervention period, endocrinologists will each manage approximately 10 T2DM patients, conduct regular follow-ups, and participate in regular training sessions, including experience-sharing meetings.
+- Regular training for endocrinologists in T2DM management [OTHER]
+    Regular training and communication are implemented by Ruijin Hospital under the guidance of T2DM management.
+
+During the patient intervention period, endocrinologists will each manage approximately 10 T2DM patients, conduct regular follow-ups, and receive regular routine training.
+
+=== PRIMARY OUTCOMES ===
+- Glycated haemoglobin (HbA1c) control rate
+    percentage of patients achieving HbA1c \<7.0%
+    Time Frame: 6 months
+
+=== SECONDARY OUTCOMES ===
+- Glycated haemoglobin (HbA1c) (Time Frame: 6 and 12 months)
+- Systolic and diastolic blood pressure (Time Frame: 6 and 12 months)
+- Body weight (Time Frame: 6 and 12 months)
+- Waist circumference (Time Frame: 6 and 12 months)
+- Hip circumference (Time Frame: 6 and 12 months)
+- Fasting blood glucose levels (Time Frame: 6 and 12 months)
+- 2-hour post-prandial blood glucose levels (Time Frame: 6 and 12 months)
+- Fasting serum insulin levels (Time Frame: 6 and 12 months)
+- 2-hour post-prandial serum insulin levels (Time Frame: 6 and 12 months)
+- Serum triglycerides (Time Frame: 6 and 12 months)
+
+=== ELIGIBILITY CRITERIA ===
+Inclusion Criteria:
+
+* 1\. Subjects with type 2 diabetes mellitus;
+* 2\. First visit to MMC;
+* 3\. Age 40-65 years;
+* 4\. 24.0 \< BMI ≤ 35.0 kg/m2;
+* 5\. Subjects with screening HbA1c ≥ 7.5% and ≤ 10.0%, and the fasting blood glucose ≥ 8.0 mmol/l and \< 13.3 mmol/l;
+* 6\. Duration of diabetes less than 10 years;
+* 7\. Subjects with poorly controlled blood glucose only by 1-2 kinds of non-insulin hypoglycemic drugs for at least 2 months;
+* 8\. Subjects understand the nature, significance, potential benefits, inconvenience, and risks of the study before it starts, and fully understand the study procedures and voluntarily sign the informed consent form.
+
+Exclusion Criteria:
+
+* 1\. Subjects with type 1 diabetes, single gene mutation diabetes, diabetes due to pancreatic injury or other secondary diabetes (such as Cushing's syndrome, thyroid dysfunction or acromegaly, etc.);
+* 2\. Subjects with serious cardiovascular diseases, such as congenital heart disease, rheumatic heart disease, hypertrophic or dilated cardiomyopathy and chronic congestive heart failure (NYHA III-IV); acute myocarditis within 12 months; severe liver and kidney dysfunction (eGFR\<60mL/min/1.73m2); mental disorder, etc.
+* 3\. Subjects with acute diabetic complications in the past 3 months;
+* 4\. Subjects who were or are using insulin to control diabetes in the past 3 months;
+* 5\. History of drug abuse;
+* 6\. History of sexually transmitted disease (such as syphilis, and HIV infection \[AIDS\], etc.) or in the active phase of infectious disease (such as viral hepatitis, and tuberculosis, etc.);
+* 7\. Subjects who are pregnant or in lactation;
+* 8\. Participation in other clinical trials;
+* 9\. Any condition that in the judgement of the investigator precludes participation.
+
+Details please see the study protocol.
+
+Population: Sex: ALL; Min Age: 40 Years; Max Age: 65 Years; Healthy Volunteers: False

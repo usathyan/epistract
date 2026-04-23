@@ -1,0 +1,71 @@
+Title: Research Study Investigating How Well Semaglutide Works in People With Type 2 Diabetes Suffering From Overweight or Obesity
+NCT ID: NCT03552757
+Acronym: STEP 2
+Status: COMPLETED
+Phase: PHASE3
+Study Type: INTERVENTIONAL
+Enrollment: 1210
+Start Date: 2018-06-04
+Completion Date: 2020-05-01
+Lead Sponsor: Novo Nordisk A/S
+Conditions: Obesity; Overweight
+
+=== BRIEF SUMMARY ===
+This study will look at the change in the participant's body weight from the start to the end of the study. This is to compare the effect on body weight in people taking semaglutide (a new medicine) and people taking "dummy" medicine. In addition to taking the study medicine, the participant will have talks with study staff about healthy food choices, how to be more physically active and what else the participant can do to lose weight. Overweight and obesity is associated with an increased risk of type 2 diabetes. Therefore, weight loss has shown to have a beneficial impact on the blood sugar levels. The participant will either get semaglutide or "dummy" medicine - which treatment the participant get is decided by chance. The participant will need to take 2 injections at the same time once a week. The study medicine is injected with a thin needle in a skin fold in the stomach, thigh or upper arm. The study will last for about 1.5 years
+
+=== STUDY ARMS / COHORTS ===
+- Semaglutide 1.0 mg (EXPERIMENTAL)
+    Participants will receive semaglutide 1.0 mg and semaglutide placebo I during 68-week treatment period in addition to a reduced-calorie diet and increased physical activity.
+    Interventions: Drug: Semaglutide 1.0 mg; Drug: Placebo I (Semaglutide)
+- Semaglutide 2.4 mg (EXPERIMENTAL)
+    Participants will receive semaglutide 2.4 mg and semaglutide placebo II during 68-week treatment period in addition to a reduced-calorie diet and increased physical activity.
+    Interventions: Drug: Semaglutide 2.4 mg; Drug: Placebo II (Semaglutide)
+- Semaglutide placebo I/II (PLACEBO_COMPARATOR)
+    Participants will receive semaglutide placebo I and II during 68-week treatment period in addition to a reduced-calorie diet and increased physical activity.
+    Interventions: Drug: Placebo I (Semaglutide); Drug: Placebo II (Semaglutide)
+
+=== INTERVENTIONS ===
+- Semaglutide 1.0 mg [DRUG]
+    Subcutaneous (s.c.) injections of semaglutide once weekly at an escalating doses (0.25 mg/week, 0.5 mg/week, 1.0 mg mg/week). The dose will be escalated to next level every 4 weeks.
+- Semaglutide 2.4 mg [DRUG]
+    Subcutaneous injections of semaglutide once weekly at an escalating doses (0.25 mg/week, 0.5 mg/week, 1.0 mg mg/week, 1.7 mg/week and 2.4 mg/week). The dose will be escalated to next level every 4 weeks.
+- Placebo I (Semaglutide) [DRUG]
+    S.c. injections of placebo once weekly at a similar dose escalation manner as semaglutide 2.4 mg (placebo matched to semaglutide 0.25 mg/week, 0.5 mg/week, 1.0 mg mg/week, 1.7 mg/week and 2.4 mg/week). The dose will be escalated to next level every 4 weeks.
+- Placebo II (Semaglutide) [DRUG]
+    S.c. injections of placebo once weekly at a similar dose escalation manner as semaglutide 1.0 mg (placebo matched to semaglutide 0.25 mg/week, 0.5 mg/week, 1.0 mg mg/week). The dose will be escalated to next level every 4 weeks.
+
+=== PRIMARY OUTCOMES ===
+- Change in Body Weight (%) - Semaglutide 2.4 mg Versus Placebo
+    Change in body weight (%) from baseline (week 0) to week 68 is presented. Results are based on the data from both in-trial and on-treatment observation periods. In-trial observation period: the uninterrupted time interval from the start of randomisation (week 0) to last trial-related subject-site contact (week 75). On-treatment observation period: the interval from the date of first trial product administration (week 0) to the date of last trial product administration (week 68) plus a 2-week follow-up period and excluding any off-treatment time intervals. Off-treatment time interval: time period with at least two consecutive missed doses.
+    Time Frame: Baseline (week 0) to week 68
+- Participants Who Achieve (Yes/no): Body Weight Reduction ≥5% - Semaglutide 2.4 mg Versus Placebo
+    Number of participants who achieved weight reduction ≥5% of their baseline body weight (yes/no) at week 68 is presented. Results are based on the data from both in-trial and on-treatment observation periods. In-trial observation period: the uninterrupted time interval from the start of randomisation (week 0) to last trial-related subject-site contact. On-treatment observation period: the interval from the date of first trial product administration (week 0) to the date of last trial product administration (week 68) plus a 2 week follow-up period and excluding any off-treatment time intervals. Off-treatment time interval: time period with at least two consecutive missed doses.
+    Time Frame: At week 68
+
+=== SECONDARY OUTCOMES ===
+- Change in Body Weight (%) - Semaglutide 2.4 mg Versus Semaglutide 1.0 mg (Time Frame: Baseline (week 0) to week 68)
+- Participants Who Achieve (Yes/no): Body Weight Reduction ≥5% - Semaglutide 2.4 mg Versus Semaglutide 1.0 mg (Time Frame: At week 68)
+- Change in Waist Circumference (Time Frame: Baseline (week 0) to week 68)
+- Change in Body Weight (Kg) (Time Frame: Baseline (week 0) to week 68)
+- Change in BMI (Time Frame: Baseline (week 0) to week 68)
+- Participants Who Achieve (Yes/no): Body Weight Reduction ≥10% (Time Frame: At week 68)
+- Participants Who Achieve (Yes/no): Body Weight Reduction ≥15% (Time Frame: At week 68)
+- Participants Who Achieve (Yes/no): Body Weight Reduction ≥20% (Time Frame: At week 68)
+- Change in HbA1c (%) (Time Frame: Baseline (week 0) to week 68)
+- Change in HbA1c (mmol/Mol) (Time Frame: Baseline (week 0) to week 68)
+
+=== ELIGIBILITY CRITERIA ===
+Inclusion Criteria:
+
+* Male or female, age greater than or equal to 18 years at the time of signing informed consent
+* Body Mass Index (BMI) greater than or equal to 27 kg/m\^2 '
+* History of at least one self-reported unsuccessful dietary effort to lose body weight
+* Diagnosed with type 2 diabetes (haemoglobin A1c 7-10% (53-86 mmol/mol) (both inclusive)) 180 days or longer prior to the day of screening
+
+Exclusion Criteria:
+
+* A self-reported change in body weight greater than 5 kg (11 lbs) within 90 days before screening irrespective of medical records
+* Renal impairment measured as estimated Glomerular Filtration Rate (eGFR) value of less than 30 mL/min/1.73 m\^2 (less than 60 ml/min/1.73 m\^2 in subjects treated with Sodium-glucose Cotransporter 2 Inhibitors) according to chronic kidney disease (CKD)-Epidemiology Collaboration (EPI) creatinine equation as defined by Kidney Disease: Improving Global Outcomes (KDIGO) 2012 by the central laboratory at screening
+* Uncontrolled and potentially unstable diabetic retinopathy or maculopathy. Verified by a pharmacologically pupil-dilated fundus examination performed by an ophthalmologist or an equally qualified health care provider (e.g. optometrist) within the past 90 days prior to screening or in the period between screening and randomisation
+
+Population: Sex: ALL; Min Age: 18 Years; Healthy Volunteers: False

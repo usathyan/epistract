@@ -1,0 +1,62 @@
+Title: Research Study to Look at How Well Semaglutide is at Lowering Weight When Taken Together With an Intensive Lifestyle Program
+NCT ID: NCT03611582
+Acronym: STEP 3
+Status: COMPLETED
+Phase: PHASE3
+Study Type: INTERVENTIONAL
+Enrollment: 611
+Start Date: 2018-08-01
+Completion Date: 2020-04-28
+Lead Sponsor: Novo Nordisk A/S
+Conditions: Overweight; Obesity
+
+=== BRIEF SUMMARY ===
+This study will look at the change in participant's body weight from the start to the end of the study. This is to compare the effect on body weight in people taking semaglutide (a new medicine) and people taking "dummy" medicine. Together with the medicine, the participant will also be part of an intensive lifestyle program where the participant will have talks with study staff about healthy food choices, what the participant can do to lose weight and be more physically active. The participant will either get semaglutide or "dummy" medicine - which treatment the participant gets is decided by chance. The participant will need to take 1 injection once a week. The study medicine is injected with a thin needle in a skin fold in the stomach, thigh or upper arm. For the first 2 months the participant will be on a low calorie diet. The diet is made up of bars, shakes and 1 low calorie pre-prepared meal for each day. The study will last for about 1.5 years. The participant will have 32 clinic visits with the study doctor.
+
+=== STUDY ARMS / COHORTS ===
+- Semaglutide (EXPERIMENTAL)
+    Participants will receive semaglutide 2.4 mg during 68-week treatment period in addition to intensive behavioural therapy.
+    Interventions: Drug: Semaglutide
+- Semaglutide placebo (PLACEBO_COMPARATOR)
+    Participants will receive semaglutide placebo during 68-week treatment period in addition to intensive behavioural therapy.
+    Interventions: Drug: Placebo (semaglutide)
+
+=== INTERVENTIONS ===
+- Semaglutide [DRUG]
+    Subcutaneous (s.c., under the skin) injections of semaglutide once weekly at escalating doses (0.25 mg/week, 0.5 mg/week, 1.0 mg/week, 1.7 mg/week, 2.4 mg/week). The dose will be escalated to next level every 4 weeks.
+- Placebo (semaglutide) [DRUG]
+    S.c. injections of placebo once weekly at a similar dose escalation manner as semaglutide (placebo matched to semaglutide 0.25 mg/week, 0.5 mg/week, 1.0 mg/week, 1.7 mg/week, 2.4 mg/week). The dose will be escalated to next level every 4 weeks.
+
+=== PRIMARY OUTCOMES ===
+- Change in Body Weight (%)
+    Change in body weight from baseline (week 0) to week 68 is presented. The endpoint was evaluated based on the data from both in-trial and on-treatment periods. In-trial observation period: the uninterrupted time interval from the start of randomisation (week 0) to last trial-related subject-site contact (week 75). On-treatment observation period: includes all time intervals in which participants are considered to be on treatment from the first (week 0) to last trial product administration (week 68), including 2 weeks of follow-up. It excludes any period of temporary treatment interruption. Temporary treatment interruption is defined as more than 2 consecutive missed doses (off-treatment period).
+    Time Frame: Baseline (week 0) to week 68
+- Participants Who Achieve (Yes/no): Body Weight Reduction More Than or Equal to 5%
+    Number of participants who achieved greater than or equal to (≥) 5% weight loss after 68 weeks is presented. In the reported data, 'Yes' infers the number of participants who have achieved ≥ 5% weight loss, whereas 'No' infers the number of participants who have not achieved ≥ 5% weight loss. The endpoint was evaluated based on the data from both in-trial and on-treatment observation periods. In-trial observation period: the uninterrupted time interval from start of randomization (week 0) to last trial-related subject-site contact (week 75). On-treatment observation period: includes all time intervals in which participants are considered to be on treatment from the first (week 0) to last trial product administration (week 68), including 2 weeks of follow-up. It excludes any period of temporary treatment interruption.
+    Time Frame: After 68 weeks
+
+=== SECONDARY OUTCOMES ===
+- Participants Who Achieve (Yes/no): Body Weight Reduction More Than or Equal to 10% (Time Frame: After 68 weeks)
+- Participants Who Achieve (Yes/no): Body Weight Reduction More Than or Equal to 15% (Time Frame: After 68 weeks)
+- Participants Who Achieve (Yes/no): Body Weight Reduction More Than or Equal to 20% (Time Frame: After 68 weeks)
+- Change in Waist Circumference (Time Frame: Baseline (week 0) to week 68)
+- Change in Systolic Blood Pressure (Time Frame: Baseline (week 0) to week 68)
+- Change in Short Form-36 (SF-36) - Physical Functioning Score (Time Frame: Baseline (week 0) to week 68)
+- Change in Body Weight (Kg) (Time Frame: Baseline (week 0) to week 68)
+- Change in Body Mass Index (Time Frame: Baseline (week 0) to week 68)
+- Change in HbA1c (%) (Time Frame: Baseline (week 0) to week 68)
+- Change in HbA1c (mmol/Mol) (Time Frame: Baseline (week 0) to week 68)
+
+=== ELIGIBILITY CRITERIA ===
+Inclusion Criteria:
+
+* Male or female, age more than or equal to 18 years at the time of signing informed consent
+* Body mass index more than or equal to 30 kg/m\^2 or more than or equal to 27 kg/m\^2 with the presence of at least one of the following weight-related comorbidities (treated or untreated): hypertension, dyslipidaemia, obstructive sleep apnoea or cardiovascular disease
+* History of at least one self-reported unsuccessful dietary effort to lose body weight
+
+Exclusion Criteria:
+
+* Hemoglobin A1c more than or equal to 48 mmol/mol (6.5%) as measured by the central laboratory at screening
+* A self-reported change in body weight more than 5 kg (11 lbs) within 90 days before screening irrespective of medical records
+
+Population: Sex: ALL; Min Age: 18 Years; Healthy Volunteers: False

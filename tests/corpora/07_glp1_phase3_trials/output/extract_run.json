@@ -1,0 +1,112 @@
+{
+  "docs_total": 10,
+  "docs_done": 10,
+  "docs_skipped": 0,
+  "docs_failed": 0,
+  "total_cost_usd": 0.9818339999999999,
+  "total_tokens": 119658,
+  "model": "anthropic/claude-sonnet-4.6",
+  "domain": "clinicaltrials",
+  "results": [
+    {
+      "doc_id": "nct01720446_sustain_6",
+      "chunks": 1,
+      "entities": 22,
+      "relations": 22,
+      "cost_usd": 0.092148,
+      "total_tokens": 11508,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "nct02692716_pioneer_6",
+      "chunks": 1,
+      "entities": 16,
+      "relations": 16,
+      "cost_usd": 0.068961,
+      "total_tokens": 9803,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "nct02906930_pioneer_1",
+      "chunks": 1,
+      "entities": 27,
+      "relations": 26,
+      "cost_usd": 0.105774,
+      "total_tokens": 12414,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "nct03548935_step_1",
+      "chunks": 1,
+      "entities": 25,
+      "relations": 25,
+      "cost_usd": 0.104022,
+      "total_tokens": 12442,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "nct03552757_step_2",
+      "chunks": 1,
+      "entities": 24,
+      "relations": 26,
+      "cost_usd": 0.105831,
+      "total_tokens": 12873,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "nct03611582_step_3",
+      "chunks": 1,
+      "entities": 25,
+      "relations": 26,
+      "cost_usd": 0.104889,
+      "total_tokens": 12387,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "nct03987919_surpass_2",
+      "chunks": 1,
+      "entities": 23,
+      "relations": 23,
+      "cost_usd": 0.097269,
+      "total_tokens": 11743,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "nct04184622_surmount_1",
+      "chunks": 1,
+      "entities": 28,
+      "relations": 29,
+      "cost_usd": 0.115308,
+      "total_tokens": 13496,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "nct05715307_achieve_1",
+      "chunks": 1,
+      "entities": 21,
+      "relations": 20,
+      "cost_usd": 0.086688,
+      "total_tokens": 11268,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "nct05822830_surmount_5",
+      "chunks": 1,
+      "entities": 23,
+      "relations": 27,
+      "cost_usd": 0.100944,
+      "total_tokens": 11724,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    }
+  ]
+}

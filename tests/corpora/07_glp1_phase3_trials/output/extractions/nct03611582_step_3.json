@@ -1,0 +1,481 @@
+{
+  "document_id": "nct03611582_step_3",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "NCT03611582",
+      "entity_type": "Trial",
+      "confidence": 0.99,
+      "context": "STEP 3 (NCT03611582): Phase 3 interventional study of semaglutide plus intensive lifestyle program for weight reduction",
+      "attributes": {
+        "trial_acronym": "STEP 3",
+        "descriptive_title": "Research Study to Look at How Well Semaglutide is at Lowering Weight When Taken Together With an Intensive Lifestyle Program",
+        "study_type": "Interventional",
+        "status": "Completed",
+        "enrollment": 611,
+        "start_date": "2018-08-01",
+        "completion_date": "2020-04-28"
+      }
+    },
+    {
+      "name": "Phase 3",
+      "entity_type": "TrialPhase",
+      "confidence": 0.99,
+      "context": "Phase: PHASE3 as listed in the trial record",
+      "attributes": {
+        "design": "Randomized controlled trial",
+        "blinding": "Double-blind (placebo-controlled)"
+      }
+    },
+    {
+      "name": "semaglutide",
+      "entity_type": "Compound",
+      "confidence": 0.98,
+      "context": "Semaglutide, a GLP-1 receptor agonist, administered as subcutaneous injections once weekly at escalating doses up to 2.4 mg",
+      "attributes": {
+        "inn": "semaglutide",
+        "drug_class": "GLP-1 receptor agonist",
+        "route": "Subcutaneous injection",
+        "max_dose": "2.4 mg",
+        "schedule": "Once weekly"
+      }
+    },
+    {
+      "name": "Semaglutide 2.4 mg QW s.c. + intensive behavioural therapy",
+      "entity_type": "Intervention",
+      "confidence": 0.95,
+      "context": "Experimental arm: semaglutide 2.4 mg during 68-week treatment period in addition to intensive behavioural therapy",
+      "attributes": {
+        "dose": "2.4 mg",
+        "schedule": "Once weekly",
+        "route": "Subcutaneous",
+        "duration": "68 weeks",
+        "co_treatment": "Intensive behavioural therapy"
+      }
+    },
+    {
+      "name": "Placebo (semaglutide) + intensive behavioural therapy",
+      "entity_type": "Intervention",
+      "confidence": 0.95,
+      "context": "Placebo comparator arm: semaglutide placebo during 68-week treatment period in addition to intensive behavioural therapy",
+      "attributes": {
+        "dose": "Matched to semaglutide escalation",
+        "schedule": "Once weekly",
+        "route": "Subcutaneous",
+        "duration": "68 weeks",
+        "co_treatment": "Intensive behavioural therapy"
+      }
+    },
+    {
+      "name": "Intensive Behavioural Therapy",
+      "entity_type": "Intervention",
+      "confidence": 0.92,
+      "context": "Intensive lifestyle program including counselling on healthy food choices, physical activity, and initial low-calorie diet; administered to all participants",
+      "attributes": {
+        "type": "Behavioural/lifestyle",
+        "components": "Dietary counselling, physical activity guidance, low-calorie diet for first 2 months"
+      }
+    },
+    {
+      "name": "Arm A: Semaglutide 2.4 mg QW",
+      "entity_type": "Cohort",
+      "confidence": 0.95,
+      "context": "Experimental arm: participants receive semaglutide 2.4 mg once weekly plus intensive behavioural therapy for 68 weeks",
+      "attributes": {
+        "arm_label": "Semaglutide",
+        "arm_type": "EXPERIMENTAL",
+        "dose": "2.4 mg",
+        "schedule": "QW",
+        "route": "Subcutaneous",
+        "duration": "68 weeks"
+      }
+    },
+    {
+      "name": "Arm B: Semaglutide Placebo",
+      "entity_type": "Cohort",
+      "confidence": 0.95,
+      "context": "Placebo comparator arm: participants receive semaglutide placebo once weekly plus intensive behavioural therapy for 68 weeks",
+      "attributes": {
+        "arm_label": "Semaglutide placebo",
+        "arm_type": "PLACEBO_COMPARATOR",
+        "schedule": "QW",
+        "route": "Subcutaneous",
+        "duration": "68 weeks"
+      }
+    },
+    {
+      "name": "Obesity",
+      "entity_type": "Condition",
+      "confidence": 0.98,
+      "context": "Condition listed: Obesity; participants required to have BMI \u226530 kg/m\u00b2 or \u226527 kg/m\u00b2 with weight-related comorbidities",
+      "attributes": {
+        "mesh_term": "Obesity",
+        "bmi_threshold": "\u226530 kg/m\u00b2"
+      }
+    },
+    {
+      "name": "Overweight",
+      "entity_type": "Condition",
+      "confidence": 0.97,
+      "context": "Condition listed: Overweight; participants with BMI \u226527 kg/m\u00b2 with at least one weight-related comorbidity eligible",
+      "attributes": {
+        "mesh_term": "Overweight",
+        "bmi_threshold": "\u226527 kg/m\u00b2 with comorbidity"
+      }
+    },
+    {
+      "name": "Novo Nordisk A/S",
+      "entity_type": "Sponsor",
+      "confidence": 0.99,
+      "context": "Lead Sponsor: Novo Nordisk A/S",
+      "attributes": {
+        "role": "Lead Sponsor",
+        "country": "Denmark"
+      }
+    },
+    {
+      "name": "change in body weight (%)",
+      "entity_type": "Outcome",
+      "confidence": 0.98,
+      "context": "Primary endpoint: change in body weight (%) from baseline (week 0) to week 68",
+      "attributes": {
+        "endpoint_type": "Primary",
+        "time_frame": "Baseline (week 0) to week 68",
+        "observation_periods": "In-trial and on-treatment"
+      }
+    },
+    {
+      "name": "proportion of participants achieving \u22655% body weight reduction",
+      "entity_type": "Outcome",
+      "confidence": 0.97,
+      "context": "Primary endpoint: number of participants achieving \u22655% weight loss after 68 weeks",
+      "attributes": {
+        "endpoint_type": "Primary",
+        "time_frame": "After 68 weeks",
+        "threshold": "\u22655%"
+      }
+    },
+    {
+      "name": "proportion of participants achieving \u226510% body weight reduction",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary endpoint: participants achieving \u226510% body weight reduction after 68 weeks",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "After 68 weeks",
+        "threshold": "\u226510%"
+      }
+    },
+    {
+      "name": "proportion of participants achieving \u226515% body weight reduction",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary endpoint: participants achieving \u226515% body weight reduction after 68 weeks",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "After 68 weeks",
+        "threshold": "\u226515%"
+      }
+    },
+    {
+      "name": "proportion of participants achieving \u226520% body weight reduction",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary endpoint: participants achieving \u226520% body weight reduction after 68 weeks",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "After 68 weeks",
+        "threshold": "\u226520%"
+      }
+    },
+    {
+      "name": "change in waist circumference",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary endpoint: change in waist circumference from baseline to week 68",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Baseline (week 0) to week 68"
+      }
+    },
+    {
+      "name": "change in systolic blood pressure",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary endpoint: change in systolic blood pressure from baseline to week 68",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Baseline (week 0) to week 68"
+      }
+    },
+    {
+      "name": "change in SF-36 physical functioning score",
+      "entity_type": "Outcome",
+      "confidence": 0.93,
+      "context": "Secondary endpoint: change in Short Form-36 (SF-36) physical functioning score from baseline to week 68",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Baseline (week 0) to week 68",
+        "instrument": "SF-36"
+      }
+    },
+    {
+      "name": "change in body weight (kg)",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary endpoint: change in body weight in kg from baseline to week 68",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Baseline (week 0) to week 68"
+      }
+    },
+    {
+      "name": "change in body mass index",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary endpoint: change in body mass index from baseline to week 68",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Baseline (week 0) to week 68"
+      }
+    },
+    {
+      "name": "change in HbA1c",
+      "entity_type": "Outcome",
+      "confidence": 0.95,
+      "context": "Secondary endpoint: change in HbA1c (% and mmol/mol) from baseline to week 68",
+      "attributes": {
+        "endpoint_type": "Secondary",
+        "time_frame": "Baseline (week 0) to week 68",
+        "units": "% and mmol/mol"
+      }
+    },
+    {
+      "name": "BMI \u226530 kg/m\u00b2 or \u226527 kg/m\u00b2 with weight-related comorbidity",
+      "entity_type": "Biomarker",
+      "confidence": 0.88,
+      "context": "Inclusion criterion: BMI \u226530 kg/m\u00b2 or \u226527 kg/m\u00b2 with hypertension, dyslipidaemia, obstructive sleep apnoea, or cardiovascular disease",
+      "attributes": {
+        "biomarker_type": "Anthropometric",
+        "use": "Patient selection (inclusion criterion)",
+        "thresholds": "\u226530 kg/m\u00b2 or \u226527 kg/m\u00b2 with comorbidity"
+      }
+    },
+    {
+      "name": "HbA1c <48 mmol/mol (6.5%)",
+      "entity_type": "Biomarker",
+      "confidence": 0.87,
+      "context": "Exclusion criterion: HbA1c \u226548 mmol/mol (6.5%) at screening excludes participants (i.e., non-diabetic population required)",
+      "attributes": {
+        "biomarker_type": "Laboratory",
+        "gene": "HBA1C",
+        "use": "Patient selection (exclusion criterion)",
+        "threshold": "<48 mmol/mol (6.5%)"
+      }
+    },
+    {
+      "name": "Adults with overweight or obesity without diabetes, BMI \u226527 kg/m\u00b2",
+      "entity_type": "Population",
+      "confidence": 0.92,
+      "context": "Adults \u226518 years with BMI \u226530 or \u226527 with comorbidities, HbA1c <48 mmol/mol, history of unsuccessful dietary weight loss effort",
+      "attributes": {
+        "age_group": "Adult (\u226518 years)",
+        "sex": "All",
+        "bmi_criteria": "\u226530 kg/m\u00b2 or \u226527 kg/m\u00b2 with comorbidity",
+        "diabetes_excluded": true,
+        "healthy_volunteers": false
+      }
+    }
+  ],
+  "relations": [
+    {
+      "source_entity": "NCT03611582",
+      "target_entity": "Phase 3",
+      "relation_type": "is_phase",
+      "confidence": 0.99,
+      "evidence": "Phase: PHASE3 as listed in the trial record"
+    },
+    {
+      "source_entity": "NCT03611582",
+      "target_entity": "Novo Nordisk A/S",
+      "relation_type": "sponsored_by",
+      "confidence": 0.99,
+      "evidence": "Lead Sponsor: Novo Nordisk A/S"
+    },
+    {
+      "source_entity": "NCT03611582",
+      "target_entity": "semaglutide",
+      "relation_type": "tests",
+      "confidence": 0.98,
+      "evidence": "Experimental arm evaluates semaglutide 2.4 mg once weekly subcutaneous injection"
+    },
+    {
+      "source_entity": "NCT03611582",
+      "target_entity": "Semaglutide 2.4 mg QW s.c. + intensive behavioural therapy",
+      "relation_type": "tests",
+      "confidence": 0.97,
+      "evidence": "Experimental arm: semaglutide 2.4 mg during 68-week treatment period in addition to intensive behavioural therapy"
+    },
+    {
+      "source_entity": "NCT03611582",
+      "target_entity": "Intensive Behavioural Therapy",
+      "relation_type": "tests",
+      "confidence": 0.93,
+      "evidence": "All participants receive intensive behavioural therapy including dietary counselling and physical activity guidance"
+    },
+    {
+      "source_entity": "NCT03611582",
+      "target_entity": "Obesity",
+      "relation_type": "investigates",
+      "confidence": 0.98,
+      "evidence": "Study investigates weight reduction in participants with obesity (BMI \u226530 kg/m\u00b2)"
+    },
+    {
+      "source_entity": "NCT03611582",
+      "target_entity": "Overweight",
+      "relation_type": "investigates",
+      "confidence": 0.97,
+      "evidence": "Study investigates weight reduction in participants with overweight (BMI \u226527 kg/m\u00b2 with comorbidities)"
+    },
+    {
+      "source_entity": "semaglutide",
+      "target_entity": "Obesity",
+      "relation_type": "treats",
+      "confidence": 0.93,
+      "evidence": "Semaglutide evaluated for treatment of obesity in STEP 3 trial"
+    },
+    {
+      "source_entity": "semaglutide",
+      "target_entity": "Overweight",
+      "relation_type": "treats",
+      "confidence": 0.9,
+      "evidence": "Semaglutide evaluated for treatment of overweight with comorbidities in STEP 3 trial"
+    },
+    {
+      "source_entity": "NCT03611582",
+      "target_entity": "change in body weight (%)",
+      "relation_type": "has_outcome",
+      "confidence": 0.98,
+      "evidence": "Primary endpoint: change in body weight (%) from baseline to week 68"
+    },
+    {
+      "source_entity": "NCT03611582",
+      "target_entity": "proportion of participants achieving \u22655% body weight reduction",
+      "relation_type": "has_outcome",
+      "confidence": 0.97,
+      "evidence": "Primary endpoint: number of participants achieving \u22655% weight loss after 68 weeks"
+    },
+    {
+      "source_entity": "NCT03611582",
+      "target_entity": "proportion of participants achieving \u226510% body weight reduction",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary endpoint: participants achieving \u226510% body weight reduction after 68 weeks"
+    },
+    {
+      "source_entity": "NCT03611582",
+      "target_entity": "proportion of participants achieving \u226515% body weight reduction",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary endpoint: participants achieving \u226515% body weight reduction after 68 weeks"
+    },
+    {
+      "source_entity": "NCT03611582",
+      "target_entity": "proportion of participants achieving \u226520% body weight reduction",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary endpoint: participants achieving \u226520% body weight reduction after 68 weeks"
+    },
+    {
+      "source_entity": "NCT03611582",
+      "target_entity": "change in waist circumference",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary endpoint: change in waist circumference from baseline to week 68"
+    },
+    {
+      "source_entity": "NCT03611582",
+      "target_entity": "change in systolic blood pressure",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary endpoint: change in systolic blood pressure from baseline to week 68"
+    },
+    {
+      "source_entity": "NCT03611582",
+      "target_entity": "change in SF-36 physical functioning score",
+      "relation_type": "has_outcome",
+      "confidence": 0.93,
+      "evidence": "Secondary endpoint: change in SF-36 physical functioning score from baseline to week 68"
+    },
+    {
+      "source_entity": "NCT03611582",
+      "target_entity": "change in body weight (kg)",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary endpoint: change in body weight in kg from baseline to week 68"
+    },
+    {
+      "source_entity": "NCT03611582",
+      "target_entity": "change in body mass index",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary endpoint: change in body mass index from baseline to week 68"
+    },
+    {
+      "source_entity": "NCT03611582",
+      "target_entity": "change in HbA1c",
+      "relation_type": "has_outcome",
+      "confidence": 0.95,
+      "evidence": "Secondary endpoint: change in HbA1c (% and mmol/mol) from baseline to week 68"
+    },
+    {
+      "source_entity": "NCT03611582",
+      "target_entity": "BMI \u226530 kg/m\u00b2 or \u226527 kg/m\u00b2 with weight-related comorbidity",
+      "relation_type": "uses_biomarker",
+      "confidence": 0.88,
+      "evidence": "Inclusion criterion: BMI \u226530 kg/m\u00b2 or \u226527 kg/m\u00b2 with weight-related comorbidity required for enrollment"
+    },
+    {
+      "source_entity": "NCT03611582",
+      "target_entity": "HbA1c <48 mmol/mol (6.5%)",
+      "relation_type": "uses_biomarker",
+      "confidence": 0.87,
+      "evidence": "Exclusion criterion: HbA1c \u226548 mmol/mol (6.5%) at screening excludes participants"
+    },
+    {
+      "source_entity": "NCT03611582",
+      "target_entity": "Adults with overweight or obesity without diabetes, BMI \u226527 kg/m\u00b2",
+      "relation_type": "enrolls",
+      "confidence": 0.95,
+      "evidence": "Enrolled adults \u226518 years with BMI \u226530 or \u226527 with comorbidities, HbA1c <48 mmol/mol, history of unsuccessful dietary weight loss"
+    },
+    {
+      "source_entity": "NCT03611582",
+      "target_entity": "Arm A: Semaglutide 2.4 mg QW",
+      "relation_type": "enrolls",
+      "confidence": 0.95,
+      "evidence": "Experimental arm: participants receive semaglutide 2.4 mg once weekly plus intensive behavioural therapy"
+    },
+    {
+      "source_entity": "NCT03611582",
+      "target_entity": "Arm B: Semaglutide Placebo",
+      "relation_type": "enrolls",
+      "confidence": 0.95,
+      "evidence": "Placebo comparator arm: participants receive semaglutide placebo once weekly plus intensive behavioural therapy"
+    },
+    {
+      "source_entity": "semaglutide",
+      "target_entity": "Intensive Behavioural Therapy",
+      "relation_type": "co_intervention",
+      "confidence": 0.95,
+      "evidence": "Semaglutide administered together with intensive behavioural therapy in the experimental arm"
+    }
+  ],
+  "cost_usd": 0.104889,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Clinical Trials",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-23T12:29:28.685584+00:00",
+  "error": null
+}

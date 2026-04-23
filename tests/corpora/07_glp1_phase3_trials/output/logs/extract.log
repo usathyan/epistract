@@ -1,0 +1,12 @@
+[1/10] EXTRACT nct01720446_sustain_6 ... 22E/22R tok=11508 $0.0921 rc=0 (70.4s)
+[2/10] EXTRACT nct02692716_pioneer_6 ... 16E/16R tok=9803 $0.0690 rc=0 (63.3s)
+[3/10] EXTRACT nct02906930_pioneer_1 ... 27E/26R tok=12414 $0.1058 rc=0 (108.1s)
+[4/10] EXTRACT nct03548935_step_1 ... 25E/25R tok=12442 $0.1040 rc=0 (63.0s)
+[5/10] EXTRACT nct03552757_step_2 ... 24E/26R tok=12873 $0.1058 rc=0 (56.3s)
+[6/10] EXTRACT nct03611582_step_3 ... 25E/26R tok=12387 $0.1049 rc=0 (134.4s)
+[7/10] EXTRACT nct03987919_surpass_2 ... 23E/23R tok=11743 $0.0973 rc=0 (46.2s)
+[8/10] EXTRACT nct04184622_surmount_1 ... 28E/29R tok=13496 $0.1153 rc=0 (68.9s)
+[9/10] EXTRACT nct05715307_achieve_1 ... 21E/20R tok=11268 $0.0867 rc=0 (125.9s)
+[10/10] EXTRACT nct05822830_surmount_5 ... 23E/27R tok=11724 $0.1009 rc=0 (60.2s)
+
+=== DONE: 10 new, 0 skipped, 0 failed | $0.9818 | 119658 tokens ===

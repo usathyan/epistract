@@ -1,0 +1,54 @@
+Title: Trial to Evaluate Cardiovascular and Other Long-term Outcomes With Semaglutide in Subjects With Type 2 Diabetes
+NCT ID: NCT01720446
+Acronym: SUSTAIN™ 6
+Status: COMPLETED
+Phase: PHASE3
+Study Type: INTERVENTIONAL
+Enrollment: 3297
+Start Date: 2013-02-21
+Completion Date: 2016-03-15
+Lead Sponsor: Novo Nordisk A/S
+Conditions: Diabetes; Diabetes Mellitus, Type 2
+
+=== BRIEF SUMMARY ===
+This trial is conducted globally. The aim of the trial is to evaluate cardiovascular and other long-term outcomes with semaglutide in subjects with type 2 diabetes. The trial is event-driven, i.e. the maximum trial duration (up to max. 148 weeks) will depend on the accrual of major adverse cardiovascular events (MACE) in this trial and the remaining research programme. The incidence of MACE will be monitored throughout the trial which will be terminated according to plan when pre-specified stopping criteria are met.
+
+=== STUDY ARMS / COHORTS ===
+- Semaglutide 0.5 mg (EXPERIMENTAL)
+    Interventions: Drug: semaglutide
+- Semaglutide 1.0 mg (EXPERIMENTAL)
+    Interventions: Drug: semaglutide
+- Semaglutide placebo 0.5 mg (PLACEBO_COMPARATOR)
+    Interventions: Drug: placebo
+- Semaglutide placebo 1.0 mg (PLACEBO_COMPARATOR)
+    Interventions: Drug: placebo
+
+=== INTERVENTIONS ===
+- semaglutide [DRUG]
+    Once weekly doses of 0.5 mg semaglutide after an initial dose escalation step of 0.25 mg as an add-on to the standard-of-care treatment. Administered subcutaneously (s.c., under the skin)
+- semaglutide [DRUG]
+    Once weekly doses of 1.0 mg semaglutide after an initial dose escalation step of 0.25 mg followed by 0.5 mg dose escalation as an add-on to the standard-of-care treatment. Administered subcutaneously (s.c., under the skin)
+- placebo [DRUG]
+    Once weekly doses volume-matched placebo, as an add-on to the standard-of-care treatment. Administered subcutaneously (s.c., under the skin).
+
+=== PRIMARY OUTCOMES ===
+- Time From Randomisation to First Occurrence of a MACE, Defined as Cardiovascular Death, Non-fatal Myocardial Infarction, or Non-fatal Stroke
+    Percentage of subjects experiencing a first event of a major adverse cardiovascular event (MACE), defined as cardiovascular (CV) death, non-fatal myocardial infarction (MI), or non-fatal stroke.
+    Time Frame: Time from randomisation up to end of follow-up (scheduled at week 109)
+
+=== SECONDARY OUTCOMES ===
+- Time From Randomisation to First Occurrence of an Expanded Composite Cardiovascular Outcome (Time Frame: Time from randomisation up to end of follow-up (scheduled at week 109))
+- Time From Randomisation to Each Individual Component of the Expanded Composite Cardiovascular Outcome (Time Frame: Time from randomisation up to end of follow-up (scheduled at week 109))
+- Time From Randomisation to First Occurrence of All-cause Death, Non-fatal MI, or Non-fatal Stroke (Time Frame: Time from randomisation up to end of follow-up (scheduled at week 109))
+- Change From Baseline to Last Assessment in the Trial in Other Treatment Outcomes: Glycosylated Haemoglobin (HbA1c) (Time Frame: Week 0, up to week 104)
+- Change From Baseline to Last Assessment in the Trial in Other Treatment Outcomes: Fasting Plasma Glucose (Time Frame: Week 0, up to week 104)
+- Change From Baseline to Last Assessment in the Trial in Other Treatment Outcomes: Body Weight (Time Frame: Week 0, up to week 104)
+- Change From Baseline to Last Assessment in the Trial in Other Treatment Outcomes: Lipid Profile (Time Frame: Week 0, up to week 104)
+- Change From Baseline to Last Assessment in the Trial in Other Treatment Outcomes: Urinary Albumin to Creatinine Ratio (Time Frame: Week 0, up to week 104)
+- Change From Baseline to Last Assessment in the Trial in Other Treatment Outcomes: Vital Signs (Time Frame: Week 0, up to week 104)
+- Incidence During the Trial in Other Treatment Outcomes: Hypoglycaemic Events (Time Frame: Week 0 - 109)
+
+=== ELIGIBILITY CRITERIA ===
+Inclusion Criteria: - Men and women with type 2 diabetes mellitus - Age above or equal to 50 years at screening and clinical evidence of cardiovascular disease or age above or equal to 60 years at screening and subclinical evidence of cardiovascular disease - Anti-diabetic drug naïve, or treated with one or two oral antidiabetic drug (OADs), or treated with human Neutral Protamin Hagedorn (NPH) insulin or long-acting insulin analogue or pre-mixed insulin, both types of insulin either alone or in combination with one or two OADs - HbA1c above or equal to 7.0% at screening Exclusion Criteria: - Type 1 diabetes mellitus - Use of glucagon-like peptide-1 (GLP-1) receptor agonist (exenatide, liraglutide, or other) or pramlintide within 90 days prior to screening - Use of any dipeptidyl peptidase 4 (DPP-IV) inhibitor within 30 days prior to screening - Treatment with insulin other than basal and pre-mixed insulin within 90 days prior to screening - except for short-term use in connection with intercurrent illness - Acute decompensation of glycaemic control requiring immediate intensification of treatment to prevent acute complications of diabetes (eg diabetes ketoacidosis) within 90 days prior to screening - History of chronic pancreatitis or idiopathic acute pancreatitis - Acute coronary or cerebro-vascular event within 90 days prior to randomisation - Currently planned coronary, carotid or peripheral artery revascularisation - Chronic heart failure New York Heart Association (NYHA) class IV - Personal or family history of multiple endocrine neoplasia type 2 (MEN2) or familial medullary thyroid carcinoma - Personal history of non-familial medullary thyroid carcinoma - Screening calcitonin above or equal to 50 ng/L
+
+Population: Sex: ALL; Min Age: 50 Years; Healthy Volunteers: False

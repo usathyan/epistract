@@ -2,6 +2,42 @@
 
 All notable changes to epistract are documented here. This project follows [Semantic Versioning](https://semver.org/).
 
+## [3.1.0] — 2026-04-23
+
+**Clinical Trials domain + external API enrichment + usage guards.** Adds a third pre-built domain (`clinicaltrials`) alongside drug-discovery and contracts, plus post-build enrichment against ClinicalTrials.gov v2 + PubChem PUG REST via `--enrich`. Hardens all 12 `/epistract:*` commands with Usage Guard blocks. Ships on top of v3.0.0's narrator + persona framework — the clinicaltrials domain gets a full analyst persona that drives both the workbench chat (reactive) and the automatic narrator (proactive).
+
+### Highlights
+
+- **Phase 21 — Clinical Trials domain package.** `domains/clinicaltrials/` ships with `domain.yaml` (12 entity types: Trial, Intervention, Condition, Sponsor, Investigator, Outcome, Compound, Biomarker, Cohort, Population, TrialPhase, Site; 10 relation types), `SKILL.md` (NCT ID capture, Phase classification, intervention/condition disambiguation, arm/cohort structure; 529 lines), and `epistemic.py` (phase-based evidence grading: Phase III → high, Phase II → medium, Phase I/observational → low; blinding/enrollment signals).
+- **External enrichment via `--enrich`.** `/epistract:ingest --domain clinicaltrials --enrich` runs `domains/clinicaltrials/enrich.py` after graph build. Trial nodes matching `NCT\d{8}` get `ct_overall_status`, `ct_phase`, `ct_enrollment`, `ct_start_date`, `ct_completion_date`, `ct_brief_title`. Compound nodes get `pubchem_cid`, `molecular_formula`, `molecular_weight`, `canonical_smiles`, `inchi`. Per-entity-type hit rates recorded in `<output_dir>/extractions/_enrichment_report.json`. Non-blocking by design: 404/429/timeout/connection errors log counts but never abort the pipeline.
+- **Usage Guard blocks on all 12 commands.** Every `/epistract:*` command now shows a formatted usage summary when invoked without required args or with `--help`. 9 commands use the guard-and-stop pattern; 3 orientation-summary variants (view, setup, domain) for commands with no required args.
+- **Three pre-built domains, one persona pattern.** The clinicaltrials domain ships with a `workbench/template.yaml` that carries a senior clinical-trials analyst persona — Phase III emphasis, NCT ID citations, enrollment-size reasoning, stratification by randomization/blinding. Same single-source-of-truth as v3.0: powers both reactive chat and proactive narrator.
+
+### Added
+
+- `domains/clinicaltrials/` — complete domain package (`domain.yaml`, `SKILL.md`, `epistemic.py`, `enrich.py`, `workbench/template.yaml`)
+- `core/domain_resolver.py` — `clinicaltrial` / `clinical_trials` aliases
+- `tests/fixtures/clinicaltrials/` — CT.gov v2 + PubChem mock responses, 404 shape fixture, sample CT protocol text
+- `tests/test_unit.py` — 12 CTDM tests (CTDM-01 through CTDM-06) covering domain YAML shape, resolver registration, SKILL.md directives, epistemic module dispatch, CT.gov/PubChem mock enrichment, 404-handling, non-blocking contract, and `_enrichment_report.json` schema
+- `commands/ingest.md` — `--enrich` flag + Step 5.5 (Enrich Knowledge Graph) invoking `domains/clinicaltrials/enrich.py` with rate-limit notes
+- All 12 `commands/*.md` — `## Usage Guard` section (guard-and-stop for required args; orientation-summary for the 3 arg-free commands)
+- `docs/ADDING-DOMAINS.md` — new "Domain Enrichment (Optional)" section documenting the `enrich_graph()` contract, when to use enrichment, the `_enrichment_report.json` schema, and how to wire a new domain into Step 5.5
+
+### Changed
+
+- `.claude-plugin/plugin.json` — version `3.0.0` → `3.1.0`; description names all three pre-built domains; keywords gain `clinical-trials`, `clinicaltrials`, `pubchem`
+
+### Attribution
+
+- Phase 21 implementation (clinicaltrials domain + enrichment + usage guards) authored by Chris Davidson (<Christopher.Davidson@gmail.com>) originally as PR #8. Ported onto v3.0.0 main in this release via a controlled port that preserves his authorship on the new commit while reconciling with v3.0's persona + narrator + documentation-restructure changes.
+
+### Migration
+
+- Existing domains continue to work byte-identically. The `--enrich` flag is opt-in and only activates for the `clinicaltrials` domain.
+- No breaking changes.
+
+---
+
 ## [3.0.0] — 2026-04-23
 
 **Graph Fidelity & Honest Limits.** Closes nine FIDL requirements (FIDL-01..09) across Phases 12–20 that hardened the pipeline from ingest through epistemic narrative. Every capacity number in `docs/PIPELINE-CAPACITY.md` is grep-verifiable in source or measured against the codebase. No aspirational claims. On top of the v2.1 reliability work, v3 adds domain-aware metadata propagation, per-domain validators, a wizard/CLI ergonomics pass, and — new in this release — an automatic LLM analyst narrator that writes `epistemic_narrative.md` on every `/epistract:epistemic` run, grounded in the per-domain persona that doubles as the workbench chat system prompt.
