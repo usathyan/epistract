@@ -51,8 +51,10 @@ S7 is the answer. Same molecular targets, same companies, but instead of patents
 | Biomarkers | 5 |
 | `asserted` relations (v3 status) | 394 |
 | `unclassified` relations (v3 status) | 1 |
-| `medium_evidence` relations (phase-tier) | 197 |
-| `unclassified` relations (phase-tier) | 198 |
+| `high_evidence` relations (phase-tier) | 177 (after `--enrich`) |
+| `medium_evidence` relations (phase-tier) | 20 (after `--enrich`) |
+| `unclassified` relations (phase-tier) | 198 (not connected to Trial nodes) |
+| Enrichment hit rate | 10/10 trials (100%), 2/2 compounds (100%) |
 | Contradictions | 0 |
 | Contested claims | 0 |
 | `metadata.domain` | `clinicaltrials` |
@@ -66,7 +68,9 @@ S7 is the answer. Same molecular targets, same companies, but instead of patents
 
 **All 394 text-classified relations are `asserted`.** CT.gov protocol language is declarative ("participants will receive", "primary endpoint is measured at week 24") — no hedging, no prophetic patent-style forward claims, no contradictions across this corpus (single-source per trial). The v3 classifier correctly reads this as asserted. This is the right answer for trial protocols, and it contrasts cleanly with S6 where 61 prophetic claims surfaced from the same molecular space viewed through patents + literature.
 
-**Phase tagging is a structural gap.** Only 2 `TrialPhase` entity nodes for 10 trials — because the extractor captured Phase as an attribute on Trials rather than as a standalone entity. The phase-based evidence tier grading defaulted `medium_evidence` for 197 relations and `unclassified` for 198. Running with `--enrich` would pull `ct_phase` as a node attribute from the CT.gov v2 API, which `_trial_phase()` reads, converting most `unclassified` to `high_evidence` (all 10 are Phase 3 / late pivotal).
+**Phase tagging is a structural gap — resolved via `--enrich`.** Pre-enrichment, only 2 `TrialPhase` entity nodes were extracted for 10 trials (the extractor captured Phase as an attribute rather than a standalone entity). Phase-tier grading defaulted to `medium_evidence` (197) and `unclassified` (198). **After running `domains/clinicaltrials/enrich.py`**, all 10 Trial nodes now carry `ct_phase: PHASE3` from the CT.gov v2 API, plus `ct_enrollment`, `ct_overall_status`, `ct_start_date`, `ct_completion_date`, `ct_brief_title`. `_trial_phase()` reads the new attribute, flipping **177 relations to `high_evidence`** (Phase 3 + enrollment ≥300) — an 89% uplift to the top tier. 198 relations remain `unclassified` because they are document-level or compound-level, not connected to Trial nodes.
+
+**Compound enrichment from PubChem.** Both `Compound` nodes (semaglutide, tirzepatide) now carry `pubchem_cid`, `molecular_formula`, `molecular_weight`, `canonical_smiles`, `inchi`. No new nodes; existing nodes got richer.
 
 ## What V3.1 delivers on clinical trials that V3.0 did not
 

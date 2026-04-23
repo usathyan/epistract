@@ -2,70 +2,79 @@
 
 ## Executive Summary
 
-- The knowledge graph is **dominated by `asserted` claims** (394 of 395 relations), with a single unclassified relation — suggesting either a highly curated corpus or a systematic gap in epistemic tagging that warrants audit before downstream decision-making.
-- **No `prophetic`, `hypothesized`, `speculative`, `contested`, or `contradictions` statuses are recorded** in the graph, which is atypical for a corpus spanning 10 trials across multiple phases; this absence is itself a finding and likely reflects incomplete annotation rather than genuine consensus.
-- The graph is **outcome-heavy** (65 Outcome nodes across 10 trials) but **intervention-light** (16 Intervention nodes), indicating that endpoint language is well-captured while the mechanistic and compound-level detail needed for cross-trial comparability may be underrepresented.
-- **Cohort and population stratification** (13 Cohort nodes, 10 Population nodes) is present but not yet linked to divergent outcome signals in the current annotation — a critical gap for any subgroup-level efficacy or safety inference.
-- With only 2 `TrialPhase` nodes recorded against 10 trials, **phase-based evidence grading cannot be applied uniformly** across the corpus; several efficacy claims may be sourced from Phase 1/2 data and should be treated as `low_evidence` or `medium_evidence` until phase attribution is completed.
+- The corpus is **dominated by `asserted` claims** (394 of 395 annotated relations), with a single unclassified relation — suggesting either unusually clean sourcing or, more likely, that prophetic and speculative content has been collapsed into `asserted` during ingestion and requires manual audit.
+- **High-evidence relations (177) coexist with a substantial unclassified tier (198)**, meaning nearly half the graph's relational claims carry no phase-based evidentiary grading; decisions downstream of these relations should be treated with caution until phase attribution is resolved.
+- The **medium-evidence tier (20 relations)** is thin relative to the graph's breadth across 10 trials, indicating limited Phase 2 bridging data — a structural gap that weakens mechanistic and dose-finding rationale for any Phase 3 conclusions present.
+- Outcome entities (65) substantially outnumber trials (10), implying **heavy endpoint multiplicity** across the corpus; secondary and exploratory endpoints risk being over-interpreted without pre-specification confirmation.
+- No `contested`, `contradictions`, `prophetic`, `hypothesized`, or `speculative` epistemic statuses are recorded in the graph — an absence that is itself a **red flag requiring verification**, as a corpus of this complexity would ordinarily surface at least some inter-source disagreement.
 
 ---
 
 ## Prophetic Claim Landscape
 
-**No relations are explicitly tagged `prophetic` in the current graph.** However, the structural profile of the corpus — 10 documents including what appear to be patent or regulatory submissions (10 `DOCUMENT` nodes) — creates a high prior probability that prophetic language exists but has not been surfaced.
+The graph records **zero relations explicitly tagged `prophetic`**, yet the entity and document composition (10 `DOCUMENT` nodes, patent-adjacent language patterns common in drug development corpora) makes it highly probable that prophetic content exists but has been absorbed into the `asserted` bucket during extraction.
 
-Specific areas where prophetic claims would be expected and should be reviewed:
+**Expected prophetic domains, by compound class / topic, that should be audited:**
 
-- **Compound class / mechanism claims**: With only 5 `Biomarker` nodes and 16 `Intervention` nodes, any language asserting that a compound "is expected to inhibit," "may be prepared by," or "would demonstrate activity against" a biomarker target is likely present in the source documents but collapsed into `asserted` status during ingestion. This is a tagging artifact risk, not a confirmed absence.
-- **Dosing and formulation language**: Patent-family documents routinely contain prophetic examples (e.g., "a dose of X mg/kg may be administered"). Without explicit `prophetic` tagging, these forward-looking claims are indistinguishable from empirically validated dosing data in the current graph.
-- **Combination therapy projections**: Given the one-to-many mapping between Interventions and Compounds expected in combination regimens, any claim about synergistic efficacy of a combination not yet tested in a completed Phase 3 trial should be flagged prophetic. The graph does not currently surface this distinction.
+- **Mechanism-of-action projections**: Any claim of the form "Compound X *is expected to* inhibit pathway Y" or "the formulation *may be prepared by* method Z" — common in IND-stage documents and patent specifications — would appear in early-phase or pre-clinical source documents. Given the presence of `Phase 1` trial nodes and `low_evidence`-tier interventions implied by the phase distribution, such claims are statistically likely.
+- **Biomarker-outcome linkages** (5 `Biomarker` entities): Biomarker-as-surrogate claims are frequently prophetic in Phase 1/2 settings. Without explicit `hypothesized` or `prophetic` tagging, analysts cannot distinguish validated companion diagnostic relationships from speculative correlations.
+- **Cohort-level efficacy projections** (13 `Cohort` entities): Enrollment-based subgroup projections ("patients with biomarker X *are expected to* respond at rate Y") are a classic prophetic pattern in protocol design documents and should be separated from observed interim or final results.
 
-**Recommended action**: Re-annotate all `DOCUMENT` nodes of type patent or preclinical report with `prophetic` status on any relation not directly supported by a completed trial endpoint readout.
+**Gap**: Until the 10 `DOCUMENT` source nodes are individually audited for patent vs. clinical report vs. protocol provenance, the prophetic/asserted boundary cannot be reliably drawn. This is the single highest-priority epistemic remediation task.
 
 ---
 
 ## Contested Claims & Contradictions
 
-**No `contested` or `contradictions` relations are recorded in the graph.** Given the breadth of 10 trials and 6 conditions, this is statistically unlikely to reflect genuine scientific consensus and more likely reflects:
+The graph records **no `contested` or `contradictions`-tagged relations**. Given the corpus spans 10 trials, 16 interventions, 6 conditions, and 65 outcomes, this is statistically implausible for a mature drug development landscape and should be interpreted as a **data quality signal, not a finding of consensus**.
 
-1. **Single-source annotation**: If each claim was extracted from one document without cross-referencing competing trial results, contradictions would not be captured.
-2. **Absence of head-to-head trial data** in the corpus (see Coverage Gaps below), which would be the primary mechanism for generating `contradictions` tags.
-3. **Outcome node proliferation without synthesis**: 65 Outcome nodes across 10 trials suggests granular endpoint capture, but without a synthesis layer comparing directionally opposing results across trials, contradictions remain latent.
+Specific areas where contestation would be expected but is absent:
 
-One structural tension worth flagging: the combination of **outcome-heavy annotation with minimal phase tagging** means that a Phase 1 signal and a Phase 3 null result for the same compound-condition pair could coexist in the graph as two `asserted` claims with no contradiction flag. This is a material risk for any analyst using the graph to support regulatory or investment decisions.
+- **Cross-trial efficacy divergence**: With 10 trials and multiple interventions mapped to overlapping conditions, head-to-head or indirect comparison data would ordinarily surface conflicting effect size estimates. No such divergence is flagged.
+- **Safety signal disagreement**: Adverse event profiles frequently differ between sponsor-submitted trial reports and independent analyses. The absence of any `contested` safety relation across 16 interventions is notable.
+- **Endpoint definition heterogeneity**: With 65 outcome entities across 10 trials, differing operationalizations of nominally identical endpoints (e.g., progression-free survival measured by different RECIST versions) would typically generate `contradictions`-tagged relations.
+
+**Recommendation**: Do not interpret the absence of `contested`/`contradictions` tags as scientific consensus. Treat it as an extraction gap requiring manual review of source documents, particularly where the same intervention appears in multiple trial arms.
 
 ---
 
 ## Coverage Gaps
 
-**Phase attribution**: Only 2 `TrialPhase` nodes are recorded for 10 trials. At minimum, 8 trials lack explicit phase annotation in the graph. This makes it impossible to apply the `high_evidence` / `medium_evidence` / `low_evidence` tiering framework systematically. Every efficacy claim in the graph should be considered **ungraded** until phase is confirmed for all trials.
+**1. Missing Phase 2 bridging evidence.**
+The medium-evidence tier covers only 20 relations despite 10 trials being present. If the trial portfolio spans Phase 1 through Phase 3, the expected Phase 2 contribution to the relational graph should be substantially larger. Either Phase 2 trials are absent from the corpus, or their relations are being collapsed into the unclassified tier.
 
-**Companion diagnostics and biomarker-to-trial linkage**: With 5 `Biomarker` nodes and 6 `Condition` nodes, the graph likely underrepresents biomarker-stratified enrollment criteria. For oncology or precision medicine trials, the absence of explicit biomarker-positive/negative cohort splits means subgroup efficacy claims cannot be validated. No companion diagnostic (`CDx`) entities are present.
+**2. Unclassified relations (198) obscure the evidentiary base.**
+Nearly half the graph's relations carry no phase-based tier. For any intervention-outcome claim sourced from an unclassified relation, the analyst cannot determine whether the evidence is Phase 1 (low_evidence) or Phase 3 (high_evidence). This is a critical gap for regulatory and investment decisions.
 
-**Head-to-head comparisons**: No cross-trial comparative relations are recorded. For any condition covered by multiple trials in the graph, the absence of a structured comparator arm or indirect treatment comparison (ITC) node means the graph cannot support comparative effectiveness claims.
+**3. No companion diagnostic / CDx coverage.**
+Five `Biomarker` entities are present, but the graph contains no explicit companion diagnostic (CDx) approval status, no FDA/EMA clearance nodes, and no `required_for_enrollment` vs. `exploratory` biomarker stratification. For precision oncology or targeted therapy contexts, this is a material omission.
 
-**Safety and adverse event outcomes**: The 65 Outcome nodes appear to skew toward efficacy endpoints based on the graph profile. Explicit safety outcome nodes (e.g., treatment-emergent adverse events, dose-limiting toxicities, serious adverse event rates) are not surfaced as a distinct category. Post-market safety signals are entirely absent — expected for recently approved products but should be noted explicitly.
+**4. No head-to-head comparator arms documented.**
+The graph does not surface any active-comparator arms or indirect treatment comparison (ITC) analyses. With 16 interventions across overlapping conditions, the absence of comparative effectiveness data limits the graph's utility for payer or HTA submissions.
 
-**Sponsor and investigator coverage**: Only 3 `Sponsor` nodes are recorded across 10 trials. Either multiple trials share sponsors (plausible for a focused portfolio) or sponsor attribution is incomplete. Investigator nodes are absent entirely, removing the ability to assess site-level or PI-level bias.
+**5. Population definitions underspecified.**
+Ten `Population` entities are present, but without explicit age range, biomarker status, disease severity, or prior therapy requirements surfaced as first-class attributes, subgroup-level claims cannot be validated against enrollment criteria.
 
-**Enrollment data**: The graph summary does not confirm whether enrollment figures are populated for all 10 trials. Missing enrollment counts prevent application of the ≥300 threshold required for `high_evidence` classification.
+**6. Post-market safety signals absent.**
+No Phase 4 or observational trial nodes are recorded. For any intervention that has reached approval or late-stage development, the absence of real-world safety data is a gap that should be explicitly noted in any regulatory or pharmacovigilance context.
 
-**Arm-level granularity**: 13 Cohort nodes for 10 trials suggests some trials have multiple arms captured, but it is unclear whether all randomized arms (including placebo/comparator) are represented. Control arm outcome data is essential for any relative efficacy claim.
+**7. Sponsor attribution thin.**
+Only 3 `Sponsor` entities are recorded across 10 trials. Either multiple trials share sponsors (possible but should be confirmed) or sponsor attribution is incomplete, which affects conflict-of-interest assessment and data provenance tracing.
 
 ---
 
 ## Recommended Follow-Ups
 
-1. **Complete phase annotation for all 10 trials**: Pull CT.gov records for each NCT ID in the graph and populate `TrialPhase` nodes. Reclassify all efficacy relations using the `high_evidence` / `medium_evidence` / `low_evidence` tier once phase and enrollment are confirmed.
+1. **Audit all 10 `DOCUMENT` nodes for source type** (patent, protocol, clinical study report, publication, IND submission). Re-tag relations originating from patent or pre-clinical documents as `prophetic` or `hypothesized` where appropriate. This is prerequisite to any reliable epistemic landscape assessment.
 
-2. **Re-run epistemic tagging with `prophetic` and `hypothesized` passes**: Apply NLP or manual review to all 10 `DOCUMENT` nodes — particularly any patents or preclinical reports — to surface forward-looking language currently collapsed into `asserted`. Flag any compound-efficacy relation not anchored to a completed trial primary endpoint.
+2. **Resolve the 198 unclassified relations** by back-mapping each to its source trial's phase and enrollment size. Apply the `high_evidence` / `medium_evidence` / `low_evidence` tier schema systematically. Prioritize relations connected to primary efficacy endpoints.
 
-3. **Audit the single unclassified relation**: Identify which entity pair carries the unclassified epistemic status and determine whether it represents a data extraction failure, a genuinely ambiguous claim, or a placeholder. This is a low-effort, high-signal task.
+3. **Manually review cross-trial intervention-outcome pairs** for the same condition to identify suppressed `contested` or `contradictions` signals. Focus on the 65 `Outcome` entities — verify which are primary pre-specified endpoints vs. secondary or exploratory, and flag any secondary analysis being cited as if it were a primary result.
 
-4. **Build a cross-trial outcome matrix**: For each Condition node, map all associated trials, their phases, primary endpoints (verbatim), and directional results into a markdown comparison table. This will surface latent contradictions currently invisible in the flat `asserted` annotation.
+4. **Expand `Biomarker` entity attributes** to include: assay type, validated vs. exploratory status, CDx approval status (FDA/EMA), and whether biomarker positivity was an enrollment criterion or a stratification variable in each linked trial.
 
-5. **Add biomarker-stratified cohort splits**: For each Biomarker node, verify whether any trial enrolled biomarker-selected populations and create explicit Cohort → Biomarker → Outcome chains. This is prerequisite for any precision medicine claim in the graph.
+5. **Verify sponsor completeness**: Confirm whether the 3 `Sponsor` entities cover all 10 trials or whether attribution is missing for some. Cross-reference NCT IDs against ClinicalTrials.gov sponsor fields directly.
 
-6. **Verify enrollment counts against CT.gov**: Confirm whether the ≥300 enrollment threshold is met for any trial currently treated as `high_evidence`. If enrollment data is absent for any trial, flag all associated efficacy claims as **ungraded** pending verification.
+6. **Pull primary endpoint verbatim language** from protocols for all 10 trials and confirm it is stored as a quoted attribute on the relevant `Outcome` nodes — not paraphrased. Any outcome node lacking verbatim protocol language should be flagged as unverified.
 
-7. **Introduce safety outcome nodes**: Re-extract adverse event, tolerability, and discontinuation data from source documents and add as distinct Outcome nodes with `safety` typing. Cross-reference against any available post-market pharmacovigilance data for approved compounds in the graph.
+7. **Assess enrollment figures** for all trials. The graph summary does not surface enrollment counts as structured attributes. Without these, the `high_evidence` tier assignment (requiring enrollment ≥300) cannot be independently validated and may be miscategorized.

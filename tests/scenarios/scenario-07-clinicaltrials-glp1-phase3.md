@@ -102,8 +102,10 @@ python scripts/launch_workbench.py tests/corpora/07_glp1_phase3_trials/output \
 | Total relations | 395 |
 | `asserted` (v3 status) | 394 |
 | `unclassified` (v3 status) | 1 |
-| `medium_evidence` (phase-tier) | 197 |
-| `unclassified` (phase-tier) | 198 |
+| `high_evidence` (phase-tier, after `--enrich`) | **177** |
+| `medium_evidence` (phase-tier, after `--enrich`) | 20 |
+| `unclassified` (phase-tier, non-trial-linked) | 198 |
+| Enrichment hit rate | 10/10 trials (100%), 2/2 compounds (100%) |
 | Contradictions | 0 |
 | Contested claims | 0 |
 

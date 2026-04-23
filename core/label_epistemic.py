@@ -484,6 +484,17 @@ def _summarize_graph_for_narrator(graph_data: dict, claims_layer: dict) -> str:
         for k, v in sorted(status_counts.items(), key=lambda kv: -kv[1]):
             parts.append(f"- {k}: {v}")
 
+    # Domain-specific evidence-tier counts (clinicaltrials populates these).
+    # Surfacing them lets domain-specialist narrators (e.g., CT analyst)
+    # reason about Phase-tier grading rather than hallucinating about
+    # missing phase annotation.
+    tier_counts = claims_layer.get("summary", {}).get("evidence_tier_counts") or {}
+    if tier_counts:
+        parts.append("")
+        parts.append("## EVIDENCE-TIER COUNTS (domain-specific, e.g. clinicaltrials phase-tier)")
+        for k, v in sorted(tier_counts.items(), key=lambda kv: -kv[1]):
+            parts.append(f"- {k}: {v}")
+
     if contradictions:
         parts.append("")
         parts.append(f"## CONTRADICTIONS ({len(contradictions)} total; first 5 shown)")

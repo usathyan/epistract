@@ -8,8 +8,9 @@
   },
   "summary": {
     "evidence_tier_counts": {
-      "medium_evidence": 197,
-      "unclassified": 198
+      "high_evidence": 177,
+      "unclassified": 198,
+      "medium_evidence": 20
     },
     "epistemic_status_counts": {
       "asserted": 394,
@@ -18,16 +19,16 @@
     "contradictions_found": 0,
     "contested_found": 0,
     "hypothesized_found": 0,
-    "trials_with_phase": 0,
+    "trials_with_phase": 9,
     "trials_with_enrollment": 10
   },
   "base_domain": {
     "description": "High-evidence relations from Phase 3, randomized, or large-enrollment trials",
-    "relation_count": 0
+    "relation_count": 177
   },
   "super_domain": {
     "description": "Medium/low/unclassified-evidence relations \u2014 smaller trials, early phase, or unclassifiable",
-    "relation_count": 395,
+    "relation_count": 218,
     "contradictions": [],
     "contested_claims": [],
     "hypotheses": []
