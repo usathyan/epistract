@@ -464,6 +464,44 @@ def test_wizard_generates_epistemic_py():
     assert "def analyze_real_estate_epistemic(" in code
     assert "metadata" in code
     assert "summary" in code
+    # FIDL-07 D-10: wizard emits CUSTOM_RULES stub + pointer to canonical doc.
+    assert "CUSTOM_RULES" in code, \
+        "Wizard must emit CUSTOM_RULES stub (FIDL-07 D-10)"
+    assert "docs/known-limitations.md" in code, \
+        "Wizard must link to canonical extensibility doc"
+
+
+@pytest.mark.unit
+def test_wizard_generates_custom_rules_stub():
+    """FIDL-07 D-10: generate_epistemic_py output ends with a no-op CUSTOM_RULES stub.
+
+    Separate test function (not just an extended existing one) so the
+    D-10 contract is independently traceable. Asserts both the literal
+    stub line and the rule-signature comment referenced by the FIDL-07
+    known-limitations section.
+    """
+    from core.domain_wizard import generate_epistemic_py
+
+    import ast
+
+    code = generate_epistemic_py(
+        "fake_domain",
+        {"ENTITY_A": {"description": "A"}},
+        [],
+        {},
+        {"high": 0.9, "medium": 0.7, "low": 0.5},
+    )
+    # Generated code must remain syntactically valid Python.
+    ast.parse(code)
+    # The stub itself
+    assert "CUSTOM_RULES: list = []" in code, \
+        "Wizard must emit literal CUSTOM_RULES stub (FIDL-07 D-10)"
+    # The rule-signature comment
+    assert "(nodes, links, context)" in code, \
+        "Wizard must document rule callable signature in a comment"
+    # The canonical-doc pointer
+    assert "docs/known-limitations.md" in code, \
+        "Wizard must point at canonical extensibility doc"
 
 
 @pytest.mark.unit
@@ -575,6 +613,244 @@ def test_wizard_skips_binary_when_sift_reader_missing():
             # MIN_SAMPLE_DOCS guard. Crucially, no dict with text=="%PDF..."
             # is returned.
             domain_wizard.read_sample_documents([pdf_path, pdf_path])
+
+
+# ========================================================================
+# Phase 16 — FIDL-05: Wizard Sample Window Beyond 8KB
+# ========================================================================
+
+
+@pytest.mark.unit
+def test_build_excerpts():
+    """UT-042: _build_excerpts returns [] for ≤12K docs and 3 slices for >12K docs (D-01, D-02, D-03)."""
+    from core.domain_wizard import (
+        EXCERPT_CHARS,
+        MULTI_EXCERPT_THRESHOLD,
+        _build_excerpts,
+    )
+
+    # Sanity-check constants
+    assert EXCERPT_CHARS == 4000, f"EXCERPT_CHARS should be 4000, got {EXCERPT_CHARS}"
+    assert MULTI_EXCERPT_THRESHOLD == 12000, (
+        f"MULTI_EXCERPT_THRESHOLD should be 12000, got {MULTI_EXCERPT_THRESHOLD}"
+    )
+
+    # Short-doc branch: strictly ≤ threshold returns []
+    assert _build_excerpts("x" * 11999) == [], "len=11999 must be short-doc path"
+    assert _build_excerpts("x" * 12000) == [], (
+        "len=12000 is boundary — must still be short-doc (uses > threshold, not >=)"
+    )
+
+    # Long-doc branch: 3 slices of 4000 chars each
+    long_result = _build_excerpts("x" * 12001)
+    assert isinstance(long_result, list), f"Expected list, got {type(long_result)}"
+    assert len(long_result) == 3, f"Expected 3 excerpts, got {len(long_result)}"
+    assert all(isinstance(s, str) for s in long_result), "All excerpts must be str"
+    assert all(len(s) == 4000 for s in long_result[:1]), (
+        "Head must be exactly 4000 chars"
+    )
+
+    # D-01 + D-03 — explicit offsets for a 30000-char doc
+    payload_30k = "a" * 30000
+    slices = _build_excerpts(payload_30k)
+    assert slices[0] == "a" * 4000, "Head slice must equal doc_text[:4000] (D-01)"
+    assert slices[1] == "a" * 4000, (
+        "Middle slice must equal doc_text[13000:17000] for 30K doc (D-03: centered)"
+    )
+    assert slices[2] == "a" * 4000, "Tail slice must equal doc_text[-4000:] (D-01)"
+
+    # Structural markers — head / middle / tail each pick up their own sentinel
+    head_mark = "HEAD_MARK"
+    mid_mark = "MID_MARK"
+    tail_mark = "TAIL_MARK"
+    structured = head_mark + ("." * 20000) + mid_mark + ("." * 20000) + tail_mark
+    struct_slices = _build_excerpts(structured)
+    assert head_mark in struct_slices[0], (
+        f"Head slice missing {head_mark!r}: {struct_slices[0][:100]!r}"
+    )
+    assert mid_mark in struct_slices[1], (
+        f"Middle slice missing {mid_mark!r}: {struct_slices[1][:100]!r}"
+    )
+    assert tail_mark in struct_slices[2], (
+        f"Tail slice missing {tail_mark!r}: {struct_slices[2][-100:]!r}"
+    )
+
+
+@pytest.mark.unit
+def test_multi_excerpt_prompt_contains_markers():
+    """UT-043: build_schema_discovery_prompt emits 3 excerpt markers + 3 sentinels for long docs (D-04, D-05, D-10, D-11).
+
+    Fixture dependency — tests/fixtures/wizard_sample_window/long_contract.txt is created in
+    Plan 16-02 Task 1. This test is RED until that task lands and GREEN thereafter.
+    """
+    from core.domain_wizard import build_schema_discovery_prompt
+
+    fixture_path = (
+        PROJECT_ROOT / "tests" / "fixtures" / "wizard_sample_window" / "long_contract.txt"
+    )
+    fixture_text = fixture_path.read_text(encoding="utf-8")
+    assert len(fixture_text) > 12000, (
+        f"Fixture must be >12K chars to trigger multi-excerpt path, got {len(fixture_text)}"
+    )
+
+    prompt = build_schema_discovery_prompt(fixture_text, "Synthetic long contract domain")
+
+    # D-04: three explicit excerpt markers on their own lines
+    assert "[EXCERPT 1/3 — chars 0 to 4000 (head)]" in prompt, (
+        "Head marker missing or wrong format (D-04 requires em-dash and exact phrasing)"
+    )
+    assert "[EXCERPT 2/3 — chars " in prompt, "Middle marker prefix missing"
+    assert "[EXCERPT 3/3 — chars " in prompt, "Tail marker prefix missing"
+
+    # D-05: preface + plural header
+    assert (
+        "The following are three excerpts from a larger document. "
+        "Treat them as non-contiguous samples of the same document, "
+        "not as a single continuous passage." in prompt
+    ), "D-05 preface missing or altered"
+    assert "**Document excerpts:**" in prompt, "Plural header missing (D-05 long-doc path)"
+    assert "**Document text:**" not in prompt, (
+        "Singular header leaked into long-doc path (D-05 violation)"
+    )
+
+    # D-10: all three sentinel phrases from the Plan 16-02 fixture appear
+    assert "PARTY_SENTINEL_HEAD" in prompt, "Head sentinel missing from rendered prompt"
+    assert "OBLIGATION_SENTINEL_MIDDLE" in prompt, "Middle sentinel missing from rendered prompt"
+    assert "TERMINATION_SENTINEL_TAIL" in prompt, "Tail sentinel missing from rendered prompt"
+
+    # Domain description still interpolated
+    assert "Synthetic long contract domain" in prompt, "Domain description missing"
+
+    # -------------------------------------------------------------------
+    # Short-doc path: backward compat (D-02) — no fixture needed
+    # -------------------------------------------------------------------
+    short_prompt = build_schema_discovery_prompt(
+        "Sample lease text here...", "Real estate lease agreements"
+    )
+    assert "**Document text:**" in short_prompt, (
+        "Short-doc path must use singular header (D-02 backward compat)"
+    )
+    assert "Sample lease text here..." in short_prompt, (
+        "Short-doc path must include full doc_text verbatim"
+    )
+    assert "[EXCERPT" not in short_prompt, (
+        "Short-doc path must NOT emit excerpt markers"
+    )
+    assert "three excerpts from a larger document" not in short_prompt, (
+        "Short-doc path must NOT emit the multi-excerpt preface"
+    )
+
+
+@pytest.mark.unit
+def test_ft016_long_doc_captures_all_three_sentinels():
+    """FT-016: end-to-end sentinel coverage — the rendered Pass-1 prompt includes
+    all 3 head/middle/tail sentinels AND all 3 excerpt markers for the 60200-char
+    synthetic fixture. Belt-and-suspenders variant of UT-043 with explicit marker
+    bound assertions (chars 28100 to 32100 for middle; 56200 to 60200 for tail).
+    """
+    from core.domain_wizard import build_schema_discovery_prompt
+
+    fixture_path = (
+        PROJECT_ROOT / "tests" / "fixtures" / "wizard_sample_window" / "long_contract.txt"
+    )
+    fixture_text = fixture_path.read_text(encoding="utf-8")
+    assert len(fixture_text) == 60200, (
+        f"Fixture length must be exactly 60200 chars for stable marker bounds, "
+        f"got {len(fixture_text)}"
+    )
+
+    prompt = build_schema_discovery_prompt(
+        fixture_text, "Synthetic long contract domain for Phase 16 FT-016"
+    )
+
+    # Sentinels — exactly one occurrence each
+    assert prompt.count("PARTY_SENTINEL_HEAD") == 1, (
+        f"Expected exactly 1 head sentinel, got {prompt.count('PARTY_SENTINEL_HEAD')}"
+    )
+    assert prompt.count("OBLIGATION_SENTINEL_MIDDLE") == 1, (
+        f"Expected exactly 1 middle sentinel, got {prompt.count('OBLIGATION_SENTINEL_MIDDLE')}"
+    )
+    assert prompt.count("TERMINATION_SENTINEL_TAIL") == 1, (
+        f"Expected exactly 1 tail sentinel, got {prompt.count('TERMINATION_SENTINEL_TAIL')}"
+    )
+
+    # Markers — exact literals with computed bounds for 60200-char doc
+    assert "[EXCERPT 1/3 — chars 0 to 4000 (head)]" in prompt
+    assert "[EXCERPT 2/3 — chars 28100 to 32100 (middle)]" in prompt, (
+        "Middle marker bounds must be 28100 to 32100 for a 60200-char doc"
+    )
+    assert "[EXCERPT 3/3 — chars 56200 to 60200 (tail)]" in prompt, (
+        "Tail marker bounds must be 56200 to 60200 for a 60200-char doc"
+    )
+
+    # Long-doc headers and preface
+    assert "**Document excerpts:**" in prompt
+    assert "The following are three excerpts from a larger document." in prompt
+
+    # Short-doc header must NOT leak
+    assert "**Document text:**" not in prompt
+
+    # Domain description interpolated
+    assert "Synthetic long contract domain for Phase 16 FT-016" in prompt
+
+
+_FT017_SHORT_DOC_STRUCTURAL_SUBSTRINGS = [
+    "You are an expert knowledge graph schema designer.",
+    "**Domain description:** Real estate lease agreements",
+    "**Document text:**",
+    "**Instructions:**",
+    "Propose 5-15 entity types and 5-20 relation types.",
+    "SCREAMING_SNAKE_CASE",
+    "Output format (JSON):",
+    "Return ONLY the JSON object, no commentary.",
+]
+
+_FT017_LONG_DOC_MARKER_SUBSTRINGS = [
+    "[EXCERPT ",
+    "three excerpts from a larger document",
+    "**Document excerpts:**",
+]
+
+
+@pytest.mark.unit
+def test_ft017_short_doc_prompt_is_strict_superset_of_pre_phase16():
+    """FT-017: D-12 regression gate — for each Phase-8 wizard fixture (all ≤12K chars),
+    the Phase 16 prompt is a strict superset of the pre-Phase-16 prompt shape:
+    full doc_text preserved verbatim, all 8 structural substrings present, no long-doc
+    markers leak in.
+    """
+    from core.domain_wizard import build_schema_discovery_prompt
+
+    fixtures_dir = PROJECT_ROOT / "tests" / "fixtures" / "wizard"
+    fixture_names = ["sample_lease_1.txt", "sample_lease_2.txt", "sample_lease_3.txt"]
+
+    for name in fixture_names:
+        fixture_path = fixtures_dir / name
+        assert fixture_path.exists(), f"Missing Phase-8 wizard fixture: {fixture_path}"
+
+        text = fixture_path.read_text(encoding="utf-8")
+        assert len(text) <= 12000, (
+            f"{name} must be ≤12000 chars to exercise the short-doc branch, got {len(text)}"
+        )
+
+        prompt = build_schema_discovery_prompt(text, "Real estate lease agreements")
+
+        # Superset of content — full text appears verbatim
+        assert text in prompt, (
+            f"Full doc_text must appear verbatim in short-doc prompt for {name}"
+        )
+
+        # Every structural substring a pre-Phase-16 caller relied on is present
+        for needle in _FT017_SHORT_DOC_STRUCTURAL_SUBSTRINGS:
+            assert needle in prompt, (
+                f"Phase-16 short-doc prompt for {name} missing pre-Phase-16 substring {needle!r}"
+            )
+
+        # No long-doc markers leak into the short-doc path
+        for marker in _FT017_LONG_DOC_MARKER_SUBSTRINGS:
+            assert marker not in prompt, (
+                f"Long-doc marker {marker!r} leaked into short-doc prompt for {name}"
+            )
 
 
 # ========================================================================
@@ -961,3 +1237,1182 @@ def test_extractor_prompt_stdin_fallback():
     # "report the failure" guidance so agents don't silently fall back to Write
     assert "report the failure" in prompt.lower(), \
         "Missing report-failure guidance (FIDL-02a D-10)"
+
+
+# ========================================================================
+# UT-031..UT-035 + UT-033b: Phase 14 chunk overlap substrate (FIDL-03)
+# ========================================================================
+
+@pytest.mark.unit
+def test_ut031_chonkie_imports():
+    """UT-031: chonkie imports and SentenceChunker round-trips on a 3-sentence string."""
+    from chonkie import SentenceChunker
+
+    chunker = SentenceChunker(
+        tokenizer="character",
+        chunk_size=1000,
+        chunk_overlap=150,
+        min_sentences_per_chunk=1,
+    )
+    chunks = chunker.chunk(
+        "Sentence one here. Sentence two follows. Sentence three trails."
+    )
+    assert len(chunks) >= 1, f"expected >=1 chunk, got {len(chunks)}"
+    c0 = chunks[0]
+    # Every Chunk must expose the four fields Plan 14-03 will consume
+    for attr in ("text", "start_index", "end_index", "token_count"):
+        assert hasattr(c0, attr), f"Chunk missing attribute {attr!r}"
+    assert isinstance(c0.start_index, int) and c0.start_index >= 0
+    assert isinstance(c0.end_index, int) and c0.end_index > c0.start_index
+
+
+@pytest.mark.unit
+def test_ut032_tail_returns_last_n_sentences():
+    """UT-032: _tail_sentences returns exactly the last OVERLAP_SENTENCES sentences when they fit the cap."""
+    from chunk_document import _tail_sentences, OVERLAP_MAX_CHARS
+
+    sentences = [f"Sentence number {i} with some padding words." for i in range(10)]
+    text = " ".join(sentences)
+    tail = _tail_sentences(text)
+
+    # Last 3 present
+    assert "Sentence number 7" in tail, f"missing sentence 7 in tail: {tail!r}"
+    assert "Sentence number 8" in tail, f"missing sentence 8 in tail: {tail!r}"
+    assert "Sentence number 9" in tail, f"missing sentence 9 in tail: {tail!r}"
+    # Earlier absent
+    assert "Sentence number 6" not in tail, f"unexpected sentence 6 in tail: {tail!r}"
+    assert "Sentence number 0" not in tail, f"unexpected sentence 0 in tail: {tail!r}"
+    # Under cap
+    assert len(tail) <= OVERLAP_MAX_CHARS, f"tail {len(tail)} > cap {OVERLAP_MAX_CHARS}"
+
+
+@pytest.mark.unit
+def test_ut033_tail_truncates_under_cap():
+    """UT-033: when last-N sentences exceed cap, helper returns most-recent whole sentences under the cap."""
+    from chunk_document import _tail_sentences, OVERLAP_MAX_CHARS
+
+    big = "A" * 700
+    text = f"First sentence: {big}. Second sentence: {big}. Third sentence: {big}."
+    tail = _tail_sentences(text)
+
+    assert len(tail) <= OVERLAP_MAX_CHARS, f"tail {len(tail)} > cap {OVERLAP_MAX_CHARS}"
+
+    # Must start on a sentence boundary — locate tail in source and confirm
+    # the preceding char is punctuation/whitespace (or tail is at index 0).
+    if tail:
+        idx = text.find(tail[:50])
+        assert idx >= 0, f"tail not found in source: {tail[:50]!r}"
+        if idx > 0:
+            prev_char = text[idx - 1]
+            assert prev_char in " \t\n", (
+                f"tail does not start on sentence boundary — preceding char is {prev_char!r}"
+            )
+
+
+@pytest.mark.unit
+def test_ut033b_partial_fit_three_sentences():
+    """UT-033b (M-5): D-02 ∩ D-03 intersection — 2 of 3 last sentences fit under cap.
+
+    Three sentences ~600 chars each: total ~1800 (over 1500 cap), but the
+    last two total ~1200 (fit). Pins the right-to-left accumulation
+    boundary: sentence 1 (oldest) dropped, 2 and 3 (most-recent) survive.
+    """
+    from chunk_document import _tail_sentences, OVERLAP_MAX_CHARS
+
+    s1 = "FIRSTSENT " + ("a" * 590) + "."
+    s2 = "SECONDSENT " + ("b" * 590) + "."
+    s3 = "THIRDSENT " + ("c" * 590) + "."
+    text = f"{s1} {s2} {s3}"
+    tail = _tail_sentences(text)
+
+    assert len(tail) <= OVERLAP_MAX_CHARS, f"tail {len(tail)} > cap {OVERLAP_MAX_CHARS}"
+    assert "SECONDSENT" in tail, f"missing SECONDSENT: {tail[:200]!r}"
+    assert "THIRDSENT" in tail, f"missing THIRDSENT: {tail[-200:]!r}"
+    assert "FIRSTSENT" not in tail, (
+        f"FIRSTSENT should be dropped (pushes total over cap): {tail[:200]!r}"
+    )
+
+
+@pytest.mark.unit
+def test_ut034_tail_handles_edges():
+    """UT-034: empty → empty; single short sentence → that sentence; single > cap → empty."""
+    from chunk_document import _tail_sentences, OVERLAP_MAX_CHARS
+
+    assert _tail_sentences("") == "", "empty input should return empty tail"
+
+    result = _tail_sentences("Only one sentence here.")
+    assert "Only one sentence here" in result, f"missing content in: {result!r}"
+
+    huge = "X" * (OVERLAP_MAX_CHARS + 500) + "."
+    assert _tail_sentences(huge) == "", (
+        "single sentence larger than cap should return empty (refuse mid-sentence truncation)"
+    )
+
+
+@pytest.mark.unit
+def test_ut035_missing_chonkie_raises_loud(monkeypatch):
+    """UT-035 (B-3): importing chunk_document with chonkie absent raises ImportError with install hint.
+
+    monkeypatch auto-restores sys.modules at teardown — safe under
+    pytest-randomly / pytest-xdist.
+    """
+    import importlib
+    import sys
+
+    monkeypatch.setitem(sys.modules, "chonkie", None)
+    monkeypatch.delitem(sys.modules, "chunk_document", raising=False)
+
+    with pytest.raises(ImportError) as excinfo:
+        importlib.import_module("chunk_document")
+    msg = str(excinfo.value)
+    assert "chonkie" in msg, f"ImportError message missing 'chonkie': {msg!r}"
+    assert (
+        "uv pip install" in msg
+        or "/epistract:setup" in msg
+    ), f"ImportError missing install hint: {msg!r}"
+
+
+# ========================================================================
+# UT-036, UT-036b, UT-037, UT-038: Phase 14 chunk overlap wiring (FIDL-03)
+# ========================================================================
+
+@pytest.mark.unit
+def test_ut036_chunk_json_schema():
+    """UT-036: every chunk has overlap_prev/next_chars, is_overlap_region, honest char_offset; (cont.) header on sub-chunks (D-12)."""
+    from chunk_document import chunk_document
+
+    # Multi-article oversized clause-aware case — forces sub-division inside
+    # the first ARTICLE so (cont.) headers are emitted. Using varied sentence
+    # content (not pure repetition) because chonkie 1.6.2 collapses repeated
+    # identical sentences into a single chunk; multi-word repeated content
+    # (23-char sentences * 1500 → 34.5K chars) splits cleanly.
+    text = (
+        "ARTICLE I. DEFINITIONS\n\n"
+        + ("Sentence content here. " * 1500)
+        + "\n\nARTICLE II. SCOPE\n\nShort body for article two."
+    )
+    chunks = chunk_document(text, "ut036_doc")
+
+    assert len(chunks) >= 2, f"expected multi-chunk, got {len(chunks)}"
+
+    for i, c in enumerate(chunks):
+        for key in ("overlap_prev_chars", "overlap_next_chars", "is_overlap_region", "char_offset"):
+            assert key in c, f"chunk {i} missing key {key!r}: {list(c.keys())}"
+        assert c["is_overlap_region"] is False
+        assert isinstance(c["overlap_prev_chars"], int) and c["overlap_prev_chars"] >= 0
+        assert isinstance(c["overlap_next_chars"], int) and c["overlap_next_chars"] >= 0
+        assert isinstance(c["char_offset"], int) and c["char_offset"] >= 0
+
+    # Boundary zeroes
+    assert chunks[0]["overlap_prev_chars"] == 0
+    assert chunks[-1]["overlap_next_chars"] == 0
+
+    # Middle chunks have incoming overlap
+    if len(chunks) >= 3:
+        assert chunks[1]["overlap_prev_chars"] > 0, (
+            f"middle chunk should have incoming overlap, got {chunks[1]['overlap_prev_chars']}"
+        )
+
+    # Honest per-sub-chunk offsets — strictly increasing (D-11)
+    offsets = [c["char_offset"] for c in chunks]
+    assert offsets == sorted(offsets), f"char_offsets not monotonic: {offsets}"
+    assert len(set(offsets)) == len(offsets), (
+        f"char_offsets not unique (D-11 violation): {offsets}"
+    )
+
+    # D-12: sub-chunks after the first of an oversized section get "(cont.)"
+    assert any(c["section_header"].endswith("(cont.)") for c in chunks[1:]), (
+        f"expected at least one (cont.) header in sub-chunks, got: "
+        f"{[c['section_header'] for c in chunks]}"
+    )
+
+
+@pytest.mark.unit
+def test_ut036b_honest_offset_across_whitespace_gaps():
+    """UT-036b: char_offset stays honest across whitespace-only paragraph gaps.
+
+    Chonkie operates on the buffered text as-is (including blank paragraphs),
+    so start_index is honest automatically. For chunks emitted by _split_fixed
+    (no clause structure), chonkie's Chunk.text IS the slice of source text
+    starting at cc.start_index — including any overlap prefix chonkie copied
+    from the previous chunk. So the honest-offset invariant is:
+
+        source_text[char_offset : char_offset + 30] == chunk.text[:30]
+
+    This pins that M-6 (blank-paragraph offset drift) is dissolved by chonkie
+    — chonkie operates on the buffered text as-is, blank paragraphs stay
+    in place, and start_index never drifts.
+    """
+    from chunk_document import chunk_document, MAX_CHUNK_SIZE
+
+    paragraph = "Distinct paragraph content. It has three sentences. Each sentence is unique to this paragraph."
+    separators = ["\n\n\n\n", "\n\n\n", "\n\n\n\n\n"]
+    segments = [paragraph.replace("Distinct", f"Distinct{i}") for i in range(200)]
+    text = ""
+    for i, seg in enumerate(segments):
+        text += seg
+        if i < len(segments) - 1:
+            text += separators[i % len(separators)]
+    assert len(text) > MAX_CHUNK_SIZE, f"test text too short: {len(text)}"
+
+    chunks = chunk_document(text, "ut036b_doc")
+    assert len(chunks) >= 2
+
+    # All fallback chunks: section_header == "" (proves _split_fixed path)
+    for c in chunks:
+        assert c["section_header"] == "", (
+            f"expected fallback path (no headers), got: {c['section_header']!r}"
+        )
+
+    # Honest-offset invariant: chunk.text[:N] == source_text[char_offset:char_offset+N]
+    # for each chunk, including blank-paragraph regions in the source.
+    for i, c in enumerate(chunks):
+        char_offset = c["char_offset"]
+        body = c["text"]
+
+        probe = body[:30]
+        expected = text[char_offset : char_offset + 30]
+        assert probe == expected, (
+            f"chunk {i} offset drift: char_offset={char_offset}\n"
+            f"chunk.text[:30]: {probe!r}\n"
+            f"expected text[{char_offset}:{char_offset+30}]: {expected!r}"
+        )
+
+
+@pytest.mark.unit
+def test_ut037_overlap_at_article_boundary():
+    """UT-037 (M-1/M-2): ARTICLE-boundary flush prepends previous article's RAW tail to the new article.
+
+    Pins the invariant that cross-flush overlap is computed from the
+    PREVIOUS flush's RAW body (via nonlocal _pending_tail + _tail_sentences),
+    NOT from chunks[-1]["text"].
+    """
+    from chunk_document import chunk_document, _tail_sentences
+
+    article_1_body = (
+        "This is the first sentence of article one. "
+        "This is the second sentence of article one. "
+        "This is the third sentence of article one. "
+        "This is a fourth trailing sentence."
+    )
+    article_1 = "ARTICLE I. PARTIES\n\n" + article_1_body
+    article_2 = (
+        "ARTICLE II. OBLIGATIONS\n\n"
+        "The vendor shall deliver the widgets. "
+        "Delivery is due by the end of month. "
+        "Payment follows net thirty."
+    )
+    text = article_1 + "\n\n" + article_2
+    chunks = chunk_document(text, "ut037_doc")
+
+    assert len(chunks) >= 2, (
+        f"expected 2+ chunks for 2 articles, got {len(chunks)}: "
+        f"{[c['section_header'] for c in chunks]}"
+    )
+
+    a2_idx = next(
+        (i for i, c in enumerate(chunks) if c["section_header"].upper().startswith("ARTICLE II")),
+        None,
+    )
+    assert a2_idx is not None, (
+        f"could not find ARTICLE II chunk in {[c['section_header'] for c in chunks]}"
+    )
+    assert a2_idx >= 1, "ARTICLE II chunk should not be the first chunk"
+
+    a2_chunk = chunks[a2_idx]
+
+    # CRITICAL INVARIANT (M-1/M-2): expected tail is computed from the RAW
+    # article-1 text (header + body as buffered before flush), NOT from
+    # chunks[a2_idx - 1]["text"] which may carry its own overlap prefix.
+    expected_tail = _tail_sentences(article_1)
+    assert expected_tail, "expected non-empty tail from article 1"
+
+    assert a2_chunk["overlap_prev_chars"] == len(expected_tail), (
+        f"ARTICLE II overlap_prev_chars = {a2_chunk['overlap_prev_chars']}, "
+        f"expected {len(expected_tail)} (raw tail of article 1). "
+        f"A mismatch suggests the chunker read chunks[-1]['text'] instead "
+        f"of using the nonlocal _pending_tail cache (M-1/M-2 regression)."
+    )
+    assert a2_chunk["text"].startswith(expected_tail), (
+        f"ARTICLE II text does not start with expected RAW tail.\n"
+        f"Tail: {expected_tail!r}\nHead of chunk: {a2_chunk['text'][:200]!r}"
+    )
+
+
+@pytest.mark.unit
+def test_ut038_overlap_at_split_fixed_fallback():
+    """UT-038: _split_fixed fallback path emits overlap on middle chunks (D-04 #3, D-05)."""
+    from chunk_document import chunk_document, MAX_CHUNK_SIZE, OVERLAP_MAX_CHARS
+
+    # No section headers anywhere — forces _split_fixed
+    paragraphs = [
+        f"Paragraph {i} body. This paragraph has distinct sentence content. "
+        f"Every sentence is unique. Content continues for paragraph {i}."
+        for i in range(400)
+    ]
+    text = "\n\n".join(paragraphs)
+    assert len(text) > MAX_CHUNK_SIZE
+
+    chunks = chunk_document(text, "ut038_doc")
+
+    for c in chunks:
+        assert c["section_header"] == "", (
+            f"fallback should have empty section_header, got {c['section_header']!r}"
+        )
+
+    assert len(chunks) >= 2
+    assert chunks[0]["overlap_prev_chars"] == 0
+    assert chunks[-1]["overlap_next_chars"] == 0
+    assert chunks[1]["overlap_prev_chars"] > 0, (
+        "second chunk in fallback path should have overlap from first"
+    )
+    assert chunks[1]["overlap_prev_chars"] <= OVERLAP_MAX_CHARS
+
+
+# ---------------------------------------------------------------------------
+# FIDL-04 — Format Discovery Parity (Phase 15)
+# ---------------------------------------------------------------------------
+_FIDL04_TEXT_EXTENSIONS = [
+    ".pdf", ".pptx", ".md", ".epub", ".rtf", ".odt", ".csv",
+    ".xml", ".json", ".yaml", ".log", ".ipynb", ".bib", ".fb2", ".msg",
+]
+
+
+@pytest.mark.unit
+@pytest.mark.skipif(not HAS_SIFTKG, reason="sift-kg not installed")
+def test_discover_corpus_runtime_extension_set(tmp_path):
+    """UT-039: discover_corpus delegates to sift-kg; returns 15 text-class
+    files and skips .zip (D-05) and .png (D-04 default ocr=False)."""
+    import ingest_documents
+    from ingest_documents import discover_corpus
+
+    # Reset the lazy cache so the test sees a pristine delegation path.
+    ingest_documents._SUPPORTED_EXTENSIONS_CACHE = None
+
+    for ext in _FIDL04_TEXT_EXTENSIONS:
+        (tmp_path / f"foo{ext}").write_text("stub", encoding="utf-8")
+    # Exclusions:
+    (tmp_path / "foo.zip").write_bytes(b"PK\x03\x04stub")
+    (tmp_path / "foo.png").write_bytes(b"\x89PNG\r\n\x1a\nstub")
+
+    result = discover_corpus(tmp_path)
+    suffixes = sorted(p.suffix.lower() for p in result)
+
+    assert len(result) == len(_FIDL04_TEXT_EXTENSIONS), (
+        f"Expected {len(_FIDL04_TEXT_EXTENSIONS)} files, got {len(result)}: "
+        f"{suffixes}"
+    )
+    assert ".zip" not in suffixes, "D-05: .zip must be excluded"
+    assert ".png" not in suffixes, "D-04: images must be excluded without ocr=True"
+    assert result == sorted(result), "discover_corpus must return sorted paths"
+
+    # SUPPORTED_EXTENSIONS is materialized lazily via __getattr__ (D-03).
+    exts = ingest_documents.SUPPORTED_EXTENSIONS
+    assert len(exts) >= 28, (
+        f"Runtime Kreuzberg extension set should be >=28 after D-05 filter, "
+        f"got {len(exts)}: {sorted(exts)}"
+    )
+    for pin in (".pdf", ".pptx", ".md", ".epub"):
+        assert pin in exts, f"{pin} missing from runtime SUPPORTED_EXTENSIONS"
+    assert ".zip" not in exts, "D-05: .zip must not leak through __getattr__"
+    assert ".png" not in exts, "D-04: images not in default SUPPORTED_EXTENSIONS"
+
+
+@pytest.mark.unit
+@pytest.mark.skipif(not HAS_SIFTKG, reason="sift-kg not installed")
+def test_discover_corpus_ocr_gate_includes_images(tmp_path):
+    """UT-040: Image extensions gated by ocr=True (D-04)."""
+    import ingest_documents
+    from ingest_documents import discover_corpus
+
+    ingest_documents._SUPPORTED_EXTENSIONS_CACHE = None
+
+    (tmp_path / "sample.pdf").write_text("stub", encoding="utf-8")
+    (tmp_path / "sample.png").write_bytes(b"\x89PNG\r\n\x1a\nstub")
+    (tmp_path / "sample.jpg").write_bytes(b"\xff\xd8\xff\xe0stub")
+
+    default_result = discover_corpus(tmp_path)
+    assert len(default_result) == 1, (
+        f"Default (ocr=False) should return only the PDF, got "
+        f"{[p.name for p in default_result]}"
+    )
+    assert default_result[0].suffix.lower() == ".pdf"
+
+    ocr_result = discover_corpus(tmp_path, ocr=True)
+    ocr_suffixes = sorted(p.suffix.lower() for p in ocr_result)
+    assert ocr_suffixes == [".jpg", ".pdf", ".png"], (
+        f"ocr=True should include images, got {ocr_suffixes}"
+    )
+
+
+@pytest.mark.unit
+def test_discover_corpus_raises_when_sift_reader_missing(tmp_path):
+    """UT-041: Missing sift-kg -> ImportError, not silent 9-extension fallback (D-02)."""
+    import ingest_documents
+
+    (tmp_path / "foo.pdf").write_text("stub", encoding="utf-8")
+
+    # Also reset the cache so the patched flag actually drives behavior.
+    ingest_documents._SUPPORTED_EXTENSIONS_CACHE = None
+
+    with mock.patch.object(ingest_documents, "HAS_SIFT_READER", False):
+        with pytest.raises(ImportError, match=r"sift.?kg|/epistract:setup"):
+            ingest_documents.discover_corpus(tmp_path)
+        with pytest.raises(ImportError, match=r"sift.?kg|/epistract:setup"):
+            _ = ingest_documents.SUPPORTED_EXTENSIONS
+
+
+# ---------------------------------------------------------------------------
+# FIDL-06 — Domain Awareness in Consumers (Phase 17)
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.unit
+def test_cmd_build_writes_domain_metadata(tmp_path, monkeypatch):
+    """UT-044: cmd_build persists metadata.domain into graph_data.json (D-01, D-02)."""
+    import json as _json
+    import sys as _sys
+
+    # Ensure `run_sift` imports cleanly from the tests/conftest-configured sys.path.
+    _sys.path.insert(0, str(PROJECT_ROOT))  # for examples.workbench and core.*
+    import run_sift  # from core/ on sys.path (per conftest line 20)
+
+    def _stub_import_sift(names):
+        def stub_run_build(output_dir, domain):
+            gp = Path(output_dir) / "graph_data.json"
+            gp.parent.mkdir(parents=True, exist_ok=True)
+            gp.write_text(_json.dumps({
+                "metadata": {
+                    "created_at": "2026-04-21T00:00:00+00:00",
+                    "updated_at": "2026-04-21T00:00:00+00:00",
+                    "entity_count": 0,
+                    "relation_count": 0,
+                    "document_count": 0,
+                    "entity_type_summary": {},
+                    "sift_kg_version": "0.9.0-stub",
+                },
+                "nodes": [],
+                "links": [],
+            }))
+
+            class _Stub:
+                entity_count = 0
+                relation_count = 0
+
+            return _Stub()
+
+        def stub_load_domain(domain_path=None):
+            return None
+
+        table = {"run_build": stub_run_build, "load_domain": stub_load_domain}
+        return tuple(table[n] for n in names)
+
+    monkeypatch.setattr(run_sift, "_import_sift", _stub_import_sift)
+
+    # Also stub the community-labeling import path so the try/except doesn't
+    # crash when label_communities can't run against a zero-node graph.
+    import core.label_communities as lc
+    monkeypatch.setattr(lc, "label_communities", lambda _p: None)
+
+    # Branch 1: explicit domain
+    out1 = tmp_path / "out1"
+    run_sift.cmd_build(str(out1), domain_name="contracts")
+    graph1 = _json.loads((out1 / "graph_data.json").read_text(encoding="utf-8"))
+    assert graph1["metadata"]["domain"] == "contracts"
+    # D-02: all pre-existing metadata keys preserved
+    for key in (
+        "created_at", "updated_at", "entity_count", "relation_count",
+        "document_count", "entity_type_summary", "sift_kg_version",
+    ):
+        assert key in graph1["metadata"], f"metadata key {key!r} was dropped"
+    assert graph1["nodes"] == [] and graph1["links"] == []
+
+    # Branch 2: domain_name=None → metadata.domain is JSON null (None in Python)
+    out2 = tmp_path / "out2"
+    run_sift.cmd_build(str(out2), domain_name=None)
+    graph2 = _json.loads((out2 / "graph_data.json").read_text(encoding="utf-8"))
+    assert graph2["metadata"]["domain"] is None, (
+        "cmd_build(None) must write JSON null, not the string 'None'"
+    )
+
+
+@pytest.mark.unit
+def test_resolve_domain_precedence(tmp_path, capsys):
+    """UT-045: resolve_domain honors explicit > metadata > fallback (D-03, D-07, D-08, D-09, D-11)."""
+    import json as _json
+    import sys as _sys
+
+    _sys.path.insert(0, str(PROJECT_ROOT))
+    from examples.workbench.template_loader import resolve_domain
+
+    def _write(path, metadata):
+        path.mkdir(parents=True, exist_ok=True)
+        (path / "graph_data.json").write_text(_json.dumps({
+            "metadata": metadata, "nodes": [], "links": [],
+        }))
+
+    # Branch 1: explicit wins over metadata (D-09)
+    dir1 = tmp_path / "dir1"
+    _write(dir1, {"domain": "contracts"})
+    resolved, source = resolve_domain(dir1, "drug-discovery")
+    assert (resolved, source) == ("drug-discovery", "explicit")
+
+    # Branch 2: metadata happy path (D-03)
+    resolved, source = resolve_domain(dir1, None)
+    assert (resolved, source) == ("contracts", "metadata")
+
+    # Branch 3: legacy graph — metadata dict present but no `domain` key (D-08)
+    dir2 = tmp_path / "dir2"
+    _write(dir2, {"created_at": "2026-04-21T00:00:00+00:00"})
+    capsys.readouterr()  # clear any prior output
+    resolved, source = resolve_domain(dir2, None)
+    assert (resolved, source) == (None, "fallback")
+    captured = capsys.readouterr()
+    assert "graph_data.json" in captured.err
+    assert "domain" in captured.err.lower()
+
+    # Branch 4: graph_data.json missing entirely
+    dir3 = tmp_path / "dir3"
+    dir3.mkdir()
+    resolved, source = resolve_domain(dir3, None)
+    assert (resolved, source) == (None, "fallback")
+
+
+@pytest.mark.unit
+def test_build_system_prompt_loads_analysis_patterns(capsys, monkeypatch):
+    """UT-046: build_system_prompt reads template['analysis_patterns'] and falls back with a warning (FIDL-06 D-06)."""
+    import sys as _sys
+
+    _sys.path.insert(0, str(PROJECT_ROOT))
+    import examples.workbench.system_prompt as sp
+    from examples.workbench.system_prompt import build_system_prompt
+
+    class _StubData:
+        def __init__(self, claims):
+            self.graph_data = {"nodes": [], "edges": []}
+            self.claims_layer = claims
+            self.communities = {}
+
+    xref_claims = {
+        "cross_references": [
+            {"entity": "Aramark", "appears_in": ["PCC", "Catering"]},
+        ],
+        "conflicts": [],
+        "gaps": [],
+        "risks": [],
+    }
+
+    # Branch 1: contracts template uses contracts heading
+    contracts_template = {
+        "persona": "stub persona",
+        "analysis_patterns": {
+            "cross_references_heading": "CROSS-CONTRACT REFERENCES",
+            "appears_in_phrase": "appears in",
+        },
+    }
+    prompt = build_system_prompt(_StubData(xref_claims), contracts_template)
+    assert "### CROSS-CONTRACT REFERENCES (1 entities)" in prompt
+    assert "Aramark appears in: PCC, Catering" in prompt
+
+    # Branch 2: drug-discovery template uses drug-discovery heading
+    dd_template = {
+        "persona": "stub persona",
+        "analysis_patterns": {
+            "cross_references_heading": "CROSS-STUDY REFERENCES",
+            "appears_in_phrase": "appears in",
+        },
+    }
+    prompt = build_system_prompt(_StubData(xref_claims), dd_template)
+    assert "### CROSS-STUDY REFERENCES (1 entities)" in prompt
+    assert "### CROSS-CONTRACT REFERENCES" not in prompt
+
+    # Branch 3: legacy template (no analysis_patterns) — fallback with warning
+    monkeypatch.setattr(sp, "_warned_about_missing_analysis_patterns", False)
+    capsys.readouterr()  # clear prior output
+    legacy_template = {"persona": "stub persona"}  # no analysis_patterns key
+    prompt = build_system_prompt(_StubData(xref_claims), legacy_template)
+    assert "### CROSS-CONTRACT REFERENCES (1 entities)" in prompt, (
+        "Fallback must use contracts-default heading per D-06"
+    )
+    captured = capsys.readouterr()
+    assert "analysis_patterns" in captured.err, (
+        f"D-06 visible warning expected on stderr, got: {captured.err!r}"
+    )
+
+    # Branch 4: no cross_references in claims → no heading regardless of template
+    empty_claims = {"conflicts": [], "gaps": [], "risks": []}
+    prompt = build_system_prompt(_StubData(empty_claims), legacy_template)
+    assert "CROSS-CONTRACT REFERENCES" not in prompt
+    assert "CROSS-STUDY REFERENCES" not in prompt
+
+
+# ---------------------------------------------------------------------------
+# FIDL-07 — Per-Domain Epistemic & Validator Extensibility (Phase 18)
+# ---------------------------------------------------------------------------
+
+
+def _build_synthetic_domain(tmp_root, domain_name, epistemic_src):
+    """Build a minimal synthetic domain at tmp_root/domains/<domain_name>/.
+
+    Writes domain.yaml (minimal valid schema) and epistemic.py with the
+    provided source. Returns (domain_dir, module_path).
+    """
+    from pathlib import Path as _P
+    domain_dir = _P(tmp_root) / "domains" / domain_name
+    domain_dir.mkdir(parents=True, exist_ok=True)
+    (domain_dir / "domain.yaml").write_text(
+        "version: 1.0\n"
+        f"name: {domain_name}\n"
+        "entity_types:\n"
+        "  - name: THING\n"
+        "    description: test\n"
+        "relation_types:\n"
+        "  - name: RELATES_TO\n"
+        "    description: test\n"
+    )
+    module_path = domain_dir / "epistemic.py"
+    module_path.write_text(epistemic_src)
+    return domain_dir, module_path
+
+
+def _write_stub_graph(output_dir, domain_name):
+    import json as _json
+    from pathlib import Path as _P
+    out = _P(output_dir)
+    out.mkdir(parents=True, exist_ok=True)
+    (out / "graph_data.json").write_text(_json.dumps({
+        "metadata": {
+            "created_at": "2026-04-22T00:00:00+00:00",
+            "updated_at": "2026-04-22T00:00:00+00:00",
+            "entity_count": 0,
+            "relation_count": 0,
+            "document_count": 0,
+            "entity_type_summary": {},
+            "sift_kg_version": "0.9.0-stub",
+            "domain": domain_name,
+        },
+        "nodes": [],
+        "links": [],
+    }))
+    return out
+
+
+def _load_synthetic_module(module_path, mod_name):
+    import importlib.util as _il
+    spec = _il.spec_from_file_location(mod_name, module_path)
+    mod = _il.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+@pytest.mark.unit
+def test_custom_rules_dispatch(tmp_path, monkeypatch):
+    """UT-047: CUSTOM_RULES findings merge into claims_layer.super_domain.custom_findings (D-01, D-02, D-12)."""
+    sys.path.insert(0, str(PROJECT_ROOT))
+    import core.label_epistemic as le
+
+    epistemic_src = (
+        "CONTEXT_CAPTURE = {}\n"
+        "\n"
+        "def good_rule(nodes, links, context):\n"
+        "    CONTEXT_CAPTURE.update(context)\n"
+        "    return [{'rule_name': 'good_rule', 'type': 'demo', 'severity': 'INFO',\n"
+        "             'description': 'hello', 'evidence': {}}]\n"
+        "\n"
+        "CUSTOM_RULES = [good_rule]\n"
+        "\n"
+        "def analyze_testdomain_epistemic(output_dir, graph_data):\n"
+        "    return {\n"
+        "        'metadata': {'domain': 'testdomain'},\n"
+        "        'summary': {'total_relations': 0, 'epistemic_status_counts': {}},\n"
+        "        'base_domain': {'asserted_relations': []},\n"
+        "        'super_domain': {},\n"
+        "    }\n"
+    )
+    _, module_path = _build_synthetic_domain(tmp_path, "testdomain", epistemic_src)
+    out = _write_stub_graph(tmp_path / "out", "testdomain")
+    mod = _load_synthetic_module(module_path, "domains.testdomain.epistemic")
+
+    monkeypatch.setattr(le, "_load_domain_epistemic", lambda name: mod)
+
+    le.analyze_epistemic(out, domain_name="testdomain")
+
+    claims = json.loads((out / "claims_layer.json").read_text())
+    cf = claims["super_domain"]["custom_findings"]
+    assert "good_rule" in cf, f"custom_findings missing good_rule; got {list(cf)}"
+    assert cf["good_rule"][0]["description"] == "hello"
+    assert cf["good_rule"][0]["rule_name"] == "good_rule"
+
+    # Context plumbing
+    assert "output_dir" in mod.CONTEXT_CAPTURE
+    assert "graph_data" in mod.CONTEXT_CAPTURE
+    assert "domain_name" in mod.CONTEXT_CAPTURE
+    assert mod.CONTEXT_CAPTURE["domain_name"] == "testdomain"
+
+
+@pytest.mark.unit
+def test_get_validation_dir_resolution():
+    """UT-048: get_validation_dir + resolve_domain['validation_dir'] (D-03, D-13)."""
+    sys.path.insert(0, str(PROJECT_ROOT))
+    from core.domain_resolver import get_validation_dir, resolve_domain
+
+    # Branch 1: drug-discovery has validation/run_validation.py (after Task 3 Sub-step D)
+    dd = get_validation_dir("drug-discovery")
+    assert dd is not None, "drug-discovery validation/ should be discovered"
+    assert dd.name == "validation"
+    assert (dd / "run_validation.py").exists(), (
+        "Task 3 Sub-step D must create run_validation.py for UT-048 to pass GREEN"
+    )
+
+    # Branch 2: contracts has no validation/ dir
+    assert get_validation_dir("contracts") is None
+
+    # Branch 3: unknown domain
+    assert get_validation_dir("nonexistent-domain-xyz") is None
+
+    # Branch 4: resolve_domain exposes the key + preserves pre-existing keys
+    info_dd = resolve_domain("drug-discovery")
+    assert "validation_dir" in info_dd
+    assert info_dd["validation_dir"] == str(dd)
+    for key in ("name", "dir", "yaml_path", "skill_path", "schema"):
+        assert key in info_dd, f"resolve_domain dropped pre-existing key {key!r}"
+
+    info_c = resolve_domain("contracts")
+    assert info_c["validation_dir"] is None
+    for key in ("name", "dir", "yaml_path", "skill_path", "schema"):
+        assert key in info_c
+
+
+@pytest.mark.unit
+def test_rule_failure_isolation(tmp_path, monkeypatch):
+    """UT-050: one broken rule does not abort the phase; error recorded, others still run (D-02, D-09, D-15)."""
+    sys.path.insert(0, str(PROJECT_ROOT))
+    import core.label_epistemic as le
+
+    epistemic_src = (
+        "def good_rule_a(nodes, links, context):\n"
+        "    return [{'rule_name': 'good_rule_a', 'description': 'a',\n"
+        "             'type': 'demo', 'severity': 'INFO', 'evidence': {}}]\n"
+        "\n"
+        "def broken_rule(nodes, links, context):\n"
+        "    raise ValueError('boom')\n"
+        "\n"
+        "def good_rule_b(nodes, links, context):\n"
+        "    return [{'rule_name': 'good_rule_b', 'description': 'b',\n"
+        "             'type': 'demo', 'severity': 'INFO', 'evidence': {}}]\n"
+        "\n"
+        "CUSTOM_RULES = [good_rule_a, broken_rule, good_rule_b]\n"
+        "\n"
+        "def analyze_testdomain_epistemic(output_dir, graph_data):\n"
+        "    return {\n"
+        "        'metadata': {'domain': 'testdomain'},\n"
+        "        'summary': {'total_relations': 0, 'epistemic_status_counts': {}},\n"
+        "        'base_domain': {'asserted_relations': []},\n"
+        "        'super_domain': {},\n"
+        "    }\n"
+    )
+    _, module_path = _build_synthetic_domain(tmp_path, "testdomain", epistemic_src)
+    out = _write_stub_graph(tmp_path / "out", "testdomain")
+    mod = _load_synthetic_module(module_path, "domains.testdomain.epistemic")
+
+    monkeypatch.setattr(le, "_load_domain_epistemic", lambda name: mod)
+
+    # Must not raise — the isolation guard is the whole point of UT-050.
+    le.analyze_epistemic(out, domain_name="testdomain")
+
+    claims = json.loads((out / "claims_layer.json").read_text())
+    cf = claims["super_domain"]["custom_findings"]
+
+    assert cf["good_rule_a"][0]["description"] == "a"
+    assert cf["good_rule_b"][0]["description"] == "b"
+    assert cf["broken_rule"][0]["status"] == "error"
+    assert "boom" in cf["broken_rule"][0]["error"]
+    assert cf["broken_rule"][0]["rule_name"] == "broken_rule"
+
+
+# ===========================================================================
+# Phase 18 Plan 18-02 — UT-049 structural doctype detection (FIDL-07 D-05/D-06)
+# ===========================================================================
+
+
+@pytest.mark.unit
+def test_ut049_structural_doctype_detection():
+    """UT-049: PDB prefix → structural doc_type; ≥0.9 structural → asserted override.
+
+    Two-site convention sync (D-05): both drug-discovery and core modules
+    must recognize the same PDB_PATTERN + apply the same ≥0.9 short-circuit
+    in classify_epistemic_status. No shared import — each module carries
+    its own copy kept in sync by convention.
+    """
+    import importlib.util as _il
+
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+    # Dynamic-load drug-discovery epistemic (hyphenated package; not importable
+    # via regular import). Mirrors core.label_epistemic._load_domain_epistemic.
+    dd_path = PROJECT_ROOT / "domains" / "drug-discovery" / "epistemic.py"
+    spec = _il.spec_from_file_location("dd_epistemic_ut049", dd_path)
+    dd = _il.module_from_spec(spec)
+    spec.loader.exec_module(dd)
+
+    from core import label_epistemic as le
+
+    for mod, name in [(dd, "drug-discovery"), (le, "core.label_epistemic")]:
+        # (1) PDB underscore variant → structural
+        assert mod.infer_doc_type("pdb_1abc") == "structural", \
+            f"{name}: pdb_1abc should classify as structural"
+        # (2) PDB hyphen variant, case-insensitive
+        assert mod.infer_doc_type("pdb-7xyz") == "structural", \
+            f"{name}: pdb-7xyz (hyphen, case-insensitive) should classify as structural"
+        # (3) Regression guard: pmid_ still returns "paper"
+        assert mod.infer_doc_type("pmid_12345") == "paper", \
+            f"{name}: regression — pmid_* should still be paper"
+        # (4) Content signal detection
+        assert mod._detect_structural_content(
+            "Crystal structure of KRAS resolved at 2.1 Å"
+        ) is True, f"{name}: crystal structure + resolution content signal"
+        # Regression guard: generic text should NOT trigger
+        assert mod._detect_structural_content(
+            "This paper studies protein folding"
+        ) is False, f"{name}: generic text should not be structural content"
+        # (5) High-confidence structural beats hedging (D-06)
+        assert mod.classify_epistemic_status(
+            "hypothesized structure", 0.95, "structural"
+        ) == "asserted", \
+            f"{name}: high-conf structural overrides hedging regex (D-06)"
+        # (6) Low-confidence structural falls through to hedging
+        assert mod.classify_epistemic_status(
+            "suggests mechanism", 0.7, "structural"
+        ) == "hypothesized", \
+            f"{name}: low-conf structural falls through to hedging detection"
+
+
+# ---------------------------------------------------------------------------
+# FIDL-08 — Wizard & CLI Ergonomics (Phase 19)
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "raw,expected",
+    [
+        ("Q&A Analysis (v2)", "q-a-analysis-v2"),
+        ("  Hello World  ", "hello-world"),
+        ("multi--dash", "multi-dash"),
+        ("drug-discovery", "drug-discovery"),  # D-14 backward-compat invariant
+        ("contracts", "contracts"),  # D-14 backward-compat invariant
+        ("中文 Analysis", "analysis"),  # NFKD + ASCII-ignore strips non-Latin
+    ],
+)
+def test_generate_slug_edge_cases(raw, expected):
+    """UT-051: generate_slug produces safe directory names across edge cases.
+
+    Covers D-15 lock table (Q&A, whitespace, double-dash, existing domains,
+    non-ASCII). Both existing domains (drug-discovery, contracts) are
+    byte-identical under the new helper — Phase 19 introduces no drift for
+    already-clean slugs (D-14 backward-compat gate).
+    """
+    from core.domain_wizard import generate_slug
+
+    result = generate_slug(raw)
+    assert result == expected, f"generate_slug({raw!r}) -> {result!r}, expected {expected!r}"
+    # Post-condition invariants (D-01 + D-03)
+    assert result == result.strip("-"), f"slug has leading/trailing hyphen: {result!r}"
+    assert "--" not in result, f"slug has double hyphen: {result!r}"
+    assert all(c in "abcdefghijklmnopqrstuvwxyz0123456789-" for c in result), (
+        f"slug has invalid char: {result!r}"
+    )
+    assert result != "", "slug is empty (should have raised)"
+
+
+@pytest.mark.parametrize("raw", ["", "   ", "\t\n"])
+def test_generate_slug_rejects_empty(raw):
+    """UT-051 (cont.): generate_slug raises ValueError for empty/whitespace-only input."""
+    from core.domain_wizard import generate_slug
+
+    with pytest.raises(ValueError):
+        generate_slug(raw)
+
+
+def test_generate_workbench_template_shape():
+    """UT-052: generate_workbench_template emits WorkbenchTemplate-valid YAML.
+
+    Validates the Phase 17 Pydantic contract (D-16), deterministic palette
+    rotation (alphabetical sort → modulo cycle), and required analysis_patterns
+    + dashboard keys. Determinism gate: two calls with same inputs produce
+    byte-identical output.
+    """
+    from core.domain_wizard import generate_workbench_template
+    from examples.workbench.template_schema import WorkbenchTemplate
+
+    entity_types = {
+        "Foo": {"description": "x"},
+        "Bar": {"description": "y"},
+        "Baz": {"description": "z"},
+    }
+
+    emitted = generate_workbench_template("test-domain", entity_types)
+    assert isinstance(emitted, str)
+
+    parsed = yaml.safe_load(emitted)
+    assert isinstance(parsed, dict)
+
+    # (1) Phase 17 Pydantic contract — shape gate
+    WorkbenchTemplate.model_validate(parsed)  # raises ValidationError on mismatch
+
+    # (2) entity_colors cardinality
+    assert set(parsed["entity_colors"].keys()) == {"Foo", "Bar", "Baz"}
+
+    # (3) Deterministic palette rotation — alphabetical sort: Bar, Baz, Foo
+    # First three DEFAULT_ENTITY_COLORS entries:
+    assert parsed["entity_colors"]["Bar"] == "#97c2fc"
+    assert parsed["entity_colors"]["Baz"] == "#ffa07a"
+    assert parsed["entity_colors"]["Foo"] == "#90ee90"
+
+    # (4) analysis_patterns required keys
+    assert "cross_references_heading" in parsed["analysis_patterns"]
+    assert "appears_in_phrase" in parsed["analysis_patterns"]
+
+    # (5) dashboard shape
+    assert isinstance(parsed["dashboard"], dict)
+    assert "title" in parsed["dashboard"]
+    assert "subtitle" in parsed["dashboard"]
+
+    # (6) Determinism — second call byte-identical
+    emitted_again = generate_workbench_template("test-domain", entity_types)
+    assert emitted == emitted_again, "generate_workbench_template is not deterministic"
+
+
+def test_resolve_domain_arg_path_shim(tmp_path, capsys):
+    """UT-053: --domain shim accepts name, extracts from path, errors on outside paths.
+
+    FIDL-08 D-07, D-08:
+      - Bare name (no slash, no .yaml) → passthrough (filesystem never touched).
+      - Path inside DOMAINS_DIR matching <DOMAINS_DIR>/<name>/domain.yaml → return <name>.
+      - Path outside DOMAINS_DIR → stderr error + SystemExit(non-zero).
+    """
+    from core.run_sift import resolve_domain_arg
+    from core.domain_resolver import DOMAINS_DIR
+
+    # (a) bare name passthrough — no filesystem touch
+    assert resolve_domain_arg("contracts") == "contracts"
+    assert resolve_domain_arg("drug-discovery") == "drug-discovery"
+
+    # (b) valid path → name extraction (uses real domains/ layout)
+    contracts_yaml = DOMAINS_DIR / "contracts" / "domain.yaml"
+    assert contracts_yaml.exists(), "test prerequisite: contracts domain must exist"
+    assert resolve_domain_arg(str(contracts_yaml)) == "contracts"
+
+    dd_yaml = DOMAINS_DIR / "drug-discovery" / "domain.yaml"
+    assert dd_yaml.exists(), "test prerequisite: drug-discovery domain must exist"
+    assert resolve_domain_arg(str(dd_yaml)) == "drug-discovery"
+
+    # (c) outside-domains path → SystemExit with clear stderr message
+    alien_dir = tmp_path / "alien"
+    alien_dir.mkdir()
+    alien_yaml = alien_dir / "domain.yaml"
+    alien_yaml.write_text("# synthetic outside-domains/ file\n")
+
+    with pytest.raises(SystemExit) as exc_info:
+        resolve_domain_arg(str(alien_yaml))
+    assert exc_info.value.code != 0, f"expected non-zero exit, got {exc_info.value.code}"
+
+    captured = capsys.readouterr()
+    assert "--domain expects a name registered under domains/" in captured.err, (
+        f"error message missing expected text; stderr was: {captured.err!r}"
+    )
+
+
+def test_wizard_schema_bypass_skips_llm(tmp_path, monkeypatch):
+    """UT-054: --schema bypass skips LLM discovery entirely.
+
+    Monkeypatches litellm to fail on import. If the bypass accidentally
+    takes the 3-pass LLM path, the import failure surfaces and the test
+    fails. Also monkeypatches DOMAINS_DIR → tmp_path/domains so no
+    permanent pollution of the real domains/ dir.
+
+    FIDL-08 D-09, D-10, D-11, D-18.
+    """
+    # (a) block litellm import — any accidental LLM call path raises
+    monkeypatch.setitem(sys.modules, "litellm", None)
+
+    # (b) synthetic schema
+    schema = {
+        "entity_types": {
+            "FOO": {"description": "test entity foo"},
+            "BAR": {"description": "test entity bar"},
+        },
+        "relation_types": {
+            "REL_A": {"description": "test relation a"},
+        },
+        "description": "UT-054 test schema",
+        "system_context": "test",
+        "extraction_guidelines": "test",
+    }
+    schema_path = tmp_path / "schema.json"
+    schema_path.write_text(json.dumps(schema, indent=2))
+
+    # (c) redirect DOMAINS_DIR so the generated domain lands in tmp_path
+    # (CRITICAL: prevents permanent ut054-test-domain pollution of real domains/)
+    fake_domains = tmp_path / "domains"
+    fake_domains.mkdir()
+    monkeypatch.setattr("core.domain_wizard.DOMAINS_DIR", fake_domains)
+
+    # (d) invoke wizard main() directly with synthetic argv
+    from core.domain_wizard import main
+    exit_code = main([
+        "--schema", str(schema_path),
+        "--name", "ut054-test-domain",
+    ])
+
+    # (e) bypass completed successfully
+    assert exit_code == 0, f"expected exit 0, got {exit_code}"
+
+    # (f) domain package written to tmp/domains/ut054-test-domain/
+    domain_dir = fake_domains / "ut054-test-domain"
+    assert (domain_dir / "domain.yaml").exists()
+    assert (domain_dir / "SKILL.md").exists()
+    assert (domain_dir / "epistemic.py").exists()
+    assert (domain_dir / "workbench" / "template.yaml").exists()
+
+
+def test_ut055_narrator_load_domain_persona():
+    """UT-055: _load_domain_persona reads the persona from workbench template.yaml.
+
+    Validates the single-source-of-truth contract: the same persona used by
+    the workbench chat (reactive) is what the label_epistemic narrator reads
+    (proactive). A drug-discovery persona is always present after Phase 21
+    and must include the epistemic-status vocabulary ('asserted', 'prophetic').
+    """
+    from core.label_epistemic import _load_domain_persona
+
+    persona = _load_domain_persona("drug-discovery")
+    assert isinstance(persona, str) and persona
+    # Epistemic vocabulary commitments — these must live in the persona so the
+    # narrator knows to classify relations using this language.
+    for token in ("asserted", "prophetic", "hypothesized", "contested"):
+        assert token in persona.lower(), (
+            f"drug-discovery persona must commit to epistemic status '{token}'"
+        )
+
+    # Missing domain → None (not raise)
+    assert _load_domain_persona("this-domain-does-not-exist") is None
+
+    # Unknown alias also → None
+    assert _load_domain_persona("") is None
+    assert _load_domain_persona(None) is None
+
+
+def test_ut056_narrator_summarize_graph_shape():
+    """UT-056: _summarize_graph_for_narrator produces markdown with all sections.
+
+    The summary is the sole factual payload passed to the LLM. If a section is
+    silently dropped the narrative will hallucinate — so each expected heading
+    must appear when the corresponding data is present.
+    """
+    from core.label_epistemic import _summarize_graph_for_narrator
+
+    graph_data = {
+        "nodes": [
+            {"entity_type": "COMPOUND", "name": "semaglutide"},
+            {"entity_type": "DISEASE", "name": "obesity"},
+        ],
+        "links": [
+            {
+                "source_entity": "semaglutide",
+                "target_entity": "obesity",
+                "relation_type": "INDICATED_FOR",
+                "epistemic_status": "prophetic",
+                "source_documents": ["patent_01"],
+                "evidence": "is expected to reduce weight in obese patients",
+            },
+            {
+                "source_entity": "semaglutide",
+                "target_entity": "obesity",
+                "relation_type": "INDICATED_FOR",
+                "epistemic_status": "hypothesized",
+            },
+        ],
+    }
+    claims_layer = {
+        "summary": {
+            "epistemic_status_counts": {"prophetic": 1, "hypothesized": 1},
+        },
+        "super_domain": {
+            "contradictions": [{"source": "x", "target": "y"}],
+            "hypotheses": [{"label": "H1", "members": [1, 2]}],
+            "contested_claims": [
+                {
+                    "source_entity": "semaglutide",
+                    "target_entity": "obesity",
+                    "relation_type": "INDICATED_FOR",
+                    "epistemic_status": "hypothesized",
+                }
+            ],
+        },
+    }
+    summary = _summarize_graph_for_narrator(graph_data, claims_layer)
+
+    # Structural gates — every non-empty section must produce a heading
+    assert "## GRAPH SUMMARY" in summary
+    assert "Entities: 2" in summary
+    assert "Relations: 2" in summary
+    assert "COMPOUND: 1" in summary
+    assert "## EPISTEMIC STATUS COUNTS" in summary
+    assert "## CONTRADICTIONS" in summary
+    assert "## HYPOTHESIS GROUPS" in summary
+    assert "## PROPHETIC CLAIMS" in summary
+    assert "## CONTESTED CLAIMS" in summary
+    # Verify the prophetic claim made it into the text
+    assert "is expected to reduce weight" in summary
+
+
+def test_ut057_narrator_non_blocking_on_missing_credentials(tmp_path, monkeypatch):
+    """UT-057: narrator failure never blocks claims_layer.json.
+
+    The narrator is ADDITIVE — if credentials are absent or the LLM call
+    fails, `/epistract:epistemic` must still succeed and write the rule-based
+    claims_layer.json. This is the core reliability contract.
+    """
+    from core import label_epistemic
+
+    # Clear all LLM credentials so resolve_api_config returns None
+    for var in (
+        "AZURE_FOUNDRY_API_KEY",
+        "ANTHROPIC_FOUNDRY_API_KEY",
+        "ANTHROPIC_API_KEY",
+        "OPENROUTER_API_KEY",
+    ):
+        monkeypatch.delenv(var, raising=False)
+
+    # Minimal graph: one node, one asserted relation
+    graph_data = {
+        "metadata": {"domain": "drug-discovery"},
+        "nodes": [{"id": "x", "name": "x", "entity_type": "COMPOUND"}],
+        "links": [
+            {
+                "source": "x",
+                "target": "x",
+                "source_entity": "x",
+                "target_entity": "x",
+                "relation_type": "ACTIVATES",
+                "evidence": "activates x",
+                "confidence": 0.9,
+            }
+        ],
+    }
+    (tmp_path / "graph_data.json").write_text(json.dumps(graph_data))
+
+    # Run with narrate=True — should SUCCEED despite missing credentials
+    result = label_epistemic.analyze_epistemic(
+        tmp_path,
+        domain_name="drug-discovery",
+        narrate=True,
+    )
+
+    # claims_layer.json must exist regardless of narrator outcome
+    claims_path = tmp_path / "claims_layer.json"
+    assert claims_path.exists(), "claims_layer.json must ship even when narrator fails"
+    # No narrative file should have been created
+    assert not (tmp_path / "epistemic_narrative.md").exists()
+    # Returned claims layer is well-formed
+    assert "summary" in result

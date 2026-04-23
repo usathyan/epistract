@@ -1,0 +1,16 @@
+Title: GLP-1 receptor agonists and uses thereof (small molecule)
+Source: Google Patents
+Patent ID: WO2018109607A1
+Assignee: Pfizer Inc
+Filing Date: December 1, 2017
+
+ABSTRACT/DESCRIPTION:
+The invention describes 6-carboxylic acids of benzimidazoles and 4-aza-, 5-aza-, 7-aza-, and 4,7-diaza-benzimidazoles as small-molecule GLP-1 receptor agonists, processes for their synthesis, and methods of administering said compounds to mammals in need thereof. This patent covers the chemical class from which danuglipron (PF-06882961) was developed.
+
+Unlike peptide-based GLP-1 receptor agonists (semaglutide, liraglutide, tirzepatide), these are orally bioavailable nonpeptide small molecules that activate the GLP-1 receptor through an allosteric mechanism. The compounds bind within a transmembrane pocket distinct from the orthosteric peptide-binding domain, stabilizing an active receptor conformation that couples to Gs proteins and drives intracellular cAMP accumulation.
+
+The molecular scaffold consists of benzimidazole-based structures with various substituents defined by Formulas I, II, and III, featuring specific structural requirements for GLP-1 receptor binding and activation. The compounds are characterized by molecular weights in the range suitable for oral absorption and lack peptide bonds, making them resistant to proteolytic degradation by enzymes such as dipeptidyl peptidase-4 (DPP-4) and neutral endopeptidases.
+
+Danuglipron, derived from this chemical series, reached Phase 2/3 clinical trials for type 2 diabetes and obesity. Pfizer subsequently discontinued the twice-daily formulation but continues development of a once-daily formulation. A separate oral small-molecule GLP-1 agonist, orforglipron (LY3502970, originally OWL-833), is being developed by Eli Lilly with the molecular formula C48H48F2N10O5 and molecular weight 882.96, and has demonstrated significant weight loss and HbA1c reduction in Phase 3 trials (ACHIEVE program). Orforglipron has CAS Registry Number 2212020-52-3.
+
+The development of oral nonpeptide GLP-1 agonists represents a significant advance in the GLP-1 receptor agonist class, potentially expanding patient access by eliminating the need for injection and improving treatment adherence.

@@ -1,0 +1,30 @@
+{
+  "v2": {
+    "path": "tests/corpora/06_glp1_landscape/output-v2",
+    "nodes": 193,
+    "edges": 619,
+    "communities": 9,
+    "metadata_domain": null,
+    "has_metadata": true,
+    "prophetic": 15,
+    "hypotheses": 5,
+    "contradictions": 1,
+    "contested": 5,
+    "has_validation_report": false,
+    "validation_status": null
+  },
+  "v3": {
+    "path": "tests/corpora/06_glp1_landscape/output-v3",
+    "nodes": 278,
+    "edges": 855,
+    "communities": 10,
+    "metadata_domain": "drug-discovery",
+    "has_metadata": true,
+    "prophetic": 61,
+    "hypotheses": 2,
+    "contradictions": 2,
+    "contested": 33,
+    "has_validation_report": true,
+    "validation_status": "skipped"
+  }
+}

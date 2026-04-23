@@ -1,0 +1,196 @@
+{
+  "document_id": "pmid_35441470",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "inn": "semaglutide",
+        "drug_class": "GLP-1 receptor agonist",
+        "development_stage": "approved",
+        "route_of_administration": "subcutaneous",
+        "dose": "2.4 mg once-weekly",
+        "formulation": "once-weekly subcutaneous injection"
+      },
+      "confidence": 0.98,
+      "context": "One year after withdrawal of once-weekly subcutaneous semaglutide 2.4 mg and lifestyle intervention, participants regained two-thirds of their prior weight loss"
+    },
+    {
+      "name": "Obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Obesity",
+        "icd_code": "E66",
+        "aliases": [
+          "obesity"
+        ],
+        "eligibility_criterion": "BMI >= 30 kg/m2"
+      },
+      "confidence": 0.97,
+      "context": "STEP 1 (NCT03548935) randomized 1961 adults with a body mass index \u2265 30 kg/m"
+    },
+    {
+      "name": "Cardiovascular Diseases",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Cardiovascular Diseases",
+        "icd_code": "I00-I99",
+        "aliases": [
+          "cardiometabolic disease",
+          "cardiovascular risk"
+        ]
+      },
+      "confidence": 0.85,
+      "context": "Cardiometabolic improvements seen from week 0 to week 68 with semaglutide reverted towards baseline at week 120 for most variables."
+    },
+    {
+      "name": "STEP 1 trial extension",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT03548935",
+        "trial_acronym": "STEP 1",
+        "phase": "Phase III",
+        "design": "randomized, extension study",
+        "primary_endpoint": "body weight change",
+        "status": "completed",
+        "patient_population": "Adults with BMI >= 30 kg/m2",
+        "extension_participants": 327,
+        "total_randomized": 1961,
+        "treatment_duration_weeks": 68,
+        "follow_up_duration_weeks": 120
+      },
+      "confidence": 0.98,
+      "context": "STEP 1 (NCT03548935) randomized 1961 adults with a body mass index \u2265 30 kg/m"
+    },
+    {
+      "name": "Weight Gain after semaglutide withdrawal",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "meddra_pt": "Weight Increased",
+        "severity_grade": null,
+        "frequency": "common",
+        "onset": "delayed",
+        "management": "ongoing treatment required",
+        "organ_class": "Metabolism and Nutrition Disorders",
+        "magnitude": "11.6 percentage points regained by week 120 in semaglutide group"
+      },
+      "confidence": 0.9,
+      "context": "Following treatment withdrawal, semaglutide and placebo participants regained 11.6 (SD: 7.7) and 1.9 (SD: 4.8) percentage points of lost weight, respectively, by week 120"
+    },
+    {
+      "name": "body weight reduction",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "physiological",
+        "measurement_method": "percent body weight change",
+        "clinical_relevance": "primary efficacy endpoint",
+        "magnitude_semaglutide": "17.3% mean weight loss at week 68",
+        "magnitude_placebo": "2.0% mean weight loss at week 68"
+      },
+      "confidence": 0.95,
+      "context": "From week 0 to week 68, mean weight loss was 17.3% (SD: 9.3%) with semaglutide and 2.0% (SD: 6.1%) with placebo."
+    },
+    {
+      "name": "cardiometabolic risk factor improvement",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "physiological",
+        "measurement_method": "cardiometabolic variable assessment",
+        "clinical_relevance": "secondary efficacy endpoint",
+        "reversibility": "reverted towards baseline after treatment withdrawal"
+      },
+      "confidence": 0.9,
+      "context": "Cardiometabolic improvements seen from week 0 to week 68 with semaglutide reverted towards baseline at week 120 for most variables."
+    },
+    {
+      "name": "Wilding et al., Diabetes Obesity Metabolism 2022",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "35441470",
+        "journal": "Diabetes, obesity & metabolism",
+        "year": 2022,
+        "first_author": "Wilding",
+        "publication_type": "original_research"
+      },
+      "confidence": 0.99,
+      "context": "Weight regain and cardiometabolic effects after withdrawal of semaglutide: The STEP 1 trial extension."
+    },
+    {
+      "name": "GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "selectivity": "selective",
+        "target": "GLP-1 receptor"
+      },
+      "confidence": 0.85,
+      "context": "MeSH Terms: Glucagon-Like Peptides"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Obesity",
+      "confidence": 0.95,
+      "evidence": "STEP 1 (NCT03548935) randomized 1961 adults with a body mass index \u2265 30 kg/m"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "semaglutide",
+      "target_entity": "STEP 1 trial extension",
+      "confidence": 0.98,
+      "evidence": "STEP 1 (NCT03548935) randomized 1961 adults with a body mass index \u2265 30 kg/m"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "semaglutide",
+      "target_entity": "Weight Gain after semaglutide withdrawal",
+      "confidence": 0.88,
+      "evidence": "Following treatment withdrawal, semaglutide and placebo participants regained 11.6 (SD: 7.7) and 1.9 (SD: 4.8) percentage points of lost weight, respectively, by week 120"
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "STEP 1 trial extension",
+      "target_entity": "Wilding et al., Diabetes Obesity Metabolism 2022",
+      "confidence": 0.99,
+      "evidence": "Weight regain and cardiometabolic effects after withdrawal of semaglutide: The STEP 1 trial extension."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor agonism",
+      "confidence": 0.85,
+      "evidence": "MeSH Terms: Glucagon-Like Peptides"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "semaglutide",
+      "target_entity": "cardiometabolic risk factor improvement",
+      "confidence": 0.92,
+      "evidence": "Cardiometabolic improvements seen from week 0 to week 68 with semaglutide reverted towards baseline at week 120 for most variables."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "semaglutide",
+      "target_entity": "body weight reduction",
+      "confidence": 0.97,
+      "evidence": "From week 0 to week 68, mean weight loss was 17.3% (SD: 9.3%) with semaglutide and 2.0% (SD: 6.1%) with placebo."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "cardiometabolic risk factor improvement",
+      "target_entity": "Cardiovascular Diseases",
+      "confidence": 0.82,
+      "evidence": "Cardiometabolic improvements seen from week 0 to week 68 with semaglutide reverted towards baseline at week 120 for most variables."
+    }
+  ],
+  "cost_usd": 0.070911,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:42:13.914991+00:00",
+  "error": null
+}

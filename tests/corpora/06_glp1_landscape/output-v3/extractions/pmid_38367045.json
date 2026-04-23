@@ -1,0 +1,336 @@
+{
+  "document_id": "pmid_38367045",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "retatrutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "triple receptor agonist peptide",
+        "development_stage": "Phase III",
+        "route_of_administration": "not specified",
+        "targets": [
+          "GCGR",
+          "GIPR",
+          "GLP-1R"
+        ]
+      },
+      "confidence": 0.97,
+      "context": "Retatrutide is a novel triple receptor agonist peptide that targets the glucagon receptor (GCGR), glucose-dependent insulinotropic polypeptide receptor (GIPR), and glucagon-like peptide-1 receptor (GLP-1R)."
+    },
+    {
+      "name": "Obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Obesity",
+        "aliases": [
+          "overweight and obese"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "Obesity is one of the critical public health problems in our society. It leads to various health conditions, such as type 2 diabetes mellitus, cardiovascular disease, hypertension, dyslipidaemia, and non-alcoholic fatty liver disease."
+    },
+    {
+      "name": "Type 2 Diabetes Mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Diabetes Mellitus, Type 2",
+        "icd_code": "E11",
+        "aliases": [
+          "T2DM",
+          "type 2 diabetes mellitus"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "The Phase III trial of this pipeline drug for treating type 2 diabetes mellitus, non-alcoholic fatty liver disease, and obesity started on August 28, 2023."
+    },
+    {
+      "name": "Non-Alcoholic Fatty Liver Disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Non-alcoholic Fatty Liver Disease",
+        "icd_code": "K76.0",
+        "aliases": [
+          "NAFLD",
+          "non-alcoholic fatty liver disease"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "The Phase III trial of this pipeline drug for treating type 2 diabetes mellitus, non-alcoholic fatty liver disease, and obesity started on August 28, 2023."
+    },
+    {
+      "name": "Cardiovascular Disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Cardiovascular Diseases"
+      },
+      "confidence": 0.9,
+      "context": "It leads to various health conditions, such as type 2 diabetes mellitus, cardiovascular disease, hypertension, dyslipidaemia, and non-alcoholic fatty liver disease."
+    },
+    {
+      "name": "Hypertension",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Hypertension",
+        "icd_code": "I10"
+      },
+      "confidence": 0.9,
+      "context": "It leads to various health conditions, such as type 2 diabetes mellitus, cardiovascular disease, hypertension, dyslipidaemia, and non-alcoholic fatty liver disease."
+    },
+    {
+      "name": "Dyslipidaemia",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Dyslipidemias",
+        "aliases": [
+          "dyslipidemia"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "It leads to various health conditions, such as type 2 diabetes mellitus, cardiovascular disease, hypertension, dyslipidaemia, and non-alcoholic fatty liver disease."
+    },
+    {
+      "name": "glucagon receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "aliases": [
+          "GCGR"
+        ]
+      },
+      "confidence": 0.97,
+      "context": "Retatrutide is a novel triple receptor agonist peptide that targets the glucagon receptor (GCGR), glucose-dependent insulinotropic polypeptide receptor (GIPR), and glucagon-like peptide-1 receptor (GLP-1R)."
+    },
+    {
+      "name": "glucose-dependent insulinotropic polypeptide receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "aliases": [
+          "GIPR"
+        ]
+      },
+      "confidence": 0.97,
+      "context": "Retatrutide is a novel triple receptor agonist peptide that targets the glucagon receptor (GCGR), glucose-dependent insulinotropic polypeptide receptor (GIPR), and glucagon-like peptide-1 receptor (GLP-1R)."
+    },
+    {
+      "name": "glucagon-like peptide-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "aliases": [
+          "GLP-1R",
+          "GLP1R"
+        ]
+      },
+      "confidence": 0.97,
+      "context": "Retatrutide is a novel triple receptor agonist peptide that targets the glucagon receptor (GCGR), glucose-dependent insulinotropic polypeptide receptor (GIPR), and glucagon-like peptide-1 receptor (GLP-1R)."
+    },
+    {
+      "name": "triple receptor agonism (GCGR/GIPR/GLP-1R)",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "selectivity": "triple",
+        "target": "GCGR, GIPR, GLP-1R"
+      },
+      "confidence": 0.95,
+      "context": "This novel drug has the potential to treat metabolic abnormalities associated with obesity as well as diseases resulting from it due to its distinct mechanism of action."
+    },
+    {
+      "name": "retatrutide Phase II clinical trial (obesity)",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "Phase II",
+        "status": "completed",
+        "patient_population": "overweight and obese adults",
+        "primary_endpoint": "weight loss",
+        "primary_endpoint_met": true,
+        "key_results": "average weight loss of 17.5% at 24 weeks and 24.4% at 48 weeks"
+      },
+      "confidence": 0.9,
+      "context": "The results of a Phase II clinical trial have demonstrated significant weight reduction in overweight and obese adults. Specifically, the trial reported an average weight loss of 17.5% and 24.4% at 24 and 48 weeks, respectively."
+    },
+    {
+      "name": "retatrutide Phase III clinical trial",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "Phase III",
+        "status": "recruiting",
+        "start_date": "August 28, 2023",
+        "indications": [
+          "Type 2 Diabetes Mellitus",
+          "Non-Alcoholic Fatty Liver Disease",
+          "Obesity"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "The Phase III trial of this pipeline drug for treating type 2 diabetes mellitus, non-alcoholic fatty liver disease, and obesity started on August 28, 2023."
+    },
+    {
+      "name": "Kaur Manmeet et al., European Journal of Clinical Pharmacology 2024",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "38367045",
+        "journal": "European journal of clinical pharmacology",
+        "year": 2024,
+        "first_author": "Kaur",
+        "publication_type": "review"
+      },
+      "confidence": 0.99,
+      "context": "A review of an investigational drug retatrutide, a novel triple agonist agent for the treatment of obesity."
+    },
+    {
+      "name": "Weight Loss",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "physiological",
+        "clinical_relevance": "primary efficacy endpoint for obesity treatment"
+      },
+      "confidence": 0.92,
+      "context": "The results of a Phase II clinical trial have demonstrated significant weight reduction in overweight and obese adults. Specifically, the trial reported an average weight loss of 17.5% and 24.4% at 24 and 48 weeks, respectively."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "retatrutide",
+      "target_entity": "glucagon receptor",
+      "confidence": 0.97,
+      "evidence": "Retatrutide is a novel triple receptor agonist peptide that targets the glucagon receptor (GCGR), glucose-dependent insulinotropic polypeptide receptor (GIPR), and glucagon-like peptide-1 receptor (GLP-1R)."
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "retatrutide",
+      "target_entity": "glucose-dependent insulinotropic polypeptide receptor",
+      "confidence": 0.97,
+      "evidence": "Retatrutide is a novel triple receptor agonist peptide that targets the glucagon receptor (GCGR), glucose-dependent insulinotropic polypeptide receptor (GIPR), and glucagon-like peptide-1 receptor (GLP-1R)."
+    },
+    {
+      "relation_type": "TARGETS",
+      "source_entity": "retatrutide",
+      "target_entity": "glucagon-like peptide-1 receptor",
+      "confidence": 0.97,
+      "evidence": "Retatrutide is a novel triple receptor agonist peptide that targets the glucagon receptor (GCGR), glucose-dependent insulinotropic polypeptide receptor (GIPR), and glucagon-like peptide-1 receptor (GLP-1R)."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "retatrutide",
+      "target_entity": "glucagon receptor",
+      "confidence": 0.95,
+      "evidence": "Retatrutide is a novel triple receptor agonist peptide that targets the glucagon receptor (GCGR), glucose-dependent insulinotropic polypeptide receptor (GIPR), and glucagon-like peptide-1 receptor (GLP-1R)."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "retatrutide",
+      "target_entity": "glucose-dependent insulinotropic polypeptide receptor",
+      "confidence": 0.95,
+      "evidence": "Retatrutide is a novel triple receptor agonist peptide that targets the glucagon receptor (GCGR), glucose-dependent insulinotropic polypeptide receptor (GIPR), and glucagon-like peptide-1 receptor (GLP-1R)."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "retatrutide",
+      "target_entity": "glucagon-like peptide-1 receptor",
+      "confidence": 0.95,
+      "evidence": "Retatrutide is a novel triple receptor agonist peptide that targets the glucagon receptor (GCGR), glucose-dependent insulinotropic polypeptide receptor (GIPR), and glucagon-like peptide-1 receptor (GLP-1R)."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "retatrutide",
+      "target_entity": "triple receptor agonism (GCGR/GIPR/GLP-1R)",
+      "confidence": 0.97,
+      "evidence": "Retatrutide is a novel triple receptor agonist peptide that targets the glucagon receptor (GCGR), glucose-dependent insulinotropic polypeptide receptor (GIPR), and glucagon-like peptide-1 receptor (GLP-1R)."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "retatrutide",
+      "target_entity": "Obesity",
+      "confidence": 0.8,
+      "evidence": "The results of a Phase II clinical trial have demonstrated significant weight reduction in overweight and obese adults. Specifically, the trial reported an average weight loss of 17.5% and 24.4% at 24 and 48 weeks, respectively."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "retatrutide",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.7,
+      "evidence": "The Phase III trial of this pipeline drug for treating type 2 diabetes mellitus, non-alcoholic fatty liver disease, and obesity started on August 28, 2023."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "retatrutide",
+      "target_entity": "Non-Alcoholic Fatty Liver Disease",
+      "confidence": 0.7,
+      "evidence": "The Phase III trial of this pipeline drug for treating type 2 diabetes mellitus, non-alcoholic fatty liver disease, and obesity started on August 28, 2023."
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "retatrutide",
+      "target_entity": "retatrutide Phase II clinical trial (obesity)",
+      "confidence": 0.92,
+      "evidence": "The results of a Phase II clinical trial have demonstrated significant weight reduction in overweight and obese adults. Specifically, the trial reported an average weight loss of 17.5% and 24.4% at 24 and 48 weeks, respectively."
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "retatrutide",
+      "target_entity": "retatrutide Phase III clinical trial",
+      "confidence": 0.95,
+      "evidence": "The Phase III trial of this pipeline drug for treating type 2 diabetes mellitus, non-alcoholic fatty liver disease, and obesity started on August 28, 2023."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "Obesity",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.9,
+      "evidence": "Obesity is one of the critical public health problems in our society. It leads to various health conditions, such as type 2 diabetes mellitus, cardiovascular disease, hypertension, dyslipidaemia, and non-alcoholic fatty liver disease."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "Obesity",
+      "target_entity": "Cardiovascular Disease",
+      "confidence": 0.9,
+      "evidence": "Obesity is one of the critical public health problems in our society. It leads to various health conditions, such as type 2 diabetes mellitus, cardiovascular disease, hypertension, dyslipidaemia, and non-alcoholic fatty liver disease."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "Obesity",
+      "target_entity": "Hypertension",
+      "confidence": 0.9,
+      "evidence": "Obesity is one of the critical public health problems in our society. It leads to various health conditions, such as type 2 diabetes mellitus, cardiovascular disease, hypertension, dyslipidaemia, and non-alcoholic fatty liver disease."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "Obesity",
+      "target_entity": "Dyslipidaemia",
+      "confidence": 0.9,
+      "evidence": "Obesity is one of the critical public health problems in our society. It leads to various health conditions, such as type 2 diabetes mellitus, cardiovascular disease, hypertension, dyslipidaemia, and non-alcoholic fatty liver disease."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "Obesity",
+      "target_entity": "Non-Alcoholic Fatty Liver Disease",
+      "confidence": 0.9,
+      "evidence": "Obesity is one of the critical public health problems in our society. It leads to various health conditions, such as type 2 diabetes mellitus, cardiovascular disease, hypertension, dyslipidaemia, and non-alcoholic fatty liver disease."
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "retatrutide Phase II clinical trial (obesity)",
+      "target_entity": "Kaur Manmeet et al., European Journal of Clinical Pharmacology 2024",
+      "confidence": 0.85,
+      "evidence": "The results of a Phase II clinical trial have demonstrated significant weight reduction in overweight and obese adults. Specifically, the trial reported an average weight loss of 17.5% and 24.4% at 24 and 48 weeks, respectively."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "retatrutide",
+      "target_entity": "Weight Loss",
+      "confidence": 0.92,
+      "evidence": "The results of a Phase II clinical trial have demonstrated significant weight reduction in overweight and obese adults. Specifically, the trial reported an average weight loss of 17.5% and 24.4% at 24 and 48 weeks, respectively."
+    }
+  ],
+  "cost_usd": 0.103668,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:47:17.857493+00:00",
+  "error": null
+}

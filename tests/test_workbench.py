@@ -358,3 +358,112 @@ def test_schema_expansion():
         "SCHEDULED",
     ]:
         assert expected in relation_types, f"Missing relation type: {expected}"
+
+
+# ---------------------------------------------------------------------------
+# FT-018 — FIDL-06 end-to-end: domain auto-detection through /api/template
+# ---------------------------------------------------------------------------
+
+
+def _ft018_build_stub_graph(tmp_dir: Path, domain_name: str | None) -> None:
+    """Write a minimal graph_data.json that matches sift-kg's schema + has metadata.domain."""
+    import json as _json
+
+    tmp_dir.mkdir(parents=True, exist_ok=True)
+    (tmp_dir / "graph_data.json").write_text(_json.dumps({
+        "metadata": {
+            "created_at": "2026-04-21T00:00:00+00:00",
+            "updated_at": "2026-04-21T00:00:00+00:00",
+            "entity_count": 0,
+            "relation_count": 0,
+            "document_count": 0,
+            "entity_type_summary": {},
+            "sift_kg_version": "0.9.0-stub",
+            "domain": domain_name,
+        },
+        "nodes": [],
+        "links": [],
+    }))
+
+
+def test_ft018_domain_autodetect_through_api_contracts(tmp_path):
+    """FT-018 (half 1): contracts graph → /api/template returns contracts template (no explicit --domain)."""
+    from examples.workbench.server import create_app
+    from starlette.testclient import TestClient
+
+    out = tmp_path / "contract_out"
+    _ft018_build_stub_graph(out, "contracts")
+
+    app = create_app(out, domain=None)  # no explicit → must auto-detect
+    client = TestClient(app)
+    resp = client.get("/api/template")
+    assert resp.status_code == 200
+    body = resp.json()
+    assert body["title"] == "Sample Contract Analysis Workbench", (
+        f"Expected contracts title, got {body['title']!r}"
+    )
+    assert body.get("analysis_patterns") is not None, (
+        "Contracts template must ship analysis_patterns per Plan 17-02 Task 1"
+    )
+    assert (
+        body["analysis_patterns"]["cross_references_heading"]
+        == "CROSS-CONTRACT REFERENCES"
+    )
+
+
+def test_ft018_domain_autodetect_through_api_drug_discovery(tmp_path):
+    """FT-018 (half 2): drug-discovery graph → /api/template returns drug-discovery template."""
+    from examples.workbench.server import create_app
+    from starlette.testclient import TestClient
+
+    out = tmp_path / "dd_out"
+    _ft018_build_stub_graph(out, "drug-discovery")
+
+    app = create_app(out, domain=None)
+    client = TestClient(app)
+    resp = client.get("/api/template")
+    assert resp.status_code == 200
+    body = resp.json()
+    assert "Drug Discovery" in body["title"], (
+        f"Expected drug-discovery title, got {body['title']!r}"
+    )
+    assert body.get("analysis_patterns") is not None
+    assert (
+        body["analysis_patterns"]["cross_references_heading"]
+        == "CROSS-STUDY REFERENCES"
+    )
+
+
+def test_ft018_explicit_beats_metadata(tmp_path):
+    """FT-018 (D-09 regression): explicit --domain overrides graph_data.json metadata."""
+    from examples.workbench.server import create_app
+    from starlette.testclient import TestClient
+
+    out = tmp_path / "mixed"
+    _ft018_build_stub_graph(out, "contracts")  # graph says contracts
+
+    app = create_app(out, domain="drug-discovery")  # user says drug-discovery
+    client = TestClient(app)
+    resp = client.get("/api/template")
+    assert resp.status_code == 200
+    assert "Drug Discovery" in resp.json()["title"], (
+        "D-09: explicit --domain must beat metadata.domain"
+    )
+
+
+def test_ft018_legacy_graph_no_metadata_domain(tmp_path):
+    """FT-018 (D-08 regression): legacy graph without metadata.domain → generic fallback."""
+    from examples.workbench.server import create_app
+    from starlette.testclient import TestClient
+
+    out = tmp_path / "legacy"
+    _ft018_build_stub_graph(out, None)  # writes "domain": null
+
+    app = create_app(out, domain=None)
+    client = TestClient(app)
+    resp = client.get("/api/template")
+    assert resp.status_code == 200
+    body = resp.json()
+    assert body["title"] == "Knowledge Graph Explorer", (
+        f"D-08: legacy graph must fall back to generic, got {body['title']!r}"
+    )

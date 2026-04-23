@@ -1,0 +1,230 @@
+{
+  "document_id": "pmid_37192005",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "GLP-1 analogue",
+        "development_stage": "approved",
+        "route_of_administration": "not specified in abstract",
+        "duration": "long-acting"
+      },
+      "confidence": 0.99,
+      "context": "we examined the effects of semaglutide, a long-acting GLP-1 analogue, on biobehavioral correlates of alcohol use in rodents"
+    },
+    {
+      "name": "glucagon-like peptide-1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "incretin hormone",
+        "aliases": "GLP-1"
+      },
+      "confidence": 0.95,
+      "context": "Growing evidence indicates that the glucagon-like peptide-1 (GLP-1) system is involved in the neurobiology of addictive behaviors"
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "protein_family": "glucagon receptor family"
+      },
+      "confidence": 0.8,
+      "context": "the glucagon-like peptide-1 (GLP-1) system is involved in the neurobiology of addictive behaviors, and GLP-1 analogues may be used for the treatment of alcohol use disorder"
+    },
+    {
+      "name": "gamma-aminobutyric acid",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "neurotransmitter",
+        "aliases": "GABA"
+      },
+      "confidence": 0.95,
+      "context": "Semaglutide increased sIPSC frequency in CeA and ILC neurons from alcohol-naive rats, suggesting enhanced GABA release"
+    },
+    {
+      "name": "Alcohol Use Disorder",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Alcoholism",
+        "aliases": "AUD, alcohol use disorder"
+      },
+      "confidence": 0.99,
+      "context": "GLP-1 analogues may be used for the treatment of alcohol use disorder (AUD)"
+    },
+    {
+      "name": "binge alcohol drinking",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "behavioral",
+        "measurement_method": "drinking-in-the-dark procedure",
+        "associated_genes": null,
+        "clinical_relevance": "model of AUD"
+      },
+      "confidence": 0.95,
+      "context": "A drinking-in-the-dark procedure was used to test the effects of semaglutide on binge-like drinking in male and female mice"
+    },
+    {
+      "name": "dependence-induced alcohol drinking",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "behavioral",
+        "clinical_relevance": "model of AUD"
+      },
+      "confidence": 0.9,
+      "context": "We also tested the effects of semaglutide on binge-like and dependence-induced alcohol drinking in male and female rats"
+    },
+    {
+      "name": "GABA neurotransmission modulation",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "modulation",
+        "target": "GABA inhibitory synaptic transmission",
+        "brain_regions": "central amygdala, infralimbic cortex"
+      },
+      "confidence": 0.88,
+      "context": "Semaglutide increased sIPSC frequency in CeA and ILC neurons from alcohol-naive rats, suggesting enhanced GABA release"
+    },
+    {
+      "name": "GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "selectivity": "GLP-1 receptor selective",
+        "target": "GLP-1 receptor"
+      },
+      "confidence": 0.88,
+      "context": "the glucagon-like peptide-1 (GLP-1) system is involved in the neurobiology of addictive behaviors, and GLP-1 analogues may be used for the treatment of alcohol use disorder (AUD)"
+    },
+    {
+      "name": "central amygdala GABAergic inhibitory transmission",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "neurophysiological",
+        "measurement_method": "spontaneous inhibitory postsynaptic currents (sIPSCs)",
+        "brain_region": "central amygdala (CeA)"
+      },
+      "confidence": 0.9,
+      "context": "Semaglutide increased sIPSC frequency in CeA and ILC neurons from alcohol-naive rats, suggesting enhanced GABA release"
+    },
+    {
+      "name": "infralimbic cortex GABAergic inhibitory transmission",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "neurophysiological",
+        "measurement_method": "spontaneous inhibitory postsynaptic currents (sIPSCs)",
+        "brain_region": "infralimbic cortex (ILC)"
+      },
+      "confidence": 0.9,
+      "context": "Semaglutide increased sIPSC frequency in CeA and ILC neurons from alcohol-naive rats, suggesting enhanced GABA release, but had no overall effect on GABA transmission in alcohol-dependent rats"
+    },
+    {
+      "name": "Chuong et al., JCI Insight 2023",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "37192005",
+        "journal": "JCI insight",
+        "year": 2023,
+        "first_author": "Chuong",
+        "publication_type": "original_research"
+      },
+      "confidence": 0.99,
+      "context": "The glucagon-like peptide-1 (GLP-1) analogue semaglutide reduces alcohol drinking and modulates central GABA neurotransmission. JCI insight (2023)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor agonism",
+      "confidence": 0.9,
+      "evidence": "we examined the effects of semaglutide, a long-acting GLP-1 analogue, on biobehavioral correlates of alcohol use in rodents"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "semaglutide",
+      "target_entity": "GABA neurotransmission modulation",
+      "confidence": 0.88,
+      "evidence": "Semaglutide increased sIPSC frequency in CeA and ILC neurons from alcohol-naive rats, suggesting enhanced GABA release"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.88,
+      "evidence": "the glucagon-like peptide-1 (GLP-1) system is involved in the neurobiology of addictive behaviors, and GLP-1 analogues may be used for the treatment of alcohol use disorder (AUD)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Alcohol Use Disorder",
+      "confidence": 0.6,
+      "evidence": "providing support for clinical testing of semaglutide as a potentially novel pharmacotherapy for AUD"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "semaglutide",
+      "target_entity": "binge alcohol drinking",
+      "confidence": 0.92,
+      "evidence": "Semaglutide dose-dependently reduced binge-like alcohol drinking in mice; a similar effect was observed on the intake of other caloric/noncaloric solutions"
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "semaglutide",
+      "target_entity": "dependence-induced alcohol drinking",
+      "confidence": 0.9,
+      "evidence": "Semaglutide also reduced binge-like and dependence-induced alcohol drinking in rats"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "central amygdala GABAergic inhibitory transmission",
+      "confidence": 0.85,
+      "evidence": "Semaglutide increased sIPSC frequency in CeA and ILC neurons from alcohol-naive rats, suggesting enhanced GABA release"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "infralimbic cortex GABAergic inhibitory transmission",
+      "confidence": 0.85,
+      "evidence": "Semaglutide increased sIPSC frequency in CeA and ILC neurons from alcohol-naive rats, suggesting enhanced GABA release"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "glucagon-like peptide-1",
+      "target_entity": "Alcohol Use Disorder",
+      "confidence": 0.8,
+      "evidence": "Growing evidence indicates that the glucagon-like peptide-1 (GLP-1) system is involved in the neurobiology of addictive behaviors"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "binge alcohol drinking",
+      "target_entity": "Alcohol Use Disorder",
+      "confidence": 0.9,
+      "evidence": "A drinking-in-the-dark procedure was used to test the effects of semaglutide on binge-like drinking in male and female mice"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "dependence-induced alcohol drinking",
+      "target_entity": "Alcohol Use Disorder",
+      "confidence": 0.9,
+      "evidence": "We also tested the effects of semaglutide on binge-like and dependence-induced alcohol drinking in male and female rats"
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "semaglutide",
+      "target_entity": "Chuong et al., JCI Insight 2023",
+      "confidence": 0.99,
+      "evidence": "The glucagon-like peptide-1 (GLP-1) analogue semaglutide reduces alcohol drinking and modulates central GABA neurotransmission. JCI insight (2023) PMID: 37192005"
+    }
+  ],
+  "cost_usd": 0.079104,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:44:33.638419+00:00",
+  "error": null
+}

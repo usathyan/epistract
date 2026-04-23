@@ -1,0 +1,304 @@
+{
+  "document_id": "pmid_37657738",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "glucagon-like peptide-1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "incretin hormone",
+        "aliases": "GLP-1",
+        "function": "metabolic homeostasis, glucose-dependent insulin secretion stimulation"
+      },
+      "confidence": 0.95,
+      "context": "Glucagon-like peptide 1 (GLP-1) is a hormone of the incretin family, secreted in response to nutrient ingestion, and plays a role in metabolic homeostasis."
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "aliases": "GLP-1R"
+      },
+      "confidence": 0.9,
+      "context": "GLP-1 receptor agonist has a peripheral and a central action, including stimulation of glucose-dependent insulin secretion and insulin biosynthesis."
+    },
+    {
+      "name": "GLP-1 receptor agonists",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "target": "GLP-1 receptor",
+        "selectivity": "selective",
+        "aliases": "GLP-1 analogs, GLP-1 RAs"
+      },
+      "confidence": 0.95,
+      "context": "GLP-1 receptor agonist has a peripheral and a central action, including stimulation of glucose-dependent insulin secretion and insulin biosynthesis, inhibition of glucagon secretion and gastric emptying, and inhibition of food intake."
+    },
+    {
+      "name": "insulin",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "hormone",
+        "function": "glucose metabolism regulation"
+      },
+      "confidence": 0.9,
+      "context": "stimulation of glucose-dependent insulin secretion and insulin biosynthesis"
+    },
+    {
+      "name": "glucagon",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "hormone",
+        "function": "glucose metabolism regulation"
+      },
+      "confidence": 0.85,
+      "context": "inhibition of glucagon secretion and gastric emptying"
+    },
+    {
+      "name": "Type 2 Diabetes Mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Diabetes Mellitus, Type 2",
+        "icd_code": "E11",
+        "aliases": "T2DM, type 2 diabetes"
+      },
+      "confidence": 0.98,
+      "context": "their use in the treatment of type 2 diabetes has been extended to the management of obesity, and numerous trials are being conducted to assess their cardiovascular effect."
+    },
+    {
+      "name": "Obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Obesity",
+        "icd_code": "E66"
+      },
+      "confidence": 0.9,
+      "context": "their use in the treatment of type 2 diabetes has been extended to the management of obesity"
+    },
+    {
+      "name": "Dementia",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Dementia",
+        "icd_code": "F03"
+      },
+      "confidence": 0.95,
+      "context": "we aim to examine the pathological features between type 2 diabetes and dementia, GLP-1 central effects, and analyze the relevant literature about the effect of GLP-1 analogs on cognitive function"
+    },
+    {
+      "name": "Alzheimer's Disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Alzheimer Disease",
+        "icd_code": "G30",
+        "disease_subtype": "neurodegenerative dementia"
+      },
+      "confidence": 0.95,
+      "context": "Type 2 diabetes appears to share common pathophysiological mechanisms with the development of cognitive disorders, such as Alzheimer's and Parkinson's disease, related to insulin resistance."
+    },
+    {
+      "name": "Parkinson's Disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Parkinson Disease",
+        "icd_code": "G20",
+        "disease_subtype": "neurodegenerative disorder"
+      },
+      "confidence": 0.95,
+      "context": "Type 2 diabetes appears to share common pathophysiological mechanisms with the development of cognitive disorders, such as Alzheimer's and Parkinson's disease, related to insulin resistance."
+    },
+    {
+      "name": "insulin resistance",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "physiological",
+        "clinical_relevance": "mechanism, prognosis",
+        "associated_genes": "INSR"
+      },
+      "confidence": 0.9,
+      "context": "Type 2 diabetes appears to share common pathophysiological mechanisms with the development of cognitive disorders, such as Alzheimer's and Parkinson's disease, related to insulin resistance."
+    },
+    {
+      "name": "cognitive impairment",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "physiological",
+        "clinical_relevance": "outcome measure"
+      },
+      "confidence": 0.85,
+      "context": "analyze the relevant literature about the effect of GLP-1 analogs on cognitive function of patients with type 2 diabetes but also without"
+    },
+    {
+      "name": "hippocampal connectivity",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "pharmacodynamic",
+        "analyte": "neuroimaging",
+        "assay": "functional magnetic resonance imaging",
+        "tissue": "brain"
+      },
+      "confidence": 0.8,
+      "context": "Results tends to show an improvement in some brain markers (e.g. hippocampal connections, cerebral glucose metabolism, hippocampal activation on functional magnetic resonance imaging)"
+    },
+    {
+      "name": "cerebral glucose metabolism",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "pharmacodynamic",
+        "analyte": "metabolic imaging",
+        "tissue": "brain"
+      },
+      "confidence": 0.8,
+      "context": "Results tends to show an improvement in some brain markers (e.g. hippocampal connections, cerebral glucose metabolism, hippocampal activation on functional magnetic resonance imaging)"
+    },
+    {
+      "name": "Monney et al., Diabetes & Metabolism 2023",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "37657738",
+        "journal": "Diabetes & metabolism",
+        "year": 2023,
+        "first_author": "Monney",
+        "publication_type": "review"
+      },
+      "confidence": 0.99,
+      "context": "GLP-1 receptor agonists effect on cognitive function in patients with and without type 2 diabetes. Diabetes & metabolism (2023). PMID: 37657738"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.95,
+      "evidence": "GLP-1 receptor agonist has a peripheral and a central action, including stimulation of glucose-dependent insulin secretion and insulin biosynthesis, inhibition of glucagon secretion and gastric emptying, and inhibition of food intake."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "glucagon-like peptide-1",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.9,
+      "evidence": "Glucagon-like peptide 1 (GLP-1) is a hormone of the incretin family, secreted in response to nutrient ingestion, and plays a role in metabolic homeostasis."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.95,
+      "evidence": "their use in the treatment of type 2 diabetes has been extended to the management of obesity"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "Obesity",
+      "confidence": 0.9,
+      "evidence": "their use in the treatment of type 2 diabetes has been extended to the management of obesity"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "insulin resistance",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.9,
+      "evidence": "Type 2 diabetes appears to share common pathophysiological mechanisms with the development of cognitive disorders, such as Alzheimer's and Parkinson's disease, related to insulin resistance."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "insulin resistance",
+      "target_entity": "Alzheimer's Disease",
+      "confidence": 0.85,
+      "evidence": "Type 2 diabetes appears to share common pathophysiological mechanisms with the development of cognitive disorders, such as Alzheimer's and Parkinson's disease, related to insulin resistance."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "insulin resistance",
+      "target_entity": "Parkinson's Disease",
+      "confidence": 0.8,
+      "evidence": "Type 2 diabetes appears to share common pathophysiological mechanisms with the development of cognitive disorders, such as Alzheimer's and Parkinson's disease, related to insulin resistance."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "Type 2 Diabetes Mellitus",
+      "target_entity": "Dementia",
+      "confidence": 0.85,
+      "evidence": "we aim to examine the pathological features between type 2 diabetes and dementia, GLP-1 central effects, and analyze the relevant literature about the effect of GLP-1 analogs on cognitive function"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "Type 2 Diabetes Mellitus",
+      "target_entity": "Alzheimer's Disease",
+      "confidence": 0.85,
+      "evidence": "Type 2 diabetes appears to share common pathophysiological mechanisms with the development of cognitive disorders, such as Alzheimer's and Parkinson's disease, related to insulin resistance."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "Type 2 Diabetes Mellitus",
+      "target_entity": "Parkinson's Disease",
+      "confidence": 0.85,
+      "evidence": "Type 2 diabetes appears to share common pathophysiological mechanisms with the development of cognitive disorders, such as Alzheimer's and Parkinson's disease, related to insulin resistance."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "cognitive impairment",
+      "confidence": 0.7,
+      "evidence": "Results tends to show an improvement in some brain markers (e.g. hippocampal connections, cerebral glucose metabolism, hippocampal activation on functional magnetic resonance imaging), but without being able to demonstrate a strong correlation to cognitive scores."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "hippocampal connectivity",
+      "confidence": 0.75,
+      "evidence": "Results tends to show an improvement in some brain markers (e.g. hippocampal connections, cerebral glucose metabolism, hippocampal activation on functional magnetic resonance imaging)"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "cerebral glucose metabolism",
+      "confidence": 0.75,
+      "evidence": "Results tends to show an improvement in some brain markers (e.g. hippocampal connections, cerebral glucose metabolism, hippocampal activation on functional magnetic resonance imaging)"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "Dementia",
+      "confidence": 0.7,
+      "evidence": "Some epidemiological studies suggest that GLP-1 receptor agonists may offer a protective effect, by delaying progression to dementia when diabetic patients are treated with GLP-1 receptor agonists."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "Alzheimer's Disease",
+      "confidence": 0.65,
+      "evidence": "Ongoing trials are in progress and may provide disease-modifying care for Alzheimer's disease and Parkinson's disease patients in the future."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "Parkinson's Disease",
+      "confidence": 0.65,
+      "evidence": "Ongoing trials are in progress and may provide disease-modifying care for Alzheimer's disease and Parkinson's disease patients in the future."
+    },
+    {
+      "relation_type": "INHIBITS",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "glucagon",
+      "confidence": 0.9,
+      "evidence": "GLP-1 receptor agonist has a peripheral and a central action, including stimulation of glucose-dependent insulin secretion and insulin biosynthesis, inhibition of glucagon secretion and gastric emptying, and inhibition of food intake."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "insulin",
+      "confidence": 0.9,
+      "evidence": "GLP-1 receptor agonist has a peripheral and a central action, including stimulation of glucose-dependent insulin secretion and insulin biosynthesis"
+    }
+  ],
+  "cost_usd": 0.09276,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:46:36.889422+00:00",
+  "error": null
+}

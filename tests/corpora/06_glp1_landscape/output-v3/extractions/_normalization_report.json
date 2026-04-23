@@ -1,0 +1,148 @@
+{
+  "total": 34,
+  "passed": 34,
+  "recovered": 0,
+  "unrecoverable": 0,
+  "pass_rate": 1.0,
+  "fail_threshold": 0.95,
+  "above_threshold": true,
+  "generated_at": "2026-04-22T17:58:20.127665+00:00",
+  "actions": [
+    {
+      "file": "patent_01_us10888605b2_semaglutide.json",
+      "action": "passed"
+    },
+    {
+      "file": "patent_02_us11357820b2_tirzepatide.json",
+      "action": "passed"
+    },
+    {
+      "file": "patent_03_us10335462b2_semaglutide_longacting.json",
+      "action": "passed"
+    },
+    {
+      "file": "patent_04_wo2020159949a1_tirzepatide_process.json",
+      "action": "passed"
+    },
+    {
+      "file": "patent_05_wo2018109607a1_pfizer_oral_glp1.json",
+      "action": "passed"
+    },
+    {
+      "file": "patent_06_us10370426b2_triple_agonist.json",
+      "action": "passed"
+    },
+    {
+      "file": "patent_07_wo2019239319a1_pfizer_danuglipron.json",
+      "action": "passed"
+    },
+    {
+      "file": "patent_08_us12054528b2_glp1_amylin_coagonist.json",
+      "action": "passed"
+    },
+    {
+      "file": "patent_09_us11111285b2_zealand_triple_agonist.json",
+      "action": "passed"
+    },
+    {
+      "file": "patent_10_us11622996b2_oral_semaglutide_snac.json",
+      "action": "passed"
+    },
+    {
+      "file": "pmid_32442310.json",
+      "action": "passed"
+    },
+    {
+      "file": "pmid_35441470.json",
+      "action": "passed"
+    },
+    {
+      "file": "pmid_35650449.json",
+      "action": "passed"
+    },
+    {
+      "file": "pmid_35658024.json",
+      "action": "passed"
+    },
+    {
+      "file": "pmid_36945734.json",
+      "action": "passed"
+    },
+    {
+      "file": "pmid_37192005.json",
+      "action": "passed"
+    },
+    {
+      "file": "pmid_37351564.json",
+      "action": "passed"
+    },
+    {
+      "file": "pmid_37657738.json",
+      "action": "passed"
+    },
+    {
+      "file": "pmid_38367045.json",
+      "action": "passed"
+    },
+    {
+      "file": "pmid_38632474.json",
+      "action": "passed"
+    },
+    {
+      "file": "pmid_38785209.json",
+      "action": "passed"
+    },
+    {
+      "file": "pmid_38851997.json",
+      "action": "passed"
+    },
+    {
+      "file": "pmid_38858523.json",
+      "action": "passed"
+    },
+    {
+      "file": "pmid_38958939.json",
+      "action": "passed"
+    },
+    {
+      "file": "pmid_39357509.json",
+      "action": "passed"
+    },
+    {
+      "file": "pmid_39536238.json",
+      "action": "passed"
+    },
+    {
+      "file": "pmid_39663847.json",
+      "action": "passed"
+    },
+    {
+      "file": "pmid_39903735.json",
+      "action": "passed"
+    },
+    {
+      "file": "pmid_40305708.json",
+      "action": "passed"
+    },
+    {
+      "file": "pmid_40544432.json",
+      "action": "passed"
+    },
+    {
+      "file": "pmid_40544433.json",
+      "action": "passed"
+    },
+    {
+      "file": "pmid_40544435.json",
+      "action": "passed"
+    },
+    {
+      "file": "pmid_40726115.json",
+      "action": "passed"
+    },
+    {
+      "file": "pmid_41523559.json",
+      "action": "passed"
+    }
+  ]
+}

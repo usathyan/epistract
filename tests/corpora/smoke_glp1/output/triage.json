@@ -1,0 +1,49 @@
+{
+  "ingested_at": "2026-04-22T17:33:56.556564+00:00",
+  "corpus_path": "tests/corpora/smoke_glp1/docs",
+  "domain": "drug-discovery",
+  "total_files": 3,
+  "successful": 3,
+  "failed": 0,
+  "documents": [
+    {
+      "doc_id": "patent_10_us11622996b2_oral_semaglutide_snac",
+      "filename": "patent_10_US11622996B2_oral_semaglutide_snac.txt",
+      "file_path": "tests/corpora/smoke_glp1/docs/patent_10_US11622996B2_oral_semaglutide_snac.txt",
+      "file_size_bytes": 2230,
+      "page_count": null,
+      "category": "uncategorized",
+      "parse_type": "text",
+      "text_length": 2229,
+      "parse_errors": null,
+      "extraction_readiness_score": 0.7,
+      "warnings": []
+    },
+    {
+      "doc_id": "pmid_32442310",
+      "filename": "pmid_32442310.txt",
+      "file_path": "tests/corpora/smoke_glp1/docs/pmid_32442310.txt",
+      "file_size_bytes": 2155,
+      "page_count": null,
+      "category": "uncategorized",
+      "parse_type": "text",
+      "text_length": 2154,
+      "parse_errors": null,
+      "extraction_readiness_score": 0.7,
+      "warnings": []
+    },
+    {
+      "doc_id": "pmid_41523559",
+      "filename": "pmid_41523559.txt",
+      "file_path": "tests/corpora/smoke_glp1/docs/pmid_41523559.txt",
+      "file_size_bytes": 2467,
+      "page_count": null,
+      "category": "uncategorized",
+      "parse_type": "text",
+      "text_length": 2449,
+      "parse_errors": null,
+      "extraction_readiness_score": 0.7,
+      "warnings": []
+    }
+  ]
+}

@@ -1,0 +1,301 @@
+{
+  "document_id": "pmid_38785209",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "GLP-1 receptor agonist",
+        "route_of_administration": "subcutaneous injection",
+        "development_stage": "approved",
+        "developer": "Novo Nordisk"
+      },
+      "confidence": 0.99,
+      "context": "We randomly assigned patients with type 2 diabetes and chronic kidney disease... semaglutide reduced the risk of clinically important kidney outcomes and death from cardiovascular causes"
+    },
+    {
+      "name": "Type 2 Diabetes Mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Diabetes Mellitus, Type 2",
+        "aliases": [
+          "T2DM",
+          "type 2 diabetes"
+        ]
+      },
+      "confidence": 0.99,
+      "context": "Patients with type 2 diabetes and chronic kidney disease are at high risk for kidney failure, cardiovascular events, and death."
+    },
+    {
+      "name": "Chronic Kidney Disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Renal Insufficiency, Chronic",
+        "aliases": [
+          "CKD"
+        ],
+        "disease_subtype": "diabetic nephropathy-associated",
+        "stage": "eGFR 50-75 ml/min/1.73 m\u00b2"
+      },
+      "confidence": 0.99,
+      "context": "Patients with type 2 diabetes and chronic kidney disease (defined by an estimated glomerular filtration rate [eGFR] of 50 to 75 ml per minute per 1.73 m"
+    },
+    {
+      "name": "Diabetic Nephropathy",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Diabetic Nephropathies",
+        "aliases": [
+          "diabetic kidney disease",
+          "DKD"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "Patients with type 2 diabetes and chronic kidney disease are at high risk for kidney failure, cardiovascular events, and death."
+    },
+    {
+      "name": "Cardiovascular Disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Cardiovascular Diseases",
+        "aliases": [
+          "CVD"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "Patients with type 2 diabetes and chronic kidney disease are at high risk for kidney failure, cardiovascular events, and death."
+    },
+    {
+      "name": "Kidney Failure",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Renal Insufficiency",
+        "aliases": [
+          "end-stage renal disease",
+          "ESRD",
+          "kidney failure"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "Patients with type 2 diabetes and chronic kidney disease are at high risk for kidney failure, cardiovascular events, and death."
+    },
+    {
+      "name": "GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "target": "GLP-1 receptor",
+        "selectivity": "selective"
+      },
+      "confidence": 0.95,
+      "context": "MeSH Terms: Glucagon-Like Peptide-1 Receptor Agonists, Semaglutide"
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "protein_family": "glucagon receptor family",
+        "aliases": [
+          "GLP1R",
+          "glucagon-like peptide-1 receptor"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "MeSH Terms: Glucagon-Like Peptide-1 Receptor Agonists, Semaglutide"
+    },
+    {
+      "name": "FLOW",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT03819153",
+        "trial_acronym": "FLOW",
+        "phase": "Phase III",
+        "design": "randomized, double-blind, placebo-controlled",
+        "primary_endpoint": "composite kidney and cardiovascular outcomes",
+        "primary_endpoint_met": true,
+        "status": "completed",
+        "patient_population": "Type 2 diabetes with CKD (eGFR 50-75 ml/min/1.73 m\u00b2)",
+        "sample_size": 3533,
+        "median_follow_up_years": 3.4,
+        "early_termination": true,
+        "early_termination_reason": "prespecified interim analysis recommendation"
+      },
+      "confidence": 0.99,
+      "context": "Funded by Novo Nordisk; FLOW ClinicalTrials.gov number, NCT03819153."
+    },
+    {
+      "name": "Novo Nordisk",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "pharma",
+        "country": "Denmark"
+      },
+      "confidence": 0.99,
+      "context": "Funded by Novo Nordisk; FLOW ClinicalTrials.gov number, NCT03819153."
+    },
+    {
+      "name": "Perkovic et al., NEJM 2024",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "38785209",
+        "journal": "The New England Journal of Medicine",
+        "year": 2024,
+        "first_author": "Perkovic",
+        "publication_type": "original_research"
+      },
+      "confidence": 0.99,
+      "context": "Title: Effects of Semaglutide on Chronic Kidney Disease in Patients with Type 2 Diabetes. Journal: The New England journal of medicine (2024) PMID: 38785209"
+    },
+    {
+      "name": "eGFR slope",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "pharmacodynamic",
+        "analyte": "estimated glomerular filtration rate",
+        "assay": "serum creatinine-based eGFR calculation",
+        "tissue": "blood",
+        "threshold": "annual slope ml/min/1.73 m\u00b2/year",
+        "aliases": [
+          "eGFR",
+          "estimated glomerular filtration rate"
+        ]
+      },
+      "confidence": 0.92,
+      "context": "The mean annual eGFR slope was less steep (indicating a slower decrease) by 1.16 ml per minute per 1.73 m"
+    },
+    {
+      "name": "Cardiovascular Death",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "meddra_pt": "Cardiovascular death",
+        "seriousness": "life-threatening",
+        "organ_class": "Cardiac disorders"
+      },
+      "confidence": 0.9,
+      "context": "death from cardiovascular causes (hazard ratio, 0.71; 95% CI, 0.56 to 0.89)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Chronic Kidney Disease",
+      "confidence": 0.95,
+      "evidence": "Semaglutide reduced the risk of clinically important kidney outcomes and death from cardiovascular causes in patients with type 2 diabetes and chronic kidney disease."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.95,
+      "evidence": "Patients with type 2 diabetes and chronic kidney disease are at high risk for kidney failure, cardiovascular events, and death. Whether treatment with semaglutide would mitigate these risks is unknown."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor agonism",
+      "confidence": 0.95,
+      "evidence": "MeSH Terms: Glucagon-Like Peptide-1 Receptor Agonists, Semaglutide"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.92,
+      "evidence": "MeSH Terms: Glucagon-Like Peptide-1 Receptor Agonists, Semaglutide"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "semaglutide",
+      "target_entity": "FLOW",
+      "confidence": 0.99,
+      "evidence": "We randomly assigned patients with type 2 diabetes and chronic kidney disease... Funded by Novo Nordisk; FLOW ClinicalTrials.gov number, NCT03819153."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "semaglutide",
+      "target_entity": "Novo Nordisk",
+      "confidence": 0.99,
+      "evidence": "Funded by Novo Nordisk; FLOW ClinicalTrials.gov number, NCT03819153."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "FLOW",
+      "target_entity": "Novo Nordisk",
+      "confidence": 0.99,
+      "evidence": "Funded by Novo Nordisk; FLOW ClinicalTrials.gov number, NCT03819153."
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "FLOW",
+      "target_entity": "Perkovic et al., NEJM 2024",
+      "confidence": 0.99,
+      "evidence": "Title: Effects of Semaglutide on Chronic Kidney Disease in Patients with Type 2 Diabetes. Journal: The New England journal of medicine (2024) PMID: 38785209"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "Diabetic Nephropathy",
+      "target_entity": "Chronic Kidney Disease",
+      "confidence": 0.9,
+      "evidence": "Patients with type 2 diabetes and chronic kidney disease are at high risk for kidney failure, cardiovascular events, and death."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "Diabetic Nephropathy",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.88,
+      "evidence": "Patients with type 2 diabetes and chronic kidney disease are at high risk for kidney failure, cardiovascular events, and death."
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "eGFR slope",
+      "target_entity": "Chronic Kidney Disease",
+      "confidence": 0.92,
+      "evidence": "chronic kidney disease (defined by an estimated glomerular filtration rate [eGFR] of 50 to 75 ml per minute per 1.73 m"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "eGFR slope",
+      "target_entity": "semaglutide",
+      "confidence": 0.85,
+      "evidence": "The mean annual eGFR slope was less steep (indicating a slower decrease) by 1.16 ml per minute per 1.73 m"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "semaglutide",
+      "target_entity": "Cardiovascular Death",
+      "confidence": 0.55,
+      "evidence": "death from cardiovascular causes (hazard ratio, 0.71; 95% CI, 0.56 to 0.89)"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "Type 2 Diabetes Mellitus",
+      "target_entity": "Cardiovascular Disease",
+      "confidence": 0.92,
+      "evidence": "Patients with type 2 diabetes and chronic kidney disease are at high risk for kidney failure, cardiovascular events, and death."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "Chronic Kidney Disease",
+      "target_entity": "Cardiovascular Disease",
+      "confidence": 0.92,
+      "evidence": "Patients with type 2 diabetes and chronic kidney disease are at high risk for kidney failure, cardiovascular events, and death."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "Chronic Kidney Disease",
+      "target_entity": "Kidney Failure",
+      "confidence": 0.92,
+      "evidence": "Patients with type 2 diabetes and chronic kidney disease are at high risk for kidney failure, cardiovascular events, and death."
+    }
+  ],
+  "cost_usd": 0.088086,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:48:25.861277+00:00",
+  "error": null
+}

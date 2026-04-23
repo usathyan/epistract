@@ -1,0 +1,17 @@
+Title: Triple glucagon/GLP-1/GIP receptor agonist
+Source: Google Scholar → Google Patents
+Patent ID: US10370426B2
+Assignee: Hanmi Pharmaceutical Co Ltd
+Filing Date: June 29, 2018
+
+ABSTRACT/DESCRIPTION:
+The invention concerns a triple agonist peptide possessing activities to all of glucagon, GLP-1, and GIP receptors, and its applications in treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease.
+
+The patent discloses 102 specific peptide variants (SEQ ID NOS: 1-102) for triple receptor agonism. The general peptide formula (SEQ ID NO: 103) is:
+Xaa1-Xaa2-Xaa3-Gly-Thr-Phe-Xaa7-Ser-Asp-Xaa10-Ser-Xaa12-Xaa13-Xaa14-Xaa15-Xaa16-Xaa17-Xaa18-Xaa19-Xaa20-Xaa21-Phe-Xaa23-Xaa24-Trp-Leu-Xaa27-Xaa28-Xaa29-Xaa30-R1
+
+Extended 40-amino-acid variants (SEQ ID NO: 104) and 39-amino-acid variants (SEQ ID NO: 105) with fixed positions are also described. Critical variable positions include residues 1, 2, 3, 7, 10, 12-24, 27-30, with variable side-chain identities enabling optimization of selectivity ratios across the three receptors (GLP-1R, GIPR, GCGR).
+
+The triple agonist approach simultaneously activates glucagon-like peptide-1 (GLP-1) receptor for glucose-dependent insulin secretion and appetite suppression, glucose-dependent insulinotropic polypeptide (GIP) receptor for enhanced insulin response and lipid metabolism, and glucagon receptor (GCGR) for increased energy expenditure and hepatic lipid oxidation. This multi-receptor mechanism produces synergistic weight loss and metabolic improvement beyond what single or dual agonists achieve.
+
+The peptides may be modified with fatty acid conjugation or PEGylation at lysine residues to extend plasma half-life. Retatrutide (LY3437943), developed by Eli Lilly, is a related triple GIP/GLP-1/glucagon receptor agonist currently in Phase 3 clinical trials that has demonstrated up to 24% body weight reduction in Phase 2 studies.

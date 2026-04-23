@@ -1,0 +1,253 @@
+{
+  "document_id": "pmid_39536238",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "tirzepatide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "GIP/GLP-1 receptor agonist",
+        "development_stage": "approved",
+        "route_of_administration": "subcutaneous injection",
+        "dosing_frequency": "once-weekly",
+        "doses_studied": [
+          "5 mg",
+          "10 mg",
+          "15 mg"
+        ]
+      },
+      "confidence": 0.99,
+      "context": "2539 participants with obesity, of whom 1032 also had prediabetes, were assigned in a 1:1:1:1 ratio to receive tirzepatide at a once-weekly dose of 5 mg, 10 mg, or 15 mg or placebo."
+    },
+    {
+      "name": "Obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Obesity",
+        "icd_code": "E66",
+        "aliases": [
+          "chronic obesity"
+        ]
+      },
+      "confidence": 0.99,
+      "context": "Obesity is a chronic disease and causal precursor to myriad other conditions, including type 2 diabetes."
+    },
+    {
+      "name": "Type 2 Diabetes Mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Diabetes Mellitus, Type 2",
+        "icd_code": "E11",
+        "aliases": [
+          "T2DM",
+          "type 2 diabetes"
+        ]
+      },
+      "confidence": 0.99,
+      "context": "Obesity is a chronic disease and causal precursor to myriad other conditions, including type 2 diabetes."
+    },
+    {
+      "name": "Prediabetes",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Prediabetic State",
+        "icd_code": "R73.09",
+        "aliases": [
+          "prediabetic state",
+          "prediabetes"
+        ]
+      },
+      "confidence": 0.99,
+      "context": "its efficacy in reducing weight and delaying progression to type 2 diabetes in persons with both obesity and prediabetes."
+    },
+    {
+      "name": "SURMOUNT-1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT04184622",
+        "trial_acronym": "SURMOUNT-1",
+        "phase": "Phase III",
+        "design": "randomized, double-blind, placebo-controlled",
+        "primary_endpoint": "percent change in body weight from baseline",
+        "key_secondary_endpoints": [
+          "percent change in body weight from baseline to week 176",
+          "onset of type 2 diabetes during 176-week period",
+          "onset of type 2 diabetes during 193-week period"
+        ],
+        "treatment_duration_weeks": 176,
+        "off_treatment_period_weeks": 17,
+        "total_participants": 2539,
+        "prediabetes_subgroup_n": 1032,
+        "status": "completed",
+        "patient_population": "adults with obesity, subgroup with both obesity and prediabetes",
+        "sponsor": "Eli Lilly"
+      },
+      "confidence": 0.99,
+      "context": "We performed a phase 3, double-blind, randomized, controlled trial in which 2539 participants with obesity, of whom 1032 also had prediabetes, were assigned in a 1:1:1:1 ratio to receive tirzepatide at a once-weekly dose of 5 mg, 10 mg, or 15 mg or placebo."
+    },
+    {
+      "name": "GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "target": "GLP-1 receptor",
+        "selectivity": "dual GIP/GLP-1"
+      },
+      "confidence": 0.9,
+      "context": "MeSH Terms: Glucagon-Like Peptide-1 Receptor Agonists"
+    },
+    {
+      "name": "body weight reduction",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "physiological",
+        "measurement_method": "percent change in body weight from baseline",
+        "clinical_relevance": "primary efficacy endpoint"
+      },
+      "confidence": 0.97,
+      "context": "At 176 weeks, the mean percent change in body weight among the participants who received tirzepatide was -12.3% with the 5-mg dose, -18.7% with the 10-mg dose, and -19.7% with the 15-mg dose, as compared with -1.3% among those who received placebo (P<0.001 for all comparisons with placebo)."
+    },
+    {
+      "name": "Gastrointestinal Adverse Events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "meddra_pt": "Gastrointestinal disorders",
+        "severity_grade": "Grade 1-2 (mild to moderate)",
+        "frequency": "most common (excluding COVID-19)",
+        "onset": "primarily during dose-escalation period (first 20 weeks)",
+        "organ_class": "Gastrointestinal disorders",
+        "seriousness": "non-serious (most)"
+      },
+      "confidence": 0.95,
+      "context": "Other than coronavirus disease 2019, the most common adverse events were gastrointestinal, most of which were mild to moderate in severity and occurred primarily during the dose-escalation period in the first 20 weeks of the trial."
+    },
+    {
+      "name": "Eli Lilly",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "pharma",
+        "country": "United States"
+      },
+      "confidence": 0.99,
+      "context": "Funded by Eli Lilly; SURMOUNT-1 ClinicalTrials.gov number, NCT04184622."
+    },
+    {
+      "name": "Jastreboff et al., NEJM 2025",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "39536238",
+        "journal": "The New England Journal of Medicine",
+        "year": 2025,
+        "first_author": "Jastreboff",
+        "publication_type": "original_research"
+      },
+      "confidence": 0.99,
+      "context": "Title: Tirzepatide for Obesity Treatment and Diabetes Prevention. Journal: The New England journal of medicine (2025). PMID: 39536238."
+    },
+    {
+      "name": "prediabetes progression to T2DM biomarker",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "predictive",
+        "analyte": "prediabetes status",
+        "clinical_relevance": "patient stratification for diabetes prevention trial",
+        "tissue": "blood (glucose/HbA1c)"
+      },
+      "confidence": 0.85,
+      "context": "its efficacy in reducing weight and delaying progression to type 2 diabetes in persons with both obesity and prediabetes."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "Obesity",
+      "confidence": 0.97,
+      "evidence": "Three years of treatment with tirzepatide in persons with obesity and prediabetes resulted in substantial and sustained weight reduction and a markedly lower risk of progression to type 2 diabetes than that with placebo."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "Prediabetes",
+      "confidence": 0.88,
+      "evidence": "its efficacy in reducing weight and delaying progression to type 2 diabetes in persons with both obesity and prediabetes."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "tirzepatide",
+      "target_entity": "GLP-1 receptor agonism",
+      "confidence": 0.9,
+      "evidence": "MeSH Terms: Glucagon-Like Peptide-1 Receptor Agonists"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "tirzepatide",
+      "target_entity": "SURMOUNT-1",
+      "confidence": 0.99,
+      "evidence": "2539 participants with obesity, of whom 1032 also had prediabetes, were assigned in a 1:1:1:1 ratio to receive tirzepatide at a once-weekly dose of 5 mg, 10 mg, or 15 mg or placebo."
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "tirzepatide",
+      "target_entity": "Gastrointestinal Adverse Events",
+      "confidence": 0.95,
+      "evidence": "Other than coronavirus disease 2019, the most common adverse events were gastrointestinal, most of which were mild to moderate in severity and occurred primarily during the dose-escalation period in the first 20 weeks of the trial."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "Obesity",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.97,
+      "evidence": "Obesity is a chronic disease and causal precursor to myriad other conditions, including type 2 diabetes."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "Prediabetes",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.97,
+      "evidence": "its efficacy in reducing weight and delaying progression to type 2 diabetes in persons with both obesity and prediabetes."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "tirzepatide",
+      "target_entity": "Eli Lilly",
+      "confidence": 0.99,
+      "evidence": "Funded by Eli Lilly; SURMOUNT-1 ClinicalTrials.gov number, NCT04184622."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "SURMOUNT-1",
+      "target_entity": "Eli Lilly",
+      "confidence": 0.99,
+      "evidence": "Funded by Eli Lilly; SURMOUNT-1 ClinicalTrials.gov number, NCT04184622."
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "SURMOUNT-1",
+      "target_entity": "Jastreboff et al., NEJM 2025",
+      "confidence": 0.99,
+      "evidence": "Title: Tirzepatide for Obesity Treatment and Diabetes Prevention. Journal: The New England journal of medicine (2025). PMID: 39536238."
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "prediabetes progression to T2DM biomarker",
+      "target_entity": "tirzepatide",
+      "confidence": 0.85,
+      "evidence": "its efficacy in reducing weight and delaying progression to type 2 diabetes in persons with both obesity and prediabetes."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "tirzepatide",
+      "target_entity": "body weight reduction",
+      "confidence": 0.99,
+      "evidence": "At 176 weeks, the mean percent change in body weight among the participants who received tirzepatide was -12.3% with the 5-mg dose, -18.7% with the 10-mg dose, and -19.7% with the 15-mg dose, as compared with -1.3% among those who received placebo (P<0.001 for all comparisons with placebo)."
+    }
+  ],
+  "cost_usd": 0.084597,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:51:48.639528+00:00",
+  "error": null
+}

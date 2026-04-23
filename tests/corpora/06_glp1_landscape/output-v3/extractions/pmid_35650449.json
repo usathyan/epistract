@@ -1,0 +1,375 @@
+{
+  "document_id": "pmid_35650449",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "GLP-1 receptor agonist",
+        "development_stage": "approved",
+        "route_of_administration": "subcutaneous, oral",
+        "formulation": "peptidic",
+        "inn": "semaglutide"
+      },
+      "confidence": 0.98,
+      "context": "Semaglutide, a peptidic GLP-1 receptor agonist, has been clinically approved for treatment of type 2 diabetes mellitus and is available in subcutaneous and oral dosage form."
+    },
+    {
+      "name": "GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "target": "GLP-1 receptor",
+        "selectivity": "selective"
+      },
+      "confidence": 0.95,
+      "context": "Semaglutide, a peptidic GLP-1 receptor agonist, has been clinically approved for treatment of type 2 diabetes mellitus."
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "protein_family": "glucagon receptor family"
+      },
+      "confidence": 0.95,
+      "context": "Semaglutide, a peptidic GLP-1 receptor agonist, has been clinically approved for treatment of type 2 diabetes mellitus and is available in subcutaneous and oral dosage form."
+    },
+    {
+      "name": "Type 2 Diabetes Mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Diabetes Mellitus, Type 2",
+        "icd_code": "E11",
+        "aliases": [
+          "T2DM",
+          "type 2 diabetes"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "Semaglutide, a peptidic GLP-1 receptor agonist, has been clinically approved for treatment of type 2 diabetes mellitus and is available in subcutaneous and oral dosage form."
+    },
+    {
+      "name": "Obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Obesity",
+        "icd_code": "E66"
+      },
+      "confidence": 0.97,
+      "context": "semaglutide became the first long-acting GLP-1 receptor agonist to be approved by the United States Food and Drug Administration for management of obesity."
+    },
+    {
+      "name": "Non-Alcoholic Steatohepatitis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Non-alcoholic Fatty Liver Disease",
+        "aliases": [
+          "NASH"
+        ],
+        "disease_subtype": "non-alcoholic steatohepatitis"
+      },
+      "confidence": 0.97,
+      "context": "Diabetes, insulin resistance, and obesity are responsible for the pathological manifestations of non-alcoholic steatohepatitis (NASH)."
+    },
+    {
+      "name": "Parkinson Disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Parkinson Disease",
+        "icd_code": "G20",
+        "aliases": [
+          "Parkinson's disease",
+          "PD"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "Various pre-clinical and phase-2 studies have indicated the therapeutic potential of semaglutide in non-alcoholic steatohepatitis and neurodegenerative disorders like Parkinson's and Alzheimer's disease."
+    },
+    {
+      "name": "Alzheimer Disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Alzheimer Disease",
+        "icd_code": "G30",
+        "aliases": [
+          "Alzheimer's disease",
+          "AD"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "Various pre-clinical and phase-2 studies have indicated the therapeutic potential of semaglutide in non-alcoholic steatohepatitis and neurodegenerative disorders like Parkinson's and Alzheimer's disease."
+    },
+    {
+      "name": "Neurodegenerative Diseases",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Neurodegenerative Diseases",
+        "aliases": [
+          "neurodegeneration",
+          "neurodegenerative disorders"
+        ]
+      },
+      "confidence": 0.92,
+      "context": "Similarly, insulin resistance in brain is also responsible for neurodegeneration and impaired cognitive functions."
+    },
+    {
+      "name": "Insulin Resistance",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "physiological",
+        "clinical_relevance": "mechanism, prognosis",
+        "associated_genes": []
+      },
+      "confidence": 0.95,
+      "context": "Diabetes, insulin resistance, and obesity are responsible for the pathological manifestations of non-alcoholic steatohepatitis (NASH). Similarly, insulin resistance in brain is also responsible for neurodegeneration and impaired cognitive functions."
+    },
+    {
+      "name": "Insulin Signaling Pathway",
+      "entity_type": "PATHWAY",
+      "attributes": {
+        "pathway_class": "signaling",
+        "key_components": [
+          "insulin",
+          "insulin receptor"
+        ]
+      },
+      "confidence": 0.88,
+      "context": "Semaglutide improves insulin resistance, insulin signalling pathway, and reduce body weight which are responsible for prevention or progression of NASH and neurodegenerative diseases."
+    },
+    {
+      "name": "SUSTAIN",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "Phase III",
+        "trial_acronym": "SUSTAIN",
+        "primary_endpoint": "anti-obesity, glycemic control"
+      },
+      "confidence": 0.88,
+      "context": "Observations from phase-3 clinical trials like SUSTAIN and PIONEER indicated anti-obesity potential of semaglutide, which was established in STEP trials."
+    },
+    {
+      "name": "PIONEER",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "Phase III",
+        "trial_acronym": "PIONEER",
+        "primary_endpoint": "anti-obesity, glycemic control"
+      },
+      "confidence": 0.88,
+      "context": "Observations from phase-3 clinical trials like SUSTAIN and PIONEER indicated anti-obesity potential of semaglutide, which was established in STEP trials."
+    },
+    {
+      "name": "STEP",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "Phase III",
+        "trial_acronym": "STEP",
+        "primary_endpoint": "weight reduction"
+      },
+      "confidence": 0.9,
+      "context": "Observations from phase-3 clinical trials like SUSTAIN and PIONEER indicated anti-obesity potential of semaglutide, which was established in STEP trials."
+    },
+    {
+      "name": "FDA approval of semaglutide for obesity",
+      "entity_type": "REGULATORY_ACTION",
+      "attributes": {
+        "agency": "FDA",
+        "action_type": "approval",
+        "indication": "management of obesity"
+      },
+      "confidence": 0.95,
+      "context": "semaglutide became the first long-acting GLP-1 receptor agonist to be approved by the United States Food and Drug Administration for management of obesity."
+    },
+    {
+      "name": "United States Food and Drug Administration",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "regulatory_agency",
+        "country": "United States",
+        "aliases": [
+          "FDA",
+          "US FDA"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "semaglutide became the first long-acting GLP-1 receptor agonist to be approved by the United States Food and Drug Administration for management of obesity."
+    },
+    {
+      "name": "Mahapatra et al., Pharmaceutical Research 2022",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "35650449",
+        "journal": "Pharmaceutical Research",
+        "year": 2022,
+        "first_author": "Mahapatra",
+        "publication_type": "review"
+      },
+      "confidence": 0.99,
+      "context": "Therapeutic Potential of Semaglutide, a Newer GLP-1 Receptor Agonist, in Abating Obesity, Non-Alcoholic Steatohepatitis and Neurodegenerative diseases: A Narrative Review."
+    },
+    {
+      "name": "hepatoprotective effect of semaglutide",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "modulation",
+        "target": "liver"
+      },
+      "confidence": 0.82,
+      "context": "Various pre-clinical and clinical studies have revealed the hepatoprotective effect of semaglutide in NASH and neuroprotective effect in Parkinson's and Alzheimer's disease."
+    },
+    {
+      "name": "neuroprotective effect of semaglutide",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "modulation",
+        "target": "brain"
+      },
+      "confidence": 0.82,
+      "context": "Various pre-clinical and clinical studies have revealed the hepatoprotective effect of semaglutide in NASH and neuroprotective effect in Parkinson's and Alzheimer's disease."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor agonism",
+      "confidence": 0.98,
+      "evidence": "Semaglutide, a peptidic GLP-1 receptor agonist, has been clinically approved for treatment of type 2 diabetes mellitus and is available in subcutaneous and oral dosage form."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.97,
+      "evidence": "Semaglutide, a peptidic GLP-1 receptor agonist, has been clinically approved for treatment of type 2 diabetes mellitus and is available in subcutaneous and oral dosage form."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.98,
+      "evidence": "Semaglutide, a peptidic GLP-1 receptor agonist, has been clinically approved for treatment of type 2 diabetes mellitus and is available in subcutaneous and oral dosage form."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Obesity",
+      "confidence": 0.97,
+      "evidence": "semaglutide became the first long-acting GLP-1 receptor agonist to be approved by the United States Food and Drug Administration for management of obesity."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Non-Alcoholic Steatohepatitis",
+      "confidence": 0.6,
+      "evidence": "Various pre-clinical and phase-2 studies have indicated the therapeutic potential of semaglutide in non-alcoholic steatohepatitis and neurodegenerative disorders like Parkinson's and Alzheimer's disease."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Parkinson Disease",
+      "confidence": 0.58,
+      "evidence": "Various pre-clinical and phase-2 studies have indicated the therapeutic potential of semaglutide in non-alcoholic steatohepatitis and neurodegenerative disorders like Parkinson's and Alzheimer's disease."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Alzheimer Disease",
+      "confidence": 0.58,
+      "evidence": "Various pre-clinical and phase-2 studies have indicated the therapeutic potential of semaglutide in non-alcoholic steatohepatitis and neurodegenerative disorders like Parkinson's and Alzheimer's disease."
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "semaglutide",
+      "target_entity": "SUSTAIN",
+      "confidence": 0.88,
+      "evidence": "Observations from phase-3 clinical trials like SUSTAIN and PIONEER indicated anti-obesity potential of semaglutide, which was established in STEP trials."
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "semaglutide",
+      "target_entity": "PIONEER",
+      "confidence": 0.88,
+      "evidence": "Observations from phase-3 clinical trials like SUSTAIN and PIONEER indicated anti-obesity potential of semaglutide, which was established in STEP trials."
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "semaglutide",
+      "target_entity": "STEP",
+      "confidence": 0.9,
+      "evidence": "Observations from phase-3 clinical trials like SUSTAIN and PIONEER indicated anti-obesity potential of semaglutide, which was established in STEP trials."
+    },
+    {
+      "relation_type": "GRANTS_APPROVAL_FOR",
+      "source_entity": "FDA approval of semaglutide for obesity",
+      "target_entity": "semaglutide",
+      "confidence": 0.95,
+      "evidence": "semaglutide became the first long-acting GLP-1 receptor agonist to be approved by the United States Food and Drug Administration for management of obesity."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "Insulin Resistance",
+      "target_entity": "Non-Alcoholic Steatohepatitis",
+      "confidence": 0.9,
+      "evidence": "Diabetes, insulin resistance, and obesity are responsible for the pathological manifestations of non-alcoholic steatohepatitis (NASH)."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "Insulin Resistance",
+      "target_entity": "Neurodegenerative Diseases",
+      "confidence": 0.88,
+      "evidence": "Similarly, insulin resistance in brain is also responsible for neurodegeneration and impaired cognitive functions."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "Insulin Signaling Pathway",
+      "target_entity": "Non-Alcoholic Steatohepatitis",
+      "confidence": 0.85,
+      "evidence": "Semaglutide improves insulin resistance, insulin signalling pathway, and reduce body weight which are responsible for prevention or progression of NASH and neurodegenerative diseases."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "Insulin Signaling Pathway",
+      "target_entity": "Neurodegenerative Diseases",
+      "confidence": 0.85,
+      "evidence": "Semaglutide improves insulin resistance, insulin signalling pathway, and reduce body weight which are responsible for prevention or progression of NASH and neurodegenerative diseases."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "semaglutide",
+      "target_entity": "hepatoprotective effect of semaglutide",
+      "confidence": 0.8,
+      "evidence": "Various pre-clinical and clinical studies have revealed the hepatoprotective effect of semaglutide in NASH and neuroprotective effect in Parkinson's and Alzheimer's disease."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "semaglutide",
+      "target_entity": "neuroprotective effect of semaglutide",
+      "confidence": 0.8,
+      "evidence": "Various pre-clinical and clinical studies have revealed the hepatoprotective effect of semaglutide in NASH and neuroprotective effect in Parkinson's and Alzheimer's disease."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "Insulin Resistance",
+      "target_entity": "Obesity",
+      "confidence": 0.88,
+      "evidence": "Diabetes, insulin resistance, and obesity are responsible for the pathological manifestations of non-alcoholic steatohepatitis (NASH)."
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "SUSTAIN",
+      "target_entity": "Mahapatra et al., Pharmaceutical Research 2022",
+      "confidence": 0.75,
+      "evidence": "Observations from phase-3 clinical trials like SUSTAIN and PIONEER indicated anti-obesity potential of semaglutide, which was established in STEP trials."
+    }
+  ],
+  "cost_usd": 0.105141,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:42:56.552356+00:00",
+  "error": null
+}

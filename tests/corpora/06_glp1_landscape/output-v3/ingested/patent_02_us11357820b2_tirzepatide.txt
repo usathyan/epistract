@@ -1,0 +1,15 @@
+Title: GIP/GLP1 agonist compositions
+Source: Google Patents
+Patent ID: US11357820B2
+Assignee: Eli Lilly and Company
+Filing Date: June 14, 2019
+CAS Registry: 2023788-19-2
+
+ABSTRACT/DESCRIPTION:
+A pharmaceutical composition of tirzepatide, comprising an agent selected from NaCl and propylene glycol, and dibasic sodium phosphate is provided. Tirzepatide is a dual GIP/GLP-1 receptor agonist peptide with CAS Registry Number 2023788-19-2.
+
+The tirzepatide peptide sequence (SEQ ID NO: 1) is: YX1EGTFTSDYSIX2LDKIAQKAFVQWLMGGPSSGAPPPS, where X1 = Aib (2-aminoisobutyric acid) and X2 = Aib. At position 20, the lysine (K) is chemically modified via conjugation to the epsilon-amino group with a C20 fatty diacid moiety: (2-[2-(2-Amino-ethoxy)-ethoxy]-acetyl)2-(gamma-Glu)1-CO-(CH2)18-CO2H. The C-terminal amino acid is amidated as a primary amide. This 39-amino-acid synthetic peptide is based on the native GIP sequence with modifications that confer dual GIP and GLP-1 receptor agonist activity.
+
+The fatty diacid moiety enables albumin binding, extending the plasma half-life to approximately 5 days and permitting once-weekly subcutaneous dosing. Tirzepatide has demonstrated superior efficacy in glycemic control (HbA1c reduction) and weight loss compared to selective GLP-1 receptor agonists in the SURPASS clinical trial program. The dual agonist mechanism activates both the GIP receptor (primary) and the GLP-1 receptor, with an imbalanced potency favoring GIP receptor activation.
+
+Pharmaceutical compositions for subcutaneous injection comprise tirzepatide at concentrations suitable for therapeutic dosing, NaCl or propylene glycol as isotonic agent, and dibasic sodium phosphate as buffer, formulated for acceptable shelf-life stability. The tirzepatide trifluoroacetate salt form is also described.

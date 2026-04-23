@@ -1,0 +1,544 @@
+{
+  "document_id": "pmid_38851997",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "Metabolic Dysfunction-Associated Steatotic Liver Disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Non-alcoholic Fatty Liver Disease",
+        "aliases": [
+          "MASLD",
+          "NAFLD",
+          "non-alcoholic fatty liver disease",
+          "steatotic liver disease"
+        ],
+        "disease_subtype": "steatotic liver disease with cardiometabolic risk factors",
+        "prevalence": "not specified"
+      },
+      "confidence": 0.98,
+      "context": "Metabolic dysfunction-associated steatotic liver disease (MASLD), previously termed non-alcoholic fatty liver disease (NAFLD), is defined as steatotic liver disease (SLD) in the presence of one or more cardiometabolic risk factor(s) and the absence of harmful alcohol intake."
+    },
+    {
+      "name": "Metabolic Dysfunction-Associated Steatohepatitis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "aliases": [
+          "MASH",
+          "NASH",
+          "non-alcoholic steatohepatitis"
+        ],
+        "disease_subtype": "steatohepatitis subtype of MASLD"
+      },
+      "confidence": 0.98,
+      "context": "The spectrum of MASLD includes steatosis, metabolic dysfunction-associated steatohepatitis (MASH, previously NASH), fibrosis, cirrhosis and MASH-related hepatocellular carcinoma (HCC)."
+    },
+    {
+      "name": "Hepatic Steatosis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "aliases": [
+          "steatosis",
+          "liver steatosis"
+        ],
+        "disease_subtype": "early stage of MASLD spectrum"
+      },
+      "confidence": 0.95,
+      "context": "The spectrum of MASLD includes steatosis, metabolic dysfunction-associated steatohepatitis (MASH, previously NASH), fibrosis, cirrhosis and MASH-related hepatocellular carcinoma (HCC)."
+    },
+    {
+      "name": "Liver Fibrosis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "aliases": [
+          "hepatic fibrosis",
+          "advanced fibrosis"
+        ],
+        "stage": "stage \u22652 significant; advanced fibrosis",
+        "disease_subtype": "MASLD-related fibrosis"
+      },
+      "confidence": 0.95,
+      "context": "A stepwise approach using blood-based scores (such as FIB-4) and, sequentially, imaging techniques (such as transient elastography) is suitable to rule-out/in advanced fibrosis, which is predictive of liver-related outcomes."
+    },
+    {
+      "name": "Liver Cirrhosis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "aliases": [
+          "cirrhosis",
+          "MASH-related cirrhosis"
+        ],
+        "disease_subtype": "MASLD/MASH-related cirrhosis"
+      },
+      "confidence": 0.95,
+      "context": "The spectrum of MASLD includes steatosis, metabolic dysfunction-associated steatohepatitis (MASH, previously NASH), fibrosis, cirrhosis and MASH-related hepatocellular carcinoma (HCC)."
+    },
+    {
+      "name": "Hepatocellular Carcinoma",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "aliases": [
+          "HCC",
+          "MASH-related HCC"
+        ],
+        "disease_subtype": "MASH-related hepatocellular carcinoma"
+      },
+      "confidence": 0.95,
+      "context": "The spectrum of MASLD includes steatosis, metabolic dysfunction-associated steatohepatitis (MASH, previously NASH), fibrosis, cirrhosis and MASH-related hepatocellular carcinoma (HCC)."
+    },
+    {
+      "name": "Type 2 Diabetes Mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "aliases": [
+          "T2D",
+          "type 2 diabetes"
+        ],
+        "icd_code": "E11"
+      },
+      "confidence": 0.97,
+      "context": "Case-finding strategies for MASLD with liver fibrosis, using non-invasive tests, should be applied in individuals with cardiometabolic risk factors, abnormal liver enzymes, and/or radiological signs of hepatic steatosis, particularly in the presence of type 2 diabetes (T2D) or obesity with additional metabolic risk factor(s)."
+    },
+    {
+      "name": "Obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Obesity",
+        "icd_code": "E66"
+      },
+      "confidence": 0.97,
+      "context": "Case-finding strategies for MASLD with liver fibrosis, using non-invasive tests, should be applied in individuals with cardiometabolic risk factors, abnormal liver enzymes, and/or radiological signs of hepatic steatosis, particularly in the presence of type 2 diabetes (T2D) or obesity with additional metabolic risk factor(s)."
+    },
+    {
+      "name": "Portal Hypertension",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "aliases": [
+          "portal hypertension"
+        ],
+        "disease_subtype": "complication of cirrhosis"
+      },
+      "confidence": 0.9,
+      "context": "Management of MASH-related cirrhosis includes adaptations of metabolic drugs, nutritional counselling, surveillance for portal hypertension and HCC, as well as liver transplantation in decompensated cirrhosis."
+    },
+    {
+      "name": "resmetirom",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "thyroid hormone receptor beta agonist",
+        "development_stage": "approved",
+        "route_of_administration": "oral",
+        "indication": "non-cirrhotic MASH with significant liver fibrosis (stage \u22652)"
+      },
+      "confidence": 0.97,
+      "context": "Adults with non-cirrhotic MASH and significant liver fibrosis (stage \u22652) should be considered for a MASH-targeted treatment with resmetirom, which demonstrated histological effectiveness on steatohepatitis and fibrosis with an acceptable safety and tolerability profile."
+    },
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "GLP-1 receptor agonist",
+        "development_stage": "approved",
+        "route_of_administration": "subcutaneous or oral",
+        "indication": "type 2 diabetes, obesity"
+      },
+      "confidence": 0.95,
+      "context": "Optimal management of comorbidities - including use of incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity, if indicated - is advised."
+    },
+    {
+      "name": "tirzepatide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "GLP-1/GIP dual receptor agonist",
+        "development_stage": "approved",
+        "route_of_administration": "subcutaneous",
+        "indication": "type 2 diabetes, obesity"
+      },
+      "confidence": 0.95,
+      "context": "Optimal management of comorbidities - including use of incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity, if indicated - is advised."
+    },
+    {
+      "name": "incretin-based therapy",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "selectivity": "incretin receptor agonism",
+        "target": "GLP-1 receptor and/or GIP receptor"
+      },
+      "confidence": 0.9,
+      "context": "Optimal management of comorbidities - including use of incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity, if indicated - is advised."
+    },
+    {
+      "name": "FIB-4 score",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "diagnostic",
+        "analyte": "blood-based composite score",
+        "assay": "blood-based score",
+        "tissue": "blood",
+        "clinical_relevance": "stratification for advanced liver fibrosis"
+      },
+      "confidence": 0.95,
+      "context": "A stepwise approach using blood-based scores (such as FIB-4) and, sequentially, imaging techniques (such as transient elastography) is suitable to rule-out/in advanced fibrosis, which is predictive of liver-related outcomes."
+    },
+    {
+      "name": "transient elastography",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "diagnostic",
+        "analyte": "liver stiffness measurement",
+        "assay": "transient elastography",
+        "tissue": "liver",
+        "clinical_relevance": "rule-out/in advanced fibrosis"
+      },
+      "confidence": 0.95,
+      "context": "A stepwise approach using blood-based scores (such as FIB-4) and, sequentially, imaging techniques (such as transient elastography) is suitable to rule-out/in advanced fibrosis, which is predictive of liver-related outcomes."
+    },
+    {
+      "name": "cardiometabolic risk factors",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "physiological",
+        "clinical_relevance": "stratification for MASLD diagnosis and screening"
+      },
+      "confidence": 0.9,
+      "context": "Metabolic dysfunction-associated steatotic liver disease (MASLD), previously termed non-alcoholic fatty liver disease (NAFLD), is defined as steatotic liver disease (SLD) in the presence of one or more cardiometabolic risk factor(s) and the absence of harmful alcohol intake."
+    },
+    {
+      "name": "liver steatosis on imaging",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "diagnostic",
+        "analyte": "hepatic fat content",
+        "assay": "radiological imaging",
+        "tissue": "liver",
+        "clinical_relevance": "case-finding for MASLD"
+      },
+      "confidence": 0.88,
+      "context": "Case-finding strategies for MASLD with liver fibrosis, using non-invasive tests, should be applied in individuals with cardiometabolic risk factors, abnormal liver enzymes, and/or radiological signs of hepatic steatosis."
+    },
+    {
+      "name": "liver enzymes elevation",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "diagnostic",
+        "analyte": "serum liver enzymes (ALT, AST)",
+        "assay": "blood test",
+        "tissue": "blood",
+        "clinical_relevance": "case-finding for MASLD"
+      },
+      "confidence": 0.88,
+      "context": "Case-finding strategies for MASLD with liver fibrosis, using non-invasive tests, should be applied in individuals with cardiometabolic risk factors, abnormal liver enzymes, and/or radiological signs of hepatic steatosis."
+    },
+    {
+      "name": "bariatric surgery",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "surgical intervention",
+        "selectivity": "weight reduction",
+        "target": "gastrointestinal anatomy"
+      },
+      "confidence": 0.88,
+      "context": "Bariatric surgery is also an option in individuals with MASLD and obesity."
+    },
+    {
+      "name": "liver transplantation",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "surgical intervention",
+        "target": "decompensated cirrhosis"
+      },
+      "confidence": 0.88,
+      "context": "Management of MASH-related cirrhosis includes adaptations of metabolic drugs, nutritional counselling, surveillance for portal hypertension and HCC, as well as liver transplantation in decompensated cirrhosis."
+    },
+    {
+      "name": "European Association for the Study of the Liver",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "academic",
+        "aliases": [
+          "EASL"
+        ],
+        "country": "Europe"
+      },
+      "confidence": 0.97,
+      "context": "This joint EASL-EASD-EASO guideline provides an update on definitions, prevention, screening, diagnosis and treatment for MASLD."
+    },
+    {
+      "name": "European Association for the Study of Diabetes",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "academic",
+        "aliases": [
+          "EASD"
+        ],
+        "country": "Europe"
+      },
+      "confidence": 0.97,
+      "context": "This joint EASL-EASD-EASO guideline provides an update on definitions, prevention, screening, diagnosis and treatment for MASLD."
+    },
+    {
+      "name": "European Association for the Study of Obesity",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "academic",
+        "aliases": [
+          "EASO"
+        ],
+        "country": "Europe"
+      },
+      "confidence": 0.97,
+      "context": "This joint EASL-EASD-EASO guideline provides an update on definitions, prevention, screening, diagnosis and treatment for MASLD."
+    },
+    {
+      "name": "EASL-EASD-EASO MASLD Clinical Practice Guidelines 2024",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "38851997",
+        "journal": "Journal of Hepatology",
+        "year": "2024",
+        "publication_type": "review",
+        "first_author": "EASL-EASD-EASO"
+      },
+      "confidence": 0.98,
+      "context": "EASL-EASD-EASO Clinical Practice Guidelines on the management of metabolic dysfunction-associated steatotic liver disease (MASLD). Journal of hepatology (2024)."
+    },
+    {
+      "name": "MASH histological improvement",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "molecular",
+        "measurement_method": "liver biopsy histology",
+        "clinical_relevance": "treatment endpoint for MASH"
+      },
+      "confidence": 0.9,
+      "context": "Adults with non-cirrhotic MASH and significant liver fibrosis (stage \u22652) should be considered for a MASH-targeted treatment with resmetirom, which demonstrated histological effectiveness on steatohepatitis and fibrosis with an acceptable safety and tolerability profile."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "cardiometabolic risk factors",
+      "target_entity": "Metabolic Dysfunction-Associated Steatotic Liver Disease",
+      "confidence": 0.97,
+      "evidence": "Metabolic dysfunction-associated steatotic liver disease (MASLD), previously termed non-alcoholic fatty liver disease (NAFLD), is defined as steatotic liver disease (SLD) in the presence of one or more cardiometabolic risk factor(s) and the absence of harmful alcohol intake."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "Metabolic Dysfunction-Associated Steatohepatitis",
+      "target_entity": "Hepatocellular Carcinoma",
+      "confidence": 0.95,
+      "evidence": "The spectrum of MASLD includes steatosis, metabolic dysfunction-associated steatohepatitis (MASH, previously NASH), fibrosis, cirrhosis and MASH-related hepatocellular carcinoma (HCC)."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "Metabolic Dysfunction-Associated Steatohepatitis",
+      "target_entity": "Liver Cirrhosis",
+      "confidence": 0.95,
+      "evidence": "The spectrum of MASLD includes steatosis, metabolic dysfunction-associated steatohepatitis (MASH, previously NASH), fibrosis, cirrhosis and MASH-related hepatocellular carcinoma (HCC)."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "Liver Fibrosis",
+      "target_entity": "Metabolic Dysfunction-Associated Steatotic Liver Disease",
+      "confidence": 0.95,
+      "evidence": "A stepwise approach using blood-based scores (such as FIB-4) and, sequentially, imaging techniques (such as transient elastography) is suitable to rule-out/in advanced fibrosis, which is predictive of liver-related outcomes."
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "FIB-4 score",
+      "target_entity": "Liver Fibrosis",
+      "confidence": 0.95,
+      "evidence": "A stepwise approach using blood-based scores (such as FIB-4) and, sequentially, imaging techniques (such as transient elastography) is suitable to rule-out/in advanced fibrosis, which is predictive of liver-related outcomes."
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "transient elastography",
+      "target_entity": "Liver Fibrosis",
+      "confidence": 0.95,
+      "evidence": "A stepwise approach using blood-based scores (such as FIB-4) and, sequentially, imaging techniques (such as transient elastography) is suitable to rule-out/in advanced fibrosis, which is predictive of liver-related outcomes."
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "liver steatosis on imaging",
+      "target_entity": "Metabolic Dysfunction-Associated Steatotic Liver Disease",
+      "confidence": 0.88,
+      "evidence": "Case-finding strategies for MASLD with liver fibrosis, using non-invasive tests, should be applied in individuals with cardiometabolic risk factors, abnormal liver enzymes, and/or radiological signs of hepatic steatosis."
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "liver enzymes elevation",
+      "target_entity": "Metabolic Dysfunction-Associated Steatotic Liver Disease",
+      "confidence": 0.88,
+      "evidence": "Case-finding strategies for MASLD with liver fibrosis, using non-invasive tests, should be applied in individuals with cardiometabolic risk factors, abnormal liver enzymes, and/or radiological signs of hepatic steatosis."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "resmetirom",
+      "target_entity": "Metabolic Dysfunction-Associated Steatohepatitis",
+      "confidence": 0.95,
+      "evidence": "Adults with non-cirrhotic MASH and significant liver fibrosis (stage \u22652) should be considered for a MASH-targeted treatment with resmetirom, which demonstrated histological effectiveness on steatohepatitis and fibrosis with an acceptable safety and tolerability profile."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "resmetirom",
+      "target_entity": "Liver Fibrosis",
+      "confidence": 0.93,
+      "evidence": "Adults with non-cirrhotic MASH and significant liver fibrosis (stage \u22652) should be considered for a MASH-targeted treatment with resmetirom, which demonstrated histological effectiveness on steatohepatitis and fibrosis with an acceptable safety and tolerability profile."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.93,
+      "evidence": "Optimal management of comorbidities - including use of incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity, if indicated - is advised."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Obesity",
+      "confidence": 0.93,
+      "evidence": "Optimal management of comorbidities - including use of incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity, if indicated - is advised."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.93,
+      "evidence": "Optimal management of comorbidities - including use of incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity, if indicated - is advised."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "Obesity",
+      "confidence": 0.93,
+      "evidence": "Optimal management of comorbidities - including use of incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity, if indicated - is advised."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "semaglutide",
+      "target_entity": "incretin-based therapy",
+      "confidence": 0.92,
+      "evidence": "Optimal management of comorbidities - including use of incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity, if indicated - is advised."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "tirzepatide",
+      "target_entity": "incretin-based therapy",
+      "confidence": 0.92,
+      "evidence": "Optimal management of comorbidities - including use of incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity, if indicated - is advised."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Metabolic Dysfunction-Associated Steatotic Liver Disease",
+      "confidence": 0.78,
+      "evidence": "In adults with MASLD, lifestyle modification - including weight loss, dietary changes, physical exercise and discouraging alcohol consumption - as well as optimal management of comorbidities - including use of incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity, if indicated - is advised."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "Metabolic Dysfunction-Associated Steatotic Liver Disease",
+      "confidence": 0.78,
+      "evidence": "In adults with MASLD, lifestyle modification - including weight loss, dietary changes, physical exercise and discouraging alcohol consumption - as well as optimal management of comorbidities - including use of incretin-based therapies (e.g. semaglutide, tirzepatide) for T2D or obesity, if indicated - is advised."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "bariatric surgery",
+      "target_entity": "Metabolic Dysfunction-Associated Steatotic Liver Disease",
+      "confidence": 0.88,
+      "evidence": "Bariatric surgery is also an option in individuals with MASLD and obesity."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "bariatric surgery",
+      "target_entity": "Obesity",
+      "confidence": 0.9,
+      "evidence": "Bariatric surgery is also an option in individuals with MASLD and obesity."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "liver transplantation",
+      "target_entity": "Liver Cirrhosis",
+      "confidence": 0.9,
+      "evidence": "Management of MASH-related cirrhosis includes adaptations of metabolic drugs, nutritional counselling, surveillance for portal hypertension and HCC, as well as liver transplantation in decompensated cirrhosis."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "Type 2 Diabetes Mellitus",
+      "target_entity": "Metabolic Dysfunction-Associated Steatotic Liver Disease",
+      "confidence": 0.93,
+      "evidence": "Case-finding strategies for MASLD with liver fibrosis, using non-invasive tests, should be applied in individuals with cardiometabolic risk factors, abnormal liver enzymes, and/or radiological signs of hepatic steatosis, particularly in the presence of type 2 diabetes (T2D) or obesity with additional metabolic risk factor(s)."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "Obesity",
+      "target_entity": "Metabolic Dysfunction-Associated Steatotic Liver Disease",
+      "confidence": 0.93,
+      "evidence": "Case-finding strategies for MASLD with liver fibrosis, using non-invasive tests, should be applied in individuals with cardiometabolic risk factors, abnormal liver enzymes, and/or radiological signs of hepatic steatosis, particularly in the presence of type 2 diabetes (T2D) or obesity with additional metabolic risk factor(s)."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "Metabolic Dysfunction-Associated Steatohepatitis",
+      "target_entity": "Portal Hypertension",
+      "confidence": 0.85,
+      "evidence": "Management of MASH-related cirrhosis includes adaptations of metabolic drugs, nutritional counselling, surveillance for portal hypertension and HCC, as well as liver transplantation in decompensated cirrhosis."
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "EASL-EASD-EASO MASLD Clinical Practice Guidelines 2024",
+      "target_entity": "EASL-EASD-EASO MASLD Clinical Practice Guidelines 2024",
+      "confidence": 0.98,
+      "evidence": "EASL-EASD-EASO Clinical Practice Guidelines on the management of metabolic dysfunction-associated steatotic liver disease (MASLD). Journal of hepatology (2024). PMID: 38851997."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "EASL-EASD-EASO MASLD Clinical Practice Guidelines 2024",
+      "target_entity": "European Association for the Study of the Liver",
+      "confidence": 0.97,
+      "evidence": "This joint EASL-EASD-EASO guideline provides an update on definitions, prevention, screening, diagnosis and treatment for MASLD."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "EASL-EASD-EASO MASLD Clinical Practice Guidelines 2024",
+      "target_entity": "European Association for the Study of Diabetes",
+      "confidence": 0.97,
+      "evidence": "This joint EASL-EASD-EASO guideline provides an update on definitions, prevention, screening, diagnosis and treatment for MASLD."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "EASL-EASD-EASO MASLD Clinical Practice Guidelines 2024",
+      "target_entity": "European Association for the Study of Obesity",
+      "confidence": 0.97,
+      "evidence": "This joint EASL-EASD-EASO guideline provides an update on definitions, prevention, screening, diagnosis and treatment for MASLD."
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "FIB-4 score",
+      "target_entity": "resmetirom",
+      "confidence": 0.8,
+      "evidence": "A stepwise approach using blood-based scores (such as FIB-4) and, sequentially, imaging techniques (such as transient elastography) is suitable to rule-out/in advanced fibrosis, which is predictive of liver-related outcomes."
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "transient elastography",
+      "target_entity": "resmetirom",
+      "confidence": 0.8,
+      "evidence": "A stepwise approach using blood-based scores (such as FIB-4) and, sequentially, imaging techniques (such as transient elastography) is suitable to rule-out/in advanced fibrosis, which is predictive of liver-related outcomes."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "MASH histological improvement",
+      "target_entity": "resmetirom",
+      "confidence": 0.93,
+      "evidence": "Adults with non-cirrhotic MASH and significant liver fibrosis (stage \u22652) should be considered for a MASH-targeted treatment with resmetirom, which demonstrated histological effectiveness on steatohepatitis and fibrosis with an acceptable safety and tolerability profile."
+    }
+  ],
+  "cost_usd": 0.152148,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:49:35.820128+00:00",
+  "error": null
+}

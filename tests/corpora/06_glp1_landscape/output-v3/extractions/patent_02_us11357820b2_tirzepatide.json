@@ -1,0 +1,215 @@
+{
+  "document_id": "patent_02_us11357820b2_tirzepatide",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "tirzepatide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "cas_number": "2023788-19-2",
+        "drug_class": "dual GIP/GLP-1 receptor agonist peptide",
+        "route_of_administration": "subcutaneous",
+        "formulation": "once-weekly subcutaneous injection",
+        "development_stage": "approved",
+        "half_life": "approximately 5 days",
+        "compound_code": "US11357820B2",
+        "requires_validation": true,
+        "notation_type": "amino_acid_sequence",
+        "notation_present": true,
+        "salt_form": "trifluoroacetate",
+        "peptide_length": "39 amino acids",
+        "c_terminal_modification": "primary amide",
+        "fatty_acid_modification": "C20 fatty diacid moiety at position 20 lysine epsilon-amino group"
+      },
+      "confidence": 0.98,
+      "context": "Tirzepatide is a dual GIP/GLP-1 receptor agonist peptide with CAS Registry Number 2023788-19-2."
+    },
+    {
+      "name": "GIP receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "full_name": "glucose-dependent insulinotropic polypeptide receptor"
+      },
+      "confidence": 0.95,
+      "context": "The dual agonist mechanism activates both the GIP receptor (primary) and the GLP-1 receptor, with an imbalanced potency favoring GIP receptor activation."
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "The dual agonist mechanism activates both the GIP receptor (primary) and the GLP-1 receptor, with an imbalanced potency favoring GIP receptor activation."
+    },
+    {
+      "name": "dual GIP/GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "selectivity": "dual",
+        "target": "GIP receptor and GLP-1 receptor",
+        "potency_balance": "imbalanced, favoring GIP receptor activation"
+      },
+      "confidence": 0.97,
+      "context": "The dual agonist mechanism activates both the GIP receptor (primary) and the GLP-1 receptor, with an imbalanced potency favoring GIP receptor activation."
+    },
+    {
+      "name": "Type 2 Diabetes Mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "aliases": "T2DM",
+        "icd_code": "E11"
+      },
+      "confidence": 0.8,
+      "context": "Tirzepatide has demonstrated superior efficacy in glycemic control (HbA1c reduction) and weight loss compared to selective GLP-1 receptor agonists in the SURPASS clinical trial program."
+    },
+    {
+      "name": "Obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "icd_code": "E66",
+        "aliases": "overweight"
+      },
+      "confidence": 0.75,
+      "context": "Tirzepatide has demonstrated superior efficacy in glycemic control (HbA1c reduction) and weight loss compared to selective GLP-1 receptor agonists in the SURPASS clinical trial program."
+    },
+    {
+      "name": "SURPASS clinical trial program",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "trial_acronym": "SURPASS",
+        "design": "clinical trial program",
+        "investigational_drug": "tirzepatide"
+      },
+      "confidence": 0.9,
+      "context": "Tirzepatide has demonstrated superior efficacy in glycemic control (HbA1c reduction) and weight loss compared to selective GLP-1 receptor agonists in the SURPASS clinical trial program."
+    },
+    {
+      "name": "HbA1c reduction",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "pharmacodynamic",
+        "analyte": "glycated hemoglobin",
+        "clinical_relevance": "glycemic control endpoint"
+      },
+      "confidence": 0.9,
+      "context": "Tirzepatide has demonstrated superior efficacy in glycemic control (HbA1c reduction) and weight loss compared to selective GLP-1 receptor agonists in the SURPASS clinical trial program."
+    },
+    {
+      "name": "selective GLP-1 receptor agonists",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "selectivity": "selective",
+        "target": "GLP-1 receptor"
+      },
+      "confidence": 0.88,
+      "context": "Tirzepatide has demonstrated superior efficacy in glycemic control (HbA1c reduction) and weight loss compared to selective GLP-1 receptor agonists in the SURPASS clinical trial program."
+    },
+    {
+      "name": "Eli Lilly and Company",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "pharma",
+        "country": "United States"
+      },
+      "confidence": 0.99,
+      "context": "Assignee: Eli Lilly and Company"
+    },
+    {
+      "name": "US11357820B2",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "publication_type": "patent",
+        "patent_number": "US11357820B2",
+        "filing_date": "June 14, 2019",
+        "assignee": "Eli Lilly and Company",
+        "cas_registry": "2023788-19-2"
+      },
+      "confidence": 0.99,
+      "context": "Patent ID: US11357820B2, Assignee: Eli Lilly and Company, Filing Date: June 14, 2019"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "tirzepatide",
+      "target_entity": "dual GIP/GLP-1 receptor agonism",
+      "confidence": 0.97,
+      "evidence": "Tirzepatide is a dual GIP/GLP-1 receptor agonist peptide with CAS Registry Number 2023788-19-2."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "tirzepatide",
+      "target_entity": "GIP receptor",
+      "confidence": 0.97,
+      "evidence": "The dual agonist mechanism activates both the GIP receptor (primary) and the GLP-1 receptor, with an imbalanced potency favoring GIP receptor activation."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "tirzepatide",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.95,
+      "evidence": "The dual agonist mechanism activates both the GIP receptor (primary) and the GLP-1 receptor, with an imbalanced potency favoring GIP receptor activation."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.75,
+      "evidence": "Tirzepatide has demonstrated superior efficacy in glycemic control (HbA1c reduction) and weight loss compared to selective GLP-1 receptor agonists in the SURPASS clinical trial program."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "Obesity",
+      "confidence": 0.65,
+      "evidence": "Tirzepatide has demonstrated superior efficacy in glycemic control (HbA1c reduction) and weight loss compared to selective GLP-1 receptor agonists in the SURPASS clinical trial program."
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "tirzepatide",
+      "target_entity": "SURPASS clinical trial program",
+      "confidence": 0.92,
+      "evidence": "Tirzepatide has demonstrated superior efficacy in glycemic control (HbA1c reduction) and weight loss compared to selective GLP-1 receptor agonists in the SURPASS clinical trial program."
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "HbA1c reduction",
+      "target_entity": "tirzepatide",
+      "confidence": 0.85,
+      "evidence": "Tirzepatide has demonstrated superior efficacy in glycemic control (HbA1c reduction) and weight loss compared to selective GLP-1 receptor agonists in the SURPASS clinical trial program."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "tirzepatide",
+      "target_entity": "Eli Lilly and Company",
+      "confidence": 0.99,
+      "evidence": "Assignee: Eli Lilly and Company"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "SURPASS clinical trial program",
+      "target_entity": "Eli Lilly and Company",
+      "confidence": 0.9,
+      "evidence": "Assignee: Eli Lilly and Company"
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "tirzepatide",
+      "target_entity": "US11357820B2",
+      "confidence": 0.99,
+      "evidence": "Patent ID: US11357820B2, Assignee: Eli Lilly and Company, Filing Date: June 14, 2019"
+    }
+  ],
+  "cost_usd": 0.075957,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:35:34.143908+00:00",
+  "error": null
+}

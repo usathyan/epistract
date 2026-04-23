@@ -1,0 +1,442 @@
+{
+  "document_id": "pmid_40544433",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "cagrilintide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "amylin analogue",
+        "development_stage": "Phase III",
+        "route_of_administration": "subcutaneous",
+        "dose": "2.4 mg"
+      },
+      "confidence": 0.98,
+      "context": "cagrilintide at a dose of 2.4 mg has shown promising results in early-phase trials"
+    },
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "GLP-1 receptor agonist",
+        "development_stage": "approved",
+        "route_of_administration": "subcutaneous",
+        "dose": "2.4 mg"
+      },
+      "confidence": 0.98,
+      "context": "Semaglutide at a dose of 2.4 mg has established weight-loss and cardiovascular benefits"
+    },
+    {
+      "name": "CagriSema",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "compound_code": "CagriSema",
+        "drug_class": "amylin analogue / GLP-1 receptor agonist combination",
+        "development_stage": "Phase III",
+        "dose": "cagrilintide 2.4 mg + semaglutide 2.4 mg"
+      },
+      "confidence": 0.97,
+      "context": "the efficacy of the combination (known as CagriSema) on weight loss in persons with either overweight and coexisting conditions or obesity is unknown"
+    },
+    {
+      "name": "Obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Obesity",
+        "icd_code": "E66",
+        "aliases": [
+          "obesity"
+        ],
+        "diagnostic_criteria": "BMI >= 30"
+      },
+      "confidence": 0.98,
+      "context": "adults without diabetes who had a body-mass index (BMI) of 30 or higher or a BMI of 27 or higher with at least one obesity-related complication"
+    },
+    {
+      "name": "Overweight",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Overweight",
+        "icd_code": "E66.3",
+        "aliases": [
+          "overweight"
+        ],
+        "diagnostic_criteria": "BMI >= 27 with at least one obesity-related complication"
+      },
+      "confidence": 0.95,
+      "context": "adults without diabetes who had a body-mass index (BMI) of 30 or higher or a BMI of 27 or higher with at least one obesity-related complication"
+    },
+    {
+      "name": "Dyslipidemias",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Dyslipidemias",
+        "aliases": [
+          "dyslipidemia"
+        ]
+      },
+      "confidence": 0.85,
+      "context": "MeSH Terms: Dyslipidemias, Hypertension"
+    },
+    {
+      "name": "Hypertension",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Hypertension",
+        "aliases": [
+          "high blood pressure"
+        ]
+      },
+      "confidence": 0.85,
+      "context": "MeSH Terms: Dyslipidemias, Hypertension"
+    },
+    {
+      "name": "REDEFINE 1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT05567796",
+        "trial_acronym": "REDEFINE 1",
+        "phase": "Phase III",
+        "design": "randomized, double-blind, placebo-controlled, active-controlled, multicenter",
+        "primary_endpoint": "relative change in body weight and >= 5% body weight reduction from baseline to week 68",
+        "duration_weeks": 68,
+        "patient_population": "adults without diabetes with BMI >= 30 or BMI >= 27 with at least one obesity-related complication",
+        "status": "completed",
+        "primary_endpoint_met": true,
+        "total_enrolled": 3417
+      },
+      "confidence": 0.98,
+      "context": "In a phase 3a, 68-week, multicenter, double-blind, placebo-controlled and active-controlled trial... (Funded by Novo Nordisk; REDEFINE 1 ClinicalTrials.gov number, NCT05567796.)"
+    },
+    {
+      "name": "Novo Nordisk",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "pharma",
+        "country": "Denmark"
+      },
+      "confidence": 0.98,
+      "context": "Funded by Novo Nordisk; REDEFINE 1 ClinicalTrials.gov number, NCT05567796."
+    },
+    {
+      "name": "Gastrointestinal Adverse Events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "meddra_pt": "Gastrointestinal disorders",
+        "organ_class": "Gastrointestinal disorders",
+        "frequency": "very common",
+        "seriousness": "non-serious",
+        "severity_grade": "mild-to-moderate",
+        "onset": "mainly transient",
+        "components": [
+          "nausea",
+          "vomiting",
+          "diarrhea",
+          "constipation",
+          "abdominal pain"
+        ],
+        "frequency_cagrisema": "79.6%",
+        "frequency_placebo": "39.9%"
+      },
+      "confidence": 0.97,
+      "context": "Gastrointestinal adverse events (affecting 79.6% in the cagrilintide-semaglutide group and 39.9% in the placebo group), including nausea, vomiting, diarrhea, constipation, or abdominal pain, were mainly transient and mild-to-moderate in severity."
+    },
+    {
+      "name": "Nausea",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "meddra_pt": "Nausea",
+        "organ_class": "Gastrointestinal disorders",
+        "seriousness": "non-serious",
+        "severity_grade": "mild-to-moderate",
+        "onset": "mainly transient"
+      },
+      "confidence": 0.95,
+      "context": "Gastrointestinal adverse events... including nausea, vomiting, diarrhea, constipation, or abdominal pain, were mainly transient and mild-to-moderate in severity."
+    },
+    {
+      "name": "Vomiting",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "meddra_pt": "Vomiting",
+        "organ_class": "Gastrointestinal disorders",
+        "seriousness": "non-serious",
+        "severity_grade": "mild-to-moderate",
+        "onset": "mainly transient"
+      },
+      "confidence": 0.95,
+      "context": "Gastrointestinal adverse events... including nausea, vomiting, diarrhea, constipation, or abdominal pain, were mainly transient and mild-to-moderate in severity."
+    },
+    {
+      "name": "Diarrhea",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "meddra_pt": "Diarrhoea",
+        "organ_class": "Gastrointestinal disorders",
+        "seriousness": "non-serious",
+        "severity_grade": "mild-to-moderate",
+        "onset": "mainly transient"
+      },
+      "confidence": 0.95,
+      "context": "Gastrointestinal adverse events... including nausea, vomiting, diarrhea, constipation, or abdominal pain, were mainly transient and mild-to-moderate in severity."
+    },
+    {
+      "name": "Constipation",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "meddra_pt": "Constipation",
+        "organ_class": "Gastrointestinal disorders",
+        "seriousness": "non-serious",
+        "severity_grade": "mild-to-moderate",
+        "onset": "mainly transient"
+      },
+      "confidence": 0.95,
+      "context": "Gastrointestinal adverse events... including nausea, vomiting, diarrhea, constipation, or abdominal pain, were mainly transient and mild-to-moderate in severity."
+    },
+    {
+      "name": "Abdominal Pain",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "meddra_pt": "Abdominal pain",
+        "organ_class": "Gastrointestinal disorders",
+        "seriousness": "non-serious",
+        "severity_grade": "mild-to-moderate",
+        "onset": "mainly transient"
+      },
+      "confidence": 0.95,
+      "context": "Gastrointestinal adverse events... including nausea, vomiting, diarrhea, constipation, or abdominal pain, were mainly transient and mild-to-moderate in severity."
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "protein_family": "glucagon receptor family",
+        "aliases": [
+          "GLP-1R",
+          "glucagon-like peptide-1 receptor"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "MeSH Terms: Glucagon-Like Peptide-1 Receptor Agonists"
+    },
+    {
+      "name": "amylin receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "receptor",
+        "aliases": [
+          "IAPP receptor",
+          "islet amyloid polypeptide receptor"
+        ]
+      },
+      "confidence": 0.8,
+      "context": "MeSH Terms: Islet Amyloid Polypeptide"
+    },
+    {
+      "name": "GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "selectivity": "selective",
+        "target": "GLP-1 receptor"
+      },
+      "confidence": 0.92,
+      "context": "MeSH Terms: Glucagon-Like Peptide-1 Receptor Agonists"
+    },
+    {
+      "name": "amylin receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "selectivity": "selective",
+        "target": "amylin receptor"
+      },
+      "confidence": 0.85,
+      "context": "MeSH Terms: Islet Amyloid Polypeptide"
+    },
+    {
+      "name": "Garvey et al., NEJM 2025",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "40544433",
+        "journal": "The New England Journal of Medicine",
+        "year": 2025,
+        "first_author": "Garvey",
+        "publication_type": "original_research"
+      },
+      "confidence": 0.99,
+      "context": "Title: Coadministered Cagrilintide and Semaglutide in Adults with Overweight or Obesity. Journal: The New England journal of medicine (2025) PMID: 40544433"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "COMBINED_WITH",
+      "source_entity": "cagrilintide",
+      "target_entity": "semaglutide",
+      "confidence": 0.98,
+      "evidence": "the efficacy of the combination (known as CagriSema) on weight loss in persons with either overweight and coexisting conditions or obesity is unknown"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor agonism",
+      "confidence": 0.95,
+      "evidence": "MeSH Terms: Glucagon-Like Peptide-1 Receptor Agonists"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.95,
+      "evidence": "MeSH Terms: Glucagon-Like Peptide-1 Receptor Agonists"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "cagrilintide",
+      "target_entity": "amylin receptor agonism",
+      "confidence": 0.88,
+      "evidence": "MeSH Terms: Islet Amyloid Polypeptide"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "cagrilintide",
+      "target_entity": "amylin receptor",
+      "confidence": 0.85,
+      "evidence": "MeSH Terms: Islet Amyloid Polypeptide"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Obesity",
+      "confidence": 0.95,
+      "evidence": "Semaglutide at a dose of 2.4 mg has established weight-loss and cardiovascular benefits"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Overweight",
+      "confidence": 0.9,
+      "evidence": "Semaglutide at a dose of 2.4 mg has established weight-loss and cardiovascular benefits"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "CagriSema",
+      "target_entity": "Obesity",
+      "confidence": 0.95,
+      "evidence": "Cagrilintide-semaglutide provided significant and clinically relevant body-weight reductions in adults with overweight or obesity, as compared with placebo."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "CagriSema",
+      "target_entity": "Overweight",
+      "confidence": 0.95,
+      "evidence": "Cagrilintide-semaglutide provided significant and clinically relevant body-weight reductions in adults with overweight or obesity, as compared with placebo."
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "CagriSema",
+      "target_entity": "REDEFINE 1",
+      "confidence": 0.98,
+      "evidence": "In a phase 3a, 68-week, multicenter, double-blind, placebo-controlled and active-controlled trial... (Funded by Novo Nordisk; REDEFINE 1 ClinicalTrials.gov number, NCT05567796.)"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "semaglutide",
+      "target_entity": "REDEFINE 1",
+      "confidence": 0.98,
+      "evidence": "Participants were randomly assigned in a ratio of 21:3:3:7 to receive the combination of semaglutide at a dose of 2.4 mg and cagrilintide at a dose of 2.4 mg, semaglutide alone at a dose of 2.4 mg, cagrilintide alone at a dose of 2.4 mg, or placebo"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "cagrilintide",
+      "target_entity": "REDEFINE 1",
+      "confidence": 0.98,
+      "evidence": "Participants were randomly assigned in a ratio of 21:3:3:7 to receive the combination of semaglutide at a dose of 2.4 mg and cagrilintide at a dose of 2.4 mg, semaglutide alone at a dose of 2.4 mg, cagrilintide alone at a dose of 2.4 mg, or placebo"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "CagriSema",
+      "target_entity": "Gastrointestinal Adverse Events",
+      "confidence": 0.97,
+      "evidence": "Gastrointestinal adverse events (affecting 79.6% in the cagrilintide-semaglutide group and 39.9% in the placebo group), including nausea, vomiting, diarrhea, constipation, or abdominal pain, were mainly transient and mild-to-moderate in severity."
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "CagriSema",
+      "target_entity": "Nausea",
+      "confidence": 0.95,
+      "evidence": "Gastrointestinal adverse events (affecting 79.6% in the cagrilintide-semaglutide group and 39.9% in the placebo group), including nausea, vomiting, diarrhea, constipation, or abdominal pain, were mainly transient and mild-to-moderate in severity."
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "CagriSema",
+      "target_entity": "Vomiting",
+      "confidence": 0.95,
+      "evidence": "Gastrointestinal adverse events (affecting 79.6% in the cagrilintide-semaglutide group and 39.9% in the placebo group), including nausea, vomiting, diarrhea, constipation, or abdominal pain, were mainly transient and mild-to-moderate in severity."
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "CagriSema",
+      "target_entity": "Diarrhea",
+      "confidence": 0.95,
+      "evidence": "Gastrointestinal adverse events (affecting 79.6% in the cagrilintide-semaglutide group and 39.9% in the placebo group), including nausea, vomiting, diarrhea, constipation, or abdominal pain, were mainly transient and mild-to-moderate in severity."
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "CagriSema",
+      "target_entity": "Constipation",
+      "confidence": 0.95,
+      "evidence": "Gastrointestinal adverse events (affecting 79.6% in the cagrilintide-semaglutide group and 39.9% in the placebo group), including nausea, vomiting, diarrhea, constipation, or abdominal pain, were mainly transient and mild-to-moderate in severity."
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "CagriSema",
+      "target_entity": "Abdominal Pain",
+      "confidence": 0.95,
+      "evidence": "Gastrointestinal adverse events (affecting 79.6% in the cagrilintide-semaglutide group and 39.9% in the placebo group), including nausea, vomiting, diarrhea, constipation, or abdominal pain, were mainly transient and mild-to-moderate in severity."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "CagriSema",
+      "target_entity": "Novo Nordisk",
+      "confidence": 0.97,
+      "evidence": "Funded by Novo Nordisk; REDEFINE 1 ClinicalTrials.gov number, NCT05567796."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "cagrilintide",
+      "target_entity": "Novo Nordisk",
+      "confidence": 0.95,
+      "evidence": "Funded by Novo Nordisk; REDEFINE 1 ClinicalTrials.gov number, NCT05567796."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "semaglutide",
+      "target_entity": "Novo Nordisk",
+      "confidence": 0.95,
+      "evidence": "Funded by Novo Nordisk; REDEFINE 1 ClinicalTrials.gov number, NCT05567796."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "REDEFINE 1",
+      "target_entity": "Novo Nordisk",
+      "confidence": 0.98,
+      "evidence": "Funded by Novo Nordisk; REDEFINE 1 ClinicalTrials.gov number, NCT05567796."
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "REDEFINE 1",
+      "target_entity": "Garvey et al., NEJM 2025",
+      "confidence": 0.99,
+      "evidence": "Title: Coadministered Cagrilintide and Semaglutide in Adults with Overweight or Obesity. Journal: The New England journal of medicine (2025) PMID: 40544433"
+    }
+  ],
+  "cost_usd": 0.122277,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:56:12.447089+00:00",
+  "error": null
+}

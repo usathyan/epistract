@@ -1,0 +1,168 @@
+{
+  "document_id": "pmid_41523559",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "tirzepatide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "dual GIP/GLP-1 receptor agonist",
+        "development_stage": "approved",
+        "route_of_administration": "subcutaneous"
+      },
+      "confidence": 0.99,
+      "context": "Semaglutide and tirzepatide are among the most promising agents."
+    },
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "GLP-1 receptor agonist",
+        "development_stage": "approved",
+        "route_of_administration": "subcutaneous"
+      },
+      "confidence": 0.99,
+      "context": "Semaglutide and tirzepatide are among the most promising agents."
+    },
+    {
+      "name": "Obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Obesity",
+        "icd_code": "E66",
+        "aliases": [
+          "obesity"
+        ]
+      },
+      "confidence": 0.99,
+      "context": "Efficacy and Safety of Tirzepatide and Semaglutide for Obesity Management: A Real-World Comparison."
+    },
+    {
+      "name": "Type 2 Diabetes Mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Diabetes Mellitus, Type 2",
+        "icd_code": "E11",
+        "aliases": [
+          "T2DM"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "Incretin-based therapies have emerged as effective strategies for obesity and type 2 diabetes mellitus (T2DM) management."
+    },
+    {
+      "name": "Gastrointestinal Adverse Events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "meddra_pt": "Gastrointestinal disorder",
+        "organ_class": "Gastrointestinal disorders",
+        "seriousness": "non-serious",
+        "frequency": "common"
+      },
+      "confidence": 0.9,
+      "context": "Gastrointestinal adverse events were the most common, occurring more frequently with tirzepatide, while serious events were rare."
+    },
+    {
+      "name": "incretin-based therapy",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "target": "incretin receptors (GLP-1, GIP)"
+      },
+      "confidence": 0.85,
+      "context": "Incretin-based therapies have emerged as effective strategies for obesity and type 2 diabetes mellitus (T2DM) management."
+    },
+    {
+      "name": "Kumar et al., Cureus 2025",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "41523559",
+        "journal": "Cureus",
+        "year": 2025,
+        "first_author": "Kumar",
+        "publication_type": "original_research"
+      },
+      "confidence": 0.99,
+      "context": "Efficacy and Safety of Tirzepatide and Semaglutide for Obesity Management: A Real-World Comparison. Authors: Shil Kishore Kumar, Hira Ananda D, Bakchi Sudipta, Paul Susanta K, Hossain Mahmud. Journal: Cureus (2025). PMID: 41523559"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "Obesity",
+      "confidence": 0.9,
+      "evidence": "Tirzepatide and semaglutide were both associated with weight reduction in obesity, with greater reductions observed with tirzepatide, particularly when combined with lifestyle interventions."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Obesity",
+      "confidence": 0.9,
+      "evidence": "Tirzepatide and semaglutide were both associated with weight reduction in obesity, with greater reductions observed with tirzepatide, particularly when combined with lifestyle interventions."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.8,
+      "evidence": "Incretin-based therapies have emerged as effective strategies for obesity and type 2 diabetes mellitus (T2DM) management. Semaglutide and tirzepatide are among the most promising agents."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.8,
+      "evidence": "Incretin-based therapies have emerged as effective strategies for obesity and type 2 diabetes mellitus (T2DM) management. Semaglutide and tirzepatide are among the most promising agents."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "tirzepatide",
+      "target_entity": "incretin-based therapy",
+      "confidence": 0.85,
+      "evidence": "Incretin-based therapies have emerged as effective strategies for obesity and type 2 diabetes mellitus (T2DM) management. Semaglutide and tirzepatide are among the most promising agents."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "semaglutide",
+      "target_entity": "incretin-based therapy",
+      "confidence": 0.85,
+      "evidence": "Incretin-based therapies have emerged as effective strategies for obesity and type 2 diabetes mellitus (T2DM) management. Semaglutide and tirzepatide are among the most promising agents."
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "tirzepatide",
+      "target_entity": "Gastrointestinal Adverse Events",
+      "confidence": 0.88,
+      "evidence": "Gastrointestinal adverse events were the most common, occurring more frequently with tirzepatide, while serious events were rare."
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "semaglutide",
+      "target_entity": "Gastrointestinal Adverse Events",
+      "confidence": 0.82,
+      "evidence": "Gastrointestinal adverse events were the most common, occurring more frequently with tirzepatide, while serious events were rare."
+    },
+    {
+      "relation_type": "COMBINED_WITH",
+      "source_entity": "tirzepatide",
+      "target_entity": "semaglutide",
+      "confidence": 0.55,
+      "evidence": "Both drugs produced significant weight loss, with tirzepatide achieving greater reductions than semaglutide (8.53\u00b14.10 vs. 6.85\u00b13.38 kg; p=0.033)."
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "tirzepatide",
+      "target_entity": "Kumar et al., Cureus 2025",
+      "confidence": 0.99,
+      "evidence": "Efficacy and Safety of Tirzepatide and Semaglutide for Obesity Management: A Real-World Comparison. Journal: Cureus (2025). PMID: 41523559"
+    }
+  ],
+  "cost_usd": 0.066609,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:58:05.526413+00:00",
+  "error": null
+}

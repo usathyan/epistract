@@ -1,0 +1,352 @@
+{
+  "docs_total": 34,
+  "docs_done": 34,
+  "docs_skipped": 0,
+  "docs_failed": 0,
+  "total_cost_usd": 3.201984,
+  "total_tokens": 544296,
+  "model": "anthropic/claude-sonnet-4.6",
+  "domain": "drug-discovery",
+  "results": [
+    {
+      "doc_id": "patent_01_us10888605b2_semaglutide",
+      "chunks": 1,
+      "entities": 10,
+      "relations": 10,
+      "cost_usd": 0.076947,
+      "total_tokens": 14757,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "patent_02_us11357820b2_tirzepatide",
+      "chunks": 1,
+      "entities": 11,
+      "relations": 10,
+      "cost_usd": 0.075957,
+      "total_tokens": 14699,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "patent_03_us10335462b2_semaglutide_longacting",
+      "chunks": 1,
+      "entities": 14,
+      "relations": 13,
+      "cost_usd": 0.094758,
+      "total_tokens": 15974,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "patent_04_wo2020159949a1_tirzepatide_process",
+      "chunks": 1,
+      "entities": 12,
+      "relations": 9,
+      "cost_usd": 0.079665,
+      "total_tokens": 14963,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "patent_05_wo2018109607a1_pfizer_oral_glp1",
+      "chunks": 1,
+      "entities": 20,
+      "relations": 20,
+      "cost_usd": 0.117033,
+      "total_tokens": 17479,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "patent_06_us10370426b2_triple_agonist",
+      "chunks": 1,
+      "entities": 19,
+      "relations": 23,
+      "cost_usd": 0.11769,
+      "total_tokens": 17550,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "patent_07_wo2019239319a1_pfizer_danuglipron",
+      "chunks": 1,
+      "entities": 15,
+      "relations": 19,
+      "cost_usd": 0.107379,
+      "total_tokens": 16861,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "patent_08_us12054528b2_glp1_amylin_coagonist",
+      "chunks": 1,
+      "entities": 18,
+      "relations": 21,
+      "cost_usd": 0.107607,
+      "total_tokens": 16869,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "patent_09_us11111285b2_zealand_triple_agonist",
+      "chunks": 1,
+      "entities": 18,
+      "relations": 17,
+      "cost_usd": 0.102036,
+      "total_tokens": 16556,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "patent_10_us11622996b2_oral_semaglutide_snac",
+      "chunks": 1,
+      "entities": 11,
+      "relations": 11,
+      "cost_usd": 0.080469,
+      "total_tokens": 15055,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "pmid_32442310",
+      "chunks": 1,
+      "entities": 13,
+      "relations": 15,
+      "cost_usd": 0.085005,
+      "total_tokens": 15315,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "pmid_35441470",
+      "chunks": 1,
+      "entities": 9,
+      "relations": 8,
+      "cost_usd": 0.070911,
+      "total_tokens": 14309,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "pmid_35650449",
+      "chunks": 1,
+      "entities": 19,
+      "relations": 19,
+      "cost_usd": 0.105141,
+      "total_tokens": 16715,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "pmid_35658024",
+      "chunks": 1,
+      "entities": 14,
+      "relations": 12,
+      "cost_usd": 0.088095,
+      "total_tokens": 15869,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "pmid_36945734",
+      "chunks": 1,
+      "entities": 13,
+      "relations": 11,
+      "cost_usd": 0.08622,
+      "total_tokens": 15416,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "pmid_37192005",
+      "chunks": 1,
+      "entities": 12,
+      "relations": 12,
+      "cost_usd": 0.079104,
+      "total_tokens": 14908,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "pmid_37351564",
+      "chunks": 1,
+      "entities": 11,
+      "relations": 10,
+      "cost_usd": 0.080583,
+      "total_tokens": 15173,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "pmid_37657738",
+      "chunks": 1,
+      "entities": 15,
+      "relations": 18,
+      "cost_usd": 0.09276,
+      "total_tokens": 15784,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "pmid_38367045",
+      "chunks": 1,
+      "entities": 15,
+      "relations": 19,
+      "cost_usd": 0.103668,
+      "total_tokens": 16536,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "pmid_38632474",
+      "chunks": 1,
+      "entities": 14,
+      "relations": 15,
+      "cost_usd": 0.090633,
+      "total_tokens": 15619,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "pmid_38785209",
+      "chunks": 1,
+      "entities": 13,
+      "relations": 16,
+      "cost_usd": 0.088086,
+      "total_tokens": 15586,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "pmid_38851997",
+      "chunks": 1,
+      "entities": 25,
+      "relations": 31,
+      "cost_usd": 0.152148,
+      "total_tokens": 19832,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "pmid_38858523",
+      "chunks": 1,
+      "entities": 12,
+      "relations": 11,
+      "cost_usd": 0.080325,
+      "total_tokens": 14995,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "pmid_38958939",
+      "chunks": 1,
+      "entities": 13,
+      "relations": 11,
+      "cost_usd": 0.091671,
+      "total_tokens": 16233,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "pmid_39357509",
+      "chunks": 1,
+      "entities": 11,
+      "relations": 12,
+      "cost_usd": 0.073002,
+      "total_tokens": 14382,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "pmid_39536238",
+      "chunks": 1,
+      "entities": 11,
+      "relations": 12,
+      "cost_usd": 0.084597,
+      "total_tokens": 15531,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "pmid_39663847",
+      "chunks": 1,
+      "entities": 11,
+      "relations": 10,
+      "cost_usd": 0.074628,
+      "total_tokens": 14576,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "pmid_39903735",
+      "chunks": 1,
+      "entities": 21,
+      "relations": 24,
+      "cost_usd": 0.138009,
+      "total_tokens": 18963,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "pmid_40305708",
+      "chunks": 1,
+      "entities": 13,
+      "relations": 14,
+      "cost_usd": 0.096972,
+      "total_tokens": 16364,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "pmid_40544432",
+      "chunks": 1,
+      "entities": 17,
+      "relations": 19,
+      "cost_usd": 0.106998,
+      "total_tokens": 17050,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "pmid_40544433",
+      "chunks": 1,
+      "entities": 20,
+      "relations": 23,
+      "cost_usd": 0.122277,
+      "total_tokens": 18127,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "pmid_40544435",
+      "chunks": 1,
+      "entities": 12,
+      "relations": 11,
+      "cost_usd": 0.09063,
+      "total_tokens": 16002,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "pmid_40726115",
+      "chunks": 1,
+      "entities": 17,
+      "relations": 17,
+      "cost_usd": 0.094371,
+      "total_tokens": 16109,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    },
+    {
+      "doc_id": "pmid_41523559",
+      "chunks": 1,
+      "entities": 7,
+      "relations": 10,
+      "cost_usd": 0.066609,
+      "total_tokens": 14139,
+      "build_extraction_rc": 0,
+      "build_extraction_stderr": ""
+    }
+  ]
+}

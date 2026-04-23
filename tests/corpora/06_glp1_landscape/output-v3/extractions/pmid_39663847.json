@@ -1,0 +1,202 @@
+{
+  "document_id": "pmid_39663847",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "survodutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "dual GLP-1R/GCGR agonist",
+        "development_stage": "Phase 3",
+        "route_of_administration": "investigational"
+      },
+      "confidence": 0.97,
+      "context": "Survodutide, an investigational dual agonist that simultaneously targets both the glucagon receptor (GCGR) and GLP-1 R, has emerged as a promising therapeutic candidate for the comprehensive management of obesity and MASH."
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "aliases": "GLP-1 R, GLP1R"
+      },
+      "confidence": 0.97,
+      "context": "Glucagon-like peptide-1 receptor (GLP-1 R) agonists have demonstrated remarkable effectiveness in the treatment of obesity and type 2 diabetes."
+    },
+    {
+      "name": "glucagon receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "aliases": "GCGR"
+      },
+      "confidence": 0.97,
+      "context": "Survodutide, an investigational dual agonist that simultaneously targets both the glucagon receptor (GCGR) and GLP-1 R."
+    },
+    {
+      "name": "metabolic dysfunction-associated steatohepatitis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "aliases": "MASH",
+        "mesh_term": "Fatty Liver",
+        "disease_subtype": "metabolic dysfunction-associated steatohepatitis"
+      },
+      "confidence": 0.97,
+      "context": "Survodutide, an investigational dual agonist that simultaneously targets both the glucagon receptor (GCGR) and GLP-1 R, has emerged as a promising therapeutic candidate for the comprehensive management of obesity and MASH."
+    },
+    {
+      "name": "Obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Obesity"
+      },
+      "confidence": 0.97,
+      "context": "Glucagon-like peptide-1 receptor (GLP-1 R) agonists have demonstrated remarkable effectiveness in the treatment of obesity and type 2 diabetes."
+    },
+    {
+      "name": "Type 2 Diabetes Mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Diabetes Mellitus, Type 2",
+        "aliases": "T2DM, type 2 diabetes"
+      },
+      "confidence": 0.97,
+      "context": "Glucagon-like peptide-1 receptor (GLP-1 R) agonists have demonstrated remarkable effectiveness in the treatment of obesity and type 2 diabetes."
+    },
+    {
+      "name": "hepatic fibrosis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "aliases": "fibrosis regression",
+        "disease_subtype": "liver fibrosis in MASH"
+      },
+      "confidence": 0.85,
+      "context": "Although these agents provide beneficial effects for metabolic dysfunction-associated steatohepatitis (MASH) through their glucose-lowering and weight-reducing properties, their efficacy in promoting fibrosis regression remains unproven."
+    },
+    {
+      "name": "GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "selectivity": "selective",
+        "target": "GLP-1 receptor"
+      },
+      "confidence": 0.92,
+      "context": "Glucagon-like peptide-1 receptor (GLP-1 R) agonists have demonstrated remarkable effectiveness in the treatment of obesity and type 2 diabetes."
+    },
+    {
+      "name": "dual GLP-1R and GCGR agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "selectivity": "dual",
+        "target": "GLP-1 receptor and glucagon receptor"
+      },
+      "confidence": 0.97,
+      "context": "Survodutide, an investigational dual agonist that simultaneously targets both the glucagon receptor (GCGR) and GLP-1 R, has emerged as a promising therapeutic candidate for the comprehensive management of obesity and MASH."
+    },
+    {
+      "name": "Gastrointestinal Adverse Effects",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "organ_class": "gastrointestinal",
+        "seriousness": "non-serious",
+        "management": "manageable"
+      },
+      "confidence": 0.88,
+      "context": "The drug is generally well tolerated, with primarily manageable gastrointestinal adverse effects."
+    },
+    {
+      "name": "Kaya et al., Expert Opinion on Investigational Drugs 2024",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "39663847",
+        "journal": "Expert opinion on investigational drugs",
+        "year": "2024",
+        "first_author": "Kaya",
+        "publication_type": "review"
+      },
+      "confidence": 0.99,
+      "context": "Survodutide in MASH: bridging the gap between hepatic and systemic metabolic dysfunction. Expert opinion on investigational drugs (2024)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "survodutide",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.97,
+      "evidence": "Survodutide, an investigational dual agonist that simultaneously targets both the glucagon receptor (GCGR) and GLP-1 R."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "survodutide",
+      "target_entity": "glucagon receptor",
+      "confidence": 0.97,
+      "evidence": "Survodutide, an investigational dual agonist that simultaneously targets both the glucagon receptor (GCGR) and GLP-1 R."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "survodutide",
+      "target_entity": "dual GLP-1R and GCGR agonism",
+      "confidence": 0.97,
+      "evidence": "Survodutide, an investigational dual agonist that simultaneously targets both the glucagon receptor (GCGR) and GLP-1 R, has emerged as a promising therapeutic candidate for the comprehensive management of obesity and MASH."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "survodutide",
+      "target_entity": "metabolic dysfunction-associated steatohepatitis",
+      "confidence": 0.8,
+      "evidence": "Survodutide, an investigational dual agonist that simultaneously targets both the glucagon receptor (GCGR) and GLP-1 R, has emerged as a promising therapeutic candidate for the comprehensive management of obesity and MASH."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "survodutide",
+      "target_entity": "Obesity",
+      "confidence": 0.8,
+      "evidence": "Survodutide, an investigational dual agonist that simultaneously targets both the glucagon receptor (GCGR) and GLP-1 R, has emerged as a promising therapeutic candidate for the comprehensive management of obesity and MASH."
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "survodutide",
+      "target_entity": "Gastrointestinal Adverse Effects",
+      "confidence": 0.88,
+      "evidence": "The drug is generally well tolerated, with primarily manageable gastrointestinal adverse effects."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1 receptor agonism",
+      "target_entity": "Obesity",
+      "confidence": 0.9,
+      "evidence": "Glucagon-like peptide-1 receptor (GLP-1 R) agonists have demonstrated remarkable effectiveness in the treatment of obesity and type 2 diabetes."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1 receptor agonism",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.9,
+      "evidence": "Glucagon-like peptide-1 receptor (GLP-1 R) agonists have demonstrated remarkable effectiveness in the treatment of obesity and type 2 diabetes."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "GLP-1 receptor agonism",
+      "target_entity": "metabolic dysfunction-associated steatohepatitis",
+      "confidence": 0.78,
+      "evidence": "Although these agents provide beneficial effects for metabolic dysfunction-associated steatohepatitis (MASH) through their glucose-lowering and weight-reducing properties, their efficacy in promoting fibrosis regression remains unproven."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "metabolic dysfunction-associated steatohepatitis",
+      "target_entity": "hepatic fibrosis",
+      "confidence": 0.85,
+      "evidence": "Although these agents provide beneficial effects for metabolic dysfunction-associated steatohepatitis (MASH) through their glucose-lowering and weight-reducing properties, their efficacy in promoting fibrosis regression remains unproven."
+    }
+  ],
+  "cost_usd": 0.074628,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:52:12.674381+00:00",
+  "error": null
+}

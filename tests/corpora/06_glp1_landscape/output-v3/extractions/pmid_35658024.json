@@ -1,0 +1,276 @@
+{
+  "document_id": "pmid_35658024",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "tirzepatide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "dual GIP and GLP-1 receptor agonist",
+        "development_stage": "Phase III",
+        "route_of_administration": "subcutaneous",
+        "formulation": "once-weekly injection",
+        "doses_studied": [
+          "5 mg",
+          "10 mg",
+          "15 mg"
+        ]
+      },
+      "confidence": 0.99,
+      "context": "tirzepatide, a novel glucose-dependent insulinotropic polypeptide and glucagon-like peptide-1 receptor agonist, in people with obesity are not known."
+    },
+    {
+      "name": "Obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Obesity",
+        "icd_code": "E66",
+        "aliases": [
+          "obesity"
+        ],
+        "description": "chronic disease resulting in substantial global morbidity and mortality",
+        "eligibility_criteria": "BMI >= 30, or BMI >= 27 with at least one weight-related complication, excluding diabetes"
+      },
+      "confidence": 0.99,
+      "context": "Obesity is a chronic disease that results in substantial global morbidity and mortality."
+    },
+    {
+      "name": "GIP receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "target": "glucose-dependent insulinotropic polypeptide receptor"
+      },
+      "confidence": 0.95,
+      "context": "tirzepatide, a novel glucose-dependent insulinotropic polypeptide and glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "name": "GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "target": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "tirzepatide, a novel glucose-dependent insulinotropic polypeptide and glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "name": "GIP receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "full_name": "glucose-dependent insulinotropic polypeptide receptor"
+      },
+      "confidence": 0.95,
+      "context": "tirzepatide, a novel glucose-dependent insulinotropic polypeptide and glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "tirzepatide, a novel glucose-dependent insulinotropic polypeptide and glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "name": "SURMOUNT-1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT04184622",
+        "trial_acronym": "SURMOUNT-1",
+        "phase": "Phase III",
+        "design": "randomized, double-blind, placebo-controlled",
+        "primary_endpoint": "percentage change in weight from baseline; proportion achieving >= 5% weight reduction",
+        "duration_weeks": 72,
+        "dose_escalation_weeks": 20,
+        "n_enrolled": 2539,
+        "patient_population": "Adults with BMI >= 30, or BMI >= 27 with at least one weight-related complication, excluding diabetes",
+        "randomization_ratio": "1:1:1:1",
+        "primary_endpoint_met": true,
+        "status": "completed"
+      },
+      "confidence": 0.99,
+      "context": "Supported by Eli Lilly; SURMOUNT-1 ClinicalTrials.gov number, NCT04184622."
+    },
+    {
+      "name": "Eli Lilly",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "pharma",
+        "country": "United States"
+      },
+      "confidence": 0.99,
+      "context": "Supported by Eli Lilly; SURMOUNT-1 ClinicalTrials.gov number, NCT04184622."
+    },
+    {
+      "name": "Gastrointestinal Adverse Events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "meddra_pt": "Gastrointestinal disorders",
+        "organ_class": "Gastrointestinal disorders",
+        "severity_grade": "mostly Grade 1-2",
+        "seriousness": "non-serious",
+        "onset": "primarily during dose escalation",
+        "frequency": "most common adverse events with tirzepatide"
+      },
+      "confidence": 0.97,
+      "context": "The most common adverse events with tirzepatide were gastrointestinal, and most were mild to moderate in severity, occurring primarily during dose escalation."
+    },
+    {
+      "name": "Treatment Discontinuation due to Adverse Events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "meddra_pt": "Drug discontinued",
+        "frequency_5mg": "4.3%",
+        "frequency_10mg": "7.1%",
+        "frequency_15mg": "6.2%",
+        "frequency_placebo": "2.6%",
+        "seriousness": "serious"
+      },
+      "confidence": 0.95,
+      "context": "Adverse events caused treatment discontinuation in 4.3%, 7.1%, 6.2%, and 2.6% of participants receiving 5-mg, 10-mg, and 15-mg tirzepatide doses and placebo, respectively."
+    },
+    {
+      "name": "Jastreboff et al., NEJM 2022",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "35658024",
+        "journal": "The New England Journal of Medicine",
+        "year": 2022,
+        "first_author": "Jastreboff",
+        "publication_type": "original_research"
+      },
+      "confidence": 0.99,
+      "context": "Title: Tirzepatide Once Weekly for the Treatment of Obesity. Journal: The New England journal of medicine (2022). PMID: 35658024."
+    },
+    {
+      "name": "body weight reduction >= 5%",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "surrogate",
+        "analyte": "body weight",
+        "threshold": "5% reduction from baseline",
+        "clinical_relevance": "primary endpoint for obesity treatment efficacy"
+      },
+      "confidence": 0.9,
+      "context": "Coprimary end points were the percentage change in weight from baseline and a weight reduction of 5% or more."
+    },
+    {
+      "name": "body weight reduction >= 20%",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "surrogate",
+        "analyte": "body weight",
+        "threshold": "20% reduction from baseline",
+        "clinical_relevance": "secondary efficacy endpoint for obesity treatment"
+      },
+      "confidence": 0.9,
+      "context": "50% (95% CI, 46 to 54) and 57% (95% CI, 53 to 61) of participants in the 10-mg and 15-mg groups had a reduction in body weight of 20% or more, as compared with 3% (95% CI, 1 to 5) in the placebo group."
+    },
+    {
+      "name": "cardiometabolic risk factors",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "physiological",
+        "clinical_relevance": "prespecified secondary endpoints in SURMOUNT-1"
+      },
+      "confidence": 0.85,
+      "context": "Improvements in all prespecified cardiometabolic measures were observed with tirzepatide."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "Obesity",
+      "confidence": 0.95,
+      "evidence": "In this 72-week trial in participants with obesity, 5 mg, 10 mg, or 15 mg of tirzepatide once weekly provided substantial and sustained reductions in body weight."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "tirzepatide",
+      "target_entity": "GIP receptor agonism",
+      "confidence": 0.97,
+      "evidence": "tirzepatide, a novel glucose-dependent insulinotropic polypeptide and glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "tirzepatide",
+      "target_entity": "GLP-1 receptor agonism",
+      "confidence": 0.97,
+      "evidence": "tirzepatide, a novel glucose-dependent insulinotropic polypeptide and glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "tirzepatide",
+      "target_entity": "GIP receptor",
+      "confidence": 0.97,
+      "evidence": "tirzepatide, a novel glucose-dependent insulinotropic polypeptide and glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "tirzepatide",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.97,
+      "evidence": "tirzepatide, a novel glucose-dependent insulinotropic polypeptide and glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "tirzepatide",
+      "target_entity": "SURMOUNT-1",
+      "confidence": 0.99,
+      "evidence": "Supported by Eli Lilly; SURMOUNT-1 ClinicalTrials.gov number, NCT04184622."
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "tirzepatide",
+      "target_entity": "Gastrointestinal Adverse Events",
+      "confidence": 0.97,
+      "evidence": "The most common adverse events with tirzepatide were gastrointestinal, and most were mild to moderate in severity, occurring primarily during dose escalation."
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "tirzepatide",
+      "target_entity": "Treatment Discontinuation due to Adverse Events",
+      "confidence": 0.95,
+      "evidence": "Adverse events caused treatment discontinuation in 4.3%, 7.1%, 6.2%, and 2.6% of participants receiving 5-mg, 10-mg, and 15-mg tirzepatide doses and placebo, respectively."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "tirzepatide",
+      "target_entity": "Eli Lilly",
+      "confidence": 0.97,
+      "evidence": "Supported by Eli Lilly; SURMOUNT-1 ClinicalTrials.gov number, NCT04184622."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "SURMOUNT-1",
+      "target_entity": "Eli Lilly",
+      "confidence": 0.97,
+      "evidence": "Supported by Eli Lilly; SURMOUNT-1 ClinicalTrials.gov number, NCT04184622."
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "SURMOUNT-1",
+      "target_entity": "Jastreboff et al., NEJM 2022",
+      "confidence": 0.99,
+      "evidence": "Title: Tirzepatide Once Weekly for the Treatment of Obesity. Journal: The New England journal of medicine (2022). PMID: 35658024."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "tirzepatide",
+      "target_entity": "cardiometabolic risk factors",
+      "confidence": 0.88,
+      "evidence": "Improvements in all prespecified cardiometabolic measures were observed with tirzepatide."
+    }
+  ],
+  "cost_usd": 0.088095,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:43:31.693755+00:00",
+  "error": null
+}

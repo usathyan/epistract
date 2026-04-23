@@ -1,0 +1,8 @@
+{
+  "status": "skipped",
+  "reason": "RDKit not installed",
+  "documents_validated": 0,
+  "total_smiles_checked": 0,
+  "invalid_smiles": [],
+  "errors": []
+}

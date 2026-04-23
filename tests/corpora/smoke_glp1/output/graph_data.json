@@ -1,0 +1,1755 @@
+{
+  "metadata": {
+    "created_at": "2026-04-22T13:43:12.295197",
+    "updated_at": "2026-04-22T13:43:12.977331",
+    "entity_count": 25,
+    "relation_count": 56,
+    "document_count": 3,
+    "entity_type_summary": {
+      "DOCUMENT": 3,
+      "COMPOUND": 8,
+      "PROTEIN": 3,
+      "MECHANISM_OF_ACTION": 2,
+      "ORGANIZATION": 1,
+      "PUBLICATION": 1,
+      "DISEASE": 4,
+      "PHENOTYPE": 1,
+      "BIOMARKER": 1,
+      "ADVERSE_EVENT": 1
+    },
+    "sift_kg_version": "0.9.0",
+    "domain": "drug-discovery"
+  },
+  "nodes": [
+    {
+      "id": "doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "entity_type": "DOCUMENT",
+      "name": "patent_10_us11622996b2_oral_semaglutide_snac",
+      "confidence": 1.0,
+      "source_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "attributes": {
+        "path": ""
+      }
+    },
+    {
+      "id": "compound:semaglutide",
+      "entity_type": "COMPOUND",
+      "name": "semaglutide",
+      "confidence": 0.98,
+      "source_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac",
+        "pmid_41523559"
+      ],
+      "attributes": {
+        "inn": "semaglutide",
+        "brand_name": "Rybelsus",
+        "drug_class": "GLP-1 receptor agonist",
+        "development_stage": "approved",
+        "route_of_administration": "oral",
+        "formulation": "tablet with SNAC absorption enhancer",
+        "doses": "3 mg, 7 mg, 14 mg",
+        "modality": "GLP-1 receptor agonist",
+        "class": "incretin-based therapy"
+      },
+      "context": "Semaglutide is formulated as oral tablets containing 300 mg SNAC with 3 mg, 7 mg, or 14 mg semaglutide... This oral formulation is marketed as Rybelsus."
+    },
+    {
+      "id": "compound:snac",
+      "entity_type": "COMPOUND",
+      "name": "SNAC",
+      "confidence": 0.95,
+      "source_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "attributes": {
+        "inn": "salcaprozate sodium",
+        "aliases": "sodium N-(8-(2-hydroxybenzoyl)amino)caprylate, sodium 8-[(2-hydroxybenzoyl)amino]octanoate",
+        "drug_class": "absorption enhancer",
+        "requires_validation": true,
+        "notation_type": "InChIKey",
+        "notation_present": true,
+        "inchikey_reported": "UOENJXXSKABLJL-UHFFFAOYSA-M"
+      },
+      "context": "SNAC chemical identifier: sodium 8-[(2-hydroxybenzoyl)amino]octanoate (InChIKey: UOENJXXSKABLJL-UHFFFAOYSA-M)... SNAC is also known as salcaprozate sodium."
+    },
+    {
+      "id": "compound:octanoic_acid",
+      "entity_type": "COMPOUND",
+      "name": "octanoic acid",
+      "confidence": 0.9,
+      "source_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "attributes": {
+        "aliases": "caprylic acid",
+        "requires_validation": true,
+        "notation_type": "InChIKey",
+        "notation_present": true,
+        "inchikey_reported": "WWZKQHOCKIZLMA-UHFFFAOYSA-N"
+      },
+      "context": "The related caprylic acid backbone has the identifier WWZKQHOCKIZLMA-UHFFFAOYSA-N (octanoic acid)."
+    },
+    {
+      "id": "compound:liraglutide",
+      "entity_type": "COMPOUND",
+      "name": "liraglutide",
+      "confidence": 0.9,
+      "source_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac",
+        "pmid_32442310"
+      ],
+      "attributes": {
+        "inn": "liraglutide",
+        "drug_class": "GLP-1 receptor agonist"
+      },
+      "context": "The GLP-1 agonists specifically discussed include semaglutide and liraglutide.",
+      "community": "Glp-1 Receptor Agonism / Insulin Resistance"
+    },
+    {
+      "id": "compound:orforglipron",
+      "entity_type": "COMPOUND",
+      "name": "orforglipron",
+      "confidence": 0.85,
+      "source_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "attributes": {
+        "inn": "orforglipron",
+        "drug_class": "small-molecule nonpeptide GLP-1 agonist"
+      },
+      "context": "Next-generation oral approaches include small-molecule nonpeptide GLP-1 agonists (orforglipron, danuglipron) that do not require absorption enhancers."
+    },
+    {
+      "id": "compound:danuglipron",
+      "entity_type": "COMPOUND",
+      "name": "danuglipron",
+      "confidence": 0.85,
+      "source_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "attributes": {
+        "inn": "danuglipron",
+        "drug_class": "small-molecule nonpeptide GLP-1 agonist"
+      },
+      "context": "Next-generation oral approaches include small-molecule nonpeptide GLP-1 agonists (orforglipron, danuglipron) that do not require absorption enhancers."
+    },
+    {
+      "id": "protein:glp_1_receptor",
+      "entity_type": "PROTEIN",
+      "name": "GLP-1 receptor",
+      "confidence": 0.9,
+      "source_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "attributes": {
+        "protein_class": "GPCR"
+      },
+      "context": "The patent describes pharmaceutical compositions combining a GLP-1 receptor agonist with sodium N-(8-(2-hydroxybenzoyl)amino)caprylate (SNAC) for oral administration."
+    },
+    {
+      "id": "mechanism_of_action:glp_1_receptor_agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "name": "GLP-1 receptor agonism",
+      "confidence": 0.9,
+      "source_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac",
+        "pmid_32442310"
+      ],
+      "attributes": {
+        "mechanism_class": "activation",
+        "target": "GLP-1 receptor"
+      },
+      "context": "The patent describes pharmaceutical compositions combining a GLP-1 receptor agonist with sodium N-(8-(2-hydroxybenzoyl)amino)caprylate (SNAC) for oral administration.",
+      "community": "Glp-1 Receptor Agonism / Insulin Resistance"
+    },
+    {
+      "id": "mechanism_of_action:transcellular_absorption_enhancement_via_transient_gastric_epithelial_permeability",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "name": "transcellular absorption enhancement via transient gastric epithelial permeability",
+      "confidence": 0.9,
+      "source_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "attributes": {
+        "mechanism_class": "modulation",
+        "target": "gastric epithelium"
+      },
+      "context": "SNAC is an absorption enhancer that enables oral delivery of peptide therapeutics by transiently increasing gastric epithelial permeability."
+    },
+    {
+      "id": "organization:novo_nordisk",
+      "entity_type": "ORGANIZATION",
+      "name": "Novo Nordisk",
+      "confidence": 0.98,
+      "source_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "attributes": {
+        "organization_type": "pharma",
+        "country": "Denmark",
+        "legal_name": "Novo Nordisk AS"
+      },
+      "context": "Assignee: Novo Nordisk AS"
+    },
+    {
+      "id": "publication:us11622996b2",
+      "entity_type": "PUBLICATION",
+      "name": "US11622996B2",
+      "confidence": 0.98,
+      "source_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "attributes": {
+        "publication_type": "patent",
+        "patent_number": "US11622996B2",
+        "assignee": "Novo Nordisk AS",
+        "filing_date": "2019-05-06",
+        "title": "Solid compositions comprising a GLP-1 agonist and SNAC for oral delivery"
+      },
+      "context": "Patent ID: US11622996B2 ... Filing Date: May 6, 2019 ... Title: Solid compositions comprising a GLP-1 agonist and SNAC for oral delivery"
+    },
+    {
+      "id": "doc:pmid_32442310",
+      "entity_type": "DOCUMENT",
+      "name": "pmid_32442310",
+      "confidence": 1.0,
+      "source_documents": [
+        "pmid_32442310"
+      ],
+      "attributes": {
+        "path": ""
+      }
+    },
+    {
+      "id": "compound:metformin",
+      "entity_type": "COMPOUND",
+      "name": "metformin",
+      "confidence": 0.9,
+      "source_documents": [
+        "pmid_32442310"
+      ],
+      "attributes": {
+        "inn": "metformin",
+        "drug_class": "biguanide"
+      },
+      "context": "the administration of GLP-1 RA (mainly liraglutide) alone or in combination with metformin has been investigated in women with obesity and PCOS",
+      "community": "Glp-1 Receptor Agonism / Insulin Resistance"
+    },
+    {
+      "id": "protein:glucagon_like_peptide_1_receptor",
+      "entity_type": "PROTEIN",
+      "name": "Glucagon-Like Peptide-1 Receptor",
+      "confidence": 0.9,
+      "source_documents": [
+        "pmid_32442310"
+      ],
+      "attributes": {
+        "protein_class": "GPCR",
+        "aliases": "GLP-1 receptor"
+      },
+      "context": "the emerging role of glucagon-like peptide-1 (GLP-1) receptor agonists (GLP-1 RAs) as a therapeutic option for obese women with PCOS",
+      "community": "Glp-1 Receptor Agonism / Insulin Resistance"
+    },
+    {
+      "id": "protein:glp_1",
+      "entity_type": "PROTEIN",
+      "name": "GLP-1",
+      "confidence": 0.85,
+      "source_documents": [
+        "pmid_32442310"
+      ],
+      "attributes": {
+        "protein_class": "incretin hormone",
+        "aliases": "glucagon-like peptide-1"
+      },
+      "context": "an underlying pathophysiological link between obesity, GLP-1 kinetic alterations, and PCOS pathogenesis",
+      "community": "Glp-1 Receptor Agonism / Insulin Resistance"
+    },
+    {
+      "id": "disease:polycystic_ovary_syndrome",
+      "entity_type": "DISEASE",
+      "name": "Polycystic Ovary Syndrome",
+      "confidence": 0.95,
+      "source_documents": [
+        "pmid_32442310"
+      ],
+      "attributes": {
+        "mesh_term": "Polycystic Ovary Syndrome",
+        "aliases": "PCOS"
+      },
+      "context": "Polycystic ovary syndrome (PCOS) is one of the leading causes of infertility",
+      "community": "Glp-1 Receptor Agonism / Insulin Resistance"
+    },
+    {
+      "id": "disease:obesity",
+      "entity_type": "DISEASE",
+      "name": "Obesity",
+      "confidence": 0.98,
+      "source_documents": [
+        "pmid_32442310",
+        "pmid_41523559"
+      ],
+      "attributes": {
+        "mesh_term": "Obesity"
+      },
+      "context": "Obesity is responsible for an increased risk of sub-fecundity and infertility",
+      "community": "Glp-1 Receptor Agonism / Insulin Resistance"
+    },
+    {
+      "id": "disease:female_infertility",
+      "entity_type": "DISEASE",
+      "name": "Female Infertility",
+      "confidence": 0.9,
+      "source_documents": [
+        "pmid_32442310"
+      ],
+      "attributes": {
+        "mesh_term": "Infertility, Female"
+      },
+      "context": "Obesity is responsible for an increased risk of sub-fecundity and infertility",
+      "community": "Glp-1 Receptor Agonism / Insulin Resistance"
+    },
+    {
+      "id": "disease:type_2_diabetes_mellitus",
+      "entity_type": "DISEASE",
+      "name": "Type 2 Diabetes Mellitus",
+      "confidence": 0.95,
+      "source_documents": [
+        "pmid_32442310",
+        "pmid_41523559"
+      ],
+      "attributes": {
+        "mesh_term": "Diabetes Mellitus, Type 2",
+        "aliases": "diabetes",
+        "abbreviation": "T2DM"
+      },
+      "context": "Based on the positive results in patients affected by obesity, with or without diabetes"
+    },
+    {
+      "id": "phenotype:insulin_resistance",
+      "entity_type": "PHENOTYPE",
+      "name": "insulin resistance",
+      "confidence": 0.8,
+      "source_documents": [
+        "pmid_32442310"
+      ],
+      "attributes": {
+        "phenotype_category": "physiological",
+        "clinical_relevance": "mechanism"
+      },
+      "context": "Several studies demonstrated significant weight loss and testosterone reduction, with mixed results relative to improvements in insulin resistance parameters and menstrual patterns",
+      "community": "Glp-1 Receptor Agonism / Insulin Resistance"
+    },
+    {
+      "id": "biomarker:body_mass_index",
+      "entity_type": "BIOMARKER",
+      "name": "body mass index",
+      "confidence": 0.85,
+      "source_documents": [
+        "pmid_32442310"
+      ],
+      "attributes": {
+        "biomarker_type": "prognostic",
+        "analyte": "anthropometric",
+        "aliases": "BMI"
+      },
+      "context": "higher body mass index (BMI) is associated with poorer fertility prognosis",
+      "community": "Glp-1 Receptor Agonism / Insulin Resistance"
+    },
+    {
+      "id": "doc:pmid_41523559",
+      "entity_type": "DOCUMENT",
+      "name": "pmid_41523559",
+      "confidence": 1.0,
+      "source_documents": [
+        "pmid_41523559"
+      ],
+      "attributes": {
+        "path": ""
+      }
+    },
+    {
+      "id": "compound:tirzepatide",
+      "entity_type": "COMPOUND",
+      "name": "tirzepatide",
+      "confidence": 0.98,
+      "source_documents": [
+        "pmid_41523559"
+      ],
+      "attributes": {
+        "modality": "dual GIP/GLP-1 receptor agonist",
+        "class": "incretin-based therapy"
+      },
+      "context": "Semaglutide and tirzepatide are among the most promising agents."
+    },
+    {
+      "id": "adverse_event:gastrointestinal_adverse_events",
+      "entity_type": "ADVERSE_EVENT",
+      "name": "gastrointestinal adverse events",
+      "confidence": 0.95,
+      "source_documents": [
+        "pmid_41523559"
+      ],
+      "attributes": {
+        "severity": "mostly non-serious",
+        "frequency": "most common"
+      },
+      "context": "Gastrointestinal adverse events were the most common, occurring more frequently with tirzepatide"
+    }
+  ],
+  "links": [
+    {
+      "source": "compound:semaglutide",
+      "target": "doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "relation_id": "compound:semaglutide|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "canonical_key": "compound:semaglutide|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.95,
+      "evidence": "",
+      "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+      "support_count": 1,
+      "support_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+          "confidence": 0.95,
+          "evidence": "",
+          "relation_id": "compound:semaglutide|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:semaglutide",
+      "target": "protein:glp_1_receptor",
+      "relation_id": "compound:semaglutide|ACTIVATES|protein:glp_1_receptor",
+      "canonical_key": "compound:semaglutide|ACTIVATES|protein:glp_1_receptor",
+      "relation_type": "ACTIVATES",
+      "confidence": 0.9,
+      "evidence": "The patent describes pharmaceutical compositions combining a GLP-1 receptor agonist with sodium N-(8-(2-hydroxybenzoyl)amino)caprylate (SNAC) for oral administration.",
+      "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+      "support_count": 1,
+      "support_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+          "confidence": 0.9,
+          "evidence": "The patent describes pharmaceutical compositions combining a GLP-1 receptor agonist with sodium N-(8-(2-hydroxybenzoyl)amino)caprylate (SNAC) for oral administration.",
+          "relation_id": "compound:semaglutide|ACTIVATES|protein:glp_1_receptor|patent_10_us11622996b2_oral_semaglutide_snac"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:semaglutide",
+      "target": "mechanism_of_action:glp_1_receptor_agonism",
+      "relation_id": "compound:semaglutide|HAS_MECHANISM|mechanism_of_action:glp_1_receptor_agonism",
+      "canonical_key": "compound:semaglutide|HAS_MECHANISM|mechanism_of_action:glp_1_receptor_agonism",
+      "relation_type": "HAS_MECHANISM",
+      "confidence": 0.95,
+      "evidence": "The patent describes pharmaceutical compositions combining a GLP-1 receptor agonist with sodium N-(8-(2-hydroxybenzoyl)amino)caprylate (SNAC) for oral administration.",
+      "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+      "support_count": 1,
+      "support_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+          "confidence": 0.95,
+          "evidence": "The patent describes pharmaceutical compositions combining a GLP-1 receptor agonist with sodium N-(8-(2-hydroxybenzoyl)amino)caprylate (SNAC) for oral administration.",
+          "relation_id": "compound:semaglutide|HAS_MECHANISM|mechanism_of_action:glp_1_receptor_agonism|patent_10_us11622996b2_oral_semaglutide_snac"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:semaglutide",
+      "target": "compound:snac",
+      "relation_id": "compound:semaglutide|COMBINED_WITH|compound:snac",
+      "canonical_key": "compound:semaglutide|COMBINED_WITH|compound:snac",
+      "relation_type": "COMBINED_WITH",
+      "confidence": 0.98,
+      "evidence": "Semaglutide is formulated as oral tablets containing 300 mg SNAC with 3 mg, 7 mg, or 14 mg semaglutide.",
+      "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+      "support_count": 1,
+      "support_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+          "confidence": 0.98,
+          "evidence": "Semaglutide is formulated as oral tablets containing 300 mg SNAC with 3 mg, 7 mg, or 14 mg semaglutide.",
+          "relation_id": "compound:semaglutide|COMBINED_WITH|compound:snac|patent_10_us11622996b2_oral_semaglutide_snac"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:semaglutide",
+      "target": "publication:us11622996b2",
+      "relation_id": "compound:semaglutide|PUBLISHED_IN|publication:us11622996b2",
+      "canonical_key": "compound:semaglutide|PUBLISHED_IN|publication:us11622996b2",
+      "relation_type": "PUBLISHED_IN",
+      "confidence": 0.95,
+      "evidence": "Title: Solid compositions comprising a GLP-1 agonist and SNAC for oral delivery ... Semaglutide is formulated as oral tablets containing 300 mg SNAC with 3 mg, 7 mg, or 14 mg semaglutide.",
+      "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+      "support_count": 1,
+      "support_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+          "confidence": 0.95,
+          "evidence": "Title: Solid compositions comprising a GLP-1 agonist and SNAC for oral delivery ... Semaglutide is formulated as oral tablets containing 300 mg SNAC with 3 mg, 7 mg, or 14 mg semaglutide.",
+          "relation_id": "compound:semaglutide|PUBLISHED_IN|publication:us11622996b2|patent_10_us11622996b2_oral_semaglutide_snac"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:semaglutide",
+      "target": "doc:pmid_41523559",
+      "relation_id": "compound:semaglutide|MENTIONED_IN|doc:pmid_41523559",
+      "canonical_key": "compound:semaglutide|MENTIONED_IN|doc:pmid_41523559",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.98,
+      "evidence": "",
+      "source_document": "pmid_41523559",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_41523559"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_41523559",
+          "confidence": 0.98,
+          "evidence": "",
+          "relation_id": "compound:semaglutide|MENTIONED_IN|doc:pmid_41523559"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:semaglutide",
+      "target": "disease:obesity",
+      "relation_id": "compound:semaglutide|INDICATED_FOR|disease:obesity",
+      "canonical_key": "compound:semaglutide|INDICATED_FOR|disease:obesity",
+      "relation_type": "INDICATED_FOR",
+      "confidence": 0.95,
+      "evidence": "Tirzepatide and semaglutide were both associated with weight reduction in obesity",
+      "source_document": "pmid_41523559",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_41523559"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_41523559",
+          "confidence": 0.95,
+          "evidence": "Tirzepatide and semaglutide were both associated with weight reduction in obesity",
+          "relation_id": "compound:semaglutide|INDICATED_FOR|disease:obesity|pmid_41523559"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:semaglutide",
+      "target": "disease:type_2_diabetes_mellitus",
+      "relation_id": "compound:semaglutide|INDICATED_FOR|disease:type_2_diabetes_mellitus",
+      "canonical_key": "compound:semaglutide|INDICATED_FOR|disease:type_2_diabetes_mellitus",
+      "relation_type": "INDICATED_FOR",
+      "confidence": 0.85,
+      "evidence": "Incretin-based therapies have emerged as effective strategies for obesity and type 2 diabetes mellitus (T2DM) management. Semaglutide and tirzepatide are among the most promising agents.",
+      "source_document": "pmid_41523559",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_41523559"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_41523559",
+          "confidence": 0.85,
+          "evidence": "Incretin-based therapies have emerged as effective strategies for obesity and type 2 diabetes mellitus (T2DM) management. Semaglutide and tirzepatide are among the most promising agents.",
+          "relation_id": "compound:semaglutide|INDICATED_FOR|disease:type_2_diabetes_mellitus|pmid_41523559"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:semaglutide",
+      "target": "adverse_event:gastrointestinal_adverse_events",
+      "relation_id": "compound:semaglutide|CAUSES|adverse_event:gastrointestinal_adverse_events",
+      "canonical_key": "compound:semaglutide|CAUSES|adverse_event:gastrointestinal_adverse_events",
+      "relation_type": "CAUSES",
+      "confidence": 0.9,
+      "evidence": "Gastrointestinal adverse events were the most common, occurring more frequently with tirzepatide, while serious events were rare.",
+      "source_document": "pmid_41523559",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_41523559"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_41523559",
+          "confidence": 0.9,
+          "evidence": "Gastrointestinal adverse events were the most common, occurring more frequently with tirzepatide, while serious events were rare.",
+          "relation_id": "compound:semaglutide|CAUSES|adverse_event:gastrointestinal_adverse_events|pmid_41523559"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:snac",
+      "target": "doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "relation_id": "compound:snac|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "canonical_key": "compound:snac|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.95,
+      "evidence": "",
+      "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+      "support_count": 1,
+      "support_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+          "confidence": 0.95,
+          "evidence": "",
+          "relation_id": "compound:snac|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:snac",
+      "target": "mechanism_of_action:transcellular_absorption_enhancement_via_transient_gastric_epithelial_permeability",
+      "relation_id": "compound:snac|HAS_MECHANISM|mechanism_of_action:transcellular_absorption_enhancement_via_transient_gastric_epithelial_permeability",
+      "canonical_key": "compound:snac|HAS_MECHANISM|mechanism_of_action:transcellular_absorption_enhancement_via_transient_gastric_epithelial_permeability",
+      "relation_type": "HAS_MECHANISM",
+      "confidence": 0.95,
+      "evidence": "SNAC is an absorption enhancer that enables oral delivery of peptide therapeutics by transiently increasing gastric epithelial permeability.",
+      "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+      "support_count": 1,
+      "support_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+          "confidence": 0.95,
+          "evidence": "SNAC is an absorption enhancer that enables oral delivery of peptide therapeutics by transiently increasing gastric epithelial permeability.",
+          "relation_id": "compound:snac|HAS_MECHANISM|mechanism_of_action:transcellular_absorption_enhancement_via_transient_gastric_epithelial_permeability|patent_10_us11622996b2_oral_semaglutide_snac"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:snac",
+      "target": "compound:octanoic_acid",
+      "relation_id": "compound:snac|DERIVED_FROM|compound:octanoic_acid",
+      "canonical_key": "compound:snac|DERIVED_FROM|compound:octanoic_acid",
+      "relation_type": "DERIVED_FROM",
+      "confidence": 0.8,
+      "evidence": "The related caprylic acid backbone has the identifier WWZKQHOCKIZLMA-UHFFFAOYSA-N (octanoic acid).",
+      "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+      "support_count": 1,
+      "support_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+          "confidence": 0.8,
+          "evidence": "The related caprylic acid backbone has the identifier WWZKQHOCKIZLMA-UHFFFAOYSA-N (octanoic acid).",
+          "relation_id": "compound:snac|DERIVED_FROM|compound:octanoic_acid|patent_10_us11622996b2_oral_semaglutide_snac"
+        }
+      ],
+      "epistemic_status": "prophetic"
+    },
+    {
+      "source": "compound:octanoic_acid",
+      "target": "doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "relation_id": "compound:octanoic_acid|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "canonical_key": "compound:octanoic_acid|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.9,
+      "evidence": "",
+      "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+      "support_count": 1,
+      "support_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+          "confidence": 0.9,
+          "evidence": "",
+          "relation_id": "compound:octanoic_acid|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:liraglutide",
+      "target": "doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "relation_id": "compound:liraglutide|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "canonical_key": "compound:liraglutide|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.9,
+      "evidence": "",
+      "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+      "support_count": 1,
+      "support_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+          "confidence": 0.9,
+          "evidence": "",
+          "relation_id": "compound:liraglutide|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:liraglutide",
+      "target": "protein:glp_1_receptor",
+      "relation_id": "compound:liraglutide|ACTIVATES|protein:glp_1_receptor",
+      "canonical_key": "compound:liraglutide|ACTIVATES|protein:glp_1_receptor",
+      "relation_type": "ACTIVATES",
+      "confidence": 0.85,
+      "evidence": "The GLP-1 agonists specifically discussed include semaglutide and liraglutide.",
+      "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+      "support_count": 1,
+      "support_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+          "confidence": 0.85,
+          "evidence": "The GLP-1 agonists specifically discussed include semaglutide and liraglutide.",
+          "relation_id": "compound:liraglutide|ACTIVATES|protein:glp_1_receptor|patent_10_us11622996b2_oral_semaglutide_snac"
+        }
+      ],
+      "epistemic_status": "prophetic"
+    },
+    {
+      "source": "compound:liraglutide",
+      "target": "mechanism_of_action:glp_1_receptor_agonism",
+      "relation_id": "compound:liraglutide|HAS_MECHANISM|mechanism_of_action:glp_1_receptor_agonism",
+      "canonical_key": "compound:liraglutide|HAS_MECHANISM|mechanism_of_action:glp_1_receptor_agonism",
+      "relation_type": "HAS_MECHANISM",
+      "confidence": 0.99,
+      "evidence": "the emerging role of glucagon-like peptide-1 (GLP-1) receptor agonists (GLP-1 RAs) as a therapeutic option for obese women with PCOS",
+      "source_document": "pmid_32442310",
+      "support_count": 2,
+      "support_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac",
+        "pmid_32442310"
+      ],
+      "support_doc_count": 2,
+      "mentions": [
+        {
+          "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+          "confidence": 0.9,
+          "evidence": "The GLP-1 agonists specifically discussed include semaglutide and liraglutide.",
+          "relation_id": "compound:liraglutide|HAS_MECHANISM|mechanism_of_action:glp_1_receptor_agonism|patent_10_us11622996b2_oral_semaglutide_snac"
+        },
+        {
+          "source_document": "pmid_32442310",
+          "confidence": 0.9,
+          "evidence": "the emerging role of glucagon-like peptide-1 (GLP-1) receptor agonists (GLP-1 RAs) as a therapeutic option for obese women with PCOS",
+          "relation_id": "compound:liraglutide|HAS_MECHANISM|mechanism_of_action:glp_1_receptor_agonism|pmid_32442310"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:liraglutide",
+      "target": "doc:pmid_32442310",
+      "relation_id": "compound:liraglutide|MENTIONED_IN|doc:pmid_32442310",
+      "canonical_key": "compound:liraglutide|MENTIONED_IN|doc:pmid_32442310",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.9,
+      "evidence": "",
+      "source_document": "pmid_32442310",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_32442310"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_32442310",
+          "confidence": 0.9,
+          "evidence": "",
+          "relation_id": "compound:liraglutide|MENTIONED_IN|doc:pmid_32442310"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:liraglutide",
+      "target": "disease:obesity",
+      "relation_id": "compound:liraglutide|INDICATED_FOR|disease:obesity",
+      "canonical_key": "compound:liraglutide|INDICATED_FOR|disease:obesity",
+      "relation_type": "INDICATED_FOR",
+      "confidence": 0.85,
+      "evidence": "Based on the positive results in patients affected by obesity, with or without diabetes, the administration of GLP-1 RA (mainly liraglutide) alone or in combination with metformin has been investigated",
+      "source_document": "pmid_32442310",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_32442310"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_32442310",
+          "confidence": 0.85,
+          "evidence": "Based on the positive results in patients affected by obesity, with or without diabetes, the administration of GLP-1 RA (mainly liraglutide) alone or in combination with metformin has been investigated",
+          "relation_id": "compound:liraglutide|INDICATED_FOR|disease:obesity|pmid_32442310"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:liraglutide",
+      "target": "disease:polycystic_ovary_syndrome",
+      "relation_id": "compound:liraglutide|INDICATED_FOR|disease:polycystic_ovary_syndrome",
+      "canonical_key": "compound:liraglutide|INDICATED_FOR|disease:polycystic_ovary_syndrome",
+      "relation_type": "INDICATED_FOR",
+      "confidence": 0.8,
+      "evidence": "the administration of GLP-1 RA (mainly liraglutide) alone or in combination with metformin has been investigated in women with obesity and PCOS",
+      "source_document": "pmid_32442310",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_32442310"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_32442310",
+          "confidence": 0.8,
+          "evidence": "the administration of GLP-1 RA (mainly liraglutide) alone or in combination with metformin has been investigated in women with obesity and PCOS",
+          "relation_id": "compound:liraglutide|INDICATED_FOR|disease:polycystic_ovary_syndrome|pmid_32442310"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:liraglutide",
+      "target": "compound:metformin",
+      "relation_id": "compound:liraglutide|COMBINED_WITH|compound:metformin",
+      "canonical_key": "compound:liraglutide|COMBINED_WITH|compound:metformin",
+      "relation_type": "COMBINED_WITH",
+      "confidence": 0.9,
+      "evidence": "the administration of GLP-1 RA (mainly liraglutide) alone or in combination with metformin has been investigated in women with obesity and PCOS",
+      "source_document": "pmid_32442310",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_32442310"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_32442310",
+          "confidence": 0.9,
+          "evidence": "the administration of GLP-1 RA (mainly liraglutide) alone or in combination with metformin has been investigated in women with obesity and PCOS",
+          "relation_id": "compound:liraglutide|COMBINED_WITH|compound:metformin|pmid_32442310"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:liraglutide",
+      "target": "protein:glucagon_like_peptide_1_receptor",
+      "relation_id": "compound:liraglutide|ACTIVATES|protein:glucagon_like_peptide_1_receptor",
+      "canonical_key": "compound:liraglutide|ACTIVATES|protein:glucagon_like_peptide_1_receptor",
+      "relation_type": "ACTIVATES",
+      "confidence": 0.9,
+      "evidence": "glucagon-like peptide-1 (GLP-1) receptor agonists (GLP-1 RAs)",
+      "source_document": "pmid_32442310",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_32442310"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_32442310",
+          "confidence": 0.9,
+          "evidence": "glucagon-like peptide-1 (GLP-1) receptor agonists (GLP-1 RAs)",
+          "relation_id": "compound:liraglutide|ACTIVATES|protein:glucagon_like_peptide_1_receptor|pmid_32442310"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:orforglipron",
+      "target": "doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "relation_id": "compound:orforglipron|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "canonical_key": "compound:orforglipron|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.85,
+      "evidence": "",
+      "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+      "support_count": 1,
+      "support_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+          "confidence": 0.85,
+          "evidence": "",
+          "relation_id": "compound:orforglipron|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:orforglipron",
+      "target": "protein:glp_1_receptor",
+      "relation_id": "compound:orforglipron|ACTIVATES|protein:glp_1_receptor",
+      "canonical_key": "compound:orforglipron|ACTIVATES|protein:glp_1_receptor",
+      "relation_type": "ACTIVATES",
+      "confidence": 0.8,
+      "evidence": "Next-generation oral approaches include small-molecule nonpeptide GLP-1 agonists (orforglipron, danuglipron) that do not require absorption enhancers.",
+      "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+      "support_count": 1,
+      "support_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+          "confidence": 0.8,
+          "evidence": "Next-generation oral approaches include small-molecule nonpeptide GLP-1 agonists (orforglipron, danuglipron) that do not require absorption enhancers.",
+          "relation_id": "compound:orforglipron|ACTIVATES|protein:glp_1_receptor|patent_10_us11622996b2_oral_semaglutide_snac"
+        }
+      ],
+      "epistemic_status": "prophetic"
+    },
+    {
+      "source": "compound:danuglipron",
+      "target": "doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "relation_id": "compound:danuglipron|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "canonical_key": "compound:danuglipron|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.85,
+      "evidence": "",
+      "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+      "support_count": 1,
+      "support_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+          "confidence": 0.85,
+          "evidence": "",
+          "relation_id": "compound:danuglipron|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:danuglipron",
+      "target": "protein:glp_1_receptor",
+      "relation_id": "compound:danuglipron|ACTIVATES|protein:glp_1_receptor",
+      "canonical_key": "compound:danuglipron|ACTIVATES|protein:glp_1_receptor",
+      "relation_type": "ACTIVATES",
+      "confidence": 0.8,
+      "evidence": "Next-generation oral approaches include small-molecule nonpeptide GLP-1 agonists (orforglipron, danuglipron) that do not require absorption enhancers.",
+      "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+      "support_count": 1,
+      "support_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+          "confidence": 0.8,
+          "evidence": "Next-generation oral approaches include small-molecule nonpeptide GLP-1 agonists (orforglipron, danuglipron) that do not require absorption enhancers.",
+          "relation_id": "compound:danuglipron|ACTIVATES|protein:glp_1_receptor|patent_10_us11622996b2_oral_semaglutide_snac"
+        }
+      ],
+      "epistemic_status": "prophetic"
+    },
+    {
+      "source": "protein:glp_1_receptor",
+      "target": "doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "relation_id": "protein:glp_1_receptor|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "canonical_key": "protein:glp_1_receptor|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.9,
+      "evidence": "",
+      "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+      "support_count": 1,
+      "support_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+          "confidence": 0.9,
+          "evidence": "",
+          "relation_id": "protein:glp_1_receptor|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "mechanism_of_action:glp_1_receptor_agonism",
+      "target": "doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "relation_id": "mechanism_of_action:glp_1_receptor_agonism|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "canonical_key": "mechanism_of_action:glp_1_receptor_agonism|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.9,
+      "evidence": "",
+      "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+      "support_count": 1,
+      "support_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+          "confidence": 0.9,
+          "evidence": "",
+          "relation_id": "mechanism_of_action:glp_1_receptor_agonism|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "mechanism_of_action:glp_1_receptor_agonism",
+      "target": "doc:pmid_32442310",
+      "relation_id": "mechanism_of_action:glp_1_receptor_agonism|MENTIONED_IN|doc:pmid_32442310",
+      "canonical_key": "mechanism_of_action:glp_1_receptor_agonism|MENTIONED_IN|doc:pmid_32442310",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.9,
+      "evidence": "",
+      "source_document": "pmid_32442310",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_32442310"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_32442310",
+          "confidence": 0.9,
+          "evidence": "",
+          "relation_id": "mechanism_of_action:glp_1_receptor_agonism|MENTIONED_IN|doc:pmid_32442310"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "mechanism_of_action:transcellular_absorption_enhancement_via_transient_gastric_epithelial_permeability",
+      "target": "doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "relation_id": "mechanism_of_action:transcellular_absorption_enhancement_via_transient_gastric_epithelial_permeability|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "canonical_key": "mechanism_of_action:transcellular_absorption_enhancement_via_transient_gastric_epithelial_permeability|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.9,
+      "evidence": "",
+      "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+      "support_count": 1,
+      "support_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+          "confidence": 0.9,
+          "evidence": "",
+          "relation_id": "mechanism_of_action:transcellular_absorption_enhancement_via_transient_gastric_epithelial_permeability|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "organization:novo_nordisk",
+      "target": "doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "relation_id": "organization:novo_nordisk|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "canonical_key": "organization:novo_nordisk|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.98,
+      "evidence": "",
+      "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+      "support_count": 1,
+      "support_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+          "confidence": 0.98,
+          "evidence": "",
+          "relation_id": "organization:novo_nordisk|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "organization:novo_nordisk",
+      "target": "compound:semaglutide",
+      "relation_id": "compound:semaglutide|DEVELOPED_BY|organization:novo_nordisk",
+      "canonical_key": "compound:semaglutide|DEVELOPED_BY|organization:novo_nordisk",
+      "relation_type": "DEVELOPES",
+      "confidence": 0.9,
+      "evidence": "Assignee: Novo Nordisk AS ... This oral formulation is marketed as Rybelsus.",
+      "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+      "support_count": 1,
+      "support_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+          "confidence": 0.9,
+          "evidence": "Assignee: Novo Nordisk AS ... This oral formulation is marketed as Rybelsus.",
+          "relation_id": "compound:semaglutide|DEVELOPED_BY|organization:novo_nordisk|patent_10_us11622996b2_oral_semaglutide_snac"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "publication:us11622996b2",
+      "target": "doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "relation_id": "publication:us11622996b2|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "canonical_key": "publication:us11622996b2|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.98,
+      "evidence": "",
+      "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+      "support_count": 1,
+      "support_documents": [
+        "patent_10_us11622996b2_oral_semaglutide_snac"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "patent_10_us11622996b2_oral_semaglutide_snac",
+          "confidence": 0.98,
+          "evidence": "",
+          "relation_id": "publication:us11622996b2|MENTIONED_IN|doc:patent_10_us11622996b2_oral_semaglutide_snac"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:metformin",
+      "target": "doc:pmid_32442310",
+      "relation_id": "compound:metformin|MENTIONED_IN|doc:pmid_32442310",
+      "canonical_key": "compound:metformin|MENTIONED_IN|doc:pmid_32442310",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.9,
+      "evidence": "",
+      "source_document": "pmid_32442310",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_32442310"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_32442310",
+          "confidence": 0.9,
+          "evidence": "",
+          "relation_id": "compound:metformin|MENTIONED_IN|doc:pmid_32442310"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:metformin",
+      "target": "disease:polycystic_ovary_syndrome",
+      "relation_id": "compound:metformin|INDICATED_FOR|disease:polycystic_ovary_syndrome",
+      "canonical_key": "compound:metformin|INDICATED_FOR|disease:polycystic_ovary_syndrome",
+      "relation_type": "INDICATED_FOR",
+      "confidence": 0.75,
+      "evidence": "the administration of GLP-1 RA (mainly liraglutide) alone or in combination with metformin has been investigated in women with obesity and PCOS",
+      "source_document": "pmid_32442310",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_32442310"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_32442310",
+          "confidence": 0.75,
+          "evidence": "the administration of GLP-1 RA (mainly liraglutide) alone or in combination with metformin has been investigated in women with obesity and PCOS",
+          "relation_id": "compound:metformin|INDICATED_FOR|disease:polycystic_ovary_syndrome|pmid_32442310"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "protein:glucagon_like_peptide_1_receptor",
+      "target": "doc:pmid_32442310",
+      "relation_id": "protein:glucagon_like_peptide_1_receptor|MENTIONED_IN|doc:pmid_32442310",
+      "canonical_key": "protein:glucagon_like_peptide_1_receptor|MENTIONED_IN|doc:pmid_32442310",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.9,
+      "evidence": "",
+      "source_document": "pmid_32442310",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_32442310"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_32442310",
+          "confidence": 0.9,
+          "evidence": "",
+          "relation_id": "protein:glucagon_like_peptide_1_receptor|MENTIONED_IN|doc:pmid_32442310"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "protein:glp_1",
+      "target": "doc:pmid_32442310",
+      "relation_id": "protein:glp_1|MENTIONED_IN|doc:pmid_32442310",
+      "canonical_key": "protein:glp_1|MENTIONED_IN|doc:pmid_32442310",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.85,
+      "evidence": "",
+      "source_document": "pmid_32442310",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_32442310"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_32442310",
+          "confidence": 0.85,
+          "evidence": "",
+          "relation_id": "protein:glp_1|MENTIONED_IN|doc:pmid_32442310"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "protein:glp_1",
+      "target": "protein:glucagon_like_peptide_1_receptor",
+      "relation_id": "protein:glp_1|ACTIVATES|protein:glucagon_like_peptide_1_receptor",
+      "canonical_key": "protein:glp_1|ACTIVATES|protein:glucagon_like_peptide_1_receptor",
+      "relation_type": "ACTIVATES",
+      "confidence": 0.85,
+      "evidence": "glucagon-like peptide-1 (GLP-1) receptor agonists",
+      "source_document": "pmid_32442310",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_32442310"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_32442310",
+          "confidence": 0.85,
+          "evidence": "glucagon-like peptide-1 (GLP-1) receptor agonists",
+          "relation_id": "protein:glp_1|ACTIVATES|protein:glucagon_like_peptide_1_receptor|pmid_32442310"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "protein:glp_1",
+      "target": "disease:polycystic_ovary_syndrome",
+      "relation_id": "protein:glp_1|ASSOCIATED_WITH|disease:polycystic_ovary_syndrome",
+      "canonical_key": "protein:glp_1|ASSOCIATED_WITH|disease:polycystic_ovary_syndrome",
+      "relation_type": "ASSOCIATED_WITH",
+      "confidence": 0.7,
+      "evidence": "Current experimental and clinical evidence suggests the presence of an underlying pathophysiological link between obesity, GLP-1 kinetic alterations, and PCOS pathogenesis",
+      "source_document": "pmid_32442310",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_32442310"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_32442310",
+          "confidence": 0.7,
+          "evidence": "Current experimental and clinical evidence suggests the presence of an underlying pathophysiological link between obesity, GLP-1 kinetic alterations, and PCOS pathogenesis",
+          "relation_id": "protein:glp_1|ASSOCIATED_WITH|disease:polycystic_ovary_syndrome|pmid_32442310"
+        }
+      ],
+      "epistemic_status": "hypothesized"
+    },
+    {
+      "source": "disease:polycystic_ovary_syndrome",
+      "target": "doc:pmid_32442310",
+      "relation_id": "disease:polycystic_ovary_syndrome|MENTIONED_IN|doc:pmid_32442310",
+      "canonical_key": "disease:polycystic_ovary_syndrome|MENTIONED_IN|doc:pmid_32442310",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.95,
+      "evidence": "",
+      "source_document": "pmid_32442310",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_32442310"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_32442310",
+          "confidence": 0.95,
+          "evidence": "",
+          "relation_id": "disease:polycystic_ovary_syndrome|MENTIONED_IN|doc:pmid_32442310"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "disease:polycystic_ovary_syndrome",
+      "target": "disease:female_infertility",
+      "relation_id": "disease:polycystic_ovary_syndrome|IMPLICATED_IN|disease:female_infertility",
+      "canonical_key": "disease:polycystic_ovary_syndrome|IMPLICATED_IN|disease:female_infertility",
+      "relation_type": "IMPLICATED_IN",
+      "confidence": 0.9,
+      "evidence": "Polycystic ovary syndrome (PCOS) is one of the leading causes of infertility",
+      "source_document": "pmid_32442310",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_32442310"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_32442310",
+          "confidence": 0.9,
+          "evidence": "Polycystic ovary syndrome (PCOS) is one of the leading causes of infertility",
+          "relation_id": "disease:polycystic_ovary_syndrome|IMPLICATED_IN|disease:female_infertility|pmid_32442310"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "disease:obesity",
+      "target": "doc:pmid_32442310",
+      "relation_id": "disease:obesity|MENTIONED_IN|doc:pmid_32442310",
+      "canonical_key": "disease:obesity|MENTIONED_IN|doc:pmid_32442310",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.95,
+      "evidence": "",
+      "source_document": "pmid_32442310",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_32442310"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_32442310",
+          "confidence": 0.95,
+          "evidence": "",
+          "relation_id": "disease:obesity|MENTIONED_IN|doc:pmid_32442310"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "disease:obesity",
+      "target": "disease:female_infertility",
+      "relation_id": "disease:obesity|IMPLICATED_IN|disease:female_infertility",
+      "canonical_key": "disease:obesity|IMPLICATED_IN|disease:female_infertility",
+      "relation_type": "IMPLICATED_IN",
+      "confidence": 0.9,
+      "evidence": "Obesity is responsible for an increased risk of sub-fecundity and infertility",
+      "source_document": "pmid_32442310",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_32442310"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_32442310",
+          "confidence": 0.9,
+          "evidence": "Obesity is responsible for an increased risk of sub-fecundity and infertility",
+          "relation_id": "disease:obesity|IMPLICATED_IN|disease:female_infertility|pmid_32442310"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "disease:obesity",
+      "target": "disease:polycystic_ovary_syndrome",
+      "relation_id": "disease:obesity|ASSOCIATED_WITH|disease:polycystic_ovary_syndrome",
+      "canonical_key": "disease:obesity|ASSOCIATED_WITH|disease:polycystic_ovary_syndrome",
+      "relation_type": "ASSOCIATED_WITH",
+      "confidence": 0.85,
+      "evidence": "many women with PCOS are also overweight or obese",
+      "source_document": "pmid_32442310",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_32442310"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_32442310",
+          "confidence": 0.85,
+          "evidence": "many women with PCOS are also overweight or obese",
+          "relation_id": "disease:obesity|ASSOCIATED_WITH|disease:polycystic_ovary_syndrome|pmid_32442310"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "disease:obesity",
+      "target": "doc:pmid_41523559",
+      "relation_id": "disease:obesity|MENTIONED_IN|doc:pmid_41523559",
+      "canonical_key": "disease:obesity|MENTIONED_IN|doc:pmid_41523559",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.98,
+      "evidence": "",
+      "source_document": "pmid_41523559",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_41523559"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_41523559",
+          "confidence": 0.98,
+          "evidence": "",
+          "relation_id": "disease:obesity|MENTIONED_IN|doc:pmid_41523559"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "disease:female_infertility",
+      "target": "doc:pmid_32442310",
+      "relation_id": "disease:female_infertility|MENTIONED_IN|doc:pmid_32442310",
+      "canonical_key": "disease:female_infertility|MENTIONED_IN|doc:pmid_32442310",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.9,
+      "evidence": "",
+      "source_document": "pmid_32442310",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_32442310"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_32442310",
+          "confidence": 0.9,
+          "evidence": "",
+          "relation_id": "disease:female_infertility|MENTIONED_IN|doc:pmid_32442310"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "disease:type_2_diabetes_mellitus",
+      "target": "doc:pmid_32442310",
+      "relation_id": "disease:type_2_diabetes_mellitus|MENTIONED_IN|doc:pmid_32442310",
+      "canonical_key": "disease:type_2_diabetes_mellitus|MENTIONED_IN|doc:pmid_32442310",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.7,
+      "evidence": "",
+      "source_document": "pmid_32442310",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_32442310"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_32442310",
+          "confidence": 0.7,
+          "evidence": "",
+          "relation_id": "disease:type_2_diabetes_mellitus|MENTIONED_IN|doc:pmid_32442310"
+        }
+      ],
+      "epistemic_status": "unclassified"
+    },
+    {
+      "source": "disease:type_2_diabetes_mellitus",
+      "target": "doc:pmid_41523559",
+      "relation_id": "disease:type_2_diabetes_mellitus|MENTIONED_IN|doc:pmid_41523559",
+      "canonical_key": "disease:type_2_diabetes_mellitus|MENTIONED_IN|doc:pmid_41523559",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.95,
+      "evidence": "",
+      "source_document": "pmid_41523559",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_41523559"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_41523559",
+          "confidence": 0.95,
+          "evidence": "",
+          "relation_id": "disease:type_2_diabetes_mellitus|MENTIONED_IN|doc:pmid_41523559"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "phenotype:insulin_resistance",
+      "target": "doc:pmid_32442310",
+      "relation_id": "phenotype:insulin_resistance|MENTIONED_IN|doc:pmid_32442310",
+      "canonical_key": "phenotype:insulin_resistance|MENTIONED_IN|doc:pmid_32442310",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.8,
+      "evidence": "",
+      "source_document": "pmid_32442310",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_32442310"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_32442310",
+          "confidence": 0.8,
+          "evidence": "",
+          "relation_id": "phenotype:insulin_resistance|MENTIONED_IN|doc:pmid_32442310"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "phenotype:insulin_resistance",
+      "target": "disease:polycystic_ovary_syndrome",
+      "relation_id": "phenotype:insulin_resistance|IMPLICATED_IN|disease:polycystic_ovary_syndrome",
+      "canonical_key": "phenotype:insulin_resistance|IMPLICATED_IN|disease:polycystic_ovary_syndrome",
+      "relation_type": "IMPLICATED_IN",
+      "confidence": 0.7,
+      "evidence": "mixed results relative to improvements in insulin resistance parameters and menstrual patterns",
+      "source_document": "pmid_32442310",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_32442310"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_32442310",
+          "confidence": 0.7,
+          "evidence": "mixed results relative to improvements in insulin resistance parameters and menstrual patterns",
+          "relation_id": "phenotype:insulin_resistance|IMPLICATED_IN|disease:polycystic_ovary_syndrome|pmid_32442310"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "biomarker:body_mass_index",
+      "target": "doc:pmid_32442310",
+      "relation_id": "biomarker:body_mass_index|MENTIONED_IN|doc:pmid_32442310",
+      "canonical_key": "biomarker:body_mass_index|MENTIONED_IN|doc:pmid_32442310",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.85,
+      "evidence": "",
+      "source_document": "pmid_32442310",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_32442310"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_32442310",
+          "confidence": 0.85,
+          "evidence": "",
+          "relation_id": "biomarker:body_mass_index|MENTIONED_IN|doc:pmid_32442310"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "biomarker:body_mass_index",
+      "target": "disease:female_infertility",
+      "relation_id": "biomarker:body_mass_index|DIAGNOSTIC_FOR|disease:female_infertility",
+      "canonical_key": "biomarker:body_mass_index|DIAGNOSTIC_FOR|disease:female_infertility",
+      "relation_type": "DIAGNOSTIC_FOR",
+      "confidence": 0.75,
+      "evidence": "higher body mass index (BMI) is associated with poorer fertility prognosis",
+      "source_document": "pmid_32442310",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_32442310"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_32442310",
+          "confidence": 0.75,
+          "evidence": "higher body mass index (BMI) is associated with poorer fertility prognosis",
+          "relation_id": "biomarker:body_mass_index|DIAGNOSTIC_FOR|disease:female_infertility|pmid_32442310"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:tirzepatide",
+      "target": "doc:pmid_41523559",
+      "relation_id": "compound:tirzepatide|MENTIONED_IN|doc:pmid_41523559",
+      "canonical_key": "compound:tirzepatide|MENTIONED_IN|doc:pmid_41523559",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.98,
+      "evidence": "",
+      "source_document": "pmid_41523559",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_41523559"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_41523559",
+          "confidence": 0.98,
+          "evidence": "",
+          "relation_id": "compound:tirzepatide|MENTIONED_IN|doc:pmid_41523559"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:tirzepatide",
+      "target": "disease:obesity",
+      "relation_id": "compound:tirzepatide|INDICATED_FOR|disease:obesity",
+      "canonical_key": "compound:tirzepatide|INDICATED_FOR|disease:obesity",
+      "relation_type": "INDICATED_FOR",
+      "confidence": 0.95,
+      "evidence": "Tirzepatide and semaglutide were both associated with weight reduction in obesity",
+      "source_document": "pmid_41523559",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_41523559"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_41523559",
+          "confidence": 0.95,
+          "evidence": "Tirzepatide and semaglutide were both associated with weight reduction in obesity",
+          "relation_id": "compound:tirzepatide|INDICATED_FOR|disease:obesity|pmid_41523559"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:tirzepatide",
+      "target": "disease:type_2_diabetes_mellitus",
+      "relation_id": "compound:tirzepatide|INDICATED_FOR|disease:type_2_diabetes_mellitus",
+      "canonical_key": "compound:tirzepatide|INDICATED_FOR|disease:type_2_diabetes_mellitus",
+      "relation_type": "INDICATED_FOR",
+      "confidence": 0.85,
+      "evidence": "Incretin-based therapies have emerged as effective strategies for obesity and type 2 diabetes mellitus (T2DM) management. Semaglutide and tirzepatide are among the most promising agents.",
+      "source_document": "pmid_41523559",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_41523559"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_41523559",
+          "confidence": 0.85,
+          "evidence": "Incretin-based therapies have emerged as effective strategies for obesity and type 2 diabetes mellitus (T2DM) management. Semaglutide and tirzepatide are among the most promising agents.",
+          "relation_id": "compound:tirzepatide|INDICATED_FOR|disease:type_2_diabetes_mellitus|pmid_41523559"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "compound:tirzepatide",
+      "target": "adverse_event:gastrointestinal_adverse_events",
+      "relation_id": "compound:tirzepatide|CAUSES|adverse_event:gastrointestinal_adverse_events",
+      "canonical_key": "compound:tirzepatide|CAUSES|adverse_event:gastrointestinal_adverse_events",
+      "relation_type": "CAUSES",
+      "confidence": 0.95,
+      "evidence": "Gastrointestinal adverse events were the most common, occurring more frequently with tirzepatide",
+      "source_document": "pmid_41523559",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_41523559"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_41523559",
+          "confidence": 0.95,
+          "evidence": "Gastrointestinal adverse events were the most common, occurring more frequently with tirzepatide",
+          "relation_id": "compound:tirzepatide|CAUSES|adverse_event:gastrointestinal_adverse_events|pmid_41523559"
+        }
+      ],
+      "epistemic_status": "asserted"
+    },
+    {
+      "source": "adverse_event:gastrointestinal_adverse_events",
+      "target": "doc:pmid_41523559",
+      "relation_id": "adverse_event:gastrointestinal_adverse_events|MENTIONED_IN|doc:pmid_41523559",
+      "canonical_key": "adverse_event:gastrointestinal_adverse_events|MENTIONED_IN|doc:pmid_41523559",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.95,
+      "evidence": "",
+      "source_document": "pmid_41523559",
+      "support_count": 1,
+      "support_documents": [
+        "pmid_41523559"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "pmid_41523559",
+          "confidence": 0.95,
+          "evidence": "",
+          "relation_id": "adverse_event:gastrointestinal_adverse_events|MENTIONED_IN|doc:pmid_41523559"
+        }
+      ],
+      "epistemic_status": "asserted"
+    }
+  ]
+}

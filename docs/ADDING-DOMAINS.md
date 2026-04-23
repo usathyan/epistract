@@ -370,7 +370,20 @@ dashboard:
   subtitle: "Contract categories and document coverage summary"
 ```
 
-Fields: `title`, `subtitle`, `persona` (chat system prompt), `placeholder`, `loading_message`, `starter_questions`, `entity_colors` (hex per entity type), `dashboard` (title/subtitle for overview panel).
+Fields: `title`, `subtitle`, `persona` (see below), `placeholder`, `loading_message`, `starter_questions`, `entity_colors` (hex per entity type), `dashboard` (title/subtitle for overview panel), `analysis_patterns` (cross-reference heading + "appears in" phrase for the domain).
+
+#### The `persona` field — single source of truth
+
+The `persona` is used in **two** places:
+
+1. **Workbench chat system prompt** — when the user asks questions in `/epistract:dashboard`, the chat panel injects `persona` at the start of the system message (reactive — fires on user input).
+2. **Epistemic narrator** — when `/epistract:epistemic` runs, `core.label_epistemic` reads the same `persona` and feeds it to an LLM along with the freshly-built `claims_layer.json` to produce `epistemic_narrative.md` (proactive — fires after the graph is built).
+
+Upgrade `persona` once; both surfaces improve together.
+
+A strong persona names a profession, describes expertise depth, commits to the epistemic-status vocabulary (`asserted` / `prophetic` / `hypothesized` / `contested` / `contradictions` / `negative`), and states citation + formatting expectations. See `domains/drug-discovery/workbench/template.yaml` for a reference implementation.
+
+When you create a domain with `/epistract:domain`, the wizard asks for a persona paragraph. If you say "default," it emits an analyst-shaped template with the domain name substituted — richer than a one-liner, weaker than hand-crafted, immediately usable. Tailor it for best narrator quality.
 
 ---
 

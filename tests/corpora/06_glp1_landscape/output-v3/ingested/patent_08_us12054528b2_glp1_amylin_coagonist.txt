@@ -1,0 +1,19 @@
+Title: Co-agonists of the GLP-1 and amylin receptors
+Source: Google Patents (via SerpAPI)
+Patent ID: US12054528B2
+Assignee: Novo Nordisk AS
+Filing Date: December 19, 2022
+
+ABSTRACT/DESCRIPTION:
+The invention relates to compounds functioning as dual receptor agonists that bind to and activate both GLP-1 and amylin receptors. These co-agonists are single polypeptide molecules rather than separate co-administered formulations, designed for treating obesity, type 2 diabetes mellitus, cardiovascular disease, and related metabolic conditions. The compounds include protraction moieties to extend biological half-life and demonstrate oral bioavailability potential.
+
+The single-chain polypeptide backbone contains a GLP-1 receptor agonist component (peptide Z1), an optional peptide linker (1-30 amino acids), and an amylin receptor agonist component (peptide Z3), with 1-3 lysine and/or cysteine residues for protraction moiety attachment. The patent lists 256 sequence identifiers (SEQ ID NOs 1-256):
+
+SEQ ID NO: 1 — Human GLP-1(7-37) reference sequence: HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG
+SEQ ID NOs: 2-78 — GLP-1 agonist variants with Aib substitutions and acylation
+SEQ ID NOs: 79-88 — Amylin agonist variants derived from pramlintide/cagrilintide
+SEQ ID NOs: 117-236 — Co-agonist polypeptide backbones combining both activities
+
+Performance characteristics include EC50 values potentially below 10 pM on both receptors and biological half-life of 15-60 hours versus minutes for native GLP-1 and amylin ligands.
+
+This patent relates to the CagriSema program. CagriSema is a co-administered combination of cagrilintide (a long-acting amylin analog) and semaglutide (a GLP-1 receptor agonist) currently in Phase 3 clinical trials. The combination targets both GLP-1-mediated glucose-dependent insulin secretion and appetite suppression, and amylin-mediated gastric emptying delay and central satiety signaling. Phase 2 data showed the combination achieved superior weight loss versus either monotherapy without worsening tolerability. This patent represents a next-generation approach: engineering a single molecule with dual GLP-1/amylin activity rather than co-administering two separate peptides.

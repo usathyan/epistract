@@ -1,0 +1,354 @@
+{
+  "document_id": "patent_09_us11111285b2_zealand_triple_agonist",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "glucagon-GLP-1-GIP triple agonist",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "compound_code": "US11111285B2",
+        "drug_class": "triple receptor agonist peptide",
+        "development_stage": "preclinical",
+        "route_of_administration": "likely subcutaneous",
+        "formulation": "lipophilic-modified peptide with PEG-containing spacers",
+        "dosing_frequency": "once-weekly or less frequent",
+        "requires_validation": true,
+        "notation_type": "amino_acid_sequence",
+        "notation_present": true
+      },
+      "confidence": 0.85,
+      "context": "The invention describes compounds possessing agonist activity at glucagon, GIP, and GLP-1 receptors for treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease."
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "protein_family": "incretin receptor family",
+        "uniprot_id": "P43220"
+      },
+      "confidence": 0.95,
+      "context": "The triple agonist mechanism simultaneously engages: GLP-1 receptor for glucose-dependent insulin secretion and appetite suppression"
+    },
+    {
+      "name": "GIP receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "protein_family": "incretin receptor family",
+        "uniprot_id": "P48546"
+      },
+      "confidence": 0.95,
+      "context": "GIP receptor for enhanced insulin response and improved lipid metabolism"
+    },
+    {
+      "name": "glucagon receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "protein_family": "glucagon receptor family",
+        "uniprot_id": "P47871"
+      },
+      "confidence": 0.95,
+      "context": "glucagon receptor for increased energy expenditure and hepatic lipid oxidation"
+    },
+    {
+      "name": "Obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Obesity",
+        "icd_code": "E66",
+        "aliases": [
+          "obesity",
+          "metabolic obesity"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "The invention describes compounds possessing agonist activity at glucagon, GIP, and GLP-1 receptors for treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease."
+    },
+    {
+      "name": "Type 2 Diabetes Mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Diabetes Mellitus, Type 2",
+        "icd_code": "E11",
+        "aliases": [
+          "T2DM",
+          "type 2 diabetes"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "The invention describes compounds possessing agonist activity at glucagon, GIP, and GLP-1 receptors for treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease."
+    },
+    {
+      "name": "Dyslipidemia",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Dyslipidemias",
+        "icd_code": "E78",
+        "aliases": [
+          "dyslipidemia",
+          "hyperlipidemia"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "The invention describes compounds possessing agonist activity at glucagon, GIP, and GLP-1 receptors for treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease."
+    },
+    {
+      "name": "Non-Alcoholic Fatty Liver Disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Non-alcoholic Fatty Liver Disease",
+        "icd_code": "K76.0",
+        "aliases": [
+          "NAFLD",
+          "non-alcoholic fatty liver disease"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "The invention describes compounds possessing agonist activity at glucagon, GIP, and GLP-1 receptors for treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease."
+    },
+    {
+      "name": "Metabolic Syndrome",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Metabolic Syndrome",
+        "icd_code": "E88.81",
+        "aliases": [
+          "metabolic syndrome"
+        ]
+      },
+      "confidence": 0.8,
+      "context": "Zealand Pharma is developing these compounds as potential best-in-class treatments for obesity and metabolic syndrome."
+    },
+    {
+      "name": "GLP-1 receptor agonism with glucose-dependent insulin secretion and appetite suppression",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "selectivity": "multi-targeted",
+        "target": "GLP-1 receptor"
+      },
+      "confidence": 0.9,
+      "context": "GLP-1 receptor for glucose-dependent insulin secretion and appetite suppression"
+    },
+    {
+      "name": "GIP receptor agonism with enhanced insulin response and lipid metabolism improvement",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "selectivity": "multi-targeted",
+        "target": "GIP receptor"
+      },
+      "confidence": 0.9,
+      "context": "GIP receptor for enhanced insulin response and improved lipid metabolism"
+    },
+    {
+      "name": "glucagon receptor agonism with increased energy expenditure and hepatic lipid oxidation",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "selectivity": "multi-targeted",
+        "target": "glucagon receptor"
+      },
+      "confidence": 0.9,
+      "context": "glucagon receptor for increased energy expenditure and hepatic lipid oxidation"
+    },
+    {
+      "name": "albumin binding for plasma half-life extension",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "modulation",
+        "target": "serum albumin",
+        "reversibility": "reversible"
+      },
+      "confidence": 0.85,
+      "context": "This enables albumin binding and extends plasma half-life to support once-weekly or less frequent dosing."
+    },
+    {
+      "name": "Zealand Pharma AS",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "biotech",
+        "country": "Denmark"
+      },
+      "confidence": 0.98,
+      "context": "Assignee: Zealand Pharma AS"
+    },
+    {
+      "name": "US11111285B2",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "publication_type": "patent",
+        "assignee": "Zealand Pharma AS",
+        "filing_date": "October 4, 2018",
+        "patent_number": "US11111285B2"
+      },
+      "confidence": 0.98,
+      "context": "Patent ID: US11111285B2\nAssignee: Zealand Pharma AS\nFiling Date: October 4, 2018"
+    },
+    {
+      "name": "Exendin-4 C-terminal extension peptides",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "peptide extension sequence",
+        "compound_code": "SEQ ID NOs 53-58",
+        "requires_validation": true,
+        "notation_type": "amino_acid_sequence",
+        "notation_present": true
+      },
+      "confidence": 0.8,
+      "context": "Six C-terminal extension sequences (Y1, SEQ ID NOs 53-58) are derived from Exendin-4, including Gly-Pro-Ser-Ser-Gly-Ala-Pro-Pro-Pro-Ser (SEQ ID NO: 53). These extensions enhance in vivo stability without reducing glucagon receptor activity."
+    },
+    {
+      "name": "enhanced in vivo stability via C-terminal Exendin-4 extension",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "molecular",
+        "measurement_method": "in vivo stability assay",
+        "clinical_relevance": "mechanism"
+      },
+      "confidence": 0.8,
+      "context": "These extensions enhance in vivo stability without reducing glucagon receptor activity."
+    },
+    {
+      "name": "lipophilic fatty acid conjugation via PEG spacer",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "modulation",
+        "target": "serum albumin",
+        "reversibility": "reversible"
+      },
+      "confidence": 0.85,
+      "context": "Lipophilic modification at designated residues uses fatty acid conjugates with terminal polar groups (carboxylic acid, phosphonate, or sulfonate) connected via PEG-containing spacers."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.9,
+      "evidence": "The triple agonist mechanism simultaneously engages: GLP-1 receptor for glucose-dependent insulin secretion and appetite suppression"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "GIP receptor",
+      "confidence": 0.9,
+      "evidence": "GIP receptor for enhanced insulin response and improved lipid metabolism"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "glucagon receptor",
+      "confidence": 0.9,
+      "evidence": "glucagon receptor for increased energy expenditure and hepatic lipid oxidation"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "GLP-1 receptor agonism with glucose-dependent insulin secretion and appetite suppression",
+      "confidence": 0.9,
+      "evidence": "The triple agonist mechanism simultaneously engages: GLP-1 receptor for glucose-dependent insulin secretion and appetite suppression"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "GIP receptor agonism with enhanced insulin response and lipid metabolism improvement",
+      "confidence": 0.9,
+      "evidence": "GIP receptor for enhanced insulin response and improved lipid metabolism"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "glucagon receptor agonism with increased energy expenditure and hepatic lipid oxidation",
+      "confidence": 0.9,
+      "evidence": "glucagon receptor for increased energy expenditure and hepatic lipid oxidation"
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "albumin binding for plasma half-life extension",
+      "confidence": 0.85,
+      "evidence": "This enables albumin binding and extends plasma half-life to support once-weekly or less frequent dosing."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "lipophilic fatty acid conjugation via PEG spacer",
+      "confidence": 0.85,
+      "evidence": "Lipophilic modification at designated residues uses fatty acid conjugates with terminal polar groups (carboxylic acid, phosphonate, or sulfonate) connected via PEG-containing spacers."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "Obesity",
+      "confidence": 0.45,
+      "evidence": "The invention describes compounds possessing agonist activity at glucagon, GIP, and GLP-1 receptors for treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.45,
+      "evidence": "The invention describes compounds possessing agonist activity at glucagon, GIP, and GLP-1 receptors for treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "Dyslipidemia",
+      "confidence": 0.4,
+      "evidence": "The invention describes compounds possessing agonist activity at glucagon, GIP, and GLP-1 receptors for treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "Non-Alcoholic Fatty Liver Disease",
+      "confidence": 0.4,
+      "evidence": "The invention describes compounds possessing agonist activity at glucagon, GIP, and GLP-1 receptors for treating metabolic disorders including obesity, type 2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "Metabolic Syndrome",
+      "confidence": 0.4,
+      "evidence": "Zealand Pharma is developing these compounds as potential best-in-class treatments for obesity and metabolic syndrome."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "Zealand Pharma AS",
+      "confidence": 0.95,
+      "evidence": "Assignee: Zealand Pharma AS"
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "US11111285B2",
+      "confidence": 0.98,
+      "evidence": "Patent ID: US11111285B2\nAssignee: Zealand Pharma AS\nFiling Date: October 4, 2018"
+    },
+    {
+      "relation_type": "DERIVED_FROM",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "Exendin-4 C-terminal extension peptides",
+      "confidence": 0.75,
+      "evidence": "Six C-terminal extension sequences (Y1, SEQ ID NOs 53-58) are derived from Exendin-4, including Gly-Pro-Ser-Ser-Gly-Ala-Pro-Pro-Pro-Ser (SEQ ID NO: 53). These extensions enhance in vivo stability without reducing glucagon receptor activity."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "glucagon-GLP-1-GIP triple agonist",
+      "target_entity": "enhanced in vivo stability via C-terminal Exendin-4 extension",
+      "confidence": 0.8,
+      "evidence": "These extensions enhance in vivo stability without reducing glucagon receptor activity."
+    }
+  ],
+  "cost_usd": 0.102036,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:40:45.772412+00:00",
+  "error": null
+}

@@ -1,0 +1,281 @@
+{
+  "document_id": "pmid_38632474",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "glucagon-like peptide 1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "abbreviation": "GLP1",
+        "protein_class": "incretin hormone",
+        "protein_family": "glucagon peptide family"
+      },
+      "confidence": 0.98,
+      "context": "therapies based on incretin hormones, spearheaded by glucagon-like peptide 1 (GLP1) receptor agonists (GLP1RAs), have become the treatment of choice for obesity and T2DM"
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "abbreviation": "GLP1R",
+        "protein_class": "GPCR",
+        "protein_family": "glucagon receptor family"
+      },
+      "confidence": 0.95,
+      "context": "glucagon-like peptide 1 (GLP1) receptor agonists (GLP1RAs), have become the treatment of choice for obesity and T2DM"
+    },
+    {
+      "name": "GLP-1 receptor agonists",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "abbreviation": "GLP1RAs",
+        "mechanism_class": "activation",
+        "selectivity": "selective",
+        "target": "GLP-1 receptor"
+      },
+      "confidence": 0.98,
+      "context": "therapies based on incretin hormones, spearheaded by glucagon-like peptide 1 (GLP1) receptor agonists (GLP1RAs), have become the treatment of choice for obesity and T2DM"
+    },
+    {
+      "name": "glucose-dependent insulinotropic peptide",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "abbreviation": "GIP",
+        "protein_class": "incretin hormone"
+      },
+      "confidence": 0.92,
+      "context": "These include 'GLP1 plus' agents, which combine the known advantages of GLP1RAs with the activity of additional hormones, such as glucose-dependent insulinotropic peptide, glucagon and amylin"
+    },
+    {
+      "name": "glucagon",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "pancreatic hormone",
+        "protein_family": "glucagon peptide family"
+      },
+      "confidence": 0.92,
+      "context": "These include 'GLP1 plus' agents, which combine the known advantages of GLP1RAs with the activity of additional hormones, such as glucose-dependent insulinotropic peptide, glucagon and amylin"
+    },
+    {
+      "name": "amylin",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "pancreatic hormone"
+      },
+      "confidence": 0.92,
+      "context": "These include 'GLP1 plus' agents, which combine the known advantages of GLP1RAs with the activity of additional hormones, such as glucose-dependent insulinotropic peptide, glucagon and amylin, to achieve desired therapeutic goals."
+    },
+    {
+      "name": "GLP1 plus agents",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "selectivity": "multi-targeted",
+        "target": "GLP-1 receptor and additional hormone receptors",
+        "description": "Combination agents combining GLP1RA activity with additional hormones such as GIP, glucagon, and amylin"
+      },
+      "confidence": 0.9,
+      "context": "These include 'GLP1 plus' agents, which combine the known advantages of GLP1RAs with the activity of additional hormones, such as glucose-dependent insulinotropic peptide, glucagon and amylin, to achieve desired therapeutic goals."
+    },
+    {
+      "name": "second-generation non-peptidic oral GLP-1 receptor agonists",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "non-peptidic GLP-1 receptor agonist",
+        "route_of_administration": "oral",
+        "development_stage": "investigational",
+        "formulation": "non-peptidic small molecule"
+      },
+      "confidence": 0.85,
+      "context": "Second-generation non-peptidic oral GLP1RAs promise to extend the benefits of GLP1 therapy to those who do not want, or cannot have, subcutaneous injection therapy."
+    },
+    {
+      "name": "Obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Obesity",
+        "icd_code": "E66",
+        "aliases": [
+          "obesity"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "Obesity and type 2 diabetes mellitus (T2DM) are widespread, non-communicable diseases that are responsible for considerable levels of morbidity and mortality globally"
+    },
+    {
+      "name": "Type 2 Diabetes Mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Diabetes Mellitus, Type 2",
+        "icd_code": "E11",
+        "aliases": [
+          "T2DM",
+          "type 2 diabetes"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "Obesity and type 2 diabetes mellitus (T2DM) are widespread, non-communicable diseases that are responsible for considerable levels of morbidity and mortality globally"
+    },
+    {
+      "name": "Cardiovascular Disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Cardiovascular Diseases",
+        "icd_code": "I00-I99",
+        "aliases": [
+          "CVD"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "primarily in the form of cardiovascular disease (CVD)... clinical evidence now suggests that these agents have benefits for CVD"
+    },
+    {
+      "name": "incretin hormones",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "target": "incretin receptors",
+        "description": "Hormones that stimulate insulin secretion in a glucose-dependent manner"
+      },
+      "confidence": 0.9,
+      "context": "therapies based on incretin hormones, spearheaded by glucagon-like peptide 1 (GLP1) receptor agonists (GLP1RAs), have become the treatment of choice for obesity and T2DM"
+    },
+    {
+      "name": "metabolic surgery",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "surgical intervention",
+        "description": "Bariatric/metabolic surgical procedures for obesity and T2DM"
+      },
+      "confidence": 0.85,
+      "context": "metabolic surgery, although effective, is not practically deliverable on the scale that is required."
+    },
+    {
+      "name": "Ansari Saleem et al., Nature Reviews Endocrinology 2024",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "38632474",
+        "journal": "Nature reviews. Endocrinology",
+        "year": 2024,
+        "first_author": "Ansari Saleem",
+        "publication_type": "review"
+      },
+      "confidence": 0.99,
+      "context": "Targeting the incretin system in obesity and type 2 diabetes mellitus. Nature reviews. Endocrinology (2024)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.98,
+      "evidence": "therapies based on incretin hormones, spearheaded by glucagon-like peptide 1 (GLP1) receptor agonists (GLP1RAs), have become the treatment of choice for obesity and T2DM"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "Obesity",
+      "confidence": 0.95,
+      "evidence": "glucagon-like peptide 1 (GLP1) receptor agonists (GLP1RAs), have become the treatment of choice for obesity and T2DM"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.95,
+      "evidence": "glucagon-like peptide 1 (GLP1) receptor agonists (GLP1RAs), have become the treatment of choice for obesity and T2DM"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "Cardiovascular Disease",
+      "confidence": 0.8,
+      "evidence": "clinical evidence now suggests that these agents have benefits for CVD"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "Obesity",
+      "target_entity": "Cardiovascular Disease",
+      "confidence": 0.9,
+      "evidence": "Obesity and type 2 diabetes mellitus (T2DM) are widespread, non-communicable diseases that are responsible for considerable levels of morbidity and mortality globally, primarily in the form of cardiovascular disease (CVD)."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "Type 2 Diabetes Mellitus",
+      "target_entity": "Cardiovascular Disease",
+      "confidence": 0.9,
+      "evidence": "Obesity and type 2 diabetes mellitus (T2DM) are widespread, non-communicable diseases that are responsible for considerable levels of morbidity and mortality globally, primarily in the form of cardiovascular disease (CVD)."
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "glucagon-like peptide 1",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.95,
+      "evidence": "therapies based on incretin hormones, spearheaded by glucagon-like peptide 1 (GLP1) receptor agonists (GLP1RAs), have become the treatment of choice for obesity and T2DM"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "second-generation non-peptidic oral GLP-1 receptor agonists",
+      "target_entity": "Obesity",
+      "confidence": 0.75,
+      "evidence": "Second-generation non-peptidic oral GLP1RAs promise to extend the benefits of GLP1 therapy to those who do not want, or cannot have, subcutaneous injection therapy."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "second-generation non-peptidic oral GLP-1 receptor agonists",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.75,
+      "evidence": "Second-generation non-peptidic oral GLP1RAs promise to extend the benefits of GLP1 therapy to those who do not want, or cannot have, subcutaneous injection therapy."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "second-generation non-peptidic oral GLP-1 receptor agonists",
+      "target_entity": "GLP-1 receptor agonists",
+      "confidence": 0.88,
+      "evidence": "Second-generation non-peptidic oral GLP1RAs promise to extend the benefits of GLP1 therapy to those who do not want, or cannot have, subcutaneous injection therapy."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "GLP1 plus agents",
+      "target_entity": "GLP-1 receptor agonists",
+      "confidence": 0.9,
+      "evidence": "These include 'GLP1 plus' agents, which combine the known advantages of GLP1RAs with the activity of additional hormones, such as glucose-dependent insulinotropic peptide, glucagon and amylin, to achieve desired therapeutic goals."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP1 plus agents",
+      "target_entity": "Obesity",
+      "confidence": 0.85,
+      "evidence": "These include 'GLP1 plus' agents, which combine the known advantages of GLP1RAs with the activity of additional hormones, such as glucose-dependent insulinotropic peptide, glucagon and amylin, to achieve desired therapeutic goals."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP1 plus agents",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.85,
+      "evidence": "These include 'GLP1 plus' agents, which combine the known advantages of GLP1RAs with the activity of additional hormones, such as glucose-dependent insulinotropic peptide, glucagon and amylin, to achieve desired therapeutic goals."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "metabolic surgery",
+      "target_entity": "Obesity",
+      "confidence": 0.88,
+      "evidence": "metabolic surgery, although effective, is not practically deliverable on the scale that is required."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "metabolic surgery",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.8,
+      "evidence": "metabolic surgery, although effective, is not practically deliverable on the scale that is required."
+    }
+  ],
+  "cost_usd": 0.090633,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:47:53.164491+00:00",
+  "error": null
+}

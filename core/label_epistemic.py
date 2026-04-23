@@ -29,6 +29,8 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
+import yaml
+
 
 # ---------------------------------------------------------------------------
 # Dynamic domain epistemic module loader
@@ -91,10 +93,18 @@ HEDGING_PATTERNS = [
 PATENT_PATTERN = re.compile(r"^patent", re.I)
 PREPRINT_PATTERN = re.compile(r"(biorxiv|medrxiv|arxiv)", re.I)
 PUBMED_PATTERN = re.compile(r"^pmid_", re.I)
+# FIDL-07 D-05: structural-biology doctype signals.
+# Kept in sync with domains/drug-discovery/epistemic.py by convention
+# (not shared import). Any drift between the two copies is caught by UT-049.
+PDB_PATTERN = re.compile(r"^pdb[_-]", re.I)
+STRUCTURAL_CONTENT_RE = re.compile(r"\b\d+(?:\.\d+)?\s*(?:Å|angstrom)\b", re.I)
 
 
 def infer_doc_type(doc_id: str) -> str:
     """Infer document type from document ID naming conventions."""
+    # FIDL-07 D-05: PDB prefix check runs FIRST (explicit-is-better).
+    if PDB_PATTERN.match(doc_id):
+        return "structural"
     if PATENT_PATTERN.match(doc_id):
         return "patent"
     if PREPRINT_PATTERN.search(doc_id):
@@ -108,6 +118,12 @@ def classify_epistemic_status(evidence: str, confidence: float, doc_type: str) -
     """Classify a single mention's epistemic status from evidence text + metadata."""
     if not evidence:
         return "asserted" if confidence >= 0.8 else "unclassified"
+
+    # FIDL-07 D-06: structural (crystallography/cryo-EM) papers are evidence-grade;
+    # high-confidence claims beat hedging-regex false positives like
+    # "hypothesized structure". Short-circuit BEFORE the hedging scan.
+    if doc_type == "structural" and confidence >= 0.9:
+        return "asserted"
 
     # Check hedging patterns (order matters — first match wins)
     for pattern, status in HEDGING_PATTERNS:
@@ -127,6 +143,29 @@ def classify_epistemic_status(evidence: str, confidence: float, doc_type: str) -
         return "speculative"
 
     return "asserted"
+
+
+def _detect_structural_content(evidence: str) -> bool:
+    """Detect structural-biology content signals in first 800 chars of evidence.
+
+    FIDL-07 D-05: Signals are "crystal structure", "x-ray crystallograph",
+    "cryo-em", "electron microscop", plus a resolution regex matching
+    `N Å` / `N.N angstrom` etc. Mirrored from
+    domains/drug-discovery/epistemic.py by convention (two-site sync, D-05).
+    Exposed for rule authors; not called in the dispatch path.
+    """
+    if not evidence:
+        return False
+    snippet = evidence[:800].lower()
+    keyword_signals = (
+        "crystal structure",
+        "x-ray crystallograph",
+        "cryo-em",
+        "electron microscop",
+    )
+    if any(kw in snippet for kw in keyword_signals):
+        return True
+    return bool(STRUCTURAL_CONTENT_RE.search(snippet))
 
 
 # ---------------------------------------------------------------------------
@@ -373,15 +412,199 @@ def _builtin_biomedical_epistemic(output_dir: Path, graph_data: dict) -> dict:
     }
 
 
+def _load_domain_persona(domain_name: str | None) -> str | None:
+    """Load persona from domains/<name>/workbench/template.yaml. Returns None if absent.
+
+    The persona is used two ways:
+      1. Workbench chat system prompt (reactive — reads same YAML directly).
+      2. Automatic narrator in this module (below).
+    Single source of truth across both surfaces.
+    """
+    if not domain_name:
+        return None
+    # Mirror _load_domain_epistemic alias handling
+    try:
+        from core.domain_resolver import DOMAIN_ALIASES
+        resolved = DOMAIN_ALIASES.get(domain_name, domain_name)
+    except ImportError:
+        resolved = domain_name
+
+    domains_dir = Path(__file__).parent.parent / "domains"
+    candidates = [
+        domains_dir / resolved / "workbench" / "template.yaml",
+        domains_dir / domain_name / "workbench" / "template.yaml",
+    ]
+    for path in candidates:
+        if path.exists():
+            try:
+                data = yaml.safe_load(path.read_text(encoding="utf-8"))
+                if isinstance(data, dict):
+                    persona = data.get("persona")
+                    if isinstance(persona, str) and persona.strip():
+                        return persona.strip()
+            except Exception as e:  # noqa: BLE001
+                print(
+                    f"Warning: could not parse persona from {path}: {e}",
+                    file=sys.stderr,
+                )
+    return None
+
+
+def _summarize_graph_for_narrator(graph_data: dict, claims_layer: dict) -> str:
+    """Compact structured summary of graph + claims for the narrator prompt."""
+    nodes = graph_data.get("nodes", [])
+    links = graph_data.get("links", graph_data.get("edges", []))
+
+    by_type: dict[str, int] = defaultdict(int)
+    for n in nodes:
+        by_type[n.get("entity_type") or "UNKNOWN"] += 1
+
+    status_counts = claims_layer.get("summary", {}).get("epistemic_status_counts", {})
+    super_domain = claims_layer.get("super_domain", {})
+    contradictions = super_domain.get("contradictions", []) or []
+    hypotheses = super_domain.get("hypotheses", []) or []
+    contested = super_domain.get("contested_claims", []) or []
+    custom = super_domain.get("custom_findings", {}) or {}
+
+    prophetic = [
+        l for l in links if l.get("epistemic_status") == "prophetic"
+    ]
+
+    parts: list[str] = []
+    parts.append("## GRAPH SUMMARY")
+    parts.append(f"- Entities: {len(nodes)} across {len(by_type)} types")
+    parts.append(f"- Relations: {len(links)}")
+    parts.append("- Entity type distribution (top 10):")
+    for k, v in sorted(by_type.items(), key=lambda kv: -kv[1])[:10]:
+        parts.append(f"  - {k}: {v}")
+
+    if status_counts:
+        parts.append("")
+        parts.append("## EPISTEMIC STATUS COUNTS")
+        for k, v in sorted(status_counts.items(), key=lambda kv: -kv[1]):
+            parts.append(f"- {k}: {v}")
+
+    if contradictions:
+        parts.append("")
+        parts.append(f"## CONTRADICTIONS ({len(contradictions)} total; first 5 shown)")
+        for c in contradictions[:5]:
+            parts.append(f"- {json.dumps(c, default=str)[:400]}")
+
+    if hypotheses:
+        parts.append("")
+        parts.append(f"## HYPOTHESIS GROUPS ({len(hypotheses)} total; first 5 shown)")
+        for h in hypotheses[:5]:
+            label = h.get("label") or h.get("title") or "(unlabeled)"
+            members = h.get("members") or h.get("evidence") or []
+            parts.append(
+                f"- **{label}** ({len(members) if hasattr(members, '__len__') else '?'} members)"
+            )
+
+    if prophetic:
+        parts.append("")
+        parts.append(
+            f"## PROPHETIC CLAIMS ({len(prophetic)} total; first 15 shown)"
+        )
+        for p in prophetic[:15]:
+            src = p.get("source_entity") or p.get("source") or "?"
+            tgt = p.get("target_entity") or p.get("target") or "?"
+            rt = p.get("relation_type") or p.get("label") or "?"
+            docs = p.get("source_documents") or []
+            ev = (p.get("evidence") or "")[:180]
+            doc_tail = f" docs={docs[:2]}" if docs else ""
+            parts.append(f"- `{src}` --[{rt}]--> `{tgt}`{doc_tail}\n  evidence: \"{ev}\"")
+
+    if contested:
+        parts.append("")
+        parts.append(
+            f"## CONTESTED CLAIMS ({len(contested)} total; first 10 shown)"
+        )
+        for c in contested[:10]:
+            src = c.get("source_entity") or c.get("source") or "?"
+            tgt = c.get("target_entity") or c.get("target") or "?"
+            rt = c.get("relation_type") or c.get("label") or "?"
+            status = c.get("epistemic_status", "?")
+            parts.append(f"- `{src}` --[{rt}]--> `{tgt}` status=`{status}`")
+
+    if custom:
+        parts.append("")
+        parts.append(f"## CUSTOM RULE FINDINGS ({len(custom)} rules fired)")
+        for rule_name, findings in custom.items():
+            count = len(findings) if hasattr(findings, "__len__") else "?"
+            parts.append(f"- {rule_name}: {count} findings")
+
+    return "\n".join(parts)
+
+
+_NARRATOR_USER_PROMPT = (
+    "Produce a structured analyst briefing based on the knowledge graph and "
+    "epistemic findings summarized in your system prompt.\n\n"
+    "Structure (use markdown headings exactly in this order):\n\n"
+    "# Epistemic Briefing\n\n"
+    "## Executive Summary\n"
+    "3-5 bullet points capturing the most decision-relevant findings.\n\n"
+    "## Prophetic Claim Landscape\n"
+    "Which assertions in the corpus are forward-looking (patent language, "
+    "'is expected to', 'may be prepared by') rather than empirically "
+    "established? Group by patent family / compound class / topic where "
+    "possible. Call out the gap between prophetic language and asserted "
+    "evidence.\n\n"
+    "## Contested Claims & Contradictions\n"
+    "Relations where different sources disagree or where opposing evidence "
+    "exists. Name source IDs on both sides. If none exist, state so "
+    "briefly and move on.\n\n"
+    "## Coverage Gaps\n"
+    "What is the graph silent on that a domain analyst would expect? "
+    "Missing trial phases, absent companion diagnostics, no head-to-head "
+    "comparisons, unattributed claims — name specifically.\n\n"
+    "## Recommended Follow-Ups\n"
+    "Specific next actions — documents to pull, relations to manually "
+    "review, assumptions to verify.\n\n"
+    "Rules:\n"
+    "- Do NOT repeat the raw counts from the summary; synthesize instead.\n"
+    "- Cite source document IDs inline in backticks when making claims.\n"
+    "- Use the epistemic-status vocabulary from your system prompt: "
+    "asserted, prophetic, hypothesized, contested, contradictions.\n"
+    "- Keep total under ~1500 words.\n"
+    "- Return only the markdown briefing, no preamble."
+)
+
+
+def narrate_claims_layer(
+    graph_data: dict,
+    claims_layer: dict,
+    persona: str,
+) -> str:
+    """Generate the narrative briefing via LLM. Returns markdown string.
+
+    Raises core.llm_client.LLMConfigError when no credentials are set, and
+    core.llm_client.LLMCallError when the API call itself fails. Callers
+    should catch both and fall back to rule-only output.
+    """
+    from core.llm_client import call_llm
+
+    context = _summarize_graph_for_narrator(graph_data, claims_layer)
+    system_prompt = f"{persona}\n\n---\n\n{context}"
+    narrative = call_llm(
+        system=system_prompt,
+        user=_NARRATOR_USER_PROMPT,
+        max_tokens=4096,
+        temperature=0.3,
+    )
+    return narrative
+
+
 def analyze_epistemic(
     output_dir: Path,
     domain_name: str | None = None,
     master_doc_path: Path | None = None,
+    narrate: bool = True,
 ) -> dict:
     """Run full epistemic analysis on a built graph.
 
     Dispatches to the appropriate domain-specific analysis module based on
-    graph metadata or explicit domain_name parameter.
+    graph metadata or explicit domain_name parameter. Optionally runs the
+    LLM narrator afterward to produce an analyst briefing.
 
     Args:
         output_dir: Directory containing graph_data.json.
@@ -389,6 +612,10 @@ def analyze_epistemic(
             graph_data.json metadata.domain field (defaults to "drug-discovery").
         master_doc_path: Optional path to master reference document (e.g.,
             Sample_Conference_Master.md) for coverage gap analysis in contract domain.
+        narrate: When True (default), calls the domain persona + LLM to
+            produce epistemic_narrative.md alongside claims_layer.json.
+            Set False to skip the LLM call entirely (offline runs,
+            no credentials available).
 
     Returns:
         Claims layer dict with metadata, summary, base_domain, super_domain.
@@ -430,12 +657,84 @@ def analyze_epistemic(
         # Final fallback: built-in biomedical analysis
         claims_layer = _builtin_biomedical_epistemic(output_dir, graph_data)
 
+    # FIDL-07 (D-01, D-02, D-09): iterate CUSTOM_RULES after domain dispatch.
+    # Each rule is called with (nodes, links, context); findings merge into
+    # claims_layer.super_domain.custom_findings keyed by rule.__name__.
+    # Per-rule try/except isolates failures — one bad rule cannot abort the
+    # phase. Absent CUSTOM_RULES attribute → empty list → no custom_findings
+    # key added (D-07 backward-compat: V2 baseline JSON is byte-identical
+    # when no domain has adopted the hook).
+    if domain_mod is not None:
+        custom_rules = getattr(domain_mod, "CUSTOM_RULES", [])
+        if custom_rules:
+            nodes = graph_data.get("nodes", [])
+            links = graph_data.get("links", [])
+            context = {
+                "output_dir": output_dir,
+                "graph_data": graph_data,
+                "domain_name": effective_domain,
+            }
+            super_domain = claims_layer.setdefault("super_domain", {})
+            custom_findings = super_domain.setdefault("custom_findings", {})
+            for rule in custom_rules:
+                rule_name = getattr(rule, "__name__", "<anonymous>")
+                try:
+                    findings = rule(nodes, links, context)
+                    if not isinstance(findings, list):
+                        findings = []
+                    custom_findings[rule_name] = findings
+                except Exception as e:  # noqa: BLE001 — rule isolation is the whole point
+                    custom_findings[rule_name] = [
+                        {
+                            "rule_name": rule_name,
+                            "status": "error",
+                            "error": str(e),
+                        }
+                    ]
+                    print(
+                        f"Warning: CUSTOM_RULE {rule_name!r} failed: {e}",
+                        file=sys.stderr,
+                    )
+
     # Write claims layer
     claims_path = output_dir / "claims_layer.json"
     claims_path.write_text(json.dumps(claims_layer, indent=2))
 
     # Update graph_data.json with epistemic_status on links
     graph_path.write_text(json.dumps(graph_data, indent=2))
+
+    # Optional: LLM narrator using the domain persona. Non-blocking — any
+    # failure leaves claims_layer.json on disk as the authoritative rule
+    # output; the narrative is additive.
+    narrative_path = output_dir / "epistemic_narrative.md"
+    narrative_status = "skipped"
+    if narrate:
+        persona = _load_domain_persona(effective_domain)
+        if persona is None:
+            narrative_status = "no-persona"
+            print(
+                f"Note: no persona in domains/{effective_domain}/workbench/"
+                f"template.yaml — skipping narrator. Add a persona field to "
+                f"enable automatic briefings.",
+                file=sys.stderr,
+            )
+        else:
+            try:
+                narrative = narrate_claims_layer(graph_data, claims_layer, persona)
+                narrative_path.write_text(narrative, encoding="utf-8")
+                narrative_status = "ok"
+            except Exception as e:  # noqa: BLE001 — narrator is additive, failure is non-fatal
+                # core.llm_client raises LLMConfigError / LLMCallError; also
+                # catch generic to prevent any narrator bug from blocking
+                # claims_layer.json writes.
+                narrative_status = f"error: {type(e).__name__}"
+                print(
+                    f"Note: narrator skipped ({type(e).__name__}: {e}). "
+                    f"claims_layer.json is authoritative.",
+                    file=sys.stderr,
+                )
+    else:
+        narrative_status = "disabled"
 
     # Print summary
     summary = claims_layer.get("summary", {})
@@ -445,6 +744,10 @@ def analyze_epistemic(
         json.dumps(
             {
                 "claims_layer": str(claims_path),
+                "narrative": (
+                    str(narrative_path) if narrative_status == "ok" else None
+                ),
+                "narrative_status": narrative_status,
                 "domain": domain_name,
                 "total_relations": len(links),
                 "base_domain_relations": status_counts.get("asserted", 0),
@@ -466,7 +769,8 @@ def analyze_epistemic(
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print(
-            "Usage: python label_epistemic.py <output_dir> [--domain <name>] [--master-doc <path>]",
+            "Usage: python label_epistemic.py <output_dir> [--domain <name>] "
+            "[--master-doc <path>] [--no-narrate]",
             file=sys.stderr,
         )
         sys.exit(1)
@@ -484,4 +788,11 @@ if __name__ == "__main__":
         if idx + 1 < len(sys.argv):
             master_doc = Path(sys.argv[idx + 1])
 
-    analyze_epistemic(out_dir, domain_name=domain, master_doc_path=master_doc)
+    narrate_flag = "--no-narrate" not in sys.argv
+
+    analyze_epistemic(
+        out_dir,
+        domain_name=domain,
+        master_doc_path=master_doc,
+        narrate=narrate_flag,
+    )

@@ -1,0 +1,236 @@
+{
+  "document_id": "pmid_38858523",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "retatrutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "triple hormone receptor agonist",
+        "development_stage": "Phase II",
+        "route_of_administration": "subcutaneous",
+        "formulation": "once-weekly subcutaneous injection",
+        "compound_code": null
+      },
+      "confidence": 0.98,
+      "context": "Retatrutide is a novel triple agonist of the glucose-dependent insulinotropic polypeptide, glucagon-like peptide 1 and glucagon receptors."
+    },
+    {
+      "name": "GIP receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "aliases": [
+          "glucose-dependent insulinotropic polypeptide receptor",
+          "GIPR"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "Retatrutide is a novel triple agonist of the glucose-dependent insulinotropic polypeptide, glucagon-like peptide 1 and glucagon receptors."
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "aliases": [
+          "glucagon-like peptide 1 receptor",
+          "GLP-1R"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "Retatrutide is a novel triple agonist of the glucose-dependent insulinotropic polypeptide, glucagon-like peptide 1 and glucagon receptors."
+    },
+    {
+      "name": "glucagon receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "aliases": [
+          "GCGR"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "Retatrutide is a novel triple agonist of the glucose-dependent insulinotropic polypeptide, glucagon-like peptide 1 and glucagon receptors."
+    },
+    {
+      "name": "Metabolic Dysfunction-Associated Steatotic Liver Disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "aliases": [
+          "MASLD",
+          "metabolic dysfunction-associated steatotic liver disease"
+        ],
+        "mesh_term": "Fatty Liver",
+        "disease_subtype": "metabolic dysfunction-associated"
+      },
+      "confidence": 0.98,
+      "context": "The primary objective of this substudy was to assess mean relative change from baseline in liver fat (LF) at 24 weeks in participants from that study with metabolic dysfunction-associated steatotic liver disease and \u226510% of LF."
+    },
+    {
+      "name": "Obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Obesity"
+      },
+      "confidence": 0.95,
+      "context": "A 48-week phase 2 obesity study demonstrated weight reductions of 22.8% and 24.2% with retatrutide 8 and 12 mg, respectively."
+    },
+    {
+      "name": "triple GIP/GLP-1/glucagon receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "selectivity": "triple",
+        "target": "GIP receptor, GLP-1 receptor, glucagon receptor"
+      },
+      "confidence": 0.97,
+      "context": "Retatrutide is a novel triple agonist of the glucose-dependent insulinotropic polypeptide, glucagon-like peptide 1 and glucagon receptors."
+    },
+    {
+      "name": "NCT04881760",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT04881760",
+        "phase": "Phase II",
+        "design": "randomized, double-blind, placebo-controlled",
+        "primary_endpoint": "mean relative change from baseline in liver fat at 24 weeks",
+        "status": "completed",
+        "patient_population": "participants with MASLD and \u226510% liver fat",
+        "duration_weeks": 48
+      },
+      "confidence": 0.98,
+      "context": "Here, in this randomized, double-blind, placebo-controlled trial, participants (n = 98) were randomly assigned to 48 weeks of once-weekly subcutaneous retatrutide (1, 4, 8 or 12 mg dose) or placebo. The ClinicalTrials.gov registration is NCT04881760."
+    },
+    {
+      "name": "liver fat reduction",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "pharmacodynamic",
+        "analyte": "liver fat fraction",
+        "threshold": "<5% (normal liver fat)",
+        "tissue": "liver"
+      },
+      "confidence": 0.9,
+      "context": "The primary objective of this substudy was to assess mean relative change from baseline in liver fat (LF) at 24 weeks in participants from that study with metabolic dysfunction-associated steatotic liver disease and \u226510% of LF."
+    },
+    {
+      "name": "insulin sensitivity",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "physiological",
+        "clinical_relevance": "mechanism, prognosis"
+      },
+      "confidence": 0.85,
+      "context": "LF reductions were significantly related to changes in body weight, abdominal fat and metabolic measures associated with improved insulin sensitivity and lipid metabolism."
+    },
+    {
+      "name": "lipid metabolism",
+      "entity_type": "PATHWAY",
+      "attributes": {
+        "pathway_class": "metabolic"
+      },
+      "confidence": 0.82,
+      "context": "LF reductions were significantly related to changes in body weight, abdominal fat and metabolic measures associated with improved insulin sensitivity and lipid metabolism."
+    },
+    {
+      "name": "Sanyal et al., Nature Medicine 2024",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "38858523",
+        "journal": "Nature Medicine",
+        "year": 2024,
+        "first_author": "Sanyal",
+        "publication_type": "original_research"
+      },
+      "confidence": 0.99,
+      "context": "Triple hormone receptor agonist retatrutide for metabolic dysfunction-associated steatotic liver disease: a randomized phase 2a trial. Nature medicine (2024). PMID: 38858523"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "retatrutide",
+      "target_entity": "triple GIP/GLP-1/glucagon receptor agonism",
+      "confidence": 0.97,
+      "evidence": "Retatrutide is a novel triple agonist of the glucose-dependent insulinotropic polypeptide, glucagon-like peptide 1 and glucagon receptors."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "retatrutide",
+      "target_entity": "GIP receptor",
+      "confidence": 0.97,
+      "evidence": "Retatrutide is a novel triple agonist of the glucose-dependent insulinotropic polypeptide, glucagon-like peptide 1 and glucagon receptors."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "retatrutide",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.97,
+      "evidence": "Retatrutide is a novel triple agonist of the glucose-dependent insulinotropic polypeptide, glucagon-like peptide 1 and glucagon receptors."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "retatrutide",
+      "target_entity": "glucagon receptor",
+      "confidence": 0.97,
+      "evidence": "Retatrutide is a novel triple agonist of the glucose-dependent insulinotropic polypeptide, glucagon-like peptide 1 and glucagon receptors."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "retatrutide",
+      "target_entity": "Metabolic Dysfunction-Associated Steatotic Liver Disease",
+      "confidence": 0.75,
+      "evidence": "The primary objective of this substudy was to assess mean relative change from baseline in liver fat (LF) at 24 weeks in participants from that study with metabolic dysfunction-associated steatotic liver disease and \u226510% of LF."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "retatrutide",
+      "target_entity": "Obesity",
+      "confidence": 0.85,
+      "evidence": "A 48-week phase 2 obesity study demonstrated weight reductions of 22.8% and 24.2% with retatrutide 8 and 12 mg, respectively."
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "retatrutide",
+      "target_entity": "NCT04881760",
+      "confidence": 0.98,
+      "evidence": "participants (n = 98) were randomly assigned to 48 weeks of once-weekly subcutaneous retatrutide (1, 4, 8 or 12 mg dose) or placebo. The ClinicalTrials.gov registration is NCT04881760."
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "NCT04881760",
+      "target_entity": "Sanyal et al., Nature Medicine 2024",
+      "confidence": 0.98,
+      "evidence": "Triple hormone receptor agonist retatrutide for metabolic dysfunction-associated steatotic liver disease: a randomized phase 2a trial. Nature medicine (2024). PMID: 38858523"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "liver fat reduction",
+      "target_entity": "retatrutide",
+      "confidence": 0.88,
+      "evidence": "The mean relative change from baseline in LF at 24 weeks was -42.9% (1 mg), -57.0% (4 mg), -81.4% (8 mg), -82.4% (12 mg) and +0.3% (placebo) (all P < 0.001 versus placebo)."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "retatrutide",
+      "target_entity": "insulin sensitivity",
+      "confidence": 0.85,
+      "evidence": "LF reductions were significantly related to changes in body weight, abdominal fat and metabolic measures associated with improved insulin sensitivity and lipid metabolism."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "retatrutide",
+      "target_entity": "lipid metabolism",
+      "confidence": 0.82,
+      "evidence": "LF reductions were significantly related to changes in body weight, abdominal fat and metabolic measures associated with improved insulin sensitivity and lipid metabolism."
+    }
+  ],
+  "cost_usd": 0.080325,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:50:05.516311+00:00",
+  "error": null
+}

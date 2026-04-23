@@ -1,0 +1,24 @@
+{
+  "total": 3,
+  "passed": 3,
+  "recovered": 0,
+  "unrecoverable": 0,
+  "pass_rate": 1.0,
+  "fail_threshold": 0.95,
+  "above_threshold": true,
+  "generated_at": "2026-04-22T17:43:06.457623+00:00",
+  "actions": [
+    {
+      "file": "patent_10_us11622996b2_oral_semaglutide_snac.json",
+      "action": "passed"
+    },
+    {
+      "file": "pmid_32442310.json",
+      "action": "passed"
+    },
+    {
+      "file": "pmid_41523559.json",
+      "action": "passed"
+    }
+  ]
+}

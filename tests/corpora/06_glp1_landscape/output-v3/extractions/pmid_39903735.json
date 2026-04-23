@@ -1,0 +1,411 @@
+{
+  "document_id": "pmid_39903735",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "Metabolic Dysfunction-Associated Steatohepatitis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Metabolic dysfunction-associated steatohepatitis",
+        "aliases": [
+          "MASH",
+          "NASH"
+        ],
+        "disease_subtype": "metabolic liver disease",
+        "prevalence": "leading cause of liver disease"
+      },
+      "confidence": 0.98,
+      "context": "Metabolic dysfunction-associated steatohepatitis (MASH) is a leading cause of liver disease."
+    },
+    {
+      "name": "Liver Fibrosis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Liver Cirrhosis",
+        "aliases": [
+          "hepatic fibrosis",
+          "fibrosis"
+        ],
+        "disease_subtype": "hepatic fibrosis"
+      },
+      "confidence": 0.95,
+      "context": "The co-primary endpoints were fibrosis improvement \u22651 stage without MASH worsening and MASH resolution without worsening fibrosis."
+    },
+    {
+      "name": "pegozafermin",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "development_stage": "late-phase clinical development",
+        "drug_class": "FGF21 analog"
+      },
+      "confidence": 0.97,
+      "context": "Pegozafermin, cilofexor + firsocostat, denifanstat, survodutide, obeticholic acid, tirzepatide, resmetirom, and semaglutide were significantly better than placebo in achieving fibrosis regression without worsening MASH."
+    },
+    {
+      "name": "cilofexor",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "development_stage": "late-phase clinical development",
+        "drug_class": "FXR agonist"
+      },
+      "confidence": 0.97,
+      "context": "Pegozafermin, cilofexor + firsocostat, denifanstat, survodutide, obeticholic acid, tirzepatide, resmetirom, and semaglutide were significantly better than placebo in achieving fibrosis regression without worsening MASH."
+    },
+    {
+      "name": "firsocostat",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "development_stage": "late-phase clinical development",
+        "drug_class": "ACC inhibitor"
+      },
+      "confidence": 0.97,
+      "context": "Pegozafermin, cilofexor + firsocostat, denifanstat, survodutide, obeticholic acid, tirzepatide, resmetirom, and semaglutide were significantly better than placebo in achieving fibrosis regression without worsening MASH."
+    },
+    {
+      "name": "denifanstat",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "development_stage": "late-phase clinical development",
+        "drug_class": "SCD1 inhibitor"
+      },
+      "confidence": 0.97,
+      "context": "Pegozafermin, cilofexor + firsocostat, denifanstat, survodutide, obeticholic acid, tirzepatide, resmetirom, and semaglutide were significantly better than placebo in achieving fibrosis regression without worsening MASH."
+    },
+    {
+      "name": "survodutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "development_stage": "late-phase clinical development",
+        "drug_class": "GLP-1/glucagon receptor dual agonist"
+      },
+      "confidence": 0.97,
+      "context": "Pegozafermin, cilofexor + firsocostat, denifanstat, survodutide, obeticholic acid, tirzepatide, resmetirom, and semaglutide were significantly better than placebo in achieving fibrosis regression without worsening MASH."
+    },
+    {
+      "name": "obeticholic acid",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "development_stage": "late-phase clinical development",
+        "drug_class": "FXR agonist"
+      },
+      "confidence": 0.97,
+      "context": "Pegozafermin, cilofexor + firsocostat, denifanstat, survodutide, obeticholic acid, tirzepatide, resmetirom, and semaglutide were significantly better than placebo in achieving fibrosis regression without worsening MASH."
+    },
+    {
+      "name": "tirzepatide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "development_stage": "late-phase clinical development",
+        "drug_class": "GIP/GLP-1 receptor dual agonist"
+      },
+      "confidence": 0.97,
+      "context": "Pegozafermin, cilofexor + firsocostat, denifanstat, survodutide, obeticholic acid, tirzepatide, resmetirom, and semaglutide were significantly better than placebo in achieving fibrosis regression without worsening MASH."
+    },
+    {
+      "name": "resmetirom",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "development_stage": "late-phase clinical development",
+        "drug_class": "thyroid hormone receptor beta agonist"
+      },
+      "confidence": 0.97,
+      "context": "Pegozafermin, cilofexor + firsocostat, denifanstat, survodutide, obeticholic acid, tirzepatide, resmetirom, and semaglutide were significantly better than placebo in achieving fibrosis regression without worsening MASH."
+    },
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "development_stage": "late-phase clinical development",
+        "drug_class": "GLP-1 receptor agonist"
+      },
+      "confidence": 0.97,
+      "context": "Pegozafermin, cilofexor + firsocostat, denifanstat, survodutide, obeticholic acid, tirzepatide, resmetirom, and semaglutide were significantly better than placebo in achieving fibrosis regression without worsening MASH."
+    },
+    {
+      "name": "selonsertib",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "development_stage": "clinical development",
+        "drug_class": "ASK1 inhibitor"
+      },
+      "confidence": 0.95,
+      "context": "Pegozafermin (SUCRA: 79.92), cilofexor + firsocostat (SUCRA: 71.38), and cilofexor + selonsertib (SUCRA: 69.11) were ranked the most effective interventions."
+    },
+    {
+      "name": "efruxifermin",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "development_stage": "late-phase clinical development",
+        "drug_class": "FGF21 analog"
+      },
+      "confidence": 0.97,
+      "context": "Pegozafermin, survodutide, tirzepatide, efruxifermin, liraglutide, vitamin E + pioglitazone, resmetirom, semaglutide, pioglitazone, denifanstat, semaglutide, and lanifibranor were significantly better than placebo in achieving MASH resolution without worsening fibrosis."
+    },
+    {
+      "name": "liraglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "development_stage": "approved",
+        "drug_class": "GLP-1 receptor agonist"
+      },
+      "confidence": 0.97,
+      "context": "Pegozafermin, survodutide, tirzepatide, efruxifermin, liraglutide, vitamin E + pioglitazone, resmetirom, semaglutide, pioglitazone, denifanstat, semaglutide, and lanifibranor were significantly better than placebo in achieving MASH resolution without worsening fibrosis."
+    },
+    {
+      "name": "vitamin E",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "antioxidant"
+      },
+      "confidence": 0.95,
+      "context": "Pegozafermin, survodutide, tirzepatide, efruxifermin, liraglutide, vitamin E + pioglitazone, resmetirom, semaglutide, pioglitazone, denifanstat, semaglutide, and lanifibranor were significantly better than placebo in achieving MASH resolution without worsening fibrosis."
+    },
+    {
+      "name": "pioglitazone",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "development_stage": "approved",
+        "drug_class": "thiazolidinedione, PPAR-gamma agonist"
+      },
+      "confidence": 0.97,
+      "context": "Pegozafermin, survodutide, tirzepatide, efruxifermin, liraglutide, vitamin E + pioglitazone, resmetirom, semaglutide, pioglitazone, denifanstat, semaglutide, and lanifibranor were significantly better than placebo in achieving MASH resolution without worsening fibrosis."
+    },
+    {
+      "name": "lanifibranor",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "development_stage": "late-phase clinical development",
+        "drug_class": "pan-PPAR agonist"
+      },
+      "confidence": 0.97,
+      "context": "Pegozafermin, survodutide, tirzepatide, efruxifermin, liraglutide, vitamin E + pioglitazone, resmetirom, semaglutide, pioglitazone, denifanstat, semaglutide, and lanifibranor were significantly better than placebo in achieving MASH resolution without worsening fibrosis."
+    },
+    {
+      "name": "MASH Pharmacotherapy Network Meta-Analysis 2025",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "39903735",
+        "journal": "Hepatology (Baltimore, Md.)",
+        "year": "2025",
+        "first_author": "Souza",
+        "publication_type": "meta_analysis"
+      },
+      "confidence": 0.99,
+      "context": "Comparison of pharmacological therapies in metabolic dysfunction-associated steatohepatitis for fibrosis regression and MASH resolution: Systematic review and network meta-analysis."
+    },
+    {
+      "name": "fibrosis improvement without MASH worsening",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "surrogate",
+        "analyte": "liver biopsy fibrosis stage",
+        "assay": "liver biopsy",
+        "threshold": "\u22651 stage improvement",
+        "tissue": "liver"
+      },
+      "confidence": 0.95,
+      "context": "The co-primary endpoints were fibrosis improvement \u22651 stage without MASH worsening and MASH resolution without worsening fibrosis."
+    },
+    {
+      "name": "MASH resolution without worsening fibrosis",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "surrogate",
+        "analyte": "liver biopsy histology",
+        "assay": "liver biopsy",
+        "tissue": "liver"
+      },
+      "confidence": 0.95,
+      "context": "The co-primary endpoints were fibrosis improvement \u22651 stage without MASH worsening and MASH resolution without worsening fibrosis."
+    },
+    {
+      "name": "biopsy-proven MASH",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "diagnostic",
+        "analyte": "liver histology",
+        "assay": "liver biopsy",
+        "tissue": "liver"
+      },
+      "confidence": 0.93,
+      "context": "We searched PubMed and Embase databases from January 1, 2020 to December 1, 2024, for published randomized controlled trials comparing pharmacological interventions in patients with biopsy-proven MASH."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "pegozafermin",
+      "target_entity": "Metabolic Dysfunction-Associated Steatohepatitis",
+      "confidence": 0.92,
+      "evidence": "Pegozafermin, cilofexor + firsocostat, denifanstat, survodutide, obeticholic acid, tirzepatide, resmetirom, and semaglutide were significantly better than placebo in achieving fibrosis regression without worsening MASH."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "cilofexor",
+      "target_entity": "Metabolic Dysfunction-Associated Steatohepatitis",
+      "confidence": 0.9,
+      "evidence": "Pegozafermin, cilofexor + firsocostat, denifanstat, survodutide, obeticholic acid, tirzepatide, resmetirom, and semaglutide were significantly better than placebo in achieving fibrosis regression without worsening MASH."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "firsocostat",
+      "target_entity": "Metabolic Dysfunction-Associated Steatohepatitis",
+      "confidence": 0.9,
+      "evidence": "Pegozafermin, cilofexor + firsocostat, denifanstat, survodutide, obeticholic acid, tirzepatide, resmetirom, and semaglutide were significantly better than placebo in achieving fibrosis regression without worsening MASH."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "denifanstat",
+      "target_entity": "Metabolic Dysfunction-Associated Steatohepatitis",
+      "confidence": 0.9,
+      "evidence": "Pegozafermin, cilofexor + firsocostat, denifanstat, survodutide, obeticholic acid, tirzepatide, resmetirom, and semaglutide were significantly better than placebo in achieving fibrosis regression without worsening MASH."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "survodutide",
+      "target_entity": "Metabolic Dysfunction-Associated Steatohepatitis",
+      "confidence": 0.9,
+      "evidence": "Pegozafermin, cilofexor + firsocostat, denifanstat, survodutide, obeticholic acid, tirzepatide, resmetirom, and semaglutide were significantly better than placebo in achieving fibrosis regression without worsening MASH."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "obeticholic acid",
+      "target_entity": "Metabolic Dysfunction-Associated Steatohepatitis",
+      "confidence": 0.9,
+      "evidence": "Pegozafermin, cilofexor + firsocostat, denifanstat, survodutide, obeticholic acid, tirzepatide, resmetirom, and semaglutide were significantly better than placebo in achieving fibrosis regression without worsening MASH."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "Metabolic Dysfunction-Associated Steatohepatitis",
+      "confidence": 0.9,
+      "evidence": "Pegozafermin, cilofexor + firsocostat, denifanstat, survodutide, obeticholic acid, tirzepatide, resmetirom, and semaglutide were significantly better than placebo in achieving fibrosis regression without worsening MASH."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "resmetirom",
+      "target_entity": "Metabolic Dysfunction-Associated Steatohepatitis",
+      "confidence": 0.9,
+      "evidence": "Pegozafermin, cilofexor + firsocostat, denifanstat, survodutide, obeticholic acid, tirzepatide, resmetirom, and semaglutide were significantly better than placebo in achieving fibrosis regression without worsening MASH."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Metabolic Dysfunction-Associated Steatohepatitis",
+      "confidence": 0.9,
+      "evidence": "Pegozafermin, cilofexor + firsocostat, denifanstat, survodutide, obeticholic acid, tirzepatide, resmetirom, and semaglutide were significantly better than placebo in achieving fibrosis regression without worsening MASH."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "efruxifermin",
+      "target_entity": "Metabolic Dysfunction-Associated Steatohepatitis",
+      "confidence": 0.9,
+      "evidence": "Pegozafermin, survodutide, tirzepatide, efruxifermin, liraglutide, vitamin E + pioglitazone, resmetirom, semaglutide, pioglitazone, denifanstat, semaglutide, and lanifibranor were significantly better than placebo in achieving MASH resolution without worsening fibrosis."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "liraglutide",
+      "target_entity": "Metabolic Dysfunction-Associated Steatohepatitis",
+      "confidence": 0.9,
+      "evidence": "Pegozafermin, survodutide, tirzepatide, efruxifermin, liraglutide, vitamin E + pioglitazone, resmetirom, semaglutide, pioglitazone, denifanstat, semaglutide, and lanifibranor were significantly better than placebo in achieving MASH resolution without worsening fibrosis."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "vitamin E",
+      "target_entity": "Metabolic Dysfunction-Associated Steatohepatitis",
+      "confidence": 0.88,
+      "evidence": "Pegozafermin, survodutide, tirzepatide, efruxifermin, liraglutide, vitamin E + pioglitazone, resmetirom, semaglutide, pioglitazone, denifanstat, semaglutide, and lanifibranor were significantly better than placebo in achieving MASH resolution without worsening fibrosis."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "pioglitazone",
+      "target_entity": "Metabolic Dysfunction-Associated Steatohepatitis",
+      "confidence": 0.9,
+      "evidence": "Pegozafermin, survodutide, tirzepatide, efruxifermin, liraglutide, vitamin E + pioglitazone, resmetirom, semaglutide, pioglitazone, denifanstat, semaglutide, and lanifibranor were significantly better than placebo in achieving MASH resolution without worsening fibrosis."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "lanifibranor",
+      "target_entity": "Metabolic Dysfunction-Associated Steatohepatitis",
+      "confidence": 0.9,
+      "evidence": "Pegozafermin, survodutide, tirzepatide, efruxifermin, liraglutide, vitamin E + pioglitazone, resmetirom, semaglutide, pioglitazone, denifanstat, semaglutide, and lanifibranor were significantly better than placebo in achieving MASH resolution without worsening fibrosis."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "selonsertib",
+      "target_entity": "Metabolic Dysfunction-Associated Steatohepatitis",
+      "confidence": 0.85,
+      "evidence": "Pegozafermin (SUCRA: 79.92), cilofexor + firsocostat (SUCRA: 71.38), and cilofexor + selonsertib (SUCRA: 69.11) were ranked the most effective interventions."
+    },
+    {
+      "relation_type": "COMBINED_WITH",
+      "source_entity": "cilofexor",
+      "target_entity": "firsocostat",
+      "confidence": 0.97,
+      "evidence": "Pegozafermin, cilofexor + firsocostat, denifanstat, survodutide, obeticholic acid, tirzepatide, resmetirom, and semaglutide were significantly better than placebo in achieving fibrosis regression without worsening MASH."
+    },
+    {
+      "relation_type": "COMBINED_WITH",
+      "source_entity": "cilofexor",
+      "target_entity": "selonsertib",
+      "confidence": 0.95,
+      "evidence": "Pegozafermin (SUCRA: 79.92), cilofexor + firsocostat (SUCRA: 71.38), and cilofexor + selonsertib (SUCRA: 69.11) were ranked the most effective interventions."
+    },
+    {
+      "relation_type": "COMBINED_WITH",
+      "source_entity": "vitamin E",
+      "target_entity": "pioglitazone",
+      "confidence": 0.95,
+      "evidence": "Pegozafermin, survodutide, tirzepatide, efruxifermin, liraglutide, vitamin E + pioglitazone, resmetirom, semaglutide, pioglitazone, denifanstat, semaglutide, and lanifibranor were significantly better than placebo in achieving MASH resolution without worsening fibrosis."
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "fibrosis improvement without MASH worsening",
+      "target_entity": "pegozafermin",
+      "confidence": 0.9,
+      "evidence": "Pegozafermin (SUCRA: 79.92), cilofexor + firsocostat (SUCRA: 71.38), and cilofexor + selonsertib (SUCRA: 69.11) were ranked the most effective interventions."
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "MASH resolution without worsening fibrosis",
+      "target_entity": "pegozafermin",
+      "confidence": 0.92,
+      "evidence": "Pegozafermin (SUCRA: 91.75), survodutide (SUCRA: 90.87), and tirzepatide (SUCRA: 84.70) were ranked the most effective interventions for achieving MASH resolution without worsening fibrosis."
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "MASH resolution without worsening fibrosis",
+      "target_entity": "survodutide",
+      "confidence": 0.92,
+      "evidence": "Pegozafermin (SUCRA: 91.75), survodutide (SUCRA: 90.87), and tirzepatide (SUCRA: 84.70) were ranked the most effective interventions for achieving MASH resolution without worsening fibrosis."
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "MASH resolution without worsening fibrosis",
+      "target_entity": "tirzepatide",
+      "confidence": 0.92,
+      "evidence": "Pegozafermin (SUCRA: 91.75), survodutide (SUCRA: 90.87), and tirzepatide (SUCRA: 84.70) were ranked the most effective interventions for achieving MASH resolution without worsening fibrosis."
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "biopsy-proven MASH",
+      "target_entity": "Metabolic Dysfunction-Associated Steatohepatitis",
+      "confidence": 0.95,
+      "evidence": "We searched PubMed and Embase databases from January 1, 2020 to December 1, 2024, for published randomized controlled trials comparing pharmacological interventions in patients with biopsy-proven MASH."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "Metabolic Dysfunction-Associated Steatohepatitis",
+      "target_entity": "Liver Fibrosis",
+      "confidence": 0.95,
+      "evidence": "Metabolic dysfunction-associated steatohepatitis (MASH) is a leading cause of liver disease. With the advent of multiple therapeutic targets in late-phase clinical drug development for MASH, there is a knowledge gap to better understand the comparative efficacy of various pharmacological agents."
+    }
+  ],
+  "cost_usd": 0.138009,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:53:05.769153+00:00",
+  "error": null
+}

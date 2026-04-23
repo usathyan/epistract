@@ -1,0 +1,360 @@
+{
+  "document_id": "patent_08_us12054528b2_glp1_amylin_coagonist",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "GLP-1/amylin receptor co-agonist polypeptide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "dual receptor agonist, single-chain polypeptide",
+        "development_stage": "preclinical",
+        "route_of_administration": "oral (potential)",
+        "compound_code": "SEQ ID NOs 117-236",
+        "formulation": "single polypeptide with protraction moiety",
+        "requires_validation": true,
+        "notation_type": "amino_acid_sequence",
+        "notation_present": true
+      },
+      "confidence": 0.85,
+      "context": "The invention relates to compounds functioning as dual receptor agonists that bind to and activate both GLP-1 and amylin receptors. These co-agonists are single polypeptide molecules rather than separate co-administered formulations, designed for treating obesity, type 2 diabetes mellitus, cardiovascular disease, and related metabolic conditions."
+    },
+    {
+      "name": "cagrilintide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "long-acting amylin analog",
+        "development_stage": "Phase III",
+        "route_of_administration": "subcutaneous"
+      },
+      "confidence": 0.92,
+      "context": "CagriSema is a co-administered combination of cagrilintide (a long-acting amylin analog) and semaglutide (a GLP-1 receptor agonist) currently in Phase 3 clinical trials."
+    },
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "GLP-1 receptor agonist",
+        "development_stage": "approved"
+      },
+      "confidence": 0.95,
+      "context": "CagriSema is a co-administered combination of cagrilintide (a long-acting amylin analog) and semaglutide (a GLP-1 receptor agonist) currently in Phase 3 clinical trials."
+    },
+    {
+      "name": "CagriSema",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "combination therapy, GLP-1 receptor agonist + amylin analog",
+        "development_stage": "Phase III",
+        "formulation": "co-administered combination of cagrilintide and semaglutide"
+      },
+      "confidence": 0.92,
+      "context": "CagriSema is a co-administered combination of cagrilintide (a long-acting amylin analog) and semaglutide (a GLP-1 receptor agonist) currently in Phase 3 clinical trials."
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "protein_family": "incretin receptor family"
+      },
+      "confidence": 0.95,
+      "context": "The invention relates to compounds functioning as dual receptor agonists that bind to and activate both GLP-1 and amylin receptors."
+    },
+    {
+      "name": "amylin receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "protein_family": "calcitonin receptor family"
+      },
+      "confidence": 0.95,
+      "context": "The invention relates to compounds functioning as dual receptor agonists that bind to and activate both GLP-1 and amylin receptors."
+    },
+    {
+      "name": "GLP-1(7-37)",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "endogenous incretin peptide",
+        "compound_code": "SEQ ID NO: 1",
+        "requires_validation": true,
+        "notation_type": "amino_acid_sequence",
+        "notation_present": true
+      },
+      "confidence": 0.9,
+      "context": "SEQ ID NO: 1 \u2014 Human GLP-1(7-37) reference sequence: HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG"
+    },
+    {
+      "name": "Obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Obesity",
+        "icd_code": "E66"
+      },
+      "confidence": 0.9,
+      "context": "designed for treating obesity, type 2 diabetes mellitus, cardiovascular disease, and related metabolic conditions."
+    },
+    {
+      "name": "Type 2 Diabetes Mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Diabetes Mellitus, Type 2",
+        "icd_code": "E11",
+        "aliases": "T2DM"
+      },
+      "confidence": 0.9,
+      "context": "designed for treating obesity, type 2 diabetes mellitus, cardiovascular disease, and related metabolic conditions."
+    },
+    {
+      "name": "Cardiovascular Disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Cardiovascular Diseases",
+        "icd_code": "I51.9"
+      },
+      "confidence": 0.85,
+      "context": "designed for treating obesity, type 2 diabetes mellitus, cardiovascular disease, and related metabolic conditions."
+    },
+    {
+      "name": "GLP-1-mediated glucose-dependent insulin secretion",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "target": "GLP-1 receptor"
+      },
+      "confidence": 0.88,
+      "context": "The combination targets both GLP-1-mediated glucose-dependent insulin secretion and appetite suppression, and amylin-mediated gastric emptying delay and central satiety signaling."
+    },
+    {
+      "name": "amylin-mediated gastric emptying delay and central satiety signaling",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "modulation",
+        "target": "amylin receptor"
+      },
+      "confidence": 0.88,
+      "context": "The combination targets both GLP-1-mediated glucose-dependent insulin secretion and appetite suppression, and amylin-mediated gastric emptying delay and central satiety signaling."
+    },
+    {
+      "name": "dual GLP-1/amylin receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "selectivity": "dual",
+        "target": "GLP-1 receptor and amylin receptor"
+      },
+      "confidence": 0.88,
+      "context": "The invention relates to compounds functioning as dual receptor agonists that bind to and activate both GLP-1 and amylin receptors."
+    },
+    {
+      "name": "Novo Nordisk AS",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "pharma",
+        "country": "Denmark"
+      },
+      "confidence": 0.98,
+      "context": "Assignee: Novo Nordisk AS"
+    },
+    {
+      "name": "US12054528B2",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "publication_type": "patent",
+        "patent_number": "US12054528B2",
+        "filing_date": "December 19, 2022",
+        "assignee": "Novo Nordisk AS"
+      },
+      "confidence": 0.98,
+      "context": "Patent ID: US12054528B2, Assignee: Novo Nordisk AS, Filing Date: December 19, 2022"
+    },
+    {
+      "name": "CagriSema Phase 3 clinical trial",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "Phase III",
+        "status": "active",
+        "patient_population": "obesity and/or type 2 diabetes"
+      },
+      "confidence": 0.88,
+      "context": "CagriSema is a co-administered combination of cagrilintide (a long-acting amylin analog) and semaglutide (a GLP-1 receptor agonist) currently in Phase 3 clinical trials."
+    },
+    {
+      "name": "CagriSema Phase 2 study",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "phase": "Phase II",
+        "status": "completed",
+        "primary_endpoint_met": true
+      },
+      "confidence": 0.82,
+      "context": "Phase 2 data showed the combination achieved superior weight loss versus either monotherapy without worsening tolerability."
+    },
+    {
+      "name": "superior weight loss with CagriSema vs monotherapy",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "physiological",
+        "clinical_relevance": "efficacy endpoint",
+        "measurement_method": "body weight reduction"
+      },
+      "confidence": 0.8,
+      "context": "Phase 2 data showed the combination achieved superior weight loss versus either monotherapy without worsening tolerability."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "GLP-1/amylin receptor co-agonist polypeptide",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.88,
+      "evidence": "The invention relates to compounds functioning as dual receptor agonists that bind to and activate both GLP-1 and amylin receptors."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "GLP-1/amylin receptor co-agonist polypeptide",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.85,
+      "evidence": "The invention relates to compounds functioning as dual receptor agonists that bind to and activate both GLP-1 and amylin receptors."
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "GLP-1/amylin receptor co-agonist polypeptide",
+      "target_entity": "amylin receptor",
+      "confidence": 0.88,
+      "evidence": "The invention relates to compounds functioning as dual receptor agonists that bind to and activate both GLP-1 and amylin receptors."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "GLP-1/amylin receptor co-agonist polypeptide",
+      "target_entity": "amylin receptor",
+      "confidence": 0.85,
+      "evidence": "The invention relates to compounds functioning as dual receptor agonists that bind to and activate both GLP-1 and amylin receptors."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "GLP-1/amylin receptor co-agonist polypeptide",
+      "target_entity": "dual GLP-1/amylin receptor agonism",
+      "confidence": 0.85,
+      "evidence": "The invention relates to compounds functioning as dual receptor agonists that bind to and activate both GLP-1 and amylin receptors. These co-agonists are single polypeptide molecules rather than separate co-administered formulations."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1/amylin receptor co-agonist polypeptide",
+      "target_entity": "Obesity",
+      "confidence": 0.4,
+      "evidence": "designed for treating obesity, type 2 diabetes mellitus, cardiovascular disease, and related metabolic conditions."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1/amylin receptor co-agonist polypeptide",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.4,
+      "evidence": "designed for treating obesity, type 2 diabetes mellitus, cardiovascular disease, and related metabolic conditions."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1/amylin receptor co-agonist polypeptide",
+      "target_entity": "Cardiovascular Disease",
+      "confidence": 0.35,
+      "evidence": "designed for treating obesity, type 2 diabetes mellitus, cardiovascular disease, and related metabolic conditions."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "GLP-1/amylin receptor co-agonist polypeptide",
+      "target_entity": "Novo Nordisk AS",
+      "confidence": 0.95,
+      "evidence": "Assignee: Novo Nordisk AS"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "CagriSema",
+      "target_entity": "Novo Nordisk AS",
+      "confidence": 0.9,
+      "evidence": "This patent relates to the CagriSema program. CagriSema is a co-administered combination of cagrilintide (a long-acting amylin analog) and semaglutide (a GLP-1 receptor agonist) currently in Phase 3 clinical trials."
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "GLP-1/amylin receptor co-agonist polypeptide",
+      "target_entity": "US12054528B2",
+      "confidence": 0.98,
+      "evidence": "Patent ID: US12054528B2, Assignee: Novo Nordisk AS, Filing Date: December 19, 2022"
+    },
+    {
+      "relation_type": "COMBINED_WITH",
+      "source_entity": "cagrilintide",
+      "target_entity": "semaglutide",
+      "confidence": 0.95,
+      "evidence": "CagriSema is a co-administered combination of cagrilintide (a long-acting amylin analog) and semaglutide (a GLP-1 receptor agonist) currently in Phase 3 clinical trials."
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "CagriSema",
+      "target_entity": "CagriSema Phase 3 clinical trial",
+      "confidence": 0.9,
+      "evidence": "CagriSema is a co-administered combination of cagrilintide (a long-acting amylin analog) and semaglutide (a GLP-1 receptor agonist) currently in Phase 3 clinical trials."
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "CagriSema",
+      "target_entity": "CagriSema Phase 2 study",
+      "confidence": 0.85,
+      "evidence": "Phase 2 data showed the combination achieved superior weight loss versus either monotherapy without worsening tolerability."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "CagriSema",
+      "target_entity": "Obesity",
+      "confidence": 0.82,
+      "evidence": "The combination targets both GLP-1-mediated glucose-dependent insulin secretion and appetite suppression, and amylin-mediated gastric emptying delay and central satiety signaling."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "CagriSema",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.82,
+      "evidence": "The combination targets both GLP-1-mediated glucose-dependent insulin secretion and appetite suppression, and amylin-mediated gastric emptying delay and central satiety signaling."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1-mediated glucose-dependent insulin secretion",
+      "confidence": 0.88,
+      "evidence": "The combination targets both GLP-1-mediated glucose-dependent insulin secretion and appetite suppression, and amylin-mediated gastric emptying delay and central satiety signaling."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "cagrilintide",
+      "target_entity": "amylin-mediated gastric emptying delay and central satiety signaling",
+      "confidence": 0.88,
+      "evidence": "The combination targets both GLP-1-mediated glucose-dependent insulin secretion and appetite suppression, and amylin-mediated gastric emptying delay and central satiety signaling."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.92,
+      "evidence": "CagriSema is a co-administered combination of cagrilintide (a long-acting amylin analog) and semaglutide (a GLP-1 receptor agonist) currently in Phase 3 clinical trials."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "cagrilintide",
+      "target_entity": "amylin receptor",
+      "confidence": 0.9,
+      "evidence": "CagriSema is a co-administered combination of cagrilintide (a long-acting amylin analog) and semaglutide (a GLP-1 receptor agonist) currently in Phase 3 clinical trials."
+    },
+    {
+      "relation_type": "DERIVED_FROM",
+      "source_entity": "cagrilintide",
+      "target_entity": "GLP-1/amylin receptor co-agonist polypeptide",
+      "confidence": 0.4,
+      "evidence": "This patent represents a next-generation approach: engineering a single molecule with dual GLP-1/amylin activity rather than co-administering two separate peptides."
+    }
+  ],
+  "cost_usd": 0.107607,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:40:08.497151+00:00",
+  "error": null
+}

@@ -102,9 +102,29 @@ Wait for user approval or modifications before proceeding. If the user suggests 
 - Re-display the updated schema for confirmation
 - Repeat until approved
 
+**Elicit the analyst persona:**
+
+Before generating epistemic parameters, ask the user for a persona paragraph. This text serves BOTH the workbench chat prompt (reactive) AND the automatic narrator that runs after `/epistract:epistemic` (proactive — produces `epistemic_narrative.md`). A good persona names a profession, describes depth of expertise, and commits to the epistemic-status vocabulary (`asserted` / `prophetic` / `hypothesized` / `contested` / `contradictions` / `negative`).
+
+Prompt the user something like:
+
+```
+Who should the workbench/narrator behave as for this domain?
+- Profession / title (e.g., "senior drug discovery competitive intelligence
+  analyst", "procurement contracts analyst", "ESG investment researcher")
+- Depth signals (what body of knowledge do they draw on?)
+- Formatting preferences (tables? inline citations?)
+
+Paste a paragraph, or type "default" to use the analyst-shaped template.
+```
+
+If the user types "default" or provides nothing, pass `persona=None` to
+`generate_domain_package()` — the wizard will emit the analyst-shaped
+default template that includes epistemic-status vocabulary automatically.
+
 ### Step 3: Generate Domain Package
 
-After user approves the schema:
+After user approves the schema and persona:
 
 **Generate epistemic parameters:**
 1. Collect short text excerpts from each sample document (first ~500 chars each)
@@ -192,6 +212,63 @@ Your domain is ready! Try it with:
 - **Epistemic validation fails**: Retry generation with the error message as context (up to 2 retries)
 - **Domain name collision**: Ask user to overwrite or choose new name (per D-16)
 - **Fewer than 2 documents**: Error with message "At least 2 sample documents required (3-5 recommended)"
+
+## Schema Bypass (--schema)
+
+For users with an established ontology (e.g., axmp-compliance domains with pre-defined entity/relation types), the wizard supports a deterministic, LLM-free bypass:
+
+```bash
+python -m core.domain_wizard --schema my_schema.json --name my-domain
+```
+
+This flag skips the 3-pass LLM discovery entirely (see `docs/known-limitations.md §Wizard & CLI Ergonomics (FIDL-08)`) and generates a domain package directly from the user-supplied JSON schema.
+
+### When to use
+
+- You have an established ontology and want reproducible, byte-deterministic domain creation.
+- You want to avoid LLM costs and non-determinism during domain setup.
+- You are automating domain creation (CI, batch provisioning).
+
+### Schema shape
+
+**Required top-level keys** (both must be non-empty dicts):
+- `entity_types`: `{"<TYPE_NAME>": {"description": "..."}}` — map of entity type name to metadata.
+- `relation_types`: `{"<REL_NAME>": {"description": "..."}}` — map of relation type name to metadata.
+
+**Optional top-level keys** (sensible defaults applied):
+- `description` — domain description for `domain.yaml`; default `""`.
+- `system_context` — system prompt for extraction agents; default `"Domain extraction pipeline"`.
+- `extraction_guidelines` — extraction instructions; default `"Follow domain schema."`.
+- `contradiction_pairs` — epistemic contradiction pairs; default `[]`.
+- `gap_target_types` — gap detection targets; default `{}`.
+- `confidence_thresholds` — confidence cutoffs; default `{"high": 0.9, "medium": 0.7, "low": 0.5}`.
+- `persona` — analyst persona paragraph(s) used by BOTH the workbench chat prompt AND the automatic narrator in `/epistract:epistemic`. When omitted, the wizard emits an analyst-shaped default template with the domain name substituted. For best narrator quality, supply a domain-specific persona that names a profession, describes expertise depth, and commits to the epistemic-status vocabulary (`asserted` / `prophetic` / `hypothesized` / `contested` / `contradictions` / `negative`).
+
+**Required CLI flags:**
+- `--schema <file.json>` — path to the JSON schema file.
+- `--name <slug>` — domain name (used as directory name under `domains/`). Passed through `generate_slug` for normalization.
+
+### Example
+
+```json
+{
+  "entity_types": {
+    "PARTY": {"description": "A legal entity in the contract."},
+    "OBLIGATION": {"description": "A duty one party owes another."}
+  },
+  "relation_types": {
+    "HAS_OBLIGATION": {"description": "Links a PARTY to an OBLIGATION."}
+  },
+  "description": "Contract obligations domain.",
+  "system_context": "You are analyzing vendor contracts.",
+  "extraction_guidelines": "Extract all PARTY and OBLIGATION entities.",
+  "persona": "You are a senior procurement contracts analyst. When answering questions or producing a briefing, call out epistemic status (asserted / prophetic / hypothesized / contested / contradictions), synthesize across contracts, surface coverage gaps, and cite source contracts inline by ID. Use markdown tables for cross-contract comparisons."
+}
+```
+
+### No LLM guarantee
+
+When `--schema` is passed, the wizard does NOT import or call LiteLLM at any point. Domain creation is pure Python + filesystem I/O. See `docs/known-limitations.md §Wizard & CLI Ergonomics (FIDL-08)` for the full contract.
 
 ## Notes
 

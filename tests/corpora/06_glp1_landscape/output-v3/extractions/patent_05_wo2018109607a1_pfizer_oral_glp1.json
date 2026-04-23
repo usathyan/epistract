@@ -1,0 +1,392 @@
+{
+  "document_id": "patent_05_wo2018109607a1_pfizer_oral_glp1",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "danuglipron",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "compound_code": "PF-06882961",
+        "drug_class": "nonpeptide small-molecule GLP-1 receptor agonist",
+        "development_stage": "Phase II/III",
+        "route_of_administration": "oral",
+        "formulation": "twice-daily (discontinued); once-daily (in development)"
+      },
+      "confidence": 0.9,
+      "context": "Danuglipron (PF-06882961) was developed. Danuglipron, derived from this chemical series, reached Phase 2/3 clinical trials for type 2 diabetes and obesity. Pfizer subsequently discontinued the twice-daily formulation but continues development of a once-daily formulation."
+    },
+    {
+      "name": "orforglipron",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "compound_code": "LY3502970",
+        "inn": "orforglipron",
+        "aliases": [
+          "OWL-833"
+        ],
+        "drug_class": "oral small-molecule GLP-1 receptor agonist",
+        "development_stage": "Phase III",
+        "route_of_administration": "oral",
+        "molecular_formula": "C48H48F2N10O5",
+        "molecular_weight": "882.96",
+        "requires_validation": true,
+        "notation_type": "CAS_number",
+        "notation_present": true
+      },
+      "confidence": 0.9,
+      "context": "A separate oral small-molecule GLP-1 agonist, orforglipron (LY3502970, originally OWL-833), is being developed by Eli Lilly with the molecular formula C48H48F2N10O5 and molecular weight 882.96, and has demonstrated significant weight loss and HbA1c reduction in Phase 3 trials (ACHIEVE program). Orforglipron has CAS Registry Number 2212020-52-3."
+    },
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "inn": "semaglutide",
+        "drug_class": "peptide-based GLP-1 receptor agonist",
+        "route_of_administration": "injection"
+      },
+      "confidence": 0.85,
+      "context": "Unlike peptide-based GLP-1 receptor agonists (semaglutide, liraglutide, tirzepatide), these are orally bioavailable nonpeptide small molecules that activate the GLP-1 receptor through an allosteric mechanism."
+    },
+    {
+      "name": "liraglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "inn": "liraglutide",
+        "drug_class": "peptide-based GLP-1 receptor agonist",
+        "route_of_administration": "injection"
+      },
+      "confidence": 0.85,
+      "context": "Unlike peptide-based GLP-1 receptor agonists (semaglutide, liraglutide, tirzepatide), these are orally bioavailable nonpeptide small molecules that activate the GLP-1 receptor through an allosteric mechanism."
+    },
+    {
+      "name": "tirzepatide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "inn": "tirzepatide",
+        "drug_class": "peptide-based GLP-1 receptor agonist",
+        "route_of_administration": "injection"
+      },
+      "confidence": 0.85,
+      "context": "Unlike peptide-based GLP-1 receptor agonists (semaglutide, liraglutide, tirzepatide), these are orally bioavailable nonpeptide small molecules that activate the GLP-1 receptor through an allosteric mechanism."
+    },
+    {
+      "name": "benzimidazole-based GLP-1 receptor agonist scaffold",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "compound_class": "6-carboxylic acids of benzimidazoles and 4-aza-, 5-aza-, 7-aza-, and 4,7-diaza-benzimidazoles",
+        "drug_class": "nonpeptide small-molecule GLP-1 receptor agonist",
+        "route_of_administration": "oral",
+        "development_stage": "preclinical/patent"
+      },
+      "confidence": 0.8,
+      "context": "The invention describes 6-carboxylic acids of benzimidazoles and 4-aza-, 5-aza-, 7-aza-, and 4,7-diaza-benzimidazoles as small-molecule GLP-1 receptor agonists, processes for their synthesis, and methods of administering said compounds to mammals in need thereof."
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "protein_family": "class B secretin receptor family",
+        "domain": "transmembrane pocket; orthosteric peptide-binding domain"
+      },
+      "confidence": 0.95,
+      "context": "These are orally bioavailable nonpeptide small molecules that activate the GLP-1 receptor through an allosteric mechanism. The compounds bind within a transmembrane pocket distinct from the orthosteric peptide-binding domain, stabilizing an active receptor conformation that couples to Gs proteins and drives intracellular cAMP accumulation."
+    },
+    {
+      "name": "Gs protein",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "G protein",
+        "protein_family": "stimulatory G protein"
+      },
+      "confidence": 0.9,
+      "context": "Stabilizing an active receptor conformation that couples to Gs proteins and drives intracellular cAMP accumulation."
+    },
+    {
+      "name": "dipeptidyl peptidase-4",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "protease",
+        "aliases": [
+          "DPP-4"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "Making them resistant to proteolytic degradation by enzymes such as dipeptidyl peptidase-4 (DPP-4) and neutral endopeptidases."
+    },
+    {
+      "name": "neutral endopeptidase",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "protease"
+      },
+      "confidence": 0.85,
+      "context": "Making them resistant to proteolytic degradation by enzymes such as dipeptidyl peptidase-4 (DPP-4) and neutral endopeptidases."
+    },
+    {
+      "name": "Type 2 Diabetes Mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Diabetes Mellitus, Type 2",
+        "icd_code": "E11",
+        "aliases": [
+          "T2DM",
+          "type 2 diabetes"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "Danuglipron, derived from this chemical series, reached Phase 2/3 clinical trials for type 2 diabetes and obesity."
+    },
+    {
+      "name": "Obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Obesity",
+        "icd_code": "E66"
+      },
+      "confidence": 0.9,
+      "context": "Danuglipron, derived from this chemical series, reached Phase 2/3 clinical trials for type 2 diabetes and obesity."
+    },
+    {
+      "name": "allosteric GLP-1 receptor activation",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "selectivity": "allosteric",
+        "target": "GLP-1 receptor",
+        "downstream_effect": "Gs protein coupling and intracellular cAMP accumulation"
+      },
+      "confidence": 0.9,
+      "context": "These are orally bioavailable nonpeptide small molecules that activate the GLP-1 receptor through an allosteric mechanism. The compounds bind within a transmembrane pocket distinct from the orthosteric peptide-binding domain, stabilizing an active receptor conformation that couples to Gs proteins and drives intracellular cAMP accumulation."
+    },
+    {
+      "name": "ACHIEVE program",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "trial_acronym": "ACHIEVE",
+        "phase": "Phase III",
+        "drug": "orforglipron",
+        "primary_endpoint": "weight loss and HbA1c reduction"
+      },
+      "confidence": 0.85,
+      "context": "Orforglipron (LY3502970, originally OWL-833), is being developed by Eli Lilly with the molecular formula C48H48F2N10O5 and molecular weight 882.96, and has demonstrated significant weight loss and HbA1c reduction in Phase 3 trials (ACHIEVE program)."
+    },
+    {
+      "name": "Pfizer Inc",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "pharma",
+        "country": "United States"
+      },
+      "confidence": 0.98,
+      "context": "Assignee: Pfizer Inc"
+    },
+    {
+      "name": "Eli Lilly",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "pharma",
+        "country": "United States"
+      },
+      "confidence": 0.95,
+      "context": "A separate oral small-molecule GLP-1 agonist, orforglipron (LY3502970, originally OWL-833), is being developed by Eli Lilly."
+    },
+    {
+      "name": "WO2018109607A1",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "publication_type": "patent",
+        "patent_id": "WO2018109607A1",
+        "assignee": "Pfizer Inc",
+        "filing_date": "2017-12-01",
+        "title": "GLP-1 receptor agonists and uses thereof (small molecule)"
+      },
+      "confidence": 0.98,
+      "context": "Patent ID: WO2018109607A1, Assignee: Pfizer Inc, Filing Date: December 1, 2017"
+    },
+    {
+      "name": "HbA1c reduction",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "pharmacodynamic",
+        "analyte": "glycated hemoglobin",
+        "aliases": [
+          "HbA1c"
+        ],
+        "clinical_relevance": "treatment response indicator for diabetes"
+      },
+      "confidence": 0.85,
+      "context": "Orforglipron has demonstrated significant weight loss and HbA1c reduction in Phase 3 trials (ACHIEVE program)."
+    },
+    {
+      "name": "oral bioavailability",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "physiological",
+        "clinical_relevance": "enables oral administration; eliminates need for injection"
+      },
+      "confidence": 0.85,
+      "context": "These are orally bioavailable nonpeptide small molecules that activate the GLP-1 receptor through an allosteric mechanism."
+    },
+    {
+      "name": "proteolytic degradation resistance",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "molecular",
+        "associated_mechanism": "lack of peptide bonds",
+        "clinical_relevance": "resistance to DPP-4 and neutral endopeptidases enables oral dosing"
+      },
+      "confidence": 0.85,
+      "context": "The compounds are characterized by molecular weights in the range suitable for oral absorption and lack peptide bonds, making them resistant to proteolytic degradation by enzymes such as dipeptidyl peptidase-4 (DPP-4) and neutral endopeptidases."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "benzimidazole-based GLP-1 receptor agonist scaffold",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.88,
+      "evidence": "The invention describes 6-carboxylic acids of benzimidazoles and 4-aza-, 5-aza-, 7-aza-, and 4,7-diaza-benzimidazoles as small-molecule GLP-1 receptor agonists."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "benzimidazole-based GLP-1 receptor agonist scaffold",
+      "target_entity": "allosteric GLP-1 receptor activation",
+      "confidence": 0.88,
+      "evidence": "These are orally bioavailable nonpeptide small molecules that activate the GLP-1 receptor through an allosteric mechanism. The compounds bind within a transmembrane pocket distinct from the orthosteric peptide-binding domain, stabilizing an active receptor conformation that couples to Gs proteins and drives intracellular cAMP accumulation."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "danuglipron",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.85,
+      "evidence": "This patent covers the chemical class from which danuglipron (PF-06882961) was developed. These are orally bioavailable nonpeptide small molecules that activate the GLP-1 receptor through an allosteric mechanism."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "danuglipron",
+      "target_entity": "allosteric GLP-1 receptor activation",
+      "confidence": 0.85,
+      "evidence": "This patent covers the chemical class from which danuglipron (PF-06882961) was developed. These are orally bioavailable nonpeptide small molecules that activate the GLP-1 receptor through an allosteric mechanism."
+    },
+    {
+      "relation_type": "DERIVED_FROM",
+      "source_entity": "danuglipron",
+      "target_entity": "benzimidazole-based GLP-1 receptor agonist scaffold",
+      "confidence": 0.9,
+      "evidence": "This patent covers the chemical class from which danuglipron (PF-06882961) was developed. Danuglipron, derived from this chemical series, reached Phase 2/3 clinical trials for type 2 diabetes and obesity."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "danuglipron",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.75,
+      "evidence": "Danuglipron, derived from this chemical series, reached Phase 2/3 clinical trials for type 2 diabetes and obesity."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "danuglipron",
+      "target_entity": "Obesity",
+      "confidence": 0.75,
+      "evidence": "Danuglipron, derived from this chemical series, reached Phase 2/3 clinical trials for type 2 diabetes and obesity."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "danuglipron",
+      "target_entity": "Pfizer Inc",
+      "confidence": 0.95,
+      "evidence": "Assignee: Pfizer Inc. This patent covers the chemical class from which danuglipron (PF-06882961) was developed."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "WO2018109607A1",
+      "target_entity": "Pfizer Inc",
+      "confidence": 0.98,
+      "evidence": "Assignee: Pfizer Inc, Filing Date: December 1, 2017"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "orforglipron",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.85,
+      "evidence": "A separate oral small-molecule GLP-1 agonist, orforglipron (LY3502970, originally OWL-833), is being developed by Eli Lilly."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "orforglipron",
+      "target_entity": "allosteric GLP-1 receptor activation",
+      "confidence": 0.75,
+      "evidence": "The development of oral nonpeptide GLP-1 agonists represents a significant advance in the GLP-1 receptor agonist class, potentially expanding patient access by eliminating the need for injection and improving treatment adherence."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "orforglipron",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.8,
+      "evidence": "Orforglipron has demonstrated significant weight loss and HbA1c reduction in Phase 3 trials (ACHIEVE program)."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "orforglipron",
+      "target_entity": "Obesity",
+      "confidence": 0.8,
+      "evidence": "Orforglipron has demonstrated significant weight loss and HbA1c reduction in Phase 3 trials (ACHIEVE program)."
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "orforglipron",
+      "target_entity": "ACHIEVE program",
+      "confidence": 0.9,
+      "evidence": "Orforglipron has demonstrated significant weight loss and HbA1c reduction in Phase 3 trials (ACHIEVE program)."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "orforglipron",
+      "target_entity": "Eli Lilly",
+      "confidence": 0.95,
+      "evidence": "A separate oral small-molecule GLP-1 agonist, orforglipron (LY3502970, originally OWL-833), is being developed by Eli Lilly."
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "HbA1c reduction",
+      "target_entity": "orforglipron",
+      "confidence": 0.8,
+      "evidence": "Orforglipron has demonstrated significant weight loss and HbA1c reduction in Phase 3 trials (ACHIEVE program)."
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "benzimidazole-based GLP-1 receptor agonist scaffold",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.88,
+      "evidence": "The compounds bind within a transmembrane pocket distinct from the orthosteric peptide-binding domain, stabilizing an active receptor conformation that couples to Gs proteins and drives intracellular cAMP accumulation."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "GLP-1 receptor",
+      "target_entity": "Gs protein",
+      "confidence": 0.9,
+      "evidence": "Stabilizing an active receptor conformation that couples to Gs proteins and drives intracellular cAMP accumulation."
+    },
+    {
+      "relation_type": "EXPRESSED_IN",
+      "source_entity": "benzimidazole-based GLP-1 receptor agonist scaffold",
+      "target_entity": "oral bioavailability",
+      "confidence": 0.8,
+      "evidence": "These are orally bioavailable nonpeptide small molecules that activate the GLP-1 receptor through an allosteric mechanism."
+    },
+    {
+      "relation_type": "EXPRESSED_IN",
+      "source_entity": "benzimidazole-based GLP-1 receptor agonist scaffold",
+      "target_entity": "proteolytic degradation resistance",
+      "confidence": 0.85,
+      "evidence": "The compounds are characterized by molecular weights in the range suitable for oral absorption and lack peptide bonds, making them resistant to proteolytic degradation by enzymes such as dipeptidyl peptidase-4 (DPP-4) and neutral endopeptidases."
+    }
+  ],
+  "cost_usd": 0.117033,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:37:49.970028+00:00",
+  "error": null
+}

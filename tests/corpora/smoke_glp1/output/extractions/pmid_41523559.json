@@ -1,0 +1,123 @@
+{
+  "document_id": "pmid_41523559",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "tirzepatide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "dual GIP/GLP-1 receptor agonist",
+        "class": "incretin-based therapy"
+      },
+      "confidence": 0.98,
+      "context": "Semaglutide and tirzepatide are among the most promising agents."
+    },
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "modality": "GLP-1 receptor agonist",
+        "class": "incretin-based therapy"
+      },
+      "confidence": 0.98,
+      "context": "Semaglutide and tirzepatide are among the most promising agents."
+    },
+    {
+      "name": "obesity",
+      "entity_type": "DISEASE",
+      "attributes": {},
+      "confidence": 0.98,
+      "context": "Efficacy and Safety of Tirzepatide and Semaglutide for Obesity Management"
+    },
+    {
+      "name": "type 2 diabetes mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "abbreviation": "T2DM"
+      },
+      "confidence": 0.95,
+      "context": "effective strategies for obesity and type 2 diabetes mellitus (T2DM) management"
+    },
+    {
+      "name": "gastrointestinal adverse events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "severity": "mostly non-serious",
+        "frequency": "most common"
+      },
+      "confidence": 0.95,
+      "context": "Gastrointestinal adverse events were the most common, occurring more frequently with tirzepatide"
+    },
+    {
+      "name": "Cureus",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "year": "2025",
+        "pmid": "41523559"
+      },
+      "confidence": 0.98,
+      "context": "Journal: Cureus (2025) PMID: 41523559"
+    },
+    {
+      "name": "PMID:41523559",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "41523559",
+        "type": "retrospective observational study"
+      },
+      "confidence": 0.98,
+      "context": "PMID: 41523559"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "obesity",
+      "confidence": 0.95,
+      "evidence": "Tirzepatide and semaglutide were both associated with weight reduction in obesity"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "obesity",
+      "confidence": 0.95,
+      "evidence": "Tirzepatide and semaglutide were both associated with weight reduction in obesity"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "tirzepatide",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.85,
+      "evidence": "Incretin-based therapies have emerged as effective strategies for obesity and type 2 diabetes mellitus (T2DM) management. Semaglutide and tirzepatide are among the most promising agents."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "type 2 diabetes mellitus",
+      "confidence": 0.85,
+      "evidence": "Incretin-based therapies have emerged as effective strategies for obesity and type 2 diabetes mellitus (T2DM) management. Semaglutide and tirzepatide are among the most promising agents."
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "tirzepatide",
+      "target_entity": "gastrointestinal adverse events",
+      "confidence": 0.95,
+      "evidence": "Gastrointestinal adverse events were the most common, occurring more frequently with tirzepatide"
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "semaglutide",
+      "target_entity": "gastrointestinal adverse events",
+      "confidence": 0.9,
+      "evidence": "Gastrointestinal adverse events were the most common, occurring more frequently with tirzepatide, while serious events were rare."
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-7-1m",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:42:21.225762+00:00",
+  "error": null
+}

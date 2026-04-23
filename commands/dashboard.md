@@ -14,7 +14,7 @@ Launch the FastAPI-backed workbench for an existing knowledge graph. The workben
 ## Arguments
 
 - `<output_dir>` (required) — directory containing `graph_data.json`, `communities.json`, and (optionally) `claims_layer.json` from a prior `/epistract:ingest` + `/epistract:epistemic` run
-- `--domain <name>` (optional) — domain package name (e.g., `drug-discovery`, `contracts`). Loads domain-specific workbench template (title, entity colors, persona prompt). Defaults to reading the domain from the output_dir's graph_data.json metadata.
+- `--domain <name>` (optional) — domain package name (e.g., `drug-discovery`, `contracts`). Loads domain-specific workbench template (title, entity colors, persona prompt). **Precedence** (per FIDL-06): explicit `--domain` flag wins, then `graph_data.json.metadata.domain` auto-detection, then generic fallback. If you pass `--domain foo` against a graph built with `--domain bar`, the flag wins — this is intentional so you can experiment with alternate templates against the same graph. Legacy graphs built before Phase 17 have no `metadata.domain` and fall back to generic with a one-line warning on stderr; rebuild with `/epistract:ingest --domain <name>` to silence it.
 - `--port <port>` (optional) — HTTP port (default: 8000)
 - `--host <host>` (optional) — bind host (default: 127.0.0.1 for localhost-only)
 

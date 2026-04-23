@@ -1,0 +1,213 @@
+{
+  "document_id": "pmid_39357509",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "glucagon-like peptide-1",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "incretin hormone",
+        "aliases": "GLP-1"
+      },
+      "confidence": 0.98,
+      "context": "The development of glucagon-like peptide-1 receptor (GLP-1R) agonists reveals our ability to pharmacologically manage weight and address metabolic conditions."
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "aliases": "GLP-1R",
+        "uniprot_id": "P43220"
+      },
+      "confidence": 0.98,
+      "context": "The development of glucagon-like peptide-1 receptor (GLP-1R) agonists reveals our ability to pharmacologically manage weight and address metabolic conditions."
+    },
+    {
+      "name": "GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "target": "GLP-1 receptor",
+        "aliases": "GLP-1R agonism"
+      },
+      "confidence": 0.97,
+      "context": "GLP-1R agonism in curbing obesity, achieved by impacting appetite and addressing associated metabolic defects, is revealing additional benefits extending beyond weight loss."
+    },
+    {
+      "name": "GLP-1 receptor agonists",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "GLP-1 receptor agonist",
+        "development_stage": "approved",
+        "aliases": "GLP-1RAs"
+      },
+      "confidence": 0.97,
+      "context": "The development of glucagon-like peptide-1 receptor (GLP-1R) agonists reveals our ability to pharmacologically manage weight and address metabolic conditions."
+    },
+    {
+      "name": "Obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Obesity",
+        "icd_code": "E66",
+        "aliases": "overnutrition-related obesity"
+      },
+      "confidence": 0.98,
+      "context": "This transformative setting has led to persistent health issues, such as obesity and metabolic syndrome."
+    },
+    {
+      "name": "Metabolic Syndrome",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Metabolic Syndrome",
+        "icd_code": "E88.81"
+      },
+      "confidence": 0.95,
+      "context": "This transformative setting has led to persistent health issues, such as obesity and metabolic syndrome."
+    },
+    {
+      "name": "chronic low-grade inflammation",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "physiological",
+        "clinical_relevance": "mechanism linking obesity to neurodegeneration"
+      },
+      "confidence": 0.92,
+      "context": "Obesity is directly linked to chronic low-grade inflammation, connecting our metabolic environment to neurodegenerative diseases."
+    },
+    {
+      "name": "Neurodegenerative Diseases",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Neurodegenerative Diseases",
+        "aliases": "neurological conditions, neurodegeneration"
+      },
+      "confidence": 0.9,
+      "context": "Obesity is directly linked to chronic low-grade inflammation, connecting our metabolic environment to neurodegenerative diseases."
+    },
+    {
+      "name": "appetite regulation",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "physiological",
+        "clinical_relevance": "mechanism of GLP-1R agonist-mediated weight loss"
+      },
+      "confidence": 0.88,
+      "context": "GLP-1R agonism in curbing obesity, achieved by impacting appetite and addressing associated metabolic defects, is revealing additional benefits extending beyond weight loss."
+    },
+    {
+      "name": "neurovascular landscape remodeling",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "cellular",
+        "clinical_relevance": "potential mechanism of GLP-1R agonism on brain health"
+      },
+      "confidence": 0.8,
+      "context": "recent literature suggests that GLP-1R agonism may have the capacity to shape the neurovascular landscape."
+    },
+    {
+      "name": "cognitive impairment",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Cognitive Dysfunction",
+        "aliases": "cognitive well-being, cognitive decline"
+      },
+      "confidence": 0.75,
+      "context": "GLP-1R agonism emerges as a promising strategy for addressing the complex interplay between metabolic health and cognitive well-being."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.97,
+      "evidence": "The development of glucagon-like peptide-1 receptor (GLP-1R) agonists reveals our ability to pharmacologically manage weight and address metabolic conditions."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "GLP-1 receptor agonism",
+      "confidence": 0.97,
+      "evidence": "GLP-1R agonism in curbing obesity, achieved by impacting appetite and addressing associated metabolic defects, is revealing additional benefits extending beyond weight loss."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "Obesity",
+      "confidence": 0.92,
+      "evidence": "The development of glucagon-like peptide-1 receptor (GLP-1R) agonists reveals our ability to pharmacologically manage weight and address metabolic conditions."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "GLP-1 receptor agonists",
+      "target_entity": "Metabolic Syndrome",
+      "confidence": 0.82,
+      "evidence": "The development of glucagon-like peptide-1 receptor (GLP-1R) agonists reveals our ability to pharmacologically manage weight and address metabolic conditions."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "chronic low-grade inflammation",
+      "target_entity": "Neurodegenerative Diseases",
+      "confidence": 0.88,
+      "evidence": "Obesity is directly linked to chronic low-grade inflammation, connecting our metabolic environment to neurodegenerative diseases."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "chronic low-grade inflammation",
+      "target_entity": "Obesity",
+      "confidence": 0.9,
+      "evidence": "Obesity is directly linked to chronic low-grade inflammation, connecting our metabolic environment to neurodegenerative diseases."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "Obesity",
+      "target_entity": "Neurodegenerative Diseases",
+      "confidence": 0.88,
+      "evidence": "Obesity is directly linked to chronic low-grade inflammation, connecting our metabolic environment to neurodegenerative diseases."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "Obesity",
+      "target_entity": "cognitive impairment",
+      "confidence": 0.78,
+      "evidence": "GLP-1R agonism emerges as a promising strategy for addressing the complex interplay between metabolic health and cognitive well-being."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "GLP-1 receptor agonism",
+      "target_entity": "appetite regulation",
+      "confidence": 0.85,
+      "evidence": "GLP-1R agonism in curbing obesity, achieved by impacting appetite and addressing associated metabolic defects, is revealing additional benefits extending beyond weight loss."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "GLP-1 receptor agonism",
+      "target_entity": "neurovascular landscape remodeling",
+      "confidence": 0.72,
+      "evidence": "recent literature suggests that GLP-1R agonism may have the capacity to shape the neurovascular landscape."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "GLP-1 receptor agonism",
+      "target_entity": "cognitive impairment",
+      "confidence": 0.68,
+      "evidence": "GLP-1R agonism emerges as a promising strategy for addressing the complex interplay between metabolic health and cognitive well-being."
+    },
+    {
+      "relation_type": "BINDS_TO",
+      "source_entity": "glucagon-like peptide-1",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.95,
+      "evidence": "The development of glucagon-like peptide-1 receptor (GLP-1R) agonists reveals our ability to pharmacologically manage weight and address metabolic conditions."
+    }
+  ],
+  "cost_usd": 0.073002,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:51:14.116550+00:00",
+  "error": null
+}

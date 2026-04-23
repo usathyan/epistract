@@ -41,10 +41,17 @@ HEDGING_PATTERNS = [
 PATENT_PATTERN = re.compile(r"^patent", re.I)
 PREPRINT_PATTERN = re.compile(r"(biorxiv|medrxiv|arxiv)", re.I)
 PUBMED_PATTERN = re.compile(r"^pmid_", re.I)
+# FIDL-07 D-05: structural-biology doctype signals.
+# Kept in sync with core/label_epistemic.py by convention (not shared import).
+PDB_PATTERN = re.compile(r"^pdb[_-]", re.I)
+STRUCTURAL_CONTENT_RE = re.compile(r"\b\d+(?:\.\d+)?\s*(?:Å|angstrom)\b", re.I)
 
 
 def infer_doc_type(doc_id: str) -> str:
     """Infer document type from document ID naming conventions."""
+    # FIDL-07 D-05: PDB prefix check runs FIRST (explicit-is-better).
+    if PDB_PATTERN.match(doc_id):
+        return "structural"
     if PATENT_PATTERN.match(doc_id):
         return "patent"
     if PREPRINT_PATTERN.search(doc_id):
@@ -58,6 +65,12 @@ def classify_epistemic_status(evidence: str, confidence: float, doc_type: str) -
     """Classify a single mention's epistemic status from evidence text + metadata."""
     if not evidence:
         return "asserted" if confidence >= 0.8 else "unclassified"
+
+    # FIDL-07 D-06: structural (crystallography/cryo-EM) papers are evidence-grade;
+    # high-confidence claims beat hedging-regex false positives like
+    # "hypothesized structure". Short-circuit BEFORE the hedging scan.
+    if doc_type == "structural" and confidence >= 0.9:
+        return "asserted"
 
     # Check hedging patterns (order matters -- first match wins)
     for pattern, status in HEDGING_PATTERNS:
@@ -77,6 +90,34 @@ def classify_epistemic_status(evidence: str, confidence: float, doc_type: str) -
         return "speculative"
 
     return "asserted"
+
+
+def _detect_structural_content(evidence: str) -> bool:
+    """Detect structural-biology content signals in first 800 chars of evidence.
+
+    FIDL-07 D-05: Signals are "crystal structure", "x-ray crystallograph",
+    "cryo-em", "electron microscop", plus a resolution regex matching
+    `N Å` / `N.N angstrom` etc. The helper is exposed for rule authors
+    who want to short-circuit doctype classification when the document
+    ID prefix is generic (e.g., a PMID paper whose body is a crystal-
+    structure report). Not called in the main dispatch path — rule
+    authors opt in by importing.
+
+    Empty/None evidence returns False without raising. Scan is confined
+    to the first 800 chars to bound cost on very long evidence strings.
+    """
+    if not evidence:
+        return False
+    snippet = evidence[:800].lower()
+    keyword_signals = (
+        "crystal structure",
+        "x-ray crystallograph",
+        "cryo-em",
+        "electron microscop",
+    )
+    if any(kw in snippet for kw in keyword_signals):
+        return True
+    return bool(STRUCTURAL_CONTENT_RE.search(snippet))
 
 
 # ---------------------------------------------------------------------------

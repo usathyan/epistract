@@ -1,0 +1,251 @@
+{
+  "document_id": "pmid_36945734",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "inn": "semaglutide",
+        "drug_class": "glucagon-like peptide-1 receptor agonist",
+        "route_of_administration": "oral",
+        "formulation": "oral tablet",
+        "dose": "14 mg once daily",
+        "development_stage": "approved",
+        "compound_code": "oral semaglutide"
+      },
+      "confidence": 0.98,
+      "context": "In SOUL, the effects of oral semaglutide, the first oral glucagon-like peptide-1 receptor agonist, on the risk of cardiovascular (CV) events in individuals with type 2 diabetes and established atherosclerotic CV disease (ASCVD) and/or chronic kidney disease (CKD) will be assessed."
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "protein_family": "glucagon receptor family",
+        "aliases": "GLP-1R"
+      },
+      "confidence": 0.9,
+      "context": "the effects of oral semaglutide, the first oral glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "name": "GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "selectivity": "selective",
+        "target": "GLP-1 receptor"
+      },
+      "confidence": 0.92,
+      "context": "oral semaglutide, the first oral glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "name": "Type 2 Diabetes Mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Diabetes Mellitus, Type 2",
+        "icd_code": "E11",
+        "aliases": "T2D, type 2 diabetes"
+      },
+      "confidence": 0.98,
+      "context": "the effects of oral semaglutide, the first oral glucagon-like peptide-1 receptor agonist, on the risk of cardiovascular (CV) events in individuals with type 2 diabetes and established atherosclerotic CV disease (ASCVD) and/or chronic kidney disease (CKD) will be assessed."
+    },
+    {
+      "name": "Atherosclerotic Cardiovascular Disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Cardiovascular Diseases",
+        "aliases": "ASCVD, established ASCVD",
+        "disease_subtype": "atherosclerotic"
+      },
+      "confidence": 0.97,
+      "context": "individuals with type 2 diabetes and established atherosclerotic CV disease (ASCVD) and/or chronic kidney disease (CKD)"
+    },
+    {
+      "name": "Chronic Kidney Disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Renal Insufficiency, Chronic",
+        "icd_code": "N18",
+        "aliases": "CKD",
+        "diagnostic_criterion": "estimated glomerular filtration rate <60 mL/min/1.73 m\u00b2"
+      },
+      "confidence": 0.97,
+      "context": "individuals with type 2 diabetes and established atherosclerotic CV disease (ASCVD) and/or chronic kidney disease (CKD)"
+    },
+    {
+      "name": "Coronary Artery Disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Coronary Artery Disease",
+        "aliases": "CAD",
+        "disease_subtype": "atherosclerotic cardiovascular disease subtype"
+      },
+      "confidence": 0.97,
+      "context": "evidence of ASCVD (coronary artery disease [CAD], cerebrovascular disease, symptomatic peripheral arterial disease [PAD]) and/or CKD"
+    },
+    {
+      "name": "Cerebrovascular Disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Cerebrovascular Disorders",
+        "disease_subtype": "atherosclerotic cardiovascular disease subtype"
+      },
+      "confidence": 0.97,
+      "context": "evidence of ASCVD (coronary artery disease [CAD], cerebrovascular disease, symptomatic peripheral arterial disease [PAD]) and/or CKD"
+    },
+    {
+      "name": "Peripheral Arterial Disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Peripheral Arterial Disease",
+        "aliases": "PAD",
+        "disease_subtype": "symptomatic, atherosclerotic cardiovascular disease subtype"
+      },
+      "confidence": 0.97,
+      "context": "evidence of ASCVD (coronary artery disease [CAD], cerebrovascular disease, symptomatic peripheral arterial disease [PAD]) and/or CKD"
+    },
+    {
+      "name": "SOUL",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "trial_acronym": "SOUL",
+        "full_name": "Semaglutide cardiOvascular oUtcomes triaL",
+        "phase": "Phase III",
+        "design": "randomized, double-blind, parallel-group, placebo-controlled",
+        "primary_endpoint": "cardiovascular outcomes",
+        "status": "active",
+        "enrollment": 9650,
+        "enrollment_start": "June 17, 2019",
+        "enrollment_end": "March 24, 2021",
+        "patient_population": "individuals aged \u226550 years with type 2 diabetes and established ASCVD and/or CKD",
+        "comparator": "placebo plus standard of care",
+        "mean_age": "66.1 years",
+        "percent_male": "71.1%",
+        "percent_white": "68.9%",
+        "mean_diabetes_duration": "15.4 years",
+        "mean_bmi": "31.1 kg/m\u00b2"
+      },
+      "confidence": 0.98,
+      "context": "SOUL is a randomized, double-blind, parallel-group, placebo-controlled CV outcomes trial comparing oral semaglutide (14 mg once daily) with placebo, both in addition to standard of care, in individuals aged \u226550 years with type 2 diabetes and evidence of ASCVD (coronary artery disease [CAD], cerebrovascular disease, symptomatic peripheral arterial disease [PAD]) and/or CKD"
+    },
+    {
+      "name": "McGuire et al., Diabetes Obesity Metabolism 2023",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "36945734",
+        "journal": "Diabetes, obesity & metabolism",
+        "year": 2023,
+        "first_author": "McGuire",
+        "publication_type": "original_research"
+      },
+      "confidence": 0.99,
+      "context": "Effects of oral semaglutide on cardiovascular outcomes in individuals with type 2 diabetes and established atherosclerotic cardiovascular disease and/or chronic kidney disease: Design and baseline characteristics of SOUL, a randomized trial."
+    },
+    {
+      "name": "Atherosclerosis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Atherosclerosis"
+      },
+      "confidence": 0.9,
+      "context": "individuals with type 2 diabetes and established atherosclerotic CV disease (ASCVD) and/or chronic kidney disease (CKD)"
+    },
+    {
+      "name": "cardiovascular risk reduction",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "modulation",
+        "target": "cardiovascular outcomes"
+      },
+      "confidence": 0.8,
+      "context": "SOUL will provide evidence regarding the CV effects of oral semaglutide in individuals with type 2 diabetes and established ASCVD and/or CKD."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor agonism",
+      "confidence": 0.95,
+      "evidence": "oral semaglutide, the first oral glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.93,
+      "evidence": "oral semaglutide, the first oral glucagon-like peptide-1 receptor agonist"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.92,
+      "evidence": "the effects of oral semaglutide, the first oral glucagon-like peptide-1 receptor agonist, on the risk of cardiovascular (CV) events in individuals with type 2 diabetes and established atherosclerotic CV disease (ASCVD) and/or chronic kidney disease (CKD) will be assessed."
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "semaglutide",
+      "target_entity": "SOUL",
+      "confidence": 0.98,
+      "evidence": "SOUL is a randomized, double-blind, parallel-group, placebo-controlled CV outcomes trial comparing oral semaglutide (14 mg once daily) with placebo, both in addition to standard of care"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Atherosclerotic Cardiovascular Disease",
+      "confidence": 0.72,
+      "evidence": "SOUL will provide evidence regarding the CV effects of oral semaglutide in individuals with type 2 diabetes and established ASCVD and/or CKD."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Chronic Kidney Disease",
+      "confidence": 0.7,
+      "evidence": "SOUL will provide evidence regarding the CV effects of oral semaglutide in individuals with type 2 diabetes and established ASCVD and/or CKD."
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "SOUL",
+      "target_entity": "McGuire et al., Diabetes Obesity Metabolism 2023",
+      "confidence": 0.98,
+      "evidence": "Effects of oral semaglutide on cardiovascular outcomes in individuals with type 2 diabetes and established atherosclerotic cardiovascular disease and/or chronic kidney disease: Design and baseline characteristics of SOUL, a randomized trial."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "Atherosclerotic Cardiovascular Disease",
+      "target_entity": "Coronary Artery Disease",
+      "confidence": 0.95,
+      "evidence": "evidence of ASCVD (coronary artery disease [CAD], cerebrovascular disease, symptomatic peripheral arterial disease [PAD]) and/or CKD"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "Atherosclerotic Cardiovascular Disease",
+      "target_entity": "Cerebrovascular Disease",
+      "confidence": 0.95,
+      "evidence": "evidence of ASCVD (coronary artery disease [CAD], cerebrovascular disease, symptomatic peripheral arterial disease [PAD]) and/or CKD"
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "Atherosclerotic Cardiovascular Disease",
+      "target_entity": "Peripheral Arterial Disease",
+      "confidence": 0.95,
+      "evidence": "evidence of ASCVD (coronary artery disease [CAD], cerebrovascular disease, symptomatic peripheral arterial disease [PAD]) and/or CKD"
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "Atherosclerosis",
+      "target_entity": "Atherosclerotic Cardiovascular Disease",
+      "confidence": 0.9,
+      "evidence": "individuals with type 2 diabetes and established atherosclerotic CV disease (ASCVD) and/or chronic kidney disease (CKD)"
+    }
+  ],
+  "cost_usd": 0.08622,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:44:06.506597+00:00",
+  "error": null
+}

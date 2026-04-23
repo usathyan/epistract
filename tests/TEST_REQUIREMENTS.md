@@ -341,6 +341,284 @@ These are real research questions a PhD scientist would ask. Each tests whether 
 
 ---
 
+## 6. Phase 14 Tests (Chunk Overlap)
+
+### UT-031: blingfire imports and tokenizes at module load
+- **Traces to:** FIDL-03
+- **Test:** `import blingfire; blingfire.text_to_sentences_and_offsets("One. Two. Three.")` returns a 2-tuple (text_with_newlines, offset_array) with 3 sentences.
+- **Pass criteria:** Import succeeds; result contains 3 sentence spans.
+
+### UT-032: Overlap primitive returns last-N sentences under cap
+- **Traces to:** FIDL-03 (D-02, D-03)
+- **Test:** Unit test invokes the `core/chunk_document.py` overlap helper on a 10-sentence fixture; asserts the returned overlap contains exactly the last 3 sentences when their total length is ≤1500 chars.
+- **Pass criteria:** Overlap string equals concatenation of last 3 sentences (order preserved); `len(overlap) <= 1500`.
+
+### UT-033: Overlap primitive truncates on 1500-char cap
+- **Traces to:** FIDL-03 (D-03)
+- **Test:** Feed a fixture where the last 3 sentences total > 1500 chars. Helper returns the most-recent sentences whose cumulative length fits under 1500; never mid-sentence truncation.
+- **Pass criteria:** `len(overlap) <= 1500`; overlap starts on a sentence boundary (begins a new sentence produced by blingfire, not mid-word).
+
+### UT-033b: Overlap primitive — partial fit (2 of 3 last sentences fit under cap) (M-5)
+- **Traces to:** FIDL-03 (D-02 ∩ D-03 intersection)
+- **Test:** Build a fixture with 3 sentences of ~600 chars each (total ~1800, over the 1500 cap, but the last 2 fit at ~1200). Assert the primitive returns exactly the last 2 sentences — the oldest (first) is dropped, the two most-recent are preserved. This pins the interior walk (right-to-left accumulate) behavior in between "all 3 fit" (UT-032) and "none fit" (UT-033 edge where a single sentence > cap).
+- **Pass criteria:** Overlap contains the content of sentences 2 and 3 (the most-recent two); does NOT contain sentence 1's distinguishing content; `len(overlap) <= 1500`.
+
+### UT-034: Overlap primitive handles fewer-than-N sentences
+- **Traces to:** FIDL-03
+- **Test:** Feed a fixture with exactly 1 sentence; helper returns that sentence (not error, not empty). Feed empty text; helper returns "".
+- **Pass criteria:** 1-sentence input → 1-sentence overlap; empty input → empty overlap.
+
+### UT-035: Missing blingfire raises loud ImportError
+- **Traces to:** FIDL-03 (D-08)
+- **Test:** Use pytest's `monkeypatch.setitem(sys.modules, "blingfire", None)` + `monkeypatch.delitem(sys.modules, "chunk_document", raising=False)` and `importlib.import_module("chunk_document")`; assert ImportError whose message mentions both `blingfire` and the install hint (`uv pip install blingfire` or `/epistract:setup`). Monkeypatch restores state automatically at teardown — no manual try/finally, safe under pytest-randomly / pytest-xdist.
+- **Pass criteria:** ImportError raised with install hint substring present; no test ordering interference.
+
+### UT-036: Chunk JSON contains overlap_prev_chars / overlap_next_chars / is_overlap_region / char_offset + section_header (cont.) invariant
+- **Traces to:** FIDL-03 (D-10, D-11, D-12)
+- **Test:** Run `chunk_document()` on a fixture that produces ≥3 chunks. Every chunk dict has all four keys. First chunk has `overlap_prev_chars == 0`. Last chunk has `overlap_next_chars == 0`. Non-boundary chunks have `overlap_prev_chars > 0`. `is_overlap_region` is always `False` at the chunk level (reserved flag per D-10). `char_offset` strictly increases across sub-chunks of the same merged section (D-11 — honest per-sub-chunk offsets). Additionally (m-7 fix): sub-chunks after the first of an oversized section have `section_header` ending in `(cont.)` — pins D-12.
+- **Pass criteria:** All four keys present on every chunk; `overlap_prev_chars[0] == 0`, `overlap_next_chars[-1] == 0`, middle chunks `> 0`; `is_overlap_region` always False; sub-chunk offsets strictly increasing within a merged section; at least one chunk[1:] has `section_header.endswith("(cont.)")`.
+
+### UT-036b: char_offset stays honest across whitespace-only paragraph gaps (M-6)
+- **Traces to:** FIDL-03 (D-11)
+- **Test:** Fixture where paragraphs are separated by triple/quadruple blank lines (whitespace-only paragraphs in between). Pin that for each emitted chunk, `original_text[chunk["char_offset"] : chunk["char_offset"] + 30]` aligns with the corresponding chunk body text (after stripping any overlap prefix that was prepended and the `\n\n` separator). Proves the paragraph-skip branch in `_split_at_paragraphs` does not cause `current_start` to lag by the blank-paragraph's length — i.e., `char_offset` marks where the FIRST real paragraph starts, not the spurious earlier whitespace block.
+- **Pass criteria:** Offset slice of original text matches chunk body for every chunk; no off-by-N drift attributable to blank-paragraph skip.
+
+### UT-037: Overlap emitted at ARTICLE boundary flush (cross-flush tail cache — M-1/M-2)
+- **Traces to:** FIDL-03 (D-04 #2)
+- **Test:** Fixture with two ARTICLE sections, each > MIN_CHUNK_SIZE but < MAX_CHUNK_SIZE (so each gets its own chunk without internal splitting). The overlap prefix on ARTICLE II must equal `_sentence_overlap(article_1_raw_text)` — NOT `_sentence_overlap(chunks[0]["text"])`. This pins the correct invariant: cross-flush overlap is computed from the RAW outgoing tail (cached in a nonlocal `_pending_tail` inside `_merge_small_sections`), not from the previous chunk's emitted text (which may itself already carry an overlap prefix — chaining those overlaps would accumulate).
+- **Pass criteria:** Chunk 2 `text` starts with `_sentence_overlap(article_1_raw_text)` verbatim; `overlap_prev_chars` equals that tail length; no chained accumulation across multiple flushes.
+
+### UT-038: Overlap emitted at _split_fixed fallback
+- **Traces to:** FIDL-03 (D-05 — one primitive, reused)
+- **Test:** Fixture with no section headers (falls through `_split_at_sections` → `_split_fixed`), ≥3 paragraphs, total length > MAX_CHUNK_SIZE. Chunks 2..N have non-zero `overlap_prev_chars` populated by the same helper as the clause-aware path.
+- **Pass criteria:** Chunks 2..N all have `overlap_prev_chars > 0`; chunk 1 has `overlap_prev_chars == 0`.
+
+### FT-011: Chunk-level co-location of boundary-straddling mentions (M-3 — weaker spec)
+- **Traces to:** FIDL-03 (D-13 #1)
+- **Test:** Synthetic text fixture where `sotorasib` ends chunk 1 and `KRAS G12C` starts chunk 2 (the "INHIBITS(sotorasib, KRAS G12C)" relation that spans char ~9999/10001). The test is CHUNK-LEVEL (co-location of both mention strings in at least one chunk's text) — a necessary precondition for graph-level extraction. Without a real LLM we cannot assert the relation itself appears in the final graph, but co-location of both entity strings in a single chunk is the CAUSE the fix addresses; extraction failure is the downstream effect. The test is structured as a single function with GREEN mode (real overlap — both mentions co-locate in at least one chunk) and RED mode (monkeypatch `_sentence_overlap` → `""`, no chunk co-locates both mentions). One test function, two modes — no git-stash choreography.
+- **Pass criteria:** GREEN: at least one chunk contains both `sotorasib` and `kras g12c` (case-insensitive). RED: with overlap disabled, no chunk contains both.
+
+### FT-012: V2 baseline diff — drug-discovery and contract scenarios ≥ V2 (B-2: file-backed floor, FAIL not SKIP)
+- **Traces to:** FIDL-03 (D-13 #2, D-14)
+- **Test:** Read `tests/baselines/v2/expected.json` (a committed summary-counts file, format `{"scenarios": {"<scenario>": {"nodes": N, "edges": E}, ...}}`). Re-run the 6 drug-discovery regression scenarios + 1 contract scenario via `python tests/regression/run_regression.py`. For each scenario, assert post-run `nodes >= expected.nodes` AND `edges >= expected.edges`. If `tests/baselines/v2/expected.json` does NOT exist, the test FAILS (not skips) with an instructional message pointing to how to regenerate it (`make regression-update` then record the numbers into `expected.json`). The full `graph_data.json` dumps remain gitignored; only the small summary counts file is committed. The contract scenario's floor (≥663 edges, ≥341 nodes) is pinned in `expected.json` per D-14.
+- **Pass criteria:** `expected.json` exists (enforced; missing → FAIL). All 7 scenarios satisfy nodes≥expected AND edges≥expected. Contract scenario ≥663 edges, ≥341 nodes.
+
+### UT-039: discover_corpus delegates to sift-kg (runtime extension set)
+- **Traces to:** FIDL-04 (D-01, D-09)
+- **Test:** Create a tmpdir containing files with suffixes `.pdf .pptx .md .epub .rtf .odt .csv .xml .json .yaml .log .ipynb .bib .fb2 .msg` (15 varied, all text-class), plus `.zip` and `.png` (must be excluded in default call). Call `discover_corpus(tmpdir)`. Assert the returned list is sorted, length == 15 (no .zip, no .png). Then assert the runtime-resolved extension set (via module-level `SUPPORTED_EXTENSIONS`) has `len(...) >= 28` and that it is a subset of `sift_kg.ingest.create_extractor(backend="kreuzberg").supported_extensions()` minus `{".zip", ".png", ".jpg", ".jpeg", ".gif", ".webp", ".bmp", ".tiff", ".tif"}`.
+- **Pass criteria:** `discover_corpus` returns exactly the 15 text-class files, skipping .zip and .png; `len(SUPPORTED_EXTENSIONS) >= 28`; set-subset assertion holds.
+- **Dependency:** sift-kg installed (skip if HAS_SIFTKG is False).
+
+### UT-040: OCR flag gates image extensions in discover_corpus
+- **Traces to:** FIDL-04 (D-04)
+- **Test:** Create a tmpdir containing `sample.png`, `sample.jpg`, `sample.pdf`. Call `discover_corpus(tmpdir)` (ocr defaulted False) — assert only `sample.pdf` is returned. Call `discover_corpus(tmpdir, ocr=True)` — assert `sample.pdf`, `sample.png`, `sample.jpg` are all returned.
+- **Pass criteria:** Default call returns 1 file; `ocr=True` call returns 3 files.
+- **Dependency:** sift-kg installed (skip if HAS_SIFTKG is False).
+
+### UT-041: Missing sift-kg raises ImportError in discover_corpus (no silent fallback)
+- **Traces to:** FIDL-04 (D-02)
+- **Test:** Use `unittest.mock.patch.object(core.ingest_documents, "HAS_SIFT_READER", False)`, then call `discover_corpus(some_dir)`. Assert `pytest.raises(ImportError)` with a `match` pointing to `/epistract:setup` or `sift-kg`. ALSO assert `core.ingest_documents.SUPPORTED_EXTENSIONS` access under the same patch raises ImportError with the same install hint (D-02: no silent 9-extension fallback).
+- **Pass criteria:** Both `discover_corpus(dir)` and `SUPPORTED_EXTENSIONS` access raise `ImportError` whose message contains "sift-kg" or "/epistract:setup".
+- **Dependency:** None (pure mock test, runs without sift-kg paths executed).
+
+### FT-013: New-format ingest round-trip — markdown (.md) discovered and extracted end-to-end
+- **Traces to:** FIDL-04 (D-01, D-09)
+- **Test:** Copy `tests/fixtures/format_parity/sample.md` into a tmp corpus, run `ingest_corpus(corpus, output)`, assert discovery found 1 file, extraction succeeded, `parse_type="text"`, `warnings==[]`, the ingested `.txt` exists and contains the phrase `Phase 15 FT-013`, and `triage.json` reflects the clean result.
+- **Pass criteria:** `total_files==1, successful==1, failed==0`; `documents[0].warnings==[]`; ingested text file contains `Phase 15 FT-013`.
+- **Dependency:** sift-kg installed (skipped otherwise).
+
+### FT-014: Corrupted file discovered, extraction-failure recorded in triage warnings[]
+- **Traces to:** FIDL-04 (D-06, D-07)
+- **Test:** Copy `tests/fixtures/format_parity/corrupted.pptx` into a tmp corpus, run `ingest_corpus(corpus, output)`, assert discovery found 1 file (pure extension-match), warnings[] has an entry starting with `extraction_failed` OR equal to `empty_text` (parse_document return-shape disjunction per revised plan — both satisfy D-06/D-07 as long as the failure is SURFACED in warnings[]), and `triage.json` persists the warning.
+- **Pass criteria:** `total_files==1`; `documents[0].warnings` contains at least one element satisfying `startswith("extraction_failed") or == "empty_text"`; triage.json on disk reflects the warning.
+- **Dependency:** sift-kg installed (skipped otherwise).
+
+### FT-015: V2 baseline floor holds after FIDL-04 discovery-layer change (D-13)
+- **Traces to:** FIDL-04 (D-13), Phase 14 D-14
+- **Test:** Read `tests/baselines/v2/expected.json`. For each scenario whose output directory exists (resolved via the same logic as tests/test_e2e.py FT-012), assert `graph_data.json` nodes ≥ floor AND edges ≥ floor. If `contract_events` has an output directory, assert nodes ≥341 AND edges ≥663 (Phase 14 D-14 hard floor). `expected.json` missing is a HARD FAILURE.
+- **Pass criteria:** All resolvable scenarios satisfy their committed floor; contract floor 341/663 is absolute when its output exists; missing `expected.json` fails (not skips).
+- **Dependency:** `tests/baselines/v2/expected.json` present (guaranteed by Phase 14 commit).
+
+---
+
+## 7. Phase 16 Tests (Wizard Sample Window Beyond 8KB)
+
+### UT-042: _build_excerpts returns [] for short docs and 3-slice list for long docs
+- **Traces to:** FIDL-05 (D-01, D-02, D-03)
+- **Test:** Call `core.domain_wizard._build_excerpts("x" * 11999)` — assert the result is `[]` (short-doc branch — len ≤ MULTI_EXCERPT_THRESHOLD). Call `_build_excerpts("x" * 12001)` — assert the result is a list of 3 strings, each ≤ 4000 chars. Call `_build_excerpts(("a" * 30000))` (exactly 30000 chars) — assert `len(result) == 3`, `result[0] == "a" * 4000` (head is first 4000 chars, D-01), `result[1] == "a" * 4000` (middle slice len == 4000, per D-03: `len//2 - 2000` to `len//2 + 2000` = chars 13000..17000), and `result[2] == "a" * 4000` (tail is last 4000 chars, D-01). Call `_build_excerpts(payload)` where payload is a deterministic string `"HEAD" + "." * 20000 + "MID" + "." * 20000 + "TAIL"` (approx 40007 chars) — assert `"HEAD" in result[0]`, `"MID" in result[1]`, `"TAIL" in result[2]`.
+- **Pass criteria:** All four assertions hold; `_build_excerpts` raises no exceptions for any of the four inputs.
+- **Dependency:** None (pure function test, no I/O, no LLM call).
+
+### UT-043: build_schema_discovery_prompt emits 3 excerpt markers + 3 sentinels for long docs; full-text preserved for short docs
+- **Traces to:** FIDL-05 (D-04, D-05, D-10, D-11)
+- **Test:** Read `tests/fixtures/wizard_sample_window/long_contract.txt` (synthetic ~60K-char fixture created in Plan 16-02 Task 1 — RED until that task lands; GREEN once 16-02 Task 1 completes). Call `build_schema_discovery_prompt(fixture_text, "Synthetic long contract domain")`. Assert:
+  1. Prompt contains the literal substring `[EXCERPT 1/3 — chars 0 to 4000 (head)]` on its own line.
+  2. Prompt contains the literal substring `[EXCERPT 2/3 — chars ` (opening of middle marker; the full marker includes computed m0/m1 values).
+  3. Prompt contains the literal substring `[EXCERPT 3/3 — chars ` (opening of tail marker).
+  4. Prompt contains the preface sentence: `The following are three excerpts from a larger document. Treat them as non-contiguous samples of the same document, not as a single continuous passage.`.
+  5. Prompt contains the plural header `**Document excerpts:**` and does NOT contain the singular `**Document text:**` (long-doc path uses the plural wording per D-05).
+  6. Prompt contains all three sentinel phrases from the fixture: `PARTY_SENTINEL_HEAD`, `OBLIGATION_SENTINEL_MIDDLE`, `TERMINATION_SENTINEL_TAIL`.
+  7. Prompt contains `Synthetic long contract domain` (domain description interpolated).
+  Second assertion block (short-doc path): Call `build_schema_discovery_prompt("Sample lease text here...", "Real estate lease agreements")` (24-char input). Assert prompt CONTAINS the singular `**Document text:**` header, CONTAINS `Sample lease text here...` verbatim, and does NOT contain `[EXCERPT` or `three excerpts from a larger document`. This pins the short-doc backward-compat shape (D-02).
+- **Pass criteria:** All 7 long-doc assertions hold; all 3 short-doc assertions hold; no exceptions.
+- **Dependency:** Plan 16-02 Task 1 fixture `tests/fixtures/wizard_sample_window/long_contract.txt` exists. Until then this test FAILS with `FileNotFoundError` — that is the expected RED state for Plan 16-01, flipped to GREEN by Plan 16-02 Task 1.
+
+### FT-016: Long-doc Pass-1 prompt contains all 3 sentinels + all 3 excerpt markers (e2e)
+- **Traces to:** FIDL-05 (D-10, D-11)
+- **Test:** Read `tests/fixtures/wizard_sample_window/long_contract.txt` (60200-char fixture with sentinels at head/middle/tail). Call `build_schema_discovery_prompt(fixture_text, "Synthetic long contract domain for Phase 16 FT-016")`. Assert the rendered prompt contains exactly 1 occurrence each of `PARTY_SENTINEL_HEAD`, `OBLIGATION_SENTINEL_MIDDLE`, `TERMINATION_SENTINEL_TAIL`; the exact literal markers `[EXCERPT 1/3 — chars 0 to 4000 (head)]`, `[EXCERPT 2/3 — chars 28100 to 32100 (middle)]`, `[EXCERPT 3/3 — chars 56200 to 60200 (tail)]`; the plural header `**Document excerpts:**`; and the preface `The following are three excerpts from a larger document.`. Assert the prompt does NOT contain `**Document text:**`.
+- **Pass criteria:** All 10 substring assertions hold; sentinel counts are exactly 1.
+- **Dependency:** Fixture present (created by Plan 16-02 Task 1).
+
+### FT-017: Short-doc Pass-1 prompt is strict superset of pre-Phase-16 shape (D-12 regression gate)
+- **Traces to:** FIDL-05 (D-12)
+- **Test:** For each Phase-8 wizard fixture (`sample_lease_1.txt`, `sample_lease_2.txt`, `sample_lease_3.txt` — all ~1.3K chars, flow through the short-doc branch), call `build_schema_discovery_prompt(text, "Real estate lease agreements")`. Assert: (a) full `text` appears verbatim in the prompt; (b) all 8 structural substrings (task name, domain description interpolation, singular header, instructions, entity-type count directive, SCREAMING_SNAKE_CASE mention, JSON format header, return-only directive) are present; (c) none of `[EXCERPT `, `three excerpts from a larger document`, `**Document excerpts:**` leak in.
+- **Pass criteria:** All three fixtures pass all three assertion families.
+- **Dependency:** Phase-8 wizard fixtures (already committed in `tests/fixtures/wizard/`).
+
+---
+
+## Phase 17 — Domain Awareness in Consumers (FIDL-06)
+
+### UT-044: cmd_build persists domain into graph_data.json metadata
+- **Traces to:** FIDL-06 (D-01, D-02, D-10)
+- **Test:** Monkeypatch `core.run_sift._import_sift` to return a stub `run_build` that writes a minimal valid `graph_data.json` (with `metadata` dict containing `created_at`, `updated_at`, `entity_count`, `relation_count`) and a stub `load_domain`. Call `cmd_build(tmp_output_dir, domain_name="contracts")`. Read `graph_data.json` and assert `metadata["domain"] == "contracts"`. Also assert all pre-existing metadata keys (`created_at`, `updated_at`, `entity_count`, `relation_count`) are preserved byte-identically (D-02 additive guarantee). Then call `cmd_build(tmp_output_dir2, domain_name=None)` and assert `metadata["domain"] is None` (explicit None → None in file, not the string `"None"`).
+- **Pass criteria:** graph_data.json.metadata.domain equals the passed domain_name for both "contracts" and None; all other metadata keys unchanged.
+- **Dependency:** None — uses a stub run_build via monkeypatch so sift-kg's real extraction pipeline is not invoked.
+
+### UT-045: resolve_domain honors explicit > metadata > fallback precedence
+- **Traces to:** FIDL-06 (D-03, D-07, D-08, D-09, D-11)
+- **Test:** Three sub-assertions in a single parametrized or straight-line test:
+  1. **Explicit wins over metadata** (D-09): Write a stub `graph_data.json` with `metadata.domain = "contracts"` into tmp_output_dir. Call `resolve_domain(tmp_output_dir, explicit_domain="drug-discovery")`. Assert the return is `("drug-discovery", "explicit")`.
+  2. **Metadata used when no explicit** (D-03 happy path): Same tmp_output_dir. Call `resolve_domain(tmp_output_dir, explicit_domain=None)`. Assert return is `("contracts", "metadata")`.
+  3. **Fallback on missing metadata.domain** (D-08 legacy): Write a second stub `graph_data.json` with metadata lacking the `domain` key. Call `resolve_domain(tmp2, explicit_domain=None)`. Assert return is `(None, "fallback")` AND that a warning was emitted (capture via `capsys` or `caplog` — match the substring `graph_data.json` and `domain`).
+  4. **Fallback on absent graph_data.json** (extra robustness): Call `resolve_domain(empty_tmpdir, explicit_domain=None)`. Assert return is `(None, "fallback")` — no warning required for this branch since the missing-graph case is also covered by the launcher's existing "Warning: No graph_data.json found" path.
+- **Pass criteria:** All four branches return the expected (resolved_domain, source) tuple; branch 3 emits a warning to stderr or log.
+- **Dependency:** None — pure stub JSON, no sift-kg.
+
+### UT-046: build_system_prompt reads analysis_patterns from template with fallback-plus-warning
+- **Traces to:** FIDL-06 (D-06)
+- **Test:** Four branches (see tests/test_unit.py::test_build_system_prompt_loads_analysis_patterns):
+  1. Contracts template → cross-references section uses "CROSS-CONTRACT REFERENCES"
+  2. Drug-discovery template → same section uses "CROSS-STUDY REFERENCES"
+  3. Legacy template with no analysis_patterns → falls back to "CROSS-CONTRACT REFERENCES" AND emits a one-shot stderr warning mentioning `analysis_patterns`
+  4. Claims layer with no cross_references → section is omitted entirely regardless of template.
+- **Pass criteria:** All four branches produce the expected prompt substring. Warning is emitted exactly in branch 3.
+- **Dependency:** None — uses a minimal _StubData class; no sift-kg, no FastAPI.
+
+### FT-018: End-to-end domain auto-detection through /api/template
+- **Traces to:** FIDL-06 (D-03, D-07, D-08, D-09, D-13)
+- **Test:** Four sub-tests (all in tests/test_workbench.py):
+  1. `test_ft018_domain_autodetect_through_api_contracts`: build stub graph_data.json with metadata.domain="contracts"; create_app(out, domain=None); GET /api/template; assert title == "Sample Contract Analysis Workbench" AND analysis_patterns.cross_references_heading == "CROSS-CONTRACT REFERENCES".
+  2. `test_ft018_domain_autodetect_through_api_drug_discovery`: same pattern with metadata.domain="drug-discovery"; assert "Drug Discovery" in title AND analysis_patterns.cross_references_heading == "CROSS-STUDY REFERENCES".
+  3. `test_ft018_explicit_beats_metadata`: metadata.domain="contracts" + create_app(out, domain="drug-discovery") → title reflects drug-discovery (D-09).
+  4. `test_ft018_legacy_graph_no_metadata_domain`: metadata.domain is null → title is generic "Knowledge Graph Explorer" (D-08 fallback).
+- **Pass criteria:** All four sub-tests pass; existing /api/template endpoint behavior preserved (D-14 — no regression on test_template_api_endpoint or test_template_api_generic).
+- **Dependency:** FastAPI TestClient (already used by other tests in test_workbench.py), no sift-kg, no external LLM.
+
+## Phase 18 — Per-Domain Epistemic & Validator Extensibility (FIDL-07)
+
+### UT-047: CUSTOM_RULES dispatch merges findings into claims_layer.super_domain.custom_findings
+- **Traces to:** FIDL-07 (D-01, D-02, D-12)
+- **Test:** Create a synthetic domain via `tmp_path / "domains" / "testdomain"` with `domain.yaml` (minimal valid schema — one entity type, one relation type) and an `epistemic.py` containing `CUSTOM_RULES = [good_rule]` where `good_rule(nodes, links, context)` returns `[{"rule_name": "good_rule", "type": "demo", "severity": "INFO", "description": "hello", "evidence": {}}]` AND an `analyze_testdomain_epistemic(output_dir, graph_data)` stub returning a minimal valid `claims_layer` dict. Monkeypatch `core.label_epistemic._load_domain_epistemic` to return the synthetic module. Write a stub `graph_data.json` into `tmp_path / "out"` (with `metadata.domain = "testdomain"`, empty nodes/links). Call `label_epistemic.analyze_epistemic(tmp_path / "out", domain_name="testdomain")`. Load `claims_layer.json`. Assert `claims_layer["super_domain"]["custom_findings"]["good_rule"][0]["description"] == "hello"` AND `claims_layer["super_domain"]["custom_findings"]["good_rule"][0]["rule_name"] == "good_rule"`. Also assert `context` passed into `good_rule` contained `output_dir`, `graph_data`, and `domain_name` keys.
+- **Pass criteria:** claims_layer.super_domain.custom_findings["good_rule"][0]["description"] == "hello"; context dict has all three required keys.
+- **Dependency:** None — synthetic domain on tmp_path, no sift-kg, no real domain touched.
+
+### UT-048: get_validation_dir returns Path for drug-discovery, None for contracts / unknown
+- **Traces to:** FIDL-07 (D-03, D-13)
+- **Test:** Import `from core.domain_resolver import get_validation_dir`. Four branches:
+  1. `get_validation_dir("drug-discovery")` returns a `Path` pointing at `<PROJECT_ROOT>/domains/drug-discovery/validation`, AND `(returned_path / "run_validation.py").exists()` is True.
+  2. `get_validation_dir("contracts")` returns `None` (no validation/ dir in contracts domain).
+  3. `get_validation_dir("nonexistent-domain-xyz")` returns `None` (catches FileNotFoundError from _resolve_domain_dir).
+  4. Also assert `resolve_domain("drug-discovery")["validation_dir"]` equals `str(<PROJECT_ROOT>/domains/drug-discovery/validation)`. Assert `resolve_domain("contracts")["validation_dir"] is None`. Assert all five pre-existing keys (`name`, `dir`, `yaml_path`, `skill_path`, `schema`) still present unchanged.
+- **Pass criteria:** All four branches return the expected Path/None; resolve_domain's dict has `validation_dir` key with correct value; no pre-existing key removed.
+- **Dependency:** None — real domains/ dir on disk is read-only; no sift-kg required.
+
+### UT-049: Structural doctype detection in both drug-discovery and core epistemic modules
+- **Traces to:** FIDL-07 (D-05, D-06, D-14)
+- **Test:** Dynamic-load `domains/drug-discovery/epistemic.py` via `importlib.util.spec_from_file_location` (hyphenated package not importable via regular `import`); also `from core import label_epistemic as le`. For each module, assert all six shapes:
+  1. `infer_doc_type("pdb_1abc")` == `"structural"` (underscore variant).
+  2. `infer_doc_type("pdb-7xyz")` == `"structural"` (hyphen variant, case-insensitive).
+  3. `infer_doc_type("pmid_12345")` == `"paper"` (regression guard — pmid_ still paper).
+  4. `_detect_structural_content("Crystal structure of KRAS resolved at 2.1 Å")` returns True; `_detect_structural_content("This paper studies protein folding")` returns False (regression guard).
+  5. `classify_epistemic_status("hypothesized structure", 0.95, "structural")` == `"asserted"` — high-confidence structural overrides hedging-regex false positive (D-06 short-circuit).
+  6. `classify_epistemic_status("suggests mechanism", 0.7, "structural")` == `"hypothesized"` — low-confidence structural falls through to normal hedging.
+  Both modules must pass identical assertions — this is the D-05 two-site convention-sync gate. Any drift between `domains/drug-discovery/epistemic.py` and `core/label_epistemic.py` is caught here.
+- **Pass criteria:** All six assertions pass for both modules (12+ asserts total). `grep -c "PDB_PATTERN"` returns 1 in each file (mirror invariant).
+- **Dependency:** None — pure function tests; no sift-kg, no fixtures, no tmp dirs.
+
+### FT-019: End-to-end — baseline invariance + structural doctype propagation + validator report presence
+- **Traces to:** FIDL-07 (D-05, D-06, D-16)
+- **Test:** Three split sub-tests in `tests/test_e2e.py` (each a separate function for per-sub-test failure isolation, mirroring FT-018's split in `test_workbench.py`):
+  - **Sub-test A (`test_ft019_baseline_invariance_contracts`):** Copy `sample_extraction_contract.json` into `tmp_path/extractions/`. Call `cmd_build(tmp_path, domain_name="contracts")`. Call `analyze_epistemic(tmp_path, domain_name="contracts")`. Assert `claims_layer["super_domain"].get("custom_findings", {}) == {}` OR the `"custom_findings"` key is absent from `super_domain` (D-07 backward-compat contract — contracts ships no CUSTOM_RULES).
+  - **Sub-test B (`test_ft019_structural_doctype_propagation`):** `_write_synthetic_pdb_extraction(tmp_path)` helper writes a minimal DocumentExtraction JSON with `document_id: "pdb_1abc"`, one GENE + one COMPOUND entity, one relation with `evidence: "crystal structure of KRAS resolved at 2.1 Å"`. `cmd_build(tmp_path, domain_name="drug-discovery")` builds the graph. `analyze_epistemic(tmp_path, domain_name="drug-discovery")` runs. Assert `"structural" in claims_layer["summary"]["document_types"]` — the `pdb_1abc` mention's `source_document` propagates through `build_doc_type_profile` → `infer_doc_type` → the `structural` bucket in `doc_profile`.
+  - **Sub-test C (`test_ft019_validator_report_exists`):** After the same synthetic build as Sub-test B, assert `(tmp_path / "validation_report.json").exists()` AND the loaded JSON has a `"status"` key. Both `"ok"` and `"skipped"` (RDKit-absent environments) satisfy the assertion — the presence of the report + its schema shape is the gate, not the validation outcome.
+- **Pass criteria:** All three sub-tests pass (or skip module-wide when HAS_SIFTKG is False). No claims_layer regression on contracts; structural doctype surfaces end-to-end; validator report lands.
+- **Dependency:** sift-kg (enforced by module-level `pytest.mark.skipif`); fixtures dir for contracts sample; no external LLM.
+
+### UT-050: Rule-failure isolation — one broken rule does not abort others
+- **Traces to:** FIDL-07 (D-02, D-09, D-15)
+- **Test:** Same synthetic-testdomain pattern as UT-047. `CUSTOM_RULES = [good_rule_a, broken_rule, good_rule_b]`. `good_rule_a` returns one INFO finding. `broken_rule` does `raise ValueError("boom")` as its first line. `good_rule_b` returns one INFO finding. Call `analyze_epistemic` as in UT-047. Assert:
+  - `claims_layer["super_domain"]["custom_findings"]["good_rule_a"][0]["description"] == "a"`
+  - `claims_layer["super_domain"]["custom_findings"]["good_rule_b"][0]["description"] == "b"`
+  - `claims_layer["super_domain"]["custom_findings"]["broken_rule"][0]["status"] == "error"`
+  - `"boom" in claims_layer["super_domain"]["custom_findings"]["broken_rule"][0]["error"]`
+  - No `ValueError` propagates from `analyze_epistemic` (the call returns normally).
+- **Pass criteria:** All three rule outputs coexist in custom_findings; broken_rule has `status == "error"` and its error message contains `"boom"`; no exception propagates.
+- **Dependency:** None — synthetic domain on tmp_path, no sift-kg.
+
+---
+
+## Phase 19 — Wizard & CLI Ergonomics (FIDL-08)
+
+### UT-051: generate_slug produces safe directory names across edge-case inputs
+- **Traces to:** FIDL-08 (D-01, D-15)
+- **Test:** Import `from core.domain_wizard import generate_slug`. Parametrized (or sequential) asserts covering the D-15 edge table:
+  - `generate_slug("Q&A Analysis (v2)")` == `"q-a-analysis-v2"` — non-alphanumerics collapsed to single hyphens, trimmed.
+  - `generate_slug("  Hello World  ")` == `"hello-world"` — leading/trailing whitespace trimmed.
+  - `generate_slug("multi--dash")` == `"multi-dash"` — double hyphen collapsed.
+  - `generate_slug("drug-discovery")` == `"drug-discovery"` — byte-identical for existing clean inputs (D-14 backward-compat).
+  - `generate_slug("contracts")` == `"contracts"` — byte-identical for existing clean inputs.
+  - `generate_slug("")` raises `ValueError`.
+  - `generate_slug("   ")` raises `ValueError` (empty after trim).
+  - `generate_slug("中文 Analysis")` == `"analysis"` (non-ASCII stripped via NFKD + ASCII-ignore) — OR raises `ValueError` if stripped result is empty (pure non-Latin input with zero Latin chars). Mixed case asserts `"analysis"`.
+- **Pass criteria:** All edge-case entries produce the locked output or raise the specified exception; no unexpected exceptions propagate; every character of every successful return is in `[a-z0-9-]`; no returned slug contains `"--"`; no returned slug has leading/trailing `-`.
+- **Dependency:** None — pure function test; no sift-kg, no tmp dirs, no fixtures.
+
+### UT-052: generate_workbench_template emits WorkbenchTemplate-valid YAML with deterministic palette
+- **Traces to:** FIDL-08 (D-04, D-16)
+- **Test:** Import `from core.domain_wizard import generate_workbench_template` AND `from examples.workbench.template_schema import WorkbenchTemplate`. Build synthetic `entity_types = {"Foo": {"description": "x"}, "Bar": {"description": "y"}, "Baz": {"description": "z"}}`. Call `emitted = generate_workbench_template("test-domain", entity_types)`. Parse via `parsed = yaml.safe_load(emitted)`. Assert:
+  1. `WorkbenchTemplate.model_validate(parsed)` raises no exception (Phase 17 Pydantic contract gate — D-16).
+  2. `set(parsed["entity_colors"].keys()) == {"Foo", "Bar", "Baz"}` (one color per entity type).
+  3. `parsed["entity_colors"]["Bar"]` == palette[0] (Bar sorts first alphabetically); `parsed["entity_colors"]["Baz"]` == palette[1]; `parsed["entity_colors"]["Foo"]` == palette[2] — deterministic palette rotation.
+  4. `"cross_references_heading" in parsed["analysis_patterns"]` AND `"appears_in_phrase" in parsed["analysis_patterns"]` — required keys from `AnalysisPatterns` model.
+  5. `parsed["dashboard"]` is a dict with `title` and `subtitle` keys (DashboardConfig shape).
+  6. Determinism: `generate_workbench_template("test-domain", entity_types) == generate_workbench_template("test-domain", entity_types)` — byte-identical on repeat calls.
+- **Pass criteria:** All six assertions pass; YAML is fully-formed and Pydantic-valid; palette assignment is sort-order-deterministic (dict insertion order of input does NOT affect output).
+- **Dependency:** PyYAML, Pydantic v2 (both already pinned ≥2.5 via sift-kg); no sift-kg runtime; no fixtures.
+
+### UT-053: resolve_domain_arg path shim handles name, path, outside-domains cases
+- **Traces to:** FIDL-08 (D-07, D-08, D-17)
+- **Test:** Import `from core.run_sift import resolve_domain_arg`. Assertions:
+  - Bare name passthrough: `resolve_domain_arg("contracts") == "contracts"` AND `resolve_domain_arg("drug-discovery") == "drug-discovery"` — bare name never touches the filesystem (D-08 explicit non-ambiguity).
+  - Path → name extraction: `resolve_domain_arg(str(DOMAINS_DIR / "contracts" / "domain.yaml")) == "contracts"` AND same for drug-discovery.
+  - Outside-domains path: `resolve_domain_arg(str(tmp_path / "alien" / "domain.yaml"))` raises `SystemExit(non-zero)` with stderr containing `"--domain expects a name registered under domains/"`.
+- **Pass criteria:** All three branches behave per D-07/D-08; bare-name branch is filesystem-free (`"/" not in value and not value.endswith(".yaml")` check short-circuits).
+- **Dependency:** Real `domains/contracts/` and `domains/drug-discovery/` directories (always present in repo); `tmp_path` for the outside-domains case.
+
+### UT-054: --schema bypass creates domain package without importing LiteLLM
+- **Traces to:** FIDL-08 (D-09, D-10, D-11, D-18)
+- **Test:** Monkeypatch `sys.modules["litellm"] = None` so any `import litellm` fails. Build synthetic schema dict (2 entity types, 1 relation type + description/context/guidelines). Monkeypatch `core.domain_wizard.DOMAINS_DIR` to `tmp_path/domains` (prevents real-domain pollution). Call `main(["--schema", <schema>, "--name", "ut054-test-domain"])`. Assert: exit code 0; `tmp/domains/ut054-test-domain/{domain.yaml, SKILL.md, epistemic.py, workbench/template.yaml}` all exist; no LLM import fired (monkeypatch enforced — bypass never touches LiteLLM).
+- **Pass criteria:** Bypass completes without triggering LLM; all package files written; test leaves zero permanent state in repo's real `domains/`.
+- **Dependency:** No sift-kg, no LLM, no network — pure stdlib + PyYAML.
+
+### FT-020: End-to-end /epistract:domain --schema → domain package with valid WorkbenchTemplate
+- **Traces to:** FIDL-08 (D-09, D-10, D-11, D-19)
+- **Test:** Load fixture `tests/fixtures/wizard/schema.json` (3 entity types — PARTY, OBLIGATION, TERM; 2 relation types — HAS_OBLIGATION, EXPIRES_ON; optional metadata keys for description/system_context/extraction_guidelines). Monkeypatch `DOMAINS_DIR` → `tmp_path/domains`. Invoke `main(["--schema", <fixture>, "--name", "ft020-test-domain"])` in-process. Assert: all 7 expected package files exist (domain.yaml, SKILL.md, epistemic.py, __init__.py, references/entity-types.md, references/relation-types.md, workbench/template.yaml); the emitted `workbench/template.yaml` parses and validates against the Phase 17 `WorkbenchTemplate` Pydantic model; `entity_colors` keys match the fixture's 3 entity types.
+- **Pass criteria:** End-to-end wizard bypass produces a Pydantic-valid, complete domain package. Test leaves ZERO permanent state in real `domains/` dir — verified by `ls domains/ | grep -v -E '(contracts|drug-discovery)'` returning empty.
+- **Dependency:** `tests/fixtures/wizard/schema.json`; no sift-kg required (module-level `pytestmark` skipif(not HAS_SIFTKG) overridden by an explicit `@pytest.mark.skipif(False, ...)` decorator on FT-020); PyYAML + Pydantic for the validation gate.
+
+---
+
 ## 4. Traceability Matrix
 
 | Requirement | Domain Spec Section | Entity Types Tested | Relation Types Tested | Test Corpus |
@@ -358,3 +636,27 @@ These are real research questions a PhD scientist would ask. Each tests whether 
 | UAT-301–303 | 3, 4 | COMPOUND, DISEASE, PROTEIN, MOA | INDICATED_FOR, HAS_MECHANISM, TARGETS | 03_rare_disease |
 | UAT-401–404 | 3, 4 | COMPOUND, CLINICAL_TRIAL, ADVERSE_EVENT, BIOMARKER | COMBINED_WITH, EVALUATED_IN, CAUSES, PREDICTS_RESPONSE_TO | 04_immunooncology |
 | UAT-501–503 | 3, 4 | COMPOUND, PROTEIN, DISEASE, CLINICAL_TRIAL | HAS_MECHANISM, TARGETS, INHIBITS, EVALUATED_IN, INDICATED_FOR | 05_cardiovascular |
+| UT-039 | FIDL-04 (D-01, D-09) | N/A (discovery layer) | N/A | Synthetic tmpdir |
+| UT-040 | FIDL-04 (D-04) | N/A | N/A | Synthetic tmpdir |
+| UT-041 | FIDL-04 (D-02) | N/A | N/A | Synthetic tmpdir |
+| FT-013 | FIDL-04 (D-01, D-09) | N/A (ingest-layer) | N/A | tests/fixtures/format_parity/sample.md |
+| FT-014 | FIDL-04 (D-06, D-07) | N/A | N/A | tests/fixtures/format_parity/corrupted.pptx |
+| FT-015 | FIDL-04 (D-13), Phase 14 D-14 | All (existing V2 scenarios) | All | tests/baselines/v2/expected.json |
+| UT-042 | FIDL-05 (D-01, D-02, D-03) | N/A (prompt-builder layer) | N/A | Inline synthetic strings |
+| UT-043 | FIDL-05 (D-04, D-05, D-10, D-11) | N/A | N/A | tests/fixtures/wizard_sample_window/long_contract.txt |
+| FT-016 | FIDL-05 (D-10, D-11) | N/A (prompt-layer) | N/A | tests/fixtures/wizard_sample_window/long_contract.txt |
+| FT-017 | FIDL-05 (D-12) | N/A | N/A | tests/fixtures/wizard/sample_lease_{1,2,3}.txt |
+| UT-044 | FIDL-06 (D-01, D-02, D-10) | N/A (metadata write) | N/A | Stub graph_data.json |
+| UT-045 | FIDL-06 (D-03, D-07, D-08, D-09, D-11) | N/A (resolver) | N/A | Stub graph_data.json |
+| UT-046 | FIDL-06 (D-06) | N/A (system prompt) | N/A | Stub WorkbenchData |
+| FT-018 | FIDL-06 (D-03, D-07, D-08, D-09, D-13) | N/A (e2e) | N/A | Stub graph_data.json |
+| UT-047 | FIDL-07 (D-01, D-02, D-12) | N/A (rule dispatch) | N/A | Synthetic tmpdir |
+| UT-048 | FIDL-07 (D-03, D-13) | N/A (resolver) | N/A | N/A (real domains/ dir) |
+| UT-049 | FIDL-07 (D-05, D-06, D-14) | N/A (doctype + status) | N/A | Inline assertions |
+| UT-050 | FIDL-07 (D-02, D-09, D-15) | N/A (rule isolation) | N/A | Synthetic tmpdir |
+| FT-019 | FIDL-07 (D-05, D-06, D-16) | GENE, COMPOUND | TARGETS | Synthetic pdb_1abc + contracts fixture |
+| UT-051 | FIDL-08 (D-01, D-15) | N/A (slug helper) | N/A | Inline edge table |
+| UT-052 | FIDL-08 (D-04, D-16) | N/A (template emitter) | N/A | Synthetic entity_types dict |
+| UT-053 | FIDL-08 (D-07, D-08, D-17) | N/A (path shim) | N/A | tmp_path synthetic paths |
+| UT-054 | FIDL-08 (D-09, D-10, D-11, D-18) | N/A (schema bypass) | N/A | Synthetic schema dict |
+| FT-020 | FIDL-08 (D-09, D-10, D-11, D-19) | N/A (e2e wizard) | N/A | tests/fixtures/wizard/schema.json |

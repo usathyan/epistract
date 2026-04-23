@@ -1,0 +1,24 @@
+{
+  "entity_types": {
+    "PARTY": {
+      "description": "A legal entity (person, company, organization) named in the contract."
+    },
+    "OBLIGATION": {
+      "description": "A duty or commitment one party owes another."
+    },
+    "TERM": {
+      "description": "A named defined term introduced in the agreement."
+    }
+  },
+  "relation_types": {
+    "HAS_OBLIGATION": {
+      "description": "Links a PARTY to an OBLIGATION they owe."
+    },
+    "EXPIRES_ON": {
+      "description": "Links an OBLIGATION or TERM to a termination date."
+    }
+  },
+  "description": "Test contract domain for FT-020 end-to-end wizard bypass.",
+  "system_context": "You are analyzing a test contract domain.",
+  "extraction_guidelines": "Extract PARTY, OBLIGATION, TERM entities and their relations."
+}

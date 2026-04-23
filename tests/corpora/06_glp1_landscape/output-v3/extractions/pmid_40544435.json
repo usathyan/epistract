@@ -1,0 +1,271 @@
+{
+  "document_id": "pmid_40544435",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "orforglipron",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "GLP-1 receptor agonist",
+        "compound_type": "small-molecule, nonpeptide",
+        "development_stage": "Phase III",
+        "route_of_administration": "oral",
+        "doses_studied": [
+          "3 mg",
+          "12 mg",
+          "36 mg"
+        ],
+        "dosing_frequency": "once daily"
+      },
+      "confidence": 0.99,
+      "context": "Orforglipron is a small-molecule, nonpeptide glucagon-like peptide-1 (GLP-1) receptor agonist in clinical development for type 2 diabetes and weight management."
+    },
+    {
+      "name": "GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "target": "GLP-1 receptor",
+        "selectivity": "selective",
+        "compound_type": "small-molecule, nonpeptide"
+      },
+      "confidence": 0.97,
+      "context": "Orforglipron is a small-molecule, nonpeptide glucagon-like peptide-1 (GLP-1) receptor agonist in clinical development for type 2 diabetes and weight management."
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "protein_family": "glucagon receptor family",
+        "aliases": [
+          "GLP1R",
+          "glucagon-like peptide-1 receptor"
+        ]
+      },
+      "confidence": 0.97,
+      "context": "Orforglipron is a small-molecule, nonpeptide glucagon-like peptide-1 (GLP-1) receptor agonist in clinical development for type 2 diabetes and weight management."
+    },
+    {
+      "name": "Type 2 Diabetes Mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Diabetes Mellitus, Type 2",
+        "icd_code": "E11",
+        "aliases": [
+          "T2DM",
+          "type 2 diabetes",
+          "early type 2 diabetes"
+        ],
+        "disease_subtype": "diet and exercise managed (no pharmacotherapy)"
+      },
+      "confidence": 0.99,
+      "context": "Participants had type 2 diabetes treated only with diet and exercise, a glycated hemoglobin level of at least 7.0% but no more than 9.5%, and a body-mass index... of at least 23.0."
+    },
+    {
+      "name": "Obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Obesity",
+        "aliases": [
+          "weight management",
+          "overweight"
+        ],
+        "notes": "orforglipron in development for weight management"
+      },
+      "confidence": 0.8,
+      "context": "Orforglipron is a small-molecule, nonpeptide glucagon-like peptide-1 (GLP-1) receptor agonist in clinical development for type 2 diabetes and weight management."
+    },
+    {
+      "name": "ACHIEVE-1",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT05971940",
+        "trial_acronym": "ACHIEVE-1",
+        "phase": "Phase III",
+        "design": "randomized, double-blind, placebo-controlled",
+        "randomization_ratio": "1:1:1:1",
+        "duration_weeks": 40,
+        "primary_endpoint": "change from baseline in glycated hemoglobin level at week 40",
+        "key_secondary_endpoint": "percent change in body weight from baseline at week 40",
+        "patient_population": "adults with type 2 diabetes managed with diet and exercise only, HbA1c 7.0-9.5%, BMI >= 23.0",
+        "total_participants": 559,
+        "status": "completed",
+        "primary_endpoint_met": true
+      },
+      "confidence": 0.99,
+      "context": "In this phase 3, double-blind, placebo-controlled trial, we randomly assigned participants in a 1:1:1:1 ratio to receive orforglipron at one of three doses (3 mg, 12 mg, or 36 mg) or placebo once daily for 40 weeks. (Supported by Eli Lilly; ACHIEVE-1 ClinicalTrials.gov number, NCT05971940.)"
+    },
+    {
+      "name": "glycated hemoglobin",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "pharmacodynamic, surrogate efficacy",
+        "analyte": "HbA1c",
+        "aliases": [
+          "HbA1c",
+          "hemoglobin A1c"
+        ],
+        "threshold_inclusion": "7.0% to 9.5% at baseline",
+        "mean_baseline": "8.0%",
+        "mean_at_week40_orforglipron": "6.5 to 6.7%",
+        "tissue": "blood",
+        "assay": "laboratory measurement"
+      },
+      "confidence": 0.99,
+      "context": "The primary end point was the change from baseline to week 40 in the glycated hemoglobin level. The mean glycated hemoglobin level at baseline was 8.0%."
+    },
+    {
+      "name": "body weight reduction",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "pharmacodynamic",
+        "analyte": "body weight",
+        "percent_change_3mg": "-4.5%",
+        "percent_change_12mg": "-5.8%",
+        "percent_change_36mg": "-7.6%",
+        "percent_change_placebo": "-1.7%",
+        "timepoint": "week 40"
+      },
+      "confidence": 0.97,
+      "context": "The percent change in body weight from baseline to week 40 was -4.5% with the 3-mg dose, -5.8% with the 12-mg dose, -7.6% with the 36-mg dose, and -1.7% with placebo."
+    },
+    {
+      "name": "Gastrointestinal Disorders",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "meddra_pt": "Gastrointestinal disorders",
+        "organ_class": "Gastrointestinal disorders",
+        "severity_grade": "mild to moderate",
+        "frequency": "most common",
+        "onset": "during dose escalation",
+        "seriousness": "non-serious"
+      },
+      "confidence": 0.95,
+      "context": "The most common adverse events were mild-to-moderate gastrointestinal events, most of which occurred during dose escalation."
+    },
+    {
+      "name": "Hypoglycemia",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "meddra_pt": "Hypoglycaemia",
+        "organ_class": "Metabolism and nutrition disorders",
+        "severity_grade": "severe (none reported)",
+        "frequency": "none (severe episodes)",
+        "seriousness": "no severe episodes reported"
+      },
+      "confidence": 0.95,
+      "context": "No episodes of severe hypoglycemia were reported."
+    },
+    {
+      "name": "Eli Lilly",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "pharma",
+        "country": "United States"
+      },
+      "confidence": 0.99,
+      "context": "Supported by Eli Lilly; ACHIEVE-1 ClinicalTrials.gov number, NCT05971940."
+    },
+    {
+      "name": "Rosenstock et al., NEJM 2025",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "40544435",
+        "journal": "The New England Journal of Medicine",
+        "year": 2025,
+        "first_author": "Rosenstock",
+        "publication_type": "original_research",
+        "title": "Orforglipron, an Oral Small-Molecule GLP-1 Receptor Agonist, in Early Type 2 Diabetes"
+      },
+      "confidence": 0.99,
+      "context": "Title: Orforglipron, an Oral Small-Molecule GLP-1 Receptor Agonist, in Early Type 2 Diabetes. Authors: Rosenstock Julio, Hsia Stanley, Nevarez Ruiz Luis, Eyde Sarah, Cox David. Journal: The New England journal of medicine (2025). PMID: 40544435."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "orforglipron",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.97,
+      "evidence": "Orforglipron is a small-molecule, nonpeptide glucagon-like peptide-1 (GLP-1) receptor agonist in clinical development for type 2 diabetes and weight management."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "orforglipron",
+      "target_entity": "GLP-1 receptor agonism",
+      "confidence": 0.97,
+      "evidence": "Orforglipron is a small-molecule, nonpeptide glucagon-like peptide-1 (GLP-1) receptor agonist in clinical development for type 2 diabetes and weight management."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "orforglipron",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.85,
+      "evidence": "Orforglipron is a small-molecule, nonpeptide glucagon-like peptide-1 (GLP-1) receptor agonist in clinical development for type 2 diabetes and weight management."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "orforglipron",
+      "target_entity": "Obesity",
+      "confidence": 0.75,
+      "evidence": "Orforglipron is a small-molecule, nonpeptide glucagon-like peptide-1 (GLP-1) receptor agonist in clinical development for type 2 diabetes and weight management."
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "orforglipron",
+      "target_entity": "ACHIEVE-1",
+      "confidence": 0.99,
+      "evidence": "In this phase 3, double-blind, placebo-controlled trial, we randomly assigned participants in a 1:1:1:1 ratio to receive orforglipron at one of three doses (3 mg, 12 mg, or 36 mg) or placebo once daily for 40 weeks."
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "orforglipron",
+      "target_entity": "Gastrointestinal Disorders",
+      "confidence": 0.95,
+      "evidence": "The most common adverse events were mild-to-moderate gastrointestinal events, most of which occurred during dose escalation."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "orforglipron",
+      "target_entity": "Eli Lilly",
+      "confidence": 0.97,
+      "evidence": "Supported by Eli Lilly; ACHIEVE-1 ClinicalTrials.gov number, NCT05971940."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "ACHIEVE-1",
+      "target_entity": "Eli Lilly",
+      "confidence": 0.97,
+      "evidence": "Supported by Eli Lilly; ACHIEVE-1 ClinicalTrials.gov number, NCT05971940."
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "ACHIEVE-1",
+      "target_entity": "Rosenstock et al., NEJM 2025",
+      "confidence": 0.99,
+      "evidence": "Title: Orforglipron, an Oral Small-Molecule GLP-1 Receptor Agonist, in Early Type 2 Diabetes. Authors: Rosenstock Julio, Hsia Stanley, Nevarez Ruiz Luis, Eyde Sarah, Cox David. Journal: The New England journal of medicine (2025). PMID: 40544435."
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "glycated hemoglobin",
+      "target_entity": "orforglipron",
+      "confidence": 0.92,
+      "evidence": "The primary end point was the change from baseline to week 40 in the glycated hemoglobin level. All three doses of orforglipron were superior to placebo with respect to the primary end point."
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "glycated hemoglobin",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.9,
+      "evidence": "Participants had type 2 diabetes treated only with diet and exercise, a glycated hemoglobin level of at least 7.0% but no more than 9.5%."
+    }
+  ],
+  "cost_usd": 0.09063,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:57:10.416127+00:00",
+  "error": null
+}

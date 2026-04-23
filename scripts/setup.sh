@@ -136,6 +136,38 @@ EOF
 fi
 
 # ---------------------------------------------------------------------------
+# chonkie (required — sentence-aware chunker with overlap, Phase 14 FIDL-03)
+# ---------------------------------------------------------------------------
+
+if "$VENV_PYTHON" -c "import chonkie" 2>/dev/null; then
+  CHONKIE_VERSION=$("$VENV_PYTHON" -c "import importlib.metadata; print(importlib.metadata.version('chonkie'))" 2>/dev/null || echo "unknown")
+  echo "chonkie $CHONKIE_VERSION"
+else
+  if [ "$CHECK_ONLY" = true ]; then
+    echo "MISSING: chonkie (run without --check to install)"
+  else
+    echo "chonkie not found, installing via uv..."
+    if ! uv pip install 'chonkie>=1.0'; then
+      cat <<'EOF'
+
+ERROR: uv pip install chonkie failed.
+
+chonkie is required — core/chunk_document.py imports it at module load and
+the whole ingest pipeline cannot run without it. Common causes:
+  1. Corporate SSL inspection proxy — set SSL_CERT_FILE or REQUESTS_CA_BUNDLE.
+  2. Network / DNS — check that pypi.org is reachable.
+  3. Python version — chonkie supports 3.11+.
+
+Re-run this script after fixing the underlying issue.
+EOF
+    exit 1
+  fi
+    CHONKIE_VERSION=$("$VENV_PYTHON" -c "import importlib.metadata; print(importlib.metadata.version('chonkie'))" 2>/dev/null || echo "unknown")
+    echo "chonkie $CHONKIE_VERSION (installed)"
+  fi
+fi
+
+# ---------------------------------------------------------------------------
 # RDKit (optional)
 # ---------------------------------------------------------------------------
 

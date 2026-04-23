@@ -1,0 +1,209 @@
+{
+  "document_id": "patent_01_us10888605b2_semaglutide",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "inn": "semaglutide",
+        "drug_class": "GLP-1 receptor agonist",
+        "development_stage": "approved",
+        "route_of_administration": "subcutaneous injection",
+        "formulation": "liquid parenteral",
+        "compound_code": "N/A",
+        "iupac_description": "N6.26-{18-[N-(17-carboxyheptadecanoyl)-L-gamma-glutamyl]-10-oxo-3,6,12,15-tetraoxa-9,18-diazaoctadecanoyl}-[8-(2-amino-2-propanoic acid),34-L-arginine]human glucagon-like peptide 1(7-37)",
+        "requires_validation": true,
+        "notation_type": "IUPAC_name",
+        "notation_present": true,
+        "dosing_frequency": "once-weekly",
+        "concentration_range_mg_ml": "0.5 to 5.0"
+      },
+      "confidence": 0.98,
+      "context": "The invention covers pharmaceutical formulations containing the GLP-1 peptide semaglutide with phenol content not exceeding 0.01% (w/w)."
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "protein_family": "incretin receptor"
+      },
+      "confidence": 0.92,
+      "context": "Semaglutide is a GLP-1 receptor agonist indicated for the treatment of type 2 diabetes mellitus, prevention and treatment of obesity, and related metabolic disorders including cardiovascular risk reduction."
+    },
+    {
+      "name": "GLP-1(7-37)",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "incretin peptide",
+        "protein_family": "glucagon-like peptide",
+        "requires_validation": true,
+        "notation_type": "amino_acid_sequence",
+        "notation_present": true
+      },
+      "confidence": 0.95,
+      "context": "The native GLP-1(7-37) peptide sequence is HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG."
+    },
+    {
+      "name": "Type 2 Diabetes Mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Diabetes Mellitus, Type 2",
+        "icd_code": "E11",
+        "aliases": [
+          "T2DM",
+          "type 2 diabetes"
+        ]
+      },
+      "confidence": 0.97,
+      "context": "Semaglutide is a GLP-1 receptor agonist indicated for the treatment of type 2 diabetes mellitus, prevention and treatment of obesity, and related metabolic disorders including cardiovascular risk reduction."
+    },
+    {
+      "name": "Obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Obesity",
+        "icd_code": "E66"
+      },
+      "confidence": 0.95,
+      "context": "Semaglutide is a GLP-1 receptor agonist indicated for the treatment of type 2 diabetes mellitus, prevention and treatment of obesity, and related metabolic disorders including cardiovascular risk reduction."
+    },
+    {
+      "name": "Cardiovascular Risk Reduction",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Cardiovascular Diseases",
+        "disease_subtype": "cardiovascular risk reduction indication",
+        "aliases": [
+          "CV risk reduction"
+        ]
+      },
+      "confidence": 0.88,
+      "context": "Semaglutide is a GLP-1 receptor agonist indicated for the treatment of type 2 diabetes mellitus, prevention and treatment of obesity, and related metabolic disorders including cardiovascular risk reduction."
+    },
+    {
+      "name": "GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "selectivity": "selective",
+        "target": "GLP-1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "Semaglutide is a GLP-1 receptor agonist indicated for the treatment of type 2 diabetes mellitus, prevention and treatment of obesity, and related metabolic disorders including cardiovascular risk reduction."
+    },
+    {
+      "name": "albumin binding-mediated half-life extension",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "modulation",
+        "target": "serum albumin",
+        "structural_basis": "C18 fatty diacid acylation via linker at lysine 26"
+      },
+      "confidence": 0.92,
+      "context": "Semaglutide is a modified analog with alpha-aminoisobutyric acid (Aib) at position 8 and arginine at position 34, acylated with a C18 fatty diacid via a linker at lysine 26, which extends the half-life by promoting albumin binding."
+    },
+    {
+      "name": "Novo Nordisk AS",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "pharma",
+        "country": "Denmark"
+      },
+      "confidence": 0.99,
+      "context": "Assignee: Novo Nordisk AS"
+    },
+    {
+      "name": "US10888605B2",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "publication_type": "patent",
+        "patent_number": "US10888605B2",
+        "filing_date": "January 28, 2020",
+        "assignee": "Novo Nordisk AS"
+      },
+      "confidence": 0.99,
+      "context": "Patent ID: US10888605B2; Filing Date: January 28, 2020; Assignee: Novo Nordisk AS"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.95,
+      "evidence": "Semaglutide is a GLP-1 receptor agonist indicated for the treatment of type 2 diabetes mellitus, prevention and treatment of obesity, and related metabolic disorders including cardiovascular risk reduction."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor agonism",
+      "confidence": 0.95,
+      "evidence": "Semaglutide is a GLP-1 receptor agonist indicated for the treatment of type 2 diabetes mellitus, prevention and treatment of obesity, and related metabolic disorders including cardiovascular risk reduction."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "semaglutide",
+      "target_entity": "albumin binding-mediated half-life extension",
+      "confidence": 0.92,
+      "evidence": "Semaglutide is a modified analog with alpha-aminoisobutyric acid (Aib) at position 8 and arginine at position 34, acylated with a C18 fatty diacid via a linker at lysine 26, which extends the half-life by promoting albumin binding."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.88,
+      "evidence": "Semaglutide is a GLP-1 receptor agonist indicated for the treatment of type 2 diabetes mellitus, prevention and treatment of obesity, and related metabolic disorders including cardiovascular risk reduction."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Obesity",
+      "confidence": 0.85,
+      "evidence": "Semaglutide is a GLP-1 receptor agonist indicated for the treatment of type 2 diabetes mellitus, prevention and treatment of obesity, and related metabolic disorders including cardiovascular risk reduction."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Cardiovascular Risk Reduction",
+      "confidence": 0.75,
+      "evidence": "Semaglutide is a GLP-1 receptor agonist indicated for the treatment of type 2 diabetes mellitus, prevention and treatment of obesity, and related metabolic disorders including cardiovascular risk reduction."
+    },
+    {
+      "relation_type": "DERIVED_FROM",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1(7-37)",
+      "confidence": 0.95,
+      "evidence": "Semaglutide is a modified analog with alpha-aminoisobutyric acid (Aib) at position 8 and arginine at position 34, acylated with a C18 fatty diacid via a linker at lysine 26, which extends the half-life by promoting albumin binding. This enables once-weekly subcutaneous administration."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "semaglutide",
+      "target_entity": "Novo Nordisk AS",
+      "confidence": 0.97,
+      "evidence": "Assignee: Novo Nordisk AS"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "US10888605B2",
+      "target_entity": "Novo Nordisk AS",
+      "confidence": 0.99,
+      "evidence": "Patent ID: US10888605B2; Assignee: Novo Nordisk AS"
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "semaglutide",
+      "target_entity": "US10888605B2",
+      "confidence": 0.97,
+      "evidence": "The invention covers pharmaceutical formulations containing the GLP-1 peptide semaglutide with phenol content not exceeding 0.01% (w/w)."
+    }
+  ],
+  "cost_usd": 0.076947,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:34:04.491826+00:00",
+  "error": null
+}

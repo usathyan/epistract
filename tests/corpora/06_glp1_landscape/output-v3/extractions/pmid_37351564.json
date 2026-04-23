@@ -1,0 +1,229 @@
+{
+  "document_id": "pmid_37351564",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "orforglipron",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "nonpeptide GLP-1 receptor agonist",
+        "route_of_administration": "oral",
+        "development_stage": "Phase II",
+        "dosing_frequency": "once daily",
+        "doses_studied": [
+          "12 mg",
+          "24 mg",
+          "36 mg",
+          "45 mg"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "Data are needed regarding the efficacy and safety of the nonpeptide glucagon-like peptide-1 (GLP-1) receptor agonist orforglipron as a once-daily oral therapy for weight reduction in adults with obesity."
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "full_name": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "Data are needed regarding the efficacy and safety of the nonpeptide glucagon-like peptide-1 (GLP-1) receptor agonist orforglipron as a once-daily oral therapy for weight reduction in adults with obesity."
+    },
+    {
+      "name": "GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "selectivity": "selective",
+        "target": "GLP-1 receptor",
+        "compound_class": "nonpeptide GLP-1 receptor agonist"
+      },
+      "confidence": 0.95,
+      "context": "Daily oral orforglipron, a nonpeptide GLP-1 receptor agonist, was associated with weight reduction."
+    },
+    {
+      "name": "Obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Obesity",
+        "icd_code": "E66",
+        "aliases": [
+          "overweight"
+        ]
+      },
+      "confidence": 0.98,
+      "context": "Obesity is a major risk factor for many leading causes of illness and death worldwide. Data are needed regarding the efficacy and safety of the nonpeptide glucagon-like peptide-1 (GLP-1) receptor agonist orforglipron as a once-daily oral therapy for weight reduction in adults with obesity."
+    },
+    {
+      "name": "Diabetes Mellitus, Type 2",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Diabetes Mellitus, Type 2",
+        "icd_code": "E11",
+        "aliases": [
+          "T2DM",
+          "type 2 diabetes"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "we enrolled adults with obesity, or with overweight plus at least one weight-related coexisting condition, and without diabetes."
+    },
+    {
+      "name": "GZGI",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT05051579",
+        "trial_acronym": "GZGI",
+        "phase": "Phase II",
+        "design": "randomized, double-blind, placebo-controlled",
+        "primary_endpoint": "percentage change from baseline in body weight at week 26",
+        "secondary_endpoint": "percentage change from baseline in body weight at week 36",
+        "duration_weeks": 36,
+        "patient_population": "adults with obesity, or overweight plus at least one weight-related coexisting condition, without diabetes",
+        "n_randomized": 272,
+        "status": "completed"
+      },
+      "confidence": 0.98,
+      "context": "In this phase 2, randomized, double-blind trial, we enrolled adults with obesity, or with overweight plus at least one weight-related coexisting condition, and without diabetes. Participants were randomly assigned to receive orforglipron at one of four doses (12, 24, 36, or 45 mg) or placebo once daily for 36 weeks."
+    },
+    {
+      "name": "Gastrointestinal Events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "meddra_pt": "Gastrointestinal disorders",
+        "severity_grade": "mild to moderate",
+        "frequency": "most common",
+        "onset": "primarily during dose escalation",
+        "management": "discontinuation in 10 to 17% of participants across dose cohorts",
+        "organ_class": "Gastrointestinal disorders"
+      },
+      "confidence": 0.95,
+      "context": "The most common adverse events reported with orforglipron were gastrointestinal events, which were mild to moderate, occurred primarily during dose escalation, and led to discontinuation of orforglipron in 10 to 17% of participants across dose cohorts."
+    },
+    {
+      "name": "Eli Lilly",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "pharma",
+        "country": "United States"
+      },
+      "confidence": 0.98,
+      "context": "(Funded by Eli Lilly; GZGI ClinicalTrials.gov number, NCT05051579.)"
+    },
+    {
+      "name": "Wharton et al., NEJM 2023",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "37351564",
+        "journal": "The New England Journal of Medicine",
+        "year": 2023,
+        "first_author": "Wharton",
+        "publication_type": "original_research"
+      },
+      "confidence": 0.98,
+      "context": "Title: Daily Oral GLP-1 Receptor Agonist Orforglipron for Adults with Obesity. Authors: Wharton Sean, Blevins Thomas, Connery Lisa, Rosenstock Julio, Raha Sohini. Journal: The New England journal of medicine (2023). PMID: 37351564"
+    },
+    {
+      "name": "body weight reduction",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "pharmacodynamic",
+        "analyte": "body weight",
+        "threshold": "at least 10% reduction by week 36",
+        "measurement_method": "percentage change from baseline"
+      },
+      "confidence": 0.88,
+      "context": "The percentage change from baseline in body weight was assessed at week 26 (primary end point) and at week 36 (secondary end point)."
+    },
+    {
+      "name": "cardiometabolic risk factors",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "physiological",
+        "clinical_relevance": "treatment outcome measure"
+      },
+      "confidence": 0.82,
+      "context": "The use of orforglipron led to improvement in all prespecified weight-related and cardiometabolic measures."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "orforglipron",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.97,
+      "evidence": "Data are needed regarding the efficacy and safety of the nonpeptide glucagon-like peptide-1 (GLP-1) receptor agonist orforglipron as a once-daily oral therapy for weight reduction in adults with obesity."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "orforglipron",
+      "target_entity": "GLP-1 receptor agonism",
+      "confidence": 0.97,
+      "evidence": "Daily oral orforglipron, a nonpeptide GLP-1 receptor agonist, was associated with weight reduction."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "orforglipron",
+      "target_entity": "Obesity",
+      "confidence": 0.85,
+      "evidence": "Daily oral orforglipron, a nonpeptide GLP-1 receptor agonist, was associated with weight reduction. Adverse events reported with orforglipron were similar to those with injectable GLP-1 receptor agonists."
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "orforglipron",
+      "target_entity": "GZGI",
+      "confidence": 0.98,
+      "evidence": "Participants were randomly assigned to receive orforglipron at one of four doses (12, 24, 36, or 45 mg) or placebo once daily for 36 weeks."
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "orforglipron",
+      "target_entity": "Gastrointestinal Events",
+      "confidence": 0.95,
+      "evidence": "The most common adverse events reported with orforglipron were gastrointestinal events, which were mild to moderate, occurred primarily during dose escalation, and led to discontinuation of orforglipron in 10 to 17% of participants across dose cohorts."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "orforglipron",
+      "target_entity": "Eli Lilly",
+      "confidence": 0.95,
+      "evidence": "(Funded by Eli Lilly; GZGI ClinicalTrials.gov number, NCT05051579.)"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "GZGI",
+      "target_entity": "Eli Lilly",
+      "confidence": 0.95,
+      "evidence": "(Funded by Eli Lilly; GZGI ClinicalTrials.gov number, NCT05051579.)"
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "GZGI",
+      "target_entity": "Wharton et al., NEJM 2023",
+      "confidence": 0.98,
+      "evidence": "Title: Daily Oral GLP-1 Receptor Agonist Orforglipron for Adults with Obesity. Authors: Wharton Sean, Blevins Thomas, Connery Lisa, Rosenstock Julio, Raha Sohini. Journal: The New England journal of medicine (2023). PMID: 37351564"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "body weight reduction",
+      "target_entity": "orforglipron",
+      "confidence": 0.82,
+      "evidence": "The percentage change from baseline in body weight was assessed at week 26 (primary end point) and at week 36 (secondary end point)."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "Obesity",
+      "target_entity": "cardiometabolic risk factors",
+      "confidence": 0.8,
+      "evidence": "The use of orforglipron led to improvement in all prespecified weight-related and cardiometabolic measures."
+    }
+  ],
+  "cost_usd": 0.080583,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:45:04.123047+00:00",
+  "error": null
+}

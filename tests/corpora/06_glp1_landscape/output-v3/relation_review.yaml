@@ -1,0 +1,789 @@
+review_threshold: 0.7
+relations:
+- source_id: compound:semaglutide
+  source_name: semaglutide
+  target_id: disease:hyperglycemia
+  target_name: Hyperglycemia
+  relation_type: INDICATED_FOR
+  confidence: 0.55
+  evidence: A key embodiment involves administering a GLP-1 agonist with a minimum
+    half-life of 72 hours in doses of at least 0.7 mg weekly (or semaglutide-equivalent)
+    on a once-weekly or less frequent schedule for managing type 2 diabetes, hyperglycemia,
+    glucose tolerance disorders, and obesity.
+  source_document: patent_03_us10335462b2_semaglutide_longacting
+  status: DRAFT
+  flag_reason: Low confidence (0.55 < 0.7)
+- source_id: compound:semaglutide
+  source_name: semaglutide
+  target_id: disease:glucose_tolerance_disorder
+  target_name: Glucose Tolerance Disorder
+  relation_type: INDICATED_FOR
+  confidence: 0.5
+  evidence: A key embodiment involves administering a GLP-1 agonist with a minimum
+    half-life of 72 hours in doses of at least 0.7 mg weekly (or semaglutide-equivalent)
+    on a once-weekly or less frequent schedule for managing type 2 diabetes, hyperglycemia,
+    glucose tolerance disorders, and obesity.
+  source_document: patent_03_us10335462b2_semaglutide_longacting
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: compound:semaglutide
+  source_name: semaglutide
+  target_id: disease:non_alcoholic_steatohepatitis
+  target_name: Non-Alcoholic Steatohepatitis
+  relation_type: INDICATED_FOR
+  confidence: 0.6
+  evidence: Various pre-clinical and phase-2 studies have indicated the therapeutic
+    potential of semaglutide in non-alcoholic steatohepatitis and neurodegenerative
+    disorders like Parkinson's and Alzheimer's disease.
+  source_document: pmid_35650449
+  status: DRAFT
+  flag_reason: Low confidence (0.60 < 0.7)
+- source_id: compound:semaglutide
+  source_name: semaglutide
+  target_id: disease:parkinson_disease
+  target_name: Parkinson Disease
+  relation_type: INDICATED_FOR
+  confidence: 0.58
+  evidence: Various pre-clinical and phase-2 studies have indicated the therapeutic
+    potential of semaglutide in non-alcoholic steatohepatitis and neurodegenerative
+    disorders like Parkinson's and Alzheimer's disease.
+  source_document: pmid_35650449
+  status: DRAFT
+  flag_reason: Low confidence (0.58 < 0.7)
+- source_id: compound:semaglutide
+  source_name: semaglutide
+  target_id: disease:alzheimer_disease
+  target_name: Alzheimer Disease
+  relation_type: INDICATED_FOR
+  confidence: 0.58
+  evidence: Various pre-clinical and phase-2 studies have indicated the therapeutic
+    potential of semaglutide in non-alcoholic steatohepatitis and neurodegenerative
+    disorders like Parkinson's and Alzheimer's disease.
+  source_document: pmid_35650449
+  status: DRAFT
+  flag_reason: Low confidence (0.58 < 0.7)
+- source_id: compound:semaglutide
+  source_name: semaglutide
+  target_id: disease:alcohol_use_disorder
+  target_name: Alcohol Use Disorder
+  relation_type: INDICATED_FOR
+  confidence: 0.6
+  evidence: providing support for clinical testing of semaglutide as a potentially
+    novel pharmacotherapy for AUD
+  source_document: pmid_37192005
+  status: DRAFT
+  flag_reason: Low confidence (0.60 < 0.7)
+- source_id: compound:semaglutide
+  source_name: semaglutide
+  target_id: adverse_event:cardiovascular_death
+  target_name: Cardiovascular Death
+  relation_type: CAUSES
+  confidence: 0.55
+  evidence: death from cardiovascular causes (hazard ratio, 0.71; 95% CI, 0.56 to
+    0.89)
+  source_document: pmid_38785209
+  status: DRAFT
+  flag_reason: Low confidence (0.55 < 0.7)
+- source_id: compound:semaglutide
+  source_name: semaglutide
+  target_id: disease:nonarteritic_anterior_ischemic_optic_neuropathy
+  target_name: Nonarteritic Anterior Ischemic Optic Neuropathy
+  relation_type: CAUSES
+  confidence: 0.62
+  evidence: This study's findings suggest an association between semaglutide and NAION.
+    As this was an observational study, future study is required to assess causality.
+  source_document: pmid_38958939
+  status: DRAFT
+  flag_reason: Low confidence (0.62 < 0.7)
+- source_id: mechanism_of_action:glp_1_receptor_agonism
+  source_name: GLP-1 receptor agonism
+  target_id: disease:cognitive_impairment
+  target_name: cognitive impairment
+  relation_type: ASSOCIATED_WITH
+  confidence: 0.68
+  evidence: GLP-1R agonism emerges as a promising strategy for addressing the complex
+    interplay between metabolic health and cognitive well-being.
+  source_document: pmid_39357509
+  status: DRAFT
+  flag_reason: Low confidence (0.68 < 0.7)
+- source_id: compound:tirzepatide
+  source_name: tirzepatide
+  target_id: compound:semaglutide
+  target_name: semaglutide
+  relation_type: COMBINED_WITH
+  confidence: 0.55
+  evidence: Both drugs produced significant weight loss, with tirzepatide achieving
+    greater reductions than semaglutide (8.53±4.10 vs. 6.85±3.38 kg; p=0.033).
+  source_document: pmid_41523559
+  status: DRAFT
+  flag_reason: Low confidence (0.55 < 0.7)
+- source_id: biomarker:hba1c_reduction
+  source_name: HbA1c reduction
+  target_id: compound:tirzepatide
+  target_name: tirzepatide
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.85
+  evidence: Tirzepatide has demonstrated superior efficacy in glycemic control (HbA1c
+    reduction) and weight loss compared to selective GLP-1 receptor agonists in the
+    SURPASS clinical trial program.
+  source_document: patent_02_us11357820b2_tirzepatide
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:hba1c_reduction
+  source_name: HbA1c reduction
+  target_id: compound:semaglutide
+  target_name: semaglutide
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.82
+  evidence: Clinical studies demonstrated that weekly semaglutide at doses of 0.5
+    mg and 1.0 mg achieved significant reductions in HbA1c and body weight in patients
+    with type 2 diabetes.
+  source_document: patent_03_us10335462b2_semaglutide_longacting
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:hba1c_reduction
+  source_name: HbA1c reduction
+  target_id: compound:orforglipron
+  target_name: orforglipron
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.8
+  evidence: Orforglipron has demonstrated significant weight loss and HbA1c reduction
+    in Phase 3 trials (ACHIEVE program).
+  source_document: patent_05_wo2018109607a1_pfizer_oral_glp1
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: compound:danuglipron
+  source_name: danuglipron
+  target_id: disease:non_alcoholic_steatohepatitis
+  target_name: Non-Alcoholic Steatohepatitis
+  relation_type: INDICATED_FOR
+  confidence: 0.45
+  evidence: Therapeutic indications include type 2 diabetes mellitus, obesity, non-alcoholic
+    steatohepatitis (NASH), cardiovascular disease, and related metabolic disorders.
+  source_document: patent_07_wo2019239319a1_pfizer_danuglipron
+  status: DRAFT
+  flag_reason: Low confidence (0.45 < 0.7)
+- source_id: compound:danuglipron
+  source_name: danuglipron
+  target_id: disease:cardiovascular_disease
+  target_name: Cardiovascular Disease
+  relation_type: INDICATED_FOR
+  confidence: 0.4
+  evidence: Therapeutic indications include type 2 diabetes mellitus, obesity, non-alcoholic
+    steatohepatitis (NASH), cardiovascular disease, and related metabolic disorders.
+  source_document: patent_07_wo2019239319a1_pfizer_danuglipron
+  status: DRAFT
+  flag_reason: Low confidence (0.40 < 0.7)
+- source_id: compound:triple_glucagon_glp_1_gip_receptor_agonist_peptide
+  source_name: triple glucagon/GLP-1/GIP receptor agonist peptide
+  target_id: disease:obesity
+  target_name: Obesity
+  relation_type: INDICATED_FOR
+  confidence: 0.45
+  evidence: The invention concerns a triple agonist peptide possessing activities
+    to all of glucagon, GLP-1, and GIP receptors, and its applications in treating
+    metabolic disorders including obesity, type 2 diabetes, dyslipidemia, and non-alcoholic
+    fatty liver disease.
+  source_document: patent_06_us10370426b2_triple_agonist
+  status: DRAFT
+  flag_reason: Low confidence (0.45 < 0.7)
+- source_id: compound:triple_glucagon_glp_1_gip_receptor_agonist_peptide
+  source_name: triple glucagon/GLP-1/GIP receptor agonist peptide
+  target_id: disease:type_2_diabetes_mellitus
+  target_name: Type 2 Diabetes Mellitus
+  relation_type: INDICATED_FOR
+  confidence: 0.45
+  evidence: The invention concerns a triple agonist peptide possessing activities
+    to all of glucagon, GLP-1, and GIP receptors, and its applications in treating
+    metabolic disorders including obesity, type 2 diabetes, dyslipidemia, and non-alcoholic
+    fatty liver disease.
+  source_document: patent_06_us10370426b2_triple_agonist
+  status: DRAFT
+  flag_reason: Low confidence (0.45 < 0.7)
+- source_id: compound:triple_glucagon_glp_1_gip_receptor_agonist_peptide
+  source_name: triple glucagon/GLP-1/GIP receptor agonist peptide
+  target_id: disease:dyslipidemia
+  target_name: Dyslipidemia
+  relation_type: INDICATED_FOR
+  confidence: 0.45
+  evidence: The invention concerns a triple agonist peptide possessing activities
+    to all of glucagon, GLP-1, and GIP receptors, and its applications in treating
+    metabolic disorders including obesity, type 2 diabetes, dyslipidemia, and non-alcoholic
+    fatty liver disease.
+  source_document: patent_06_us10370426b2_triple_agonist
+  status: DRAFT
+  flag_reason: Low confidence (0.45 < 0.7)
+- source_id: compound:triple_glucagon_glp_1_gip_receptor_agonist_peptide
+  source_name: triple glucagon/GLP-1/GIP receptor agonist peptide
+  target_id: disease:non_alcoholic_fatty_liver_disease
+  target_name: Non-Alcoholic Fatty Liver Disease
+  relation_type: INDICATED_FOR
+  confidence: 0.45
+  evidence: The invention concerns a triple agonist peptide possessing activities
+    to all of glucagon, GLP-1, and GIP receptors, and its applications in treating
+    metabolic disorders including obesity, type 2 diabetes, dyslipidemia, and non-alcoholic
+    fatty liver disease.
+  source_document: patent_06_us10370426b2_triple_agonist
+  status: DRAFT
+  flag_reason: Low confidence (0.45 < 0.7)
+- source_id: biomarker:body_weight_reduction_up_to_24
+  source_name: body weight reduction (up to 24%)
+  target_id: compound:retatrutide
+  target_name: retatrutide
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.75
+  evidence: Retatrutide (LY3437943), developed by Eli Lilly, is a related triple GIP/GLP-1/glucagon
+    receptor agonist currently in Phase 3 clinical trials that has demonstrated up
+    to 24% body weight reduction in Phase 2 studies.
+  source_document: patent_06_us10370426b2_triple_agonist
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: compound:glp_1_amylin_receptor_co_agonist_polypeptide
+  source_name: GLP-1/amylin receptor co-agonist polypeptide
+  target_id: disease:obesity
+  target_name: Obesity
+  relation_type: INDICATED_FOR
+  confidence: 0.4
+  evidence: designed for treating obesity, type 2 diabetes mellitus, cardiovascular
+    disease, and related metabolic conditions.
+  source_document: patent_08_us12054528b2_glp1_amylin_coagonist
+  status: DRAFT
+  flag_reason: Low confidence (0.40 < 0.7)
+- source_id: compound:glp_1_amylin_receptor_co_agonist_polypeptide
+  source_name: GLP-1/amylin receptor co-agonist polypeptide
+  target_id: disease:type_2_diabetes_mellitus
+  target_name: Type 2 Diabetes Mellitus
+  relation_type: INDICATED_FOR
+  confidence: 0.4
+  evidence: designed for treating obesity, type 2 diabetes mellitus, cardiovascular
+    disease, and related metabolic conditions.
+  source_document: patent_08_us12054528b2_glp1_amylin_coagonist
+  status: DRAFT
+  flag_reason: Low confidence (0.40 < 0.7)
+- source_id: compound:glp_1_amylin_receptor_co_agonist_polypeptide
+  source_name: GLP-1/amylin receptor co-agonist polypeptide
+  target_id: disease:cardiovascular_disease
+  target_name: Cardiovascular Disease
+  relation_type: INDICATED_FOR
+  confidence: 0.35
+  evidence: designed for treating obesity, type 2 diabetes mellitus, cardiovascular
+    disease, and related metabolic conditions.
+  source_document: patent_08_us12054528b2_glp1_amylin_coagonist
+  status: DRAFT
+  flag_reason: Low confidence (0.35 < 0.7)
+- source_id: compound:cagrilintide
+  source_name: cagrilintide
+  target_id: compound:glp_1_amylin_receptor_co_agonist_polypeptide
+  target_name: GLP-1/amylin receptor co-agonist polypeptide
+  relation_type: DERIVED_FROM
+  confidence: 0.4
+  evidence: 'This patent represents a next-generation approach: engineering a single
+    molecule with dual GLP-1/amylin activity rather than co-administering two separate
+    peptides.'
+  source_document: patent_08_us12054528b2_glp1_amylin_coagonist
+  status: DRAFT
+  flag_reason: Low confidence (0.40 < 0.7)
+- source_id: compound:glucagon_glp_1_gip_triple_agonist
+  source_name: glucagon-GLP-1-GIP triple agonist
+  target_id: disease:obesity
+  target_name: Obesity
+  relation_type: INDICATED_FOR
+  confidence: 0.45
+  evidence: The invention describes compounds possessing agonist activity at glucagon,
+    GIP, and GLP-1 receptors for treating metabolic disorders including obesity, type
+    2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease.
+  source_document: patent_09_us11111285b2_zealand_triple_agonist
+  status: DRAFT
+  flag_reason: Low confidence (0.45 < 0.7)
+- source_id: compound:glucagon_glp_1_gip_triple_agonist
+  source_name: glucagon-GLP-1-GIP triple agonist
+  target_id: disease:type_2_diabetes_mellitus
+  target_name: Type 2 Diabetes Mellitus
+  relation_type: INDICATED_FOR
+  confidence: 0.45
+  evidence: The invention describes compounds possessing agonist activity at glucagon,
+    GIP, and GLP-1 receptors for treating metabolic disorders including obesity, type
+    2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease.
+  source_document: patent_09_us11111285b2_zealand_triple_agonist
+  status: DRAFT
+  flag_reason: Low confidence (0.45 < 0.7)
+- source_id: compound:glucagon_glp_1_gip_triple_agonist
+  source_name: glucagon-GLP-1-GIP triple agonist
+  target_id: disease:dyslipidemia
+  target_name: Dyslipidemia
+  relation_type: INDICATED_FOR
+  confidence: 0.4
+  evidence: The invention describes compounds possessing agonist activity at glucagon,
+    GIP, and GLP-1 receptors for treating metabolic disorders including obesity, type
+    2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease.
+  source_document: patent_09_us11111285b2_zealand_triple_agonist
+  status: DRAFT
+  flag_reason: Low confidence (0.40 < 0.7)
+- source_id: compound:glucagon_glp_1_gip_triple_agonist
+  source_name: glucagon-GLP-1-GIP triple agonist
+  target_id: disease:non_alcoholic_fatty_liver_disease
+  target_name: Non-Alcoholic Fatty Liver Disease
+  relation_type: INDICATED_FOR
+  confidence: 0.4
+  evidence: The invention describes compounds possessing agonist activity at glucagon,
+    GIP, and GLP-1 receptors for treating metabolic disorders including obesity, type
+    2 diabetes, dyslipidemia, and non-alcoholic fatty liver disease.
+  source_document: patent_09_us11111285b2_zealand_triple_agonist
+  status: DRAFT
+  flag_reason: Low confidence (0.40 < 0.7)
+- source_id: compound:glucagon_glp_1_gip_triple_agonist
+  source_name: glucagon-GLP-1-GIP triple agonist
+  target_id: disease:metabolic_syndrome
+  target_name: Metabolic Syndrome
+  relation_type: INDICATED_FOR
+  confidence: 0.4
+  evidence: Zealand Pharma is developing these compounds as potential best-in-class
+    treatments for obesity and metabolic syndrome.
+  source_document: patent_09_us11111285b2_zealand_triple_agonist
+  status: DRAFT
+  flag_reason: Low confidence (0.40 < 0.7)
+- source_id: mechanism_of_action:glp_1_receptor_agonists
+  source_name: GLP-1 receptor agonists
+  target_id: disease:alzheimer_disease
+  target_name: Alzheimer Disease
+  relation_type: ASSOCIATED_WITH
+  confidence: 0.65
+  evidence: Ongoing trials are in progress and may provide disease-modifying care
+    for Alzheimer's disease and Parkinson's disease patients in the future.
+  source_document: pmid_37657738
+  status: DRAFT
+  flag_reason: Low confidence (0.65 < 0.7)
+- source_id: mechanism_of_action:glp_1_receptor_agonists
+  source_name: GLP-1 receptor agonists
+  target_id: disease:parkinson_disease
+  target_name: Parkinson Disease
+  relation_type: ASSOCIATED_WITH
+  confidence: 0.65
+  evidence: Ongoing trials are in progress and may provide disease-modifying care
+    for Alzheimer's disease and Parkinson's disease patients in the future.
+  source_document: pmid_37657738
+  status: DRAFT
+  flag_reason: Low confidence (0.65 < 0.7)
+- source_id: biomarker:body_weight_reduction
+  source_name: body weight reduction
+  target_id: compound:orforglipron
+  target_name: orforglipron
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.82
+  evidence: The percentage change from baseline in body weight was assessed at week
+    26 (primary end point) and at week 36 (secondary end point).
+  source_document: pmid_37351564
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:body_weight_reduction
+  source_name: body weight reduction
+  target_id: compound:cagrisema
+  target_name: CagriSema
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.95
+  evidence: The estimated mean change in body weight from baseline to week 68 was
+    -13.7% in the cagrilintide-semaglutide group and -3.4% in the placebo group (estimated
+    difference, -10.4 percentage points; 95% confidence interval, -11.2 to -9.5; P<0.001).
+  source_document: pmid_40544432
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:egfr_slope
+  source_name: eGFR slope
+  target_id: disease:chronic_kidney_disease
+  target_name: Chronic Kidney Disease
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.92
+  evidence: chronic kidney disease (defined by an estimated glomerular filtration
+    rate [eGFR] of 50 to 75 ml per minute per 1.73 m
+  source_document: pmid_38785209
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:egfr_slope
+  source_name: eGFR slope
+  target_id: compound:semaglutide
+  target_name: semaglutide
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.85
+  evidence: The mean annual eGFR slope was less steep (indicating a slower decrease)
+    by 1.16 ml per minute per 1.73 m
+  source_document: pmid_38785209
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:fib_4_score
+  source_name: FIB-4 score
+  target_id: disease:liver_fibrosis
+  target_name: Liver Fibrosis
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.95
+  evidence: A stepwise approach using blood-based scores (such as FIB-4) and, sequentially,
+    imaging techniques (such as transient elastography) is suitable to rule-out/in
+    advanced fibrosis, which is predictive of liver-related outcomes.
+  source_document: pmid_38851997
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:fib_4_score
+  source_name: FIB-4 score
+  target_id: compound:resmetirom
+  target_name: resmetirom
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.8
+  evidence: A stepwise approach using blood-based scores (such as FIB-4) and, sequentially,
+    imaging techniques (such as transient elastography) is suitable to rule-out/in
+    advanced fibrosis, which is predictive of liver-related outcomes.
+  source_document: pmid_38851997
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:transient_elastography
+  source_name: transient elastography
+  target_id: disease:liver_fibrosis
+  target_name: Liver Fibrosis
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.95
+  evidence: A stepwise approach using blood-based scores (such as FIB-4) and, sequentially,
+    imaging techniques (such as transient elastography) is suitable to rule-out/in
+    advanced fibrosis, which is predictive of liver-related outcomes.
+  source_document: pmid_38851997
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:transient_elastography
+  source_name: transient elastography
+  target_id: compound:resmetirom
+  target_name: resmetirom
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.8
+  evidence: A stepwise approach using blood-based scores (such as FIB-4) and, sequentially,
+    imaging techniques (such as transient elastography) is suitable to rule-out/in
+    advanced fibrosis, which is predictive of liver-related outcomes.
+  source_document: pmid_38851997
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:liver_steatosis_on_imaging
+  source_name: liver steatosis on imaging
+  target_id: disease:metabolic_dysfunction_associated_steatotic_liver_disease
+  target_name: Metabolic Dysfunction-Associated Steatotic Liver Disease
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.88
+  evidence: Case-finding strategies for MASLD with liver fibrosis, using non-invasive
+    tests, should be applied in individuals with cardiometabolic risk factors, abnormal
+    liver enzymes, and/or radiological signs of hepatic steatosis.
+  source_document: pmid_38851997
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:liver_enzymes_elevation
+  source_name: liver enzymes elevation
+  target_id: disease:metabolic_dysfunction_associated_steatotic_liver_disease
+  target_name: Metabolic Dysfunction-Associated Steatotic Liver Disease
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.88
+  evidence: Case-finding strategies for MASLD with liver fibrosis, using non-invasive
+    tests, should be applied in individuals with cardiometabolic risk factors, abnormal
+    liver enzymes, and/or radiological signs of hepatic steatosis.
+  source_document: pmid_38851997
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:liver_fat_reduction
+  source_name: liver fat reduction
+  target_id: compound:retatrutide
+  target_name: retatrutide
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.88
+  evidence: The mean relative change from baseline in LF at 24 weeks was -42.9% (1
+    mg), -57.0% (4 mg), -81.4% (8 mg), -82.4% (12 mg) and +0.3% (placebo) (all P <
+    0.001 versus placebo).
+  source_document: pmid_38858523
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: disease:systemic_hypertension
+  source_name: Systemic Hypertension
+  target_id: disease:nonarteritic_anterior_ischemic_optic_neuropathy
+  target_name: Nonarteritic Anterior Ischemic Optic Neuropathy
+  relation_type: ASSOCIATED_WITH
+  confidence: 0.65
+  evidence: accounting for covarying factors (sex, age, systemic hypertension, T2D,
+    obstructive sleep apnea, obesity, hyperlipidemia, and coronary artery disease)
+    and contraindications for use of semaglutide
+  source_document: pmid_38958939
+  status: DRAFT
+  flag_reason: Low confidence (0.65 < 0.7)
+- source_id: disease:obstructive_sleep_apnea
+  source_name: Obstructive Sleep Apnea
+  target_id: disease:nonarteritic_anterior_ischemic_optic_neuropathy
+  target_name: Nonarteritic Anterior Ischemic Optic Neuropathy
+  relation_type: ASSOCIATED_WITH
+  confidence: 0.65
+  evidence: accounting for covarying factors (sex, age, systemic hypertension, T2D,
+    obstructive sleep apnea, obesity, hyperlipidemia, and coronary artery disease)
+    and contraindications for use of semaglutide
+  source_document: pmid_38958939
+  status: DRAFT
+  flag_reason: Low confidence (0.65 < 0.7)
+- source_id: biomarker:naion_incidence_in_t2d_patients_semaglutide_vs_non_glp_1_ra
+  source_name: NAION incidence in T2D patients (semaglutide vs non-GLP-1 RA)
+  target_id: compound:semaglutide
+  target_name: semaglutide
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.72
+  evidence: A Cox proportional hazards regression model showed higher risk of NAION
+    for patients receiving semaglutide (hazard ratio [HR], 4.28; 95% CI, 1.62-11.29);
+    P < .001).
+  source_document: pmid_38958939
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:naion_incidence_in_overweight_obese_patients_semaglutide_vs_non_glp_1_ra
+  source_name: NAION incidence in overweight/obese patients (semaglutide vs non-GLP-1
+    RA)
+  target_id: compound:semaglutide
+  target_name: semaglutide
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.72
+  evidence: A Cox proportional hazards regression model showed a higher risk of NAION
+    for patients prescribed semaglutide (HR, 7.64; 95% CI, 2.21-26.36; P < .001).
+  source_document: pmid_38958939
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:prediabetes_progression_to_t2dm_biomarker
+  source_name: prediabetes progression to T2DM biomarker
+  target_id: compound:tirzepatide
+  target_name: tirzepatide
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.85
+  evidence: its efficacy in reducing weight and delaying progression to type 2 diabetes
+    in persons with both obesity and prediabetes.
+  source_document: pmid_39536238
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:fibrosis_improvement_without_mash_worsening
+  source_name: fibrosis improvement without MASH worsening
+  target_id: compound:pegozafermin
+  target_name: pegozafermin
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.9
+  evidence: 'Pegozafermin (SUCRA: 79.92), cilofexor + firsocostat (SUCRA: 71.38),
+    and cilofexor + selonsertib (SUCRA: 69.11) were ranked the most effective interventions.'
+  source_document: pmid_39903735
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:mash_resolution_without_worsening_fibrosis
+  source_name: MASH resolution without worsening fibrosis
+  target_id: compound:pegozafermin
+  target_name: pegozafermin
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.92
+  evidence: 'Pegozafermin (SUCRA: 91.75), survodutide (SUCRA: 90.87), and tirzepatide
+    (SUCRA: 84.70) were ranked the most effective interventions for achieving MASH
+    resolution without worsening fibrosis.'
+  source_document: pmid_39903735
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:mash_resolution_without_worsening_fibrosis
+  source_name: MASH resolution without worsening fibrosis
+  target_id: compound:survodutide
+  target_name: survodutide
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.92
+  evidence: 'Pegozafermin (SUCRA: 91.75), survodutide (SUCRA: 90.87), and tirzepatide
+    (SUCRA: 84.70) were ranked the most effective interventions for achieving MASH
+    resolution without worsening fibrosis.'
+  source_document: pmid_39903735
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:mash_resolution_without_worsening_fibrosis
+  source_name: MASH resolution without worsening fibrosis
+  target_id: compound:tirzepatide
+  target_name: tirzepatide
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.92
+  evidence: 'Pegozafermin (SUCRA: 91.75), survodutide (SUCRA: 90.87), and tirzepatide
+    (SUCRA: 84.70) were ranked the most effective interventions for achieving MASH
+    resolution without worsening fibrosis.'
+  source_document: pmid_39903735
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:biopsy_proven_mash
+  source_name: biopsy-proven MASH
+  target_id: disease:metabolic_dysfunction_associated_steatohepatitis
+  target_name: Metabolic Dysfunction-Associated Steatohepatitis
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.95
+  evidence: We searched PubMed and Embase databases from January 1, 2020 to December
+    1, 2024, for published randomized controlled trials comparing pharmacological
+    interventions in patients with biopsy-proven MASH.
+  source_document: pmid_39903735
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:liver_histologic_improvement
+  source_name: liver histologic improvement
+  target_id: disease:metabolic_dysfunction_associated_steatohepatitis
+  target_name: Metabolic Dysfunction-Associated Steatohepatitis
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.9
+  evidence: In patients with MASH and moderate or advanced liver fibrosis, once-weekly
+    semaglutide at a dose of 2.4 mg improved liver histologic results.
+  source_document: pmid_40305708
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:steatohepatitis_resolution
+  source_name: steatohepatitis resolution
+  target_id: compound:semaglutide
+  target_name: semaglutide
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.88
+  evidence: Resolution of steatohepatitis without worsening of fibrosis occurred in
+    62.9% of the 534 patients in the semaglutide group and in 34.3% of the 266 patients
+    in the placebo group (estimated difference, 28.7 percentage points; 95% confidence
+    interval [CI], 21.1 to 36.2; P<0.001).
+  source_document: pmid_40305708
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:liver_fibrosis_reduction
+  source_name: liver fibrosis reduction
+  target_id: compound:semaglutide
+  target_name: semaglutide
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.88
+  evidence: A reduction in liver fibrosis without worsening of steatohepatitis was
+    reported in 36.8% of the patients in the semaglutide group and in 22.4% of those
+    in the placebo group (estimated difference, 14.4 percentage points; 95% CI, 7.5
+    to 21.3; P<0.001).
+  source_document: pmid_40305708
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:liver_fibrosis_reduction
+  source_name: liver fibrosis reduction
+  target_id: disease:liver_fibrosis
+  target_name: Liver Fibrosis
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.9
+  evidence: A reduction in liver fibrosis without worsening of steatohepatitis was
+    reported in 36.8% of the patients in the semaglutide group and in 22.4% of those
+    in the placebo group (estimated difference, 14.4 percentage points; 95% CI, 7.5
+    to 21.3; P<0.001).
+  source_document: pmid_40305708
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:glycated_hemoglobin_hba1c
+  source_name: Glycated Hemoglobin (HbA1c)
+  target_id: compound:cagrisema
+  target_name: CagriSema
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.9
+  evidence: The percentage of patients who had a glycated hemoglobin level of 6.5%
+    or less was 73.5% in the cagrilintide-semaglutide group and 15.9% in the placebo
+    group.
+  source_document: pmid_40544432
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:glycated_hemoglobin_hba1c
+  source_name: Glycated Hemoglobin (HbA1c)
+  target_id: disease:type_2_diabetes_mellitus
+  target_name: Type 2 Diabetes Mellitus
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.9
+  evidence: adults with a body-mass index of 27 or more, a glycated hemoglobin level
+    of 7 to 10%, and type 2 diabetes
+  source_document: pmid_40544432
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: biomarker:glycated_hemoglobin
+  source_name: glycated hemoglobin
+  target_id: compound:orforglipron
+  target_name: orforglipron
+  relation_type: PREDICTS_RESPONSE_TO
+  confidence: 0.92
+  evidence: The primary end point was the change from baseline to week 40 in the glycated
+    hemoglobin level. All three doses of orforglipron were superior to placebo with
+    respect to the primary end point.
+  source_document: pmid_40544435
+  status: DRAFT
+  flag_reason: Type 'PREDICTS_RESPONSE_TO' requires review
+- source_id: biomarker:glycated_hemoglobin
+  source_name: glycated hemoglobin
+  target_id: disease:type_2_diabetes_mellitus
+  target_name: Type 2 Diabetes Mellitus
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.9
+  evidence: Participants had type 2 diabetes treated only with diet and exercise,
+    a glycated hemoglobin level of at least 7.0% but no more than 9.5%.
+  source_document: pmid_40544435
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review
+- source_id: compound:glucagon_like_peptide_1_receptor_agonists
+  source_name: glucagon-like peptide-1 receptor agonists
+  target_id: disease:chronic_pain
+  target_name: Chronic Pain
+  relation_type: INDICATED_FOR
+  confidence: 0.6
+  evidence: Emerging evidence suggests that glucagon-like peptide-1 receptor agonists
+    (GLP-1RAs), developed for diabetes and obesity, may offer novel analgesia and
+    treat drug-seeking behavior.
+  source_document: pmid_40726115
+  status: DRAFT
+  flag_reason: Low confidence (0.60 < 0.7)
+- source_id: compound:glucagon_like_peptide_1_receptor_agonists
+  source_name: glucagon-like peptide-1 receptor agonists
+  target_id: disease:substance_use_disorder
+  target_name: Substance Use Disorder
+  relation_type: INDICATED_FOR
+  confidence: 0.55
+  evidence: GLP-1RAs offer a promising shift in pain management, potentially reducing
+    opioid dependence, preventing surgical interventions, and lowering healthcare
+    costs.
+  source_document: pmid_40726115
+  status: DRAFT
+  flag_reason: Low confidence (0.55 < 0.7)
+- source_id: compound:glucagon_like_peptide_1_receptor_agonists
+  source_name: glucagon-like peptide-1 receptor agonists
+  target_id: disease:alcohol_use_disorder
+  target_name: Alcohol Use Disorder
+  relation_type: INDICATED_FOR
+  confidence: 0.65
+  evidence: Trials in alcohol addiction show promise, though evidence for other substances
+    remains inconclusive.
+  source_document: pmid_40726115
+  status: DRAFT
+  flag_reason: Low confidence (0.65 < 0.7)
+- source_id: compound:glucagon_like_peptide_1_receptor_agonists
+  source_name: glucagon-like peptide-1 receptor agonists
+  target_id: disease:osteoarthritis
+  target_name: Osteoarthritis
+  relation_type: INDICATED_FOR
+  confidence: 0.6
+  evidence: In osteoarthritis, they appear to reduce inflammation and cartilage degradation,
+    but trials in non-obese, non-comorbid patients are needed.
+  source_document: pmid_40726115
+  status: DRAFT
+  flag_reason: Low confidence (0.60 < 0.7)
+- source_id: compound:glucagon_like_peptide_1_receptor_agonists
+  source_name: glucagon-like peptide-1 receptor agonists
+  target_id: disease:diabetic_neuropathy
+  target_name: Diabetic Neuropathy
+  relation_type: INDICATED_FOR
+  confidence: 0.6
+  evidence: In diabetic neuropathy, GLP-1RAs show potential for nerve repair, but
+    optimal dosing and long-term efficacy need clarification.
+  source_document: pmid_40726115
+  status: DRAFT
+  flag_reason: Low confidence (0.60 < 0.7)
+- source_id: compound:glucagon_like_peptide_1_receptor_agonists
+  source_name: glucagon-like peptide-1 receptor agonists
+  target_id: disease:migraine
+  target_name: Migraine
+  relation_type: INDICATED_FOR
+  confidence: 0.5
+  evidence: Preclinical data support GLP-1RAs signaling in migraines, but human studies
+    are lacking.
+  source_document: pmid_40726115
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: compound:glucagon_like_peptide_1_receptor_agonists
+  source_name: glucagon-like peptide-1 receptor agonists
+  target_id: disease:opioid_dependence
+  target_name: Opioid Dependence
+  relation_type: ASSOCIATED_WITH
+  confidence: 0.65
+  evidence: GLP-1RAs offer a promising shift in pain management, potentially reducing
+    opioid dependence, preventing surgical interventions, and lowering healthcare
+    costs.
+  source_document: pmid_40726115
+  status: DRAFT
+  flag_reason: Low confidence (0.65 < 0.7)

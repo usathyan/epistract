@@ -1,0 +1,237 @@
+{
+  "document_id": "patent_10_us11622996b2_oral_semaglutide_snac",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "inn": "semaglutide",
+        "brand_name": "Rybelsus",
+        "drug_class": "GLP-1 receptor agonist",
+        "development_stage": "approved",
+        "route_of_administration": "oral",
+        "formulation": "tablet with SNAC absorption enhancer",
+        "doses": "3 mg, 7 mg, 14 mg"
+      },
+      "confidence": 0.95,
+      "context": "Semaglutide is formulated as oral tablets containing 300 mg SNAC with 3 mg, 7 mg, or 14 mg semaglutide... This oral formulation is marketed as Rybelsus."
+    },
+    {
+      "name": "SNAC",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "inn": "salcaprozate sodium",
+        "aliases": "sodium N-(8-(2-hydroxybenzoyl)amino)caprylate, sodium 8-[(2-hydroxybenzoyl)amino]octanoate",
+        "drug_class": "absorption enhancer",
+        "requires_validation": true,
+        "notation_type": "InChIKey",
+        "notation_present": true,
+        "inchikey_reported": "UOENJXXSKABLJL-UHFFFAOYSA-M"
+      },
+      "confidence": 0.95,
+      "context": "SNAC chemical identifier: sodium 8-[(2-hydroxybenzoyl)amino]octanoate (InChIKey: UOENJXXSKABLJL-UHFFFAOYSA-M)... SNAC is also known as salcaprozate sodium."
+    },
+    {
+      "name": "octanoic acid",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "aliases": "caprylic acid",
+        "requires_validation": true,
+        "notation_type": "InChIKey",
+        "notation_present": true,
+        "inchikey_reported": "WWZKQHOCKIZLMA-UHFFFAOYSA-N"
+      },
+      "confidence": 0.9,
+      "context": "The related caprylic acid backbone has the identifier WWZKQHOCKIZLMA-UHFFFAOYSA-N (octanoic acid)."
+    },
+    {
+      "name": "liraglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "inn": "liraglutide",
+        "drug_class": "GLP-1 receptor agonist"
+      },
+      "confidence": 0.9,
+      "context": "The GLP-1 agonists specifically discussed include semaglutide and liraglutide."
+    },
+    {
+      "name": "orforglipron",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "inn": "orforglipron",
+        "drug_class": "small-molecule nonpeptide GLP-1 agonist"
+      },
+      "confidence": 0.85,
+      "context": "Next-generation oral approaches include small-molecule nonpeptide GLP-1 agonists (orforglipron, danuglipron) that do not require absorption enhancers."
+    },
+    {
+      "name": "danuglipron",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "inn": "danuglipron",
+        "drug_class": "small-molecule nonpeptide GLP-1 agonist"
+      },
+      "confidence": 0.85,
+      "context": "Next-generation oral approaches include small-molecule nonpeptide GLP-1 agonists (orforglipron, danuglipron) that do not require absorption enhancers."
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR"
+      },
+      "confidence": 0.9,
+      "context": "The patent describes pharmaceutical compositions combining a GLP-1 receptor agonist with sodium N-(8-(2-hydroxybenzoyl)amino)caprylate (SNAC) for oral administration."
+    },
+    {
+      "name": "pepsin",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "protease"
+      },
+      "confidence": 0.9,
+      "context": "SNAC overcomes these barriers by creating a localized pH increase around the tablet, protecting semaglutide from pepsin degradation, and facilitating transcellular absorption primarily in the stomach."
+    },
+    {
+      "name": "GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "target": "GLP-1 receptor"
+      },
+      "confidence": 0.9,
+      "context": "The patent describes pharmaceutical compositions combining a GLP-1 receptor agonist with sodium N-(8-(2-hydroxybenzoyl)amino)caprylate (SNAC) for oral administration."
+    },
+    {
+      "name": "transcellular absorption enhancement via transient gastric epithelial permeability",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "modulation",
+        "target": "gastric epithelium"
+      },
+      "confidence": 0.9,
+      "context": "SNAC is an absorption enhancer that enables oral delivery of peptide therapeutics by transiently increasing gastric epithelial permeability."
+    },
+    {
+      "name": "Novo Nordisk",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "pharma",
+        "country": "Denmark",
+        "legal_name": "Novo Nordisk AS"
+      },
+      "confidence": 0.98,
+      "context": "Assignee: Novo Nordisk AS"
+    },
+    {
+      "name": "US11622996B2",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "publication_type": "patent",
+        "patent_number": "US11622996B2",
+        "assignee": "Novo Nordisk AS",
+        "filing_date": "2019-05-06",
+        "title": "Solid compositions comprising a GLP-1 agonist and SNAC for oral delivery"
+      },
+      "confidence": 0.98,
+      "context": "Patent ID: US11622996B2 ... Filing Date: May 6, 2019 ... Title: Solid compositions comprising a GLP-1 agonist and SNAC for oral delivery"
+    },
+    {
+      "name": "poor intestinal passive permeability of GLP-1 peptides",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "physiological",
+        "clinical_relevance": "mechanism"
+      },
+      "confidence": 0.85,
+      "context": "The oral semaglutide formulation was developed because the peptide nature of GLP-1 receptor agonists renders them susceptible to proteolytic degradation in the gastrointestinal tract and poor passive permeability across the intestinal epithelium."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.9,
+      "evidence": "The patent describes pharmaceutical compositions combining a GLP-1 receptor agonist with sodium N-(8-(2-hydroxybenzoyl)amino)caprylate (SNAC) for oral administration."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "liraglutide",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.85,
+      "evidence": "The GLP-1 agonists specifically discussed include semaglutide and liraglutide."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "orforglipron",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.8,
+      "evidence": "Next-generation oral approaches include small-molecule nonpeptide GLP-1 agonists (orforglipron, danuglipron) that do not require absorption enhancers."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "danuglipron",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.8,
+      "evidence": "Next-generation oral approaches include small-molecule nonpeptide GLP-1 agonists (orforglipron, danuglipron) that do not require absorption enhancers."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor agonism",
+      "confidence": 0.95,
+      "evidence": "The patent describes pharmaceutical compositions combining a GLP-1 receptor agonist with sodium N-(8-(2-hydroxybenzoyl)amino)caprylate (SNAC) for oral administration."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "liraglutide",
+      "target_entity": "GLP-1 receptor agonism",
+      "confidence": 0.9,
+      "evidence": "The GLP-1 agonists specifically discussed include semaglutide and liraglutide."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "SNAC",
+      "target_entity": "transcellular absorption enhancement via transient gastric epithelial permeability",
+      "confidence": 0.95,
+      "evidence": "SNAC is an absorption enhancer that enables oral delivery of peptide therapeutics by transiently increasing gastric epithelial permeability."
+    },
+    {
+      "relation_type": "COMBINED_WITH",
+      "source_entity": "semaglutide",
+      "target_entity": "SNAC",
+      "confidence": 0.98,
+      "evidence": "Semaglutide is formulated as oral tablets containing 300 mg SNAC with 3 mg, 7 mg, or 14 mg semaglutide."
+    },
+    {
+      "relation_type": "DERIVED_FROM",
+      "source_entity": "SNAC",
+      "target_entity": "octanoic acid",
+      "confidence": 0.8,
+      "evidence": "The related caprylic acid backbone has the identifier WWZKQHOCKIZLMA-UHFFFAOYSA-N (octanoic acid)."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "semaglutide",
+      "target_entity": "Novo Nordisk",
+      "confidence": 0.9,
+      "evidence": "Assignee: Novo Nordisk AS ... This oral formulation is marketed as Rybelsus."
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "semaglutide",
+      "target_entity": "US11622996B2",
+      "confidence": 0.95,
+      "evidence": "Title: Solid compositions comprising a GLP-1 agonist and SNAC for oral delivery ... Semaglutide is formulated as oral tablets containing 300 mg SNAC with 3 mg, 7 mg, or 14 mg semaglutide."
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-7-1m",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:42:21.197713+00:00",
+  "error": null
+}

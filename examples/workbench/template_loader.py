@@ -7,7 +7,9 @@ Self-contained: imports only PyYAML, pathlib, os (no imports from core/).
 """
 from __future__ import annotations
 
+import json
 import os
+import sys
 from pathlib import Path
 
 import yaml
@@ -58,6 +60,61 @@ def load_template(domain_name: str | None = None) -> dict:
         return model.model_dump()
     except Exception:
         return dict(GENERIC_TEMPLATE)
+
+
+def resolve_domain(
+    output_dir: Path,
+    explicit_domain: str | None,
+) -> tuple[str | None, str]:
+    """Resolve the effective domain for a workbench session.
+
+    Precedence (D-03, D-07, D-09 — explicit beats implicit):
+      1. `explicit_domain` arg is non-None → ("<arg>", "explicit")
+      2. `<output_dir>/graph_data.json` has `metadata.domain` set (non-None) →
+         ("<metadata>", "metadata")
+      3. Otherwise → (None, "fallback") + a visible stderr warning when
+         graph_data.json exists but metadata.domain is missing (D-08 legacy).
+
+    Args:
+        output_dir: Directory containing graph_data.json.
+        explicit_domain: The value passed via --domain flag (or None).
+
+    Returns:
+        Tuple of (resolved_domain, source) where `source` is one of
+        "explicit", "metadata", or "fallback". Callers pass resolved_domain
+        to load_template().
+    """
+    if explicit_domain:
+        return explicit_domain, "explicit"
+
+    graph_path = Path(output_dir) / "graph_data.json"
+    if not graph_path.exists():
+        # Launcher already emits a "Warning: No graph_data.json found" for
+        # this case; don't double-warn.
+        return None, "fallback"
+
+    try:
+        graph_json = json.loads(graph_path.read_text(encoding="utf-8"))
+    except (OSError, ValueError, json.JSONDecodeError):
+        print(
+            f"Warning: could not parse {graph_path}; domain defaults to generic",
+            file=sys.stderr,
+        )
+        return None, "fallback"
+
+    metadata = graph_json.get("metadata") or {}
+    domain_from_meta = metadata.get("domain")
+    if domain_from_meta:
+        return domain_from_meta, "metadata"
+
+    # Legacy graph (pre-Phase-17) — no domain in metadata.
+    print(
+        f"Warning: {graph_path} has no metadata.domain field; "
+        "domain defaults to generic. Rebuild the graph with "
+        "`/epistract:ingest --domain <name>` to get a domain-aware workbench.",
+        file=sys.stderr,
+    )
+    return None, "fallback"
 
 
 def auto_generate_starters(entity_types: list[str]) -> list[str]:

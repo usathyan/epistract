@@ -1,0 +1,14 @@
+{
+  "generated": "2026-04-19",
+  "updated": "2026-04-20",
+  "note": "V2 acceptance floor for Phase 14 FT-012 (FIDL-03). Committed summary counts — NOT the full graph_data.json dumps (those remain gitignored). Missing this file is a HARD FAILURE in FT-012 (a skippable gate is no gate). Drug-discovery floors are seeded from pre-Phase-14 runs (2026-04-13 output-v2/ artifacts); they serve as a no-regression gate — post-chonkie extraction must meet or exceed these counts. The contract scenario carries the D-14 floor (>=341 nodes / >=663 edges). Human checkpoint (Plan 14-04 Task 3) resolved 2026-04-20 via Option 3a: adopt pre-Phase-14 counts as floors without running fresh post-Phase-14 extraction, on the rationale that FT-012 is a guardrail against future code changes, not an acceptance test for Phase 14 itself (which is proven by UT-031..UT-038 + UT-033b + UT-036b at unit level and FT-011 at E2E level).",
+  "scenarios": {
+    "01_picalm_alzheimers": {"nodes": 183, "edges": 478},
+    "02_kras_g12c_landscape": {"nodes": 140, "edges": 432},
+    "03_rare_disease": {"nodes": 110, "edges": 278},
+    "04_immunooncology": {"nodes": 151, "edges": 440},
+    "05_cardiovascular": {"nodes": 90, "edges": 245},
+    "06_glp1_landscape": {"nodes": 193, "edges": 619},
+    "contract_events": {"nodes": 341, "edges": 663}
+  }
+}

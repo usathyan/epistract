@@ -1,0 +1,12 @@
+{
+  "biomarker:body_mass_index": "Glp-1 Receptor Agonism / Insulin Resistance",
+  "disease:female_infertility": "Glp-1 Receptor Agonism / Insulin Resistance",
+  "disease:obesity": "Glp-1 Receptor Agonism / Insulin Resistance",
+  "mechanism_of_action:glp_1_receptor_agonism": "Glp-1 Receptor Agonism / Insulin Resistance",
+  "disease:polycystic_ovary_syndrome": "Glp-1 Receptor Agonism / Insulin Resistance",
+  "compound:metformin": "Glp-1 Receptor Agonism / Insulin Resistance",
+  "compound:liraglutide": "Glp-1 Receptor Agonism / Insulin Resistance",
+  "protein:glucagon_like_peptide_1_receptor": "Glp-1 Receptor Agonism / Insulin Resistance",
+  "phenotype:insulin_resistance": "Glp-1 Receptor Agonism / Insulin Resistance",
+  "protein:glp_1": "Glp-1 Receptor Agonism / Insulin Resistance"
+}

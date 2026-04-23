@@ -1,0 +1,326 @@
+{
+  "document_id": "patent_07_wo2019239319a1_pfizer_danuglipron",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "danuglipron",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "compound_code": "PF-06882961",
+        "drug_class": "small-molecule GLP-1 receptor agonist",
+        "development_stage": "Phase II/III",
+        "route_of_administration": "oral",
+        "formulation": "once-daily extended-release (in development); twice-daily (discontinued)"
+      },
+      "confidence": 0.92,
+      "context": "This patent is part of the chemical series from which danuglipron (PF-06882961) was developed by Pfizer. Danuglipron, derived from this chemical series, advanced to Phase 2/3 clinical trials."
+    },
+    {
+      "name": "Compound 1 (WO2019239319A1)",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "iupac_name": "2-({4-[2-(4-chloro-2-fluorophenyl)-1,3-benzodioxol-4-yl]piperidin-1-yl}methyl)-1-[(2S)-oxetan-2-ylmethyl]-1H-benzimidazole-6-carboxylic acid",
+        "drug_class": "small-molecule GLP-1 receptor agonist",
+        "requires_validation": true,
+        "notation_type": "IUPAC_name",
+        "notation_present": true,
+        "patent_id": "WO2019239319A1"
+      },
+      "confidence": 0.8,
+      "context": "Compound 1: 2-({4-[2-(4-chloro-2-fluorophenyl)-1,3-benzodioxol-4-yl]piperidin-1-yl}methyl)-1-[(2S)-oxetan-2-ylmethyl]-1H-benzimidazole-6-carboxylic acid"
+    },
+    {
+      "name": "Compound 2 (WO2019239319A1)",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "iupac_name": "2-({4-[(2S)-2-(4-chloro-2-fluorophenyl)-2-methyl-1,3-benzodioxol-4-yl]piperidin-1-yl}methyl)-1-[(2S)-oxetan-2-ylmethyl]-1H-benzimidazole-6-carboxylic acid",
+        "drug_class": "small-molecule GLP-1 receptor agonist",
+        "formulation": "including tris salt forms",
+        "requires_validation": true,
+        "notation_type": "IUPAC_name",
+        "notation_present": true,
+        "patent_id": "WO2019239319A1"
+      },
+      "confidence": 0.8,
+      "context": "Compound 2: 2-({4-[(2S)-2-(4-chloro-2-fluorophenyl)-2-methyl-1,3-benzodioxol-4-yl]piperidin-1-yl}methyl)-1-[(2S)-oxetan-2-ylmethyl]-1H-benzimidazole-6-carboxylic acid (including tris salt forms)"
+    },
+    {
+      "name": "Compound 3 (WO2019239319A1)",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "iupac_name": "2-({4-[2-(5-Chloropyridin-2-yl)-2-methyl-1,3-benzodioxol-4-yl]piperidin-1-yl}methyl)-1-[(2S)-oxetan-2-ylmethyl]-1H-benzimidazole-6-carboxylic acid (DIAST-X2)",
+        "drug_class": "small-molecule GLP-1 receptor agonist",
+        "requires_validation": true,
+        "notation_type": "IUPAC_name",
+        "notation_present": true,
+        "patent_id": "WO2019239319A1"
+      },
+      "confidence": 0.8,
+      "context": "Compound 3: 2-({4-[2-(5-Chloropyridin-2-yl)-2-methyl-1,3-benzodioxol-4-yl]piperidin-1-yl}methyl)-1-[(2S)-oxetan-2-ylmethyl]-1H-benzimidazole-6-carboxylic acid (DIAST-X2)"
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "protein_family": "class B secretin receptor family",
+        "domain": "transmembrane pocket (allosteric); orthosteric peptide-binding domain"
+      },
+      "confidence": 0.95,
+      "context": "These nonpeptide compounds activate the GLP-1 receptor through an allosteric mechanism, binding within a transmembrane pocket distinct from the orthosteric peptide-binding domain."
+    },
+    {
+      "name": "DPP-4",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "protease",
+        "protein_family": "dipeptidyl peptidase"
+      },
+      "confidence": 0.9,
+      "context": "They are orally bioavailable and resistant to proteolytic degradation by DPP-4 and neutral endopeptidases."
+    },
+    {
+      "name": "neutral endopeptidase",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "protease"
+      },
+      "confidence": 0.88,
+      "context": "They are orally bioavailable and resistant to proteolytic degradation by DPP-4 and neutral endopeptidases."
+    },
+    {
+      "name": "small-molecule GLP-1 receptor agonism (allosteric)",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "selectivity": "selective",
+        "reversibility": "not specified",
+        "target": "GLP-1 receptor",
+        "binding_site": "transmembrane allosteric pocket, distinct from orthosteric peptide-binding domain"
+      },
+      "confidence": 0.92,
+      "context": "These nonpeptide compounds activate the GLP-1 receptor through an allosteric mechanism, binding within a transmembrane pocket distinct from the orthosteric peptide-binding domain."
+    },
+    {
+      "name": "Type 2 Diabetes Mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Diabetes Mellitus, Type 2",
+        "icd_code": "E11",
+        "aliases": [
+          "T2DM",
+          "type 2 diabetes"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "Therapeutic indications include type 2 diabetes mellitus, obesity, non-alcoholic steatohepatitis (NASH), cardiovascular disease, and related metabolic disorders."
+    },
+    {
+      "name": "Obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Obesity",
+        "icd_code": "E66"
+      },
+      "confidence": 0.9,
+      "context": "Therapeutic indications include type 2 diabetes mellitus, obesity, non-alcoholic steatohepatitis (NASH), cardiovascular disease, and related metabolic disorders. Pfizer discontinued the twice-daily formulation but continues development of a once-daily extended-release formulation for obesity."
+    },
+    {
+      "name": "Non-Alcoholic Steatohepatitis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Non-alcoholic Fatty Liver Disease",
+        "aliases": [
+          "NASH"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "Therapeutic indications include type 2 diabetes mellitus, obesity, non-alcoholic steatohepatitis (NASH), cardiovascular disease, and related metabolic disorders."
+    },
+    {
+      "name": "Cardiovascular Disease",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Cardiovascular Diseases",
+        "icd_code": "I51.9"
+      },
+      "confidence": 0.88,
+      "context": "Therapeutic indications include type 2 diabetes mellitus, obesity, non-alcoholic steatohepatitis (NASH), cardiovascular disease, and related metabolic disorders."
+    },
+    {
+      "name": "Pfizer Inc",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "pharma",
+        "country": "United States"
+      },
+      "confidence": 0.98,
+      "context": "Assignee: Pfizer Inc. This patent is part of the chemical series from which danuglipron (PF-06882961) was developed by Pfizer."
+    },
+    {
+      "name": "WO2019239319A1",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "publication_type": "patent",
+        "patent_number": "WO2019239319A1",
+        "assignee": "Pfizer Inc",
+        "filing_date": "2019-06-11"
+      },
+      "confidence": 0.98,
+      "context": "Patent ID: WO2019239319A1. Assignee: Pfizer Inc. Filing Date: June 11, 2019."
+    },
+    {
+      "name": "oral bioavailability of benzimidazole GLP-1 receptor agonists",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "physiological",
+        "clinical_relevance": "mechanism",
+        "measurement_method": "not specified"
+      },
+      "confidence": 0.88,
+      "context": "They are orally bioavailable and resistant to proteolytic degradation by DPP-4 and neutral endopeptidases."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "danuglipron",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.88,
+      "evidence": "This patent is part of the chemical series from which danuglipron (PF-06882961) was developed by Pfizer. These nonpeptide compounds activate the GLP-1 receptor through an allosteric mechanism."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "danuglipron",
+      "target_entity": "small-molecule GLP-1 receptor agonism (allosteric)",
+      "confidence": 0.88,
+      "evidence": "These nonpeptide compounds activate the GLP-1 receptor through an allosteric mechanism, binding within a transmembrane pocket distinct from the orthosteric peptide-binding domain."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "Compound 1 (WO2019239319A1)",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.78,
+      "evidence": "These nonpeptide compounds activate the GLP-1 receptor through an allosteric mechanism, binding within a transmembrane pocket distinct from the orthosteric peptide-binding domain."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "Compound 1 (WO2019239319A1)",
+      "target_entity": "small-molecule GLP-1 receptor agonism (allosteric)",
+      "confidence": 0.78,
+      "evidence": "These nonpeptide compounds activate the GLP-1 receptor through an allosteric mechanism, binding within a transmembrane pocket distinct from the orthosteric peptide-binding domain."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "Compound 2 (WO2019239319A1)",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.78,
+      "evidence": "These nonpeptide compounds activate the GLP-1 receptor through an allosteric mechanism, binding within a transmembrane pocket distinct from the orthosteric peptide-binding domain."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "Compound 2 (WO2019239319A1)",
+      "target_entity": "small-molecule GLP-1 receptor agonism (allosteric)",
+      "confidence": 0.78,
+      "evidence": "These nonpeptide compounds activate the GLP-1 receptor through an allosteric mechanism, binding within a transmembrane pocket distinct from the orthosteric peptide-binding domain."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "Compound 3 (WO2019239319A1)",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.78,
+      "evidence": "These nonpeptide compounds activate the GLP-1 receptor through an allosteric mechanism, binding within a transmembrane pocket distinct from the orthosteric peptide-binding domain."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "Compound 3 (WO2019239319A1)",
+      "target_entity": "small-molecule GLP-1 receptor agonism (allosteric)",
+      "confidence": 0.78,
+      "evidence": "These nonpeptide compounds activate the GLP-1 receptor through an allosteric mechanism, binding within a transmembrane pocket distinct from the orthosteric peptide-binding domain."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "danuglipron",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.55,
+      "evidence": "Therapeutic indications include type 2 diabetes mellitus, obesity, non-alcoholic steatohepatitis (NASH), cardiovascular disease, and related metabolic disorders."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "danuglipron",
+      "target_entity": "Obesity",
+      "confidence": 0.6,
+      "evidence": "Pfizer discontinued the twice-daily formulation but continues development of a once-daily extended-release formulation for obesity."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "danuglipron",
+      "target_entity": "Non-Alcoholic Steatohepatitis",
+      "confidence": 0.45,
+      "evidence": "Therapeutic indications include type 2 diabetes mellitus, obesity, non-alcoholic steatohepatitis (NASH), cardiovascular disease, and related metabolic disorders."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "danuglipron",
+      "target_entity": "Cardiovascular Disease",
+      "confidence": 0.4,
+      "evidence": "Therapeutic indications include type 2 diabetes mellitus, obesity, non-alcoholic steatohepatitis (NASH), cardiovascular disease, and related metabolic disorders."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "Compound 1 (WO2019239319A1)",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.4,
+      "evidence": "Therapeutic indications include type 2 diabetes mellitus, obesity, non-alcoholic steatohepatitis (NASH), cardiovascular disease, and related metabolic disorders."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "Compound 2 (WO2019239319A1)",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.4,
+      "evidence": "Therapeutic indications include type 2 diabetes mellitus, obesity, non-alcoholic steatohepatitis (NASH), cardiovascular disease, and related metabolic disorders."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "Compound 3 (WO2019239319A1)",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.4,
+      "evidence": "Therapeutic indications include type 2 diabetes mellitus, obesity, non-alcoholic steatohepatitis (NASH), cardiovascular disease, and related metabolic disorders."
+    },
+    {
+      "relation_type": "DERIVED_FROM",
+      "source_entity": "danuglipron",
+      "target_entity": "Compound 1 (WO2019239319A1)",
+      "confidence": 0.75,
+      "evidence": "This patent is part of the chemical series from which danuglipron (PF-06882961) was developed by Pfizer."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "danuglipron",
+      "target_entity": "Pfizer Inc",
+      "confidence": 0.97,
+      "evidence": "This patent is part of the chemical series from which danuglipron (PF-06882961) was developed by Pfizer."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "WO2019239319A1",
+      "target_entity": "Pfizer Inc",
+      "confidence": 0.98,
+      "evidence": "Assignee: Pfizer Inc. Filing Date: June 11, 2019."
+    },
+    {
+      "relation_type": "EXPRESSED_IN",
+      "source_entity": "Compound 1 (WO2019239319A1)",
+      "target_entity": "oral bioavailability of benzimidazole GLP-1 receptor agonists",
+      "confidence": 0.82,
+      "evidence": "They are orally bioavailable and resistant to proteolytic degradation by DPP-4 and neutral endopeptidases."
+    }
+  ],
+  "cost_usd": 0.107379,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:39:23.103767+00:00",
+  "error": null
+}

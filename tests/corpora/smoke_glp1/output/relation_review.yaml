@@ -1,0 +1,12 @@
+review_threshold: 0.7
+relations:
+- source_id: biomarker:body_mass_index
+  source_name: body mass index
+  target_id: disease:female_infertility
+  target_name: Female Infertility
+  relation_type: DIAGNOSTIC_FOR
+  confidence: 0.75
+  evidence: higher body mass index (BMI) is associated with poorer fertility prognosis
+  source_document: pmid_32442310
+  status: DRAFT
+  flag_reason: Type 'DIAGNOSTIC_FOR' requires review

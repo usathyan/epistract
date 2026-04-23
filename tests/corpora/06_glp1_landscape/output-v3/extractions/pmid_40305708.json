@@ -1,0 +1,277 @@
+{
+  "document_id": "pmid_40305708",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "glucagon-like peptide-1 receptor agonist",
+        "development_stage": "Phase III",
+        "route_of_administration": "subcutaneous",
+        "dose": "2.4 mg once-weekly",
+        "formulation": "once-weekly subcutaneous injection"
+      },
+      "confidence": 0.98,
+      "context": "Semaglutide, a glucagon-like peptide-1 receptor agonist, is a candidate for the treatment of metabolic dysfunction-associated steatohepatitis (MASH)."
+    },
+    {
+      "name": "GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "target": "glucagon-like peptide-1 receptor"
+      },
+      "confidence": 0.95,
+      "context": "Semaglutide, a glucagon-like peptide-1 receptor agonist, is a candidate for the treatment of metabolic dysfunction-associated steatohepatitis (MASH)."
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "protein_family": "glucagon receptor family"
+      },
+      "confidence": 0.95,
+      "context": "Semaglutide, a glucagon-like peptide-1 receptor agonist, is a candidate for the treatment of metabolic dysfunction-associated steatohepatitis (MASH)."
+    },
+    {
+      "name": "Metabolic Dysfunction-Associated Steatohepatitis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Non-alcoholic Fatty Liver Disease",
+        "aliases": [
+          "MASH",
+          "metabolic dysfunction-associated steatohepatitis"
+        ],
+        "disease_subtype": "steatohepatitis with fibrosis stage 2 or 3"
+      },
+      "confidence": 0.98,
+      "context": "Semaglutide, a glucagon-like peptide-1 receptor agonist, is a candidate for the treatment of metabolic dysfunction-associated steatohepatitis (MASH)."
+    },
+    {
+      "name": "Liver Fibrosis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Liver Cirrhosis",
+        "disease_subtype": "fibrosis stage 2 or 3",
+        "stage": "moderate to advanced (stage 2-3)"
+      },
+      "confidence": 0.95,
+      "context": "we assigned 1197 patients with biopsy-defined MASH and fibrosis stage 2 or 3 in a 2:1 ratio to receive once-weekly subcutaneous semaglutide at a dose of 2.4 mg or placebo for 240 weeks."
+    },
+    {
+      "name": "ESSENCE",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "nct_id": "NCT04822181",
+        "phase": "Phase III",
+        "design": "multicenter, randomized, double-blind, placebo-controlled",
+        "primary_endpoint": "resolution of steatohepatitis without worsening of liver fibrosis; reduction in liver fibrosis without worsening of steatohepatitis",
+        "status": "ongoing",
+        "patient_population": "adults with biopsy-defined MASH and fibrosis stage 2 or 3",
+        "total_enrollment": 1197,
+        "interim_analysis_n": 800,
+        "treatment_duration_weeks": 240,
+        "primary_endpoint_met": true,
+        "sponsor": "Novo Nordisk"
+      },
+      "confidence": 0.97,
+      "context": "In this ongoing phase 3, multicenter, randomized, double-blind, placebo-controlled trial, we assigned 1197 patients with biopsy-defined MASH and fibrosis stage 2 or 3 in a 2:1 ratio to receive once-weekly subcutaneous semaglutide at a dose of 2.4 mg or placebo for 240 weeks. (Funded by Novo Nordisk; ClinicalTrials.gov number, NCT04822181.)"
+    },
+    {
+      "name": "Gastrointestinal Adverse Events",
+      "entity_type": "ADVERSE_EVENT",
+      "attributes": {
+        "meddra_pt": "Gastrointestinal disorders",
+        "organ_class": "Gastrointestinal disorders",
+        "frequency": "more common in semaglutide group",
+        "seriousness": "non-serious (implied)"
+      },
+      "confidence": 0.92,
+      "context": "Gastrointestinal adverse events were more common in the semaglutide group."
+    },
+    {
+      "name": "Novo Nordisk",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "pharma",
+        "country": "Denmark"
+      },
+      "confidence": 0.98,
+      "context": "(Funded by Novo Nordisk; ClinicalTrials.gov number, NCT04822181.)"
+    },
+    {
+      "name": "Sanyal et al., NEJM 2025",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "40305708",
+        "journal": "The New England Journal of Medicine",
+        "year": 2025,
+        "first_author": "Sanyal",
+        "publication_type": "original_research"
+      },
+      "confidence": 0.99,
+      "context": "Title: Phase 3 Trial of Semaglutide in Metabolic Dysfunction-Associated Steatohepatitis. Journal: The New England journal of medicine (2025). PMID: 40305708."
+    },
+    {
+      "name": "liver histologic improvement",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "pharmacodynamic",
+        "analyte": "liver histology",
+        "assay": "biopsy",
+        "tissue": "liver",
+        "clinical_relevance": "primary endpoint for MASH treatment response"
+      },
+      "confidence": 0.9,
+      "context": "In patients with MASH and moderate or advanced liver fibrosis, once-weekly semaglutide at a dose of 2.4 mg improved liver histologic results."
+    },
+    {
+      "name": "steatohepatitis resolution",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "pharmacodynamic",
+        "analyte": "liver histology",
+        "assay": "biopsy",
+        "tissue": "liver",
+        "threshold": "resolution of steatohepatitis without worsening of fibrosis",
+        "clinical_relevance": "primary endpoint part 1"
+      },
+      "confidence": 0.93,
+      "context": "Resolution of steatohepatitis without worsening of fibrosis occurred in 62.9% of the 534 patients in the semaglutide group and in 34.3% of the 266 patients in the placebo group (estimated difference, 28.7 percentage points; 95% confidence interval [CI], 21.1 to 36.2; P<0.001)."
+    },
+    {
+      "name": "liver fibrosis reduction",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "pharmacodynamic",
+        "analyte": "liver fibrosis stage",
+        "assay": "biopsy",
+        "tissue": "liver",
+        "threshold": "reduction in liver fibrosis without worsening of steatohepatitis",
+        "clinical_relevance": "primary endpoint part 1"
+      },
+      "confidence": 0.93,
+      "context": "A reduction in liver fibrosis without worsening of steatohepatitis was reported in 36.8% of the patients in the semaglutide group and in 22.4% of those in the placebo group (estimated difference, 14.4 percentage points; 95% CI, 7.5 to 21.3; P<0.001)."
+    },
+    {
+      "name": "body weight reduction",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "physiological",
+        "measurement_method": "percent change from baseline body weight",
+        "clinical_relevance": "secondary endpoint"
+      },
+      "confidence": 0.9,
+      "context": "The mean change in body weight was -10.5% with semaglutide and -2.0% with placebo (estimated difference, -8.5 percentage points; 95% CI, -9.6 to -7.4; P<0.001)."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor agonism",
+      "confidence": 0.98,
+      "evidence": "Semaglutide, a glucagon-like peptide-1 receptor agonist, is a candidate for the treatment of metabolic dysfunction-associated steatohepatitis (MASH)."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.97,
+      "evidence": "Semaglutide, a glucagon-like peptide-1 receptor agonist, is a candidate for the treatment of metabolic dysfunction-associated steatohepatitis (MASH)."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Metabolic Dysfunction-Associated Steatohepatitis",
+      "confidence": 0.93,
+      "evidence": "In patients with MASH and moderate or advanced liver fibrosis, once-weekly semaglutide at a dose of 2.4 mg improved liver histologic results."
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "semaglutide",
+      "target_entity": "ESSENCE",
+      "confidence": 0.98,
+      "evidence": "we assigned 1197 patients with biopsy-defined MASH and fibrosis stage 2 or 3 in a 2:1 ratio to receive once-weekly subcutaneous semaglutide at a dose of 2.4 mg or placebo for 240 weeks."
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "semaglutide",
+      "target_entity": "Gastrointestinal Adverse Events",
+      "confidence": 0.92,
+      "evidence": "Gastrointestinal adverse events were more common in the semaglutide group."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "semaglutide",
+      "target_entity": "Novo Nordisk",
+      "confidence": 0.95,
+      "evidence": "(Funded by Novo Nordisk; ClinicalTrials.gov number, NCT04822181.)"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "ESSENCE",
+      "target_entity": "Novo Nordisk",
+      "confidence": 0.97,
+      "evidence": "(Funded by Novo Nordisk; ClinicalTrials.gov number, NCT04822181.)"
+    },
+    {
+      "relation_type": "PUBLISHED_IN",
+      "source_entity": "ESSENCE",
+      "target_entity": "Sanyal et al., NEJM 2025",
+      "confidence": 0.99,
+      "evidence": "Title: Phase 3 Trial of Semaglutide in Metabolic Dysfunction-Associated Steatohepatitis. Journal: The New England journal of medicine (2025). PMID: 40305708."
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "steatohepatitis resolution",
+      "target_entity": "semaglutide",
+      "confidence": 0.88,
+      "evidence": "Resolution of steatohepatitis without worsening of fibrosis occurred in 62.9% of the 534 patients in the semaglutide group and in 34.3% of the 266 patients in the placebo group (estimated difference, 28.7 percentage points; 95% confidence interval [CI], 21.1 to 36.2; P<0.001)."
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "liver fibrosis reduction",
+      "target_entity": "semaglutide",
+      "confidence": 0.88,
+      "evidence": "A reduction in liver fibrosis without worsening of steatohepatitis was reported in 36.8% of the patients in the semaglutide group and in 22.4% of those in the placebo group (estimated difference, 14.4 percentage points; 95% CI, 7.5 to 21.3; P<0.001)."
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "liver histologic improvement",
+      "target_entity": "Metabolic Dysfunction-Associated Steatohepatitis",
+      "confidence": 0.9,
+      "evidence": "In patients with MASH and moderate or advanced liver fibrosis, once-weekly semaglutide at a dose of 2.4 mg improved liver histologic results."
+    },
+    {
+      "relation_type": "DIAGNOSTIC_FOR",
+      "source_entity": "liver fibrosis reduction",
+      "target_entity": "Liver Fibrosis",
+      "confidence": 0.9,
+      "evidence": "A reduction in liver fibrosis without worsening of steatohepatitis was reported in 36.8% of the patients in the semaglutide group and in 22.4% of those in the placebo group (estimated difference, 14.4 percentage points; 95% CI, 7.5 to 21.3; P<0.001)."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "semaglutide",
+      "target_entity": "body weight reduction",
+      "confidence": 0.95,
+      "evidence": "The mean change in body weight was -10.5% with semaglutide and -2.0% with placebo (estimated difference, -8.5 percentage points; 95% CI, -9.6 to -7.4; P<0.001)."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Liver Fibrosis",
+      "confidence": 0.88,
+      "evidence": "In patients with MASH and moderate or advanced liver fibrosis, once-weekly semaglutide at a dose of 2.4 mg improved liver histologic results."
+    }
+  ],
+  "cost_usd": 0.096972,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:53:41.528031+00:00",
+  "error": null
+}

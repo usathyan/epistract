@@ -19,7 +19,20 @@ You are running the epistract drug discovery knowledge graph pipeline.
 
 ### Step 1: Discover and Read Documents
 
-List all files in the provided path. Supported formats: PDF, DOCX, XLSX, PPTX, HTML, TXT, EPUB, and 75+ more via sift-kg's Kreuzberg engine.
+Discover all documents in the provided path. Format support is resolved at runtime from sift-kg's Kreuzberg extractor — no hardcoded allowlist. Supported categories:
+
+- **Documents**: PDF, DOCX, DOC, ODT, RTF
+- **Spreadsheets**: XLSX, XLSM, XLS, ODS, CSV
+- **Presentations**: PPTX
+- **Web / Data**: HTML, HTM, XML, JSON, YAML, YML
+- **Text / Notes**: TXT, MD, MARKDOWN, RST, LOG
+- **eBooks**: EPUB, FB2
+- **Email**: EML, MSG
+- **Academic**: BIB, TEX, IPYNB
+- **Images (OCR-gated)**: PNG, JPG, JPEG, GIF, WEBP, BMP, TIFF, TIF — discovered only when `--ocr` is set or the caller passes `discover_corpus(..., ocr=True)`
+- **Archives**: `.zip` is explicitly excluded (breaks per-document provenance; see Phase 15 D-05)
+
+Authoritative runtime list: whatever `sift_kg.ingest.create_extractor(backend='kreuzberg').supported_extensions()` returns — this string matches the Kreuzberg wheel currently installed, so adding a new format upstream is picked up automatically by `core.ingest_documents.discover_corpus`.
 
 For each document, read its text content using sift-kg:
 ```python
@@ -27,7 +40,7 @@ from sift_kg.ingest.reader import read_document
 text = read_document(Path(doc_path))
 ```
 
-Or via the command line: read each file and note its content.
+Extraction failures after discovery are recorded in `triage.json` under each document's `warnings[]` field (codes: `extraction_failed:<reason>`, `empty_text`) — discovery remains pure extension-match; content validation happens at parse time.
 
 ### Step 2: Chunk Text
 

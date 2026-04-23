@@ -75,23 +75,31 @@ def main():
 
     # Import and create app
     from examples.workbench.server import create_app
-    from examples.workbench.template_loader import load_template
+    from examples.workbench.template_loader import load_template, resolve_domain
 
+    # FIDL-06: resolve domain once via the shared helper so banner, title,
+    # and API all agree. create_app does its own resolve_domain call (the
+    # helper is idempotent) — we call it here purely for the banner.
+    resolved_domain, source = resolve_domain(output_dir, domain)
     app = create_app(output_dir, domain=domain)
-    title = load_template(domain).get("title", "Epistract Workbench")
+    title = load_template(resolved_domain).get("title", "Epistract Workbench")
 
     if HAS_RICH:
         _console.print(f"[bold green]{title}[/]")
         _console.print(f"  Output dir: {output_dir}")
-        if domain:
-            _console.print(f"  Domain:     {domain}")
+        if resolved_domain:
+            _console.print(f"  Domain:     {resolved_domain}  ({source})")
+        else:
+            _console.print(f"  Domain:     (generic — {source})")
         _console.print(f"  Server:     http://{host}:{port}")
         _console.print("  Press Ctrl+C to stop\n")
     else:
         print(title)
         print(f"  Output dir: {output_dir}")
-        if domain:
-            print(f"  Domain:     {domain}")
+        if resolved_domain:
+            print(f"  Domain:     {resolved_domain}  ({source})")
+        else:
+            print(f"  Domain:     (generic — {source})")
         print(f"  Server:     http://{host}:{port}")
         print("  Press Ctrl+C to stop\n")
 

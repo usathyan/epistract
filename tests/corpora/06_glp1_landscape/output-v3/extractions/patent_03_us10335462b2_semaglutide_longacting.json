@@ -1,0 +1,289 @@
+{
+  "document_id": "patent_03_us10335462b2_semaglutide_longacting",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "semaglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "inn": "semaglutide",
+        "compound_code": "[Aib8, Arg34, Lys37]GLP-1(7-37)",
+        "drug_class": "GLP-1 receptor agonist",
+        "development_stage": "approved",
+        "route_of_administration": "subcutaneous",
+        "half_life_hours": 160,
+        "half_life_days": 7,
+        "formulation": "acylated GLP-1 peptide with C18 fatty diacid via gamma-glutamic acid and mini-PEG linker",
+        "dosing_schedule": "once-weekly",
+        "doses_studied": [
+          "0.25 mg weekly",
+          "0.5 mg weekly",
+          "1.0 mg weekly"
+        ],
+        "requires_validation": true,
+        "notation_type": "amino_acid_sequence",
+        "notation_present": true
+      },
+      "confidence": 0.95,
+      "context": "Semaglutide is described as a unique acylated GLP-1 peptide with a half-life of approximately 160 hours (approximately 7 days), prepared per Example 4 of WO2006/097537."
+    },
+    {
+      "name": "liraglutide",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "inn": "liraglutide",
+        "drug_class": "GLP-1 receptor agonist",
+        "half_life_hours": 13,
+        "dosing_schedule": "once-daily"
+      },
+      "confidence": 0.9,
+      "context": "The long half-life of semaglutide compared to native GLP-1 (half-life approximately 2 minutes) and liraglutide (half-life approximately 13 hours) enables once-weekly dosing."
+    },
+    {
+      "name": "native GLP-1(7-37)",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "endogenous GLP-1 peptide",
+        "half_life_minutes": 2,
+        "sequence": "HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG",
+        "sequence_id": "SEQ ID NO: 1",
+        "requires_validation": true,
+        "notation_type": "amino_acid_sequence",
+        "notation_present": true
+      },
+      "confidence": 0.92,
+      "context": "The native GLP-1(7-37) peptide sequence is HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG (SEQ ID NO: 1)."
+    },
+    {
+      "name": "GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "selectivity": "selective",
+        "target": "GLP-1 receptor"
+      },
+      "confidence": 0.9,
+      "context": "A key embodiment involves administering a GLP-1 agonist with a minimum half-life of 72 hours in doses of at least 0.7 mg weekly (or semaglutide-equivalent) on a once-weekly or less frequent schedule."
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "protein_family": "incretin receptor family"
+      },
+      "confidence": 0.88,
+      "context": "A key embodiment involves administering a GLP-1 agonist with a minimum half-life of 72 hours in doses of at least 0.7 mg weekly (or semaglutide-equivalent) on a once-weekly or less frequent schedule for managing type 2 diabetes, hyperglycemia, glucose tolerance disorders, and obesity."
+    },
+    {
+      "name": "Type 2 Diabetes Mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Diabetes Mellitus, Type 2",
+        "icd_code": "E11",
+        "aliases": [
+          "T2DM",
+          "type 2 diabetes"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "Clinical studies demonstrated that weekly semaglutide at doses of 0.5 mg and 1.0 mg achieved significant reductions in HbA1c and body weight in patients with type 2 diabetes."
+    },
+    {
+      "name": "Hyperglycemia",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Hyperglycemia",
+        "icd_code": "R73.09"
+      },
+      "confidence": 0.88,
+      "context": "A key embodiment involves administering a GLP-1 agonist with a minimum half-life of 72 hours in doses of at least 0.7 mg weekly (or semaglutide-equivalent) on a once-weekly or less frequent schedule for managing type 2 diabetes, hyperglycemia, glucose tolerance disorders, and obesity."
+    },
+    {
+      "name": "Glucose Tolerance Disorder",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Glucose Intolerance",
+        "aliases": [
+          "impaired glucose tolerance",
+          "glucose tolerance disorders"
+        ]
+      },
+      "confidence": 0.85,
+      "context": "A key embodiment involves administering a GLP-1 agonist with a minimum half-life of 72 hours in doses of at least 0.7 mg weekly (or semaglutide-equivalent) on a once-weekly or less frequent schedule for managing type 2 diabetes, hyperglycemia, glucose tolerance disorders, and obesity."
+    },
+    {
+      "name": "Obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Obesity",
+        "icd_code": "E66"
+      },
+      "confidence": 0.88,
+      "context": "A key embodiment involves administering a GLP-1 agonist with a minimum half-life of 72 hours in doses of at least 0.7 mg weekly (or semaglutide-equivalent) on a once-weekly or less frequent schedule for managing type 2 diabetes, hyperglycemia, glucose tolerance disorders, and obesity."
+    },
+    {
+      "name": "SUSTAIN",
+      "entity_type": "CLINICAL_TRIAL",
+      "attributes": {
+        "trial_acronym": "SUSTAIN",
+        "phase": "Phase III",
+        "primary_endpoint": "HbA1c reduction, cardiovascular safety (MACE)",
+        "patient_population": "patients with type 2 diabetes",
+        "design": "clinical trial program"
+      },
+      "confidence": 0.85,
+      "context": "The SUSTAIN clinical trial program showed cardiovascular safety with a trend toward reduced major adverse cardiovascular events (MACE)."
+    },
+    {
+      "name": "HbA1c reduction",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "pharmacodynamic",
+        "analyte": "glycated hemoglobin",
+        "assay": "HbA1c measurement",
+        "tissue": "blood",
+        "clinical_relevance": "glycemic control endpoint"
+      },
+      "confidence": 0.9,
+      "context": "Clinical studies demonstrated that weekly semaglutide at doses of 0.5 mg and 1.0 mg achieved significant reductions in HbA1c and body weight in patients with type 2 diabetes."
+    },
+    {
+      "name": "Major Adverse Cardiovascular Events",
+      "entity_type": "BIOMARKER",
+      "attributes": {
+        "biomarker_type": "surrogate",
+        "analyte": "composite cardiovascular endpoint",
+        "aliases": [
+          "MACE"
+        ],
+        "clinical_relevance": "cardiovascular safety endpoint"
+      },
+      "confidence": 0.82,
+      "context": "The SUSTAIN clinical trial program showed cardiovascular safety with a trend toward reduced major adverse cardiovascular events (MACE)."
+    },
+    {
+      "name": "Novo Nordisk AS",
+      "entity_type": "ORGANIZATION",
+      "attributes": {
+        "organization_type": "pharma",
+        "country": "Denmark"
+      },
+      "confidence": 0.98,
+      "context": "Assignee: Novo Nordisk AS"
+    },
+    {
+      "name": "US10335462B2",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "publication_type": "patent",
+        "patent_number": "US10335462B2",
+        "filing_date": "July 21, 2017",
+        "assignee": "Novo Nordisk AS",
+        "title": "Use of long-acting GLP-1 peptides"
+      },
+      "confidence": 0.98,
+      "context": "Patent ID: US10335462B2, Assignee: Novo Nordisk AS, Filing Date: July 21, 2017"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor agonism",
+      "confidence": 0.9,
+      "evidence": "A key embodiment involves administering a GLP-1 agonist with a minimum half-life of 72 hours in doses of at least 0.7 mg weekly (or semaglutide-equivalent) on a once-weekly or less frequent schedule."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "semaglutide",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.9,
+      "evidence": "A key embodiment involves administering a GLP-1 agonist with a minimum half-life of 72 hours in doses of at least 0.7 mg weekly (or semaglutide-equivalent) on a once-weekly or less frequent schedule for managing type 2 diabetes, hyperglycemia, glucose tolerance disorders, and obesity."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "native GLP-1(7-37)",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.88,
+      "evidence": "The native GLP-1(7-37) peptide sequence is HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG (SEQ ID NO: 1)."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Type 2 Diabetes Mellitus",
+      "confidence": 0.88,
+      "evidence": "Clinical studies demonstrated that weekly semaglutide at doses of 0.5 mg and 1.0 mg achieved significant reductions in HbA1c and body weight in patients with type 2 diabetes."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Hyperglycemia",
+      "confidence": 0.55,
+      "evidence": "A key embodiment involves administering a GLP-1 agonist with a minimum half-life of 72 hours in doses of at least 0.7 mg weekly (or semaglutide-equivalent) on a once-weekly or less frequent schedule for managing type 2 diabetes, hyperglycemia, glucose tolerance disorders, and obesity."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Glucose Tolerance Disorder",
+      "confidence": 0.5,
+      "evidence": "A key embodiment involves administering a GLP-1 agonist with a minimum half-life of 72 hours in doses of at least 0.7 mg weekly (or semaglutide-equivalent) on a once-weekly or less frequent schedule for managing type 2 diabetes, hyperglycemia, glucose tolerance disorders, and obesity."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "semaglutide",
+      "target_entity": "Obesity",
+      "confidence": 0.55,
+      "evidence": "A key embodiment involves administering a GLP-1 agonist with a minimum half-life of 72 hours in doses of at least 0.7 mg weekly (or semaglutide-equivalent) on a once-weekly or less frequent schedule for managing type 2 diabetes, hyperglycemia, glucose tolerance disorders, and obesity."
+    },
+    {
+      "relation_type": "EVALUATED_IN",
+      "source_entity": "semaglutide",
+      "target_entity": "SUSTAIN",
+      "confidence": 0.88,
+      "evidence": "The SUSTAIN clinical trial program showed cardiovascular safety with a trend toward reduced major adverse cardiovascular events (MACE)."
+    },
+    {
+      "relation_type": "DERIVED_FROM",
+      "source_entity": "semaglutide",
+      "target_entity": "native GLP-1(7-37)",
+      "confidence": 0.92,
+      "evidence": "The key semaglutide analog is designated [Aib8, Arg34, Lys37]GLP-1(7-37), denoting substitutions where alpha-aminoisobutyric acid replaces the amino acid at position 8, arginine replaces the amino acid at position 34, and lysine replaces the amino acid at position 37."
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "semaglutide",
+      "target_entity": "Novo Nordisk AS",
+      "confidence": 0.95,
+      "evidence": "Assignee: Novo Nordisk AS"
+    },
+    {
+      "relation_type": "DEVELOPED_BY",
+      "source_entity": "US10335462B2",
+      "target_entity": "Novo Nordisk AS",
+      "confidence": 0.98,
+      "evidence": "Patent ID: US10335462B2, Assignee: Novo Nordisk AS, Filing Date: July 21, 2017"
+    },
+    {
+      "relation_type": "PREDICTS_RESPONSE_TO",
+      "source_entity": "HbA1c reduction",
+      "target_entity": "semaglutide",
+      "confidence": 0.82,
+      "evidence": "Clinical studies demonstrated that weekly semaglutide at doses of 0.5 mg and 1.0 mg achieved significant reductions in HbA1c and body weight in patients with type 2 diabetes."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "Major Adverse Cardiovascular Events",
+      "target_entity": "semaglutide",
+      "confidence": 0.75,
+      "evidence": "The SUSTAIN clinical trial program showed cardiovascular safety with a trend toward reduced major adverse cardiovascular events (MACE)."
+    }
+  ],
+  "cost_usd": 0.094758,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:36:13.793636+00:00",
+  "error": null
+}

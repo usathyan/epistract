@@ -2,6 +2,58 @@
 
 All notable changes to epistract are documented here. This project follows [Semantic Versioning](https://semver.org/).
 
+## [3.0.0] — 2026-04-23
+
+**Graph Fidelity & Honest Limits.** Closes nine FIDL requirements (FIDL-01..09) across Phases 12–20 that hardened the pipeline from ingest through epistemic narrative. Every capacity number in `docs/PIPELINE-CAPACITY.md` is grep-verifiable in source or measured against the codebase. No aspirational claims. On top of the v2.1 reliability work, v3 adds domain-aware metadata propagation, per-domain validators, a wizard/CLI ergonomics pass, and — new in this release — an automatic LLM analyst narrator that writes `epistemic_narrative.md` on every `/epistract:epistemic` run, grounded in the per-domain persona that doubles as the workbench chat system prompt.
+
+### Highlights
+
+- **FIDL-03 — Sentence-aware chunk overlap.** Chunk boundaries emit `chonkie.SentenceChunker` overlap — last 3 sentences of previous chunk, capped at 1,500 chars, preserved at every split point. Each chunk JSON records `overlap_prev_chars`, `overlap_next_chars`, `is_overlap_region`. Recovers cross-chunk entities and relations that the pre-v3 hard 10,000-char boundary dropped. `chonkie` is now a required runtime dep (ARM64 / x86 parity — replaces earlier `blingfire` plan).
+- **FIDL-04 — Format discovery parity.** `core/ingest_documents.discover_corpus` delegates to `sift_kg.ingest.reader` — no hardcoded allowlist. Runtime-resolved: 29 text-class extensions (37 with `--ocr`), `.zip` excluded for provenance, loud `ImportError` when `sift_kg.ingest.reader` is missing.
+- **FIDL-05 — Wizard sample window beyond 8KB.** Pass-1 schema discovery now sees beyond the first 8KB of each sample document. Multi-excerpt strategy for documents > 12K chars: head (first 4K) + middle (4K centered on midpoint) + tail (last 4K), joined with explicit `[EXCERPT N/3]` markers. Documents ≤ 12K pass through as full text. Measured cost: ~2,631 input tokens per Pass-1 call.
+- **FIDL-06 — Domain awareness in downstream consumers.** `graph_data.json metadata.domain` is the new source of truth. `/epistract:dashboard` auto-detects domain; workbench chat system prompt loads per-domain `analysis_patterns`; `graph.html` gets domain-aware title + entity colors from `workbench/template.yaml`. Precedence: explicit `--domain` flag > metadata > hardcoded default. Legacy graphs fall back cleanly with a one-shot stderr warning.
+- **FIDL-07 — Per-domain epistemic & validator extensibility.** Domains can ship `CUSTOM_RULES: list[callable]` in `epistemic.py`; merged into `claims_layer.super_domain.custom_findings` by rule name. `core/domain_resolver.get_validation_dir(domain)` discovers `domains/<name>/validation/run_validation.py`; `cmd_build` auto-invokes and writes `validation_report.json`. Failure isolation: one failing rule or validator records `{status: error}` but does NOT abort the pipeline. Structural-biology doctype: drug-discovery `infer_doc_type` recognizes PDB-prefixed IDs + X-ray/cryo-EM signals; high-confidence (≥0.9) structural claims short-circuit to `asserted`.
+- **FIDL-08 — Wizard & CLI ergonomics.** Safe slugification (NFKD → ASCII) handles `Q&A Analysis (v2)` → `q-a-analysis-v2`. Wizard auto-emits `domains/<slug>/workbench/template.yaml` with deterministic palette entity colors + Pydantic-validated analysis_patterns. `--domain` accepts path: `run_sift build --domain /path/to/domain.yaml` infers the name when inside `domains/`. `--schema <file.json>` bypass flag generates a complete domain package in one shot, LLM-free.
+- **FIDL-09 — Pipeline Capacity & Limits (now `docs/PIPELINE-CAPACITY.md`).** Every capacity number grep-verifiable or measured against the codebase.
+- **Automatic analyst narrator (`epistemic_narrative.md`).** After the rule engine writes `claims_layer.json`, `core.label_epistemic` calls an LLM with the domain `persona` (from `domains/<name>/workbench/template.yaml`) and writes a structured analyst briefing. The same persona drives both the workbench chat (reactive) and the narrator (proactive) — single source of truth. Opt out with `--no-narrate`. Non-blocking on API error: `claims_layer.json` is authoritative.
+- **Shared LLM client** (`core/llm_client.py`). Synchronous provider-auto-detection client mirroring workbench priority: Azure Foundry → Anthropic → OpenRouter. Reusable from any core-layer script.
+- **V3 S06 rebuild (GLP-1 Competitive Intelligence).** 34-document corpus rebuilt end-to-end with Sonnet 4.6 via OpenRouter: 278 nodes (+44% vs V2), 855 edges (+38%), 10 communities, 61 prophetic claims (+307%), 33 contested claims (+560%), `metadata.domain` populated, `validation_report.json` emitted, `epistemic_narrative.md` produced. Full comparison: `docs/SHOWCASE-GLP1.md`.
+- **Documentation reorganization.** README rewritten as a first-visitor story focused on V3 as the final product. Detailed content extracted to `docs/ARCHITECTURE.md`, `docs/WORKBENCH.md`, `docs/COMMANDS.md`, `docs/PIPELINE-CAPACITY.md`, `docs/SHOWCASE-GLP1.md`. Stale intermediate artifacts moved to `archive/` (gitignored).
+
+### Added
+
+- `core/llm_client.py` — provider-auto-detection synchronous LLM client.
+- `core/label_epistemic.py` — narrator step: `_load_domain_persona`, `_summarize_graph_for_narrator`, `narrate_claims_layer`. `--no-narrate` CLI flag.
+- `scripts/extract_corpus.py` — direct-call OpenRouter extraction script with resume-safe skip-if-exists and per-doc cost/token tracking.
+- `scripts/s06_v2_v3_delta.py` — V2/V3 delta capture.
+- `docs/ARCHITECTURE.md`, `docs/WORKBENCH.md`, `docs/COMMANDS.md`, `docs/PIPELINE-CAPACITY.md`, `docs/SHOWCASE-GLP1.md` — new user-facing documentation.
+- `domains/drug-discovery/workbench/template.yaml` — upgraded persona with epistemic-status vocabulary, citation discipline, vocabulary standards (INN/HGNC/MeSH/MedDRA).
+- `domains/drug-discovery/validation/run_validation.py` — molecular validation entry point (RDKit-gated; gracefully skipped when RDKit not installed).
+- **Requirements**: FIDL-03..FIDL-09 registered and completed in `.planning/REQUIREMENTS.md`.
+- **Tests**: UT-031..UT-057 + FT-012..FT-020 + additional narrator tests (`test_ut055_narrator_load_domain_persona`, `test_ut056_narrator_summarize_graph_shape`, `test_ut057_narrator_non_blocking_on_missing_credentials`).
+
+### Changed
+
+- `README.md` — rewritten as a first-visitor story. Previous version preserved in `archive/README-pre-v3-2026-04-23.md`.
+- `core/label_epistemic.py:analyze_epistemic` — accepts `narrate=True` parameter; writes `epistemic_narrative.md` alongside `claims_layer.json` when persona and credentials are available.
+- `core/domain_wizard.py:generate_workbench_template` — new `persona_override` param; emits an analyst-shaped multi-paragraph persona template by default (was one sentence).
+- `core/domain_wizard.py:generate_domain_package` — new `persona` param threaded through; `--schema` bypass reads optional `persona` field from schema JSON.
+- `core/run_sift.py:cmd_view` — fills only the first of pyvis's two empty `<h1></h1>` tags and strips the second, so `graph.html` renders the title exactly once (was duplicated).
+- `commands/domain.md` — new persona-elicitation step in the interactive wizard flow; `persona` documented in `--schema` bypass section.
+- `commands/epistemic.md` — documents `--no-narrate` flag, `epistemic_narrative.md` artifact, narrator credential priority, single-source-of-truth persona mechanism.
+
+### Deprecations
+
+- `blingfire` removed from plan. `chonkie` is the sentence chunker going forward (ARM64 / x86 parity).
+
+### Migration
+
+- **Rebuild your graphs to get v3 metadata.** Graphs built before v3 lack `metadata.domain` — they still work but downstream consumers fall back to explicit `--domain` flag or default.
+- **No migration script shipped** — a quick rebuild is faster than writing one.
+- Existing domains without `CUSTOM_RULES`, `validation/` directory, or `workbench/template.yaml` continue to work byte-identically. All v3 additions are backward-compatible.
+
+---
+
 ## [2.1.0] — 2026-04-17
 
 **Graph Fidelity & Extraction Pipeline Reliability.** Two reliability phases close silent-data-loss holes in the extraction pipeline. The extraction-load rate jumped from ~70% (axmp-compliance 23-doc run lost 7 documents) to ≥95%, proven end-to-end on a 24-file Bug-4 reproducer (FT-009 at 100%). The `/epistract:domain` wizard now reads PDFs correctly instead of leaking binary headers into generated schemas.

@@ -57,3 +57,6 @@ entity_colors:
 dashboard:
   title: "Sample 2026 Contract Portfolio & Key Financial Commitments"
   subtitle: "8 contract categories covering 57 documents with vendors across venue, catering, hotels, AV, security, decorating, EMS, and event services."
+analysis_patterns:
+  cross_references_heading: "CROSS-CONTRACT REFERENCES"
+  appears_in_phrase: "appears in"

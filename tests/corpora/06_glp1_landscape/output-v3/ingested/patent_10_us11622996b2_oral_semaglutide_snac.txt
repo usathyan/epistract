@@ -1,0 +1,16 @@
+Title: Solid compositions comprising a GLP-1 agonist and SNAC for oral delivery
+Source: Google Patents (via SerpAPI)
+Patent ID: US11622996B2
+Assignee: Novo Nordisk AS
+Filing Date: May 6, 2019
+
+ABSTRACT/DESCRIPTION:
+The patent describes pharmaceutical compositions combining a GLP-1 receptor agonist with sodium N-(8-(2-hydroxybenzoyl)amino)caprylate (SNAC) for oral administration. SNAC is an absorption enhancer that enables oral delivery of peptide therapeutics by transiently increasing gastric epithelial permeability. The compositions provide accelerated absorption of the GLP-1 agonist within 15-30 minutes after administration and thereby improved oral bioavailability and exposure.
+
+SNAC chemical identifier: sodium 8-[(2-hydroxybenzoyl)amino]octanoate (InChIKey: UOENJXXSKABLJL-UHFFFAOYSA-M). The related caprylic acid backbone has the identifier WWZKQHOCKIZLMA-UHFFFAOYSA-N (octanoic acid). SNAC is also known as salcaprozate sodium.
+
+The GLP-1 agonists specifically discussed include semaglutide and liraglutide. Semaglutide is formulated as oral tablets containing 300 mg SNAC with 3 mg, 7 mg, or 14 mg semaglutide. The tablet must be taken on an empty stomach with no more than 120 mL water, with at least 30 minutes before eating, to maximize absorption. This oral formulation is marketed as Rybelsus.
+
+The oral semaglutide formulation was developed because the peptide nature of GLP-1 receptor agonists renders them susceptible to proteolytic degradation in the gastrointestinal tract and poor passive permeability across the intestinal epithelium. SNAC overcomes these barriers by creating a localized pH increase around the tablet, protecting semaglutide from pepsin degradation, and facilitating transcellular absorption primarily in the stomach.
+
+This technology represents a significant advance in GLP-1 receptor agonist delivery, enabling the first orally available peptide GLP-1 RA. However, the bioavailability of oral semaglutide remains low (approximately 1%) compared to subcutaneous administration, requiring higher doses and strict dosing conditions. Next-generation oral approaches include small-molecule nonpeptide GLP-1 agonists (orforglipron, danuglipron) that do not require absorption enhancers.

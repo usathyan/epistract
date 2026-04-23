@@ -1,0 +1,9 @@
+Title: GLP-1 programs the neurovascular landscape.
+Authors: Chen Bandy, Yu Xiaofei, Horvath-Diano Claudia, Ortuño María José, Tschöp Matthias H
+Journal: Cell metabolism (2024)
+PMID: 39357509
+Source: Google Scholar topic: GLP-1 competitive landscape
+MeSH Terms: Humans, Glucagon-Like Peptide 1, Animals, Glucagon-Like Peptide-1 Receptor, Obesity, Brain, Glucagon-Like Peptide-1 Receptor Agonists
+
+ABSTRACT:
+Readily available nutrient-rich foods exploit our inherent drive to overconsume, creating an environment of overnutrition. This transformative setting has led to persistent health issues, such as obesity and metabolic syndrome. The development of glucagon-like peptide-1 receptor (GLP-1R) agonists reveals our ability to pharmacologically manage weight and address metabolic conditions. Obesity is directly linked to chronic low-grade inflammation, connecting our metabolic environment to neurodegenerative diseases. GLP-1R agonism in curbing obesity, achieved by impacting appetite and addressing associated metabolic defects, is revealing additional benefits extending beyond weight loss. Whether GLP-1R agonism directly impacts brain health or does so indirectly through improved metabolic health remains to be elucidated. In exploring the intricate connection between obesity and neurological conditions, recent literature suggests that GLP-1R agonism may have the capacity to shape the neurovascular landscape. Thus, GLP-1R agonism emerges as a promising strategy for addressing the complex interplay between metabolic health and cognitive well-being.

@@ -56,6 +56,34 @@ def _resolve_domain_dir(name: str) -> Path:
     )
 
 
+def get_validation_dir(domain_name: str) -> Path | None:
+    """Return the domain's validation/ directory if it exists and ships a run_validation.py.
+
+    FIDL-07 (D-03): Convention-based auto-discovery of optional post-build
+    validators. A domain "has a validator" iff
+    ``<domain_dir>/validation/run_validation.py`` exists. Missing directory,
+    missing ``run_validation.py``, or unknown domain → None (silent —
+    per D-08 the absence of a validator is not a warning condition).
+
+    Args:
+        domain_name: Domain name (handles aliases via ``_resolve_domain_dir``).
+
+    Returns:
+        Path to ``<domain_dir>/validation`` when the convention file is
+        present, else None.
+    """
+    try:
+        domain_dir = _resolve_domain_dir(domain_name)
+    except FileNotFoundError:
+        return None
+    validation_dir = domain_dir / "validation"
+    if not validation_dir.is_dir():
+        return None
+    if not (validation_dir / "run_validation.py").is_file():
+        return None
+    return validation_dir
+
+
 def resolve_domain(name: str | None = None) -> dict:
     """Resolve a domain by name and return its schema as a dict.
 
@@ -64,7 +92,9 @@ def resolve_domain(name: str | None = None) -> dict:
               Defaults to DEFAULT_DOMAIN if None.
 
     Returns:
-        Dict with keys: name, dir, yaml_path, skill_path, schema.
+        Dict with keys: name, dir, yaml_path, skill_path, schema, validation_dir.
+        The ``validation_dir`` key (FIDL-07 D-03) is None when the domain
+        ships no ``validation/run_validation.py`` convention entry point.
     """
     name = name or DEFAULT_DOMAIN
     domain_dir = _resolve_domain_dir(name)
@@ -83,12 +113,15 @@ def resolve_domain(name: str | None = None) -> dict:
         # Fallback: return path only, caller loads with their own YAML parser
         schema = None
 
+    validation_dir = get_validation_dir(name)
+
     return {
         "name": name,
         "dir": str(domain_dir),
         "yaml_path": str(yaml_path),
         "skill_path": str(domain_dir / "SKILL.md"),
         "schema": schema,
+        "validation_dir": str(validation_dir) if validation_dir else None,
     }
 
 

@@ -12,14 +12,19 @@ from examples.workbench.api_chat import router as chat_router
 from examples.workbench.api_graph import router as graph_router
 from examples.workbench.api_sources import router as sources_router
 from examples.workbench.data_loader import WorkbenchData
-from examples.workbench.template_loader import DOMAINS_DIR, load_template
+from examples.workbench.template_loader import DOMAINS_DIR, load_template, resolve_domain
 
 STATIC_DIR = Path(__file__).parent / "static"
 
 
 def create_app(output_dir: Path, domain: str | None = None) -> FastAPI:
-    """Create and configure the FastAPI application."""
-    template = load_template(domain)
+    """Create and configure the FastAPI application.
+
+    FIDL-06: Resolves the effective domain via resolve_domain (precedence:
+    explicit arg > graph_data.json metadata.domain > None/fallback).
+    """
+    resolved_domain, _source = resolve_domain(Path(output_dir), domain)
+    template = load_template(resolved_domain)
     app = FastAPI(title=template.get("title", "Knowledge Graph Explorer"))
 
     # CORS for local development (per D-07, localhost only)
@@ -36,7 +41,8 @@ def create_app(output_dir: Path, domain: str | None = None) -> FastAPI:
 
     # Store output_dir and domain name for later use
     app.state.output_dir = output_dir
-    app.state._domain_name = domain
+    app.state._domain_name = resolved_domain  # FIDL-06: use resolved, not raw
+    app.state._domain_source = _source       # FIDL-06: expose for debugging
 
     # Include API routers
     app.include_router(graph_router)

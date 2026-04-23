@@ -15,6 +15,17 @@ class DashboardConfig(BaseModel):
     subtitle: str = ""
 
 
+class AnalysisPatterns(BaseModel):
+    """Domain-specific analysis vocabulary for the chat system prompt (FIDL-06 D-06).
+
+    Lets each domain override contract-centric wording like
+    "CROSS-CONTRACT REFERENCES" without editing system_prompt.py.
+    """
+
+    cross_references_heading: str = "CROSS-CONTRACT REFERENCES"
+    appears_in_phrase: str = "appears in"
+
+
 class WorkbenchTemplate(BaseModel):
     """Domain-specific workbench template configuration.
 
@@ -33,3 +44,4 @@ class WorkbenchTemplate(BaseModel):
     starter_questions: list[str] = Field(default_factory=list)
     entity_colors: dict[str, str] = Field(default_factory=dict)
     dashboard: DashboardConfig | None = None
+    analysis_patterns: AnalysisPatterns | None = None

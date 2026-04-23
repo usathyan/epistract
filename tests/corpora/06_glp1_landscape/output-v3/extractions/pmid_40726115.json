@@ -1,0 +1,339 @@
+{
+  "document_id": "pmid_40726115",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "glucagon-like peptide-1 receptor agonists",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "GLP-1 receptor agonist",
+        "development_stage": "approved",
+        "aliases": [
+          "GLP-1RAs",
+          "GLP-1 agonists"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "Emerging evidence suggests that glucagon-like peptide-1 receptor agonists (GLP-1RAs), developed for diabetes and obesity, may offer novel analgesia and treat drug-seeking behavior."
+    },
+    {
+      "name": "Chronic Pain",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Chronic Pain",
+        "aliases": [
+          "chronic pain"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "Chronic pain imposes a significant healthcare burden, with treatments often limited by side effects, opioid dependency, and preventable surgeries."
+    },
+    {
+      "name": "Osteoarthritis",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Osteoarthritis",
+        "aliases": [
+          "arthritis",
+          "OA"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "In osteoarthritis, they appear to reduce inflammation and cartilage degradation, but trials in non-obese, non-comorbid patients are needed."
+    },
+    {
+      "name": "Diabetic Neuropathy",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Diabetic Neuropathies",
+        "aliases": [
+          "diabetic neuropathy",
+          "nerve pain from diabetes"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "In diabetic neuropathy, GLP-1RAs show potential for nerve repair, but optimal dosing and long-term efficacy need clarification."
+    },
+    {
+      "name": "Migraine",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Migraine Disorders",
+        "aliases": [
+          "migraines",
+          "headaches"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "Preclinical data support GLP-1RAs signaling in migraines, but human studies are lacking."
+    },
+    {
+      "name": "Alcohol Use Disorder",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Alcoholism",
+        "aliases": [
+          "alcohol addiction",
+          "alcohol use disorder"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "Trials in alcohol addiction show promise, though evidence for other substances remains inconclusive."
+    },
+    {
+      "name": "Substance Use Disorder",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Substance-Related Disorders",
+        "aliases": [
+          "drug-seeking behavior",
+          "addiction",
+          "substance use disorders"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "This review examines the role of GLP-1RAs in pain management, focusing on inflammation, macrophage repolarization, oxidative stress, and dopaminergic pathways in substance use disorders."
+    },
+    {
+      "name": "Diabetes Mellitus",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Diabetes Mellitus",
+        "aliases": [
+          "diabetes"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "Emerging evidence suggests that glucagon-like peptide-1 receptor agonists (GLP-1RAs), developed for diabetes and obesity, may offer novel analgesia and treat drug-seeking behavior."
+    },
+    {
+      "name": "Obesity",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Obesity"
+      },
+      "confidence": 0.9,
+      "context": "Emerging evidence suggests that glucagon-like peptide-1 receptor agonists (GLP-1RAs), developed for diabetes and obesity, may offer novel analgesia and treat drug-seeking behavior."
+    },
+    {
+      "name": "Opioid Dependence",
+      "entity_type": "DISEASE",
+      "attributes": {
+        "mesh_term": "Opioid-Related Disorders",
+        "aliases": [
+          "opioid dependency",
+          "opioid dependence"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "GLP-1RAs offer a promising shift in pain management, potentially reducing opioid dependence, preventing surgical interventions, and lowering healthcare costs."
+    },
+    {
+      "name": "GLP-1 receptor agonism",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "attributes": {
+        "mechanism_class": "activation",
+        "target": "GLP-1 receptor",
+        "selectivity": "selective"
+      },
+      "confidence": 0.9,
+      "context": "These medications act on various parts of the body, including the brain and nervous system. They may reduce inflammation, protect nerve cells, and influence how the brain perceives pain or reacts to addictive substances."
+    },
+    {
+      "name": "GLP-1 receptor",
+      "entity_type": "PROTEIN",
+      "attributes": {
+        "protein_class": "GPCR",
+        "aliases": [
+          "GLP-1R",
+          "glucagon-like peptide-1 receptor"
+        ]
+      },
+      "confidence": 0.9,
+      "context": "glucagon-like peptide-1 receptor agonists (GLP-1RAs), developed for diabetes and obesity, may offer novel analgesia and treat drug-seeking behavior."
+    },
+    {
+      "name": "macrophage repolarization",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "cellular",
+        "clinical_relevance": "mechanism"
+      },
+      "confidence": 0.85,
+      "context": "This review examines the role of GLP-1RAs in pain management, focusing on inflammation, macrophage repolarization, oxidative stress, and dopaminergic pathways in substance use disorders."
+    },
+    {
+      "name": "oxidative stress",
+      "entity_type": "PHENOTYPE",
+      "attributes": {
+        "phenotype_category": "cellular",
+        "clinical_relevance": "mechanism"
+      },
+      "confidence": 0.85,
+      "context": "This review examines the role of GLP-1RAs in pain management, focusing on inflammation, macrophage repolarization, oxidative stress, and dopaminergic pathways in substance use disorders."
+    },
+    {
+      "name": "dopaminergic pathway",
+      "entity_type": "PATHWAY",
+      "attributes": {
+        "pathway_class": "signaling",
+        "aliases": [
+          "dopaminergic pathways"
+        ]
+      },
+      "confidence": 0.85,
+      "context": "This review examines the role of GLP-1RAs in pain management, focusing on inflammation, macrophage repolarization, oxidative stress, and dopaminergic pathways in substance use disorders."
+    },
+    {
+      "name": "opioids",
+      "entity_type": "COMPOUND",
+      "attributes": {
+        "drug_class": "opioid analgesic",
+        "development_stage": "approved"
+      },
+      "confidence": 0.9,
+      "context": "current treatments like opioids often come with serious risks, including addiction."
+    },
+    {
+      "name": "Bade Sahil et al., Pain Management 2025",
+      "entity_type": "PUBLICATION",
+      "attributes": {
+        "pmid": "40726115",
+        "journal": "Pain management",
+        "year": 2025,
+        "first_author": "Bade",
+        "publication_type": "review"
+      },
+      "confidence": 0.99,
+      "context": "GLP-1 agonists: a game changer in pain treatment and addiction. Pain management (2025). PMID: 40726115."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "glucagon-like peptide-1 receptor agonists",
+      "target_entity": "Diabetes Mellitus",
+      "confidence": 0.95,
+      "evidence": "glucagon-like peptide-1 receptor agonists (GLP-1RAs), developed for diabetes and obesity, may offer novel analgesia and treat drug-seeking behavior."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "glucagon-like peptide-1 receptor agonists",
+      "target_entity": "Obesity",
+      "confidence": 0.95,
+      "evidence": "glucagon-like peptide-1 receptor agonists (GLP-1RAs), developed for diabetes and obesity, may offer novel analgesia and treat drug-seeking behavior."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "glucagon-like peptide-1 receptor agonists",
+      "target_entity": "Chronic Pain",
+      "confidence": 0.6,
+      "evidence": "Emerging evidence suggests that glucagon-like peptide-1 receptor agonists (GLP-1RAs), developed for diabetes and obesity, may offer novel analgesia and treat drug-seeking behavior."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "glucagon-like peptide-1 receptor agonists",
+      "target_entity": "Substance Use Disorder",
+      "confidence": 0.55,
+      "evidence": "GLP-1RAs offer a promising shift in pain management, potentially reducing opioid dependence, preventing surgical interventions, and lowering healthcare costs."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "glucagon-like peptide-1 receptor agonists",
+      "target_entity": "Alcohol Use Disorder",
+      "confidence": 0.65,
+      "evidence": "Trials in alcohol addiction show promise, though evidence for other substances remains inconclusive."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "glucagon-like peptide-1 receptor agonists",
+      "target_entity": "Osteoarthritis",
+      "confidence": 0.6,
+      "evidence": "In osteoarthritis, they appear to reduce inflammation and cartilage degradation, but trials in non-obese, non-comorbid patients are needed."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "glucagon-like peptide-1 receptor agonists",
+      "target_entity": "Diabetic Neuropathy",
+      "confidence": 0.6,
+      "evidence": "In diabetic neuropathy, GLP-1RAs show potential for nerve repair, but optimal dosing and long-term efficacy need clarification."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "glucagon-like peptide-1 receptor agonists",
+      "target_entity": "Migraine",
+      "confidence": 0.5,
+      "evidence": "Preclinical data support GLP-1RAs signaling in migraines, but human studies are lacking."
+    },
+    {
+      "relation_type": "HAS_MECHANISM",
+      "source_entity": "glucagon-like peptide-1 receptor agonists",
+      "target_entity": "GLP-1 receptor agonism",
+      "confidence": 0.9,
+      "evidence": "These medications act on various parts of the body, including the brain and nervous system. They may reduce inflammation, protect nerve cells, and influence how the brain perceives pain or reacts to addictive substances."
+    },
+    {
+      "relation_type": "ACTIVATES",
+      "source_entity": "glucagon-like peptide-1 receptor agonists",
+      "target_entity": "GLP-1 receptor",
+      "confidence": 0.9,
+      "evidence": "glucagon-like peptide-1 receptor agonists (GLP-1RAs), developed for diabetes and obesity, may offer novel analgesia and treat drug-seeking behavior."
+    },
+    {
+      "relation_type": "PARTICIPATES_IN",
+      "source_entity": "GLP-1 receptor",
+      "target_entity": "dopaminergic pathway",
+      "confidence": 0.75,
+      "evidence": "This review examines the role of GLP-1RAs in pain management, focusing on inflammation, macrophage repolarization, oxidative stress, and dopaminergic pathways in substance use disorders."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "dopaminergic pathway",
+      "target_entity": "Substance Use Disorder",
+      "confidence": 0.8,
+      "evidence": "This review examines the role of GLP-1RAs in pain management, focusing on inflammation, macrophage repolarization, oxidative stress, and dopaminergic pathways in substance use disorders."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "oxidative stress",
+      "target_entity": "Chronic Pain",
+      "confidence": 0.7,
+      "evidence": "This review examines the role of GLP-1RAs in pain management, focusing on inflammation, macrophage repolarization, oxidative stress, and dopaminergic pathways in substance use disorders."
+    },
+    {
+      "relation_type": "IMPLICATED_IN",
+      "source_entity": "macrophage repolarization",
+      "target_entity": "Chronic Pain",
+      "confidence": 0.7,
+      "evidence": "This review examines the role of GLP-1RAs in pain management, focusing on inflammation, macrophage repolarization, oxidative stress, and dopaminergic pathways in substance use disorders."
+    },
+    {
+      "relation_type": "CAUSES",
+      "source_entity": "opioids",
+      "target_entity": "Opioid Dependence",
+      "confidence": 0.9,
+      "evidence": "current treatments like opioids often come with serious risks, including addiction."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "opioids",
+      "target_entity": "Chronic Pain",
+      "confidence": 0.85,
+      "evidence": "Many people live with chronic pain, and current treatments like opioids often come with serious risks, including addiction."
+    },
+    {
+      "relation_type": "ASSOCIATED_WITH",
+      "source_entity": "glucagon-like peptide-1 receptor agonists",
+      "target_entity": "Opioid Dependence",
+      "confidence": 0.65,
+      "evidence": "GLP-1RAs offer a promising shift in pain management, potentially reducing opioid dependence, preventing surgical interventions, and lowering healthcare costs."
+    }
+  ],
+  "cost_usd": 0.094371,
+  "model_used": "anthropic/claude-sonnet-4.6",
+  "domain_name": "Drug Discovery",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-22T17:57:42.241643+00:00",
+  "error": null
+}

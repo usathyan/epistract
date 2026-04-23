@@ -1,0 +1,13 @@
+Title: GLP-1 compositions and uses thereof
+Source: Google Patents
+Patent ID: US10888605B2
+Assignee: Novo Nordisk AS
+Filing Date: January 28, 2020
+CAS Registry: N/A
+
+ABSTRACT/DESCRIPTION:
+The invention covers pharmaceutical formulations containing the GLP-1 peptide semaglutide with phenol content not exceeding 0.01% (w/w). Semaglutide is described as N6.26-{18-[N-(17-carboxyheptadecanoyl)-L-gamma-glutamyl]-10-oxo-3,6,12,15-tetraoxa-9,18-diazaoctadecanoyl}-[8-(2-amino-2-propanoic acid),34-L-arginine]human glucagon-like peptide 1(7-37). The compositions exhibit enhanced chemical and physical stability compared to traditional formulations containing higher phenol concentrations. The liquid compositions are suitable for parenteral administration, particularly subcutaneous injection, and maintain stability through extended storage periods at controlled temperatures.
+
+Semaglutide concentration in the formulation ranges from 0.5 to 5.0 mg/ml with phenol content reduced to 0.1 mg/ml or less (substantially reduced from historical 5.5 mg/ml). The buffer system uses disodium hydrogen phosphate at 1.42 mg/ml with propylene glycol (14 mg/ml) or sodium chloride as isotonic agent. The formulation pH ranges from 7.0 to 7.8. Semaglutide is a GLP-1 receptor agonist indicated for the treatment of type 2 diabetes mellitus, prevention and treatment of obesity, and related metabolic disorders including cardiovascular risk reduction.
+
+The native GLP-1(7-37) peptide sequence is HAEGTFTSDVSSYLEGQAAKEFIAWLVKGRG. Semaglutide is a modified analog with alpha-aminoisobutyric acid (Aib) at position 8 and arginine at position 34, acylated with a C18 fatty diacid via a linker at lysine 26, which extends the half-life by promoting albumin binding. This enables once-weekly subcutaneous administration.

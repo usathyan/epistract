@@ -1,0 +1,8 @@
+Title: Triple hormone receptor agonist retatrutide for metabolic dysfunction-associated steatotic liver disease: a randomized phase 2a trial.
+Authors: Sanyal Arun J, Kaplan Lee M, Frias Juan P, Brouwers Bram, Wu Qiwei
+Journal: Nature medicine (2024)
+PMID: 38858523
+MeSH Terms: Humans, Male, Female, Middle Aged, Fatty Liver, Adult, Double-Blind Method, Receptors, Glucagon, Liver, Obesity, Aged, Fatty Acids, Peptides, Glucagon-Like Peptide-1 Receptor Agonists
+
+ABSTRACT:
+Retatrutide is a novel triple agonist of the glucose-dependent insulinotropic polypeptide, glucagon-like peptide 1 and glucagon receptors. A 48-week phase 2 obesity study demonstrated weight reductions of 22.8% and 24.2% with retatrutide 8 and 12 mg, respectively. The primary objective of this substudy was to assess mean relative change from baseline in liver fat (LF) at 24 weeks in participants from that study with metabolic dysfunction-associated steatotic liver disease and ≥10% of LF. Here, in this randomized, double-blind, placebo-controlled trial, participants (n = 98) were randomly assigned to 48 weeks of once-weekly subcutaneous retatrutide (1, 4, 8 or 12 mg dose) or placebo. The mean relative change from baseline in LF at 24 weeks was -42.9% (1 mg), -57.0% (4 mg), -81.4% (8 mg), -82.4% (12 mg) and +0.3% (placebo) (all P < 0.001 versus placebo). At 24 weeks, normal LF (<5%) was achieved by 27% (1 mg), 52% (4 mg), 79% (8 mg), 86% (12 mg) and 0% (placebo) of participants. LF reductions were significantly related to changes in body weight, abdominal fat and metabolic measures associated with improved insulin sensitivity and lipid metabolism. The ClinicalTrials.gov registration is NCT04881760 .

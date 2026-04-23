@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import sys
 
 from examples.workbench.data_loader import WorkbenchData
 
@@ -10,6 +11,25 @@ _DEFAULT_PERSONA = (
     "You are a knowledge graph analyst. "
     "Answer questions using the graph data provided."
 )
+
+# FIDL-06 D-06: Guard — emit the "missing analysis_patterns" warning at most
+# once per process so chat logs don't spam on every chat turn.
+_warned_about_missing_analysis_patterns: bool = False
+
+
+def _warn_missing_analysis_patterns() -> None:
+    """Emit a one-shot warning when a template lacks analysis_patterns (FIDL-06 D-06)."""
+    global _warned_about_missing_analysis_patterns
+    if _warned_about_missing_analysis_patterns:
+        return
+    _warned_about_missing_analysis_patterns = True
+    print(
+        "Warning: workbench template has no analysis_patterns block; "
+        "chat will use contracts-default vocabulary ('CROSS-CONTRACT REFERENCES'). "
+        "Add analysis_patterns to domains/<name>/workbench/template.yaml to "
+        "customize cross-reference wording for your domain.",
+        file=sys.stderr,
+    )
 
 
 def build_system_prompt(data: WorkbenchData, template: dict) -> str:
@@ -87,11 +107,26 @@ def build_system_prompt(data: WorkbenchData, template: dict) -> str:
 
         xrefs = data.claims_layer.get("cross_references", [])
         if xrefs:
-            parts.append(f"### CROSS-CONTRACT REFERENCES ({len(xrefs)} entities)")
+            # FIDL-06 D-06: domain-specific heading from template.analysis_patterns.
+            # Missing template block → fall back to hardcoded contracts wording
+            # (matches pre-Phase-17 behavior) with a one-time visible warning.
+            patterns = template.get("analysis_patterns")
+            if patterns:
+                heading = patterns.get(
+                    "cross_references_heading", "CROSS-CONTRACT REFERENCES"
+                )
+                appears_in_phrase = patterns.get("appears_in_phrase", "appears in")
+            else:
+                heading = "CROSS-CONTRACT REFERENCES"
+                appears_in_phrase = "appears in"
+                _warn_missing_analysis_patterns()
+            parts.append(f"### {heading} ({len(xrefs)} entities)")
             for x in xrefs:
                 entity = x.get("entity", "")
                 appears = x.get("appears_in", [])
-                parts.append(f"- {entity} appears in: {', '.join(appears)}")
+                parts.append(
+                    f"- {entity} {appears_in_phrase}: {', '.join(appears)}"
+                )
             parts.append("")
 
     # --- Communities ---
