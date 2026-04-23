@@ -135,6 +135,33 @@ More: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 All three live in `domains/` as self-contained packages. Schemas are human-readable YAML; inspect `domains/drug-discovery/domain.yaml`, `domains/contracts/domain.yaml`, or `domains/clinicaltrials/domain.yaml`.
 
+### Showcases & visual artifacts
+
+**drug-discovery** — S6 GLP-1 Competitive Intelligence (34 docs: 10 patents + 24 PubMed abstracts → 278 nodes, 855 edges, 61 prophetic claims, 1,166-word narrator briefing)
+
+- Showcase: [`docs/SHOWCASE-GLP1.md`](docs/SHOWCASE-GLP1.md)
+- Auto-generated analyst briefing: [`tests/corpora/06_glp1_landscape/output-v3/epistemic_narrative.md`](tests/corpora/06_glp1_landscape/output-v3/epistemic_narrative.md)
+- Workbench screenshots — [dashboard panel](docs/screenshots/workbench-01-dashboard.png) · [chat welcome](docs/screenshots/workbench-02-chat-welcome.png) · [graph panel](docs/screenshots/workbench-03-graph-glp1.png) · [chat on prophetic claims](docs/screenshots/workbench-04-chat-epistemic.png)
+- Interactive graph (open locally in browser): [`tests/corpora/06_glp1_landscape/output-v3/graph.html`](tests/corpora/06_glp1_landscape/output-v3/graph.html)
+- Scenario history (V1 → V2 → V3): [`tests/scenarios/scenario-06-glp1-landscape-v2.md`](tests/scenarios/scenario-06-glp1-landscape-v2.md)
+- V2 scenario gallery (S1–S5 screenshots from the V2 regression validation): [S1 PICALM](tests/scenarios/screenshots/scenario-01-graph-v2.png) · [S2 KRAS G12C](tests/scenarios/screenshots/scenario-02-graph-v2.png) · [S3 Rare Disease](tests/scenarios/screenshots/scenario-03-graph-v2.png) · [S4 Immuno-oncology](tests/scenarios/screenshots/scenario-04-graph-v2.png) · [S5 Cardiovascular](tests/scenarios/screenshots/scenario-05-graph-v2.png) · [S6 GLP-1](tests/scenarios/screenshots/scenario-06-graph-v2.png)
+
+**clinicaltrials** — S7 GLP-1 Phase 3 Landscape (10 CT.gov protocols: SURPASS, SURMOUNT, STEP, PIONEER, SUSTAIN, ACHIEVE → 142 nodes, 395 edges, 1,197-word narrator briefing)
+
+- Showcase: [`docs/SHOWCASE-CLINICALTRIALS.md`](docs/SHOWCASE-CLINICALTRIALS.md)
+- Auto-generated analyst briefing: [`tests/corpora/07_glp1_phase3_trials/output/epistemic_narrative.md`](tests/corpora/07_glp1_phase3_trials/output/epistemic_narrative.md)
+- Interactive graph (open locally in browser): [`tests/corpora/07_glp1_phase3_trials/output/graph.html`](tests/corpora/07_glp1_phase3_trials/output/graph.html)
+- Scenario doc: [`tests/scenarios/scenario-07-clinicaltrials-glp1-phase3.md`](tests/scenarios/scenario-07-clinicaltrials-glp1-phase3.md)
+- Raw corpus: [`tests/corpora/07_glp1_phase3_trials/docs/`](tests/corpora/07_glp1_phase3_trials/docs/) (10 NCT protocol files)
+
+**contracts** — schema scaffold; bring your own corpus
+
+- Showcase walkthrough: [`docs/showcases/contracts.md`](docs/showcases/contracts.md)
+- Domain package: [`domains/contracts/`](domains/contracts/) (schema, SKILL.md, epistemic.py, workbench template with a worked 57-document persona)
+- No bundled corpus graph in the public repo — the contracts domain is designed for private legal/procurement work. Run `/epistract:ingest <your-contract-corpus> --domain contracts` to produce your own graph + workbench view.
+
+*GitHub renders `.html` files as source, not interactive pages — clone the repo and open the `graph.html` links locally in a browser to interact with the force-directed graphs.*
+
 ---
 
 ## Documentation
