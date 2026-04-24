@@ -2774,3 +2774,172 @@ def test_fda09_wizard_generate_domain_yaml_without_anchors():
     assert "community_label_anchors" not in parsed, (
         "community_label_anchors should be absent when not provided"
     )
+
+
+# ========================================================================
+# Phase 05: Workbench model selector (WB-MODEL-01)
+# Wave 0 stub tests — RED until Plan 05-03 Tasks 2-3 land.
+# ========================================================================
+
+WORKBENCH_LLM_ENV_VARS = (
+    "AZURE_FOUNDRY_API_KEY",
+    "ANTHROPIC_FOUNDRY_API_KEY",
+    "AZURE_FOUNDRY_BASE_URL",
+    "ANTHROPIC_FOUNDRY_BASE_URL",
+    "AZURE_FOUNDRY_RESOURCE",
+    "AZURE_FOUNDRY_DEPLOYMENT",
+    "ANTHROPIC_FOUNDRY_DEPLOYMENT",
+    "ANTHROPIC_API_KEY",
+    "OPENROUTER_API_KEY",
+)
+
+
+def _clear_llm_env(monkeypatch):
+    """Remove every LLM-related env var so tests start from a clean slate."""
+    for var in WORKBENCH_LLM_ENV_VARS:
+        monkeypatch.delenv(var, raising=False)
+
+
+@pytest.mark.unit
+def test_chat_request_model_field(monkeypatch):
+    """WB-MODEL-01: ChatRequest accepts optional `model` field; omission is backward-compatible."""
+    _clear_llm_env(monkeypatch)
+    from examples.workbench.api_chat import ChatRequest
+
+    # Omission: model defaults to None
+    req_no_model = ChatRequest(question="hello")
+    assert req_no_model.model is None, (
+        f"Expected model=None when omitted, got {req_no_model.model!r}"
+    )
+
+    # Explicit value: passes through unchanged
+    req_with_model = ChatRequest(
+        question="hello",
+        model="claude-haiku-3-5-20241022",
+    )
+    assert req_with_model.model == "claude-haiku-3-5-20241022"
+
+    # history field remains intact
+    req_with_history = ChatRequest(
+        question="hello",
+        history=[{"role": "user", "content": "prior"}],
+        model="claude-opus-4-20250514",
+    )
+    assert req_with_history.history == [{"role": "user", "content": "prior"}]
+    assert req_with_history.model == "claude-opus-4-20250514"
+
+
+@pytest.mark.unit
+def test_resolve_api_config_model_override(monkeypatch):
+    """WB-MODEL-01: _resolve_api_config(model_override=...) substitutes for Anthropic/OpenRouter; ignored by Foundry."""
+    from examples.workbench.api_chat import _resolve_api_config
+
+    # --- Case A: ANTHROPIC_API_KEY only ---
+    _clear_llm_env(monkeypatch)
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-test-anthropic")
+
+    # No override → default model
+    _, _, default_model, provider = _resolve_api_config()
+    assert provider == "anthropic"
+    assert default_model == "claude-sonnet-4-20250514"
+
+    # Override non-empty → substituted
+    _, _, overridden, _ = _resolve_api_config(
+        model_override="claude-opus-4-20250514"
+    )
+    assert overridden == "claude-opus-4-20250514"
+
+    # Empty string → coerced to default
+    _, _, empty_override, _ = _resolve_api_config(model_override="")
+    assert empty_override == "claude-sonnet-4-20250514"
+
+    # Whitespace-only → coerced to default
+    _, _, ws_override, _ = _resolve_api_config(model_override="   ")
+    assert ws_override == "claude-sonnet-4-20250514"
+
+    # --- Case B: OPENROUTER_API_KEY only ---
+    _clear_llm_env(monkeypatch)
+    monkeypatch.setenv("OPENROUTER_API_KEY", "sk-test-openrouter")
+
+    _, _, or_default, or_provider = _resolve_api_config()
+    assert or_provider == "openrouter"
+    assert or_default == "anthropic/claude-sonnet-4"
+
+    _, _, or_override, _ = _resolve_api_config(
+        model_override="anthropic/claude-haiku-4"
+    )
+    assert or_override == "anthropic/claude-haiku-4"
+
+    # --- Case C: Foundry (AZURE_FOUNDRY_API_KEY + AZURE_FOUNDRY_RESOURCE) ---
+    # Override must be IGNORED — deployment name comes from env/default.
+    _clear_llm_env(monkeypatch)
+    monkeypatch.setenv("AZURE_FOUNDRY_API_KEY", "sk-test-foundry")
+    monkeypatch.setenv("AZURE_FOUNDRY_RESOURCE", "test-resource")
+
+    _, _, foundry_default, foundry_provider = _resolve_api_config()
+    assert foundry_provider == "anthropic"  # Foundry uses native format
+    assert foundry_default == "claude-sonnet-4-6"  # the compiled default
+
+    # Override is silently ignored — still returns the env deployment
+    _, _, foundry_ignored, _ = _resolve_api_config(
+        model_override="anthropic/claude-haiku-4"
+    )
+    assert foundry_ignored == "claude-sonnet-4-6", (
+        "Foundry must IGNORE model_override — deployment is determined by "
+        "AZURE_FOUNDRY_DEPLOYMENT, not the request body"
+    )
+
+
+@pytest.mark.unit
+def test_get_models_no_key(tmp_path, monkeypatch):
+    """WB-MODEL-01: GET /api/models returns empty payload (not 500) when no API key is configured."""
+    _clear_llm_env(monkeypatch)
+
+    # Build a minimal graph_data.json so create_app() doesn't blow up
+    (tmp_path / "graph_data.json").write_text(
+        json.dumps({"nodes": [], "links": [], "metadata": {"domain": "contracts"}})
+    )
+
+    from examples.workbench.server import create_app
+    from starlette.testclient import TestClient
+
+    app = create_app(tmp_path, domain="contracts")
+    client = TestClient(app)
+
+    resp = client.get("/api/models")
+    assert resp.status_code == 200, f"Expected 200, got {resp.status_code}: {resp.text}"
+    data = resp.json()
+    assert data == {"provider": None, "default_model": None, "models": []}, (
+        f"Expected empty payload when no API key set; got {data}"
+    )
+
+
+@pytest.mark.unit
+def test_get_models_anthropic(tmp_path, monkeypatch):
+    """WB-MODEL-01: GET /api/models returns curated Anthropic list when ANTHROPIC_API_KEY is set."""
+    _clear_llm_env(monkeypatch)
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-test-anthropic")
+
+    (tmp_path / "graph_data.json").write_text(
+        json.dumps({"nodes": [], "links": [], "metadata": {"domain": "contracts"}})
+    )
+
+    from examples.workbench.server import create_app
+    from starlette.testclient import TestClient
+
+    app = create_app(tmp_path, domain="contracts")
+    client = TestClient(app)
+
+    resp = client.get("/api/models")
+    assert resp.status_code == 200
+    data = resp.json()
+    assert data["provider"] == "anthropic"
+    assert data["default_model"] == "claude-sonnet-4-20250514"
+    assert isinstance(data["models"], list)
+    assert len(data["models"]) >= 3, f"Expected >=3 Anthropic models, got {len(data['models'])}"
+    # Every entry must have id + label (both strings)
+    for entry in data["models"]:
+        assert "id" in entry and isinstance(entry["id"], str) and entry["id"]
+        assert "label" in entry and isinstance(entry["label"], str) and entry["label"]
+    # First entry is the default
+    assert data["models"][0]["id"] == data["default_model"]
