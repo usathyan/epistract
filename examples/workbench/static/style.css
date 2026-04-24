@@ -512,6 +512,12 @@ body {
   cursor: pointer;
 }
 
+.graph-toolbar {
+  display: flex;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+}
+
 .graph-container {
   flex: 1;
   min-height: 300px;
