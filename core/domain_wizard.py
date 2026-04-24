@@ -948,7 +948,7 @@ def generate_workbench_template(
     data = {
         "title": f"{pretty_name} Knowledge Graph Explorer",
         "subtitle": f"Explore {pretty_lower} entities and relationships",
-        "persona": persona_override.strip() if persona_override else default_persona.strip(),
+        "persona": persona_override.strip() if (persona_override and persona_override.strip()) else default_persona.strip(),
         "placeholder": "Ask a question about the knowledge graph...",
         "loading_message": "Analyzing",
         "starter_questions": [],
