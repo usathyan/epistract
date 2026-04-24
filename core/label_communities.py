@@ -251,7 +251,6 @@ def label_communities(output_dir: Path) -> dict:
 
     # Generate labels
     label_map = {}  # old name -> new name
-    labeled_communities = {}
     results = []
 
     for old_name in sorted(community_members.keys()):
