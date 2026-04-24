@@ -21,6 +21,124 @@ from examples.workbench.template_loader import (
 
 STATIC_DIR = Path(__file__).parent / "static"
 
+# ---------------------------------------------------------------------------
+# OpenRouter live model cache (module-level — survives across requests)
+# ---------------------------------------------------------------------------
+_or_models_cache: dict = {"data": None, "fetched_at": 0.0}
+_OR_CACHE_TTL = 3600  # seconds — OpenRouter adds ~27 models / month
+_OPENROUTER_DEFAULT_MODEL = "anthropic/claude-sonnet-4"
+
+# Mapping of OpenRouter id prefix -> category label for optgroup rendering.
+# The tilde prefix used on "latest" aliases (e.g. ~anthropic/) is stripped
+# before lookup. Unknown prefixes fall into "Other".
+CATEGORY_MAP: dict[str, str] = {
+    "anthropic": "Claude (Anthropic)",
+    "openai": "GPT / O-series (OpenAI)",
+    "google": "Gemini / Gemma (Google)",
+    "meta-llama": "Llama (Meta)",
+    "mistralai": "Mistral",
+    "deepseek": "DeepSeek",
+    "qwen": "Qwen (Alibaba)",
+    "x-ai": "Grok (xAI)",
+    "nvidia": "Nvidia",
+    "cohere": "Cohere",
+    "amazon": "Amazon",
+    "perplexity": "Perplexity",
+}
+
+
+def _filter_and_group_or_models(raw: list[dict]) -> list[dict]:
+    """Filter OpenRouter models to text-output only and attach group/cost fields.
+
+    Exclusions (in order):
+      - architecture.output_modalities != ["text"]  (drops image/audio generators)
+      - id startswith "openrouter/"                  (router meta-models)
+      - expiration_date set and < today               (expired models)
+      - float(pricing.prompt) < 0                     (variable-price routers)
+
+    Returns new dicts with fields: id, label, group, input_cost, output_cost,
+    context_length, free. Defensive parsing tolerates missing/None fields —
+    never raise from this function.
+    """
+    from datetime import date
+
+    today = date.today().isoformat()
+    result: list[dict] = []
+    for m in raw:
+        arch = m.get("architecture", {}) or {}
+        if arch.get("output_modalities") != ["text"]:
+            continue
+        model_id = m.get("id", "") or ""
+        if model_id.startswith("openrouter/"):
+            continue
+        exp = m.get("expiration_date")
+        if exp and exp < today:
+            continue
+        pricing = m.get("pricing", {}) or {}
+        try:
+            prompt_price = float(pricing.get("prompt", "0") or "0")
+        except (ValueError, TypeError):
+            prompt_price = 0.0
+        if prompt_price < 0:
+            continue
+        try:
+            completion_price = float(pricing.get("completion", "0") or "0")
+        except (ValueError, TypeError):
+            completion_price = 0.0
+        # Strip leading '~' (latest-alias prefix) before lookup.
+        prefix = model_id.split("/")[0].lstrip("~")
+        group = CATEGORY_MAP.get(prefix, "Other")
+        name = m.get("name", model_id) or model_id
+        label_name = name.split(": ", 1)[1] if ": " in name else name
+        is_free = prompt_price == 0.0
+        input_cost_per_million = round(prompt_price * 1_000_000, 4)
+        output_cost_per_million = round(completion_price * 1_000_000, 4)
+        cost_label = "free" if is_free else f"${input_cost_per_million:.2f}/M"
+        result.append(
+            {
+                "id": model_id,
+                "label": f"{label_name} ({cost_label})",
+                "group": group,
+                "input_cost": 0.0 if is_free else input_cost_per_million,
+                "output_cost": 0.0 if is_free else output_cost_per_million,
+                "context_length": m.get("context_length", 0) or 0,
+                "free": is_free,
+            }
+        )
+    return result
+
+
+async def _fetch_or_models() -> list[dict]:
+    """Fetch and cache the OpenRouter text-output model list.
+
+    TTL: _OR_CACHE_TTL seconds. On network error, returns cached data if
+    any, else static PROVIDER_MODELS['openrouter'] (Plan 03 fallback).
+    """
+    import time
+
+    import httpx
+
+    from examples.workbench.api_chat import PROVIDER_MODELS
+
+    now = time.time()
+    if _or_models_cache["data"] is not None and (
+        now - _or_models_cache["fetched_at"] < _OR_CACHE_TTL
+    ):
+        return _or_models_cache["data"]
+    try:
+        async with httpx.AsyncClient(timeout=10.0) as client:
+            resp = await client.get("https://openrouter.ai/api/v1/models")
+            resp.raise_for_status()
+            raw = resp.json().get("data", []) or []
+        models = _filter_and_group_or_models(raw)
+        _or_models_cache["data"] = models
+        _or_models_cache["fetched_at"] = now
+        return models
+    except Exception:
+        if _or_models_cache["data"] is not None:
+            return _or_models_cache["data"]
+        return PROVIDER_MODELS["openrouter"]
+
 
 def create_app(output_dir: Path, domain: str | None = None) -> FastAPI:
     """Create and configure the FastAPI application.
@@ -197,10 +315,13 @@ def create_app(output_dir: Path, domain: str | None = None) -> FastAPI:
                 "models": models,
             }
         if os.environ.get("OPENROUTER_API_KEY"):
-            models = PROVIDER_MODELS["openrouter"]
+            models = await _fetch_or_models()
+            default = _OPENROUTER_DEFAULT_MODEL
+            if not any(m.get("id") == default for m in models):
+                default = models[0]["id"] if models else _OPENROUTER_DEFAULT_MODEL
             return {
                 "provider": "openrouter",
-                "default_model": models[0]["id"],
+                "default_model": default,
                 "models": models,
             }
         return {"provider": None, "default_model": None, "models": []}
