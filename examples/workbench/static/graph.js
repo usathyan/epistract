@@ -108,13 +108,22 @@ function buildGraph() {
     // Clear placeholder
     container.innerHTML = '';
 
+    // Pre-compute node degree (total incoming + outgoing edges) for visual sizing.
+    // Range: 8px (isolated node) to 24px (highest-degree hub). See UI-SPEC Degree-Based Node Sizing.
+    const degreeMap = {};
+    allEdges.forEach(e => {
+        degreeMap[e.source] = (degreeMap[e.source] || 0) + 1;
+        degreeMap[e.target] = (degreeMap[e.target] || 0) + 1;
+    });
+    const maxDegree = Math.max(...Object.values(degreeMap), 1);
+
     const nodes = allNodes.map(n => ({
         id: n.id,
         label: n.name || n.id,
         color: getEntityColor(n.entity_type),
         title: `${n.entity_type}: ${n.name}`,
         shape: 'dot',
-        size: 12,
+        size: 8 + Math.round(((degreeMap[n.id] || 0) / maxDegree) * 16),
         font: {
             size: 12,
             color: '#1a1a1a',
@@ -151,7 +160,13 @@ function buildGraph() {
                 drawThreshold: 6,
             },
         },
-        interaction: { hover: true, tooltipDelay: 200 },
+        interaction: {
+            hover: true,
+            tooltipDelay: 200,
+            multiselect: true,
+            dragNodes: true,
+            navigationButtons: false,
+        },
     };
 
     network = new vis.Network(container, { nodes: visNodes, edges: visEdges }, options);
