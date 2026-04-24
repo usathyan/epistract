@@ -1,4 +1,5 @@
 """Epistract Workbench - Domain-agnostic knowledge graph explorer."""
+
 from __future__ import annotations
 
 from pathlib import Path
@@ -12,7 +13,11 @@ from examples.workbench.api_chat import router as chat_router
 from examples.workbench.api_graph import router as graph_router
 from examples.workbench.api_sources import router as sources_router
 from examples.workbench.data_loader import WorkbenchData
-from examples.workbench.template_loader import DOMAINS_DIR, load_template, resolve_domain
+from examples.workbench.template_loader import (
+    DOMAINS_DIR,
+    load_template,
+    resolve_domain,
+)
 
 STATIC_DIR = Path(__file__).parent / "static"
 
@@ -42,7 +47,7 @@ def create_app(output_dir: Path, domain: str | None = None) -> FastAPI:
     # Store output_dir and domain name for later use
     app.state.output_dir = output_dir
     app.state._domain_name = resolved_domain  # FIDL-06: use resolved, not raw
-    app.state._domain_source = _source       # FIDL-06: expose for debugging
+    app.state._domain_source = _source  # FIDL-06: expose for debugging
 
     # Include API routers
     app.include_router(graph_router)
@@ -99,9 +104,7 @@ def create_app(output_dir: Path, domain: str | None = None) -> FastAPI:
         title = dashboard_block.get(
             "title", template.get("title", "Knowledge Graph Summary")
         )
-        subtitle = dashboard_block.get(
-            "subtitle", template.get("subtitle", "")
-        )
+        subtitle = dashboard_block.get("subtitle", template.get("subtitle", ""))
         return {
             "html": None,
             "auto": True,
@@ -150,5 +153,56 @@ def create_app(output_dir: Path, domain: str | None = None) -> FastAPI:
             ),
             "llm_provider": provider,
         }
+
+    @app.get("/api/models")
+    async def get_models():
+        """Return the curated model list for the active LLM provider.
+
+        Detection mirrors /api/health. We intentionally do NOT call
+        api_chat._resolve_api_config() because that function raises
+        RuntimeError when Foundry keys are set without a base URL or
+        resource — which would break this endpoint on every page-load.
+        Foundry returns a single-entry list (deployment name) so the
+        frontend hides the selector (only one choice available).
+        """
+        import os
+
+        from examples.workbench.api_chat import PROVIDER_MODELS
+
+        has_foundry = bool(
+            os.environ.get("AZURE_FOUNDRY_API_KEY")
+            or os.environ.get("ANTHROPIC_FOUNDRY_API_KEY")
+        )
+        if has_foundry:
+            deployment = (
+                os.environ.get("AZURE_FOUNDRY_DEPLOYMENT")
+                or os.environ.get("ANTHROPIC_FOUNDRY_DEPLOYMENT")
+                or "claude-sonnet-4-6"
+            )
+            has_custom_base = bool(
+                os.environ.get("AZURE_FOUNDRY_BASE_URL")
+                or os.environ.get("ANTHROPIC_FOUNDRY_BASE_URL")
+            )
+            provider = "azure-foundry-custom" if has_custom_base else "azure-foundry"
+            return {
+                "provider": provider,
+                "default_model": deployment,
+                "models": [{"id": deployment, "label": deployment}],
+            }
+        if os.environ.get("ANTHROPIC_API_KEY"):
+            models = PROVIDER_MODELS["anthropic"]
+            return {
+                "provider": "anthropic",
+                "default_model": models[0]["id"],
+                "models": models,
+            }
+        if os.environ.get("OPENROUTER_API_KEY"):
+            models = PROVIDER_MODELS["openrouter"]
+            return {
+                "provider": "openrouter",
+                "default_model": models[0]["id"],
+                "models": models,
+            }
+        return {"provider": None, "default_model": None, "models": []}
 
     return app
