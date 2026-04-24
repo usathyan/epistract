@@ -1,5 +1,5 @@
 // app.js - Main application coordinator
-import { initChat } from './chat.js';
+import { initChat, loadModelSelector } from './chat.js';
 import { initGraph } from './graph.js';
 // sources.js removed -- source docs now accessed via dashboard links
 
@@ -207,6 +207,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         switchPanel('sources');
         window.dispatchEvent(new CustomEvent('navigate-source', { detail: { docId, section } }));
     }});
+    loadModelSelector();
     await initGraph({ template, openChat: (question) => {
         switchPanel('chat');
         window.dispatchEvent(new CustomEvent('ask-question', { detail: { question } }));

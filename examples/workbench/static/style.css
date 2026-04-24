@@ -365,6 +365,24 @@ body {
   opacity: 0.9;
 }
 
+.model-select {
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  font-size: var(--size-label);
+  font-family: var(--font-body);
+  cursor: pointer;
+  outline: none;
+  flex-shrink: 0;
+}
+
+.model-select option {
+  background: var(--color-secondary);
+  color: white;
+}
+
 /* Loading dots animation */
 .loading-dots::after {
   content: "";

@@ -74,12 +74,19 @@ async function sendMessage(question) {
     chatHistory.push({ role: 'user', content: question });
 
     // Stream response via SSE (D-09)
+    // Read current model selection (null = use backend default).
+    // `|| null` coerces "" (unloaded select) to null per RESEARCH Pitfall 2.
+    const selectedModel = document.getElementById('model-select')?.value || null;
     let fullResponse = '';
     try {
         const response = await fetch('/api/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ question, history: chatHistory.slice(0, -1) }),
+            body: JSON.stringify({
+                question,
+                history: chatHistory.slice(0, -1),
+                model: selectedModel,
+            }),
         });
 
         const reader = response.body.getReader();
@@ -148,4 +155,46 @@ function linkifyCitations(html) {
 
 function escapeAttr(str) {
     return str.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+}
+
+// ---------------------------------------------------------------------------
+// Model selector: fetches /api/models, populates <select>, persists to
+// localStorage under key `epistract_model`. Hidden when <=1 model available
+// (Azure Foundry single-deployment case) per RESEARCH Pitfall 4.
+// ---------------------------------------------------------------------------
+export async function loadModelSelector() {
+    const modelSelect = document.getElementById('model-select');
+    if (!modelSelect) return;
+    try {
+        const resp = await fetch('/api/models');
+        if (!resp.ok) {
+            modelSelect.style.display = 'none';
+            return;
+        }
+        const data = await resp.json();
+        if (!data.models || data.models.length <= 1) {
+            // Foundry single-deployment OR no provider configured.
+            modelSelect.style.display = 'none';
+            return;
+        }
+        // Populate options
+        data.models.forEach(m => {
+            const opt = document.createElement('option');
+            opt.value = m.id;
+            opt.textContent = m.label;
+            modelSelect.appendChild(opt);
+        });
+        // Restore persisted selection — validate against current list
+        // (per RESEARCH Pitfall 3 — provider switch must not leak stale IDs).
+        const saved = localStorage.getItem('epistract_model');
+        if (saved && data.models.some(m => m.id === saved)) {
+            modelSelect.value = saved;
+        }
+        modelSelect.style.display = '';
+        modelSelect.addEventListener('change', () => {
+            localStorage.setItem('epistract_model', modelSelect.value);
+        });
+    } catch (_e) {
+        modelSelect.style.display = 'none';
+    }
 }
