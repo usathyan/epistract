@@ -158,43 +158,143 @@ function escapeAttr(str) {
 }
 
 // ---------------------------------------------------------------------------
-// Model selector: fetches /api/models, populates <select>, persists to
-// localStorage under key `epistract_model`. Hidden when <=1 model available
-// (Azure Foundry single-deployment case) per RESEARCH Pitfall 4.
+// Model selector: fetches /api/models, renders an <optgroup>-structured
+// <select> when the backend returns grouped data (OpenRouter live list),
+// otherwise falls back to a flat list (Anthropic/Foundry). A sort toggle
+// button flips between "by group" and "by cost" (cheapest first). Both the
+// selected model (`epistract_model`) and the sort mode (`epistract_model_sort`)
+// persist in localStorage.
 // ---------------------------------------------------------------------------
+const CATEGORY_ORDER = [
+    "Claude (Anthropic)",
+    "GPT / O-series (OpenAI)",
+    "Qwen (Alibaba)",
+    "Gemini / Gemma (Google)",
+    "Mistral",
+    "Llama (Meta)",
+    "DeepSeek",
+    "Grok (xAI)",
+    "Nvidia",
+    "Amazon",
+    "Perplexity",
+    "Cohere",
+    "Other",
+];
+
+function buildGroupedOptions(models, select) {
+    const groups = {};
+    for (const m of models) {
+        const g = m.group || 'Other';
+        if (!groups[g]) groups[g] = [];
+        groups[g].push(m);
+    }
+    for (const catName of CATEGORY_ORDER) {
+        const bucket = groups[catName];
+        if (!bucket || bucket.length === 0) continue;
+        const og = document.createElement('optgroup');
+        og.label = catName;
+        for (const m of bucket) {
+            const opt = document.createElement('option');
+            opt.value = m.id;
+            opt.textContent = m.label;
+            og.appendChild(opt);
+        }
+        select.appendChild(og);
+    }
+    // Catch any group present in data but missing from CATEGORY_ORDER
+    // (future-proofing — should not happen in practice).
+    for (const [catName, bucket] of Object.entries(groups)) {
+        if (CATEGORY_ORDER.includes(catName)) continue;
+        const og = document.createElement('optgroup');
+        og.label = catName;
+        for (const m of bucket) {
+            const opt = document.createElement('option');
+            opt.value = m.id;
+            opt.textContent = m.label;
+            og.appendChild(opt);
+        }
+        select.appendChild(og);
+    }
+}
+
+function buildCostSortedOptions(models, select) {
+    const sorted = [...models].sort(
+        (a, b) => (a.input_cost ?? 0) - (b.input_cost ?? 0)
+    );
+    for (const m of sorted) {
+        const opt = document.createElement('option');
+        opt.value = m.id;
+        opt.textContent = m.label;
+        select.appendChild(opt);
+    }
+}
+
 export async function loadModelSelector() {
     const modelSelect = document.getElementById('model-select');
+    const sortBtn = document.getElementById('model-sort-btn');
     if (!modelSelect) return;
     try {
         const resp = await fetch('/api/models');
         if (!resp.ok) {
             modelSelect.style.display = 'none';
+            if (sortBtn) sortBtn.style.display = 'none';
             return;
         }
         const data = await resp.json();
         if (!data.models || data.models.length <= 1) {
-            // Foundry single-deployment OR no provider configured.
             modelSelect.style.display = 'none';
+            if (sortBtn) sortBtn.style.display = 'none';
             return;
         }
-        // Populate options
-        data.models.forEach(m => {
-            const opt = document.createElement('option');
-            opt.value = m.id;
-            opt.textContent = m.label;
-            modelSelect.appendChild(opt);
-        });
-        // Restore persisted selection — validate against current list
-        // (per RESEARCH Pitfall 3 — provider switch must not leak stale IDs).
-        const saved = localStorage.getItem('epistract_model');
-        if (saved && data.models.some(m => m.id === saved)) {
-            modelSelect.value = saved;
+        const hasGroups = data.models.some(m => m.group);
+        let sortByCost = hasGroups &&
+            localStorage.getItem('epistract_model_sort') === 'cost';
+
+        function rebuildOptions() {
+            modelSelect.innerHTML = '';
+            if (!sortByCost && hasGroups) {
+                buildGroupedOptions(data.models, modelSelect);
+                if (sortBtn) {
+                    sortBtn.textContent = '$↑';
+                    sortBtn.title = 'Sort by cost (cheapest first)';
+                }
+            } else {
+                buildCostSortedOptions(data.models, modelSelect);
+                if (sortBtn) {
+                    sortBtn.textContent = '▤';
+                    sortBtn.title = 'Group by provider';
+                }
+            }
+            const saved = localStorage.getItem('epistract_model');
+            if (saved && data.models.some(m => m.id === saved)) {
+                modelSelect.value = saved;
+            }
         }
+
+        rebuildOptions();
         modelSelect.style.display = '';
+
+        // Sort button is only meaningful when we have grouped data
+        // (Anthropic/Foundry paths return no `group` field per Pitfall 6).
+        if (hasGroups && sortBtn) {
+            sortBtn.style.display = '';
+            sortBtn.addEventListener('click', () => {
+                sortByCost = !sortByCost;
+                localStorage.setItem(
+                    'epistract_model_sort',
+                    sortByCost ? 'cost' : 'group',
+                );
+                rebuildOptions();
+            });
+        } else if (sortBtn) {
+            sortBtn.style.display = 'none';
+        }
+
         modelSelect.addEventListener('change', () => {
             localStorage.setItem('epistract_model', modelSelect.value);
         });
     } catch (_e) {
         modelSelect.style.display = 'none';
+        if (sortBtn) sortBtn.style.display = 'none';
     }
 }
