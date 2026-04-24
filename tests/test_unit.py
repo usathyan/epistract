@@ -2589,3 +2589,34 @@ def test_ctdm06_enrich_non_blocking():
         # Must return None, not raise
         assert enrich._fetch_ct_gov("NCT04303780") is None
         assert enrich._fetch_pubchem("remdesivir") is None
+
+
+# ---------------------------------------------------------------------------
+# FDA-09: community_label_anchors — Task 1 tests
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.unit
+def test_fda09_domain_yaml_has_anchors():
+    """FDA-09 SC1: fda-product-labels domain.yaml contains community_label_anchors list."""
+    import yaml
+    from core.domain_resolver import DOMAINS_DIR
+
+    yaml_path = DOMAINS_DIR / "fda-product-labels" / "domain.yaml"
+    schema = yaml.safe_load(yaml_path.read_text())
+    assert "community_label_anchors" in schema, "community_label_anchors missing from domain.yaml"
+    anchors = schema["community_label_anchors"]
+    assert anchors == ["DRUG_PRODUCT", "ACTIVE_INGREDIENT", "INDICATION", "MANUFACTURER"]
+
+
+@pytest.mark.unit
+def test_fda09_anchor_types_exist_in_entity_types():
+    """FDA-09: all anchor types must be defined entity_types in the schema."""
+    import yaml
+    from core.domain_resolver import DOMAINS_DIR
+
+    yaml_path = DOMAINS_DIR / "fda-product-labels" / "domain.yaml"
+    schema = yaml.safe_load(yaml_path.read_text())
+    entity_type_names = set(schema.get("entity_types", {}).keys())
+    for anchor in schema["community_label_anchors"]:
+        assert anchor in entity_type_names, f"Anchor {anchor!r} not found in entity_types"
