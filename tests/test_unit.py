@@ -2620,3 +2620,114 @@ def test_fda09_anchor_types_exist_in_entity_types():
     entity_type_names = set(schema.get("entity_types", {}).keys())
     for anchor in schema["community_label_anchors"]:
         assert anchor in entity_type_names, f"Anchor {anchor!r} not found in entity_types"
+
+
+# ---------------------------------------------------------------------------
+# FDA-09: _anchor_label() unit tests — Task 2
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.unit
+def test_fda09_anchor_label_single_match():
+    from core.label_communities import _anchor_label
+
+    members = [{"name": "Fluconazole", "entity_type": "DRUG_PRODUCT"}]
+    anchors = ["DRUG_PRODUCT", "ACTIVE_INGREDIENT", "INDICATION"]
+    assert _anchor_label(members, anchors) == "Fluconazole"
+
+
+@pytest.mark.unit
+def test_fda09_anchor_label_two_matches_slash():
+    from core.label_communities import _anchor_label
+
+    members = [
+        {"name": "Aspirin", "entity_type": "DRUG_PRODUCT"},
+        {"name": "Ibuprofen", "entity_type": "DRUG_PRODUCT"},
+    ]
+    result = _anchor_label(members, ["DRUG_PRODUCT"])
+    assert result == "Aspirin / Ibuprofen"
+
+
+@pytest.mark.unit
+def test_fda09_anchor_label_three_plus_more():
+    from core.label_communities import _anchor_label
+
+    members = [
+        {"name": "Alpha", "entity_type": "DRUG_PRODUCT"},
+        {"name": "Beta", "entity_type": "DRUG_PRODUCT"},
+        {"name": "Gamma", "entity_type": "DRUG_PRODUCT"},
+    ]
+    result = _anchor_label(members, ["DRUG_PRODUCT"])
+    assert result == "Alpha + 2 more"
+
+
+@pytest.mark.unit
+def test_fda09_anchor_label_truncation():
+    from core.label_communities import _anchor_label
+
+    long_name = "A" * 50  # 50 chars; _clean_name title-cases but 'A'*50 stays 50 'A's
+    members = [{"name": long_name, "entity_type": "DRUG_PRODUCT"}]
+    result = _anchor_label(members, ["DRUG_PRODUCT"])
+    assert result is not None
+    assert result.endswith("…"), f"Expected ellipsis suffix, got: {result!r}"
+    assert len(result) == 41  # 40 chars + 1 ellipsis char
+
+
+@pytest.mark.unit
+def test_fda09_anchor_label_priority_fallback():
+    """DRUG_PRODUCT absent; falls back to ACTIVE_INGREDIENT."""
+    from core.label_communities import _anchor_label
+
+    members = [{"name": "Fluoxetine", "entity_type": "ACTIVE_INGREDIENT"}]
+    result = _anchor_label(members, ["DRUG_PRODUCT", "ACTIVE_INGREDIENT", "INDICATION"])
+    assert result == "Fluoxetine"
+
+
+@pytest.mark.unit
+def test_fda09_anchor_label_no_match_returns_none():
+    from core.label_communities import _anchor_label
+
+    members = [
+        {"name": "Some Mechanism", "entity_type": "MECHANISM_OF_ACTION"},
+        {"name": "500mg Tablet Daily", "entity_type": "DOSAGE_REGIMEN"},
+    ]
+    result = _anchor_label(members, ["DRUG_PRODUCT", "ACTIVE_INGREDIENT", "INDICATION"])
+    assert result is None
+
+
+@pytest.mark.unit
+def test_fda09_backward_compat_no_anchors(tmp_path, monkeypatch):
+    """Domains without community_label_anchors must use _generate_label (no crash)."""
+    import json
+    import core.label_communities as lc
+
+    monkeypatch.setattr(lc, "_load_domain_anchors", lambda gd: [])
+
+    communities = {"gene:tp53": "community_0"}
+    graph_data = {
+        "metadata": {"domain": "drug-discovery"},
+        "nodes": [{"id": "gene:tp53", "name": "TP53", "entity_type": "GENE"}],
+    }
+    (tmp_path / "communities.json").write_text(json.dumps(communities))
+    (tmp_path / "graph_data.json").write_text(json.dumps(graph_data))
+
+    result = lc.label_communities(tmp_path)
+    assert isinstance(result, dict)
+    assert len(result) == 1
+
+
+@pytest.mark.unit
+def test_fda09_backward_compat_missing_domain_metadata(tmp_path):
+    """graph_data.json with no metadata.domain -> _generate_label fallback (no crash)."""
+    import json
+    import core.label_communities as lc
+
+    communities = {"gene:brca1": "community_0"}
+    graph_data = {
+        "nodes": [{"id": "gene:brca1", "name": "BRCA1", "entity_type": "GENE"}],
+    }
+    (tmp_path / "communities.json").write_text(json.dumps(communities))
+    (tmp_path / "graph_data.json").write_text(json.dumps(graph_data))
+
+    result = lc.label_communities(tmp_path)
+    assert isinstance(result, dict)

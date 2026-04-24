@@ -14,6 +14,67 @@ from collections import Counter
 from pathlib import Path
 
 
+def _anchor_label(members: list[dict], anchors: list[str]) -> str | None:
+    """Generate a community label using domain-configured anchor entity types.
+
+    Walks the priority list (anchors) in order; first anchor type that has
+    at least one member in the community becomes the label source.
+
+    Args:
+        members: List of node dicts with keys "name" and "entity_type".
+        anchors: Ordered priority list of entity type names from domain.yaml
+                 community_label_anchors. First match wins.
+
+    Returns:
+        Label string if any anchor matches, else None (caller falls back to
+        _generate_label for backward compatibility).
+    """
+    MAX_NAME_LEN = 40
+
+    def _truncate(name: str) -> str:
+        cleaned = _clean_name(name)
+        return cleaned[:MAX_NAME_LEN] + "…" if len(cleaned) > MAX_NAME_LEN else cleaned
+
+    for anchor_type in anchors:
+        matched = [m for m in members if m.get("entity_type") == anchor_type]
+        if not matched:
+            continue
+        names = [_truncate(m["name"]) for m in matched]
+        if len(names) == 1:
+            return names[0]
+        if len(names) == 2:
+            return f"{names[0]} / {names[1]}"
+        return f"{names[0]} + {len(names) - 1} more"
+    return None
+
+
+def _load_domain_anchors(graph_data: dict) -> list[str]:
+    """Load community_label_anchors from the domain yaml referenced by graph_data.
+
+    Reads metadata.domain from graph_data, resolves the domain via
+    core.domain_resolver.resolve_domain, and returns community_label_anchors.
+    Returns empty list on any failure to preserve backward compatibility.
+
+    Args:
+        graph_data: Parsed graph_data.json dict.
+
+    Returns:
+        List of anchor entity type names, or [] if not configured or on error.
+    """
+    try:
+        from core.domain_resolver import resolve_domain
+
+        domain_name = graph_data.get("metadata", {}).get("domain")
+        if not domain_name:
+            return []
+        info = resolve_domain(domain_name)
+        schema = info.get("schema") or {}
+        anchors = schema.get("community_label_anchors", [])
+        return anchors if isinstance(anchors, list) else []
+    except Exception:
+        return []
+
+
 def _top_entities(members: list[dict], n: int = 5) -> list[str]:
     """Return the top-N most-connected entity names (by link count) in a community."""
     # Sort by number of connections (approximated by confidence or just alphabetically)
@@ -176,6 +237,10 @@ def label_communities(output_dir: Path) -> dict:
     for node in graph_data.get("nodes", []):
         node_lookup[node["id"]] = node
 
+    # Load domain-configured label anchors (FDA-09). Returns [] when
+    # community_label_anchors is absent from domain.yaml (backward compat).
+    domain_anchors = _load_domain_anchors(graph_data)
+
     # Group members by community
     community_members = {}
     for entity_id, community_name in communities.items():
@@ -191,7 +256,10 @@ def label_communities(output_dir: Path) -> dict:
 
     for old_name in sorted(community_members.keys()):
         members = community_members[old_name]
-        label = _generate_label(members)
+        if domain_anchors:
+            label = _anchor_label(members, domain_anchors) or _generate_label(members)
+        else:
+            label = _generate_label(members)
         label_map[old_name] = label
         results.append({"community": old_name, "label": label, "members": len(members)})
 
