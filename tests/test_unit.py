@@ -3167,7 +3167,20 @@ def test_get_models_openrouter_live(tmp_path, monkeypatch):
     mock_response.raise_for_status = MagicMock()
     mock_response.json = MagicMock(return_value=mock_data)
 
-    async def mock_get_fn(*args, **kwargs):
+    async def mock_get_fn(url, *args, **kwargs):
+        if "/endpoints" in str(url):
+            healthy = MagicMock()
+            healthy.raise_for_status = MagicMock()
+            healthy.json = MagicMock(
+                return_value={
+                    "data": {
+                        "endpoints": [
+                            {"uptime_last_5m": 99.9, "uptime_last_1d": 99.9}
+                        ]
+                    }
+                }
+            )
+            return healthy
         return mock_response
 
     from examples.workbench.server import create_app
@@ -3243,3 +3256,344 @@ def test_get_models_openrouter_fallback(tmp_path, monkeypatch):
         assert "group" not in m, (
             f"Static fallback models must NOT have 'group' field, found in {m}"
         )
+
+
+# ========================================================================
+# Phase 05-05: OpenRouter model health filtering (WB-MODEL-02)
+# ========================================================================
+
+
+@pytest.mark.unit
+def test_check_or_model_health_no_endpoints():
+    """05-05: Empty endpoints array excludes both free and paid models."""
+    import asyncio
+    from unittest.mock import AsyncMock, MagicMock
+
+    from examples.workbench.server import _check_or_model_health
+
+    models = [
+        {"id": "google/broken:free", "free": True, "label": "Broken (free)"},
+        {"id": "anthropic/broken-paid", "free": False, "label": "Broken ($5/M)"},
+    ]
+
+    async def mock_get(url, **kwargs):
+        resp = MagicMock()
+        resp.raise_for_status = MagicMock()
+        resp.json = MagicMock(return_value={"data": {"endpoints": []}})
+        return resp
+
+    client = MagicMock()
+    client.get = AsyncMock(side_effect=mock_get)
+
+    result = asyncio.run(_check_or_model_health(models, client))
+    ids = [m["id"] for m in result]
+    assert "google/broken:free" not in ids, (
+        f"Free model with 0 endpoints must be excluded; got {ids}"
+    )
+    assert "anthropic/broken-paid" not in ids, (
+        f"Paid model with 0 endpoints must be excluded; got {ids}"
+    )
+
+
+@pytest.mark.unit
+def test_check_or_model_health_low_uptime():
+    """05-05: Free model with uptime_last_5m < 70% is excluded (5m signal overrides 1d)."""
+    import asyncio
+    from unittest.mock import AsyncMock, MagicMock
+
+    from examples.workbench.server import _check_or_model_health
+
+    models = [
+        {"id": "google/gemma-3-27b-it:free", "free": True, "label": "Gemma 3 27B (free)"},
+    ]
+
+    async def mock_get(url, **kwargs):
+        resp = MagicMock()
+        resp.raise_for_status = MagicMock()
+        resp.json = MagicMock(
+            return_value={
+                "data": {
+                    "endpoints": [
+                        {"uptime_last_5m": 37.8, "uptime_last_1d": 99.2}
+                    ]
+                }
+            }
+        )
+        return resp
+
+    client = MagicMock()
+    client.get = AsyncMock(side_effect=mock_get)
+
+    result = asyncio.run(_check_or_model_health(models, client))
+    assert len(result) == 0, (
+        f"Free model with uptime_5m=37.8 must be excluded; got {result}"
+    )
+
+
+@pytest.mark.unit
+def test_check_or_model_health_null_5m_good_1d():
+    """05-05: Free model with null uptime_5m but uptime_1d >= 80% is kept (low-traffic historical)."""
+    import asyncio
+    from unittest.mock import AsyncMock, MagicMock
+
+    from examples.workbench.server import _check_or_model_health
+
+    models = [
+        {"id": "google/gemma-3-9b-it:free", "free": True, "label": "Gemma 3 9B (free)"},
+    ]
+
+    async def mock_get(url, **kwargs):
+        resp = MagicMock()
+        resp.raise_for_status = MagicMock()
+        resp.json = MagicMock(
+            return_value={
+                "data": {
+                    "endpoints": [
+                        {"uptime_last_5m": None, "uptime_last_1d": 99.9}
+                    ]
+                }
+            }
+        )
+        return resp
+
+    client = MagicMock()
+    client.get = AsyncMock(side_effect=mock_get)
+
+    result = asyncio.run(_check_or_model_health(models, client))
+    ids = [m["id"] for m in result]
+    assert "google/gemma-3-9b-it:free" in ids, (
+        f"Free model with null 5m but 1d=99.9 must be kept; got {ids}"
+    )
+
+
+@pytest.mark.unit
+def test_check_or_model_health_null_5m_bad_1d():
+    """05-05: Free model with null uptime_5m and uptime_1d < 80% is excluded."""
+    import asyncio
+    from unittest.mock import AsyncMock, MagicMock
+
+    from examples.workbench.server import _check_or_model_health
+
+    models = [
+        {"id": "google/gemma-2-9b-it:free", "free": True, "label": "Gemma 2 9B (free)"},
+    ]
+
+    async def mock_get(url, **kwargs):
+        resp = MagicMock()
+        resp.raise_for_status = MagicMock()
+        resp.json = MagicMock(
+            return_value={
+                "data": {
+                    "endpoints": [
+                        {"uptime_last_5m": None, "uptime_last_1d": 45.0}
+                    ]
+                }
+            }
+        )
+        return resp
+
+    client = MagicMock()
+    client.get = AsyncMock(side_effect=mock_get)
+
+    result = asyncio.run(_check_or_model_health(models, client))
+    assert len(result) == 0, (
+        f"Free model with null 5m and 1d=45.0 must be excluded; got {result}"
+    )
+
+
+@pytest.mark.unit
+def test_check_or_model_health_network_error():
+    """05-05: Network error during health check is fail-open — model is kept."""
+    import asyncio
+    from unittest.mock import AsyncMock, MagicMock
+
+    from examples.workbench.server import _check_or_model_health
+
+    models = [
+        {"id": "google/gemma-3-27b-it:free", "free": True, "label": "Gemma 3 27B (free)"},
+    ]
+
+    async def mock_get(url, **kwargs):
+        import httpx
+
+        raise httpx.ConnectError("boom")
+
+    client = MagicMock()
+    client.get = AsyncMock(side_effect=mock_get)
+
+    result = asyncio.run(_check_or_model_health(models, client))
+    ids = [m["id"] for m in result]
+    assert "google/gemma-3-27b-it:free" in ids, (
+        f"Network error must be fail-open (model kept); got {ids}"
+    )
+
+
+@pytest.mark.unit
+def test_check_or_model_health_paid_uptime_passthrough():
+    """05-05: Paid model with very low uptime_5m is kept — uptime exclusion applies to free only."""
+    import asyncio
+    from unittest.mock import AsyncMock, MagicMock
+
+    from examples.workbench.server import _check_or_model_health
+
+    models = [
+        {
+            "id": "anthropic/claude-sonnet-4",
+            "free": False,
+            "label": "Claude Sonnet 4 ($3.00/M)",
+        },
+    ]
+
+    async def mock_get(url, **kwargs):
+        resp = MagicMock()
+        resp.raise_for_status = MagicMock()
+        resp.json = MagicMock(
+            return_value={
+                "data": {
+                    "endpoints": [
+                        {"uptime_last_5m": 20.0, "uptime_last_1d": 55.0}
+                    ]
+                }
+            }
+        )
+        return resp
+
+    client = MagicMock()
+    client.get = AsyncMock(side_effect=mock_get)
+
+    result = asyncio.run(_check_or_model_health(models, client))
+    ids = [m["id"] for m in result]
+    assert "anthropic/claude-sonnet-4" in ids, (
+        f"Paid model must NOT be excluded on uptime grounds; got {ids}"
+    )
+
+
+@pytest.mark.unit
+def test_check_or_model_health_paid_no_endpoints():
+    """05-05: Paid model with empty endpoints array IS excluded (no_endpoints applies to all)."""
+    import asyncio
+    from unittest.mock import AsyncMock, MagicMock
+
+    from examples.workbench.server import _check_or_model_health
+
+    models = [
+        {
+            "id": "~anthropic/claude-opus-latest",
+            "free": False,
+            "label": "Claude Opus Latest ($15.00/M)",
+        },
+    ]
+
+    async def mock_get(url, **kwargs):
+        resp = MagicMock()
+        resp.raise_for_status = MagicMock()
+        resp.json = MagicMock(return_value={"data": {"endpoints": []}})
+        return resp
+
+    client = MagicMock()
+    client.get = AsyncMock(side_effect=mock_get)
+
+    result = asyncio.run(_check_or_model_health(models, client))
+    assert len(result) == 0, (
+        f"Paid model with 0 endpoints must be excluded; got {result}"
+    )
+
+
+@pytest.mark.unit
+def test_get_models_openrouter_health_filtered(tmp_path, monkeypatch):
+    """05-05: GET /api/models filters out broken model (empty endpoints) via health check."""
+    import json as _json
+    from unittest.mock import AsyncMock, MagicMock, patch
+
+    import examples.workbench.server as srv
+
+    _clear_llm_env(monkeypatch)
+    monkeypatch.setenv("OPENROUTER_API_KEY", "sk-or-v1-test-key")
+
+    # Reset cache so the test always triggers a fresh fetch
+    srv._or_models_cache["data"] = None
+    srv._or_models_cache["fetched_at"] = 0.0
+
+    (tmp_path / "graph_data.json").write_text(
+        _json.dumps({"nodes": [], "links": [], "metadata": {"domain": "contracts"}})
+    )
+
+    async def mock_get_fn(url, *args, **kwargs):
+        url_s = str(url)
+        if "/endpoints" in url_s:
+            resp = MagicMock()
+            resp.raise_for_status = MagicMock()
+            if "google/broken:free" in url_s:
+                resp.json = MagicMock(return_value={"data": {"endpoints": []}})
+            else:
+                resp.json = MagicMock(
+                    return_value={
+                        "data": {
+                            "endpoints": [
+                                {"uptime_last_5m": 99.9, "uptime_last_1d": 99.9}
+                            ]
+                        }
+                    }
+                )
+            return resp
+        resp = MagicMock()
+        resp.raise_for_status = MagicMock()
+        resp.json = MagicMock(
+            return_value={
+                "data": [
+                    {
+                        "id": "google/broken:free",
+                        "name": "Google: Broken",
+                        "architecture": {"output_modalities": ["text"]},
+                        "pricing": {"prompt": "0", "completion": "0"},
+                        "context_length": 8192,
+                        "expiration_date": None,
+                    },
+                    {
+                        "id": "keepme/healthy:free",
+                        "name": "KeepMe: Healthy",
+                        "architecture": {"output_modalities": ["text"]},
+                        "pricing": {"prompt": "0", "completion": "0"},
+                        "context_length": 8192,
+                        "expiration_date": None,
+                    },
+                    {
+                        "id": "anthropic/claude-sonnet-4",
+                        "name": "Anthropic: Claude Sonnet 4",
+                        "architecture": {"output_modalities": ["text"]},
+                        "pricing": {"prompt": "0.000003", "completion": "0.000015"},
+                        "context_length": 200000,
+                        "expiration_date": None,
+                    },
+                ]
+            }
+        )
+        return resp
+
+    from examples.workbench.server import create_app
+    from starlette.testclient import TestClient
+
+    app = create_app(tmp_path, domain="contracts")
+    client = TestClient(app)
+
+    with patch("httpx.AsyncClient.get", new=AsyncMock(side_effect=mock_get_fn)):
+        resp = client.get("/api/models")
+
+    assert resp.status_code == 200
+    data = resp.json()
+    assert data["provider"] == "openrouter", (
+        f"Expected provider=openrouter, got {data['provider']!r}"
+    )
+    model_ids = {m["id"] for m in data["models"]}
+    assert len(data["models"]) == 2, (
+        f"Expected 2 models after health filter (broken excluded); got {len(data['models'])}: {model_ids}"
+    )
+    assert "google/broken:free" not in model_ids, (
+        f"Broken model (empty endpoints) must be excluded; got {model_ids}"
+    )
+    assert "keepme/healthy:free" in model_ids, (
+        f"Healthy free model must be kept; got {model_ids}"
+    )
+    assert "anthropic/claude-sonnet-4" in model_ids, (
+        f"Healthy paid model must be kept; got {model_ids}"
+    )
