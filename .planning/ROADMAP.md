@@ -68,8 +68,8 @@
 **Plans:** 2 plans
 
 Plans:
-- [ ] 04-01-PLAN.md — Add anchors to fda-product-labels domain.yaml, refactor label_communities.py with anchor path + backward-compat fallback, update domain_wizard.py to emit anchors
-- [ ] 04-02-PLAN.md — Re-run labeler on fda-smoke-test graph and human-verify readable output
+- [x] 04-01-PLAN.md — Add anchors to fda-product-labels domain.yaml, refactor label_communities.py with anchor path + backward-compat fallback, update domain_wizard.py to emit anchors
+- [x] 04-02-PLAN.md — Re-run labeler on fda-smoke-test graph and human-verify readable output
 
 **Success Criteria:**
 1. `domains/fda-product-labels/domain.yaml` contains `community_label_anchors: [DRUG_PRODUCT, ACTIVE_INGREDIENT, INDICATION, MANUFACTURER]`
@@ -77,6 +77,29 @@ Plans:
 3. Community labels for fda-product-labels graph use drug/ingredient names as anchors (e.g. "Fluconazole", "Risperidone") rather than mechanism descriptions
 4. `core/domain_wizard.py` generates `community_label_anchors` in domain.yaml output for all new domains
 5. Existing domains (drug-discovery, contracts, clinicaltrials) produce unchanged or improved labels after the refactor
+
+### Phase 5: Workbench Visualization Enhancements
+
+**Goal:** Make the workbench graph panel visibly appealing and interactive — add drag-to-pin with accent-color feedback, readable labels (semi-transparent halo + zoom-aware scaling), degree-based node sizing (hubs render larger), Ctrl/Cmd+click multiselect, and a two-button toolbar ("Fit View" recenters; "Reset Pins" clears pin state). Change surface is confined to three static files: `examples/workbench/static/graph.js`, `index.html`, and `style.css`. No Python or backend changes.
+
+**Requirements:** WB-VIS-01, WB-VIS-02, WB-VIS-03, WB-VIS-04, WB-VIS-05, WB-VIS-06, WB-VIS-07
+**Depends on:** Phase 4
+**Plans:** 2 plans
+
+Plans:
+- [ ] 05-01-PLAN.md — Node font halo + label scaling + degree-based sizing + explicit interaction block (multiselect, dragNodes, navigationButtons) in graph.js
+- [ ] 05-02-PLAN.md — pinnedNodes Set + dragEnd pin handler + Fit View / Reset Pins toolbar (HTML+CSS+JS) + window-resize popover cleanup; ends with human smoke-test checkpoint
+
+**Success Criteria:**
+1. Node labels render at 12px with `rgba(255, 255, 255, 0.85)` halo; auto-hide below `drawThreshold: 6`
+2. Node size scales with degree in 8–24px range (isolated = 8px, hub = 24px)
+3. Ctrl/Cmd+click selects multiple nodes via vis-network built-in multiselect
+4. Dragging a node pins it in place with 2px `#4a6cf7` accent border; canvas-pan does not create phantom pins
+5. "Fit View" button animates `network.fit()` over 400ms; "Reset Pins" restores entity-type borders and clears `pinnedNodes` Set
+6. Window resize closes any open node popover so it does not float stale
+7. Existing stabilization hook, click handler, and doubleClick neighborhood-zoom (D-17) remain unmodified
+8. `examples/workbench/static/graph.js` stays under 350 LOC
+9. `python -m pytest tests/test_unit.py -v` exits 0 (no Python code touched)
 
 ---
 
