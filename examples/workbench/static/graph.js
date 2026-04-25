@@ -195,43 +195,11 @@ function buildGraph() {
         }
     });
 
-    // Group drag: track the dragged node and its connected neighbors so they
-    // move together. Physics is off post-stabilization, so we move neighbors
-    // manually via network.moveNode() on each dragging event.
-    let _dragGroup = null; // { nodeId, connected, positions }
-
-    network.on('dragStart', (params) => {
-        if (!params.nodes || params.nodes.length === 0) { _dragGroup = null; return; }
-        const nodeId = params.nodes[0];
-        const connected = network.getConnectedNodes(nodeId);
-        const positions = {};
-        [nodeId, ...connected].forEach(id => {
-            positions[id] = { ...network.getPosition(id) };
-        });
-        _dragGroup = { nodeId, connected, positions };
-    });
-
-    network.on('dragging', (params) => {
-        if (!_dragGroup || !params.nodes || params.nodes[0] !== _dragGroup.nodeId) return;
-        const cur = network.getPosition(_dragGroup.nodeId);
-        const start = _dragGroup.positions[_dragGroup.nodeId];
-        const dx = cur.x - start.x;
-        const dy = cur.y - start.y;
-        _dragGroup.connected.forEach(id => {
-            const s = _dragGroup.positions[id];
-            network.moveNode(id, s.x + dx, s.y + dy);
-        });
-    });
-
-    // Drag-to-pin: when user drops a node, pin it and all neighbors that moved with it.
+    // Drag-to-pin: when user drops a node, pin it and apply the accent border.
     // Guard against canvas pan (params.nodes is empty for non-node drags).
     network.on('dragEnd', (params) => {
-        if (!params.nodes || params.nodes.length === 0) { _dragGroup = null; return; }
-        const movedIds = _dragGroup
-            ? [_dragGroup.nodeId, ..._dragGroup.connected]
-            : params.nodes;
-        _dragGroup = null;
-        const updates = movedIds.map(nodeId => {
+        if (!params.nodes || params.nodes.length === 0) return;
+        const updates = params.nodes.map(nodeId => {
             pinnedNodes.add(nodeId);
             return {
                 id: nodeId,
