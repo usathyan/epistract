@@ -84,11 +84,11 @@ Plans:
 
 **Requirements:** WB-VIS-01, WB-VIS-02, WB-VIS-03, WB-VIS-04, WB-VIS-05, WB-VIS-06, WB-VIS-07
 **Depends on:** Phase 4
-**Plans:** 2 plans
+**Plans:** 5/5 plans complete
 
 Plans:
-- [ ] 05-01-PLAN.md — Node font halo + label scaling + degree-based sizing + explicit interaction block (multiselect, dragNodes, navigationButtons) in graph.js
-- [ ] 05-02-PLAN.md — pinnedNodes Set + dragEnd pin handler + Fit View / Reset Pins toolbar (HTML+CSS+JS) + window-resize popover cleanup; ends with human smoke-test checkpoint
+- [x] 05-01-PLAN.md — Node font halo + label scaling + degree-based sizing + explicit interaction block (multiselect, dragNodes, navigationButtons) in graph.js
+- [x] 05-02-PLAN.md — pinnedNodes Set + dragEnd pin handler + Fit View / Reset Pins toolbar (HTML+CSS+JS) + window-resize popover cleanup; ends with human smoke-test checkpoint
 
 **Success Criteria:**
 1. Node labels render at 12px with `rgba(255, 255, 255, 0.85)` halo; auto-hide below `drawThreshold: 6`
