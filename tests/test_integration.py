@@ -14,13 +14,12 @@ from __future__ import annotations
 
 import json
 import shutil
-import sys
 from pathlib import Path
 
 import pytest
 import yaml
 
-from conftest import FIXTURES_DIR, HAS_BIOPYTHON, HAS_RDKIT, HAS_SIFTKG, PROJECT_ROOT
+from conftest import FIXTURES_DIR, HAS_RDKIT, HAS_SIFTKG
 
 # ---------------------------------------------------------------------------
 # Ensure core/ is importable (conftest.py already adds it to sys.path)
@@ -37,7 +36,7 @@ def test_build_extraction_writes_json(tmp_path):
     """write_extraction produces valid DocumentExtraction JSON on disk."""
     from build_extraction import write_extraction
 
-    result_path = write_extraction(
+    write_extraction(
         doc_id="test_doc.pdf",
         output_dir=str(tmp_path),
         entities=[
@@ -59,9 +58,7 @@ def test_build_extraction_writes_json(tmp_path):
     assert data["document_id"] == "test_doc.pdf", (
         f"Expected document_id 'test_doc.pdf', got {data['document_id']}"
     )
-    assert len(data["entities"]) == 1, (
-        f"Expected 1 entity, got {len(data['entities'])}"
-    )
+    assert len(data["entities"]) == 1, f"Expected 1 entity, got {len(data['entities'])}"
 
 
 @pytest.mark.integration
@@ -227,7 +224,9 @@ def test_cross_domain_both_produce_valid_graphs(tmp_path):
     )
     cmd_build(str(drug_dir), domain_name="drug-discovery")
     drug_graph = drug_dir / "graph_data.json"
-    assert drug_graph.exists(), "cmd_build did not produce graph_data.json for drug-discovery"
+    assert drug_graph.exists(), (
+        "cmd_build did not produce graph_data.json for drug-discovery"
+    )
     drug_data = json.loads(drug_graph.read_text())
     assert len(drug_data.get("nodes", [])) > 0, "Drug-discovery graph has no nodes"
 
@@ -237,17 +236,34 @@ def test_cross_domain_both_produce_valid_graphs(tmp_path):
         doc_id="test_vendor.pdf",
         output_dir=str(contract_dir),
         entities=[
-            {"name": "PCCA", "entity_type": "PARTY", "confidence": 0.95, "context": "Licensor"},
-            {"name": "Catering", "entity_type": "SERVICE", "confidence": 0.90, "context": "Food services"},
+            {
+                "name": "PCCA",
+                "entity_type": "PARTY",
+                "confidence": 0.95,
+                "context": "Licensor",
+            },
+            {
+                "name": "Catering",
+                "entity_type": "SERVICE",
+                "confidence": 0.90,
+                "context": "Food services",
+            },
         ],
         relations=[
-            {"source_entity": "PCCA", "target_entity": "Catering", "relation_type": "PROVIDES_SERVICE",
-             "confidence": 0.88, "evidence": "PCCA provides catering services."},
+            {
+                "source_entity": "PCCA",
+                "target_entity": "Catering",
+                "relation_type": "PROVIDES_SERVICE",
+                "confidence": 0.88,
+                "evidence": "PCCA provides catering services.",
+            },
         ],
         domain_name="contracts",
     )
     contract_extraction = contract_dir / "extractions" / "test_vendor.pdf.json"
-    assert contract_extraction.exists(), "write_extraction did not create file for contracts"
+    assert contract_extraction.exists(), (
+        "write_extraction did not create file for contracts"
+    )
     contract_data = json.loads(contract_extraction.read_text())
     assert contract_data["domain_name"] == "Contract Analysis", (
         f"Expected domain_name 'Contract Analysis', got {contract_data['domain_name']}"
@@ -271,12 +287,8 @@ def test_cross_domain_resolver_loads_correct_schemas():
         assert "relation_types" in data, (
             f"Missing relation_types in {domain_name} domain.yaml"
         )
-        assert len(data["entity_types"]) > 0, (
-            f"Empty entity_types in {domain_name}"
-        )
-        assert len(data["relation_types"]) > 0, (
-            f"Empty relation_types in {domain_name}"
-        )
+        assert len(data["entity_types"]) > 0, f"Empty entity_types in {domain_name}"
+        assert len(data["relation_types"]) > 0, f"Empty relation_types in {domain_name}"
 
 
 # ---------------------------------------------------------------------------
@@ -339,7 +351,9 @@ def wizard_test_domain():
 
     # Validate epistemic before writing
     validation = validate_generated_epistemic(epistemic_py, "test_leases_integration")
-    assert validation["valid"], f"Epistemic validation failed: {validation.get('error')}"
+    assert validation["valid"], (
+        f"Epistemic validation failed: {validation.get('error')}"
+    )
 
     # Write package
     write_domain_package(
@@ -362,7 +376,9 @@ def test_wizard_domain_pipeline(wizard_test_domain):
     from domain_resolver import resolve_domain, list_domains
 
     domains = list_domains()
-    assert domain_name in domains, f"Generated domain not discovered. Available: {domains}"
+    assert domain_name in domains, (
+        f"Generated domain not discovered. Available: {domains}"
+    )
 
     # 2. resolve_domain returns valid schema
     result = resolve_domain(domain_name)
@@ -430,3 +446,83 @@ def test_wizard_generated_domain_yaml_loadable(wizard_test_domain):
     assert len(schema["relation_types"]) == 4, (
         f"Expected 4 relation types, got {len(schema['relation_types'])}"
     )
+
+
+# ---------------------------------------------------------------------------
+# Phase 6: db_corpus → ingest hand-off (DB-08)
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.integration
+@pytest.mark.skipif(not HAS_SIFTKG, reason="sift-kg not installed")
+def test_db_corpus_to_ingest(tmp_path):
+    """Corpus produced by write_db_corpus is a valid input to discover_corpus.
+
+    Builds a 4-row corpus from tests/fixtures/sample.sqlite using
+    write_db_corpus.serialize_row + fetch_sqlite_rows directly, then
+    verifies that core.ingest_documents.discover_corpus picks them up
+    as plain-text documents.
+
+    Pins DB-08 from .planning/phases/06-structured-data-corpus-skill/06-VALIDATION.md.
+    """
+    write_db_corpus = pytest.importorskip("write_db_corpus")
+    from ingest_documents import discover_corpus  # core/ on sys.path via conftest
+
+    docs_dir = tmp_path / "docs"
+    docs_dir.mkdir()
+
+    cols, rows = write_db_corpus.fetch_sqlite_rows(
+        db_path=str(FIXTURES_DIR / "sample.sqlite"),
+        table="patients",
+        pk_col="id",
+        limit=10,
+    )
+
+    # Use a connection string with credentials to prove redaction works
+    # end-to-end. The redacted form is what gets embedded in headers.
+    raw_url = "postgresql+psycopg2://alice:s3cret@db.example.com/clinical"
+    redacted = write_db_corpus._redact_url(raw_url)
+    assert "alice" not in redacted and "s3cret" not in redacted
+
+    written: list[str] = []
+    for row in rows:
+        fname = write_db_corpus.serialize_row(
+            row=row,
+            table_name="patients",
+            pk_col="id",
+            db_url_redacted=redacted,
+            docs_dir=docs_dir,
+        )
+        if fname:
+            written.append(fname)
+
+    assert len(written) == 4, f"expected 4 written, got {len(written)}: {written}"
+    assert {
+        "patients_1.txt",
+        "patients_2.txt",
+        "patients_3.txt",
+        "patients_5.txt",
+    } == set(written)
+
+    # T-6-01 end-to-end: no credentials must appear in any written .txt file.
+    for f in docs_dir.iterdir():
+        content = f.read_text(encoding="utf-8")
+        assert "alice" not in content, f"credential leak in {f.name}"
+        assert "s3cret" not in content, f"credential leak in {f.name}"
+
+    # DB-08: the corpus directory is a valid input to discover_corpus.
+    # discover_corpus returns list[Path] (sift-kg delegates to discover_documents).
+    discovered = discover_corpus(docs_dir)
+    assert len(discovered) >= 4, (
+        f"expected >=4 discovered docs, got {len(discovered)}: {discovered}"
+    )
+    txt_paths = [p for p in discovered if str(p).endswith(".txt")]
+    assert len(txt_paths) >= 4
+    # Filenames must include all 4 we wrote.
+    discovered_names = {Path(p).name for p in discovered}
+    assert {
+        "patients_1.txt",
+        "patients_2.txt",
+        "patients_3.txt",
+        "patients_5.txt",
+    }.issubset(discovered_names)
