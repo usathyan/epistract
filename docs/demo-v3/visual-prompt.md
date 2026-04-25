@@ -54,84 +54,12 @@ A clean technical schematic illustrating a two-layer knowledge graph framework c
 
 ---
 
-## Mermaid diagram alternative (if you'd rather skip image generation)
-
-If you want a pure technical diagram instead of a generated image, this Mermaid block renders cleanly in any markdown viewer or via `bunx beautiful-mermaid`:
-
-```mermaid
-flowchart TB
-    subgraph EPI [" Layer 2 — Epistemic Super-Domain "]
-        direction LR
-        ES1["asserted"]
-        ES2["prophetic"]
-        ES3["hypothesized"]
-        ES4["contested"]
-        ES5["contradiction"]
-        ES6["negative"]
-    end
-
-    subgraph BF [" Layer 1 — Brute Facts KG "]
-        direction TB
-        G["278 nodes · 855 edges<br/>10 Louvain communities<br/>13 entity types · 22 relation types<br/>(drug-discovery domain, S6 GLP-1 corpus)"]
-    end
-
-    G -. "epistemic classification<br/>(rules + doc-type inference)" .-> EPI
-
-    P["persona.yaml<br/>(senior drug-discovery<br/>CI analyst)"]
-    P -- "system prompt" --> WC["Workbench Chat<br/>(reactive)"]
-    P -- "system prompt" --> NB["epistemic_narrative.md<br/>(proactive · auto-generated · 1166 words)"]
-
-    EPI -. reads .-> P
-
-    subgraph DOM [" Domain Configs (4 today) "]
-        direction LR
-        D1["drug-discovery<br/>(13/22)"]
-        D2["contracts<br/>(11/11)"]
-        D3["clinicaltrials<br/>(12/10)"]
-        D4["fda-product-labels<br/>(17/16)"]
-    end
-
-    subgraph SCEN [" Track Record (Scenarios validated) "]
-        direction LR
-        S1["S1 PICALM"]
-        S2["S2 KRAS"]
-        S3["S3 RareDz"]
-        S4["S4 IO"]
-        S5["S5 Cardio"]
-        S6["S6 GLP-1"]
-        S7["S7 GLP-1 Ph3"]
-    end
-
-    S1 & S2 & S3 & S4 & S5 & S6 -. validate .-> D1
-    S7 -. validate .-> D3
-    D1 & D2 & D3 & D4 -- "config consumed by" --> G
-
-    style EPI fill:#1e293b,stroke:#fbbf24,color:#fbbf24
-    style BF fill:#0f172a,stroke:#6366f1,color:#cbd5e1
-    style P fill:#7c3aed,stroke:#a78bfa,color:#fff
-    style WC fill:#06b6d4,stroke:#67e8f9,color:#fff
-    style NB fill:#10b981,stroke:#6ee7b7,color:#fff
-    style DOM fill:#1e293b,stroke:#94a3b8,color:#cbd5e1
-    style SCEN fill:#1e293b,stroke:#94a3b8,color:#cbd5e1
-```
-
-This Mermaid diagram is **factually grounded**:
-
-- Layer-1 numbers (278/855/10) are S6 V3 actuals
-- Entity / relation counts per domain are correct (13/22, 11/11, 12/10, 17/16)
-- 6 scenarios for drug-discovery, 1 for clinicaltrials match `tests/scenarios/`
-- The persona-dual-use arrow direction matches the actual data flow
-
-You can render it with `bunx beautiful-mermaid` (per your CLAUDE.md preference) for SVG + ASCII output.
-
----
-
 ## Suggested deliverables (you decide which)
 
-- **Title card hero (16:9)** — generated image OR Mermaid diagram rendered as SVG
+- **Title card hero (16:9)** — generated image
 - **Closing card (16:9)** — same composition, different title (`QnA →`)
 - **Optional**: a "scenarios timeline" thin banner showing S1 through S7 chronologically — useful if you ever do a "where the framework has been used" slide
 
 ---
 
-*Visual prompt prepared 2026-04-25. Iterate. The Mermaid alternative is a safe fallback if image generation produces too much "AI tropes" noise — KG audiences will respect a clean technical diagram more than a glossy generated image anyway.*
+*Visual prompt prepared 2026-04-25. Iterate. KG audiences will respect a clean technical schematic more than a glossy generated image — keep the prompt grounded in actual system structure.*

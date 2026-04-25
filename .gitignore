@@ -16,6 +16,9 @@ node_modules/
 # GSD workflow artifacts — development-only, not in remote (per D-14)
 .planning/
 
+# Personal blog drafts under docs/blog/ — local notes, not part of the repo
+docs/blog/
+
 # Claude Code local config — RULE#1: dot-folders are local-only.
 # .claude-plugin/ is intentionally NOT ignored — it ships the plugin marketplace files.
 .claude/
