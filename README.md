@@ -2,6 +2,8 @@
 
 **Turn any corpus of documents into a knowledge graph that actually understands what the documents say, what they contradict, and what they are missing.**
 
+> 📄 **Paper:** *Epistract: A Two-Layer Knowledge Graph Framework with an Epistemic Super-Domain Layer* — [paper/v2/main.pdf](paper/v2/main.pdf) (April 2026, draft v2, framework v3.2.0). The earlier March 2026 draft on the v1 framework is preserved at [paper/main.pdf](paper/main.pdf).
+
 ![Epistract — a two-layer knowledge graph framework](docs/screenshots/epistract-architecture.png)
 
 The diagram above is the whole framework on one page. The dense graph at the bottom is **Layer 1, the brute facts** — entities (compounds, diseases, mechanisms, biomarkers, clinical trials) extracted from the corpus and connected by typed relations, color-coded by entity type. The translucent overlay above it is **Layer 2, the epistemic super-domain** — every relation in the graph carries a categorical status (`asserted`, `prophetic`, `hypothesized`, `contested`, `contradiction`, `negative`) so the graph knows the difference between a peer-reviewed clinical result and patent forward-looking language. The single `persona.yaml` icon on the right with two arrows is the second pattern that matters: one analyst persona, defined once per domain, drives both a **reactive workbench chat** and a **proactive auto-generated briefing**. The four pills along the bottom are today's pre-built domains; the row of thumbnails (S1–S7) is the track record — actual scenario corpora that have pressure-tested each domain.

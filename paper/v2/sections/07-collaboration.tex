@@ -1,0 +1,20 @@
+\section{Human-AI Collaboration Process}
+\label{sec:collaboration}
+
+The v1 paper~\cite{bhatt2026epistract_v1} described the collaboration model under which the framework was built: intensive interactive Claude Code sessions in which the human drove scientific strategy and acceptance criteria, and the AI drove implementation, parallelization, and documentation. That description remains accurate. This section adds three v3-specific observations.
+
+\subsection{The GSD workflow as methodology}
+
+The v3 development cycles were managed under a structured planning workflow (``Get Shit Done,'' GSD), in which each phase of work begins with a written goal and acceptance criteria, proceeds through a discussion-and-research stage, lands a plan, executes against atomic commits, and verifies goal achievement before closing. The workflow's artifacts (\texttt{ROADMAP.md}, \texttt{REQUIREMENTS.md}, per-phase \texttt{PLAN.md} and \texttt{VERIFICATION.md}) are local-only by design (gitignored under \texttt{.planning/}) but they shape the public commit history: each commit message names its phase and the requirement it discharges, producing an auditable trail from goal to implementation to verification.
+
+This methodology made the multi-version trajectory of v3 tractable. Phase~18 (``Graph Fidelity \& Honest Limits'') landed FIDL-01 through FIDL-09 -- nine independently verified requirements that together added the two-layer architecture, the persona dual-use pattern, and the v3 schema refinement. Each requirement was scoped tightly enough to verify in isolation; their composition produced the v3.0 release. Phase~21 (clinicaltrials) followed the same pattern for the second domain.
+
+\subsection{External contribution: the controlled-port pattern}
+
+The clinicaltrials domain (Section~\ref{sec:domain-clinicaltrials}) and the fda-product-labels domain (Section~\ref{sec:domains}) were initially contributed by Chris Davidson via pull request. In both cases the original contribution arrived against a stale fork (the contributor's main branch lagged the upstream main by a release or more), and a direct rebase or merge would either lose context or pull in unrelated drift. The framework adopted a \emph{controlled-port pattern}: rather than rebasing the contributor's branch onto upstream main, the maintainer creates a new branch off current upstream main, hand-ports the substantive contribution file-by-file with attribution preserved via Git's \texttt{Co-Authored-By} trailer, and reviews each ported file against current conventions. This avoided two recurring failure modes (contributor-introduced \texttt{.planning/} files leaking into the public repo, and stub configurations replacing hand-tailored files) and preserved authorship attribution. The pattern is documented in repository memory for future contributions.
+
+\subsection{Honesty as a development practice}
+
+Several v3 commits are corrections rather than additions. The README was found to overclaim ``domain knowledge compounds across scenarios -- patterns generalize, edge cases surface, the analyst persona learns what to flag,'' implying an automatic-learning mechanism that the framework does not implement. The correction reframed scenario count as a track record (pressure-testing depth) rather than an auto-learning signal, and opened GitHub Issue~\#15 to track the aspirational mechanism. The visible commit (\texttt{a8a91db}) does not add a feature; it walks back a marketing claim. The collaboration model includes the human's role in catching such drifts -- the AI alone is unlikely to identify when its own framing has shifted from ``claim'' to ``promise.''
+
+The pattern recurs in three places: the README compounding correction, the demo-script accuracy checklist (every claim mapped to a verifiable codebase source), and this paper's Section~\ref{sec:evaluation} (``What the evaluation does not establish''). Each is an artifact of treating documentation honesty as a first-class development task rather than as polish.

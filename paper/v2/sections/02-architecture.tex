@@ -1,0 +1,47 @@
+\section{Architecture: a two-layer pipeline}
+\label{sec:architecture}
+
+Epistract implements a six-stage pipeline (Figure~\ref{fig:architecture}). Documents enter; an agent-based extractor produces typed entities and relations against a domain schema; a deterministic validation step verifies molecular identifiers (drug-discovery only); a graph builder deduplicates and detects communities; an \emph{epistemic classifier} annotates every relation with a categorical status; and an analyst-persona stage produces a proactive briefing from the classified graph. The visualizer surfaces both layers together, with an interactive chat panel grounded in the same domain persona.
+
+\subsection{Agent-based extraction}
+
+The central extraction choice is unchanged from v1: extraction agents run as Claude Code subprocesses, not stateless API calls~\cite{bhatt2026epistract_v1}. Each agent receives a full document, reads it with domain understanding informed by the domain's \texttt{SKILL.md} extraction prompt, and produces structured JSON conforming to the domain schema's entity and relation types. For corpora of four or more documents, agents execute in parallel, with one extractor per document. Each agent emits, per relation, a verbatim evidence quote and a confidence score in $[0, 1]$ -- two fields the epistemic classifier in Layer 2 depends on.
+
+This is qualitatively different from chunked-RAG retrieval and from API-based stateless extraction. A chunked retriever loses the cross-paragraph context that distinguishes a method statement from a result; a stateless API extractor, processing chunks in isolation, cannot resolve a phrase like ``the same compound'' across paragraph boundaries. By giving each agent the entire document and a long context window, Epistract preserves the discourse structure necessary for relation typing.
+
+\subsection{Domain pluggability}
+
+Domain knowledge enters the pipeline through four files, all in a self-contained per-domain directory:
+
+\begin{itemize}
+\item \texttt{domain.yaml} -- entity types and relation types in YAML, with names, descriptions, and example surface forms. The \emph{schema}.
+\item \texttt{SKILL.md} -- the extraction prompt the agent reads. Includes naming conventions (INN names for drugs, HGNC symbols for genes, MeSH preferred terms for diseases), confidence-scoring guidance, and per-entity-type examples.
+\item \texttt{epistemic.py} -- the per-domain rule engine that produces categorical statuses. Includes \texttt{HEDGING\_PATTERNS} (regex over evidence text), \texttt{infer\_doc\_type()} (inference rules from filename or text features), and any domain-specific custom rules (e.g., the four-level FDA epistemology classifier in \texttt{fda-product-labels/epistemic.py}).
+\item \texttt{workbench/template.yaml} -- the analyst persona, in one YAML field as a multi-line string. This is the system prompt for both the reactive chat and the proactive narrator.
+\end{itemize}
+
+The core pipeline (\texttt{core/}) is domain-agnostic. \texttt{core/domain\_resolver.py} loads a domain by name, locates the four files, and threads the schema, prompt, and rule module through the rest of the pipeline. Adding a domain is a purely declarative act: write the four files, place them under \texttt{domains/<name>/}, and \texttt{/epistract:ingest --domain <name>} works. The framework ships with a \texttt{/epistract:domain} wizard that bootstraps these four files from a sample corpus through a guided three-pass interactive flow.
+
+\subsection{Deterministic validation (drug-discovery only)}
+
+Drug-discovery alone among the four shipped domains carries a deterministic post-extraction validation step. SMILES strings are validated and canonicalized through RDKit~\cite{rdkit2024}; protein and nucleotide sequences are checked against standard alphabets through Biopython~\cite{biopython2009}; structured identifiers (CAS registry numbers, NCT trial numbers, InChIKeys) are validated by regex and, where possible, cross-referenced. The validation report is auto-emitted as \texttt{validation\_report.json} alongside the graph. The other three shipped domains do not require this stage because their entity types are not chemistry-bound; the framework simply skips the validation step when the domain provides no \texttt{validation-scripts/} directory.
+
+\subsection{Graph construction}
+
+Once extraction and (optional) validation are complete, sift-kg~\cite{sifkg2024} handles graph assembly: entity deduplication via SemHash and Unicode normalization, Louvain community detection, and interactive HTML visualization via pyvis~\cite{pyvis2018}. A custom labeling engine assigns descriptive community names from member entity composition rather than numeric identifiers (this remains the same as v1, with refinements). The output of this stage is \texttt{graph\_data.json} -- the canonical Layer 1 artifact.
+
+\subsection{Epistemic classification (Layer 2)}
+
+The new architectural element in v3 is a separate post-graph stage that annotates Layer 1 with categorical epistemic statuses. This is the subject of Section~\ref{sec:epistemic}; in summary, the stage reads \texttt{graph\_data.json}, applies the domain's rule engine (\texttt{epistemic.py}) to every relation's verbatim evidence and source-document type, and writes \texttt{claims\_layer.json}. This artifact is the canonical Layer 2 output. It is reproducible (rule-based) and bit-identical across runs given identical Layer 1 input.
+
+\subsection{Persona-driven narration}
+
+A second post-graph stage consumes the classified graph (\emph{not} the source documents) and produces a proactive briefing. The narrator's system prompt is the domain's analyst persona, loaded directly from \texttt{workbench/template.yaml}. Its input is a structured summary of the classified graph -- per-status counts, contested-claim pairs, prophetic-claim concentrations, gap signals -- assembled by \texttt{core/label\_epistemic.py} from \texttt{claims\_layer.json}. The output is \texttt{epistemic\_narrative.md}, a domain-shaped analyst briefing with executive summary, contested claims, prophetic claims, gaps, and recommended follow-ups. Unlike Layer 2, this output is non-deterministic (LLM-generated); the deterministic record is \texttt{claims\_layer.json}.
+
+\subsection{Workbench: the reactive surface}
+
+A web-based dashboard (the workbench, launched via \texttt{/epistract:dashboard}) renders the graph with a chat panel beside it. The chat's system prompt is the same analyst persona used for the narrator. Both surfaces -- the auto-generated briefing and the chat -- are grounded in the same graph data and the same persona. This is the persona dual-use pattern: one source of truth (\texttt{template.yaml}'s persona field), two surfaces (proactive narrator, reactive chat). Section~\ref{sec:epistemic} returns to this point.
+
+\subsection{Plugin delivery}
+
+Epistract is distributed as a Claude Code plugin~\cite{claudecode2024}. Users install with \texttt{/plugin install epistract} and invoke pipeline stages via slash commands: \texttt{/epistract:ingest}, \texttt{/epistract:epistemic}, \texttt{/epistract:dashboard}. The plugin encapsulates the entire dependency tree (Python virtualenv, sift-kg, RDKit, Biopython, optional sentence-transformers) and exposes a single entry point per pipeline stage. The same delivery model from v1 carries forward unchanged.

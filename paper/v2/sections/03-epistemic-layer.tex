@@ -1,0 +1,67 @@
+\section{The Epistemic Super-Domain Layer}
+\label{sec:epistemic}
+
+The epistemic super-domain layer is the central architectural contribution of v3. This section describes its rationale, taxonomy, rule engine, output artifact, and the persona-driven narrator stage that consumes it.
+
+\subsection{Rationale}
+
+A confidence score in $[0, 1]$ on a relation is a one-dimensional signal: it conveys how strongly the extractor believes a given subject--predicate--object triple is in the source text. It does not convey what \emph{kind of claim} the source text is making. The same edge in the graph could be supported by source language that asserts ($p<0.001$ in a randomized trial), prophesies (``in one or more embodiments\ldots'' in a patent), hypothesizes (``has been suggested to\ldots'' in a discussion section), or denies (``did not show a statistically significant\ldots''). These differ \emph{categorically}, not by degree, and a scalar confidence flattens them all into the same numerical surface.
+
+The epistemic super-domain layer adds a second dimension. Every relation in the graph receives a categorical \emph{epistemic status} from a small fixed taxonomy. The taxonomy was chosen to be (a) source-language-driven (every status corresponds to identifiable patterns in the verbatim evidence text), (b) decision-relevant (analysts make different decisions about \texttt{prophetic} vs.\ \texttt{asserted} edges), and (c) cross-domain general (the same taxonomy applies in drug-discovery, contracts, clinicaltrials, and FDA labels, with per-domain variations).
+
+\subsection{The status taxonomy}
+
+The shared epistemic status taxonomy contains seven categorical labels (Table~\ref{tab:epistemic-statuses}). Six are positive classifications (a relation has been classified as one of these); the seventh, \texttt{unclassified}, is assigned when no rule matches. Domain-specific epistemic modules may add or refine statuses (for example, \texttt{fda-product-labels} introduces a four-level classifier mapping onto these statuses with finer granularity).
+
+\begin{table}[t]
+\centering
+\small
+\caption{The shared epistemic status taxonomy.}
+\label{tab:epistemic-statuses}
+\begin{tabular}{@{}lp{8.5cm}@{}}
+\toprule
+\textbf{Status} & \textbf{Meaning and trigger patterns} \\
+\midrule
+\texttt{asserted} & Quantitative or definitive claim grounded in the source. Default for evidence text containing trial results, p-values, dose-response data, or unhedged assertion. \\
+\texttt{prophetic} & Patent forward-looking language. Triggered by phrases such as ``in one or more embodiments,'' ``may be useful for,'' ``the present invention provides,'' and document-type inference (the source document is a patent filing). \\
+\texttt{hypothesized} & Hedged research language. Triggered by ``hypothesized,'' ``has been suggested,'' ``may indicate,'' ``is thought to,'' and similar epistemic hedging vocabulary. \\
+\texttt{contested} & The same subject--predicate--object triple appears across multiple source documents with materially different confidence scores or contradictory evidence quotes. Detected at cross-source aggregation time, not within a single document. \\
+\texttt{contradiction} & Explicit denial of a claim asserted in another source (``did not demonstrate,'' ``failed to show statistical significance,'' ``no evidence of\ldots''). Stronger than \texttt{contested}. \\
+\texttt{negative} & Explicit absence claim from a single source (``no association observed,'' ``no detectable expression''). Distinct from \texttt{contradiction} (which is cross-source). \\
+\texttt{speculative} & Marked future-conditional language outside patents (``further studies are needed,'' ``the implications remain to be determined''). \\
+\texttt{unclassified} & No rule fired; default fall-through. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{The rule engine}
+
+Layer 2 is produced by a deterministic rule engine in \texttt{core/label\_epistemic.py}, parameterized by the domain's \texttt{epistemic.py} module. The engine has three stages, applied per relation:
+
+\begin{enumerate}
+\item \textbf{Document-type inference.} The source document's filename and any cached document-type hint (e.g., ``patent\_{}WO2024\_*\_zealand.txt'' triggers patent-type inference) drive a coarse classification. Patent-source relations default to \texttt{prophetic} unless a more specific trigger fires.
+\item \textbf{Hedging-pattern matching.} A list of compiled regex patterns runs against the relation's verbatim evidence text. Each pattern carries a status it produces on match. Patterns are short, conservative, and audited: they prefer \texttt{unclassified} over a wrong classification.
+\item \textbf{Cross-source aggregation.} After per-relation classification, the engine groups relations by $\langle$subject, predicate, object$\rangle$ identity and inspects the multi-source set. If the same triple appears with confidence ranges spanning more than 0.30 across sources, it is annotated \texttt{contested}. If a source's evidence text is a denial of another source's assertion, the deniers are annotated \texttt{contradiction}.
+\end{enumerate}
+
+The output of the rule engine is \texttt{claims\_layer.json}: a per-relation record with the assigned status, the matching rule (for audit), the verbatim evidence quote, and a back-reference to the source document. This artifact is bit-identical across runs given identical Layer 1 input. It is the reproducible Layer 2 record.
+
+\subsection{Domain-specific epistemic rules}
+
+Each domain's \texttt{epistemic.py} can add domain-specific rules beyond the shared taxonomy. Two examples illustrate the pattern.
+
+\paragraph{Phase-based evidence grading (clinicaltrials).} Clinical trial documents from \texttt{ClinicalTrials.gov} carry trial-phase metadata (Phase 1, 2, 3, 4). The clinicaltrials epistemic module promotes Phase 3 and Phase 4 outcome relations to \texttt{asserted}, leaves Phase 2 at the rule-engine default, and demotes Phase 1 outcomes to \texttt{hypothesized} unless the evidence quote explicitly asserts a quantitative result. This phase-based grading captures regulatory-grade evidence stratification that a domain-agnostic rule engine cannot infer from text alone.
+
+\paragraph{Four-level FDA epistemology (fda-product-labels).} FDA Structured Product Labels carry a recognizable epistemic vocabulary (``has been demonstrated,'' ``has been reported,'' ``has been theorized,'' implicit assertions in the Indications and Usage section). The fda-product-labels epistemic module implements a four-level classifier mapping onto the shared taxonomy with finer granularity: \texttt{established} (regulatory-grade asserted), \texttt{reported} (lower-tier asserted), \texttt{theoretical} (hypothesized in the FDA-specific sense), and a default \texttt{asserted} for unmarked indications-and-usage statements. The four levels are visible to the analyst persona, which can stratify briefings accordingly.
+
+These per-domain extensions illustrate the framework's pluggability: the core pipeline does not need to know about phase-based grading or FDA epistemology vocabulary -- the domain's \texttt{epistemic.py} encodes that knowledge, and \texttt{core/label\_epistemic.py} dispatches to it.
+
+\subsection{The persona-driven narrator}
+
+A separate stage consumes the classified graph and produces a proactive briefing in natural language. The narrator's system prompt is the domain's analyst persona, loaded directly from \texttt{workbench/template.yaml}. The input to the narrator is \emph{not} the source documents -- it is a structured summary of the classified graph, assembled from \texttt{claims\_layer.json}: per-status counts, contested-claim pairs with their confidence ranges, prophetic-claim concentrations by entity type, gap signals (entity types with low connection density), and any domain-specific signals the persona is configured to attend to. The narrator emits \texttt{epistemic\_narrative.md}, structured into Executive Summary, Asserted Claims, Prophetic Claims, Contested Claims, Gaps, and Recommended Follow-Ups sections.
+
+A worked example: on the S6 GLP-1 corpus (drug-discovery domain, 34 documents), the narrator's executive summary identified \emph{61 prophetic claims} concentrated on cardiovascular, neurodegenerative, and metabolic-sub-disorder indications and recommended ``temporal stratification of confidence'' on the contested \texttt{semaglutide INDICATED\_FOR obesity} edge (confidence range $0.55$--$0.97$ across sources, where $0.55$ instances trace to pre-STEP-1 patent language and $0.97$ instances trace to post-approval clinical assertions). The narrator did not see the source documents directly; its claims trace back to graph nodes and relations annotated by the rule engine.
+
+\subsection{Persona dual-use: one source, two surfaces}
+
+The same persona string is also the system prompt for the workbench's reactive chat panel. When a user asks ``which prophetic claims are concentrated on cardiovascular outcomes?'' in chat, the answer is generated by the same persona that wrote the briefing, against the same classified graph, with the same vocabulary and decision criteria. This is by design: the proactive briefing and the reactive chat would otherwise drift apart in tone, vocabulary, and analytic framing if they were configured separately. The pattern reduces the surface area of the framework -- one YAML field defines the domain's analyst voice -- and makes domain extension cheaper: a domain author writes one persona, and both surfaces inherit it.

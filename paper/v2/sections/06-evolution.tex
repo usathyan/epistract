@@ -1,0 +1,42 @@
+\section{Evolution: GraphRAG $\to$ Epistract v1 $\to$ Epistract v3}
+\label{sec:evolution}
+
+This section compresses the multi-version trajectory of the framework. Readers familiar with the v1 paper~\cite{bhatt2026epistract_v1} can skim; readers new to the system may find the comparison useful as orientation.
+
+\begin{table}[t]
+\centering
+\caption{Architectural evolution across three iterations.}
+\label{tab:evolution-three}
+\small
+\begin{tabular}{@{}lp{2.7cm}p{3.2cm}p{4.2cm}@{}}
+\toprule
+\textbf{Dimension} & \textbf{GraphRAG} & \textbf{Epistract v1} & \textbf{Epistract v3} \\
+\midrule
+Relationship basis   & Embedding similarity   & LLM comprehension                    & LLM comprehension + epistemic typing \\
+Layers               & One                    & One (brute facts)                    & Two (brute facts + epistemic super-domain) \\
+Schema               & Generic NER            & 17 ent / 30 rel, drug-discovery only & 4 domains: 11--17 ent / 10--22 rel; refined drug-discovery 13/22 \\
+Domain pluggability  & N/A                    & N/A                                  & Four config files; \texttt{/epistract:domain} wizard \\
+Relation typing      & Untyped                & Typed, directional                   & Typed + categorical epistemic status \\
+Evidence             & None                   & Source passage + confidence          & + per-relation epistemic status, classification rule, doc-type inference \\
+Validation           & None                   & RDKit, Biopython, NCT/CAS            & Same; opt-in CT.gov enrichment for clinicaltrials \\
+Briefing             & None                   & None                                 & Auto-generated narrator briefing per run \\
+Chat surface         & None                   & None                                 & Workbench chat; same persona as briefing \\
+Persona              & N/A                    & N/A                                  & One YAML string per domain; dual-use \\
+Scale                & 6 articles             & 111 documents, 6 scenarios           & 121 documents, 7 scenarios, 2 active domains \\
+Cross-domain         & Single corpus          & Six varied corpora, one domain       & Two domains validated, two scaffolded \\
+Source types         & PubMed                 & PubMed + Scholar + Patents           & + ClinicalTrials.gov \\
+Reproducibility      & Code on GitHub         & Plugin + committed artifacts         & + reproducible epistemic layer; non-deterministic narrator \\
+Documented gaps      & None enumerated        & None enumerated                      & Issues~\#14 (fda showcase corpus), \#15 (auto-learning), \texttt{docs/known-limitations.md} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{From GraphRAG to v1: similarity to comprehension.} The v1 paper argued that biomedical KG construction needs typed, directional, evidence-backed relations grounded in domain ontologies, and that LLM comprehension of full documents -- not embedding similarity over chunks -- is the right substrate. That argument remains the foundation of Layer 1 in v3.
+
+\paragraph{From v1 to v3: comprehension is necessary but not sufficient.} A graph of typed, evidence-backed relations is still flat with respect to the epistemic content of its sources. A patent's prophetic indication is recorded as the same kind of edge as a Phase 3 trial's asserted indication. The v3 architecture adds a second layer that records categorical epistemic statuses, and a persona-driven narrator that synthesizes the two layers into analyst-shaped briefings. The schema also evolved: drug-discovery's 17-entity / 30-relation v1 schema was consolidated to 13 / 22 in v3 by removing low-yield types observed across S1--S5.
+
+\paragraph{From v1 to v3: from one domain to four.} v1 was a single-domain framework that the paper described, slightly imprecisely, as ``six domains'' (the six scenarios were varied corpora within drug-discovery, not separate domains). v3 ships four genuinely separate domains, each with its own schema, epistemic rules, and persona, with the core pipeline domain-agnostic. The clinicaltrials domain in particular illustrates the value of per-domain epistemic rules: phase-based grading is incompatible with drug-discovery's hedging-and-doc-type model, but fits naturally as a domain extension.
+
+\paragraph{From v1 to v3: from extraction artifact to analyst surface.} v1 produced a graph; the user explored it manually. v3 adds two reading surfaces: a proactive briefing (\texttt{epistemic\_narrative.md}) auto-generated per run, and a reactive chat (the workbench) grounded in the same persona and graph. Both are downstream of \texttt{claims\_layer.json}, the new canonical artifact.
+
+\paragraph{Honest accounting.} The v3 framework is also more explicit about what it does and does not do. The README, the in-product documentation, and this paper all distinguish ``track record'' (a domain has been pressure-tested across multiple scenarios) from ``compounding learning'' (the framework would automatically benefit from prior runs). The framework does the first; the second is aspirational and tracked as Issue~\#15. This shift in framing -- from optimistic feature claims to documented gaps -- is itself a contribution of v3.

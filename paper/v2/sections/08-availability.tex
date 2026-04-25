@@ -1,0 +1,32 @@
+\section{Availability, Reproducibility, and Limitations}
+\label{sec:availability}
+
+\subsection{Availability}
+
+Epistract is released as open-source software under the MIT license at \url{https://github.com/usathyan/epistract}. Installation is two commands: \texttt{/plugin install epistract} (within Claude Code) and \texttt{/epistract:setup} (which installs the Python pipeline, sift-kg, RDKit, and Biopython into an isolated virtual environment). The runtime requirements are Python 3.11 or later, Claude Code, and (for the chat and narrator stages) a credential for one of three supported LLM gateways: Azure AI Foundry, Anthropic direct, or OpenRouter, resolved in that priority order.
+
+\subsection{Reproducibility}
+
+All seven validation scenarios are reproducible from the public repository. Each scenario directory under \texttt{tests/corpora/} contains the source documents (or the SerpAPI / E-utilities query parameters used to assemble them, where licensing prohibits redistribution), the extraction outputs in JSON, the constructed graph data, the classified \texttt{claims\_layer.json}, and the narrator's \texttt{epistemic\_narrative.md}. The classified layer is bit-identical across runs given identical Layer 1 input. The narrator output is non-deterministic but stable in structure (executive summary, prophetic, contested, gaps, follow-ups) and findings (run-to-run word-choice variance, run-to-run finding-set stability).
+
+The plugin architecture provides a versioning benefit: the deployed framework version is recorded in every output artifact's metadata, and committed test baselines serve as regression anchors across releases. The v3.2.0 release notes name the four shipped domains, the seven validated scenarios, and the gaps tracked in Issues~\#14 and~\#15.
+
+\subsection{Documented gaps}
+
+The framework documents three classes of gap explicitly:
+
+\paragraph{Issue \#14: fda-product-labels showcase corpus.} The domain ships with schema, epistemic rules, and persona, but no validated showcase corpus. A 200--400-document SPL ingestion is in flight with the contributor.
+
+\paragraph{Issue \#15: cross-scenario knowledge persistence.} The framework does not currently fold lessons from prior scenario runs into subsequent runs. Five candidate mechanisms for compounding knowledge across scenarios are scoped (cross-scenario entity canonicalization, domain-level aggregate graphs, persona few-shot from prior briefings, epistemic-rule mining, cross-scenario claim arbitration), with the first identified as the most tractable v3.3 candidate. This is aspirational; no work has begun.
+
+\paragraph{\texttt{docs/known-limitations.md}.} A running ledger of operational issues that constrain the framework: \texttt{httpx} 403 responses against \texttt{ClinicalTrials.gov} (use \texttt{urllib} instead), agent-tool model overrides failing silently when the parent runs a 1M-context Sonnet variant, workbench chat \texttt{max\_tokens} truncation at 4096, and others. Each entry is logged with a workaround and a tracking reference.
+
+\subsection{Responsible use}
+
+Epistract is a research tool, not a clinical or regulatory decision-making system. The knowledge graphs it produces are derived from LLM extraction (probabilistic) and rule-based epistemic classification (deterministic, but rule-bounded). The narrator briefings are LLM-generated and non-deterministic. Every output should be treated as a hypothesis requiring expert review before informing any scientific, clinical, or regulatory decision. The framework explicitly discloses this caveat in the README, in the in-product workbench, and in this paper.
+
+The persona pattern is a particular focus of the responsible-use boundary. A senior drug-discovery competitive-intelligence analyst is a \emph{voice}; the framework does not certify that any briefing meets professional standards, and users in pharmaceutical and healthcare settings should apply institutional review and domain expert oversight before acting on any framework output.
+
+\subsection{Community contribution}
+
+The framework's design invites contribution at four levels: new evaluation scenarios with curated corpora that pressure-test existing domains; schema extensions that introduce entity or relation types; new pre-built domains beyond the four shipped (the \texttt{/epistract:domain} wizard reduces the scaffolding cost to under 15 minutes for a new domain with a sample corpus); and external database connectors for entity enrichment (PubChem, ChEMBL, UniProt, ClinicalTrials.gov). Contribution patterns are documented in \texttt{docs/ADDING-DOMAINS.md}; the controlled-port pattern (Section~\ref{sec:collaboration}) is documented for cross-version contributions.

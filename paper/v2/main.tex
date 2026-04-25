@@ -1,0 +1,64 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- Packages ---
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{natbib}
+\usepackage{makecell}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+% --- Figure path ---
+\graphicspath{{figures/}}
+
+% --- Title ---
+\title{%
+  Epistract: A Two-Layer Knowledge Graph Framework\\
+  with an Epistemic Super-Domain Layer\\[0.5em]
+  \large Comprehension-grounded extraction with categorical epistemic typing,\\
+  validated across four pre-built domains
+}
+\author{Umesh Bhatt\\
+\texttt{umesh@8thcross.com}\\
+\texttt{@8thcross} on Medium\\[0.5em]
+\small with contributions from Chris Davidson (clinicaltrials, fda-product-labels)}
+\date{April 2026 — draft v2 (framework v3.2.0)}
+
+\begin{document}
+
+\maketitle
+
+% --- Abstract ---
+\begin{abstract}
+\input{sections/00-abstract}
+\end{abstract}
+
+\noindent\textit{This paper supersedes the March 2026 draft on GraphRAG-to-Epistract, which described the v1 framework as a single-domain (drug-discovery) system. The current paper documents the v3.2 framework: a two-layer architecture with a categorical epistemic super-domain layer, four pre-built domains with domain-specific epistemic rules, and a single-source-of-truth analyst persona pattern that drives both reactive chat and proactive briefings. The earlier paper is preserved at \texttt{paper/main.tex} in the repository.}
+
+% --- Sections ---
+\input{sections/01-motivation}
+\input{sections/02-architecture}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig1-architecture.png}
+\caption{Epistract on one page. \textbf{Layer 1, the brute facts}: a force-directed labeled property graph with entities (compounds, diseases, mechanisms, biomarkers, clinical trials) extracted from a corpus and color-coded by entity type, connected by typed directional relations. \textbf{Layer 2, the epistemic super-domain}: a categorical status (\texttt{asserted}, \texttt{prophetic}, \texttt{hypothesized}, \texttt{contested}, \texttt{contradiction}, \texttt{negative}) annotated on every relation by a rule engine that combines regex patterns over evidence text with document-type inference. \textbf{The analyst persona} (right): a single \texttt{persona.yaml} string per domain drives both the reactive workbench chat and a proactive auto-generated briefing (\texttt{epistemic\_narrative.md}) -- one source of truth, two surfaces. \textbf{The four pre-built domains} (bottom): drug-discovery, contracts, clinicaltrials, fda-product-labels. \textbf{Track record} (S1--S7): scenario corpora that have pressure-tested each domain.}
+\label{fig:architecture}
+\end{figure*}
+
+\input{sections/03-epistemic-layer}
+\input{sections/04-domains}
+\input{sections/05-evaluation}
+\input{sections/06-evolution}
+\input{sections/07-collaboration}
+\input{sections/08-availability}
+\input{sections/09-conclusion}
+
+% --- Bibliography ---
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
