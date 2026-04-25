@@ -23,6 +23,45 @@ _CONFIDENCE_MEDIUM = 0.7
 _CONFIDENCE_LOW = 0.5
 _ENTITY_TYPES = ['DRUG_PRODUCT', 'ACTIVE_INGREDIENT', 'INACTIVE_INGREDIENT', 'MANUFACTURER', 'INDICATION', 'CONTRAINDICATION', 'ADVERSE_REACTION', 'WARNING', 'DRUG_INTERACTION', 'DOSAGE_REGIMEN', 'PATIENT_POPULATION', 'MECHANISM_OF_ACTION', 'PHARMACOKINETIC_PROPERTY', 'CLINICAL_STUDY', 'PHARMACOLOGIC_CLASS', 'REGULATORY_IDENTIFIER']
 
+# FDA SPL section / language markers used by the four-level epistemic classifier.
+# Lowercased substrings; matched case-insensitively against link.evidence.
+_ESTABLISHED_MARKERS = (
+    "boxed warning",
+    "contraindication",
+    "contraindicated",
+    "must not",
+    "do not use",
+    "warnings and precautions",
+)
+_OBSERVED_MARKERS = (
+    "clinical studies",
+    "clinical trial",
+    "controlled trial",
+    "randomized",
+    "placebo-controlled",
+    "placebo controlled",
+    "double-blind",
+    "double blind",
+)
+_REPORTED_MARKERS = (
+    "adverse reactions",
+    "postmarketing",
+    "post-marketing",
+    "post marketing",
+    "spontaneous report",
+    "post-marketing experience",
+    "postmarket surveillance",
+)
+_THEORETICAL_MARKERS = (
+    "clinical pharmacology",
+    "mechanism of action",
+    "pharmacodynamics",
+    "in vitro",
+    "in-vitro",
+    "expected to",
+    "is thought to",
+)
+
 
 def analyze_fda_product_labels_epistemic(
     output_dir: Path,
@@ -56,22 +95,53 @@ def analyze_fda_product_labels_epistemic(
                     "evidence": link.get("evidence", ""),
                 })
 
-    # --- Confidence calibration ---
-    asserted_count = 0
-    hypothesized_count = 0
-    unverified_count = 0
+    # --- FDA-specific epistemology classification (FDA-04) ---
+    # Levels reflect the SPL labeling section semantics, not a raw confidence threshold:
+    #   established  -- definitive labeling language (BOXED WARNING, CONTRAINDICATION,
+    #                    "contraindicated", "must not", "do not use")
+    #   observed     -- controlled clinical study data (CLINICAL STUDIES section,
+    #                    "controlled trial", "randomized", "placebo")
+    #   reported     -- postmarket / spontaneous data (ADVERSE REACTIONS, POSTMARKETING,
+    #                    "spontaneous report", "post-marketing experience")
+    #   theoretical  -- mechanism-of-action inference (CLINICAL PHARMACOLOGY,
+    #                    "mechanism", "pharmacology", "in vitro", "expected to")
+    # Confidence is the tiebreaker when no marker matches.
+
+    established_count = 0
+    observed_count = 0
+    reported_count = 0
+    theoretical_count = 0
 
     for link in links:
+        evidence = str(link.get("evidence", "")).lower()
         confidence = link.get("confidence", 0.5)
-        if confidence >= _CONFIDENCE_HIGH:
-            link["epistemic_status"] = "asserted"
-            asserted_count += 1
+
+        if any(marker in evidence for marker in _ESTABLISHED_MARKERS):
+            level = "established"
+        elif any(marker in evidence for marker in _OBSERVED_MARKERS):
+            level = "observed"
+        elif any(marker in evidence for marker in _REPORTED_MARKERS):
+            level = "reported"
+        elif any(marker in evidence for marker in _THEORETICAL_MARKERS):
+            level = "theoretical"
+        elif confidence >= _CONFIDENCE_HIGH:
+            level = "established"
         elif confidence >= _CONFIDENCE_MEDIUM:
-            link["epistemic_status"] = "hypothesized"
-            hypothesized_count += 1
+            level = "observed"
+        elif confidence >= _CONFIDENCE_LOW:
+            level = "reported"
         else:
-            link["epistemic_status"] = "unverified"
-            unverified_count += 1
+            level = "theoretical"
+
+        link["epistemic_status"] = level
+        if level == "established":
+            established_count += 1
+        elif level == "observed":
+            observed_count += 1
+        elif level == "reported":
+            reported_count += 1
+        else:
+            theoretical_count += 1
 
     # --- Gap analysis ---
     gaps: list[dict] = []
@@ -112,14 +182,15 @@ def analyze_fda_product_labels_epistemic(
             "gaps_found": len(gaps),
             "cross_document_entities": len(cross_doc_entities),
             "epistemic_status_counts": {
-                "asserted": asserted_count,
-                "hypothesized": hypothesized_count,
-                "unverified": unverified_count,
+                "established": established_count,
+                "observed": observed_count,
+                "reported": reported_count,
+                "theoretical": theoretical_count,
             },
         },
         "base_domain": {
             "description": "Factual fda_product_labels knowledge graph relations",
-            "relation_count": asserted_count,
+            "relation_count": established_count,
         },
         "super_domain": {
             "domain": "fda_product_labels",
@@ -131,6 +202,27 @@ def analyze_fda_product_labels_epistemic(
     }
 
     return claims_layer
+
+
+def annotate_relations(
+    output_dir: Path,
+    graph_data: dict,
+) -> dict:
+    """REQUIREMENTS.md FDA-04 spelling alias.
+
+    The framework dispatch convention is `analyze_{slug}_epistemic()`
+    (see core/label_epistemic.py:654-663). REQUIREMENTS.md FDA-04 spells
+    the function `annotate_relations()`; this alias delegates to the
+    canonical implementation so both spellings are valid entry points.
+
+    Args:
+        output_dir: Directory containing graph outputs.
+        graph_data: Parsed graph_data.json with nodes and links.
+
+    Returns:
+        Dict with keys: metadata, summary, base_domain, super_domain.
+    """
+    return analyze_fda_product_labels_epistemic(output_dir, graph_data)
 
 
 # ------------------------------------------------------------------
