@@ -20,33 +20,6 @@ router = APIRouter(prefix="/api", tags=["chat"])
 
 
 # ---------------------------------------------------------------------------
-# Curated model catalog (per-provider)
-# ---------------------------------------------------------------------------
-# The workbench exposes this list via GET /api/models so the frontend can
-# render a model-selection dropdown. Foundry is intentionally absent — its
-# deployment name is determined by AZURE_FOUNDRY_DEPLOYMENT and is built at
-# request time inside /api/models (single-entry list, selector hidden).
-#
-# Update this dict when provider model catalogs change. Invalid IDs are
-# rejected at LLM-API time (HTTP 400) and surface to the user as an SSE
-# error event — no server-side allowlist enforcement needed.
-PROVIDER_MODELS: dict[str, list[dict[str, str]]] = {
-    "anthropic": [
-        {"id": "claude-sonnet-4-20250514", "label": "Claude Sonnet 4"},
-        {"id": "claude-opus-4-20250514", "label": "Claude Opus 4"},
-        {"id": "claude-haiku-3-5-20241022", "label": "Claude Haiku 3.5"},
-    ],
-    "openrouter": [
-        {"id": "anthropic/claude-sonnet-4", "label": "Claude Sonnet 4"},
-        {"id": "anthropic/claude-opus-4", "label": "Claude Opus 4"},
-        {"id": "anthropic/claude-haiku-4", "label": "Claude Haiku 4"},
-        {"id": "anthropic/claude-sonnet-4-5", "label": "Claude Sonnet 4.5"},
-        {"id": "anthropic/claude-haiku-3-5", "label": "Claude Haiku 3.5"},
-    ],
-}
-
-
-# ---------------------------------------------------------------------------
 # Request model
 # ---------------------------------------------------------------------------
 
@@ -56,7 +29,6 @@ class ChatRequest(BaseModel):
 
     question: str
     history: list[dict] = []  # [{"role": "user"|"assistant", "content": "..."}]
-    model: str | None = None  # None = use provider default (curated via /api/models)
 
 
 # ---------------------------------------------------------------------------
@@ -85,15 +57,8 @@ def _ensure_messages_suffix(url: str) -> str:
     return url + "/v1/messages"
 
 
-def _resolve_api_config(
-    model_override: str | None = None,
-) -> tuple[str | None, str, str, str]:
+def _resolve_api_config() -> tuple[str | None, str, str, str]:
     """Return (api_key, base_url, model, provider) from available env vars.
-
-    If model_override is non-None and non-empty after stripping, it replaces
-    the default model for Anthropic direct and OpenRouter providers. The Azure
-    Foundry provider ignores model_override — the deployment name is determined
-    by the Azure AI Studio registration and the AZURE_FOUNDRY_DEPLOYMENT env var.
 
     Priority:
     1. AZURE_FOUNDRY_API_KEY (or ANTHROPIC_FOUNDRY_API_KEY as alias)
@@ -124,11 +89,6 @@ def _resolve_api_config(
     (ANTHROPIC_FOUNDRY_*) rather than the cloud (AZURE_FOUNDRY_*); both
     prefixes are accepted as synonyms throughout the Foundry block.
     """
-    # Coerce empty/whitespace override to None so the caller's empty-string
-    # default (from a hidden or unpopulated <select>) falls back to the
-    # provider's baked-in model. See RESEARCH Pitfall 2.
-    effective_model = (model_override or "").strip() or None
-
     # --- Foundry block ---
     # Accept either AZURE_FOUNDRY_* or ANTHROPIC_FOUNDRY_* naming. We look
     # up both for every field and prefer AZURE_* when both are set (the
@@ -167,9 +127,6 @@ def _resolve_api_config(
                 "  AZURE_FOUNDRY_RESOURCE=<azure-resource-name>\n"
                 "Or unset the API key to fall back to ANTHROPIC_API_KEY / OPENROUTER_API_KEY."
             )
-        # model_override intentionally NOT applied here — Foundry deployment
-        # name is determined by Azure AI Studio registration + the
-        # AZURE_FOUNDRY_DEPLOYMENT env var, not by the request body.
         return foundry_key, base_url, deployment, "anthropic"
 
     anthropic_key = os.environ.get("ANTHROPIC_API_KEY")
@@ -177,7 +134,7 @@ def _resolve_api_config(
         return (
             anthropic_key,
             "https://api.anthropic.com/v1/messages",
-            effective_model or "claude-sonnet-4-20250514",
+            "claude-sonnet-4-20250514",
             "anthropic",
         )
 
@@ -186,7 +143,7 @@ def _resolve_api_config(
         return (
             openrouter_key,
             "https://openrouter.ai/api/v1/chat/completions",
-            effective_model or "anthropic/claude-sonnet-4",
+            "anthropic/claude-sonnet-4",
             "openrouter",
         )
 
@@ -202,9 +159,7 @@ def _resolve_api_config(
 async def chat(request: Request, body: ChatRequest):
     """Stream an LLM response as SSE events."""
     try:
-        api_key, base_url, model, provider = _resolve_api_config(
-            model_override=body.model,
-        )
+        api_key, base_url, model, provider = _resolve_api_config()
     except RuntimeError as exc:
         return EventSourceResponse(_error_stream(str(exc)))
     if not api_key:
@@ -352,18 +307,6 @@ async def _stream_openai_compat(
                         break
                     try:
                         event = json.loads(data_str)
-                        # OpenRouter can embed errors inside the SSE stream
-                        # (not just as HTTP error codes) — surface them explicitly.
-                        error_obj = event.get("error")
-                        if error_obj:
-                            msg = error_obj.get("message", str(error_obj))
-                            yield {
-                                "data": json.dumps(
-                                    {"type": "error", "content": f"Model error: {msg}"}
-                                )
-                            }
-                            yield {"data": json.dumps({"type": "done"})}
-                            return
                         choices = event.get("choices", [])
                         if choices:
                             delta = choices[0].get("delta", {})

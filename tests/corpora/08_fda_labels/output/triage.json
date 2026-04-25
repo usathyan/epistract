@@ -1,0 +1,101 @@
+{
+  "ingested_at": "2026-04-25T23:10:04.769300+00:00",
+  "corpus_path": "tests/corpora/08_fda_labels/docs",
+  "domain": "fda-product-labels",
+  "total_files": 7,
+  "successful": 7,
+  "failed": 0,
+  "documents": [
+    {
+      "doc_id": "adalimumab_humira",
+      "filename": "adalimumab_humira.txt",
+      "file_path": "tests/corpora/08_fda_labels/docs/adalimumab_humira.txt",
+      "file_size_bytes": 80000,
+      "page_count": null,
+      "category": "uncategorized",
+      "parse_type": "text",
+      "text_length": 79903,
+      "parse_errors": null,
+      "extraction_readiness_score": 0.7,
+      "warnings": []
+    },
+    {
+      "doc_id": "atorvastatin_lipitor",
+      "filename": "atorvastatin_lipitor.txt",
+      "file_path": "tests/corpora/08_fda_labels/docs/atorvastatin_lipitor.txt",
+      "file_size_bytes": 64112,
+      "page_count": null,
+      "category": "uncategorized",
+      "parse_type": "text",
+      "text_length": 63949,
+      "parse_errors": null,
+      "extraction_readiness_score": 0.7,
+      "warnings": []
+    },
+    {
+      "doc_id": "imatinib_gleevec",
+      "filename": "imatinib_gleevec.txt",
+      "file_path": "tests/corpora/08_fda_labels/docs/imatinib_gleevec.txt",
+      "file_size_bytes": 80000,
+      "page_count": null,
+      "category": "uncategorized",
+      "parse_type": "text",
+      "text_length": 79888,
+      "parse_errors": null,
+      "extraction_readiness_score": 0.7,
+      "warnings": []
+    },
+    {
+      "doc_id": "semaglutide_ozempic",
+      "filename": "semaglutide_ozempic.txt",
+      "file_path": "tests/corpora/08_fda_labels/docs/semaglutide_ozempic.txt",
+      "file_size_bytes": 57076,
+      "page_count": null,
+      "category": "uncategorized",
+      "parse_type": "text",
+      "text_length": 56935,
+      "parse_errors": null,
+      "extraction_readiness_score": 0.7,
+      "warnings": []
+    },
+    {
+      "doc_id": "semaglutide_wegovy",
+      "filename": "semaglutide_wegovy.txt",
+      "file_path": "tests/corpora/08_fda_labels/docs/semaglutide_wegovy.txt",
+      "file_size_bytes": 80000,
+      "page_count": null,
+      "category": "uncategorized",
+      "parse_type": "text",
+      "text_length": 79814,
+      "parse_errors": null,
+      "extraction_readiness_score": 0.7,
+      "warnings": []
+    },
+    {
+      "doc_id": "tirzepatide_mounjaro",
+      "filename": "tirzepatide_mounjaro.txt",
+      "file_path": "tests/corpora/08_fda_labels/docs/tirzepatide_mounjaro.txt",
+      "file_size_bytes": 64638,
+      "page_count": null,
+      "category": "uncategorized",
+      "parse_type": "text",
+      "text_length": 64610,
+      "parse_errors": null,
+      "extraction_readiness_score": 0.7,
+      "warnings": []
+    },
+    {
+      "doc_id": "warfarin_jantoven",
+      "filename": "warfarin_jantoven.txt",
+      "file_path": "tests/corpora/08_fda_labels/docs/warfarin_jantoven.txt",
+      "file_size_bytes": 50952,
+      "page_count": null,
+      "category": "uncategorized",
+      "parse_type": "text",
+      "text_length": 50865,
+      "parse_errors": null,
+      "extraction_readiness_score": 0.7,
+      "warnings": []
+    }
+  ]
+}

@@ -80,8 +80,6 @@
     </div>
 
     <form class="chat-input" id="chat-form">
-      <button type="button" id="model-sort-btn" class="model-sort-btn" title="Sort by cost (cheapest first)" style="display:none">$&uarr;</button>
-      <select id="model-select" class="model-select" title="Select model" style="display:none"></select>
       <textarea id="chat-input" placeholder="Ask a question..." rows="1"></textarea>
       <button type="submit" class="send-btn">Send</button>
     </form>
@@ -106,10 +104,6 @@
           <option value="warning">Warning</option>
           <option value="info">Info</option>
         </select>
-        <div class="graph-toolbar">
-          <button class="toggle-btn active" id="graph-fit-btn" title="Fit all nodes in view">Fit View</button>
-          <button class="toggle-btn active" id="graph-reset-pins-btn" title="Unpin all dragged nodes">Reset Pins</button>
-        </div>
       </div>
 
       <div id="graph-container" class="graph-container">

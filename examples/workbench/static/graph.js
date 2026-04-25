@@ -10,7 +10,6 @@ let visNodes = null;
 let visEdges = null;
 let activeTypes = new Set();
 let callbacks = {};
-const pinnedNodes = new Set();
 
 function getEntityColor(type) {
     if (ENTITY_COLORS[type]) return ENTITY_COLORS[type];
@@ -109,27 +108,14 @@ function buildGraph() {
     // Clear placeholder
     container.innerHTML = '';
 
-    // Pre-compute node degree (total incoming + outgoing edges) for visual sizing.
-    // Range: 8px (isolated node) to 24px (highest-degree hub). See UI-SPEC Degree-Based Node Sizing.
-    const degreeMap = {};
-    allEdges.forEach(e => {
-        degreeMap[e.source] = (degreeMap[e.source] || 0) + 1;
-        degreeMap[e.target] = (degreeMap[e.target] || 0) + 1;
-    });
-    const maxDegree = Math.max(...Object.values(degreeMap), 1);
-
     const nodes = allNodes.map(n => ({
         id: n.id,
         label: n.name || n.id,
         color: getEntityColor(n.entity_type),
         title: `${n.entity_type}: ${n.name}`,
         shape: 'dot',
-        size: 8 + Math.round(((degreeMap[n.id] || 0) / maxDegree) * 16),
-        font: {
-            size: 12,
-            color: '#1a1a1a',
-            background: 'rgba(255, 255, 255, 0.85)',
-        },
+        size: 12,
+        font: { size: 11, color: '#333' },
         _data: n,
     }));
 
@@ -152,22 +138,7 @@ function buildGraph() {
             barnesHut: { gravitationalConstant: -3000, springLength: 150 },
             stabilization: { iterations: 100 },
         },
-        scaling: {
-            label: {
-                enabled: true,
-                min: 8,
-                max: 14,
-                maxVisible: 14,
-                drawThreshold: 6,
-            },
-        },
-        interaction: {
-            hover: true,
-            tooltipDelay: 200,
-            multiselect: true,
-            dragNodes: true,
-            navigationButtons: false,
-        },
+        interaction: { hover: true, tooltipDelay: 200 },
     };
 
     network = new vis.Network(container, { nodes: visNodes, edges: visEdges }, options);
@@ -194,57 +165,6 @@ function buildGraph() {
             network.fit({ nodes: [nodeId, ...connectedNodes], animation: { duration: 500 } });
         }
     });
-
-    // Drag-to-pin: when user drops a node, pin it and apply the accent border.
-    // Guard against canvas pan (params.nodes is empty for non-node drags).
-    network.on('dragEnd', (params) => {
-        if (!params.nodes || params.nodes.length === 0) return;
-        const updates = params.nodes.map(nodeId => {
-            pinnedNodes.add(nodeId);
-            return {
-                id: nodeId,
-                fixed: { x: true, y: true },
-                borderWidth: 2,
-                color: {
-                    border: '#4a6cf7',
-                    highlight: { border: '#4a6cf7' },
-                },
-            };
-        });
-        visNodes.update(updates);
-    });
-
-    // Fit View: recenter all nodes in the viewport with a short animation.
-    const fitBtn = document.getElementById('graph-fit-btn');
-    if (fitBtn) {
-        fitBtn.addEventListener('click', () => {
-            network.fit({ animation: { duration: 400 } });
-        });
-    }
-
-    // Reset Pins: unpin every pinned node and restore entity-type border color.
-    const resetPinsBtn = document.getElementById('graph-reset-pins-btn');
-    if (resetPinsBtn) {
-        resetPinsBtn.addEventListener('click', () => {
-            if (pinnedNodes.size === 0) return;
-            const unfixUpdates = [...pinnedNodes].map(nodeId => {
-                const node = allNodes.find(n => n.id === nodeId);
-                const entityColor = getEntityColor(node?.entity_type || '');
-                return {
-                    id: nodeId,
-                    fixed: false,
-                    borderWidth: 1,
-                    color: { border: entityColor, highlight: { border: entityColor } },
-                };
-            });
-            visNodes.update(unfixUpdates);
-            pinnedNodes.clear();
-        });
-    }
-
-    // Close any open node popover on window resize so it does not float
-    // in a stale DOM position (RESEARCH Pitfall 4).
-    window.addEventListener('resize', hideNodePopover);
 }
 
 function filterGraph() {
