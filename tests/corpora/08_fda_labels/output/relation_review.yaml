@@ -1,0 +1,703 @@
+review_threshold: 0.7
+relations:
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: active_ingredient:atorvastatin
+  target_name: atorvastatin
+  relation_type: HAS_ACTIVE_INGREDIENT
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: contraindication:acute_liver_failure
+  target_name: acute liver failure
+  relation_type: CONTRAINDICATED_IN
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: contraindication:decompensated_cirrhosis
+  target_name: decompensated cirrhosis
+  relation_type: CONTRAINDICATED_IN
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: adverse_reaction:pancreatitis
+  target_name: pancreatitis
+  relation_type: CAUSES_ADVERSE_REACTION
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: adverse_reaction:fatigue
+  target_name: fatigue
+  relation_type: CAUSES_ADVERSE_REACTION
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: adverse_reaction:hepatic_failure
+  target_name: hepatic failure
+  relation_type: CAUSES_ADVERSE_REACTION
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: adverse_reaction:anaphylaxis
+  target_name: anaphylaxis
+  relation_type: CAUSES_ADVERSE_REACTION
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: drug_interaction:grapefruit_juice
+  target_name: grapefruit juice
+  relation_type: INTERACTS_WITH
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: patient_population:child_pugh_b_disease
+  target_name: Child-Pugh B disease
+  relation_type: STUDIED_IN_POPULATION
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: mechanism_of_action:inhibition_of_hmg_coa_reductase_reducing_cholesterol_synthesis
+  target_name: Inhibition of HMG-CoA reductase, reducing cholesterol synthesis
+  relation_type: HAS_MECHANISM
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: adverse_reaction:tendon_rupture
+  target_name: tendon rupture
+  relation_type: CAUSES_ADVERSE_REACTION
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: drug_interaction:rifampin
+  target_name: rifampin
+  relation_type: INTERACTS_WITH
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: drug_interaction:oral_contraceptives
+  target_name: oral contraceptives
+  relation_type: INTERACTS_WITH
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: drug_interaction:digoxin
+  target_name: digoxin
+  relation_type: INTERACTS_WITH
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: drug_interaction:cyclosporine
+  target_name: cyclosporine
+  relation_type: INTERACTS_WITH
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: drug_interaction:gemfibrozil
+  target_name: gemfibrozil
+  relation_type: INTERACTS_WITH
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: drug_interaction:anti_viral_medications_e_g_ledipasvir_sofosbuvir
+  target_name: anti-viral medications (e.g., ledipasvir/sofosbuvir)
+  relation_type: INTERACTS_WITH
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: drug_interaction:azoles_clarithromycin_itraconazole_etc
+  target_name: azoles (clarithromycin, itraconazole, etc.)
+  relation_type: INTERACTS_WITH
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: drug_interaction:niacin_1_g_day
+  target_name: niacin (≥1 g/day)
+  relation_type: INTERACTS_WITH
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: drug_interaction:fibrates_other_than_gemfibrozil
+  target_name: fibrates (other than gemfibrozil)
+  relation_type: INTERACTS_WITH
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: drug_interaction:colchicine
+  target_name: colchicine
+  relation_type: INTERACTS_WITH
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: adverse_reaction:rhabdomyolysis
+  target_name: rhabdomyolysis
+  relation_type: HAS_WARNING
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: adverse_reaction:myositis
+  target_name: myositis
+  relation_type: HAS_WARNING
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: adverse_reaction:dizziness
+  target_name: dizziness
+  relation_type: HAS_WARNING
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: adverse_reaction:peripheral_neuropathy
+  target_name: peripheral neuropathy
+  relation_type: HAS_WARNING
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: adverse_reaction:cognitive_impairment
+  target_name: cognitive impairment
+  relation_type: HAS_WARNING
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: adverse_reaction:myasthenia_gravis
+  target_name: myasthenia gravis
+  relation_type: HAS_WARNING
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: adverse_reaction:angioneurotic_edema
+  target_name: angioneurotic edema
+  relation_type: HAS_WARNING
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: adverse_reaction:bullous_rash
+  target_name: bullous rash
+  relation_type: HAS_WARNING
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: adverse_reaction:stevens_johnson_syndrome
+  target_name: Stevens-Johnson syndrome
+  relation_type: HAS_WARNING
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: adverse_reaction:toxic_epidermal_necrolysis
+  target_name: toxic epidermal necrolysis
+  relation_type: HAS_WARNING
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:lipitor
+  source_name: LIPITOR
+  target_id: mechanism_of_action:selective_competitive_inhibition_of_hmg_coa_reductase
+  target_name: Selective competitive inhibition of HMG-CoA reductase
+  relation_type: HAS_MECHANISM
+  confidence: 0.5
+  evidence: ''
+  source_document: atorvastatin_lipitor
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:ozempic
+  source_name: OZEMPIC
+  target_id: active_ingredient:semaglutide
+  target_name: semaglutide
+  relation_type: HAS_ACTIVE_INGREDIENT
+  confidence: 0.5
+  evidence: ''
+  source_document: semaglutide_ozempic
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:ozempic
+  source_name: OZEMPIC
+  target_id: inactive_ingredient:disodium_phosphate_dihydrate
+  target_name: disodium phosphate dihydrate
+  relation_type: HAS_INACTIVE_INGREDIENT
+  confidence: 0.5
+  evidence: ''
+  source_document: semaglutide_ozempic
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:ozempic
+  source_name: OZEMPIC
+  target_id: inactive_ingredient:propylene_glycol
+  target_name: propylene glycol
+  relation_type: HAS_INACTIVE_INGREDIENT
+  confidence: 0.5
+  evidence: ''
+  source_document: semaglutide_ozempic
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:ozempic
+  source_name: OZEMPIC
+  target_id: inactive_ingredient:phenol
+  target_name: phenol
+  relation_type: HAS_INACTIVE_INGREDIENT
+  confidence: 0.5
+  evidence: ''
+  source_document: semaglutide_ozempic
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:ozempic
+  source_name: OZEMPIC
+  target_id: inactive_ingredient:water_for_injections
+  target_name: water for injections
+  relation_type: HAS_INACTIVE_INGREDIENT
+  confidence: 0.5
+  evidence: ''
+  source_document: semaglutide_ozempic
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:ozempic
+  source_name: OZEMPIC
+  target_id: clinical_study:sustain_6
+  target_name: SUSTAIN 6
+  relation_type: EVALUATED_IN
+  confidence: 0.5
+  evidence: ''
+  source_document: semaglutide_ozempic
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: manufacturer:novo_nordisk_inc
+  source_name: Novo Nordisk Inc.
+  target_id: drug_product:ozempic
+  target_name: OZEMPIC
+  relation_type: MANUFACTURES
+  confidence: 0.5
+  evidence: ''
+  source_document: semaglutide_ozempic
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: manufacturer:upsher_smith_laboratories_llc
+  source_name: Upsher-Smith Laboratories, LLC
+  target_id: drug_product:jantoven
+  target_name: JANTOVEN
+  relation_type: MANUFACTURES
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: active_ingredient:warfarin_sodium
+  target_name: warfarin sodium
+  relation_type: HAS_ACTIVE_INGREDIENT
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: contraindication:pregnancy
+  target_name: Pregnancy
+  relation_type: CONTRAINDICATED_IN
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: contraindication:heparin_induced_thrombocytopenia_hit_and_hitts
+  target_name: Heparin-induced thrombocytopenia (HIT) and HITTS
+  relation_type: CONTRAINDICATED_IN
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: adverse_reaction:calciphylaxis
+  target_name: Calciphylaxis
+  relation_type: CONTRAINDICATED_IN
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: adverse_reaction:calciphylaxis
+  target_name: Calciphylaxis
+  relation_type: CAUSES_ADVERSE_REACTION
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: warning:boxed_warning_increased_risk_of_hemorrhage_and_tissue_necrosis
+  target_name: 'Boxed warning: increased risk of hemorrhage and tissue necrosis'
+  relation_type: HAS_WARNING
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: warning:bleeding_risk_with_concomitant_anticoagulants_and_cyp2c9_inhibitors
+  target_name: Bleeding risk with concomitant anticoagulants and CYP2C9 inhibitors
+  relation_type: HAS_WARNING
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: drug_interaction:cyp2c9_inhibitors_e_g_fluconazole_amiodarone_increase_inr
+  target_name: CYP2C9 inhibitors (e.g., fluconazole, amiodarone) increase INR
+  relation_type: INTERACTS_WITH
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: patient_population:pregnant_women
+  target_name: Pregnant women
+  relation_type: STUDIED_IN_POPULATION
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: patient_population:patients_with_renal_impairment
+  target_name: Patients with renal impairment
+  relation_type: STUDIED_IN_POPULATION
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: patient_population:patients_with_hepatic_impairment
+  target_name: Patients with hepatic impairment
+  relation_type: STUDIED_IN_POPULATION
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: mechanism_of_action:inhibition_of_vitamin_k_epoxide_reductase_reducing_synthesis_of_vitamin_k_dependent_clotting_factors
+  target_name: Inhibition of vitamin K epoxide reductase, reducing synthesis of vitamin
+    K-dependent clotting factors
+  relation_type: HAS_MECHANISM
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: pharmacokinetic_property:metabolized_by_cyp2c9_cyp1a2_cyp3a4
+  target_name: Metabolized by CYP2C9, CYP1A2, CYP3A4
+  relation_type: HAS_PK_PROPERTY
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: labtest:inr
+  target_name: INR
+  relation_type: HAS_WARNING
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: adverse_reaction:hemorrhage
+  target_name: Hemorrhage
+  relation_type: CAUSES_ADVERSE_REACTION
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: adverse_reaction:tissue_necrosis
+  target_name: Tissue necrosis
+  relation_type: CAUSES_ADVERSE_REACTION
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: adverse_reaction:acute_kidney_injury
+  target_name: Acute kidney injury
+  relation_type: CAUSES_ADVERSE_REACTION
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: adverse_reaction:systemic_atheroemboli_and_cholesterol_microemboli
+  target_name: Systemic atheroemboli and cholesterol microemboli
+  relation_type: CAUSES_ADVERSE_REACTION
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: adverse_reaction:limb_ischemia_necrosis_and_gangrene_in_patients_with_hit_and_hitts
+  target_name: Limb ischemia, necrosis, and gangrene in patients with HIT and HITTS
+  relation_type: CAUSES_ADVERSE_REACTION
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: drug_interaction:cyp2c9_inducers_e_g_rifampin_carbamazepine_decrease_inr
+  target_name: CYP2C9 inducers (e.g., rifampin, carbamazepine) decrease INR
+  relation_type: INTERACTS_WITH
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: inactive_ingredient:lactose_monohydrate
+  target_name: lactose monohydrate
+  relation_type: HAS_INACTIVE_INGREDIENT
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: inactive_ingredient:magnesium_stearate
+  target_name: magnesium stearate
+  relation_type: HAS_INACTIVE_INGREDIENT
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: inactive_ingredient:povidone
+  target_name: povidone
+  relation_type: HAS_INACTIVE_INGREDIENT
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: inactive_ingredient:pregelatinized_starch_corn
+  target_name: pregelatinized starch (corn)
+  relation_type: HAS_INACTIVE_INGREDIENT
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: inactive_ingredient:fd_c_red_40_aluminum_lake
+  target_name: 'FD&C Red #40 Aluminum Lake'
+  relation_type: HAS_INACTIVE_INGREDIENT
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: inactive_ingredient:d_c_yellow_10_aluminum_lake
+  target_name: 'D&C Yellow #10 Aluminum Lake'
+  relation_type: HAS_INACTIVE_INGREDIENT
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: inactive_ingredient:brown_75_synthetic_brown_iron_oxide
+  target_name: 'Brown #75 Synthetic Brown Iron Oxide'
+  relation_type: HAS_INACTIVE_INGREDIENT
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: inactive_ingredient:fd_c_yellow_6_aluminum_lake
+  target_name: 'FD&C Yellow #6 Aluminum Lake'
+  relation_type: HAS_INACTIVE_INGREDIENT
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: inactive_ingredient:yellow_10_synthetic_yellow_iron_oxide
+  target_name: 'Yellow #10 Synthetic Yellow Iron Oxide'
+  relation_type: HAS_INACTIVE_INGREDIENT
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
+- source_id: drug_product:jantoven
+  source_name: JANTOVEN
+  target_id: inactive_ingredient:black_85_synthetic_black_iron_oxide
+  target_name: 'Black #85 Synthetic Black Iron Oxide'
+  relation_type: HAS_INACTIVE_INGREDIENT
+  confidence: 0.5
+  evidence: ''
+  source_document: warfarin_jantoven
+  status: DRAFT
+  flag_reason: Low confidence (0.50 < 0.7)
