@@ -26,7 +26,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "MANUFACTURER_1",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "MANUFACTURER_1",
+      "target_entity": "Eli Lilly and Company",
       "relation_type": "MANUFACTURED_BY",
       "evidence": ""
     },

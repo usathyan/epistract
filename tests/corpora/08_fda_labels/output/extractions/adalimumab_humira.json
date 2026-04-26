@@ -893,7 +893,7 @@
       "target": "MANUFACTURER_1",
       "type": "MANUFACTURED_BY",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "MANUFACTURER_1",
+      "target_entity": "AbbVie",
       "relation_type": "MANUFACTURED_BY",
       "evidence": ""
     },
@@ -902,7 +902,7 @@
       "target": "INDICATION_1",
       "type": "INDICATED_FOR",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "INDICATION_1",
+      "target_entity": "ulcerative colitis",
       "relation_type": "INDICATED_FOR",
       "evidence": ""
     },
@@ -911,7 +911,7 @@
       "target": "INDICATION_2",
       "type": "INDICATED_FOR",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "INDICATION_2",
+      "target_entity": "rheumatoid arthritis",
       "relation_type": "INDICATED_FOR",
       "evidence": ""
     },
@@ -920,7 +920,7 @@
       "target": "INDICATION_3",
       "type": "INDICATED_FOR",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "INDICATION_3",
+      "target_entity": "plaque psoriasis",
       "relation_type": "INDICATED_FOR",
       "evidence": ""
     },
@@ -929,7 +929,7 @@
       "target": "INDICATION_4",
       "type": "INDICATED_FOR",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "INDICATION_4",
+      "target_entity": "hidradenitis suppurativa",
       "relation_type": "INDICATED_FOR",
       "evidence": ""
     },
@@ -938,7 +938,7 @@
       "target": "INDICATION_5",
       "type": "INDICATED_FOR",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "INDICATION_5",
+      "target_entity": "uveitis",
       "relation_type": "INDICATED_FOR",
       "evidence": ""
     },
@@ -947,7 +947,7 @@
       "target": "INDICATION_6",
       "type": "INDICATED_FOR",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "INDICATION_6",
+      "target_entity": "juvenile idiopathic arthritis",
       "relation_type": "INDICATED_FOR",
       "evidence": ""
     },
@@ -956,7 +956,7 @@
       "target": "INDICATION_7",
       "type": "INDICATED_FOR",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "INDICATION_7",
+      "target_entity": "psoriatic arthritis",
       "relation_type": "INDICATED_FOR",
       "evidence": ""
     },
@@ -965,7 +965,7 @@
       "target": "INDICATION_8",
       "type": "INDICATED_FOR",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "INDICATION_8",
+      "target_entity": "ankylosing spondylitis",
       "relation_type": "INDICATED_FOR",
       "evidence": ""
     },
@@ -974,7 +974,7 @@
       "target": "INDICATION_9",
       "type": "INDICATED_FOR",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "INDICATION_9",
+      "target_entity": "Crohn's disease",
       "relation_type": "INDICATED_FOR",
       "evidence": ""
     },
@@ -983,7 +983,7 @@
       "target": "CONTRAINDICATION_1",
       "type": "CONTRAINDICATED_IN",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "CONTRAINDICATION_1",
+      "target_entity": "live vaccines",
       "relation_type": "CONTRAINDICATED_IN",
       "evidence": ""
     },
@@ -992,7 +992,7 @@
       "target": "CONTRAINDICATION_2",
       "type": "CONTRAINDICATED_IN",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "CONTRAINDICATION_2",
+      "target_entity": "Active tuberculosis (latent or reactivated)",
       "relation_type": "CONTRAINDICATED_IN",
       "evidence": ""
     },
@@ -1001,7 +1001,7 @@
       "target": "CONTRAINDICATION_3",
       "type": "CONTRAINDICATED_IN",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "CONTRAINDICATION_3",
+      "target_entity": "Active hepatitis B virus infection",
       "relation_type": "CONTRAINDICATED_IN",
       "evidence": ""
     },
@@ -1010,7 +1010,7 @@
       "target": "ADVERSE_REACTION_1",
       "type": "CAUSES_ADVERSE_REACTION",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_1",
+      "target_entity": "upper respiratory tract infection",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -1019,7 +1019,7 @@
       "target": "ADVERSE_REACTION_2",
       "type": "CAUSES_ADVERSE_REACTION",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_2",
+      "target_entity": "nasopharyngitis",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -1028,7 +1028,7 @@
       "target": "ADVERSE_REACTION_3",
       "type": "CAUSES_ADVERSE_REACTION",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_3",
+      "target_entity": "hepatosplenic T-cell lymphoma",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -1037,7 +1037,7 @@
       "target": "ADVERSE_REACTION_4",
       "type": "CAUSES_ADVERSE_REACTION",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_4",
+      "target_entity": "viral infection",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -1046,7 +1046,7 @@
       "target": "ADVERSE_REACTION_5",
       "type": "CAUSES_ADVERSE_REACTION",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_5",
+      "target_entity": "device related sepsis",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -1055,7 +1055,7 @@
       "target": "ADVERSE_REACTION_6",
       "type": "CAUSES_ADVERSE_REACTION",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_6",
+      "target_entity": "gastroenteritis",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -1064,7 +1064,7 @@
       "target": "WARNING_1",
       "type": "HAS_WARNING",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "WARNING_1",
+      "target_entity": "monitor for hepatitis B virus reactivation",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -1073,7 +1073,7 @@
       "target": "WARNING_2",
       "type": "HAS_WARNING",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "WARNING_2",
+      "target_entity": "monitor for hypersensitivity reactions",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -1082,7 +1082,7 @@
       "target": "WARNING_3",
       "type": "HAS_WARNING",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "WARNING_3",
+      "target_entity": "monitor for demyelinating disorders",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -1091,7 +1091,7 @@
       "target": "WARNING_4",
       "type": "HAS_WARNING",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "WARNING_4",
+      "target_entity": "monitor for heart failure",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -1100,7 +1100,7 @@
       "target": "WARNING_5",
       "type": "HAS_WARNING",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "WARNING_5",
+      "target_entity": "Anaphylaxis or serious hypersensitivity reactions",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -1109,7 +1109,7 @@
       "target": "WARNING_6",
       "type": "HAS_WARNING",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "WARNING_6",
+      "target_entity": "Hepatitis B virus reactivation",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -1118,7 +1118,7 @@
       "target": "WARNING_7",
       "type": "HAS_WARNING",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "WARNING_7",
+      "target_entity": "Demyelinating disease",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -1127,7 +1127,7 @@
       "target": "WARNING_8",
       "type": "HAS_WARNING",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "WARNING_8",
+      "target_entity": "Cytopenias, pancytopenia",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -1136,7 +1136,7 @@
       "target": "WARNING_9",
       "type": "HAS_WARNING",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "WARNING_9",
+      "target_entity": "Heart failure",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -1145,7 +1145,7 @@
       "target": "WARNING_10",
       "type": "HAS_WARNING",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "WARNING_10",
+      "target_entity": "Autoimmunity",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -1154,7 +1154,7 @@
       "target": "DRUG_INTERACTION_1",
       "type": "INTERACTS_WITH",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "DRUG_INTERACTION_1",
+      "target_entity": "abatacept",
       "relation_type": "INTERACTS_WITH",
       "evidence": ""
     },
@@ -1163,7 +1163,7 @@
       "target": "DRUG_INTERACTION_2",
       "type": "INTERACTS_WITH",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "DRUG_INTERACTION_2",
+      "target_entity": "anakinra",
       "relation_type": "INTERACTS_WITH",
       "evidence": ""
     },
@@ -1217,7 +1217,7 @@
       "target": "PATIENT_POPULATION_1",
       "type": "STUDIED_IN_POPULATION",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "PATIENT_POPULATION_1",
+      "target_entity": "pediatric",
       "relation_type": "STUDIED_IN_POPULATION",
       "evidence": ""
     },
@@ -1226,7 +1226,7 @@
       "target": "PATIENT_POPULATION_2",
       "type": "STUDIED_IN_POPULATION",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "PATIENT_POPULATION_2",
+      "target_entity": "adult",
       "relation_type": "STUDIED_IN_POPULATION",
       "evidence": ""
     },
@@ -1235,7 +1235,7 @@
       "target": "PATIENT_POPULATION_3",
       "type": "STUDIED_IN_POPULATION",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "PATIENT_POPULATION_3",
+      "target_entity": "HBV carriers",
       "relation_type": "STUDIED_IN_POPULATION",
       "evidence": ""
     },
@@ -1244,7 +1244,7 @@
       "target": "PATIENT_POPULATION_4",
       "type": "STUDIED_IN_POPULATION",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "PATIENT_POPULATION_4",
+      "target_entity": "Patients 2 years and older with juvenile idiopathic arthritis",
       "relation_type": "STUDIED_IN_POPULATION",
       "evidence": ""
     },
@@ -1253,7 +1253,7 @@
       "target": "PATIENT_POPULATION_5",
       "type": "STUDIED_IN_POPULATION",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "PATIENT_POPULATION_5",
+      "target_entity": "Patients 6 years and older with Crohn\u2019s disease",
       "relation_type": "STUDIED_IN_POPULATION",
       "evidence": ""
     },
@@ -1262,7 +1262,7 @@
       "target": "PATIENT_POPULATION_6",
       "type": "STUDIED_IN_POPULATION",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "PATIENT_POPULATION_6",
+      "target_entity": "Patients 5 years and older with ulcerative colitis",
       "relation_type": "STUDIED_IN_POPULATION",
       "evidence": ""
     },
@@ -1271,7 +1271,7 @@
       "target": "PATIENT_POPULATION_7",
       "type": "STUDIED_IN_POPULATION",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "PATIENT_POPULATION_7",
+      "target_entity": "Patients 12 years and older with hidradenitis suppurativa",
       "relation_type": "STUDIED_IN_POPULATION",
       "evidence": ""
     },
@@ -1280,7 +1280,7 @@
       "target": "PATIENT_POPULATION_8",
       "type": "STUDIED_IN_POPULATION",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "PATIENT_POPULATION_8",
+      "target_entity": "Patients 2 years and older with non\u2011infectious uveitis",
       "relation_type": "STUDIED_IN_POPULATION",
       "evidence": ""
     },
@@ -1289,7 +1289,7 @@
       "target": "MECHANISM_OF_ACTION_1",
       "type": "HAS_MECHANISM",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "MECHANISM_OF_ACTION_1",
+      "target_entity": "TNF-alpha inhibitor",
       "relation_type": "HAS_MECHANISM",
       "evidence": ""
     },
@@ -1298,7 +1298,7 @@
       "target": "PHARMACOKINETIC_PROPERTY_1",
       "type": "HAS_PK_PROPERTY",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "PHARMACOKINETIC_PROPERTY_1",
+      "target_entity": "Half\u2011life",
       "relation_type": "HAS_PK_PROPERTY",
       "evidence": ""
     },
@@ -1307,7 +1307,7 @@
       "target": "PHARMACOKINETIC_PROPERTY_2",
       "type": "HAS_PK_PROPERTY",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "PHARMACOKINETIC_PROPERTY_2",
+      "target_entity": "Protein binding",
       "relation_type": "HAS_PK_PROPERTY",
       "evidence": ""
     },
@@ -1316,7 +1316,7 @@
       "target": "PHARMACOLOGIC_CLASS_1",
       "type": "BELONGS_TO_CLASS",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "PHARMACOLOGIC_CLASS_1",
+      "target_entity": "TNF blocker",
       "relation_type": "BELONGS_TO_CLASS",
       "evidence": ""
     },
@@ -1352,7 +1352,7 @@
       "target": "LABTEST_1",
       "type": "HAS_WARNING",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "LABTEST_1",
+      "target_entity": "HBV serology",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -1361,7 +1361,7 @@
       "target": "LABTEST_2",
       "type": "HAS_WARNING",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "LABTEST_2",
+      "target_entity": "liver function tests",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -1370,7 +1370,7 @@
       "target": "LABTEST_3",
       "type": "HAS_WARNING",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "LABTEST_3",
+      "target_entity": "HBV DNA",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -1730,7 +1730,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_7",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_7",
+      "target_entity": "H1N1 influenza",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -1739,7 +1739,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_8",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_8",
+      "target_entity": "disseminated histoplasmosis",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -1748,7 +1748,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_9",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_9",
+      "target_entity": "allergic reaction",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -1757,7 +1757,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_10",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_10",
+      "target_entity": "diverticulitis",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -1766,7 +1766,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_11",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_11",
+      "target_entity": "large bowel perforation",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -1775,7 +1775,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_12",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_12",
+      "target_entity": "pancreatitis",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -1784,7 +1784,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_13",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_13",
+      "target_entity": "liver failure",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -1793,7 +1793,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_14",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_14",
+      "target_entity": "hepatitis",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -1802,7 +1802,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_15",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_15",
+      "target_entity": "aplastic anemia",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -1811,7 +1811,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_16",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_16",
+      "target_entity": "sarcoidosis",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -1820,7 +1820,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_17",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_17",
+      "target_entity": "Merkel cell carcinoma",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -1829,7 +1829,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_18",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_18",
+      "target_entity": "serious infection",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -1838,7 +1838,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_19",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_19",
+      "target_entity": "heart failure",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -1847,7 +1847,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_20",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_20",
+      "target_entity": "cerebrovascular accident",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -1856,7 +1856,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_21",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_21",
+      "target_entity": "interstitial lung disease",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -1865,7 +1865,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "DRUG_INTERACTION_3",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "DRUG_INTERACTION_3",
+      "target_entity": "live vaccines",
       "relation_type": "INTERACTS_WITH",
       "evidence": ""
     },
@@ -1874,7 +1874,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "DRUG_INTERACTION_4",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "DRUG_INTERACTION_4",
+      "target_entity": "methotrexate",
       "relation_type": "INTERACTS_WITH",
       "evidence": ""
     },
@@ -2675,7 +2675,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "LABTEST_1",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "LABTEST_1",
+      "target_entity": "HBV serology",
       "relation_type": "HAS_PK_PROPERTY",
       "evidence": ""
     },
@@ -2684,7 +2684,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "LABTEST_2",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "LABTEST_2",
+      "target_entity": "liver function tests",
       "relation_type": "HAS_PK_PROPERTY",
       "evidence": ""
     },
@@ -2775,7 +2775,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_22",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_22",
+      "target_entity": "pulmonary embolism",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -2785,7 +2785,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_23",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_23",
+      "target_entity": "Stevens-Johnson syndrome",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -2795,7 +2795,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_24",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_24",
+      "target_entity": "cutaneous vasculitis",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -2805,7 +2805,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_25",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_25",
+      "target_entity": "erythema multiforme",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -2815,7 +2815,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_26",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_26",
+      "target_entity": "new or worsening psoriasis",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -2825,7 +2825,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_27",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_27",
+      "target_entity": "alopecia",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -2835,7 +2835,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_28",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_28",
+      "target_entity": "lichenoid skin reaction",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -2845,7 +2845,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_29",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_29",
+      "target_entity": "systemic vasculitis",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -2855,7 +2855,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_30",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_30",
+      "target_entity": "deep vein thrombosis",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -2865,7 +2865,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "CONTRAINDICATION_1",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "CONTRAINDICATION_1",
+      "target_entity": "live vaccines",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -2875,7 +2875,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "DRUG_INTERACTION_5",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "DRUG_INTERACTION_5",
+      "target_entity": "rituximab",
       "relation_type": "INTERACTS_WITH",
       "evidence": ""
     },
@@ -2885,7 +2885,7 @@
       "subject": "DRUG_PRODUCT_1",
       "object": "DRUG_INTERACTION_6",
       "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "DRUG_INTERACTION_6",
+      "target_entity": "other biologic DMARDs",
       "relation_type": "INTERACTS_WITH",
       "evidence": ""
     },

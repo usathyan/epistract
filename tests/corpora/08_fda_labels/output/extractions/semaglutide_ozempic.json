@@ -84,8 +84,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "ACTIVE_INGREDIENT_1",
       "type": "HAS_ACTIVE_INGREDIENT",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ACTIVE_INGREDIENT_1",
+      "source_entity": "OZEMPIC",
+      "target_entity": "semaglutide",
       "relation_type": "HAS_ACTIVE_INGREDIENT",
       "evidence": ""
     },
@@ -93,8 +93,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "MANUFACTURER_1",
       "type": "MANUFACTURED_BY",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "MANUFACTURER_1",
+      "source_entity": "OZEMPIC",
+      "target_entity": "Novo Nordisk Inc.",
       "relation_type": "MANUFACTURED_BY",
       "evidence": ""
     },
@@ -102,7 +102,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "INDICATION_1",
       "type": "INDICATED_FOR",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "INDICATION_1",
       "relation_type": "INDICATED_FOR",
       "evidence": ""
@@ -111,7 +111,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "INDICATION_2",
       "type": "INDICATED_FOR",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "INDICATION_2",
       "relation_type": "INDICATED_FOR",
       "evidence": ""
@@ -120,7 +120,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "CONTRAINDICATION_1",
       "type": "CONTRAINDICATED_IN",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "CONTRAINDICATION_1",
       "relation_type": "CONTRAINDICATED_IN",
       "evidence": ""
@@ -129,7 +129,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "CONTRAINDICATION_2",
       "type": "CONTRAINDICATED_IN",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "CONTRAINDICATION_2",
       "relation_type": "CONTRAINDICATED_IN",
       "evidence": ""
@@ -138,7 +138,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "WARNING_1",
       "type": "HAS_WARNING",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "WARNING_1",
       "relation_type": "HAS_WARNING",
       "evidence": ""
@@ -147,7 +147,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "WARNING_2",
       "type": "HAS_WARNING",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "WARNING_2",
       "relation_type": "HAS_WARNING",
       "evidence": ""
@@ -156,7 +156,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "WARNING_3",
       "type": "HAS_WARNING",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "WARNING_3",
       "relation_type": "HAS_WARNING",
       "evidence": ""
@@ -165,7 +165,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "WARNING_4",
       "type": "HAS_WARNING",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "WARNING_4",
       "relation_type": "HAS_WARNING",
       "evidence": ""
@@ -174,7 +174,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "WARNING_5",
       "type": "HAS_WARNING",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "WARNING_5",
       "relation_type": "HAS_WARNING",
       "evidence": ""
@@ -183,7 +183,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "DRUG_INTERACTION_1",
       "type": "INTERACTS_WITH",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "DRUG_INTERACTION_1",
       "relation_type": "INTERACTS_WITH",
       "evidence": ""
@@ -192,7 +192,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "DOSAGE_REGIMEN_1",
       "type": "DOSED_VIA",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "DOSAGE_REGIMEN_1",
       "relation_type": "DOSED_VIA",
       "evidence": ""
@@ -201,7 +201,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "PATIENT_POPULATION_1",
       "type": "STUDIED_IN_POPULATION",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "PATIENT_POPULATION_1",
       "relation_type": "STUDIED_IN_POPULATION",
       "evidence": ""
@@ -210,7 +210,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "PATIENT_POPULATION_2",
       "type": "STUDIED_IN_POPULATION",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "PATIENT_POPULATION_2",
       "relation_type": "STUDIED_IN_POPULATION",
       "evidence": ""
@@ -219,7 +219,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "MECHANISM_OF_ACTION_1",
       "type": "HAS_MECHANISM",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "MECHANISM_OF_ACTION_1",
       "relation_type": "HAS_MECHANISM",
       "evidence": ""
@@ -228,7 +228,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "PHARMACOKINETIC_PROPERTY_1",
       "type": "HAS_PK_PROPERTY",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "PHARMACOKINETIC_PROPERTY_1",
       "relation_type": "HAS_PK_PROPERTY",
       "evidence": ""
@@ -237,7 +237,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "PHARMACOKINETIC_PROPERTY_2",
       "type": "HAS_PK_PROPERTY",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "PHARMACOKINETIC_PROPERTY_2",
       "relation_type": "HAS_PK_PROPERTY",
       "evidence": ""
@@ -246,7 +246,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "PHARMACOLOGIC_CLASS_1",
       "type": "BELONGS_TO_CLASS",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "PHARMACOLOGIC_CLASS_1",
       "relation_type": "BELONGS_TO_CLASS",
       "evidence": ""
@@ -255,7 +255,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "PHARMACOLOGIC_CLASS_2",
       "type": "BELONGS_TO_CLASS",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "PHARMACOLOGIC_CLASS_2",
       "relation_type": "BELONGS_TO_CLASS",
       "evidence": ""
@@ -264,7 +264,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "PHARMACOLOGIC_CLASS_3",
       "type": "BELONGS_TO_CLASS",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "PHARMACOLOGIC_CLASS_3",
       "relation_type": "BELONGS_TO_CLASS",
       "evidence": ""
@@ -273,7 +273,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "REGULATORY_IDENTIFIER_1",
       "type": "IDENTIFIED_BY",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "REGULATORY_IDENTIFIER_1",
       "relation_type": "IDENTIFIED_BY",
       "evidence": ""
@@ -282,7 +282,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "LABTEST_1",
       "type": "HAS_WARNING",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "LABTEST_1",
       "relation_type": "HAS_WARNING",
       "evidence": ""
@@ -291,7 +291,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "LABTEST_2",
       "type": "HAS_WARNING",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "LABTEST_2",
       "relation_type": "HAS_WARNING",
       "evidence": ""
@@ -300,7 +300,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "LABTEST_3",
       "type": "HAS_WARNING",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "LABTEST_3",
       "relation_type": "HAS_WARNING",
       "evidence": ""
@@ -309,7 +309,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "LABTEST_4",
       "type": "HAS_WARNING",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "LABTEST_4",
       "relation_type": "HAS_WARNING",
       "evidence": ""
@@ -320,7 +320,7 @@
       "attributes": {},
       "from": "DRUG_PRODUCT_1",
       "to": "MECHANISM_1",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "MECHANISM_1",
       "relation_type": "HAS_MECHANISM",
       "evidence": ""
@@ -331,7 +331,7 @@
       "attributes": {},
       "from": "DRUG_PRODUCT_1",
       "to": "PK_PROPERTY_1",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "PK_PROPERTY_1",
       "relation_type": "HAS_PK_PROPERTY",
       "evidence": ""
@@ -342,7 +342,7 @@
       "attributes": {},
       "from": "DRUG_PRODUCT_1",
       "to": "PK_PROPERTY_2",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "PK_PROPERTY_2",
       "relation_type": "HAS_PK_PROPERTY",
       "evidence": ""
@@ -353,7 +353,7 @@
       "attributes": {},
       "from": "DRUG_PRODUCT_1",
       "to": "PK_PROPERTY_3",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "PK_PROPERTY_3",
       "relation_type": "HAS_PK_PROPERTY",
       "evidence": ""
@@ -362,7 +362,7 @@
       "type": "HAS_ACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "ACTIVE_INGREDIENT_SEMAGLUTIDE",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "ACTIVE_INGREDIENT_SEMAGLUTIDE",
       "relation_type": "HAS_ACTIVE_INGREDIENT",
       "evidence": ""
@@ -578,7 +578,7 @@
       "type": "STUDIED_IN_POPULATION",
       "subject": "DRUG_PRODUCT_1",
       "object": "PATIENT_POPULATION_3",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "PATIENT_POPULATION_3",
       "relation_type": "STUDIED_IN_POPULATION",
       "evidence": ""
@@ -641,7 +641,7 @@
       "type": "STUDIED_IN_POPULATION",
       "subject": "DRUG_PRODUCT_1",
       "object": "PATIENT_POPULATION_4",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "PATIENT_POPULATION_4",
       "relation_type": "STUDIED_IN_POPULATION",
       "evidence": ""
@@ -705,8 +705,8 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_1",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "INACTIVE_INGREDIENT_1",
+      "source_entity": "OZEMPIC",
+      "target_entity": "disodium phosphate dihydrate",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
     },
@@ -715,8 +715,8 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_2",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "INACTIVE_INGREDIENT_2",
+      "source_entity": "OZEMPIC",
+      "target_entity": "propylene glycol",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
     },
@@ -725,8 +725,8 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_3",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "INACTIVE_INGREDIENT_3",
+      "source_entity": "OZEMPIC",
+      "target_entity": "phenol",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
     },
@@ -735,8 +735,8 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_4",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "INACTIVE_INGREDIENT_4",
+      "source_entity": "OZEMPIC",
+      "target_entity": "water for injections",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
     },
@@ -745,7 +745,7 @@
       "type": "DOSED_VIA",
       "subject": "DRUG_PRODUCT_1",
       "object": "DOSAGE_REGIMEN_2",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "DOSAGE_REGIMEN_2",
       "relation_type": "DOSED_VIA",
       "evidence": ""
@@ -755,7 +755,7 @@
       "type": "DOSED_VIA",
       "subject": "DRUG_PRODUCT_1",
       "object": "DOSAGE_REGIMEN_3",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "DOSAGE_REGIMEN_3",
       "relation_type": "DOSED_VIA",
       "evidence": ""
@@ -765,7 +765,7 @@
       "type": "DOSED_VIA",
       "subject": "DRUG_PRODUCT_1",
       "object": "DOSAGE_REGIMEN_4",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "DOSAGE_REGIMEN_4",
       "relation_type": "DOSED_VIA",
       "evidence": ""
@@ -775,7 +775,7 @@
       "type": "DOSED_VIA",
       "subject": "DRUG_PRODUCT_1",
       "object": "DOSAGE_REGIMEN_5",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "OZEMPIC",
       "target_entity": "DOSAGE_REGIMEN_5",
       "relation_type": "DOSED_VIA",
       "evidence": ""
@@ -785,8 +785,8 @@
       "type": "EVALUATED_IN",
       "subject": "DRUG_PRODUCT_1",
       "object": "CLINICAL_STUDY_1",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "CLINICAL_STUDY_1",
+      "source_entity": "OZEMPIC",
+      "target_entity": "SUSTAIN 6",
       "relation_type": "EVALUATED_IN",
       "evidence": ""
     }

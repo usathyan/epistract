@@ -1,0 +1,1777 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1>FDA Product Labels Knowledge Graph Explorer</h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 100%;
+                 background-color: #1a1a2e;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    <style>html, body { height: 100%; margin: 0; padding: 0; overflow: hidden; } .card { height: 100%; }</style>
+</head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"aliases": "", "borderWidth": 2.0, "color": {"background": "#42A5F5", "border": "#e86262", "highlight": {"background": "#42A5F5", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "ADVERSE_REACTION", "font": {"color": "#e0e0e0"}, "full_name": "pancreatitis", "id": "adverse_reaction:pancreatitis", "label": "pancreatitis", "node_degree": 1, "num_source_docs": 2, "shape": "dot", "size": 8.5, "source_docs_str": "adalimumab_humira,atorvastatin_lipitor", "title": "pancreatitis\nType: ADVERSE_REACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: adalimumab_humira, atorvastatin_lipitor", "x": 1320.5396956195093, "y": -4.942011802661682}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#42A5F5", "border": "#e86262", "highlight": {"background": "#42A5F5", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "ADVERSE_REACTION", "font": {"color": "#e0e0e0"}, "full_name": "Stevens-Johnson syndrome", "id": "adverse_reaction:stevens_johnson_syndrome", "label": "Stevens-Johnson syndrome", "node_degree": 1, "num_source_docs": 2, "shape": "dot", "size": 8.5, "source_docs_str": "adalimumab_humira,atorvastatin_lipitor", "title": "Stevens-Johnson syndrome\nType: ADVERSE_REACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: adalimumab_humira, atorvastatin_lipitor", "x": 1244.7836011547272, "y": -53.775444817837524}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#66BB6A", "border": "#e86262", "highlight": {"background": "#66BB6A", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "DRUG_PRODUCT", "font": {"color": "#e0e0e0"}, "full_name": "LIPITOR", "id": "drug_product:lipitor", "label": "LIPITOR", "node_degree": 33, "num_source_docs": 1, "shape": "dot", "size": 50, "source_docs_str": "atorvastatin_lipitor", "title": "LIPITOR\nType: DRUG_PRODUCT\nConnections: 33\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1350.0118634683736, "y": -77.95973482728996}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#FFA726", "border": "#e86262", "highlight": {"background": "#FFA726", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "ACTIVE_INGREDIENT", "font": {"color": "#e0e0e0"}, "full_name": "atorvastatin", "id": "active_ingredient:atorvastatin", "label": "atorvastatin", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "atorvastatin\nType: ACTIVE_INGREDIENT\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1096.1263217077067, "y": 57.745561213725864}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#42A5F5", "border": "#e86262", "highlight": {"background": "#42A5F5", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "ADVERSE_REACTION", "font": {"color": "#e0e0e0"}, "full_name": "fatigue", "id": "adverse_reaction:fatigue", "label": "fatigue", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "fatigue\nType: ADVERSE_REACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1365.024976814686, "y": -185.6542788297321}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#42A5F5", "border": "#e86262", "highlight": {"background": "#42A5F5", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "ADVERSE_REACTION", "font": {"color": "#e0e0e0"}, "full_name": "hepatic failure", "id": "adverse_reaction:hepatic_failure", "label": "hepatic failure", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "hepatic failure\nType: ADVERSE_REACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1324.2998724004788, "y": 19.222186784683117}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#42A5F5", "border": "#e86262", "highlight": {"background": "#42A5F5", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "ADVERSE_REACTION", "font": {"color": "#e0e0e0"}, "full_name": "anaphylaxis", "id": "adverse_reaction:anaphylaxis", "label": "anaphylaxis", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "anaphylaxis\nType: ADVERSE_REACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1292.7040246699326, "y": -26.158514090547214}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#42A5F5", "border": "#e86262", "highlight": {"background": "#42A5F5", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "ADVERSE_REACTION", "font": {"color": "#e0e0e0"}, "full_name": "tendon rupture", "id": "adverse_reaction:tendon_rupture", "label": "tendon rupture", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "tendon rupture\nType: ADVERSE_REACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1387.35835581333, "y": 118.16487461363107}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#42A5F5", "border": "#e86262", "highlight": {"background": "#42A5F5", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "ADVERSE_REACTION", "font": {"color": "#e0e0e0"}, "full_name": "rhabdomyolysis", "id": "adverse_reaction:rhabdomyolysis", "label": "rhabdomyolysis", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "rhabdomyolysis\nType: ADVERSE_REACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1283.0805348669353, "y": 51.204277614386}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#42A5F5", "border": "#e86262", "highlight": {"background": "#42A5F5", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "ADVERSE_REACTION", "font": {"color": "#e0e0e0"}, "full_name": "myositis", "id": "adverse_reaction:myositis", "label": "myositis", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "myositis\nType: ADVERSE_REACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1339.689203693271, "y": 12.53693733886115}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#42A5F5", "border": "#e86262", "highlight": {"background": "#42A5F5", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "ADVERSE_REACTION", "font": {"color": "#e0e0e0"}, "full_name": "dizziness", "id": "adverse_reaction:dizziness", "label": "dizziness", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "dizziness\nType: ADVERSE_REACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1038.6150722866837, "y": 114.11713769121394}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#42A5F5", "border": "#e86262", "highlight": {"background": "#42A5F5", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "ADVERSE_REACTION", "font": {"color": "#e0e0e0"}, "full_name": "peripheral neuropathy", "id": "adverse_reaction:peripheral_neuropathy", "label": "peripheral neuropathy", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "peripheral neuropathy\nType: ADVERSE_REACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1214.6726389505234, "y": 182.7098258226696}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#42A5F5", "border": "#e86262", "highlight": {"background": "#42A5F5", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "ADVERSE_REACTION", "font": {"color": "#e0e0e0"}, "full_name": "cognitive impairment", "id": "adverse_reaction:cognitive_impairment", "label": "cognitive impairment", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "cognitive impairment\nType: ADVERSE_REACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1195.266609915581, "y": -224.42926933127322}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#42A5F5", "border": "#e86262", "highlight": {"background": "#42A5F5", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "ADVERSE_REACTION", "font": {"color": "#e0e0e0"}, "full_name": "myasthenia gravis", "id": "adverse_reaction:myasthenia_gravis", "label": "myasthenia gravis", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "myasthenia gravis\nType: ADVERSE_REACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1390.9663084521478, "y": 153.07809474336244}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#42A5F5", "border": "#e86262", "highlight": {"background": "#42A5F5", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "ADVERSE_REACTION", "font": {"color": "#e0e0e0"}, "full_name": "angioneurotic edema", "id": "adverse_reaction:angioneurotic_edema", "label": "angioneurotic edema", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "angioneurotic edema\nType: ADVERSE_REACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1014.3902948768628, "y": -87.2949007806289}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#42A5F5", "border": "#e86262", "highlight": {"background": "#42A5F5", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "ADVERSE_REACTION", "font": {"color": "#e0e0e0"}, "full_name": "bullous rash", "id": "adverse_reaction:bullous_rash", "label": "bullous rash", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "bullous rash\nType: ADVERSE_REACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1039.8863179390958, "y": -23.541894401384383}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#42A5F5", "border": "#e86262", "highlight": {"background": "#42A5F5", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "ADVERSE_REACTION", "font": {"color": "#e0e0e0"}, "full_name": "toxic epidermal necrolysis", "id": "adverse_reaction:toxic_epidermal_necrolysis", "label": "toxic epidermal necrolysis", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "toxic epidermal necrolysis\nType: ADVERSE_REACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1074.0680603502692, "y": -151.34832184284454}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#AB47BC", "border": "#e86262", "highlight": {"background": "#AB47BC", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "DRUG_INTERACTION", "font": {"color": "#e0e0e0"}, "full_name": "grapefruit juice", "id": "drug_interaction:grapefruit_juice", "label": "grapefruit juice", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "grapefruit juice\nType: DRUG_INTERACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1362.6820072145756, "y": -117.97659942679732}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#AB47BC", "border": "#e86262", "highlight": {"background": "#AB47BC", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "DRUG_INTERACTION", "font": {"color": "#e0e0e0"}, "full_name": "rifampin", "id": "drug_interaction:rifampin", "label": "rifampin", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "rifampin\nType: DRUG_INTERACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1022.8463386633138, "y": 4.6761933284259385}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#AB47BC", "border": "#e86262", "highlight": {"background": "#AB47BC", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "DRUG_INTERACTION", "font": {"color": "#e0e0e0"}, "full_name": "oral contraceptives", "id": "drug_interaction:oral_contraceptives", "label": "oral contraceptives", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "oral contraceptives\nType: DRUG_INTERACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1447.9356924412293, "y": -97.00790331632481}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#AB47BC", "border": "#e86262", "highlight": {"background": "#AB47BC", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "DRUG_INTERACTION", "font": {"color": "#e0e0e0"}, "full_name": "digoxin", "id": "drug_interaction:digoxin", "label": "digoxin", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "digoxin\nType: DRUG_INTERACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1069.499502573358, "y": 144.20732278843292}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#AB47BC", "border": "#e86262", "highlight": {"background": "#AB47BC", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "DRUG_INTERACTION", "font": {"color": "#e0e0e0"}, "full_name": "cyclosporine", "id": "drug_interaction:cyclosporine", "label": "cyclosporine", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "cyclosporine\nType: DRUG_INTERACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1260.8472717715654, "y": -219.79831732907317}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#AB47BC", "border": "#e86262", "highlight": {"background": "#AB47BC", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "DRUG_INTERACTION", "font": {"color": "#e0e0e0"}, "full_name": "gemfibrozil", "id": "drug_interaction:gemfibrozil", "label": "gemfibrozil", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "gemfibrozil\nType: DRUG_INTERACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1301.2147768862935, "y": -232.86947794334927}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#AB47BC", "border": "#e86262", "highlight": {"background": "#AB47BC", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "DRUG_INTERACTION", "font": {"color": "#e0e0e0"}, "full_name": "anti-viral medications (e.g., ledipasvir/sofosbuvir)", "id": "drug_interaction:anti_viral_medications_e_g_ledipasvir_sofosbuvir", "label": "anti-viral medications (e.g., ledipasvir/sofosbuvir)", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "anti-viral medications (e.g., ledipasvir/sofosbuvir)\nType: DRUG_INTERACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1343.9669126157837, "y": 245.05835800422085}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#AB47BC", "border": "#e86262", "highlight": {"background": "#AB47BC", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "DRUG_INTERACTION", "font": {"color": "#e0e0e0"}, "full_name": "azoles (clarithromycin, itraconazole, etc.)", "id": "drug_interaction:azoles_clarithromycin_itraconazole_etc", "label": "azoles (clarithromycin, itraconazole, etc.)", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "azoles (clarithromycin, itraconazole, etc.)\nType: DRUG_INTERACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1245.243875488721, "y": -211.75892083591563}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#AB47BC", "border": "#e86262", "highlight": {"background": "#AB47BC", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "DRUG_INTERACTION", "font": {"color": "#e0e0e0"}, "full_name": "niacin (\u22651 g/day)", "id": "drug_interaction:niacin_1_g_day", "label": "niacin (\u22651 g/day)", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "niacin (\u22651 g/day)\nType: DRUG_INTERACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1017.2049784479022, "y": -91.45829514870147}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#AB47BC", "border": "#e86262", "highlight": {"background": "#AB47BC", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "DRUG_INTERACTION", "font": {"color": "#e0e0e0"}, "full_name": "fibrates (other than gemfibrozil)", "id": "drug_interaction:fibrates_other_than_gemfibrozil", "label": "fibrates (other than gemfibrozil)", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "fibrates (other than gemfibrozil)\nType: DRUG_INTERACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1322.2201709576268, "y": -153.84225286987822}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#AB47BC", "border": "#e86262", "highlight": {"background": "#AB47BC", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "DRUG_INTERACTION", "font": {"color": "#e0e0e0"}, "full_name": "colchicine", "id": "drug_interaction:colchicine", "label": "colchicine", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "colchicine\nType: DRUG_INTERACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1184.245210709837, "y": 0.028763028807333058}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#26C6DA", "border": "#e86262", "highlight": {"background": "#26C6DA", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "PATIENT_POPULATION", "font": {"color": "#e0e0e0"}, "full_name": "Pediatric patients aged 10 years and older with HeFH", "id": "patient_population:pediatric_patients_aged_10_years_and_older_with_hefh", "label": "Pediatric patients aged 10 years and older with HeFH", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "Pediatric patients aged 10 years and older with HeFH\nType: PATIENT_POPULATION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1265.2246994235738, "y": -133.2405039685267}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#EF5350", "border": "#e86262", "highlight": {"background": "#EF5350", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "MECHANISM_OF_ACTION", "font": {"color": "#e0e0e0"}, "full_name": "Inhibition of HMG-CoA reductase, reducing cholesterol synthesis", "id": "mechanism_of_action:inhibition_of_hmg_coa_reductase_reducing_cholesterol_synthesis", "label": "Inhibition of HMG-CoA reductase, reducing cholesterol synthesis", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "Inhibition of HMG-CoA reductase, reducing cholesterol synthesis\nType: MECHANISM_OF_ACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1015.5512325555775, "y": -85.27671964221196}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#26C6DA", "border": "#e86262", "highlight": {"background": "#26C6DA", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "PATIENT_POPULATION", "font": {"color": "#e0e0e0"}, "full_name": "Child-Pugh B disease", "id": "patient_population:child_pugh_b_disease", "label": "Child-Pugh B disease", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "Child-Pugh B disease\nType: PATIENT_POPULATION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1234.1315835992496, "y": -183.27740004226155}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#FFEE58", "border": "#e86262", "highlight": {"background": "#FFEE58", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "CONTRAINDICATION", "font": {"color": "#e0e0e0"}, "full_name": "acute liver failure", "id": "contraindication:acute_liver_failure", "label": "acute liver failure", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "acute liver failure\nType: CONTRAINDICATION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1167.204146687552, "y": 11.774213968468132}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#FFEE58", "border": "#e86262", "highlight": {"background": "#FFEE58", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "CONTRAINDICATION", "font": {"color": "#e0e0e0"}, "full_name": "decompensated cirrhosis", "id": "contraindication:decompensated_cirrhosis", "label": "decompensated cirrhosis", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "decompensated cirrhosis\nType: CONTRAINDICATION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1306.1264802382552, "y": 140.05683430423562}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#EF5350", "border": "#e86262", "highlight": {"background": "#EF5350", "border": "#e86262"}}, "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease", "description": "", "entity_type": "MECHANISM_OF_ACTION", "font": {"color": "#e0e0e0"}, "full_name": "Selective competitive inhibition of HMG-CoA reductase", "id": "mechanism_of_action:selective_competitive_inhibition_of_hmg_coa_reductase", "label": "Selective competitive inhibition of HMG-CoA reductase", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "atorvastatin_lipitor", "title": "Selective competitive inhibition of HMG-CoA reductase\nType: MECHANISM_OF_ACTION\nConnections: 1\nCommunity: Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease\nConfidence: 50%\nSources: atorvastatin_lipitor", "x": 1226.4666816182275, "y": 53.75729108421416}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#66BB6A", "border": "#b062e8", "highlight": {"background": "#66BB6A", "border": "#b062e8"}}, "community": "Novo Nordisk Inc. / Ozempic / Sustain 6", "description": "", "entity_type": "DRUG_PRODUCT", "font": {"color": "#e0e0e0"}, "full_name": "OZEMPIC", "id": "drug_product:ozempic", "label": "OZEMPIC", "node_degree": 7, "num_source_docs": 1, "shape": "dot", "size": 23.5, "source_docs_str": "semaglutide_ozempic", "title": "OZEMPIC\nType: DRUG_PRODUCT\nConnections: 7\nCommunity: Novo Nordisk Inc. / Ozempic / Sustain 6\nConfidence: 50%\nSources: semaglutide_ozempic", "x": -487.36212620706686, "y": -1034.7093109988894}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#FFA726", "border": "#b062e8", "highlight": {"background": "#FFA726", "border": "#b062e8"}}, "community": "Novo Nordisk Inc. / Ozempic / Sustain 6", "description": "", "entity_type": "ACTIVE_INGREDIENT", "font": {"color": "#e0e0e0"}, "full_name": "semaglutide", "id": "active_ingredient:semaglutide", "label": "semaglutide", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "semaglutide_ozempic", "title": "semaglutide\nType: ACTIVE_INGREDIENT\nConnections: 1\nCommunity: Novo Nordisk Inc. / Ozempic / Sustain 6\nConfidence: 50%\nSources: semaglutide_ozempic", "x": -727.1916653661751, "y": -1185.4580204796232}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#EC407A", "border": "#b062e8", "highlight": {"background": "#EC407A", "border": "#b062e8"}}, "community": "Novo Nordisk Inc. / Ozempic / Sustain 6", "description": "", "entity_type": "INACTIVE_INGREDIENT", "font": {"color": "#e0e0e0"}, "full_name": "disodium phosphate dihydrate", "id": "inactive_ingredient:disodium_phosphate_dihydrate", "label": "disodium phosphate dihydrate", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "semaglutide_ozempic", "title": "disodium phosphate dihydrate\nType: INACTIVE_INGREDIENT\nConnections: 1\nCommunity: Novo Nordisk Inc. / Ozempic / Sustain 6\nConfidence: 50%\nSources: semaglutide_ozempic", "x": -719.8931737703244, "y": -1080.4696430962167}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#EC407A", "border": "#b062e8", "highlight": {"background": "#EC407A", "border": "#b062e8"}}, "community": "Novo Nordisk Inc. / Ozempic / Sustain 6", "description": "", "entity_type": "INACTIVE_INGREDIENT", "font": {"color": "#e0e0e0"}, "full_name": "propylene glycol", "id": "inactive_ingredient:propylene_glycol", "label": "propylene glycol", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "semaglutide_ozempic", "title": "propylene glycol\nType: INACTIVE_INGREDIENT\nConnections: 1\nCommunity: Novo Nordisk Inc. / Ozempic / Sustain 6\nConfidence: 50%\nSources: semaglutide_ozempic", "x": -586.7667218576323, "y": -845.9536837021906}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#EC407A", "border": "#b062e8", "highlight": {"background": "#EC407A", "border": "#b062e8"}}, "community": "Novo Nordisk Inc. / Ozempic / Sustain 6", "description": "", "entity_type": "INACTIVE_INGREDIENT", "font": {"color": "#e0e0e0"}, "full_name": "phenol", "id": "inactive_ingredient:phenol", "label": "phenol", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "semaglutide_ozempic", "title": "phenol\nType: INACTIVE_INGREDIENT\nConnections: 1\nCommunity: Novo Nordisk Inc. / Ozempic / Sustain 6\nConfidence: 50%\nSources: semaglutide_ozempic", "x": -840.8061298606422, "y": -1174.1078372539098}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#EC407A", "border": "#b062e8", "highlight": {"background": "#EC407A", "border": "#b062e8"}}, "community": "Novo Nordisk Inc. / Ozempic / Sustain 6", "description": "", "entity_type": "INACTIVE_INGREDIENT", "font": {"color": "#e0e0e0"}, "full_name": "water for injections", "id": "inactive_ingredient:water_for_injections", "label": "water for injections", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "semaglutide_ozempic", "title": "water for injections\nType: INACTIVE_INGREDIENT\nConnections: 1\nCommunity: Novo Nordisk Inc. / Ozempic / Sustain 6\nConfidence: 50%\nSources: semaglutide_ozempic", "x": -405.42505494348524, "y": -1177.242010695681}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#9CCC65", "border": "#b062e8", "highlight": {"background": "#9CCC65", "border": "#b062e8"}}, "community": "Novo Nordisk Inc. / Ozempic / Sustain 6", "description": "", "entity_type": "MANUFACTURER", "font": {"color": "#e0e0e0"}, "full_name": "Novo Nordisk Inc.", "id": "manufacturer:novo_nordisk_inc", "label": "Novo Nordisk Inc.", "node_degree": 1, "num_source_docs": 2, "shape": "dot", "size": 8.5, "source_docs_str": "semaglutide_ozempic,semaglutide_wegovy", "title": "Novo Nordisk Inc.\nType: MANUFACTURER\nConnections: 1\nCommunity: Novo Nordisk Inc. / Ozempic / Sustain 6\nConfidence: 50%\nSources: semaglutide_ozempic, semaglutide_wegovy", "x": -393.88838055939385, "y": -912.3201960743031}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#FF7043", "border": "#b062e8", "highlight": {"background": "#FF7043", "border": "#b062e8"}}, "community": "Novo Nordisk Inc. / Ozempic / Sustain 6", "description": "", "entity_type": "CLINICAL_STUDY", "font": {"color": "#e0e0e0"}, "full_name": "SUSTAIN 6", "id": "clinical_study:sustain_6", "label": "SUSTAIN 6", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "semaglutide_ozempic", "title": "SUSTAIN 6\nType: CLINICAL_STUDY\nConnections: 1\nCommunity: Novo Nordisk Inc. / Ozempic / Sustain 6\nConfidence: 50%\nSources: semaglutide_ozempic", "x": -619.3158664482698, "y": -998.2308071888051}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#9CCC65", "border": "#62e889", "highlight": {"background": "#9CCC65", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "MANUFACTURER", "font": {"color": "#e0e0e0"}, "full_name": "Upsher-Smith Laboratories, LLC", "id": "manufacturer:upsher_smith_laboratories_llc", "label": "Upsher-Smith Laboratories, LLC", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "Upsher-Smith Laboratories, LLC\nType: MANUFACTURER\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -755.2734580545821, "y": 834.6258975938732}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#66BB6A", "border": "#62e889", "highlight": {"background": "#66BB6A", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "DRUG_PRODUCT", "font": {"color": "#e0e0e0"}, "full_name": "JANTOVEN", "id": "drug_product:jantoven", "label": "JANTOVEN", "node_degree": 32, "num_source_docs": 1, "shape": "dot", "size": 50, "source_docs_str": "warfarin_jantoven", "title": "JANTOVEN\nType: DRUG_PRODUCT\nConnections: 32\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -839.8189753438921, "y": 1079.7262894951682}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#FFA726", "border": "#62e889", "highlight": {"background": "#FFA726", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "ACTIVE_INGREDIENT", "font": {"color": "#e0e0e0"}, "full_name": "warfarin sodium", "id": "active_ingredient:warfarin_sodium", "label": "warfarin sodium", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "warfarin sodium\nType: ACTIVE_INGREDIENT\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -723.4582228319441, "y": 1279.0693609809246}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#FFEE58", "border": "#62e889", "highlight": {"background": "#FFEE58", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "CONTRAINDICATION", "font": {"color": "#e0e0e0"}, "full_name": "Pregnancy", "id": "contraindication:pregnancy", "label": "Pregnancy", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "Pregnancy\nType: CONTRAINDICATION\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -547.4741317352276, "y": 1140.1515377667456}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#FFEE58", "border": "#62e889", "highlight": {"background": "#FFEE58", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "CONTRAINDICATION", "font": {"color": "#e0e0e0"}, "full_name": "Heparin-induced thrombocytopenia (HIT) and HITTS", "id": "contraindication:heparin_induced_thrombocytopenia_hit_and_hitts", "label": "Heparin-induced thrombocytopenia (HIT) and HITTS", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "Heparin-induced thrombocytopenia (HIT) and HITTS\nType: CONTRAINDICATION\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -491.2724664354463, "y": 1146.552266296635}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#42A5F5", "border": "#62e889", "highlight": {"background": "#42A5F5", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "ADVERSE_REACTION", "font": {"color": "#e0e0e0"}, "full_name": "Hemorrhage", "id": "adverse_reaction:hemorrhage", "label": "Hemorrhage", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "Hemorrhage\nType: ADVERSE_REACTION\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -747.4238934040112, "y": 945.9108751696729}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#42A5F5", "border": "#62e889", "highlight": {"background": "#42A5F5", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "ADVERSE_REACTION", "font": {"color": "#e0e0e0"}, "full_name": "Tissue necrosis", "id": "adverse_reaction:tissue_necrosis", "label": "Tissue necrosis", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "Tissue necrosis\nType: ADVERSE_REACTION\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -554.4159458318069, "y": 1060.7768245396528}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#42A5F5", "border": "#62e889", "highlight": {"background": "#42A5F5", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "ADVERSE_REACTION", "font": {"color": "#e0e0e0"}, "full_name": "Calciphylaxis", "id": "adverse_reaction:calciphylaxis", "label": "Calciphylaxis", "node_degree": 2, "num_source_docs": 1, "shape": "dot", "size": 11.0, "source_docs_str": "warfarin_jantoven", "title": "Calciphylaxis\nType: ADVERSE_REACTION\nConnections: 2\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -758.2431638959737, "y": 1020.5404672336537}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#42A5F5", "border": "#62e889", "highlight": {"background": "#42A5F5", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "ADVERSE_REACTION", "font": {"color": "#e0e0e0"}, "full_name": "Acute kidney injury", "id": "adverse_reaction:acute_kidney_injury", "label": "Acute kidney injury", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "Acute kidney injury\nType: ADVERSE_REACTION\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -608.3975278887453, "y": 1103.0036247967614}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#42A5F5", "border": "#62e889", "highlight": {"background": "#42A5F5", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "ADVERSE_REACTION", "font": {"color": "#e0e0e0"}, "full_name": "Systemic atheroemboli and cholesterol microemboli", "id": "adverse_reaction:systemic_atheroemboli_and_cholesterol_microemboli", "label": "Systemic atheroemboli and cholesterol microemboli", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "Systemic atheroemboli and cholesterol microemboli\nType: ADVERSE_REACTION\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -673.7713192148727, "y": 1252.5961931214465}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#42A5F5", "border": "#62e889", "highlight": {"background": "#42A5F5", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "ADVERSE_REACTION", "font": {"color": "#e0e0e0"}, "full_name": "Limb ischemia, necrosis, and gangrene in patients with HIT and HITTS", "id": "adverse_reaction:limb_ischemia_necrosis_and_gangrene_in_patients_with_hit_and_hitts", "label": "Limb ischemia, necrosis, and gangrene in patients with HIT and HITTS", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "Limb ischemia, necrosis, and gangrene in patients with HIT and HITTS\nType: ADVERSE_REACTION\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -750.5323888918447, "y": 1251.7296380454086}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#7E57C2", "border": "#62e889", "highlight": {"background": "#7E57C2", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "WARNING", "font": {"color": "#e0e0e0"}, "full_name": "Boxed warning: increased risk of hemorrhage and tissue necrosis", "id": "warning:boxed_warning_increased_risk_of_hemorrhage_and_tissue_necrosis", "label": "Boxed warning: increased risk of hemorrhage and tissue necrosis", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "Boxed warning: increased risk of hemorrhage and tissue necrosis\nType: WARNING\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -848.6206121206613, "y": 1274.3888051406607}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#7E57C2", "border": "#62e889", "highlight": {"background": "#7E57C2", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "WARNING", "font": {"color": "#e0e0e0"}, "full_name": "Bleeding risk with concomitant anticoagulants and CYP2C9 inhibitors", "id": "warning:bleeding_risk_with_concomitant_anticoagulants_and_cyp2c9_inhibitors", "label": "Bleeding risk with concomitant anticoagulants and CYP2C9 inhibitors", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "Bleeding risk with concomitant anticoagulants and CYP2C9 inhibitors\nType: WARNING\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -431.22226170425216, "y": 1006.9602589172094}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#AB47BC", "border": "#62e889", "highlight": {"background": "#AB47BC", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "DRUG_INTERACTION", "font": {"color": "#e0e0e0"}, "full_name": "CYP2C9 inhibitors (e.g., fluconazole, amiodarone) increase INR", "id": "drug_interaction:cyp2c9_inhibitors_e_g_fluconazole_amiodarone_increase_inr", "label": "CYP2C9 inhibitors (e.g., fluconazole, amiodarone) increase INR", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "CYP2C9 inhibitors (e.g., fluconazole, amiodarone) increase INR\nType: DRUG_INTERACTION\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -491.4564967779443, "y": 851.9393210325103}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#AB47BC", "border": "#62e889", "highlight": {"background": "#AB47BC", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "DRUG_INTERACTION", "font": {"color": "#e0e0e0"}, "full_name": "CYP2C9 inducers (e.g., rifampin, carbamazepine) decrease INR", "id": "drug_interaction:cyp2c9_inducers_e_g_rifampin_carbamazepine_decrease_inr", "label": "CYP2C9 inducers (e.g., rifampin, carbamazepine) decrease INR", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "CYP2C9 inducers (e.g., rifampin, carbamazepine) decrease INR\nType: DRUG_INTERACTION\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -432.0031721035577, "y": 1170.7735008953841}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#26C6DA", "border": "#62e889", "highlight": {"background": "#26C6DA", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "PATIENT_POPULATION", "font": {"color": "#e0e0e0"}, "full_name": "Pregnant women", "id": "patient_population:pregnant_women", "label": "Pregnant women", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "Pregnant women\nType: PATIENT_POPULATION\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -566.2518482742562, "y": 1015.2854354211014}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#26C6DA", "border": "#62e889", "highlight": {"background": "#26C6DA", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "PATIENT_POPULATION", "font": {"color": "#e0e0e0"}, "full_name": "Patients with renal impairment", "id": "patient_population:patients_with_renal_impairment", "label": "Patients with renal impairment", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "Patients with renal impairment\nType: PATIENT_POPULATION\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -523.374260602247, "y": 822.563909603617}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#26C6DA", "border": "#62e889", "highlight": {"background": "#26C6DA", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "PATIENT_POPULATION", "font": {"color": "#e0e0e0"}, "full_name": "Patients with hepatic impairment", "id": "patient_population:patients_with_hepatic_impairment", "label": "Patients with hepatic impairment", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "Patients with hepatic impairment\nType: PATIENT_POPULATION\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -679.2326379416005, "y": 1185.9034044252103}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#EF5350", "border": "#62e889", "highlight": {"background": "#EF5350", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "MECHANISM_OF_ACTION", "font": {"color": "#e0e0e0"}, "full_name": "Inhibition of vitamin K epoxide reductase, reducing synthesis of vitamin K-dependent clotting factors", "id": "mechanism_of_action:inhibition_of_vitamin_k_epoxide_reductase_reducing_synthesis_of_vitamin_k_dependent_clotting_factors", "label": "Inhibition of vitamin K epoxide reductase, reducing synthesis of vitamin K-dependent clotting factors", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "Inhibition of vitamin K epoxide reductase, reducing synthesis of vitamin K-dependent clotting factors\nType: MECHANISM_OF_ACTION\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -430.18658302778925, "y": 818.3782910169257}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#29B6F6", "border": "#62e889", "highlight": {"background": "#29B6F6", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "PHARMACOKINETIC_PROPERTY", "font": {"color": "#e0e0e0"}, "full_name": "Metabolized by CYP2C9, CYP1A2, CYP3A4", "id": "pharmacokinetic_property:metabolized_by_cyp2c9_cyp1a2_cyp3a4", "label": "Metabolized by CYP2C9, CYP1A2, CYP3A4", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "Metabolized by CYP2C9, CYP1A2, CYP3A4\nType: PHARMACOKINETIC_PROPERTY\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -767.1860527042618, "y": 837.6964755791089}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#8D6E63", "border": "#62e889", "highlight": {"background": "#8D6E63", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "LABTEST", "font": {"color": "#e0e0e0"}, "full_name": "INR", "id": "labtest:inr", "label": "INR", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "INR\nType: LABTEST\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -778.6591502528067, "y": 902.6709880832154}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#EC407A", "border": "#62e889", "highlight": {"background": "#EC407A", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "INACTIVE_INGREDIENT", "font": {"color": "#e0e0e0"}, "full_name": "lactose monohydrate", "id": "inactive_ingredient:lactose_monohydrate", "label": "lactose monohydrate", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "lactose monohydrate\nType: INACTIVE_INGREDIENT\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -583.6099412649828, "y": 856.3747158747092}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#EC407A", "border": "#62e889", "highlight": {"background": "#EC407A", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "INACTIVE_INGREDIENT", "font": {"color": "#e0e0e0"}, "full_name": "magnesium stearate", "id": "inactive_ingredient:magnesium_stearate", "label": "magnesium stearate", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "magnesium stearate\nType: INACTIVE_INGREDIENT\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -797.7058837903623, "y": 1142.9508922057153}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#EC407A", "border": "#62e889", "highlight": {"background": "#EC407A", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "INACTIVE_INGREDIENT", "font": {"color": "#e0e0e0"}, "full_name": "povidone", "id": "inactive_ingredient:povidone", "label": "povidone", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "povidone\nType: INACTIVE_INGREDIENT\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -534.7670611223936, "y": 1032.6757573984098}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#EC407A", "border": "#62e889", "highlight": {"background": "#EC407A", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "INACTIVE_INGREDIENT", "font": {"color": "#e0e0e0"}, "full_name": "pregelatinized starch (corn)", "id": "inactive_ingredient:pregelatinized_starch_corn", "label": "pregelatinized starch (corn)", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "pregelatinized starch (corn)\nType: INACTIVE_INGREDIENT\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -814.769520113747, "y": 1097.0016988643372}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#EC407A", "border": "#62e889", "highlight": {"background": "#EC407A", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "INACTIVE_INGREDIENT", "font": {"color": "#e0e0e0"}, "full_name": "FD\u0026C Red #40 Aluminum Lake", "id": "inactive_ingredient:fd_c_red_40_aluminum_lake", "label": "FD\u0026C Red #40 Aluminum Lake", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "FD\u0026C Red #40 Aluminum Lake\nType: INACTIVE_INGREDIENT\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -478.7503164997711, "y": 1085.1875284526598}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#EC407A", "border": "#62e889", "highlight": {"background": "#EC407A", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "INACTIVE_INGREDIENT", "font": {"color": "#e0e0e0"}, "full_name": "FD\u0026C Blue #2 Aluminum Lake", "id": "inactive_ingredient:fd_c_blue_2_aluminum_lake", "label": "FD\u0026C Blue #2 Aluminum Lake", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "FD\u0026C Blue #2 Aluminum Lake\nType: INACTIVE_INGREDIENT\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -843.0385537844924, "y": 1056.8528587702156}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#EC407A", "border": "#62e889", "highlight": {"background": "#EC407A", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "INACTIVE_INGREDIENT", "font": {"color": "#e0e0e0"}, "full_name": "D\u0026C Yellow #10 Aluminum Lake", "id": "inactive_ingredient:d_c_yellow_10_aluminum_lake", "label": "D\u0026C Yellow #10 Aluminum Lake", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "D\u0026C Yellow #10 Aluminum Lake\nType: INACTIVE_INGREDIENT\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -452.9424080135324, "y": 867.3933477986585}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#EC407A", "border": "#62e889", "highlight": {"background": "#EC407A", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "INACTIVE_INGREDIENT", "font": {"color": "#e0e0e0"}, "full_name": "Brown #75 Synthetic Brown Iron Oxide", "id": "inactive_ingredient:brown_75_synthetic_brown_iron_oxide", "label": "Brown #75 Synthetic Brown Iron Oxide", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "Brown #75 Synthetic Brown Iron Oxide\nType: INACTIVE_INGREDIENT\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -533.740161984274, "y": 890.7517602195962}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#EC407A", "border": "#62e889", "highlight": {"background": "#EC407A", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "INACTIVE_INGREDIENT", "font": {"color": "#e0e0e0"}, "full_name": "FD\u0026C Yellow #6 Aluminum Lake", "id": "inactive_ingredient:fd_c_yellow_6_aluminum_lake", "label": "FD\u0026C Yellow #6 Aluminum Lake", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "FD\u0026C Yellow #6 Aluminum Lake\nType: INACTIVE_INGREDIENT\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -559.6631738019962, "y": 849.6183871119523}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#EC407A", "border": "#62e889", "highlight": {"background": "#EC407A", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "INACTIVE_INGREDIENT", "font": {"color": "#e0e0e0"}, "full_name": "Yellow #10 Synthetic Yellow Iron Oxide", "id": "inactive_ingredient:yellow_10_synthetic_yellow_iron_oxide", "label": "Yellow #10 Synthetic Yellow Iron Oxide", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "Yellow #10 Synthetic Yellow Iron Oxide\nType: INACTIVE_INGREDIENT\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -735.1768769211349, "y": 1047.6261083521067}, {"aliases": "", "borderWidth": 2.0, "color": {"background": "#EC407A", "border": "#62e889", "highlight": {"background": "#EC407A", "border": "#62e889"}}, "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide", "description": "", "entity_type": "INACTIVE_INGREDIENT", "font": {"color": "#e0e0e0"}, "full_name": "Black #85 Synthetic Black Iron Oxide", "id": "inactive_ingredient:black_85_synthetic_black_iron_oxide", "label": "Black #85 Synthetic Black Iron Oxide", "node_degree": 1, "num_source_docs": 1, "shape": "dot", "size": 8.5, "source_docs_str": "warfarin_jantoven", "title": "Black #85 Synthetic Black Iron Oxide\nType: INACTIVE_INGREDIENT\nConnections: 1\nCommunity: Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSources: warfarin_jantoven", "x": -618.0396970892745, "y": 1059.3572041489842}]);
+                  edges = new vis.DataSet([{"arrows": "to", "color": "#4CAF50", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "HAS_ACTIVE_INGREDIENT", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "atorvastatin", "title": "LIPITOR HAS_ACTIVE_INGREDIENT atorvastatin\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "active_ingredient:atorvastatin", "width": 3.5}, {"arrows": "to", "color": "#FF7043", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "CONTRAINDICATED_IN", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "acute liver failure", "title": "LIPITOR CONTRAINDICATED_IN acute liver failure\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "contraindication:acute_liver_failure", "width": 3.5}, {"arrows": "to", "color": "#FF7043", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "CONTRAINDICATED_IN", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "decompensated cirrhosis", "title": "LIPITOR CONTRAINDICATED_IN decompensated cirrhosis\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "contraindication:decompensated_cirrhosis", "width": 3.5}, {"arrows": "to", "color": "#42A5F5", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "CAUSES_ADVERSE_REACTION", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "pancreatitis", "title": "LIPITOR CAUSES_ADVERSE_REACTION pancreatitis\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "adverse_reaction:pancreatitis", "width": 3.5}, {"arrows": "to", "color": "#42A5F5", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "CAUSES_ADVERSE_REACTION", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "fatigue", "title": "LIPITOR CAUSES_ADVERSE_REACTION fatigue\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "adverse_reaction:fatigue", "width": 3.5}, {"arrows": "to", "color": "#42A5F5", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "CAUSES_ADVERSE_REACTION", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "hepatic failure", "title": "LIPITOR CAUSES_ADVERSE_REACTION hepatic failure\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "adverse_reaction:hepatic_failure", "width": 3.5}, {"arrows": "to", "color": "#42A5F5", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "CAUSES_ADVERSE_REACTION", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "anaphylaxis", "title": "LIPITOR CAUSES_ADVERSE_REACTION anaphylaxis\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "adverse_reaction:anaphylaxis", "width": 3.5}, {"arrows": "to", "color": "#AB47BC", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "INTERACTS_WITH", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "grapefruit juice", "title": "LIPITOR INTERACTS_WITH grapefruit juice\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "drug_interaction:grapefruit_juice", "width": 3.5}, {"arrows": "to", "color": "#26A69A", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "STUDIED_IN_POPULATION", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "Child-Pugh B disease", "title": "LIPITOR STUDIED_IN_POPULATION Child-Pugh B disease\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "patient_population:child_pugh_b_disease", "width": 3.5}, {"arrows": "to", "color": "#26A69A", "edge_confidence": 0.75, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "STUDIED_IN_POPULATION", "source_name": "LIPITOR", "support_count": 2, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "Pediatric patients aged 10 years and older with HeFH", "title": "LIPITOR STUDIED_IN_POPULATION Pediatric patients aged 10 years and older with HeFH\nConfidence: 75%\nSupport mentions: 2\nSupport docs: 1", "to": "patient_population:pediatric_patients_aged_10_years_and_older_with_hefh", "width": 5.5}, {"arrows": "to", "color": "#EC407A", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "HAS_MECHANISM", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "Inhibition of HMG-CoA reductase, reducing cholesterol synthesis", "title": "LIPITOR HAS_MECHANISM Inhibition of HMG-CoA reductase, reducing cholesterol synthesis\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "mechanism_of_action:inhibition_of_hmg_coa_reductase_reducing_cholesterol_synthesis", "width": 3.5}, {"arrows": "to", "color": "#42A5F5", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "CAUSES_ADVERSE_REACTION", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "tendon rupture", "title": "LIPITOR CAUSES_ADVERSE_REACTION tendon rupture\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "adverse_reaction:tendon_rupture", "width": 3.5}, {"arrows": "to", "color": "#AB47BC", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "INTERACTS_WITH", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "rifampin", "title": "LIPITOR INTERACTS_WITH rifampin\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "drug_interaction:rifampin", "width": 3.5}, {"arrows": "to", "color": "#AB47BC", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "INTERACTS_WITH", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "oral contraceptives", "title": "LIPITOR INTERACTS_WITH oral contraceptives\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "drug_interaction:oral_contraceptives", "width": 3.5}, {"arrows": "to", "color": "#AB47BC", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "INTERACTS_WITH", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "digoxin", "title": "LIPITOR INTERACTS_WITH digoxin\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "drug_interaction:digoxin", "width": 3.5}, {"arrows": "to", "color": "#AB47BC", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "INTERACTS_WITH", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "cyclosporine", "title": "LIPITOR INTERACTS_WITH cyclosporine\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "drug_interaction:cyclosporine", "width": 3.5}, {"arrows": "to", "color": "#AB47BC", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "INTERACTS_WITH", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "gemfibrozil", "title": "LIPITOR INTERACTS_WITH gemfibrozil\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "drug_interaction:gemfibrozil", "width": 3.5}, {"arrows": "to", "color": "#AB47BC", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "INTERACTS_WITH", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "anti-viral medications (e.g., ledipasvir/sofosbuvir)", "title": "LIPITOR INTERACTS_WITH anti-viral medications (e.g., ledipasvir/sofosbuvir)\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "drug_interaction:anti_viral_medications_e_g_ledipasvir_sofosbuvir", "width": 3.5}, {"arrows": "to", "color": "#AB47BC", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "INTERACTS_WITH", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "azoles (clarithromycin, itraconazole, etc.)", "title": "LIPITOR INTERACTS_WITH azoles (clarithromycin, itraconazole, etc.)\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "drug_interaction:azoles_clarithromycin_itraconazole_etc", "width": 3.5}, {"arrows": "to", "color": "#AB47BC", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "INTERACTS_WITH", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "niacin (\u22651 g/day)", "title": "LIPITOR INTERACTS_WITH niacin (\u22651 g/day)\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "drug_interaction:niacin_1_g_day", "width": 3.5}, {"arrows": "to", "color": "#AB47BC", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "INTERACTS_WITH", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "fibrates (other than gemfibrozil)", "title": "LIPITOR INTERACTS_WITH fibrates (other than gemfibrozil)\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "drug_interaction:fibrates_other_than_gemfibrozil", "width": 3.5}, {"arrows": "to", "color": "#AB47BC", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "INTERACTS_WITH", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "colchicine", "title": "LIPITOR INTERACTS_WITH colchicine\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "drug_interaction:colchicine", "width": 3.5}, {"arrows": "to", "color": "#FFA726", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "HAS_WARNING", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "rhabdomyolysis", "title": "LIPITOR HAS_WARNING rhabdomyolysis\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "adverse_reaction:rhabdomyolysis", "width": 3.5}, {"arrows": "to", "color": "#FFA726", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "HAS_WARNING", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "myositis", "title": "LIPITOR HAS_WARNING myositis\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "adverse_reaction:myositis", "width": 3.5}, {"arrows": "to", "color": "#FFA726", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "HAS_WARNING", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "dizziness", "title": "LIPITOR HAS_WARNING dizziness\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "adverse_reaction:dizziness", "width": 3.5}, {"arrows": "to", "color": "#FFA726", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "HAS_WARNING", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "peripheral neuropathy", "title": "LIPITOR HAS_WARNING peripheral neuropathy\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "adverse_reaction:peripheral_neuropathy", "width": 3.5}, {"arrows": "to", "color": "#FFA726", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "HAS_WARNING", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "cognitive impairment", "title": "LIPITOR HAS_WARNING cognitive impairment\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "adverse_reaction:cognitive_impairment", "width": 3.5}, {"arrows": "to", "color": "#FFA726", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "HAS_WARNING", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "myasthenia gravis", "title": "LIPITOR HAS_WARNING myasthenia gravis\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "adverse_reaction:myasthenia_gravis", "width": 3.5}, {"arrows": "to", "color": "#FFA726", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "HAS_WARNING", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "angioneurotic edema", "title": "LIPITOR HAS_WARNING angioneurotic edema\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "adverse_reaction:angioneurotic_edema", "width": 3.5}, {"arrows": "to", "color": "#FFA726", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "HAS_WARNING", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "bullous rash", "title": "LIPITOR HAS_WARNING bullous rash\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "adverse_reaction:bullous_rash", "width": 3.5}, {"arrows": "to", "color": "#FFA726", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "HAS_WARNING", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "Stevens-Johnson syndrome", "title": "LIPITOR HAS_WARNING Stevens-Johnson syndrome\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "adverse_reaction:stevens_johnson_syndrome", "width": 3.5}, {"arrows": "to", "color": "#FFA726", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "HAS_WARNING", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "toxic epidermal necrolysis", "title": "LIPITOR HAS_WARNING toxic epidermal necrolysis\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "adverse_reaction:toxic_epidermal_necrolysis", "width": 3.5}, {"arrows": "to", "color": "#EC407A", "edge_confidence": 0.5, "from": "drug_product:lipitor", "full_evidence": "", "relation_type": "HAS_MECHANISM", "source_name": "LIPITOR", "support_count": 1, "support_doc_count": 1, "support_docs_str": "atorvastatin_lipitor", "target_name": "Selective competitive inhibition of HMG-CoA reductase", "title": "LIPITOR HAS_MECHANISM Selective competitive inhibition of HMG-CoA reductase\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "mechanism_of_action:selective_competitive_inhibition_of_hmg_coa_reductase", "width": 3.5}, {"arrows": "to", "color": "#4CAF50", "edge_confidence": 0.5, "from": "drug_product:ozempic", "full_evidence": "", "relation_type": "HAS_ACTIVE_INGREDIENT", "source_name": "OZEMPIC", "support_count": 1, "support_doc_count": 1, "support_docs_str": "semaglutide_ozempic", "target_name": "semaglutide", "title": "OZEMPIC HAS_ACTIVE_INGREDIENT semaglutide\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "active_ingredient:semaglutide", "width": 3.5}, {"arrows": "to", "color": "#66BB6A", "edge_confidence": 0.5, "from": "drug_product:ozempic", "full_evidence": "", "relation_type": "HAS_INACTIVE_INGREDIENT", "source_name": "OZEMPIC", "support_count": 1, "support_doc_count": 1, "support_docs_str": "semaglutide_ozempic", "target_name": "disodium phosphate dihydrate", "title": "OZEMPIC HAS_INACTIVE_INGREDIENT disodium phosphate dihydrate\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "inactive_ingredient:disodium_phosphate_dihydrate", "width": 3.5}, {"arrows": "to", "color": "#66BB6A", "edge_confidence": 0.5, "from": "drug_product:ozempic", "full_evidence": "", "relation_type": "HAS_INACTIVE_INGREDIENT", "source_name": "OZEMPIC", "support_count": 1, "support_doc_count": 1, "support_docs_str": "semaglutide_ozempic", "target_name": "propylene glycol", "title": "OZEMPIC HAS_INACTIVE_INGREDIENT propylene glycol\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "inactive_ingredient:propylene_glycol", "width": 3.5}, {"arrows": "to", "color": "#66BB6A", "edge_confidence": 0.5, "from": "drug_product:ozempic", "full_evidence": "", "relation_type": "HAS_INACTIVE_INGREDIENT", "source_name": "OZEMPIC", "support_count": 1, "support_doc_count": 1, "support_docs_str": "semaglutide_ozempic", "target_name": "phenol", "title": "OZEMPIC HAS_INACTIVE_INGREDIENT phenol\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "inactive_ingredient:phenol", "width": 3.5}, {"arrows": "to", "color": "#66BB6A", "edge_confidence": 0.5, "from": "drug_product:ozempic", "full_evidence": "", "relation_type": "HAS_INACTIVE_INGREDIENT", "source_name": "OZEMPIC", "support_count": 1, "support_doc_count": 1, "support_docs_str": "semaglutide_ozempic", "target_name": "water for injections", "title": "OZEMPIC HAS_INACTIVE_INGREDIENT water for injections\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "inactive_ingredient:water_for_injections", "width": 3.5}, {"arrows": "to", "color": "#7E57C2", "edge_confidence": 0.5, "from": "drug_product:ozempic", "full_evidence": "", "relation_type": "EVALUATED_IN", "source_name": "OZEMPIC", "support_count": 1, "support_doc_count": 1, "support_docs_str": "semaglutide_ozempic", "target_name": "SUSTAIN 6", "title": "OZEMPIC EVALUATED_IN SUSTAIN 6\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "clinical_study:sustain_6", "width": 3.5}, {"arrows": "to", "color": "#29B6F6", "edge_confidence": 0.5, "from": "manufacturer:novo_nordisk_inc", "full_evidence": "", "relation_type": "MANUFACTURES", "source_name": "Novo Nordisk Inc.", "support_count": 1, "support_doc_count": 1, "support_docs_str": "semaglutide_ozempic", "target_name": "OZEMPIC", "title": "Novo Nordisk Inc. MANUFACTURES OZEMPIC\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "drug_product:ozempic", "width": 3.5}, {"arrows": "to", "color": "#29B6F6", "edge_confidence": 0.5, "from": "manufacturer:upsher_smith_laboratories_llc", "full_evidence": "", "relation_type": "MANUFACTURES", "source_name": "Upsher-Smith Laboratories, LLC", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "JANTOVEN", "title": "Upsher-Smith Laboratories, LLC MANUFACTURES JANTOVEN\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "drug_product:jantoven", "width": 3.5}, {"arrows": "to", "color": "#4CAF50", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "HAS_ACTIVE_INGREDIENT", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "warfarin sodium", "title": "JANTOVEN HAS_ACTIVE_INGREDIENT warfarin sodium\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "active_ingredient:warfarin_sodium", "width": 3.5}, {"arrows": "to", "color": "#FF7043", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "CONTRAINDICATED_IN", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "Pregnancy", "title": "JANTOVEN CONTRAINDICATED_IN Pregnancy\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "contraindication:pregnancy", "width": 3.5}, {"arrows": "to", "color": "#FF7043", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "CONTRAINDICATED_IN", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "Heparin-induced thrombocytopenia (HIT) and HITTS", "title": "JANTOVEN CONTRAINDICATED_IN Heparin-induced thrombocytopenia (HIT) and HITTS\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "contraindication:heparin_induced_thrombocytopenia_hit_and_hitts", "width": 3.5}, {"arrows": "to", "color": "#FF7043", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "CONTRAINDICATED_IN", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "Calciphylaxis", "title": "JANTOVEN CONTRAINDICATED_IN Calciphylaxis\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "adverse_reaction:calciphylaxis", "width": 3.5}, {"arrows": "to", "color": "#42A5F5", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "CAUSES_ADVERSE_REACTION", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "Calciphylaxis", "title": "JANTOVEN CAUSES_ADVERSE_REACTION Calciphylaxis\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "adverse_reaction:calciphylaxis", "width": 3.5}, {"arrows": "to", "color": "#FFA726", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "HAS_WARNING", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "Boxed warning: increased risk of hemorrhage and tissue necrosis", "title": "JANTOVEN HAS_WARNING Boxed warning: increased risk of hemorrhage and tissue necrosis\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "warning:boxed_warning_increased_risk_of_hemorrhage_and_tissue_necrosis", "width": 3.5}, {"arrows": "to", "color": "#FFA726", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "HAS_WARNING", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "Bleeding risk with concomitant anticoagulants and CYP2C9 inhibitors", "title": "JANTOVEN HAS_WARNING Bleeding risk with concomitant anticoagulants and CYP2C9 inhibitors\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "warning:bleeding_risk_with_concomitant_anticoagulants_and_cyp2c9_inhibitors", "width": 3.5}, {"arrows": "to", "color": "#AB47BC", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "INTERACTS_WITH", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "CYP2C9 inhibitors (e.g., fluconazole, amiodarone) increase INR", "title": "JANTOVEN INTERACTS_WITH CYP2C9 inhibitors (e.g., fluconazole, amiodarone) increase INR\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "drug_interaction:cyp2c9_inhibitors_e_g_fluconazole_amiodarone_increase_inr", "width": 3.5}, {"arrows": "to", "color": "#26A69A", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "STUDIED_IN_POPULATION", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "Pregnant women", "title": "JANTOVEN STUDIED_IN_POPULATION Pregnant women\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "patient_population:pregnant_women", "width": 3.5}, {"arrows": "to", "color": "#26A69A", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "STUDIED_IN_POPULATION", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "Patients with renal impairment", "title": "JANTOVEN STUDIED_IN_POPULATION Patients with renal impairment\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "patient_population:patients_with_renal_impairment", "width": 3.5}, {"arrows": "to", "color": "#26A69A", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "STUDIED_IN_POPULATION", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "Patients with hepatic impairment", "title": "JANTOVEN STUDIED_IN_POPULATION Patients with hepatic impairment\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "patient_population:patients_with_hepatic_impairment", "width": 3.5}, {"arrows": "to", "color": "#EC407A", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "HAS_MECHANISM", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "Inhibition of vitamin K epoxide reductase, reducing synthesis of vitamin K-dependent clotting factors", "title": "JANTOVEN HAS_MECHANISM Inhibition of vitamin K epoxide reductase, reducing synthesis of vitamin K-dependent clotting factors\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "mechanism_of_action:inhibition_of_vitamin_k_epoxide_reductase_reducing_synthesis_of_vitamin_k_dependent_clotting_factors", "width": 3.5}, {"arrows": "to", "color": "#EF5350", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "HAS_PK_PROPERTY", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "Metabolized by CYP2C9, CYP1A2, CYP3A4", "title": "JANTOVEN HAS_PK_PROPERTY Metabolized by CYP2C9, CYP1A2, CYP3A4\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "pharmacokinetic_property:metabolized_by_cyp2c9_cyp1a2_cyp3a4", "width": 3.5}, {"arrows": "to", "color": "#FFA726", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "HAS_WARNING", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "INR", "title": "JANTOVEN HAS_WARNING INR\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "labtest:inr", "width": 3.5}, {"arrows": "to", "color": "#42A5F5", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "CAUSES_ADVERSE_REACTION", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "Hemorrhage", "title": "JANTOVEN CAUSES_ADVERSE_REACTION Hemorrhage\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "adverse_reaction:hemorrhage", "width": 3.5}, {"arrows": "to", "color": "#42A5F5", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "CAUSES_ADVERSE_REACTION", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "Tissue necrosis", "title": "JANTOVEN CAUSES_ADVERSE_REACTION Tissue necrosis\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "adverse_reaction:tissue_necrosis", "width": 3.5}, {"arrows": "to", "color": "#42A5F5", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "CAUSES_ADVERSE_REACTION", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "Acute kidney injury", "title": "JANTOVEN CAUSES_ADVERSE_REACTION Acute kidney injury\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "adverse_reaction:acute_kidney_injury", "width": 3.5}, {"arrows": "to", "color": "#42A5F5", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "CAUSES_ADVERSE_REACTION", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "Systemic atheroemboli and cholesterol microemboli", "title": "JANTOVEN CAUSES_ADVERSE_REACTION Systemic atheroemboli and cholesterol microemboli\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "adverse_reaction:systemic_atheroemboli_and_cholesterol_microemboli", "width": 3.5}, {"arrows": "to", "color": "#42A5F5", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "CAUSES_ADVERSE_REACTION", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "Limb ischemia, necrosis, and gangrene in patients with HIT and HITTS", "title": "JANTOVEN CAUSES_ADVERSE_REACTION Limb ischemia, necrosis, and gangrene in patients with HIT and HITTS\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "adverse_reaction:limb_ischemia_necrosis_and_gangrene_in_patients_with_hit_and_hitts", "width": 3.5}, {"arrows": "to", "color": "#AB47BC", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "INTERACTS_WITH", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "CYP2C9 inducers (e.g., rifampin, carbamazepine) decrease INR", "title": "JANTOVEN INTERACTS_WITH CYP2C9 inducers (e.g., rifampin, carbamazepine) decrease INR\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "drug_interaction:cyp2c9_inducers_e_g_rifampin_carbamazepine_decrease_inr", "width": 3.5}, {"arrows": "to", "color": "#66BB6A", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "HAS_INACTIVE_INGREDIENT", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "lactose monohydrate", "title": "JANTOVEN HAS_INACTIVE_INGREDIENT lactose monohydrate\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "inactive_ingredient:lactose_monohydrate", "width": 3.5}, {"arrows": "to", "color": "#66BB6A", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "HAS_INACTIVE_INGREDIENT", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "magnesium stearate", "title": "JANTOVEN HAS_INACTIVE_INGREDIENT magnesium stearate\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "inactive_ingredient:magnesium_stearate", "width": 3.5}, {"arrows": "to", "color": "#66BB6A", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "HAS_INACTIVE_INGREDIENT", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "povidone", "title": "JANTOVEN HAS_INACTIVE_INGREDIENT povidone\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "inactive_ingredient:povidone", "width": 3.5}, {"arrows": "to", "color": "#66BB6A", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "HAS_INACTIVE_INGREDIENT", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "pregelatinized starch (corn)", "title": "JANTOVEN HAS_INACTIVE_INGREDIENT pregelatinized starch (corn)\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "inactive_ingredient:pregelatinized_starch_corn", "width": 3.5}, {"arrows": "to", "color": "#66BB6A", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "HAS_INACTIVE_INGREDIENT", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "FD\u0026C Red #40 Aluminum Lake", "title": "JANTOVEN HAS_INACTIVE_INGREDIENT FD\u0026C Red #40 Aluminum Lake\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "inactive_ingredient:fd_c_red_40_aluminum_lake", "width": 3.5}, {"arrows": "to", "color": "#66BB6A", "edge_confidence": 0.75, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "HAS_INACTIVE_INGREDIENT", "source_name": "JANTOVEN", "support_count": 2, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "FD\u0026C Blue #2 Aluminum Lake", "title": "JANTOVEN HAS_INACTIVE_INGREDIENT FD\u0026C Blue #2 Aluminum Lake\nConfidence: 75%\nSupport mentions: 2\nSupport docs: 1", "to": "inactive_ingredient:fd_c_blue_2_aluminum_lake", "width": 5.5}, {"arrows": "to", "color": "#66BB6A", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "HAS_INACTIVE_INGREDIENT", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "D\u0026C Yellow #10 Aluminum Lake", "title": "JANTOVEN HAS_INACTIVE_INGREDIENT D\u0026C Yellow #10 Aluminum Lake\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "inactive_ingredient:d_c_yellow_10_aluminum_lake", "width": 3.5}, {"arrows": "to", "color": "#66BB6A", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "HAS_INACTIVE_INGREDIENT", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "Brown #75 Synthetic Brown Iron Oxide", "title": "JANTOVEN HAS_INACTIVE_INGREDIENT Brown #75 Synthetic Brown Iron Oxide\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "inactive_ingredient:brown_75_synthetic_brown_iron_oxide", "width": 3.5}, {"arrows": "to", "color": "#66BB6A", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "HAS_INACTIVE_INGREDIENT", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "FD\u0026C Yellow #6 Aluminum Lake", "title": "JANTOVEN HAS_INACTIVE_INGREDIENT FD\u0026C Yellow #6 Aluminum Lake\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "inactive_ingredient:fd_c_yellow_6_aluminum_lake", "width": 3.5}, {"arrows": "to", "color": "#66BB6A", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "HAS_INACTIVE_INGREDIENT", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "Yellow #10 Synthetic Yellow Iron Oxide", "title": "JANTOVEN HAS_INACTIVE_INGREDIENT Yellow #10 Synthetic Yellow Iron Oxide\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "inactive_ingredient:yellow_10_synthetic_yellow_iron_oxide", "width": 3.5}, {"arrows": "to", "color": "#66BB6A", "edge_confidence": 0.5, "from": "drug_product:jantoven", "full_evidence": "", "relation_type": "HAS_INACTIVE_INGREDIENT", "source_name": "JANTOVEN", "support_count": 1, "support_doc_count": 1, "support_docs_str": "warfarin_jantoven", "target_name": "Black #85 Synthetic Black Iron Oxide", "title": "JANTOVEN HAS_INACTIVE_INGREDIENT Black #85 Synthetic Black Iron Oxide\nConfidence: 50%\nSupport mentions: 1\nSupport docs: 1", "to": "inactive_ingredient:black_85_synthetic_black_iron_oxide", "width": 3.5}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {"physics": {"forceAtlas2Based": {"gravitationalConstant": -350, "centralGravity": 0.002, "springLength": 400, "springConstant": 0.03, "damping": 0.4, "avoidOverlap": 0.9}, "solver": "forceAtlas2Based", "stabilization": {"enabled": true, "iterations": 300}, "enabled": true}, "edges": {"arrows": {"to": {"enabled": true, "scaleFactor": 1.2}}, "smooth": {"type": "curvedCW", "roundness": 0.1}, "color": {"opacity": 0.2}, "font": {"size": 0}}, "nodes": {"font": {"size": 0, "face": "Inter,sans-serif"}, "borderWidth": 1.5, "borderWidthSelected": 3}, "interaction": {"hover": true, "tooltipDelay": 999999, "zoomView": true, "dragView": true, "hideEdgesOnDrag": true, "hideEdgesOnZoom": true}};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    <style>#sift-controls {
+    position:fixed; top:12px; left:12px; z-index:999;
+    background:rgba(26,26,46,0.95); border:1px solid #333;
+    border-radius:10px; padding:14px 16px;
+    font-family:Inter,system-ui,sans-serif; font-size:13px;
+    color:#e0e0e0; width:320px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    max-height: calc(100vh - 24px);
+    overflow-y: auto;
+}
+#sift-controls::-webkit-scrollbar { width: 4px; }
+#sift-controls::-webkit-scrollbar-thumb { background: #444; border-radius: 2px; }
+.section-header {
+    font-weight:600; margin:12px 0 6px; font-size:11px;
+    color:#888; text-transform:uppercase; letter-spacing:0.5px;
+    border-top: 1px solid #333; padding-top: 10px;
+}
+.section-header:first-of-type { border-top: none; margin-top: 6px; }
+.type-row {
+    display:flex; align-items:center; gap:6px; margin:3px 0; cursor:pointer;
+}
+.type-row input[type="checkbox"] { margin:0; cursor:pointer; }
+.type-row input[type="color"] {
+    width:18px; height:18px; border:none; padding:0;
+    background:none; cursor:pointer; border-radius:3px;
+}
+.type-label { font-size:11px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+#search-input {
+    width:100%; padding:6px 10px; border-radius:6px;
+    border:1px solid #444; background:#16213e;
+    color:#e0e0e0; font-size:12px; margin-bottom:4px;
+    box-sizing:border-box; outline:none;
+}
+#search-input:focus { border-color:#4FC3F7; }
+/* Detail sidebar */
+#detail-panel {
+    position:fixed; top:0; right:0; z-index:998;
+    width:320px; height:100vh;
+    background:rgba(26,26,46,0.97); border-left:1px solid #333;
+    font-family:Inter,system-ui,sans-serif; font-size:13px;
+    color:#e0e0e0; display:none; flex-direction:column;
+    overflow:hidden;
+}
+#detail-panel.open { display:flex; }
+#detail-header {
+    padding:12px 14px; border-bottom:1px solid #333;
+    display:flex; align-items:center; justify-content:space-between;
+}
+#detail-header h3 {
+    margin:0; font-size:14px; font-weight:600; color:#fff;
+    overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+    max-width:240px;
+}
+#detail-close {
+    background:none; border:none; color:#888; cursor:pointer;
+    font-size:18px; padding:0 4px; line-height:1;
+}
+#detail-close:hover { color:#fff; }
+#detail-back:hover { color:#fff !important; }
+#detail-body {
+    flex:1; overflow-y:auto; padding:12px 14px;
+}
+#detail-body::-webkit-scrollbar { width: 4px; }
+#detail-body::-webkit-scrollbar-thumb { background: #444; border-radius: 2px; }
+.d-field { margin-bottom:8px; }
+.d-label {
+    font-size:10px; text-transform:uppercase; letter-spacing:0.5px;
+    color:#666; margin-bottom:2px;
+}
+.d-val { font-size:13px; color:#e0e0e0; word-wrap:break-word; line-height:1.4; }
+.d-badge {
+    display:inline-block; padding:2px 8px; border-radius:4px;
+    font-size:11px; font-weight:600;
+}
+.d-conn {
+    border-bottom:1px solid #2a2a3e;
+    font-size:12px;
+}
+.d-conn-header {
+    display:flex; align-items:center; gap:4px;
+    padding:5px 0; cursor:pointer;
+}
+.d-conn-header:hover { color:#4FC3F7; }
+.d-conn-summary { flex:1; min-width:0; }
+.d-conn-nav {
+    background:none; border:1px solid #444; color:#888; cursor:pointer;
+    font-size:11px; padding:2px 6px; border-radius:4px; flex-shrink:0;
+    line-height:1;
+}
+.d-conn-nav:hover { color:#4FC3F7; border-color:#4FC3F7; }
+.d-conn.active { background:rgba(79,195,247,0.15); border-left:2px solid #4FC3F7; padding-left:6px; }
+.d-conn.active .d-conn-header { color:#4FC3F7; }
+.d-conn-detail { display:none; padding:4px 0 8px; }
+.d-conn.expanded .d-conn-detail { display:block; }
+.d-edge-card {
+    background:rgba(255,255,255,0.03); border-radius:5px;
+    padding:6px 8px; margin:4px 0; border-left:2px solid #444;
+}
+.d-edge-card .d-label { font-size:9px; margin-bottom:1px; }
+.d-edge-card .d-val { font-size:11px; }
+.d-edge-evidence {
+    font-size:11px; color:#aaa; line-height:1.5;
+    margin-top:4px; white-space:pre-wrap;
+}
+.d-evidence {
+    font-size:12px; color:#ccc; line-height:1.6;
+    background:rgba(255,255,255,0.03); border-radius:6px;
+    padding:10px 12px; border-left:3px solid #4FC3F7;
+    white-space:pre-wrap;
+}
+/* Focus mode banner */
+#focus-banner {
+    position:fixed; top:12px; left:50%; transform:translateX(-50%);
+    z-index:1000; background:rgba(66,165,245,0.95);
+    color:#fff; padding:8px 18px; border-radius:8px;
+    font-family:Inter,system-ui,sans-serif; font-size:13px;
+    font-weight:600; display:none; align-items:center; gap:10px;
+    box-shadow:0 2px 12px rgba(0,0,0,0.3);
+}
+#focus-banner.visible { display:flex; }
+#focus-exit {
+    background:none; border:none; color:#fff; cursor:pointer;
+    font-size:18px; padding:0 2px; line-height:1; opacity:0.8;
+}
+#focus-exit:hover { opacity:1; }
+/* Trail breadcrumb */
+.trail-header {
+    font-size:10px; text-transform:uppercase; letter-spacing:0.5px;
+    color:#666; margin-bottom:8px; padding-bottom:6px;
+    border-bottom:1px solid #333;
+}
+.trail-card {
+    border:1px solid #2a2a3e; border-radius:6px;
+    margin-bottom:0; overflow:hidden;
+    transition: border-color 0.15s;
+}
+.trail-card.current { border-color:#4FC3F7; }
+.trail-card-header {
+    display:flex; align-items:center; gap:8px;
+    padding:8px 10px; cursor:pointer;
+    font-size:12px; font-weight:600; color:#e0e0e0;
+}
+.trail-card-header:hover { color:#4FC3F7; }
+.trail-card-header .d-badge { font-size:9px; padding:1px 5px; flex-shrink:0; }
+.trail-card-header .trail-expand-icon {
+    margin-left:auto; font-size:10px; color:#666; flex-shrink:0;
+    transition: transform 0.15s;
+}
+.trail-card.expanded .trail-expand-icon { transform:rotate(90deg); }
+.trail-card-body {
+    display:none; padding:8px 10px 10px;
+    border-top:1px solid #2a2a3e;
+}
+.trail-card.expanded .trail-card-body { display:block; }
+.trail-rel-label {
+    font-size:10px; text-transform:uppercase; letter-spacing:0.3px;
+    color:#555; padding:4px 0 4px 12px;
+    display:flex; align-items:center; gap:6px;
+}
+.trail-rel-label::before {
+    content:''; display:inline-block;
+    width:1px; height:10px; background:#444;
+    margin-left:4px;
+}
+.d-conn-group-header {
+    font-size:9px; text-transform:uppercase; letter-spacing:0.5px;
+    color:#666; padding:8px 0 4px; border-bottom:1px solid #2a2a3e;
+    margin-bottom:4px;
+}
+</style>
+<div id="sift-controls">
+    <div style="font-weight:700;margin-bottom:10px;font-size:15px;color:#fff">sift-kg</div>
+    <input id="search-input" type="text" placeholder="Search entities..." oninput="searchEntity(this.value)">
+
+    <div style="margin:8px 0 4px;display:flex;gap:8px">
+        <div style="flex:1;min-width:0">
+            <label style="font-size:10px;color:#888">Connections &ge; <span id="deg-val">1</span></label>
+            <input id="deg-slider" type="range" min="1" max="20" value="1" style="width:100%;margin:2px 0;accent-color:#4FC3F7" oninput="filterByDegree(this.value)">
+        </div>
+        <div style="flex:1;min-width:0">
+            <label style="font-size:10px;color:#888">Docs &ge; <span id="docs-val">1</span></label>
+            <input id="docs-slider" type="range" min="1" max="2" value="1" style="width:100%;margin:2px 0;accent-color:#4FC3F7" oninput="filterBySupportDocs(this.value)">
+        </div>
+    </div>
+
+    <div style="margin:0 0 4px">
+        <label style="font-size:10px;color:#888">Source document</label>
+        <select id="doc-filter" onchange="filterBySourceDoc(this.value)" style="width:100%;padding:3px 6px;margin:2px 0;border-radius:4px;border:1px solid #444;background:#16213e;color:#e0e0e0;font-size:11px;outline:none">
+            <option value="">All documents</option><option value="adalimumab_humira">adalimumab_humira (2)</option><option value="atorvastatin_lipitor">atorvastatin_lipitor (34)</option><option value="semaglutide_ozempic">semaglutide_ozempic (8)</option><option value="semaglutide_wegovy">semaglutide_wegovy (1)</option><option value="warfarin_jantoven">warfarin_jantoven (32)</option>
+        </select>
+    </div>
+
+    <div class="section-header" style="border-top:none">Communities</div><div class="type-row"><input type="checkbox" checked data-community="Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease" onchange="toggleCommunity(this)"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#e86262;border:1px solid #555;flex-shrink:0"></span><span class="type-label">Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease</span></div><div class="type-row"><input type="checkbox" checked data-community="Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide" onchange="toggleCommunity(this)"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#62e889;border:1px solid #555;flex-shrink:0"></span><span class="type-label">Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide</span></div><div class="type-row"><input type="checkbox" checked data-community="Novo Nordisk Inc. / Ozempic / Sustain 6" onchange="toggleCommunity(this)"><span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#b062e8;border:1px solid #555;flex-shrink:0"></span><span class="type-label">Novo Nordisk Inc. / Ozempic / Sustain 6</span></div>
+
+    <div class="section-header">Entity Types</div>
+    <div class="type-row"><input type="checkbox" checked data-etype="ACTIVE_INGREDIENT" onchange="toggleEntityType(this)"><input type="color" value="#FFA726" data-etype-color="ACTIVE_INGREDIENT" onchange="changeEntityColor(this)"><span class="type-label">ACTIVE_INGREDIENT</span></div><div class="type-row"><input type="checkbox" checked data-etype="ADVERSE_REACTION" onchange="toggleEntityType(this)"><input type="color" value="#42A5F5" data-etype-color="ADVERSE_REACTION" onchange="changeEntityColor(this)"><span class="type-label">ADVERSE_REACTION</span></div><div class="type-row"><input type="checkbox" checked data-etype="CLINICAL_STUDY" onchange="toggleEntityType(this)"><input type="color" value="#FF7043" data-etype-color="CLINICAL_STUDY" onchange="changeEntityColor(this)"><span class="type-label">CLINICAL_STUDY</span></div><div class="type-row"><input type="checkbox" checked data-etype="CONTRAINDICATION" onchange="toggleEntityType(this)"><input type="color" value="#FFEE58" data-etype-color="CONTRAINDICATION" onchange="changeEntityColor(this)"><span class="type-label">CONTRAINDICATION</span></div><div class="type-row"><input type="checkbox" checked data-etype="DRUG_INTERACTION" onchange="toggleEntityType(this)"><input type="color" value="#AB47BC" data-etype-color="DRUG_INTERACTION" onchange="changeEntityColor(this)"><span class="type-label">DRUG_INTERACTION</span></div><div class="type-row"><input type="checkbox" checked data-etype="DRUG_PRODUCT" onchange="toggleEntityType(this)"><input type="color" value="#66BB6A" data-etype-color="DRUG_PRODUCT" onchange="changeEntityColor(this)"><span class="type-label">DRUG_PRODUCT</span></div><div class="type-row"><input type="checkbox" checked data-etype="INACTIVE_INGREDIENT" onchange="toggleEntityType(this)"><input type="color" value="#EC407A" data-etype-color="INACTIVE_INGREDIENT" onchange="changeEntityColor(this)"><span class="type-label">INACTIVE_INGREDIENT</span></div><div class="type-row"><input type="checkbox" checked data-etype="LABTEST" onchange="toggleEntityType(this)"><input type="color" value="#8D6E63" data-etype-color="LABTEST" onchange="changeEntityColor(this)"><span class="type-label">LABTEST</span></div><div class="type-row"><input type="checkbox" checked data-etype="MANUFACTURER" onchange="toggleEntityType(this)"><input type="color" value="#9CCC65" data-etype-color="MANUFACTURER" onchange="changeEntityColor(this)"><span class="type-label">MANUFACTURER</span></div><div class="type-row"><input type="checkbox" checked data-etype="MECHANISM_OF_ACTION" onchange="toggleEntityType(this)"><input type="color" value="#EF5350" data-etype-color="MECHANISM_OF_ACTION" onchange="changeEntityColor(this)"><span class="type-label">MECHANISM_OF_ACTION</span></div><div class="type-row"><input type="checkbox" checked data-etype="PATIENT_POPULATION" onchange="toggleEntityType(this)"><input type="color" value="#26C6DA" data-etype-color="PATIENT_POPULATION" onchange="changeEntityColor(this)"><span class="type-label">PATIENT_POPULATION</span></div><div class="type-row"><input type="checkbox" checked data-etype="PHARMACOKINETIC_PROPERTY" onchange="toggleEntityType(this)"><input type="color" value="#29B6F6" data-etype-color="PHARMACOKINETIC_PROPERTY" onchange="changeEntityColor(this)"><span class="type-label">PHARMACOKINETIC_PROPERTY</span></div><div class="type-row"><input type="checkbox" checked data-etype="WARNING" onchange="toggleEntityType(this)"><input type="color" value="#7E57C2" data-etype-color="WARNING" onchange="changeEntityColor(this)"><span class="type-label">WARNING</span></div>
+
+    <div class="section-header">Relation Types</div>
+    <div class="type-row"><input type="checkbox" checked data-rtype="HAS_INACTIVE_INGREDIENT" onchange="toggleRelationType(this)"><span class="type-label">HAS_INACTIVE_INGREDIENT</span><span style="margin-left:auto;font-size:10px;color:#666;flex-shrink:0">15</span></div><div class="type-row"><input type="checkbox" checked data-rtype="INTERACTS_WITH" onchange="toggleRelationType(this)"><span class="type-label">INTERACTS_WITH</span><span style="margin-left:auto;font-size:10px;color:#666;flex-shrink:0">13</span></div><div class="type-row"><input type="checkbox" checked data-rtype="HAS_WARNING" onchange="toggleRelationType(this)"><span class="type-label">HAS_WARNING</span><span style="margin-left:auto;font-size:10px;color:#666;flex-shrink:0">13</span></div><div class="type-row"><input type="checkbox" checked data-rtype="CAUSES_ADVERSE_REACTION" onchange="toggleRelationType(this)"><span class="type-label">CAUSES_ADVERSE_REACTION</span><span style="margin-left:auto;font-size:10px;color:#666;flex-shrink:0">11</span></div><div class="type-row"><input type="checkbox" checked data-rtype="CONTRAINDICATED_IN" onchange="toggleRelationType(this)"><span class="type-label">CONTRAINDICATED_IN</span><span style="margin-left:auto;font-size:10px;color:#666;flex-shrink:0">5</span></div><div class="type-row"><input type="checkbox" checked data-rtype="STUDIED_IN_POPULATION" onchange="toggleRelationType(this)"><span class="type-label">STUDIED_IN_POPULATION</span><span style="margin-left:auto;font-size:10px;color:#666;flex-shrink:0">5</span></div><div class="type-row"><input type="checkbox" checked data-rtype="HAS_ACTIVE_INGREDIENT" onchange="toggleRelationType(this)"><span class="type-label">HAS_ACTIVE_INGREDIENT</span><span style="margin-left:auto;font-size:10px;color:#666;flex-shrink:0">3</span></div><div class="type-row"><input type="checkbox" checked data-rtype="HAS_MECHANISM" onchange="toggleRelationType(this)"><span class="type-label">HAS_MECHANISM</span><span style="margin-left:auto;font-size:10px;color:#666;flex-shrink:0">3</span></div><div class="type-row"><input type="checkbox" checked data-rtype="MANUFACTURES" onchange="toggleRelationType(this)"><span class="type-label">MANUFACTURES</span><span style="margin-left:auto;font-size:10px;color:#666;flex-shrink:0">2</span></div><div class="type-row"><input type="checkbox" checked data-rtype="EVALUATED_IN" onchange="toggleRelationType(this)"><span class="type-label">EVALUATED_IN</span><span style="margin-left:auto;font-size:10px;color:#666;flex-shrink:0">1</span></div><div class="type-row"><input type="checkbox" checked data-rtype="HAS_PK_PROPERTY" onchange="toggleRelationType(this)"><span class="type-label">HAS_PK_PROPERTY</span><span style="margin-left:auto;font-size:10px;color:#666;flex-shrink:0">1</span></div>
+
+    <div style="margin-top:12px;font-size:11px;color:#555;border-top:1px solid #333;padding-top:8px">
+        74 entities &middot; 72 relations
+    </div>
+</div>
+<div id="focus-banner">
+    <span id="focus-label">Focused on: &mdash;</span>
+    <button id="focus-exit" onclick="exitFocusMode()">&times;</button>
+</div>
+<div id="detail-panel">
+    <div id="detail-header">
+        <button id="detail-back" onclick="detailGoBack()" style="display:none;background:none;border:none;color:#888;cursor:pointer;font-size:16px;padding:0 4px;line-height:1">&larr;</button>
+        <h3 id="detail-title">Detail</h3>
+        <button id="detail-close" onclick="closeDetail()">&times;</button>
+    </div>
+    <div id="detail-body"></div>
+</div>
+<div id="edge-tooltip" style="display:none;position:fixed;pointer-events:none;
+    background:#23233a;border:1px solid #555;border-radius:6px;padding:6px 10px;
+    font-size:12px;color:#e0e0e0;z-index:9999;max-width:260px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.4);white-space:nowrap"></div>
+
+<script>var SIFT_CONFIG={"communityColors": {"Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease": "#e86262", "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide": "#62e889", "Novo Nordisk Inc. / Ozempic / Sustain 6": "#b062e8"}, "defaultDegree": 1, "defaultMinDocs": 1, "maxSourceDocs": 2, "focusCommunity": "", "preFilteredSourceDoc": ""};</script>
+<script>var allNodes = nodes.get();
+var allEdges = edges.get();
+
+// --- Community region data ---
+var communityHulls = {};   // comm -> [{x,y}, ...] padded convex hull points
+var communityCentroids = {}; // comm -> {x, y}
+var communityColors = SIFT_CONFIG.communityColors;
+
+// Convex hull (Graham scan)
+function convexHull(points) {
+    if (points.length < 3) return points.slice();
+    points.sort(function(a, b) { return a.x === b.x ? a.y - b.y : a.x - b.x; });
+    var lower = [];
+    for (var i = 0; i < points.length; i++) {
+        while (lower.length >= 2 && cross(lower[lower.length - 2], lower[lower.length - 1], points[i]) <= 0) lower.pop();
+        lower.push(points[i]);
+    }
+    var upper = [];
+    for (var i = points.length - 1; i >= 0; i--) {
+        while (upper.length >= 2 && cross(upper[upper.length - 2], upper[upper.length - 1], points[i]) <= 0) upper.pop();
+        upper.push(points[i]);
+    }
+    upper.pop(); lower.pop();
+    return lower.concat(upper);
+}
+function cross(o, a, b) { return (a.x - o.x) * (b.y - o.y) - (a.y - o.y) * (b.x - o.x); }
+
+// Pad hull outward from centroid
+function padHull(hull, cx, cy, padding) {
+    return hull.map(function(p) {
+        var dx = p.x - cx, dy = p.y - cy;
+        var dist = Math.sqrt(dx * dx + dy * dy) || 1;
+        return { x: p.x + (dx / dist) * padding, y: p.y + (dy / dist) * padding };
+    });
+}
+
+function computeCommunityRegions() {
+    var positions = network.getPositions();
+    var commPoints = {};
+    allNodes.forEach(function(n) {
+        if (!n.community) return;
+        var p = positions[n.id];
+        if (!p) return;
+        if (!commPoints[n.community]) commPoints[n.community] = [];
+        commPoints[n.community].push({ x: p.x, y: p.y });
+    });
+    communityHulls = {};
+    communityCentroids = {};
+    for (var comm in commPoints) {
+        var pts = commPoints[comm];
+        // Centroid
+        var cx = 0, cy = 0;
+        for (var i = 0; i < pts.length; i++) { cx += pts[i].x; cy += pts[i].y; }
+        cx /= pts.length; cy /= pts.length;
+        communityCentroids[comm] = { x: cx, y: cy };
+        // Hull with padding
+        if (pts.length < 3) {
+            communityHulls[comm] = padHull(pts, cx, cy, 80);
+        } else {
+            var hull = convexHull(pts);
+            communityHulls[comm] = padHull(hull, cx, cy, 80);
+        }
+    }
+}
+
+network.once('stabilizationIterationsDone', function() {
+    network.setOptions({ physics: { enabled: false } });
+    computeCommunityRegions();
+});
+
+// Draw filled community regions BEHIND nodes
+network.on('beforeDrawing', function(ctx) {
+    if (focusedNodeId !== null) return;
+    for (var comm in communityHulls) {
+        var hull = communityHulls[comm];
+        if (hull.length < 2) continue;
+        var color = communityColors[comm] || '#ffffff';
+        var r = parseInt(color.slice(1,3), 16);
+        var g = parseInt(color.slice(3,5), 16);
+        var b = parseInt(color.slice(5,7), 16);
+
+        ctx.save();
+        ctx.beginPath();
+        // Draw smooth rounded hull using quadratic curves
+        if (hull.length === 2) {
+            ctx.moveTo(hull[0].x, hull[0].y);
+            ctx.lineTo(hull[1].x, hull[1].y);
+        } else {
+            // Start at midpoint of first edge
+            var mx = (hull[0].x + hull[hull.length - 1].x) / 2;
+            var my = (hull[0].y + hull[hull.length - 1].y) / 2;
+            ctx.moveTo(mx, my);
+            for (var i = 0; i < hull.length; i++) {
+                var next = (i + 1) % hull.length;
+                var mx2 = (hull[i].x + hull[next].x) / 2;
+                var my2 = (hull[i].y + hull[next].y) / 2;
+                ctx.quadraticCurveTo(hull[i].x, hull[i].y, mx2, my2);
+            }
+        }
+        ctx.closePath();
+        ctx.fillStyle = 'rgba(' + r + ',' + g + ',' + b + ',0.08)';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(' + r + ',' + g + ',' + b + ',0.25)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        ctx.restore();
+    }
+});
+
+// Draw community labels ON TOP of nodes — scale-compensated
+network.on('afterDrawing', function(ctx) {
+    if (focusedNodeId !== null) return;
+    var scale = network.getScale();
+    var fontSize = Math.round(16 / scale);
+    var strokeW = Math.max(2, Math.round(3 / scale));
+    for (var comm in communityCentroids) {
+        var pos = communityCentroids[comm];
+        var color = communityColors[comm] || '#ffffff';
+        ctx.save();
+        ctx.font = '700 ' + fontSize + 'px Inter, system-ui, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.strokeStyle = '#1a1a2e';
+        ctx.lineWidth = strokeW;
+        ctx.lineJoin = 'round';
+        ctx.strokeText(comm, pos.x, pos.y);
+        ctx.fillStyle = color;
+        ctx.fillText(comm, pos.x, pos.y);
+        ctx.restore();
+    }
+});
+
+var hiddenEntityTypes = new Set();
+var hiddenRelationTypes = new Set();
+var hiddenCommunities = new Set();
+var focusedNodeId = null;
+var focusConnIndex = -1;
+var focusHistory = [];
+
+// --- Detail sidebar ---
+var dp = document.getElementById('detail-panel');
+var dt = document.getElementById('detail-title');
+var db = document.getElementById('detail-body');
+var detailBackBtn = document.getElementById('detail-back');
+var detailLastNodeId = null;
+
+function esc(s) {
+    var d = document.createElement('div');
+    d.textContent = String(s);
+    return d.innerHTML;
+}
+
+// --- Trail breadcrumb helpers ---
+function findRelationBetween(fromId, toId) {
+    var outgoing = [], incoming = [];
+    allEdges.forEach(function(e) {
+        if (e.from === fromId && e.to === toId) {
+            if (outgoing.indexOf(e.relation_type) < 0) outgoing.push(e.relation_type);
+        } else if (e.to === fromId && e.from === toId) {
+            if (incoming.indexOf(e.relation_type) < 0) incoming.push(e.relation_type);
+        }
+    });
+    // Prefer outgoing; if only incoming, mark as incoming
+    if (outgoing.length > 0) return { rel: outgoing.join(', '), dir: '\u2192' };
+    if (incoming.length > 0) return { rel: incoming.join(', '), dir: '\u2190' };
+    return { rel: '', dir: '' };
+}
+
+function getTrailPath() {
+    var path = [];
+    for (var i = 0; i < focusHistory.length; i++) {
+        var entry = focusHistory[i];
+        path.push({ nodeId: entry.nodeId, edgeRel: entry.relationType || '', edgeDir: entry.relationDir || '' });
+    }
+    path.push({ nodeId: focusedNodeId, edgeRel: null, edgeDir: null });
+    return path;
+}
+
+function getTrailNodeIds() {
+    var ids = new Set();
+    for (var i = 0; i < focusHistory.length; i++) {
+        ids.add(focusHistory[i].nodeId);
+    }
+    if (focusedNodeId) ids.add(focusedNodeId);
+    return ids;
+}
+
+function getTrailEdgeIds() {
+    var edgeIds = new Set();
+    var trail = getTrailPath();
+    for (var i = 0; i < trail.length - 1; i++) {
+        var fromId = trail[i].nodeId;
+        var toId = trail[i + 1].nodeId;
+        allEdges.forEach(function(e) {
+            if ((e.from === fromId && e.to === toId) || (e.to === fromId && e.from === toId)) {
+                edgeIds.add(e.id);
+            }
+        });
+    }
+    return edgeIds;
+}
+
+// Map trail edge IDs to the traversal "from" node for correct label perspective
+function getTrailEdgePerspectives() {
+    var map = {};
+    var trail = getTrailPath();
+    for (var i = 0; i < trail.length - 1; i++) {
+        var fromId = trail[i].nodeId;
+        var toId = trail[i + 1].nodeId;
+        allEdges.forEach(function(e) {
+            if ((e.from === fromId && e.to === toId) || (e.to === fromId && e.from === toId)) {
+                map[e.id] = fromId;
+            }
+        });
+    }
+    return map;
+}
+
+function buildNodeDetailHtml(nodeId) {
+    var node = nodes.get(nodeId);
+    if (!node) return '';
+
+    var connMap = {};
+    allEdges.forEach(function(e) {
+        var dir, nid, name;
+        if (e.from === nodeId) { dir = '\u2192'; nid = e.to; name = e.target_name || e.to; }
+        else if (e.to === nodeId) { dir = '\u2190'; nid = e.from; name = e.source_name || e.from; }
+        else return;
+        var key = dir + '|' + nid;
+        if (!connMap[key]) connMap[key] = { rels: [], edges: [], name: name, dir: dir, nid: nid, maxSupport: 0 };
+        if (connMap[key].rels.indexOf(e.relation_type) < 0) connMap[key].rels.push(e.relation_type);
+        connMap[key].maxSupport = Math.max(connMap[key].maxSupport, e.support_count || 1);
+        connMap[key].edges.push({
+            relation_type: e.relation_type,
+            confidence: e.edge_confidence || 0,
+            support_count: e.support_count || 1,
+            support_doc_count: e.support_doc_count || 0,
+            evidence: e.full_evidence || ''
+        });
+    });
+    var conns = [];
+    for (var k in connMap) {
+        var g = connMap[k];
+        g.rels.sort();
+        g.rel = g.rels.join(', ');
+        conns.push(g);
+    }
+    // Sort: outgoing first, then incoming; within each group, by rel then name
+    conns.sort(function(a, b) {
+        var aOut = a.dir === '\u2192' ? 0 : 1;
+        var bOut = b.dir === '\u2192' ? 0 : 1;
+        if (aOut !== bOut) return aOut - bOut;
+        return a.rel.localeCompare(b.rel) || a.name.localeCompare(b.name);
+    });
+
+    var h = '';
+    var tc = node.color || '#B0BEC5';
+    if (typeof tc === 'object') tc = tc.background || '#B0BEC5';
+    h += '<div class="d-field"><div class="d-label">Type</div>';
+    h += '<span class="d-badge" style="background:' + esc(tc) + ';color:#1a1a2e">' + esc(node.entity_type || 'UNKNOWN') + '</span></div>';
+
+    if (node.community) {
+        h += '<div class="d-field"><div class="d-label">Community</div>';
+        h += '<div class="d-val">' + esc(node.community) + '</div></div>';
+    }
+
+    if (node.description) {
+        h += '<div class="d-field"><div class="d-label">Description</div>';
+        h += '<div class="d-evidence">' + esc(node.description) + '</div></div>';
+    }
+
+    var lines = (node.title || '').split('\n');
+    for (var i = 1; i < lines.length; i++) {
+        var ln = lines[i].trim();
+        if (!ln) continue;
+        if (ln.startsWith('Community:')) continue;
+        var ci = ln.indexOf(': ');
+        if (ci > 0) {
+            h += '<div class="d-field"><div class="d-label">' + esc(ln.substring(0, ci)) + '</div>';
+            h += '<div class="d-val">' + esc(ln.substring(ci + 2)) + '</div></div>';
+        }
+    }
+
+    var relTypes = [];
+    var seenRel = {};
+    for (var r = 0; r < conns.length; r++) {
+        for (var ri = 0; ri < conns[r].rels.length; ri++) {
+            var rt = conns[r].rels[ri];
+            if (!seenRel[rt]) { relTypes.push(rt); seenRel[rt] = true; }
+        }
+    }
+    relTypes.sort();
+
+    h += '<div class="d-field" style="margin-top:14px">';
+    h += '<div class="d-label">Connections (' + conns.length + ')</div>';
+    if (relTypes.length > 1) {
+        h += '<select class="trail-conn-filter" onchange="filterTrailConns(this, \'' + esc(nodeId) + '\')" style="width:100%;padding:4px 6px;margin:4px 0 6px;border-radius:4px;border:1px solid #444;background:#16213e;color:#e0e0e0;font-size:11px;outline:none">';
+        h += '<option value="">All types</option>';
+        for (var t = 0; t < relTypes.length; t++) {
+            var cnt = conns.filter(function(c){ return c.rels.indexOf(relTypes[t]) >= 0; }).length;
+            h += '<option value="' + esc(relTypes[t]) + '">' + esc(relTypes[t]) + ' (' + cnt + ')</option>';
+        }
+        h += '</select>';
+    }
+    h += '<div class="trail-conn-list" data-node-id="' + esc(nodeId) + '">';
+    h += buildConnListHtml(conns, '');
+    h += '</div></div>';
+
+    if (!window._trailConns) window._trailConns = {};
+    window._trailConns[nodeId] = conns;
+
+    return h;
+}
+
+function buildConnRowHtml(c) {
+    var isIncoming = c.dir === '\u2190';
+    var relLabel = c.rels.map(function(r){ return isIncoming ? inverseRelLabel(r) : formatRelLabel(r); }).join(', ');
+    var h = '';
+    h += '<div class="d-conn" data-nid="' + esc(c.nid) + '">';
+    h += '<div class="d-conn-header">';
+    h += '<div class="d-conn-summary">';
+    h += '<span style="color:#888;font-size:10px">' + esc(relLabel).toUpperCase() + '</span><br>';
+    h += '<span>' + esc(c.name) + '</span>';
+    h += '</div>';
+    h += '<button class="d-conn-nav" data-nid="' + esc(c.nid) + '" title="Go to ' + esc(c.name) + '">\u2192</button>';
+    h += '</div>';
+    h += '<div class="d-conn-detail">';
+    var edges = c.edges || [];
+    for (var ei = 0; ei < edges.length; ei++) {
+        var ed = edges[ei];
+        h += '<div class="d-edge-card">';
+        h += '<div class="d-label">' + esc(formatRelLabel(ed.relation_type)).toUpperCase() + '</div>';
+        var parts = [];
+        if (ed.confidence) parts.push(Math.round(ed.confidence * 100) + '% confidence');
+        parts.push(ed.support_count + (ed.support_count === 1 ? ' mention' : ' mentions'));
+        if (ed.support_doc_count > 1) parts.push(ed.support_doc_count + ' docs');
+        h += '<div class="d-val" style="color:#999">' + esc(parts.join(' \u00b7 ')) + '</div>';
+        if (ed.evidence) {
+            h += '<div class="d-edge-evidence">' + esc(ed.evidence) + '</div>';
+        }
+        h += '</div>';
+    }
+    h += '</div>';
+    h += '</div>';
+    return h;
+}
+
+function buildConnListHtml(conns, relFilter) {
+    var outgoing = [];
+    var incoming = [];
+    for (var j = 0; j < conns.length; j++) {
+        var c = conns[j];
+        if (relFilter && c.rels.indexOf(relFilter) < 0) continue;
+        if (c.dir === '\u2190') { incoming.push(c); } else { outgoing.push(c); }
+    }
+    var h = '';
+    if (outgoing.length > 0) {
+        h += '<div class="d-conn-group-header">Outgoing</div>';
+        for (var o = 0; o < outgoing.length; o++) h += buildConnRowHtml(outgoing[o]);
+    }
+    if (incoming.length > 0) {
+        h += '<div class="d-conn-group-header">Incoming</div>';
+        for (var i = 0; i < incoming.length; i++) h += buildConnRowHtml(incoming[i]);
+    }
+    return h;
+}
+
+function filterTrailConns(select, nodeId) {
+    var list = document.querySelector('.trail-conn-list[data-node-id="' + nodeId + '"]');
+    if (!list) return;
+    var conns = (window._trailConns || {})[nodeId] || [];
+    list.innerHTML = buildConnListHtml(conns, select.value);
+}
+
+function renderTrail() {
+    var trail = getTrailPath();
+    if (trail.length <= 1) {
+        showNodeDetail(focusedNodeId);
+        return;
+    }
+
+    window._trailConns = {};
+    dt.textContent = 'Trail';
+    detailBackBtn.style.display = 'none';
+    dp.classList.add('open');
+
+    var h = '<div class="trail-header">Trail (' + trail.length + ' nodes)</div>';
+
+    for (var i = 0; i < trail.length; i++) {
+        var step = trail[i];
+        var node = nodes.get(step.nodeId);
+        if (!node) continue;
+        var isCurrent = (i === trail.length - 1);
+        var isExpanded = isCurrent;
+
+        var tc = node.color || '#B0BEC5';
+        if (typeof tc === 'object') tc = tc.background || '#B0BEC5';
+
+        h += '<div class="trail-card' + (isCurrent ? ' current' : '') + (isExpanded ? ' expanded' : '') + '" data-trail-idx="' + i + '" data-trail-nid="' + esc(step.nodeId) + '">';
+        h += '<div class="trail-card-header" onclick="toggleTrailCard(' + i + ')">';
+        h += '<span class="d-badge" style="background:' + esc(tc) + ';color:#1a1a2e">' + esc(node.entity_type || '?') + '</span>';
+        h += '<span>' + esc(node.full_name || node.label || step.nodeId) + '</span>';
+        h += '<span class="trail-expand-icon">\u25B8</span>';
+        h += '</div>';
+        h += '<div class="trail-card-body">';
+        h += buildNodeDetailHtml(step.nodeId);
+        h += '</div>';
+        h += '</div>';
+
+        if (step.edgeRel) {
+            var isIncomingTrail = step.edgeDir === '\u2190';
+            var trailRelLabel = step.edgeRel.split(', ').map(function(r) {
+                return isIncomingTrail ? inverseRelLabel(r.trim()) : formatRelLabel(r.trim());
+            }).join(', ');
+            h += '<div class="trail-rel-label">\u2193 ' + esc(trailRelLabel).toUpperCase() + '</div>';
+        }
+    }
+
+    db.innerHTML = h;
+
+    var currentNodeId = trail[trail.length - 1].nodeId;
+    window._conns = (window._trailConns || {})[currentNodeId] || [];
+}
+
+function toggleTrailCard(idx) {
+    var cards = document.querySelectorAll('.trail-card');
+    cards.forEach(function(card, i) {
+        if (i === idx) {
+            card.classList.toggle('expanded');
+        } else {
+            card.classList.remove('expanded');
+        }
+    });
+}
+
+function closeDetail() {
+    dp.classList.remove('open');
+    detailLastNodeId = null;
+    if (focusedNodeId !== null) exitFocusMode();
+}
+
+function detailGoBack() {
+    if (detailLastNodeId) showNodeDetail(detailLastNodeId);
+}
+
+function focusNode(nid) {
+    if (focusedNodeId !== null) {
+        var info = findRelationBetween(focusedNodeId, nid);
+        focusHistory.push({ nodeId: focusedNodeId, connIndex: focusConnIndex, relationType: info.rel, relationDir: info.dir, targetId: nid });
+        enterFocusMode(nid);
+        return;
+    }
+    network.focus(nid, { scale: 1.5, animation: { duration: 400 } });
+    network.selectNodes([nid]);
+    showNodeDetail(nid);
+}
+
+// event delegation for connection rows
+db.addEventListener('click', function(ev) {
+    // Navigate button → go to neighbor
+    var navBtn = ev.target.closest('.d-conn-nav');
+    if (navBtn) {
+        var nid = navBtn.getAttribute('data-nid');
+        if (nid) focusNode(nid);
+        return;
+    }
+    // Clickable node names in edge detail (From/To)
+    var nodeLink = ev.target.closest('[data-nid]:not(.d-conn-nav):not(.d-conn)');
+    if (nodeLink) {
+        focusNode(nodeLink.getAttribute('data-nid'));
+        return;
+    }
+    // Connection header → toggle expand
+    var header = ev.target.closest('.d-conn-header');
+    if (header) {
+        var conn = header.closest('.d-conn');
+        if (conn) conn.classList.toggle('expanded');
+        return;
+    }
+});
+
+network.on('click', function(params) {
+    if (focusedNodeId !== null && params.nodes && params.nodes.length > 0) {
+        // In focus mode: click neighbor to shift focus
+        var clickedNid = params.nodes[0];
+        var clickInfo = findRelationBetween(focusedNodeId, clickedNid);
+        focusHistory.push({ nodeId: focusedNodeId, connIndex: focusConnIndex, relationType: clickInfo.rel, relationDir: clickInfo.dir, targetId: clickedNid });
+        enterFocusMode(clickedNid);
+        return;
+    }
+    if (focusedNodeId !== null && (!params.nodes || params.nodes.length === 0) && (!params.edges || params.edges.length === 0)) {
+        // Click empty canvas → exit focus
+        exitFocusMode();
+        return;
+    }
+    if (params.nodes && params.nodes.length > 0) {
+        showNodeDetail(params.nodes[0]);
+    } else if (params.edges && params.edges.length > 0) {
+        showEdgeDetail(params.edges[0]);
+    }
+});
+
+function showNodeDetail(nodeId) {
+    var node = nodes.get(nodeId);
+    if (!node) return;
+    detailLastNodeId = nodeId;
+    detailBackBtn.style.display = 'none';
+    dt.textContent = node.full_name || node.label || nodeId;
+    dp.classList.add('open');
+
+    // gather connections — group by neighbor, merge relation types, store edge data
+    var connMap = {};
+    allEdges.forEach(function(e) {
+        var dir, nid, name;
+        if (e.from === nodeId) { dir = '\u2192'; nid = e.to; name = e.target_name || e.to; }
+        else if (e.to === nodeId) { dir = '\u2190'; nid = e.from; name = e.source_name || e.from; }
+        else return;
+        var key = dir + '|' + nid;
+        if (!connMap[key]) connMap[key] = { rels: [], edges: [], name: name, dir: dir, nid: nid, maxSupport: 0 };
+        if (connMap[key].rels.indexOf(e.relation_type) < 0) connMap[key].rels.push(e.relation_type);
+        connMap[key].maxSupport = Math.max(connMap[key].maxSupport, e.support_count || 1);
+        connMap[key].edges.push({
+            relation_type: e.relation_type,
+            confidence: e.edge_confidence || 0,
+            support_count: e.support_count || 1,
+            support_doc_count: e.support_doc_count || 0,
+            evidence: e.full_evidence || ''
+        });
+    });
+    var conns = [];
+    for (var k in connMap) {
+        var g = connMap[k];
+        g.rels.sort();
+        g.rel = g.rels.join(', ');
+        conns.push(g);
+    }
+    // Sort: outgoing first, then incoming; within each group, by rel then name
+    conns.sort(function(a, b) {
+        var aOut = a.dir === '\u2192' ? 0 : 1;
+        var bOut = b.dir === '\u2192' ? 0 : 1;
+        if (aOut !== bOut) return aOut - bOut;
+        return a.rel.localeCompare(b.rel) || a.name.localeCompare(b.name);
+    });
+    window._conns = conns;
+
+    var h = '';
+    // type
+    var tc = node.color || '#B0BEC5';
+    if (typeof tc === 'object') tc = tc.background || '#B0BEC5';
+    h += '<div class="d-field"><div class="d-label">Type</div>';
+    h += '<span class="d-badge" style="background:' + esc(tc) + ';color:#1a1a2e">' + esc(node.entity_type || 'UNKNOWN') + '</span></div>';
+
+    // community
+    if (node.community) {
+        h += '<div class="d-field"><div class="d-label">Community</div>';
+        h += '<div class="d-val">' + esc(node.community) + '</div></div>';
+    }
+
+    // narrative description
+    if (node.description) {
+        h += '<div class="d-field"><div class="d-label">Description</div>';
+        h += '<div class="d-evidence">' + esc(node.description) + '</div></div>';
+    }
+
+    // parse tooltip fields
+    var lines = (node.title || '').split('\n');
+    for (var i = 1; i < lines.length; i++) {
+        var ln = lines[i].trim();
+        if (!ln) continue;
+        if (ln.startsWith('Community:')) continue;
+        var ci = ln.indexOf(': ');
+        if (ci > 0) {
+            h += '<div class="d-field"><div class="d-label">' + esc(ln.substring(0, ci)) + '</div>';
+            h += '<div class="d-val">' + esc(ln.substring(ci + 2)) + '</div></div>';
+        }
+    }
+
+    // unique relation types for filter (flatten from grouped rels)
+    var relTypes = [];
+    var seenRel = {};
+    for (var r = 0; r < conns.length; r++) {
+        for (var ri = 0; ri < conns[r].rels.length; ri++) {
+            var rt = conns[r].rels[ri];
+            if (!seenRel[rt]) { relTypes.push(rt); seenRel[rt] = true; }
+        }
+    }
+    relTypes.sort();
+
+    // filter select + connections header
+    h += '<div class="d-field" style="margin-top:14px">';
+    h += '<div class="d-label">Connections (' + conns.length + ')</div>';
+    if (relTypes.length > 1) {
+        h += '<select id="conn-filter" onchange="filterConns(this.value)" style="width:100%;padding:4px 6px;margin:4px 0 6px;border-radius:4px;border:1px solid #444;background:#16213e;color:#e0e0e0;font-size:11px;outline:none">';
+        h += '<option value="">All types</option>';
+        for (var t = 0; t < relTypes.length; t++) {
+            var cnt = conns.filter(function(c){ return c.rels.indexOf(relTypes[t]) >= 0; }).length;
+            h += '<option value="' + esc(relTypes[t]) + '">' + esc(relTypes[t]) + ' (' + cnt + ')</option>';
+        }
+        h += '</select>';
+    }
+    h += '<div id="conn-list"></div></div>';
+
+    db.innerHTML = h;
+    filterConns('');
+}
+
+function filterConns(relFilter) {
+    var list = document.getElementById('conn-list');
+    if (!list) return;
+    var conns = window._conns || [];
+    list.innerHTML = buildConnListHtml(conns, relFilter);
+}
+
+function showEdgeDetail(edgeId) {
+    var edge = edges.get(edgeId);
+    if (!edge) return;
+    var rt = edge.relation_type || 'UNKNOWN';
+    detailBackBtn.style.display = detailLastNodeId ? '' : 'none';
+    dt.textContent = rt;
+    dp.classList.add('open');
+
+    var ec = edge.color || '#555';
+    if (typeof ec === 'object') ec = ec.color || '#555';
+
+    var h = '';
+    h += '<div class="d-field"><span class="d-badge" style="background:' + esc(ec) + ';color:#1a1a2e">' + esc(rt) + '</span></div>';
+    h += '<div class="d-field"><div class="d-label">From</div>';
+    h += '<div class="d-val" style="cursor:pointer;color:#4FC3F7" data-nid="' + esc(edge.from) + '">' + esc(edge.source_name || edge.from) + '</div></div>';
+    h += '<div class="d-field"><div class="d-label">To</div>';
+    h += '<div class="d-val" style="cursor:pointer;color:#4FC3F7" data-nid="' + esc(edge.to) + '">' + esc(edge.target_name || edge.to) + '</div></div>';
+
+    if (edge.edge_confidence) {
+        h += '<div class="d-field"><div class="d-label">Confidence</div>';
+        h += '<div class="d-val">' + Math.round(edge.edge_confidence * 100) + '%</div></div>';
+    }
+    var sc = edge.support_count || 1;
+    var sdc = edge.support_doc_count || 0;
+    h += '<div class="d-field"><div class="d-label">Support</div>';
+    h += '<div class="d-val">' + sc + (sc === 1 ? ' mention' : ' mentions');
+    if (sdc > 1) h += ' across ' + sdc + ' docs';
+    h += '</div></div>';
+    if (edge.full_evidence) {
+        h += '<div class="d-field"><div class="d-label">Evidence</div>';
+        h += '<div class="d-evidence">' + esc(edge.full_evidence) + '</div></div>';
+    }
+    db.innerHTML = h;
+}
+
+// --- Entity type toggle ---
+function toggleEntityType(cb) {
+    var type = cb.dataset.etype;
+    if (cb.checked) hiddenEntityTypes.delete(type);
+    else hiddenEntityTypes.add(type);
+    applyFilters();
+}
+
+// --- Community toggle ---
+function toggleCommunity(cb) {
+    var comm = cb.dataset.community;
+    if (cb.checked) hiddenCommunities.delete(comm);
+    else hiddenCommunities.add(comm);
+    applyFilters();
+}
+
+// --- Relation type toggle ---
+function toggleRelationType(cb) {
+    var type = cb.dataset.rtype;
+    if (cb.checked) hiddenRelationTypes.delete(type);
+    else hiddenRelationTypes.add(type);
+    applyEdgeFilters();
+}
+
+// --- Entity color picker ---
+function changeEntityColor(input) {
+    var type = input.dataset.etypeColor;
+    var color = input.value;
+    var updates = [];
+    allNodes.forEach(function(n) {
+        if (n.entity_type === type) {
+            var c = n.color;
+            var border = (typeof c === 'object' && c.border) ? c.border : '#333';
+            updates.push({ id: n.id, color: { background: color, border: border, highlight: { background: color, border: border } } });
+        }
+    });
+    nodes.update(updates);
+    allNodes = nodes.get();
+}
+
+function applyFilters() {
+    var updates = [];
+    allNodes.forEach(function(node) {
+        var docHidden = false;
+        if (activeSourceDoc) {
+            var nodeDocs = (node.source_docs_str || '').split(',');
+            docHidden = nodeDocs.indexOf(activeSourceDoc) < 0;
+        }
+        var hidden = hiddenEntityTypes.has(node.entity_type) ||
+                     (node.community && hiddenCommunities.has(node.community)) ||
+                     (node.node_degree || 0) < minDegree ||
+                     (node.num_source_docs || 0) < minSupportDocs ||
+                     docHidden;
+        updates.push({ id: node.id, hidden: hidden });
+    });
+    nodes.update(updates);
+}
+
+function applyEdgeFilters() {
+    var updates = [];
+    allEdges.forEach(function(edge) {
+        var docHidden = false;
+        if (activeSourceDoc) {
+            var edgeDocs = (edge.support_docs_str || '').split(',');
+            docHidden = edgeDocs.indexOf(activeSourceDoc) < 0;
+        }
+        var hidden = hiddenRelationTypes.has(edge.relation_type) ||
+                     docHidden;
+        updates.push({ id: edge.id, hidden: hidden });
+    });
+    edges.update(updates);
+}
+
+// --- Degree filter ---
+var minDegree = SIFT_CONFIG.defaultDegree;
+function filterByDegree(val) {
+    minDegree = parseInt(val, 10);
+    document.getElementById('deg-val').textContent = minDegree;
+    applyFilters();
+}
+
+// --- Support docs filter ---
+var minSupportDocs = SIFT_CONFIG.defaultMinDocs || 0;
+function filterBySupportDocs(val) {
+    minSupportDocs = parseInt(val, 10);
+    document.getElementById('docs-val').textContent = minSupportDocs;
+    applyFilters();
+}
+
+
+
+// --- Source document filter ---
+var activeSourceDoc = '';
+function filterBySourceDoc(val) {
+    activeSourceDoc = val;
+    applyFilters();
+    applyEdgeFilters();
+}
+
+// --- Startup: apply smart defaults ---
+(function() {
+    // MENTIONED_IN starts unchecked — add to hidden set
+    var mentionedCb = document.querySelector('[data-rtype="MENTIONED_IN"]');
+    if (mentionedCb && !mentionedCb.checked) {
+        hiddenRelationTypes.add('MENTIONED_IN');
+    }
+    // --community flag: pre-hide all other communities
+    if (SIFT_CONFIG.focusCommunity) {
+        var target = SIFT_CONFIG.focusCommunity;
+        document.querySelectorAll('[data-community]').forEach(function(cb) {
+            if (cb.dataset.community !== target) {
+                cb.checked = false;
+                hiddenCommunities.add(cb.dataset.community);
+            }
+        });
+    }
+    // --source-doc flag: pre-select and disable dropdown
+    if (SIFT_CONFIG.preFilteredSourceDoc) {
+        var docSelect = document.getElementById('doc-filter');
+        if (docSelect) {
+            docSelect.value = SIFT_CONFIG.preFilteredSourceDoc;
+            docSelect.disabled = true;
+            docSelect.style.opacity = '0.5';
+            activeSourceDoc = SIFT_CONFIG.preFilteredSourceDoc;
+        }
+    }
+    applyEdgeFilters();
+    applyFilters();
+})();
+
+// --- Search ---
+function searchEntity(query) {
+    if (!query || query.length < 2) {
+        var reset = allNodes.map(function(n) {
+            return { id: n.id, opacity: 1.0, font: { size: 0 }, borderWidth: n.community ? 2 : 1.5 };
+        });
+        nodes.update(reset);
+        return;
+    }
+    query = query.toLowerCase();
+    var matchIds = new Set();
+    allNodes.forEach(function(n) {
+        var name = (n.full_name || n.label || '').toLowerCase();
+        var als = (n.aliases || '').toLowerCase();
+        if (name.includes(query) || als.includes(query)) matchIds.add(n.id);
+    });
+    var neighborIds = new Set();
+    allEdges.forEach(function(e) {
+        if (matchIds.has(e.from)) neighborIds.add(e.to);
+        if (matchIds.has(e.to)) neighborIds.add(e.from);
+    });
+    var updates = allNodes.map(function(n) {
+        if (matchIds.has(n.id))
+            return { id: n.id, opacity: 1.0, font: { size: 18, color: '#ffffff' }, borderWidth: 3 };
+        else if (neighborIds.has(n.id))
+            return { id: n.id, opacity: 0.8, font: { size: 12 }, borderWidth: n.community ? 2 : 1.5 };
+        else
+            return { id: n.id, opacity: 0.1, font: { size: 0 }, borderWidth: 1 };
+    });
+    nodes.update(updates);
+    if (matchIds.size > 0) {
+        network.focus(matchIds.values().next().value, { scale: 1.5, animation: { duration: 500 } });
+    }
+}
+
+// --- Focus mode (ego-graph explorer) ---
+function formatRelLabel(rt) {
+    return rt.toLowerCase().replace(/_/g, ' ');
+}
+
+// Direction-aware edge label relative to a perspective node
+function edgeLabelFrom(e, perspectiveNodeId) {
+    if (e.to === perspectiveNodeId && e.from !== perspectiveNodeId) {
+        return inverseRelLabel(e.relation_type);
+    }
+    return formatRelLabel(e.relation_type);
+}
+
+// Convert relation type to passive/inverse form for incoming edges
+// e.g. "CONTRADICTS" → "CONTRADICTED BY", "GOVERNS" → "GOVERNED BY"
+function inverseRelLabel(rt) {
+    var inv = {
+        'CONTRADICTS': 'CONTRADICTED BY',
+        'GOVERNS': 'GOVERNED BY',
+        'INVOLVES': 'INVOLVED IN',
+        'RESPONSIBLE_FOR': 'UNDER RESPONSIBILITY OF',
+        'ENABLED_BY': 'ENABLES',
+        'ASSOCIATED_WITH': 'ASSOCIATED WITH'
+    };
+    var upper = rt.toUpperCase().replace(/\s+/g, '_');
+    if (inv[upper]) return formatRelLabel(inv[upper]);
+    // Fallback: try common English verb patterns
+    var lower = rt.toLowerCase().replace(/_/g, ' ');
+    if (lower.endsWith('s') && !lower.endsWith('ss')) {
+        // "contradicts" → "contradicted by" (rough heuristic)
+        return lower.replace(/s$/, 'd by');
+    }
+    return lower + ' (inverse)';
+}
+
+network.on('doubleClick', function(params) {
+    if (params.nodes && params.nodes.length > 0) {
+        enterFocusMode(params.nodes[0]);
+    }
+});
+
+document.addEventListener('keydown', function(ev) {
+    if (ev.key === 'Escape') {
+        exitFocusMode();
+        return;
+    }
+    if (focusedNodeId === null) return;
+    var connList = document.querySelector('.trail-card.current .trail-conn-list') || document.getElementById('conn-list');
+    var rows = connList ? connList.querySelectorAll('.d-conn') : [];
+    if (!rows.length) return;
+
+    if (ev.key === 'ArrowDown' || ev.key === 'ArrowUp') {
+        ev.preventDefault();
+        if (ev.key === 'ArrowDown') focusConnIndex = Math.min(focusConnIndex + 1, rows.length - 1);
+        else focusConnIndex = focusConnIndex - 1;
+        if (focusConnIndex < 0) {
+            // Back to full neighborhood view
+            focusConnIndex = -1;
+            rows.forEach(function(r) { r.classList.remove('active'); });
+            var restoreId = focusedNodeId;
+            focusedNodeId = null;  // clear so enterFocusMode guard allows re-entry
+            enterFocusMode(restoreId);
+            return;
+        }
+        highlightConn(focusConnIndex);
+    } else if (ev.key === 'ArrowRight' || ev.key === 'Enter') {
+        ev.preventDefault();
+        if (focusConnIndex >= 0 && focusConnIndex < rows.length) {
+            var targetNid = rows[focusConnIndex].getAttribute('data-nid');
+            var currentConns = focusHistory.length > 0
+                ? ((window._trailConns || {})[focusedNodeId] || [])
+                : (window._conns || []);
+            var relType = '';
+            var relDir = '';
+            if (currentConns[focusConnIndex]) {
+                relType = currentConns[focusConnIndex].rels.join(', ');
+                relDir = currentConns[focusConnIndex].dir || '';
+            }
+            focusHistory.push({ nodeId: focusedNodeId, connIndex: focusConnIndex, relationType: relType, relationDir: relDir, targetId: targetNid });
+            enterFocusMode(targetNid);
+        }
+    } else if (ev.key === ' ') {
+        ev.preventDefault();
+        if (focusConnIndex >= 0 && focusConnIndex < rows.length) {
+            rows[focusConnIndex].classList.toggle('expanded');
+            var detail = rows[focusConnIndex].querySelector('.d-conn-detail');
+            if (detail && rows[focusConnIndex].classList.contains('expanded')) {
+                setTimeout(function() { detail.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }, 10);
+            }
+        }
+    } else if (ev.key === 'Backspace' || ev.key === 'Delete' || ev.key === 'ArrowLeft') {
+        ev.preventDefault();
+        if (focusHistory.length > 0) {
+            var prev = focusHistory.pop();
+            focusedNodeId = null;
+            enterFocusMode(prev.nodeId, prev.connIndex >= 0);
+            if (prev.connIndex >= 0) {
+                focusConnIndex = prev.connIndex;
+                highlightConn(prev.connIndex);
+            }
+        }
+    }
+});
+
+function highlightConn(idx) {
+    var connList = document.querySelector('.trail-card.current .trail-conn-list') || document.getElementById('conn-list');
+    var rows = connList ? connList.querySelectorAll('.d-conn') : [];
+    rows.forEach(function(r, i) {
+        r.classList.toggle('active', i === idx);
+        if (i !== idx) r.classList.remove('expanded');
+    });
+    if (rows[idx]) rows[idx].scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    if (idx < 0 || idx >= rows.length) return;
+    var c = { nid: rows[idx].getAttribute('data-nid') };
+
+    network.selectNodes([c.nid]);
+
+    // Find neighbor's adjacents, ranked by degree — cap at 10
+    var adjList = [];
+    var adjDeg = {};
+    allEdges.forEach(function(e) {
+        var other = null;
+        if (e.from === c.nid && e.to !== focusedNodeId) other = e.to;
+        if (e.to === c.nid && e.from !== focusedNodeId) other = e.from;
+        if (other && !adjDeg[other]) {
+            adjDeg[other] = 0;
+            adjList.push(other);
+        }
+        if (other) adjDeg[other]++;
+    });
+    adjList.sort(function(a, b) {
+        var da = 0, db = 0;
+        allNodes.forEach(function(n) {
+            if (n.id === a) da = n.node_degree || 0;
+            if (n.id === b) db = n.node_degree || 0;
+        });
+        return db - da;
+    });
+    var MAX_ADJ = 10;
+    var adjIds = new Set(adjList.slice(0, MAX_ADJ));
+
+    // Collect focused node's 1-hop neighbors so they stay faintly visible
+    var focusNeighborIds = new Set();
+    allEdges.forEach(function(e) {
+        if (e.from === focusedNodeId && e.to !== c.nid) focusNeighborIds.add(e.to);
+        if (e.to === focusedNodeId && e.from !== c.nid) focusNeighborIds.add(e.from);
+    });
+
+    // Nodes: primary pair full, trail visible, adjacents ghosted, focus neighbors faint
+    var trailNids = getTrailNodeIds();
+    var nodeUpdates = [];
+    allNodes.forEach(function(n) {
+        var isPrimary = n.id === focusedNodeId || n.id === c.nid;
+        var isAdj = adjIds.has(n.id);
+        var isTrail = trailNids.has(n.id);
+        var isFocusNeighbor = focusNeighborIds.has(n.id);
+        var visible = isPrimary || isAdj || isTrail || isFocusNeighbor;
+        var opacity = isPrimary || isTrail ? 1.0 : isAdj ? 0.35 : isFocusNeighbor ? 0.15 : 1.0;
+        nodeUpdates.push({ id: n.id, hidden: !visible, opacity: opacity });
+    });
+    nodes.update(nodeUpdates);
+
+    // Count parallel edges between primary pair for curve offsets
+    var primaryCount = 0;
+    var primaryIndex = {};
+    allEdges.forEach(function(e) {
+        var isPrimary = (e.from === focusedNodeId && e.to === c.nid) || (e.to === focusedNodeId && e.from === c.nid);
+        if (isPrimary) {
+            primaryIndex[e.id] = primaryCount;
+            primaryCount++;
+        }
+    });
+
+    // Edges: primary thick + labeled, trail visible + labeled, adjacent thin, focus-neighbor faint
+    var trailEids = getTrailEdgeIds();
+    var trailPersp = getTrailEdgePerspectives();
+    var edgeUpdates = [];
+    allEdges.forEach(function(e) {
+        var isPrimary = (e.from === focusedNodeId && e.to === c.nid) || (e.to === focusedNodeId && e.from === c.nid);
+        var isAdj = (e.from === c.nid && adjIds.has(e.to)) || (e.to === c.nid && adjIds.has(e.from));
+        var isTrail = trailEids.has(e.id);
+        var isFocusEdge = (e.from === focusedNodeId && focusNeighborIds.has(e.to)) || (e.to === focusedNodeId && focusNeighborIds.has(e.from));
+        var show = (isPrimary || isAdj || isTrail || isFocusEdge) && !hiddenRelationTypes.has(e.relation_type);
+        var origWidth = Math.min(10, 1.5 + (e.support_count || 1) * 2);
+        var origColor = (typeof e.color === 'string') ? e.color : (e.color && e.color.color) || '#888';
+        var edgeOpacity = isPrimary || isTrail ? 1.0 : isAdj ? 0.25 : isFocusEdge ? 0.1 : 0.25;
+        var edgePerspective = isTrail ? (trailPersp[e.id] || focusedNodeId) : focusedNodeId;
+        var update = {
+            id: e.id,
+            hidden: !show,
+            color: { color: origColor, opacity: edgeOpacity },
+            label: (isPrimary || isTrail) ? edgeLabelFrom(e, edgePerspective) : '',
+            width: isPrimary ? Math.max(3, origWidth) : (isTrail ? origWidth : 1)
+        };
+        if (isPrimary && primaryCount > 1) {
+            var roundness = 0.15 + (primaryIndex[e.id] || 0) * 0.2;
+            update.smooth = { type: 'curvedCW', roundness: roundness };
+        }
+        edgeUpdates.push(update);
+    });
+    edges.update(edgeUpdates);
+
+    // Camera: fit trail + primary pair, adjacents are peripheral
+    var fitNodeIds = [focusedNodeId, c.nid];
+    trailNids.forEach(function(nid) { if (fitNodeIds.indexOf(nid) < 0) fitNodeIds.push(nid); });
+    var positions = network.getPositions(fitNodeIds);
+    var minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+    fitNodeIds.forEach(function(nid) {
+        var p = positions[nid];
+        if (!p) return;
+        if (p.x < minX) minX = p.x;
+        if (p.x > maxX) maxX = p.x;
+        if (p.y < minY) minY = p.y;
+        if (p.y > maxY) maxY = p.y;
+    });
+    var midX = (minX + maxX) / 2;
+    var midY = (minY + maxY) / 2;
+
+    var pad = 250;
+    var rangeX = (maxX - minX) + pad * 2;
+    var rangeY = (maxY - minY) + pad * 2;
+
+    var canvasEl = network.canvas.frame.canvas;
+    var totalW = canvasEl.clientWidth;
+    var totalH = canvasEl.clientHeight;
+    var leftW = 352;
+    var rightW = dp.classList.contains('open') ? 320 : 0;
+    var visW = totalW - leftW - rightW;
+    var visH = totalH - 80;
+
+    var scale = Math.min(visW / rangeX, visH / rangeY, 1.5);
+
+    var visCenterPx = leftW + visW / 2;
+    var shiftPx = visCenterPx - totalW / 2;
+
+    network.moveTo({
+        position: { x: midX - shiftPx / scale, y: midY },
+        scale: scale,
+        animation: { duration: 300, easingFunction: 'easeInOutQuad' }
+    });
+
+    // Fonts: primary pair large + white, trail nodes medium + gray, adjacents small + dim
+    (function() {
+        var nodeFontSize = Math.round(20 / scale);
+        var adjFontSize = Math.round(9 / scale);
+        var ghostFontSize = Math.round(6 / scale);
+        var edgeFontSize = Math.round(16 / scale);
+        var strokeW = Math.max(3, Math.round(3 / scale));
+
+        var fontUpdatesN = [];
+        allNodes.forEach(function(n) {
+            if (n.id === focusedNodeId || n.id === c.nid) {
+                fontUpdatesN.push({ id: n.id, font: { size: nodeFontSize, color: '#ffffff', strokeWidth: strokeW, strokeColor: '#1a1a2e' } });
+            } else if (trailNids.has(n.id)) {
+                fontUpdatesN.push({ id: n.id, font: { size: adjFontSize, color: '#aaaaaa', strokeWidth: strokeW, strokeColor: '#1a1a2e' } });
+            } else if (adjIds.has(n.id)) {
+                fontUpdatesN.push({ id: n.id, font: { size: adjFontSize, color: '#555555', strokeWidth: strokeW, strokeColor: '#1a1a2e' } });
+            } else if (focusNeighborIds.has(n.id)) {
+                fontUpdatesN.push({ id: n.id, font: { size: ghostFontSize, color: '#333333', strokeWidth: strokeW, strokeColor: '#1a1a2e' } });
+            }
+        });
+        nodes.update(fontUpdatesN);
+
+        var fontUpdatesE = [];
+        var smallEdgeFont = Math.round(4 / scale);
+        allEdges.forEach(function(e) {
+            var isPrimary = (e.from === focusedNodeId && e.to === c.nid) || (e.to === focusedNodeId && e.from === c.nid);
+            var isTrail = trailEids.has(e.id);
+            if ((isPrimary || isTrail) && !hiddenRelationTypes.has(e.relation_type)) {
+                fontUpdatesE.push({ id: e.id, font: { size: edgeFontSize, color: '#ffffff', strokeWidth: strokeW, strokeColor: '#1a1a2e' } });
+            } else {
+                fontUpdatesE.push({ id: e.id, font: { size: smallEdgeFont, color: '#333333', strokeWidth: 0, strokeColor: '#1a1a2e' } });
+            }
+        });
+        edges.update(fontUpdatesE);
+    })();
+}
+
+// --- Overview hover preview: show name + highlight connections ---
+var overviewHoveredId = null;
+network.on('hoverNode', function(params) {
+    if (focusedNodeId !== null) return;  // focus mode handles its own display
+    var nid = params.node;
+    overviewHoveredId = nid;
+    var scale = network.getScale();
+    var labelSize = Math.round(12 / scale);
+    var neighborSize = Math.round(9 / scale);
+    var strokeW = Math.max(2, Math.round(2 / scale));
+
+    // Find connected neighbors
+    var neighborIds = new Set();
+    var connEdgeIds = new Set();
+    allEdges.forEach(function(e) {
+        if (e.from === nid) { neighborIds.add(e.to); connEdgeIds.add(e.id); }
+        if (e.to === nid) { neighborIds.add(e.from); connEdgeIds.add(e.id); }
+    });
+
+    // Show hovered node label + dim neighbor labels
+    var nodeUpdates = [];
+    nodeUpdates.push({ id: nid, font: { size: labelSize, color: '#ffffff', strokeWidth: strokeW, strokeColor: '#1a1a2e' } });
+    neighborIds.forEach(function(id) {
+        nodeUpdates.push({ id: id, font: { size: neighborSize, color: '#999999', strokeWidth: strokeW, strokeColor: '#1a1a2e' } });
+    });
+    nodes.update(nodeUpdates);
+
+    // Brighten connected edges
+    var edgeUpdates = [];
+    connEdgeIds.forEach(function(eid) {
+        edgeUpdates.push({ id: eid, color: { opacity: 0.7 } });
+    });
+    edges.update(edgeUpdates);
+});
+
+network.on('blurNode', function(params) {
+    if (focusedNodeId !== null) return;
+    if (overviewHoveredId === null) return;
+    overviewHoveredId = null;
+
+    // Reset all node fonts to 0 (overview default)
+    var nodeResets = [];
+    allNodes.forEach(function(n) {
+        nodeResets.push({ id: n.id, font: { size: 0 } });
+    });
+    nodes.update(nodeResets);
+
+    // Reset all edge opacities
+    var edgeResets = [];
+    allEdges.forEach(function(e) {
+        edgeResets.push({ id: e.id, color: { opacity: 0.2 } });
+    });
+    edges.update(edgeResets);
+});
+
+// Hover-to-reveal edge labels + support tooltip in focus mode
+var edgeTooltip = document.getElementById('edge-tooltip');
+network.on('hoverEdge', function(params) {
+    if (focusedNodeId === null) return;
+    var e = edges.get(params.edge);
+    if (!e) return;
+    // Show edge label only in neighborhood view (pair view already has labels)
+    if (focusConnIndex < 0) {
+        edges.update({ id: e.id, font: { size: 12, color: '#fff', strokeWidth: 3, strokeColor: '#1a1a2e' }, label: edgeLabelFrom(e, focusedNodeId) });
+    }
+    // Show support tooltip in all focus sub-modes
+    var parts = [edgeLabelFrom(e, focusedNodeId)];
+    if (e.edge_confidence) parts.push(Math.round(e.edge_confidence * 100) + '%');
+    var sc = e.support_count || 1;
+    parts.push(sc + (sc === 1 ? ' mention' : ' mentions'));
+    if (e.support_doc_count > 1) parts.push(e.support_doc_count + ' docs');
+    edgeTooltip.innerHTML = parts.join(' &middot; ');
+    edgeTooltip.style.display = 'block';
+});
+network.on('blurEdge', function(params) {
+    if (focusedNodeId === null) return;
+    var e = edges.get(params.edge);
+    if (!e) return;
+    if (focusConnIndex < 0) {
+        edges.update({ id: e.id, font: { size: 0 }, label: '' });
+    }
+    edgeTooltip.style.display = 'none';
+});
+// Track mouse to position tooltip
+document.getElementById('mynetwork').addEventListener('mousemove', function(ev) {
+    if (edgeTooltip.style.display === 'block') {
+        edgeTooltip.style.left = (ev.clientX + 14) + 'px';
+        edgeTooltip.style.top = (ev.clientY - 28) + 'px';
+    }
+});
+
+function enterFocusMode(nodeId, skipCamera) {
+    if (focusedNodeId === nodeId && focusConnIndex < 0) return;  // already in neighborhood view
+    overviewHoveredId = null;  // clear any hover preview state
+    focusedNodeId = nodeId;
+    var node = nodes.get(nodeId);
+    if (!node) return;
+
+    // Show banner
+    var banner = document.getElementById('focus-banner');
+    document.getElementById('focus-label').textContent = 'Focused on: ' + (node.full_name || node.label || nodeId);
+    banner.classList.add('visible');
+
+    // Find all 1-hop neighbors, ranked by degree
+    var allNeighbors = [];
+    var neighborDeg = {};
+    var connectedEdgeIds = new Set();
+    allEdges.forEach(function(e) {
+        if (e.from === nodeId) { connectedEdgeIds.add(e.id); if (!neighborDeg[e.to]) { neighborDeg[e.to] = 0; allNeighbors.push(e.to); } neighborDeg[e.to]++; }
+        if (e.to === nodeId) { connectedEdgeIds.add(e.id); if (!neighborDeg[e.from]) { neighborDeg[e.from] = 0; allNeighbors.push(e.from); } neighborDeg[e.from]++; }
+    });
+
+    // Sort by global degree, cap visible neighbors for dense hubs
+    allNeighbors.sort(function(a, b) {
+        var da = 0, db = 0;
+        allNodes.forEach(function(n) { if (n.id === a) da = n.node_degree || 0; if (n.id === b) db = n.node_degree || 0; });
+        return db - da;
+    });
+    var MAX_NEIGHBORS = 25;
+    var visibleNeighbors = new Set(allNeighbors.slice(0, MAX_NEIGHBORS));
+    visibleNeighbors.add(nodeId);
+    var trailNodeIds = getTrailNodeIds();
+    trailNodeIds.forEach(function(nid) { visibleNeighbors.add(nid); });
+
+    // Show top neighbors, hide rest
+    var nodeUpdates = [];
+    allNodes.forEach(function(n) {
+        var isVisible = visibleNeighbors.has(n.id);
+        var isFocused = n.id === nodeId;
+        var isTrail = trailNodeIds.has(n.id);
+        var belowDegree = (n.node_degree || 0) < minDegree;
+        nodeUpdates.push({ id: n.id, hidden: !isVisible || (!isFocused && !isTrail && belowDegree), opacity: 1.0, font: { size: 14, color: '#e0e0e0' } });
+    });
+    nodes.update(nodeUpdates);
+
+    // Count parallel edges per node pair to offset curves
+    var pairCount = {};
+    var pairIndex = {};
+    allEdges.forEach(function(e) {
+        if (!connectedEdgeIds.has(e.id)) return;
+        var key = [e.from, e.to].sort().join('||');
+        if (!pairCount[key]) pairCount[key] = 0;
+        pairIndex[e.id] = pairCount[key];
+        pairCount[key]++;
+    });
+
+    // Show static edge labels only for small neighborhoods
+    var showStaticLabels = visibleNeighbors.size <= 20;
+
+    // Show edges only to visible neighbors + trail edges
+    var trailEdgeIds = getTrailEdgeIds();
+    var trailEdgePersp = getTrailEdgePerspectives();
+    var edgeUpdates = [];
+    allEdges.forEach(function(e) {
+        var isTrailEdge = trailEdgeIds.has(e.id);
+        if (isTrailEdge) {
+            edgeUpdates.push({
+                id: e.id,
+                hidden: false,
+                color: { opacity: 0.6 },
+                font: { size: 11, color: '#ccc', strokeWidth: 3, strokeColor: '#1a1a2e' },
+                label: edgeLabelFrom(e, trailEdgePersp[e.id] || nodeId),
+                smooth: { type: 'curvedCW', roundness: 0.1 }
+            });
+        } else if (connectedEdgeIds.has(e.id)) {
+            var other = e.from === nodeId ? e.to : e.from;
+            if (!visibleNeighbors.has(other)) {
+                edgeUpdates.push({ id: e.id, hidden: true });
+                return;
+            }
+            var key = [e.from, e.to].sort().join('||');
+            var total = pairCount[key] || 1;
+            var idx = pairIndex[e.id] || 0;
+            var roundness = total > 1 ? 0.15 + idx * 0.2 : 0.1;
+            edgeUpdates.push({
+                id: e.id,
+                hidden: hiddenRelationTypes.has(e.relation_type),
+                color: { opacity: 0.6 },
+                font: { size: showStaticLabels ? 11 : 0, color: '#ccc', strokeWidth: 3, strokeColor: '#1a1a2e' },
+                label: showStaticLabels ? edgeLabelFrom(e, nodeId) : '',
+                smooth: { type: 'curvedCW', roundness: roundness }
+            });
+        } else {
+            edgeUpdates.push({ id: e.id, hidden: true });
+        }
+    });
+    edges.update(edgeUpdates);
+
+    if (!skipCamera) focusConnIndex = -1;
+
+    if (!skipCamera) {
+        // Sidebar-aware camera fit
+        var fitIds = [];
+        visibleNeighbors.forEach(function(nid) { fitIds.push(nid); });
+        var positions = network.getPositions(fitIds);
+        var minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+        fitIds.forEach(function(nid) {
+            var p = positions[nid];
+            if (!p) return;
+            if (p.x < minX) minX = p.x;
+            if (p.x > maxX) maxX = p.x;
+            if (p.y < minY) minY = p.y;
+            if (p.y > maxY) maxY = p.y;
+        });
+        var midX = (minX + maxX) / 2;
+        var midY = (minY + maxY) / 2;
+
+        var pad = 150;
+        var rangeX = (maxX - minX) + pad * 2;
+        var rangeY = (maxY - minY) + pad * 2;
+
+        var canvasEl = network.canvas.frame.canvas;
+        var totalW = canvasEl.clientWidth;
+        var totalH = canvasEl.clientHeight;
+        var leftW = 352;
+        var rightW = dp.classList.contains('open') ? 320 : 0;
+        var visW = totalW - leftW - rightW;
+        var visH = totalH - 80;
+
+        var scale = Math.min(visW / rangeX, visH / rangeY, 1.2);
+
+        var visCenterPx = leftW + visW / 2;
+        var shiftPx = visCenterPx - totalW / 2;
+
+        network.moveTo({
+            position: { x: midX - shiftPx / scale, y: midY },
+            scale: scale,
+            animation: { duration: 400, easingFunction: 'easeInOutQuad' }
+        });
+
+        // After camera settles, apply scale-aware labels on top neighbors
+        setTimeout(function() {
+            var s = network.getScale();
+            var fontSize = Math.round(14 / s);
+            var strokeW = Math.max(2, Math.round(2 / s));
+
+            // Label top 15 by degree + focused node
+            var maxLabeled = 15;
+            var labeledSet = new Set();
+            labeledSet.add(nodeId);
+            var trailIds = getTrailNodeIds();
+            trailIds.forEach(function(nid) { labeledSet.add(nid); });
+            for (var i = 0; i < Math.min(maxLabeled, allNeighbors.length); i++) {
+                if (visibleNeighbors.has(allNeighbors[i])) labeledSet.add(allNeighbors[i]);
+            }
+
+            var updates = [];
+            allNodes.forEach(function(n) {
+                if (visibleNeighbors.has(n.id)) {
+                    var show = labeledSet.has(n.id);
+                    updates.push({ id: n.id, font: { size: show ? fontSize : 0, color: '#e0e0e0', strokeWidth: strokeW, strokeColor: '#1a1a2e' } });
+                }
+            });
+            nodes.update(updates);
+
+            // Upscale trail edge labels to match current zoom
+            var trailEids = getTrailEdgeIds();
+            if (trailEids.size > 0) {
+                var trailEdgeFontSize = Math.round(12 / s);
+                var edgeUpdatesTrail = [];
+                trailEids.forEach(function(eid) {
+                    edgeUpdatesTrail.push({ id: eid, font: { size: trailEdgeFontSize, color: '#cccccc', strokeWidth: strokeW, strokeColor: '#1a1a2e' } });
+                });
+                edges.update(edgeUpdatesTrail);
+            }
+        }, 450);
+    }
+
+    if (focusHistory.length > 0) {
+        renderTrail();
+    } else {
+        showNodeDetail(nodeId);
+    }
+}
+
+function exitFocusMode() {
+    if (focusedNodeId === null) {
+        closeDetail();
+        return;
+    }
+    focusedNodeId = null;
+    focusConnIndex = -1;
+    focusHistory = [];
+
+    // Hide banner
+    document.getElementById('focus-banner').classList.remove('visible');
+
+    // Restore all nodes per current filters + reset fonts to overview (no labels)
+    applyFilters();
+    var fontResets = [];
+    allNodes.forEach(function(n) {
+        fontResets.push({ id: n.id, font: { size: 0, color: '#e0e0e0' }, opacity: 1.0 });
+    });
+    nodes.update(fontResets);
+
+    // Restore edges — re-apply edge filters, reset labels and curves
+    var edgeUpdates = [];
+    allEdges.forEach(function(e) {
+        edgeUpdates.push({
+            id: e.id,
+            hidden: hiddenRelationTypes.has(e.relation_type),
+            color: { opacity: 0.2 },
+            font: { size: 0 },
+            label: '',
+            smooth: { type: 'curvedCW', roundness: 0.1 }
+        });
+    });
+    edges.update(edgeUpdates);
+
+    // Fit camera back to full graph
+    network.fit({ animation: { duration: 400, easingFunction: 'easeInOutQuad' } });
+}
+</script><script>
+// FIDL-06 D-05: domain entity_colors overlay injected by cmd_view.
+(function() {
+  var overrides = {"DRUG_PRODUCT": "#1abc9c", "ACTIVE_INGREDIENT": "#97c2fc", "INACTIVE_INGREDIENT": "#e67e22", "MANUFACTURER": "#fd79a8", "INDICATION": "#34495e", "CONTRAINDICATION": "#f1c40f", "ADVERSE_REACTION": "#ffa07a", "WARNING": "#e74c3c", "DRUG_INTERACTION": "#9b59b6", "DOSAGE_REGIMEN": "#fdcb6e", "PATIENT_POPULATION": "#00b894", "MECHANISM_OF_ACTION": "#636e72", "PHARMACOKINETIC_PROPERTY": "#74b9ff", "CLINICAL_STUDY": "#90ee90", "PHARMACOLOGIC_CLASS": "#a29bfe", "REGULATORY_IDENTIFIER": "#dfe6e9", "LABTEST": "#fab1a0"};
+  function applyOverrides() {
+    if (typeof nodes === "undefined" || !nodes.forEach) return;
+    var updates = [];
+    nodes.forEach(function(n) {
+      var et = n.entity_type;
+      if (et && overrides[et]) {
+        var color = overrides[et];
+        updates.push({id: n.id, color: {
+          background: color,
+          border: (n.color &amp;&amp; n.color.border) || color,
+          highlight: {background: color, border: (n.color &amp;&amp; n.color.border) || color}
+        }});
+      }
+    });
+    if (updates.length) nodes.update(updates);
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", applyOverrides);
+  } else {
+    setTimeout(applyOverrides, 100);
+  }
+})();
+</script>
+</body>
+</html>

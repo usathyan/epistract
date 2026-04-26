@@ -295,8 +295,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "ACTIVE_INGREDIENT_1",
       "type": "HAS_ACTIVE_INGREDIENT",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ACTIVE_INGREDIENT_1",
+      "source_entity": "LIPITOR",
+      "target_entity": "atorvastatin",
       "relation_type": "HAS_ACTIVE_INGREDIENT",
       "evidence": ""
     },
@@ -304,7 +304,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "MANUFACTURER_1",
       "type": "MANUFACTURED_BY",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "MANUFACTURER_1",
       "relation_type": "MANUFACTURED_BY",
       "evidence": ""
@@ -313,7 +313,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "INDICATION_1",
       "type": "INDICATED_FOR",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INDICATION_1",
       "relation_type": "INDICATED_FOR",
       "evidence": ""
@@ -322,7 +322,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "INDICATION_2",
       "type": "INDICATED_FOR",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INDICATION_2",
       "relation_type": "INDICATED_FOR",
       "evidence": ""
@@ -331,7 +331,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "INDICATION_3",
       "type": "INDICATED_FOR",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INDICATION_3",
       "relation_type": "INDICATED_FOR",
       "evidence": ""
@@ -340,7 +340,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "INDICATION_4",
       "type": "INDICATED_FOR",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INDICATION_4",
       "relation_type": "INDICATED_FOR",
       "evidence": ""
@@ -349,7 +349,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "INDICATION_5",
       "type": "INDICATED_FOR",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INDICATION_5",
       "relation_type": "INDICATED_FOR",
       "evidence": ""
@@ -358,7 +358,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "INDICATION_6",
       "type": "INDICATED_FOR",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INDICATION_6",
       "relation_type": "INDICATED_FOR",
       "evidence": ""
@@ -367,7 +367,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "INDICATION_7",
       "type": "INDICATED_FOR",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INDICATION_7",
       "relation_type": "INDICATED_FOR",
       "evidence": ""
@@ -376,7 +376,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "INDICATION_8",
       "type": "INDICATED_FOR",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INDICATION_8",
       "relation_type": "INDICATED_FOR",
       "evidence": ""
@@ -385,8 +385,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "CONTRAINDICATION_1",
       "type": "CONTRAINDICATED_IN",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "CONTRAINDICATION_1",
+      "source_entity": "LIPITOR",
+      "target_entity": "acute liver failure",
       "relation_type": "CONTRAINDICATED_IN",
       "evidence": ""
     },
@@ -394,8 +394,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "CONTRAINDICATION_2",
       "type": "CONTRAINDICATED_IN",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "CONTRAINDICATION_2",
+      "source_entity": "LIPITOR",
+      "target_entity": "decompensated cirrhosis",
       "relation_type": "CONTRAINDICATED_IN",
       "evidence": ""
     },
@@ -403,7 +403,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "WARNING_1",
       "type": "HAS_WARNING",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "WARNING_1",
       "relation_type": "HAS_WARNING",
       "evidence": ""
@@ -412,7 +412,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "WARNING_2",
       "type": "HAS_WARNING",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "WARNING_2",
       "relation_type": "HAS_WARNING",
       "evidence": ""
@@ -421,7 +421,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "WARNING_3",
       "type": "HAS_WARNING",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "WARNING_3",
       "relation_type": "HAS_WARNING",
       "evidence": ""
@@ -430,8 +430,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "ADVERSE_REACTION_1",
       "type": "CAUSES_ADVERSE_REACTION",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_1",
+      "source_entity": "LIPITOR",
+      "target_entity": "pancreatitis",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -439,8 +439,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "ADVERSE_REACTION_2",
       "type": "CAUSES_ADVERSE_REACTION",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_2",
+      "source_entity": "LIPITOR",
+      "target_entity": "fatigue",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -448,8 +448,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "ADVERSE_REACTION_3",
       "type": "CAUSES_ADVERSE_REACTION",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_3",
+      "source_entity": "LIPITOR",
+      "target_entity": "hepatic failure",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -457,8 +457,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "ADVERSE_REACTION_4",
       "type": "CAUSES_ADVERSE_REACTION",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_4",
+      "source_entity": "LIPITOR",
+      "target_entity": "anaphylaxis",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -466,8 +466,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "DRUG_INTERACTION_1",
       "type": "INTERACTS_WITH",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "DRUG_INTERACTION_1",
+      "source_entity": "LIPITOR",
+      "target_entity": "grapefruit juice",
       "relation_type": "INTERACTS_WITH",
       "evidence": ""
     },
@@ -475,7 +475,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "DOSAGE_REGIMEN_1",
       "type": "DOSED_VIA",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "DOSAGE_REGIMEN_1",
       "relation_type": "DOSED_VIA",
       "evidence": ""
@@ -484,8 +484,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "PATIENT_POPULATION_1",
       "type": "STUDIED_IN_POPULATION",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "PATIENT_POPULATION_1",
+      "source_entity": "LIPITOR",
+      "target_entity": "Child-Pugh B disease",
       "relation_type": "STUDIED_IN_POPULATION",
       "evidence": ""
     },
@@ -493,8 +493,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "PATIENT_POPULATION_2",
       "type": "STUDIED_IN_POPULATION",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "PATIENT_POPULATION_2",
+      "source_entity": "LIPITOR",
+      "target_entity": "Pediatric patients aged 10 years and older with HeFH",
       "relation_type": "STUDIED_IN_POPULATION",
       "evidence": ""
     },
@@ -502,8 +502,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "PATIENT_POPULATION_3",
       "type": "STUDIED_IN_POPULATION",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "PATIENT_POPULATION_3",
+      "source_entity": "LIPITOR",
+      "target_entity": "Pediatric patients aged 10 years and older with HoFH",
       "relation_type": "STUDIED_IN_POPULATION",
       "evidence": ""
     },
@@ -511,7 +511,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "PATIENT_POPULATION_4",
       "type": "STUDIED_IN_POPULATION",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "PATIENT_POPULATION_4",
       "relation_type": "STUDIED_IN_POPULATION",
       "evidence": ""
@@ -520,7 +520,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "PATIENT_POPULATION_5",
       "type": "STUDIED_IN_POPULATION",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "PATIENT_POPULATION_5",
       "relation_type": "STUDIED_IN_POPULATION",
       "evidence": ""
@@ -529,8 +529,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "MECHANISM_OF_ACTION_1",
       "type": "HAS_MECHANISM",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "MECHANISM_OF_ACTION_1",
+      "source_entity": "LIPITOR",
+      "target_entity": "Inhibition of HMG-CoA reductase, reducing cholesterol synthesis",
       "relation_type": "HAS_MECHANISM",
       "evidence": ""
     },
@@ -538,7 +538,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "PHARMACOKINETIC_PROPERTY_1",
       "type": "HAS_PK_PROPERTY",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "PHARMACOKINETIC_PROPERTY_1",
       "relation_type": "HAS_PK_PROPERTY",
       "evidence": ""
@@ -547,7 +547,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "PHARMACOLOGIC_CLASS_1",
       "type": "BELONGS_TO_CLASS",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "PHARMACOLOGIC_CLASS_1",
       "relation_type": "BELONGS_TO_CLASS",
       "evidence": ""
@@ -556,7 +556,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "REGULATORY_IDENTIFIER_1",
       "type": "IDENTIFIED_BY",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "REGULATORY_IDENTIFIER_1",
       "relation_type": "IDENTIFIED_BY",
       "evidence": ""
@@ -565,7 +565,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "LABTEST_1",
       "type": "HAS_WARNING",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "LABTEST_1",
       "relation_type": "HAS_WARNING",
       "evidence": ""
@@ -574,7 +574,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "LABTEST_2",
       "type": "HAS_WARNING",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "LABTEST_2",
       "relation_type": "HAS_WARNING",
       "evidence": ""
@@ -583,7 +583,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "LABTEST_3",
       "type": "HAS_WARNING",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "LABTEST_3",
       "relation_type": "HAS_WARNING",
       "evidence": ""
@@ -592,7 +592,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "LABTEST_4",
       "type": "HAS_WARNING",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "LABTEST_4",
       "relation_type": "HAS_WARNING",
       "evidence": ""
@@ -601,7 +601,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "LABTEST_5",
       "type": "HAS_WARNING",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "LABTEST_5",
       "relation_type": "HAS_WARNING",
       "evidence": ""
@@ -610,7 +610,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "CLINICAL_STUDY_1",
       "type": "EVALUATED_IN",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "CLINICAL_STUDY_1",
       "relation_type": "EVALUATED_IN",
       "evidence": ""
@@ -619,7 +619,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "CLINICAL_STUDY_2",
       "type": "EVALUATED_IN",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "CLINICAL_STUDY_2",
       "relation_type": "EVALUATED_IN",
       "evidence": ""
@@ -628,8 +628,8 @@
       "type": "CAUSES_ADVERSE_REACTION",
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_5",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_5",
+      "source_entity": "LIPITOR",
+      "target_entity": "tendon rupture",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -637,7 +637,7 @@
       "type": "HAS_PK_PROPERTY",
       "subject": "DRUG_PRODUCT_1",
       "object": "PHARMACOKINETIC_PROPERTY_2",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "PHARMACOKINETIC_PROPERTY_2",
       "relation_type": "HAS_PK_PROPERTY",
       "evidence": ""
@@ -646,7 +646,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_1",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_1",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -655,7 +655,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_2",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_2",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -664,7 +664,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_3",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_3",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -673,7 +673,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_4",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_4",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -682,7 +682,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_5",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_5",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -691,7 +691,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_6",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_6",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -700,7 +700,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_7",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_7",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -709,7 +709,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_8",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_8",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -718,7 +718,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_9",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_9",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -727,7 +727,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_10",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_10",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -736,7 +736,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_11",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_11",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -745,7 +745,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_12",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_12",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -754,7 +754,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_13",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_13",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -763,7 +763,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_14",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_14",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -772,7 +772,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_15",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_15",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -781,7 +781,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_16",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_16",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -790,7 +790,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_17",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_17",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -799,7 +799,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_18",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_18",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -808,7 +808,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_19",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_19",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -817,7 +817,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_20",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_20",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -826,7 +826,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_21",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_21",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -835,7 +835,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_22",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_22",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -844,7 +844,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_23",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_23",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -853,7 +853,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_24",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_24",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -862,7 +862,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_25",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_25",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -871,7 +871,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_26",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_26",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -880,7 +880,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_27",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_27",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -889,7 +889,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_28",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_28",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -898,7 +898,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_29",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_29",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -907,7 +907,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_30",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_30",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -916,7 +916,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_31",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_31",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -925,7 +925,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_32",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_32",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -934,7 +934,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_33",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_33",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -943,7 +943,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_34",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_34",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -952,7 +952,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_35",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_35",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -961,7 +961,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_36",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_36",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -970,7 +970,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_37",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_37",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -979,7 +979,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_38",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_38",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -988,7 +988,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_39",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_39",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -997,7 +997,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_40",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_40",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1006,7 +1006,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_41",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_41",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1015,7 +1015,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_42",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_42",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1024,7 +1024,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_43",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_43",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1033,7 +1033,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_44",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_44",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1042,7 +1042,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_45",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_45",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1051,7 +1051,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_46",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_46",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1060,7 +1060,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_47",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_47",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1069,7 +1069,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_48",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_48",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1078,7 +1078,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_49",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_49",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1087,7 +1087,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_50",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_50",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1096,7 +1096,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_51",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_51",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1105,7 +1105,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_52",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_52",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1114,7 +1114,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_53",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_53",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1123,7 +1123,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_54",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_54",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1132,7 +1132,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_55",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_55",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1141,7 +1141,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_56",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_56",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1150,7 +1150,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_57",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_57",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1159,7 +1159,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_58",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_58",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1168,7 +1168,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_59",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_59",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1177,7 +1177,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_60",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_60",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1186,7 +1186,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_61",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_61",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1195,7 +1195,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_62",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_62",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1204,7 +1204,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_63",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_63",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1213,7 +1213,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_64",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_64",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1222,7 +1222,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_65",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_65",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1231,7 +1231,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_66",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_66",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1240,7 +1240,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_67",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_67",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1249,7 +1249,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_68",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_68",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1258,7 +1258,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_69",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_69",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1267,7 +1267,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_70",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_70",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1276,7 +1276,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_71",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_71",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1285,7 +1285,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_72",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_72",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1294,7 +1294,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_73",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_73",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1303,7 +1303,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_74",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_74",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1312,7 +1312,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_75",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_75",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1321,7 +1321,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_76",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_76",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1330,7 +1330,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_77",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_77",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1339,7 +1339,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_78",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_78",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1348,7 +1348,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_79",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_79",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1357,7 +1357,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_80",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_80",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1366,7 +1366,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_81",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_81",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1375,7 +1375,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_82",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_82",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1384,7 +1384,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_83",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_83",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1393,7 +1393,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_84",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_84",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1402,7 +1402,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_85",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_85",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1411,7 +1411,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_86",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_86",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1420,7 +1420,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_87",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_87",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1429,7 +1429,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_88",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_88",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1438,7 +1438,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_89",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_89",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1447,7 +1447,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_90",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_90",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1456,7 +1456,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_91",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_91",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1465,7 +1465,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_92",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_92",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1474,7 +1474,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_93",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_93",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1483,7 +1483,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_94",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_94",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1492,7 +1492,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_95",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_95",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1501,7 +1501,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_96",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_96",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1510,7 +1510,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_97",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_97",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1519,7 +1519,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_98",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_98",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1528,7 +1528,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_99",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_99",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1537,7 +1537,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_100",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_100",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1546,7 +1546,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_101",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_101",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1555,7 +1555,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_102",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_102",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1564,7 +1564,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_103",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_103",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1573,7 +1573,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_104",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_104",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1582,7 +1582,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_105",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_105",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1591,7 +1591,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_106",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_106",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1600,7 +1600,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_107",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_107",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1609,7 +1609,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_108",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_108",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1618,7 +1618,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_109",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_109",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1627,7 +1627,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_110",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_110",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1636,7 +1636,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_111",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_111",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1645,7 +1645,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_112",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_112",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1654,7 +1654,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_113",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_113",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1663,7 +1663,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_114",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_114",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1672,7 +1672,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_115",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_115",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1681,7 +1681,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_116",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_116",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1690,7 +1690,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_117",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_117",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1699,7 +1699,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_118",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_118",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1708,7 +1708,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_119",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_119",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1717,7 +1717,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_120",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_120",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1726,7 +1726,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_121",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_121",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1735,7 +1735,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_122",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_122",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1744,7 +1744,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_123",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_123",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1753,7 +1753,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_124",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_124",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1762,7 +1762,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_125",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_125",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1771,7 +1771,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_126",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_126",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1780,7 +1780,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_127",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_127",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1789,7 +1789,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_128",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_128",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1798,7 +1798,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_129",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_129",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1807,7 +1807,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_130",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_130",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1816,7 +1816,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_131",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_131",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1825,7 +1825,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_132",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_132",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1834,7 +1834,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_133",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_133",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1843,7 +1843,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_134",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_134",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1852,7 +1852,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_135",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_135",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1861,7 +1861,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_136",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_136",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1870,7 +1870,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_137",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_137",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1879,7 +1879,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_138",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_138",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1888,7 +1888,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_139",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_139",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1897,7 +1897,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_140",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_140",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1906,7 +1906,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_141",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_141",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1915,7 +1915,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_142",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_142",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1924,7 +1924,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_143",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_143",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1933,7 +1933,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_144",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_144",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1942,7 +1942,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_145",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_145",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1951,7 +1951,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_146",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_146",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1960,7 +1960,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_147",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_147",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1969,7 +1969,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_148",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_148",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1978,7 +1978,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_149",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_149",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1987,7 +1987,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_150",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_150",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -1996,7 +1996,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_151",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_151",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -2005,7 +2005,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_152",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_152",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -2014,7 +2014,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_153",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_153",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -2023,7 +2023,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_154",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_154",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -2032,7 +2032,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_155",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_155",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -2041,7 +2041,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_156",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_156",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -2050,7 +2050,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_157",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_157",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -2059,7 +2059,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_158",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_158",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -2068,7 +2068,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_ING_HALF",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_ING_HALF",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -2077,7 +2077,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_159",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "INACTIVE_INGREDIENT_159",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -2086,7 +2086,7 @@
       "type": "DOSED_VIA",
       "subject": "DRUG_PRODUCT_1",
       "object": "DOSAGE_REGIMEN_2",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "DOSAGE_REGIMEN_2",
       "relation_type": "DOSED_VIA",
       "evidence": ""
@@ -2095,7 +2095,7 @@
       "type": "DOSED_VIA",
       "subject": "DRUG_PRODUCT_1",
       "object": "DOSAGE_REGIMEN_3",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "DOSAGE_REGIMEN_3",
       "relation_type": "DOSED_VIA",
       "evidence": ""
@@ -2104,7 +2104,7 @@
       "type": "DOSED_VIA",
       "subject": "DRUG_PRODUCT_1",
       "object": "DOSAGE_REGIMEN_4",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "DOSAGE_REGIMEN_4",
       "relation_type": "DOSED_VIA",
       "evidence": ""
@@ -2113,8 +2113,8 @@
       "type": "INTERACTS_WITH",
       "subject": "DRUG_PRODUCT_1",
       "object": "DRUG_INTERACTION_2",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "DRUG_INTERACTION_2",
+      "source_entity": "LIPITOR",
+      "target_entity": "rifampin",
       "relation_type": "INTERACTS_WITH",
       "evidence": ""
     },
@@ -2122,8 +2122,8 @@
       "type": "INTERACTS_WITH",
       "subject": "DRUG_PRODUCT_1",
       "object": "DRUG_INTERACTION_3",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "DRUG_INTERACTION_3",
+      "source_entity": "LIPITOR",
+      "target_entity": "oral contraceptives",
       "relation_type": "INTERACTS_WITH",
       "evidence": ""
     },
@@ -2131,8 +2131,8 @@
       "type": "INTERACTS_WITH",
       "subject": "DRUG_PRODUCT_1",
       "object": "DRUG_INTERACTION_4",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "DRUG_INTERACTION_4",
+      "source_entity": "LIPITOR",
+      "target_entity": "digoxin",
       "relation_type": "INTERACTS_WITH",
       "evidence": ""
     },
@@ -2140,8 +2140,8 @@
       "type": "INTERACTS_WITH",
       "subject": "DRUG_PRODUCT_1",
       "object": "DRUG_INTERACTION_5",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "DRUG_INTERACTION_5",
+      "source_entity": "LIPITOR",
+      "target_entity": "cyclosporine",
       "relation_type": "INTERACTS_WITH",
       "evidence": ""
     },
@@ -2149,8 +2149,8 @@
       "type": "INTERACTS_WITH",
       "subject": "DRUG_PRODUCT_1",
       "object": "DRUG_INTERACTION_6",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "DRUG_INTERACTION_6",
+      "source_entity": "LIPITOR",
+      "target_entity": "gemfibrozil",
       "relation_type": "INTERACTS_WITH",
       "evidence": ""
     },
@@ -2158,8 +2158,8 @@
       "type": "INTERACTS_WITH",
       "subject": "DRUG_PRODUCT_1",
       "object": "DRUG_INTERACTION_7",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "DRUG_INTERACTION_7",
+      "source_entity": "LIPITOR",
+      "target_entity": "anti-viral medications (e.g., ledipasvir/sofosbuvir)",
       "relation_type": "INTERACTS_WITH",
       "evidence": ""
     },
@@ -2167,8 +2167,8 @@
       "type": "INTERACTS_WITH",
       "subject": "DRUG_PRODUCT_1",
       "object": "DRUG_INTERACTION_8",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "DRUG_INTERACTION_8",
+      "source_entity": "LIPITOR",
+      "target_entity": "azoles (clarithromycin, itraconazole, etc.)",
       "relation_type": "INTERACTS_WITH",
       "evidence": ""
     },
@@ -2176,8 +2176,8 @@
       "type": "INTERACTS_WITH",
       "subject": "DRUG_PRODUCT_1",
       "object": "DRUG_INTERACTION_9",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "DRUG_INTERACTION_9",
+      "source_entity": "LIPITOR",
+      "target_entity": "niacin (\u22651 g/day)",
       "relation_type": "INTERACTS_WITH",
       "evidence": ""
     },
@@ -2185,8 +2185,8 @@
       "type": "INTERACTS_WITH",
       "subject": "DRUG_PRODUCT_1",
       "object": "DRUG_INTERACTION_10",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "DRUG_INTERACTION_10",
+      "source_entity": "LIPITOR",
+      "target_entity": "fibrates (other than gemfibrozil)",
       "relation_type": "INTERACTS_WITH",
       "evidence": ""
     },
@@ -2194,8 +2194,8 @@
       "type": "INTERACTS_WITH",
       "subject": "DRUG_PRODUCT_1",
       "object": "DRUG_INTERACTION_11",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "DRUG_INTERACTION_11",
+      "source_entity": "LIPITOR",
+      "target_entity": "colchicine",
       "relation_type": "INTERACTS_WITH",
       "evidence": ""
     },
@@ -2203,8 +2203,8 @@
       "type": "HAS_WARNING",
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_6",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_6",
+      "source_entity": "LIPITOR",
+      "target_entity": "rhabdomyolysis",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -2212,8 +2212,8 @@
       "type": "HAS_WARNING",
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_7",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_7",
+      "source_entity": "LIPITOR",
+      "target_entity": "myositis",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -2221,8 +2221,8 @@
       "type": "HAS_WARNING",
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_8",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_8",
+      "source_entity": "LIPITOR",
+      "target_entity": "dizziness",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -2230,8 +2230,8 @@
       "type": "HAS_WARNING",
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_9",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_9",
+      "source_entity": "LIPITOR",
+      "target_entity": "peripheral neuropathy",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -2239,8 +2239,8 @@
       "type": "HAS_WARNING",
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_10",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_10",
+      "source_entity": "LIPITOR",
+      "target_entity": "cognitive impairment",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -2248,8 +2248,8 @@
       "type": "HAS_WARNING",
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_11",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_11",
+      "source_entity": "LIPITOR",
+      "target_entity": "myasthenia gravis",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -2257,8 +2257,8 @@
       "type": "HAS_WARNING",
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_12",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_12",
+      "source_entity": "LIPITOR",
+      "target_entity": "angioneurotic edema",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -2266,8 +2266,8 @@
       "type": "HAS_WARNING",
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_13",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_13",
+      "source_entity": "LIPITOR",
+      "target_entity": "bullous rash",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -2275,8 +2275,8 @@
       "type": "HAS_WARNING",
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_14",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_14",
+      "source_entity": "LIPITOR",
+      "target_entity": "Stevens-Johnson syndrome",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -2284,8 +2284,8 @@
       "type": "HAS_WARNING",
       "subject": "DRUG_PRODUCT_1",
       "object": "ADVERSE_REACTION_15",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_15",
+      "source_entity": "LIPITOR",
+      "target_entity": "toxic epidermal necrolysis",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -2293,7 +2293,7 @@
       "type": "HAS_PK_PROPERTY",
       "subject": "DRUG_PRODUCT_1",
       "object": "PHARMACOKINETIC_PROPERTY_3",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "PHARMACOKINETIC_PROPERTY_3",
       "relation_type": "HAS_PK_PROPERTY",
       "evidence": ""
@@ -2302,7 +2302,7 @@
       "type": "HAS_PK_PROPERTY",
       "subject": "DRUG_PRODUCT_1",
       "object": "PHARMACOKINETIC_PROPERTY_4",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "PHARMACOKINETIC_PROPERTY_4",
       "relation_type": "HAS_PK_PROPERTY",
       "evidence": ""
@@ -2312,8 +2312,8 @@
       "type": "HAS_MECHANISM",
       "subject": "DRUG_PRODUCT_1",
       "object": "MECHANISM_1",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "MECHANISM_1",
+      "source_entity": "LIPITOR",
+      "target_entity": "Selective competitive inhibition of HMG-CoA reductase",
       "relation_type": "HAS_MECHANISM",
       "evidence": ""
     },
@@ -2390,7 +2390,7 @@
       "from": "DRUG_PRODUCT_2",
       "to": "MECHANISM_1",
       "source_entity": "DRUG_PRODUCT_2",
-      "target_entity": "MECHANISM_1",
+      "target_entity": "Selective competitive inhibition of HMG-CoA reductase",
       "relation_type": "HAS_MECHANISM",
       "evidence": ""
     },
@@ -2411,7 +2411,7 @@
       "attributes": {},
       "from": "DRUG_PRODUCT_1",
       "to": "CLINICAL_STUDY_3",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "LIPITOR",
       "target_entity": "CLINICAL_STUDY_3",
       "relation_type": "EVALUATED_IN",
       "evidence": ""
@@ -2456,7 +2456,7 @@
       "from": "DRUG_PRODUCT_2",
       "to": "PATIENT_POPULATION_1",
       "source_entity": "DRUG_PRODUCT_2",
-      "target_entity": "PATIENT_POPULATION_1",
+      "target_entity": "Child-Pugh B disease",
       "relation_type": "STUDIED_IN_POPULATION",
       "evidence": ""
     },
@@ -2467,7 +2467,7 @@
       "from": "DRUG_PRODUCT_2",
       "to": "PATIENT_POPULATION_2",
       "source_entity": "DRUG_PRODUCT_2",
-      "target_entity": "PATIENT_POPULATION_2",
+      "target_entity": "Pediatric patients aged 10 years and older with HeFH",
       "relation_type": "STUDIED_IN_POPULATION",
       "evidence": ""
     },
@@ -2478,7 +2478,7 @@
       "from": "DRUG_PRODUCT_2",
       "to": "PATIENT_POPULATION_3",
       "source_entity": "DRUG_PRODUCT_2",
-      "target_entity": "PATIENT_POPULATION_3",
+      "target_entity": "Pediatric patients aged 10 years and older with HoFH",
       "relation_type": "STUDIED_IN_POPULATION",
       "evidence": ""
     }

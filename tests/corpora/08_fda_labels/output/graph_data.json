@@ -1,0 +1,4457 @@
+{
+  "metadata": {
+    "created_at": "2026-04-25T20:51:56.897518",
+    "updated_at": "2026-04-25T20:52:03.130727",
+    "entity_count": 81,
+    "relation_count": 149,
+    "document_count": 7,
+    "entity_type_summary": {
+      "DOCUMENT": 7,
+      "ADVERSE_REACTION": 21,
+      "DRUG_PRODUCT": 3,
+      "ACTIVE_INGREDIENT": 3,
+      "DRUG_INTERACTION": 13,
+      "PATIENT_POPULATION": 5,
+      "MECHANISM_OF_ACTION": 3,
+      "CONTRAINDICATION": 4,
+      "INACTIVE_INGREDIENT": 15,
+      "MANUFACTURER": 2,
+      "CLINICAL_STUDY": 1,
+      "WARNING": 2,
+      "PHARMACOKINETIC_PROPERTY": 1,
+      "LABTEST": 1
+    },
+    "sift_kg_version": "0.9.0",
+    "domain": "fda-product-labels"
+  },
+  "nodes": [
+    {
+      "id": "doc:adalimumab_humira",
+      "entity_type": "DOCUMENT",
+      "name": "adalimumab_humira",
+      "confidence": 1.0,
+      "source_documents": [
+        "adalimumab_humira"
+      ],
+      "attributes": {
+        "path": ""
+      }
+    },
+    {
+      "id": "adverse_reaction:pancreatitis",
+      "entity_type": "ADVERSE_REACTION",
+      "name": "pancreatitis",
+      "confidence": 0.5,
+      "source_documents": [
+        "adalimumab_humira",
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "adverse_reaction:stevens_johnson_syndrome",
+      "entity_type": "ADVERSE_REACTION",
+      "name": "Stevens-Johnson syndrome",
+      "confidence": 0.5,
+      "source_documents": [
+        "adalimumab_humira",
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "doc:atorvastatin_lipitor",
+      "entity_type": "DOCUMENT",
+      "name": "atorvastatin_lipitor",
+      "confidence": 1.0,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {
+        "path": ""
+      }
+    },
+    {
+      "id": "drug_product:lipitor",
+      "entity_type": "DRUG_PRODUCT",
+      "name": "LIPITOR",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "active_ingredient:atorvastatin",
+      "entity_type": "ACTIVE_INGREDIENT",
+      "name": "atorvastatin",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "adverse_reaction:fatigue",
+      "entity_type": "ADVERSE_REACTION",
+      "name": "fatigue",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "adverse_reaction:hepatic_failure",
+      "entity_type": "ADVERSE_REACTION",
+      "name": "hepatic failure",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "adverse_reaction:anaphylaxis",
+      "entity_type": "ADVERSE_REACTION",
+      "name": "anaphylaxis",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "adverse_reaction:tendon_rupture",
+      "entity_type": "ADVERSE_REACTION",
+      "name": "tendon rupture",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "adverse_reaction:rhabdomyolysis",
+      "entity_type": "ADVERSE_REACTION",
+      "name": "rhabdomyolysis",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "adverse_reaction:myositis",
+      "entity_type": "ADVERSE_REACTION",
+      "name": "myositis",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "adverse_reaction:dizziness",
+      "entity_type": "ADVERSE_REACTION",
+      "name": "dizziness",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "adverse_reaction:peripheral_neuropathy",
+      "entity_type": "ADVERSE_REACTION",
+      "name": "peripheral neuropathy",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "adverse_reaction:cognitive_impairment",
+      "entity_type": "ADVERSE_REACTION",
+      "name": "cognitive impairment",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "adverse_reaction:myasthenia_gravis",
+      "entity_type": "ADVERSE_REACTION",
+      "name": "myasthenia gravis",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "adverse_reaction:angioneurotic_edema",
+      "entity_type": "ADVERSE_REACTION",
+      "name": "angioneurotic edema",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "adverse_reaction:bullous_rash",
+      "entity_type": "ADVERSE_REACTION",
+      "name": "bullous rash",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "adverse_reaction:toxic_epidermal_necrolysis",
+      "entity_type": "ADVERSE_REACTION",
+      "name": "toxic epidermal necrolysis",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "drug_interaction:grapefruit_juice",
+      "entity_type": "DRUG_INTERACTION",
+      "name": "grapefruit juice",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "drug_interaction:rifampin",
+      "entity_type": "DRUG_INTERACTION",
+      "name": "rifampin",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "drug_interaction:oral_contraceptives",
+      "entity_type": "DRUG_INTERACTION",
+      "name": "oral contraceptives",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "drug_interaction:digoxin",
+      "entity_type": "DRUG_INTERACTION",
+      "name": "digoxin",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "drug_interaction:cyclosporine",
+      "entity_type": "DRUG_INTERACTION",
+      "name": "cyclosporine",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "drug_interaction:gemfibrozil",
+      "entity_type": "DRUG_INTERACTION",
+      "name": "gemfibrozil",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "drug_interaction:anti_viral_medications_e_g_ledipasvir_sofosbuvir",
+      "entity_type": "DRUG_INTERACTION",
+      "name": "anti-viral medications (e.g., ledipasvir/sofosbuvir)",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "drug_interaction:azoles_clarithromycin_itraconazole_etc",
+      "entity_type": "DRUG_INTERACTION",
+      "name": "azoles (clarithromycin, itraconazole, etc.)",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "drug_interaction:niacin_1_g_day",
+      "entity_type": "DRUG_INTERACTION",
+      "name": "niacin (\u22651 g/day)",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "drug_interaction:fibrates_other_than_gemfibrozil",
+      "entity_type": "DRUG_INTERACTION",
+      "name": "fibrates (other than gemfibrozil)",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "drug_interaction:colchicine",
+      "entity_type": "DRUG_INTERACTION",
+      "name": "colchicine",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "patient_population:pediatric_patients_aged_10_years_and_older_with_hefh",
+      "entity_type": "PATIENT_POPULATION",
+      "name": "Pediatric patients aged 10 years and older with HeFH",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "mechanism_of_action:inhibition_of_hmg_coa_reductase_reducing_cholesterol_synthesis",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "name": "Inhibition of HMG-CoA reductase, reducing cholesterol synthesis",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "patient_population:child_pugh_b_disease",
+      "entity_type": "PATIENT_POPULATION",
+      "name": "Child-Pugh B disease",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "contraindication:acute_liver_failure",
+      "entity_type": "CONTRAINDICATION",
+      "name": "acute liver failure",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "contraindication:decompensated_cirrhosis",
+      "entity_type": "CONTRAINDICATION",
+      "name": "decompensated cirrhosis",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "mechanism_of_action:selective_competitive_inhibition_of_hmg_coa_reductase",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "name": "Selective competitive inhibition of HMG-CoA reductase",
+      "confidence": 0.5,
+      "source_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Hmg-Coa Reductase, Reducing Cholesterol Synthesis / Selective Competitive Inhibition Of Hmg-Coa Reductase / Child-Pugh B Disease"
+    },
+    {
+      "id": "doc:imatinib_gleevec",
+      "entity_type": "DOCUMENT",
+      "name": "imatinib_gleevec",
+      "confidence": 1.0,
+      "source_documents": [
+        "imatinib_gleevec"
+      ],
+      "attributes": {
+        "path": ""
+      }
+    },
+    {
+      "id": "doc:semaglutide_ozempic",
+      "entity_type": "DOCUMENT",
+      "name": "semaglutide_ozempic",
+      "confidence": 1.0,
+      "source_documents": [
+        "semaglutide_ozempic"
+      ],
+      "attributes": {
+        "path": ""
+      }
+    },
+    {
+      "id": "drug_product:ozempic",
+      "entity_type": "DRUG_PRODUCT",
+      "name": "OZEMPIC",
+      "confidence": 0.5,
+      "source_documents": [
+        "semaglutide_ozempic"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Novo Nordisk Inc. / Ozempic / Sustain 6"
+    },
+    {
+      "id": "active_ingredient:semaglutide",
+      "entity_type": "ACTIVE_INGREDIENT",
+      "name": "semaglutide",
+      "confidence": 0.5,
+      "source_documents": [
+        "semaglutide_ozempic"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Novo Nordisk Inc. / Ozempic / Sustain 6"
+    },
+    {
+      "id": "inactive_ingredient:disodium_phosphate_dihydrate",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "name": "disodium phosphate dihydrate",
+      "confidence": 0.5,
+      "source_documents": [
+        "semaglutide_ozempic"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Novo Nordisk Inc. / Ozempic / Sustain 6"
+    },
+    {
+      "id": "inactive_ingredient:propylene_glycol",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "name": "propylene glycol",
+      "confidence": 0.5,
+      "source_documents": [
+        "semaglutide_ozempic"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Novo Nordisk Inc. / Ozempic / Sustain 6"
+    },
+    {
+      "id": "inactive_ingredient:phenol",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "name": "phenol",
+      "confidence": 0.5,
+      "source_documents": [
+        "semaglutide_ozempic"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Novo Nordisk Inc. / Ozempic / Sustain 6"
+    },
+    {
+      "id": "inactive_ingredient:water_for_injections",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "name": "water for injections",
+      "confidence": 0.5,
+      "source_documents": [
+        "semaglutide_ozempic"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Novo Nordisk Inc. / Ozempic / Sustain 6"
+    },
+    {
+      "id": "manufacturer:novo_nordisk_inc",
+      "entity_type": "MANUFACTURER",
+      "name": "Novo Nordisk Inc.",
+      "confidence": 0.5,
+      "source_documents": [
+        "semaglutide_ozempic",
+        "semaglutide_wegovy"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Novo Nordisk Inc. / Ozempic / Sustain 6"
+    },
+    {
+      "id": "clinical_study:sustain_6",
+      "entity_type": "CLINICAL_STUDY",
+      "name": "SUSTAIN 6",
+      "confidence": 0.5,
+      "source_documents": [
+        "semaglutide_ozempic"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Novo Nordisk Inc. / Ozempic / Sustain 6"
+    },
+    {
+      "id": "doc:semaglutide_wegovy",
+      "entity_type": "DOCUMENT",
+      "name": "semaglutide_wegovy",
+      "confidence": 1.0,
+      "source_documents": [
+        "semaglutide_wegovy"
+      ],
+      "attributes": {
+        "path": ""
+      }
+    },
+    {
+      "id": "doc:tirzepatide_mounjaro",
+      "entity_type": "DOCUMENT",
+      "name": "tirzepatide_mounjaro",
+      "confidence": 1.0,
+      "source_documents": [
+        "tirzepatide_mounjaro"
+      ],
+      "attributes": {
+        "path": ""
+      }
+    },
+    {
+      "id": "doc:warfarin_jantoven",
+      "entity_type": "DOCUMENT",
+      "name": "warfarin_jantoven",
+      "confidence": 1.0,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {
+        "path": ""
+      }
+    },
+    {
+      "id": "manufacturer:upsher_smith_laboratories_llc",
+      "entity_type": "MANUFACTURER",
+      "name": "Upsher-Smith Laboratories, LLC",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "drug_product:jantoven",
+      "entity_type": "DRUG_PRODUCT",
+      "name": "JANTOVEN",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "active_ingredient:warfarin_sodium",
+      "entity_type": "ACTIVE_INGREDIENT",
+      "name": "warfarin sodium",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "contraindication:pregnancy",
+      "entity_type": "CONTRAINDICATION",
+      "name": "Pregnancy",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "contraindication:heparin_induced_thrombocytopenia_hit_and_hitts",
+      "entity_type": "CONTRAINDICATION",
+      "name": "Heparin-induced thrombocytopenia (HIT) and HITTS",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "adverse_reaction:hemorrhage",
+      "entity_type": "ADVERSE_REACTION",
+      "name": "Hemorrhage",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "adverse_reaction:tissue_necrosis",
+      "entity_type": "ADVERSE_REACTION",
+      "name": "Tissue necrosis",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "adverse_reaction:calciphylaxis",
+      "entity_type": "ADVERSE_REACTION",
+      "name": "Calciphylaxis",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "adverse_reaction:acute_kidney_injury",
+      "entity_type": "ADVERSE_REACTION",
+      "name": "Acute kidney injury",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "adverse_reaction:systemic_atheroemboli_and_cholesterol_microemboli",
+      "entity_type": "ADVERSE_REACTION",
+      "name": "Systemic atheroemboli and cholesterol microemboli",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "adverse_reaction:limb_ischemia_necrosis_and_gangrene_in_patients_with_hit_and_hitts",
+      "entity_type": "ADVERSE_REACTION",
+      "name": "Limb ischemia, necrosis, and gangrene in patients with HIT and HITTS",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "warning:boxed_warning_increased_risk_of_hemorrhage_and_tissue_necrosis",
+      "entity_type": "WARNING",
+      "name": "Boxed warning: increased risk of hemorrhage and tissue necrosis",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "warning:bleeding_risk_with_concomitant_anticoagulants_and_cyp2c9_inhibitors",
+      "entity_type": "WARNING",
+      "name": "Bleeding risk with concomitant anticoagulants and CYP2C9 inhibitors",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "drug_interaction:cyp2c9_inhibitors_e_g_fluconazole_amiodarone_increase_inr",
+      "entity_type": "DRUG_INTERACTION",
+      "name": "CYP2C9 inhibitors (e.g., fluconazole, amiodarone) increase INR",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "drug_interaction:cyp2c9_inducers_e_g_rifampin_carbamazepine_decrease_inr",
+      "entity_type": "DRUG_INTERACTION",
+      "name": "CYP2C9 inducers (e.g., rifampin, carbamazepine) decrease INR",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "patient_population:pregnant_women",
+      "entity_type": "PATIENT_POPULATION",
+      "name": "Pregnant women",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "patient_population:patients_with_renal_impairment",
+      "entity_type": "PATIENT_POPULATION",
+      "name": "Patients with renal impairment",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "patient_population:patients_with_hepatic_impairment",
+      "entity_type": "PATIENT_POPULATION",
+      "name": "Patients with hepatic impairment",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "mechanism_of_action:inhibition_of_vitamin_k_epoxide_reductase_reducing_synthesis_of_vitamin_k_dependent_clotting_factors",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "name": "Inhibition of vitamin K epoxide reductase, reducing synthesis of vitamin K-dependent clotting factors",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "pharmacokinetic_property:metabolized_by_cyp2c9_cyp1a2_cyp3a4",
+      "entity_type": "PHARMACOKINETIC_PROPERTY",
+      "name": "Metabolized by CYP2C9, CYP1A2, CYP3A4",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "labtest:inr",
+      "entity_type": "LABTEST",
+      "name": "INR",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "inactive_ingredient:lactose_monohydrate",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "name": "lactose monohydrate",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "inactive_ingredient:magnesium_stearate",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "name": "magnesium stearate",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "inactive_ingredient:povidone",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "name": "povidone",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "inactive_ingredient:pregelatinized_starch_corn",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "name": "pregelatinized starch (corn)",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "inactive_ingredient:fd_c_red_40_aluminum_lake",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "name": "FD&C Red #40 Aluminum Lake",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "inactive_ingredient:fd_c_blue_2_aluminum_lake",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "name": "FD&C Blue #2 Aluminum Lake",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "inactive_ingredient:d_c_yellow_10_aluminum_lake",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "name": "D&C Yellow #10 Aluminum Lake",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "inactive_ingredient:brown_75_synthetic_brown_iron_oxide",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "name": "Brown #75 Synthetic Brown Iron Oxide",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "inactive_ingredient:fd_c_yellow_6_aluminum_lake",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "name": "FD&C Yellow #6 Aluminum Lake",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "inactive_ingredient:yellow_10_synthetic_yellow_iron_oxide",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "name": "Yellow #10 Synthetic Yellow Iron Oxide",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    },
+    {
+      "id": "inactive_ingredient:black_85_synthetic_black_iron_oxide",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "name": "Black #85 Synthetic Black Iron Oxide",
+      "confidence": 0.5,
+      "source_documents": [
+        "warfarin_jantoven"
+      ],
+      "attributes": {},
+      "context": "",
+      "community": "Inhibition Of Vitamin K Epoxide Reductase, Reducing Synthesis Of Vitamin K-Dependent Clotting Factors / Acute Kidney Injury / Black #85 Synthetic Black Iron Oxide"
+    }
+  ],
+  "links": [
+    {
+      "source": "adverse_reaction:pancreatitis",
+      "target": "doc:adalimumab_humira",
+      "relation_id": "adverse_reaction:pancreatitis|MENTIONED_IN|doc:adalimumab_humira",
+      "canonical_key": "adverse_reaction:pancreatitis|MENTIONED_IN|doc:adalimumab_humira",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "adalimumab_humira",
+      "support_count": 1,
+      "support_documents": [
+        "adalimumab_humira"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "adalimumab_humira",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "adverse_reaction:pancreatitis|MENTIONED_IN|doc:adalimumab_humira"
+        }
+      ]
+    },
+    {
+      "source": "adverse_reaction:pancreatitis",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "adverse_reaction:pancreatitis|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "adverse_reaction:pancreatitis|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "adverse_reaction:pancreatitis|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "adverse_reaction:stevens_johnson_syndrome",
+      "target": "doc:adalimumab_humira",
+      "relation_id": "adverse_reaction:stevens_johnson_syndrome|MENTIONED_IN|doc:adalimumab_humira",
+      "canonical_key": "adverse_reaction:stevens_johnson_syndrome|MENTIONED_IN|doc:adalimumab_humira",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "adalimumab_humira",
+      "support_count": 1,
+      "support_documents": [
+        "adalimumab_humira"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "adalimumab_humira",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "adverse_reaction:stevens_johnson_syndrome|MENTIONED_IN|doc:adalimumab_humira"
+        }
+      ]
+    },
+    {
+      "source": "adverse_reaction:stevens_johnson_syndrome",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "adverse_reaction:stevens_johnson_syndrome|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "adverse_reaction:stevens_johnson_syndrome|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "adverse_reaction:stevens_johnson_syndrome|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "drug_product:lipitor|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "drug_product:lipitor|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "active_ingredient:atorvastatin",
+      "relation_id": "drug_product:lipitor|HAS_ACTIVE_INGREDIENT|active_ingredient:atorvastatin",
+      "canonical_key": "drug_product:lipitor|HAS_ACTIVE_INGREDIENT|active_ingredient:atorvastatin",
+      "relation_type": "HAS_ACTIVE_INGREDIENT",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|HAS_ACTIVE_INGREDIENT|active_ingredient:atorvastatin|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "contraindication:acute_liver_failure",
+      "relation_id": "drug_product:lipitor|CONTRAINDICATED_IN|contraindication:acute_liver_failure",
+      "canonical_key": "drug_product:lipitor|CONTRAINDICATED_IN|contraindication:acute_liver_failure",
+      "relation_type": "CONTRAINDICATED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|CONTRAINDICATED_IN|contraindication:acute_liver_failure|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "contraindication:decompensated_cirrhosis",
+      "relation_id": "drug_product:lipitor|CONTRAINDICATED_IN|contraindication:decompensated_cirrhosis",
+      "canonical_key": "drug_product:lipitor|CONTRAINDICATED_IN|contraindication:decompensated_cirrhosis",
+      "relation_type": "CONTRAINDICATED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|CONTRAINDICATED_IN|contraindication:decompensated_cirrhosis|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "adverse_reaction:pancreatitis",
+      "relation_id": "drug_product:lipitor|CAUSES_ADVERSE_REACTION|adverse_reaction:pancreatitis",
+      "canonical_key": "drug_product:lipitor|CAUSES_ADVERSE_REACTION|adverse_reaction:pancreatitis",
+      "relation_type": "CAUSES_ADVERSE_REACTION",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|CAUSES_ADVERSE_REACTION|adverse_reaction:pancreatitis|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "adverse_reaction:fatigue",
+      "relation_id": "drug_product:lipitor|CAUSES_ADVERSE_REACTION|adverse_reaction:fatigue",
+      "canonical_key": "drug_product:lipitor|CAUSES_ADVERSE_REACTION|adverse_reaction:fatigue",
+      "relation_type": "CAUSES_ADVERSE_REACTION",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|CAUSES_ADVERSE_REACTION|adverse_reaction:fatigue|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "adverse_reaction:hepatic_failure",
+      "relation_id": "drug_product:lipitor|CAUSES_ADVERSE_REACTION|adverse_reaction:hepatic_failure",
+      "canonical_key": "drug_product:lipitor|CAUSES_ADVERSE_REACTION|adverse_reaction:hepatic_failure",
+      "relation_type": "CAUSES_ADVERSE_REACTION",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|CAUSES_ADVERSE_REACTION|adverse_reaction:hepatic_failure|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "adverse_reaction:anaphylaxis",
+      "relation_id": "drug_product:lipitor|CAUSES_ADVERSE_REACTION|adverse_reaction:anaphylaxis",
+      "canonical_key": "drug_product:lipitor|CAUSES_ADVERSE_REACTION|adverse_reaction:anaphylaxis",
+      "relation_type": "CAUSES_ADVERSE_REACTION",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|CAUSES_ADVERSE_REACTION|adverse_reaction:anaphylaxis|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "drug_interaction:grapefruit_juice",
+      "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:grapefruit_juice",
+      "canonical_key": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:grapefruit_juice",
+      "relation_type": "INTERACTS_WITH",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:grapefruit_juice|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "patient_population:child_pugh_b_disease",
+      "relation_id": "drug_product:lipitor|STUDIED_IN_POPULATION|patient_population:child_pugh_b_disease",
+      "canonical_key": "drug_product:lipitor|STUDIED_IN_POPULATION|patient_population:child_pugh_b_disease",
+      "relation_type": "STUDIED_IN_POPULATION",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|STUDIED_IN_POPULATION|patient_population:child_pugh_b_disease|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "patient_population:pediatric_patients_aged_10_years_and_older_with_hefh",
+      "relation_id": "drug_product:lipitor|STUDIED_IN_POPULATION|patient_population:pediatric_patients_aged_10_years_and_older_with_hefh",
+      "canonical_key": "drug_product:lipitor|STUDIED_IN_POPULATION|patient_population:pediatric_patients_aged_10_years_and_older_with_hefh",
+      "relation_type": "STUDIED_IN_POPULATION",
+      "confidence": 0.75,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 2,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|STUDIED_IN_POPULATION|patient_population:pediatric_patients_aged_10_years_and_older_with_hefh|atorvastatin_lipitor"
+        },
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|STUDIED_IN_POPULATION|patient_population:pediatric_patients_aged_10_years_and_older_with_hefh|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "mechanism_of_action:inhibition_of_hmg_coa_reductase_reducing_cholesterol_synthesis",
+      "relation_id": "drug_product:lipitor|HAS_MECHANISM|mechanism_of_action:inhibition_of_hmg_coa_reductase_reducing_cholesterol_synthesis",
+      "canonical_key": "drug_product:lipitor|HAS_MECHANISM|mechanism_of_action:inhibition_of_hmg_coa_reductase_reducing_cholesterol_synthesis",
+      "relation_type": "HAS_MECHANISM",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|HAS_MECHANISM|mechanism_of_action:inhibition_of_hmg_coa_reductase_reducing_cholesterol_synthesis|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "adverse_reaction:tendon_rupture",
+      "relation_id": "drug_product:lipitor|CAUSES_ADVERSE_REACTION|adverse_reaction:tendon_rupture",
+      "canonical_key": "drug_product:lipitor|CAUSES_ADVERSE_REACTION|adverse_reaction:tendon_rupture",
+      "relation_type": "CAUSES_ADVERSE_REACTION",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|CAUSES_ADVERSE_REACTION|adverse_reaction:tendon_rupture|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "drug_interaction:rifampin",
+      "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:rifampin",
+      "canonical_key": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:rifampin",
+      "relation_type": "INTERACTS_WITH",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:rifampin|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "drug_interaction:oral_contraceptives",
+      "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:oral_contraceptives",
+      "canonical_key": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:oral_contraceptives",
+      "relation_type": "INTERACTS_WITH",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:oral_contraceptives|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "drug_interaction:digoxin",
+      "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:digoxin",
+      "canonical_key": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:digoxin",
+      "relation_type": "INTERACTS_WITH",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:digoxin|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "drug_interaction:cyclosporine",
+      "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:cyclosporine",
+      "canonical_key": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:cyclosporine",
+      "relation_type": "INTERACTS_WITH",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:cyclosporine|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "drug_interaction:gemfibrozil",
+      "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:gemfibrozil",
+      "canonical_key": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:gemfibrozil",
+      "relation_type": "INTERACTS_WITH",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:gemfibrozil|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "drug_interaction:anti_viral_medications_e_g_ledipasvir_sofosbuvir",
+      "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:anti_viral_medications_e_g_ledipasvir_sofosbuvir",
+      "canonical_key": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:anti_viral_medications_e_g_ledipasvir_sofosbuvir",
+      "relation_type": "INTERACTS_WITH",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:anti_viral_medications_e_g_ledipasvir_sofosbuvir|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "drug_interaction:azoles_clarithromycin_itraconazole_etc",
+      "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:azoles_clarithromycin_itraconazole_etc",
+      "canonical_key": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:azoles_clarithromycin_itraconazole_etc",
+      "relation_type": "INTERACTS_WITH",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:azoles_clarithromycin_itraconazole_etc|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "drug_interaction:niacin_1_g_day",
+      "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:niacin_1_g_day",
+      "canonical_key": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:niacin_1_g_day",
+      "relation_type": "INTERACTS_WITH",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:niacin_1_g_day|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "drug_interaction:fibrates_other_than_gemfibrozil",
+      "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:fibrates_other_than_gemfibrozil",
+      "canonical_key": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:fibrates_other_than_gemfibrozil",
+      "relation_type": "INTERACTS_WITH",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:fibrates_other_than_gemfibrozil|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "drug_interaction:colchicine",
+      "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:colchicine",
+      "canonical_key": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:colchicine",
+      "relation_type": "INTERACTS_WITH",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:colchicine|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "adverse_reaction:rhabdomyolysis",
+      "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:rhabdomyolysis",
+      "canonical_key": "drug_product:lipitor|HAS_WARNING|adverse_reaction:rhabdomyolysis",
+      "relation_type": "HAS_WARNING",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:rhabdomyolysis|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "adverse_reaction:myositis",
+      "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:myositis",
+      "canonical_key": "drug_product:lipitor|HAS_WARNING|adverse_reaction:myositis",
+      "relation_type": "HAS_WARNING",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:myositis|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "adverse_reaction:dizziness",
+      "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:dizziness",
+      "canonical_key": "drug_product:lipitor|HAS_WARNING|adverse_reaction:dizziness",
+      "relation_type": "HAS_WARNING",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:dizziness|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "adverse_reaction:peripheral_neuropathy",
+      "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:peripheral_neuropathy",
+      "canonical_key": "drug_product:lipitor|HAS_WARNING|adverse_reaction:peripheral_neuropathy",
+      "relation_type": "HAS_WARNING",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:peripheral_neuropathy|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "adverse_reaction:cognitive_impairment",
+      "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:cognitive_impairment",
+      "canonical_key": "drug_product:lipitor|HAS_WARNING|adverse_reaction:cognitive_impairment",
+      "relation_type": "HAS_WARNING",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:cognitive_impairment|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "adverse_reaction:myasthenia_gravis",
+      "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:myasthenia_gravis",
+      "canonical_key": "drug_product:lipitor|HAS_WARNING|adverse_reaction:myasthenia_gravis",
+      "relation_type": "HAS_WARNING",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:myasthenia_gravis|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "adverse_reaction:angioneurotic_edema",
+      "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:angioneurotic_edema",
+      "canonical_key": "drug_product:lipitor|HAS_WARNING|adverse_reaction:angioneurotic_edema",
+      "relation_type": "HAS_WARNING",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:angioneurotic_edema|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "adverse_reaction:bullous_rash",
+      "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:bullous_rash",
+      "canonical_key": "drug_product:lipitor|HAS_WARNING|adverse_reaction:bullous_rash",
+      "relation_type": "HAS_WARNING",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:bullous_rash|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "adverse_reaction:stevens_johnson_syndrome",
+      "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:stevens_johnson_syndrome",
+      "canonical_key": "drug_product:lipitor|HAS_WARNING|adverse_reaction:stevens_johnson_syndrome",
+      "relation_type": "HAS_WARNING",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:stevens_johnson_syndrome|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "adverse_reaction:toxic_epidermal_necrolysis",
+      "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:toxic_epidermal_necrolysis",
+      "canonical_key": "drug_product:lipitor|HAS_WARNING|adverse_reaction:toxic_epidermal_necrolysis",
+      "relation_type": "HAS_WARNING",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:toxic_epidermal_necrolysis|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:lipitor",
+      "target": "mechanism_of_action:selective_competitive_inhibition_of_hmg_coa_reductase",
+      "relation_id": "drug_product:lipitor|HAS_MECHANISM|mechanism_of_action:selective_competitive_inhibition_of_hmg_coa_reductase",
+      "canonical_key": "drug_product:lipitor|HAS_MECHANISM|mechanism_of_action:selective_competitive_inhibition_of_hmg_coa_reductase",
+      "relation_type": "HAS_MECHANISM",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:lipitor|HAS_MECHANISM|mechanism_of_action:selective_competitive_inhibition_of_hmg_coa_reductase|atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "active_ingredient:atorvastatin",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "active_ingredient:atorvastatin|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "active_ingredient:atorvastatin|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "active_ingredient:atorvastatin|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "adverse_reaction:fatigue",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "adverse_reaction:fatigue|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "adverse_reaction:fatigue|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "adverse_reaction:fatigue|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "adverse_reaction:hepatic_failure",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "adverse_reaction:hepatic_failure|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "adverse_reaction:hepatic_failure|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "adverse_reaction:hepatic_failure|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "adverse_reaction:anaphylaxis",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "adverse_reaction:anaphylaxis|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "adverse_reaction:anaphylaxis|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "adverse_reaction:anaphylaxis|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "adverse_reaction:tendon_rupture",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "adverse_reaction:tendon_rupture|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "adverse_reaction:tendon_rupture|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "adverse_reaction:tendon_rupture|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "adverse_reaction:rhabdomyolysis",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "adverse_reaction:rhabdomyolysis|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "adverse_reaction:rhabdomyolysis|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "adverse_reaction:rhabdomyolysis|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "adverse_reaction:myositis",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "adverse_reaction:myositis|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "adverse_reaction:myositis|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "adverse_reaction:myositis|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "adverse_reaction:dizziness",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "adverse_reaction:dizziness|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "adverse_reaction:dizziness|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "adverse_reaction:dizziness|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "adverse_reaction:peripheral_neuropathy",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "adverse_reaction:peripheral_neuropathy|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "adverse_reaction:peripheral_neuropathy|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "adverse_reaction:peripheral_neuropathy|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "adverse_reaction:cognitive_impairment",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "adverse_reaction:cognitive_impairment|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "adverse_reaction:cognitive_impairment|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "adverse_reaction:cognitive_impairment|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "adverse_reaction:myasthenia_gravis",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "adverse_reaction:myasthenia_gravis|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "adverse_reaction:myasthenia_gravis|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "adverse_reaction:myasthenia_gravis|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "adverse_reaction:angioneurotic_edema",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "adverse_reaction:angioneurotic_edema|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "adverse_reaction:angioneurotic_edema|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "adverse_reaction:angioneurotic_edema|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "adverse_reaction:bullous_rash",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "adverse_reaction:bullous_rash|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "adverse_reaction:bullous_rash|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "adverse_reaction:bullous_rash|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "adverse_reaction:toxic_epidermal_necrolysis",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "adverse_reaction:toxic_epidermal_necrolysis|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "adverse_reaction:toxic_epidermal_necrolysis|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "adverse_reaction:toxic_epidermal_necrolysis|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_interaction:grapefruit_juice",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "drug_interaction:grapefruit_juice|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "drug_interaction:grapefruit_juice|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_interaction:grapefruit_juice|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_interaction:rifampin",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "drug_interaction:rifampin|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "drug_interaction:rifampin|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_interaction:rifampin|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_interaction:oral_contraceptives",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "drug_interaction:oral_contraceptives|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "drug_interaction:oral_contraceptives|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_interaction:oral_contraceptives|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_interaction:digoxin",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "drug_interaction:digoxin|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "drug_interaction:digoxin|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_interaction:digoxin|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_interaction:cyclosporine",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "drug_interaction:cyclosporine|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "drug_interaction:cyclosporine|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_interaction:cyclosporine|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_interaction:gemfibrozil",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "drug_interaction:gemfibrozil|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "drug_interaction:gemfibrozil|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_interaction:gemfibrozil|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_interaction:anti_viral_medications_e_g_ledipasvir_sofosbuvir",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "drug_interaction:anti_viral_medications_e_g_ledipasvir_sofosbuvir|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "drug_interaction:anti_viral_medications_e_g_ledipasvir_sofosbuvir|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_interaction:anti_viral_medications_e_g_ledipasvir_sofosbuvir|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_interaction:azoles_clarithromycin_itraconazole_etc",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "drug_interaction:azoles_clarithromycin_itraconazole_etc|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "drug_interaction:azoles_clarithromycin_itraconazole_etc|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_interaction:azoles_clarithromycin_itraconazole_etc|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_interaction:niacin_1_g_day",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "drug_interaction:niacin_1_g_day|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "drug_interaction:niacin_1_g_day|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_interaction:niacin_1_g_day|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_interaction:fibrates_other_than_gemfibrozil",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "drug_interaction:fibrates_other_than_gemfibrozil|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "drug_interaction:fibrates_other_than_gemfibrozil|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_interaction:fibrates_other_than_gemfibrozil|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_interaction:colchicine",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "drug_interaction:colchicine|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "drug_interaction:colchicine|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_interaction:colchicine|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "patient_population:pediatric_patients_aged_10_years_and_older_with_hefh",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "patient_population:pediatric_patients_aged_10_years_and_older_with_hefh|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "patient_population:pediatric_patients_aged_10_years_and_older_with_hefh|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.75,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 2,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "patient_population:pediatric_patients_aged_10_years_and_older_with_hefh|MENTIONED_IN|doc:atorvastatin_lipitor"
+        },
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "patient_population:pediatric_patients_aged_10_years_and_older_with_hefh|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "mechanism_of_action:inhibition_of_hmg_coa_reductase_reducing_cholesterol_synthesis",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "mechanism_of_action:inhibition_of_hmg_coa_reductase_reducing_cholesterol_synthesis|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "mechanism_of_action:inhibition_of_hmg_coa_reductase_reducing_cholesterol_synthesis|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "mechanism_of_action:inhibition_of_hmg_coa_reductase_reducing_cholesterol_synthesis|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "patient_population:child_pugh_b_disease",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "patient_population:child_pugh_b_disease|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "patient_population:child_pugh_b_disease|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "patient_population:child_pugh_b_disease|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "contraindication:acute_liver_failure",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "contraindication:acute_liver_failure|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "contraindication:acute_liver_failure|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "contraindication:acute_liver_failure|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "contraindication:decompensated_cirrhosis",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "contraindication:decompensated_cirrhosis|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "contraindication:decompensated_cirrhosis|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "contraindication:decompensated_cirrhosis|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "mechanism_of_action:selective_competitive_inhibition_of_hmg_coa_reductase",
+      "target": "doc:atorvastatin_lipitor",
+      "relation_id": "mechanism_of_action:selective_competitive_inhibition_of_hmg_coa_reductase|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "canonical_key": "mechanism_of_action:selective_competitive_inhibition_of_hmg_coa_reductase|MENTIONED_IN|doc:atorvastatin_lipitor",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "atorvastatin_lipitor",
+      "support_count": 1,
+      "support_documents": [
+        "atorvastatin_lipitor"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "atorvastatin_lipitor",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "mechanism_of_action:selective_competitive_inhibition_of_hmg_coa_reductase|MENTIONED_IN|doc:atorvastatin_lipitor"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:ozempic",
+      "target": "doc:semaglutide_ozempic",
+      "relation_id": "drug_product:ozempic|MENTIONED_IN|doc:semaglutide_ozempic",
+      "canonical_key": "drug_product:ozempic|MENTIONED_IN|doc:semaglutide_ozempic",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "semaglutide_ozempic",
+      "support_count": 1,
+      "support_documents": [
+        "semaglutide_ozempic"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "semaglutide_ozempic",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:ozempic|MENTIONED_IN|doc:semaglutide_ozempic"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:ozempic",
+      "target": "active_ingredient:semaglutide",
+      "relation_id": "drug_product:ozempic|HAS_ACTIVE_INGREDIENT|active_ingredient:semaglutide",
+      "canonical_key": "drug_product:ozempic|HAS_ACTIVE_INGREDIENT|active_ingredient:semaglutide",
+      "relation_type": "HAS_ACTIVE_INGREDIENT",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "semaglutide_ozempic",
+      "support_count": 1,
+      "support_documents": [
+        "semaglutide_ozempic"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "semaglutide_ozempic",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:ozempic|HAS_ACTIVE_INGREDIENT|active_ingredient:semaglutide|semaglutide_ozempic"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:ozempic",
+      "target": "inactive_ingredient:disodium_phosphate_dihydrate",
+      "relation_id": "drug_product:ozempic|HAS_INACTIVE_INGREDIENT|inactive_ingredient:disodium_phosphate_dihydrate",
+      "canonical_key": "drug_product:ozempic|HAS_INACTIVE_INGREDIENT|inactive_ingredient:disodium_phosphate_dihydrate",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "semaglutide_ozempic",
+      "support_count": 1,
+      "support_documents": [
+        "semaglutide_ozempic"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "semaglutide_ozempic",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:ozempic|HAS_INACTIVE_INGREDIENT|inactive_ingredient:disodium_phosphate_dihydrate|semaglutide_ozempic"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:ozempic",
+      "target": "inactive_ingredient:propylene_glycol",
+      "relation_id": "drug_product:ozempic|HAS_INACTIVE_INGREDIENT|inactive_ingredient:propylene_glycol",
+      "canonical_key": "drug_product:ozempic|HAS_INACTIVE_INGREDIENT|inactive_ingredient:propylene_glycol",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "semaglutide_ozempic",
+      "support_count": 1,
+      "support_documents": [
+        "semaglutide_ozempic"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "semaglutide_ozempic",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:ozempic|HAS_INACTIVE_INGREDIENT|inactive_ingredient:propylene_glycol|semaglutide_ozempic"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:ozempic",
+      "target": "inactive_ingredient:phenol",
+      "relation_id": "drug_product:ozempic|HAS_INACTIVE_INGREDIENT|inactive_ingredient:phenol",
+      "canonical_key": "drug_product:ozempic|HAS_INACTIVE_INGREDIENT|inactive_ingredient:phenol",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "semaglutide_ozempic",
+      "support_count": 1,
+      "support_documents": [
+        "semaglutide_ozempic"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "semaglutide_ozempic",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:ozempic|HAS_INACTIVE_INGREDIENT|inactive_ingredient:phenol|semaglutide_ozempic"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:ozempic",
+      "target": "inactive_ingredient:water_for_injections",
+      "relation_id": "drug_product:ozempic|HAS_INACTIVE_INGREDIENT|inactive_ingredient:water_for_injections",
+      "canonical_key": "drug_product:ozempic|HAS_INACTIVE_INGREDIENT|inactive_ingredient:water_for_injections",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "semaglutide_ozempic",
+      "support_count": 1,
+      "support_documents": [
+        "semaglutide_ozempic"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "semaglutide_ozempic",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:ozempic|HAS_INACTIVE_INGREDIENT|inactive_ingredient:water_for_injections|semaglutide_ozempic"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:ozempic",
+      "target": "clinical_study:sustain_6",
+      "relation_id": "drug_product:ozempic|EVALUATED_IN|clinical_study:sustain_6",
+      "canonical_key": "drug_product:ozempic|EVALUATED_IN|clinical_study:sustain_6",
+      "relation_type": "EVALUATED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "semaglutide_ozempic",
+      "support_count": 1,
+      "support_documents": [
+        "semaglutide_ozempic"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "semaglutide_ozempic",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:ozempic|EVALUATED_IN|clinical_study:sustain_6|semaglutide_ozempic"
+        }
+      ]
+    },
+    {
+      "source": "active_ingredient:semaglutide",
+      "target": "doc:semaglutide_ozempic",
+      "relation_id": "active_ingredient:semaglutide|MENTIONED_IN|doc:semaglutide_ozempic",
+      "canonical_key": "active_ingredient:semaglutide|MENTIONED_IN|doc:semaglutide_ozempic",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "semaglutide_ozempic",
+      "support_count": 1,
+      "support_documents": [
+        "semaglutide_ozempic"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "semaglutide_ozempic",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "active_ingredient:semaglutide|MENTIONED_IN|doc:semaglutide_ozempic"
+        }
+      ]
+    },
+    {
+      "source": "inactive_ingredient:disodium_phosphate_dihydrate",
+      "target": "doc:semaglutide_ozempic",
+      "relation_id": "inactive_ingredient:disodium_phosphate_dihydrate|MENTIONED_IN|doc:semaglutide_ozempic",
+      "canonical_key": "inactive_ingredient:disodium_phosphate_dihydrate|MENTIONED_IN|doc:semaglutide_ozempic",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "semaglutide_ozempic",
+      "support_count": 1,
+      "support_documents": [
+        "semaglutide_ozempic"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "semaglutide_ozempic",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "inactive_ingredient:disodium_phosphate_dihydrate|MENTIONED_IN|doc:semaglutide_ozempic"
+        }
+      ]
+    },
+    {
+      "source": "inactive_ingredient:propylene_glycol",
+      "target": "doc:semaglutide_ozempic",
+      "relation_id": "inactive_ingredient:propylene_glycol|MENTIONED_IN|doc:semaglutide_ozempic",
+      "canonical_key": "inactive_ingredient:propylene_glycol|MENTIONED_IN|doc:semaglutide_ozempic",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "semaglutide_ozempic",
+      "support_count": 1,
+      "support_documents": [
+        "semaglutide_ozempic"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "semaglutide_ozempic",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "inactive_ingredient:propylene_glycol|MENTIONED_IN|doc:semaglutide_ozempic"
+        }
+      ]
+    },
+    {
+      "source": "inactive_ingredient:phenol",
+      "target": "doc:semaglutide_ozempic",
+      "relation_id": "inactive_ingredient:phenol|MENTIONED_IN|doc:semaglutide_ozempic",
+      "canonical_key": "inactive_ingredient:phenol|MENTIONED_IN|doc:semaglutide_ozempic",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "semaglutide_ozempic",
+      "support_count": 1,
+      "support_documents": [
+        "semaglutide_ozempic"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "semaglutide_ozempic",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "inactive_ingredient:phenol|MENTIONED_IN|doc:semaglutide_ozempic"
+        }
+      ]
+    },
+    {
+      "source": "inactive_ingredient:water_for_injections",
+      "target": "doc:semaglutide_ozempic",
+      "relation_id": "inactive_ingredient:water_for_injections|MENTIONED_IN|doc:semaglutide_ozempic",
+      "canonical_key": "inactive_ingredient:water_for_injections|MENTIONED_IN|doc:semaglutide_ozempic",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "semaglutide_ozempic",
+      "support_count": 1,
+      "support_documents": [
+        "semaglutide_ozempic"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "semaglutide_ozempic",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "inactive_ingredient:water_for_injections|MENTIONED_IN|doc:semaglutide_ozempic"
+        }
+      ]
+    },
+    {
+      "source": "manufacturer:novo_nordisk_inc",
+      "target": "doc:semaglutide_ozempic",
+      "relation_id": "manufacturer:novo_nordisk_inc|MENTIONED_IN|doc:semaglutide_ozempic",
+      "canonical_key": "manufacturer:novo_nordisk_inc|MENTIONED_IN|doc:semaglutide_ozempic",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "semaglutide_ozempic",
+      "support_count": 1,
+      "support_documents": [
+        "semaglutide_ozempic"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "semaglutide_ozempic",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "manufacturer:novo_nordisk_inc|MENTIONED_IN|doc:semaglutide_ozempic"
+        }
+      ]
+    },
+    {
+      "source": "manufacturer:novo_nordisk_inc",
+      "target": "doc:semaglutide_wegovy",
+      "relation_id": "manufacturer:novo_nordisk_inc|MENTIONED_IN|doc:semaglutide_wegovy",
+      "canonical_key": "manufacturer:novo_nordisk_inc|MENTIONED_IN|doc:semaglutide_wegovy",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "semaglutide_wegovy",
+      "support_count": 1,
+      "support_documents": [
+        "semaglutide_wegovy"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "semaglutide_wegovy",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "manufacturer:novo_nordisk_inc|MENTIONED_IN|doc:semaglutide_wegovy"
+        }
+      ]
+    },
+    {
+      "source": "manufacturer:novo_nordisk_inc",
+      "target": "drug_product:ozempic",
+      "relation_id": "drug_product:ozempic|MANUFACTURED_BY|manufacturer:novo_nordisk_inc",
+      "canonical_key": "drug_product:ozempic|MANUFACTURED_BY|manufacturer:novo_nordisk_inc",
+      "relation_type": "MANUFACTURES",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "semaglutide_ozempic",
+      "support_count": 1,
+      "support_documents": [
+        "semaglutide_ozempic"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "semaglutide_ozempic",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:ozempic|MANUFACTURED_BY|manufacturer:novo_nordisk_inc|semaglutide_ozempic"
+        }
+      ]
+    },
+    {
+      "source": "clinical_study:sustain_6",
+      "target": "doc:semaglutide_ozempic",
+      "relation_id": "clinical_study:sustain_6|MENTIONED_IN|doc:semaglutide_ozempic",
+      "canonical_key": "clinical_study:sustain_6|MENTIONED_IN|doc:semaglutide_ozempic",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "semaglutide_ozempic",
+      "support_count": 1,
+      "support_documents": [
+        "semaglutide_ozempic"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "semaglutide_ozempic",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "clinical_study:sustain_6|MENTIONED_IN|doc:semaglutide_ozempic"
+        }
+      ]
+    },
+    {
+      "source": "manufacturer:upsher_smith_laboratories_llc",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "manufacturer:upsher_smith_laboratories_llc|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "manufacturer:upsher_smith_laboratories_llc|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "manufacturer:upsher_smith_laboratories_llc|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "manufacturer:upsher_smith_laboratories_llc",
+      "target": "drug_product:jantoven",
+      "relation_id": "drug_product:jantoven|MANUFACTURED_BY|manufacturer:upsher_smith_laboratories_llc",
+      "canonical_key": "drug_product:jantoven|MANUFACTURED_BY|manufacturer:upsher_smith_laboratories_llc",
+      "relation_type": "MANUFACTURES",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|MANUFACTURED_BY|manufacturer:upsher_smith_laboratories_llc|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "drug_product:jantoven|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "drug_product:jantoven|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "active_ingredient:warfarin_sodium",
+      "relation_id": "drug_product:jantoven|HAS_ACTIVE_INGREDIENT|active_ingredient:warfarin_sodium",
+      "canonical_key": "drug_product:jantoven|HAS_ACTIVE_INGREDIENT|active_ingredient:warfarin_sodium",
+      "relation_type": "HAS_ACTIVE_INGREDIENT",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|HAS_ACTIVE_INGREDIENT|active_ingredient:warfarin_sodium|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "contraindication:pregnancy",
+      "relation_id": "drug_product:jantoven|CONTRAINDICATED_IN|contraindication:pregnancy",
+      "canonical_key": "drug_product:jantoven|CONTRAINDICATED_IN|contraindication:pregnancy",
+      "relation_type": "CONTRAINDICATED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|CONTRAINDICATED_IN|contraindication:pregnancy|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "contraindication:heparin_induced_thrombocytopenia_hit_and_hitts",
+      "relation_id": "drug_product:jantoven|CONTRAINDICATED_IN|contraindication:heparin_induced_thrombocytopenia_hit_and_hitts",
+      "canonical_key": "drug_product:jantoven|CONTRAINDICATED_IN|contraindication:heparin_induced_thrombocytopenia_hit_and_hitts",
+      "relation_type": "CONTRAINDICATED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|CONTRAINDICATED_IN|contraindication:heparin_induced_thrombocytopenia_hit_and_hitts|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "adverse_reaction:calciphylaxis",
+      "relation_id": "drug_product:jantoven|CONTRAINDICATED_IN|adverse_reaction:calciphylaxis",
+      "canonical_key": "drug_product:jantoven|CONTRAINDICATED_IN|adverse_reaction:calciphylaxis",
+      "relation_type": "CONTRAINDICATED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|CONTRAINDICATED_IN|adverse_reaction:calciphylaxis|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "adverse_reaction:calciphylaxis",
+      "relation_id": "drug_product:jantoven|CAUSES_ADVERSE_REACTION|adverse_reaction:calciphylaxis",
+      "canonical_key": "drug_product:jantoven|CAUSES_ADVERSE_REACTION|adverse_reaction:calciphylaxis",
+      "relation_type": "CAUSES_ADVERSE_REACTION",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|CAUSES_ADVERSE_REACTION|adverse_reaction:calciphylaxis|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "warning:boxed_warning_increased_risk_of_hemorrhage_and_tissue_necrosis",
+      "relation_id": "drug_product:jantoven|HAS_WARNING|warning:boxed_warning_increased_risk_of_hemorrhage_and_tissue_necrosis",
+      "canonical_key": "drug_product:jantoven|HAS_WARNING|warning:boxed_warning_increased_risk_of_hemorrhage_and_tissue_necrosis",
+      "relation_type": "HAS_WARNING",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|HAS_WARNING|warning:boxed_warning_increased_risk_of_hemorrhage_and_tissue_necrosis|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "warning:bleeding_risk_with_concomitant_anticoagulants_and_cyp2c9_inhibitors",
+      "relation_id": "drug_product:jantoven|HAS_WARNING|warning:bleeding_risk_with_concomitant_anticoagulants_and_cyp2c9_inhibitors",
+      "canonical_key": "drug_product:jantoven|HAS_WARNING|warning:bleeding_risk_with_concomitant_anticoagulants_and_cyp2c9_inhibitors",
+      "relation_type": "HAS_WARNING",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|HAS_WARNING|warning:bleeding_risk_with_concomitant_anticoagulants_and_cyp2c9_inhibitors|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "drug_interaction:cyp2c9_inhibitors_e_g_fluconazole_amiodarone_increase_inr",
+      "relation_id": "drug_product:jantoven|INTERACTS_WITH|drug_interaction:cyp2c9_inhibitors_e_g_fluconazole_amiodarone_increase_inr",
+      "canonical_key": "drug_product:jantoven|INTERACTS_WITH|drug_interaction:cyp2c9_inhibitors_e_g_fluconazole_amiodarone_increase_inr",
+      "relation_type": "INTERACTS_WITH",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|INTERACTS_WITH|drug_interaction:cyp2c9_inhibitors_e_g_fluconazole_amiodarone_increase_inr|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "patient_population:pregnant_women",
+      "relation_id": "drug_product:jantoven|STUDIED_IN_POPULATION|patient_population:pregnant_women",
+      "canonical_key": "drug_product:jantoven|STUDIED_IN_POPULATION|patient_population:pregnant_women",
+      "relation_type": "STUDIED_IN_POPULATION",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|STUDIED_IN_POPULATION|patient_population:pregnant_women|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "patient_population:patients_with_renal_impairment",
+      "relation_id": "drug_product:jantoven|STUDIED_IN_POPULATION|patient_population:patients_with_renal_impairment",
+      "canonical_key": "drug_product:jantoven|STUDIED_IN_POPULATION|patient_population:patients_with_renal_impairment",
+      "relation_type": "STUDIED_IN_POPULATION",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|STUDIED_IN_POPULATION|patient_population:patients_with_renal_impairment|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "patient_population:patients_with_hepatic_impairment",
+      "relation_id": "drug_product:jantoven|STUDIED_IN_POPULATION|patient_population:patients_with_hepatic_impairment",
+      "canonical_key": "drug_product:jantoven|STUDIED_IN_POPULATION|patient_population:patients_with_hepatic_impairment",
+      "relation_type": "STUDIED_IN_POPULATION",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|STUDIED_IN_POPULATION|patient_population:patients_with_hepatic_impairment|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "mechanism_of_action:inhibition_of_vitamin_k_epoxide_reductase_reducing_synthesis_of_vitamin_k_dependent_clotting_factors",
+      "relation_id": "drug_product:jantoven|HAS_MECHANISM|mechanism_of_action:inhibition_of_vitamin_k_epoxide_reductase_reducing_synthesis_of_vitamin_k_dependent_clotting_factors",
+      "canonical_key": "drug_product:jantoven|HAS_MECHANISM|mechanism_of_action:inhibition_of_vitamin_k_epoxide_reductase_reducing_synthesis_of_vitamin_k_dependent_clotting_factors",
+      "relation_type": "HAS_MECHANISM",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|HAS_MECHANISM|mechanism_of_action:inhibition_of_vitamin_k_epoxide_reductase_reducing_synthesis_of_vitamin_k_dependent_clotting_factors|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "pharmacokinetic_property:metabolized_by_cyp2c9_cyp1a2_cyp3a4",
+      "relation_id": "drug_product:jantoven|HAS_PK_PROPERTY|pharmacokinetic_property:metabolized_by_cyp2c9_cyp1a2_cyp3a4",
+      "canonical_key": "drug_product:jantoven|HAS_PK_PROPERTY|pharmacokinetic_property:metabolized_by_cyp2c9_cyp1a2_cyp3a4",
+      "relation_type": "HAS_PK_PROPERTY",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|HAS_PK_PROPERTY|pharmacokinetic_property:metabolized_by_cyp2c9_cyp1a2_cyp3a4|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "labtest:inr",
+      "relation_id": "drug_product:jantoven|HAS_WARNING|labtest:inr",
+      "canonical_key": "drug_product:jantoven|HAS_WARNING|labtest:inr",
+      "relation_type": "HAS_WARNING",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|HAS_WARNING|labtest:inr|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "adverse_reaction:hemorrhage",
+      "relation_id": "drug_product:jantoven|CAUSES_ADVERSE_REACTION|adverse_reaction:hemorrhage",
+      "canonical_key": "drug_product:jantoven|CAUSES_ADVERSE_REACTION|adverse_reaction:hemorrhage",
+      "relation_type": "CAUSES_ADVERSE_REACTION",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|CAUSES_ADVERSE_REACTION|adverse_reaction:hemorrhage|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "adverse_reaction:tissue_necrosis",
+      "relation_id": "drug_product:jantoven|CAUSES_ADVERSE_REACTION|adverse_reaction:tissue_necrosis",
+      "canonical_key": "drug_product:jantoven|CAUSES_ADVERSE_REACTION|adverse_reaction:tissue_necrosis",
+      "relation_type": "CAUSES_ADVERSE_REACTION",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|CAUSES_ADVERSE_REACTION|adverse_reaction:tissue_necrosis|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "adverse_reaction:acute_kidney_injury",
+      "relation_id": "drug_product:jantoven|CAUSES_ADVERSE_REACTION|adverse_reaction:acute_kidney_injury",
+      "canonical_key": "drug_product:jantoven|CAUSES_ADVERSE_REACTION|adverse_reaction:acute_kidney_injury",
+      "relation_type": "CAUSES_ADVERSE_REACTION",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|CAUSES_ADVERSE_REACTION|adverse_reaction:acute_kidney_injury|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "adverse_reaction:systemic_atheroemboli_and_cholesterol_microemboli",
+      "relation_id": "drug_product:jantoven|CAUSES_ADVERSE_REACTION|adverse_reaction:systemic_atheroemboli_and_cholesterol_microemboli",
+      "canonical_key": "drug_product:jantoven|CAUSES_ADVERSE_REACTION|adverse_reaction:systemic_atheroemboli_and_cholesterol_microemboli",
+      "relation_type": "CAUSES_ADVERSE_REACTION",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|CAUSES_ADVERSE_REACTION|adverse_reaction:systemic_atheroemboli_and_cholesterol_microemboli|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "adverse_reaction:limb_ischemia_necrosis_and_gangrene_in_patients_with_hit_and_hitts",
+      "relation_id": "drug_product:jantoven|CAUSES_ADVERSE_REACTION|adverse_reaction:limb_ischemia_necrosis_and_gangrene_in_patients_with_hit_and_hitts",
+      "canonical_key": "drug_product:jantoven|CAUSES_ADVERSE_REACTION|adverse_reaction:limb_ischemia_necrosis_and_gangrene_in_patients_with_hit_and_hitts",
+      "relation_type": "CAUSES_ADVERSE_REACTION",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|CAUSES_ADVERSE_REACTION|adverse_reaction:limb_ischemia_necrosis_and_gangrene_in_patients_with_hit_and_hitts|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "drug_interaction:cyp2c9_inducers_e_g_rifampin_carbamazepine_decrease_inr",
+      "relation_id": "drug_product:jantoven|INTERACTS_WITH|drug_interaction:cyp2c9_inducers_e_g_rifampin_carbamazepine_decrease_inr",
+      "canonical_key": "drug_product:jantoven|INTERACTS_WITH|drug_interaction:cyp2c9_inducers_e_g_rifampin_carbamazepine_decrease_inr",
+      "relation_type": "INTERACTS_WITH",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|INTERACTS_WITH|drug_interaction:cyp2c9_inducers_e_g_rifampin_carbamazepine_decrease_inr|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "inactive_ingredient:lactose_monohydrate",
+      "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:lactose_monohydrate",
+      "canonical_key": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:lactose_monohydrate",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:lactose_monohydrate|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "inactive_ingredient:magnesium_stearate",
+      "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:magnesium_stearate",
+      "canonical_key": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:magnesium_stearate",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:magnesium_stearate|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "inactive_ingredient:povidone",
+      "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:povidone",
+      "canonical_key": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:povidone",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:povidone|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "inactive_ingredient:pregelatinized_starch_corn",
+      "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:pregelatinized_starch_corn",
+      "canonical_key": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:pregelatinized_starch_corn",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:pregelatinized_starch_corn|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "inactive_ingredient:fd_c_red_40_aluminum_lake",
+      "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:fd_c_red_40_aluminum_lake",
+      "canonical_key": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:fd_c_red_40_aluminum_lake",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:fd_c_red_40_aluminum_lake|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "inactive_ingredient:fd_c_blue_2_aluminum_lake",
+      "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:fd_c_blue_2_aluminum_lake",
+      "canonical_key": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:fd_c_blue_2_aluminum_lake",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "confidence": 0.75,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 2,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:fd_c_blue_2_aluminum_lake|warfarin_jantoven"
+        },
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:fd_c_blue_2_aluminum_lake|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "inactive_ingredient:d_c_yellow_10_aluminum_lake",
+      "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:d_c_yellow_10_aluminum_lake",
+      "canonical_key": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:d_c_yellow_10_aluminum_lake",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:d_c_yellow_10_aluminum_lake|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "inactive_ingredient:brown_75_synthetic_brown_iron_oxide",
+      "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:brown_75_synthetic_brown_iron_oxide",
+      "canonical_key": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:brown_75_synthetic_brown_iron_oxide",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:brown_75_synthetic_brown_iron_oxide|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "inactive_ingredient:fd_c_yellow_6_aluminum_lake",
+      "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:fd_c_yellow_6_aluminum_lake",
+      "canonical_key": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:fd_c_yellow_6_aluminum_lake",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:fd_c_yellow_6_aluminum_lake|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "inactive_ingredient:yellow_10_synthetic_yellow_iron_oxide",
+      "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:yellow_10_synthetic_yellow_iron_oxide",
+      "canonical_key": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:yellow_10_synthetic_yellow_iron_oxide",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:yellow_10_synthetic_yellow_iron_oxide|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_product:jantoven",
+      "target": "inactive_ingredient:black_85_synthetic_black_iron_oxide",
+      "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:black_85_synthetic_black_iron_oxide",
+      "canonical_key": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:black_85_synthetic_black_iron_oxide",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:black_85_synthetic_black_iron_oxide|warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "active_ingredient:warfarin_sodium",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "active_ingredient:warfarin_sodium|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "active_ingredient:warfarin_sodium|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "active_ingredient:warfarin_sodium|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "contraindication:pregnancy",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "contraindication:pregnancy|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "contraindication:pregnancy|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "contraindication:pregnancy|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "contraindication:heparin_induced_thrombocytopenia_hit_and_hitts",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "contraindication:heparin_induced_thrombocytopenia_hit_and_hitts|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "contraindication:heparin_induced_thrombocytopenia_hit_and_hitts|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "contraindication:heparin_induced_thrombocytopenia_hit_and_hitts|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "adverse_reaction:hemorrhage",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "adverse_reaction:hemorrhage|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "adverse_reaction:hemorrhage|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "adverse_reaction:hemorrhage|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "adverse_reaction:tissue_necrosis",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "adverse_reaction:tissue_necrosis|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "adverse_reaction:tissue_necrosis|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "adverse_reaction:tissue_necrosis|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "adverse_reaction:calciphylaxis",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "adverse_reaction:calciphylaxis|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "adverse_reaction:calciphylaxis|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "adverse_reaction:calciphylaxis|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "adverse_reaction:acute_kidney_injury",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "adverse_reaction:acute_kidney_injury|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "adverse_reaction:acute_kidney_injury|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "adverse_reaction:acute_kidney_injury|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "adverse_reaction:systemic_atheroemboli_and_cholesterol_microemboli",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "adverse_reaction:systemic_atheroemboli_and_cholesterol_microemboli|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "adverse_reaction:systemic_atheroemboli_and_cholesterol_microemboli|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "adverse_reaction:systemic_atheroemboli_and_cholesterol_microemboli|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "adverse_reaction:limb_ischemia_necrosis_and_gangrene_in_patients_with_hit_and_hitts",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "adverse_reaction:limb_ischemia_necrosis_and_gangrene_in_patients_with_hit_and_hitts|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "adverse_reaction:limb_ischemia_necrosis_and_gangrene_in_patients_with_hit_and_hitts|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "adverse_reaction:limb_ischemia_necrosis_and_gangrene_in_patients_with_hit_and_hitts|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "warning:boxed_warning_increased_risk_of_hemorrhage_and_tissue_necrosis",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "warning:boxed_warning_increased_risk_of_hemorrhage_and_tissue_necrosis|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "warning:boxed_warning_increased_risk_of_hemorrhage_and_tissue_necrosis|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "warning:boxed_warning_increased_risk_of_hemorrhage_and_tissue_necrosis|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "warning:bleeding_risk_with_concomitant_anticoagulants_and_cyp2c9_inhibitors",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "warning:bleeding_risk_with_concomitant_anticoagulants_and_cyp2c9_inhibitors|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "warning:bleeding_risk_with_concomitant_anticoagulants_and_cyp2c9_inhibitors|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "warning:bleeding_risk_with_concomitant_anticoagulants_and_cyp2c9_inhibitors|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_interaction:cyp2c9_inhibitors_e_g_fluconazole_amiodarone_increase_inr",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "drug_interaction:cyp2c9_inhibitors_e_g_fluconazole_amiodarone_increase_inr|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "drug_interaction:cyp2c9_inhibitors_e_g_fluconazole_amiodarone_increase_inr|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_interaction:cyp2c9_inhibitors_e_g_fluconazole_amiodarone_increase_inr|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "drug_interaction:cyp2c9_inducers_e_g_rifampin_carbamazepine_decrease_inr",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "drug_interaction:cyp2c9_inducers_e_g_rifampin_carbamazepine_decrease_inr|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "drug_interaction:cyp2c9_inducers_e_g_rifampin_carbamazepine_decrease_inr|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "drug_interaction:cyp2c9_inducers_e_g_rifampin_carbamazepine_decrease_inr|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "patient_population:pregnant_women",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "patient_population:pregnant_women|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "patient_population:pregnant_women|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "patient_population:pregnant_women|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "patient_population:patients_with_renal_impairment",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "patient_population:patients_with_renal_impairment|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "patient_population:patients_with_renal_impairment|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "patient_population:patients_with_renal_impairment|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "patient_population:patients_with_hepatic_impairment",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "patient_population:patients_with_hepatic_impairment|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "patient_population:patients_with_hepatic_impairment|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "patient_population:patients_with_hepatic_impairment|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "mechanism_of_action:inhibition_of_vitamin_k_epoxide_reductase_reducing_synthesis_of_vitamin_k_dependent_clotting_factors",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "mechanism_of_action:inhibition_of_vitamin_k_epoxide_reductase_reducing_synthesis_of_vitamin_k_dependent_clotting_factors|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "mechanism_of_action:inhibition_of_vitamin_k_epoxide_reductase_reducing_synthesis_of_vitamin_k_dependent_clotting_factors|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "mechanism_of_action:inhibition_of_vitamin_k_epoxide_reductase_reducing_synthesis_of_vitamin_k_dependent_clotting_factors|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "pharmacokinetic_property:metabolized_by_cyp2c9_cyp1a2_cyp3a4",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "pharmacokinetic_property:metabolized_by_cyp2c9_cyp1a2_cyp3a4|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "pharmacokinetic_property:metabolized_by_cyp2c9_cyp1a2_cyp3a4|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "pharmacokinetic_property:metabolized_by_cyp2c9_cyp1a2_cyp3a4|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "labtest:inr",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "labtest:inr|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "labtest:inr|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "labtest:inr|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "inactive_ingredient:lactose_monohydrate",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "inactive_ingredient:lactose_monohydrate|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "inactive_ingredient:lactose_monohydrate|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "inactive_ingredient:lactose_monohydrate|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "inactive_ingredient:magnesium_stearate",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "inactive_ingredient:magnesium_stearate|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "inactive_ingredient:magnesium_stearate|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "inactive_ingredient:magnesium_stearate|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "inactive_ingredient:povidone",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "inactive_ingredient:povidone|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "inactive_ingredient:povidone|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "inactive_ingredient:povidone|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "inactive_ingredient:pregelatinized_starch_corn",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "inactive_ingredient:pregelatinized_starch_corn|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "inactive_ingredient:pregelatinized_starch_corn|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "inactive_ingredient:pregelatinized_starch_corn|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "inactive_ingredient:fd_c_red_40_aluminum_lake",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "inactive_ingredient:fd_c_red_40_aluminum_lake|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "inactive_ingredient:fd_c_red_40_aluminum_lake|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "inactive_ingredient:fd_c_red_40_aluminum_lake|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "inactive_ingredient:fd_c_blue_2_aluminum_lake",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "inactive_ingredient:fd_c_blue_2_aluminum_lake|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "inactive_ingredient:fd_c_blue_2_aluminum_lake|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.75,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 2,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "inactive_ingredient:fd_c_blue_2_aluminum_lake|MENTIONED_IN|doc:warfarin_jantoven"
+        },
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "inactive_ingredient:fd_c_blue_2_aluminum_lake|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "inactive_ingredient:d_c_yellow_10_aluminum_lake",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "inactive_ingredient:d_c_yellow_10_aluminum_lake|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "inactive_ingredient:d_c_yellow_10_aluminum_lake|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "inactive_ingredient:d_c_yellow_10_aluminum_lake|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "inactive_ingredient:brown_75_synthetic_brown_iron_oxide",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "inactive_ingredient:brown_75_synthetic_brown_iron_oxide|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "inactive_ingredient:brown_75_synthetic_brown_iron_oxide|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "inactive_ingredient:brown_75_synthetic_brown_iron_oxide|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "inactive_ingredient:fd_c_yellow_6_aluminum_lake",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "inactive_ingredient:fd_c_yellow_6_aluminum_lake|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "inactive_ingredient:fd_c_yellow_6_aluminum_lake|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "inactive_ingredient:fd_c_yellow_6_aluminum_lake|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "inactive_ingredient:yellow_10_synthetic_yellow_iron_oxide",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "inactive_ingredient:yellow_10_synthetic_yellow_iron_oxide|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "inactive_ingredient:yellow_10_synthetic_yellow_iron_oxide|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "inactive_ingredient:yellow_10_synthetic_yellow_iron_oxide|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    },
+    {
+      "source": "inactive_ingredient:black_85_synthetic_black_iron_oxide",
+      "target": "doc:warfarin_jantoven",
+      "relation_id": "inactive_ingredient:black_85_synthetic_black_iron_oxide|MENTIONED_IN|doc:warfarin_jantoven",
+      "canonical_key": "inactive_ingredient:black_85_synthetic_black_iron_oxide|MENTIONED_IN|doc:warfarin_jantoven",
+      "relation_type": "MENTIONED_IN",
+      "confidence": 0.5,
+      "evidence": "",
+      "source_document": "warfarin_jantoven",
+      "support_count": 1,
+      "support_documents": [
+        "warfarin_jantoven"
+      ],
+      "support_doc_count": 1,
+      "mentions": [
+        {
+          "source_document": "warfarin_jantoven",
+          "confidence": 0.5,
+          "evidence": "",
+          "relation_id": "inactive_ingredient:black_85_synthetic_black_iron_oxide|MENTIONED_IN|doc:warfarin_jantoven"
+        }
+      ]
+    }
+  ]
+}

@@ -276,8 +276,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "ACTIVE_INGREDIENT_1",
       "type": "HAS_ACTIVE_INGREDIENT",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ACTIVE_INGREDIENT_1",
+      "source_entity": "JANTOVEN",
+      "target_entity": "warfarin sodium",
       "relation_type": "HAS_ACTIVE_INGREDIENT",
       "evidence": ""
     },
@@ -285,8 +285,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "MANUFACTURER_1",
       "type": "MANUFACTURED_BY",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "MANUFACTURER_1",
+      "source_entity": "JANTOVEN",
+      "target_entity": "Upsher-Smith Laboratories, LLC",
       "relation_type": "MANUFACTURED_BY",
       "evidence": ""
     },
@@ -294,7 +294,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "INDICATION_1",
       "type": "INDICATED_FOR",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "INDICATION_1",
       "relation_type": "INDICATED_FOR",
       "evidence": ""
@@ -303,7 +303,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "INDICATION_2",
       "type": "INDICATED_FOR",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "INDICATION_2",
       "relation_type": "INDICATED_FOR",
       "evidence": ""
@@ -312,7 +312,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "INDICATION_3",
       "type": "INDICATED_FOR",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "INDICATION_3",
       "relation_type": "INDICATED_FOR",
       "evidence": ""
@@ -321,8 +321,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "CONTRAINDICATION_1",
       "type": "CONTRAINDICATED_IN",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "CONTRAINDICATION_1",
+      "source_entity": "JANTOVEN",
+      "target_entity": "Pregnancy",
       "relation_type": "CONTRAINDICATED_IN",
       "evidence": ""
     },
@@ -330,8 +330,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "CONTRAINDICATION_2",
       "type": "CONTRAINDICATED_IN",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "CONTRAINDICATION_2",
+      "source_entity": "JANTOVEN",
+      "target_entity": "Heparin-induced thrombocytopenia (HIT) and HITTS",
       "relation_type": "CONTRAINDICATED_IN",
       "evidence": ""
     },
@@ -339,8 +339,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "CONTRAINDICATION_3",
       "type": "CONTRAINDICATED_IN",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "CONTRAINDICATION_3",
+      "source_entity": "JANTOVEN",
+      "target_entity": "Calciphylaxis",
       "relation_type": "CONTRAINDICATED_IN",
       "evidence": ""
     },
@@ -348,7 +348,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "CONTRAINDICATION_4",
       "type": "CONTRAINDICATED_IN",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "CONTRAINDICATION_4",
       "relation_type": "CONTRAINDICATED_IN",
       "evidence": ""
@@ -357,7 +357,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "CONTRAINDICATION_5",
       "type": "CONTRAINDICATED_IN",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "CONTRAINDICATION_5",
       "relation_type": "CONTRAINDICATED_IN",
       "evidence": ""
@@ -366,7 +366,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "CONTRAINDICATION_6",
       "type": "CONTRAINDICATED_IN",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "CONTRAINDICATION_6",
       "relation_type": "CONTRAINDICATED_IN",
       "evidence": ""
@@ -375,7 +375,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "CONTRAINDICATION_7",
       "type": "CONTRAINDICATED_IN",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "CONTRAINDICATION_7",
       "relation_type": "CONTRAINDICATED_IN",
       "evidence": ""
@@ -384,7 +384,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "CONTRAINDICATION_8",
       "type": "CONTRAINDICATED_IN",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "CONTRAINDICATION_8",
       "relation_type": "CONTRAINDICATED_IN",
       "evidence": ""
@@ -393,7 +393,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "CONTRAINDICATION_9",
       "type": "CONTRAINDICATED_IN",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "CONTRAINDICATION_9",
       "relation_type": "CONTRAINDICATED_IN",
       "evidence": ""
@@ -402,7 +402,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "CONTRAINDICATION_10",
       "type": "CONTRAINDICATED_IN",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "CONTRAINDICATION_10",
       "relation_type": "CONTRAINDICATED_IN",
       "evidence": ""
@@ -411,8 +411,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "WARNING_1",
       "type": "HAS_WARNING",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "WARNING_1",
+      "source_entity": "JANTOVEN",
+      "target_entity": "Boxed warning: increased risk of hemorrhage and tissue necrosis",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -420,8 +420,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "WARNING_2",
       "type": "HAS_WARNING",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "WARNING_2",
+      "source_entity": "JANTOVEN",
+      "target_entity": "Bleeding risk with concomitant anticoagulants and CYP2C9 inhibitors",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -429,7 +429,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "WARNING_3",
       "type": "HAS_WARNING",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "WARNING_3",
       "relation_type": "HAS_WARNING",
       "evidence": ""
@@ -438,7 +438,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "WARNING_4",
       "type": "HAS_WARNING",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "WARNING_4",
       "relation_type": "HAS_WARNING",
       "evidence": ""
@@ -447,7 +447,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "WARNING_5",
       "type": "HAS_WARNING",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "WARNING_5",
       "relation_type": "HAS_WARNING",
       "evidence": ""
@@ -456,7 +456,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "WARNING_6",
       "type": "HAS_WARNING",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "WARNING_6",
       "relation_type": "HAS_WARNING",
       "evidence": ""
@@ -465,8 +465,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "DRUG_INTERACTION_1",
       "type": "INTERACTS_WITH",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "DRUG_INTERACTION_1",
+      "source_entity": "JANTOVEN",
+      "target_entity": "CYP2C9 inhibitors (e.g., fluconazole, amiodarone) increase INR",
       "relation_type": "INTERACTS_WITH",
       "evidence": ""
     },
@@ -474,8 +474,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "PATIENT_POPULATION_1",
       "type": "STUDIED_IN_POPULATION",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "PATIENT_POPULATION_1",
+      "source_entity": "JANTOVEN",
+      "target_entity": "Pregnant women",
       "relation_type": "STUDIED_IN_POPULATION",
       "evidence": ""
     },
@@ -483,8 +483,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "PATIENT_POPULATION_2",
       "type": "STUDIED_IN_POPULATION",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "PATIENT_POPULATION_2",
+      "source_entity": "JANTOVEN",
+      "target_entity": "Patients with renal impairment",
       "relation_type": "STUDIED_IN_POPULATION",
       "evidence": ""
     },
@@ -492,8 +492,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "PATIENT_POPULATION_3",
       "type": "STUDIED_IN_POPULATION",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "PATIENT_POPULATION_3",
+      "source_entity": "JANTOVEN",
+      "target_entity": "Patients with hepatic impairment",
       "relation_type": "STUDIED_IN_POPULATION",
       "evidence": ""
     },
@@ -501,8 +501,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "MECHANISM_OF_ACTION_1",
       "type": "HAS_MECHANISM",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "MECHANISM_OF_ACTION_1",
+      "source_entity": "JANTOVEN",
+      "target_entity": "Inhibition of vitamin K epoxide reductase, reducing synthesis of vitamin K-dependent clotting factors",
       "relation_type": "HAS_MECHANISM",
       "evidence": ""
     },
@@ -510,8 +510,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "PHARMACOKINETIC_PROPERTY_1",
       "type": "HAS_PK_PROPERTY",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "PHARMACOKINETIC_PROPERTY_1",
+      "source_entity": "JANTOVEN",
+      "target_entity": "Metabolized by CYP2C9, CYP1A2, CYP3A4",
       "relation_type": "HAS_PK_PROPERTY",
       "evidence": ""
     },
@@ -519,7 +519,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "REGULATORY_IDENTIFIER_1",
       "type": "IDENTIFIED_BY",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "REGULATORY_IDENTIFIER_1",
       "relation_type": "IDENTIFIED_BY",
       "evidence": ""
@@ -528,7 +528,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "REGULATORY_IDENTIFIER_2",
       "type": "IDENTIFIED_BY",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "REGULATORY_IDENTIFIER_2",
       "relation_type": "IDENTIFIED_BY",
       "evidence": ""
@@ -537,7 +537,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "REGULATORY_IDENTIFIER_3",
       "type": "IDENTIFIED_BY",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "REGULATORY_IDENTIFIER_3",
       "relation_type": "IDENTIFIED_BY",
       "evidence": ""
@@ -546,8 +546,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "LABTEST_1",
       "type": "HAS_WARNING",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "LABTEST_1",
+      "source_entity": "JANTOVEN",
+      "target_entity": "INR",
       "relation_type": "HAS_WARNING",
       "evidence": ""
     },
@@ -555,7 +555,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "LABTEST_2",
       "type": "HAS_WARNING",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "LABTEST_2",
       "relation_type": "HAS_WARNING",
       "evidence": ""
@@ -564,8 +564,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "ADVERSE_REACTION_1",
       "type": "CAUSES_ADVERSE_REACTION",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_1",
+      "source_entity": "JANTOVEN",
+      "target_entity": "Hemorrhage",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -573,8 +573,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "ADVERSE_REACTION_2",
       "type": "CAUSES_ADVERSE_REACTION",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_2",
+      "source_entity": "JANTOVEN",
+      "target_entity": "Tissue necrosis",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -582,8 +582,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "ADVERSE_REACTION_3",
       "type": "CAUSES_ADVERSE_REACTION",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_3",
+      "source_entity": "JANTOVEN",
+      "target_entity": "Calciphylaxis",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -591,8 +591,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "ADVERSE_REACTION_4",
       "type": "CAUSES_ADVERSE_REACTION",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_4",
+      "source_entity": "JANTOVEN",
+      "target_entity": "Acute kidney injury",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -600,8 +600,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "ADVERSE_REACTION_5",
       "type": "CAUSES_ADVERSE_REACTION",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_5",
+      "source_entity": "JANTOVEN",
+      "target_entity": "Systemic atheroemboli and cholesterol microemboli",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -609,8 +609,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "ADVERSE_REACTION_6",
       "type": "CAUSES_ADVERSE_REACTION",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "ADVERSE_REACTION_6",
+      "source_entity": "JANTOVEN",
+      "target_entity": "Limb ischemia, necrosis, and gangrene in patients with HIT and HITTS",
       "relation_type": "CAUSES_ADVERSE_REACTION",
       "evidence": ""
     },
@@ -618,8 +618,8 @@
       "source": "DRUG_PRODUCT_1",
       "target": "DRUG_INTERACTION_2",
       "type": "INTERACTS_WITH",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "DRUG_INTERACTION_2",
+      "source_entity": "JANTOVEN",
+      "target_entity": "CYP2C9 inducers (e.g., rifampin, carbamazepine) decrease INR",
       "relation_type": "INTERACTS_WITH",
       "evidence": ""
     },
@@ -627,7 +627,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "INDICATION_4",
       "type": "INDICATED_FOR",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "INDICATION_4",
       "relation_type": "INDICATED_FOR",
       "evidence": ""
@@ -636,7 +636,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "DOSAGE_REGIMEN_1",
       "type": "DOSED_VIA",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "DOSAGE_REGIMEN_1",
       "relation_type": "DOSED_VIA",
       "evidence": ""
@@ -645,7 +645,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "DOSAGE_REGIMEN_2",
       "type": "DOSED_VIA",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "DOSAGE_REGIMEN_2",
       "relation_type": "DOSED_VIA",
       "evidence": ""
@@ -654,7 +654,7 @@
       "source": "DRUG_PRODUCT_1",
       "target": "PHARMACOLOGIC_CLASS_1",
       "type": "BELONGS_TO_CLASS",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "PHARMACOLOGIC_CLASS_1",
       "relation_type": "BELONGS_TO_CLASS",
       "evidence": ""
@@ -663,8 +663,8 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_1",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "INACTIVE_INGREDIENT_1",
+      "source_entity": "JANTOVEN",
+      "target_entity": "lactose monohydrate",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
     },
@@ -672,8 +672,8 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_2",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "INACTIVE_INGREDIENT_2",
+      "source_entity": "JANTOVEN",
+      "target_entity": "magnesium stearate",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
     },
@@ -681,8 +681,8 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_3",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "INACTIVE_INGREDIENT_3",
+      "source_entity": "JANTOVEN",
+      "target_entity": "povidone",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
     },
@@ -690,8 +690,8 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_4",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "INACTIVE_INGREDIENT_4",
+      "source_entity": "JANTOVEN",
+      "target_entity": "pregelatinized starch (corn)",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
     },
@@ -699,8 +699,8 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_5",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "INACTIVE_INGREDIENT_5",
+      "source_entity": "JANTOVEN",
+      "target_entity": "FD&C Red #40 Aluminum Lake",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
     },
@@ -708,8 +708,8 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_6",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "INACTIVE_INGREDIENT_6",
+      "source_entity": "JANTOVEN",
+      "target_entity": "FD&C Blue #2 Aluminum Lake",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
     },
@@ -717,7 +717,7 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_7",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "INACTIVE_INGREDIENT_7",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
@@ -726,8 +726,8 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_8",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "INACTIVE_INGREDIENT_8",
+      "source_entity": "JANTOVEN",
+      "target_entity": "D&C Yellow #10 Aluminum Lake",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
     },
@@ -735,8 +735,8 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_9",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "INACTIVE_INGREDIENT_9",
+      "source_entity": "JANTOVEN",
+      "target_entity": "FD&C Blue #1 Aluminum Lake",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
     },
@@ -744,8 +744,8 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_10",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "INACTIVE_INGREDIENT_10",
+      "source_entity": "JANTOVEN",
+      "target_entity": "Brown #75 Synthetic Brown Iron Oxide",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
     },
@@ -753,8 +753,8 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_11",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "INACTIVE_INGREDIENT_11",
+      "source_entity": "JANTOVEN",
+      "target_entity": "FD&C Yellow #6 Aluminum Lake",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
     },
@@ -762,8 +762,8 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_12",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "INACTIVE_INGREDIENT_12",
+      "source_entity": "JANTOVEN",
+      "target_entity": "Yellow #10 Synthetic Yellow Iron Oxide",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
     },
@@ -771,8 +771,8 @@
       "type": "HAS_INACTIVE_INGREDIENT",
       "subject": "DRUG_PRODUCT_1",
       "object": "INACTIVE_INGREDIENT_13",
-      "source_entity": "DRUG_PRODUCT_1",
-      "target_entity": "INACTIVE_INGREDIENT_13",
+      "source_entity": "JANTOVEN",
+      "target_entity": "Black #85 Synthetic Black Iron Oxide",
       "relation_type": "HAS_INACTIVE_INGREDIENT",
       "evidence": ""
     },
@@ -780,7 +780,7 @@
       "type": "DOSED_VIA",
       "subject": "DRUG_PRODUCT_1",
       "object": "DOSAGE_REGIMEN_3",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "DOSAGE_REGIMEN_3",
       "relation_type": "DOSED_VIA",
       "evidence": ""
@@ -789,7 +789,7 @@
       "type": "DOSED_VIA",
       "subject": "DRUG_PRODUCT_1",
       "object": "DOSAGE_REGIMEN_4",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "DOSAGE_REGIMEN_4",
       "relation_type": "DOSED_VIA",
       "evidence": ""
@@ -798,7 +798,7 @@
       "type": "DOSED_VIA",
       "subject": "DRUG_PRODUCT_1",
       "object": "DOSAGE_REGIMEN_5",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "DOSAGE_REGIMEN_5",
       "relation_type": "DOSED_VIA",
       "evidence": ""
@@ -807,7 +807,7 @@
       "type": "DOSED_VIA",
       "subject": "DRUG_PRODUCT_1",
       "object": "DOSAGE_REGIMEN_6",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "DOSAGE_REGIMEN_6",
       "relation_type": "DOSED_VIA",
       "evidence": ""
@@ -816,7 +816,7 @@
       "type": "DOSED_VIA",
       "subject": "DRUG_PRODUCT_1",
       "object": "DOSAGE_REGIMEN_7",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "DOSAGE_REGIMEN_7",
       "relation_type": "DOSED_VIA",
       "evidence": ""
@@ -825,7 +825,7 @@
       "type": "DOSED_VIA",
       "subject": "DRUG_PRODUCT_1",
       "object": "DOSAGE_REGIMEN_8",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "DOSAGE_REGIMEN_8",
       "relation_type": "DOSED_VIA",
       "evidence": ""
@@ -834,7 +834,7 @@
       "type": "DOSED_VIA",
       "subject": "DRUG_PRODUCT_1",
       "object": "DOSAGE_REGIMEN_9",
-      "source_entity": "DRUG_PRODUCT_1",
+      "source_entity": "JANTOVEN",
       "target_entity": "DOSAGE_REGIMEN_9",
       "relation_type": "DOSED_VIA",
       "evidence": ""
