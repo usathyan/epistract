@@ -73,8 +73,8 @@ Statements that may come up in QnA — make sure each is defensible:
 | "drug-discovery validated across six scenarios" | tests/scenarios/scenario-0{1-6}-*-v2.md all exist with V2 validation status |
 | "clinicaltrials launched with one scenario (S7)" | tests/corpora/07_glp1_phase3_trials/ exists, full pipeline output |
 | "Phase-based evidence grading in clinicaltrials" | `domains/clinicaltrials/epistemic.py` has the grader |
-| "Four-level FDA epistemology classifier in fda-product-labels" | `domains/fda-product-labels/epistemic.py` has `_ESTABLISHED_MARKERS`, `_REPORTED_MARKERS`, `_THEORETICAL_MARKERS` |
-| "fda-product-labels has zero scenarios; showcase corpus in flight" | Truthful — Issue #14 tracks it; no `tests/corpora/08_*` exists |
+| "Four-level FDA epistemology classifier in fda-product-labels" | `domains/fda-product-labels/epistemic.py` has `_ESTABLISHED_MARKERS`, `_OBSERVED_MARKERS`, `_REPORTED_MARKERS`, `_THEORETICAL_MARKERS` |
+| "fda-product-labels validated via S8 in v3.2.1" | `tests/corpora/08_fda_labels/output/graph_data.json` shows 81 nodes / 149 relations / domain=fda-product-labels; PR #18 merged 2026-04-26; Issue #14 closed |
 | "framework doesn't auto-learn across scenarios" | True — corrected on 2026-04-25 (commit a8a91db); Issue #15 tracks the aspiration |
 | "The narrator briefing is LLM-generated; the claims layer is rule-based" | True — `core/label_epistemic.py` rule engine + LLM call sequence |
 | "We use Claude Sonnet for narrator generation" | True at recording time; `core/llm_client.py` supports Azure Foundry → Anthropic → OpenRouter resolution |
@@ -84,7 +84,7 @@ Statements that may come up in QnA — make sure each is defensible:
 ## Honesty caveats — say these out loud if asked
 
 - **Auto-learning across scenarios** — does NOT happen. Issue #15 tracks the aspiration. Don't imply otherwise.
-- **fda-product-labels has no showcase corpus yet** — Issue #14 in flight with Chris Davidson. Don't display fda-product-labels as if it's at parity with drug-discovery.
+- **fda-product-labels has one showcase corpus (S8)** — landed in v3.2.1 (2026-04-26) via Chris Davidson's PR #18, closing Issue #14. The S8 corpus is 7 SPL labels and the four-level epistemology classifier produced 145 `reported` / 4 `observed` / 0 `established` / 0 `theoretical` — a finding about SPL section structure (97% of the corpus is post-marketing safety data). Don't display fda-product-labels at parity with drug-discovery (six scenarios vs. one), but it is no longer scaffolded.
 - **The narrator briefing is non-deterministic** — `claims_layer.json` is the reproducible artifact; the briefing varies per run. Don't promise byte-identical output.
 - **Workbench chat needs an LLM credential** — graph + extraction work without one. Don't promise the chat works in air-gapped settings without configuration.
 - **AxMP private use case** — keep out of public talk per user direction.

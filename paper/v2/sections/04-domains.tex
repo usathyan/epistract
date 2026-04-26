@@ -1,21 +1,21 @@
 \section{Pre-built Domains}
 \label{sec:domains}
 
-The framework ships with four pre-built domains. Two have been validated against showcase corpora; two are schema scaffolds awaiting their first showcase corpus. Table~\ref{tab:domains} summarizes their state.
+The framework ships with four pre-built domains. Three have been validated against showcase corpora; one is a schema scaffold awaiting its first showcase corpus. Table~\ref{tab:domains} summarizes their state.
 
 \begin{table}[t]
 \centering
 \small
-\caption{The four pre-built domains in v3.2.0. ``Scenarios validated'' is the maturity signal -- a domain that has been pressure-tested across multiple varied corpora has had its persona, epistemic rules, and entity-type coverage refined in ways one with zero scenarios has not. Schema is static.}
+\caption{The four pre-built domains in v3.2.1. ``Scenarios validated'' is the maturity signal -- a domain that has been pressure-tested across multiple varied corpora has had its persona, epistemic rules, and entity-type coverage refined in ways one with zero scenarios has not. Schema is static.}
 \label{tab:domains}
 \begin{tabular}{@{}lrrlp{4.5cm}@{}}
 \toprule
 \textbf{Domain} & \textbf{Entities} & \textbf{Relations} & \textbf{Scenarios} & \textbf{Specialty pipeline} \\
 \midrule
 drug-discovery       & 13 & 22 & S1--S6 (six)   & RDKit / Biopython molecular validation; structural-node enrichment \\
-contracts            & 11 & 11 & none yet       & --- \\
 clinicaltrials       & 12 & 10 & S7 (one)       & Phase-based evidence grading; optional CT.gov enrichment \\
-fda-product-labels   & 17 & 16 & none yet       & Four-level FDA epistemology classifier \\
+fda-product-labels   & 17 & 16 & S8 (one)       & Four-level FDA epistemology classifier (established / observed / reported / theoretical) \\
+contracts            & 11 & 11 & none yet       & --- \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -48,9 +48,9 @@ A vendor- and event-contract domain. Eleven entity types covering contract parti
 
 A FDA Structured Product Label (SPL) domain. Seventeen entity types covering drug products (\texttt{DrugProduct}, \texttt{ActiveIngredient}, \texttt{Strength}, \texttt{DosageForm}), regulatory metadata (\texttt{NDC}, \texttt{NDA}, \texttt{ANDA}, \texttt{SetID}, \texttt{RxCUI}, \texttt{UNII}), label sections (\texttt{Indication}, \texttt{Contraindication}, \texttt{AdverseReaction}, \texttt{Interaction}, \texttt{Warning}, \texttt{LabTest}), and \texttt{DOCUMENT}. Sixteen directed relation types.
 
-The domain's epistemic module implements a four-level FDA epistemology classifier (\texttt{established}, \texttt{reported}, \texttt{theoretical}, \texttt{asserted}) keyed to FDA's recognizable label-text vocabulary (``has been demonstrated,'' ``has been reported,'' ``has been theorized,'' unmarked Indications-and-Usage assertions). The four levels map onto the shared epistemic taxonomy with finer granularity, allowing the analyst persona to stratify briefings into ``regulatory-grade evidence,'' ``post-marketing reports,'' ``mechanistic theory,'' and ``unmarked indications.''
+The domain's epistemic module implements a four-level FDA epistemology classifier (\texttt{established}, \texttt{observed}, \texttt{reported}, \texttt{theoretical}) keyed to FDA's recognizable label-section structure mandated by 21 CFR §201.57: \texttt{established} for definitive labeling language (BOXED WARNING, CONTRAINDICATION, mandated dosing limits), \texttt{observed} for controlled clinical study data (CLINICAL STUDIES section: RCT-cited efficacy, dose-response), \texttt{reported} for post-market / spontaneous data (ADVERSE REACTIONS, POSTMARKETING, DRUG INTERACTIONS), and \texttt{theoretical} for mechanism-of-action inference (CLINICAL PHARMACOLOGY: in-vitro and mechanistic reasoning).
 
-The domain has no validated showcase corpus as of v3.2.0; the schema and epistemic module are scaffolds, awaiting a 200--400-document SPL ingestion that GitHub Issue~\#14 tracks. The persona has been hand-tailored to FDA-canonical citations (SPL set ID, NDA/ANDA, NDC, RxCUI, UNII) in anticipation of the showcase corpus.
+The S8 showcase corpus validates the domain on a 7-document openFDA SPL set: Ozempic (NDA209637 injectable), Wegovy (NDA215256), Mounjaro (NDA215866), Humira (BLA125057, boxed warning), Gleevec (NDA021588), Lipitor (NDA020702), and Jantoven (ANDA040416). The build produced 81 nodes and 149 relations across 14 exercised entity types, with the four-level classifier yielding 4 \texttt{observed} relations (RCT-cited efficacy from CLINICAL STUDIES sections: SUSTAIN-6 in Ozempic, LDL-lowering in Lipitor, survival benefit in Gleevec, INR monitoring in Jantoven) and 145 \texttt{reported} relations (97\% of the corpus -- consistent with the structural reality that post-marketing pharmacovigilance dominates SPL labels). The persona is hand-tailored to FDA-canonical citations (SPL set ID, NDA/ANDA/BLA, NDC, RxCUI, UNII). The 1{,}571-word narrator briefing applies the four-tier stratification to surface boxed-warning entities, post-marketing safety signals, and drug-interaction patterns. Co-authored with Chris Davidson; landed in v3.2.1, closing GitHub Issue~\#14.
 
 \subsection{Adding a new domain}
 
