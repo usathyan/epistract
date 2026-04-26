@@ -1,0 +1,1358 @@
+{
+  "document_id": "imatinib_gleevec",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "id": "MANUFACTURER_1",
+      "name": "Novartis Pharmaceuticals Corporation",
+      "entity_type": "MANUFACTURER",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "LABTEST_1",
+      "name": "complete blood count",
+      "purpose": "monitor cytopenias",
+      "entity_type": "LABTEST",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "LABTEST_2",
+      "name": "liver function tests",
+      "purpose": "monitor hepatotoxicity",
+      "entity_type": "LABTEST",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "LABTEST_3",
+      "name": "renal function tests",
+      "purpose": "monitor renal toxicity",
+      "entity_type": "LABTEST",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "LABTEST_4",
+      "name": "TSH levels",
+      "purpose": "monitor hypothyroidism",
+      "entity_type": "LABTEST",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "LABTEST_5",
+      "name": "growth monitoring",
+      "purpose": "monitor growth retardation in children",
+      "entity_type": "LABTEST",
+      "context": "",
+      "attributes": {}
+    }
+  ],
+  "relations": [
+    {
+      "type": "HAS_ACTIVE_INGREDIENT",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "ACTIVE_INGREDIENT_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "ACTIVE_INGREDIENT_1",
+      "relation_type": "HAS_ACTIVE_INGREDIENT",
+      "evidence": ""
+    },
+    {
+      "type": "MANUFACTURED_BY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "MANUFACTURER_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "MANUFACTURER_1",
+      "relation_type": "MANUFACTURED_BY",
+      "evidence": ""
+    },
+    {
+      "type": "INDICATED_FOR",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INDICATION_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INDICATION_1",
+      "relation_type": "INDICATED_FOR",
+      "evidence": ""
+    },
+    {
+      "type": "INDICATED_FOR",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INDICATION_2",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INDICATION_2",
+      "relation_type": "INDICATED_FOR",
+      "evidence": ""
+    },
+    {
+      "type": "INDICATED_FOR",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INDICATION_3",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INDICATION_3",
+      "relation_type": "INDICATED_FOR",
+      "evidence": ""
+    },
+    {
+      "type": "INDICATED_FOR",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INDICATION_4",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INDICATION_4",
+      "relation_type": "INDICATED_FOR",
+      "evidence": ""
+    },
+    {
+      "type": "INDICATED_FOR",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INDICATION_5",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INDICATION_5",
+      "relation_type": "INDICATED_FOR",
+      "evidence": ""
+    },
+    {
+      "type": "INDICATED_FOR",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INDICATION_6",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INDICATION_6",
+      "relation_type": "INDICATED_FOR",
+      "evidence": ""
+    },
+    {
+      "type": "INDICATED_FOR",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INDICATION_7",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INDICATION_7",
+      "relation_type": "INDICATED_FOR",
+      "evidence": ""
+    },
+    {
+      "type": "INDICATED_FOR",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INDICATION_8",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INDICATION_8",
+      "relation_type": "INDICATED_FOR",
+      "evidence": ""
+    },
+    {
+      "type": "INDICATED_FOR",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INDICATION_9",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INDICATION_9",
+      "relation_type": "INDICATED_FOR",
+      "evidence": ""
+    },
+    {
+      "type": "INDICATED_FOR",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INDICATION_10",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INDICATION_10",
+      "relation_type": "INDICATED_FOR",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_WARNING",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "WARNING_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "WARNING_1",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_WARNING",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "WARNING_2",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "WARNING_2",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_WARNING",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "WARNING_3",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "WARNING_3",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_WARNING",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "WARNING_4",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "WARNING_4",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_WARNING",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "WARNING_5",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "WARNING_5",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_WARNING",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "WARNING_6",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "WARNING_6",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_WARNING",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "WARNING_7",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "WARNING_7",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_WARNING",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "WARNING_8",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "WARNING_8",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_WARNING",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "WARNING_9",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "WARNING_9",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_WARNING",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "WARNING_10",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "WARNING_10",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_WARNING",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "WARNING_11",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "WARNING_11",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_WARNING",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "WARNING_12",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "WARNING_12",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_WARNING",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "WARNING_13",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "WARNING_13",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_WARNING",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "WARNING_14",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "WARNING_14",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_1",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_2",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_2",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_3",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_3",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_4",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_4",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_5",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_5",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_6",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_6",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_7",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_7",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_8",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_8",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_9",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_9",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_10",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_10",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_11",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_11",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_12",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_12",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_13",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_13",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_14",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_14",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_15",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_15",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_16",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_16",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_17",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_17",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_18",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_18",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_19",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_19",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_20",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_20",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_21",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_21",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_22",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_22",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_23",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_23",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_24",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_24",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_25",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_25",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_26",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_26",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_27",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_27",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_28",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_28",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_29",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_29",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_30",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_30",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_31",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_31",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_32",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_32",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_33",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_33",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_34",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_34",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_35",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_35",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_36",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_36",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_37",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_37",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_38",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_38",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_39",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_39",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_40",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_40",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_41",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_41",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_42",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_42",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_43",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_43",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_44",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_44",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_45",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_45",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_46",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_46",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_47",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_47",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_48",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_48",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_49",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_49",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_50",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_50",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_51",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_51",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_52",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_52",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_53",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_53",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_54",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_54",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_55",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_55",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_56",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_56",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_57",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_57",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_58",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_58",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_59",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_59",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_60",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_60",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_61",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_61",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_62",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_62",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_63",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_63",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_64",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_64",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_65",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_65",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_66",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_66",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_67",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_67",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_68",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_68",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_69",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_69",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_70",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_70",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_71",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_71",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_72",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_72",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_73",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_73",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_74",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_74",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_75",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_75",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_76",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_76",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_77",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_77",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_78",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_78",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_79",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_79",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_80",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_80",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_81",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_81",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_82",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_82",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_83",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_83",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_84",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_84",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_85",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_85",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_86",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_86",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_87",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_87",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_88",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_88",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_89",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_89",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_90",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_90",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_91",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_91",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_92",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_92",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_93",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_93",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_94",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_94",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_95",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_95",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_96",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_96",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_97",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_97",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_98",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_98",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_99",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_99",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_100",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_100",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "REGULATORY_IDENTIFIER_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "REGULATORY_IDENTIFIER_1",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "REGULATORY_IDENTIFIER_2",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "REGULATORY_IDENTIFIER_2",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "REGULAR_IDENTIFIER_3",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "REGULAR_IDENTIFIER_3",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "REGULAR_IDENTIFIER_4",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "REGULAR_IDENTIFIER_4",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "CONTRAINDICATED_IN",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "CONTRAINDICATION_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "CONTRAINDICATION_1",
+      "relation_type": "CONTRAINDICATED_IN",
+      "evidence": ""
+    },
+    {
+      "type": "CAUSES_ADVERSE_REACTION",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "ADVERSE_REACTION_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "ADVERSE_REACTION_1",
+      "relation_type": "CAUSES_ADVERSE_REACTION",
+      "evidence": ""
+    },
+    {
+      "type": "STUDIED_IN_POPULATION",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PATIENT_POPULATION_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PATIENT_POPULATION_1",
+      "relation_type": "STUDIED_IN_POPULATION",
+      "evidence": ""
+    },
+    {
+      "type": "STUDIED_IN_POPULATION",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PATIENT_POPULATION_2",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PATIENT_POPULATION_2",
+      "relation_type": "STUDIED_IN_POPULATION",
+      "evidence": ""
+    },
+    {
+      "type": "STUDIED_IN_POPULATION",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PATIENT_POPULATION_3",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PATIENT_POPULATION_3",
+      "relation_type": "STUDIED_IN_POPULATION",
+      "evidence": ""
+    },
+    {
+      "type": "STUDIED_IN_POPULATION",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PATIENT_POPULATION_4",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PATIENT_POPULATION_4",
+      "relation_type": "STUDIED_IN_POPULATION",
+      "evidence": ""
+    },
+    {
+      "type": "STUDIED_IN_POPULATION",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PATIENT_POPULATION_5",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PATIENT_POPULATION_5",
+      "relation_type": "STUDIED_IN_POPULATION",
+      "evidence": ""
+    },
+    {
+      "type": "DOSED_VIA",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "DOSAGE_REGIMEN_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "DOSAGE_REGIMEN_1",
+      "relation_type": "DOSED_VIA",
+      "evidence": ""
+    },
+    {
+      "type": "DOSED_VIA",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "DOSAGE_REGIMEN_2",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "DOSAGE_REGIMEN_2",
+      "relation_type": "DOSED_VIA",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_WARNING",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "CONTRAINDICATION_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "CONTRAINDICATION_1",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_WARNING",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "ADVERSE_REACTION_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "ADVERSE_REACTION_1",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_WARNING",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "LABTEST_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "LABTEST_1",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_WARNING",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "LABTEST_2",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "LABTEST_2",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_WARNING",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "LABTEST_3",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "LABTEST_3",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "openai/gpt-oss-20b:free",
+  "domain_name": "fda-product-labels",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-26T00:19:43.120362+00:00",
+  "error": null
+}

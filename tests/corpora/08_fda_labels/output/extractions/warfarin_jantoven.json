@@ -1,0 +1,849 @@
+{
+  "document_id": "warfarin_jantoven",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "id": "MANUFACTURER_1",
+      "name": "Upsher-Smith Laboratories, LLC",
+      "entity_type": "MANUFACTURER",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "DRUG_PRODUCT_1",
+      "name": "JANTOVEN",
+      "brand_name": "JANTOVEN",
+      "generic_name": "warfarin sodium",
+      "product_type": "Rx",
+      "route": "Oral",
+      "spl_id": "SPL12345",
+      "set_id": "SET67890",
+      "entity_type": "DRUG_PRODUCT",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "ACTIVE_INGREDIENT_1",
+      "name": "warfarin sodium",
+      "unii": "UNII12345",
+      "strength": "5 mg tablet",
+      "entity_type": "ACTIVE_INGREDIENT",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "CONTRAINDICATION_1",
+      "name": "Pregnancy",
+      "entity_type": "CONTRAINDICATION",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "CONTRAINDICATION_2",
+      "name": "Heparin-induced thrombocytopenia (HIT) and HITTS",
+      "entity_type": "CONTRAINDICATION",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "CONTRAINDICATION_3",
+      "name": "Calciphylaxis",
+      "entity_type": "CONTRAINDICATION",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "ADVERSE_REACTION_1",
+      "name": "Hemorrhage",
+      "frequency": "serious",
+      "entity_type": "ADVERSE_REACTION",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "ADVERSE_REACTION_2",
+      "name": "Tissue necrosis",
+      "frequency": "serious",
+      "entity_type": "ADVERSE_REACTION",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "ADVERSE_REACTION_3",
+      "name": "Calciphylaxis",
+      "frequency": "serious",
+      "entity_type": "ADVERSE_REACTION",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "ADVERSE_REACTION_4",
+      "name": "Acute kidney injury",
+      "frequency": "serious",
+      "entity_type": "ADVERSE_REACTION",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "ADVERSE_REACTION_5",
+      "name": "Systemic atheroemboli and cholesterol microemboli",
+      "frequency": "serious",
+      "entity_type": "ADVERSE_REACTION",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "ADVERSE_REACTION_6",
+      "name": "Limb ischemia, necrosis, and gangrene in patients with HIT and HITTS",
+      "frequency": "serious",
+      "entity_type": "ADVERSE_REACTION",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "WARNING_1",
+      "name": "Boxed warning: increased risk of hemorrhage and tissue necrosis",
+      "boxed": true,
+      "entity_type": "WARNING",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "WARNING_2",
+      "name": "Bleeding risk with concomitant anticoagulants and CYP2C9 inhibitors",
+      "boxed": false,
+      "entity_type": "WARNING",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "DRUG_INTERACTION_1",
+      "name": "CYP2C9 inhibitors (e.g., fluconazole, amiodarone) increase INR",
+      "entity_type": "DRUG_INTERACTION",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "DRUG_INTERACTION_2",
+      "name": "CYP2C9 inducers (e.g., rifampin, carbamazepine) decrease INR",
+      "entity_type": "DRUG_INTERACTION",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "PATIENT_POPULATION_1",
+      "name": "Pregnant women",
+      "entity_type": "PATIENT_POPULATION",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "PATIENT_POPULATION_2",
+      "name": "Patients with renal impairment",
+      "entity_type": "PATIENT_POPULATION",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "PATIENT_POPULATION_3",
+      "name": "Patients with hepatic impairment",
+      "entity_type": "PATIENT_POPULATION",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "MECHANISM_OF_ACTION_1",
+      "name": "Inhibition of vitamin K epoxide reductase, reducing synthesis of vitamin K-dependent clotting factors",
+      "entity_type": "MECHANISM_OF_ACTION",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "PHARMACOKINETIC_PROPERTY_1",
+      "name": "Metabolized by CYP2C9, CYP1A2, CYP3A4",
+      "entity_type": "PHARMACOKINETIC_PROPERTY",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "LABTEST_1",
+      "name": "INR",
+      "purpose": "monitor anticoagulation efficacy and safety",
+      "entity_type": "LABTEST",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "INACTIVE_INGREDIENT_1",
+      "name": "lactose monohydrate",
+      "parent": "DRUG_PRODUCT_1",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "INACTIVE_INGREDIENT_2",
+      "name": "magnesium stearate",
+      "parent": "DRUG_PRODUCT_1",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "INACTIVE_INGREDIENT_3",
+      "name": "povidone",
+      "parent": "DRUG_PRODUCT_1",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "INACTIVE_INGREDIENT_4",
+      "name": "pregelatinized starch (corn)",
+      "parent": "DRUG_PRODUCT_1",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "INACTIVE_INGREDIENT_5",
+      "name": "FD&C Red #40 Aluminum Lake",
+      "parent": "DRUG_PRODUCT_1",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "INACTIVE_INGREDIENT_6",
+      "name": "FD&C Blue #2 Aluminum Lake",
+      "parent": "DRUG_PRODUCT_1",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "INACTIVE_INGREDIENT_8",
+      "name": "D&C Yellow #10 Aluminum Lake",
+      "parent": "DRUG_PRODUCT_1",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "INACTIVE_INGREDIENT_9",
+      "name": "FD&C Blue #1 Aluminum Lake",
+      "parent": "DRUG_PRODUCT_1",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "INACTIVE_INGREDIENT_10",
+      "name": "Brown #75 Synthetic Brown Iron Oxide",
+      "parent": "DRUG_PRODUCT_1",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "INACTIVE_INGREDIENT_11",
+      "name": "FD&C Yellow #6 Aluminum Lake",
+      "parent": "DRUG_PRODUCT_1",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "INACTIVE_INGREDIENT_12",
+      "name": "Yellow #10 Synthetic Yellow Iron Oxide",
+      "parent": "DRUG_PRODUCT_1",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "context": "",
+      "attributes": {}
+    },
+    {
+      "id": "INACTIVE_INGREDIENT_13",
+      "name": "Black #85 Synthetic Black Iron Oxide",
+      "parent": "DRUG_PRODUCT_1",
+      "entity_type": "INACTIVE_INGREDIENT",
+      "context": "",
+      "attributes": {}
+    }
+  ],
+  "relations": [
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "ACTIVE_INGREDIENT_1",
+      "type": "HAS_ACTIVE_INGREDIENT",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "ACTIVE_INGREDIENT_1",
+      "relation_type": "HAS_ACTIVE_INGREDIENT",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "MANUFACTURER_1",
+      "type": "MANUFACTURED_BY",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "MANUFACTURER_1",
+      "relation_type": "MANUFACTURED_BY",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "INDICATION_1",
+      "type": "INDICATED_FOR",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INDICATION_1",
+      "relation_type": "INDICATED_FOR",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "INDICATION_2",
+      "type": "INDICATED_FOR",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INDICATION_2",
+      "relation_type": "INDICATED_FOR",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "INDICATION_3",
+      "type": "INDICATED_FOR",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INDICATION_3",
+      "relation_type": "INDICATED_FOR",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "CONTRAINDICATION_1",
+      "type": "CONTRAINDICATED_IN",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "CONTRAINDICATION_1",
+      "relation_type": "CONTRAINDICATED_IN",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "CONTRAINDICATION_2",
+      "type": "CONTRAINDICATED_IN",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "CONTRAINDICATION_2",
+      "relation_type": "CONTRAINDICATED_IN",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "CONTRAINDICATION_3",
+      "type": "CONTRAINDICATED_IN",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "CONTRAINDICATION_3",
+      "relation_type": "CONTRAINDICATED_IN",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "CONTRAINDICATION_4",
+      "type": "CONTRAINDICATED_IN",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "CONTRAINDICATION_4",
+      "relation_type": "CONTRAINDICATED_IN",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "CONTRAINDICATION_5",
+      "type": "CONTRAINDICATED_IN",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "CONTRAINDICATION_5",
+      "relation_type": "CONTRAINDICATED_IN",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "CONTRAINDICATION_6",
+      "type": "CONTRAINDICATED_IN",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "CONTRAINDICATION_6",
+      "relation_type": "CONTRAINDICATED_IN",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "CONTRAINDICATION_7",
+      "type": "CONTRAINDICATED_IN",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "CONTRAINDICATION_7",
+      "relation_type": "CONTRAINDICATED_IN",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "CONTRAINDICATION_8",
+      "type": "CONTRAINDICATED_IN",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "CONTRAINDICATION_8",
+      "relation_type": "CONTRAINDICATED_IN",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "CONTRAINDICATION_9",
+      "type": "CONTRAINDICATED_IN",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "CONTRAINDICATION_9",
+      "relation_type": "CONTRAINDICATED_IN",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "CONTRAINDICATION_10",
+      "type": "CONTRAINDICATED_IN",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "CONTRAINDICATION_10",
+      "relation_type": "CONTRAINDICATED_IN",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "WARNING_1",
+      "type": "HAS_WARNING",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "WARNING_1",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "WARNING_2",
+      "type": "HAS_WARNING",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "WARNING_2",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "WARNING_3",
+      "type": "HAS_WARNING",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "WARNING_3",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "WARNING_4",
+      "type": "HAS_WARNING",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "WARNING_4",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "WARNING_5",
+      "type": "HAS_WARNING",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "WARNING_5",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "WARNING_6",
+      "type": "HAS_WARNING",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "WARNING_6",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "DRUG_INTERACTION_1",
+      "type": "INTERACTS_WITH",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "DRUG_INTERACTION_1",
+      "relation_type": "INTERACTS_WITH",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "PATIENT_POPULATION_1",
+      "type": "STUDIED_IN_POPULATION",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PATIENT_POPULATION_1",
+      "relation_type": "STUDIED_IN_POPULATION",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "PATIENT_POPULATION_2",
+      "type": "STUDIED_IN_POPULATION",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PATIENT_POPULATION_2",
+      "relation_type": "STUDIED_IN_POPULATION",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "PATIENT_POPULATION_3",
+      "type": "STUDIED_IN_POPULATION",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PATIENT_POPULATION_3",
+      "relation_type": "STUDIED_IN_POPULATION",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "MECHANISM_OF_ACTION_1",
+      "type": "HAS_MECHANISM",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "MECHANISM_OF_ACTION_1",
+      "relation_type": "HAS_MECHANISM",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "PHARMACOKINETIC_PROPERTY_1",
+      "type": "HAS_PK_PROPERTY",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_1",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "REGULATORY_IDENTIFIER_1",
+      "type": "IDENTIFIED_BY",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "REGULATORY_IDENTIFIER_1",
+      "relation_type": "IDENTIFIED_BY",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "REGULATORY_IDENTIFIER_2",
+      "type": "IDENTIFIED_BY",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "REGULATORY_IDENTIFIER_2",
+      "relation_type": "IDENTIFIED_BY",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "REGULATORY_IDENTIFIER_3",
+      "type": "IDENTIFIED_BY",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "REGULATORY_IDENTIFIER_3",
+      "relation_type": "IDENTIFIED_BY",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "LABTEST_1",
+      "type": "HAS_WARNING",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "LABTEST_1",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "LABTEST_2",
+      "type": "HAS_WARNING",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "LABTEST_2",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "ADVERSE_REACTION_1",
+      "type": "CAUSES_ADVERSE_REACTION",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "ADVERSE_REACTION_1",
+      "relation_type": "CAUSES_ADVERSE_REACTION",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "ADVERSE_REACTION_2",
+      "type": "CAUSES_ADVERSE_REACTION",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "ADVERSE_REACTION_2",
+      "relation_type": "CAUSES_ADVERSE_REACTION",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "ADVERSE_REACTION_3",
+      "type": "CAUSES_ADVERSE_REACTION",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "ADVERSE_REACTION_3",
+      "relation_type": "CAUSES_ADVERSE_REACTION",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "ADVERSE_REACTION_4",
+      "type": "CAUSES_ADVERSE_REACTION",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "ADVERSE_REACTION_4",
+      "relation_type": "CAUSES_ADVERSE_REACTION",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "ADVERSE_REACTION_5",
+      "type": "CAUSES_ADVERSE_REACTION",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "ADVERSE_REACTION_5",
+      "relation_type": "CAUSES_ADVERSE_REACTION",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "ADVERSE_REACTION_6",
+      "type": "CAUSES_ADVERSE_REACTION",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "ADVERSE_REACTION_6",
+      "relation_type": "CAUSES_ADVERSE_REACTION",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "DRUG_INTERACTION_2",
+      "type": "INTERACTS_WITH",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "DRUG_INTERACTION_2",
+      "relation_type": "INTERACTS_WITH",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "INDICATION_4",
+      "type": "INDICATED_FOR",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INDICATION_4",
+      "relation_type": "INDICATED_FOR",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "DOSAGE_REGIMEN_1",
+      "type": "DOSED_VIA",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "DOSAGE_REGIMEN_1",
+      "relation_type": "DOSED_VIA",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "DOSAGE_REGIMEN_2",
+      "type": "DOSED_VIA",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "DOSAGE_REGIMEN_2",
+      "relation_type": "DOSED_VIA",
+      "evidence": ""
+    },
+    {
+      "source": "DRUG_PRODUCT_1",
+      "target": "PHARMACOLOGIC_CLASS_1",
+      "type": "BELONGS_TO_CLASS",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOLOGIC_CLASS_1",
+      "relation_type": "BELONGS_TO_CLASS",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_INACTIVE_INGREDIENT",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INACTIVE_INGREDIENT_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INACTIVE_INGREDIENT_1",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_INACTIVE_INGREDIENT",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INACTIVE_INGREDIENT_2",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INACTIVE_INGREDIENT_2",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_INACTIVE_INGREDIENT",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INACTIVE_INGREDIENT_3",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INACTIVE_INGREDIENT_3",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_INACTIVE_INGREDIENT",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INACTIVE_INGREDIENT_4",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INACTIVE_INGREDIENT_4",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_INACTIVE_INGREDIENT",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INACTIVE_INGREDIENT_5",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INACTIVE_INGREDIENT_5",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_INACTIVE_INGREDIENT",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INACTIVE_INGREDIENT_6",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INACTIVE_INGREDIENT_6",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_INACTIVE_INGREDIENT",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INACTIVE_INGREDIENT_7",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INACTIVE_INGREDIENT_7",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_INACTIVE_INGREDIENT",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INACTIVE_INGREDIENT_8",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INACTIVE_INGREDIENT_8",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_INACTIVE_INGREDIENT",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INACTIVE_INGREDIENT_9",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INACTIVE_INGREDIENT_9",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_INACTIVE_INGREDIENT",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INACTIVE_INGREDIENT_10",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INACTIVE_INGREDIENT_10",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_INACTIVE_INGREDIENT",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INACTIVE_INGREDIENT_11",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INACTIVE_INGREDIENT_11",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_INACTIVE_INGREDIENT",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INACTIVE_INGREDIENT_12",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INACTIVE_INGREDIENT_12",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_INACTIVE_INGREDIENT",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INACTIVE_INGREDIENT_13",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INACTIVE_INGREDIENT_13",
+      "relation_type": "HAS_INACTIVE_INGREDIENT",
+      "evidence": ""
+    },
+    {
+      "type": "DOSED_VIA",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "DOSAGE_REGIMEN_3",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "DOSAGE_REGIMEN_3",
+      "relation_type": "DOSED_VIA",
+      "evidence": ""
+    },
+    {
+      "type": "DOSED_VIA",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "DOSAGE_REGIMEN_4",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "DOSAGE_REGIMEN_4",
+      "relation_type": "DOSED_VIA",
+      "evidence": ""
+    },
+    {
+      "type": "DOSED_VIA",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "DOSAGE_REGIMEN_5",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "DOSAGE_REGIMEN_5",
+      "relation_type": "DOSED_VIA",
+      "evidence": ""
+    },
+    {
+      "type": "DOSED_VIA",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "DOSAGE_REGIMEN_6",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "DOSAGE_REGIMEN_6",
+      "relation_type": "DOSED_VIA",
+      "evidence": ""
+    },
+    {
+      "type": "DOSED_VIA",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "DOSAGE_REGIMEN_7",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "DOSAGE_REGIMEN_7",
+      "relation_type": "DOSED_VIA",
+      "evidence": ""
+    },
+    {
+      "type": "DOSED_VIA",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "DOSAGE_REGIMEN_8",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "DOSAGE_REGIMEN_8",
+      "relation_type": "DOSED_VIA",
+      "evidence": ""
+    },
+    {
+      "type": "DOSED_VIA",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "DOSAGE_REGIMEN_9",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "DOSAGE_REGIMEN_9",
+      "relation_type": "DOSED_VIA",
+      "evidence": ""
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "openai/gpt-oss-20b:free",
+  "domain_name": "fda-product-labels",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-26T00:42:52.436750+00:00",
+  "error": null
+}

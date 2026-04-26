@@ -1,0 +1,514 @@
+{
+  "document_id": "tirzepatide_mounjaro",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "id": "MANUFACTURER_1",
+      "name": "Eli Lilly and Company",
+      "entity_type": "MANUFACTURER",
+      "context": "",
+      "attributes": {}
+    }
+  ],
+  "relations": [
+    {
+      "type": "HAS_ACTIVE_INGREDIENT",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "ACTIVE_INGREDIENT_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "ACTIVE_INGREDIENT_1",
+      "relation_type": "HAS_ACTIVE_INGREDIENT",
+      "evidence": ""
+    },
+    {
+      "type": "MANUFACTURED_BY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "MANUFACTURER_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "MANUFACTURER_1",
+      "relation_type": "MANUFACTURED_BY",
+      "evidence": ""
+    },
+    {
+      "type": "INDICATED_FOR",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INDICATION_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INDICATION_1",
+      "relation_type": "INDICATED_FOR",
+      "evidence": ""
+    },
+    {
+      "type": "CONTRAINDICATED_IN",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "CONTRAINDICATION_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "CONTRAINDICATION_1",
+      "relation_type": "CONTRAINDICATED_IN",
+      "evidence": ""
+    },
+    {
+      "type": "CONTRAINDICATED_IN",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "CONTRAINDICATION_2",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "CONTRAINDICATION_2",
+      "relation_type": "CONTRAINDICATED_IN",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_WARNING",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "WARNING_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "WARNING_1",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_WARNING",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "WARNING_2",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "WARNING_2",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_WARNING",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "WARNING_3",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "WARNING_3",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_WARNING",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "WARNING_4",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "WARNING_4",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_WARNING",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "WARNING_5",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "WARNING_5",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_WARNING",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "WARNING_6",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "WARNING_6",
+      "relation_type": "HAS_WARNING",
+      "evidence": ""
+    },
+    {
+      "type": "INTERACTS_WITH",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "DRUG_INTERACTION_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "DRUG_INTERACTION_1",
+      "relation_type": "INTERACTS_WITH",
+      "evidence": ""
+    },
+    {
+      "type": "DOSED_VIA",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PATIENT_POPULATION_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PATIENT_POPULATION_1",
+      "relation_type": "DOSED_VIA",
+      "evidence": ""
+    },
+    {
+      "type": "DOSED_VIA",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PATIENT_POPULATION_2",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PATIENT_POPULATION_2",
+      "relation_type": "DOSED_VIA",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_MECHANISM",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "MECHANISM_OF_ACTION_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "MECHANISM_OF_ACTION_1",
+      "relation_type": "HAS_MECHANISM",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_1",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOKINETIC_PROPERTY_2",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOKINETIC_PROPERTY_2",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "BELONGS_TO_CLASS",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOLOGIC_CLASS_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOLOGIC_CLASS_1",
+      "relation_type": "BELONGS_TO_CLASS",
+      "evidence": ""
+    },
+    {
+      "type": "BELONGS_TO_CLASS",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PHARMACOLOGIC_CLASS_2",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PHARMACOLOGIC_CLASS_2",
+      "relation_type": "BELONGS_TO_CLASS",
+      "evidence": ""
+    },
+    {
+      "type": "IDENTIFIED_BY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "REGULATORY_IDENTIFIER_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "REGULATORY_IDENTIFIER_1",
+      "relation_type": "IDENTIFIED_BY",
+      "evidence": ""
+    },
+    {
+      "type": "IDENTIFIED_BY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "REGULATORY_IDENTIFIER_2",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "REGULATORY_IDENTIFIER_2",
+      "relation_type": "IDENTIFIED_BY",
+      "evidence": ""
+    },
+    {
+      "type": "IDENTIFIED_BY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "REGULATORY_IDENTIFIER_3",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "REGULATORY_IDENTIFIER_3",
+      "relation_type": "IDENTIFIED_BY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_LABTEST",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "LABTEST_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "LABTEST_1",
+      "relation_type": "HAS_LABTEST",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_LABTEST",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "LABTEST_2",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "LABTEST_2",
+      "relation_type": "HAS_LABTEST",
+      "evidence": ""
+    },
+    {
+      "id": "REL_1",
+      "type": "HAS_MECHANISM",
+      "attributes": {},
+      "from": "DRUG_PRODUCT_1",
+      "to": "MECHANISM_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "MECHANISM_1",
+      "relation_type": "HAS_MECHANISM",
+      "evidence": ""
+    },
+    {
+      "id": "REL_2",
+      "type": "HAS_PK_PROPERTY",
+      "attributes": {},
+      "from": "DRUG_PRODUCT_1",
+      "to": "PK_PROPERTY_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PK_PROPERTY_1",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "id": "REL_3",
+      "type": "HAS_PK_PROPERTY",
+      "attributes": {},
+      "from": "DRUG_PRODUCT_1",
+      "to": "PK_PROPERTY_2",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PK_PROPERTY_2",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_ACTIVE_INGREDIENT",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "ACTIVE_INGREDIENT_2",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "ACTIVE_INGREDIENT_2",
+      "relation_type": "HAS_ACTIVE_INGREDIENT",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_ACTIVE_INGREDIENT",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "ACTIVE_INGREDIENT_3",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "ACTIVE_INGREDIENT_3",
+      "relation_type": "HAS_ACTIVE_INGREDIENT",
+      "evidence": ""
+    },
+    {
+      "type": "STUDIED_IN_POPULATION",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PATIENT_POPULATION_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PATIENT_POPULATION_1",
+      "relation_type": "STUDIED_IN_POPULATION",
+      "evidence": ""
+    },
+    {
+      "type": "STUDIED_IN_POPULATION",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PATIENT_POPULATION_2",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PATIENT_POPULATION_2",
+      "relation_type": "STUDIED_IN_POPULATION",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PK_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PK_1",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PK_2",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PK_2",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PK_3",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PK_3",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PK_4",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PK_4",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "HAS_PK_PROPERTY",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "PK_5",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "PK_5",
+      "relation_type": "HAS_PK_PROPERTY",
+      "evidence": ""
+    },
+    {
+      "type": "DOSED_VIA",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "DOSAGE_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "DOSAGE_1",
+      "relation_type": "DOSED_VIA",
+      "evidence": ""
+    },
+    {
+      "type": "DOSED_VIA",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "DOSAGE_2",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "DOSAGE_2",
+      "relation_type": "DOSED_VIA",
+      "evidence": ""
+    },
+    {
+      "type": "DOSED_VIA",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "DOSAGE_3",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "DOSAGE_3",
+      "relation_type": "DOSED_VIA",
+      "evidence": ""
+    },
+    {
+      "type": "DOSED_VIA",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "DOSAGE_4",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "DOSAGE_4",
+      "relation_type": "DOSED_VIA",
+      "evidence": ""
+    },
+    {
+      "type": "DOSED_VIA",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "DOSAGE_5",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "DOSAGE_5",
+      "relation_type": "DOSED_VIA",
+      "evidence": ""
+    },
+    {
+      "type": "DOSED_VIA",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "DOSAGE_6",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "DOSAGE_6",
+      "relation_type": "DOSED_VIA",
+      "evidence": ""
+    },
+    {
+      "type": "INTERACTS_WITH",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INTERACTION_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INTERACTION_1",
+      "relation_type": "INTERACTS_WITH",
+      "evidence": ""
+    },
+    {
+      "type": "INTERACTS_WITH",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INTERACTION_2",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INTERACTION_2",
+      "relation_type": "INTERACTS_WITH",
+      "evidence": ""
+    },
+    {
+      "type": "INTERACTS_WITH",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "INTERACTION_3",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "INTERACTION_3",
+      "relation_type": "INTERACTS_WITH",
+      "evidence": ""
+    },
+    {
+      "type": "INDICATED_FOR",
+      "subject": "DRUG_PRODUCT_2",
+      "object": "INDICATION_1",
+      "source_entity": "DRUG_PRODUCT_2",
+      "target_entity": "INDICATION_1",
+      "relation_type": "INDICATED_FOR",
+      "evidence": ""
+    },
+    {
+      "type": "INDICATED_FOR",
+      "subject": "DRUG_PRODUCT_3",
+      "object": "INDICATION_1",
+      "source_entity": "DRUG_PRODUCT_3",
+      "target_entity": "INDICATION_1",
+      "relation_type": "INDICATED_FOR",
+      "evidence": ""
+    },
+    {
+      "type": "INDICATED_FOR",
+      "subject": "DRUG_PRODUCT_4",
+      "object": "INDICATION_1",
+      "source_entity": "DRUG_PRODUCT_4",
+      "target_entity": "INDICATION_1",
+      "relation_type": "INDICATED_FOR",
+      "evidence": ""
+    },
+    {
+      "type": "DOSED_VIA",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "DOSAGE_REGIMEN_1",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "DOSAGE_REGIMEN_1",
+      "relation_type": "DOSED_VIA",
+      "evidence": ""
+    },
+    {
+      "type": "DOSED_VIA",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "DOSAGE_REGIMEN_2",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "DOSAGE_REGIMEN_2",
+      "relation_type": "DOSED_VIA",
+      "evidence": ""
+    },
+    {
+      "type": "DOSED_VIA",
+      "subject": "DRUG_PRODUCT_1",
+      "object": "DOSAGE_REGIMEN_3",
+      "source_entity": "DRUG_PRODUCT_1",
+      "target_entity": "DOSAGE_REGIMEN_3",
+      "relation_type": "DOSED_VIA",
+      "evidence": ""
+    },
+    {
+      "type": "STUDIED_IN_POPULATION",
+      "subject": "DRUG_PRODUCT_2",
+      "object": "PATIENT_POPULATION_1",
+      "source_entity": "DRUG_PRODUCT_2",
+      "target_entity": "PATIENT_POPULATION_1",
+      "relation_type": "STUDIED_IN_POPULATION",
+      "evidence": ""
+    },
+    {
+      "type": "STUDIED_IN_POPULATION",
+      "subject": "DRUG_PRODUCT_3",
+      "object": "PATIENT_POPULATION_1",
+      "source_entity": "DRUG_PRODUCT_3",
+      "target_entity": "PATIENT_POPULATION_1",
+      "relation_type": "STUDIED_IN_POPULATION",
+      "evidence": ""
+    },
+    {
+      "type": "STUDIED_IN_POPULATION",
+      "subject": "DRUG_PRODUCT_4",
+      "object": "PATIENT_POPULATION_1",
+      "source_entity": "DRUG_PRODUCT_4",
+      "target_entity": "PATIENT_POPULATION_1",
+      "relation_type": "STUDIED_IN_POPULATION",
+      "evidence": ""
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "openai/gpt-oss-20b:free",
+  "domain_name": "fda-product-labels",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-26T00:48:16.078574+00:00",
+  "error": null
+}

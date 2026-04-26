@@ -141,11 +141,38 @@ def _dedupe_entities(entities: list[dict]) -> list[dict]:
     return out
 
 
+def _normalize_relation_fields(r: dict) -> dict:
+    """Normalize alternative field names to the canonical schema.
+
+    Some models return subject/object instead of source_entity/target_entity,
+    or use 'type' instead of 'relation_type'. Normalize to canonical names so
+    the deduplication key check and downstream Pydantic validation succeed.
+    """
+    r = dict(r)  # immutable copy — do not mutate caller's dict
+    # source_entity: canonical; subject / from / source are alternatives
+    if not r.get("source_entity"):
+        for alt in ("subject", "from", "source"):
+            if r.get(alt):
+                r["source_entity"] = r[alt]
+                break
+    # target_entity: canonical; object / to / target are alternatives
+    if not r.get("target_entity"):
+        for alt in ("object", "to", "target"):
+            if r.get(alt):
+                r["target_entity"] = r[alt]
+                break
+    # relation_type: canonical; type is the common alternative
+    if not r.get("relation_type") and r.get("type"):
+        r["relation_type"] = r["type"]
+    return r
+
+
 def _dedupe_relations(relations: list[dict]) -> list[dict]:
-    """Dedupe by (source, target, relation_type)."""
+    """Normalize field names, then dedupe by (source, target, relation_type)."""
     seen: set[tuple[str, str, str]] = set()
     out: list[dict] = []
-    for r in relations:
+    for raw_r in relations:
+        r = _normalize_relation_fields(raw_r)
         key = (
             str(r.get("source_entity", "")).strip(),
             str(r.get("target_entity", "")).strip(),
