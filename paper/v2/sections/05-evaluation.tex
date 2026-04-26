@@ -34,7 +34,32 @@ The drug-discovery domain has accumulated the most pressure-testing. S1--S5 esta
 
 \subsection{Cross-source patent extraction (S6)}
 
-The S6 GLP-1 corpus comprises 24 PubMed abstracts and 10 patent filings from five pharmaceutical companies (Novo Nordisk, Eli Lilly, Pfizer, Hanmi Pharmaceutical, Zealand Pharma). The patent component is a deliberate stress test: patents differ structurally from research papers, use heavily prophetic language, and contain molecular identifiers (peptide sequences, CAS registry numbers, InChIKeys) that abstracts do not. The rebuild produced 278 entities and 855 relations on the refined v3 schema -- a higher density than any S1--S5 corpus and the first scenario to exercise multi-source entity merging at scale (semaglutide appears in 17 documents -- 4 patents and 13 papers -- and is correctly deduplicated to a single node with merged attributes).
+The S6 GLP-1 corpus comprises 24 PubMed abstracts and 10 patent filings from five pharmaceutical companies (Novo Nordisk, Eli Lilly, Pfizer, Hanmi Pharmaceutical, Zealand Pharma). The patent component is a deliberate stress test: patents differ structurally from research papers, use heavily prophetic language, and contain molecular identifiers (peptide sequences, CAS registry numbers, InChIKeys) that abstracts do not. The rebuild produced 278 entities and 855 relations on the consolidated 13/22 schema -- a higher density than any S1--S5 corpus and the first scenario to exercise multi-source entity merging at scale (semaglutide appears in 17 documents -- 4 patents and 13 papers -- and is correctly deduplicated to a single node with merged attributes).
+
+\paragraph{Enrichment across rebuilds of the same corpus.} The S6 corpus has been rebuilt twice as the framework has matured, holding the source documents constant. Table~\ref{tab:s6-enrichment} reports the deltas between the most recent two rebuilds (V2 baseline vs.\ V3 rebuild), which together exercise the v3.0 pipeline contributions: \texttt{chonkie} sentence-aware chunking with overlap (FIDL-03), Pydantic-validated extraction at write time (FIDL-02c), \texttt{metadata.domain} round-tripped through the graph (FIDL-06), per-domain validators auto-invoked post-build (FIDL-07), the deterministic Layer 2 \texttt{claims\_layer.json} artifact, and the persona-driven narrator briefing (\texttt{epistemic\_narrative.md}). The increases in nodes, edges, and average attributes per node reflect a combination of the framework's Pydantic-strict extraction (no silent drops on schema-misshapen extractions) and the consolidated schema's better fit to the corpus. The much larger increases in \emph{prophetic} (15 $\to$ 61) and \emph{contested} (5 $\to$ 33) classifications reflect the v3.0 Layer 2 itself: those classifications were simply not produced by earlier rebuilds, because the rule engine and cross-source aggregation had not been built yet. Two artifacts are entirely new in V3 and therefore appear without a baseline: \texttt{validation\_report.json} and \texttt{epistemic\_narrative.md}.
+
+\begin{table}[t]
+\centering
+\small
+\caption{S6 GLP-1 corpus rebuilds, holding the 34-document source corpus constant. ``V2'' is the rebuild against the earlier framework state (single-layer graph, no narrator); ``V3'' is the rebuild against the v3.0 framework with the two-layer architecture, the sentence-aware chunker, Pydantic-strict extraction, and the persona-driven narrator. The extractor model also changed (V2 used Opus 4.6, V3 used Sonnet 4.6 via OpenRouter), which is a confound for raw entity / relation counts but does not affect the artifact-level additions.}
+\label{tab:s6-enrichment}
+\begin{tabular}{@{}lrrl@{}}
+\toprule
+\textbf{Metric}                                  & \textbf{V2}   & \textbf{V3}   & \textbf{$\Delta$} \\
+\midrule
+Nodes                                            & 193           & 278           & $+44\%$ \\
+Edges                                            & 619           & 855           & $+38\%$ \\
+Communities                                      & 9             & 10            & $+1$ \\
+Avg.\ attributes per node                        & 1.77          & 3.86          & $+118\%$ \\
+\midrule
+\texttt{prophetic} relations (Layer 2)           & 15            & 61            & $+307\%$ \\
+\texttt{contested} relations (Layer 2)           & 5             & 33            & $+560\%$ \\
+\texttt{metadata.domain} in \texttt{graph\_data.json} & ---      & yes           & new (FIDL-06) \\
+\texttt{validation\_report.json} auto-emitted    & ---           & yes           & new (FIDL-07) \\
+\texttt{epistemic\_narrative.md} auto-emitted    & ---           & yes           & new (v3 narrator) \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \subsection{Trial-protocol structure (S7)}
 

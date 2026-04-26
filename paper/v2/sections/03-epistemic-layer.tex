@@ -1,7 +1,15 @@
-\section{The Epistemic Super-Domain Layer}
+\section{The Epistemic Super-Domain Layer and the Narrator}
 \label{sec:epistemic}
 
-The epistemic super-domain layer is the central architectural contribution of v3. This section describes its rationale, taxonomy, rule engine, output artifact, and the persona-driven narrator stage that consumes it.
+This section describes the framework's distinctive analytical layer: the categorical epistemic typing on every relation, the deterministic rule engine that produces it, the per-domain customization paths, and the persona-driven \emph{narrator} stage that synthesizes the classified graph into an analyst briefing. Three output artifacts are produced together, and each has its own consumer:
+
+\begin{itemize}
+\item \texttt{graph\_data.json} -- Layer 1, the brute-facts graph (Section~\ref{sec:architecture}).
+\item \texttt{claims\_layer.json} -- Layer 2, the deterministic per-relation epistemic classification produced by the rule engine. Reproducible bit-identically across runs given identical Layer 1 input. The canonical machine-readable record.
+\item \texttt{epistemic\_narrative.md} -- the analyst briefing produced by the persona-driven narrator stage from the classified graph (\emph{not} from the source documents). Structured into Executive Summary, Asserted Claims, Prophetic Claims, Contested Claims, Gaps, and Recommended Follow-Ups. Non-deterministic in word choice but stable in structure and findings across runs.
+\end{itemize}
+
+A fourth surface, the \emph{workbench chat}, is the reactive consumer of the same classified graph and the same domain persona. Together, the classified graph (\texttt{claims\_layer.json}), the proactive briefing (\texttt{epistemic\_narrative.md}), and the reactive chat are what the framework adds beyond a typed-relation knowledge graph -- and they are what an analyst actually consumes when working with the framework on a corpus.
 
 \subsection{Rationale}
 
