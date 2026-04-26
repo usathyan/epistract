@@ -170,6 +170,17 @@ All four live in `domains/` as self-contained packages — schemas are human-rea
 - Domain package: [`domains/contracts/`](domains/contracts/) (schema, SKILL.md, epistemic.py, workbench template with a worked 57-document persona)
 - No bundled corpus graph in the public repo — the contracts domain is designed for private legal/procurement work. Run `/epistract:ingest <your-contract-corpus> --domain contracts` to produce your own graph + workbench view.
 
+**fda-product-labels** — S8 FDA Product Labels showcase (7 SPL labels: Ozempic, Wegovy, Mounjaro, Humira, Gleevec, Lipitor, Jantoven → 81 nodes, 149 edges, 1,579-word narrator briefing). Four-level FDA epistemology classifier (new in v3.2).
+
+- Showcase: [`docs/SHOWCASE-FDA.md`](docs/SHOWCASE-FDA.md)
+- Auto-generated analyst briefing: [`tests/corpora/08_fda_labels/output/epistemic_narrative.md`](tests/corpora/08_fda_labels/output/epistemic_narrative.md)
+- Workbench screenshots — [dashboard panel](docs/screenshots/fda-labels-01-dashboard.png) · [chat welcome](docs/screenshots/fda-labels-02-chat-welcome.png) · [graph panel](docs/screenshots/fda-labels-03-graph.png) · [chat on epistemic](docs/screenshots/fda-labels-04-chat-epistemic.png)
+- Interactive graph (open locally in browser): [`tests/corpora/08_fda_labels/output/graph.html`](tests/corpora/08_fda_labels/output/graph.html)
+- Scenario doc: [`tests/scenarios/scenario-08-fda-product-labels.md`](tests/scenarios/scenario-08-fda-product-labels.md)
+- Raw corpus: [`tests/corpora/08_fda_labels/docs/`](tests/corpora/08_fda_labels/docs/) (7 SPL label files)
+- Domain package: [`domains/fda-product-labels/`](domains/fda-product-labels/) (17 entity types, 16 relation types, hand-tailored senior FDA regulatory intelligence analyst persona)
+- Four-level FDA epistemology classifier in [`domains/fda-product-labels/epistemic.py`](domains/fda-product-labels/epistemic.py) — `established` (boxed warnings, contraindications, RCT evidence) / `reported` (adverse reactions, post-marketing surveillance) / `theoretical` (mechanism, pharmacology, in vitro) / `asserted` (default) — populated alongside the v3-standard `epistemic_status` field
+
 *GitHub renders `.html` files as source, not interactive pages — clone the repo and open the `graph.html` links locally in a browser to interact with the force-directed graphs.*
 
 ---
