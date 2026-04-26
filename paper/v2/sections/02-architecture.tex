@@ -5,7 +5,7 @@ Epistract implements a six-stage pipeline (Figure~\ref{fig:architecture}). Docum
 
 \subsection{Agent-based extraction}
 
-The central extraction choice is unchanged from v1: extraction agents run as Claude Code subprocesses, not stateless API calls~\cite{bhatt2026epistract_v1}. Each agent receives a full document, reads it with domain understanding informed by the domain's \texttt{SKILL.md} extraction prompt, and produces structured JSON conforming to the domain schema's entity and relation types. For corpora of four or more documents, agents execute in parallel, with one extractor per document. Each agent emits, per relation, a verbatim evidence quote and a confidence score in $[0, 1]$ -- two fields the epistemic classifier in Layer 2 depends on.
+Extraction agents run as Claude Code subprocesses, not stateless API calls. Each agent receives a full document, reads it with domain understanding informed by the domain's \texttt{SKILL.md} extraction prompt, and produces structured JSON conforming to the domain schema's entity and relation types. For corpora of four or more documents, agents execute in parallel, with one extractor per document. Each agent emits, per relation, a verbatim evidence quote and a confidence score in $[0, 1]$ -- two fields the epistemic classifier in Layer 2 depends on.
 
 This is qualitatively different from chunked-RAG retrieval and from API-based stateless extraction. A chunked retriever loses the cross-paragraph context that distinguishes a method statement from a result; a stateless API extractor, processing chunks in isolation, cannot resolve a phrase like ``the same compound'' across paragraph boundaries. By giving each agent the entire document and a long context window, Epistract preserves the discourse structure necessary for relation typing.
 
@@ -28,7 +28,7 @@ Drug-discovery alone among the four shipped domains carries a deterministic post
 
 \subsection{Graph construction}
 
-Once extraction and (optional) validation are complete, sift-kg~\cite{sifkg2024} handles graph assembly: entity deduplication via SemHash and Unicode normalization, Louvain community detection, and interactive HTML visualization via pyvis~\cite{pyvis2018}. A custom labeling engine assigns descriptive community names from member entity composition rather than numeric identifiers (this remains the same as v1, with refinements). The output of this stage is \texttt{graph\_data.json} -- the canonical Layer 1 artifact.
+Once extraction and (optional) validation are complete, sift-kg~\cite{sifkg2024} handles graph assembly: entity deduplication via SemHash and Unicode normalization, Louvain community detection, and interactive HTML visualization via pyvis~\cite{pyvis2018}. A custom labeling engine assigns descriptive community names from member entity composition rather than numeric identifiers, with the labeling rules type-aware: gene-dominant clusters receive names reflecting the biological context of their gene members, pathway-driven clusters are named for the dominant pathway, and clusters organized around a mechanism--cell type axis receive compound labels. The output of this stage is \texttt{graph\_data.json} -- the canonical Layer 1 artifact.
 
 \subsection{Epistemic classification (Layer 2)}
 
@@ -44,4 +44,4 @@ A web-based dashboard (the workbench, launched via \texttt{/epistract:dashboard}
 
 \subsection{Plugin delivery}
 
-Epistract is distributed as a Claude Code plugin~\cite{claudecode2024}. Users install with \texttt{/plugin install epistract} and invoke pipeline stages via slash commands: \texttt{/epistract:ingest}, \texttt{/epistract:epistemic}, \texttt{/epistract:dashboard}. The plugin encapsulates the entire dependency tree (Python virtualenv, sift-kg, RDKit, Biopython, optional sentence-transformers) and exposes a single entry point per pipeline stage. The same delivery model from v1 carries forward unchanged.
+Epistract is distributed as a Claude Code plugin~\cite{claudecode2024}. Users install with \texttt{/plugin install epistract} and invoke pipeline stages via slash commands: \texttt{/epistract:ingest}, \texttt{/epistract:epistemic}, \texttt{/epistract:dashboard}. The plugin encapsulates the entire dependency tree (Python virtualenv, sift-kg, RDKit, Biopython, optional sentence-transformers) and exposes a single entry point per pipeline stage.

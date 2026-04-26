@@ -48,7 +48,7 @@ Paper: paper/v2/main.pdf · Umesh Bhatt · umesh@8thcross.com
 
 **Narration:**
 
-> "Hi, I'm Umesh. Epistract is a knowledge graph workspace inside Claude Code — a scientist's question drives the corpus, the domain, and the graph that answers it. The motivating problem: most KG tools stop at extracting entities and typed relations. They tell you what's in a document but not *how* it's stated — asserted with quantitative evidence, patent forward-looking language, hedged research wording, or contradicting another source? Epistract treats that epistemic dimension as a first-class layer on top of the brute facts.
+> "Hi, I'm Umesh. Epistract is a knowledge graph workspace built for scientists and computational analysts — biomedical researchers, clinical and regulatory analysts, competitive intelligence teams — to accelerate the rigorous, auditable analytical work of reading large document corpora. It's primarily an analysis tool: it doesn't write back to your corpus, doesn't generate new documents — it produces a structured graph, an epistemic classification, and an analyst briefing, all of which you consume. It runs inside Claude Code, where a scientist's question drives the corpus, the domain, and the graph that answers it. The motivating problem: most KG tools stop at extracting entities and typed relations. They tell you what's in a document but not *how* it's stated — asserted with quantitative evidence, patent forward-looking language, hedged research wording, or contradicting another source? Epistract treats that epistemic dimension as a first-class layer on top of the brute facts.
 >
 > My question for this demo: how does the contemporary GLP-1 receptor agonist competitive landscape stack up — asserted clinical evidence versus patent prophecy versus research hypothesis? To answer it, thirty-four documents: ten patent filings from Novo Nordisk, Pfizer, Eli Lilly, Hanmi, and Zealand, plus twenty-four PubMed papers. The graph is already built. I'll trigger the analyst briefing now, and while it runs I'll walk the graph itself."
 
@@ -130,7 +130,7 @@ bat tests/corpora/06_glp1_landscape/output-v3/epistemic_narrative.md
 
 **Narration:**
 
-> "Quick wrap-up. The framework is domain-agnostic — four pre-built domains today: drug-discovery, contracts, clinicaltrials, FDA product labels. Each domain is four required files — schema in YAML, extraction prompt in Markdown, epistemic rules in Python, analyst persona in YAML — plus optional helpers like an external-API enrichment module. Open source, MIT license. Runs as a Claude Code plugin. There's a paper at `paper/v2/main.pdf` in the repo if you want the architectural detail and the per-domain epistemic rules — link's in the README. Code and paper both at github.com/usathyan/epistract. Happy to take questions."
+> "Quick wrap-up. Four pre-built domains today: drug-discovery, contracts, clinicaltrials, FDA product labels. As your understanding of a corpus grows, you iterate — bring more documents in with `/epistract:ingest`, rebuild the epistemic layer with `/epistract:epistemic`, ask follow-ups in the workbench chat. The framework itself doesn't auto-learn across runs — refinements are human-mediated, Issue 15 tracks that aspiration — but Claude Code's memory and its plugin and MCP ecosystem keep your accumulated context across sessions. Open source, MIT. Paper at `paper/v2/main.pdf` — link's in the README. Code at github.com/usathyan/epistract. Happy to take questions."
 
 **Cut to closing card:**
 ```
@@ -187,8 +187,8 @@ QnA →
 - "Can I bring my own LLM?" — Azure AI Foundry → Anthropic direct → OpenRouter, in priority order. All speak Anthropic-native or OpenAI-compat format.
 - "Why labeled property graph instead of RDF?" — sift-kg's NetworkX substrate. RDF / GraphML / Turtle exports via `/epistract:export`.
 - "Does the framework learn across scenarios?" — Not yet. Refinements are human-mediated. Issue #15 tracks the aspirational compounding mechanism.
-- "Is there a paper?" — Yes, two. The current v2 paper (April 2026, framework v3.2) is at `paper/v2/main.pdf` — covers the two-layer architecture, the epistemic super-domain, the persona dual-use pattern, and all four pre-built domains. The earlier v1 paper (March 2026) is preserved at `paper/main.pdf` and covers the GraphRAG-to-Epistract trajectory in more depth. Both are linked from the README.
-- "How are the paper's claims grounded?" — Every quantitative claim in the v2 paper traces to a committed artifact under `tests/corpora/`. The accuracy checklist (`docs/demo-v3/accuracy-checklist.md`) maps demo claims to their codebase sources too.
+- "Is there a paper?" — Yes, at `paper/v2/main.pdf` — covers the two-layer architecture, the epistemic super-domain layer, the persona dual-use pattern, the four pre-built domains, and the seven validation scenarios. Linked from the README.
+- "How are the paper's claims grounded?" — Every quantitative claim in the paper traces to a committed artifact under `tests/corpora/`. The accuracy checklist (`docs/demo-v3/accuracy-checklist.md`) maps demo claims to their codebase sources too.
 
 ---
 
