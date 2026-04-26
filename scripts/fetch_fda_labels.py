@@ -104,9 +104,6 @@ def fetch(query_value: str, query_field: str) -> dict | None:
     except (URLError, ValueError) as e:
         print(f"ERROR: {query_value} -> request failed: {e}", file=sys.stderr)
         return None
-    except KeyError as e:
-        print(f"ERROR: {query_value} -> missing key in response: {e}", file=sys.stderr)
-        return None
 
 
 # ---------------------------------------------------------------------------
