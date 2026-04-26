@@ -1023,7 +1023,8 @@
           "evidence": "",
           "relation_id": "adverse_reaction:pancreatitis|MENTIONED_IN|doc:adalimumab_humira"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "adverse_reaction:pancreatitis",
@@ -1046,7 +1047,8 @@
           "evidence": "",
           "relation_id": "adverse_reaction:pancreatitis|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "adverse_reaction:stevens_johnson_syndrome",
@@ -1069,7 +1071,8 @@
           "evidence": "",
           "relation_id": "adverse_reaction:stevens_johnson_syndrome|MENTIONED_IN|doc:adalimumab_humira"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "adverse_reaction:stevens_johnson_syndrome",
@@ -1092,7 +1095,8 @@
           "evidence": "",
           "relation_id": "adverse_reaction:stevens_johnson_syndrome|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1115,7 +1119,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1138,7 +1143,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|HAS_ACTIVE_INGREDIENT|active_ingredient:atorvastatin|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1161,7 +1167,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|CONTRAINDICATED_IN|contraindication:acute_liver_failure|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1184,7 +1191,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|CONTRAINDICATED_IN|contraindication:decompensated_cirrhosis|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1207,7 +1215,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|CAUSES_ADVERSE_REACTION|adverse_reaction:pancreatitis|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1230,7 +1239,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|CAUSES_ADVERSE_REACTION|adverse_reaction:fatigue|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1253,7 +1263,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|CAUSES_ADVERSE_REACTION|adverse_reaction:hepatic_failure|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1276,7 +1287,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|CAUSES_ADVERSE_REACTION|adverse_reaction:anaphylaxis|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1299,7 +1311,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:grapefruit_juice|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1322,7 +1335,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|STUDIED_IN_POPULATION|patient_population:child_pugh_b_disease|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1351,7 +1365,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|STUDIED_IN_POPULATION|patient_population:pediatric_patients_aged_10_years_and_older_with_hefh|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "observed"
     },
     {
       "source": "drug_product:lipitor",
@@ -1374,7 +1389,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|HAS_MECHANISM|mechanism_of_action:inhibition_of_hmg_coa_reductase_reducing_cholesterol_synthesis|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1397,7 +1413,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|CAUSES_ADVERSE_REACTION|adverse_reaction:tendon_rupture|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1420,7 +1437,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:rifampin|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1443,7 +1461,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:oral_contraceptives|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1466,7 +1485,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:digoxin|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1489,7 +1509,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:cyclosporine|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1512,7 +1533,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:gemfibrozil|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1535,7 +1557,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:anti_viral_medications_e_g_ledipasvir_sofosbuvir|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1558,7 +1581,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:azoles_clarithromycin_itraconazole_etc|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1581,7 +1605,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:niacin_1_g_day|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1604,7 +1629,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:fibrates_other_than_gemfibrozil|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1627,7 +1653,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|INTERACTS_WITH|drug_interaction:colchicine|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1650,7 +1677,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:rhabdomyolysis|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1673,7 +1701,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:myositis|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1696,7 +1725,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:dizziness|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1719,7 +1749,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:peripheral_neuropathy|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1742,7 +1773,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:cognitive_impairment|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1765,7 +1797,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:myasthenia_gravis|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1788,7 +1821,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:angioneurotic_edema|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1811,7 +1845,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:bullous_rash|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1834,7 +1869,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:stevens_johnson_syndrome|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1857,7 +1893,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|HAS_WARNING|adverse_reaction:toxic_epidermal_necrolysis|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:lipitor",
@@ -1880,7 +1917,8 @@
           "evidence": "",
           "relation_id": "drug_product:lipitor|HAS_MECHANISM|mechanism_of_action:selective_competitive_inhibition_of_hmg_coa_reductase|atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "active_ingredient:atorvastatin",
@@ -1903,7 +1941,8 @@
           "evidence": "",
           "relation_id": "active_ingredient:atorvastatin|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "adverse_reaction:fatigue",
@@ -1926,7 +1965,8 @@
           "evidence": "",
           "relation_id": "adverse_reaction:fatigue|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "adverse_reaction:hepatic_failure",
@@ -1949,7 +1989,8 @@
           "evidence": "",
           "relation_id": "adverse_reaction:hepatic_failure|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "adverse_reaction:anaphylaxis",
@@ -1972,7 +2013,8 @@
           "evidence": "",
           "relation_id": "adverse_reaction:anaphylaxis|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "adverse_reaction:tendon_rupture",
@@ -1995,7 +2037,8 @@
           "evidence": "",
           "relation_id": "adverse_reaction:tendon_rupture|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "adverse_reaction:rhabdomyolysis",
@@ -2018,7 +2061,8 @@
           "evidence": "",
           "relation_id": "adverse_reaction:rhabdomyolysis|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "adverse_reaction:myositis",
@@ -2041,7 +2085,8 @@
           "evidence": "",
           "relation_id": "adverse_reaction:myositis|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "adverse_reaction:dizziness",
@@ -2064,7 +2109,8 @@
           "evidence": "",
           "relation_id": "adverse_reaction:dizziness|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "adverse_reaction:peripheral_neuropathy",
@@ -2087,7 +2133,8 @@
           "evidence": "",
           "relation_id": "adverse_reaction:peripheral_neuropathy|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "adverse_reaction:cognitive_impairment",
@@ -2110,7 +2157,8 @@
           "evidence": "",
           "relation_id": "adverse_reaction:cognitive_impairment|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "adverse_reaction:myasthenia_gravis",
@@ -2133,7 +2181,8 @@
           "evidence": "",
           "relation_id": "adverse_reaction:myasthenia_gravis|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "adverse_reaction:angioneurotic_edema",
@@ -2156,7 +2205,8 @@
           "evidence": "",
           "relation_id": "adverse_reaction:angioneurotic_edema|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "adverse_reaction:bullous_rash",
@@ -2179,7 +2229,8 @@
           "evidence": "",
           "relation_id": "adverse_reaction:bullous_rash|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "adverse_reaction:toxic_epidermal_necrolysis",
@@ -2202,7 +2253,8 @@
           "evidence": "",
           "relation_id": "adverse_reaction:toxic_epidermal_necrolysis|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_interaction:grapefruit_juice",
@@ -2225,7 +2277,8 @@
           "evidence": "",
           "relation_id": "drug_interaction:grapefruit_juice|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_interaction:rifampin",
@@ -2248,7 +2301,8 @@
           "evidence": "",
           "relation_id": "drug_interaction:rifampin|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_interaction:oral_contraceptives",
@@ -2271,7 +2325,8 @@
           "evidence": "",
           "relation_id": "drug_interaction:oral_contraceptives|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_interaction:digoxin",
@@ -2294,7 +2349,8 @@
           "evidence": "",
           "relation_id": "drug_interaction:digoxin|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_interaction:cyclosporine",
@@ -2317,7 +2373,8 @@
           "evidence": "",
           "relation_id": "drug_interaction:cyclosporine|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_interaction:gemfibrozil",
@@ -2340,7 +2397,8 @@
           "evidence": "",
           "relation_id": "drug_interaction:gemfibrozil|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_interaction:anti_viral_medications_e_g_ledipasvir_sofosbuvir",
@@ -2363,7 +2421,8 @@
           "evidence": "",
           "relation_id": "drug_interaction:anti_viral_medications_e_g_ledipasvir_sofosbuvir|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_interaction:azoles_clarithromycin_itraconazole_etc",
@@ -2386,7 +2445,8 @@
           "evidence": "",
           "relation_id": "drug_interaction:azoles_clarithromycin_itraconazole_etc|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_interaction:niacin_1_g_day",
@@ -2409,7 +2469,8 @@
           "evidence": "",
           "relation_id": "drug_interaction:niacin_1_g_day|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_interaction:fibrates_other_than_gemfibrozil",
@@ -2432,7 +2493,8 @@
           "evidence": "",
           "relation_id": "drug_interaction:fibrates_other_than_gemfibrozil|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_interaction:colchicine",
@@ -2455,7 +2517,8 @@
           "evidence": "",
           "relation_id": "drug_interaction:colchicine|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "patient_population:pediatric_patients_aged_10_years_and_older_with_hefh",
@@ -2484,7 +2547,8 @@
           "evidence": "",
           "relation_id": "patient_population:pediatric_patients_aged_10_years_and_older_with_hefh|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "observed"
     },
     {
       "source": "mechanism_of_action:inhibition_of_hmg_coa_reductase_reducing_cholesterol_synthesis",
@@ -2507,7 +2571,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:inhibition_of_hmg_coa_reductase_reducing_cholesterol_synthesis|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "patient_population:child_pugh_b_disease",
@@ -2530,7 +2595,8 @@
           "evidence": "",
           "relation_id": "patient_population:child_pugh_b_disease|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "contraindication:acute_liver_failure",
@@ -2553,7 +2619,8 @@
           "evidence": "",
           "relation_id": "contraindication:acute_liver_failure|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "contraindication:decompensated_cirrhosis",
@@ -2576,7 +2643,8 @@
           "evidence": "",
           "relation_id": "contraindication:decompensated_cirrhosis|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "mechanism_of_action:selective_competitive_inhibition_of_hmg_coa_reductase",
@@ -2599,7 +2667,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:selective_competitive_inhibition_of_hmg_coa_reductase|MENTIONED_IN|doc:atorvastatin_lipitor"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:ozempic",
@@ -2622,7 +2691,8 @@
           "evidence": "",
           "relation_id": "drug_product:ozempic|MENTIONED_IN|doc:semaglutide_ozempic"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:ozempic",
@@ -2645,7 +2715,8 @@
           "evidence": "",
           "relation_id": "drug_product:ozempic|HAS_ACTIVE_INGREDIENT|active_ingredient:semaglutide|semaglutide_ozempic"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:ozempic",
@@ -2668,7 +2739,8 @@
           "evidence": "",
           "relation_id": "drug_product:ozempic|HAS_INACTIVE_INGREDIENT|inactive_ingredient:disodium_phosphate_dihydrate|semaglutide_ozempic"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:ozempic",
@@ -2691,7 +2763,8 @@
           "evidence": "",
           "relation_id": "drug_product:ozempic|HAS_INACTIVE_INGREDIENT|inactive_ingredient:propylene_glycol|semaglutide_ozempic"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:ozempic",
@@ -2714,7 +2787,8 @@
           "evidence": "",
           "relation_id": "drug_product:ozempic|HAS_INACTIVE_INGREDIENT|inactive_ingredient:phenol|semaglutide_ozempic"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:ozempic",
@@ -2737,7 +2811,8 @@
           "evidence": "",
           "relation_id": "drug_product:ozempic|HAS_INACTIVE_INGREDIENT|inactive_ingredient:water_for_injections|semaglutide_ozempic"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:ozempic",
@@ -2760,7 +2835,8 @@
           "evidence": "",
           "relation_id": "drug_product:ozempic|EVALUATED_IN|clinical_study:sustain_6|semaglutide_ozempic"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "active_ingredient:semaglutide",
@@ -2783,7 +2859,8 @@
           "evidence": "",
           "relation_id": "active_ingredient:semaglutide|MENTIONED_IN|doc:semaglutide_ozempic"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "inactive_ingredient:disodium_phosphate_dihydrate",
@@ -2806,7 +2883,8 @@
           "evidence": "",
           "relation_id": "inactive_ingredient:disodium_phosphate_dihydrate|MENTIONED_IN|doc:semaglutide_ozempic"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "inactive_ingredient:propylene_glycol",
@@ -2829,7 +2907,8 @@
           "evidence": "",
           "relation_id": "inactive_ingredient:propylene_glycol|MENTIONED_IN|doc:semaglutide_ozempic"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "inactive_ingredient:phenol",
@@ -2852,7 +2931,8 @@
           "evidence": "",
           "relation_id": "inactive_ingredient:phenol|MENTIONED_IN|doc:semaglutide_ozempic"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "inactive_ingredient:water_for_injections",
@@ -2875,7 +2955,8 @@
           "evidence": "",
           "relation_id": "inactive_ingredient:water_for_injections|MENTIONED_IN|doc:semaglutide_ozempic"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "manufacturer:novo_nordisk_inc",
@@ -2898,7 +2979,8 @@
           "evidence": "",
           "relation_id": "manufacturer:novo_nordisk_inc|MENTIONED_IN|doc:semaglutide_ozempic"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "manufacturer:novo_nordisk_inc",
@@ -2921,7 +3003,8 @@
           "evidence": "",
           "relation_id": "manufacturer:novo_nordisk_inc|MENTIONED_IN|doc:semaglutide_wegovy"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "manufacturer:novo_nordisk_inc",
@@ -2944,7 +3027,8 @@
           "evidence": "",
           "relation_id": "drug_product:ozempic|MANUFACTURED_BY|manufacturer:novo_nordisk_inc|semaglutide_ozempic"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "clinical_study:sustain_6",
@@ -2967,7 +3051,8 @@
           "evidence": "",
           "relation_id": "clinical_study:sustain_6|MENTIONED_IN|doc:semaglutide_ozempic"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "manufacturer:upsher_smith_laboratories_llc",
@@ -2990,7 +3075,8 @@
           "evidence": "",
           "relation_id": "manufacturer:upsher_smith_laboratories_llc|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "manufacturer:upsher_smith_laboratories_llc",
@@ -3013,7 +3099,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|MANUFACTURED_BY|manufacturer:upsher_smith_laboratories_llc|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3036,7 +3123,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3059,7 +3147,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|HAS_ACTIVE_INGREDIENT|active_ingredient:warfarin_sodium|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3082,7 +3171,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|CONTRAINDICATED_IN|contraindication:pregnancy|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3105,7 +3195,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|CONTRAINDICATED_IN|contraindication:heparin_induced_thrombocytopenia_hit_and_hitts|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3128,7 +3219,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|CONTRAINDICATED_IN|adverse_reaction:calciphylaxis|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3151,7 +3243,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|CAUSES_ADVERSE_REACTION|adverse_reaction:calciphylaxis|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3174,7 +3267,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|HAS_WARNING|warning:boxed_warning_increased_risk_of_hemorrhage_and_tissue_necrosis|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3197,7 +3291,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|HAS_WARNING|warning:bleeding_risk_with_concomitant_anticoagulants_and_cyp2c9_inhibitors|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3220,7 +3315,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|INTERACTS_WITH|drug_interaction:cyp2c9_inhibitors_e_g_fluconazole_amiodarone_increase_inr|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3243,7 +3339,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|STUDIED_IN_POPULATION|patient_population:pregnant_women|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3266,7 +3363,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|STUDIED_IN_POPULATION|patient_population:patients_with_renal_impairment|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3289,7 +3387,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|STUDIED_IN_POPULATION|patient_population:patients_with_hepatic_impairment|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3312,7 +3411,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|HAS_MECHANISM|mechanism_of_action:inhibition_of_vitamin_k_epoxide_reductase_reducing_synthesis_of_vitamin_k_dependent_clotting_factors|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3335,7 +3435,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|HAS_PK_PROPERTY|pharmacokinetic_property:metabolized_by_cyp2c9_cyp1a2_cyp3a4|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3358,7 +3459,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|HAS_WARNING|labtest:inr|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3381,7 +3483,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|CAUSES_ADVERSE_REACTION|adverse_reaction:hemorrhage|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3404,7 +3507,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|CAUSES_ADVERSE_REACTION|adverse_reaction:tissue_necrosis|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3427,7 +3531,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|CAUSES_ADVERSE_REACTION|adverse_reaction:acute_kidney_injury|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3450,7 +3555,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|CAUSES_ADVERSE_REACTION|adverse_reaction:systemic_atheroemboli_and_cholesterol_microemboli|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3473,7 +3579,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|CAUSES_ADVERSE_REACTION|adverse_reaction:limb_ischemia_necrosis_and_gangrene_in_patients_with_hit_and_hitts|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3496,7 +3603,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|INTERACTS_WITH|drug_interaction:cyp2c9_inducers_e_g_rifampin_carbamazepine_decrease_inr|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3519,7 +3627,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:lactose_monohydrate|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3542,7 +3651,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:magnesium_stearate|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3565,7 +3675,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:povidone|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3588,7 +3699,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:pregelatinized_starch_corn|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3611,7 +3723,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:fd_c_red_40_aluminum_lake|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3640,7 +3753,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:fd_c_blue_2_aluminum_lake|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "observed"
     },
     {
       "source": "drug_product:jantoven",
@@ -3663,7 +3777,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:d_c_yellow_10_aluminum_lake|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3686,7 +3801,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:brown_75_synthetic_brown_iron_oxide|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3709,7 +3825,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:fd_c_yellow_6_aluminum_lake|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3732,7 +3849,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:yellow_10_synthetic_yellow_iron_oxide|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_product:jantoven",
@@ -3755,7 +3873,8 @@
           "evidence": "",
           "relation_id": "drug_product:jantoven|HAS_INACTIVE_INGREDIENT|inactive_ingredient:black_85_synthetic_black_iron_oxide|warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "active_ingredient:warfarin_sodium",
@@ -3778,7 +3897,8 @@
           "evidence": "",
           "relation_id": "active_ingredient:warfarin_sodium|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "contraindication:pregnancy",
@@ -3801,7 +3921,8 @@
           "evidence": "",
           "relation_id": "contraindication:pregnancy|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "contraindication:heparin_induced_thrombocytopenia_hit_and_hitts",
@@ -3824,7 +3945,8 @@
           "evidence": "",
           "relation_id": "contraindication:heparin_induced_thrombocytopenia_hit_and_hitts|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "adverse_reaction:hemorrhage",
@@ -3847,7 +3969,8 @@
           "evidence": "",
           "relation_id": "adverse_reaction:hemorrhage|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "adverse_reaction:tissue_necrosis",
@@ -3870,7 +3993,8 @@
           "evidence": "",
           "relation_id": "adverse_reaction:tissue_necrosis|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "adverse_reaction:calciphylaxis",
@@ -3893,7 +4017,8 @@
           "evidence": "",
           "relation_id": "adverse_reaction:calciphylaxis|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "adverse_reaction:acute_kidney_injury",
@@ -3916,7 +4041,8 @@
           "evidence": "",
           "relation_id": "adverse_reaction:acute_kidney_injury|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "adverse_reaction:systemic_atheroemboli_and_cholesterol_microemboli",
@@ -3939,7 +4065,8 @@
           "evidence": "",
           "relation_id": "adverse_reaction:systemic_atheroemboli_and_cholesterol_microemboli|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "adverse_reaction:limb_ischemia_necrosis_and_gangrene_in_patients_with_hit_and_hitts",
@@ -3962,7 +4089,8 @@
           "evidence": "",
           "relation_id": "adverse_reaction:limb_ischemia_necrosis_and_gangrene_in_patients_with_hit_and_hitts|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "warning:boxed_warning_increased_risk_of_hemorrhage_and_tissue_necrosis",
@@ -3985,7 +4113,8 @@
           "evidence": "",
           "relation_id": "warning:boxed_warning_increased_risk_of_hemorrhage_and_tissue_necrosis|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "warning:bleeding_risk_with_concomitant_anticoagulants_and_cyp2c9_inhibitors",
@@ -4008,7 +4137,8 @@
           "evidence": "",
           "relation_id": "warning:bleeding_risk_with_concomitant_anticoagulants_and_cyp2c9_inhibitors|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_interaction:cyp2c9_inhibitors_e_g_fluconazole_amiodarone_increase_inr",
@@ -4031,7 +4161,8 @@
           "evidence": "",
           "relation_id": "drug_interaction:cyp2c9_inhibitors_e_g_fluconazole_amiodarone_increase_inr|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "drug_interaction:cyp2c9_inducers_e_g_rifampin_carbamazepine_decrease_inr",
@@ -4054,7 +4185,8 @@
           "evidence": "",
           "relation_id": "drug_interaction:cyp2c9_inducers_e_g_rifampin_carbamazepine_decrease_inr|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "patient_population:pregnant_women",
@@ -4077,7 +4209,8 @@
           "evidence": "",
           "relation_id": "patient_population:pregnant_women|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "patient_population:patients_with_renal_impairment",
@@ -4100,7 +4233,8 @@
           "evidence": "",
           "relation_id": "patient_population:patients_with_renal_impairment|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "patient_population:patients_with_hepatic_impairment",
@@ -4123,7 +4257,8 @@
           "evidence": "",
           "relation_id": "patient_population:patients_with_hepatic_impairment|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "mechanism_of_action:inhibition_of_vitamin_k_epoxide_reductase_reducing_synthesis_of_vitamin_k_dependent_clotting_factors",
@@ -4146,7 +4281,8 @@
           "evidence": "",
           "relation_id": "mechanism_of_action:inhibition_of_vitamin_k_epoxide_reductase_reducing_synthesis_of_vitamin_k_dependent_clotting_factors|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "pharmacokinetic_property:metabolized_by_cyp2c9_cyp1a2_cyp3a4",
@@ -4169,7 +4305,8 @@
           "evidence": "",
           "relation_id": "pharmacokinetic_property:metabolized_by_cyp2c9_cyp1a2_cyp3a4|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "labtest:inr",
@@ -4192,7 +4329,8 @@
           "evidence": "",
           "relation_id": "labtest:inr|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "inactive_ingredient:lactose_monohydrate",
@@ -4215,7 +4353,8 @@
           "evidence": "",
           "relation_id": "inactive_ingredient:lactose_monohydrate|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "inactive_ingredient:magnesium_stearate",
@@ -4238,7 +4377,8 @@
           "evidence": "",
           "relation_id": "inactive_ingredient:magnesium_stearate|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "inactive_ingredient:povidone",
@@ -4261,7 +4401,8 @@
           "evidence": "",
           "relation_id": "inactive_ingredient:povidone|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "inactive_ingredient:pregelatinized_starch_corn",
@@ -4284,7 +4425,8 @@
           "evidence": "",
           "relation_id": "inactive_ingredient:pregelatinized_starch_corn|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "inactive_ingredient:fd_c_red_40_aluminum_lake",
@@ -4307,7 +4449,8 @@
           "evidence": "",
           "relation_id": "inactive_ingredient:fd_c_red_40_aluminum_lake|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "inactive_ingredient:fd_c_blue_2_aluminum_lake",
@@ -4336,7 +4479,8 @@
           "evidence": "",
           "relation_id": "inactive_ingredient:fd_c_blue_2_aluminum_lake|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "observed"
     },
     {
       "source": "inactive_ingredient:d_c_yellow_10_aluminum_lake",
@@ -4359,7 +4503,8 @@
           "evidence": "",
           "relation_id": "inactive_ingredient:d_c_yellow_10_aluminum_lake|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "inactive_ingredient:brown_75_synthetic_brown_iron_oxide",
@@ -4382,7 +4527,8 @@
           "evidence": "",
           "relation_id": "inactive_ingredient:brown_75_synthetic_brown_iron_oxide|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "inactive_ingredient:fd_c_yellow_6_aluminum_lake",
@@ -4405,7 +4551,8 @@
           "evidence": "",
           "relation_id": "inactive_ingredient:fd_c_yellow_6_aluminum_lake|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "inactive_ingredient:yellow_10_synthetic_yellow_iron_oxide",
@@ -4428,7 +4575,8 @@
           "evidence": "",
           "relation_id": "inactive_ingredient:yellow_10_synthetic_yellow_iron_oxide|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     },
     {
       "source": "inactive_ingredient:black_85_synthetic_black_iron_oxide",
@@ -4451,7 +4599,8 @@
           "evidence": "",
           "relation_id": "inactive_ingredient:black_85_synthetic_black_iron_oxide|MENTIONED_IN|doc:warfarin_jantoven"
         }
-      ]
+      ],
+      "epistemic_status": "reported"
     }
   ]
 }
