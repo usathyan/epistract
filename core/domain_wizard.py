@@ -417,6 +417,7 @@ def generate_domain_yaml(
     system_context: str,
     entity_types: dict,
     relation_types: dict,
+    community_label_anchors: list[str] | None = None,
 ) -> str:
     """Generate domain.yaml content as YAML string.
 
@@ -426,6 +427,9 @@ def generate_domain_yaml(
         system_context: System prompt for LLM extraction context.
         entity_types: Dict of entity type name -> {description}.
         relation_types: Dict of relation type name -> {description}.
+        community_label_anchors: Optional ordered list of entity type names used
+            as label anchors for community detection output. When provided, emitted
+            as the last top-level key in domain.yaml. Omitted when None.
 
     Returns:
         YAML string ready to write to domain.yaml.
@@ -438,6 +442,8 @@ def generate_domain_yaml(
         "entity_types": entity_types,
         "relation_types": relation_types,
     }
+    if community_label_anchors is not None:
+        schema["community_label_anchors"] = community_label_anchors
     return yaml.safe_dump(
         schema,
         default_flow_style=False,
@@ -942,7 +948,7 @@ def generate_workbench_template(
     data = {
         "title": f"{pretty_name} Knowledge Graph Explorer",
         "subtitle": f"Explore {pretty_lower} entities and relationships",
-        "persona": persona_override.strip() if persona_override else default_persona.strip(),
+        "persona": persona_override.strip() if (persona_override and persona_override.strip()) else default_persona.strip(),
         "placeholder": "Ask a question about the knowledge graph...",
         "loading_message": "Analyzing",
         "starter_questions": [],
@@ -1061,6 +1067,7 @@ def generate_domain_package(
     gap_target_types: dict | None = None,
     confidence_thresholds: dict | None = None,
     persona: str | None = None,
+    community_label_anchors: list[str] | None = None,
 ) -> dict:
     """Generate and write a complete domain package.
 
@@ -1097,6 +1104,7 @@ def generate_domain_package(
     # Generate all artifacts
     domain_yaml = generate_domain_yaml(
         domain_name, description, system_context, entity_types, relation_types,
+        community_label_anchors=community_label_anchors,
     )
     skill_md = generate_skill_md(
         domain_name, system_context, entity_types, relation_types,
@@ -1228,6 +1236,11 @@ def main(argv: list[str] | None = None) -> int:
     # When absent, generate_workbench_template falls back to the analyst-shaped
     # default with the domain slug substituted.
     persona = schema.get("persona")
+    # community_label_anchors: optional list of entity types used to anchor
+    # community labels (domain-aware labeling).  Must be read here so that
+    # --schema bypass callers can supply anchors without going through the
+    # interactive wizard.
+    community_label_anchors = schema.get("community_label_anchors") or None
 
     # D-11: bypass the 3-pass LLM discovery — call generate_domain_package directly.
     # Mirror commands/domain.md:140 slug convention (hyphens → underscores for function names).
@@ -1244,6 +1257,7 @@ def main(argv: list[str] | None = None) -> int:
         gap_target_types=gap_target_types,
         confidence_thresholds=confidence_thresholds,
         persona=persona,
+        community_label_anchors=community_label_anchors,
     )
 
     print(f"Domain package created at: {result['domain_dir']}")
