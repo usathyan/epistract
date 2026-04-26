@@ -213,7 +213,7 @@ async def _stream_anthropic(
     }
     payload = {
         "model": model,
-        "max_tokens": 4096,
+        "max_tokens": 1024,
         "system": system,
         "messages": messages,
         "stream": True,
@@ -276,7 +276,7 @@ async def _stream_openai_compat(
     oai_messages = [{"role": "system", "content": system}] + messages
     payload = {
         "model": model,
-        "max_tokens": 4096,
+        "max_tokens": 1024,
         "messages": oai_messages,
         "stream": True,
     }
