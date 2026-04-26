@@ -1,0 +1,109 @@
+name: fda-product-labels
+version: 1.0.0
+description: JSON representations of FDA drug product labels (Structured Product Labeling),
+  covering both prescription and OTC drugs with sections for indications, warnings,
+  adverse reactions, pharmacology, dosing, and regulatory identifiers.
+system_context: You are analyzing FDA Structured Product Labeling (SPL) documents
+  — the authoritative regulatory labels submitted by manufacturers for prescription
+  and over-the-counter drug products. Each document is a JSON file containing clinical
+  sections (indications, contraindications, warnings, adverse reactions, pharmacology)
+  alongside structured openfda metadata (brand/generic names, NDC codes, pharmacologic
+  class, manufacturer). Extract precise, clinically meaningful entities and relationships
+  that would support pharmacovigilance, formulary analysis, drug interaction screening,
+  and regulatory intelligence.
+entity_types:
+  DRUG_PRODUCT:
+    description: A drug product identified by brand/generic name, product type (Rx/OTC),
+      dosage form, and route of administration
+  ACTIVE_INGREDIENT:
+    description: An active pharmaceutical ingredient (API) with substance name and
+      UNII code
+  INACTIVE_INGREDIENT:
+    description: An excipient or inactive ingredient in the formulation
+  MANUFACTURER:
+    description: The manufacturer, labeler, or marketing company responsible for the
+      drug product
+  INDICATION:
+    description: An FDA-approved therapeutic use or clinical condition the drug is
+      indicated to treat
+  CONTRAINDICATION:
+    description: A patient condition, prior history, or co-medication that prohibits
+      use of the drug
+  ADVERSE_REACTION:
+    description: An adverse event or side effect observed in clinical trials or post-marketing
+      surveillance
+  WARNING:
+    description: A boxed warning, warnings-and-precautions entry, or safety signal
+      requiring clinician action
+  DRUG_INTERACTION:
+    description: A clinically significant interaction between this drug and another
+      drug, substance, or food that affects safety or efficacy
+  DOSAGE_REGIMEN:
+    description: A specific dosing instruction including dose amount, frequency, route,
+      and target patient population
+  PATIENT_POPULATION:
+    description: A patient subgroup with special dosing or safety considerations (pediatric,
+      geriatric, renally impaired, pregnant, nursing mothers)
+  MECHANISM_OF_ACTION:
+    description: The pharmacological mechanism by which the active ingredient produces
+      its therapeutic effect
+  PHARMACOKINETIC_PROPERTY:
+    description: A PK parameter including absorption, distribution, metabolism, excretion,
+      half-life, Cmax, bioavailability, or protein binding
+  CLINICAL_STUDY:
+    description: A clinical trial or study referenced in the label to support safety
+      or efficacy claims
+  PHARMACOLOGIC_CLASS:
+    description: An FDA-recognized drug class designation (EPC, MoA, Chemical Structure,
+      or PE classification)
+  REGULATORY_IDENTIFIER:
+    description: A regulatory code such as NDA/ANDA application number, NDC code,
+      RxCUI, UNII, or SPL set ID
+  LABTEST:
+    description: A laboratory monitoring test referenced in the label for tracking
+      drug safety or efficacy (e.g. liver function tests for hepatotoxic drugs, CBC
+      for immunosuppressants, lipid panels for statins, INR for anticoagulants)
+relation_types:
+  HAS_ACTIVE_INGREDIENT:
+    description: Links a DRUG_PRODUCT to its ACTIVE_INGREDIENT(s)
+  HAS_INACTIVE_INGREDIENT:
+    description: Links a DRUG_PRODUCT to its INACTIVE_INGREDIENT(s)
+  MANUFACTURED_BY:
+    description: Links a DRUG_PRODUCT to its MANUFACTURER
+  INDICATED_FOR:
+    description: Links a DRUG_PRODUCT to an INDICATION (FDA-approved use)
+  CONTRAINDICATED_IN:
+    description: Links a DRUG_PRODUCT to a CONTRAINDICATION (prohibited patient condition)
+  CAUSES_ADVERSE_REACTION:
+    description: Links a DRUG_PRODUCT to an ADVERSE_REACTION observed in clinical
+      or post-marketing data
+  HAS_WARNING:
+    description: Links a DRUG_PRODUCT to a WARNING (boxed or standard precaution)
+  INTERACTS_WITH:
+    description: Links a DRUG_PRODUCT to another DRUG_PRODUCT or substance involved
+      in a clinically significant DRUG_INTERACTION
+  DOSED_VIA:
+    description: Links a DRUG_PRODUCT to a DOSAGE_REGIMEN specifying how and when
+      to administer it
+  STUDIED_IN_POPULATION:
+    description: Links a DRUG_PRODUCT to a PATIENT_POPULATION with special safety
+      or dosing notes
+  HAS_MECHANISM:
+    description: Links a DRUG_PRODUCT to its MECHANISM_OF_ACTION
+  HAS_PK_PROPERTY:
+    description: Links a DRUG_PRODUCT to a PHARMACOKINETIC_PROPERTY
+  EVALUATED_IN:
+    description: Links a DRUG_PRODUCT to a CLINICAL_STUDY that supported label claims
+  BELONGS_TO_CLASS:
+    description: Links a DRUG_PRODUCT to its PHARMACOLOGIC_CLASS
+  IDENTIFIED_BY:
+    description: Links a DRUG_PRODUCT to a REGULATORY_IDENTIFIER (NDC, NDA/ANDA, RxCUI,
+      etc.)
+  CONTRAINDICATED_WITH:
+    description: Links a DRUG_PRODUCT to another DRUG_PRODUCT whose co-administration
+      is explicitly prohibited
+community_label_anchors:
+  - DRUG_PRODUCT
+  - ACTIVE_INGREDIENT
+  - INDICATION
+  - MANUFACTURER
