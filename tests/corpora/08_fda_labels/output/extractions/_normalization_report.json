@@ -1,0 +1,40 @@
+{
+  "total": 7,
+  "passed": 7,
+  "recovered": 0,
+  "unrecoverable": 0,
+  "pass_rate": 1.0,
+  "fail_threshold": 0.95,
+  "above_threshold": true,
+  "generated_at": "2026-04-26T00:49:37.681168+00:00",
+  "actions": [
+    {
+      "file": "adalimumab_humira.json",
+      "action": "passed"
+    },
+    {
+      "file": "atorvastatin_lipitor.json",
+      "action": "passed"
+    },
+    {
+      "file": "imatinib_gleevec.json",
+      "action": "passed"
+    },
+    {
+      "file": "semaglutide_ozempic.json",
+      "action": "passed"
+    },
+    {
+      "file": "semaglutide_wegovy.json",
+      "action": "passed"
+    },
+    {
+      "file": "tirzepatide_mounjaro.json",
+      "action": "passed"
+    },
+    {
+      "file": "warfarin_jantoven.json",
+      "action": "passed"
+    }
+  ]
+}

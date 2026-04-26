@@ -1,0 +1,54 @@
+{
+  "docs_total": 7,
+  "docs_done": 7,
+  "docs_skipped": 0,
+  "docs_failed": 0,
+  "total_cost_usd": 0.0,
+  "total_tokens": 386635,
+  "model": "openai/gpt-oss-20b:free",
+  "domain": "fda-product-labels",
+  "results": [
+    {
+      "doc_id": "adalimumab_humira",
+      "entities": 118,
+      "relations": 225,
+      "cost_usd": 0.0
+    },
+    {
+      "doc_id": "atorvastatin_lipitor",
+      "entities": 36,
+      "relations": 240,
+      "cost_usd": 0.0
+    },
+    {
+      "doc_id": "imatinib_gleevec",
+      "entities": 6,
+      "relations": 144,
+      "cost_usd": 0.0
+    },
+    {
+      "doc_id": "semaglutide_ozempic",
+      "entities": 8,
+      "relations": 77,
+      "cost_usd": 0.0
+    },
+    {
+      "doc_id": "semaglutide_wegovy",
+      "entities": 1,
+      "relations": 101,
+      "cost_usd": 0.0
+    },
+    {
+      "doc_id": "tirzepatide_mounjaro",
+      "entities": 1,
+      "relations": 54,
+      "cost_usd": 0.0
+    },
+    {
+      "doc_id": "warfarin_jantoven",
+      "entities": 34,
+      "relations": 63,
+      "cost_usd": 0.0
+    }
+  ]
+}
