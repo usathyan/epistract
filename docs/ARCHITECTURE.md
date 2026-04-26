@@ -10,6 +10,8 @@ Epistract builds knowledge graphs in two layers. The first layer extracts brute 
 
 - **Layer 2 — Epistemic Super Domain.** Domain-specific rules detect conflicts, gaps, confidence levels, and risks across the graph. The epistemic machinery is the same regardless of domain — only the rules change. Drug-discovery rules classify relations as *asserted* / *hypothesized* / *prophetic* (patent-sourced forward claims) / *contested* / *contradictions* / *negative* / *speculative*. Contract rules detect cross-contract conflicts, obligation gaps, and risk indicators. On top of the rule engine, an LLM analyst narrator reads the classified graph and writes `epistemic_narrative.md` — a structured briefing an analyst would produce.
 
+  **Predefined defaults, customizable per domain.** Every pre-built domain ships with a starter rule set: the seven-status taxonomy above, hedging-pattern regex rules that catch common research-language constructions, document-type inference defaults (patents, trial protocols, FDA labels, peer-reviewed papers), and the cross-source aggregation rule that flags `contested` edges. These defaults are the floor, not the ceiling. Customize per domain by editing `domains/<name>/epistemic.py`: add hedging patterns (one-line additions to `HEDGING_PATTERNS`), add domain-specific status types (clinicaltrials adds phase-based grading; fda-product-labels adds a four-level `established`/`reported`/`theoretical`/`asserted` classifier), or override cross-source thresholds. The wizard (`/epistract:domain`) generates a starter `epistemic.py` pre-populated with the shared taxonomy so authors edit rather than write from scratch.
+
 ## Domain Pluggability
 
 New domains are added by creating a configuration package (no pipeline code changes):

@@ -56,6 +56,21 @@ Each domain's \texttt{epistemic.py} can add domain-specific rules beyond the sha
 
 These per-domain extensions illustrate the framework's pluggability: the core pipeline does not need to know about phase-based grading or FDA epistemology vocabulary -- the domain's \texttt{epistemic.py} encodes that knowledge, and \texttt{core/label\_epistemic.py} dispatches to it.
 
+\subsection{Predefined defaults, customizable per domain}
+\label{sec:epistemic-customization}
+
+The framework ships with a usable epistemic layer out of the box. Every pre-built domain comes with: (a) the seven-status taxonomy in Table~\ref{tab:epistemic-statuses}; (b) a starter set of hedging-pattern regex rules that fire on common research-language constructions across all biomedical and contract corpora; (c) document-type inference defaults that recognize patent filings, trial-protocol records, FDA labels, and peer-reviewed papers from filename and structural cues; and (d) the cross-source aggregation rule that detects \texttt{contested} edges when the same triple appears with confidence variance above a threshold across documents. A user who installs the framework, picks a pre-built domain, and ingests their corpus gets all four behaviors without further configuration.
+
+These defaults are the floor, not the ceiling. Three customization paths are supported:
+
+\begin{itemize}
+\item \emph{Add or refine hedging patterns.} The domain's \texttt{epistemic.py} exposes \texttt{HEDGING\_PATTERNS} as a list of $\langle$regex, status, rationale$\rangle$ triples. Adding a new pattern is one line; the rule engine picks it up on the next ingest.
+\item \emph{Add domain-specific status types.} The clinicaltrials and fda-product-labels domains demonstrate how a domain can introduce statuses beyond the shared seven (\texttt{established}, \texttt{reported}, \texttt{theoretical} for FDA labels) by extending the rule engine. New domains can do the same; the rule-engine dispatch is open.
+\item \emph{Override the cross-source aggregation threshold or add custom rules.} A domain can plug in \texttt{CUSTOM\_RULES} (cross-source contradiction patterns, domain-specific contested-pair detection, special-case escalations) without modifying \texttt{core/label\_epistemic.py}. The wizard generates a starter \texttt{epistemic.py} pre-populated with the shared taxonomy and the pattern of \texttt{HEDGING\_PATTERNS} / \texttt{CUSTOM\_RULES} so authors edit rather than write from scratch.
+\end{itemize}
+
+The customization story is part of the workspace pattern. A scientist exploring a new corpus type may discover a class of hedging language the defaults miss (e.g., contract-specific obligations stated in conditional-future tense, or laboratory-protocol-specific provisional language). The fix is a one-line addition to the domain's \texttt{epistemic.py}, not a feature request to the framework. This keeps the framework lean -- only the rules that matter to a given domain live in that domain -- and keeps domain authors in control of how their corpora are classified.
+
 \subsection{The persona-driven narrator}
 
 A separate stage consumes the classified graph and produces a proactive briefing in natural language. The narrator's system prompt is the domain's analyst persona, loaded directly from \texttt{workbench/template.yaml}. The input to the narrator is \emph{not} the source documents -- it is a structured summary of the classified graph, assembled from \texttt{claims\_layer.json}: per-status counts, contested-claim pairs with their confidence ranges, prophetic-claim concentrations by entity type, gap signals (entity types with low connection density), and any domain-specific signals the persona is configured to attend to. The narrator emits \texttt{epistemic\_narrative.md}, structured into Executive Summary, Asserted Claims, Prophetic Claims, Contested Claims, Gaps, and Recommended Follow-Ups sections.
