@@ -1,0 +1,2141 @@
+{
+  "metadata": {
+    "domain": "fda_product_labels",
+    "description": "Epistemic analysis for fda_product_labels domain",
+    "generated_from": "tests/corpora/08_fda_labels/output/graph_data.json",
+    "total_relations": 149
+  },
+  "evidence_tier_counts": {
+    "established": 0,
+    "observed": 4,
+    "reported": 145,
+    "theoretical": 0
+  },
+  "epistemic_status_counts": {
+    "established": 0,
+    "observed": 4,
+    "reported": 145,
+    "theoretical": 0
+  },
+  "summary": {
+    "conflicts_found": 0,
+    "gaps_found": 417,
+    "cross_document_entities": 3,
+    "epistemic_status_counts": {
+      "established": 0,
+      "observed": 4,
+      "reported": 145,
+      "theoretical": 0
+    }
+  },
+  "base_domain": {
+    "description": "Factual fda_product_labels knowledge graph relations",
+    "relation_count": 0
+  },
+  "super_domain": {
+    "domain": "fda_product_labels",
+    "description": "Epistemic layer -- conflicts, gaps, cross-document linking",
+    "conflicts": [],
+    "coverage_gaps": [
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "M",
+        "description": "No M entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "n",
+        "description": "No n entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "y",
+        "description": "No y entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "O",
+        "description": "No O entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "T",
+        "description": "No T entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "C",
+        "description": "No C entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "n",
+        "description": "No n entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "d",
+        "description": "No d entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "g",
+        "description": "No g entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "n",
+        "description": "No n entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "r",
+        "description": "No r entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "c",
+        "description": "No c entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "l",
+        "description": "No l entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "b",
+        "description": "No b entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "l",
+        "description": "No l entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "s",
+        "description": "No s entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "o",
+        "description": "No o entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "m",
+        "description": "No m entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "t",
+        "description": "No t entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "m",
+        "description": "No m entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "c",
+        "description": "No c entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "h",
+        "description": "No h entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "n",
+        "description": "No n entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "s",
+        "description": "No s entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "m",
+        "description": "No m entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "o",
+        "description": "No o entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "f",
+        "description": "No f entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "c",
+        "description": "No c entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "t",
+        "description": "No t entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "o",
+        "description": "No o entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "n",
+        "description": "No n entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": ";",
+        "description": "No ; entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "f",
+        "description": "No f entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "l",
+        "description": "No l entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "g",
+        "description": "No g entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "b",
+        "description": "No b entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "s",
+        "description": "No s entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "n",
+        "description": "No n entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "c",
+        "description": "No c entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "s",
+        "description": "No s entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "k",
+        "description": "No k entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "n",
+        "description": "No n entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "o",
+        "description": "No o entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "w",
+        "description": "No w entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "l",
+        "description": "No l entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "d",
+        "description": "No d entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "g",
+        "description": "No g entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "g",
+        "description": "No g entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": "p",
+        "description": "No p entities found in graph"
+      },
+      {
+        "category": "MECHANISM_OF_ACTION",
+        "missing_type": ".",
+        "description": "No . entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "L",
+        "description": "No L entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "b",
+        "description": "No b entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "l",
+        "description": "No l entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "s",
+        "description": "No s entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "l",
+        "description": "No l entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "c",
+        "description": "No c entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "k",
+        "description": "No k entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "n",
+        "description": "No n entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "g",
+        "description": "No g entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "p",
+        "description": "No p entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "h",
+        "description": "No h entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "r",
+        "description": "No r entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "m",
+        "description": "No m entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "c",
+        "description": "No c entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "o",
+        "description": "No o entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "k",
+        "description": "No k entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "n",
+        "description": "No n entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "t",
+        "description": "No t entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "c",
+        "description": "No c entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "s",
+        "description": "No s entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "d",
+        "description": "No d entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "t",
+        "description": "No t entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "c",
+        "description": "No c entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "n",
+        "description": "No n entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "n",
+        "description": "No n entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "o",
+        "description": "No o entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "t",
+        "description": "No t entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "s",
+        "description": "No s entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "u",
+        "description": "No u entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "p",
+        "description": "No p entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "p",
+        "description": "No p entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "o",
+        "description": "No o entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "r",
+        "description": "No r entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "t",
+        "description": "No t entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "d",
+        "description": "No d entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "o",
+        "description": "No o entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "s",
+        "description": "No s entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "n",
+        "description": "No n entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "g",
+        "description": "No g entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "-",
+        "description": "No - entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "d",
+        "description": "No d entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "j",
+        "description": "No j entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "u",
+        "description": "No u entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "s",
+        "description": "No s entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "t",
+        "description": "No t entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "m",
+        "description": "No m entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "n",
+        "description": "No n entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "t",
+        "description": "No t entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "d",
+        "description": "No d entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "c",
+        "description": "No c entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "s",
+        "description": "No s entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "o",
+        "description": "No o entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "n",
+        "description": "No n entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "s",
+        "description": "No s entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": ";",
+        "description": "No ; entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "f",
+        "description": "No f entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "l",
+        "description": "No l entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "g",
+        "description": "No g entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "w",
+        "description": "No w entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "h",
+        "description": "No h entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "n",
+        "description": "No n entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "b",
+        "description": "No b entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "s",
+        "description": "No s entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "n",
+        "description": "No n entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "t",
+        "description": "No t entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "f",
+        "description": "No f entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "o",
+        "description": "No o entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "r",
+        "description": "No r entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "R",
+        "description": "No R entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "x",
+        "description": "No x entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "d",
+        "description": "No d entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "r",
+        "description": "No r entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "u",
+        "description": "No u entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "g",
+        "description": "No g entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": "s",
+        "description": "No s entities found in graph"
+      },
+      {
+        "category": "PHARMACOKINETIC_PROPERTY",
+        "missing_type": ".",
+        "description": "No . entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "L",
+        "description": "No L entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "b",
+        "description": "No b entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "l",
+        "description": "No l entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "s",
+        "description": "No s entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "w",
+        "description": "No w entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "t",
+        "description": "No t entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "h",
+        "description": "No h entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "o",
+        "description": "No o entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "u",
+        "description": "No u entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "t",
+        "description": "No t entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "r",
+        "description": "No r entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "f",
+        "description": "No f entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "r",
+        "description": "No r entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "n",
+        "description": "No n entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "c",
+        "description": "No c entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "d",
+        "description": "No d entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "c",
+        "description": "No c entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "l",
+        "description": "No l entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "n",
+        "description": "No n entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "c",
+        "description": "No c entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "l",
+        "description": "No l entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "s",
+        "description": "No s entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "t",
+        "description": "No t entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "u",
+        "description": "No u entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "d",
+        "description": "No d entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "s",
+        "description": "No s entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "p",
+        "description": "No p entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "r",
+        "description": "No r entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "o",
+        "description": "No o entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "v",
+        "description": "No v entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "d",
+        "description": "No d entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "w",
+        "description": "No w entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "k",
+        "description": "No k entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "r",
+        "description": "No r entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "v",
+        "description": "No v entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "d",
+        "description": "No d entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "n",
+        "description": "No n entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "t",
+        "description": "No t entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "r",
+        "description": "No r entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "y",
+        "description": "No y entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "g",
+        "description": "No g entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "r",
+        "description": "No r entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "o",
+        "description": "No o entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "u",
+        "description": "No u entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "n",
+        "description": "No n entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "d",
+        "description": "No d entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "n",
+        "description": "No n entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "g",
+        "description": "No g entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "f",
+        "description": "No f entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "o",
+        "description": "No o entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "r",
+        "description": "No r entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "f",
+        "description": "No f entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "f",
+        "description": "No f entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "c",
+        "description": "No c entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "c",
+        "description": "No c entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "y",
+        "description": "No y entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "c",
+        "description": "No c entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "l",
+        "description": "No l entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "m",
+        "description": "No m entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": "s",
+        "description": "No s entities found in graph"
+      },
+      {
+        "category": "CLINICAL_STUDY",
+        "missing_type": ".",
+        "description": "No . entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "L",
+        "description": "No L entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "b",
+        "description": "No b entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "l",
+        "description": "No l entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "s",
+        "description": "No s entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "t",
+        "description": "No t entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "h",
+        "description": "No h entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "t",
+        "description": "No t entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "d",
+        "description": "No d entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "o",
+        "description": "No o entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "n",
+        "description": "No n entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "o",
+        "description": "No o entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "t",
+        "description": "No t entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "d",
+        "description": "No d entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "d",
+        "description": "No d entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "r",
+        "description": "No r entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "s",
+        "description": "No s entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "s",
+        "description": "No s entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "p",
+        "description": "No p entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "d",
+        "description": "No d entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "t",
+        "description": "No t entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "r",
+        "description": "No r entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "c",
+        "description": "No c entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "o",
+        "description": "No o entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "r",
+        "description": "No r entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "g",
+        "description": "No g entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "r",
+        "description": "No r entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "t",
+        "description": "No t entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "r",
+        "description": "No r entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "c",
+        "description": "No c entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "p",
+        "description": "No p entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "o",
+        "description": "No o entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "p",
+        "description": "No p entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "u",
+        "description": "No u entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "l",
+        "description": "No l entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "t",
+        "description": "No t entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "o",
+        "description": "No o entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "n",
+        "description": "No n entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "s",
+        "description": "No s entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "l",
+        "description": "No l entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "v",
+        "description": "No v entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "f",
+        "description": "No f entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "o",
+        "description": "No o entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "r",
+        "description": "No r entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "m",
+        "description": "No m entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "u",
+        "description": "No u entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "l",
+        "description": "No l entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "r",
+        "description": "No r entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "y",
+        "description": "No y entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "n",
+        "description": "No n entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "l",
+        "description": "No l entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "y",
+        "description": "No y entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "s",
+        "description": "No s entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "t",
+        "description": "No t entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "s",
+        "description": "No s entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "w",
+        "description": "No w entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "t",
+        "description": "No t entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "h",
+        "description": "No h entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "o",
+        "description": "No o entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "u",
+        "description": "No u entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "t",
+        "description": "No t entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "c",
+        "description": "No c entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "o",
+        "description": "No o entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "m",
+        "description": "No m entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "p",
+        "description": "No p entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "l",
+        "description": "No l entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "t",
+        "description": "No t entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "s",
+        "description": "No s entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "a",
+        "description": "No a entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "f",
+        "description": "No f entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "t",
+        "description": "No t entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "y",
+        "description": "No y entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": " ",
+        "description": "No   entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "p",
+        "description": "No p entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "r",
+        "description": "No r entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "o",
+        "description": "No o entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "f",
+        "description": "No f entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "i",
+        "description": "No i entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "l",
+        "description": "No l entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "e",
+        "description": "No e entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": "s",
+        "description": "No s entities found in graph"
+      },
+      {
+        "category": "PATIENT_POPULATION",
+        "missing_type": ".",
+        "description": "No . entities found in graph"
+      }
+    ],
+    "cross_document_entities": [
+      {
+        "name": "pancreatitis",
+        "document_count": 2
+      },
+      {
+        "name": "Stevens-Johnson syndrome",
+        "document_count": 2
+      },
+      {
+        "name": "Novo Nordisk Inc.",
+        "document_count": 2
+      }
+    ]
+  }
+}

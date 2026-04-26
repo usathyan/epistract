@@ -170,6 +170,16 @@ def analyze_fda_product_labels_epistemic(
     ]
 
     # --- Build claims_layer ---
+    # Top-level evidence_tier_counts: FDA four-level evidence vocabulary
+    # (established / observed / reported / theoretical). Required by S8-03.
+    # Top-level epistemic_status_counts: v3 standard parity (same values,
+    # different key name used by the generic epistemic verifier).
+    _tier_counts = {
+        "established": established_count,
+        "observed": observed_count,
+        "reported": reported_count,
+        "theoretical": theoretical_count,
+    }
     claims_layer = {
         "metadata": {
             "domain": "fda_product_labels",
@@ -177,16 +187,14 @@ def analyze_fda_product_labels_epistemic(
             "generated_from": str(output_dir / "graph_data.json"),
             "total_relations": len(links),
         },
+        # S8-03 acceptance criterion: both keys must exist at the top level.
+        "evidence_tier_counts": _tier_counts,
+        "epistemic_status_counts": _tier_counts,
         "summary": {
             "conflicts_found": len(conflicts),
             "gaps_found": len(gaps),
             "cross_document_entities": len(cross_doc_entities),
-            "epistemic_status_counts": {
-                "established": established_count,
-                "observed": observed_count,
-                "reported": reported_count,
-                "theoretical": theoretical_count,
-            },
+            "epistemic_status_counts": _tier_counts,
         },
         "base_domain": {
             "description": "Factual fda_product_labels knowledge graph relations",
