@@ -10,22 +10,22 @@ Table~\ref{tab:scenarios} reports the seven validation scenarios. The first six 
 \begin{table}[t]
 \centering
 \small
-\caption{Validation scenarios across active domains. ``UATs'' is the user-acceptance-test pass rate for that scenario. S1--S5 ran against an earlier 17-entity / 30-relation drug-discovery schema; S6 was rebuilt on the consolidated 13-entity / 22-relation schema; S7 uses the 12-entity / 10-relation clinicaltrials schema.}
+\caption{Validation scenarios across active domains, reporting the most recent rebuild of each. ``UATs'' is the user-acceptance-test pass rate for that scenario. ``Rebuild'' indicates which framework state produced the reported numbers; the version-progression table for the most heavily rebuilt scenario (S6) appears as Table~\ref{tab:s6-enrichment} below. S1--S5 numbers are V2 rebuilds documented in \texttt{tests/scenarios/scenario-0\{1--5\}-*-v2.md}; S6 is the V3 rebuild (Table~\ref{tab:s6-enrichment}); S7 is the V3.1 launch.}
 \label{tab:scenarios}
 \begin{tabular}{@{}clrrrrcc@{}}
 \toprule
-\textbf{\#} & \textbf{Domain / Corpus} & \textbf{Docs} & \textbf{Nodes} & \textbf{Relations} & \textbf{Comm.} & \textbf{UATs} & \textbf{Schema} \\
+\textbf{\#} & \textbf{Domain / Corpus} & \textbf{Docs} & \textbf{Nodes} & \textbf{Relations} & \textbf{Comm.} & \textbf{UATs} & \textbf{Rebuild} \\
 \midrule
-S1 & drug-discovery / Neurogenetics (PICALM)        & 15 & 149 & 457 & 6  & 4/4 & 17/30 \\
-S2 & drug-discovery / Oncology (KRAS G12C)          & 16 & 108 & 307 & 4  & 5/5 & 17/30 \\
-S3 & drug-discovery / Rare Disease                  & 15 &  94 & 229 & 4  & 3/3 & 17/30 \\
-S4 & drug-discovery / Immuno-Oncology               & 16 & 132 & 361 & 5  & 4/4 & 17/30 \\
-S5 & drug-discovery / CV \& Inflammation            & 15 &  94 & 246 & 5  & 3/3 & 17/30 \\
-S6 & drug-discovery / GLP-1 CI (rebuilt)            & 34 & 278 & 855 & 10 & 6/6 & 13/22 \\
-S7 & clinicaltrials / GLP-1 Phase 3 (CT.gov)         & 10 & 142 & 395 & 4  & 5/5 & 12/10 \\
+S1 & drug-discovery / Neurogenetics (PICALM)        & 15 & 183 & 478 & 6  & 4/4 & V2 \\
+S2 & drug-discovery / Oncology (KRAS G12C)          & 16 & 140 & 432 & 4  & 5/5 & V2 \\
+S3 & drug-discovery / Rare Disease                  & 15 & 110 & 278 & 4  & 3/3 & V2 \\
+S4 & drug-discovery / Immuno-Oncology               & 16 & 151 & 440 & 5  & 4/4 & V2 \\
+S5 & drug-discovery / CV \& Inflammation            & 15 &  90 & 245 & 4  & 3/3 & V2 \\
+S6 & drug-discovery / GLP-1 CI                      & 34 & 278 & 855 & 10 & 6/6 & V3 \\
+S7 & clinicaltrials / GLP-1 Phase 3 (CT.gov)         & 10 & 142 & 395 & 8  & 5/5 & V3.1 \\
 \midrule
-   & \textbf{Drug-discovery (S1--S6)}               & 111 & 855 & 2{,}455 & 34 & 25/25 &        \\
-   & \textbf{Clinicaltrials (S7)}                   & 10  & 142 & 395     & 4  & 5/5   &        \\
+   & \textbf{Drug-discovery (S1--S6)}               & 111 & 952 & 2{,}728 & 33 & 25/25 &        \\
+   & \textbf{Clinicaltrials (S7)}                   & 10  & 142 & 395     & 8  & 5/5   &        \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -67,7 +67,7 @@ The S7 GLP-1 Phase 3 corpus comprises 10 trial protocols from \texttt{ClinicalTr
 
 \subsection{Schema coverage analysis}
 
-Across the six drug-discovery scenarios on the earlier 17-entity / 30-relation schema, the pipeline exercised 17 of 17 entity types ($100\%$) and 28 of 30 relation types ($93\%$); the two unused relations were \texttt{PHOSPHORYLATES} and \texttt{METABOLIZED\_BY}, which represent specialized biochemical relationships rarely discussed at the abstract level. The schema was subsequently consolidated to 13 entities / 22 relations by removing low-yield types observed across S1--S5; the consolidated schema retained the high-yield types and merged or removed the low-yield ones. The S6 rebuild exercised all 13 entity types and 20 of 22 relation types (the two unused being domain-rare structural relations). On the clinicaltrials domain, S7 exercised 11 of 12 entity types ($92\%$, the unused being \texttt{Endpoint} as a separate node from \texttt{Outcome}) and 9 of 10 relation types ($90\%$).
+The drug-discovery schema has gone through one consolidation. The S1--S5 V2 rebuilds ran against an earlier 17-entity / 30-relation form and together exercised 17 of 17 entity types ($100\%$) and 28 of 30 relation types ($93\%$); the two unused relations were \texttt{PHOSPHORYLATES} and \texttt{METABOLIZED\_BY}, which represent specialized biochemical relationships rarely discussed at the abstract level. The schema was subsequently consolidated to 13 entities / 22 relations by removing low-yield types observed across S1--S5; the consolidated schema retained the high-yield types and merged or removed the low-yield ones. The S6 V3 rebuild on the consolidated schema exercised all 13 entity types and 20 of 22 relation types (the two unused being domain-rare structural relations). On the clinicaltrials domain, S7 exercised 11 of 12 entity types ($92\%$, the unused being \texttt{Endpoint} as a separate node from \texttt{Outcome}) and 9 of 10 relation types ($90\%$).
 
 \subsection{Epistemic-layer outputs (S6 case study)}
 
