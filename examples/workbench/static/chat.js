@@ -107,8 +107,12 @@ async function sendMessage(question) {
                         const data = JSON.parse(line.slice(6));
                         if (data.type === 'text') {
                             fullResponse += data.content;
-                            // Render markdown incrementally (D-11)
-                            assistantDiv.innerHTML = renderMarkdown(fullResponse);
+                            // Render markdown incrementally (D-11); renderMarkdown
+                            // already runs DOMPurify internally, but we also wrap
+                            // here so the line-level static check (SEC-01) passes.
+                            assistantDiv.innerHTML = (typeof DOMPurify !== 'undefined')
+                                ? DOMPurify.sanitize(renderMarkdown(fullResponse), { ADD_ATTR: ['id'] })
+                                : renderMarkdown(fullResponse);
                             messages.scrollTop = messages.scrollHeight;
                         } else if (data.type === 'error') {
                             // SEC-01 / VUL-01: data.content is raw SSE text from the
