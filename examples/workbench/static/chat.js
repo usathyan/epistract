@@ -78,6 +78,7 @@ async function sendMessage(question) {
     // `|| null` coerces "" (unloaded select) to null per RESEARCH Pitfall 2.
     const selectedModel = document.getElementById('model-select')?.value || null;
     let fullResponse = '';
+    let errorShown = false;
     try {
         const response = await fetch('/api/chat', {
             method: 'POST',
@@ -123,8 +124,9 @@ async function sendMessage(question) {
                             errDiv.className = 'error-msg';
                             errDiv.textContent = data.content;
                             assistantDiv.appendChild(errDiv);
+                            errorShown = true;
                         } else if (data.type === 'done') {
-                            if (!fullResponse) {
+                            if (!fullResponse && !errorShown) {
                                 assistantDiv.innerHTML = '<div class="error-msg">No response received. The model may be rate-limited, unavailable, or the request exceeded its context limit. Try a different model or a shorter question.</div>';
                             } else {
                                 // Final render with citation linking
