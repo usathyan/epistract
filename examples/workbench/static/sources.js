@@ -50,7 +50,7 @@ function renderDocumentList() {
         return `
         <li>
             <button class="doc-list-item" data-doc="${doc.doc_id}" onclick="window.dispatchEvent(new CustomEvent('navigate-source', {detail: {docId: '${safeDocId}'}}))">
-                <span class="doc-name">${displayName}</span>
+                <span class="doc-name">${escapeHtml(displayName)}</span>
                 <span class="doc-size">${formatSize(doc.size_bytes)}</span>
             </button>
         </li>`;
