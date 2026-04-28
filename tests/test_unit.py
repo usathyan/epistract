@@ -3028,13 +3028,16 @@ def test_chat_request_model_field(monkeypatch):
     )
     assert req_with_model.model == "claude-haiku-3-5-20241022"
 
-    # history field remains intact
+    # history field remains intact. Items are ChatMessage instances after the
+    # SEC-03 / VUL-05 hardening (Literal["user","assistant"] role allowlist).
     req_with_history = ChatRequest(
         question="hello",
         history=[{"role": "user", "content": "prior"}],
         model="claude-opus-4-20250514",
     )
-    assert req_with_history.history == [{"role": "user", "content": "prior"}]
+    assert [m.model_dump() for m in req_with_history.history] == [
+        {"role": "user", "content": "prior"}
+    ]
     assert req_with_history.model == "claude-opus-4-20250514"
 
 
