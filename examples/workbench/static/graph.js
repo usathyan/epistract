@@ -309,25 +309,71 @@ function showNodePopover(nodeId, position) {
     popover.style.left = position.x + 'px';
     popover.style.top = position.y + 'px';
 
+    // SEC-01 / VUL-02: every field below comes from graph_data.json (untrusted).
+    // Build the popover via DOM API + textContent so a node name like
+    // `<img src=x onerror=alert(1)>` cannot inject HTML into the workbench.
+    const displayName = node.name || node.id;
     const attrs = node.attributes || {};
     const docs = node.source_documents || [];
 
-    let attrHtml = '';
-    for (const [k, v] of Object.entries(attrs)) {
-        if (v) attrHtml += `<div><span class="label">${k}:</span> <span class="data">${v}</span></div>`;
+    // Header row: <div><strong>name</strong><span class=entity-badge>type</span></div>
+    const header = document.createElement('div');
+    header.style.cssText = 'display:flex;justify-content:space-between;align-items:center;margin-bottom:8px';
+    const nameEl = document.createElement('strong');
+    nameEl.textContent = displayName;
+    header.appendChild(nameEl);
+    const badge = document.createElement('span');
+    badge.className = 'entity-badge';
+    badge.style.color = getEntityColor(node.entity_type);
+    badge.textContent = node.entity_type || '';
+    header.appendChild(badge);
+    popover.appendChild(header);
+
+    // Attribute key/value rows.
+    const attrEntries = Object.entries(attrs).filter(([, v]) => v);
+    if (attrEntries.length) {
+        const attrsWrap = document.createElement('div');
+        attrsWrap.className = 'node-attrs';
+        for (const [k, v] of attrEntries) {
+            const row = document.createElement('div');
+            const labelSpan = document.createElement('span');
+            labelSpan.className = 'label';
+            labelSpan.textContent = k + ':';
+            const dataSpan = document.createElement('span');
+            dataSpan.className = 'data';
+            dataSpan.textContent = ' ' + String(v);
+            row.appendChild(labelSpan);
+            row.appendChild(dataSpan);
+            attrsWrap.appendChild(row);
+        }
+        popover.appendChild(attrsWrap);
     }
 
-    const safeName = (node.name || node.id).replace(/'/g, "\\'").replace(/"/g, '&quot;');
+    // Source documents line.
+    if (docs.length) {
+        const docsWrap = document.createElement('div');
+        docsWrap.className = 'node-docs';
+        const docsLabel = document.createElement('span');
+        docsLabel.className = 'label';
+        docsLabel.textContent = 'Sources:';
+        docsWrap.appendChild(docsLabel);
+        docsWrap.appendChild(document.createTextNode(' ' + docs.join(', ')));
+        popover.appendChild(docsWrap);
+    }
 
-    popover.innerHTML = `
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-            <strong>${node.name || node.id}</strong>
-            <span class="entity-badge" style="color:${getEntityColor(node.entity_type)}">${node.entity_type}</span>
-        </div>
-        ${attrHtml ? `<div class="node-attrs">${attrHtml}</div>` : ''}
-        ${docs.length ? `<div class="node-docs"><span class="label">Sources:</span> ${docs.join(', ')}</div>` : ''}
-        <button class="ask-about-btn" onclick="window.dispatchEvent(new CustomEvent('ask-question', {detail: {question: 'Tell me about ${safeName}. What are the key details and relationships?'}}))">Ask about this</button>
-    `;
+    // Ask-about button — bind via addEventListener so the displayName never
+    // crosses an HTML parser. The dispatched event detail is a plain string.
+    const askBtn = document.createElement('button');
+    askBtn.className = 'ask-about-btn';
+    askBtn.textContent = 'Ask about this';
+    askBtn.addEventListener('click', () => {
+        window.dispatchEvent(new CustomEvent('ask-question', {
+            detail: {
+                question: 'Tell me about ' + displayName + '. What are the key details and relationships?',
+            },
+        }));
+    });
+    popover.appendChild(askBtn);
 
     document.getElementById('graph-panel').appendChild(popover);
 }

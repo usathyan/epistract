@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 import os
-from typing import AsyncGenerator
+from typing import AsyncGenerator, Literal
 
 import httpx
 from fastapi import APIRouter, Request
@@ -51,11 +51,23 @@ PROVIDER_MODELS: dict[str, list[dict[str, str]]] = {
 # ---------------------------------------------------------------------------
 
 
+class ChatMessage(BaseModel):
+    """A single conversational turn.
+
+    The role allowlist is enforced by Pydantic at deserialization — any value
+    other than "user" or "assistant" raises ValidationError before the handler
+    runs (VUL-05 / SEC-03 mitigation).
+    """
+
+    role: Literal["user", "assistant"]
+    content: str
+
+
 class ChatRequest(BaseModel):
     """Chat request body."""
 
     question: str
-    history: list[dict] = []  # [{"role": "user"|"assistant", "content": "..."}]
+    history: list[ChatMessage] = []
     model: str | None = None  # None = use provider default (curated via /api/models)
 
 
@@ -229,10 +241,12 @@ async def chat(request: Request, body: ChatRequest):
         user_content = f"{body.question}\n\n---\n{source_context}"
 
     # Build messages array with history (D-08: session only, last 10 turns max)
-    messages = []
+    messages: list[dict] = []
     recent_history = body.history[-10:] if len(body.history) > 10 else body.history
     for msg in recent_history:
-        messages.append({"role": msg["role"], "content": msg["content"]})
+        # msg is a ChatMessage — attribute access only; role allowlist already
+        # enforced by Pydantic at request deserialization.
+        messages.append({"role": msg.role, "content": msg.content})
     messages.append({"role": "user", "content": user_content})
 
     if provider == "anthropic":
@@ -270,12 +284,12 @@ async def _stream_anthropic(
                 "POST", base_url, json=payload, headers=headers
             ) as resp:
                 if resp.status_code != 200:
-                    body = await resp.aread()
+                    error_body = await resp.aread()
                     yield {
                         "data": json.dumps(
                             {
                                 "type": "error",
-                                "content": f"API error {resp.status_code}: {body.decode()[:500]}",
+                                "content": f"API error {resp.status_code}: {error_body.decode()[:500]}",
                             }
                         )
                     }
@@ -332,12 +346,12 @@ async def _stream_openai_compat(
                 "POST", base_url, json=payload, headers=headers
             ) as resp:
                 if resp.status_code != 200:
-                    body = await resp.aread()
+                    error_body = await resp.aread()
                     yield {
                         "data": json.dumps(
                             {
                                 "type": "error",
-                                "content": f"API error {resp.status_code}: {body.decode()[:500]}",
+                                "content": f"API error {resp.status_code}: {error_body.decode()[:500]}",
                             }
                         )
                     }

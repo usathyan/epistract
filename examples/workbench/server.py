@@ -215,6 +215,18 @@ async def _fetch_or_models() -> list[dict]:
         return PROVIDER_MODELS["openrouter"]
 
 
+# Localhost-only CORS allowlist (VUL-07 / SEC-05). The workbench is a developer tool;
+# any cross-origin request from outside localhost is refused. Add additional ports here
+# if the workbench is started on a non-default bind. The wildcard "*" is intentionally
+# NOT used — see RESEARCH section "VUL-07 — CORS Wildcard".
+LOCALHOST_ORIGINS: list[str] = [
+    "http://localhost:8501",
+    "http://127.0.0.1:8501",
+    "http://localhost:8000",
+    "http://127.0.0.1:8000",
+]
+
+
 def create_app(output_dir: Path, domain: str | None = None) -> FastAPI:
     """Create and configure the FastAPI application.
 
@@ -225,12 +237,14 @@ def create_app(output_dir: Path, domain: str | None = None) -> FastAPI:
     template = load_template(resolved_domain)
     app = FastAPI(title=template.get("title", "Knowledge Graph Explorer"))
 
-    # CORS for local development (per D-07, localhost only)
+    # CORS for local development (per D-07, localhost only). Wildcard "*" was
+    # replaced with an explicit allowlist — see VUL-07 / SEC-05 in
+    # .planning/phases/08-workbench-security-hardening/08-RESEARCH.md.
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=["*"],
-        allow_methods=["*"],
-        allow_headers=["*"],
+        allow_origins=LOCALHOST_ORIGINS,
+        allow_methods=["GET", "POST"],
+        allow_headers=["Content-Type"],
     )
 
     # Load data at startup

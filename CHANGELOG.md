@@ -2,6 +2,32 @@
 
 All notable changes to epistract are documented here. This project follows [Semantic Versioning](https://semver.org/).
 
+## [3.2.2] — 2026-04-28
+
+**Workbench security hardening.** Closes all HIGH/MEDIUM vulnerabilities identified in the workbench example app, each proven by a failing-then-passing regression test. Contributed by Chris Davidson (PR #19) and ported as a controlled release.
+
+### Security
+
+- **SEC-01 / XSS** — `chat.js` wraps every dynamic `innerHTML` assignment in `DOMPurify.sanitize` (incremental render, final render); SSE error path rebuilt via DOM API + `textContent`. `graph.js` node popover fully reconstructed with `createElement`/`textContent`. `app.js` dashboard escapes all interpolations (`escapeHtml`) and sanitizes domain-supplied HTML via DOMPurify. `sources.js` escapes `displayName`.
+- **SEC-02 / Path traversal** — `data_loader.py::get_document_text` and `get_document_pdf_path` enforce two-layer containment: string-level reject of `..`/`/`/`\\` plus `Path.resolve().relative_to(ingested_dir.resolve())`.
+- **SEC-03 / Role injection** — `ChatMessage.role: Literal["user", "assistant"]`; Pydantic rejects `system`/`tool` payloads at deserialization before the handler runs.
+- **SEC-04 / SRI missing** — `index.html` pins DOMPurify 3.4.1 + marked@18.0.2 with `integrity=sha384-…` and `crossorigin=anonymous`. DOMPurify loads first so `window.DOMPurify` is available to `chat.js`.
+- **SEC-05 / CORS wildcard** — `server.py` replaces `allow_origins=["*"]` with explicit `LOCALHOST_ORIGINS` allowlist (4 localhost ports); `allow_methods` narrowed to `GET`/`POST`, `allow_headers` to `Content-Type`.
+
+### Fixed
+
+- `chat.js` no longer overwrites a real SSE error message with the generic "No response received" fallback when the `done` event arrives after an `error` event (`errorShown` flag).
+- `tests/test_unit.py::test_chat_request_model_field` updated to compare via `model_dump()` instead of dict equality (consumer of the new `ChatMessage` schema).
+
+### Added
+
+- `tests/test_workbench_security.py` — 5 regression tests (one per SEC-0x).
+- `tests/conftest.py` — shared `client` TestClient fixture.
+
+### Known issues
+
+- Citation links rendered by `chat.js` `linkifyCitations` use inline `onclick` handlers, which DOMPurify strips during sanitization. Citations now render as inert `<a>` tags. Tracked as a follow-up — replace inline handlers with delegated `addEventListener` at the document level (mirrors the `.source-link` pattern in `index.html`).
+
 ## [3.2.1] — 2026-04-26
 
 **S8 FDA Product Labels showcase corpus.** Ships the first bundled-corpus showcase for the fda-product-labels domain: a 7-document FDA SPL corpus (Ozempic NDA209637, Wegovy NDA215256, Mounjaro NDA215866, Humira BLA125057, Gleevec NDA021588, Lipitor NDA020702, Jantoven ANDA040416), the openFDA fetch script, the full pipeline output (81 nodes / 149 edges / 1,579-word narrative), 4 workbench screenshots, scenario validation doc, and public-facing showcase doc. Closes #14.

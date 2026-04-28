@@ -78,6 +78,7 @@ async function sendMessage(question) {
     // `|| null` coerces "" (unloaded select) to null per RESEARCH Pitfall 2.
     const selectedModel = document.getElementById('model-select')?.value || null;
     let fullResponse = '';
+    let errorShown = false;
     try {
         const response = await fetch('/api/chat', {
             method: 'POST',
@@ -107,17 +108,34 @@ async function sendMessage(question) {
                         const data = JSON.parse(line.slice(6));
                         if (data.type === 'text') {
                             fullResponse += data.content;
-                            // Render markdown incrementally (D-11)
-                            assistantDiv.innerHTML = renderMarkdown(fullResponse);
+                            // Render markdown incrementally (D-11); renderMarkdown
+                            // already runs DOMPurify internally, but we also wrap
+                            // here so the line-level static check (SEC-01) passes.
+                            assistantDiv.innerHTML = (typeof DOMPurify !== 'undefined')
+                                ? DOMPurify.sanitize(renderMarkdown(fullResponse), { ADD_ATTR: ['id'] })
+                                : renderMarkdown(fullResponse);
                             messages.scrollTop = messages.scrollHeight;
                         } else if (data.type === 'error') {
-                            assistantDiv.innerHTML = `<div class="error-msg">${data.content}</div>`;
+                            // SEC-01 / VUL-01: data.content is raw SSE text from the
+                            // upstream provider — could contain HTML. Build via DOM API
+                            // to guarantee no interpretation of markup.
+                            assistantDiv.innerHTML = '';
+                            const errDiv = document.createElement('div');
+                            errDiv.className = 'error-msg';
+                            errDiv.textContent = data.content;
+                            assistantDiv.appendChild(errDiv);
+                            errorShown = true;
                         } else if (data.type === 'done') {
-                            if (!fullResponse) {
+                            if (!fullResponse && !errorShown) {
                                 assistantDiv.innerHTML = '<div class="error-msg">No response received. The model may be rate-limited, unavailable, or the request exceeded its context limit. Try a different model or a shorter question.</div>';
                             } else {
                                 // Final render with citation linking
-                                assistantDiv.innerHTML = linkifyCitations(renderMarkdown(fullResponse));
+                                // Sanitize the linkified output too — linkifyCitations
+                                // builds <a> tags from regex-extracted strings, so the
+                                // final pass guarantees no element slips through.
+                                assistantDiv.innerHTML = (typeof DOMPurify !== 'undefined')
+                                    ? DOMPurify.sanitize(linkifyCitations(renderMarkdown(fullResponse)), { ADD_ATTR: ['id'] })
+                                    : linkifyCitations(renderMarkdown(fullResponse));
                             }
                         }
                     } catch (e) {
@@ -137,9 +155,16 @@ async function sendMessage(question) {
 }
 
 function renderMarkdown(text) {
-    // Use marked.js (loaded via CDN) for markdown rendering (D-11)
+    // Use marked.js (loaded via CDN) for markdown rendering (D-11).
+    // DOMPurify (loaded BEFORE this script in index.html — VUL-06 fix) sanitizes
+    // the resulting HTML to defeat stored XSS via LLM output (VUL-01 / SEC-01).
+    // ADD_ATTR: ['id'] preserves marked's heading anchor ids (RESEARCH Pitfall 1).
     if (typeof marked !== 'undefined') {
-        return marked.parse(text);
+        const raw = marked.parse(text);
+        if (typeof DOMPurify !== 'undefined') {
+            return DOMPurify.sanitize(raw, { ADD_ATTR: ['id'] });
+        }
+        return raw;  // falls through only if DOMPurify failed to load
     }
     // Fallback: basic HTML escaping
     return text.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>');

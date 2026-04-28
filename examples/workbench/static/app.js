@@ -3,6 +3,16 @@ import { initChat, loadModelSelector } from './chat.js';
 import { initGraph } from './graph.js';
 // sources.js removed -- source docs now accessed via dashboard links
 
+// SEC-01 / VUL-03: local escapeHtml helper. We intentionally do NOT import the
+// copy from sources.js because that file is no longer wired into the module
+// graph (see line above). DOM-based escaping handles every HTML metacharacter
+// without an explicit replacement table.
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text == null ? '' : String(text);
+    return div.innerHTML;
+}
+
 // ---------------------------------------------------------------------------
 // Panel State -- only one panel visible at a time
 // ---------------------------------------------------------------------------
@@ -98,17 +108,29 @@ async function populateDashboard(template) {
         const dashResp = await fetch('/api/dashboard');
         const dashData = await dashResp.json();
         if (dashData.html) {
-            dashContent.innerHTML = dashData.html;
+            // SEC-01 / VUL-03: dashData.html may be a domain-supplied dashboard.html
+            // file (trusted authorship but still HTML) OR a server-rendered string
+            // mixing in entity_type values from graph_data.json (untrusted). Sanitize
+            // unconditionally — DOMPurify preserves heading ids per Pitfall 1.
+            dashContent.innerHTML = (typeof DOMPurify !== 'undefined')
+                ? DOMPurify.sanitize(dashData.html, { ADD_ATTR: ['id'] })
+                : dashData.html;
         } else {
-            // Auto-generate summary
-            let autoHtml = '<h2 class="dashboard-title">' + (dashData.title || 'Knowledge Graph Summary') + '</h2>';
-            if (dashData.subtitle) autoHtml += '<p class="dashboard-subtitle">' + dashData.subtitle + '</p>';
+            // Auto-generate summary. Every interpolation goes through escapeHtml —
+            // `type` is an entity_type key from graph_data.json (attacker-controlled
+            // when a malicious graph is loaded); `count` is numeric but coerced via
+            // String() defensively.
+            const safeTitle = escapeHtml(dashData.title || 'Knowledge Graph Summary');
+            const safeSubtitle = dashData.subtitle ? escapeHtml(dashData.subtitle) : '';
+            let autoHtml = '<h2 class="dashboard-title">' + safeTitle + '</h2>';
+            if (safeSubtitle) autoHtml += '<p class="dashboard-subtitle">' + safeSubtitle + '</p>';
             autoHtml += '<h3>Entity Summary</h3><div class="dashboard-table-wrap"><table class="dashboard-table"><thead><tr><th>Entity Type</th><th>Count</th></tr></thead><tbody>';
             for (const [type, count] of Object.entries(dashData.entity_counts || {})) {
-                autoHtml += '<tr><td>' + type + '</td><td>' + count + '</td></tr>';
+                autoHtml += '<tr><td>' + escapeHtml(type) + '</td><td>' + escapeHtml(String(count)) + '</td></tr>';
             }
             autoHtml += '</tbody></table></div>';
-            autoHtml += '<p>Total entities: ' + (dashData.total_nodes || 0) + ' | Total relationships: ' + (dashData.total_edges || 0) + '</p>';
+            autoHtml += '<p>Total entities: ' + escapeHtml(String(dashData.total_nodes || 0))
+                + ' | Total relationships: ' + escapeHtml(String(dashData.total_edges || 0)) + '</p>';
             dashContent.innerHTML = autoHtml;
         }
     } catch (e) {

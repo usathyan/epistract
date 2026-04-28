@@ -106,3 +106,19 @@ def sample_output_dir(tmp_path):
         shutil.copy2(fixture_file, tmp_path / fixture_file.name)
 
     return tmp_path
+
+
+@pytest.fixture
+def client(sample_output_dir):
+    """Create a FastAPI TestClient wrapping the workbench app.
+
+    Shared global fixture so test_workbench_security.py and any future
+    security/API test files can use it without duplicating setup.
+    test_workbench.py defines a local override with the same name — the
+    local fixture takes precedence within that file (pytest shadowing).
+    """
+    from examples.workbench.server import create_app
+    from starlette.testclient import TestClient
+
+    app = create_app(sample_output_dir, domain="contracts")
+    return TestClient(app)
