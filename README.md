@@ -3,6 +3,8 @@
 **A two-layer knowledge graph framework for the analyst working inside a question.**
 
 > 📄 **Paper:** *Epistract: A Two-Layer Knowledge Graph Framework with an Epistemic Super-Domain Layer* — [paper/v2/main.pdf](paper/v2/main.pdf) (April 2026, framework v3.2.x).
+>
+> 🎥 **Demo (5 min):** [Epistract at Knowledge Graph Conference 2026](https://youtu.be/SRBXZGL42fQ) (May 2026, framework v3.2.2).
 
 I have spent the last decade building enterprise knowledge graphs — Anzo from the Cambridge Semantics era, AWS Neptune / RDF stacks, Neo4j deployments at multiple companies. They worked. They answer the questions executives ask: what do we know across the organization, where do teams' work intersect, what coverage do we have on a topic. They are the right tool for breadth.
 

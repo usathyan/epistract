@@ -10,18 +10,19 @@ The demo-v3 edits are deliberately left **uncommitted in the working tree** so t
 
 ## Current state of working tree (do not commit until after recording)
 
-- [ ] `R` `docs/demo-v3/narration.md` → `archive/docs/demo/narration-v3.md` (rename, staged; `archive/` is gitignored, so this removes the file from tracked tree)
-- [ ] `R` `docs/demo-v3/run-demo.sh` → `archive/docs/demo/run-demo-v3.sh` (rename, staged; same effect as above)
-- [ ] `M` `docs/demo-v3/demo-script.md` (frontmatter v3.2.0→v3.2.2, S8 added, Block 1 reframed with analyst-inside-a-question + wrong-tool-for-enterprise-graph contrast, Block 3 schema beat trimmed to pay for it, Polycapture replaces QuickTime in production checklist, PNG title-card reference added)
-- [ ] `??` `docs/demo-v3/epistract.png` (1536×1024 schematic, untracked — needs `git add`)
+- [x] `R` `docs/demo-v3/narration.md` → `archive/docs/demo/narration-v3.md` (committed `5033b55`; *gitignore lesson — see Notes*)
+- [x] `R` `docs/demo-v3/run-demo.sh` → `archive/docs/demo/run-demo-v3.sh` (committed `5033b55`)
+- [x] `M` `docs/demo-v3/demo-script.md` (committed `5033b55`)
+- [x] `??` `docs/demo-v3/epistract.png` (committed `5033b55`)
+- [x] All demo prep files subsequently removed once recording landed on YouTube; see commit on `2026-05-03`.
 
 ## Decisions still needed
 
 ### B. Local-disk cache cleanup (no git effect)
 
-- [ ] `epistract-output/` (2.5M) — **delete locally?** Regenerable from a corpus. Cheap to keep.
-- [ ] `.DS_Store` recursive — delete (16K). Safe.
-- [ ] `.pytest_cache/`, `.ruff_cache/`, `scripts/.pytest_cache/` — delete (~450K). Regenerable.
+- [x] `epistract-output/` (2.5M) — **kept** per "cheap to keep" default.
+- [x] `.DS_Store` recursive — deleted.
+- [x] `.pytest_cache/`, `.ruff_cache/`, `scripts/.pytest_cache/` — deleted.
 - Keep: `.kreuzberg/` (slow to rebuild), `.claude/` (session state), `.planning/` (GSD), `.venv/` (slow), `archive/`, `docs/blog/`, `docs/epistract.mp4`.
 
 ### C. Tracked-but-orphaned candidates (touches git)
@@ -58,3 +59,4 @@ The demo-v3 edits are deliberately left **uncommitted in the working tree** so t
 - Open PRs at TODO creation: **none** (`gh pr list --state open` was empty).
 - The demo-script `Prior 12-min cut` line points to `archive/docs/demo/narration-v3.md` + `run-demo-v3.sh` — those paths exist locally but are gitignored. After commit + push, the link is technically dead from a fresh clone's perspective. Decide whether to re-tag the line as "available locally only" or drop it.
 - The PNG schematic subtitle reads `v3.2.0` — kept as-is per Umesh's call; architecture is unchanged across v3.2.x patches.
+- **Gitignore lesson (2026-05-03)**: `archive/` was already in `.gitignore` (line 55), but the `git mv` rename in commit `5033b55` *explicitly* staged the new path under `archive/`, which bypassed the ignore rule. Gitignore only blocks files git auto-discovers; it does not block files git is explicitly told about. Result: the archived files were tracked despite the rule. Fix applied 2026-05-03: `git rm` on the two files restored the intended state. No `.gitignore` edit was needed — the rule was already correct.
