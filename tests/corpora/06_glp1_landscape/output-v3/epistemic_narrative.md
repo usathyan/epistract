@@ -2,99 +2,87 @@
 
 ## Executive Summary
 
-- **GLP-1/GIP dual and triple agonism is the dominant mechanistic theme** across the corpus. `semaglutide`, `tirzepatide`, `orforglipron`, and `retatrutide` are all represented, with asserted clinical evidence strongest for `semaglutide` and `tirzepatide` in Type 2 Diabetes Mellitus and Obesity, and progressively weaker (prophetic → hypothesized) for emerging indications.
-- **61 prophetic claims inflate the apparent indication breadth** of these compounds. Cardiovascular risk reduction, neurodegeneration, and metabolic sub-disorders are largely patent-forward-looking, not empirically established in the graph.
-- **Two confirmed contradictions** exist on `semaglutide` and `tirzepatide` obesity indications, where confidence scores span 0.55–0.97 and 0.65–0.97 respectively — a gap large enough to affect regulatory and commercial forecasting.
-- **Hypothesized CNS and hepatic indications** for `semaglutide` (Alzheimer Disease, Parkinson Disease, Non-Alcoholic Steatohepatitis, Alcohol Use Disorder) are contested across sources with no confirmatory Phase 3 data visible in the graph.
-- **Safety surveillance is materially incomplete**: Nonarteritic Anterior Ischemic Optic Neuropathy as a `semaglutide` adverse event is hypothesized and contested; long-term cardiovascular outcome data for newer agents (`orforglipron`, `retatrutide`) are absent.
+- **`semaglutide` and `tirzepatide` dominate the corpus** with the strongest asserted evidence bases; both carry regulatory-grade INDICATED_FOR relations for Type 2 Diabetes Mellitus and Obesity, though the obesity indication for both compounds carries a **contested confidence spread** (0.55–0.97 for `semaglutide`; 0.65–0.97 for `tirzepatide`), signaling that at least one source treats it as prophetic or early-stage rather than fully approved.
+- **The prophetic claim load is substantial**: 61 forward-looking relations — concentrated in GLP-1/GIP/glucagon receptor agonist patent families — assert indications (cardiovascular risk reduction, neurodegeneration, NASH) and combination strategies that lack confirmatory trial-level evidence in this corpus.
+- **Neurological and psychiatric indications for `semaglutide`** (Alzheimer Disease, Parkinson Disease, Alcohol Use Disorder) are uniformly `hypothesized` or `contested`, with no asserted clinical trial readouts present; these represent high-visibility pipeline claims requiring independent verification.
+- **`orforglipron`** (oral small-molecule GLP-1R agonist) and **`retatrutide`** (triple GIP/GLP-1/glucagon agonist) appear in the graph primarily through prophetic and early-phase language; neither has asserted Phase 3 completion data within this corpus.
+- **Safety surveillance gaps are material**: adverse event coverage is sparse relative to the compound and indication breadth; `nonarteritic_anterior_ischemic_optic_neuropathy` as a `semaglutide` risk is explicitly `hypothesized` and `contested`, with no confirmatory pharmacovigilance data cited.
 
 ---
 
 ## Prophetic Claim Landscape
 
-### Semaglutide Patent Family (`patent_01_us10888605b2_semaglutide`)
+### GLP-1 Receptor Agonist Patent Family (`patent_01_us10888605b2_semaglutide`)
 
-The most prolific source of prophetic claims. Key forward-looking assertions include:
+The most prolific source of prophetic language. Key forward-looking assertions include:
 
-| Prophetic Claim | Gap vs. Asserted Evidence |
-|---|---|
-| `semaglutide` INDICATED_FOR `cardiovascular_risk_reduction` | SUSTAIN shows a *trend* toward MACE reduction (asserted trend, not confirmed indication) |
-| `semaglutide` INDICATED_FOR `hyperglycemia` / `glucose_tolerance_disorder` | Subsumed under T2DM indication; standalone indications are not empirically registered |
-| `semaglutide` + `sodium_n_8_2_hydroxybenzoyl_amino_caprylate` oral co-formulation | Oral delivery concept is prophetic in this patent; PIONEER trial data exist separately but are marked hypothesized in the graph |
-| `liraglutide` COMBINED_WITH `sodium_n_8_2_hydroxybenzoyl_amino_caprylate` | No empirical combination data in graph; purely compositional patent claim |
+- `semaglutide` INDICATED_FOR `cardiovascular_risk_reduction` — framed as an expected benefit, not a confirmed label claim. The SUSTAIN program shows a *trend* toward reduced MACE (`biomarker:major_adverse_cardiovascular_events`), but the graph annotates this as prophetic, not asserted.
+- `semaglutide` INDICATED_FOR `hyperglycemia` and `glucose_tolerance_disorder` — both prophetic, derived from dosing-regimen embodiment language ("a GLP-1 agonist with a minimum half-life of 72 hours… once-weekly or less"). These are plausible extrapolations from the T2DM indication but are not independently validated indications.
+- `semaglutide` ASSOCIATED_WITH `proteolytic_degradation_in_the_gastrointestinal_tract` — prophetic framing around the oral formulation rationale; the SNAC absorption-enhancer combination (`compound:sodium_n_8_2_hydroxybenzoyl_amino_caprylate`) is described as a solution to a stated problem, not a demonstrated superiority claim.
+- `compound:liraglutide` COMBINED_WITH `sodium_n_8_2_hydroxybenzoyl_amino_caprylate` — prophetic; no clinical outcome data for this specific combination is cited in the corpus.
 
-The oral formulation prophetic claims are particularly notable: the patent asserts susceptibility of GLP-1 peptides to `proteolytic_degradation_in_the_gastrointestinal_tract` as rationale, but empirical PIONEER oral semaglutide trial results are only hypothesized-status in the graph, suggesting the confirmatory link has not been fully integrated.
+### Dual/Triple Agonist Patent Family (`patent_02_us11357820b2_tirzepatide` and related)
 
-### Tirzepatide Patent Family (`patent_02_us11357820b2_tirzepatide`)
+- `tirzepatide` EVALUATED_IN `surpass` — asserted for glycemic and weight endpoints, but the INDICATED_FOR `obesity` relation retains a prophetic lower bound (0.65), suggesting the patent was filed before full regulatory approval of the obesity indication.
+- `retatrutide` Phase 3 clinical trial (`clinical_trial:retatrutide_phase_3_clinical_trial`) — the graph records Eli Lilly as the developer with an `asserted` organizational relation, but the trial outcomes are absent; the Phase 3 program itself is described in forward-looking terms.
+- `protein:glp_1_receptor` ASSOCIATED_WITH `glucose_dependent_insulin_secretion` and `appetite_suppression` — both prophetic in the triple-agonist context, extrapolated from GLP-1 monotherapy pharmacology to the triple-agonist setting without dedicated mechanistic confirmation cited.
 
-- `tirzepatide` INDICATED_FOR `obesity` carries a prophetic instance (confidence 0.65) alongside an asserted instance (0.97) — the lower-confidence prophetic claim originates from patent language predating SURMOUNT trial readouts.
-- SURPASS and SURMOUNT trial references appear as prophetic in the patent context, though external literature likely supports asserted status; the graph has not fully reconciled these.
+### Small-Molecule GLP-1R Agonist (`orforglipron`)
 
-### Triple Agonist / Retatrutide Cluster
+- `orforglipron` INDICATED_FOR [obesity, T2DM] and `biomarker:hba1c_reduction` PREDICTS_RESPONSE_TO `orforglipron` — both carry prophetic framing referencing the ACHIEVE Phase 3 program. No top-line Phase 3 results are asserted in the corpus. The gap between "Phase 3 trials (ACHIEVE program)" and confirmed efficacy is not bridged here.
 
-- `retatrutide` Phase 3 trial (`retatrutide_phase_3_clinical_trial`) is prophetic — `eli_lilly_and_company` is asserted as developer, but no Phase 3 efficacy or safety data are present in the graph.
-- The mechanistic claim that simultaneous `glp_1_receptor`, `gip_receptor`, and glucagon receptor activation produces additive metabolic benefit is prophetic/hypothesized; no head-to-head triple vs. dual agonist data exist in the graph.
-
-### GLP-1 Receptor Biology Claims
-
-- `glp_1_receptor` ASSOCIATED_WITH `glucose_dependent_insulin_secretion` and `appetite_suppression` are prophetic in one source — these are well-established pharmacologically, suggesting a source-quality issue rather than genuine uncertainty. Manual review recommended.
+**Cross-family pattern**: Patent families consistently use indication-broadening language to stake claims on metabolic comorbidities (NASH, PCOS, cardiovascular risk) without citing trial-level evidence. Analysts should treat any indication beyond T2DM and Obesity as prophetic until confirmatory trial data are independently sourced.
 
 ---
 
 ## Contested Claims & Contradictions
 
-### Confirmed Contradictions
+### Confidence Divergence (Formal Contradictions)
 
-**1. `semaglutide` INDICATED_FOR `obesity`** — confidence range 0.55–0.97 across sources including `patent_01_us10888605b2_semaglutide`. The 0.55 instance likely reflects pre-STEP-trial patent language; the 0.97 instance reflects post-approval asserted status. These should be temporally stratified, not treated as equivalent evidence.
-
-**2. `tirzepatide` INDICATED_FOR `obesity`** — confidence range 0.65–0.97 (`patent_02_us11357820b2_tirzepatide`). Same temporal artifact pattern. The 0.65 prophetic instance predates SURMOUNT-1 readout.
-
-### Contested Hypothesized Claims (33 total; highest clinical priority)
-
-| Claim | Status | Clinical Stakes |
+| Relation | Confidence Range | Interpretation |
 |---|---|---|
-| `semaglutide` INDICATED_FOR `non_alcoholic_steatohepatitis` | hypothesized, contested | Active therapeutic area; Phase 2/3 trials ongoing externally but absent from graph |
-| `semaglutide` INDICATED_FOR `alzheimer_disease` | hypothesized, contested | High public interest; no Phase 3 data in graph |
-| `semaglutide` INDICATED_FOR `parkinson_disease` | hypothesized, contested | Mechanistic rationale exists but unconfirmed |
-| `semaglutide` INDICATED_FOR `alcohol_use_disorder` | hypothesized, contested | Emerging signal; single-source conjecture risk |
-| `semaglutide` CAUSES `nonarteritic_anterior_ischemic_optic_neuropathy` | hypothesized, contested | Active FDA safety review signal; absence of asserted status is itself a regulatory risk flag |
-| `disease:type_2_diabetes_mellitus` ASSOCIATED_WITH `alzheimer_disease` / `parkinson_disease` | hypothesized, contested | Foundational assumption underlying CNS indication hypotheses |
-| `obesity` IMPLICATED_IN `polycystic_ovary_syndrome` | hypothesized, contested | Relevant for label expansion strategies |
+| `semaglutide` INDICATED_FOR `obesity` | 0.55 – 0.97 | One source (`patent_01_us10888605b2_semaglutide`) treats obesity as a primary indication; at least one source assigns only moderate confidence, consistent with a pre-approval or off-label framing |
+| `tirzepatide` INDICATED_FOR `obesity` | 0.65 – 0.97 | Same pattern; lower bound likely reflects patent filing predating FDA approval of `tirzepatide` for obesity (Zepbound, 2023) |
 
-The CNS indication cluster (`alzheimer_disease`, `parkinson_disease`) shares a common upstream hypothesis — that T2DM-associated neuroinflammation is GLP-1R-modifiable — which is itself contested. Failure of this upstream hypothesis would invalidate the downstream indication claims simultaneously.
+### Hypothesized / Contested Indication Claims
+
+- **Neurodegenerative indications**: `semaglutide` INDICATED_FOR `alzheimer_disease` and `parkinson_disease` are both `hypothesized` and `contested`. The mechanistic rationale (insulin resistance–neurodegeneration axis, `disease:type_2_diabetes_mellitus` ASSOCIATED_WITH both diseases, also `hypothesized`) is biologically plausible but unsupported by Phase 3 readouts in this corpus. No source ID provides asserted clinical evidence.
+- **`alcohol_use_disorder`**: `semaglutide` INDICATED_FOR `alcohol_use_disorder` is `hypothesized` and `contested` — single-source conjecture territory. No trial ID is linked.
+- **`non_alcoholic_steatohepatitis` (NASH)**: `semaglutide` INDICATED_FOR NASH is `hypothesized` and `contested`. Given active Phase 3 NASH trials for GLP-1 agonists in the public domain, the absence of asserted evidence here is a notable corpus gap rather than a true scientific absence.
+- **`nonarteritic_anterior_ischemic_optic_neuropathy`**: `semaglutide` CAUSES this adverse event is `hypothesized` and `contested`. This is a pharmacovigilance signal that has received regulatory attention; the graph's failure to resolve it to asserted or negative status is a risk-monitoring gap.
 
 ---
 
 ## Coverage Gaps
 
-1. **No long-term safety data for `orforglipron` or `retatrutide`**: The graph contains Phase 3 trial references for `orforglipron` (ACHIEVE program) and Phase 3 initiation for `retatrutide`, but cardiovascular outcome trials (CVOT), renal safety, and oncology signals are entirely absent.
+1. **Long-term cardiovascular outcomes**: SUSTAIN-6 and SELECT trial data for `semaglutide` are referenced obliquely (MACE trend), but no asserted CVOT primary endpoint readout is present. For a compound class where cardiovascular outcomes are a regulatory requirement, this is a critical absence.
 
-2. **No head-to-head comparison data**: The graph asserts `tirzepatide` superiority over "selective GLP-1 receptor agonists" but contains no direct `tirzepatide` vs. `semaglutide` randomized trial node. The SURPASS-2 trial (tirzepatide vs. semaglutide) is not represented.
+2. **Head-to-head comparisons**: No direct `semaglutide` vs. `tirzepatide` efficacy or safety comparison is asserted in the graph. SURPASS-CVOT and SURMOUNT data exist publicly; their absence here leaves the relative positioning of these agents unresolved within this corpus.
 
-3. **Absent companion diagnostics / predictive biomarkers**: `hba1c_reduction` appears as a response predictor for `tirzepatide`, `semaglutide`, and `orforglipron`, but no baseline patient-selection biomarker (e.g., baseline BMI threshold, GLP1R expression, genetic variant) is present. No pharmacogenomic stratification data exist.
+3. **Companion diagnostics and biomarker stratification**: The graph contains `biomarker:hba1c_reduction` as a response predictor, but no companion diagnostic, genetic biomarker (e.g., *GLP1R* variant stratification), or patient-selection algorithm is cited for any compound. This is particularly notable for the neurological indication hypotheses, where biomarker-guided trial design would be expected.
 
-4. **PIONEER oral semaglutide trial integration is incomplete**: The graph marks `semaglutide` EVALUATED_IN `pioneer` as hypothesized — a significant gap given that oral semaglutide (`rybelsus`) is an approved product with published Phase 3 data.
+4. **Pediatric and renal/hepatic subpopulation data**: No clinical trial or safety relation covers pediatric populations or dose-adjustment in renal/hepatic impairment for any compound in the graph.
 
-5. **Nonarteritic Anterior Ischemic Optic Neuropathy causality unresolved**: The adverse event is hypothesized and contested but no incidence data, comparator arm, or mechanistic explanation node exists in the graph.
+5. **`orforglipron` safety profile**: As a small-molecule GLP-1R agonist with a distinct ADME profile from peptide agonists, organ-specific toxicity data (hepatotoxicity signal noted in early trials publicly) is entirely absent from the graph.
 
-6. **No regulatory submission or approval date nodes**: The graph cannot answer "when was this approved and in which jurisdiction," limiting competitive timeline analysis.
+6. **NASH confirmatory trial**: Despite `semaglutide` INDICATED_FOR NASH being `hypothesized`, no NASH-specific trial ID (e.g., ESSENCE trial) is present. This is a high-value pipeline gap.
 
-7. **Retatrutide efficacy data absent**: Phase 2 published data for `retatrutide` exist in the literature but are not integrated; the graph only captures the Phase 3 initiation as a prophetic/organizational claim.
+7. **Formulation-specific outcomes for oral `semaglutide`**: The SNAC co-formulation rationale is prophetic; PIONEER trial outcomes are `hypothesized`/`contested` rather than asserted, leaving the oral vs. injectable efficacy comparison unresolved in the graph.
 
 ---
 
 ## Recommended Follow-Ups
 
-1. **Temporally stratify the two confirmed contradictions**: Pull filing dates for `patent_01_us10888605b2_semaglutide` and `patent_02_us11357820b2_tirzepatide` and cross-reference against STEP-1 (`NCT03548935`) and SURMOUNT-1 (`NCT04184622`) approval dates. Reclassify pre-approval prophetic instances; upgrade post-approval instances to asserted.
+1. **Pull SELECT trial publication** (cardiovascular outcomes for `semaglutide` in obesity without T2DM) to upgrade the MACE relation from prophetic to asserted and resolve the `cardiovascular_risk_reduction` indication status.
 
-2. **Manually review GLP-1R biology prophetic flags**: The `glp_1_receptor` ASSOCIATED_WITH `glucose_dependent_insulin_secretion` / `appetite_suppression` prophetic tags are almost certainly source-quality artifacts. Verify originating document context and reclassify to asserted if appropriate.
+2. **Manually review `patent_01_us10888605b2_semaglutide`** for claim scope on the oral formulation — specifically whether PIONEER-6 cardiovascular data are cited in the specification, which would allow reclassification of prophetic CVOT claims.
 
-3. **Integrate SURPASS-2 trial data**: Add a `clinical_trial:surpass_2` node with direct `tirzepatide` vs. `semaglutide` efficacy and safety relations to close the head-to-head gap. Source: NEJM 2021, Frías et al.
+3. **Source `orforglipron` ACHIEVE Phase 3 top-line results** (Eli Lilly press releases, ClinicalTrials.gov `NCT` records) to determine whether the `hba1c_reduction` PREDICTS_RESPONSE_TO `orforglipron` relation can be upgraded from prophetic to asserted.
 
-4. **Resolve NAION adverse event status**: Pull the FDA pharmacovigilance communication and any published case-control data on `semaglutide` and `nonarteritic_anterior_ischemic_optic_neuropathy`. Upgrade from hypothesized to asserted or negative based on findings.
+4. **Adjudicate the `nonarteritic_anterior_ischemic_optic_neuropathy` signal**: Pull the JAMA Ophthalmology 2023 pharmacovigilance study and any FDA label updates to assign a defensible epistemic status to this adverse event relation.
 
-5. **Ingest retatrutide Phase 2 data**: Jastreboff et al. NEJM 2023 contains asserted efficacy and safety data for `retatrutide` that would substantially upgrade multiple prophetic nodes.
+5. **Add `retatrutide` Phase 3 trial IDs** to the graph and link to primary endpoints; the current organizational relation (`eli_lilly_and_company` DEVELOPS `retatrutide_phase_3_clinical_trial`) is unanchored to outcomes.
 
-6. **Map CNS indication hypothesis chain explicitly**: Create a named hypothesis node linking `type_2_diabetes_mellitus` → neuroinflammation → `glp_1_receptor` CNS expression → `alzheimer_disease`/`parkinson_disease`. This makes the contested upstream assumption visible and allows single-point invalidation tracking.
+6. **Verify the NASH hypothesis cluster**: Identify whether the ESSENCE trial (`semaglutide` in NASH/MASH) has reported; if so, the `hypothesized` INDICATED_FOR NASH relation is either upgradeable or refutable.
 
-7. **Add regulatory approval nodes**: Ingest FDA and EMA approval records for `semaglutide` (Ozempic, Wegovy, Rybelsus), `tirzepatide` (Mounjaro, Zepbound), and `liraglutide` (Victoza, Saxenda) to enable jurisdiction-specific indication mapping.
+7. **Cross-check `tirzepatide` obesity approval date** against patent filing dates for `patent_02_us11357820b2_tirzepatide` to confirm whether the 0.65 lower-bound confidence on the obesity indication reflects a pre-approval filing artifact or a genuine evidentiary dispute.

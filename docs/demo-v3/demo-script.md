@@ -4,9 +4,9 @@
 **Track date:** 2026-05-08, 10 AM – Noon ET (virtual)
 **Video slot:** 5 minutes total + 10–15 min live QnA
 **Presenter:** Umesh Bhatt (umesh@8thcross.com)
-**Epistract version:** v3.2.0 / 4 pre-built domains, S7 clinicaltrials shipped, S6 drug-discovery validated across 6 sub-scenarios
+**Epistract version:** v3.2.2 / 4 pre-built domains (drug-discovery, clinicaltrials, fda-product-labels, contracts) / 8 validated scenarios. S8 fda-product-labels is the README showcase (landed v3.2.1, 2026-04-26); S6 drug-discovery (GLP-1) is the demo corpus — chosen for the richest prophetic-vs-asserted contrast story.
 **Prior video:** [v2.0 demo, 2026-03-27, YouTube](https://youtu.be/7mHbdb0nn3Y) — superseded
-**Prior 12-min script:** retained in git history at `docs/demo-v3/demo-script.md@2eca1bf` if a longer cut is ever needed
+**Prior 12-min cut:** archived at `archive/docs/demo/narration-v3.md` + `archive/docs/demo/run-demo-v3.sh` for any future longer venue.
 
 ---
 
@@ -20,27 +20,29 @@ KGC attendees: domain experts in life sciences, general KG practitioners, ontolo
 
 | Block | Window | What's on screen | Word budget |
 |---|---|---|---:|
-| 1. Setup + GLP-1 scenario context | 0:00 – 1:00 | Title → terminal | ~140 |
+| 1. Positioning + GLP-1 scenario | 0:00 – 1:00 | Title → terminal | ~170 |
 | 2. Trigger the briefing + name the two layers | 1:00 – 2:00 | Terminal command → workbench loading | ~140 |
-| 3. Graph walkthrough while briefing generates | 2:00 – 3:30 | Workbench Graph panel | ~210 |
+| 3. Graph walkthrough while briefing generates | 2:00 – 3:30 | Workbench Graph panel | ~190 |
 | 4. Briefing returns — read executive summary | 3:30 – 4:30 | Terminal / VS Code on `epistemic_narrative.md` | ~140 |
 | 5. Closing | 4:30 – 5:00 | Title card + GitHub URL | ~70 |
 
-Total narration: ~700 words at 140 wpm = ~5 min. Tight; rehearse twice before recording.
+Total narration: ~710 words at 140 wpm = ~5 min. Tight; rehearse twice before recording. Block 1 carries more density (the analyst-inside-a-question framing is what differentiates Epistract from enterprise KG tools — it pays for itself in the QnA), Block 3 trades a tangential schema beat for that air.
 
 ---
 
-## Block 1 — Setup + GLP-1 scenario (60s, 0:00–1:00)
+## Block 1 — Positioning + GLP-1 scenario (60s, 0:00–1:00)
 
-**Surface:** Title card for 5s, fade to a clean terminal at `~/code/epistract`.
+**Surface:** Title card for 5s — full-frame `docs/demo-v3/epistract.png` (1536×1024 schematic: two-layer architecture + persona dual-arrow + four domain pills + scenario thumbnails). Fade to a clean terminal at `~/code/epistract`.
 
-**Title card:**
+*The schematic doubles as the visual proof of every claim in the narration that follows: Layer 1 (property graph) and Layer 2 (epistemic overlay) are both visible, the persona-as-single-source-of-truth pattern (one arrow to Workbench Chat, one to Epistemic Briefing) is right there, and the four domains + scenario gradient sit along the bottom. A viewer who pauses on the title card can read the architecture before the narration even starts.*
+
+**Fallback ASCII title card** (if the PNG can't be used for any reason):
 ```
 EPISTRACT
 A Two-Layer Knowledge Graph Framework
 with an Epistemic Super-Domain Layer
 
-github.com/usathyan/epistract · v3.2.0
+github.com/usathyan/epistract · v3.2.2
 Paper: paper/v2/main.pdf · Umesh Bhatt · umesh@8thcross.com
 ```
 
@@ -48,9 +50,11 @@ Paper: paper/v2/main.pdf · Umesh Bhatt · umesh@8thcross.com
 
 **Narration:**
 
-> "Hi, I'm Umesh. Claude Code already gives you rich deep-research capabilities — web tools, MCP servers for academic search, patent retrieval, trial registries, regulatory databases. You can already use Claude Code to assemble a body of documents that answers a research direction. Epistract is what you reach for next. It's the consolidation layer: once you have that body of documents in hand, Epistract turns it into a structured knowledge graph project — typed entities and relations, an epistemic classification on every relation, an analyst briefing, and a reactive chat surface — that you use to answer many specific questions about the consolidated body. The motivating problem it solves: most KG tools stop at extracting entities and typed relations. They tell you what's in a document but not *how* it's stated — asserted with quantitative evidence, patent forward-looking language, hedged research wording, or contradicting another source? Epistract treats that epistemic dimension as a first-class layer on top of the brute facts.
+> "Hi, I'm Umesh. Epistract is built for the analyst working inside a question — the biomedical researcher screening a thirty-paper landscape for a target decision, the regulatory specialist comparing FDA labels for a class, the CI analyst working through a competitor's patent stack. Their corpus is bounded; the graph they need is built fast, queried hard, archived when the decision is made. A maintained enterprise knowledge graph — Anzo, Neptune, Neo4j — is the wrong tool for that workflow. Too slow to build, too broad to be precise, too costly to retire. Epistract is the right one.
 >
-> The body of deep research for this demo: thirty-four documents on GLP-1 receptor agonists — the drug class behind semaglutide and tirzepatide. Ten patent filings from Novo Nordisk, Pfizer, Eli Lilly, Hanmi, and Zealand. Twenty-four PubMed papers on mechanism, safety, and emerging indications. The graph is already built. I'll trigger the analyst briefing now, and while it runs I'll walk the graph itself."
+> Where it fits in the loop: Claude Code already gives you the deep-research capabilities — web tools, MCP servers for academic search, patents, trials, regulators. You assemble the corpus there. Epistract is what you reach for next — the consolidation layer that turns that body of documents into a structured knowledge graph: typed entities and relations, an epistemic classification on every relation, an analyst briefing, a reactive chat. Most KG tools stop at the brute facts. They tell you what's in a document but not *how* it's stated — asserted, prophetic patent language, hedged hypothesis, or contradiction. Epistract treats that epistemic dimension as a first-class layer on top.
+>
+> Demo corpus: thirty-four documents on GLP-1 receptor agonists — the drug class behind semaglutide and tirzepatide. Ten patent filings from Novo Nordisk, Pfizer, Eli Lilly, Hanmi, and Zealand. Twenty-four PubMed papers on mechanism, safety, and emerging indications. The graph is already built. I'll trigger the analyst briefing now, and while it runs I'll walk the graph itself."
 
 ---
 
@@ -90,7 +94,7 @@ Paper: paper/v2/main.pdf · Umesh Bhatt · umesh@8thcross.com
 
 *Click a `Compound` node — semaglutide or tirzepatide. Show its neighborhood and attributes.*
 
-> "Three things worth pointing out. One: entities are grounded to ontology standards. INN names for drugs. HGNC symbols for genes. MeSH preferred terms for diseases. The schema is in YAML, eleven to seventeen entity types per domain across our four pre-built domains. Two: every edge carries a confidence score and a verbatim source quote. Click any edge —"
+> "Three things worth pointing out. One: entities are grounded to ontology standards — INN names for drugs, HGNC symbols for genes, MeSH preferred terms for diseases. Two: every edge carries a confidence score and a verbatim source quote. Click any edge —"
 
 *Click an edge, popover shows the evidence quote.*
 
@@ -134,7 +138,7 @@ bat tests/corpora/06_glp1_landscape/output-v3/epistemic_narrative.md
 
 **Cut to closing card:**
 ```
-EPISTRACT v3.2.0
+EPISTRACT v3.2.2
 
 Paper:  Epistract — A Two-Layer Knowledge Graph Framework
         with an Epistemic Super-Domain Layer
@@ -152,12 +156,13 @@ QnA →
 
 ## Production checklist
 
+- [ ] **Title-card asset**: `docs/demo-v3/epistract.png` (1536×1024 schematic) ready as full-frame opener. Subtitle says v3.2.0 — kept as-is; the two-layer architecture hasn't changed across v3.2.x patches.
 - [ ] **Pre-built artifacts**: `tests/corpora/06_glp1_landscape/output-v3/{graph_data.json, claims_layer.json, epistemic_narrative.md}` all present and committed
 - [ ] **Paper PDF**: `paper/v2/main.pdf` rebuilt against current main and committed (so the GitHub link resolves to the latest version on day-of). Title page open in Preview ahead of time for the Block 5 picture-in-picture.
 - [ ] **Workbench pre-launch** before recording: `python scripts/launch_workbench.py tests/corpora/06_glp1_landscape/output-v3 --domain drug-discovery --port 8000` — let physics settle for 30s before hitting record
 - [ ] **OpenRouter / Anthropic credits**: enough for the live `/epistract:epistemic` rerun in Block 2 (~$0.05–$0.10 for the narrator call)
 - [ ] **Terminal / browser layout**: pre-position so the switch from terminal to browser feels natural; consider a 2-up layout where the terminal stays visible in a corner during graph walkthrough
-- [ ] **Recording**: QuickTime screen recording, 1920×1080, microphone live (this script is paced for live first-person delivery, not TTS post)
+- [ ] **Recording**: Polycapture (macOS multi-source recorder) — separate sources for terminal and browser, 1920×1080, microphone live with Voice Isolation, app exclusion ON for any window with secrets/notifications, camera bubble small bottom-right or off. Recording each source separately means a stumble on one stream doesn't force a full re-take. Script is paced for live first-person delivery, not TTS post.
 - [ ] **Backup plan**: if the live narrator call hangs (rate-limit / SSE error), have a pre-built `epistemic_narrative.md` ready to open at the 3:30 mark — don't dwell on the failure
 - [ ] **Rehearsal**: 2 rehearsal passes minimum. The live `/epistract:epistemic` runtime varies (30–90s); know what you'll fill the slack with if it returns early or late
 
