@@ -1,0 +1,139 @@
+name: pharmacovigilance
+version: 1.0.0
+description: "Pharmacovigilance domain for extracting structured knowledge graphs\
+  \ from adverse event reports (FAERS, VAERS, EudraVigilance, MedWatch), case series,\
+  \ and RCT meta-analyses. Captures suspect drugs, adverse events, patients, reporters,\
+  \ outcomes, dechallenge/rechallenge dynamics, concomitant medications, indications,\
+  \ regulatory actions, and aggregate causality signals. Optimized for cross-database\
+  \ contradiction detection and Bradford-Hill causality assessment.\n\nNOMENCLATURE\
+  \ STANDARDS:\n  - Drugs: prefer WHO ATC code (e.g. 'N02BE01' for paracetamol) as\
+  \ canonical when available; record INN, brand, and manufacturer codes as aliases.\n\
+  \  - Adverse events: prefer MedDRA Preferred Term (PT); record reporter verbatim\
+  \ and Lowest-Level Term (LLT) as aliases. Cross-walk to ICD-10 when feasible.\n\
+  \  - Outcomes: use ICH E2B outcome categories.\n  - Reporters: classify as HCP,\
+  \ consumer, lawyer, sponsor, regulator, or unknown.\n\nEXTERNAL ENRICHMENT (post-build,\
+  \ optional):\n  - WHO ATC code lookup\n  - MedDRA hierarchy expansion (LLT -> PT\
+  \ -> HLT -> HLGT -> SOC)\n  - FDA FAERS public dashboard API\n  - PubMed cross-reference\
+  \ for literature corroboration\n\nVALIDATION:\n  - WHO ATC code format (1 letter,\
+  \ 2 digits, 2 letters, 2 digits)\n  - MedDRA preferred-term lookup\n  - ICD-10 cross-walk\
+  \ where available\n\nCONFIDENCE CALIBRATION:\n  - 0.9-1.0: Asserted by HCP-submitted\
+  \ report with positive dechallenge AND rechallenge, OR multiple independent corroborating\
+  \ reports satisfying Bradford-Hill criteria.\n  - 0.7-0.89: Hypothesized — HCP-submitted\
+  \ single report, positive dechallenge only, or strong temporal association.\n  -\
+  \ 0.5-0.69: Speculative — consumer-submitted report without medical detail, weak\
+  \ temporal evidence, or single uncorroborated source.\n  - below 0.5: Lawyer-submitted\
+  \ reports without clinical detail; flag for review.\n\nIMPORTANT — RESEARCH-GRADE\
+  \ ONLY:\nThis domain output is RESEARCH-GRADE only. It MUST NOT be used as a regulatory\
+  \ submission deliverable. Outputs are not 21 CFR Part 11 audit-trail compliant.\
+  \ The narrator panel and any briefing produced from this graph must include this\
+  \ disclaimer prominently."
+system_context: "You are a pharmacovigilance analyst extracting a knowledge graph\
+  \ from adverse event reports (FAERS, VAERS, EudraVigilance, MedWatch), case series,\
+  \ and RCT meta-analyses.\n\nNOMENCLATURE:\n  - Drug: prefer WHO ATC code; record\
+  \ INN, brand, codes as aliases.\n  - AdverseEvent: prefer MedDRA Preferred Term;\
+  \ record verbatim and LLT as aliases.\n  - Outcome: use ICH E2B categories.\n  -\
+  \ Reporter: classify as HCP, consumer, lawyer, sponsor, regulator, unknown.\n\n\
+  CAUSALITY ASSESSMENT — Bradford-Hill criteria:\n  - Strength, consistency, specificity,\
+  \ temporality, biological gradient (dose-response), plausibility, coherence, experiment,\
+  \ analogy.\n  - Positive dechallenge + positive rechallenge = strongest single-case\
+  \ signal — bias toward 'asserted'.\n  - Lawyer-submitted reports lacking clinical\
+  \ detail = bias toward 'speculative'.\n  - HCP single report = 'hypothesized'.\n\
+  \  - Cross-database contradictions (e.g., FAERS vs EudraVigilance) = 'contested'.\n\
+  \nCONFIDENCE CALIBRATION:\n  - 0.9-1.0: Explicitly stated by HCP with strong Bradford-Hill\
+  \ support.\n  - 0.7-0.89: Strongly supported by HCP context.\n  - 0.5-0.69: Inferred\
+  \ from indirect evidence or non-HCP source with detail.\n  - below 0.5: Speculative\
+  \ — flag for review.\n\nRESEARCH-GRADE ONLY: outputs MUST NOT be treated as regulatory\
+  \ deliverables and are NOT 21 CFR Part 11 audit-trail compliant."
+entity_types:
+  Drug:
+    description: A pharmaceutical product implicated in or co-administered during
+      an adverse event report. Prefer the WHO ATC code as the canonical identifier
+      when available; record INN, brand names, and manufacturer codes as aliases.
+  AdverseEvent:
+    description: A clinical event experienced by a patient temporally associated with
+      drug exposure. Prefer the MedDRA Preferred Term (PT) as the canonical name;
+      record reporter verbatim, MedDRA Lowest-Level Term (LLT), and ICD-10 cross-walks
+      as aliases.
+  Patient:
+    description: The de-identified subject of an adverse event report. Captures age
+      band, sex, weight band, and relevant medical history. Never store identifying
+      information.
+  Reporter:
+    description: The party who submitted the adverse event report (physician, pharmacist,
+      consumer, lawyer, manufacturer). Reporter type strongly conditions epistemic
+      weight.
+  Outcome:
+    description: The clinical resolution of the adverse event — recovered, recovered
+      with sequelae, not recovered, fatal, or unknown. Maps to ICH E2B outcome categories.
+  ReportType:
+    description: The provenance and structure of the report — spontaneous (FAERS,
+      VAERS, EudraVigilance, MedWatch), case series, RCT meta-analysis, registry,
+      post-marketing study, literature.
+  TemporalRelationship:
+    description: The time-to-onset relationship between drug exposure and event (e.g.,
+      immediate, hours, days, weeks, months) and any latency window relevant to causality
+      assessment.
+  Concomitant:
+    description: A drug, supplement, or medical product co-administered with the suspect
+      drug at the time of the adverse event. Material to confounder analysis and drug-drug
+      interaction signal detection.
+  Indication:
+    description: The clinical reason for which the suspect drug was prescribed or
+      taken. Distinguishes signal from underlying disease confounding.
+  DechallengeRechallenge:
+    description: Documentation of whether the event resolved when the drug was withdrawn
+      (dechallenge) and whether it recurred when the drug was reintroduced (rechallenge).
+      Positive dechallenge plus positive rechallenge is the strongest single-case
+      causality signal.
+  RegulatoryAction:
+    description: An action taken by a regulator or sponsor in response to safety signals
+      — label change, boxed warning, Dear Healthcare Provider letter, REMS, market
+      withdrawal, suspension, or recall.
+  CausalitySignal:
+    description: An aggregate causality assessment derived from one or more reports
+      — Bradford-Hill consistency, strength, temporality, biological plausibility,
+      dose-response, specificity, coherence, analogy, and experiment.
+relation_types:
+  EXPERIENCED:
+    description: A Patient experienced an AdverseEvent.
+  TOOK:
+    description: A Patient took a Drug or Concomitant prior to or during the AdverseEvent
+      window.
+  INDICATED_FOR:
+    description: A Drug is indicated for an Indication (the prescribed reason for
+      use).
+  CO_ADMINISTERED_WITH:
+    description: A Drug was co-administered with a Concomitant during the same exposure
+      window. Symmetric — material to drug-drug interaction signal detection.
+  REPORTED_BY:
+    description: A ReportType / case was reported by a Reporter. Reporter identity
+      (HCP, consumer, lawyer, sponsor) conditions epistemic weight.
+  RESULTED_IN:
+    description: An AdverseEvent resulted in an Outcome (recovered, sequelae, fatal,
+      unknown).
+  OCCURRED_AFTER:
+    description: An AdverseEvent occurred after a Drug exposure with a stated TemporalRelationship.
+      Foundation of the temporality criterion.
+  RESOLVED_ON_DECHALLENGE:
+    description: An AdverseEvent resolved when the suspect Drug was withdrawn — captured
+      via a DechallengeRechallenge entity.
+  RECURRED_ON_RECHALLENGE:
+    description: An AdverseEvent recurred when the suspect Drug was reintroduced —
+      captured via a DechallengeRechallenge entity. Strongest single-case causality
+      signal.
+  CAUSED_BY:
+    description: An AdverseEvent is asserted to be caused by a Drug. Asserted only
+      when Bradford-Hill criteria are met or when the source explicitly attributes
+      causation.
+  TRIGGERED:
+    description: A CausalitySignal or AdverseEvent cluster triggered a RegulatoryAction
+      (label change, withdrawal, REMS).
+  CONTRADICTS:
+    description: A claim from one report or database contradicts a claim from another
+      (e.g., FAERS-asserted causation contradicted by EudraVigilance dechallenge-negative
+      case). Symmetric across the contradicting pair.
+community_label_anchors:
+- Drug
+- AdverseEvent
+- RegulatoryAction
+- CausalitySignal

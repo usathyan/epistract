@@ -1,0 +1,377 @@
+{
+  "document_id": "faers_warfarin_rechallenge_10219165",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "regorafenib",
+      "entity_type": "Drug",
+      "attributes": {
+        "brand_name": "STIVARGA",
+        "rxcui": "1312402",
+        "role": "Suspect",
+        "dosage": "120 MG QD days 1-21 every 4 weeks",
+        "action_taken": "Drug withdrawn"
+      },
+      "confidence": 0.99,
+      "context": "STIVARGA (regorafenib) \u2014 Role: Suspect \u2014 Indication: COLON CANCER STAGE IV \u2014 Dosage: 120 MG QD days 1-21 every 4 weeks \u2014 Action taken: Drug withdrawn"
+    },
+    {
+      "name": "warfarin",
+      "entity_type": "Drug",
+      "attributes": {
+        "brand_name": "WARFARIN",
+        "substance": "WARFARIN SODIUM",
+        "rxcui": "855288",
+        "role": "Suspect",
+        "dosage": "0.5-2 MG DAILY"
+      },
+      "confidence": 0.99,
+      "context": "WARFARIN (multiple dose entries) \u2014 Role: Suspect \u2014 Dosage: 0.5-2 MG DAILY (various) \u2014 Substance: WARFARIN SODIUM"
+    },
+    {
+      "name": "nicorandil",
+      "entity_type": "Concomitant",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Concomitant Drug(s): NICORANDIL, THYRADIN S, LIDUC M, URSO, ZYLORIC, ALDACTONE A"
+    },
+    {
+      "name": "thyradin s",
+      "entity_type": "Concomitant",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Concomitant Drug(s): NICORANDIL, THYRADIN S, LIDUC M, URSO, ZYLORIC, ALDACTONE A"
+    },
+    {
+      "name": "liduc m",
+      "entity_type": "Concomitant",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Concomitant Drug(s): NICORANDIL, THYRADIN S, LIDUC M, URSO, ZYLORIC, ALDACTONE A"
+    },
+    {
+      "name": "urso",
+      "entity_type": "Concomitant",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Concomitant Drug(s): NICORANDIL, THYRADIN S, LIDUC M, URSO, ZYLORIC, ALDACTONE A"
+    },
+    {
+      "name": "zyloric",
+      "entity_type": "Concomitant",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Concomitant Drug(s): NICORANDIL, THYRADIN S, LIDUC M, URSO, ZYLORIC, ALDACTONE A"
+    },
+    {
+      "name": "aldactone a",
+      "entity_type": "Concomitant",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Concomitant Drug(s): NICORANDIL, THYRADIN S, LIDUC M, URSO, ZYLORIC, ALDACTONE A"
+    },
+    {
+      "name": "patient_10219165",
+      "entity_type": "Patient",
+      "attributes": {
+        "sex": "Male",
+        "age_at_onset": 76,
+        "country": "JP"
+      },
+      "confidence": 0.99,
+      "context": "Patient \u2014 Sex: Male \u2014 Age at onset: 76 years"
+    },
+    {
+      "name": "physician_reporter_JP_10219165",
+      "entity_type": "Reporter",
+      "attributes": {
+        "qualification": "Physician",
+        "country": "JP"
+      },
+      "confidence": 0.99,
+      "context": "Primary source qualification: Physician \u2014 Reporter country: JP"
+    },
+    {
+      "name": "prothrombin time prolonged",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Prothrombin time prolonged",
+        "outcome": "Recovered/resolved",
+        "positive_rechallenge": true
+      },
+      "confidence": 0.99,
+      "context": "Prothrombin time prolonged \u2014 Recovered/resolved; Positive rechallenge: Prothrombin time prolonged, International normalised ratio increased"
+    },
+    {
+      "name": "international normalised ratio increased",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "International normalised ratio increased",
+        "outcome": "Recovered/resolved",
+        "positive_rechallenge": true
+      },
+      "confidence": 0.99,
+      "context": "International normalised ratio increased \u2014 Recovered/resolved; Positive rechallenge: Prothrombin time prolonged, International normalised ratio increased"
+    },
+    {
+      "name": "pneumothorax",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Pneumothorax",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Pneumothorax \u2014 Recovered/resolved"
+    },
+    {
+      "name": "metastases to liver",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Metastases to liver"
+      },
+      "confidence": 0.99,
+      "context": "Metastases to liver"
+    },
+    {
+      "name": "palmar-plantar erythrodysaesthesia syndrome",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Palmar-plantar erythrodysaesthesia syndrome"
+      },
+      "confidence": 0.99,
+      "context": "Palmar-plantar erythrodysaesthesia syndrome"
+    },
+    {
+      "name": "carcinoembryonic antigen increased",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Carcinoembryonic antigen increased"
+      },
+      "confidence": 0.99,
+      "context": "Carcinoembryonic antigen increased"
+    },
+    {
+      "name": "drug interaction",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Drug interaction"
+      },
+      "confidence": 0.99,
+      "context": "Drug interaction \u2014 listed as MedDRA-coded adverse event"
+    },
+    {
+      "name": "colon cancer stage iv",
+      "entity_type": "Indication",
+      "attributes": {},
+      "confidence": 0.99,
+      "context": "Indication: COLON CANCER STAGE IV"
+    },
+    {
+      "name": "recovered_resolved",
+      "entity_type": "Outcome",
+      "attributes": {
+        "outcome_code": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Prothrombin time prolonged \u2014 Recovered/resolved; International normalised ratio increased \u2014 Recovered/resolved; Pneumothorax \u2014 Recovered/resolved"
+    },
+    {
+      "name": "spontaneous_faers",
+      "entity_type": "ReportType",
+      "attributes": {
+        "report_type": "Spontaneous",
+        "source": "FAERS",
+        "safety_report_id": "10219165",
+        "serious": true,
+        "expedited": true
+      },
+      "confidence": 0.99,
+      "context": "Report type: Spontaneous (FAERS) \u2014 Expedited criteria fulfilled: Yes \u2014 Serious: Yes"
+    },
+    {
+      "name": "positive_rechallenge_inr_pt",
+      "entity_type": "DechallengeRechallenge",
+      "attributes": {
+        "type": "positive rechallenge",
+        "events": [
+          "Prothrombin time prolonged",
+          "International normalised ratio increased"
+        ],
+        "drug": "regorafenib"
+      },
+      "confidence": 0.99,
+      "context": "Positive rechallenge: Prothrombin time prolonged, International normalised ratio increased \u2014 likely due to STIVARGA-WARFARIN drug interaction"
+    },
+    {
+      "name": "regorafenib_warfarin_ddi_signal",
+      "entity_type": "CausalitySignal",
+      "attributes": {
+        "signal_type": "drug_drug_interaction",
+        "drugs": [
+          "regorafenib",
+          "warfarin"
+        ],
+        "basis": "positive rechallenge",
+        "confidence_level": "high"
+      },
+      "confidence": 0.95,
+      "context": "Positive rechallenge documented (Prothrombin time prolonged, INR increased \u2014 likely due to STIVARGA-WARFARIN drug interaction). Physician reporter, Japan. This is a drug interaction signal."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10219165",
+      "target_entity": "prothrombin time prolonged",
+      "confidence": 0.99,
+      "evidence": "Male 76 years experienced Prothrombin time prolonged, International normalised ratio increased, Pneumothorax, Metastases to liver after STIVARGA and WARFARIN."
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10219165",
+      "target_entity": "international normalised ratio increased",
+      "confidence": 0.99,
+      "evidence": "Male 76 years experienced Prothrombin time prolonged, International normalised ratio increased, Pneumothorax, Metastases to liver after STIVARGA and WARFARIN."
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10219165",
+      "target_entity": "pneumothorax",
+      "confidence": 0.99,
+      "evidence": "Male 76 years experienced Prothrombin time prolonged, International normalised ratio increased, Pneumothorax, Metastases to liver after STIVARGA and WARFARIN."
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10219165",
+      "target_entity": "metastases to liver",
+      "confidence": 0.99,
+      "evidence": "Male 76 years experienced Prothrombin time prolonged, International normalised ratio increased, Pneumothorax, Metastases to liver after STIVARGA and WARFARIN."
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10219165",
+      "target_entity": "palmar-plantar erythrodysaesthesia syndrome",
+      "confidence": 0.99,
+      "evidence": "Reactions (MedDRA-coded adverse events): Palmar-plantar erythrodysaesthesia syndrome"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10219165",
+      "target_entity": "carcinoembryonic antigen increased",
+      "confidence": 0.99,
+      "evidence": "Reactions (MedDRA-coded adverse events): Carcinoembryonic antigen increased"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10219165",
+      "target_entity": "drug interaction",
+      "confidence": 0.99,
+      "evidence": "Reactions (MedDRA-coded adverse events): Drug interaction"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10219165",
+      "target_entity": "regorafenib",
+      "confidence": 0.99,
+      "evidence": "STIVARGA (regorafenib) \u2014 Role: Suspect \u2014 Dosage: 120 MG QD days 1-21 every 4 weeks"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10219165",
+      "target_entity": "warfarin",
+      "confidence": 0.99,
+      "evidence": "WARFARIN (multiple dose entries) \u2014 Role: Suspect \u2014 Dosage: 0.5-2 MG DAILY (various)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "regorafenib",
+      "target_entity": "colon cancer stage iv",
+      "confidence": 0.99,
+      "evidence": "Indication: COLON CANCER STAGE IV"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "regorafenib",
+      "target_entity": "warfarin",
+      "confidence": 0.99,
+      "evidence": "Male 76 years experienced Prothrombin time prolonged, International normalised ratio increased, Pneumothorax, Metastases to liver after STIVARGA and WARFARIN. Positive rechallenge documented \u2014 likely due to STIVARGA-WARFARIN drug interaction."
+    },
+    {
+      "relation_type": "REPORTED_BY",
+      "source_entity": "patient_10219165",
+      "target_entity": "physician_reporter_JP_10219165",
+      "confidence": 0.99,
+      "evidence": "Primary source qualification: Physician \u2014 Reporter country: JP"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "prothrombin time prolonged",
+      "target_entity": "recovered_resolved",
+      "confidence": 0.99,
+      "evidence": "Prothrombin time prolonged \u2014 Recovered/resolved"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "international normalised ratio increased",
+      "target_entity": "recovered_resolved",
+      "confidence": 0.99,
+      "evidence": "International normalised ratio increased \u2014 Recovered/resolved"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "pneumothorax",
+      "target_entity": "recovered_resolved",
+      "confidence": 0.99,
+      "evidence": "Pneumothorax \u2014 Recovered/resolved"
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "prothrombin time prolonged",
+      "target_entity": "regorafenib",
+      "confidence": 0.99,
+      "evidence": "Positive rechallenge: Prothrombin time prolonged, International normalised ratio increased \u2014 likely due to STIVARGA-WARFARIN drug interaction"
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "international normalised ratio increased",
+      "target_entity": "regorafenib",
+      "confidence": 0.99,
+      "evidence": "Positive rechallenge: Prothrombin time prolonged, International normalised ratio increased \u2014 likely due to STIVARGA-WARFARIN drug interaction"
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "prothrombin time prolonged",
+      "target_entity": "drug interaction",
+      "confidence": 0.92,
+      "evidence": "Positive rechallenge documented (Prothrombin time prolonged, INR increased \u2014 likely due to STIVARGA-WARFARIN drug interaction). This is a drug interaction signal."
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "international normalised ratio increased",
+      "target_entity": "drug interaction",
+      "confidence": 0.92,
+      "evidence": "Positive rechallenge documented (Prothrombin time prolonged, INR increased \u2014 likely due to STIVARGA-WARFARIN drug interaction). This is a drug interaction signal."
+    },
+    {
+      "relation_type": "TRIGGERED",
+      "source_entity": "regorafenib_warfarin_ddi_signal",
+      "target_entity": "prothrombin time prolonged",
+      "confidence": 0.95,
+      "evidence": "Positive rechallenge documented (Prothrombin time prolonged, INR increased \u2014 likely due to STIVARGA-WARFARIN drug interaction). Physician reporter, Japan. This is a drug interaction signal."
+    },
+    {
+      "relation_type": "TRIGGERED",
+      "source_entity": "regorafenib_warfarin_ddi_signal",
+      "target_entity": "international normalised ratio increased",
+      "confidence": 0.95,
+      "evidence": "Positive rechallenge documented (Prothrombin time prolonged, INR increased \u2014 likely due to STIVARGA-WARFARIN drug interaction). Physician reporter, Japan. This is a drug interaction signal."
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "",
+  "domain_name": "pharmacovigilance",
+  "chunk_size": 10000,
+  "extracted_at": "2026-05-03T17:50:16.611668+00:00",
+  "error": null
+}

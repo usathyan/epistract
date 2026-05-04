@@ -1,0 +1,353 @@
+{
+  "document_id": "faers_montelukast_rechallenge_10394620",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "montelukast",
+      "entity_type": "Drug",
+      "attributes": {
+        "substance": "MONTELUKAST SODIUM",
+        "rxcui": "200224, 242438, 311759",
+        "role": "Suspect",
+        "action_taken": "Drug withdrawn"
+      },
+      "confidence": 0.99,
+      "context": "Suspect Drug(s): MONTELUKAST \u2014 Role: Suspect, Action taken: Drug withdrawn, Substance name(s): MONTELUKAST SODIUM, RxCUI: 200224, 242438, 311759"
+    },
+    {
+      "name": "depression",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Depression",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Depression \u2014 Recovered/resolved"
+    },
+    {
+      "name": "sputum increased",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Sputum increased",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Sputum increased \u2014 Recovered/resolved"
+    },
+    {
+      "name": "cough",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Cough",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Cough \u2014 Recovered/resolved"
+    },
+    {
+      "name": "pallor",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Pallor",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Pallor \u2014 Recovered/resolved"
+    },
+    {
+      "name": "lethargy",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Lethargy",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Lethargy \u2014 Recovered/resolved"
+    },
+    {
+      "name": "patient_10394620",
+      "entity_type": "Patient",
+      "attributes": {
+        "sex": "Female",
+        "age_at_onset": 10,
+        "age_unit": "years"
+      },
+      "confidence": 0.99,
+      "context": "Patient \u2014 Sex: Female, Age at onset: 10 years"
+    },
+    {
+      "name": "physician_GB_10394620",
+      "entity_type": "Reporter",
+      "attributes": {
+        "qualification": "Physician",
+        "country": "GB"
+      },
+      "confidence": 0.99,
+      "context": "Primary source qualification: Physician, Reporter country: GB"
+    },
+    {
+      "name": "recovered_resolved",
+      "entity_type": "Outcome",
+      "attributes": {
+        "outcome_code": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Depression \u2014 Recovered/resolved; Sputum increased \u2014 Recovered/resolved; Cough \u2014 Recovered/resolved; Pallor \u2014 Recovered/resolved; Lethargy \u2014 Recovered/resolved"
+    },
+    {
+      "name": "spontaneous_FAERS",
+      "entity_type": "ReportType",
+      "attributes": {
+        "report_type": "Spontaneous",
+        "database": "FAERS",
+        "safetyreportid": "10394620",
+        "expedited": true,
+        "serious": true
+      },
+      "confidence": 0.99,
+      "context": "Report type: Spontaneous (FAERS), Expedited criteria fulfilled: Yes, Serious: Yes"
+    },
+    {
+      "name": "asthma",
+      "entity_type": "Indication",
+      "attributes": {
+        "indication": "ASTHMA"
+      },
+      "confidence": 0.99,
+      "context": "Indication: ASTHMA"
+    },
+    {
+      "name": "positive_rechallenge_10394620",
+      "entity_type": "DechallengeRechallenge",
+      "attributes": {
+        "dechallenge": "Drug withdrawn \u2014 all 5 AEs recovered/resolved",
+        "rechallenge": "Positive rechallenge for: Lethargy, Cough, Pallor, Depression, Sputum increased"
+      },
+      "confidence": 0.99,
+      "context": "Action taken: Drug withdrawn; Positive rechallenge: Lethargy, Cough, Pallor, Depression, Sputum increased"
+    },
+    {
+      "name": "bradford_hill_strongest_signal",
+      "entity_type": "CausalitySignal",
+      "attributes": {
+        "signal_type": "Positive rechallenge",
+        "assessment": "Strongest Bradford-Hill signal",
+        "confidence_basis": "Positive rechallenge documented for all 5 events"
+      },
+      "confidence": 0.99,
+      "context": "Positive rechallenge documented for all 5 events. Physician reporter, GB. Strongest Bradford-Hill signal."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10394620",
+      "target_entity": "depression",
+      "confidence": 0.99,
+      "evidence": "Female 10 years experienced Depression after MONTELUKAST."
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10394620",
+      "target_entity": "sputum increased",
+      "confidence": 0.99,
+      "evidence": "Female 10 years experienced Sputum increased after MONTELUKAST."
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10394620",
+      "target_entity": "cough",
+      "confidence": 0.99,
+      "evidence": "Female 10 years experienced Cough after MONTELUKAST."
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10394620",
+      "target_entity": "pallor",
+      "confidence": 0.99,
+      "evidence": "Female 10 years experienced Pallor after MONTELUKAST."
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10394620",
+      "target_entity": "lethargy",
+      "confidence": 0.99,
+      "evidence": "Female 10 years experienced Lethargy after MONTELUKAST."
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10394620",
+      "target_entity": "montelukast",
+      "confidence": 0.99,
+      "evidence": "Suspect Drug(s): MONTELUKAST \u2014 Role: Suspect"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "montelukast",
+      "target_entity": "asthma",
+      "confidence": 0.99,
+      "evidence": "Indication: ASTHMA"
+    },
+    {
+      "relation_type": "REPORTED_BY",
+      "source_entity": "spontaneous_FAERS",
+      "target_entity": "physician_GB_10394620",
+      "confidence": 0.99,
+      "evidence": "Primary source qualification: Physician, Reporter country: GB"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "depression",
+      "target_entity": "recovered_resolved",
+      "confidence": 0.99,
+      "evidence": "Depression \u2014 Recovered/resolved"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "sputum increased",
+      "target_entity": "recovered_resolved",
+      "confidence": 0.99,
+      "evidence": "Sputum increased \u2014 Recovered/resolved"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "cough",
+      "target_entity": "recovered_resolved",
+      "confidence": 0.99,
+      "evidence": "Cough \u2014 Recovered/resolved"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "pallor",
+      "target_entity": "recovered_resolved",
+      "confidence": 0.99,
+      "evidence": "Pallor \u2014 Recovered/resolved"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "lethargy",
+      "target_entity": "recovered_resolved",
+      "confidence": 0.99,
+      "evidence": "Lethargy \u2014 Recovered/resolved"
+    },
+    {
+      "relation_type": "RESOLVED_ON_DECHALLENGE",
+      "source_entity": "depression",
+      "target_entity": "montelukast",
+      "confidence": 0.99,
+      "evidence": "Action taken: Drug withdrawn; Depression \u2014 Recovered/resolved"
+    },
+    {
+      "relation_type": "RESOLVED_ON_DECHALLENGE",
+      "source_entity": "sputum increased",
+      "target_entity": "montelukast",
+      "confidence": 0.99,
+      "evidence": "Action taken: Drug withdrawn; Sputum increased \u2014 Recovered/resolved"
+    },
+    {
+      "relation_type": "RESOLVED_ON_DECHALLENGE",
+      "source_entity": "cough",
+      "target_entity": "montelukast",
+      "confidence": 0.99,
+      "evidence": "Action taken: Drug withdrawn; Cough \u2014 Recovered/resolved"
+    },
+    {
+      "relation_type": "RESOLVED_ON_DECHALLENGE",
+      "source_entity": "pallor",
+      "target_entity": "montelukast",
+      "confidence": 0.99,
+      "evidence": "Action taken: Drug withdrawn; Pallor \u2014 Recovered/resolved"
+    },
+    {
+      "relation_type": "RESOLVED_ON_DECHALLENGE",
+      "source_entity": "lethargy",
+      "target_entity": "montelukast",
+      "confidence": 0.99,
+      "evidence": "Action taken: Drug withdrawn; Lethargy \u2014 Recovered/resolved"
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "depression",
+      "target_entity": "montelukast",
+      "confidence": 0.99,
+      "evidence": "Positive rechallenge: Lethargy, Cough, Pallor, Depression, Sputum increased"
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "sputum increased",
+      "target_entity": "montelukast",
+      "confidence": 0.99,
+      "evidence": "Positive rechallenge: Lethargy, Cough, Pallor, Depression, Sputum increased"
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "cough",
+      "target_entity": "montelukast",
+      "confidence": 0.99,
+      "evidence": "Positive rechallenge: Lethargy, Cough, Pallor, Depression, Sputum increased"
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "pallor",
+      "target_entity": "montelukast",
+      "confidence": 0.99,
+      "evidence": "Positive rechallenge: Lethargy, Cough, Pallor, Depression, Sputum increased"
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "lethargy",
+      "target_entity": "montelukast",
+      "confidence": 0.99,
+      "evidence": "Positive rechallenge: Lethargy, Cough, Pallor, Depression, Sputum increased"
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "depression",
+      "target_entity": "montelukast",
+      "confidence": 0.99,
+      "evidence": "Positive rechallenge documented for all 5 events. Strongest Bradford-Hill signal."
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "sputum increased",
+      "target_entity": "montelukast",
+      "confidence": 0.99,
+      "evidence": "Positive rechallenge documented for all 5 events. Strongest Bradford-Hill signal."
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "cough",
+      "target_entity": "montelukast",
+      "confidence": 0.99,
+      "evidence": "Positive rechallenge documented for all 5 events. Strongest Bradford-Hill signal."
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "pallor",
+      "target_entity": "montelukast",
+      "confidence": 0.99,
+      "evidence": "Positive rechallenge documented for all 5 events. Strongest Bradford-Hill signal."
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "lethargy",
+      "target_entity": "montelukast",
+      "confidence": 0.99,
+      "evidence": "Positive rechallenge documented for all 5 events. Strongest Bradford-Hill signal."
+    },
+    {
+      "relation_type": "TRIGGERED",
+      "source_entity": "positive_rechallenge_10394620",
+      "target_entity": "bradford_hill_strongest_signal",
+      "confidence": 0.99,
+      "evidence": "Positive rechallenge documented for all 5 events. Physician reporter, GB. Strongest Bradford-Hill signal."
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "",
+  "domain_name": "pharmacovigilance",
+  "chunk_size": 10000,
+  "extracted_at": "2026-05-03T17:48:49.919000+00:00",
+  "error": null
+}

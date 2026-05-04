@@ -90,7 +90,7 @@ def resolve_api_config() -> LLMConfig | None:
         return LLMConfig(
             openrouter_key,
             "https://openrouter.ai/api/v1",
-            "anthropic/claude-sonnet-4.6",
+            os.environ.get("OPENROUTER_MODEL", "anthropic/claude-sonnet-4.6"),
             "openrouter",
         )
 

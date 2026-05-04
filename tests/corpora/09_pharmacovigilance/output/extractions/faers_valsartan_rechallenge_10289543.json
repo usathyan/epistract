@@ -1,0 +1,263 @@
+{
+  "document_id": "faers_valsartan_rechallenge_10289543",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "valsartan/hydrochlorothiazide 160 mg/25 mg",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "suspect",
+        "action_taken": "drug withdrawn",
+        "dose_valsartan_mg": 160,
+        "dose_hctz_mg": 25
+      },
+      "confidence": 0.99,
+      "context": "VALSARTAN/HYDROCHLOROTHIAZIDE 160 MG/25 MG \u2014 Role: Suspect \u2014 Action taken: Drug withdrawn"
+    },
+    {
+      "name": "valsartan",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "component",
+        "pulled_for_drug": true,
+        "rationale": "recall_lineage"
+      },
+      "confidence": 0.99,
+      "context": "Pulled-for drug: valsartan (rationale: recall_lineage)"
+    },
+    {
+      "name": "hydrochlorothiazide",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "component"
+      },
+      "confidence": 0.99,
+      "context": "VALSARTAN/HYDROCHLOROTHIAZIDE 160 MG/25 MG"
+    },
+    {
+      "name": "patient_10289543",
+      "entity_type": "Patient",
+      "attributes": {
+        "sex": "male",
+        "age_at_onset_years": 65,
+        "country": "DE"
+      },
+      "confidence": 0.99,
+      "context": "Male 65 years experienced Dizziness, Arrhythmia, Exercise tolerance decreased"
+    },
+    {
+      "name": "unknown reporter DE",
+      "entity_type": "Reporter",
+      "attributes": {
+        "qualification": "unknown",
+        "country": "DE"
+      },
+      "confidence": 0.99,
+      "context": "Primary source qualification: Unknown \u2014 Reporter country: DE"
+    },
+    {
+      "name": "spontaneous FAERS",
+      "entity_type": "ReportType",
+      "attributes": {
+        "safety_report_id": "10289543",
+        "expedited": false,
+        "serious": false,
+        "database": "FAERS"
+      },
+      "confidence": 0.99,
+      "context": "Report type: Spontaneous (FAERS) \u2014 Expedited criteria fulfilled: No \u2014 Serious: No"
+    },
+    {
+      "name": "dizziness",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Dizziness",
+        "outcome": "recovered/resolved"
+      },
+      "confidence": 0.65,
+      "context": "Dizziness \u2014 Recovered/resolved"
+    },
+    {
+      "name": "arrhythmia",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Arrhythmia",
+        "outcome": "recovered/resolved"
+      },
+      "confidence": 0.65,
+      "context": "Arrhythmia \u2014 Recovered/resolved"
+    },
+    {
+      "name": "exercise tolerance decreased",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Exercise tolerance decreased",
+        "outcome": "recovered/resolved",
+        "positive_rechallenge": true
+      },
+      "confidence": 0.92,
+      "context": "Positive rechallenge: Exercise tolerance decreased \u2014 Exercise tolerance decreased \u2014 Recovered/resolved"
+    },
+    {
+      "name": "essential hypertension",
+      "entity_type": "Indication",
+      "attributes": {
+        "coding": "ESSENTIAL HYPERTENSION"
+      },
+      "confidence": 0.99,
+      "context": "Indication: ESSENTIAL HYPERTENSION"
+    },
+    {
+      "name": "recovered/resolved",
+      "entity_type": "Outcome",
+      "attributes": {
+        "status": "recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Dizziness \u2014 Recovered/resolved; Arrhythmia \u2014 Recovered/resolved; Exercise tolerance decreased \u2014 Recovered/resolved"
+    },
+    {
+      "name": "drug withdrawal dechallenge",
+      "entity_type": "DechallengeRechallenge",
+      "attributes": {
+        "dechallenge": "drug withdrawn",
+        "positive_rechallenge": true,
+        "rechallenge_event": "exercise tolerance decreased"
+      },
+      "confidence": 0.92,
+      "context": "Action taken: Drug withdrawn \u2014 Positive rechallenge: Exercise tolerance decreased"
+    },
+    {
+      "name": "positive rechallenge exercise tolerance decreased",
+      "entity_type": "CausalitySignal",
+      "attributes": {
+        "signal_type": "positive_rechallenge",
+        "event": "exercise tolerance decreased",
+        "strength": "strong"
+      },
+      "confidence": 0.92,
+      "context": "Positive rechallenge documented (Exercise tolerance decreased)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10289543",
+      "target_entity": "dizziness",
+      "confidence": 0.65,
+      "evidence": "Male 65 years experienced Dizziness, Arrhythmia, Exercise tolerance decreased after VALSARTAN/HYDROCHLOROTHIAZIDE 160MG/25MG. Unknown reporter."
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10289543",
+      "target_entity": "arrhythmia",
+      "confidence": 0.65,
+      "evidence": "Male 65 years experienced Dizziness, Arrhythmia, Exercise tolerance decreased after VALSARTAN/HYDROCHLOROTHIAZIDE 160MG/25MG. Unknown reporter."
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10289543",
+      "target_entity": "exercise tolerance decreased",
+      "confidence": 0.92,
+      "evidence": "Positive rechallenge documented (Exercise tolerance decreased). Male 65 years experienced ... Exercise tolerance decreased after VALSARTAN/HYDROCHLOROTHIAZIDE 160MG/25MG."
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10289543",
+      "target_entity": "valsartan/hydrochlorothiazide 160 mg/25 mg",
+      "confidence": 0.99,
+      "evidence": "Male 65 years experienced Dizziness, Arrhythmia, Exercise tolerance decreased after VALSARTAN/HYDROCHLOROTHIAZIDE 160MG/25MG."
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "valsartan/hydrochlorothiazide 160 mg/25 mg",
+      "target_entity": "essential hypertension",
+      "confidence": 0.99,
+      "evidence": "Indication: ESSENTIAL HYPERTENSION"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "valsartan",
+      "target_entity": "hydrochlorothiazide",
+      "confidence": 0.99,
+      "evidence": "VALSARTAN/HYDROCHLOROTHIAZIDE 160 MG/25 MG \u2014 fixed-dose combination product"
+    },
+    {
+      "relation_type": "REPORTED_BY",
+      "source_entity": "patient_10289543",
+      "target_entity": "unknown reporter DE",
+      "confidence": 0.99,
+      "evidence": "Primary source qualification: Unknown \u2014 Reporter country: DE"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "dizziness",
+      "target_entity": "recovered/resolved",
+      "confidence": 0.99,
+      "evidence": "Dizziness \u2014 Recovered/resolved"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "arrhythmia",
+      "target_entity": "recovered/resolved",
+      "confidence": 0.99,
+      "evidence": "Arrhythmia \u2014 Recovered/resolved"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "exercise tolerance decreased",
+      "target_entity": "recovered/resolved",
+      "confidence": 0.99,
+      "evidence": "Exercise tolerance decreased \u2014 Recovered/resolved"
+    },
+    {
+      "relation_type": "RESOLVED_ON_DECHALLENGE",
+      "source_entity": "dizziness",
+      "target_entity": "drug withdrawal dechallenge",
+      "confidence": 0.75,
+      "evidence": "Action taken: Drug withdrawn \u2014 Dizziness \u2014 Recovered/resolved. Unknown reporter without explicit dechallenge linkage."
+    },
+    {
+      "relation_type": "RESOLVED_ON_DECHALLENGE",
+      "source_entity": "arrhythmia",
+      "target_entity": "drug withdrawal dechallenge",
+      "confidence": 0.75,
+      "evidence": "Action taken: Drug withdrawn \u2014 Arrhythmia \u2014 Recovered/resolved. Unknown reporter without explicit dechallenge linkage."
+    },
+    {
+      "relation_type": "RESOLVED_ON_DECHALLENGE",
+      "source_entity": "exercise tolerance decreased",
+      "target_entity": "drug withdrawal dechallenge",
+      "confidence": 0.85,
+      "evidence": "Action taken: Drug withdrawn \u2014 Exercise tolerance decreased \u2014 Recovered/resolved."
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "exercise tolerance decreased",
+      "target_entity": "valsartan/hydrochlorothiazide 160 mg/25 mg",
+      "confidence": 0.92,
+      "evidence": "Positive rechallenge: Exercise tolerance decreased"
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "exercise tolerance decreased",
+      "target_entity": "valsartan/hydrochlorothiazide 160 mg/25 mg",
+      "confidence": 0.92,
+      "evidence": "Positive rechallenge documented (Exercise tolerance decreased). Positive rechallenge = strongest signal \u2014 confidence >= 0.9."
+    },
+    {
+      "relation_type": "TRIGGERED",
+      "source_entity": "positive rechallenge exercise tolerance decreased",
+      "target_entity": "exercise tolerance decreased",
+      "confidence": 0.92,
+      "evidence": "Positive rechallenge documented (Exercise tolerance decreased)"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "",
+  "domain_name": "pharmacovigilance",
+  "chunk_size": 10000,
+  "extracted_at": "2026-05-03T17:49:12.190716+00:00",
+  "error": null
+}

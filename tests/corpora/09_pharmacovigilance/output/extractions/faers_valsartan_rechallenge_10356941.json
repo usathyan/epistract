@@ -1,0 +1,236 @@
+{
+  "document_id": "faers_valsartan_rechallenge_10356941",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "valsartan",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "suspect",
+        "pharmacological_class": "Angiotensin 2 Receptor Blocker",
+        "rxcui": "349199",
+        "action_taken": "drug withdrawn"
+      },
+      "confidence": 0.95,
+      "context": "Drug -- VALSARTAN, Role: Suspect, Indication: HYPERTENSION, Action taken: Drug withdrawn, Substance: VALSARTAN, Pharmacological class: Angiotensin 2 Receptor Blocker [EPC]"
+    },
+    {
+      "name": "olmesartan",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "suspect",
+        "action_taken": "drug withdrawn"
+      },
+      "confidence": 0.95,
+      "context": "Drug -- OLMESARTAN, Role: Suspect, Indication: HYPERTENSION, Action taken: Drug withdrawn, Positive rechallenge: Diarrhoea"
+    },
+    {
+      "name": "ramipril",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "suspect",
+        "pharmacological_class": "Angiotensin Converting Enzyme Inhibitor",
+        "action_taken": "drug withdrawn"
+      },
+      "confidence": 0.95,
+      "context": "Drug -- RAMIPRIL, Role: Suspect, Indication: HYPERTENSION, Action taken: Drug withdrawn, Substance: RAMIPRIL, Pharmacological class: Angiotensin Converting Enzyme Inhibitor [EPC]"
+    },
+    {
+      "name": "diarrhoea",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Diarrhoea",
+        "outcome_status": "Recovering/resolving",
+        "serious": true
+      },
+      "confidence": 0.98,
+      "context": "Reactions (MedDRA-coded adverse events): Diarrhoea \u2014 Recovering/resolving"
+    },
+    {
+      "name": "patient_10356941",
+      "entity_type": "Patient",
+      "attributes": {
+        "sex": "Female",
+        "age_at_onset": 73,
+        "country": "DE"
+      },
+      "confidence": 0.98,
+      "context": "Patient -- Sex: Female, Age at onset: 73 years"
+    },
+    {
+      "name": "reporter_10356941",
+      "entity_type": "Reporter",
+      "attributes": {
+        "qualification": "Unknown",
+        "country": "DE"
+      },
+      "confidence": 0.95,
+      "context": "Primary source qualification: Unknown, Reporter country: DE"
+    },
+    {
+      "name": "hospitalization_10356941",
+      "entity_type": "Outcome",
+      "attributes": {
+        "outcome_type": "Hospitalization",
+        "serious": true
+      },
+      "confidence": 0.98,
+      "context": "Serious: Yes \u2014 Hospitalization"
+    },
+    {
+      "name": "spontaneous_faers",
+      "entity_type": "ReportType",
+      "attributes": {
+        "report_type": "Spontaneous",
+        "database": "FAERS"
+      },
+      "confidence": 0.99,
+      "context": "Report type: Spontaneous (FAERS)"
+    },
+    {
+      "name": "hypertension",
+      "entity_type": "Indication",
+      "attributes": {},
+      "confidence": 0.98,
+      "context": "Indication: HYPERTENSION (for valsartan, olmesartan, ramipril)"
+    },
+    {
+      "name": "olmesartan_diarrhoea_rechallenge",
+      "entity_type": "DechallengeRechallenge",
+      "attributes": {
+        "drug": "olmesartan",
+        "adverse_event": "diarrhoea",
+        "rechallenge_result": "positive",
+        "dechallenge_result": "drug withdrawn"
+      },
+      "confidence": 0.98,
+      "context": "Drug -- OLMESARTAN, Positive rechallenge: Diarrhoea; Narrative: Positive rechallenge for OLMESARTAN (Diarrhoea)"
+    },
+    {
+      "name": "olmesartan_diarrhoea_causality",
+      "entity_type": "CausalitySignal",
+      "attributes": {
+        "drug": "olmesartan",
+        "adverse_event": "diarrhoea",
+        "signal_type": "positive_rechallenge",
+        "strength": "strong"
+      },
+      "confidence": 0.95,
+      "context": "Positive rechallenge for OLMESARTAN (Diarrhoea). Unknown reporter, Germany."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10356941",
+      "target_entity": "diarrhoea",
+      "confidence": 0.98,
+      "evidence": "Female 73 years experienced Diarrhoea after VALSARTAN, OLMESARTAN, RAMIPRIL."
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10356941",
+      "target_entity": "valsartan",
+      "confidence": 0.98,
+      "evidence": "Drug -- VALSARTAN, Role: Suspect"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10356941",
+      "target_entity": "olmesartan",
+      "confidence": 0.98,
+      "evidence": "Drug -- OLMESARTAN, Role: Suspect"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10356941",
+      "target_entity": "ramipril",
+      "confidence": 0.98,
+      "evidence": "Drug -- RAMIPRIL, Role: Suspect"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "valsartan",
+      "target_entity": "hypertension",
+      "confidence": 0.98,
+      "evidence": "Drug -- VALSARTAN, Indication: HYPERTENSION"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "olmesartan",
+      "target_entity": "hypertension",
+      "confidence": 0.98,
+      "evidence": "Drug -- OLMESARTAN, Indication: HYPERTENSION"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "ramipril",
+      "target_entity": "hypertension",
+      "confidence": 0.98,
+      "evidence": "Drug -- RAMIPRIL, Indication: HYPERTENSION"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "valsartan",
+      "target_entity": "olmesartan",
+      "confidence": 0.95,
+      "evidence": "Female 73 years experienced Diarrhoea after VALSARTAN, OLMESARTAN, RAMIPRIL."
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "valsartan",
+      "target_entity": "ramipril",
+      "confidence": 0.95,
+      "evidence": "Female 73 years experienced Diarrhoea after VALSARTAN, OLMESARTAN, RAMIPRIL."
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "olmesartan",
+      "target_entity": "ramipril",
+      "confidence": 0.95,
+      "evidence": "Female 73 years experienced Diarrhoea after VALSARTAN, OLMESARTAN, RAMIPRIL."
+    },
+    {
+      "relation_type": "REPORTED_BY",
+      "source_entity": "diarrhoea",
+      "target_entity": "reporter_10356941",
+      "confidence": 0.95,
+      "evidence": "Primary source qualification: Unknown, Reporter country: DE"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "diarrhoea",
+      "target_entity": "hospitalization_10356941",
+      "confidence": 0.98,
+      "evidence": "Serious: Yes \u2014 Hospitalization"
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "diarrhoea",
+      "target_entity": "olmesartan",
+      "confidence": 0.98,
+      "evidence": "Drug -- OLMESARTAN, Positive rechallenge: Diarrhoea; Narrative: Positive rechallenge for OLMESARTAN (Diarrhoea)"
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "diarrhoea",
+      "target_entity": "olmesartan",
+      "confidence": 0.9,
+      "evidence": "Positive rechallenge for OLMESARTAN (Diarrhoea). Unknown reporter, Germany. Hospitalization."
+    },
+    {
+      "relation_type": "TRIGGERED",
+      "source_entity": "olmesartan_diarrhoea_rechallenge",
+      "target_entity": "olmesartan_diarrhoea_causality",
+      "confidence": 0.95,
+      "evidence": "Positive rechallenge for OLMESARTAN (Diarrhoea)"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "",
+  "domain_name": "pharmacovigilance",
+  "chunk_size": 10000,
+  "extracted_at": "2026-05-03T17:49:00.052910+00:00",
+  "error": null
+}

@@ -1,0 +1,509 @@
+{
+  "document_id": "faers_warfarin_rechallenge_10079728",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "lenalidomide",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "suspect",
+        "brand_name": "REVLIMID",
+        "pharmacological_class": "Thalidomide Analog",
+        "rxcui": "602910"
+      },
+      "confidence": 0.99,
+      "context": "Drug -- REVLIMID (lenalidomide) Role: Suspect"
+    },
+    {
+      "name": "dexamethasone",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "suspect",
+        "dosage": "20 MG",
+        "pharmacological_class": "Corticosteroid"
+      },
+      "confidence": 0.99,
+      "context": "Drug -- DEXAMETHASONE Role: Suspect Dosage: 20 MG"
+    },
+    {
+      "name": "warfarin",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "concomitant",
+        "brand_name": "WARFARIN SODIUM"
+      },
+      "confidence": 0.99,
+      "context": "WARFARIN (WARFARIN SODIUM) \u2014 Indication: THROMBOSIS PROPHYLAXIS"
+    },
+    {
+      "name": "hydromorphone",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "brand_name": "HYDROMORPH CONTIN",
+        "class": "analgesic"
+      },
+      "confidence": 0.95,
+      "context": "HYDROMORPH CONTIN (analgesic)"
+    },
+    {
+      "name": "triazide",
+      "entity_type": "Concomitant",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "TRIAZIDE"
+    },
+    {
+      "name": "phenytoin",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "brand_name": "DILANTIN"
+      },
+      "confidence": 0.95,
+      "context": "DILANTIN (phenytoin) \u2014 Indication: CONVULSION"
+    },
+    {
+      "name": "lansoprazole",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "brand_name": "PREVACID"
+      },
+      "confidence": 0.95,
+      "context": "PREVACID (lansoprazole) \u2014 Indication: DYSPEPSIA"
+    },
+    {
+      "name": "amlodipine",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "brand_name": "NORVASC"
+      },
+      "confidence": 0.95,
+      "context": "NORVASC (amlodipine) \u2014 Indication: HYPERTENSION"
+    },
+    {
+      "name": "pulmonary oedema",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Pulmonary oedema",
+        "outcome": "Not recovered/not resolved",
+        "rechallenge_positive": true
+      },
+      "confidence": 0.99,
+      "context": "Pulmonary oedema \u2014 Not recovered/not resolved"
+    },
+    {
+      "name": "renal impairment",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Renal impairment",
+        "outcome": "Not recovered/not resolved",
+        "rechallenge_positive": true
+      },
+      "confidence": 0.99,
+      "context": "Renal impairment \u2014 Not recovered/not resolved"
+    },
+    {
+      "name": "dyspnoea",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Dyspnoea",
+        "outcome": "Not recovered/not resolved",
+        "rechallenge_positive": true
+      },
+      "confidence": 0.99,
+      "context": "Dyspnoea \u2014 Not recovered/not resolved"
+    },
+    {
+      "name": "cardiac failure congestive",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Cardiac failure congestive",
+        "outcome": "Not recovered/not resolved",
+        "rechallenge_positive": true
+      },
+      "confidence": 0.99,
+      "context": "Cardiac failure congestive \u2014 Not recovered/not resolved"
+    },
+    {
+      "name": "asthenia",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Asthenia",
+        "outcome": "Not recovered/not resolved",
+        "rechallenge_positive": true
+      },
+      "confidence": 0.99,
+      "context": "Asthenia \u2014 Not recovered/not resolved"
+    },
+    {
+      "name": "death",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Death",
+        "outcome": "Fatal"
+      },
+      "confidence": 0.99,
+      "context": "Death \u2014 Fatal"
+    },
+    {
+      "name": "patient_10079728",
+      "entity_type": "Patient",
+      "attributes": {
+        "sex": "Female",
+        "age_at_onset": 86,
+        "age_unit": "years"
+      },
+      "confidence": 0.99,
+      "context": "Sex: Female Age at onset: 86 years"
+    },
+    {
+      "name": "reporter_10079728",
+      "entity_type": "Reporter",
+      "attributes": {
+        "qualification": "Consumer or non-health professional",
+        "country": "CA"
+      },
+      "confidence": 0.99,
+      "context": "Primary source qualification: Consumer or non-health professional Reporter country: CA"
+    },
+    {
+      "name": "fatal outcome",
+      "entity_type": "Outcome",
+      "attributes": {
+        "seriousness": "Death, Hospitalization, Other medically significant",
+        "fatal": true
+      },
+      "confidence": 0.99,
+      "context": "Serious: Yes \u2014 Death, Hospitalization, Other medically significant"
+    },
+    {
+      "name": "spontaneous report",
+      "entity_type": "ReportType",
+      "attributes": {
+        "report_type": "Spontaneous (FAERS)",
+        "safety_report_id": "10079728",
+        "expedited": true
+      },
+      "confidence": 0.99,
+      "context": "Report type: Spontaneous (FAERS) Safety report ID: 10079728"
+    },
+    {
+      "name": "plasma cell myeloma",
+      "entity_type": "Indication",
+      "attributes": {},
+      "confidence": 0.99,
+      "context": "Indication: PLASMA CELL MYELOMA"
+    },
+    {
+      "name": "thrombosis prophylaxis",
+      "entity_type": "Indication",
+      "attributes": {},
+      "confidence": 0.99,
+      "context": "WARFARIN (WARFARIN SODIUM) \u2014 Indication: THROMBOSIS PROPHYLAXIS"
+    },
+    {
+      "name": "convulsion",
+      "entity_type": "Indication",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "DILANTIN (phenytoin) \u2014 Indication: CONVULSION"
+    },
+    {
+      "name": "dyspepsia",
+      "entity_type": "Indication",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "PREVACID (lansoprazole) \u2014 Indication: DYSPEPSIA"
+    },
+    {
+      "name": "hypertension",
+      "entity_type": "Indication",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "NORVASC (amlodipine) \u2014 Indication: HYPERTENSION"
+    },
+    {
+      "name": "positive rechallenge lenalidomide",
+      "entity_type": "DechallengeRechallenge",
+      "attributes": {
+        "type": "rechallenge",
+        "result": "positive",
+        "drug": "lenalidomide",
+        "events": [
+          "renal impairment",
+          "cardiac failure congestive",
+          "pulmonary oedema",
+          "asthenia",
+          "dyspnoea"
+        ]
+      },
+      "confidence": 0.95,
+      "context": "Positive rechallenge: Renal impairment, Cardiac failure congestive, Pulmonary oedema, Asthenia, Dyspnoea"
+    },
+    {
+      "name": "lenalidomide rechallenge signal",
+      "entity_type": "CausalitySignal",
+      "attributes": {
+        "signal_type": "positive_rechallenge",
+        "reporter_type": "consumer",
+        "causality_confidence": 0.7,
+        "note": "Consumer reporter lowers weight per domain rules"
+      },
+      "confidence": 0.7,
+      "context": "Positive rechallenge documented. Consumer reporter, Canada."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10079728",
+      "target_entity": "pulmonary oedema",
+      "confidence": 0.99,
+      "evidence": "Female 86 years experienced Pulmonary oedema after REVLIMID (lenalidomide)"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10079728",
+      "target_entity": "renal impairment",
+      "confidence": 0.99,
+      "evidence": "Female 86 years experienced Renal impairment after REVLIMID (lenalidomide)"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10079728",
+      "target_entity": "dyspnoea",
+      "confidence": 0.99,
+      "evidence": "Female 86 years experienced Dyspnoea after REVLIMID (lenalidomide)"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10079728",
+      "target_entity": "cardiac failure congestive",
+      "confidence": 0.99,
+      "evidence": "Female 86 years experienced Cardiac failure congestive after REVLIMID (lenalidomide)"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10079728",
+      "target_entity": "asthenia",
+      "confidence": 0.99,
+      "evidence": "Female 86 years experienced Asthenia after REVLIMID (lenalidomide)"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10079728",
+      "target_entity": "death",
+      "confidence": 0.99,
+      "evidence": "Death \u2014 Fatal"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10079728",
+      "target_entity": "lenalidomide",
+      "confidence": 0.99,
+      "evidence": "Drug -- REVLIMID (lenalidomide) Role: Suspect"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10079728",
+      "target_entity": "dexamethasone",
+      "confidence": 0.99,
+      "evidence": "Drug -- DEXAMETHASONE Role: Suspect"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10079728",
+      "target_entity": "warfarin",
+      "confidence": 0.99,
+      "evidence": "WARFARIN is concomitant"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "lenalidomide",
+      "target_entity": "plasma cell myeloma",
+      "confidence": 0.99,
+      "evidence": "Indication: PLASMA CELL MYELOMA"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "warfarin",
+      "target_entity": "thrombosis prophylaxis",
+      "confidence": 0.99,
+      "evidence": "WARFARIN (WARFARIN SODIUM) \u2014 Indication: THROMBOSIS PROPHYLAXIS"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "phenytoin",
+      "target_entity": "convulsion",
+      "confidence": 0.95,
+      "evidence": "DILANTIN (phenytoin) \u2014 Indication: CONVULSION"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "lansoprazole",
+      "target_entity": "dyspepsia",
+      "confidence": 0.95,
+      "evidence": "PREVACID (lansoprazole) \u2014 Indication: DYSPEPSIA"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "amlodipine",
+      "target_entity": "hypertension",
+      "confidence": 0.95,
+      "evidence": "NORVASC (amlodipine) \u2014 Indication: HYPERTENSION"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "lenalidomide",
+      "target_entity": "warfarin",
+      "confidence": 0.99,
+      "evidence": "WARFARIN is concomitant"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "lenalidomide",
+      "target_entity": "dexamethasone",
+      "confidence": 0.99,
+      "evidence": "Drug -- DEXAMETHASONE Role: Suspect (co-administered)"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "lenalidomide",
+      "target_entity": "phenytoin",
+      "confidence": 0.95,
+      "evidence": "DILANTIN (phenytoin) listed as concomitant drug"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "lenalidomide",
+      "target_entity": "hydromorphone",
+      "confidence": 0.95,
+      "evidence": "HYDROMORPH CONTIN (analgesic) listed as concomitant drug"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "lenalidomide",
+      "target_entity": "lansoprazole",
+      "confidence": 0.95,
+      "evidence": "PREVACID (lansoprazole) listed as concomitant drug"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "lenalidomide",
+      "target_entity": "amlodipine",
+      "confidence": 0.95,
+      "evidence": "NORVASC (amlodipine) listed as concomitant drug"
+    },
+    {
+      "relation_type": "REPORTED_BY",
+      "source_entity": "patient_10079728",
+      "target_entity": "reporter_10079728",
+      "confidence": 0.99,
+      "evidence": "Primary source qualification: Consumer or non-health professional Reporter country: CA"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "pulmonary oedema",
+      "target_entity": "fatal outcome",
+      "confidence": 0.85,
+      "evidence": "Serious: Yes \u2014 Death, Hospitalization, Other medically significant"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "cardiac failure congestive",
+      "target_entity": "fatal outcome",
+      "confidence": 0.85,
+      "evidence": "Serious: Yes \u2014 Death, Hospitalization, Other medically significant"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "renal impairment",
+      "target_entity": "fatal outcome",
+      "confidence": 0.85,
+      "evidence": "Serious: Yes \u2014 Death, Hospitalization, Other medically significant"
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "renal impairment",
+      "target_entity": "lenalidomide",
+      "confidence": 0.7,
+      "evidence": "Positive rechallenge: Renal impairment, Cardiac failure congestive, Pulmonary oedema, Asthenia, Dyspnoea. Consumer reporter."
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "cardiac failure congestive",
+      "target_entity": "lenalidomide",
+      "confidence": 0.7,
+      "evidence": "Positive rechallenge: Renal impairment, Cardiac failure congestive, Pulmonary oedema, Asthenia, Dyspnoea. Consumer reporter."
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "pulmonary oedema",
+      "target_entity": "lenalidomide",
+      "confidence": 0.7,
+      "evidence": "Positive rechallenge: Renal impairment, Cardiac failure congestive, Pulmonary oedema, Asthenia, Dyspnoea. Consumer reporter."
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "asthenia",
+      "target_entity": "lenalidomide",
+      "confidence": 0.7,
+      "evidence": "Positive rechallenge: Renal impairment, Cardiac failure congestive, Pulmonary oedema, Asthenia, Dyspnoea. Consumer reporter."
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "dyspnoea",
+      "target_entity": "lenalidomide",
+      "confidence": 0.7,
+      "evidence": "Positive rechallenge: Renal impairment, Cardiac failure congestive, Pulmonary oedema, Asthenia, Dyspnoea. Consumer reporter."
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "pulmonary oedema",
+      "target_entity": "lenalidomide",
+      "confidence": 0.7,
+      "evidence": "Positive rechallenge documented. Consumer reporter, Canada."
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "renal impairment",
+      "target_entity": "lenalidomide",
+      "confidence": 0.7,
+      "evidence": "Positive rechallenge documented. Consumer reporter, Canada."
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "dyspnoea",
+      "target_entity": "lenalidomide",
+      "confidence": 0.7,
+      "evidence": "Positive rechallenge documented. Consumer reporter, Canada."
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "cardiac failure congestive",
+      "target_entity": "lenalidomide",
+      "confidence": 0.7,
+      "evidence": "Positive rechallenge documented. Consumer reporter, Canada."
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "asthenia",
+      "target_entity": "lenalidomide",
+      "confidence": 0.7,
+      "evidence": "Positive rechallenge documented. Consumer reporter, Canada."
+    },
+    {
+      "relation_type": "TRIGGERED",
+      "source_entity": "positive rechallenge lenalidomide",
+      "target_entity": "lenalidomide rechallenge signal",
+      "confidence": 0.7,
+      "evidence": "Positive rechallenge documented. Consumer reporter, Canada. WARFARIN is concomitant."
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "",
+  "domain_name": "pharmacovigilance",
+  "chunk_size": 10000,
+  "extracted_at": "2026-05-03T17:50:05.210096+00:00",
+  "error": null
+}

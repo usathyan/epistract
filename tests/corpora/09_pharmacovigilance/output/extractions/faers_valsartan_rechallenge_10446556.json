@@ -1,0 +1,294 @@
+{
+  "document_id": "faers_valsartan_rechallenge_10446556",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "everolimus",
+      "entity_type": "Drug",
+      "attributes": {
+        "brand_name": "AFINITOR",
+        "role": "Suspect",
+        "dosage": "5-10 MG QD",
+        "action_taken": "Drug withdrawn",
+        "pharmacological_class": "mTOR Inhibitor, Kinase Inhibitor",
+        "rxcui": "845507, 845512, 845515"
+      },
+      "confidence": 0.99,
+      "context": "Drug -- AFINITOR (everolimus) - Role: Suspect - Indication: BREAST CANCER - Dosage: 5-10 MG, QD - Action taken: Drug withdrawn - Positive rechallenge: Erythema nodosum"
+    },
+    {
+      "name": "valsartan",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "combination_product": "HYDROCHLOROTHIAZIDE/VALSARTAN",
+        "role": "Concomitant"
+      },
+      "confidence": 0.95,
+      "context": "HYDROCHLOROTHIAZIDE/VALSARTAN listed as concomitant drug. VALSARTAN is a concomitant."
+    },
+    {
+      "name": "hydrochlorothiazide",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "combination_product": "HYDROCHLOROTHIAZIDE/VALSARTAN",
+        "role": "Concomitant"
+      },
+      "confidence": 0.95,
+      "context": "HYDROCHLOROTHIAZIDE/VALSARTAN listed as concomitant drug"
+    },
+    {
+      "name": "exemestane",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "pharmacological_class": "Aromatase Inhibitor",
+        "role": "Concomitant"
+      },
+      "confidence": 0.95,
+      "context": "EXEMESTANE (Aromatase Inhibitor) listed as concomitant drug"
+    },
+    {
+      "name": "zoledronic acid",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "brand_name": "ZOMETA",
+        "role": "Concomitant"
+      },
+      "confidence": 0.9,
+      "context": "ZOMETA listed as concomitant drug"
+    },
+    {
+      "name": "bisoprolol",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "brand_name": "CARDICOR",
+        "role": "Concomitant"
+      },
+      "confidence": 0.85,
+      "context": "CARDICOR listed as concomitant drug"
+    },
+    {
+      "name": "erythema nodosum",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Erythema nodosum",
+        "outcome": "Recovered/resolved",
+        "rechallenge_positive": true
+      },
+      "confidence": 0.99,
+      "context": "Erythema nodosum - Recovered/resolved; Positive rechallenge: Erythema nodosum"
+    },
+    {
+      "name": "interstitial lung disease",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Interstitial lung disease",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Interstitial lung disease - Recovered/resolved"
+    },
+    {
+      "name": "Female 65 years Italy",
+      "entity_type": "Patient",
+      "attributes": {
+        "sex": "Female",
+        "age_at_onset": 65,
+        "age_unit": "years",
+        "country": "IT"
+      },
+      "confidence": 0.99,
+      "context": "Sex: Female - Age at onset: 65 years; Reporter country: IT"
+    },
+    {
+      "name": "Other health professional Italy",
+      "entity_type": "Reporter",
+      "attributes": {
+        "qualification": "Other health professional",
+        "country": "IT"
+      },
+      "confidence": 0.99,
+      "context": "Primary source qualification: Other health professional - Reporter country: IT"
+    },
+    {
+      "name": "Recovered/resolved",
+      "entity_type": "Outcome",
+      "attributes": {
+        "outcome_code": "recovered_resolved"
+      },
+      "confidence": 0.99,
+      "context": "Erythema nodosum - Recovered/resolved; Interstitial lung disease - Recovered/resolved"
+    },
+    {
+      "name": "Spontaneous (FAERS)",
+      "entity_type": "ReportType",
+      "attributes": {
+        "report_type": "Spontaneous",
+        "database": "FAERS",
+        "safety_report_id": "10446556",
+        "expedited": true,
+        "serious": true
+      },
+      "confidence": 0.99,
+      "context": "Report type: Spontaneous (FAERS); Expedited criteria fulfilled: Yes; Serious: Yes"
+    },
+    {
+      "name": "breast cancer",
+      "entity_type": "Indication",
+      "attributes": {
+        "indication_text": "BREAST CANCER"
+      },
+      "confidence": 0.99,
+      "context": "Indication: BREAST CANCER"
+    },
+    {
+      "name": "positive rechallenge erythema nodosum",
+      "entity_type": "DechallengeRechallenge",
+      "attributes": {
+        "type": "rechallenge",
+        "result": "positive",
+        "adverse_event": "erythema nodosum"
+      },
+      "confidence": 0.99,
+      "context": "Positive rechallenge: Erythema nodosum; Action taken: Drug withdrawn"
+    },
+    {
+      "name": "everolimus erythema nodosum positive rechallenge signal",
+      "entity_type": "CausalitySignal",
+      "attributes": {
+        "signal_type": "positive_rechallenge",
+        "strength": "strong",
+        "confidence_basis": "positive rechallenge documented"
+      },
+      "confidence": 0.95,
+      "context": "Positive rechallenge documented (Erythema nodosum). Other health professional reporter, Italy."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "Female 65 years Italy",
+      "target_entity": "erythema nodosum",
+      "confidence": 0.99,
+      "evidence": "Female 65 years experienced Erythema nodosum and Interstitial lung disease after AFINITOR (everolimus)."
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "Female 65 years Italy",
+      "target_entity": "interstitial lung disease",
+      "confidence": 0.99,
+      "evidence": "Female 65 years experienced Erythema nodosum and Interstitial lung disease after AFINITOR (everolimus)."
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "Female 65 years Italy",
+      "target_entity": "everolimus",
+      "confidence": 0.99,
+      "evidence": "Drug -- AFINITOR (everolimus) - Role: Suspect - Dosage: 5-10 MG, QD"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "everolimus",
+      "target_entity": "breast cancer",
+      "confidence": 0.99,
+      "evidence": "Indication: BREAST CANCER"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "everolimus",
+      "target_entity": "valsartan",
+      "confidence": 0.95,
+      "evidence": "HYDROCHLOROTHIAZIDE/VALSARTAN listed as concomitant drug. VALSARTAN is a concomitant."
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "everolimus",
+      "target_entity": "hydrochlorothiazide",
+      "confidence": 0.95,
+      "evidence": "HYDROCHLOROTHIAZIDE/VALSARTAN listed as concomitant drug"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "everolimus",
+      "target_entity": "exemestane",
+      "confidence": 0.95,
+      "evidence": "EXEMESTANE (Aromatase Inhibitor) listed as concomitant drug"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "everolimus",
+      "target_entity": "zoledronic acid",
+      "confidence": 0.9,
+      "evidence": "ZOMETA listed as concomitant drug"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "everolimus",
+      "target_entity": "bisoprolol",
+      "confidence": 0.85,
+      "evidence": "CARDICOR listed as concomitant drug"
+    },
+    {
+      "relation_type": "REPORTED_BY",
+      "source_entity": "Female 65 years Italy",
+      "target_entity": "Other health professional Italy",
+      "confidence": 0.99,
+      "evidence": "Primary source qualification: Other health professional - Reporter country: IT"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "erythema nodosum",
+      "target_entity": "Recovered/resolved",
+      "confidence": 0.99,
+      "evidence": "Erythema nodosum - Recovered/resolved"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "interstitial lung disease",
+      "target_entity": "Recovered/resolved",
+      "confidence": 0.99,
+      "evidence": "Interstitial lung disease - Recovered/resolved"
+    },
+    {
+      "relation_type": "OCCURRED_AFTER",
+      "source_entity": "erythema nodosum",
+      "target_entity": "everolimus",
+      "confidence": 0.99,
+      "evidence": "Female 65 years experienced Erythema nodosum and Interstitial lung disease after AFINITOR (everolimus)."
+    },
+    {
+      "relation_type": "OCCURRED_AFTER",
+      "source_entity": "interstitial lung disease",
+      "target_entity": "everolimus",
+      "confidence": 0.99,
+      "evidence": "Female 65 years experienced Erythema nodosum and Interstitial lung disease after AFINITOR (everolimus)."
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "erythema nodosum",
+      "target_entity": "everolimus",
+      "confidence": 0.99,
+      "evidence": "Positive rechallenge: Erythema nodosum"
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "erythema nodosum",
+      "target_entity": "everolimus",
+      "confidence": 0.95,
+      "evidence": "Positive rechallenge documented (Erythema nodosum). Other health professional reporter, Italy."
+    },
+    {
+      "relation_type": "TRIGGERED",
+      "source_entity": "everolimus",
+      "target_entity": "everolimus erythema nodosum positive rechallenge signal",
+      "confidence": 0.95,
+      "evidence": "Positive rechallenge documented (Erythema nodosum)."
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "",
+  "domain_name": "pharmacovigilance",
+  "chunk_size": 10000,
+  "extracted_at": "2026-05-03T17:49:18.418975+00:00",
+  "error": null
+}

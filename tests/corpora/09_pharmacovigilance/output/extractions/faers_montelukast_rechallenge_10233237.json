@@ -1,0 +1,313 @@
+{
+  "document_id": "faers_montelukast_rechallenge_10233237",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "fexofenadine",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "suspect",
+        "dosage": "180 MG DAILY",
+        "action_taken": "drug withdrawn"
+      },
+      "confidence": 0.95,
+      "context": "Drug -- FEXOFENADINE, Role: Suspect, Indication: SEASONAL ALLERGY, Dosage: 180 MG, DAILY, Action taken: Drug withdrawn"
+    },
+    {
+      "name": "cetirizine hydrochloride",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "suspect",
+        "dosage": "10 MG BID",
+        "action_taken": "drug withdrawn",
+        "positive_rechallenge": true
+      },
+      "confidence": 0.95,
+      "context": "Drug -- CETIRIZINE HYDROCHLORIDE, Positive rechallenge: Chronic spontaneous urticaria"
+    },
+    {
+      "name": "diphenhydramine",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "suspect",
+        "dosage": "25 MG QHS",
+        "action_taken": "drug withdrawn"
+      },
+      "confidence": 0.95,
+      "context": "Drug -- DIPHENHYDRAMINE, Role: Suspect, Indication: SEASONAL ALLERGY, Dosage: 25 MG, QHS, Action taken: Drug withdrawn"
+    },
+    {
+      "name": "loratadine",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "suspect",
+        "dosage": "5 MG BID",
+        "action_taken": "drug withdrawn"
+      },
+      "confidence": 0.95,
+      "context": "Drug -- LORATADINE, Role: Suspect, Indication: SEASONAL ALLERGY, Dosage: 5 MG, BID, Action taken: Drug withdrawn"
+    },
+    {
+      "name": "montelukast sodium",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "role": "concomitant"
+      },
+      "confidence": 0.95,
+      "context": "Drug -- MONTELUKAST SODIUM, Role: Concomitant, Indication: ASTHMA"
+    },
+    {
+      "name": "chronic spontaneous urticaria",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_coded": true,
+        "outcome": "recovered/resolved"
+      },
+      "confidence": 0.98,
+      "context": "Reactions (MedDRA-coded adverse events): Chronic spontaneous urticaria \u2014 Recovered/resolved"
+    },
+    {
+      "name": "patient_10233237",
+      "entity_type": "Patient",
+      "attributes": {
+        "sex": "male",
+        "age_at_onset": 8,
+        "age_unit": "years"
+      },
+      "confidence": 0.98,
+      "context": "Patient: Sex: Male, Age at onset: 8 years"
+    },
+    {
+      "name": "physician_US_10233237",
+      "entity_type": "Reporter",
+      "attributes": {
+        "qualification": "physician",
+        "country": "US"
+      },
+      "confidence": 0.98,
+      "context": "Primary source qualification: Physician, Reporter country: US"
+    },
+    {
+      "name": "recovered/resolved",
+      "entity_type": "Outcome",
+      "attributes": {},
+      "confidence": 0.98,
+      "context": "Chronic spontaneous urticaria \u2014 Recovered/resolved"
+    },
+    {
+      "name": "spontaneous",
+      "entity_type": "ReportType",
+      "attributes": {
+        "database": "FAERS"
+      },
+      "confidence": 0.98,
+      "context": "Report type: Spontaneous (FAERS)"
+    },
+    {
+      "name": "seasonal allergy",
+      "entity_type": "Indication",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Indication: SEASONAL ALLERGY"
+    },
+    {
+      "name": "asthma",
+      "entity_type": "Indication",
+      "attributes": {},
+      "confidence": 0.95,
+      "context": "Drug -- MONTELUKAST SODIUM, Role: Concomitant, Indication: ASTHMA"
+    },
+    {
+      "name": "cetirizine_positive_rechallenge",
+      "entity_type": "DechallengeRechallenge",
+      "attributes": {
+        "type": "positive_rechallenge",
+        "drug": "cetirizine hydrochloride",
+        "event": "chronic spontaneous urticaria"
+      },
+      "confidence": 0.98,
+      "context": "Positive rechallenge: Chronic spontaneous urticaria recurred. Positive rechallenge for cetirizine (Chronic spontaneous urticaria recurred)."
+    },
+    {
+      "name": "cetirizine_rechallenge_signal",
+      "entity_type": "CausalitySignal",
+      "attributes": {
+        "signal_type": "positive_rechallenge",
+        "strength": "strongest",
+        "drug": "cetirizine hydrochloride"
+      },
+      "confidence": 0.98,
+      "context": "Positive rechallenge for cetirizine (Chronic spontaneous urticaria recurred). Physician reporter, US."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10233237",
+      "target_entity": "chronic spontaneous urticaria",
+      "confidence": 0.95,
+      "evidence": "Male 8 years experienced Chronic spontaneous urticaria after FEXOFENADINE, CETIRIZINE HYDROCHLORIDE, DIPHENHYDRAMINE."
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10233237",
+      "target_entity": "fexofenadine",
+      "confidence": 0.95,
+      "evidence": "Drug -- FEXOFENADINE, Role: Suspect, Indication: SEASONAL ALLERGY, Dosage: 180 MG, DAILY"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10233237",
+      "target_entity": "cetirizine hydrochloride",
+      "confidence": 0.95,
+      "evidence": "Drug -- CETIRIZINE HYDROCHLORIDE, Role: Suspect, Indication: SEASONAL ALLERGY, Dosage: 10 MG, BID"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10233237",
+      "target_entity": "diphenhydramine",
+      "confidence": 0.95,
+      "evidence": "Drug -- DIPHENHYDRAMINE, Role: Suspect, Indication: SEASONAL ALLERGY, Dosage: 25 MG, QHS"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10233237",
+      "target_entity": "loratadine",
+      "confidence": 0.95,
+      "evidence": "Drug -- LORATADINE, Role: Suspect, Indication: SEASONAL ALLERGY, Dosage: 5 MG, BID"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10233237",
+      "target_entity": "montelukast sodium",
+      "confidence": 0.95,
+      "evidence": "Drug -- MONTELUKAST SODIUM, Role: Concomitant, Indication: ASTHMA"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "fexofenadine",
+      "target_entity": "seasonal allergy",
+      "confidence": 0.95,
+      "evidence": "Indication: SEASONAL ALLERGY"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "cetirizine hydrochloride",
+      "target_entity": "seasonal allergy",
+      "confidence": 0.95,
+      "evidence": "Indication: SEASONAL ALLERGY"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "diphenhydramine",
+      "target_entity": "seasonal allergy",
+      "confidence": 0.95,
+      "evidence": "Indication: SEASONAL ALLERGY"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "loratadine",
+      "target_entity": "seasonal allergy",
+      "confidence": 0.95,
+      "evidence": "Indication: SEASONAL ALLERGY"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "montelukast sodium",
+      "target_entity": "asthma",
+      "confidence": 0.95,
+      "evidence": "Drug -- MONTELUKAST SODIUM, Role: Concomitant, Indication: ASTHMA"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "fexofenadine",
+      "target_entity": "montelukast sodium",
+      "confidence": 0.9,
+      "evidence": "Suspect drugs FEXOFENADINE, CETIRIZINE HYDROCHLORIDE, DIPHENHYDRAMINE, LORATADINE co-administered with concomitant MONTELUKAST SODIUM."
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "cetirizine hydrochloride",
+      "target_entity": "montelukast sodium",
+      "confidence": 0.9,
+      "evidence": "Suspect drugs co-administered with concomitant MONTELUKAST SODIUM."
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "diphenhydramine",
+      "target_entity": "montelukast sodium",
+      "confidence": 0.9,
+      "evidence": "Suspect drugs co-administered with concomitant MONTELUKAST SODIUM."
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "loratadine",
+      "target_entity": "montelukast sodium",
+      "confidence": 0.9,
+      "evidence": "Suspect drugs co-administered with concomitant MONTELUKAST SODIUM."
+    },
+    {
+      "relation_type": "REPORTED_BY",
+      "source_entity": "patient_10233237",
+      "target_entity": "physician_US_10233237",
+      "confidence": 0.98,
+      "evidence": "Primary source qualification: Physician, Reporter country: US"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "chronic spontaneous urticaria",
+      "target_entity": "recovered/resolved",
+      "confidence": 0.95,
+      "evidence": "Chronic spontaneous urticaria \u2014 Recovered/resolved"
+    },
+    {
+      "relation_type": "OCCURRED_AFTER",
+      "source_entity": "chronic spontaneous urticaria",
+      "target_entity": "cetirizine hydrochloride",
+      "confidence": 0.95,
+      "evidence": "Male 8 years experienced Chronic spontaneous urticaria after FEXOFENADINE, CETIRIZINE HYDROCHLORIDE, DIPHENHYDRAMINE."
+    },
+    {
+      "relation_type": "OCCURRED_AFTER",
+      "source_entity": "chronic spontaneous urticaria",
+      "target_entity": "fexofenadine",
+      "confidence": 0.88,
+      "evidence": "Male 8 years experienced Chronic spontaneous urticaria after FEXOFENADINE, CETIRIZINE HYDROCHLORIDE, DIPHENHYDRAMINE."
+    },
+    {
+      "relation_type": "OCCURRED_AFTER",
+      "source_entity": "chronic spontaneous urticaria",
+      "target_entity": "diphenhydramine",
+      "confidence": 0.88,
+      "evidence": "Male 8 years experienced Chronic spontaneous urticaria after FEXOFENADINE, CETIRIZINE HYDROCHLORIDE, DIPHENHYDRAMINE."
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "chronic spontaneous urticaria",
+      "target_entity": "cetirizine hydrochloride",
+      "confidence": 0.98,
+      "evidence": "Positive rechallenge for cetirizine (Chronic spontaneous urticaria recurred)."
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "chronic spontaneous urticaria",
+      "target_entity": "cetirizine hydrochloride",
+      "confidence": 0.92,
+      "evidence": "Positive rechallenge: Chronic spontaneous urticaria recurred. Positive rechallenge for cetirizine (Chronic spontaneous urticaria recurred). Physician reporter."
+    },
+    {
+      "relation_type": "TRIGGERED",
+      "source_entity": "cetirizine_positive_rechallenge",
+      "target_entity": "cetirizine_rechallenge_signal",
+      "confidence": 0.98,
+      "evidence": "Positive rechallenge for cetirizine (Chronic spontaneous urticaria recurred)."
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "",
+  "domain_name": "pharmacovigilance",
+  "chunk_size": 10000,
+  "extracted_at": "2026-05-03T17:48:40.035292+00:00",
+  "error": null
+}

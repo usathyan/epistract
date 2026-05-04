@@ -1,0 +1,155 @@
+{
+  "document_id": "faers_methotrexate_rechallenge_10177472",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "female patient aged 53",
+      "entity_type": "Patient",
+      "attributes": {
+        "sex": "Female",
+        "age_band": "50-59",
+        "age_at_onset": 53
+      },
+      "confidence": 0.99,
+      "context": "Patient - Sex: Female - Age at onset: 53 years"
+    },
+    {
+      "name": "methotrexate",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "Suspect",
+        "action_taken": "Drug withdrawn",
+        "pharmacological_class": "Folate Analog Metabolic Inhibitor [EPC]",
+        "rxcui": "105585, 1655956, 1946772",
+        "substance_names": "METHOTREXATE SODIUM, METHOTREXATE"
+      },
+      "confidence": 0.99,
+      "context": "Drug -- METHOTREXATE - Role: Suspect - Action taken with drug: Drug withdrawn"
+    },
+    {
+      "name": "Pleuropericarditis",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_preferred_term": "Pleuropericarditis",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "MedDRA Preferred Term: Pleuropericarditis \u2014 Outcome: Recovered/resolved"
+    },
+    {
+      "name": "Other health professional",
+      "entity_type": "Reporter",
+      "attributes": {
+        "qualification": "Other health professional",
+        "country": "IT"
+      },
+      "confidence": 0.99,
+      "context": "Primary source qualification: Other health professional - Reporter country: IT"
+    },
+    {
+      "name": "FAERS Spontaneous",
+      "entity_type": "ReportType",
+      "attributes": {
+        "report_type": "Spontaneous",
+        "database": "FAERS",
+        "safety_report_id": "10177472",
+        "receipt_date": "2014-07-24"
+      },
+      "confidence": 0.99,
+      "context": "Report type: Spontaneous (FAERS)"
+    },
+    {
+      "name": "Rheumatoid arthritis",
+      "entity_type": "Indication",
+      "attributes": {},
+      "confidence": 0.99,
+      "context": "Indication: RHEUMATOID ARTHRITIS"
+    },
+    {
+      "name": "Recovered/resolved",
+      "entity_type": "Outcome",
+      "attributes": {
+        "outcome_code": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Outcome: Recovered/resolved"
+    },
+    {
+      "name": "positive rechallenge methotrexate Pleuropericarditis",
+      "entity_type": "DechallengeRechallenge",
+      "attributes": {
+        "rechallenge_result": "positive",
+        "drug": "methotrexate",
+        "event": "Pleuropericarditis",
+        "dechallenge_action": "Drug withdrawn"
+      },
+      "confidence": 0.99,
+      "context": "Positive rechallenge \u2014 events that recurred when drug was reintroduced: Pleuropericarditis"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "female patient aged 53",
+      "target_entity": "Pleuropericarditis",
+      "confidence": 0.99,
+      "evidence": "MedDRA Preferred Term: Pleuropericarditis \u2014 Outcome: Recovered/resolved"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "female patient aged 53",
+      "target_entity": "methotrexate",
+      "confidence": 0.99,
+      "evidence": "Drug -- METHOTREXATE - Role: Suspect"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "methotrexate",
+      "target_entity": "Rheumatoid arthritis",
+      "confidence": 0.99,
+      "evidence": "Indication: RHEUMATOID ARTHRITIS"
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "Pleuropericarditis",
+      "target_entity": "methotrexate",
+      "confidence": 0.95,
+      "evidence": "Positive rechallenge documented. Under Bradford-Hill criteria this is the strongest single-case causality signal available."
+    },
+    {
+      "relation_type": "REPORTED_BY",
+      "source_entity": "FAERS Spontaneous",
+      "target_entity": "Other health professional",
+      "confidence": 0.99,
+      "evidence": "Primary source qualification: Other health professional - Reporter country: IT"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "Pleuropericarditis",
+      "target_entity": "Recovered/resolved",
+      "confidence": 0.99,
+      "evidence": "Outcome: Recovered/resolved"
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "Pleuropericarditis",
+      "target_entity": "positive rechallenge methotrexate Pleuropericarditis",
+      "confidence": 0.99,
+      "evidence": "Positive rechallenge \u2014 events that recurred when drug was reintroduced: Pleuropericarditis"
+    },
+    {
+      "relation_type": "RESOLVED_ON_DECHALLENGE",
+      "source_entity": "Pleuropericarditis",
+      "target_entity": "methotrexate",
+      "confidence": 0.95,
+      "evidence": "Action taken with drug: Drug withdrawn; Outcome: Recovered/resolved"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-sonnet-4-6",
+  "domain_name": "pharmacovigilance",
+  "chunk_size": 10000,
+  "extracted_at": "2026-05-03T17:48:47.105014+00:00",
+  "error": null
+}

@@ -1,0 +1,193 @@
+{
+  "document_id": "faers_valsartan_rechallenge_10486643",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "pitavastatin calcium",
+      "entity_type": "Drug",
+      "attributes": {
+        "brand_name": "LIVALO",
+        "role": "Suspect",
+        "dosage": "2 MG",
+        "action_taken": "Drug withdrawn",
+        "rxcui": "861643, 861646, 861648"
+      },
+      "confidence": 0.99,
+      "context": "Drug -- LIVALO (pitavastatin calcium) Role: Suspect Dosage: 2 MG Action taken: Drug withdrawn Positive rechallenge: Myalgia"
+    },
+    {
+      "name": "valsartan",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "Concomitant",
+        "pharmacological_class": "Angiotensin 2 Receptor Blocker [EPC]",
+        "action": "Dose not changed"
+      },
+      "confidence": 0.99,
+      "context": "Drug -- VALSARTAN Role: Concomitant Indication: HYPERTENSION Action: Dose not changed Pharmacological class: Angiotensin 2 Receptor Blocker [EPC]"
+    },
+    {
+      "name": "myalgia",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_coded": true,
+        "outcome_status": "Not recovered/not resolved"
+      },
+      "confidence": 0.99,
+      "context": "Myalgia \u2014 Not recovered/not resolved"
+    },
+    {
+      "name": "patient_10486643",
+      "entity_type": "Patient",
+      "attributes": {
+        "sex": "Female",
+        "age_at_onset": 60,
+        "age_unit": "years"
+      },
+      "confidence": 0.99,
+      "context": "Sex: Female Age at onset: 60 years"
+    },
+    {
+      "name": "consumer_reporter_US",
+      "entity_type": "Reporter",
+      "attributes": {
+        "qualification": "Consumer or non-health professional",
+        "country": "US"
+      },
+      "confidence": 0.99,
+      "context": "Primary source qualification: Consumer or non-health professional Reporter country: US"
+    },
+    {
+      "name": "not_recovered_not_resolved",
+      "entity_type": "Outcome",
+      "attributes": {
+        "status": "Not recovered/not resolved"
+      },
+      "confidence": 0.99,
+      "context": "Myalgia \u2014 Not recovered/not resolved"
+    },
+    {
+      "name": "spontaneous_faers",
+      "entity_type": "ReportType",
+      "attributes": {
+        "report_type": "Spontaneous",
+        "database": "FAERS",
+        "safety_report_id": "10486643",
+        "expedited": true,
+        "serious": false
+      },
+      "confidence": 0.99,
+      "context": "Report type: Spontaneous (FAERS) Expedited criteria fulfilled: Yes Serious: No"
+    },
+    {
+      "name": "positive_rechallenge_myalgia_pitavastatin",
+      "entity_type": "DechallengeRechallenge",
+      "attributes": {
+        "type": "Rechallenge",
+        "result": "Positive",
+        "drug": "pitavastatin calcium",
+        "event": "myalgia"
+      },
+      "confidence": 0.99,
+      "context": "Positive rechallenge: Myalgia"
+    },
+    {
+      "name": "hypertension",
+      "entity_type": "Indication",
+      "attributes": {},
+      "confidence": 0.99,
+      "context": "Indication: HYPERTENSION"
+    },
+    {
+      "name": "pitavastatin_myalgia_rechallenge_signal",
+      "entity_type": "CausalitySignal",
+      "attributes": {
+        "signal_type": "Positive rechallenge",
+        "strength": "Strong",
+        "reporter_type": "Consumer",
+        "confidence_basis": "Positive rechallenge with consumer reporter"
+      },
+      "confidence": 0.85,
+      "context": "Female 60 years experienced Myalgia after LIVALO (pitavastatin). Positive rechallenge (Myalgia). Consumer reporter, US."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10486643",
+      "target_entity": "myalgia",
+      "confidence": 0.99,
+      "evidence": "Female 60 years experienced Myalgia after LIVALO (pitavastatin)."
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10486643",
+      "target_entity": "pitavastatin calcium",
+      "confidence": 0.99,
+      "evidence": "Drug -- LIVALO (pitavastatin calcium) Role: Suspect"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10486643",
+      "target_entity": "valsartan",
+      "confidence": 0.99,
+      "evidence": "Drug -- VALSARTAN Role: Concomitant"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "valsartan",
+      "target_entity": "hypertension",
+      "confidence": 0.99,
+      "evidence": "Indication: HYPERTENSION"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "pitavastatin calcium",
+      "target_entity": "valsartan",
+      "confidence": 0.99,
+      "evidence": "VALSARTAN is concomitant."
+    },
+    {
+      "relation_type": "REPORTED_BY",
+      "source_entity": "patient_10486643",
+      "target_entity": "consumer_reporter_US",
+      "confidence": 0.99,
+      "evidence": "Primary source qualification: Consumer or non-health professional Reporter country: US"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "myalgia",
+      "target_entity": "not_recovered_not_resolved",
+      "confidence": 0.99,
+      "evidence": "Myalgia \u2014 Not recovered/not resolved"
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "myalgia",
+      "target_entity": "pitavastatin calcium",
+      "confidence": 0.9,
+      "evidence": "Positive rechallenge: Myalgia"
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "myalgia",
+      "target_entity": "pitavastatin calcium",
+      "confidence": 0.9,
+      "evidence": "Female 60 years experienced Myalgia after LIVALO (pitavastatin). Positive rechallenge (Myalgia). Consumer reporter, US."
+    },
+    {
+      "relation_type": "TRIGGERED",
+      "source_entity": "positive_rechallenge_myalgia_pitavastatin",
+      "target_entity": "pitavastatin_myalgia_rechallenge_signal",
+      "confidence": 0.85,
+      "evidence": "Positive rechallenge: Myalgia"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "",
+  "domain_name": "pharmacovigilance",
+  "chunk_size": 10000,
+  "extracted_at": "2026-05-03T17:49:15.667661+00:00",
+  "error": null
+}

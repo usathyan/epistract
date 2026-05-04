@@ -1,0 +1,231 @@
+{
+  "document_id": "faers_methotrexate_rechallenge_10185828",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "Patient-10185828",
+      "entity_type": "Patient",
+      "attributes": {
+        "sex": "Male",
+        "age_at_onset": 41
+      },
+      "confidence": 0.99,
+      "context": "Male patient aged 41 years"
+    },
+    {
+      "name": "methotrexate",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "suspect",
+        "substance_names": [
+          "METHOTREXATE SODIUM",
+          "METHOTREXATE"
+        ],
+        "pharmacological_class": "Folate Analog Metabolic Inhibitor [EPC]",
+        "rxcui": [
+          "105585",
+          "1655956",
+          "1946772"
+        ],
+        "action_taken": "Drug withdrawn"
+      },
+      "confidence": 0.99,
+      "context": "Drug -- METHOTREXATE, Role: Suspect"
+    },
+    {
+      "name": "pericardial effusion",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_preferred_term": "Pericardial effusion",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "MedDRA Preferred Term: Pericardial effusion \u2014 Outcome: Recovered/resolved"
+    },
+    {
+      "name": "pleural effusion",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_preferred_term": "Pleural effusion",
+        "outcome": "Recovered/resolved",
+        "rechallenge_positive": true
+      },
+      "confidence": 0.99,
+      "context": "MedDRA Preferred Term: Pleural effusion \u2014 Outcome: Recovered/resolved; Positive rechallenge \u2014 events that recurred: Pleural effusion"
+    },
+    {
+      "name": "psoriatic arthropathy",
+      "entity_type": "Indication",
+      "attributes": {},
+      "confidence": 0.99,
+      "context": "Indication: PSORIATIC ARTHROPATHY"
+    },
+    {
+      "name": "Reporter-10185828",
+      "entity_type": "Reporter",
+      "attributes": {
+        "qualification": "Other health professional",
+        "country": "COUNTRY NOT SPECIFIED"
+      },
+      "confidence": 0.99,
+      "context": "Primary source qualification: Other health professional"
+    },
+    {
+      "name": "Hospitalization-10185828",
+      "entity_type": "Outcome",
+      "attributes": {
+        "seriousness_flag": "Hospitalization",
+        "serious": true
+      },
+      "confidence": 0.99,
+      "context": "Serious: Yes \u2014 Seriousness flag: Hospitalization"
+    },
+    {
+      "name": "FAERS-10185828",
+      "entity_type": "ReportType",
+      "attributes": {
+        "report_type": "Spontaneous",
+        "safety_report_id": "10185828",
+        "expedited": true
+      },
+      "confidence": 0.99,
+      "context": "Report type: Spontaneous (FAERS); Safety report ID: 10185828"
+    },
+    {
+      "name": "PositiveRechallenge-pleural-effusion-10185828",
+      "entity_type": "DechallengeRechallenge",
+      "attributes": {
+        "dechallenge": "Drug withdrawn",
+        "rechallenge_outcome": "positive",
+        "recurred_event": "pleural effusion"
+      },
+      "confidence": 0.99,
+      "context": "Positive rechallenge documented \u2014 Pleural effusion recurred. Action taken with drug: Drug withdrawn"
+    },
+    {
+      "name": "BradfordHill-SingleCaseSignal-10185828",
+      "entity_type": "CausalitySignal",
+      "attributes": {
+        "signal_type": "positive_rechallenge",
+        "assessment_framework": "Bradford-Hill",
+        "strength": "strongest single-case signal"
+      },
+      "confidence": 0.99,
+      "context": "Bradford-Hill strongest single-case signal. Positive rechallenge documented"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "Patient-10185828",
+      "target_entity": "pericardial effusion",
+      "confidence": 0.99,
+      "evidence": "Male patient aged 41 years experienced Pericardial effusion and Pleural effusion after exposure to METHOTREXATE"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "Patient-10185828",
+      "target_entity": "pleural effusion",
+      "confidence": 0.99,
+      "evidence": "Male patient aged 41 years experienced Pericardial effusion and Pleural effusion after exposure to METHOTREXATE"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "Patient-10185828",
+      "target_entity": "methotrexate",
+      "confidence": 0.99,
+      "evidence": "Drug -- METHOTREXATE, Role: Suspect"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "methotrexate",
+      "target_entity": "psoriatic arthropathy",
+      "confidence": 0.99,
+      "evidence": "Indication: PSORIATIC ARTHROPATHY"
+    },
+    {
+      "relation_type": "REPORTED_BY",
+      "source_entity": "FAERS-10185828",
+      "target_entity": "Reporter-10185828",
+      "confidence": 0.99,
+      "evidence": "Primary source qualification: Other health professional"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "pericardial effusion",
+      "target_entity": "Hospitalization-10185828",
+      "confidence": 0.99,
+      "evidence": "Serious: Yes \u2014 Seriousness flag: Hospitalization"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "pleural effusion",
+      "target_entity": "Hospitalization-10185828",
+      "confidence": 0.99,
+      "evidence": "Serious: Yes \u2014 Seriousness flag: Hospitalization"
+    },
+    {
+      "relation_type": "OCCURRED_AFTER",
+      "source_entity": "pericardial effusion",
+      "target_entity": "methotrexate",
+      "confidence": 0.99,
+      "evidence": "Male patient aged 41 years experienced Pericardial effusion and Pleural effusion after exposure to METHOTREXATE"
+    },
+    {
+      "relation_type": "OCCURRED_AFTER",
+      "source_entity": "pleural effusion",
+      "target_entity": "methotrexate",
+      "confidence": 0.99,
+      "evidence": "Male patient aged 41 years experienced Pericardial effusion and Pleural effusion after exposure to METHOTREXATE"
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "pleural effusion",
+      "target_entity": "methotrexate",
+      "confidence": 0.99,
+      "evidence": "Positive rechallenge \u2014 events that recurred: Pleural effusion"
+    },
+    {
+      "relation_type": "RESOLVED_ON_DECHALLENGE",
+      "source_entity": "pleural effusion",
+      "target_entity": "methotrexate",
+      "confidence": 0.95,
+      "evidence": "Action taken with drug: Drug withdrawn; Outcome: Recovered/resolved"
+    },
+    {
+      "relation_type": "RESOLVED_ON_DECHALLENGE",
+      "source_entity": "pericardial effusion",
+      "target_entity": "methotrexate",
+      "confidence": 0.95,
+      "evidence": "Action taken with drug: Drug withdrawn; Outcome: Recovered/resolved"
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "pleural effusion",
+      "target_entity": "methotrexate",
+      "confidence": 0.95,
+      "evidence": "Positive rechallenge documented \u2014 Pleural effusion recurred. Bradford-Hill strongest single-case signal."
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "pericardial effusion",
+      "target_entity": "methotrexate",
+      "confidence": 0.8,
+      "evidence": "Other health professional reporter; no rechallenge documented for pericardial effusion specifically"
+    },
+    {
+      "relation_type": "TRIGGERED",
+      "source_entity": "methotrexate",
+      "target_entity": "BradfordHill-SingleCaseSignal-10185828",
+      "confidence": 0.99,
+      "evidence": "Bradford-Hill strongest single-case signal. Positive rechallenge documented"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "",
+  "domain_name": "pharmacovigilance",
+  "chunk_size": 10000,
+  "extracted_at": "2026-05-03T17:48:09.193273+00:00",
+  "error": null
+}

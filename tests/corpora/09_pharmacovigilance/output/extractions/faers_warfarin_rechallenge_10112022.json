@@ -1,0 +1,481 @@
+{
+  "document_id": "faers_warfarin_rechallenge_10112022",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "warfarin sodium",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "concomitant",
+        "rxcui": null
+      },
+      "confidence": 0.95,
+      "context": "WARFARIN SODIUM (Thrombosis)"
+    },
+    {
+      "name": "interferon beta-1a",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "suspect",
+        "brand": "REBIF",
+        "rxcui": "758025",
+        "pharmacological_class": "Interferon beta [EPC]"
+      },
+      "confidence": 0.99,
+      "context": "Drug -- REBIF (interferon beta-1a) Role: Suspect"
+    },
+    {
+      "name": "anusol",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "suspect",
+        "brand": "ANUSOL"
+      },
+      "confidence": 0.99,
+      "context": "Drug -- ANUSOL Role: Suspect"
+    },
+    {
+      "name": "bisoprolol",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "concomitant"
+      },
+      "confidence": 0.95,
+      "context": "BISOPROLOL (Atrial fibrillation)"
+    },
+    {
+      "name": "gabapentin",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "concomitant"
+      },
+      "confidence": 0.95,
+      "context": "GABAPENTIN (Neuralgia)"
+    },
+    {
+      "name": "domperidone",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "concomitant"
+      },
+      "confidence": 0.95,
+      "context": "DOMPERIDONE (Nausea)"
+    },
+    {
+      "name": "anastrozole",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "concomitant",
+        "pharmacological_class": "Aromatase Inhibitor"
+      },
+      "confidence": 0.95,
+      "context": "ANASTROZOLE (Breast Cancer, Aromatase Inhibitor)"
+    },
+    {
+      "name": "adcal-d3",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "concomitant"
+      },
+      "confidence": 0.95,
+      "context": "ADCAL-D3 (Bone density)"
+    },
+    {
+      "name": "mefenamic acid",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "concomitant",
+        "pharmacological_class": "NSAID"
+      },
+      "confidence": 0.95,
+      "context": "MEFENAMIC ACID (Dysmenorrhoea, NSAID)"
+    },
+    {
+      "name": "fesoterodine",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "concomitant"
+      },
+      "confidence": 0.95,
+      "context": "FESOTERODINE (Bladder disorder)"
+    },
+    {
+      "name": "urticaria",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Urticaria",
+        "outcome": "Not recovered/not resolved"
+      },
+      "confidence": 0.99,
+      "context": "Urticaria \u2014 Not recovered/not resolved"
+    },
+    {
+      "name": "angioedema",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Angioedema",
+        "outcome": "Not recovered/not resolved"
+      },
+      "confidence": 0.99,
+      "context": "Angioedema \u2014 Not recovered/not resolved"
+    },
+    {
+      "name": "lip swelling",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Lip swelling",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Lip swelling \u2014 Recovered/resolved"
+    },
+    {
+      "name": "swelling face",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Swelling face",
+        "outcome": "Recovering/resolving"
+      },
+      "confidence": 0.99,
+      "context": "Swelling face \u2014 Recovering/resolving"
+    },
+    {
+      "name": "throat tightness",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Throat tightness",
+        "outcome": "Unknown"
+      },
+      "confidence": 0.99,
+      "context": "Throat tightness \u2014 Unknown"
+    },
+    {
+      "name": "haemorrhoids",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Haemorrhoids",
+        "outcome": "Not recovered/not resolved"
+      },
+      "confidence": 0.99,
+      "context": "Haemorrhoids \u2014 Not recovered/not resolved"
+    },
+    {
+      "name": "dyspnoea",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Dyspnoea",
+        "outcome": "Unknown"
+      },
+      "confidence": 0.99,
+      "context": "Dyspnoea \u2014 Unknown"
+    },
+    {
+      "name": "rash",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Rash",
+        "outcome": "Not recovered/not resolved"
+      },
+      "confidence": 0.99,
+      "context": "Rash \u2014 Not recovered/not resolved"
+    },
+    {
+      "name": "rash pruritic",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Rash pruritic",
+        "outcome": "Positive rechallenge"
+      },
+      "confidence": 0.99,
+      "context": "Positive rechallenge: Rash pruritic"
+    },
+    {
+      "name": "patient_10112022",
+      "entity_type": "Patient",
+      "attributes": {
+        "sex": "Female",
+        "age_at_onset": 47,
+        "age_unit": "years"
+      },
+      "confidence": 0.99,
+      "context": "Sex: Female; Age at onset: 47 years"
+    },
+    {
+      "name": "physician_reporter_GB",
+      "entity_type": "Reporter",
+      "attributes": {
+        "qualification": "Physician",
+        "country": "GB"
+      },
+      "confidence": 0.99,
+      "context": "Primary source qualification: Physician; Reporter country: GB"
+    },
+    {
+      "name": "spontaneous_FAERS",
+      "entity_type": "ReportType",
+      "attributes": {
+        "report_type": "Spontaneous",
+        "source": "FAERS",
+        "expedited": true,
+        "serious": true
+      },
+      "confidence": 0.99,
+      "context": "Report type: Spontaneous (FAERS); Expedited criteria fulfilled: Yes; Serious: Yes"
+    },
+    {
+      "name": "relapsing-remitting multiple sclerosis",
+      "entity_type": "Indication",
+      "attributes": {},
+      "confidence": 0.99,
+      "context": "Indication: RELAPSING-REMITTING MULTIPLE SCLEROSIS"
+    },
+    {
+      "name": "haemorrhoids_indication",
+      "entity_type": "Indication",
+      "attributes": {},
+      "confidence": 0.99,
+      "context": "Indication: HAEMORRHOIDS"
+    },
+    {
+      "name": "anusol_rash_pruritic_rechallenge",
+      "entity_type": "DechallengeRechallenge",
+      "attributes": {
+        "type": "positive_rechallenge",
+        "drug": "anusol",
+        "event": "rash pruritic"
+      },
+      "confidence": 0.99,
+      "context": "Positive rechallenge: Rash pruritic"
+    },
+    {
+      "name": "anusol_rash_pruritic_signal",
+      "entity_type": "CausalitySignal",
+      "attributes": {
+        "signal_type": "positive_rechallenge",
+        "strength": "strong",
+        "confidence_modifier": 0.9
+      },
+      "confidence": 0.95,
+      "context": "Positive rechallenge (ANUSOL -> Rash pruritic). Physician reporter, GB."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10112022",
+      "target_entity": "urticaria",
+      "confidence": 0.99,
+      "evidence": "Female 47 years experienced Urticaria, Angioedema, Lip swelling, Swelling face, Throat tightness after REBIF and ANUSOL."
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10112022",
+      "target_entity": "angioedema",
+      "confidence": 0.99,
+      "evidence": "Female 47 years experienced Urticaria, Angioedema, Lip swelling, Swelling face, Throat tightness after REBIF and ANUSOL."
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10112022",
+      "target_entity": "lip swelling",
+      "confidence": 0.99,
+      "evidence": "Female 47 years experienced Urticaria, Angioedema, Lip swelling, Swelling face, Throat tightness after REBIF and ANUSOL."
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10112022",
+      "target_entity": "swelling face",
+      "confidence": 0.99,
+      "evidence": "Female 47 years experienced Urticaria, Angioedema, Lip swelling, Swelling face, Throat tightness after REBIF and ANUSOL."
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10112022",
+      "target_entity": "throat tightness",
+      "confidence": 0.99,
+      "evidence": "Female 47 years experienced Urticaria, Angioedema, Lip swelling, Swelling face, Throat tightness after REBIF and ANUSOL."
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10112022",
+      "target_entity": "haemorrhoids",
+      "confidence": 0.99,
+      "evidence": "Haemorrhoids \u2014 Not recovered/not resolved"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10112022",
+      "target_entity": "dyspnoea",
+      "confidence": 0.99,
+      "evidence": "Dyspnoea \u2014 Unknown"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10112022",
+      "target_entity": "rash",
+      "confidence": 0.99,
+      "evidence": "Rash \u2014 Not recovered/not resolved"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10112022",
+      "target_entity": "rash pruritic",
+      "confidence": 0.99,
+      "evidence": "Positive rechallenge: Rash pruritic"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10112022",
+      "target_entity": "interferon beta-1a",
+      "confidence": 0.99,
+      "evidence": "Drug -- REBIF (interferon beta-1a) Role: Suspect"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10112022",
+      "target_entity": "anusol",
+      "confidence": 0.99,
+      "evidence": "Drug -- ANUSOL Role: Suspect"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10112022",
+      "target_entity": "warfarin sodium",
+      "confidence": 0.95,
+      "evidence": "WARFARIN SODIUM (Thrombosis)"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10112022",
+      "target_entity": "bisoprolol",
+      "confidence": 0.95,
+      "evidence": "BISOPROLOL (Atrial fibrillation)"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10112022",
+      "target_entity": "gabapentin",
+      "confidence": 0.95,
+      "evidence": "GABAPENTIN (Neuralgia)"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10112022",
+      "target_entity": "domperidone",
+      "confidence": 0.95,
+      "evidence": "DOMPERIDONE (Nausea)"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10112022",
+      "target_entity": "anastrozole",
+      "confidence": 0.95,
+      "evidence": "ANASTROZOLE (Breast Cancer, Aromatase Inhibitor)"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10112022",
+      "target_entity": "adcal-d3",
+      "confidence": 0.95,
+      "evidence": "ADCAL-D3 (Bone density)"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10112022",
+      "target_entity": "mefenamic acid",
+      "confidence": 0.95,
+      "evidence": "MEFENAMIC ACID (Dysmenorrhoea, NSAID)"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10112022",
+      "target_entity": "fesoterodine",
+      "confidence": 0.95,
+      "evidence": "FESOTERODINE (Bladder disorder)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "interferon beta-1a",
+      "target_entity": "relapsing-remitting multiple sclerosis",
+      "confidence": 0.99,
+      "evidence": "Indication: RELAPSING-REMITTING MULTIPLE SCLEROSIS"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "anusol",
+      "target_entity": "haemorrhoids_indication",
+      "confidence": 0.99,
+      "evidence": "Indication: HAEMORRHOIDS"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "warfarin sodium",
+      "target_entity": "thrombosis",
+      "confidence": 0.95,
+      "evidence": "WARFARIN SODIUM (Thrombosis)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "bisoprolol",
+      "target_entity": "atrial fibrillation",
+      "confidence": 0.95,
+      "evidence": "BISOPROLOL (Atrial fibrillation)"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "interferon beta-1a",
+      "target_entity": "warfarin sodium",
+      "confidence": 0.95,
+      "evidence": "WARFARIN is concomitant."
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "interferon beta-1a",
+      "target_entity": "anastrozole",
+      "confidence": 0.95,
+      "evidence": "Concomitant Drug(s): ANASTROZOLE (Breast Cancer, Aromatase Inhibitor)"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "anusol",
+      "target_entity": "mefenamic acid",
+      "confidence": 0.9,
+      "evidence": "Concomitant Drug(s): MEFENAMIC ACID (Dysmenorrhoea, NSAID)"
+    },
+    {
+      "relation_type": "REPORTED_BY",
+      "source_entity": "spontaneous_FAERS",
+      "target_entity": "physician_reporter_GB",
+      "confidence": 0.99,
+      "evidence": "Primary source qualification: Physician; Reporter country: GB"
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "rash pruritic",
+      "target_entity": "anusol",
+      "confidence": 0.99,
+      "evidence": "Positive rechallenge: Rash pruritic"
+    },
+    {
+      "relation_type": "TRIGGERED",
+      "source_entity": "anusol_rash_pruritic_rechallenge",
+      "target_entity": "anusol_rash_pruritic_signal",
+      "confidence": 0.95,
+      "evidence": "Positive rechallenge (ANUSOL -> Rash pruritic). Physician reporter, GB."
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "rash pruritic",
+      "target_entity": "anusol",
+      "confidence": 0.92,
+      "evidence": "Positive rechallenge (ANUSOL -> Rash pruritic). Physician reporter, GB. WARFARIN is concomitant."
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "",
+  "domain_name": "pharmacovigilance",
+  "chunk_size": 10000,
+  "extracted_at": "2026-05-03T17:50:02.466729+00:00",
+  "error": null
+}

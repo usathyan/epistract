@@ -1,0 +1,399 @@
+{
+  "document_id": "faers_warfarin_rechallenge_10235486",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "lenalidomide",
+      "entity_type": "Drug",
+      "attributes": {
+        "brand_name": "REVLIMID",
+        "dosage": "25 MG",
+        "pharmacological_class": "Thalidomide Analog [EPC]",
+        "rxcui": "602910, 602912, 616114",
+        "role": "Suspect"
+      },
+      "confidence": 0.99,
+      "context": "Drug -- REVLIMID (lenalidomide) / Role: Suspect / Dosage: 25 MG / Substance: LENALIDOMIDE / Pharmacological class: Thalidomide Analog [EPC]"
+    },
+    {
+      "name": "warfarin sodium",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "Concomitant",
+        "indication": "Deep vein thrombosis"
+      },
+      "confidence": 0.99,
+      "context": "WARFARIN SODIUM (Deep vein thrombosis) listed as concomitant drug"
+    },
+    {
+      "name": "sertraline",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "Concomitant",
+        "indication": "Bipolar disorder"
+      },
+      "confidence": 0.99,
+      "context": "SERTRALINE (Bipolar disorder) listed as concomitant drug"
+    },
+    {
+      "name": "olanzapine",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "Concomitant",
+        "indication": "Bipolar disorder",
+        "pharmacological_class": "Atypical Antipsychotic"
+      },
+      "confidence": 0.99,
+      "context": "OLANZAPINE (Bipolar disorder, Atypical Antipsychotic) listed as concomitant drug"
+    },
+    {
+      "name": "lithium",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "Concomitant",
+        "indication": "Bipolar disorder"
+      },
+      "confidence": 0.99,
+      "context": "LITHIUM (Bipolar disorder) listed as concomitant drug"
+    },
+    {
+      "name": "pantoprazole",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "Concomitant",
+        "indication": "GERD",
+        "pharmacological_class": "Proton Pump Inhibitor"
+      },
+      "confidence": 0.99,
+      "context": "PANTOPRAZOLE (GERD, Proton Pump Inhibitor) listed as concomitant drug"
+    },
+    {
+      "name": "urinary tract infection",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Urinary tract infection",
+        "outcome": "Recovered/resolved (first entry); Fatal (second entry)",
+        "rechallenge": "Positive"
+      },
+      "confidence": 0.99,
+      "context": "Urinary tract infection \u2014 Recovered/resolved; Urinary tract infection (second entry) \u2014 Fatal; Positive rechallenge: Urinary tract infection"
+    },
+    {
+      "name": "pneumonia klebsiella",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Pneumonia klebsiella",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Pneumonia klebsiella \u2014 Recovered/resolved"
+    },
+    {
+      "name": "plasma cell myeloma progression",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Plasma cell myeloma",
+        "outcome": "Fatal"
+      },
+      "confidence": 0.95,
+      "context": "Plasma cell myeloma \u2014 Fatal"
+    },
+    {
+      "name": "Patient_10235486",
+      "entity_type": "Patient",
+      "attributes": {
+        "sex": "Male",
+        "age_at_onset": 77,
+        "age_unit": "years",
+        "country": "AU"
+      },
+      "confidence": 0.99,
+      "context": "Patient: Sex: Male / Age at onset: 77 years"
+    },
+    {
+      "name": "Physician_AU_10235486",
+      "entity_type": "Reporter",
+      "attributes": {
+        "qualification": "Physician",
+        "country": "AU"
+      },
+      "confidence": 0.99,
+      "context": "Primary source qualification: Physician / Reporter country: AU"
+    },
+    {
+      "name": "Death_10235486",
+      "entity_type": "Outcome",
+      "attributes": {
+        "outcome_type": "Death",
+        "seriousness": "Fatal",
+        "criteria": "Death, Hospitalization"
+      },
+      "confidence": 0.99,
+      "context": "Serious: Yes \u2014 Death, Hospitalization; Plasma cell myeloma \u2014 Fatal; Urinary tract infection (second entry) \u2014 Fatal"
+    },
+    {
+      "name": "Spontaneous_FAERS",
+      "entity_type": "ReportType",
+      "attributes": {
+        "type": "Spontaneous",
+        "database": "FAERS",
+        "expedited": true,
+        "serious": true
+      },
+      "confidence": 0.99,
+      "context": "Report type: Spontaneous (FAERS) / Expedited criteria fulfilled: Yes / Serious: Yes"
+    },
+    {
+      "name": "plasma cell myeloma",
+      "entity_type": "Indication",
+      "attributes": {
+        "indication_for": "lenalidomide"
+      },
+      "confidence": 0.99,
+      "context": "Indication: PLASMA CELL MYELOMA (for REVLIMID/lenalidomide)"
+    },
+    {
+      "name": "deep vein thrombosis",
+      "entity_type": "Indication",
+      "attributes": {
+        "indication_for": "warfarin sodium"
+      },
+      "confidence": 0.99,
+      "context": "WARFARIN SODIUM (Deep vein thrombosis)"
+    },
+    {
+      "name": "bipolar disorder",
+      "entity_type": "Indication",
+      "attributes": {
+        "indication_for": "sertraline, olanzapine, lithium"
+      },
+      "confidence": 0.99,
+      "context": "SERTRALINE (Bipolar disorder) / OLANZAPINE (Bipolar disorder) / LITHIUM (Bipolar disorder)"
+    },
+    {
+      "name": "GERD",
+      "entity_type": "Indication",
+      "attributes": {
+        "indication_for": "pantoprazole"
+      },
+      "confidence": 0.99,
+      "context": "PANTOPRAZOLE (GERD, Proton Pump Inhibitor)"
+    },
+    {
+      "name": "PositiveRechallenge_UTI_lenalidomide",
+      "entity_type": "DechallengeRechallenge",
+      "attributes": {
+        "drug": "lenalidomide",
+        "adverse_event": "urinary tract infection",
+        "rechallenge_result": "Positive",
+        "dechallenge_result": null
+      },
+      "confidence": 0.99,
+      "context": "Positive rechallenge: Urinary tract infection (for REVLIMID/lenalidomide)"
+    },
+    {
+      "name": "CausalitySignal_lenalidomide_UTI",
+      "entity_type": "CausalitySignal",
+      "attributes": {
+        "drug": "lenalidomide",
+        "event": "urinary tract infection",
+        "signal_type": "positive_rechallenge",
+        "reporter_type": "Physician",
+        "confidence_basis": "Positive rechallenge + physician reporter + fatal outcome"
+      },
+      "confidence": 0.95,
+      "context": "Positive rechallenge (Urinary tract infection). Fatal outcome. Physician reporter, Australia."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "Patient_10235486",
+      "target_entity": "urinary tract infection",
+      "confidence": 0.99,
+      "evidence": "Male 77 years experienced Urinary tract infection after REVLIMID (lenalidomide)"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "Patient_10235486",
+      "target_entity": "pneumonia klebsiella",
+      "confidence": 0.99,
+      "evidence": "Male 77 years experienced Pneumonia klebsiella after REVLIMID (lenalidomide)"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "Patient_10235486",
+      "target_entity": "plasma cell myeloma progression",
+      "confidence": 0.95,
+      "evidence": "Plasma cell myeloma \u2014 Fatal (listed under Reactions)"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "Patient_10235486",
+      "target_entity": "lenalidomide",
+      "confidence": 0.99,
+      "evidence": "Suspect Drug: REVLIMID (lenalidomide), 25 MG"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "Patient_10235486",
+      "target_entity": "warfarin sodium",
+      "confidence": 0.99,
+      "evidence": "WARFARIN SODIUM (Deep vein thrombosis) listed as concomitant drug"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "Patient_10235486",
+      "target_entity": "sertraline",
+      "confidence": 0.99,
+      "evidence": "SERTRALINE (Bipolar disorder) listed as concomitant drug"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "Patient_10235486",
+      "target_entity": "olanzapine",
+      "confidence": 0.99,
+      "evidence": "OLANZAPINE (Bipolar disorder, Atypical Antipsychotic) listed as concomitant drug"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "Patient_10235486",
+      "target_entity": "lithium",
+      "confidence": 0.99,
+      "evidence": "LITHIUM (Bipolar disorder) listed as concomitant drug"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "Patient_10235486",
+      "target_entity": "pantoprazole",
+      "confidence": 0.99,
+      "evidence": "PANTOPRAZOLE (GERD, Proton Pump Inhibitor) listed as concomitant drug"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "lenalidomide",
+      "target_entity": "plasma cell myeloma",
+      "confidence": 0.99,
+      "evidence": "Indication: PLASMA CELL MYELOMA (for REVLIMID/lenalidomide)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "warfarin sodium",
+      "target_entity": "deep vein thrombosis",
+      "confidence": 0.99,
+      "evidence": "WARFARIN SODIUM (Deep vein thrombosis)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "sertraline",
+      "target_entity": "bipolar disorder",
+      "confidence": 0.99,
+      "evidence": "SERTRALINE (Bipolar disorder)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "olanzapine",
+      "target_entity": "bipolar disorder",
+      "confidence": 0.99,
+      "evidence": "OLANZAPINE (Bipolar disorder)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "lithium",
+      "target_entity": "bipolar disorder",
+      "confidence": 0.99,
+      "evidence": "LITHIUM (Bipolar disorder)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "pantoprazole",
+      "target_entity": "GERD",
+      "confidence": 0.99,
+      "evidence": "PANTOPRAZOLE (GERD, Proton Pump Inhibitor)"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "lenalidomide",
+      "target_entity": "warfarin sodium",
+      "confidence": 0.99,
+      "evidence": "WARFARIN is concomitant; WARFARIN SODIUM listed under Concomitant Drug(s)"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "lenalidomide",
+      "target_entity": "sertraline",
+      "confidence": 0.99,
+      "evidence": "SERTRALINE listed under Concomitant Drug(s)"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "lenalidomide",
+      "target_entity": "olanzapine",
+      "confidence": 0.99,
+      "evidence": "OLANZAPINE listed under Concomitant Drug(s)"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "lenalidomide",
+      "target_entity": "lithium",
+      "confidence": 0.99,
+      "evidence": "LITHIUM listed under Concomitant Drug(s)"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "lenalidomide",
+      "target_entity": "pantoprazole",
+      "confidence": 0.99,
+      "evidence": "PANTOPRAZOLE listed under Concomitant Drug(s)"
+    },
+    {
+      "relation_type": "REPORTED_BY",
+      "source_entity": "Patient_10235486",
+      "target_entity": "Physician_AU_10235486",
+      "confidence": 0.99,
+      "evidence": "Primary source qualification: Physician / Reporter country: AU"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "urinary tract infection",
+      "target_entity": "Death_10235486",
+      "confidence": 0.9,
+      "evidence": "Urinary tract infection (second entry) \u2014 Fatal"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "plasma cell myeloma progression",
+      "target_entity": "Death_10235486",
+      "confidence": 0.95,
+      "evidence": "Plasma cell myeloma \u2014 Fatal"
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "urinary tract infection",
+      "target_entity": "PositiveRechallenge_UTI_lenalidomide",
+      "confidence": 0.99,
+      "evidence": "Positive rechallenge: Urinary tract infection (for REVLIMID/lenalidomide)"
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "urinary tract infection",
+      "target_entity": "lenalidomide",
+      "confidence": 0.92,
+      "evidence": "Positive rechallenge (Urinary tract infection). Fatal outcome. Physician reporter, Australia. Suspect drug: REVLIMID (lenalidomide)"
+    },
+    {
+      "relation_type": "TRIGGERED",
+      "source_entity": "PositiveRechallenge_UTI_lenalidomide",
+      "target_entity": "CausalitySignal_lenalidomide_UTI",
+      "confidence": 0.95,
+      "evidence": "Positive rechallenge: Urinary tract infection \u2014 strongest causality signal per domain schema"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "",
+  "domain_name": "pharmacovigilance",
+  "chunk_size": 10000,
+  "extracted_at": "2026-05-03T17:50:17.329396+00:00",
+  "error": null
+}

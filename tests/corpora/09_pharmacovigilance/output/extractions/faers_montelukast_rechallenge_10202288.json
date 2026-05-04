@@ -1,0 +1,538 @@
+{
+  "document_id": "faers_montelukast_rechallenge_10202288",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "patient_10202288",
+      "entity_type": "Patient",
+      "attributes": {
+        "sex": "Female",
+        "age_at_onset": 60,
+        "age_unit": "years",
+        "country": "SE"
+      },
+      "confidence": 0.99,
+      "context": "Female 60 years, experienced Musculoskeletal stiffness, Vomiting, Blood creatinine increased, Headache, Somnolence after ACYCLOVIR and VALACYCLOVIR."
+    },
+    {
+      "name": "physician_reporter_SE",
+      "entity_type": "Reporter",
+      "attributes": {
+        "qualification": "Physician",
+        "country": "SE"
+      },
+      "confidence": 0.99,
+      "context": "Primary source qualification: Physician; Reporter country: SE"
+    },
+    {
+      "name": "FAERS spontaneous report",
+      "entity_type": "ReportType",
+      "attributes": {
+        "report_id": "10202288",
+        "expedited": true,
+        "serious": true,
+        "serious_criteria": [
+          "Hospitalization",
+          "Other medically significant"
+        ]
+      },
+      "confidence": 0.99,
+      "context": "Report type: Spontaneous (FAERS); Safety report ID: 10202288; Expedited criteria fulfilled: Yes; Serious: Yes \u2014 Hospitalization + Other medically significant"
+    },
+    {
+      "name": "acyclovir",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "Suspect",
+        "dosage": "700 MG",
+        "frequency": "SINGLE",
+        "action_taken": "Drug withdrawn"
+      },
+      "confidence": 0.99,
+      "context": "Drug -- ACYCLOVIR; Role: Suspect; Indication: HERPES VIRUS INFECTION; Dosage: 700 MG, SINGLE; Action taken: Drug withdrawn"
+    },
+    {
+      "name": "valacyclovir",
+      "entity_type": "Drug",
+      "attributes": {
+        "role": "Suspect",
+        "dosage": "6 G",
+        "frequency": "DAILY",
+        "action_taken": "Drug withdrawn",
+        "salt_form": "hydrochloride"
+      },
+      "confidence": 0.99,
+      "context": "Drug -- VALACYCLOVIR HYDROCHLORIDE; Role: Suspect; Indication: HERPES VIRUS INFECTION; Dosage: 6 G, DAILY; Action taken: Drug withdrawn; Positive rechallenge: Headache"
+    },
+    {
+      "name": "herpes virus infection",
+      "entity_type": "Indication",
+      "attributes": {
+        "meddra_term": "Herpes virus infection"
+      },
+      "confidence": 0.95,
+      "context": "Indication: HERPES VIRUS INFECTION"
+    },
+    {
+      "name": "musculoskeletal stiffness",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_pt": "Musculoskeletal stiffness",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Musculoskeletal stiffness \u2014 Recovered/resolved"
+    },
+    {
+      "name": "vomiting",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_pt": "Vomiting",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Vomiting \u2014 Recovered/resolved"
+    },
+    {
+      "name": "blood creatinine increased",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_pt": "Blood creatinine increased",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Blood creatinine increased \u2014 Recovered/resolved"
+    },
+    {
+      "name": "headache",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_pt": "Headache",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Headache \u2014 Recovered/resolved"
+    },
+    {
+      "name": "somnolence",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_pt": "Somnolence",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Somnolence \u2014 Recovered/resolved"
+    },
+    {
+      "name": "nausea",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_pt": "Nausea",
+        "outcome": "Recovering/resolving"
+      },
+      "confidence": 0.99,
+      "context": "Nausea \u2014 Recovering/resolving"
+    },
+    {
+      "name": "antiviral drug level above therapeutic",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_pt": "Antiviral drug level above therapeutic",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Antiviral drug level above therapeutic \u2014 Recovered/resolved"
+    },
+    {
+      "name": "muscular weakness",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_pt": "Muscular weakness",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Muscular weakness \u2014 Recovered/resolved"
+    },
+    {
+      "name": "aphasia",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_pt": "Aphasia",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Aphasia \u2014 Recovered/resolved"
+    },
+    {
+      "name": "dysstasia",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_pt": "Dysstasia",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Dysstasia \u2014 Recovered/resolved"
+    },
+    {
+      "name": "bladder dysfunction",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_pt": "Bladder dysfunction",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Bladder dysfunction \u2014 Recovered/resolved"
+    },
+    {
+      "name": "valacyclovir rechallenge headache",
+      "entity_type": "DechallengeRechallenge",
+      "attributes": {
+        "drug": "valacyclovir",
+        "type": "positive_rechallenge",
+        "adverse_event": "headache"
+      },
+      "confidence": 0.95,
+      "context": "Positive rechallenge: Headache (VALACYCLOVIR HYDROCHLORIDE)"
+    },
+    {
+      "name": "positive rechallenge signal valacyclovir-headache",
+      "entity_type": "CausalitySignal",
+      "attributes": {
+        "signal_type": "positive_rechallenge",
+        "drug": "valacyclovir",
+        "adverse_event": "headache",
+        "strength": "strong"
+      },
+      "confidence": 0.95,
+      "context": "Positive rechallenge: Headache (VALACYCLOVIR HYDROCHLORIDE)"
+    },
+    {
+      "name": "amitriptyline",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "role": "Concomitant"
+      },
+      "confidence": 0.99,
+      "context": "Concomitant Drug(s): AMITRIPTYLINE"
+    },
+    {
+      "name": "cefotaxime",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "role": "Concomitant"
+      },
+      "confidence": 0.99,
+      "context": "Concomitant Drug(s): CEFOTAXIME"
+    },
+    {
+      "name": "baclofen",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "role": "Concomitant"
+      },
+      "confidence": 0.99,
+      "context": "Concomitant Drug(s): BACLOFEN"
+    },
+    {
+      "name": "calcium carbonate with colecalciferol",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "role": "Concomitant"
+      },
+      "confidence": 0.99,
+      "context": "Concomitant Drug(s): CALCIUM CARBONATE W/COLECALCIFEROL"
+    },
+    {
+      "name": "enalapril",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "role": "Concomitant"
+      },
+      "confidence": 0.99,
+      "context": "Concomitant Drug(s): ENALAPRIL"
+    },
+    {
+      "name": "metoprolol",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "role": "Concomitant"
+      },
+      "confidence": 0.99,
+      "context": "Concomitant Drug(s): METOPROLOL"
+    },
+    {
+      "name": "venlafaxine",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "role": "Concomitant"
+      },
+      "confidence": 0.99,
+      "context": "Concomitant Drug(s): VENLAFAXINE"
+    },
+    {
+      "name": "salmeterol/fluticasone propionate",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "role": "Concomitant"
+      },
+      "confidence": 0.99,
+      "context": "Concomitant Drug(s): SALMETEROL/FLUTICASONPROPIONAAT"
+    },
+    {
+      "name": "montelukast",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "role": "Concomitant",
+        "salt_form": "sodium",
+        "pulled_for_drug": true
+      },
+      "confidence": 0.99,
+      "context": "Concomitant Drug(s): MONTELUKAST SODIUM; Pulled-for drug: montelukast (rationale: cross_database_contested)"
+    },
+    {
+      "name": "betamethasone",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "role": "Concomitant"
+      },
+      "confidence": 0.99,
+      "context": "Concomitant Drug(s): BETAMETHASONE"
+    },
+    {
+      "name": "furosemide",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "role": "Concomitant"
+      },
+      "confidence": 0.99,
+      "context": "Concomitant Drug(s): FUROSEMIDE"
+    },
+    {
+      "name": "gabapentin",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "role": "Concomitant"
+      },
+      "confidence": 0.99,
+      "context": "Concomitant Drug(s): GABAPENTIN"
+    },
+    {
+      "name": "methenamine",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "role": "Concomitant"
+      },
+      "confidence": 0.99,
+      "context": "Concomitant Drug(s): METHENAMINE"
+    },
+    {
+      "name": "ampicillin",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "role": "Concomitant"
+      },
+      "confidence": 0.99,
+      "context": "Concomitant Drug(s): AMPICILLIN"
+    },
+    {
+      "name": "recovered/resolved",
+      "entity_type": "Outcome",
+      "attributes": {
+        "outcome_code": "recovered_resolved"
+      },
+      "confidence": 0.99,
+      "context": "Musculoskeletal stiffness \u2014 Recovered/resolved; Vomiting \u2014 Recovered/resolved; etc."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10202288",
+      "target_entity": "musculoskeletal stiffness",
+      "confidence": 0.99,
+      "evidence": "Female 60 years, experienced Musculoskeletal stiffness"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10202288",
+      "target_entity": "vomiting",
+      "confidence": 0.99,
+      "evidence": "Female 60 years, experienced Vomiting"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10202288",
+      "target_entity": "blood creatinine increased",
+      "confidence": 0.99,
+      "evidence": "Blood creatinine increased \u2014 Recovered/resolved"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10202288",
+      "target_entity": "headache",
+      "confidence": 0.99,
+      "evidence": "Female 60 years, experienced Headache"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10202288",
+      "target_entity": "somnolence",
+      "confidence": 0.99,
+      "evidence": "Female 60 years, experienced Somnolence"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10202288",
+      "target_entity": "nausea",
+      "confidence": 0.99,
+      "evidence": "Nausea \u2014 Recovering/resolving"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10202288",
+      "target_entity": "antiviral drug level above therapeutic",
+      "confidence": 0.99,
+      "evidence": "Antiviral drug level above therapeutic \u2014 Recovered/resolved"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10202288",
+      "target_entity": "muscular weakness",
+      "confidence": 0.99,
+      "evidence": "Muscular weakness \u2014 Recovered/resolved"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10202288",
+      "target_entity": "aphasia",
+      "confidence": 0.99,
+      "evidence": "Aphasia \u2014 Recovered/resolved"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10202288",
+      "target_entity": "dysstasia",
+      "confidence": 0.99,
+      "evidence": "Dysstasia \u2014 Recovered/resolved"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10202288",
+      "target_entity": "bladder dysfunction",
+      "confidence": 0.99,
+      "evidence": "Bladder dysfunction \u2014 Recovered/resolved"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10202288",
+      "target_entity": "acyclovir",
+      "confidence": 0.99,
+      "evidence": "Drug -- ACYCLOVIR; Role: Suspect; Dosage: 700 MG, SINGLE"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10202288",
+      "target_entity": "valacyclovir",
+      "confidence": 0.99,
+      "evidence": "Drug -- VALACYCLOVIR HYDROCHLORIDE; Role: Suspect; Dosage: 6 G, DAILY"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "acyclovir",
+      "target_entity": "herpes virus infection",
+      "confidence": 0.99,
+      "evidence": "Indication: HERPES VIRUS INFECTION (ACYCLOVIR)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "valacyclovir",
+      "target_entity": "herpes virus infection",
+      "confidence": 0.99,
+      "evidence": "Indication: HERPES VIRUS INFECTION (VALACYCLOVIR HYDROCHLORIDE)"
+    },
+    {
+      "relation_type": "REPORTED_BY",
+      "source_entity": "patient_10202288",
+      "target_entity": "physician_reporter_SE",
+      "confidence": 0.99,
+      "evidence": "Primary source qualification: Physician; Reporter country: SE"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "musculoskeletal stiffness",
+      "target_entity": "recovered/resolved",
+      "confidence": 0.99,
+      "evidence": "Musculoskeletal stiffness \u2014 Recovered/resolved"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "headache",
+      "target_entity": "recovered/resolved",
+      "confidence": 0.99,
+      "evidence": "Headache \u2014 Recovered/resolved"
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "headache",
+      "target_entity": "valacyclovir rechallenge headache",
+      "confidence": 0.95,
+      "evidence": "Positive rechallenge: Headache (VALACYCLOVIR HYDROCHLORIDE)"
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "headache",
+      "target_entity": "valacyclovir",
+      "confidence": 0.95,
+      "evidence": "Positive rechallenge: Headache \u2014 strongest causality signal per FAERS guidelines"
+    },
+    {
+      "relation_type": "TRIGGERED",
+      "source_entity": "valacyclovir rechallenge headache",
+      "target_entity": "positive rechallenge signal valacyclovir-headache",
+      "confidence": 0.95,
+      "evidence": "Positive rechallenge: Headache (VALACYCLOVIR HYDROCHLORIDE)"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "acyclovir",
+      "target_entity": "valacyclovir",
+      "confidence": 0.99,
+      "evidence": "Both listed as suspect drugs for same patient"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "acyclovir",
+      "target_entity": "montelukast",
+      "confidence": 0.99,
+      "evidence": "Concomitant Drug(s): MONTELUKAST SODIUM"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "acyclovir",
+      "target_entity": "amitriptyline",
+      "confidence": 0.99,
+      "evidence": "Concomitant Drug(s): AMITRIPTYLINE"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "acyclovir",
+      "target_entity": "gabapentin",
+      "confidence": 0.99,
+      "evidence": "Concomitant Drug(s): GABAPENTIN"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "acyclovir",
+      "target_entity": "venlafaxine",
+      "confidence": 0.99,
+      "evidence": "Concomitant Drug(s): VENLAFAXINE"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "",
+  "domain_name": "pharmacovigilance",
+  "chunk_size": 10000,
+  "extracted_at": "2026-05-03T17:48:46.244770+00:00",
+  "error": null
+}

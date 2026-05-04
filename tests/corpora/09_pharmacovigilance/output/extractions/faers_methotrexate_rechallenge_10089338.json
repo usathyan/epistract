@@ -1,0 +1,452 @@
+{
+  "document_id": "faers_methotrexate_rechallenge_10089338",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "methotrexate",
+      "entity_type": "Drug",
+      "attributes": {
+        "substance_names": [
+          "METHOTREXATE SODIUM",
+          "METHOTREXATE"
+        ],
+        "pharmacological_class": "Folate Analog Metabolic Inhibitor [EPC]",
+        "rxcui": [
+          "105585",
+          "1655956",
+          "1946772"
+        ],
+        "role": "Suspect",
+        "action_taken": "Drug withdrawn"
+      },
+      "confidence": 0.99,
+      "context": "Pulled-for drug: methotrexate (rationale: drug_drug_interaction)"
+    },
+    {
+      "name": "Patient-10089338",
+      "entity_type": "Patient",
+      "attributes": {
+        "sex": "Male",
+        "age_at_onset": 18,
+        "age_unit": "years",
+        "report_id": "10089338"
+      },
+      "confidence": 0.99,
+      "context": "Sex: Male, Age at onset: 18 years"
+    },
+    {
+      "name": "Reporter-10089338",
+      "entity_type": "Reporter",
+      "attributes": {
+        "qualification": "Unknown",
+        "reporter_type": "unknown",
+        "country": "US"
+      },
+      "confidence": 0.99,
+      "context": "Primary source qualification: Unknown, Reporter country: US"
+    },
+    {
+      "name": "FAERS",
+      "entity_type": "ReportType",
+      "attributes": {
+        "report_type": "Spontaneous",
+        "safety_report_id": "10089338",
+        "receipt_date": "2014-07-30",
+        "receive_date": "2014-04-21",
+        "source": "openFDA /drug/event.json"
+      },
+      "confidence": 0.99,
+      "context": "Report type: Spontaneous (FAERS)"
+    },
+    {
+      "name": "Erythema",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_preferred_term": "Erythema",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "MedDRA Preferred Term: Erythema \u2014 Outcome: Recovered/resolved"
+    },
+    {
+      "name": "Stomatitis",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_preferred_term": "Stomatitis",
+        "outcome": "Unknown"
+      },
+      "confidence": 0.99,
+      "context": "MedDRA Preferred Term: Stomatitis \u2014 Outcome: Unknown"
+    },
+    {
+      "name": "Blister",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_preferred_term": "Blister",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "MedDRA Preferred Term: Blister \u2014 Outcome: Recovered/resolved"
+    },
+    {
+      "name": "Drug level increased",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_preferred_term": "Drug level increased",
+        "outcome": "Unknown"
+      },
+      "confidence": 0.99,
+      "context": "MedDRA Preferred Term: Drug level increased \u2014 Outcome: Unknown"
+    },
+    {
+      "name": "Palmar-plantar erythrodysaesthesia syndrome",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_preferred_term": "Palmar-plantar erythrodysaesthesia syndrome",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "MedDRA Preferred Term: Palmar-plantar erythrodysaesthesia syndrome \u2014 Outcome: Recovered/resolved"
+    },
+    {
+      "name": "Mouth ulceration",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_preferred_term": "Mouth ulceration",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "MedDRA Preferred Term: Mouth ulceration \u2014 Outcome: Recovered/resolved"
+    },
+    {
+      "name": "Pyrexia",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_preferred_term": "Pyrexia",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "MedDRA Preferred Term: Pyrexia \u2014 Outcome: Recovered/resolved"
+    },
+    {
+      "name": "Pain",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_preferred_term": "Pain",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "MedDRA Preferred Term: Pain \u2014 Outcome: Recovered/resolved"
+    },
+    {
+      "name": "Perineal ulceration",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_preferred_term": "Perineal ulceration",
+        "outcome": "Recovered/resolved",
+        "rechallenge_positive": true
+      },
+      "confidence": 0.99,
+      "context": "Positive rechallenge \u2014 events that recurred when drug was reintroduced: Perineal ulceration"
+    },
+    {
+      "name": "Convulsion",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_preferred_term": "Convulsion",
+        "outcome": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "MedDRA Preferred Term: Convulsion \u2014 Outcome: Recovered/resolved"
+    },
+    {
+      "name": "osteosarcoma",
+      "entity_type": "Indication",
+      "attributes": {
+        "verbatim": "OSTEOSARCOMA"
+      },
+      "confidence": 0.99,
+      "context": "Indication: OSTEOSARCOMA"
+    },
+    {
+      "name": "Rechallenge-10089338-Perineal-ulceration",
+      "entity_type": "DechallengeRechallenge",
+      "attributes": {
+        "dechallenge": "Drug withdrawn",
+        "rechallenge_positive": true,
+        "recurred_event": "Perineal ulceration",
+        "bradford_hill_note": "Positive rechallenge documented \u2014 strongest single-case causality signal"
+      },
+      "confidence": 0.95,
+      "context": "Positive rechallenge documented: the following events recurred when the suspect drug was reintroduced \u2014 Perineal ulceration. Under Bradford-Hill criteria this is the strongest single-case causality signal available."
+    },
+    {
+      "name": "CausalitySignal-10089338",
+      "entity_type": "CausalitySignal",
+      "attributes": {
+        "signal_type": "positive_rechallenge",
+        "bradford_hill_criterion": "rechallenge",
+        "epistemic_status": "asserted",
+        "confidence_basis": "Positive dechallenge + positive rechallenge = strongest single-case signal"
+      },
+      "confidence": 0.95,
+      "context": "Under Bradford-Hill criteria this is the strongest single-case causality signal available."
+    },
+    {
+      "name": "Recovered/resolved",
+      "entity_type": "Outcome",
+      "attributes": {
+        "ich_e2b_category": "Recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Outcome: Recovered/resolved (multiple reactions)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "TOOK",
+      "source_entity": "Patient-10089338",
+      "target_entity": "methotrexate",
+      "confidence": 0.99,
+      "evidence": "Patient experienced reactions after exposure to METHOTREXATE"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "methotrexate",
+      "target_entity": "osteosarcoma",
+      "confidence": 0.99,
+      "evidence": "Indication: OSTEOSARCOMA"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "Patient-10089338",
+      "target_entity": "Erythema",
+      "confidence": 0.99,
+      "evidence": "patient aged 18 years who experienced Erythema after exposure to METHOTREXATE"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "Patient-10089338",
+      "target_entity": "Stomatitis",
+      "confidence": 0.99,
+      "evidence": "MedDRA Preferred Term: Stomatitis \u2014 Outcome: Unknown"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "Patient-10089338",
+      "target_entity": "Blister",
+      "confidence": 0.99,
+      "evidence": "patient aged 18 years who experienced Blister after exposure to METHOTREXATE"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "Patient-10089338",
+      "target_entity": "Drug level increased",
+      "confidence": 0.99,
+      "evidence": "MedDRA Preferred Term: Drug level increased \u2014 Outcome: Unknown"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "Patient-10089338",
+      "target_entity": "Palmar-plantar erythrodysaesthesia syndrome",
+      "confidence": 0.99,
+      "evidence": "patient aged 18 years who experienced Palmar-plantar erythrodysaesthesia syndrome after exposure to METHOTREXATE"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "Patient-10089338",
+      "target_entity": "Mouth ulceration",
+      "confidence": 0.99,
+      "evidence": "MedDRA Preferred Term: Mouth ulceration \u2014 Outcome: Recovered/resolved"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "Patient-10089338",
+      "target_entity": "Pyrexia",
+      "confidence": 0.99,
+      "evidence": "MedDRA Preferred Term: Pyrexia \u2014 Outcome: Recovered/resolved"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "Patient-10089338",
+      "target_entity": "Pain",
+      "confidence": 0.99,
+      "evidence": "MedDRA Preferred Term: Pain \u2014 Outcome: Recovered/resolved"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "Patient-10089338",
+      "target_entity": "Perineal ulceration",
+      "confidence": 0.99,
+      "evidence": "Positive rechallenge \u2014 events that recurred when drug was reintroduced: Perineal ulceration"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "Patient-10089338",
+      "target_entity": "Convulsion",
+      "confidence": 0.99,
+      "evidence": "MedDRA Preferred Term: Convulsion \u2014 Outcome: Recovered/resolved"
+    },
+    {
+      "relation_type": "REPORTED_BY",
+      "source_entity": "Patient-10089338",
+      "target_entity": "Reporter-10089338",
+      "confidence": 0.99,
+      "evidence": "Primary source qualification: Unknown, Reporter country: US"
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "Erythema",
+      "target_entity": "methotrexate",
+      "confidence": 0.85,
+      "evidence": "patient experienced Erythema after exposure to METHOTREXATE; drug withdrawn"
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "Stomatitis",
+      "target_entity": "methotrexate",
+      "confidence": 0.85,
+      "evidence": "MedDRA reaction associated with methotrexate as suspect drug"
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "Blister",
+      "target_entity": "methotrexate",
+      "confidence": 0.85,
+      "evidence": "patient experienced Blister after exposure to METHOTREXATE"
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "Drug level increased",
+      "target_entity": "methotrexate",
+      "confidence": 0.85,
+      "evidence": "MedDRA reaction associated with methotrexate as suspect drug"
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "Palmar-plantar erythrodysaesthesia syndrome",
+      "target_entity": "methotrexate",
+      "confidence": 0.85,
+      "evidence": "patient experienced Palmar-plantar erythrodysaesthesia syndrome after exposure to METHOTREXATE"
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "Mouth ulceration",
+      "target_entity": "methotrexate",
+      "confidence": 0.85,
+      "evidence": "MedDRA reaction associated with methotrexate as suspect drug"
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "Pyrexia",
+      "target_entity": "methotrexate",
+      "confidence": 0.85,
+      "evidence": "MedDRA reaction associated with methotrexate as suspect drug"
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "Pain",
+      "target_entity": "methotrexate",
+      "confidence": 0.85,
+      "evidence": "MedDRA reaction associated with methotrexate as suspect drug"
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "Perineal ulceration",
+      "target_entity": "methotrexate",
+      "confidence": 0.95,
+      "evidence": "Positive rechallenge documented: Perineal ulceration recurred when the suspect drug was reintroduced \u2014 strongest single-case causality signal"
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "Convulsion",
+      "target_entity": "methotrexate",
+      "confidence": 0.85,
+      "evidence": "MedDRA reaction associated with methotrexate as suspect drug"
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "Perineal ulceration",
+      "target_entity": "Rechallenge-10089338-Perineal-ulceration",
+      "confidence": 0.95,
+      "evidence": "Positive rechallenge \u2014 events that recurred when drug was reintroduced: Perineal ulceration"
+    },
+    {
+      "relation_type": "RESOLVED_ON_DECHALLENGE",
+      "source_entity": "Perineal ulceration",
+      "target_entity": "methotrexate",
+      "confidence": 0.9,
+      "evidence": "Action taken with the suspect drug: drug withdrawn; Perineal ulceration outcome: Recovered/resolved"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "Erythema",
+      "target_entity": "Recovered/resolved",
+      "confidence": 0.99,
+      "evidence": "MedDRA Preferred Term: Erythema \u2014 Outcome: Recovered/resolved"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "Blister",
+      "target_entity": "Recovered/resolved",
+      "confidence": 0.99,
+      "evidence": "MedDRA Preferred Term: Blister \u2014 Outcome: Recovered/resolved"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "Palmar-plantar erythrodysaesthesia syndrome",
+      "target_entity": "Recovered/resolved",
+      "confidence": 0.99,
+      "evidence": "MedDRA Preferred Term: Palmar-plantar erythrodysaesthesia syndrome \u2014 Outcome: Recovered/resolved"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "Mouth ulceration",
+      "target_entity": "Recovered/resolved",
+      "confidence": 0.99,
+      "evidence": "MedDRA Preferred Term: Mouth ulceration \u2014 Outcome: Recovered/resolved"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "Pyrexia",
+      "target_entity": "Recovered/resolved",
+      "confidence": 0.99,
+      "evidence": "MedDRA Preferred Term: Pyrexia \u2014 Outcome: Recovered/resolved"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "Pain",
+      "target_entity": "Recovered/resolved",
+      "confidence": 0.99,
+      "evidence": "MedDRA Preferred Term: Pain \u2014 Outcome: Recovered/resolved"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "Perineal ulceration",
+      "target_entity": "Recovered/resolved",
+      "confidence": 0.99,
+      "evidence": "MedDRA Preferred Term: Perineal ulceration \u2014 Outcome: Recovered/resolved"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "Convulsion",
+      "target_entity": "Recovered/resolved",
+      "confidence": 0.99,
+      "evidence": "MedDRA Preferred Term: Convulsion \u2014 Outcome: Recovered/resolved"
+    },
+    {
+      "relation_type": "TRIGGERED",
+      "source_entity": "CausalitySignal-10089338",
+      "target_entity": "Perineal ulceration",
+      "confidence": 0.95,
+      "evidence": "Positive rechallenge documented: the following events recurred when the suspect drug was reintroduced \u2014 Perineal ulceration. Under Bradford-Hill criteria this is the strongest single-case causality signal available."
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-sonnet-4-6",
+  "domain_name": "pharmacovigilance",
+  "chunk_size": 10000,
+  "extracted_at": "2026-05-03T17:49:03.134932+00:00",
+  "error": null
+}

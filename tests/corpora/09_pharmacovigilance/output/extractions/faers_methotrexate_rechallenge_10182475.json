@@ -1,0 +1,327 @@
+{
+  "document_id": "faers_methotrexate_rechallenge_10182475",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "Patient-10182475",
+      "entity_type": "Patient",
+      "attributes": {
+        "sex": "Female",
+        "age_band": "60 years",
+        "case_id": "10182475"
+      },
+      "confidence": 1.0,
+      "context": "Female patient aged 60 years"
+    },
+    {
+      "name": "golimumab",
+      "entity_type": "Drug",
+      "attributes": {
+        "brand_name": "SIMPONI ARIA",
+        "pharmacological_class": "Tumor Necrosis Factor Blocker",
+        "rxcui": "1431642,1431647",
+        "role": "Suspect",
+        "action_taken": "Drug withdrawn"
+      },
+      "confidence": 1.0,
+      "context": "Drug -- SIMPONI ARIA (golimumab) ... Role: Suspect"
+    },
+    {
+      "name": "prednisone",
+      "entity_type": "Drug",
+      "attributes": {
+        "pharmacological_class": "Corticosteroid",
+        "rxcui": "198144,198145,312615",
+        "role": "Suspect",
+        "action_taken": "Drug withdrawn"
+      },
+      "confidence": 1.0,
+      "context": "Drug -- PREDNISONE ... Role: Suspect"
+    },
+    {
+      "name": "major depression",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_pt": "Major depression",
+        "outcome": "Recovering/resolving",
+        "seriousness": "Hospitalization"
+      },
+      "confidence": 1.0,
+      "context": "MedDRA Preferred Term: Major depression -- Outcome: Recovering/resolving"
+    },
+    {
+      "name": "Physician-US",
+      "entity_type": "Reporter",
+      "attributes": {
+        "qualification": "Physician",
+        "country": "US",
+        "type": "HCP"
+      },
+      "confidence": 1.0,
+      "context": "Primary source qualification: Physician ... Reporter country: US"
+    },
+    {
+      "name": "FAERS-10182475",
+      "entity_type": "ReportType",
+      "attributes": {
+        "report_type": "Spontaneous",
+        "safety_report_id": "10182475",
+        "expedited": "Yes",
+        "serious": "Yes"
+      },
+      "confidence": 1.0,
+      "context": "Report type: Spontaneous (FAERS) ... Serious: Yes"
+    },
+    {
+      "name": "rheumatoid arthritis",
+      "entity_type": "Indication",
+      "attributes": {
+        "meddra_pt": "Rheumatoid arthritis"
+      },
+      "confidence": 1.0,
+      "context": "Indication: RHEUMATOID ARTHRITIS"
+    },
+    {
+      "name": "golimumab-major_depression-rechallenge",
+      "entity_type": "DechallengeRechallenge",
+      "attributes": {
+        "drug": "golimumab",
+        "adverse_event": "Major depression",
+        "rechallenge_positive": true,
+        "dechallenge": "Drug withdrawn",
+        "outcome": "Recurred on rechallenge"
+      },
+      "confidence": 0.98,
+      "context": "Positive rechallenge -- events that recurred when reintroduced: Major depression"
+    },
+    {
+      "name": "golimumab-major_depression-signal",
+      "entity_type": "CausalitySignal",
+      "attributes": {
+        "criteria": "Bradford-Hill",
+        "signal_type": "positive_rechallenge",
+        "strength": "strongest single-case signal",
+        "epistemology": "asserted"
+      },
+      "confidence": 0.98,
+      "context": "Positive rechallenge documented -- Major depression recurred on reintroduction. HCP (physician) reporter. Bradford-Hill strongest single-case signal."
+    },
+    {
+      "name": "hospitalization",
+      "entity_type": "Outcome",
+      "attributes": {
+        "seriousness_flag": "Hospitalization"
+      },
+      "confidence": 1.0,
+      "context": "Serious: Yes -- Seriousness flag: Hospitalization"
+    },
+    {
+      "name": "ergocalciferol",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "brand_name": "VITAMIN D3"
+      },
+      "confidence": 1.0,
+      "context": "VITAMIN D3 (ERGOCALCIFEROL)"
+    },
+    {
+      "name": "methotrexate",
+      "entity_type": "Concomitant",
+      "attributes": {},
+      "confidence": 1.0,
+      "context": "METHOTREXATE"
+    },
+    {
+      "name": "fluticasone",
+      "entity_type": "Concomitant",
+      "attributes": {},
+      "confidence": 1.0,
+      "context": "FLUTICASONE"
+    },
+    {
+      "name": "multivitamins",
+      "entity_type": "Concomitant",
+      "attributes": {},
+      "confidence": 1.0,
+      "context": "MULTIVITAMINS"
+    },
+    {
+      "name": "sertraline",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "brand_names": "SERTRALINE, ZOLOFT"
+      },
+      "confidence": 1.0,
+      "context": "SERTRALINE ... ZOLOFT (SERTRALINE)"
+    },
+    {
+      "name": "acetaminophen",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "brand_name": "TYLENOL EXTRA STRENGTH"
+      },
+      "confidence": 1.0,
+      "context": "TYLENOL EXTRA STRENGTH (ACETAMINOPHEN)"
+    },
+    {
+      "name": "levothyroxine",
+      "entity_type": "Concomitant",
+      "attributes": {},
+      "confidence": 1.0,
+      "context": "LEVOTHYROXINE"
+    },
+    {
+      "name": "omeprazole",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "pharmacological_class": "Proton Pump Inhibitor"
+      },
+      "confidence": 1.0,
+      "context": "OMEPRAZOLE (Proton Pump Inhibitor)"
+    },
+    {
+      "name": "folic acid",
+      "entity_type": "Concomitant",
+      "attributes": {},
+      "confidence": 1.0,
+      "context": "FOLIC ACID"
+    },
+    {
+      "name": "lorazepam",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "pharmacological_class": "Benzodiazepine"
+      },
+      "confidence": 1.0,
+      "context": "LORAZEPAM (Benzodiazepine)"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "Patient-10182475",
+      "target_entity": "major depression",
+      "confidence": 1.0,
+      "evidence": "Female patient aged 60 years experienced Major depression after exposure to SIMPONI ARIA (golimumab) and PREDNISONE."
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "Patient-10182475",
+      "target_entity": "golimumab",
+      "confidence": 1.0,
+      "evidence": "Drug -- SIMPONI ARIA (golimumab) ... Role: Suspect"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "Patient-10182475",
+      "target_entity": "prednisone",
+      "confidence": 1.0,
+      "evidence": "Drug -- PREDNISONE ... Role: Suspect"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "golimumab",
+      "target_entity": "rheumatoid arthritis",
+      "confidence": 1.0,
+      "evidence": "Indication: RHEUMATOID ARTHRITIS"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "prednisone",
+      "target_entity": "rheumatoid arthritis",
+      "confidence": 1.0,
+      "evidence": "Indication: RHEUMATOID ARTHRITIS"
+    },
+    {
+      "relation_type": "REPORTED_BY",
+      "source_entity": "FAERS-10182475",
+      "target_entity": "Physician-US",
+      "confidence": 1.0,
+      "evidence": "Primary source qualification: Physician"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "major depression",
+      "target_entity": "hospitalization",
+      "confidence": 1.0,
+      "evidence": "Serious: Yes -- Seriousness flag: Hospitalization"
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "major depression",
+      "target_entity": "golimumab-major_depression-rechallenge",
+      "confidence": 0.98,
+      "evidence": "Positive rechallenge -- events that recurred when reintroduced: Major depression"
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "major depression",
+      "target_entity": "golimumab",
+      "confidence": 0.93,
+      "evidence": "Positive rechallenge documented -- Major depression recurred on reintroduction. Bradford-Hill strongest single-case signal."
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "major depression",
+      "target_entity": "prednisone",
+      "confidence": 0.75,
+      "evidence": "Prednisone listed as suspect drug, withdrawn. No rechallenge data for prednisone. HCP reporter."
+    },
+    {
+      "relation_type": "TRIGGERED",
+      "source_entity": "golimumab-major_depression-signal",
+      "target_entity": "major depression",
+      "confidence": 0.98,
+      "evidence": "Positive rechallenge documented -- Major depression recurred on reintroduction. HCP (physician) reporter. Bradford-Hill strongest single-case signal."
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "golimumab",
+      "target_entity": "prednisone",
+      "confidence": 1.0,
+      "evidence": "Both golimumab and prednisone listed as suspect drugs for the same patient."
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "golimumab",
+      "target_entity": "methotrexate",
+      "confidence": 1.0,
+      "evidence": "METHOTREXATE listed as concomitant drug."
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "golimumab",
+      "target_entity": "sertraline",
+      "confidence": 1.0,
+      "evidence": "SERTRALINE / ZOLOFT listed as concomitant drug."
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "golimumab",
+      "target_entity": "lorazepam",
+      "confidence": 1.0,
+      "evidence": "LORAZEPAM listed as concomitant drug."
+    },
+    {
+      "relation_type": "OCCURRED_AFTER",
+      "source_entity": "major depression",
+      "target_entity": "golimumab",
+      "confidence": 0.93,
+      "evidence": "Female patient aged 60 years experienced Major depression after exposure to SIMPONI ARIA (golimumab) and PREDNISONE. Positive rechallenge documented."
+    },
+    {
+      "relation_type": "RESOLVED_ON_DECHALLENGE",
+      "source_entity": "major depression",
+      "target_entity": "golimumab",
+      "confidence": 0.9,
+      "evidence": "Action taken with drug: Drug withdrawn ... Positive rechallenge -- events that recurred when reintroduced: Major depression (implies prior resolution on dechallenge before rechallenge)."
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "",
+  "domain_name": "pharmacovigilance",
+  "chunk_size": 10000,
+  "extracted_at": "2026-05-03T17:48:09.194752+00:00",
+  "error": null
+}

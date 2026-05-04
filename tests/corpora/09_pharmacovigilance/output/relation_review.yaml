@@ -1,0 +1,24 @@
+review_threshold: 0.7
+relations:
+- source_id: patient:patient_10289543
+  source_name: patient_10289543
+  target_id: adverseevent:dizziness
+  target_name: dizziness
+  relation_type: EXPERIENCED
+  confidence: 0.65
+  evidence: Male 65 years experienced Dizziness, Arrhythmia, Exercise tolerance decreased
+    after VALSARTAN/HYDROCHLOROTHIAZIDE 160MG/25MG. Unknown reporter.
+  source_document: faers_valsartan_rechallenge_10289543
+  status: DRAFT
+  flag_reason: Low confidence (0.65 < 0.7)
+- source_id: patient:patient_10289543
+  source_name: patient_10289543
+  target_id: adverseevent:arrhythmia
+  target_name: arrhythmia
+  relation_type: EXPERIENCED
+  confidence: 0.65
+  evidence: Male 65 years experienced Dizziness, Arrhythmia, Exercise tolerance decreased
+    after VALSARTAN/HYDROCHLOROTHIAZIDE 160MG/25MG. Unknown reporter.
+  source_document: faers_valsartan_rechallenge_10289543
+  status: DRAFT
+  flag_reason: Low confidence (0.65 < 0.7)

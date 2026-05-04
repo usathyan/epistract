@@ -1,0 +1,76 @@
+{
+  "total": 16,
+  "passed": 16,
+  "recovered": 0,
+  "unrecoverable": 0,
+  "pass_rate": 1.0,
+  "fail_threshold": 0.95,
+  "above_threshold": true,
+  "generated_at": "2026-05-03T17:51:01.094910+00:00",
+  "actions": [
+    {
+      "file": "faers_methotrexate_rechallenge_10089338.json",
+      "action": "passed"
+    },
+    {
+      "file": "faers_methotrexate_rechallenge_10177472.json",
+      "action": "passed"
+    },
+    {
+      "file": "faers_methotrexate_rechallenge_10182475.json",
+      "action": "passed"
+    },
+    {
+      "file": "faers_methotrexate_rechallenge_10185828.json",
+      "action": "passed"
+    },
+    {
+      "file": "faers_montelukast_rechallenge_10202288.json",
+      "action": "passed"
+    },
+    {
+      "file": "faers_montelukast_rechallenge_10233237.json",
+      "action": "passed"
+    },
+    {
+      "file": "faers_montelukast_rechallenge_10394620.json",
+      "action": "passed"
+    },
+    {
+      "file": "faers_montelukast_rechallenge_10435383.json",
+      "action": "passed"
+    },
+    {
+      "file": "faers_valsartan_rechallenge_10289543.json",
+      "action": "passed"
+    },
+    {
+      "file": "faers_valsartan_rechallenge_10356941.json",
+      "action": "passed"
+    },
+    {
+      "file": "faers_valsartan_rechallenge_10446556.json",
+      "action": "passed"
+    },
+    {
+      "file": "faers_valsartan_rechallenge_10486643.json",
+      "action": "passed"
+    },
+    {
+      "file": "faers_warfarin_rechallenge_10079728.json",
+      "action": "passed"
+    },
+    {
+      "file": "faers_warfarin_rechallenge_10112022.json",
+      "action": "passed"
+    },
+    {
+      "file": "faers_warfarin_rechallenge_10219165.json",
+      "action": "passed"
+    },
+    {
+      "file": "faers_warfarin_rechallenge_10235486.json",
+      "action": "passed"
+    }
+  ]
+}

@@ -1,0 +1,697 @@
+{
+  "document_id": "faers_montelukast_rechallenge_10435383",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "escitalopram",
+      "entity_type": "Drug",
+      "attributes": {
+        "substance": "escitalopram oxalate",
+        "rxcui": [
+          "349332",
+          "351249",
+          "351250"
+        ],
+        "authorization": "202389",
+        "dosage": "10 mg daily escalated to 15 mg daily",
+        "role": "suspect",
+        "action_taken": "drug withdrawn"
+      },
+      "confidence": 0.99,
+      "context": "Drug -- ESCITALOPRAM; Role: Suspect; Indication: DEPRESSION; Dosage: 10 mg daily -> 15 mg daily; Action taken: Drug withdrawn; Positive rechallenge: Nausea, Headache"
+    },
+    {
+      "name": "montelukast",
+      "entity_type": "Drug",
+      "attributes": {
+        "substance": "montelukast sodium",
+        "rxcui": [
+          "200224",
+          "242438",
+          "311759"
+        ],
+        "role": "interacting",
+        "action_taken": "drug withdrawn"
+      },
+      "confidence": 0.99,
+      "context": "Drug -- MONTELUKAST; Role: Interacting; Indication: SEASONAL ALLERGY; Action taken: Drug withdrawn; Positive rechallenge: Headache, Nausea"
+    },
+    {
+      "name": "seretide",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "indication": "asthma"
+      },
+      "confidence": 0.95,
+      "context": "SERETIDE (Asthma)"
+    },
+    {
+      "name": "panodil",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "indication": "pain",
+        "substance": "paracetamol"
+      },
+      "confidence": 0.95,
+      "context": "PANODIL (Pain/paracetamol)"
+    },
+    {
+      "name": "patient_10435383",
+      "entity_type": "Patient",
+      "attributes": {
+        "sex": "female",
+        "age_at_onset": 36,
+        "country": "NO"
+      },
+      "confidence": 0.99,
+      "context": "Female 36 years; Reporter country: NO"
+    },
+    {
+      "name": "physician_reporter_10435383",
+      "entity_type": "Reporter",
+      "attributes": {
+        "qualification": "physician",
+        "country": "NO"
+      },
+      "confidence": 0.99,
+      "context": "Primary source qualification: Physician; Reporter country: NO"
+    },
+    {
+      "name": "hyperhidrosis",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Hyperhidrosis",
+        "outcome": "recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Hyperhidrosis -- Recovered/resolved"
+    },
+    {
+      "name": "decreased appetite",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Decreased appetite",
+        "outcome": "recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Decreased appetite -- Recovered/resolved"
+    },
+    {
+      "name": "musculoskeletal pain",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Musculoskeletal pain",
+        "outcome": "recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Musculoskeletal pain -- Recovered/resolved"
+    },
+    {
+      "name": "hypersomnia",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Hypersomnia",
+        "outcome": "recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Hypersomnia -- Recovered/resolved"
+    },
+    {
+      "name": "vomiting",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Vomiting",
+        "outcome": "recovering/resolving"
+      },
+      "confidence": 0.99,
+      "context": "Vomiting -- Recovering/resolving"
+    },
+    {
+      "name": "nausea",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Nausea",
+        "outcome": "recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Nausea -- Recovered/resolved; Positive rechallenge: Nausea"
+    },
+    {
+      "name": "tinnitus",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Tinnitus",
+        "outcome": "recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Tinnitus -- Recovered/resolved"
+    },
+    {
+      "name": "memory impairment",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Memory impairment",
+        "outcome": "recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Memory impairment -- Recovered/resolved"
+    },
+    {
+      "name": "somnolence",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Somnolence",
+        "outcome": "recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Somnolence -- Recovered/resolved"
+    },
+    {
+      "name": "diarrhoea",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Diarrhoea",
+        "outcome": "recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Diarrhoea -- Recovered/resolved"
+    },
+    {
+      "name": "paraesthesia",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Paraesthesia",
+        "outcome": "recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Paraesthesia -- Recovered/resolved"
+    },
+    {
+      "name": "pyrexia",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Pyrexia",
+        "outcome": "recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Pyrexia -- Recovered/resolved"
+    },
+    {
+      "name": "dry mouth",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Dry mouth",
+        "outcome": "unknown"
+      },
+      "confidence": 0.99,
+      "context": "Dry mouth -- Unknown"
+    },
+    {
+      "name": "myalgia",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Myalgia",
+        "outcome": "unknown"
+      },
+      "confidence": 0.99,
+      "context": "Myalgia -- Unknown"
+    },
+    {
+      "name": "heart rate irregular",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Heart rate irregular",
+        "outcome": "recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Heart rate irregular -- Recovered/resolved"
+    },
+    {
+      "name": "drug interaction",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Drug interaction",
+        "outcome": "unknown"
+      },
+      "confidence": 0.99,
+      "context": "Drug interaction -- Unknown"
+    },
+    {
+      "name": "dizziness",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Dizziness",
+        "outcome": "recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Dizziness -- Recovered/resolved"
+    },
+    {
+      "name": "restlessness",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Restlessness",
+        "outcome": "recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Restlessness -- Recovered/resolved"
+    },
+    {
+      "name": "disturbance in attention",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Disturbance in attention",
+        "outcome": "recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Disturbance in attention -- Recovered/resolved"
+    },
+    {
+      "name": "headache",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_term": "Headache",
+        "outcome": "recovered/resolved"
+      },
+      "confidence": 0.99,
+      "context": "Headache -- Recovered/resolved; Positive rechallenge: Headache"
+    },
+    {
+      "name": "depression",
+      "entity_type": "Indication",
+      "attributes": {},
+      "confidence": 0.99,
+      "context": "Indication: DEPRESSION"
+    },
+    {
+      "name": "seasonal allergy",
+      "entity_type": "Indication",
+      "attributes": {},
+      "confidence": 0.99,
+      "context": "Indication: SEASONAL ALLERGY"
+    },
+    {
+      "name": "rechallenge_escitalopram_nausea_headache",
+      "entity_type": "DechallengeRechallenge",
+      "attributes": {
+        "drug": "escitalopram",
+        "type": "positive_rechallenge",
+        "events": [
+          "nausea",
+          "headache"
+        ]
+      },
+      "confidence": 0.99,
+      "context": "Positive rechallenge: Nausea, Headache"
+    },
+    {
+      "name": "rechallenge_montelukast_headache_nausea",
+      "entity_type": "DechallengeRechallenge",
+      "attributes": {
+        "drug": "montelukast",
+        "type": "positive_rechallenge",
+        "events": [
+          "headache",
+          "nausea"
+        ]
+      },
+      "confidence": 0.99,
+      "context": "Positive rechallenge: Headache, Nausea (MONTELUKAST)"
+    },
+    {
+      "name": "spontaneous_faers",
+      "entity_type": "ReportType",
+      "attributes": {
+        "report_type": "spontaneous",
+        "system": "FAERS",
+        "expedited": true,
+        "serious": true,
+        "safety_report_id": "10435383"
+      },
+      "confidence": 0.99,
+      "context": "Report type: Spontaneous (FAERS); Expedited criteria fulfilled: Yes; Serious: Yes"
+    },
+    {
+      "name": "causality_escitalopram_physician_rechallenge",
+      "entity_type": "CausalitySignal",
+      "attributes": {
+        "drug": "escitalopram",
+        "reporter_type": "physician",
+        "rechallenge": "positive",
+        "signal_strength": "strong"
+      },
+      "confidence": 0.95,
+      "context": "Physician reporter, Norway; Positive rechallenge (Nausea, Headache)"
+    },
+    {
+      "name": "causality_montelukast_physician_rechallenge",
+      "entity_type": "CausalitySignal",
+      "attributes": {
+        "drug": "montelukast",
+        "reporter_type": "physician",
+        "rechallenge": "positive",
+        "signal_strength": "strong"
+      },
+      "confidence": 0.95,
+      "context": "MONTELUKAST also implicated as interacting drug with positive rechallenge (Headache, Nausea). Physician reporter, Norway."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10435383",
+      "target_entity": "escitalopram",
+      "confidence": 0.99,
+      "evidence": "Drug -- ESCITALOPRAM; Role: Suspect"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "patient_10435383",
+      "target_entity": "montelukast",
+      "confidence": 0.99,
+      "evidence": "Drug -- MONTELUKAST; Role: Interacting"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "escitalopram",
+      "target_entity": "depression",
+      "confidence": 0.99,
+      "evidence": "Indication: DEPRESSION"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "montelukast",
+      "target_entity": "seasonal allergy",
+      "confidence": 0.99,
+      "evidence": "Indication: SEASONAL ALLERGY"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "escitalopram",
+      "target_entity": "montelukast",
+      "confidence": 0.99,
+      "evidence": "MONTELUKAST also implicated as interacting drug"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "escitalopram",
+      "target_entity": "seretide",
+      "confidence": 0.95,
+      "evidence": "Concomitant Drug(s): SERETIDE (Asthma)"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "escitalopram",
+      "target_entity": "panodil",
+      "confidence": 0.95,
+      "evidence": "Concomitant Drug(s): PANODIL (Pain/paracetamol)"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10435383",
+      "target_entity": "hyperhidrosis",
+      "confidence": 0.99,
+      "evidence": "Female 36 years experienced Hyperhidrosis after ESCITALOPRAM"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10435383",
+      "target_entity": "decreased appetite",
+      "confidence": 0.99,
+      "evidence": "Female 36 years experienced Decreased appetite after ESCITALOPRAM"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10435383",
+      "target_entity": "musculoskeletal pain",
+      "confidence": 0.99,
+      "evidence": "Female 36 years experienced Musculoskeletal pain after ESCITALOPRAM"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10435383",
+      "target_entity": "hypersomnia",
+      "confidence": 0.99,
+      "evidence": "Female 36 years experienced Hypersomnia after ESCITALOPRAM"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10435383",
+      "target_entity": "vomiting",
+      "confidence": 0.99,
+      "evidence": "Female 36 years experienced Vomiting after ESCITALOPRAM"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10435383",
+      "target_entity": "nausea",
+      "confidence": 0.99,
+      "evidence": "Nausea -- Recovered/resolved"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10435383",
+      "target_entity": "tinnitus",
+      "confidence": 0.99,
+      "evidence": "Tinnitus -- Recovered/resolved"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10435383",
+      "target_entity": "memory impairment",
+      "confidence": 0.99,
+      "evidence": "Memory impairment -- Recovered/resolved"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10435383",
+      "target_entity": "somnolence",
+      "confidence": 0.99,
+      "evidence": "Somnolence -- Recovered/resolved"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10435383",
+      "target_entity": "diarrhoea",
+      "confidence": 0.99,
+      "evidence": "Diarrhoea -- Recovered/resolved"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10435383",
+      "target_entity": "paraesthesia",
+      "confidence": 0.99,
+      "evidence": "Paraesthesia -- Recovered/resolved"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10435383",
+      "target_entity": "pyrexia",
+      "confidence": 0.99,
+      "evidence": "Pyrexia -- Recovered/resolved"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10435383",
+      "target_entity": "dry mouth",
+      "confidence": 0.99,
+      "evidence": "Dry mouth -- Unknown"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10435383",
+      "target_entity": "myalgia",
+      "confidence": 0.99,
+      "evidence": "Myalgia -- Unknown"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10435383",
+      "target_entity": "heart rate irregular",
+      "confidence": 0.99,
+      "evidence": "Heart rate irregular -- Recovered/resolved"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10435383",
+      "target_entity": "drug interaction",
+      "confidence": 0.99,
+      "evidence": "Drug interaction -- Unknown"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10435383",
+      "target_entity": "dizziness",
+      "confidence": 0.99,
+      "evidence": "Dizziness -- Recovered/resolved"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10435383",
+      "target_entity": "restlessness",
+      "confidence": 0.99,
+      "evidence": "Restlessness -- Recovered/resolved"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10435383",
+      "target_entity": "disturbance in attention",
+      "confidence": 0.99,
+      "evidence": "Disturbance in attention -- Recovered/resolved"
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "patient_10435383",
+      "target_entity": "headache",
+      "confidence": 0.99,
+      "evidence": "Headache -- Recovered/resolved"
+    },
+    {
+      "relation_type": "REPORTED_BY",
+      "source_entity": "patient_10435383",
+      "target_entity": "physician_reporter_10435383",
+      "confidence": 0.99,
+      "evidence": "Primary source qualification: Physician; Reporter country: NO"
+    },
+    {
+      "relation_type": "OCCURRED_AFTER",
+      "source_entity": "hyperhidrosis",
+      "target_entity": "escitalopram",
+      "confidence": 0.99,
+      "evidence": "Female 36 years experienced Hyperhidrosis after ESCITALOPRAM"
+    },
+    {
+      "relation_type": "OCCURRED_AFTER",
+      "source_entity": "decreased appetite",
+      "target_entity": "escitalopram",
+      "confidence": 0.99,
+      "evidence": "Female 36 years experienced Decreased appetite after ESCITALOPRAM"
+    },
+    {
+      "relation_type": "OCCURRED_AFTER",
+      "source_entity": "musculoskeletal pain",
+      "target_entity": "escitalopram",
+      "confidence": 0.99,
+      "evidence": "Female 36 years experienced Musculoskeletal pain after ESCITALOPRAM"
+    },
+    {
+      "relation_type": "OCCURRED_AFTER",
+      "source_entity": "hypersomnia",
+      "target_entity": "escitalopram",
+      "confidence": 0.99,
+      "evidence": "Female 36 years experienced Hypersomnia after ESCITALOPRAM"
+    },
+    {
+      "relation_type": "OCCURRED_AFTER",
+      "source_entity": "vomiting",
+      "target_entity": "escitalopram",
+      "confidence": 0.99,
+      "evidence": "Female 36 years experienced Vomiting after ESCITALOPRAM"
+    },
+    {
+      "relation_type": "OCCURRED_AFTER",
+      "source_entity": "nausea",
+      "target_entity": "escitalopram",
+      "confidence": 0.99,
+      "evidence": "Positive rechallenge: Nausea"
+    },
+    {
+      "relation_type": "OCCURRED_AFTER",
+      "source_entity": "headache",
+      "target_entity": "escitalopram",
+      "confidence": 0.99,
+      "evidence": "Positive rechallenge: Headache"
+    },
+    {
+      "relation_type": "OCCURRED_AFTER",
+      "source_entity": "headache",
+      "target_entity": "montelukast",
+      "confidence": 0.95,
+      "evidence": "MONTELUKAST also implicated as interacting drug with positive rechallenge (Headache, Nausea)"
+    },
+    {
+      "relation_type": "OCCURRED_AFTER",
+      "source_entity": "nausea",
+      "target_entity": "montelukast",
+      "confidence": 0.95,
+      "evidence": "MONTELUKAST also implicated as interacting drug with positive rechallenge (Headache, Nausea)"
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "nausea",
+      "target_entity": "rechallenge_escitalopram_nausea_headache",
+      "confidence": 0.99,
+      "evidence": "Positive rechallenge: Nausea, Headache (ESCITALOPRAM)"
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "headache",
+      "target_entity": "rechallenge_escitalopram_nausea_headache",
+      "confidence": 0.99,
+      "evidence": "Positive rechallenge: Nausea, Headache (ESCITALOPRAM)"
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "headache",
+      "target_entity": "rechallenge_montelukast_headache_nausea",
+      "confidence": 0.99,
+      "evidence": "Positive rechallenge: Headache, Nausea (MONTELUKAST)"
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "nausea",
+      "target_entity": "rechallenge_montelukast_headache_nausea",
+      "confidence": 0.99,
+      "evidence": "Positive rechallenge: Headache, Nausea (MONTELUKAST)"
+    },
+    {
+      "relation_type": "TRIGGERED",
+      "source_entity": "rechallenge_escitalopram_nausea_headache",
+      "target_entity": "causality_escitalopram_physician_rechallenge",
+      "confidence": 0.95,
+      "evidence": "Positive rechallenge; Physician reporter"
+    },
+    {
+      "relation_type": "TRIGGERED",
+      "source_entity": "rechallenge_montelukast_headache_nausea",
+      "target_entity": "causality_montelukast_physician_rechallenge",
+      "confidence": 0.95,
+      "evidence": "Positive rechallenge; Physician reporter"
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "nausea",
+      "target_entity": "escitalopram",
+      "confidence": 0.95,
+      "evidence": "Positive rechallenge (Nausea, Headache) with escitalopram; Physician reporter"
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "headache",
+      "target_entity": "escitalopram",
+      "confidence": 0.95,
+      "evidence": "Positive rechallenge (Nausea, Headache) with escitalopram; Physician reporter"
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "headache",
+      "target_entity": "montelukast",
+      "confidence": 0.92,
+      "evidence": "MONTELUKAST also implicated as interacting drug with positive rechallenge (Headache, Nausea). Physician reporter."
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "nausea",
+      "target_entity": "montelukast",
+      "confidence": 0.92,
+      "evidence": "MONTELUKAST also implicated as interacting drug with positive rechallenge (Headache, Nausea). Physician reporter."
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "",
+  "domain_name": "pharmacovigilance",
+  "chunk_size": 10000,
+  "extracted_at": "2026-05-03T17:49:21.610873+00:00",
+  "error": null
+}

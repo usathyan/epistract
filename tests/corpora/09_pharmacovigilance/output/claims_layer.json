@@ -1,0 +1,189 @@
+{
+  "metadata": {
+    "domain": "pharmacovigilance",
+    "description": "Epistemic analysis for pharmacovigilance domain",
+    "generated_from": "tests/corpora/09_pharmacovigilance/output/graph_data.json",
+    "total_relations": 626
+  },
+  "summary": {
+    "conflicts_found": 3,
+    "gaps_found": 2,
+    "cross_document_entities": 30,
+    "epistemic_status_counts": {
+      "asserted": 587,
+      "hypothesized": 35,
+      "unverified": 4
+    }
+  },
+  "base_domain": {
+    "description": "Factual pharmacovigilance knowledge graph relations",
+    "relation_count": 587
+  },
+  "super_domain": {
+    "domain": "pharmacovigilance",
+    "description": "Epistemic layer -- conflicts, gaps, cross-document linking",
+    "conflicts": [
+      {
+        "type": "contradiction",
+        "terms": [
+          "resolved",
+          "not recovered"
+        ],
+        "relation": "",
+        "evidence": "Myalgia \u2014 Not recovered/not resolved"
+      },
+      {
+        "type": "contradiction",
+        "terms": [
+          "resolved",
+          "not recovered"
+        ],
+        "relation": "",
+        "evidence": "Haemorrhoids \u2014 Not recovered/not resolved"
+      },
+      {
+        "type": "contradiction",
+        "terms": [
+          "resolved",
+          "not recovered"
+        ],
+        "relation": "",
+        "evidence": "Rash \u2014 Not recovered/not resolved"
+      }
+    ],
+    "coverage_gaps": [
+      {
+        "category": "causality_signal_coverage",
+        "missing_type": "TemporalRelationship",
+        "description": "No TemporalRelationship entities found in graph"
+      },
+      {
+        "category": "regulatory_signal_coverage",
+        "missing_type": "RegulatoryAction",
+        "description": "No RegulatoryAction entities found in graph"
+      }
+    ],
+    "cross_document_entities": [
+      {
+        "name": "methotrexate",
+        "document_count": 4
+      },
+      {
+        "name": "Palmar-plantar erythrodysaesthesia syndrome",
+        "document_count": 2
+      },
+      {
+        "name": "Pyrexia",
+        "document_count": 2
+      },
+      {
+        "name": "Recovered/resolved",
+        "document_count": 8
+      },
+      {
+        "name": "FAERS Spontaneous",
+        "document_count": 4
+      },
+      {
+        "name": "Rheumatoid arthritis",
+        "document_count": 2
+      },
+      {
+        "name": "sertraline",
+        "document_count": 2
+      },
+      {
+        "name": "vomiting",
+        "document_count": 2
+      },
+      {
+        "name": "headache",
+        "document_count": 2
+      },
+      {
+        "name": "somnolence",
+        "document_count": 2
+      },
+      {
+        "name": "nausea",
+        "document_count": 2
+      },
+      {
+        "name": "montelukast",
+        "document_count": 3
+      },
+      {
+        "name": "gabapentin",
+        "document_count": 2
+      },
+      {
+        "name": "seasonal allergy",
+        "document_count": 2
+      },
+      {
+        "name": "asthma",
+        "document_count": 2
+      },
+      {
+        "name": "depression",
+        "document_count": 2
+      },
+      {
+        "name": "spontaneous_faers",
+        "document_count": 7
+      },
+      {
+        "name": "diarrhoea",
+        "document_count": 2
+      },
+      {
+        "name": "myalgia",
+        "document_count": 2
+      },
+      {
+        "name": "drug interaction",
+        "document_count": 2
+      },
+      {
+        "name": "dizziness",
+        "document_count": 2
+      },
+      {
+        "name": "valsartan",
+        "document_count": 4
+      },
+      {
+        "name": "hydrochlorothiazide",
+        "document_count": 2
+      },
+      {
+        "name": "hypertension",
+        "document_count": 3
+      },
+      {
+        "name": "bisoprolol",
+        "document_count": 2
+      },
+      {
+        "name": "lenalidomide",
+        "document_count": 2
+      },
+      {
+        "name": "warfarin",
+        "document_count": 2
+      },
+      {
+        "name": "dyspnoea",
+        "document_count": 2
+      },
+      {
+        "name": "plasma cell myeloma",
+        "document_count": 2
+      },
+      {
+        "name": "warfarin sodium",
+        "document_count": 2
+      }
+    ]
+  }
+}
