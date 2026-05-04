@@ -113,6 +113,10 @@ Four domains ship with the framework:
 - **fda-product-labels** — FDA SPL labels · 1 scenario validated · four-level FDA evidence-tier classifier
 - **contracts** — event/vendor contract analysis · schema scaffold (bring your own corpus)
 
+Community fork (not yet merged upstream):
+
+- **pharmacovigilance** — adverse-event reports (FAERS / VAERS / MedWatch) · 10 entity / 11 relation types · Bradford-Hill causality, MedDRA PT + WHO ATC · ships a FAERS corpus fetcher · [chrisdavidson/epistract `feat/pharmacovigilance-domain`](https://github.com/chrisdavidson/epistract/tree/feat/pharmacovigilance-domain/domains/pharmacovigilance) ([PR #5](https://github.com/chrisdavidson/epistract/pull/5))
+
 Full per-domain schemas, scenario coverage tables, validation history, and showcase artifacts (screenshots, briefings, interactive graphs): **[docs/DOMAINS.md](docs/DOMAINS.md)**.
 
 To create a new domain from sample documents:

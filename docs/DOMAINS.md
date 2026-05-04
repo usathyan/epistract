@@ -17,6 +17,16 @@ All four live in `domains/` as self-contained packages — schemas are human-rea
 
 ---
 
+## Community-maintained domains
+
+These domains are maintained on community forks and don't ship with the framework yet. Install by checking out the fork.
+
+| Domain | Schema | Source |
+|---|---|---|
+| **pharmacovigilance** | 10 entity / 11 relation types | [chrisdavidson/epistract `feat/pharmacovigilance-domain`](https://github.com/chrisdavidson/epistract/tree/feat/pharmacovigilance-domain/domains/pharmacovigilance) ([PR #5](https://github.com/chrisdavidson/epistract/pull/5)) — adverse-event reports (FAERS / VAERS / MedWatch) with Bradford-Hill causality vocabulary, MedDRA Preferred Term + WHO ATC nomenclature, reporter-type confidence calibration (HCP > consumer > lawyer), and a `scripts/fetch_faers_corpus.py` for fetching reports from the FDA OpenFDA API. |
+
+---
+
 ## Showcase artifacts
 
 ### drug-discovery — S6 GLP-1 Competitive Intelligence
