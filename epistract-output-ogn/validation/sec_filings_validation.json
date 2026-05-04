@@ -1,0 +1,72 @@
+{
+  "validated_at": "2026-04-29T22:34:37.247924+00:00",
+  "domain": "sec-filings",
+  "totals": {
+    "ciks": 2,
+    "valid_ciks": 2,
+    "tickers": 1,
+    "valid_tickers": 1
+  },
+  "results": [
+    {
+      "document_id": "10-K_2026-02-24_0001628280-26-011125",
+      "ciks": [],
+      "tickers": []
+    },
+    {
+      "document_id": "10-Q_2025-11-10_0001628280-25-050795",
+      "ciks": [
+        {
+          "valid": true,
+          "input": "0001821825",
+          "canonical": "0001821825",
+          "value": 1821825,
+          "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001821825"
+        }
+      ],
+      "tickers": [
+        {
+          "valid": true,
+          "input": "OGN",
+          "canonical": "OGN",
+          "root": "OGN",
+          "share_class": null,
+          "exchange": null
+        }
+      ]
+    },
+    {
+      "document_id": "8-K_2026-04-27_0001193125-26-178718",
+      "ciks": [],
+      "tickers": []
+    },
+    {
+      "document_id": "CORRESP_2024-06-06_0001821825-24-000069",
+      "ciks": [],
+      "tickers": []
+    },
+    {
+      "document_id": "DEF_14A_2026-04-24_0001193125-26-177411",
+      "ciks": [
+        {
+          "valid": true,
+          "input": "0001821825",
+          "canonical": "0001821825",
+          "value": 1821825,
+          "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001821825"
+        }
+      ],
+      "tickers": []
+    },
+    {
+      "document_id": "UPLOAD_2024-06-25_0000000000-24-007148",
+      "ciks": [],
+      "tickers": []
+    },
+    {
+      "document_id": "<unknown>",
+      "ciks": [],
+      "tickers": []
+    }
+  ]
+}

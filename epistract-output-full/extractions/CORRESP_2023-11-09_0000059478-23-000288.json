@@ -1,0 +1,211 @@
+{
+  "document_id": "CORRESP_2023-11-09_0000059478-23-000288",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "Eli Lilly and Company",
+      "entity_type": "Filer",
+      "attributes": {
+        "cik": "0000059478",
+        "ticker": "LLY",
+        "file_no": "001-06351"
+      },
+      "confidence": 0.99,
+      "context": "Re: Eli Lilly and Company Form 10-K for the fiscal year ended December 31, 2022 File No. 001-06351"
+    },
+    {
+      "name": "CORRESP 2023-11-09 (acc 0000059478-23-000288)",
+      "entity_type": "Filing",
+      "attributes": {
+        "form_type": "CORRESP",
+        "filing_date": "2023-11-09",
+        "accession": "0000059478-23-000288",
+        "subject": "Response to SEC Staff comments on 2022 Form 10-K"
+      },
+      "confidence": 0.99,
+      "context": "November 9, 2023 ... Eli Lilly and Company ... respectfully submits this letter in response to the comments received from the staff"
+    },
+    {
+      "name": "UPLOAD 2023-11-01 (Lilly 2022 10-K comments)",
+      "entity_type": "Filing",
+      "attributes": {
+        "form_type": "UPLOAD",
+        "filing_date": "2023-11-01",
+        "subject": "SEC Staff comment letter on Lilly 2022 Form 10-K"
+      },
+      "confidence": 0.95,
+      "context": "the comments received from the staff (the Staff) of the United States Securities and Exchange Commission (the SEC) by letter dated November 1, 2023"
+    },
+    {
+      "name": "CORRESP 2023-09-20 (Lilly prior response)",
+      "entity_type": "Filing",
+      "attributes": {
+        "form_type": "CORRESP",
+        "filing_date": "2023-09-20"
+      },
+      "confidence": 0.9,
+      "context": "our prior response letters dated September 20, 2023 and October 26, 2023"
+    },
+    {
+      "name": "CORRESP 2023-10-26 (Lilly prior response)",
+      "entity_type": "Filing",
+      "attributes": {
+        "form_type": "CORRESP",
+        "filing_date": "2023-10-26"
+      },
+      "confidence": 0.9,
+      "context": "our prior response letters dated September 20, 2023 and October 26, 2023"
+    },
+    {
+      "name": "10-K 2022 (Lilly fiscal year ended December 31, 2022)",
+      "entity_type": "Filing",
+      "attributes": {
+        "form_type": "10-K",
+        "period_of_report": "2022-12-31",
+        "filer": "Eli Lilly and Company"
+      },
+      "confidence": 0.98,
+      "context": "Form 10-K for the fiscal year ended December 31, 2022 ... the 2022 Form 10-K"
+    },
+    {
+      "name": "Christopher Anderson",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Associate Vice President - Leader of Corporate Securities and Assistant Secretary"
+      },
+      "confidence": 0.99,
+      "context": "By: /s/ Christopher Anderson Associate Vice President - Leader of Corporate Securities and Assistant Secretary"
+    },
+    {
+      "name": "Anat Ashkenazi",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Executive Vice President and Chief Financial Officer"
+      },
+      "confidence": 0.95,
+      "context": "cc: Anat Ashkenazi, Executive Vice President and Chief Financial Officer Eli Lilly and Company"
+    },
+    {
+      "name": "Anat Hakim",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Executive Vice President, General Counsel and Secretary"
+      },
+      "confidence": 0.95,
+      "context": "Anat Hakim, Executive Vice President, General Counsel and Secretary"
+    },
+    {
+      "name": "Donald A. Zakrowski",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Senior Vice President, Finance, and Chief Accounting Officer"
+      },
+      "confidence": 0.95,
+      "context": "Donald A. Zakrowski, Senior Vice President, Finance, and Chief Accounting Officer"
+    },
+    {
+      "name": "Climate change reputational and brand risk",
+      "entity_type": "Risk",
+      "attributes": {
+        "epistemic_status": "contested",
+        "topic": "climate change",
+        "section": "10-K Item 1A / MD&A p. 37",
+        "staff_comment_number": 1
+      },
+      "confidence": 0.9,
+      "context": "Please expand your disclosure to address how your reputation or brand could be affected by climate change and the potential response from investors, lenders, and customers."
+    },
+    {
+      "name": "Severe weather-related damages to property and operations (2020-2022)",
+      "entity_type": "Risk",
+      "attributes": {
+        "epistemic_status": "contested",
+        "topic": "severe weather impacts",
+        "section": "10-K MD&A p. 37",
+        "staff_comment_number": 2,
+        "threshold_disclosed": "$100,000 individual events tracked; none met threshold for FY2020/2021/2022"
+      },
+      "confidence": 0.9,
+      "context": "Please quantify all weather-related damages to your property or operations for each of the years ended December 31, 2022, 2021, and 2020."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "FILES",
+      "source_entity": "Eli Lilly and Company",
+      "target_entity": "CORRESP 2023-11-09 (acc 0000059478-23-000288)",
+      "confidence": 0.99,
+      "evidence": "Eli Lilly and Company (Lilly, the Company, we, or us) respectfully submits this letter"
+    },
+    {
+      "relation_type": "FILES",
+      "source_entity": "Eli Lilly and Company",
+      "target_entity": "10-K 2022 (Lilly fiscal year ended December 31, 2022)",
+      "confidence": 0.98,
+      "evidence": "Re: Eli Lilly and Company Form 10-K for the fiscal year ended December 31, 2022"
+    },
+    {
+      "relation_type": "FILES",
+      "source_entity": "Eli Lilly and Company",
+      "target_entity": "CORRESP 2023-09-20 (Lilly prior response)",
+      "confidence": 0.9,
+      "evidence": "our prior response letters dated September 20, 2023"
+    },
+    {
+      "relation_type": "FILES",
+      "source_entity": "Eli Lilly and Company",
+      "target_entity": "CORRESP 2023-10-26 (Lilly prior response)",
+      "confidence": 0.9,
+      "evidence": "our prior response letters dated ... October 26, 2023"
+    },
+    {
+      "relation_type": "RESPONDS_TO",
+      "source_entity": "CORRESP 2023-11-09 (acc 0000059478-23-000288)",
+      "target_entity": "UPLOAD 2023-11-01 (Lilly 2022 10-K comments)",
+      "confidence": 0.98,
+      "evidence": "in response to the comments received from the staff ... by letter dated November 1, 2023"
+    },
+    {
+      "relation_type": "COMMENTS_ON",
+      "source_entity": "UPLOAD 2023-11-01 (Lilly 2022 10-K comments)",
+      "target_entity": "10-K 2022 (Lilly fiscal year ended December 31, 2022)",
+      "confidence": 0.97,
+      "evidence": "comments ... in relation to the above-referenced filing (the 2022 Form 10-K)"
+    },
+    {
+      "relation_type": "RESPONDS_TO",
+      "source_entity": "CORRESP 2023-10-26 (Lilly prior response)",
+      "target_entity": "UPLOAD 2023-11-01 (Lilly 2022 10-K comments)",
+      "confidence": 0.6,
+      "evidence": "Response dated October 26, 2023 ... We note your response to prior comment 1 and re-issue it in part"
+    },
+    {
+      "relation_type": "HAS_SIGNATORY",
+      "source_entity": "CORRESP 2023-11-09 (acc 0000059478-23-000288)",
+      "target_entity": "Christopher Anderson",
+      "confidence": 0.99,
+      "evidence": "By: /s/ Christopher Anderson Associate Vice President - Leader of Corporate Securities and Assistant Secretary"
+    },
+    {
+      "relation_type": "DISCLOSES_RISK",
+      "source_entity": "10-K 2022 (Lilly fiscal year ended December 31, 2022)",
+      "target_entity": "Climate change reputational and brand risk",
+      "confidence": 0.9,
+      "evidence": "We disclosed the following in the 2022 Form 10-K: Our ability to achieve any stated environmental, social or governance goal ... could negatively affect our reputation or investor confidence"
+    },
+    {
+      "relation_type": "DISCLOSES_RISK",
+      "source_entity": "10-K 2022 (Lilly fiscal year ended December 31, 2022)",
+      "target_entity": "Severe weather-related damages to property and operations (2020-2022)",
+      "confidence": 0.85,
+      "evidence": "Lilly has not experienced any material impacts from severe weather-related events in any of the relevant periods"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "",
+  "domain_name": "sec-filings",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-29T22:53:49.498818+00:00",
+  "error": null
+}

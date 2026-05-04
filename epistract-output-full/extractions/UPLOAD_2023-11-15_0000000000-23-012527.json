@@ -1,0 +1,100 @@
+{
+  "document_id": "UPLOAD_2023-11-15_0000000000-23-012527",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "Eli Lilly and Company",
+      "entity_type": "Filer",
+      "attributes": {
+        "cik": "0000059478",
+        "ticker": "LLY"
+      },
+      "confidence": 0.99,
+      "context": "Re: Eli Lilly and Company"
+    },
+    {
+      "name": "UPLOAD 2023-11-15 (acc 0000000000-23-012527)",
+      "entity_type": "Filing",
+      "attributes": {
+        "form": "UPLOAD",
+        "filing_date": "2023-11-15",
+        "accession": "0000000000-23-012527",
+        "issuer": "SEC Division of Corporation Finance, Office of Life Sciences",
+        "addressee": "Anat Ashkenazi",
+        "subject": "review completion letter \u2014 no further comments",
+        "epistemic_status": "asserted"
+      },
+      "confidence": 0.98,
+      "context": "November 15, 2023 ... We have completed our review of your filing."
+    },
+    {
+      "name": "10-K 2023-02-22 (acc unknown \u2014 File No. 001-06351)",
+      "entity_type": "Filing",
+      "attributes": {
+        "form": "10-K",
+        "filing_date": "2023-02-22",
+        "fiscal_year_end": "2022-12-31",
+        "file_number": "001-06351"
+      },
+      "confidence": 0.95,
+      "context": "Form 10-K for the fiscal year ended December 31, 2022 Filed February 22, 2023 File No. 001-06351"
+    },
+    {
+      "name": "Anat Ashkenazi",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Executive Vice President and Chief Financial Officer",
+        "employer": "Eli Lilly and Company"
+      },
+      "confidence": 0.99,
+      "context": "Anat Ashkenazi Executive Vice President and Chief Financial Officer Eli Lilly and Company"
+    },
+    {
+      "name": "Donald A. Zakrowski",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Senior VP Finance & CAO",
+        "employer": "Eli Lilly and Company"
+      },
+      "confidence": 0.95,
+      "context": "cc: Donald A. Zakrowski, Senior VP Finance & CAO"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "COMMENTS_ON",
+      "source_entity": "UPLOAD 2023-11-15 (acc 0000000000-23-012527)",
+      "target_entity": "10-K 2023-02-22 (acc unknown \u2014 File No. 001-06351)",
+      "attributes": {
+        "resolution": "review completed with no further comments",
+        "epistemic_status": "asserted"
+      },
+      "confidence": 0.98,
+      "evidence": "Re: Eli Lilly and Company Form 10-K for the fiscal year ended December 31, 2022 ... We have completed our review of your filing."
+    },
+    {
+      "relation_type": "FILES",
+      "source_entity": "Eli Lilly and Company",
+      "target_entity": "10-K 2023-02-22 (acc unknown \u2014 File No. 001-06351)",
+      "confidence": 0.95,
+      "evidence": "Eli Lilly and Company Form 10-K for the fiscal year ended December 31, 2022 Filed February 22, 2023"
+    },
+    {
+      "relation_type": "HAS_SIGNATORY",
+      "source_entity": "10-K 2023-02-22 (acc unknown \u2014 File No. 001-06351)",
+      "target_entity": "Anat Ashkenazi",
+      "attributes": {
+        "role": "Executive Vice President and Chief Financial Officer"
+      },
+      "confidence": 0.85,
+      "evidence": "Anat Ashkenazi Executive Vice President and Chief Financial Officer Eli Lilly and Company"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "",
+  "domain_name": "sec-filings",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-29T22:54:06.523113+00:00",
+  "error": null
+}

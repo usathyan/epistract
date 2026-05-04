@@ -1,0 +1,505 @@
+{
+  "document_id": "10-Q_2025-11-10_0001628280-25-050795",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "Organon & Co.",
+      "entity_type": "Filer",
+      "attributes": {
+        "cik": "0001821825",
+        "ticker": "OGN",
+        "exchange": "NYSE"
+      },
+      "confidence": 0.99,
+      "context": "Organon & Co. (CIK 0001821825), ticker OGN, registrant of this Form 10-Q for quarter ended September 30, 2025."
+    },
+    {
+      "name": "Organon 10-Q 2025-09-30",
+      "entity_type": "Filing",
+      "attributes": {
+        "form_type": "10-Q",
+        "filing_date": "2025-11-10",
+        "period_of_report": "2025-09-30",
+        "accession": "0001628280-25-050795"
+      },
+      "confidence": 0.99,
+      "context": "Quarterly Report on Form 10-Q for the quarter ended September 30, 2025"
+    },
+    {
+      "name": "Organon 8-K 2025-10-27",
+      "entity_type": "Filing",
+      "attributes": {
+        "form_type": "8-K",
+        "filing_date": "2025-10-27"
+      },
+      "confidence": 0.95,
+      "context": "Audit Committee investigation described in our Current Report on Form 8-K, filed with the SEC on October 27, 2025"
+    },
+    {
+      "name": "Organon Women's Health and General Medicines Segment",
+      "entity_type": "Segment",
+      "attributes": {
+        "reporting_units": "U.S.; International",
+        "single_segment": true
+      },
+      "confidence": 0.95,
+      "context": "single operating segment comprised of two reporting units: U.S. and International ... women's health and general medicines"
+    },
+    {
+      "name": "United States",
+      "entity_type": "Geography",
+      "confidence": 0.99,
+      "context": "United States revenue $406M Q3 2025 / $1,232M YTD",
+      "attributes": {}
+    },
+    {
+      "name": "International",
+      "entity_type": "Geography",
+      "confidence": 0.95,
+      "context": "International revenue $1,196M Q3 2025",
+      "attributes": {}
+    },
+    {
+      "name": "Kevin Ali",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Former CEO",
+        "departure_date": "2025-10-26"
+      },
+      "confidence": 0.99,
+      "context": "on October 26, 2025, Kevin Ali resigned as Chief Executive Officer of the Company and as a member of the Board"
+    },
+    {
+      "name": "Joseph Morrissey",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Interim Chief Executive Officer",
+        "appointment_date": "2025-10-26"
+      },
+      "confidence": 0.99,
+      "context": "Joseph Morrissey ... was appointed Interim Chief Executive Officer (and principal executive officer)"
+    },
+    {
+      "name": "Carrie S. Cox",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Executive Chair (interim); Chair of the Board"
+      },
+      "confidence": 0.98,
+      "context": "Carrie S. Cox, Chair of the Board, was appointed Executive Chair for an interim period"
+    },
+    {
+      "name": "Robert Essner",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Lead Independent Director"
+      },
+      "confidence": 0.98,
+      "context": "Robert Essner, a member of the Board, was appointed to the position of Lead Independent Director"
+    },
+    {
+      "name": "Matthew Walsh",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Chief Financial Officer",
+        "signed_sox": true
+      },
+      "confidence": 0.99,
+      "context": "/s/ Matthew Walsh, Matthew Walsh, Chief Financial Officer"
+    },
+    {
+      "name": "Lynette Holzbaur",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "SVP Finance - Corporate Controller"
+      },
+      "confidence": 0.99,
+      "context": "/s/ Lynette Holzbaur, Lynette Holzbaur, Senior Vice President Finance - Corporate Controller"
+    },
+    {
+      "name": "Q3 2025 Revenue $1,602M",
+      "entity_type": "ActualResult",
+      "attributes": {
+        "period": "Q3 2025",
+        "metric": "revenue",
+        "value_usd_millions": 1602,
+        "prior_year": 1582,
+        "epistemic_status": "asserted"
+      },
+      "confidence": 0.98,
+      "context": "Revenues $1,602 (Q3 2025) vs $1,582 (Q3 2024)"
+    },
+    {
+      "name": "9M 2025 Revenue $4,709M",
+      "entity_type": "ActualResult",
+      "attributes": {
+        "period": "9M 2025",
+        "metric": "revenue",
+        "value_usd_millions": 4709,
+        "prior_year": 4811,
+        "epistemic_status": "asserted"
+      },
+      "confidence": 0.98,
+      "context": "Revenues $4,709 (9M 2025) vs $4,811 (9M 2024)"
+    },
+    {
+      "name": "Q3 2025 Net Income $160M",
+      "entity_type": "ActualResult",
+      "attributes": {
+        "period": "Q3 2025",
+        "metric": "net_income",
+        "value_usd_millions": 160,
+        "prior_year": 359,
+        "epistemic_status": "asserted"
+      },
+      "confidence": 0.98,
+      "context": "Net income $160 (Q3 2025) vs $359 (Q3 2024)"
+    },
+    {
+      "name": "Q3 2025 Diluted EPS $0.61",
+      "entity_type": "ActualResult",
+      "attributes": {
+        "period": "Q3 2025",
+        "metric": "diluted_eps",
+        "value_usd": 0.61,
+        "prior_year": 1.38,
+        "epistemic_status": "asserted"
+      },
+      "confidence": 0.98,
+      "context": "Diluted EPS $0.61 (Q3 2025) vs $1.38 (Q3 2024)"
+    },
+    {
+      "name": "United States Revenue Q3 2025 $406M",
+      "entity_type": "ActualResult",
+      "attributes": {
+        "period": "Q3 2025",
+        "geography": "United States",
+        "metric": "revenue",
+        "value_usd_millions": 406,
+        "growth_pct": 2
+      },
+      "confidence": 0.95,
+      "context": "United States $406 (Q3 2025) vs $398 (Q3 2024), 2% growth"
+    },
+    {
+      "name": "International Revenue Q3 2025 $1,196M",
+      "entity_type": "ActualResult",
+      "attributes": {
+        "period": "Q3 2025",
+        "geography": "International",
+        "metric": "revenue",
+        "value_usd_millions": 1196
+      },
+      "confidence": 0.95,
+      "context": "International $1,196 (Q3 2025)"
+    },
+    {
+      "name": "Material Weakness in ICFR as of Dec 31 2024",
+      "entity_type": "AdverseAction",
+      "attributes": {
+        "type": "material_weakness",
+        "as_of_date": "2024-12-31",
+        "epistemic_status": "asserted"
+      },
+      "confidence": 0.99,
+      "context": "we concluded that there were material weaknesses in our internal control over financial reporting as of December 31, 2024"
+    },
+    {
+      "name": "Audit Committee Investigation - Nexplanon Wholesaler Sales Practices",
+      "entity_type": "AdverseAction",
+      "attributes": {
+        "type": "internal_investigation",
+        "subject": "Nexplanon U.S. wholesaler channel stuffing",
+        "completed": true
+      },
+      "confidence": 0.97,
+      "context": "Audit Committee investigation ... two United States wholesalers being asked to purchase inventory in excess of current customer demand for Nexplanon ... former Chief Executive Officer ... engaged in inappropriate business conduct"
+    },
+    {
+      "name": "Prior Disclosures Re Nexplanon Wholesaler Sales Practices Should Not Be Relied Upon",
+      "entity_type": "Restatement",
+      "attributes": {
+        "type": "non-reliance / amendments filed",
+        "note": "10-K/A and 10-Q/A amendments filed; no restatement of financial statements per company"
+      },
+      "confidence": 0.9,
+      "context": "certain of our prior disclosures relating to these sales practices for wholesalers ... were inaccurate or incomplete. As a result, we filed the Amendments. ... We have determined that there will be no restatement or revision to our previously issued financial statements"
+    },
+    {
+      "name": "Tariff and Trade Policy Risk",
+      "entity_type": "Risk",
+      "attributes": {
+        "category": "macroeconomic / trade",
+        "epistemic_status": "hypothesized"
+      },
+      "confidence": 0.92,
+      "context": "trade protection measures and import or export licensing requirements, including the direct and indirect impacts of tariffs (including pharmaceutical sector tariffs)"
+    },
+    {
+      "name": "Audit Committee Investigation Uncertainty Risk",
+      "entity_type": "Risk",
+      "attributes": {
+        "category": "governance / controls",
+        "epistemic_status": "hypothesized"
+      },
+      "confidence": 0.95,
+      "context": "uncertainties surrounding the Audit Committee investigation described in our Current Report on Form 8-K"
+    },
+    {
+      "name": "CEO Succession / Leadership Change Risk",
+      "entity_type": "Risk",
+      "attributes": {
+        "category": "leadership",
+        "epistemic_status": "hypothesized"
+      },
+      "confidence": 0.95,
+      "context": "the risk that appointing a new Chief Executive Officer may take longer than anticipated"
+    },
+    {
+      "name": "Material Weakness Remediation Risk",
+      "entity_type": "Risk",
+      "attributes": {
+        "category": "internal controls",
+        "epistemic_status": "hypothesized"
+      },
+      "confidence": 0.95,
+      "context": "our ability to remediate the material weaknesses in internal control over financial reporting and the related costs"
+    },
+    {
+      "name": "Nexplanon Loss of Exclusivity 2027 Risk",
+      "entity_type": "Risk",
+      "attributes": {
+        "category": "patent / LOE",
+        "product": "Nexplanon",
+        "year": 2027,
+        "epistemic_status": "hypothesized"
+      },
+      "confidence": 0.95,
+      "context": "any failure by us to retain market exclusivity for Nexplanon or to obtain an additional period of exclusivity in the United States for Nexplanon subsequent to the expiration of the rod patents in 2027"
+    },
+    {
+      "name": "Atozet LOE Continuing Impact Risk",
+      "entity_type": "Risk",
+      "attributes": {
+        "category": "patent / LOE",
+        "product": "Atozet",
+        "epistemic_status": "hypothesized"
+      },
+      "confidence": 0.92,
+      "context": "the continued impact of the September 2024 loss of exclusivity (LOE) for Atozet (ezetimibe and atorvastatin)"
+    },
+    {
+      "name": "Credit Rating / Capital Markets Access Risk",
+      "entity_type": "Risk",
+      "attributes": {
+        "category": "financial",
+        "epistemic_status": "hypothesized"
+      },
+      "confidence": 0.9,
+      "context": "actions that may be taken by credit rating agencies that could negatively affect either our access to or terms of financing"
+    },
+    {
+      "name": "Drug Pricing / MFN Pricing Pressure Risk",
+      "entity_type": "Risk",
+      "attributes": {
+        "category": "regulatory / pricing",
+        "epistemic_status": "hypothesized"
+      },
+      "confidence": 0.92,
+      "context": "International reference pricing, including Most-Favored-Nation drug pricing, and other pricing-related initiatives"
+    },
+    {
+      "name": "Goodwill Impairment Risk - Reporting Units",
+      "entity_type": "Risk",
+      "attributes": {
+        "category": "accounting / impairment",
+        "epistemic_status": "hypothesized"
+      },
+      "confidence": 0.9,
+      "context": "fair value of either the U.S. or International reporting unit falling below its carrying amount ... non-cash impairment charge"
+    },
+    {
+      "name": "Jada System Divestiture Guidance up to $465M (early 2026 close)",
+      "entity_type": "Guidance",
+      "attributes": {
+        "transaction": "divestiture of Jada System to Laborie Medical Technologies",
+        "upfront_usd_millions": 440,
+        "earnout_usd_millions": 25,
+        "expected_close": "early 2026",
+        "epistemic_status": "prophetic"
+      },
+      "confidence": 0.95,
+      "context": "definitive agreement to divest the Jada System to Laborie Medical Technologies Corporation for an upfront payment of up to $465 million ... expected to close in early 2026, subject to regulatory approvals"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "FILES",
+      "source_entity": "Organon & Co.",
+      "target_entity": "Organon 10-Q 2025-09-30",
+      "confidence": 0.99,
+      "evidence": "Form 10-Q for the quarter ended September 30, 2025 filed by Organon & Co."
+    },
+    {
+      "relation_type": "FILES",
+      "source_entity": "Organon & Co.",
+      "target_entity": "Organon 8-K 2025-10-27",
+      "confidence": 0.95,
+      "evidence": "Current Report on Form 8-K, filed with the SEC on October 27, 2025"
+    },
+    {
+      "relation_type": "HAS_SEGMENT",
+      "source_entity": "Organon & Co.",
+      "target_entity": "Organon Women's Health and General Medicines Segment",
+      "confidence": 0.95,
+      "evidence": "single operating segment comprised of two reporting units: U.S. and International"
+    },
+    {
+      "relation_type": "OPERATES_IN",
+      "source_entity": "Organon Women's Health and General Medicines Segment",
+      "target_entity": "United States",
+      "confidence": 0.95,
+      "evidence": "U.S. reporting unit"
+    },
+    {
+      "relation_type": "OPERATES_IN",
+      "source_entity": "Organon Women's Health and General Medicines Segment",
+      "target_entity": "International",
+      "confidence": 0.95,
+      "evidence": "International reporting unit"
+    },
+    {
+      "relation_type": "HAS_SIGNATORY",
+      "source_entity": "Organon 10-Q 2025-09-30",
+      "target_entity": "Matthew Walsh",
+      "confidence": 0.99,
+      "evidence": "Date: November 10, 2025 /s/ Matthew Walsh, Chief Financial Officer"
+    },
+    {
+      "relation_type": "HAS_SIGNATORY",
+      "source_entity": "Organon 10-Q 2025-09-30",
+      "target_entity": "Lynette Holzbaur",
+      "confidence": 0.99,
+      "evidence": "Date: November 10, 2025 /s/ Lynette Holzbaur, Senior Vice President Finance - Corporate Controller"
+    },
+    {
+      "relation_type": "REPORTS",
+      "source_entity": "Organon 10-Q 2025-09-30",
+      "target_entity": "Q3 2025 Revenue $1,602M",
+      "confidence": 0.98,
+      "evidence": "Revenues $1,602M Q3 2025 reported in Condensed Consolidated Statements of Income"
+    },
+    {
+      "relation_type": "REPORTS",
+      "source_entity": "Organon 10-Q 2025-09-30",
+      "target_entity": "9M 2025 Revenue $4,709M",
+      "confidence": 0.98,
+      "evidence": "Nine Months Ended September 30, 2025 Revenues $4,709"
+    },
+    {
+      "relation_type": "REPORTS",
+      "source_entity": "Organon 10-Q 2025-09-30",
+      "target_entity": "Q3 2025 Net Income $160M",
+      "confidence": 0.98,
+      "evidence": "Net income $160 reported"
+    },
+    {
+      "relation_type": "REPORTS",
+      "source_entity": "Organon 10-Q 2025-09-30",
+      "target_entity": "Q3 2025 Diluted EPS $0.61",
+      "confidence": 0.98,
+      "evidence": "Diluted EPS $0.61"
+    },
+    {
+      "relation_type": "REPORTS",
+      "source_entity": "Organon 10-Q 2025-09-30",
+      "target_entity": "United States Revenue Q3 2025 $406M",
+      "confidence": 0.95,
+      "evidence": "United States $406 (Q3 2025)"
+    },
+    {
+      "relation_type": "REPORTS",
+      "source_entity": "Organon 10-Q 2025-09-30",
+      "target_entity": "International Revenue Q3 2025 $1,196M",
+      "confidence": 0.95,
+      "evidence": "International $1,196 (Q3 2025)"
+    },
+    {
+      "relation_type": "DISCLOSES_RISK",
+      "source_entity": "Organon 10-Q 2025-09-30",
+      "target_entity": "Tariff and Trade Policy Risk",
+      "confidence": 0.92,
+      "evidence": "trade protection measures ... tariffs"
+    },
+    {
+      "relation_type": "DISCLOSES_RISK",
+      "source_entity": "Organon 10-Q 2025-09-30",
+      "target_entity": "Audit Committee Investigation Uncertainty Risk",
+      "confidence": 0.95,
+      "evidence": "uncertainties surrounding the Audit Committee investigation"
+    },
+    {
+      "relation_type": "DISCLOSES_RISK",
+      "source_entity": "Organon 10-Q 2025-09-30",
+      "target_entity": "CEO Succession / Leadership Change Risk",
+      "confidence": 0.95,
+      "evidence": "the risk that appointing a new Chief Executive Officer may take longer than anticipated"
+    },
+    {
+      "relation_type": "DISCLOSES_RISK",
+      "source_entity": "Organon 10-Q 2025-09-30",
+      "target_entity": "Material Weakness Remediation Risk",
+      "confidence": 0.95,
+      "evidence": "ability to remediate the material weaknesses in internal control over financial reporting"
+    },
+    {
+      "relation_type": "DISCLOSES_RISK",
+      "source_entity": "Organon 10-Q 2025-09-30",
+      "target_entity": "Nexplanon Loss of Exclusivity 2027 Risk",
+      "confidence": 0.95,
+      "evidence": "expiration of the rod patents in 2027"
+    },
+    {
+      "relation_type": "DISCLOSES_RISK",
+      "source_entity": "Organon 10-Q 2025-09-30",
+      "target_entity": "Atozet LOE Continuing Impact Risk",
+      "confidence": 0.92,
+      "evidence": "September 2024 loss of exclusivity for Atozet"
+    },
+    {
+      "relation_type": "DISCLOSES_RISK",
+      "source_entity": "Organon 10-Q 2025-09-30",
+      "target_entity": "Credit Rating / Capital Markets Access Risk",
+      "confidence": 0.9,
+      "evidence": "actions that may be taken by credit rating agencies"
+    },
+    {
+      "relation_type": "DISCLOSES_RISK",
+      "source_entity": "Organon 10-Q 2025-09-30",
+      "target_entity": "Drug Pricing / MFN Pricing Pressure Risk",
+      "confidence": 0.92,
+      "evidence": "Most-Favored-Nation drug pricing"
+    },
+    {
+      "relation_type": "DISCLOSES_RISK",
+      "source_entity": "Organon 10-Q 2025-09-30",
+      "target_entity": "Goodwill Impairment Risk - Reporting Units",
+      "confidence": 0.9,
+      "evidence": "non-cash impairment charge ... fair value of either the U.S. or International reporting unit"
+    },
+    {
+      "relation_type": "ISSUES_GUIDANCE",
+      "source_entity": "Organon 10-Q 2025-09-30",
+      "target_entity": "Jada System Divestiture Guidance up to $465M (early 2026 close)",
+      "confidence": 0.95,
+      "evidence": "definitive agreement to divest the Jada System ... up to $465 million ... expected to close in early 2026"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "",
+  "domain_name": "sec-filings",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-29T22:32:30.136178+00:00",
+  "error": null
+}

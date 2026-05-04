@@ -1,0 +1,110 @@
+{
+  "document_id": "UPLOAD_2024-06-25_0000000000-24-007148",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "Organon & Co.",
+      "entity_type": "Filer",
+      "attributes": {
+        "cik": "0001821825",
+        "ticker": "OGN",
+        "file_no": "001-40235",
+        "address": "30 Hudson Street, Floor 33, Jersey City, New Jersey 07302"
+      },
+      "confidence": 1.0,
+      "context": "Re: Organon & Co. Form 10-K for Fiscal Year Ended December 31, 2023 File No. 001-40235"
+    },
+    {
+      "name": "UPLOAD 2024-06-25 (acc 0000000000-24-007148)",
+      "entity_type": "Filing",
+      "attributes": {
+        "form_type": "UPLOAD",
+        "filing_date": "2024-06-25",
+        "accession_number": "0000000000-24-007148",
+        "issuer": "SEC Division of Corporation Finance, Office of Life Sciences",
+        "addressee": "Matthew Walsh, Chief Financial Officer, Organon & Co.",
+        "nature": "comment-letter closing letter (review completed, no substantive comments)"
+      },
+      "confidence": 1.0,
+      "context": "June 25, 2024 ... We have completed our review of your filings. ... Division of Corporation Finance, Office of Life Sciences"
+    },
+    {
+      "name": "10-K 2024-02-28 (FY2023, File No. 001-40235)",
+      "entity_type": "Filing",
+      "attributes": {
+        "form_type": "10-K",
+        "period_of_report": "2023-12-31",
+        "file_no": "001-40235",
+        "filer": "Organon & Co."
+      },
+      "confidence": 0.95,
+      "context": "Form 10-K for Fiscal Year Ended December 31, 2023 File No. 001-40235"
+    },
+    {
+      "name": "CORRESP 2024-06-06 (acc 0001821825-24-000069)",
+      "entity_type": "Filing",
+      "attributes": {
+        "form_type": "CORRESP",
+        "filing_date": "2024-06-06",
+        "accession_number": "0001821821-24-000069",
+        "filer": "Organon & Co."
+      },
+      "confidence": 0.9,
+      "context": "Closing letter follows OGN response correspondence (CORRESP_2024-06-06_0001821825-24-000069) per dispatcher context"
+    },
+    {
+      "name": "Matthew Walsh",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Chief Financial Officer",
+        "filer": "Organon & Co."
+      },
+      "confidence": 1.0,
+      "context": "Matthew Walsh, Chief Financial Officer, Organon & Co."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "COMMENTS_ON",
+      "source_entity": "UPLOAD 2024-06-25 (acc 0000000000-24-007148)",
+      "target_entity": "10-K 2024-02-28 (FY2023, File No. 001-40235)",
+      "confidence": 1.0,
+      "evidence": "Re: Organon & Co. Form 10-K for Fiscal Year Ended December 31, 2023 File No. 001-40235 ... We have completed our review of your filings."
+    },
+    {
+      "relation_type": "RESPONDS_TO",
+      "source_entity": "CORRESP 2024-06-06 (acc 0001821825-24-000069)",
+      "target_entity": "UPLOAD 2024-06-25 (acc 0000000000-24-007148)",
+      "confidence": 0.85,
+      "evidence": "Per corpus dispatcher context: this closing letter follows the OGN response CORRESP filed 2024-06-06; staff response confirms review completed."
+    },
+    {
+      "relation_type": "FILES",
+      "source_entity": "Organon & Co.",
+      "target_entity": "10-K 2024-02-28 (FY2023, File No. 001-40235)",
+      "confidence": 1.0,
+      "evidence": "Re: Organon & Co. Form 10-K for Fiscal Year Ended December 31, 2023 File No. 001-40235"
+    },
+    {
+      "relation_type": "FILES",
+      "source_entity": "Organon & Co.",
+      "target_entity": "CORRESP 2024-06-06 (acc 0001821825-24-000069)",
+      "confidence": 0.9,
+      "evidence": "OGN-filed CORRESP response preceding this closing letter (per corpus context)."
+    },
+    {
+      "relation_type": "HAS_SIGNATORY",
+      "source_entity": "10-K 2024-02-28 (FY2023, File No. 001-40235)",
+      "target_entity": "Matthew Walsh",
+      "confidence": 0.85,
+      "evidence": "Matthew Walsh, Chief Financial Officer, Organon & Co. - addressee as principal financial officer responsible for the 10-K filing."
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "",
+  "domain_name": "sec-filings",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-29T22:54:26.895825+00:00",
+  "error": null
+}

@@ -1,0 +1,352 @@
+{
+  "document_id": "DEF_14A_2026-04-24_0001193125-26-177411",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "Organon & Co.",
+      "entity_type": "Filer",
+      "attributes": {
+        "cik": "0001821825",
+        "ticker": "NYSE:OGN",
+        "headquarters": "30 Hudson Street, Floor 33, Jersey City, New Jersey 07302",
+        "employees": "more than 10,000"
+      },
+      "confidence": 0.99,
+      "context": "Organon & Co. (Name of Registrant as Specified In Its Charter) ... CIK 0001821825 ... corporate headquarters located at 30 Hudson Street, Floor 33, Jersey City, New Jersey 07302."
+    },
+    {
+      "name": "Organon DEF 14A 2026",
+      "entity_type": "Filing",
+      "attributes": {
+        "form_type": "DEF 14A",
+        "filing_date": "2026-04-24",
+        "period_of_report": "2026 Annual Meeting (June 9, 2026)",
+        "accession_number": "0001193125-26-177411"
+      },
+      "confidence": 0.99,
+      "context": "SCHEDULE 14A Proxy Statement Pursuant to Section 14(a) of the Securities Exchange Act of 1934 ... Definitive Proxy Statement ... Organon & Co. ... Proxy Materials are being distributed to shareholders beginning on April 24, 2026."
+    },
+    {
+      "name": "PricewaterhouseCoopers LLP",
+      "entity_type": "AuditFirm",
+      "attributes": {
+        "abbreviation": "PwC",
+        "engagement_start": "2019"
+      },
+      "confidence": 0.99,
+      "context": "The Audit Committee has appointed PricewaterhouseCoopers LLP (\"PwC\") to serve as our independent auditors with respect to our operations for the year ending December 31, 2026, subject to ratification by shareholders... PwC's qualifications and performance in that capacity for Organon since its retention in 2019."
+    },
+    {
+      "name": "Joseph Morrissey",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Interim Chief Executive Officer",
+        "executive_since": "2021",
+        "age": 61
+      },
+      "confidence": 0.99,
+      "context": "Joseph Morrissey ... Title: Interim Chief Executive Officer ... The Board appointed Joe Morrissey as Interim CEO."
+    },
+    {
+      "name": "Matthew Walsh",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Executive Vice President and Chief Financial Officer",
+        "executive_since": "2021",
+        "age": 59
+      },
+      "confidence": 0.99,
+      "context": "Matthew Walsh ... Title: Executive Vice President and Chief Financial Officer."
+    },
+    {
+      "name": "Juan Camilo Arjona Ferreira",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Executive Vice President, Head of Research & Development and Chief Medical Officer",
+        "executive_since": "2024",
+        "age": 56
+      },
+      "confidence": 0.98,
+      "context": "Juan Camilo Arjona Ferreira, M.D. ... Title: Executive Vice President, Head of Research & Development and Chief Medical Officer."
+    },
+    {
+      "name": "Juliana Drinane",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Interim Head of Manufacturing and Supply",
+        "executive_since": "2025",
+        "age": 55
+      },
+      "confidence": 0.97,
+      "context": "Juliana Drinane ... Title: Interim Head of Manufacturing and Supply."
+    },
+    {
+      "name": "Aaron Falcione",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Executive Vice President and Chief Human Resources Officer",
+        "executive_since": "2021",
+        "age": 55
+      },
+      "confidence": 0.98,
+      "context": "Aaron Falcione ... Title: Executive Vice President and Chief Human Resources Officer."
+    },
+    {
+      "name": "Daniel Karp",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Executive Vice President, Corporate Development & Chief Strategy Officer",
+        "executive_since": "2024",
+        "age": 48
+      },
+      "confidence": 0.98,
+      "context": "Daniel Karp ... Title: Executive Vice President, Corporate Development & Chief Strategy Officer."
+    },
+    {
+      "name": "Vittorio Nisita",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Executive Vice President and Head of Enterprise Services & Solutions",
+        "executive_since": "2021",
+        "age": 58
+      },
+      "confidence": 0.98,
+      "context": "Vittorio Nisita ... Title: Executive Vice President and Head of Enterprise Services & Solutions."
+    },
+    {
+      "name": "Rachel Stahler",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Executive Vice President and Chief Digital & Growth Officer",
+        "executive_since": "2021",
+        "age": 50
+      },
+      "confidence": 0.98,
+      "context": "Rachel Stahler ... Title: Executive Vice President and Chief Digital & Growth Officer."
+    },
+    {
+      "name": "Kirke Weaver",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Executive Vice President, General Counsel and Corporate Secretary",
+        "executive_since": "2023",
+        "age": 53
+      },
+      "confidence": 0.99,
+      "context": "Kirke Weaver ... Title: Executive Vice President, General Counsel and Corporate Secretary."
+    },
+    {
+      "name": "Kevin Ali",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Former Chief Executive Officer",
+        "departure_date": "2025-10-26"
+      },
+      "confidence": 0.99,
+      "context": "On October 26, 2025, Kevin Ali resigned as Chief Executive Officer of the Company and as a member of the Board."
+    },
+    {
+      "name": "Carrie S. Cox",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Executive Chair of the Board",
+        "director_since": "2021",
+        "appointment_as_chair": "2025-10-26",
+        "age": 68,
+        "base_salary": "$100,000 per month"
+      },
+      "confidence": 0.99,
+      "context": "Carrie S. Cox ... Executive Chair ... Ms. Cox will receive a base salary of $100,000 per month."
+    },
+    {
+      "name": "Robert Essner",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Lead Independent Director",
+        "committees": "ESG (Chair), PDC",
+        "director_since": "2021",
+        "age": 78
+      },
+      "confidence": 0.99,
+      "context": "Robert Essner ... Independent ... Lead Director ... Committees: ESG (Chair) and PDC."
+    },
+    {
+      "name": "Alan Ezekowitz",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Independent Director",
+        "committees": "Audit, PDC",
+        "director_since": "2021",
+        "age": 72
+      },
+      "confidence": 0.98,
+      "context": "Alan Ezekowitz, M.D., Ph.D. ... Independent ... Committees: Audit and PDC."
+    },
+    {
+      "name": "Helene Gayle",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Independent Director",
+        "committees": "Talent (Chair), ESG",
+        "director_since": "2021",
+        "age": 70
+      },
+      "confidence": 0.98,
+      "context": "Helene Gayle, M.D., M.P.H. ... Independent ... Committees: Talent (Chair) and ESG."
+    },
+    {
+      "name": "Rochelle B. Lazarus",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Independent Director",
+        "committees": "ESG",
+        "director_since": "2021",
+        "age": 78,
+        "aliases": "Shelly Lazarus"
+      },
+      "confidence": 0.98,
+      "context": "Rochelle (\"Shelly\") B. Lazarus ... Independent ... Committees: ESG."
+    },
+    {
+      "name": "Deborah Leone",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Independent Director",
+        "committees": "Audit",
+        "director_since": "2021",
+        "age": 61
+      },
+      "confidence": 0.98,
+      "context": "Deborah Leone ... Independent ... Committees: Audit."
+    },
+    {
+      "name": "Philip Ozuah",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Independent Director",
+        "committees": "PDC (Chair), Talent",
+        "director_since": "2021",
+        "age": 63
+      },
+      "confidence": 0.98,
+      "context": "Philip Ozuah, M.D., Ph.D. ... Independent ... Committees: PDC (Chair) and Talent."
+    },
+    {
+      "name": "Cynthia M. Patton",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Independent Director",
+        "committees": "Audit",
+        "director_since": "2021",
+        "age": 64
+      },
+      "confidence": 0.98,
+      "context": "Cynthia M. Patton ... Independent ... Committees: Audit."
+    },
+    {
+      "name": "Ramona Sequeira",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Independent Director",
+        "committees": "Talent",
+        "director_since": "2025",
+        "age": 60
+      },
+      "confidence": 0.98,
+      "context": "Ramona Sequeira ... Independent ... Director Since: 2025 ... Committees: Talent."
+    },
+    {
+      "name": "Shalini Sharp",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Independent Director, Audit Committee Chair",
+        "committees": "Audit (Chair), PDC",
+        "director_since": "2021",
+        "age": 51
+      },
+      "confidence": 0.99,
+      "context": "Shalini Sharp ... Independent ... Committees: Audit (Chair) and PDC ... Audit Committee Shalini Sharp (Chair)."
+    },
+    {
+      "name": "Grace Puma",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Director (not standing for re-election 2026)",
+        "director_since": "2021"
+      },
+      "confidence": 0.95,
+      "context": "Grace Puma, who is currently serving as a director, is not standing for re-election at this Annual Meeting."
+    },
+    {
+      "name": "Forward-looking statements regarding 2026 priorities and ESG goals",
+      "entity_type": "Guidance",
+      "attributes": {
+        "epistemic_status": "prophetic",
+        "topics": "leverage reduction, portfolio sustainability, selective investment"
+      },
+      "confidence": 0.9,
+      "context": "Looking to 2026, our priorities are clear: sustaining performance across the portfolio, continuing to reduce leverage, and investing selectively where we have a meaningful competitive advantage."
+    },
+    {
+      "name": "Risk that ESG strategy may not be executed within expected time frames",
+      "entity_type": "Risk",
+      "attributes": {
+        "epistemic_status": "hypothesized",
+        "category": "ESG/strategic"
+      },
+      "confidence": 0.9,
+      "context": "Factors that could cause results to differ materially from those described in the forward-looking statements include our inability to execute upon our ESG strategy within expected time frames or at all."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "FILES",
+      "source_entity": "Organon & Co.",
+      "target_entity": "Organon DEF 14A 2026",
+      "confidence": 0.99,
+      "evidence": "Organon & Co. (Name of Registrant as Specified In Its Charter) ... Definitive Proxy Statement filed by the Registrant."
+    },
+    {
+      "relation_type": "AUDITS",
+      "source_entity": "PricewaterhouseCoopers LLP",
+      "target_entity": "Organon & Co.",
+      "confidence": 0.99,
+      "evidence": "The Audit Committee has appointed PricewaterhouseCoopers LLP (\"PwC\") to serve as our independent auditors with respect to our operations for the year ending December 31, 2026 ... PwC's qualifications and performance in that capacity for Organon since its retention in 2019."
+    },
+    {
+      "relation_type": "HAS_SIGNATORY",
+      "source_entity": "Organon DEF 14A 2026",
+      "target_entity": "Carrie S. Cox",
+      "confidence": 0.9,
+      "evidence": "Sincerely, Carrie S. Cox, Executive Chair (signed shareholder letter accompanying the proxy)."
+    },
+    {
+      "relation_type": "HAS_SIGNATORY",
+      "source_entity": "Organon DEF 14A 2026",
+      "target_entity": "Kirke Weaver",
+      "confidence": 0.7,
+      "evidence": "Mr. Weaver serves as Executive Vice President, General Counsel and Corporate Secretary."
+    },
+    {
+      "relation_type": "DISCLOSES_RISK",
+      "source_entity": "Organon DEF 14A 2026",
+      "target_entity": "Risk that ESG strategy may not be executed within expected time frames",
+      "confidence": 0.9,
+      "evidence": "Factors that could cause results to differ materially from those described in the forward-looking statements include our inability to execute upon our ESG strategy within expected time frames or at all."
+    },
+    {
+      "relation_type": "ISSUES_GUIDANCE",
+      "source_entity": "Organon & Co.",
+      "target_entity": "Forward-looking statements regarding 2026 priorities and ESG goals",
+      "confidence": 0.85,
+      "evidence": "Looking to 2026, our priorities are clear: sustaining performance across the portfolio, continuing to reduce leverage, and investing selectively."
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "",
+  "domain_name": "sec-filings",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-29T22:32:27.075533+00:00",
+  "error": null
+}

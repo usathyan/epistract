@@ -1,0 +1,122 @@
+{
+  "document_id": "UPLOAD_2024-06-25_0000000000-24-007148",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "UPLOAD_2024-06-25_0000000000-24-007148",
+      "entity_type": "Filing",
+      "attributes": {
+        "form": "UPLOAD",
+        "filing_date": "2024-06-25",
+        "accession": "0000000000-24-007148",
+        "subject": "SEC staff review-completion letter for Organon Form 10-K FY2023",
+        "file_no": "001-40235",
+        "extraction_status": "full_text_extracted_short_letter",
+        "epistemic_status": "contested"
+      },
+      "confidence": 0.98,
+      "context": "United States securities and exchange commission logo. June 25, 2024. Re: Organon & Co. Form 10-K for Fiscal Year Ended December 31, 2023. File No. 001-40235."
+    },
+    {
+      "name": "Organon & Co.",
+      "entity_type": "Filer",
+      "attributes": {
+        "ticker": "OGN",
+        "address": "30 Hudson Street, Floor 33, Jersey City, New Jersey 07302"
+      },
+      "confidence": 0.99,
+      "context": "Organon & Co. 30 Hudson Street, Floor 33 Jersey City, New Jersey 07302"
+    },
+    {
+      "name": "10-K_2023_Organon",
+      "entity_type": "Filing",
+      "attributes": {
+        "form": "10-K",
+        "period_of_report": "2023-12-31",
+        "file_no": "001-40235",
+        "filer": "Organon & Co."
+      },
+      "confidence": 0.95,
+      "context": "Form 10-K for Fiscal Year Ended December 31, 2023. File No. 001-40235."
+    },
+    {
+      "name": "CORRESP_2024-06-06_0001821825-24-000069",
+      "entity_type": "Filing",
+      "attributes": {
+        "form": "CORRESP",
+        "filing_date": "2024-06-06",
+        "accession": "0001821825-24-000069",
+        "filer": "Organon & Co.",
+        "note": "Pre-positioned reference to companion response correspondence"
+      },
+      "confidence": 0.7,
+      "context": "Response correspondence pairing referenced by orchestrator; not named in this UPLOAD letter body."
+    },
+    {
+      "name": "Matthew Walsh",
+      "entity_type": "Officer",
+      "attributes": {
+        "title": "Chief Financial Officer",
+        "filer": "Organon & Co."
+      },
+      "confidence": 0.99,
+      "context": "Matthew Walsh, Chief Financial Officer, Organon & Co."
+    },
+    {
+      "name": "SEC staff review completion - no further comments",
+      "entity_type": "AdverseAction",
+      "attributes": {
+        "action_type": "comment_letter_closure",
+        "outcome": "review_completed_no_further_comments",
+        "epistemic_status": "asserted",
+        "note": "SEC staff issued only a closing letter; no enumerated staff comments are present in the body. Disclosure responsibility expressly reaffirmed against the registrant."
+      },
+      "confidence": 0.9,
+      "context": "We have completed our review of your filings. We remind you that the company and its management are responsible for the accuracy and adequacy of their disclosures, notwithstanding any review, comments, action or absence of action by the staff."
+    }
+  ],
+  "relations": [
+    {
+      "source_entity": "Organon & Co.",
+      "target_entity": "UPLOAD_2024-06-25_0000000000-24-007148",
+      "relation_type": "FILES",
+      "confidence": 0.6,
+      "evidence": "Comment-letter UPLOAD addressed to Organon CFO; SEC staff is author, but EDGAR pairs the UPLOAD with the Organon filer dossier (File No. 001-40235)."
+    },
+    {
+      "source_entity": "Organon & Co.",
+      "target_entity": "10-K_2023_Organon",
+      "relation_type": "FILES",
+      "confidence": 0.99,
+      "evidence": "Form 10-K for Fiscal Year Ended December 31, 2023. File No. 001-40235."
+    },
+    {
+      "source_entity": "UPLOAD_2024-06-25_0000000000-24-007148",
+      "target_entity": "10-K_2023_Organon",
+      "relation_type": "COMMENTS_ON",
+      "confidence": 0.97,
+      "evidence": "Re: Organon & Co. Form 10-K for Fiscal Year Ended December 31, 2023. We have completed our review of your filings."
+    },
+    {
+      "source_entity": "CORRESP_2024-06-06_0001821825-24-000069",
+      "target_entity": "UPLOAD_2024-06-25_0000000000-24-007148",
+      "relation_type": "RESPONDS_TO",
+      "confidence": 0.8,
+      "evidence": "Closing letter follows the registrants response correspondence dated 2024-06-06; pairing established at orchestrator level."
+    },
+    {
+      "source_entity": "10-K_2023_Organon",
+      "target_entity": "Matthew Walsh",
+      "relation_type": "HAS_SIGNATORY",
+      "confidence": 0.6,
+      "evidence": "Matthew Walsh, Chief Financial Officer, Organon & Co. (addressee of SEC closing letter; certifying officer of the underlying 10-K under SOX 302/906)."
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "",
+  "domain_name": "sec-filings",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-29T22:29:56.690349+00:00",
+  "error": null
+}

@@ -1,0 +1,470 @@
+{
+  "document_id": "faers_methotrexate_rechallenge_10182475",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "golimumab",
+      "entity_type": "Drug",
+      "attributes": {
+        "brand": "SIMPONI ARIA",
+        "substance": "GOLIMUMAB",
+        "atc_class": "Tumor Necrosis Factor Blocker [EPC]",
+        "rxcui": "1431642,1431647",
+        "role": "suspect",
+        "dosage": "3 VIALS (150 MG)",
+        "authorization_number": "125433",
+        "action_taken": "drug withdrawn"
+      },
+      "confidence": 0.98,
+      "context": "Drug -- SIMPONI ARIA ... Substance name(s): GOLIMUMAB ... Pharmacological class: Tumor Necrosis Factor Blocker [EPC]"
+    },
+    {
+      "name": "prednisone",
+      "entity_type": "Drug",
+      "attributes": {
+        "substance": "PREDNISONE",
+        "atc_class": "Corticosteroid [EPC]",
+        "rxcui": "198144,198145,312615",
+        "role": "suspect",
+        "action_taken": "drug withdrawn"
+      },
+      "confidence": 0.95,
+      "context": "Drug -- PREDNISONE. ... Role: Suspect ... Pharmacological class: Corticosteroid [EPC]"
+    },
+    {
+      "name": "methotrexate",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "substance": "METHOTREXATE SODIUM, METHOTREXATE",
+        "atc_class": "Folate Analog Metabolic Inhibitor [EPC]",
+        "rxcui": "105585,1655956,1946772",
+        "role": "concomitant"
+      },
+      "confidence": 0.95,
+      "context": "Drug -- METHOTREXATE ... Role: Concomitant"
+    },
+    {
+      "name": "ergocalciferol",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "brand": "VITAMIN D3",
+        "substance": "ERGOCALCIFEROL",
+        "atc_class": "Provitamin D2 Compound [EPC]",
+        "rxcui": "1367410"
+      },
+      "confidence": 0.9,
+      "context": "Drug -- VITAMIN D3 ... Substance name(s): ERGOCALCIFEROL"
+    },
+    {
+      "name": "fluticasone",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "role": "concomitant"
+      },
+      "confidence": 0.9,
+      "context": "Drug -- FLUTICASONE ... Role: Concomitant"
+    },
+    {
+      "name": "multivitamins",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "role": "concomitant"
+      },
+      "confidence": 0.85,
+      "context": "Drug -- MULTIVITAMINS ... Role: Concomitant"
+    },
+    {
+      "name": "sertraline",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "substance": "SERTRALINE HYDROCHLORIDE",
+        "rxcui": "312938,312940,312941",
+        "brand_alias": "ZOLOFT"
+      },
+      "confidence": 0.95,
+      "context": "Drug -- SERTRALINE ... Drug -- ZOLOFT ... Substance name(s): SERTRALINE HYDROCHLORIDE"
+    },
+    {
+      "name": "acetaminophen",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "brand": "TYLENOL EXTRA STRENGTH",
+        "substance": "ACETAMINOPHEN",
+        "rxcui": "198440,209459,198439"
+      },
+      "confidence": 0.9,
+      "context": "Drug -- TYLENOL EXTRA STRENGTH ... Substance name(s): ACETAMINOPHEN"
+    },
+    {
+      "name": "levothyroxine",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "role": "concomitant"
+      },
+      "confidence": 0.9,
+      "context": "Drug -- LEVOTHYROXINE ... Role: Concomitant"
+    },
+    {
+      "name": "omeprazole",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "substance": "OMEPRAZOLE, SODIUM BICARBONATE, OMEPRAZOLE MAGNESIUM",
+        "atc_class": "Proton Pump Inhibitor [EPC]",
+        "rxcui": "402014,753557,753562"
+      },
+      "confidence": 0.95,
+      "context": "Drug -- OMEPRAZOLE. ... Pharmacological class: Proton Pump Inhibitor [EPC]"
+    },
+    {
+      "name": "folic acid",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "substance": ".ALPHA.-TOCOPHEROL ACETATE, DL-, ASCORBIC ACID, CALCIUM CARBONATE",
+        "atc_class": "Vitamin C [EPC], Vitamin D [EPC], Vitamin B12 [EPC]",
+        "rxcui": "310410,2707361,2733998"
+      },
+      "confidence": 0.85,
+      "context": "Drug -- FOLIC ACID. ... Pharmacological class: Vitamin C [EPC], Vitamin D [EPC], Vitamin B12 [EPC]"
+    },
+    {
+      "name": "lorazepam",
+      "entity_type": "Concomitant",
+      "attributes": {
+        "substance": "LORAZEPAM",
+        "atc_class": "Benzodiazepine [EPC]",
+        "rxcui": "238100,197900,197901"
+      },
+      "confidence": 0.95,
+      "context": "Drug -- LORAZEPAM. ... Pharmacological class: Benzodiazepine [EPC]"
+    },
+    {
+      "name": "Major depression",
+      "entity_type": "AdverseEvent",
+      "attributes": {
+        "meddra_pt": "Major depression",
+        "verbatim_term": "Major depression",
+        "seriousness": "Hospitalization (initial or prolonged)"
+      },
+      "confidence": 0.98,
+      "context": "MedDRA Preferred Term: Major depression"
+    },
+    {
+      "name": "Patient_10182475",
+      "entity_type": "Patient",
+      "attributes": {
+        "sex": "Female",
+        "age_at_onset_years": 60,
+        "age_band": "60-69"
+      },
+      "confidence": 0.98,
+      "context": "Sex: Female; Age at onset: 60 years"
+    },
+    {
+      "name": "Reporter_Physician_US_10182475",
+      "entity_type": "Reporter",
+      "attributes": {
+        "qualification": "Physician",
+        "classification": "HCP",
+        "country": "US"
+      },
+      "confidence": 0.98,
+      "context": "Primary source qualification: Physician; Reporter country: US"
+    },
+    {
+      "name": "Recovering/resolving",
+      "entity_type": "Outcome",
+      "attributes": {
+        "ich_e2b_category": "recovering/resolving"
+      },
+      "confidence": 0.95,
+      "context": "Outcome: Recovering/resolving"
+    },
+    {
+      "name": "FAERS Spontaneous Report 10182475",
+      "entity_type": "ReportType",
+      "attributes": {
+        "safety_report_id": "10182475",
+        "type": "Spontaneous (FAERS)",
+        "receipt_date": "2014-08-11",
+        "receive_date": "2014-05-20",
+        "company_number": "US-JNJFOC-20140507527",
+        "expedited": true,
+        "serious": true
+      },
+      "confidence": 0.99,
+      "context": "Report type: Spontaneous (FAERS); Safety report ID: 10182475"
+    },
+    {
+      "name": "Rheumatoid arthritis (indication)",
+      "entity_type": "Indication",
+      "attributes": {
+        "meddra_term": "Rheumatoid arthritis"
+      },
+      "confidence": 0.98,
+      "context": "Indication: RHEUMATOID ARTHRITIS"
+    },
+    {
+      "name": "Positive rechallenge - golimumab/Major depression",
+      "entity_type": "DechallengeRechallenge",
+      "attributes": {
+        "dechallenge": "drug withdrawn",
+        "rechallenge": "positive - events recurred on reintroduction",
+        "events_recurred": "Major depression",
+        "drug": "golimumab"
+      },
+      "confidence": 0.98,
+      "context": "Action taken with drug: Drug withdrawn. Positive rechallenge - events that recurred when drug was reintroduced: Major depression"
+    },
+    {
+      "name": "Bradford-Hill strongest single-case signal - golimumab/Major depression",
+      "entity_type": "CausalitySignal",
+      "attributes": {
+        "criterion": "temporality + experiment (rechallenge)",
+        "strength": "strongest single-case signal",
+        "source": "HCP physician"
+      },
+      "confidence": 0.92,
+      "context": "Under Bradford-Hill criteria this is the strongest single-case causality signal available."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "REPORTED_BY",
+      "source_entity": "FAERS Spontaneous Report 10182475",
+      "target_entity": "Reporter_Physician_US_10182475",
+      "confidence": 0.98,
+      "evidence": "The report was submitted by a physician in US."
+    },
+    {
+      "relation_type": "EXPERIENCED",
+      "source_entity": "Patient_10182475",
+      "target_entity": "Major depression",
+      "confidence": 0.98,
+      "evidence": "female patient aged 60 years who experienced Major depression"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "Patient_10182475",
+      "target_entity": "golimumab",
+      "confidence": 0.98,
+      "evidence": "after exposure to SIMPONI ARIA"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "Patient_10182475",
+      "target_entity": "prednisone",
+      "confidence": 0.95,
+      "evidence": "after exposure to SIMPONI ARIA, SIMPONI ARIA, PREDNISONE."
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "Patient_10182475",
+      "target_entity": "methotrexate",
+      "confidence": 0.9,
+      "evidence": "Drug -- METHOTREXATE Role: Concomitant"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "Patient_10182475",
+      "target_entity": "ergocalciferol",
+      "confidence": 0.85,
+      "evidence": "Drug -- VITAMIN D3 Role: Concomitant"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "Patient_10182475",
+      "target_entity": "fluticasone",
+      "confidence": 0.85,
+      "evidence": "Drug -- FLUTICASONE Role: Concomitant"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "Patient_10182475",
+      "target_entity": "multivitamins",
+      "confidence": 0.8,
+      "evidence": "Drug -- MULTIVITAMINS Role: Concomitant"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "Patient_10182475",
+      "target_entity": "sertraline",
+      "confidence": 0.9,
+      "evidence": "Drug -- SERTRALINE / Drug -- ZOLOFT Role: Concomitant"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "Patient_10182475",
+      "target_entity": "acetaminophen",
+      "confidence": 0.85,
+      "evidence": "Drug -- TYLENOL EXTRA STRENGTH Role: Concomitant"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "Patient_10182475",
+      "target_entity": "levothyroxine",
+      "confidence": 0.85,
+      "evidence": "Drug -- LEVOTHYROXINE Role: Concomitant"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "Patient_10182475",
+      "target_entity": "omeprazole",
+      "confidence": 0.9,
+      "evidence": "Drug -- OMEPRAZOLE. Role: Concomitant"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "Patient_10182475",
+      "target_entity": "folic acid",
+      "confidence": 0.8,
+      "evidence": "Drug -- FOLIC ACID. Role: Concomitant"
+    },
+    {
+      "relation_type": "TOOK",
+      "source_entity": "Patient_10182475",
+      "target_entity": "lorazepam",
+      "confidence": 0.9,
+      "evidence": "Drug -- LORAZEPAM. Role: Concomitant"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "golimumab",
+      "target_entity": "Rheumatoid arthritis (indication)",
+      "confidence": 0.98,
+      "evidence": "Indication: RHEUMATOID ARTHRITIS (SIMPONI ARIA)"
+    },
+    {
+      "relation_type": "INDICATED_FOR",
+      "source_entity": "prednisone",
+      "target_entity": "Rheumatoid arthritis (indication)",
+      "confidence": 0.95,
+      "evidence": "Drug -- PREDNISONE. Indication: RHEUMATOID ARTHRITIS"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "golimumab",
+      "target_entity": "methotrexate",
+      "confidence": 0.95,
+      "evidence": "Drug -- METHOTREXATE Role: Concomitant (with suspect SIMPONI ARIA)"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "golimumab",
+      "target_entity": "prednisone",
+      "confidence": 0.9,
+      "evidence": "Both listed as suspect drugs in same case"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "golimumab",
+      "target_entity": "sertraline",
+      "confidence": 0.9,
+      "evidence": "Drug -- SERTRALINE/ZOLOFT Role: Concomitant"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "golimumab",
+      "target_entity": "lorazepam",
+      "confidence": 0.85,
+      "evidence": "Drug -- LORAZEPAM Role: Concomitant"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "golimumab",
+      "target_entity": "ergocalciferol",
+      "confidence": 0.8,
+      "evidence": "Drug -- VITAMIN D3 Role: Concomitant"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "golimumab",
+      "target_entity": "fluticasone",
+      "confidence": 0.8,
+      "evidence": "Drug -- FLUTICASONE Role: Concomitant"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "golimumab",
+      "target_entity": "acetaminophen",
+      "confidence": 0.8,
+      "evidence": "Drug -- TYLENOL EXTRA STRENGTH Role: Concomitant"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "golimumab",
+      "target_entity": "omeprazole",
+      "confidence": 0.85,
+      "evidence": "Drug -- OMEPRAZOLE. Role: Concomitant"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "golimumab",
+      "target_entity": "levothyroxine",
+      "confidence": 0.8,
+      "evidence": "Drug -- LEVOTHYROXINE Role: Concomitant"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "golimumab",
+      "target_entity": "folic acid",
+      "confidence": 0.75,
+      "evidence": "Drug -- FOLIC ACID. Role: Concomitant"
+    },
+    {
+      "relation_type": "CO_ADMINISTERED_WITH",
+      "source_entity": "golimumab",
+      "target_entity": "multivitamins",
+      "confidence": 0.75,
+      "evidence": "Drug -- MULTIVITAMINS Role: Concomitant"
+    },
+    {
+      "relation_type": "RESULTED_IN",
+      "source_entity": "Major depression",
+      "target_entity": "Recovering/resolving",
+      "confidence": 0.95,
+      "evidence": "MedDRA Preferred Term: Major depression - Outcome: Recovering/resolving"
+    },
+    {
+      "relation_type": "OCCURRED_AFTER",
+      "source_entity": "Major depression",
+      "target_entity": "golimumab",
+      "confidence": 0.95,
+      "evidence": "experienced Major depression after exposure to SIMPONI ARIA"
+    },
+    {
+      "relation_type": "OCCURRED_AFTER",
+      "source_entity": "Major depression",
+      "target_entity": "prednisone",
+      "confidence": 0.85,
+      "evidence": "experienced Major depression after exposure to SIMPONI ARIA, SIMPONI ARIA, PREDNISONE."
+    },
+    {
+      "relation_type": "RESOLVED_ON_DECHALLENGE",
+      "source_entity": "Major depression",
+      "target_entity": "Positive rechallenge - golimumab/Major depression",
+      "confidence": 0.85,
+      "evidence": "Action taken with drug: Drug withdrawn; outcome recovering/resolving"
+    },
+    {
+      "relation_type": "RECURRED_ON_RECHALLENGE",
+      "source_entity": "Major depression",
+      "target_entity": "Positive rechallenge - golimumab/Major depression",
+      "confidence": 0.95,
+      "evidence": "Positive rechallenge - events that recurred when drug was reintroduced: Major depression"
+    },
+    {
+      "relation_type": "CAUSED_BY",
+      "source_entity": "Major depression",
+      "target_entity": "golimumab",
+      "confidence": 0.92,
+      "evidence": "Positive rechallenge documented ... Under Bradford-Hill criteria this is the strongest single-case causality signal available. Reported by physician (HCP)."
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "claude-opus-4-7",
+  "domain_name": "pharmacovigilance",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-30T16:37:23.448980+00:00",
+  "error": null
+}

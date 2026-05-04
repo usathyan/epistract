@@ -1,0 +1,265 @@
+{
+  "document_id": "8-K_2026-04-27_0001193125-26-178718",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "Organon & Co.",
+      "entity_type": "Filer",
+      "attributes": {
+        "cik": "0001821825",
+        "ticker": "OGN",
+        "exchange": "NYSE",
+        "state_of_incorporation": "Delaware",
+        "irs_ein": "46-4838035",
+        "commission_file_number": "001-40235"
+      },
+      "confidence": 0.99,
+      "context": "Organon & Co. (Exact name of registrant as specified in its charter) ... Common Stock, par value $0.01 per share OGN NYSE"
+    },
+    {
+      "name": "8-K 2026-04-27 Organon Merger Agreement",
+      "entity_type": "Filing",
+      "attributes": {
+        "form_type": "8-K",
+        "filing_date": "2026-04-27",
+        "period_of_report": "2026-04-26",
+        "accession_number": "0001193125-26-178718",
+        "items": [
+          "1.01",
+          "5.02",
+          "7.01",
+          "9.01"
+        ]
+      },
+      "confidence": 0.99,
+      "context": "FORM 8-K CURRENT REPORT ... Date of Report (Date of earliest event reported): April 26, 2026"
+    },
+    {
+      "name": "Sun Pharmaceutical Holdings USA, Inc.",
+      "entity_type": "Filer",
+      "attributes": {
+        "role": "Parent (acquirer)",
+        "state_of_incorporation": "Delaware"
+      },
+      "confidence": 0.9,
+      "context": "Agreement and Plan of Merger ... with Sun Pharmaceutical Holdings USA, Inc., a Delaware corporation (Parent)"
+    },
+    {
+      "name": "Sun Pharmaceutical Industries Limited",
+      "entity_type": "Filer",
+      "attributes": {
+        "role": "India Parent",
+        "jurisdiction": "India"
+      },
+      "confidence": 0.9,
+      "context": "Sun Pharmaceutical Industries Limited, an entity organized under the laws of India (India Parent)"
+    },
+    {
+      "name": "Joseph Morrissey",
+      "entity_type": "Officer",
+      "attributes": {
+        "title": "Chief Executive Officer",
+        "appointment_date": "2026-04-26",
+        "previous_role": "Interim Chief Executive Officer (since 2025-10-26)"
+      },
+      "confidence": 0.99,
+      "context": "On April 26, 2026, Mr. Morrissey was appointed to serve as Chief Executive Officer of the Company on a permanent basis."
+    },
+    {
+      "name": "Carrie S. Cox",
+      "entity_type": "Officer",
+      "attributes": {
+        "title": "Executive Chair",
+        "appointment_date": "2026-04-26",
+        "previous_role": "Interim Executive Chair (since 2025-10-26)"
+      },
+      "confidence": 0.99,
+      "context": "On April 26, 2026, Ms. Cox was appointed to serve as Executive Chair on a non-interim basis."
+    },
+    {
+      "name": "Organon Sun Pharma Merger Consideration $14.00 per share",
+      "entity_type": "Guidance",
+      "attributes": {
+        "type": "merger_consideration",
+        "per_share_price_usd": 14.0,
+        "premium_pct": 103,
+        "unaffected_date": "2026-04-09",
+        "expected_event": "Merger close"
+      },
+      "confidence": 0.95,
+      "context": "each Share ... will be converted into the right to receive $14.00 in cash, without interest ... which represents a 103% premium to the Company\u2019s closing Share price on April 9, 2026"
+    },
+    {
+      "name": "Organon Merger Termination Fee $120 million",
+      "entity_type": "Guidance",
+      "attributes": {
+        "type": "termination_fee",
+        "amount_usd": 120000000,
+        "trigger": "Superior Proposal acceptance"
+      },
+      "confidence": 0.95,
+      "context": "the Company will be required to pay Parent a termination fee of $120,000,000 ... if the Company terminates the Merger Agreement in order to accept a Superior Proposal"
+    },
+    {
+      "name": "Risk: Merger may not close on anticipated terms or timing",
+      "entity_type": "Risk",
+      "attributes": {
+        "category": "transaction_risk",
+        "hedging": "may"
+      },
+      "confidence": 0.9,
+      "context": "uncertainties as to the timing of the Merger; (ii) the risk that the Merger may not be completed on the anticipated terms in a timely manner or at all"
+    },
+    {
+      "name": "Risk: Failure to obtain required regulatory approvals",
+      "entity_type": "Risk",
+      "attributes": {
+        "category": "regulatory_risk",
+        "hedging": "may"
+      },
+      "confidence": 0.9,
+      "context": "the failure to receive any required regulatory approvals from any applicable governmental entities"
+    },
+    {
+      "name": "Risk: Stockholder litigation in connection with the Merger",
+      "entity_type": "Risk",
+      "attributes": {
+        "category": "litigation_risk",
+        "hedging": "may"
+      },
+      "confidence": 0.9,
+      "context": "the risk that stockholder litigation in connection with the Merger may result in significant costs of defense, indemnification and liability"
+    },
+    {
+      "name": "Risk: Competing offers or acquisition proposals",
+      "entity_type": "Risk",
+      "attributes": {
+        "category": "transaction_risk",
+        "hedging": "may"
+      },
+      "confidence": 0.9,
+      "context": "the possibility that competing offers or acquisition proposals for the Company will be made"
+    },
+    {
+      "name": "Risk: Loss of key personnel and customer relationships during pendency",
+      "entity_type": "Risk",
+      "attributes": {
+        "category": "operational_risk",
+        "hedging": "may"
+      },
+      "confidence": 0.85,
+      "context": "the effect of the announcement or pendency of the Merger on the Company\u2019s ability to retain and hire key personnel, its ability to maintain relationships with its customers, suppliers and others"
+    },
+    {
+      "name": "United States",
+      "entity_type": "Geography",
+      "attributes": {
+        "country_code": "US"
+      },
+      "confidence": 0.9,
+      "context": "30 Hudson Street, Floor 33, Jersey City, NJ 07302"
+    },
+    {
+      "name": "India",
+      "entity_type": "Geography",
+      "attributes": {
+        "country_code": "IN"
+      },
+      "confidence": 0.9,
+      "context": "Sun Pharmaceutical Industries Limited, an entity organized under the laws of India"
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "FILES",
+      "source_entity": "Organon & Co.",
+      "target_entity": "8-K 2026-04-27 Organon Merger Agreement",
+      "confidence": 0.99,
+      "evidence": "FORM 8-K CURRENT REPORT ... Organon & Co. (Exact name of registrant as specified in its charter)"
+    },
+    {
+      "relation_type": "HAS_SIGNATORY",
+      "source_entity": "8-K 2026-04-27 Organon Merger Agreement",
+      "target_entity": "Joseph Morrissey",
+      "confidence": 0.85,
+      "evidence": "Item 5.02: Mr. Morrissey was appointed to serve as Chief Executive Officer of the Company on a permanent basis."
+    },
+    {
+      "relation_type": "HAS_SIGNATORY",
+      "source_entity": "8-K 2026-04-27 Organon Merger Agreement",
+      "target_entity": "Carrie S. Cox",
+      "confidence": 0.7,
+      "evidence": "Item 5.02: Ms. Cox was appointed to serve as Executive Chair on a non-interim basis."
+    },
+    {
+      "relation_type": "ISSUES_GUIDANCE",
+      "source_entity": "8-K 2026-04-27 Organon Merger Agreement",
+      "target_entity": "Organon Sun Pharma Merger Consideration $14.00 per share",
+      "confidence": 0.95,
+      "evidence": "each Share ... will be converted into the right to receive $14.00 in cash ... 103% premium"
+    },
+    {
+      "relation_type": "ISSUES_GUIDANCE",
+      "source_entity": "8-K 2026-04-27 Organon Merger Agreement",
+      "target_entity": "Organon Merger Termination Fee $120 million",
+      "confidence": 0.95,
+      "evidence": "termination fee of $120,000,000 ... in connection with the termination of the Merger Agreement"
+    },
+    {
+      "relation_type": "DISCLOSES_RISK",
+      "source_entity": "8-K 2026-04-27 Organon Merger Agreement",
+      "target_entity": "Risk: Merger may not close on anticipated terms or timing",
+      "confidence": 0.95,
+      "evidence": "Cautionary Statement Regarding Forward-Looking Statements: (ii) the risk that the Merger may not be completed on the anticipated terms in a timely manner or at all"
+    },
+    {
+      "relation_type": "DISCLOSES_RISK",
+      "source_entity": "8-K 2026-04-27 Organon Merger Agreement",
+      "target_entity": "Risk: Failure to obtain required regulatory approvals",
+      "confidence": 0.95,
+      "evidence": "the failure to receive any required regulatory approvals from any applicable governmental entities"
+    },
+    {
+      "relation_type": "DISCLOSES_RISK",
+      "source_entity": "8-K 2026-04-27 Organon Merger Agreement",
+      "target_entity": "Risk: Stockholder litigation in connection with the Merger",
+      "confidence": 0.9,
+      "evidence": "stockholder litigation in connection with the Merger may result in significant costs of defense"
+    },
+    {
+      "relation_type": "DISCLOSES_RISK",
+      "source_entity": "8-K 2026-04-27 Organon Merger Agreement",
+      "target_entity": "Risk: Competing offers or acquisition proposals",
+      "confidence": 0.9,
+      "evidence": "the possibility that competing offers or acquisition proposals for the Company will be made"
+    },
+    {
+      "relation_type": "DISCLOSES_RISK",
+      "source_entity": "8-K 2026-04-27 Organon Merger Agreement",
+      "target_entity": "Risk: Loss of key personnel and customer relationships during pendency",
+      "confidence": 0.85,
+      "evidence": "the effect of the announcement or pendency of the Merger on the Company\u2019s ability to retain and hire key personnel"
+    },
+    {
+      "relation_type": "OPERATES_IN",
+      "source_entity": "Organon & Co.",
+      "target_entity": "United States",
+      "confidence": 0.9,
+      "evidence": "30 Hudson Street, Floor 33, Jersey City, NJ 07302"
+    },
+    {
+      "relation_type": "OPERATES_IN",
+      "source_entity": "Sun Pharmaceutical Industries Limited",
+      "target_entity": "India",
+      "confidence": 0.95,
+      "evidence": "Sun Pharmaceutical Industries Limited, an entity organized under the laws of India"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "",
+  "domain_name": "sec-filings",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-29T22:29:42.324476+00:00",
+  "error": null
+}

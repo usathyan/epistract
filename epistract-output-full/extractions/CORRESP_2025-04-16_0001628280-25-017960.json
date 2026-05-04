@@ -1,0 +1,134 @@
+{
+  "document_id": "CORRESP_2025-04-16_0001628280-25-017960",
+  "document_path": "",
+  "chunks_processed": 1,
+  "entities": [
+    {
+      "name": "Merck & Co., Inc.",
+      "entity_type": "Filer",
+      "attributes": {
+        "cik": "0000310158",
+        "ticker": "MRK"
+      },
+      "confidence": 1.0,
+      "context": "Merck & Co., Inc. (\"Merck\" or the \"Company\") is submitting this letter in response to the written comment of the staff"
+    },
+    {
+      "name": "CORRESP 2025-04-16 (acc 0001628280-25-017960)",
+      "entity_type": "Filing",
+      "attributes": {
+        "form_type": "CORRESP",
+        "filing_date": "2025-04-16",
+        "accession": "0001628280-25-017960",
+        "filer": "Merck & Co., Inc."
+      },
+      "confidence": 1.0,
+      "context": "April 16, 2025 ... Merck & Co., Inc. is submitting this letter in response to the written comment of the staff"
+    },
+    {
+      "name": "UPLOAD 2025-04-10 (SEC Staff comment letter to Merck re 10-K FY2024)",
+      "entity_type": "Filing",
+      "attributes": {
+        "form_type": "UPLOAD",
+        "filing_date": "2025-04-10",
+        "addressee": "Caroline Litchfield",
+        "subject": "Form 10-K for the Fiscal Year Ended December 31, 2024"
+      },
+      "confidence": 0.95,
+      "context": "the written comment of the staff (the \"Staff\") of the Securities and Exchange Commission dated April 10, 2025 addressed to Caroline Litchfield, Executive Vice President and Chief Financial Officer, relating to the Company's Form 10-K for the fiscal year ended December 31, 2024"
+    },
+    {
+      "name": "10-K FY2024 (Merck, File No. 1-06571)",
+      "entity_type": "Filing",
+      "attributes": {
+        "form_type": "10-K",
+        "period_of_report": "2024-12-31",
+        "file_number": "1-06571",
+        "filer": "Merck & Co., Inc."
+      },
+      "confidence": 1.0,
+      "context": "Form 10-K for the Fiscal Year Ended December 31, 2024 File No. 1-06571"
+    },
+    {
+      "name": "Jon Filderman",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Vice President, Corporate Legal",
+        "signed": "CORRESP 2025-04-16"
+      },
+      "confidence": 1.0,
+      "context": "/s/ Jon Filderman  Jon Filderman  Vice President, Corporate Legal"
+    },
+    {
+      "name": "Caroline Litchfield",
+      "entity_type": "Officer",
+      "attributes": {
+        "role": "Executive Vice President and Chief Financial Officer"
+      },
+      "confidence": 1.0,
+      "context": "addressed to Caroline Litchfield, Executive Vice President and Chief Financial Officer"
+    },
+    {
+      "name": "Keytruda licensing agreements disclosure dispute (Item 601(b)(10)(ii)(B))",
+      "entity_type": "Risk",
+      "attributes": {
+        "epistemic_status": "contested",
+        "topic": "Whether Merck must file Keytruda-related licensing agreements as material contracts under Item 601(b)(10)(ii)(B) of Regulation S-K",
+        "staff_position": "Keytruda accounted for 46% of 2024 revenues; Staff requested Merck either file the agreements or explain why not substantially dependent",
+        "company_position": "Merck owns all rights to Keytruda (acquired 2007); royalty agreements are non-exclusive licenses on which Merck does not depend; not required to file"
+      },
+      "confidence": 0.95,
+      "context": "We note that Keytruda accounted for 46% of your revenues in 2024. Please either file these agreements pursuant to Item 601(b)(10)(ii)(B) of Regulation S-K or explain why you believe you are not substantially dependent on licensing agreements providing you with the right to sell Keytruda."
+    }
+  ],
+  "relations": [
+    {
+      "relation_type": "FILES",
+      "source_entity": "Merck & Co., Inc.",
+      "target_entity": "CORRESP 2025-04-16 (acc 0001628280-25-017960)",
+      "confidence": 1.0,
+      "evidence": "Merck & Co., Inc. is submitting this letter ... April 16, 2025"
+    },
+    {
+      "relation_type": "RESPONDS_TO",
+      "source_entity": "CORRESP 2025-04-16 (acc 0001628280-25-017960)",
+      "target_entity": "UPLOAD 2025-04-10 (SEC Staff comment letter to Merck re 10-K FY2024)",
+      "confidence": 1.0,
+      "evidence": "submitting this letter in response to the written comment of the staff ... dated April 10, 2025"
+    },
+    {
+      "relation_type": "COMMENTS_ON",
+      "source_entity": "UPLOAD 2025-04-10 (SEC Staff comment letter to Merck re 10-K FY2024)",
+      "target_entity": "10-K FY2024 (Merck, File No. 1-06571)",
+      "confidence": 1.0,
+      "evidence": "relating to the Company's Form 10-K for the fiscal year ended December 31, 2024"
+    },
+    {
+      "relation_type": "HAS_SIGNATORY",
+      "source_entity": "CORRESP 2025-04-16 (acc 0001628280-25-017960)",
+      "target_entity": "Jon Filderman",
+      "confidence": 1.0,
+      "evidence": "/s/ Jon Filderman  Jon Filderman  Vice President, Corporate Legal"
+    },
+    {
+      "relation_type": "FILES",
+      "source_entity": "Merck & Co., Inc.",
+      "target_entity": "10-K FY2024 (Merck, File No. 1-06571)",
+      "confidence": 1.0,
+      "evidence": "Form 10-K for the Fiscal Year Ended December 31, 2024 File No. 1-06571"
+    },
+    {
+      "relation_type": "DISCLOSES_RISK",
+      "source_entity": "CORRESP 2025-04-16 (acc 0001628280-25-017960)",
+      "target_entity": "Keytruda licensing agreements disclosure dispute (Item 601(b)(10)(ii)(B))",
+      "confidence": 0.9,
+      "evidence": "Keytruda accounted for 46% of your revenues in 2024 ... explain why you believe you are not substantially dependent on licensing agreements"
+    }
+  ],
+  "cost_usd": 0.0,
+  "model_used": "",
+  "domain_name": "sec-filings",
+  "chunk_size": 10000,
+  "extracted_at": "2026-04-29T22:54:09.983922+00:00",
+  "error": null
+}
