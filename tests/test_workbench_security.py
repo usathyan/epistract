@@ -5,6 +5,7 @@ Each test exercises a confirmed vulnerability from the research inventory; on th
 unmodified codebase every test in this file FAILS (RED phase). Phases 02, 03, and 04
 drive each test to GREEN.
 """
+
 from __future__ import annotations
 
 import re
@@ -16,7 +17,9 @@ from pydantic import ValidationError
 from examples.workbench.api_chat import ChatRequest
 from examples.workbench.data_loader import WorkbenchData
 
-WORKBENCH_STATIC = Path(__file__).resolve().parent.parent / "examples" / "workbench" / "static"
+WORKBENCH_STATIC = (
+    Path(__file__).resolve().parent.parent / "examples" / "workbench" / "static"
+)
 INDEX_HTML = WORKBENCH_STATIC / "index.html"
 
 
@@ -25,6 +28,7 @@ INDEX_HTML = WORKBENCH_STATIC / "index.html"
 # be sanitized via DOMPurify or replaced with textContent / DOM API construction.
 # This is a static-source check — we are not booting a browser.
 
+
 @pytest.mark.unit
 def test_xss_sanitization():
     """Every innerHTML assignment fed by untrusted data must be sanitized."""
@@ -32,6 +36,7 @@ def test_xss_sanitization():
         WORKBENCH_STATIC / "chat.js",
         WORKBENCH_STATIC / "graph.js",
         WORKBENCH_STATIC / "app.js",
+        WORKBENCH_STATIC / "sidebar.js",  # defense in depth for SIDEBAR-04
     ]
     # Acceptable patterns:
     #   - DOMPurify.sanitize(...)            (Pattern A from RESEARCH)
@@ -46,6 +51,8 @@ def test_xss_sanitization():
     )
     offenders: list[tuple[Path, int, str]] = []
     for f in files_to_check:
+        if not f.exists():
+            continue  # file not yet created (e.g. sidebar.js before Wave 2)
         text = f.read_text(encoding="utf-8")
         for lineno, line in enumerate(text.splitlines(), start=1):
             if not danger_re.search(line):
@@ -63,6 +70,7 @@ def test_xss_sanitization():
 
 # -- SEC-02 -----------------------------------------------------------------
 # Path traversal in get_document_text.
+
 
 @pytest.mark.unit
 def test_path_traversal_blocked(tmp_path):
@@ -82,6 +90,7 @@ def test_path_traversal_blocked(tmp_path):
 # -- SEC-03 -----------------------------------------------------------------
 # Role injection — Pydantic must reject roles outside the allowlist.
 
+
 @pytest.mark.unit
 def test_role_validation():
     """ChatRequest must reject any history entry whose role is not user|assistant."""
@@ -90,7 +99,9 @@ def test_role_validation():
         question="hi",
         history=[{"role": "user", "content": "hello"}],
     )
-    role = ok.history[0].role if hasattr(ok.history[0], "role") else ok.history[0]["role"]
+    role = (
+        ok.history[0].role if hasattr(ok.history[0], "role") else ok.history[0]["role"]
+    )
     assert role == "user"
     # Injection attempt MUST raise.
     with pytest.raises(ValidationError):
@@ -108,6 +119,7 @@ def test_role_validation():
 
 # -- SEC-04 -----------------------------------------------------------------
 # SRI integrity attribute on every CDN script in index.html.
+
 
 @pytest.mark.unit
 def test_sri_hashes_present():
@@ -132,6 +144,7 @@ def test_sri_hashes_present():
 # -- SEC-05 -----------------------------------------------------------------
 # CORS must be restricted to localhost — no wildcard echo.
 
+
 @pytest.mark.unit
 def test_cors_restricted(client):
     """Cross-origin request from a non-localhost origin must not receive ACAO: *."""
@@ -146,3 +159,38 @@ def test_cors_restricted(client):
     )
     # Non-localhost origin must not be reflected back.
     assert "evil.example.com" not in acao
+
+
+# -- SIDEBAR-04 ---------------------------------------------------------------
+# XSS: sidebar.js must not use innerHTML to render graph data.
+# All entity names, relation types, attribute values, and evidence
+# text from graph_data.json must go through textContent or DOM API.
+
+
+@pytest.mark.unit
+def test_sidebar_xss_dom_api():
+    """sidebar.js must not use innerHTML to render graph data (SIDEBAR-04).
+
+    All entity names, relation types, attribute values, and evidence
+    text from graph_data.json must go through textContent or DOM API.
+    This test must fail RED before sidebar.js is created, then pass GREEN
+    after the full DOM-API-only implementation is in place.
+    """
+    sidebar_js = WORKBENCH_STATIC / "sidebar.js"
+    assert sidebar_js.exists(), "sidebar.js must exist (SIDEBAR-04)"
+
+    text = sidebar_js.read_text(encoding="utf-8")
+    # innerHTML is acceptable ONLY for static literal strings.
+    # Detect the dangerous pattern: innerHTML assigned with a template literal
+    # interpolation OR variable/expression concatenation.
+    danger_re = re.compile(r"innerHTML\s*=\s*.*(\$\{|[a-zA-Z_]\w*\s*\+)")
+    offenders = []
+    for lineno, line in enumerate(text.splitlines(), start=1):
+        if danger_re.search(line):
+            offenders.append((lineno, line.strip()))
+
+    assert not offenders, (
+        "sidebar.js uses innerHTML with dynamic graph data -- use textContent "
+        "or createElement instead (SIDEBAR-04):\n"
+        + "\n".join(f"  line {ln}: {src}" for ln, src in offenders)
+    )
