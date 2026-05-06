@@ -381,7 +381,10 @@ function filterGraph() {
         const typeVisible = activeTypes.has(n.entity_type);
         const searchMatch = !searchTerm || (n.name || '').toLowerCase().includes(searchTerm);
         const severityMatch = !severityNodeIds || severityNodeIds.has(n.id);
-        const hidden = !(typeVisible && searchMatch && severityMatch);
+        // DEGREE-01: hide nodes whose total degree (degreeMap, computed at build time
+        // across ALL edges, not currently visible edges) is below the threshold.
+        const degreeOk = (degreeMap[n.id] || 0) >= minDegreeThreshold;
+        const hidden = !(typeVisible && searchMatch && severityMatch && degreeOk);
         return { id: n.id, hidden };
     });
 
@@ -416,7 +419,13 @@ function filterGraph() {
                 ? confidence < confidenceThreshold
                 : confidenceThreshold > 0.5;
 
-            return { id: edgeId, hidden: epistemicHidden || confidenceHidden };
+            // RTYPE-03: hide edges whose relation_type is not in activeRelationTypes.
+            // Edges with no relation_type field remain visible from this dimension
+            // (mirrors the "hasStatus" guard for epistemic_status above).
+            const hasRelType = e.relation_type != null && e.relation_type !== '';
+            const relationHidden = hasRelType && !activeRelationTypes.has(e.relation_type);
+
+            return { id: edgeId, hidden: epistemicHidden || confidenceHidden || relationHidden };
         });
 
         visEdges.update(edgeUpdates);
