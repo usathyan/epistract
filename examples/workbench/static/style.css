@@ -553,6 +553,10 @@ body {
   flex-wrap: wrap;
 }
 
+#graph-panel {
+  position: relative;
+}
+
 .graph-container {
   flex: 1;
   min-height: 300px;
@@ -1189,4 +1193,373 @@ body {
   color: #374151;
   background: #fafafa;
   border-radius: 0 0 12px 12px;
+}
+
+/* =========================================================================
+   Graph Detail Sidebar (Phase 09 — SIDEBAR-01..04)
+   Overlay inside #graph-panel (which has position: relative).
+   NOT a flex child — avoids vis.js canvas resize events on open/close.
+   ========================================================================= */
+
+#graph-detail-sidebar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 320px;
+  background: var(--color-dominant);
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  transform: translateX(100%);
+  transition: transform 0.2s ease-out;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#graph-detail-sidebar:not(.graph-detail-sidebar--closed) {
+  transform: translateX(0);
+}
+
+.graph-detail-sidebar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-md) var(--space-sm);
+  border-bottom: 1px solid #e5e7eb;
+  flex-shrink: 0;
+  gap: var(--space-sm);
+}
+
+.graph-detail-sidebar__title {
+  font-size: var(--size-heading);
+  font-weight: 600;
+  line-height: 1.2;
+  color: #1a1a1a;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.graph-detail-sidebar__badge {
+  font-size: var(--size-label);
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.graph-detail-sidebar__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #666;
+  border-radius: 4px;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.graph-detail-sidebar__close:hover {
+  background: #f3f4f6;
+  color: #1a1a1a;
+}
+
+.graph-detail-sidebar__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.graph-detail-sidebar__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.graph-detail-sidebar__section-label {
+  font-size: var(--size-label);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #666;
+  margin-bottom: var(--space-xs);
+}
+
+.graph-detail-sidebar__attr-row {
+  display: flex;
+  gap: var(--space-sm);
+  font-size: var(--size-data);
+}
+
+.graph-detail-sidebar__attr-key {
+  font-weight: 600;
+  color: #666;
+  white-space: nowrap;
+  font-family: var(--font-data);
+}
+
+.graph-detail-sidebar__attr-value {
+  color: #1a1a1a;
+  word-break: break-word;
+}
+
+.graph-detail-sidebar__relations-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.graph-detail-sidebar__relation-row {
+  font-size: var(--size-data);
+  font-family: var(--font-data);
+  color: #1a1a1a;
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-xs);
+}
+
+.graph-detail-sidebar__relation-type {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.graph-detail-sidebar__pair {
+  font-size: var(--size-data);
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.graph-detail-sidebar__mention {
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.graph-detail-sidebar__mention-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  font-size: var(--size-label);
+  color: #666;
+}
+
+.graph-detail-sidebar__mention-doc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.graph-detail-sidebar__confidence-pill {
+  font-family: var(--font-data);
+  font-size: var(--size-label);
+  background: #f3f4f6;
+  border-radius: 10px;
+  padding: 1px 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.graph-detail-sidebar__evidence {
+  font-size: var(--size-data);
+  color: #1a1a1a;
+  line-height: 1.5;
+  border-left: 3px solid var(--color-accent);
+  padding-left: var(--space-sm);
+  margin: 0;
+}
+
+.graph-detail-sidebar__evidence-empty {
+  font-size: var(--size-data);
+  color: #666;
+  font-style: italic;
+}
+
+.graph-detail-sidebar__ask-btn {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: var(--size-body);
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  margin-top: var(--space-sm);
+}
+
+.graph-detail-sidebar__ask-btn:hover {
+  opacity: 0.9;
+}
+
+.graph-detail-sidebar__empty {
+  color: #666;
+  font-size: var(--size-body);
+  text-align: center;
+  padding: var(--space-lg) var(--space-md);
+}
+
+.graph-detail-sidebar__empty-hint {
+  font-size: var(--size-label);
+  color: #999;
+  margin-top: var(--space-sm);
+}
+
+/* Epistemic badge scoping for sidebar context.
+   Duplicate of .edge-popover rules — sidebar uses same colours, different parent.
+   Keep .edge-popover originals for backward compat during popover removal. */
+.graph-detail-sidebar .epistemic-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: var(--size-label);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.graph-detail-sidebar .epistemic-badge.status-asserted     { background: #dcfce7; color: #166534; }
+.graph-detail-sidebar .epistemic-badge.status-prophetic    { background: #ede9fe; color: #5b21b6; }
+.graph-detail-sidebar .epistemic-badge.status-hypothesized { background: #fef3c7; color: #92400e; }
+.graph-detail-sidebar .epistemic-badge.status-contested    { background: #fee2e2; color: #991b1b; }
+.graph-detail-sidebar .epistemic-badge.status-contradiction { background: #fecaca; color: #7f1d1d; }
+.graph-detail-sidebar .epistemic-badge.status-negative     { background: #f3f4f6; color: #374151; }
+.graph-detail-sidebar .epistemic-badge.status-speculative  { background: #e0e7ff; color: #3730a3; }
+.graph-detail-sidebar .epistemic-badge.status-unknown      { background: #f3f4f6; color: #6b7280; }
+
+/* ---------------------------------------------------------------------------
+   Phase 10 — Graph Interaction and Filters
+   --------------------------------------------------------------------------- */
+
+/* Shared section label for entity-type, epistemic, and confidence controls */
+.filter-section-label {
+  font-size: var(--size-label);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #666;
+  margin: 0 0 var(--space-xs) 0;
+  display: block;
+}
+
+/* Epistemic filter section wrapper */
+#epistemic-filter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+/* Epistemic chip row */
+#epistemic-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+/* Confidence filter section wrapper */
+#confidence-filter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+/* Confidence slider */
+#confidence-slider {
+  width: 100%;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+}
+
+#confidence-slider:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(74, 108, 247, 0.15);
+}
+
+/* ---------------------------------------------------------------------------
+   Phase 11: Relation type dropdown + min-degree slider
+   --------------------------------------------------------------------------- */
+
+/* Relation type filter section wrapper */
+#relation-type-filter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+/* <summary> inherits .filter-section-label font; remove default disclosure marker */
+#relation-type-filter summary.relation-type-summary {
+  cursor: pointer;
+  list-style: none;
+  margin: 0;
+}
+
+#relation-type-filter summary.relation-type-summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Bulk-action button row (Select All / Clear All) */
+.relation-type-actions {
+  display: flex;
+  gap: var(--space-xs);
+  margin: var(--space-xs) 0;
+}
+
+/* Scrollable checkbox panel — D-02: max-height 200px, vertical scroll */
+.relation-type-panel {
+  max-height: 200px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  padding: var(--space-xs);
+  background: var(--color-dominant);
+}
+
+/* Checkbox row inside the panel */
+.relation-type-panel label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--size-label);
+  font-weight: 400;
+  cursor: pointer;
+}
+
+/* Min-degree filter section wrapper — mirrors #confidence-filter */
+#min-degree-filter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+/* Min-degree slider — mirrors #confidence-slider */
+#min-degree-slider {
+  width: 100%;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+}
+
+#min-degree-slider:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(74, 108, 247, 0.15);
 }
