@@ -149,7 +149,10 @@ export function showEdgeDetail(edgeId, visEdges, allNodes) {
     const status = String(edge.epistemic_status || 'unknown').toLowerCase();
     const safeStatusClass = status.replace(/[^a-z0-9_-]/g, '');
     const badge = document.createElement('span');
-    badge.className = 'epistemic-badge status-' + safeStatusClass;
+    badge.className = 'epistemic-badge';
+    if (safeStatusClass) {
+        badge.classList.add('status-' + safeStatusClass);
+    }
     badge.textContent = status;
 
     const closeBtn = _makeCloseButton();
