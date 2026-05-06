@@ -111,6 +111,8 @@ async function loadGraphData() {
         }
 
         buildGraph();
+        buildEpistemicChips();
+        initConfidenceSlider();
     } catch (e) {
         console.error('Failed to load graph data:', e);
         const container = document.getElementById('graph-container');
@@ -353,6 +355,38 @@ function filterGraph() {
 
     visNodes.update(updates);
 
+    // Edge visibility: epistemic status filter + confidence threshold filter (FILTER-01..03)
+    // D-09: confidence slider filters edges only — node visibility is not affected here
+    if (visEdges) {
+        // visEdges IDs are auto-assigned by vis.js in insertion order matching allEdges index
+        const visEdgeIds = visEdges.getIds();
+        const edgeUpdates = visEdgeIds.map((edgeId, i) => {
+            const e = allEdges[i];
+            if (!e) return { id: edgeId, hidden: false };
+
+            const status = e.epistemic_status;
+            const confidence = e.confidence;
+
+            // Epistemic filter:
+            // - Edge with no status: always visible from this dimension
+            // - Edge with status not in activeEpistemicStatuses: hidden (D-07: empty set hides all status-bearing edges)
+            const hasStatus = status != null && status !== '';
+            const epistemicHidden = hasStatus && !activeEpistemicStatuses.has(status);
+
+            // Confidence filter:
+            // - Scored edge (numeric confidence): hidden when confidence < threshold
+            // - Unscored edge (null/undefined): hidden when threshold > 0.5 (D-12)
+            const isScored = typeof confidence === 'number' && isFinite(confidence);
+            const confidenceHidden = isScored
+                ? confidence < confidenceThreshold
+                : confidenceThreshold > 0.5;
+
+            return { id: edgeId, hidden: epistemicHidden || confidenceHidden };
+        });
+
+        visEdges.update(edgeUpdates);
+    }
+
     // Show empty state if all hidden
     const visibleCount = updates.filter(u => !u.hidden).length;
     const container = document.getElementById('graph-container');
@@ -376,3 +410,96 @@ function clearHighlight() {
     highlightedNodeId = null;
 }
 
+
+function buildEpistemicChips() {
+    const container = document.getElementById('epistemic-toggles');
+    const section = document.getElementById('epistemic-filter');
+    if (!container || !section) return;
+
+    // Collect distinct non-empty epistemic_status values
+    const statusSet = new Set();
+    for (const edge of allEdges) {
+        const s = edge.epistemic_status;
+        if (s != null && s !== '') statusSet.add(s);
+    }
+
+    // D-08: hide section entirely when no epistemic data
+    if (statusSet.size === 0) {
+        section.style.display = 'none';
+        return;
+    }
+
+    // Colour map for known epistemic statuses (from UI-SPEC.md)
+    const CHIP_COLORS = {
+        asserted:      { bg: '#dcfce7', text: '#166534' },
+        prophetic:     { bg: '#ede9fe', text: '#5b21b6' },
+        hypothesized:  { bg: '#fef3c7', text: '#92400e' },
+        contested:     { bg: '#fee2e2', text: '#991b1b' },
+        contradiction: { bg: '#fecaca', text: '#7f1d1d' },
+        negative:      { bg: '#f3f4f6', text: '#374151' },
+        speculative:   { bg: '#e0e7ff', text: '#3730a3' },
+        unknown:       { bg: '#f3f4f6', text: '#6b7280' },
+    };
+    const FALLBACK_COLOR = { bg: '#f3f4f6', text: '#6b7280' };
+
+    // Reset chip container and active set
+    container.innerHTML = '';   // safe: clears own controlled container, not graph data
+    activeEpistemicStatuses.clear();
+
+    for (const status of [...statusSet].sort()) {
+        // D-06: all chips active by default
+        activeEpistemicStatuses.add(status);
+
+        const colors = CHIP_COLORS[status] || FALLBACK_COLOR;
+        const btn = document.createElement('button');
+        btn.className = 'toggle-btn epistemic-chip active';
+        btn.dataset.status = status;
+        btn.style.backgroundColor = colors.bg;
+        btn.style.color = colors.text;
+        // XSS discipline: chip label via textContent only (SEC-01 / SIDEBAR-04 pattern)
+        const label = status.charAt(0).toUpperCase() + status.slice(1).replace(/_/g, ' ');
+        btn.textContent = label;
+
+        btn.addEventListener('click', () => {
+            if (activeEpistemicStatuses.has(status)) {
+                activeEpistemicStatuses.delete(status);
+                btn.classList.remove('active');
+            } else {
+                activeEpistemicStatuses.add(status);
+                btn.classList.add('active');
+            }
+            filterGraph();
+        });
+
+        container.appendChild(btn);
+    }
+}
+
+
+function initConfidenceSlider() {
+    const slider = document.getElementById('confidence-slider');
+    const readout = document.getElementById('confidence-value');
+    if (!slider || !readout) return;
+
+    // D-10: default at domain minimum observed confidence; if no scored edges, use 0
+    let domainMin = 0;
+    let foundScored = false;
+    for (const edge of allEdges) {
+        const c = edge.confidence;
+        if (typeof c === 'number' && isFinite(c)) {
+            domainMin = !foundScored ? c : Math.min(domainMin, c);
+            foundScored = true;
+        }
+    }
+
+    confidenceThreshold = domainMin;
+    slider.value = String(domainMin);
+    readout.textContent = domainMin.toFixed(2);
+
+    // D-11: continuous 0.01 steps; update on every input event
+    slider.addEventListener('input', () => {
+        confidenceThreshold = parseFloat(slider.value);
+        readout.textContent = confidenceThreshold.toFixed(2);  // textContent only (SEC-01)
+        filterGraph();
+    });
+}
