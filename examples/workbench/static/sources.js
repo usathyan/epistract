@@ -86,7 +86,7 @@ async function openDocument(docId, highlightSection) {
         const data = await resp.json();
 
         if (data.error) {
-            viewer.innerHTML = `<p class="error-msg">${data.error}</p>`;
+            viewer.innerHTML = `<p class="error-msg">${escapeHtml(data.error)}</p>`;
             return;
         }
 
@@ -101,7 +101,10 @@ async function openDocument(docId, highlightSection) {
             }
         }
 
-        viewer.innerHTML = `<pre class="source-viewer">${text}</pre>`;
+        const pre = document.createElement('pre');
+        pre.className = 'source-viewer';
+        pre.innerHTML = text; // text is escapeHtml(data.text) with safe <mark> highlight tags
+        viewer.replaceChildren(pre);
 
         // Show PDF link
         const pdfLink = document.getElementById('pdf-link');

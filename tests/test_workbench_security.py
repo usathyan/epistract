@@ -32,12 +32,10 @@ INDEX_HTML = WORKBENCH_STATIC / "index.html"
 @pytest.mark.unit
 def test_xss_sanitization():
     """Every innerHTML assignment fed by untrusted data must be sanitized."""
-    files_to_check = [
-        WORKBENCH_STATIC / "chat.js",
-        WORKBENCH_STATIC / "graph.js",
-        WORKBENCH_STATIC / "app.js",
-        WORKBENCH_STATIC / "sidebar.js",  # defense in depth for SIDEBAR-04
-    ]
+    # SEC-07: glob every *.js under examples/workbench/static/ so any newly
+    # added JS file is automatically scanned. sorted() keeps offender order
+    # deterministic across runs and platforms.
+    files_to_check = sorted(WORKBENCH_STATIC.glob("*.js"))
     # Acceptable patterns:
     #   - DOMPurify.sanitize(...)            (Pattern A from RESEARCH)
     #   - .textContent =                      (Pattern B — DOM API)
