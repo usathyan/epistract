@@ -98,6 +98,20 @@
           <!-- Populated dynamically from /api/graph/entity-types + template colors -->
         </div>
 
+        <div id="epistemic-filter">
+          <p class="filter-section-label">Epistemic Status</p>
+          <div id="epistemic-toggles">
+            <!-- Populated dynamically by graph.js buildEpistemicChips() -->
+          </div>
+        </div>
+
+        <div id="confidence-filter">
+          <label class="filter-section-label" for="confidence-slider">
+            Confidence &ge; <span id="confidence-value">0.00</span>
+          </label>
+          <input type="range" id="confidence-slider" min="0" max="1" step="0.01" value="0">
+        </div>
+
         <!-- Severity filter: hidden by default; app.js shows it when the
              current domain emits severity-tagged claims. -->
         <select id="severity-filter" class="severity-filter" style="display:none">
