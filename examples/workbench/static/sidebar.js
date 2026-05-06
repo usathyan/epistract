@@ -14,6 +14,9 @@ let sidebarBody = null;
 // ---------------------------------------------------------------------------
 
 export function initSidebar() {
+    // WR-04: Guard re-initialization — if already set up, skip to avoid
+    // resetting module-level refs while a user has sidebar content open.
+    if (sidebarEl) return;
     sidebarEl = document.getElementById('graph-detail-sidebar');
     if (!sidebarEl) {
         console.warn('graph-detail-sidebar element not found — sidebar.js not initialized');

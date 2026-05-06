@@ -119,6 +119,10 @@ function buildGraph() {
     const container = document.getElementById('graph-container');
     if (!container || !window.vis) return;
 
+    // WR-04: Close sidebar before rebuilding so stale content is not shown
+    // alongside newly rebuilt graph data.
+    hideSidebar();
+
     // Clear placeholder
     container.innerHTML = '';
 
