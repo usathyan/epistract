@@ -1190,3 +1190,51 @@ body {
   background: #fafafa;
   border-radius: 0 0 12px 12px;
 }
+
+/* ---------------------------------------------------------------------------
+   Phase 10 — Graph Interaction and Filters
+   --------------------------------------------------------------------------- */
+
+/* Shared section label for entity-type, epistemic, and confidence controls */
+.filter-section-label {
+  font-size: var(--size-label);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #666;
+  margin: 0 0 var(--space-xs) 0;
+  display: block;
+}
+
+/* Epistemic filter section wrapper */
+#epistemic-filter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+/* Epistemic chip row */
+#epistemic-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+/* Confidence filter section wrapper */
+#confidence-filter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+/* Confidence slider */
+#confidence-slider {
+  width: 100%;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+}
+
+#confidence-slider:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(74, 108, 247, 0.15);
+}
