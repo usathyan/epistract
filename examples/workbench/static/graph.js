@@ -34,6 +34,9 @@ export async function initGraph(opts) {
     if (toggleContainer) {
         try {
             const entityResp = await fetch('/api/graph/entity-types');
+            if (!entityResp.ok) {
+                throw new Error(`Entity-types API returned ${entityResp.status} ${entityResp.statusText}`);
+            }
             const entityData = await entityResp.json();
             toggleContainer.innerHTML = '';
             for (const type of Object.keys(entityData.entity_types || {})) {
@@ -86,6 +89,9 @@ export async function initGraph(opts) {
 async function loadGraphData() {
     try {
         const resp = await fetch('/api/graph');
+        if (!resp.ok) {
+            throw new Error(`Graph API returned ${resp.status} ${resp.statusText}`);
+        }
         const data = await resp.json();
         allNodes = data.nodes || [];
         allEdges = data.edges || [];
@@ -93,6 +99,9 @@ async function loadGraphData() {
         // Load claims data for severity filtering
         try {
             const claimsResp = await fetch('/api/graph/claims');
+            if (!claimsResp.ok) {
+                throw new Error(`Claims API returned ${claimsResp.status} ${claimsResp.statusText}`);
+            }
             window._claimsData = await claimsResp.json();
         } catch (e) {
             window._claimsData = null;
