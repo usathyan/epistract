@@ -1492,3 +1492,74 @@ body {
   outline: none;
   box-shadow: 0 0 0 2px rgba(74, 108, 247, 0.15);
 }
+
+/* ---------------------------------------------------------------------------
+   Phase 11: Relation type dropdown + min-degree slider
+   --------------------------------------------------------------------------- */
+
+/* Relation type filter section wrapper */
+#relation-type-filter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+/* <summary> inherits .filter-section-label font; remove default disclosure marker */
+#relation-type-filter summary.relation-type-summary {
+  cursor: pointer;
+  list-style: none;
+  margin: 0;
+}
+
+#relation-type-filter summary.relation-type-summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Bulk-action button row (Select All / Clear All) */
+.relation-type-actions {
+  display: flex;
+  gap: var(--space-xs);
+  margin: var(--space-xs) 0;
+}
+
+/* Scrollable checkbox panel — D-02: max-height 200px, vertical scroll */
+.relation-type-panel {
+  max-height: 200px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  padding: var(--space-xs);
+  background: var(--color-dominant);
+}
+
+/* Checkbox row inside the panel */
+.relation-type-panel label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--size-label);
+  font-weight: 400;
+  cursor: pointer;
+}
+
+/* Min-degree filter section wrapper — mirrors #confidence-filter */
+#min-degree-filter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+/* Min-degree slider — mirrors #confidence-slider */
+#min-degree-slider {
+  width: 100%;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+}
+
+#min-degree-slider:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(74, 108, 247, 0.15);
+}
