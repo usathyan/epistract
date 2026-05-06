@@ -42,6 +42,11 @@ export async function initGraph(opts) {
             }
             const entityData = await entityResp.json();
             toggleContainer.innerHTML = '';
+            // WR-04: clear stale entity types before re-populating so that
+            // repeated initGraph calls (e.g. domain switch) do not accumulate
+            // types from previous sessions, which would shift palette indices
+            // and leave ghost types active in the filter Set.
+            activeTypes.clear();
             for (const type of Object.keys(entityData.entity_types || {})) {
                 activeTypes.add(type);
                 const btn = document.createElement('button');
@@ -116,13 +121,29 @@ async function loadGraphData() {
     } catch (e) {
         console.error('Failed to load graph data:', e);
         const container = document.getElementById('graph-container');
-        if (container) container.innerHTML = '<p class="graph-placeholder">No entities match the current filters. Try broadening your search or toggling entity types.</p>';
+        // CR-01: use createElement/textContent instead of innerHTML (SEC-01)
+        if (container) {
+            const errMsg = document.createElement('p');
+            errMsg.className = 'graph-placeholder';
+            errMsg.textContent = 'Failed to load graph data. Please reload the page.';
+            container.appendChild(errMsg);
+        }
     }
 }
+
+let _btnListenersAttached = false;   // WR-02: guard fitBtn + resetPinsBtn duplicate registration
+let _sliderListenerAttached = false; // WR-02: guard confidence slider duplicate registration
 
 function buildGraph() {
     const container = document.getElementById('graph-container');
     if (!container || !window.vis) return;
+
+    // WR-03: destroy previous network instance before creating a new one to
+    // prevent canvas context leaks and competing requestAnimationFrame loops.
+    if (network) {
+        network.destroy();
+        network = null;
+    }
 
     // WR-04: Close sidebar before rebuilding so stale content is not shown
     // alongside newly rebuilt graph data.
@@ -281,32 +302,36 @@ function buildGraph() {
         visNodes.update(updates);
     });
 
-    // Fit View: recenter all nodes in the viewport with a short animation.
-    const fitBtn = document.getElementById('graph-fit-btn');
-    if (fitBtn) {
-        fitBtn.addEventListener('click', () => {
-            network.fit({ animation: { duration: 400 } });
-        });
-    }
-
-    // Reset Pins: unpin every pinned node and restore entity-type border color.
-    const resetPinsBtn = document.getElementById('graph-reset-pins-btn');
-    if (resetPinsBtn) {
-        resetPinsBtn.addEventListener('click', () => {
-            if (pinnedNodes.size === 0) return;
-            const unfixUpdates = [...pinnedNodes].map(nodeId => {
-                const node = allNodes.find(n => n.id === nodeId);
-                const entityColor = getEntityColor(node?.entity_type || '');
-                return {
-                    id: nodeId,
-                    fixed: false,
-                    borderWidth: 1,
-                    color: { border: entityColor, highlight: { border: entityColor } },
-                };
+    // WR-02: Guard fit-view and reset-pins listeners against duplicate registration
+    // on repeated buildGraph() calls (mirrors _resizeListenerAttached pattern).
+    if (!_btnListenersAttached) {
+        const fitBtn = document.getElementById('graph-fit-btn');
+        if (fitBtn) {
+            fitBtn.addEventListener('click', () => {
+                network.fit({ animation: { duration: 400 } });
             });
-            visNodes.update(unfixUpdates);
-            pinnedNodes.clear();
-        });
+        }
+
+        const resetPinsBtn = document.getElementById('graph-reset-pins-btn');
+        if (resetPinsBtn) {
+            resetPinsBtn.addEventListener('click', () => {
+                if (pinnedNodes.size === 0) return;
+                const unfixUpdates = [...pinnedNodes].map(nodeId => {
+                    const node = allNodes.find(n => n.id === nodeId);
+                    const entityColor = getEntityColor(node?.entity_type || '');
+                    return {
+                        id: nodeId,
+                        fixed: false,
+                        borderWidth: 1,
+                        color: { border: entityColor, highlight: { border: entityColor } },
+                    };
+                });
+                visNodes.update(unfixUpdates);
+                pinnedNodes.clear();
+            });
+        }
+
+        _btnListenersAttached = true;
     }
 
     // Close sidebar on window resize so it does not float
@@ -358,10 +383,13 @@ function filterGraph() {
     // Edge visibility: epistemic status filter + confidence threshold filter (FILTER-01..03)
     // D-09: confidence slider filters edges only — node visibility is not affected here
     if (visEdges) {
-        // visEdges IDs are auto-assigned by vis.js in insertion order matching allEdges index
-        const visEdgeIds = visEdges.getIds();
-        const edgeUpdates = visEdgeIds.map((edgeId, i) => {
-            const e = allEdges[i];
+        // WR-01: retrieve edge source data by ID from the DataSet record (_data field)
+        // rather than correlating by positional index. vis.DataSet.getIds() does not
+        // guarantee insertion order, so index-based correlation can silently apply
+        // the wrong filter to the wrong edge after any DataSet mutation.
+        const edgeUpdates = visEdges.getIds().map(edgeId => {
+            const record = visEdges.get(edgeId);
+            const e = record?._data;
             if (!e) return { id: edgeId, hidden: false };
 
             const status = e.epistemic_status;
@@ -497,9 +525,13 @@ function initConfidenceSlider() {
     readout.textContent = domainMin.toFixed(2);
 
     // D-11: continuous 0.01 steps; update on every input event
-    slider.addEventListener('input', () => {
-        confidenceThreshold = parseFloat(slider.value);
-        readout.textContent = confidenceThreshold.toFixed(2);  // textContent only (SEC-01)
-        filterGraph();
-    });
+    // WR-02: guard against duplicate registration on repeated initConfidenceSlider() calls.
+    if (!_sliderListenerAttached) {
+        slider.addEventListener('input', () => {
+            confidenceThreshold = parseFloat(slider.value);
+            readout.textContent = confidenceThreshold.toFixed(2);  // textContent only (SEC-01)
+            filterGraph();
+        });
+        _sliderListenerAttached = true;
+    }
 }
