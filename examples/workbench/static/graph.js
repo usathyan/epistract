@@ -15,6 +15,9 @@ let activeTypes = new Set();
 let callbacks = {};
 const pinnedNodes = new Set();
 let _resizeListenerAttached = false;
+let highlightedNodeId = null;             // currently highlighted node; null = no highlight active
+let activeEpistemicStatuses = new Set();  // populated by buildEpistemicChips() (plan 03)
+let confidenceThreshold = 0;             // populated by initConfidenceSlider() (plan 03)
 
 function getEntityColor(type) {
     if (ENTITY_COLORS[type]) return ENTITY_COLORS[type];
@@ -281,6 +284,7 @@ function buildGraph() {
 
 function filterGraph() {
     if (!visNodes) return;
+    clearHighlight();
 
     const searchTerm = (document.getElementById('graph-search')?.value || '').toLowerCase();
     const severityFilter = document.getElementById('severity-filter')?.value || 'all';
@@ -327,5 +331,14 @@ function filterGraph() {
     } else if (visibleCount > 0 && emptyMsg) {
         emptyMsg.remove();
     }
+}
+
+function clearHighlight() {
+    if (!visNodes || !visEdges) return;
+    const nodeRestores = visNodes.getIds().map(id => ({ id, opacity: 1.0 }));
+    const edgeRestores = visEdges.getIds().map(id => ({ id, color: { opacity: 1.0 } }));
+    visNodes.update(nodeRestores);
+    visEdges.update(edgeRestores);
+    highlightedNodeId = null;
 }
 
