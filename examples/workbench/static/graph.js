@@ -18,6 +18,9 @@ let _resizeListenerAttached = false;
 let highlightedNodeId = null;             // currently highlighted node; null = no highlight active
 let activeEpistemicStatuses = new Set();  // populated by buildEpistemicChips() (plan 03)
 let confidenceThreshold = 0;             // populated by initConfidenceSlider() (plan 03)
+let activeRelationTypes = new Set();      // populated by buildRelationTypeDropdown() (Phase 11)
+let minDegreeThreshold = 0;               // populated by initMinDegreeSlider() (Phase 11)
+let maxDegree = 0;                        // hoisted from buildGraph() local; read by initMinDegreeSlider() (Phase 11 D-10)
 
 function getEntityColor(type) {
     if (ENTITY_COLORS[type]) return ENTITY_COLORS[type];
@@ -118,6 +121,8 @@ async function loadGraphData() {
         buildGraph();
         buildEpistemicChips();
         initConfidenceSlider();
+        buildRelationTypeDropdown();
+        initMinDegreeSlider();
     } catch (e) {
         console.error('Failed to load graph data:', e);
         const container = document.getElementById('graph-container');
@@ -133,6 +138,8 @@ async function loadGraphData() {
 
 let _btnListenersAttached = false;   // WR-02: guard fitBtn + resetPinsBtn duplicate registration
 let _sliderListenerAttached = false; // WR-02: guard confidence slider duplicate registration
+let _relationFilterListenerAttached = false; // WR-02: guard relation-type bulk-action listeners
+let _degreeSliderListenerAttached = false;   // WR-02: guard min-degree slider duplicate registration
 
 function buildGraph() {
     const container = document.getElementById('graph-container');
@@ -159,7 +166,7 @@ function buildGraph() {
         degreeMap[e.source] = (degreeMap[e.source] || 0) + 1;
         degreeMap[e.target] = (degreeMap[e.target] || 0) + 1;
     });
-    const maxDegree = Math.max(...Object.values(degreeMap), 1);
+    maxDegree = Math.max(...Object.values(degreeMap), 1);
 
     const nodes = allNodes.map(n => {
         // CR-01: Build tooltip as an HTMLElement so vis.js renders it via DOM
@@ -533,5 +540,129 @@ function initConfidenceSlider() {
             filterGraph();
         });
         _sliderListenerAttached = true;
+    }
+}
+
+
+// ---------------------------------------------------------------------------
+// Phase 11: Relation type dropdown (RTYPE-01, RTYPE-02)
+// Mirrors buildEpistemicChips() structure. Edge-only filter (RTYPE-03 wired
+// in Plan 11.3 by extending filterGraph()).
+// ---------------------------------------------------------------------------
+function buildRelationTypeDropdown() {
+    const container = document.getElementById('relation-type-panel');
+    const section = document.getElementById('relation-type-filter');
+    const selectAllBtn = document.getElementById('relation-select-all');
+    const clearAllBtn = document.getElementById('relation-clear-all');
+    if (!container || !section) return;
+
+    // WR-04: state reset is the FIRST mutation (D-15)
+    activeRelationTypes.clear();
+
+    // Collect distinct non-empty relation_type values
+    const typeSet = new Set();
+    for (const edge of allEdges) {
+        const t = edge.relation_type;
+        if (t != null && t !== '') typeSet.add(t);
+    }
+
+    // D-04: hide section entirely when no relation_type data
+    if (typeSet.size === 0) {
+        section.style.display = 'none';
+        return;
+    }
+    section.style.display = '';
+
+    // Reset checkbox panel (clears own controlled container, no graph data)
+    container.innerHTML = '';
+
+    const sortedTypes = [...typeSet].sort();
+
+    for (const relType of sortedTypes) {
+        // D-03: all types active on load
+        activeRelationTypes.add(relType);
+
+        const row = document.createElement('label');
+
+        const cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.checked = true;
+        cb.dataset.relationType = relType;   // raw snake_case value (D-07)
+
+        const text = document.createElement('span');
+        // D-06: humanize for display only — textContent (SEC-01 invariant)
+        text.textContent = relType.replace(/_/g, ' ');
+
+        row.appendChild(cb);
+        row.appendChild(text);
+        container.appendChild(row);
+
+        cb.addEventListener('change', () => {
+            if (cb.checked) {
+                activeRelationTypes.add(relType);
+            } else {
+                activeRelationTypes.delete(relType);
+            }
+            filterGraph();
+        });
+    }
+
+    // D-14 / WR-02: guard bulk-action listener registration across rebuilds.
+    // Listeners re-read the panel's checkboxes at click-time so they remain
+    // correct after any subsequent buildRelationTypeDropdown() rebuild.
+    if (!_relationFilterListenerAttached && selectAllBtn && clearAllBtn) {
+        selectAllBtn.addEventListener('click', () => {
+            const panel = document.getElementById('relation-type-panel');
+            if (!panel) return;
+            const boxes = panel.querySelectorAll('input[type="checkbox"][data-relation-type]');
+            activeRelationTypes.clear();
+            boxes.forEach(box => {
+                box.checked = true;
+                activeRelationTypes.add(box.dataset.relationType);
+            });
+            filterGraph();
+        });
+
+        clearAllBtn.addEventListener('click', () => {
+            // D-05: empty set hides all relation-type edges
+            const panel = document.getElementById('relation-type-panel');
+            if (!panel) return;
+            const boxes = panel.querySelectorAll('input[type="checkbox"][data-relation-type]');
+            activeRelationTypes.clear();
+            boxes.forEach(box => { box.checked = false; });
+            filterGraph();
+        });
+
+        _relationFilterListenerAttached = true;
+    }
+}
+
+
+// ---------------------------------------------------------------------------
+// Phase 11: Min-degree slider (DEGREE-01)
+// Mirrors initConfidenceSlider() structure. Node-only filter (wired in
+// Plan 11.3 by extending filterGraph() node pass).
+// ---------------------------------------------------------------------------
+function initMinDegreeSlider() {
+    const slider = document.getElementById('min-degree-slider');
+    const readout = document.getElementById('min-degree-value');
+    if (!slider || !readout) return;
+
+    // D-10: read maxDegree from module scope (set by buildGraph())
+    slider.max = String(maxDegree);
+    slider.min = '0';
+    slider.step = '1';
+    slider.value = '0';
+    minDegreeThreshold = 0;
+    readout.textContent = '0';   // textContent only (SEC-01)
+
+    // WR-02: guard against duplicate registration on repeated init calls
+    if (!_degreeSliderListenerAttached) {
+        slider.addEventListener('input', () => {
+            minDegreeThreshold = parseInt(slider.value, 10) || 0;
+            readout.textContent = String(minDegreeThreshold);   // textContent only (SEC-01)
+            filterGraph();
+        });
+        _degreeSliderListenerAttached = true;
     }
 }
