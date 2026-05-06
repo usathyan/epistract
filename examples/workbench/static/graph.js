@@ -166,7 +166,7 @@ function buildGraph() {
         degreeMap[e.source] = (degreeMap[e.source] || 0) + 1;
         degreeMap[e.target] = (degreeMap[e.target] || 0) + 1;
     });
-    maxDegree = Math.max(...Object.values(degreeMap), 1);
+    maxDegree = Object.values(degreeMap).reduce((acc, v) => Math.max(acc, v), 1);
 
     const nodes = allNodes.map(n => {
         // CR-01: Build tooltip as an HTMLElement so vis.js renders it via DOM

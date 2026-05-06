@@ -27,6 +27,7 @@ export function initSources() {
 async function loadDocumentList() {
     try {
         const resp = await fetch('/api/sources');
+        if (!resp.ok) throw new Error(`Sources API returned ${resp.status} ${resp.statusText}`);
         const data = await resp.json();
         documents = data.documents || [];
         renderDocumentList();
@@ -39,22 +40,37 @@ function renderDocumentList() {
     const list = document.getElementById('doc-list');
     if (!list) return;
 
+    list.replaceChildren();
+
     if (documents.length === 0) {
-        list.innerHTML = '<li class="doc-list-empty">No documents found. Run the extraction pipeline first.</li>';
+        const li = document.createElement('li');
+        li.className = 'doc-list-empty';
+        li.textContent = 'No documents found. Run the extraction pipeline first.';
+        list.appendChild(li);
         return;
     }
 
-    list.innerHTML = documents.map(doc => {
-        const safeDocId = doc.doc_id.replace(/'/g, "\\'");
+    for (const doc of documents) {
         const displayName = doc.display_name || doc.filename || doc.doc_id;
-        return `
-        <li>
-            <button class="doc-list-item" data-doc="${doc.doc_id}" onclick="window.dispatchEvent(new CustomEvent('navigate-source', {detail: {docId: '${safeDocId}'}}))">
-                <span class="doc-name">${escapeHtml(displayName)}</span>
-                <span class="doc-size">${formatSize(doc.size_bytes)}</span>
-            </button>
-        </li>`;
-    }).join('');
+        const btn = document.createElement('button');
+        btn.className = 'doc-list-item';
+        btn.dataset.doc = doc.doc_id;
+        btn.addEventListener('click', () => {
+            window.dispatchEvent(new CustomEvent('navigate-source',
+                { detail: { docId: doc.doc_id } }));
+        });
+        const nameSpan = document.createElement('span');
+        nameSpan.className = 'doc-name';
+        nameSpan.textContent = displayName;
+        const sizeSpan = document.createElement('span');
+        sizeSpan.className = 'doc-size';
+        sizeSpan.textContent = formatSize(doc.size_bytes);
+        btn.appendChild(nameSpan);
+        btn.appendChild(sizeSpan);
+        const li = document.createElement('li');
+        li.appendChild(btn);
+        list.appendChild(li);
+    }
 }
 
 async function openDocument(docId, highlightSection) {
@@ -83,6 +99,7 @@ async function openDocument(docId, highlightSection) {
 
     try {
         const resp = await fetch(`/api/sources/${matchedDocId}`);
+        if (!resp.ok) throw new Error(`Document API returned ${resp.status} ${resp.statusText}`);
         const data = await resp.json();
 
         if (data.error) {
@@ -134,7 +151,7 @@ function escapeRegex(str) {
 }
 
 function formatSize(bytes) {
-    if (!bytes) return '';
+    if (!bytes || typeof bytes !== 'number') return '';
     if (bytes < 1024) return bytes + ' B';
     if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
     return (bytes / (1024 * 1024)).toFixed(1) + ' MB';

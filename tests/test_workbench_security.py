@@ -33,9 +33,13 @@ INDEX_HTML = WORKBENCH_STATIC / "index.html"
 def test_xss_sanitization():
     """Every innerHTML assignment fed by untrusted data must be sanitized."""
     # SEC-07: glob every *.js under examples/workbench/static/ so any newly
-    # added JS file is automatically scanned. sorted() keeps offender order
-    # deterministic across runs and platforms.
-    files_to_check = sorted(WORKBENCH_STATIC.glob("*.js"))
+    # added JS file is automatically scanned. Exclude minified third-party
+    # bundles (*.min.js) to avoid false positives on vis-network etc.
+    # sorted() keeps offender order deterministic across runs and platforms.
+    files_to_check = sorted(
+        f for f in WORKBENCH_STATIC.glob("*.js")
+        if not f.name.endswith(".min.js")
+    )
     # Acceptable patterns:
     #   - DOMPurify.sanitize(...)            (Pattern A from RESEARCH)
     #   - .textContent =                      (Pattern B — DOM API)
