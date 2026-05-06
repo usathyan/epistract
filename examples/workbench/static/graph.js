@@ -14,6 +14,7 @@ let visEdges = null;
 let activeTypes = new Set();
 let callbacks = {};
 const pinnedNodes = new Set();
+let _resizeListenerAttached = false;
 
 function getEntityColor(type) {
     if (ENTITY_COLORS[type]) return ENTITY_COLORS[type];
@@ -258,7 +259,11 @@ function buildGraph() {
 
     // Close sidebar on window resize so it does not float
     // in a stale DOM position (RESEARCH Pitfall 4).
-    window.addEventListener('resize', hideSidebar);
+    // CR-02: Guard against accumulating duplicate listeners on repeated buildGraph() calls.
+    if (!_resizeListenerAttached) {
+        window.addEventListener('resize', hideSidebar);
+        _resizeListenerAttached = true;
+    }
 }
 
 function filterGraph() {
