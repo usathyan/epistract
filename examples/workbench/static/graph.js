@@ -1,3 +1,5 @@
+import { initSidebar, showNodeDetail, showEdgeDetail, hideSidebar } from './sidebar.js';
+
 // graph.js - Graph panel: vis.js network, search, entity type toggles
 
 const PALETTE = ['#6366f1','#f59e0b','#ef4444','#10b981','#8b5cf6','#06b6d4','#64748b','#ec4899','#f97316','#14b8a6','#a855f7','#0ea5e9'];
@@ -6,11 +8,16 @@ let ENTITY_COLORS = {};
 let network = null;
 let allNodes = [];
 let allEdges = [];
+let degreeMap = {};          // hoisted for sidebar and Phase 10 neighbourhood highlight
 let visNodes = null;
 let visEdges = null;
 let activeTypes = new Set();
 let callbacks = {};
 const pinnedNodes = new Set();
+let _resizeListenerAttached = false;
+let highlightedNodeId = null;             // currently highlighted node; null = no highlight active
+let activeEpistemicStatuses = new Set();  // populated by buildEpistemicChips() (plan 03)
+let confidenceThreshold = 0;             // populated by initConfidenceSlider() (plan 03)
 
 function getEntityColor(type) {
     if (ENTITY_COLORS[type]) return ENTITY_COLORS[type];
@@ -30,6 +37,9 @@ export async function initGraph(opts) {
     if (toggleContainer) {
         try {
             const entityResp = await fetch('/api/graph/entity-types');
+            if (!entityResp.ok) {
+                throw new Error(`Entity-types API returned ${entityResp.status} ${entityResp.statusText}`);
+            }
             const entityData = await entityResp.json();
             toggleContainer.innerHTML = '';
             for (const type of Object.keys(entityData.entity_types || {})) {
@@ -82,6 +92,9 @@ export async function initGraph(opts) {
 async function loadGraphData() {
     try {
         const resp = await fetch('/api/graph');
+        if (!resp.ok) {
+            throw new Error(`Graph API returned ${resp.status} ${resp.statusText}`);
+        }
         const data = await resp.json();
         allNodes = data.nodes || [];
         allEdges = data.edges || [];
@@ -89,12 +102,17 @@ async function loadGraphData() {
         // Load claims data for severity filtering
         try {
             const claimsResp = await fetch('/api/graph/claims');
+            if (!claimsResp.ok) {
+                throw new Error(`Claims API returned ${claimsResp.status} ${claimsResp.statusText}`);
+            }
             window._claimsData = await claimsResp.json();
         } catch (e) {
             window._claimsData = null;
         }
 
         buildGraph();
+        buildEpistemicChips();
+        initConfidenceSlider();
     } catch (e) {
         console.error('Failed to load graph data:', e);
         const container = document.getElementById('graph-container');
@@ -106,32 +124,42 @@ function buildGraph() {
     const container = document.getElementById('graph-container');
     if (!container || !window.vis) return;
 
+    // WR-04: Close sidebar before rebuilding so stale content is not shown
+    // alongside newly rebuilt graph data.
+    hideSidebar();
+
     // Clear placeholder
     container.innerHTML = '';
 
     // Pre-compute node degree (total incoming + outgoing edges) for visual sizing.
     // Range: 8px (isolated node) to 24px (highest-degree hub). See UI-SPEC Degree-Based Node Sizing.
-    const degreeMap = {};
+    degreeMap = {};
     allEdges.forEach(e => {
         degreeMap[e.source] = (degreeMap[e.source] || 0) + 1;
         degreeMap[e.target] = (degreeMap[e.target] || 0) + 1;
     });
     const maxDegree = Math.max(...Object.values(degreeMap), 1);
 
-    const nodes = allNodes.map(n => ({
-        id: n.id,
-        label: n.name || n.id,
-        color: getEntityColor(n.entity_type),
-        title: `${n.entity_type}: ${n.name}`,
-        shape: 'dot',
-        size: 8 + Math.round(((degreeMap[n.id] || 0) / maxDegree) * 16),
-        font: {
-            size: 12,
-            color: '#1a1a1a',
-            background: 'rgba(255, 255, 255, 0.85)',
-        },
-        _data: n,
-    }));
+    const nodes = allNodes.map(n => {
+        // CR-01: Build tooltip as an HTMLElement so vis.js renders it via DOM
+        // rather than innerHTML, preventing XSS from untrusted node data.
+        const tooltipEl = document.createElement('div');
+        tooltipEl.textContent = `${n.entity_type}: ${n.name}`;
+        return {
+            id: n.id,
+            label: n.name || n.id,
+            color: getEntityColor(n.entity_type),
+            title: tooltipEl,
+            shape: 'dot',
+            size: 8 + Math.round(((degreeMap[n.id] || 0) / maxDegree) * 16),
+            font: {
+                size: 12,
+                color: '#1a1a1a',
+                background: 'rgba(255, 255, 255, 0.85)',
+            },
+            _data: n,
+        };
+    });
 
     const edges = allEdges.map(e => ({
         from: e.source,
@@ -171,22 +199,57 @@ function buildGraph() {
     };
 
     network = new vis.Network(container, { nodes: visNodes, edges: visEdges }, options);
+    initSidebar();
 
     // Disable physics after stabilization (research pitfall 4)
     network.once('stabilized', () => {
         network.setOptions({ physics: false });
     });
 
-    // Click node -> node popover; click edge -> edge popover (D-16)
-    // Node-first ordering: vis populates params.edges with the connected
-    // edges of a clicked node, so we must check nodes before edges.
+    // Click node -> highlight neighbourhood + sidebar; click edge -> sidebar only;
+    // canvas background -> clear highlight + close sidebar. (D-01..D-04)
     network.on('click', (params) => {
         if (params.nodes.length > 0) {
-            showNodePopover(params.nodes[0], params.pointer.DOM);
+            const nodeId = params.nodes[0];
+
+            // D-02: second click on already-highlighted node clears dim; sidebar stays open
+            if (highlightedNodeId === nodeId) {
+                clearHighlight();
+                showNodeDetail(nodeId, allNodes, allEdges, degreeMap, getEntityColor);
+                return;
+            }
+
+            // D-01: highlight this node's 1-hop neighbourhood; dim everything else
+            clearHighlight();
+            highlightedNodeId = nodeId;
+
+            const neighbourIds = new Set(network.getConnectedNodes(nodeId));
+            neighbourIds.add(nodeId);
+
+            const connectedEdgeIds = new Set(network.getConnectedEdges(nodeId));
+
+            // Dim non-neighbourhood nodes to opacity 0.15
+            const nodeDims = visNodes.getIds()
+                .filter(id => !neighbourIds.has(id))
+                .map(id => ({ id, opacity: 0.15 }));
+            if (nodeDims.length) visNodes.update(nodeDims);
+
+            // Dim non-neighbourhood edges to opacity 0.15
+            const edgeDims = visEdges.getIds()
+                .filter(id => !connectedEdgeIds.has(id))
+                .map(id => ({ id, color: { opacity: 0.15 } }));
+            if (edgeDims.length) visEdges.update(edgeDims);
+
+            // Open sidebar (Phase 09 unchanged)
+            showNodeDetail(nodeId, allNodes, allEdges, degreeMap, getEntityColor);
+
         } else if (params.edges && params.edges.length > 0) {
-            showEdgePopover(params.edges[0], params.pointer.DOM);
+            // D-04: edge click — sidebar only, no neighbourhood dim
+            showEdgeDetail(params.edges[0], visEdges, allNodes);
         } else {
-            hideAllPopovers();
+            // D-03: canvas background click — clear highlight AND close sidebar
+            clearHighlight();
+            hideSidebar();
         }
     });
 
@@ -246,13 +309,18 @@ function buildGraph() {
         });
     }
 
-    // Close any open popover on window resize so it does not float
+    // Close sidebar on window resize so it does not float
     // in a stale DOM position (RESEARCH Pitfall 4).
-    window.addEventListener('resize', hideAllPopovers);
+    // CR-02: Guard against accumulating duplicate listeners on repeated buildGraph() calls.
+    if (!_resizeListenerAttached) {
+        window.addEventListener('resize', hideSidebar);
+        _resizeListenerAttached = true;
+    }
 }
 
 function filterGraph() {
     if (!visNodes) return;
+    clearHighlight();
 
     const searchTerm = (document.getElementById('graph-search')?.value || '').toLowerCase();
     const severityFilter = document.getElementById('severity-filter')?.value || 'all';
@@ -287,6 +355,38 @@ function filterGraph() {
 
     visNodes.update(updates);
 
+    // Edge visibility: epistemic status filter + confidence threshold filter (FILTER-01..03)
+    // D-09: confidence slider filters edges only — node visibility is not affected here
+    if (visEdges) {
+        // visEdges IDs are auto-assigned by vis.js in insertion order matching allEdges index
+        const visEdgeIds = visEdges.getIds();
+        const edgeUpdates = visEdgeIds.map((edgeId, i) => {
+            const e = allEdges[i];
+            if (!e) return { id: edgeId, hidden: false };
+
+            const status = e.epistemic_status;
+            const confidence = e.confidence;
+
+            // Epistemic filter:
+            // - Edge with no status: always visible from this dimension
+            // - Edge with status not in activeEpistemicStatuses: hidden (D-07: empty set hides all status-bearing edges)
+            const hasStatus = status != null && status !== '';
+            const epistemicHidden = hasStatus && !activeEpistemicStatuses.has(status);
+
+            // Confidence filter:
+            // - Scored edge (numeric confidence): hidden when confidence < threshold
+            // - Unscored edge (null/undefined): hidden when threshold > 0.5 (D-12)
+            const isScored = typeof confidence === 'number' && isFinite(confidence);
+            const confidenceHidden = isScored
+                ? confidence < confidenceThreshold
+                : confidenceThreshold > 0.5;
+
+            return { id: edgeId, hidden: epistemicHidden || confidenceHidden };
+        });
+
+        visEdges.update(edgeUpdates);
+    }
+
     // Show empty state if all hidden
     const visibleCount = updates.filter(u => !u.hidden).length;
     const container = document.getElementById('graph-container');
@@ -301,235 +401,105 @@ function filterGraph() {
     }
 }
 
-function showNodePopover(nodeId, position) {
-    const node = allNodes.find(n => n.id === nodeId);
-    if (!node) return;
+function clearHighlight() {
+    if (!visNodes || !visEdges) return;
+    const nodeRestores = visNodes.getIds().map(id => ({ id, opacity: 1.0 }));
+    const edgeRestores = visEdges.getIds().map(id => ({ id, color: { opacity: 1.0 } }));
+    visNodes.update(nodeRestores);
+    visEdges.update(edgeRestores);
+    highlightedNodeId = null;
+}
 
-    hideAllPopovers();
 
-    const popover = document.createElement('div');
-    popover.className = 'node-popover';
-    popover.id = 'node-popover';
-    popover.style.left = position.x + 'px';
-    popover.style.top = position.y + 'px';
+function buildEpistemicChips() {
+    const container = document.getElementById('epistemic-toggles');
+    const section = document.getElementById('epistemic-filter');
+    if (!container || !section) return;
 
-    // SEC-01 / VUL-02: every field below comes from graph_data.json (untrusted).
-    // Build the popover via DOM API + textContent so a node name like
-    // `<img src=x onerror=alert(1)>` cannot inject HTML into the workbench.
-    const displayName = node.name || node.id;
-    const attrs = node.attributes || {};
-    const docs = node.source_documents || [];
+    // Collect distinct non-empty epistemic_status values
+    const statusSet = new Set();
+    for (const edge of allEdges) {
+        const s = edge.epistemic_status;
+        if (s != null && s !== '') statusSet.add(s);
+    }
 
-    // Header row: <div><strong>name</strong><span class=entity-badge>type</span></div>
-    const header = document.createElement('div');
-    header.style.cssText = 'display:flex;justify-content:space-between;align-items:center;margin-bottom:8px';
-    const nameEl = document.createElement('strong');
-    nameEl.textContent = displayName;
-    header.appendChild(nameEl);
-    const badge = document.createElement('span');
-    badge.className = 'entity-badge';
-    badge.style.color = getEntityColor(node.entity_type);
-    badge.textContent = node.entity_type || '';
-    header.appendChild(badge);
-    popover.appendChild(header);
+    // D-08: hide section entirely when no epistemic data
+    if (statusSet.size === 0) {
+        section.style.display = 'none';
+        return;
+    }
 
-    // Attribute key/value rows.
-    const attrEntries = Object.entries(attrs).filter(([, v]) => v);
-    if (attrEntries.length) {
-        const attrsWrap = document.createElement('div');
-        attrsWrap.className = 'node-attrs';
-        for (const [k, v] of attrEntries) {
-            const row = document.createElement('div');
-            const labelSpan = document.createElement('span');
-            labelSpan.className = 'label';
-            labelSpan.textContent = k + ':';
-            const dataSpan = document.createElement('span');
-            dataSpan.className = 'data';
-            dataSpan.textContent = ' ' + String(v);
-            row.appendChild(labelSpan);
-            row.appendChild(dataSpan);
-            attrsWrap.appendChild(row);
+    // Colour map for known epistemic statuses (from UI-SPEC.md)
+    const CHIP_COLORS = {
+        asserted:      { bg: '#dcfce7', text: '#166534' },
+        prophetic:     { bg: '#ede9fe', text: '#5b21b6' },
+        hypothesized:  { bg: '#fef3c7', text: '#92400e' },
+        contested:     { bg: '#fee2e2', text: '#991b1b' },
+        contradiction: { bg: '#fecaca', text: '#7f1d1d' },
+        negative:      { bg: '#f3f4f6', text: '#374151' },
+        speculative:   { bg: '#e0e7ff', text: '#3730a3' },
+        unknown:       { bg: '#f3f4f6', text: '#6b7280' },
+    };
+    const FALLBACK_COLOR = { bg: '#f3f4f6', text: '#6b7280' };
+
+    // Reset chip container and active set
+    container.innerHTML = '';   // safe: clears own controlled container, not graph data
+    activeEpistemicStatuses.clear();
+
+    for (const status of [...statusSet].sort()) {
+        // D-06: all chips active by default
+        activeEpistemicStatuses.add(status);
+
+        const colors = CHIP_COLORS[status] || FALLBACK_COLOR;
+        const btn = document.createElement('button');
+        btn.className = 'toggle-btn epistemic-chip active';
+        btn.dataset.status = status;
+        btn.style.backgroundColor = colors.bg;
+        btn.style.color = colors.text;
+        // XSS discipline: chip label via textContent only (SEC-01 / SIDEBAR-04 pattern)
+        const label = status.charAt(0).toUpperCase() + status.slice(1).replace(/_/g, ' ');
+        btn.textContent = label;
+
+        btn.addEventListener('click', () => {
+            if (activeEpistemicStatuses.has(status)) {
+                activeEpistemicStatuses.delete(status);
+                btn.classList.remove('active');
+            } else {
+                activeEpistemicStatuses.add(status);
+                btn.classList.add('active');
+            }
+            filterGraph();
+        });
+
+        container.appendChild(btn);
+    }
+}
+
+
+function initConfidenceSlider() {
+    const slider = document.getElementById('confidence-slider');
+    const readout = document.getElementById('confidence-value');
+    if (!slider || !readout) return;
+
+    // D-10: default at domain minimum observed confidence; if no scored edges, use 0
+    let domainMin = 0;
+    let foundScored = false;
+    for (const edge of allEdges) {
+        const c = edge.confidence;
+        if (typeof c === 'number' && isFinite(c)) {
+            domainMin = !foundScored ? c : Math.min(domainMin, c);
+            foundScored = true;
         }
-        popover.appendChild(attrsWrap);
     }
 
-    // Source documents line.
-    if (docs.length) {
-        const docsWrap = document.createElement('div');
-        docsWrap.className = 'node-docs';
-        const docsLabel = document.createElement('span');
-        docsLabel.className = 'label';
-        docsLabel.textContent = 'Sources:';
-        docsWrap.appendChild(docsLabel);
-        docsWrap.appendChild(document.createTextNode(' ' + docs.join(', ')));
-        popover.appendChild(docsWrap);
-    }
+    confidenceThreshold = domainMin;
+    slider.value = String(domainMin);
+    readout.textContent = domainMin.toFixed(2);
 
-    // Ask-about button — bind via addEventListener so the displayName never
-    // crosses an HTML parser. The dispatched event detail is a plain string.
-    const askBtn = document.createElement('button');
-    askBtn.className = 'ask-about-btn';
-    askBtn.textContent = 'Ask about this';
-    askBtn.addEventListener('click', () => {
-        window.dispatchEvent(new CustomEvent('ask-question', {
-            detail: {
-                question: 'Tell me about ' + displayName + '. What are the key details and relationships?',
-            },
-        }));
+    // D-11: continuous 0.01 steps; update on every input event
+    slider.addEventListener('input', () => {
+        confidenceThreshold = parseFloat(slider.value);
+        readout.textContent = confidenceThreshold.toFixed(2);  // textContent only (SEC-01)
+        filterGraph();
     });
-    popover.appendChild(askBtn);
-
-    document.getElementById('graph-panel').appendChild(popover);
-    clampPopoverIntoView(popover);
-}
-
-function hideNodePopover() {
-    const existing = document.getElementById('node-popover');
-    if (existing) existing.remove();
-}
-
-function hideEdgePopover() {
-    const existing = document.getElementById('edge-popover');
-    if (existing) existing.remove();
-}
-
-function hideAllPopovers() {
-    hideNodePopover();
-    hideEdgePopover();
-}
-
-// Keep popovers fully inside the graph panel. Tall content like a 25-attribute
-// Compound node, or a multi-mention edge popover, can overflow the viewport
-// when anchored at the click point — shift it so the bottom/right edges stay
-// 8px inside the panel. Vertical overflow inside the popover itself is handled
-// by `max-height: 70vh; overflow-y: auto` in CSS.
-function clampPopoverIntoView(popover) {
-    const panel = document.getElementById('graph-panel');
-    if (!panel) return;
-    const panelRect = panel.getBoundingClientRect();
-    const popRect = popover.getBoundingClientRect();
-    const margin = 8;
-
-    let dx = 0;
-    let dy = 0;
-    if (popRect.right > panelRect.right - margin) {
-        dx = (panelRect.right - margin) - popRect.right;
-    }
-    if (popRect.bottom > panelRect.bottom - margin) {
-        dy = (panelRect.bottom - margin) - popRect.bottom;
-    }
-    if (popRect.left + dx < panelRect.left + margin) {
-        dx = (panelRect.left + margin) - popRect.left;
-    }
-    if (popRect.top + dy < panelRect.top + margin) {
-        dy = (panelRect.top + margin) - popRect.top;
-    }
-
-    if (dx !== 0 || dy !== 0) {
-        const currentLeft = parseFloat(popover.style.left) || 0;
-        const currentTop = parseFloat(popover.style.top) || 0;
-        popover.style.left = (currentLeft + dx) + 'px';
-        popover.style.top = (currentTop + dy) + 'px';
-    }
-}
-
-function showEdgePopover(edgeId, position) {
-    const edgeRecord = visEdges && visEdges.get(edgeId);
-    if (!edgeRecord) return;
-    const edge = edgeRecord._data || {};
-
-    hideAllPopovers();
-
-    const popover = document.createElement('div');
-    popover.className = 'edge-popover';
-    popover.id = 'edge-popover';
-    popover.style.left = position.x + 'px';
-    popover.style.top = position.y + 'px';
-
-    // SEC-01 / VUL-02: relation_type, evidence, source_document, and entity
-    // names all originate from extracted document text. Build the popover via
-    // DOM API + textContent so a quote like `<img src=x onerror=alert(1)>`
-    // cannot inject HTML into the workbench.
-
-    // Header: relation_type + epistemic_status badge.
-    const header = document.createElement('div');
-    header.className = 'edge-header';
-    const relationEl = document.createElement('span');
-    relationEl.className = 'edge-relation';
-    relationEl.textContent = edge.relation_type || 'RELATION';
-    header.appendChild(relationEl);
-
-    const status = String(edge.epistemic_status || 'unknown').toLowerCase();
-    const safeStatusClass = status.replace(/[^a-z0-9_-]/g, '');
-    const badge = document.createElement('span');
-    badge.className = 'epistemic-badge status-' + safeStatusClass;
-    badge.textContent = status;
-    header.appendChild(badge);
-    popover.appendChild(header);
-
-    // source -> target row.
-    const sourceNode = allNodes.find(n => n.id === edge.source);
-    const targetNode = allNodes.find(n => n.id === edge.target);
-    const pair = document.createElement('div');
-    pair.className = 'edge-pair';
-    const srcStrong = document.createElement('strong');
-    srcStrong.textContent = sourceNode?.name || edge.source || '';
-    pair.appendChild(srcStrong);
-    pair.appendChild(document.createTextNode(' → '));
-    const tgtStrong = document.createElement('strong');
-    tgtStrong.textContent = targetNode?.name || edge.target || '';
-    pair.appendChild(tgtStrong);
-    popover.appendChild(pair);
-
-    // Multi-source view: one block per mention. This makes contested confidence
-    // (e.g. semaglutide INDICATED_FOR obesity at 0.55 vs 0.97) visible at the
-    // click moment instead of being averaged away.
-    const mentions = Array.isArray(edge.mentions) && edge.mentions.length
-        ? edge.mentions
-        : [{
-            source_document: edge.source_document,
-            confidence: edge.confidence,
-            evidence: edge.evidence,
-        }];
-
-    const mentionsHeader = document.createElement('div');
-    mentionsHeader.className = 'mentions-header';
-    mentionsHeader.textContent = mentions.length === 1
-        ? 'Source'
-        : 'Sources (' + mentions.length + ')';
-    popover.appendChild(mentionsHeader);
-
-    for (const m of mentions) {
-        const block = document.createElement('div');
-        block.className = 'edge-mention';
-
-        const meta = document.createElement('div');
-        meta.className = 'mention-meta';
-        const docEl = document.createElement('span');
-        docEl.textContent = m.source_document || '(unknown source)';
-        meta.appendChild(docEl);
-        const confEl = document.createElement('span');
-        confEl.className = 'confidence-pill';
-        const conf = typeof m.confidence === 'number' ? m.confidence : null;
-        confEl.textContent = conf !== null ? conf.toFixed(2) : '—';
-        meta.appendChild(confEl);
-        block.appendChild(meta);
-
-        const ev = String(m.evidence || '').trim();
-        if (ev) {
-            const quote = document.createElement('blockquote');
-            quote.className = 'mention-evidence';
-            quote.textContent = ev;
-            block.appendChild(quote);
-        } else {
-            const empty = document.createElement('div');
-            empty.className = 'mention-evidence-empty';
-            empty.textContent = 'No evidence quote (typically a document-link relation)';
-            block.appendChild(empty);
-        }
-        popover.appendChild(block);
-    }
-
-    document.getElementById('graph-panel').appendChild(popover);
-    clampPopoverIntoView(popover);
 }
