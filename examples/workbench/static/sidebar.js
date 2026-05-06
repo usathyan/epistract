@@ -181,9 +181,18 @@ export function showEdgeDetail(edgeId, visEdges, allNodes) {
 
     // Evidence/mentions section
     const mentionsSection = _makeSection('Evidence');
+    // WR-03: Use empty array when no mentions — do not fabricate a fallback object
+    // from potentially-undefined edge fields (source_document, confidence, evidence).
     const mentions = Array.isArray(edge.mentions) && edge.mentions.length
         ? edge.mentions
-        : [{ source_document: edge.source_document, confidence: edge.confidence, evidence: edge.evidence }];
+        : [];
+
+    if (!mentions.length) {
+        const emptyEl = document.createElement('div');
+        emptyEl.className = 'graph-detail-sidebar__evidence-empty';
+        emptyEl.textContent = 'No evidence recorded for this relation.';
+        mentionsSection.appendChild(emptyEl);
+    }
 
     for (const m of mentions) {
         const block = document.createElement('div');
