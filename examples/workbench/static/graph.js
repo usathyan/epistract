@@ -204,15 +204,49 @@ function buildGraph() {
         network.setOptions({ physics: false });
     });
 
-    // Click node -> sidebar node detail; click edge -> sidebar edge detail (D-16)
-    // Node-first ordering: vis populates params.edges with the connected
-    // edges of a clicked node, so we must check nodes before edges.
+    // Click node -> highlight neighbourhood + sidebar; click edge -> sidebar only;
+    // canvas background -> clear highlight + close sidebar. (D-01..D-04)
     network.on('click', (params) => {
         if (params.nodes.length > 0) {
-            showNodeDetail(params.nodes[0], allNodes, allEdges, degreeMap, getEntityColor);
+            const nodeId = params.nodes[0];
+
+            // D-02: second click on already-highlighted node clears dim; sidebar stays open
+            if (highlightedNodeId === nodeId) {
+                clearHighlight();
+                showNodeDetail(nodeId, allNodes, allEdges, degreeMap, getEntityColor);
+                return;
+            }
+
+            // D-01: highlight this node's 1-hop neighbourhood; dim everything else
+            clearHighlight();
+            highlightedNodeId = nodeId;
+
+            const neighbourIds = new Set(network.getConnectedNodes(nodeId));
+            neighbourIds.add(nodeId);
+
+            const connectedEdgeIds = new Set(network.getConnectedEdges(nodeId));
+
+            // Dim non-neighbourhood nodes to opacity 0.15
+            const nodeDims = visNodes.getIds()
+                .filter(id => !neighbourIds.has(id))
+                .map(id => ({ id, opacity: 0.15 }));
+            if (nodeDims.length) visNodes.update(nodeDims);
+
+            // Dim non-neighbourhood edges to opacity 0.15
+            const edgeDims = visEdges.getIds()
+                .filter(id => !connectedEdgeIds.has(id))
+                .map(id => ({ id, color: { opacity: 0.15 } }));
+            if (edgeDims.length) visEdges.update(edgeDims);
+
+            // Open sidebar (Phase 09 unchanged)
+            showNodeDetail(nodeId, allNodes, allEdges, degreeMap, getEntityColor);
+
         } else if (params.edges && params.edges.length > 0) {
+            // D-04: edge click — sidebar only, no neighbourhood dim
             showEdgeDetail(params.edges[0], visEdges, allNodes);
         } else {
+            // D-03: canvas background click — clear highlight AND close sidebar
+            clearHighlight();
             hideSidebar();
         }
     });
