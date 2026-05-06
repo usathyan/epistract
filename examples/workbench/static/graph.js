@@ -121,20 +121,26 @@ function buildGraph() {
     });
     const maxDegree = Math.max(...Object.values(degreeMap), 1);
 
-    const nodes = allNodes.map(n => ({
-        id: n.id,
-        label: n.name || n.id,
-        color: getEntityColor(n.entity_type),
-        title: `${n.entity_type}: ${n.name}`,
-        shape: 'dot',
-        size: 8 + Math.round(((degreeMap[n.id] || 0) / maxDegree) * 16),
-        font: {
-            size: 12,
-            color: '#1a1a1a',
-            background: 'rgba(255, 255, 255, 0.85)',
-        },
-        _data: n,
-    }));
+    const nodes = allNodes.map(n => {
+        // CR-01: Build tooltip as an HTMLElement so vis.js renders it via DOM
+        // rather than innerHTML, preventing XSS from untrusted node data.
+        const tooltipEl = document.createElement('div');
+        tooltipEl.textContent = `${n.entity_type}: ${n.name}`;
+        return {
+            id: n.id,
+            label: n.name || n.id,
+            color: getEntityColor(n.entity_type),
+            title: tooltipEl,
+            shape: 'dot',
+            size: 8 + Math.round(((degreeMap[n.id] || 0) / maxDegree) * 16),
+            font: {
+                size: 12,
+                color: '#1a1a1a',
+                background: 'rgba(255, 255, 255, 0.85)',
+            },
+            _data: n,
+        };
+    });
 
     const edges = allEdges.map(e => ({
         from: e.source,
