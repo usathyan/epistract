@@ -128,16 +128,19 @@ def resolve_domain(name: str | None = None) -> dict:
 
 
 def list_domains() -> list[str]:
-    """List all available domain names.
+    """List all active (non-archived) domain names.
 
     Returns:
-        List of domain directory names found in DOMAINS_DIR.
+        Sorted list of active domain directory names found in DOMAINS_DIR.
+        Excludes directories whose names start with '_' (e.g. _archived/).
     """
     if not DOMAINS_DIR.is_dir():
         return []
     return sorted(
         d.name for d in DOMAINS_DIR.iterdir()
-        if d.is_dir() and (d / "domain.yaml").exists()
+        if d.is_dir()
+        and not d.name.startswith("_")
+        and (d / "domain.yaml").exists()
     )
 
 
