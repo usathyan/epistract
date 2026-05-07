@@ -6,6 +6,7 @@ Usage:
     python3 scripts/manage_domains.py info <name>
     python3 scripts/manage_domains.py archive <name>
     python3 scripts/manage_domains.py remove <name>
+    python3 scripts/manage_domains.py validate <name>
 """
 
 from __future__ import annotations
@@ -192,11 +193,7 @@ def cmd_archive(name: str) -> int:
     if dst.exists():
         print(
             json.dumps(
-                {
-                    "error": (
-                        f"Archived copy already exists at {dst}. Remove it first."
-                    )
-                },
+                {"error": (f"Archived copy already exists at {dst}. Remove it first.")},
                 indent=2,
             )
         )
@@ -236,6 +233,106 @@ def cmd_remove(name: str) -> int:
     return 1
 
 
+def validate_schema(entity_types: dict, relation_types: dict) -> list[str]:
+    """Validate schema consistency: no dangling relation endpoints, no duplicate names.
+
+    Implements D-06 validation rules (three checks):
+      1. No duplicate names within entity_types namespace.
+      2. No duplicate names within relation_types namespace.
+      3. No dangling endpoints — for relations that declare source_types, target_types,
+         source, or target fields, every referenced name must exist in entity_types.
+         Relations with no endpoint fields (contracts-domain pattern) are skipped.
+
+    Namespaces are independent: an entity type and a relation type may share a name
+    without triggering a duplicate error.
+
+    Args:
+        entity_types: Dict of entity type name -> definition dict.
+        relation_types: Dict of relation type name -> definition dict.
+
+    Returns:
+        List of error strings. Empty list means schema is valid.
+    """
+    errors: list[str] = []
+    entity_names = set(entity_types.keys())
+
+    # Check 1: No duplicate entity type names
+    entity_keys = list(entity_types.keys())
+    if len(set(entity_keys)) != len(entity_keys):
+        errors.append("Duplicate entity type name detected.")
+
+    # Check 2: No duplicate relation type names
+    rel_keys = list(relation_types.keys())
+    if len(set(rel_keys)) != len(rel_keys):
+        errors.append("Duplicate relation type name detected.")
+
+    # Check 3: No dangling endpoints (only for relations that declare endpoint fields)
+    for rel_name, rel_def in relation_types.items():
+        if not isinstance(rel_def, dict):
+            continue
+        for field in ("source_types", "target_types"):
+            if field in rel_def:
+                for ep in rel_def[field] or []:
+                    if ep not in entity_names:
+                        errors.append(
+                            f"Relation type '{rel_name}' references entity type "
+                            f"'{ep}' which does not exist in entity_types."
+                        )
+        for field in ("source", "target"):
+            if field in rel_def:
+                ep = rel_def[field]
+                if ep not in entity_names:
+                    errors.append(
+                        f"Relation type '{rel_name}' references entity type "
+                        f"'{ep}' which does not exist in entity_types."
+                    )
+    return errors
+
+
+def cmd_validate(name: str) -> int:
+    """Validate schema consistency for a domain and print results as JSON.
+
+    Loads domain.yaml for the named domain, runs validate_schema(), and prints
+    {"valid": bool, "errors": list[str]}. Exits 0 whether or not violations are
+    found — the JSON payload communicates validity. Exits 1 only if domain is not
+    found or domain.yaml cannot be loaded.
+
+    Args:
+        name: Domain name (active or archived).
+
+    Returns:
+        Exit code 0 on success, 1 if domain not found.
+    """
+    src = _validate_active_name(name)
+    if src is None:
+        archived_path = ARCHIVED_DIR / name
+        if archived_path.is_dir() and (archived_path / "domain.yaml").exists():
+            src = archived_path
+        else:
+            print(
+                json.dumps(
+                    {
+                        "error": f"Domain '{name}' not found.",
+                        "hint": "Check 'manage_domains.py list' for available domains.",
+                    },
+                    indent=2,
+                )
+            )
+            return 1
+    yaml_path = src / "domain.yaml"
+    schema = yaml.safe_load(yaml_path.read_text())
+    entity_types = schema.get("entity_types", {}) or {}
+    relation_types = schema.get("relation_types", {}) or {}
+    errors = validate_schema(entity_types, relation_types)
+    print(
+        json.dumps(
+            {"valid": len(errors) == 0, "errors": errors},
+            indent=2,
+        )
+    )
+    return 0
+
+
 # ---------------------------------------------------------------------------
 # Entry point
 # ---------------------------------------------------------------------------
@@ -247,6 +344,7 @@ if __name__ == "__main__":
         "  manage_domains.py info <name>\n"
         "  manage_domains.py archive <name>\n"
         "  manage_domains.py remove <name>\n"
+        "  manage_domains.py validate <name>\n"
     )
 
     if len(sys.argv) < 2:
@@ -257,7 +355,7 @@ if __name__ == "__main__":
 
     if cmd == "list":
         sys.exit(cmd_list())
-    elif cmd in ("info", "archive", "remove"):
+    elif cmd in ("info", "archive", "remove", "validate"):
         if len(sys.argv) < 3:
             print(f"Usage: manage_domains.py {cmd} <name>", file=sys.stderr)
             sys.exit(1)
@@ -268,6 +366,8 @@ if __name__ == "__main__":
             sys.exit(cmd_archive(name))
         elif cmd == "remove":
             sys.exit(cmd_remove(name))
+        elif cmd == "validate":
+            sys.exit(cmd_validate(name))
     else:
         print(f"Unknown command: {cmd}", file=sys.stderr)
         print(_USAGE, file=sys.stderr)
