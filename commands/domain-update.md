@@ -403,10 +403,12 @@ from core.domain_wizard import (
 ```
 
 **Pass 1 — Per-document entity/relation discovery:**
-For each document path:
-1. Read text using `read_sample_documents(doc_paths)`
-2. Build the discovery prompt: `build_schema_discovery_prompt(doc["text"], domain_description)`
-3. Send prompt to Claude. Parse the JSON response to get candidate entity types and
+Call `read_sample_documents(doc_paths)` ONCE before the loop to get all document texts:
+  `doc_texts = read_sample_documents(doc_paths)`
+
+For each `doc` in `doc_texts` (NOT for each path in `doc_paths`):
+1. Build the discovery prompt: `build_schema_discovery_prompt(doc["text"], domain_description)`
+2. Send prompt to Claude. Parse the JSON response to get candidate entity types and
    relation types for this document. Collect all Pass 1 candidate dicts.
 
 **Pass 2 — Cross-document consolidation:**
@@ -541,8 +543,13 @@ EPISTRACT_DOMAINS_DIR="$TMPDIR" python3 scripts/manage_domains.py validate _vali
 rm -rf "$TMPDIR"
 ```
 
-- If `valid` is `false`: display the errors in the format below. Report "No changes made."
-  **STOP.** Do NOT write `domain.yaml`.
+- If `valid` is `false`: display the errors in the format below, then ask the user:
+  "Would you like to skip the suggestion(s) most likely causing this error and retry
+  validation? (yes/no)"
+  - If yes: identify the suggestion(s) by name from the error message, remove them from
+    the accepted list, re-run the merge and validation. If validation now passes, proceed
+    to Step 8d. If it still fails, report "No changes made." **STOP.**
+  - If no: report "No changes made." **STOP.** Do NOT write `domain.yaml`.
 
   ```
   Schema validation failed:
