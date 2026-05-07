@@ -4188,6 +4188,11 @@ def test_epistemic_py_readable():
 
 # Phase 14: Domain Update Wizard — Corpus Re-run (UPDT-05)
 # ========================================================================
+# Logic contract tests: these verify the set-arithmetic and YAML-merge patterns
+# used as inline Python in the Corpus Re-run Branch bash blocks
+# (commands/domain-update.md Steps 5d and 7d). They are intentionally
+# import-free — there is no importable diff or merge function in core/;
+# the logic runs as inline bash-embedded Python at wizard execution time.
 
 
 @pytest.mark.unit
@@ -4262,4 +4267,16 @@ def test_merge_preserves_top_level():
     )
     assert "BIOMARKER" in merged["entity_types"], (
         "Accepted suggestion BIOMARKER not present in merged schema"
+    )
+
+    # Round-trip: verify fields survive yaml.safe_dump serialization (the actual write path)
+    merged_yaml = _yaml.safe_dump(merged, default_flow_style=False, sort_keys=False, allow_unicode=True)
+    reloaded = _yaml.safe_load(merged_yaml)
+    for field in ("name", "version", "description", "system_context", "fallback_relation"):
+        assert field in reloaded, f"Field '{field}' lost during yaml.safe_dump round-trip"
+    assert "COMPOUND" in reloaded["entity_types"], (
+        "Existing entity type COMPOUND lost after yaml.safe_dump round-trip"
+    )
+    assert "BIOMARKER" in reloaded["entity_types"], (
+        "Accepted suggestion BIOMARKER not present after yaml.safe_dump round-trip"
     )
