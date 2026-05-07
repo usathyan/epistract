@@ -3815,3 +3815,220 @@ def test_get_models_openrouter_health_filtered(tmp_path, monkeypatch):
     assert "anthropic/claude-sonnet-4" in model_ids, (
         f"Healthy paid model must be kept; got {model_ids}"
     )
+
+
+# ========================================================================
+# Phase 12: Domain List and Delete Commands (LIST-01, LIST-02, DEL-01–DEL-04)
+# Wave 1 stub tests — RED until Plan 12-02 (manage_domains.py) lands.
+# ========================================================================
+
+import importlib
+import subprocess as _subprocess
+
+
+def _make_synthetic_domain(parent: Path, name: str) -> Path:
+    """Create a minimal domain directory with domain.yaml for testing."""
+    domain_dir = parent / name
+    domain_dir.mkdir(parents=True, exist_ok=True)
+    yaml_content = (
+        "entity_types:\n"
+        "  PERSON: {description: A person}\n"
+        "  ORG: {description: An organization}\n"
+        "relation_types:\n"
+        "  WORKS_FOR: {description: Employment relation}\n"
+    )
+    (domain_dir / "domain.yaml").write_text(yaml_content)
+    (domain_dir / "SKILL.md").write_text("# Skill\nExtract entities.")
+    return domain_dir
+
+
+@pytest.mark.unit
+def test_manage_domains_list_active(tmp_path):
+    """LIST-01: cmd_list() returns at least one row with status='active' for active domains."""
+    import sys
+    import json as _json
+    import os as _os
+    domains_dir = tmp_path / "domains"
+    _make_synthetic_domain(domains_dir, "test-domain")
+
+    manage_script = PROJECT_ROOT / "scripts" / "manage_domains.py"
+    result = _subprocess.run(
+        [sys.executable, str(manage_script), "list"],
+        capture_output=True, text=True,
+        env={**_os.environ, "EPISTRACT_DOMAINS_DIR": str(domains_dir)},
+    )
+    assert result.returncode == 0, f"list returned non-zero: {result.stderr}"
+    rows = _json.loads(result.stdout)
+    active_rows = [r for r in rows if r.get("status") == "active"]
+    assert len(active_rows) >= 1, f"Expected at least one active row, got: {rows}"
+
+
+@pytest.mark.unit
+def test_manage_domains_row_fields(tmp_path):
+    """LIST-02: Each row from cmd_list() contains all required fields."""
+    import sys, json as _json, os as _os
+    domains_dir = tmp_path / "domains"
+    _make_synthetic_domain(domains_dir, "test-domain")
+
+    manage_script = PROJECT_ROOT / "scripts" / "manage_domains.py"
+    result = _subprocess.run(
+        [sys.executable, str(manage_script), "list"],
+        capture_output=True, text=True,
+        env={**_os.environ, "EPISTRACT_DOMAINS_DIR": str(domains_dir)},
+    )
+    assert result.returncode == 0, f"list returned non-zero: {result.stderr}"
+    rows = _json.loads(result.stdout)
+    assert len(rows) >= 1, "Expected at least one domain row"
+    row = rows[0]
+    for field in ("name", "entity_types", "relation_types", "last_modified", "status", "file_count", "dir"):
+        assert field in row, f"Row missing field '{field}': {row}"
+    assert isinstance(row["entity_types"], int), "entity_types must be an int"
+    assert isinstance(row["relation_types"], int), "relation_types must be an int"
+    assert row["entity_types"] == 2, f"Expected 2 entity_types, got {row['entity_types']}"
+    assert row["relation_types"] == 1, f"Expected 1 relation_type, got {row['relation_types']}"
+    assert row["status"] == "active"
+
+
+@pytest.mark.unit
+def test_manage_domains_info_missing(tmp_path):
+    """DEL-01: cmd_info for a nonexistent domain returns error JSON and exit code 1."""
+    import sys, json as _json, os as _os
+    domains_dir = tmp_path / "domains"
+    domains_dir.mkdir()
+
+    manage_script = PROJECT_ROOT / "scripts" / "manage_domains.py"
+    result = _subprocess.run(
+        [sys.executable, str(manage_script), "info", "nonexistent-domain"],
+        capture_output=True, text=True,
+        env={**_os.environ, "EPISTRACT_DOMAINS_DIR": str(domains_dir)},
+    )
+    assert result.returncode == 1, f"Expected exit 1 for missing domain, got {result.returncode}"
+    data = _json.loads(result.stdout)
+    assert "error" in data, f"Expected 'error' key in output: {data}"
+    assert "nonexistent-domain" in data["error"], (
+        f"Error message should name the missing domain: {data['error']}"
+    )
+    # No filesystem mutation: domains_dir is still empty (no subdirectories created)
+    subdirs = [p for p in domains_dir.iterdir() if p.is_dir()]
+    assert subdirs == [], f"No dirs should be created for missing domain lookup, got: {subdirs}"
+
+
+@pytest.mark.unit
+def test_manage_domains_info_fields(tmp_path):
+    """DEL-03: cmd_info returns JSON with 'name' and 'file_count' keys."""
+    import sys, json as _json, os as _os
+    domains_dir = tmp_path / "domains"
+    _make_synthetic_domain(domains_dir, "test-domain")
+
+    manage_script = PROJECT_ROOT / "scripts" / "manage_domains.py"
+    result = _subprocess.run(
+        [sys.executable, str(manage_script), "info", "test-domain"],
+        capture_output=True, text=True,
+        env={**_os.environ, "EPISTRACT_DOMAINS_DIR": str(domains_dir)},
+    )
+    assert result.returncode == 0, f"info returned non-zero: {result.stderr}"
+    data = _json.loads(result.stdout)
+    assert "name" in data, f"Missing 'name' key: {data}"
+    assert "file_count" in data, f"Missing 'file_count' key: {data}"
+    assert data["name"] == "test-domain"
+    assert isinstance(data["file_count"], int)
+    assert data["file_count"] >= 2, (
+        f"Expected at least 2 files (domain.yaml + SKILL.md), got {data['file_count']}"
+    )
+
+
+@pytest.mark.unit
+def test_manage_domains_archive_moves(tmp_path):
+    """DEL-02, DEL-04b: cmd_archive moves domain to _archived/<name>/ and returns success JSON."""
+    import sys, json as _json, os as _os
+    domains_dir = tmp_path / "domains"
+    _make_synthetic_domain(domains_dir, "test-domain")
+
+    manage_script = PROJECT_ROOT / "scripts" / "manage_domains.py"
+    result = _subprocess.run(
+        [sys.executable, str(manage_script), "archive", "test-domain"],
+        capture_output=True, text=True,
+        env={**_os.environ, "EPISTRACT_DOMAINS_DIR": str(domains_dir)},
+    )
+    assert result.returncode == 0, f"archive returned non-zero: {result.stderr}"
+    data = _json.loads(result.stdout)
+    assert "archived" in data, f"Expected 'archived' key in output: {data}"
+    assert data["archived"] == "test-domain"
+
+    # Source directory must no longer exist at active location
+    assert not (domains_dir / "test-domain").exists(), "Source dir should be gone after archive"
+    # Destination must exist at _archived/test-domain/
+    archived_path = domains_dir / "_archived" / "test-domain"
+    assert archived_path.is_dir(), f"Archived dir not found at {archived_path}"
+    assert (archived_path / "domain.yaml").exists(), (
+        "domain.yaml must be present in archived location"
+    )
+
+
+@pytest.mark.unit
+def test_manage_domains_remove_active(tmp_path):
+    """DEL-02: cmd_remove on an active domain permanently deletes it."""
+    import sys, json as _json, os as _os
+    domains_dir = tmp_path / "domains"
+    _make_synthetic_domain(domains_dir, "test-domain")
+
+    manage_script = PROJECT_ROOT / "scripts" / "manage_domains.py"
+    result = _subprocess.run(
+        [sys.executable, str(manage_script), "remove", "test-domain"],
+        capture_output=True, text=True,
+        env={**_os.environ, "EPISTRACT_DOMAINS_DIR": str(domains_dir)},
+    )
+    assert result.returncode == 0, f"remove returned non-zero: {result.stderr}"
+    data = _json.loads(result.stdout)
+    assert "removed" in data, f"Expected 'removed' key: {data}"
+    assert data["removed"] == "test-domain"
+    assert data["from"] == "active"
+    assert not (domains_dir / "test-domain").exists(), "Domain dir must be gone after remove"
+
+
+@pytest.mark.unit
+def test_list_domains_excludes_archived(tmp_path, monkeypatch):
+    """DEL-04a: list_domains() excludes directories starting with '_' (e.g. _archived/)."""
+    from core import domain_resolver
+
+    domains_dir = tmp_path / "domains"
+    _make_synthetic_domain(domains_dir, "active-domain")
+    # Create _archived dir with a valid domain inside — must be excluded from list_domains
+    archived_inner = domains_dir / "_archived" / "old-domain"
+    archived_inner.mkdir(parents=True)
+    (archived_inner / "domain.yaml").write_text("entity_types: {}\nrelation_types: {}\n")
+
+    monkeypatch.setattr(domain_resolver, "DOMAINS_DIR", domains_dir)
+    result = domain_resolver.list_domains()
+    assert "active-domain" in result, f"Active domain must appear: {result}"
+    assert "_archived" not in result, f"_archived must be excluded from list_domains: {result}"
+    assert "old-domain" not in result, (
+        f"Archived subdomain must not appear in active list: {result}"
+    )
+
+
+@pytest.mark.unit
+def test_manage_domains_list_archived(tmp_path):
+    """DEL-04b: cmd_list() includes rows with status='archived' from domains/_archived/."""
+    import sys, json as _json, os as _os
+    domains_dir = tmp_path / "domains"
+    _make_synthetic_domain(domains_dir, "active-domain")
+    # Manually place an archived domain
+    archived_dir = domains_dir / "_archived" / "old-domain"
+    archived_dir.mkdir(parents=True)
+    (archived_dir / "domain.yaml").write_text(
+        "entity_types:\n  PERSON: {description: A person}\n"
+        "relation_types:\n  KNOWS: {description: Relationship}\n"
+    )
+
+    manage_script = PROJECT_ROOT / "scripts" / "manage_domains.py"
+    result = _subprocess.run(
+        [sys.executable, str(manage_script), "list"],
+        capture_output=True, text=True,
+        env={**_os.environ, "EPISTRACT_DOMAINS_DIR": str(domains_dir)},
+    )
+    assert result.returncode == 0, f"list returned non-zero: {result.stderr}"
+    rows = _json.loads(result.stdout)
+    archived_rows = [r for r in rows if r.get("status") == "archived"]
+    assert len(archived_rows) >= 1, f"Expected at least one archived row, got: {rows}"
+    assert archived_rows[0]["name"] == "old-domain"
