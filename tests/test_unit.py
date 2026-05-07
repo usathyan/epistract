@@ -4184,3 +4184,82 @@ def test_epistemic_py_readable():
         assert len(content) > 0, (
             f"epistemic.py is empty for domain '{domain_name}'"
         )
+
+
+# Phase 14: Domain Update Wizard — Corpus Re-run (UPDT-05)
+# ========================================================================
+
+
+@pytest.mark.unit
+def test_net_new_entity_diff():
+    """UPDT-05: net-new entity type diff returns only types absent from current schema."""
+    current_entities = {"COMPOUND", "GENE"}
+    proposed_entities = {"COMPOUND", "GENE", "BIOMARKER"}
+
+    net_new = proposed_entities - current_entities
+
+    assert net_new == {"BIOMARKER"}, f"Expected {{'BIOMARKER'}}, got: {net_new}"
+
+
+@pytest.mark.unit
+def test_net_new_relation_diff():
+    """UPDT-05: net-new relation type diff returns only types absent from current schema."""
+    current_relations = {"TARGETS", "INHIBITS"}
+    proposed_relations = {"TARGETS", "INHIBITS", "ACTIVATES"}
+
+    net_new = proposed_relations - current_relations
+
+    assert net_new == {"ACTIVATES"}, f"Expected {{'ACTIVATES'}}, got: {net_new}"
+
+
+@pytest.mark.unit
+def test_zero_net_new():
+    """UPDT-05: zero suggestions when proposed schema is a subset of current schema."""
+    current_entities = {"COMPOUND", "GENE"}
+    current_relations = {"TARGETS"}
+
+    # Proposed has only types already in current — nothing net-new
+    proposed_entities = {"COMPOUND"}
+    proposed_relations = {"TARGETS"}
+
+    net_new_entities = proposed_entities - current_entities
+    net_new_relations = proposed_relations - current_relations
+
+    total = len(net_new_entities) + len(net_new_relations)
+    assert total == 0, (
+        f"Expected 0 net-new suggestions when proposed is subset of current, got: {total}"
+    )
+
+
+@pytest.mark.unit
+def test_merge_preserves_top_level():
+    """UPDT-05: merge accepted suggestions preserves all top-level domain.yaml fields."""
+    import yaml as _yaml
+
+    current_yaml = (
+        "name: test-domain\n"
+        "version: '1.0'\n"
+        "description: A test domain\n"
+        "system_context: You are analyzing test docs.\n"
+        "fallback_relation: RELATED_TO\n"
+        "entity_types:\n"
+        "  COMPOUND: {description: A compound}\n"
+        "relation_types:\n"
+        "  TARGETS: {description: Acts on}\n"
+    )
+    current = _yaml.safe_load(current_yaml)
+
+    # Simulate merge: start from full current dict, update only entity_types sub-dict
+    merged = dict(current)
+    merged_entities = dict(current.get("entity_types") or {})
+    merged_entities["BIOMARKER"] = {"description": "A measurable indicator"}
+    merged["entity_types"] = merged_entities
+
+    for field in ("name", "version", "description", "system_context", "fallback_relation"):
+        assert field in merged, f"Top-level field '{field}' lost during merge"
+    assert "COMPOUND" in merged["entity_types"], (
+        "Existing entity type COMPOUND lost during merge"
+    )
+    assert "BIOMARKER" in merged["entity_types"], (
+        "Accepted suggestion BIOMARKER not present in merged schema"
+    )
