@@ -28,6 +28,7 @@ Editable components:
   1. Schema (domain.yaml)              — add/remove/rename entity and relation types
   2. Extraction prompt (SKILL.md)      — revise LLM extraction instructions
   3. Epistemic analysis (epistemic.py) — adjust confidence tiers and conflict rules
+  4. Re-run corpus analysis            — analyze new documents and suggest schema additions
 
 Examples:
   /epistract:domain-update contracts
@@ -86,8 +87,9 @@ What would you like to edit?
   1. Schema (domain.yaml)              — add/remove/rename entity and relation types
   2. Extraction prompt (SKILL.md)      — revise LLM extraction instructions
   3. Epistemic analysis (epistemic.py) — adjust confidence tiers and conflict rules
+  4. Re-run corpus analysis            — analyze new documents and suggest schema additions
 
-Type 1, 2, or 3 to continue, or anything else to cancel.
+Type 1, 2, 3, or 4 to continue, or anything else to cancel.
 ```
 
 **Wait for the user to respond before proceeding. Do not auto-advance. Do not skip this
@@ -96,6 +98,7 @@ step.**
 - If user types `1`: proceed to the **Schema Branch** (Step 3a).
 - If user types `2`: proceed to the **Extraction Prompt Branch** (Step 3b).
 - If user types `3`: proceed to the **Epistemic Analysis Branch** (Step 3c).
+- If user types `4`: proceed to the **Corpus Re-run Branch** (Step 3d).
 - Anything else: report "Cancelled. No changes made." **STOP.**
 
 ---
