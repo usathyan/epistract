@@ -4156,3 +4156,31 @@ def test_schema_validate_no_endpoints(tmp_path):
     assert data["errors"] == [], (
         f"Expected empty errors for no-endpoint schema, got: {data['errors']}"
     )
+
+
+@pytest.mark.unit
+def test_skill_md_readable():
+    """UPDT-03: SKILL.md exists and is non-empty for all shipped domains."""
+    for domain_name in ("drug-discovery", "contracts"):
+        skill_path = PROJECT_ROOT / "domains" / domain_name / "SKILL.md"
+        assert skill_path.exists(), (
+            f"SKILL.md not found for domain '{domain_name}' at {skill_path}"
+        )
+        content = skill_path.read_text()
+        assert len(content) > 0, (
+            f"SKILL.md is empty for domain '{domain_name}'"
+        )
+
+
+@pytest.mark.unit
+def test_epistemic_py_readable():
+    """UPDT-04: epistemic.py exists and is non-empty for all shipped domains."""
+    for domain_name in ("drug-discovery", "contracts"):
+        ep_path = PROJECT_ROOT / "domains" / domain_name / "epistemic.py"
+        assert ep_path.exists(), (
+            f"epistemic.py not found for domain '{domain_name}' at {ep_path}"
+        )
+        content = ep_path.read_text()
+        assert len(content) > 0, (
+            f"epistemic.py is empty for domain '{domain_name}'"
+        )
