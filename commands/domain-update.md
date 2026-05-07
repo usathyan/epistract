@@ -363,8 +363,15 @@ step.**
 - If the user provides fewer than 2 paths: report "At least 2 documents are required for
   corpus analysis." Return to this prompt. Do NOT advance.
 - If the user provides 2–5 paths: verify each path exists and is readable. If any path is
-  unreadable, warn the user and ask them to re-enter. Proceed to Step 4d once 2 or more
-  valid paths are confirmed.
+  unreadable, warn the user and ask them to re-enter. After confirming each path exists and
+  is readable, also reject any path that:
+  - Contains `..` components after resolving the real path (`os.path.realpath()`)
+  - Does not end in a supported document extension (`.pdf`, `.docx`, `.html`, `.txt`,
+    `.xls`, `.xlsx`, `.eml`, `.md`, or other common text/document formats)
+  - Is a symlink pointing outside the directory of the first provided path
+
+  Report rejected paths with a clear reason and ask the user to re-enter valid paths.
+  Proceed to Step 4d once 2 or more valid paths are confirmed.
 
 ### Step 4d: Read current schema and run 3-pass corpus analysis
 
