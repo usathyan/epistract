@@ -417,6 +417,9 @@ For each document path:
 Run the following to compute the net-new type suggestions (set subtraction on key names
 only — existing type descriptions are never compared per D-01):
 
+Store the Pass 3 JSON response string in the variable `PASS3_JSON` (the raw JSON text
+returned by Claude, not evaluated as Python). Then run:
+
 ```bash
 python3 << 'DIFF_EOF'
 import yaml, json
@@ -426,7 +429,8 @@ current = yaml.safe_load(Path('<dir>/domain.yaml').read_text())
 current_entities = set((current.get('entity_types') or {}).keys())
 current_relations = set((current.get('relation_types') or {}).keys())
 
-proposed = <pass3-output-as-python-dict>
+# Load Pass 3 output via json.loads() — never embed LLM output as Python source
+proposed = json.loads('<pass3-output-as-json-string>')
 proposed_entities = set(proposed.get('entity_types', {}).keys())
 proposed_relations = set(proposed.get('relation_types', {}).keys())
 
