@@ -74,9 +74,12 @@ def _build_domain_row(domain_dir: Path, yaml_path: Path, status: str) -> dict:
         Dict with keys: name, entity_types, relation_types, last_modified,
         status, file_count, dir.
     """
-    schema = yaml.safe_load(yaml_path.read_text())
-    entity_count = len(schema.get("entity_types", {}))
-    relation_count = len(schema.get("relation_types", {}))
+    try:
+        schema = yaml.safe_load(yaml_path.read_text()) or {}
+    except yaml.YAMLError as exc:
+        raise ValueError(f"Malformed domain.yaml at {yaml_path}: {exc}") from exc
+    entity_count = len(schema.get("entity_types", {}) or {})
+    relation_count = len(schema.get("relation_types", {}) or {})
     mtime = os.path.getmtime(yaml_path)
     last_modified = datetime.fromtimestamp(mtime, tz=timezone.utc).strftime("%Y-%m-%d")
     file_count = len(list(domain_dir.rglob("*")))
@@ -132,9 +135,17 @@ def cmd_info(name: str) -> int:
     """
     src = _validate_active_name(name)
     if src is None:
-        # Check archived location before returning not-found error
-        archived_path = ARCHIVED_DIR / name
-        if archived_path.is_dir() and (archived_path / "domain.yaml").exists():
+        # Check archived location via enumeration (rejects traversal strings)
+        archived_path = None
+        if ARCHIVED_DIR.is_dir():
+            archived_names = {
+                d.name
+                for d in ARCHIVED_DIR.iterdir()
+                if d.is_dir() and (d / "domain.yaml").exists()
+            }
+            if name in archived_names:
+                archived_path = ARCHIVED_DIR / name
+        if archived_path is not None:
             print(
                 json.dumps(
                     _build_domain_row(
@@ -154,16 +165,8 @@ def cmd_info(name: str) -> int:
             )
         )
         return 1
-    yaml_path = src / "domain.yaml"
-    if not yaml_path.exists():
-        print(
-            json.dumps(
-                {"error": f"Domain '{name}' directory exists but has no domain.yaml."},
-                indent=2,
-            )
-        )
-        return 1
-    print(json.dumps(_build_domain_row(src, yaml_path, "active"), indent=2))
+    # _validate_active_name already confirms domain.yaml exists
+    print(json.dumps(_build_domain_row(src, src / "domain.yaml", "active"), indent=2))
     return 0
 
 
@@ -212,18 +215,23 @@ def cmd_remove(name: str) -> int:
     Returns:
         Exit code 0 on success, 1 if domain not found.
     """
-    # Check active location first
-    src = DOMAINS_DIR / name
-    if src.is_dir() and (src / "domain.yaml").exists():
+    # Check active location via enumeration (rejects traversal strings)
+    src = _validate_active_name(name)
+    if src is not None:
         shutil.rmtree(src)
         print(json.dumps({"removed": name, "from": "active"}, indent=2))
         return 0
-    # Check archived location
-    archived = ARCHIVED_DIR / name
-    if archived.is_dir() and (archived / "domain.yaml").exists():
-        shutil.rmtree(archived)
-        print(json.dumps({"removed": name, "from": "archived"}, indent=2))
-        return 0
+    # Check archived location via enumeration (rejects traversal strings)
+    if ARCHIVED_DIR.is_dir():
+        archived_names = {
+            d.name
+            for d in ARCHIVED_DIR.iterdir()
+            if d.is_dir() and (d / "domain.yaml").exists()
+        }
+        if name in archived_names:
+            shutil.rmtree(ARCHIVED_DIR / name)
+            print(json.dumps({"removed": name, "from": "archived"}, indent=2))
+            return 0
     print(
         json.dumps(
             {"error": f"Domain '{name}' not found (active or archived)."},
@@ -256,17 +264,11 @@ def validate_schema(entity_types: dict, relation_types: dict) -> list[str]:
     errors: list[str] = []
     entity_names = set(entity_types.keys())
 
-    # Check 1: No duplicate entity type names
-    entity_keys = list(entity_types.keys())
-    if len(set(entity_keys)) != len(entity_keys):
-        errors.append("Duplicate entity type name detected.")
+    # Duplicate-name checks: Python dicts and yaml.safe_load both deduplicate keys
+    # before this function sees them, so duplicates cannot be detected here.
+    # Enforcement happens at YAML authoring time (yaml.safe_load last-value-wins).
 
-    # Check 2: No duplicate relation type names
-    rel_keys = list(relation_types.keys())
-    if len(set(rel_keys)) != len(rel_keys):
-        errors.append("Duplicate relation type name detected.")
-
-    # Check 3: No dangling endpoints (only for relations that declare endpoint fields)
+    # Check: No dangling endpoints (only for relations that declare endpoint fields)
     for rel_name, rel_def in relation_types.items():
         if not isinstance(rel_def, dict):
             continue
@@ -305,10 +307,16 @@ def cmd_validate(name: str) -> int:
     """
     src = _validate_active_name(name)
     if src is None:
-        archived_path = ARCHIVED_DIR / name
-        if archived_path.is_dir() and (archived_path / "domain.yaml").exists():
-            src = archived_path
-        else:
+        # Check archived location via enumeration (rejects traversal strings)
+        if ARCHIVED_DIR.is_dir():
+            archived_names = {
+                d.name
+                for d in ARCHIVED_DIR.iterdir()
+                if d.is_dir() and (d / "domain.yaml").exists()
+            }
+            if name in archived_names:
+                src = ARCHIVED_DIR / name
+        if src is None:
             print(
                 json.dumps(
                     {

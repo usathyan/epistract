@@ -160,20 +160,21 @@ PyYAML dump). Explain what changed.
 Run the following to validate the proposed schema before presenting the confirmation gate.
 Validation must pass before the user is asked to confirm the write:
 
+Write the proposed domain.yaml to a temporary file, then validate it using the
+`manage_domains.py validate` subcommand. This avoids fragile `sys.path` manipulation
+that breaks when `EPISTRACT_DOMAINS_DIR` is overridden.
+
 ```bash
-python3 -c "
-import yaml, json, sys
-from pathlib import Path
-sys.path.insert(0, str(Path('<dir>').parent.parent / 'scripts'))
-from manage_domains import validate_schema
-proposed = yaml.safe_load(sys.stdin.read())
-et = proposed.get('entity_types', {}) or {}
-rt = proposed.get('relation_types', {}) or {}
-errors = validate_schema(et, rt)
-print(json.dumps({'valid': len(errors) == 0, 'errors': errors}))
-" << 'SCHEMA_EOF'
+TMPDIR=$(mktemp -d)
+cat > "$TMPDIR/domain.yaml" << 'SCHEMA_EOF'
 <proposed full domain.yaml content>
 SCHEMA_EOF
+
+# Write to a throwaway domain directory so the validate subcommand can find it
+mkdir -p "$TMPDIR/_validate_tmp"
+cp "$TMPDIR/domain.yaml" "$TMPDIR/_validate_tmp/domain.yaml"
+EPISTRACT_DOMAINS_DIR="$TMPDIR" python3 scripts/manage_domains.py validate _validate_tmp
+rm -rf "$TMPDIR"
 ```
 
 - If `valid` is `false`: display errors in the following format. Then **return to Step 4a**
