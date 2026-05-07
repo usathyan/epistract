@@ -516,10 +516,12 @@ Run the temp-dir validation gate on the merged schema before writing:
 ```bash
 TMPDIR=$(mktemp -d)
 mkdir -p "$TMPDIR/_validate_tmp"
+VALIDATE_PATH="$TMPDIR/_validate_tmp/domain.yaml"
+export VALIDATE_PATH
 python3 -c "
+import os, sys
 from pathlib import Path
-import sys
-Path('$TMPDIR/_validate_tmp/domain.yaml').write_text(sys.stdin.read())
+Path(os.environ['VALIDATE_PATH']).write_text(sys.stdin.read())
 " << 'SCHEMA_EOF'
 <merged domain.yaml content as YAML string>
 SCHEMA_EOF
