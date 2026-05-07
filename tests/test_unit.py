@@ -4032,3 +4032,127 @@ def test_manage_domains_list_archived(tmp_path):
     archived_rows = [r for r in rows if r.get("status") == "archived"]
     assert len(archived_rows) >= 1, f"Expected at least one archived row, got: {rows}"
     assert archived_rows[0]["name"] == "old-domain"
+
+
+# ========================================================================
+# Phase 13: Domain Update Wizard — Core Editing (UPDT-01–UPDT-04)
+# Wave 1 RED tests — become GREEN when Plan 13-02 (manage_domains.py) lands.
+# ========================================================================
+
+
+@pytest.mark.unit
+def test_schema_validate_dangling_endpoint(tmp_path):
+    """UPDT-02: validate subcommand detects a relation referencing a nonexistent entity type."""
+    import sys, json as _json, os as _os
+
+    domains_dir = tmp_path / "domains"
+    _make_synthetic_domain(domains_dir, "test-domain")
+    # Overwrite domain.yaml with a dangling endpoint in source_types
+    (domains_dir / "test-domain" / "domain.yaml").write_text(
+        "entity_types:\n"
+        "  PERSON: {description: A person}\n"
+        "relation_types:\n"
+        "  TARGETS:\n"
+        "    description: Acts on target\n"
+        "    source_types: [NONEXISTENT_TYPE]\n"
+    )
+
+    manage_script = PROJECT_ROOT / "scripts" / "manage_domains.py"
+    result = _subprocess.run(
+        [sys.executable, str(manage_script), "validate", "test-domain"],
+        capture_output=True, text=True,
+        env={**_os.environ, "EPISTRACT_DOMAINS_DIR": str(domains_dir)},
+    )
+    assert result.returncode == 0, f"validate returned non-zero: {result.stderr}"
+    data = _json.loads(result.stdout)
+    assert data["valid"] is False, f"Expected valid=false for dangling endpoint, got: {data}"
+    assert any("NONEXISTENT_TYPE" in e for e in data["errors"]), (
+        f"Expected error mentioning 'NONEXISTENT_TYPE', got: {data['errors']}"
+    )
+
+
+@pytest.mark.unit
+def test_schema_validate_no_duplicate_false_positive():
+    """UPDT-02: validate_schema() returns no errors for a valid schema with no duplicates."""
+    import importlib.util
+
+    manage_script = PROJECT_ROOT / "scripts" / "manage_domains.py"
+    spec = importlib.util.spec_from_file_location("manage_domains", manage_script)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+
+    errors = mod.validate_schema(
+        entity_types={"PERSON": {"description": "A"}, "ORG": {"description": "B"}},
+        relation_types={
+            "WORKS_FOR": {
+                "description": "Employment",
+                "source_types": ["PERSON"],
+                "target_types": ["ORG"],
+            }
+        },
+    )
+    assert errors == [], f"Expected no errors for valid schema, got: {errors}"
+
+
+@pytest.mark.unit
+def test_schema_validate_clean(tmp_path):
+    """UPDT-02: validate subcommand returns valid=true and empty errors for a clean schema."""
+    import sys, json as _json, os as _os
+
+    domains_dir = tmp_path / "domains"
+    _make_synthetic_domain(domains_dir, "test-domain")
+    # Overwrite domain.yaml with a fully valid schema
+    (domains_dir / "test-domain" / "domain.yaml").write_text(
+        "entity_types:\n"
+        "  COMPOUND: {description: A compound}\n"
+        "  GENE: {description: A gene}\n"
+        "relation_types:\n"
+        "  TARGETS:\n"
+        "    description: Compound acts on gene\n"
+        "    source_types: [COMPOUND]\n"
+        "    target_types: [GENE]\n"
+    )
+
+    manage_script = PROJECT_ROOT / "scripts" / "manage_domains.py"
+    result = _subprocess.run(
+        [sys.executable, str(manage_script), "validate", "test-domain"],
+        capture_output=True, text=True,
+        env={**_os.environ, "EPISTRACT_DOMAINS_DIR": str(domains_dir)},
+    )
+    assert result.returncode == 0, f"validate returned non-zero: {result.stderr}"
+    data = _json.loads(result.stdout)
+    assert data["valid"] is True, f"Expected valid=true for clean schema, got: {data}"
+    assert data["errors"] == [], f"Expected empty errors for clean schema, got: {data['errors']}"
+
+
+@pytest.mark.unit
+def test_schema_validate_no_endpoints(tmp_path):
+    """UPDT-02: validate subcommand returns valid=true for contracts-style schema with no endpoint fields."""
+    import sys, json as _json, os as _os
+
+    domains_dir = tmp_path / "domains"
+    _make_synthetic_domain(domains_dir, "test-domain")
+    # Overwrite domain.yaml with contracts-style relations (no source_types/target_types)
+    (domains_dir / "test-domain" / "domain.yaml").write_text(
+        "entity_types:\n"
+        "  PARTY: {description: Organization}\n"
+        "  CONTRACT: {description: Agreement}\n"
+        "relation_types:\n"
+        "  OBLIGATED_TO: {description: Party is obligated}\n"
+        "  HAS_DEADLINE: {description: Has a deadline}\n"
+    )
+
+    manage_script = PROJECT_ROOT / "scripts" / "manage_domains.py"
+    result = _subprocess.run(
+        [sys.executable, str(manage_script), "validate", "test-domain"],
+        capture_output=True, text=True,
+        env={**_os.environ, "EPISTRACT_DOMAINS_DIR": str(domains_dir)},
+    )
+    assert result.returncode == 0, f"validate returned non-zero: {result.stderr}"
+    data = _json.loads(result.stdout)
+    assert data["valid"] is True, (
+        f"Expected valid=true for no-endpoint schema (contracts-style), got: {data}"
+    )
+    assert data["errors"] == [], (
+        f"Expected empty errors for no-endpoint schema, got: {data['errors']}"
+    )
