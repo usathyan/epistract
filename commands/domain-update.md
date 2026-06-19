@@ -174,9 +174,9 @@ cat > "$TMPDIR/domain.yaml" << 'SCHEMA_EOF'
 SCHEMA_EOF
 
 # Write to a throwaway domain directory so the validate subcommand can find it
-mkdir -p "$TMPDIR/_validate_tmp"
-cp "$TMPDIR/domain.yaml" "$TMPDIR/_validate_tmp/domain.yaml"
-EPISTRACT_DOMAINS_DIR="$TMPDIR" python3 scripts/manage_domains.py validate _validate_tmp
+mkdir -p "$TMPDIR/validate_scratch"
+cp "$TMPDIR/domain.yaml" "$TMPDIR/validate_scratch/domain.yaml"
+EPISTRACT_DOMAINS_DIR="$TMPDIR" python3 scripts/manage_domains.py validate validate_scratch
 rm -rf "$TMPDIR"
 ```
 
@@ -528,8 +528,8 @@ Run the temp-dir validation gate on the merged schema before writing:
 
 ```bash
 TMPDIR=$(mktemp -d)
-mkdir -p "$TMPDIR/_validate_tmp"
-VALIDATE_PATH="$TMPDIR/_validate_tmp/domain.yaml"
+mkdir -p "$TMPDIR/validate_scratch"
+VALIDATE_PATH="$TMPDIR/validate_scratch/domain.yaml"
 export VALIDATE_PATH
 python3 -c "
 import os, sys
@@ -539,7 +539,7 @@ Path(os.environ['VALIDATE_PATH']).write_text(sys.stdin.read())
 <merged domain.yaml content as YAML string>
 SCHEMA_EOF
 
-EPISTRACT_DOMAINS_DIR="$TMPDIR" python3 scripts/manage_domains.py validate _validate_tmp
+EPISTRACT_DOMAINS_DIR="$TMPDIR" python3 scripts/manage_domains.py validate validate_scratch
 rm -rf "$TMPDIR"
 ```
 
