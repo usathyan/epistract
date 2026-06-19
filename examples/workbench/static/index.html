@@ -98,6 +98,41 @@
           <!-- Populated dynamically from /api/graph/entity-types + template colors -->
         </div>
 
+        <div id="epistemic-filter">
+          <p class="filter-section-label">Epistemic Status</p>
+          <div id="epistemic-toggles">
+            <!-- Populated dynamically by graph.js buildEpistemicChips() -->
+          </div>
+        </div>
+
+        <div id="confidence-filter">
+          <label class="filter-section-label" for="confidence-slider">
+            Confidence &ge; <span id="confidence-value">0.00</span>
+          </label>
+          <input type="range" id="confidence-slider" min="0" max="1" step="0.01" value="0">
+        </div>
+
+        <div id="relation-type-filter">
+          <details id="relation-type-details">
+            <summary class="filter-section-label relation-type-summary">Relation Types</summary>
+            <div class="relation-type-actions">
+              <button type="button" class="toggle-btn active" id="relation-select-all">Select All</button>
+              <button type="button" class="toggle-btn" id="relation-clear-all">Clear All</button>
+            </div>
+            <div class="relation-type-panel" id="relation-type-panel">
+              <!-- Populated dynamically by graph.js buildRelationTypeDropdown() -->
+            </div>
+          </details>
+        </div>
+
+        <div id="min-degree-filter">
+          <label class="filter-section-label" for="min-degree-slider">
+            Min. total connections: <span id="min-degree-value">0</span>
+          </label>
+          <input type="range" id="min-degree-slider" min="0" max="0" step="1" value="0">
+        </div>
+
+
         <!-- Severity filter: hidden by default; app.js shows it when the
              current domain emits severity-tagged claims. -->
         <select id="severity-filter" class="severity-filter" style="display:none">
@@ -114,6 +149,18 @@
 
       <div id="graph-container" class="graph-container">
         <p class="graph-placeholder">Building graph visualization...</p>
+      </div>
+
+      <div id="graph-detail-sidebar"
+           class="graph-detail-sidebar graph-detail-sidebar--closed"
+           aria-label="Node/edge detail panel"
+           role="complementary">
+        <div class="graph-detail-sidebar__header">
+          <!-- populated by sidebar.js showNodeDetail() / showEdgeDetail() -->
+        </div>
+        <div class="graph-detail-sidebar__body">
+          <!-- populated by sidebar.js showNodeDetail() / showEdgeDetail() -->
+        </div>
       </div>
     </div>
 
