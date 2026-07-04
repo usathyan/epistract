@@ -18,6 +18,30 @@ dependencies = [
     "chonkie>=1.0",
 ]
 
+# Console entry point for the multi-project CLI. `core/` is exposed as a flat
+# module collection (see [tool.setuptools]) so `epistract` resolves to
+# core/cli.py:main. The heavy pipeline deps (sift-kg, kreuzberg, ...) are still
+# provisioned by scripts/setup.sh per the note above; the CLI's project/index/
+# search subcommands run with only stdlib + chonkie, and degrade gracefully
+# (Kreuzberg text extraction is optional — plain-text formats always work).
+[project.scripts]
+epistract = "cli:main"
+
+[tool.setuptools]
+py-modules = [
+    "cli",
+    "registry",
+    "index_db",
+    "graph_retrieval",
+    "hedging",
+    "triple_judge",
+    "entity_resolution_v2",
+    "epistemic_temporal",
+]
+
+[tool.setuptools.package-dir]
+"" = "core"
+
 [tool.pytest.ini_options]
 markers = [
     "unit: Fast tests with no external dependencies",

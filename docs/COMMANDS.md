@@ -4,6 +4,21 @@ Slash commands split into two groups — **full-pipeline commands** that do ever
 
 Each command has a fuller spec under `commands/<name>.md` — this doc is the quick reference.
 
+> **Working with named datasets?** If you want to keep several knowledge bases side by side and grow them over time, use the **project commands** below (`init`, `add-files`, `index`, `search`, `enhance`). See the **[Projects guide](PROJECTS.md)** for the full workflow.
+
+## Projects (named, reusable datasets)
+
+| Command | Runs | When to use |
+|---|---|---|
+| `/epistract:init <name> --domain <name>` | Create a named project (own corpus, graph, index) | Starting a knowledge base you'll add to over time |
+| `/epistract:add-files <paths...> --project <name>` | Copy documents into the project corpus (dedup by content) | Adding local files to a project |
+| `/epistract:add-url <urls...> --project <name>` | Fetch web documents into the corpus (dedup by content) | Adding web pages to a project |
+| `/epistract:index --project <name>` | Build/refresh the hybrid search index (incremental) | After adding documents — indexes only what changed |
+| `/epistract:search <query> --project <name>` | Hybrid search over entities + document text | Finding entities and passages; `--expand` follows graph links |
+| `/epistract:enhance --project <name>` | Merge duplicate entities, judge relations, add epistemic layer | Improving a built graph's quality |
+| `/epistract:projects list\|info\|delete <name>` | Manage the project registry | Listing, inspecting, or removing projects |
+| `/epistract:status --project <name>` | Show documents, graph size, and index state | Checking a project's state |
+
 ## Full pipeline
 
 | Command | Runs | When to use |
@@ -58,6 +73,20 @@ commands/domain.md
 commands/dashboard.md
 commands/ask.md
 commands/acquire.md
+commands/init.md
+commands/add-files.md
+commands/add-url.md
+commands/index.md
+commands/search.md
+commands/enhance.md
+commands/projects.md
 ```
 
 Each is a Markdown skill file loaded by Claude Code when you invoke the command.
+
+## `query` vs `search`
+
+Both find things in your graph, but they're different tools:
+
+- **`/epistract:query`** — a quick substring match over entity names in a graph folder. No index needed. Good for "does an entity named X exist?"
+- **`/epistract:search`** — full hybrid search across a **project's** entities *and* document text, best-match ranked, with optional graph expansion (`--expand`). Needs `/epistract:index` first. Good for "what do my documents say about X, and what's related?"

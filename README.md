@@ -145,6 +145,31 @@ The wizard reads your samples, proposes entity/relation types, asks about your a
 
 Full reference + flags: [docs/COMMANDS.md](docs/COMMANDS.md).
 
+### Projects — named, reusable knowledge bases
+
+Prefer to keep several knowledge bases side by side and grow them over time? The **project
+commands** let you create named datasets, add documents whenever you like, and search or ask
+questions by name — no folder paths to remember, and re-indexing only touches what changed.
+
+| Command | Purpose |
+|---|---|
+| `/epistract:init <name>` | Create a named project (own corpus, graph, index) |
+| `/epistract:add-files` / `/epistract:add-url` | Add documents or web pages to a project |
+| `/epistract:index` | Build/refresh the hybrid search index (incremental) |
+| `/epistract:search <query>` | Hybrid search over entities + document text (`--expand` follows graph links) |
+| `/epistract:enhance` | Merge duplicate entities, judge relations, add an epistemic layer |
+| `/epistract:projects` / `/epistract:status` | List/inspect projects and their state |
+
+```bash
+/epistract:init glp1-research --domain drug-discovery
+/epistract:add-files paper1.pdf paper2.pdf --project glp1-research
+/epistract:index  --project glp1-research
+/epistract:search "GLP-1 receptor agonist" --project glp1-research --expand
+```
+
+These also work as a terminal command (`epistract init …`, `epistract search …`) for scripting.
+Full walkthrough: **[docs/PROJECTS.md](docs/PROJECTS.md)**.
+
 ---
 
 ## Documentation
@@ -152,6 +177,7 @@ Full reference + flags: [docs/COMMANDS.md](docs/COMMANDS.md).
 - [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — pipeline, two-layer design, data formats
 - [docs/DOMAINS.md](docs/DOMAINS.md) — per-domain schemas, scenarios, showcase artifacts
 - [docs/COMMANDS.md](docs/COMMANDS.md) — full `/epistract:*` reference
+- [docs/PROJECTS.md](docs/PROJECTS.md) — named, reusable knowledge bases (init / add / index / search / enhance)
 - [docs/WORKBENCH.md](docs/WORKBENCH.md) — workbench usage, LLM provider config (Azure / Anthropic / OpenRouter), install troubleshooting
 - [docs/ADDING-DOMAINS.md](docs/ADDING-DOMAINS.md) — domain wizard + manual creation
 - [docs/PIPELINE-CAPACITY.md](docs/PIPELINE-CAPACITY.md) — formats, limits, what works and what doesn't
