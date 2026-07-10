@@ -51,6 +51,19 @@ def test_score_relation_does_not_mutate():
     assert out["epistemic_status"] in {"asserted", "hypothesized", "speculative"}
 
 
+def test_score_relation_preserves_superseded():
+    link = {
+        "evidence": "X suggests Y",
+        "confidence": 0.9,
+        "epistemic_status": "superseded",
+    }
+    out = hedging.score_relation(link)
+    assert out["epistemic_status"] == "superseded", (
+        "re-scoring must not resurrect a superseded edge"
+    )
+    assert "hedge_score" in out, "hedge annotation should still be attached"
+
+
 def test_hedge_classifier_hook_blends():
     # A classifier that always says "very hedged" pulls a low lexical score up.
     plain = hedging.hedge_score("X binds Y.")
@@ -277,7 +290,7 @@ def test_temporal_layer_invalidates_older_edge():
     newer = result["links"][1]
     assert older["epistemic_status"] == "superseded"
     assert older["invalid_at"] == "2026-07-04T00:00:00Z"
-    assert older["superseded_by"] == 1
+    assert older["superseded_by"] == "drug|DECREASES|marker"
     assert newer.get("epistemic_status") != "superseded"
 
 
@@ -303,6 +316,63 @@ def test_adjudicate_fn_can_veto_lexical_contradiction():
     # Adjudicator says "not actually a contradiction" -> nothing invalidated.
     result = et.apply_temporal_layer(links, adjudicate_fn=lambda a, b: False, now="t")
     assert result["invalidated"] == 0
+
+
+def test_temporal_layer_reports_stable_identities():
+    links = [
+        {"source": "a", "target": "b", "relation_type": "ACTIVATES", "valid_at": "1"},
+        {"source": "a", "target": "b", "relation_type": "INHIBITS", "valid_at": "2"},
+    ]
+    result = et.apply_temporal_layer(links, now="t")
+    (report,) = result["contradictions"]
+    assert report["active"] == "a|INHIBITS|b"
+    assert report["superseded"] == "a|ACTIVATES|b"
+
+
+def test_apply_temporal_layer_idempotent_on_superseded():
+    links = [
+        {
+            "source": "drug",
+            "target": "marker",
+            "relation_type": "INCREASES",
+            "confidence": 0.8,
+            "valid_at": "2020-01-01",
+        },
+        {
+            "source": "drug",
+            "target": "marker",
+            "relation_type": "DECREASES",
+            "confidence": 0.8,
+            "valid_at": "2024-01-01",
+        },
+    ]
+    first = et.apply_temporal_layer(links, now="2026-01-01T00:00:00Z")
+    assert first["invalidated"] == 1
+    second = et.apply_temporal_layer(first["links"], now="2026-06-01T00:00:00Z")
+    assert second["invalidated"] == 0, "second pass must not re-invalidate"
+    superseded = [
+        link
+        for link in second["links"]
+        if link.get("epistemic_status") == "superseded"
+    ]
+    assert len(superseded) == 1
+    assert superseded[0]["invalid_at"] == "2026-01-01T00:00:00Z", (
+        "re-running must not re-stamp invalid_at"
+    )
+
+
+def test_contradiction_grouping_scoped():
+    # Two different (source, target) pairs, each internally contradictory.
+    links = [
+        {"source": "a", "target": "b", "relation_type": "INCREASES", "valid_at": "1"},
+        {"source": "x", "target": "y", "relation_type": "ACTIVATES", "valid_at": "1"},
+        {"source": "a", "target": "b", "relation_type": "DECREASES", "valid_at": "2"},
+        {"source": "x", "target": "y", "relation_type": "INHIBITS", "valid_at": "2"},
+    ]
+    result = et.apply_temporal_layer(links, now="t")
+    assert result["invalidated"] == 2
+    pairs = {(c["source"], c["target"]) for c in result["contradictions"]}
+    assert pairs == {("a", "b"), ("x", "y")}, "no cross-pair contradictions"
 
 
 # ---------------------------------------------------------------------------

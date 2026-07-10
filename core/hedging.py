@@ -107,9 +107,13 @@ def score_relation(link: dict, classifier_fn=None) -> dict:
     """Annotate a graph link with hedge_score and a graded epistemic_status.
 
     Returns a new dict (does not mutate the input) so callers control
-    when the change is applied to the graph.
+    when the change is applied to the graph. A pre-existing
+    epistemic_status of "superseded" is preserved (the hedge_score is
+    still attached) so re-scoring cannot resurrect invalidated edges.
     """
     evidence = link.get("evidence", "") or ""
     score = hedge_score(evidence, classifier_fn=classifier_fn)
+    if link.get("epistemic_status") == "superseded":
+        return {**link, "hedge_score": score, "epistemic_status": "superseded"}
     status = status_from_score(score, link.get("confidence", 1.0))
     return {**link, "hedge_score": score, "epistemic_status": status}

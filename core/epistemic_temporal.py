@@ -81,6 +81,15 @@ def _edge_time(link: dict) -> str:
     return link.get("valid_at") or ""
 
 
+def _edge_identity(link: dict) -> str:
+    """Stable identity for an edge: 'source|relation_type|target'.
+
+    Used for superseded_by references and contradiction reports so they
+    survive edge reordering/filtering, unlike array indices.
+    """
+    return f"{link.get('source')}|{link.get('relation_type')}|{link.get('target')}"
+
+
 def apply_temporal_layer(
     links: list[dict],
     adjudicate_fn=None,
@@ -92,7 +101,8 @@ def apply_temporal_layer(
     "invalidated": n}. For each contradicting pair, the more recent edge
     (by valid_at, tie-broken by higher confidence) stays active; the other
     gets epistemic_status="superseded", invalid_at=now, and superseded_by
-    pointing at the winner's index.
+    pointing at the winner's stable edge identity
+    ("source|relation_type|target").
 
     Never deletes edges — invalidation is annotation only, preserving the
     full provenance trail.
@@ -102,36 +112,44 @@ def apply_temporal_layer(
     contradictions: list[dict] = []
     invalidated = 0
 
-    for i in range(len(annotated)):
-        for j in range(i + 1, len(annotated)):
-            a, b = annotated[i], annotated[j]
-            if (
-                a.get("epistemic_status") == "superseded"
-                or b.get("epistemic_status") == "superseded"
-            ):
-                continue
-            if not relations_contradict(a, b, adjudicate_fn=adjudicate_fn):
-                continue
+    # Group by (source, target): relations_contradict is always False across
+    # different node pairs, so scoping the pairwise scan to each group is
+    # behavior-preserving while avoiding the all-pairs O(n^2) sweep. Groups
+    # keep original edge ordering so tie-breaks match the previous scan.
+    groups: dict[tuple, list[int]] = {}
+    for idx, link in enumerate(annotated):
+        groups.setdefault((link.get("source"), link.get("target")), []).append(idx)
 
-            # Winner = more recent, tie-broken by confidence.
-            a_key = (_edge_time(a), a.get("confidence", 0.0))
-            b_key = (_edge_time(b), b.get("confidence", 0.0))
-            winner_idx, loser_idx = (i, j) if a_key >= b_key else (j, i)
-            loser = annotated[loser_idx]
-            loser["epistemic_status"] = "superseded"
-            loser["invalid_at"] = stamp
-            loser["superseded_by"] = winner_idx
-            invalidated += 1
-            contradictions.append(
-                {
-                    "source": a.get("source"),
-                    "target": a.get("target"),
-                    "active": winner_idx,
-                    "superseded": loser_idx,
-                    "active_relation": annotated[winner_idx].get("relation_type"),
-                    "superseded_relation": loser.get("relation_type"),
-                }
-            )
+    for indices in groups.values():
+        for pos_i in range(len(indices)):
+            for pos_j in range(pos_i + 1, len(indices)):
+                a, b = annotated[indices[pos_i]], annotated[indices[pos_j]]
+                if (
+                    a.get("epistemic_status") == "superseded"
+                    or b.get("epistemic_status") == "superseded"
+                ):
+                    continue
+                if not relations_contradict(a, b, adjudicate_fn=adjudicate_fn):
+                    continue
+
+                # Winner = more recent, tie-broken by confidence.
+                a_key = (_edge_time(a), a.get("confidence", 0.0))
+                b_key = (_edge_time(b), b.get("confidence", 0.0))
+                winner, loser = (a, b) if a_key >= b_key else (b, a)
+                loser["epistemic_status"] = "superseded"
+                loser["invalid_at"] = stamp
+                loser["superseded_by"] = _edge_identity(winner)
+                invalidated += 1
+                contradictions.append(
+                    {
+                        "source": a.get("source"),
+                        "target": a.get("target"),
+                        "active": _edge_identity(winner),
+                        "superseded": _edge_identity(loser),
+                        "active_relation": winner.get("relation_type"),
+                        "superseded_relation": loser.get("relation_type"),
+                    }
+                )
 
     return {
         "links": annotated,
