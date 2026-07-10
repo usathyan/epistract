@@ -64,6 +64,13 @@ def test_score_relation_preserves_superseded():
     assert "hedge_score" in out, "hedge annotation should still be attached"
 
 
+def test_score_relation_tolerates_null_confidence():
+    # An explicit JSON null confidence must not crash status_from_score.
+    out = hedging.score_relation({"evidence": "X binds Y.", "confidence": None})
+    assert isinstance(out, dict), "score_relation must return a dict on null confidence"
+    assert out["epistemic_status"] in {"asserted", "hypothesized", "speculative"}
+
+
 def test_hedge_classifier_hook_blends():
     # A classifier that always says "very hedged" pulls a low lexical score up.
     plain = hedging.hedge_score("X binds Y.")
@@ -226,6 +233,35 @@ def test_embed_fn_drives_similarity():
     assert len(result["merge_map"]) == 1
 
 
+def test_resolve_entities_skips_document_nodes():
+    entities = [
+        {
+            "id": "doc:veg_menu_akka13th_1092025_ver1",
+            "name": "veg_menu_akka13th_1092025_ver1",
+            "entity_type": "DOCUMENT",
+        },
+        {
+            "id": "doc:non_veg_menu_akka13th_1092025_ver1",
+            "name": "non_veg_menu_akka13th_1092025_ver1",
+            "entity_type": "DOCUMENT",
+        },
+        {"id": "e1", "name": "GLP-1 Receptor", "entity_type": "PROTEIN"},
+        {"id": "e2", "name": "GLP1 receptor", "entity_type": "PROTEIN"},
+    ]
+    result = erv2.resolve_entities(entities)
+    doc_ids = {
+        "doc:veg_menu_akka13th_1092025_ver1",
+        "doc:non_veg_menu_akka13th_1092025_ver1",
+    }
+    merged_ids = set(result["merge_map"]) | set(result["merge_map"].values())
+    assert not (doc_ids & merged_ids), (
+        f"DOCUMENT nodes must never appear in merge_map, got {result['merge_map']}"
+    )
+    assert len(result["merge_map"]) == 1, (
+        "similar non-DOCUMENT entities in the same input must still merge"
+    )
+
+
 def test_apply_merge_map_repoints_links_and_drops_selfloops():
     graph = {
         "nodes": [
@@ -371,6 +407,34 @@ def test_apply_temporal_layer_idempotent_on_superseded():
     assert superseded[0]["invalid_at"] == "2026-01-01T00:00:00Z", (
         "re-running must not re-stamp invalid_at"
     )
+
+
+def test_temporal_layer_tolerates_null_confidence():
+    # An explicit JSON null confidence must not break the tie-break comparison.
+    links = [
+        {
+            "source": "drug",
+            "target": "marker",
+            "relation_type": "INCREASES",
+            "confidence": None,
+            "valid_at": "2020-01-01",
+        },
+        {
+            "source": "drug",
+            "target": "marker",
+            "relation_type": "DECREASES",
+            "confidence": 0.8,
+            "valid_at": "2020-01-01",
+        },
+    ]
+    result = et.apply_temporal_layer(links, now="t")
+    assert result["invalidated"] == 1, "exactly one edge should be superseded"
+    superseded = [
+        link
+        for link in result["links"]
+        if link.get("epistemic_status") == "superseded"
+    ]
+    assert len(superseded) == 1
 
 
 def test_contradiction_grouping_scoped():

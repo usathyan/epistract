@@ -99,6 +99,7 @@ def resolve_entities(
     verify_fn=None,
     high: float = 0.85,
     low: float = 0.55,
+    skip_types: frozenset[str] = frozenset({"DOCUMENT"}),
 ) -> dict:
     """Cluster duplicate entities and return a merge map.
 
@@ -111,11 +112,20 @@ def resolve_entities(
         embed_fn: optional names->vectors; enables cosine similarity.
         verify_fn: optional (entity_a, entity_b)->bool for the ambiguous band.
         high/low: similarity thresholds.
+        skip_types: entity types (upper-cased) excluded from resolution
+            entirely — never blocked, clustered, or merged. Defaults to
+            {"DOCUMENT"}: document nodes are provenance anchors whose ids/names
+            are filenames, so name-similarity merging would corrupt
+            MENTIONED_IN provenance.
 
     Returns {"merge_map": {dup_id: canonical_id}, "clusters": [...],
     "verified": n, "auto_merged": n}.
     """
-    by_id = {str(e.get("id") or e.get("name") or ""): e for e in entities}
+    by_id = {
+        str(e.get("id") or e.get("name") or ""): e
+        for e in entities
+        if (e.get("entity_type") or "").upper() not in skip_types
+    }
     ids = list(by_id)
 
     # Optional embeddings, computed once.

@@ -115,5 +115,8 @@ def score_relation(link: dict, classifier_fn=None) -> dict:
     score = hedge_score(evidence, classifier_fn=classifier_fn)
     if link.get("epistemic_status") == "superseded":
         return {**link, "hedge_score": score, "epistemic_status": "superseded"}
-    status = status_from_score(score, link.get("confidence", 1.0))
+    confidence = link.get("confidence", 1.0)
+    if confidence is None:  # explicit JSON null; 0.0 stays a valid value
+        confidence = 1.0
+    status = status_from_score(score, confidence)
     return {**link, "hedge_score": score, "epistemic_status": status}

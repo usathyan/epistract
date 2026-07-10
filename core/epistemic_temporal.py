@@ -81,6 +81,12 @@ def _edge_time(link: dict) -> str:
     return link.get("valid_at") or ""
 
 
+def _edge_confidence(link: dict) -> float:
+    """Tie-break key: confidence, coercing explicit null to the 0.0 default."""
+    confidence = link.get("confidence", 0.0)
+    return 0.0 if confidence is None else confidence
+
+
 def _edge_identity(link: dict) -> str:
     """Stable identity for an edge: 'source|relation_type|target'.
 
@@ -133,8 +139,8 @@ def apply_temporal_layer(
                     continue
 
                 # Winner = more recent, tie-broken by confidence.
-                a_key = (_edge_time(a), a.get("confidence", 0.0))
-                b_key = (_edge_time(b), b.get("confidence", 0.0))
+                a_key = (_edge_time(a), _edge_confidence(a))
+                b_key = (_edge_time(b), _edge_confidence(b))
                 winner, loser = (a, b) if a_key >= b_key else (b, a)
                 loser["epistemic_status"] = "superseded"
                 loser["invalid_at"] = stamp
