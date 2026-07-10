@@ -114,6 +114,21 @@ def test_add_url_uses_fetcher(project):
     assert Path(report["file"]).read_bytes() == b"content here"
 
 
+def test_default_fetcher_rejects_non_http():
+    with pytest.raises(ProjectError, match="scheme"):
+        registry._default_fetcher("file:///etc/passwd")
+    with pytest.raises(ProjectError, match="scheme"):
+        registry._default_fetcher("ftp://example.com/x")
+
+
+def test_load_registry_corrupt_json(home):
+    path = registry._registry_path()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("{not valid json")
+    with pytest.raises(ProjectError, match="registry.json"):
+        registry.load_registry()
+
+
 # ---------------------------------------------------------------------------
 # Index & search
 # ---------------------------------------------------------------------------
@@ -148,6 +163,20 @@ def test_index_is_incremental(project):
     second = index_db.index_project(project)
     assert second["indexed"] == []
     assert second["skipped"] == 2
+
+
+def test_index_reconciles_deleted_docs(project):
+    _seed_corpus(project)
+    index_db.index_project(project)
+    (registry.corpus_dir(project) / "doc2.txt").unlink()
+    stats = index_db.index_project(project)
+    assert stats["removed"] == 1, f"expected 1 removed doc, got {stats}"
+    db = index_db.open_index(project)
+    doc_ids = {row[0] for row in db.execute("SELECT doc_id FROM documents")}
+    chunk_docs = {row[0] for row in db.execute("SELECT doc_id FROM chunks_fts")}
+    db.close()
+    assert not any("doc2.txt" in d for d in doc_ids), f"stale doc rows: {doc_ids}"
+    assert not any("doc2.txt" in d for d in chunk_docs), "stale chunk rows remain"
 
 
 def test_index_picks_up_changes(project):

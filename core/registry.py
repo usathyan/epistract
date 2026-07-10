@@ -42,6 +42,7 @@ REGISTRY_FILENAME = "registry.json"
 STATE_DIRNAME = ".epistract"
 MANIFEST_FILENAME = "project.json"
 NAME_PATTERN = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]*")
+MAX_DOWNLOAD_BYTES = 50 * 1024 * 1024
 
 DEFAULT_DOMAIN = "drug-discovery"
 
@@ -68,7 +69,10 @@ def load_registry() -> dict:
     path = _registry_path()
     if not path.exists():
         return {"version": 1, "projects": {}}
-    return json.loads(path.read_text())
+    try:
+        return json.loads(path.read_text())
+    except json.JSONDecodeError as e:
+        raise ProjectError(f"Corrupt JSON in {path}: {e}") from e
 
 
 def _save_registry(registry: dict) -> None:
@@ -171,7 +175,10 @@ def get_project(name: str) -> dict:
             f"Project '{name}' is registered at {root} but its manifest is missing "
             f"(directory moved or deleted?). Use `epistract projects delete {name}`."
         )
-    manifest = json.loads(manifest_file.read_text())
+    try:
+        manifest = json.loads(manifest_file.read_text())
+    except json.JSONDecodeError as e:
+        raise ProjectError(f"Corrupt JSON in {manifest_file}: {e}") from e
     return {
         "name": name,
         "root": str(root),
@@ -192,7 +199,10 @@ def resolve_project(name: str | None = None, cwd: str | Path | None = None) -> d
     for candidate in (current, *current.parents):
         manifest_file = _manifest_path(candidate)
         if manifest_file.exists():
-            manifest = json.loads(manifest_file.read_text())
+            try:
+                manifest = json.loads(manifest_file.read_text())
+            except json.JSONDecodeError as e:
+                raise ProjectError(f"Corrupt JSON in {manifest_file}: {e}") from e
             return {
                 "name": manifest.get("name", candidate.name),
                 "root": str(candidate),
@@ -282,9 +292,17 @@ def add_files(project: dict, paths: list[str | Path]) -> dict:
 
 
 def _default_fetcher(url: str) -> bytes:
+    scheme = urlparse(url).scheme
+    if scheme not in {"http", "https"}:
+        raise ProjectError(
+            f"Unsupported URL scheme '{scheme}' for {url} (only http/https)"
+        )
     request = Request(url, headers={"User-Agent": "epistract/1.0"})
-    with urlopen(request, timeout=60) as response:  # noqa: S310 — user-supplied URL
-        return response.read()
+    with urlopen(request, timeout=60) as response:  # noqa: S310 — scheme checked above
+        data = response.read(MAX_DOWNLOAD_BYTES + 1)
+    if len(data) > MAX_DOWNLOAD_BYTES:
+        raise ProjectError(f"{url} exceeds the {MAX_DOWNLOAD_BYTES} byte download cap")
+    return data
 
 
 def _filename_from_url(url: str) -> str:

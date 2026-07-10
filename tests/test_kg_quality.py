@@ -152,6 +152,18 @@ def test_make_llm_judge_parses_valid_output():
     assert verdict["score"] == 0.9
 
 
+def test_make_llm_judge_clamps_score():
+    high = '{"verdict": "supported", "score": 5.0, "reason": "x"}'
+    judge = triple_judge.make_llm_judge(call_fn=lambda s, u, **k: high)
+    verdict = judge({"source": "a:x", "target": "b:y", "relation_type": "R"}, "ev")
+    assert verdict["score"] == 1.0, "out-of-range score must clamp to 1.0"
+
+    low = '{"verdict": "unsupported", "score": -1.0, "reason": "x"}'
+    judge = triple_judge.make_llm_judge(call_fn=lambda s, u, **k: low)
+    verdict = judge({"source": "a:x", "target": "b:y", "relation_type": "R"}, "ev")
+    assert verdict["score"] == 0.0, "negative score must clamp to 0.0"
+
+
 # ---------------------------------------------------------------------------
 # Entity resolution cascade
 # ---------------------------------------------------------------------------

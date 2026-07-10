@@ -104,8 +104,10 @@ def chunk_text(
 ) -> list[str]:
     """Paragraph-packing chunker with sentence-boundary splits and tail overlap.
 
-    Fallback used when chonkie (core/chunk_document.py) is unavailable;
-    boundaries land on paragraph/sentence edges, never mid-word.
+    Fallback used when chonkie (core/chunk_document.py) is unavailable.
+    Chunk START boundaries land on paragraph/sentence edges, but the tail
+    overlap is a fixed-size character slice (current[-overlap:]) of the
+    previous chunk's end, so the overlap window can begin mid-word.
     """
     pieces: list[str] = []
     for paragraph in re.split(r"\n\s*\n", text):
@@ -145,18 +147,28 @@ def _candidate_documents(project: dict) -> list[Path]:
 
 
 def index_project(project: dict, rebuild: bool = False) -> dict:
-    """Index new/changed documents and refresh the entity table.
+    """Index new/changed documents, drop deleted ones, refresh entities.
 
     Returns stats: {"indexed": [...], "skipped": n, "failed": [...],
-    "chunks": n, "entities": n}.
+    "removed": n, "chunks": n, "entities": n}.
     """
     if rebuild and index_path(project).exists():
         index_path(project).unlink()
     db = open_index(project)
     root = Path(project["root"])
-    stats = {"indexed": [], "skipped": 0, "failed": [], "chunks": 0, "entities": 0}
+    stats = {
+        "indexed": [],
+        "skipped": 0,
+        "failed": [],
+        "removed": 0,
+        "chunks": 0,
+        "entities": 0,
+    }
 
-    for path in _candidate_documents(project):
+    candidates = _candidate_documents(project)
+    candidate_ids = {str(p.relative_to(root)) for p in candidates}
+
+    for path in candidates:
         doc_id = str(path.relative_to(root))
         digest = hashlib.sha256(path.read_bytes()).hexdigest()
         row = db.execute(
@@ -188,6 +200,16 @@ def index_project(project: dict, rebuild: bool = False) -> dict:
         )
         stats["indexed"].append(doc_id)
         stats["chunks"] += len(chunks)
+
+    # Reconcile: drop rows for documents whose source files were deleted.
+    # Per-id DELETEs (not NOT IN over a literal list) — chunks_fts is an
+    # FTS5 virtual table and the stale set is small.
+    indexed_ids = {row[0] for row in db.execute("SELECT doc_id FROM documents")}
+    stale = indexed_ids - candidate_ids
+    for doc_id in stale:
+        db.execute("DELETE FROM chunks_fts WHERE doc_id = ?", (doc_id,))
+        db.execute("DELETE FROM documents WHERE doc_id = ?", (doc_id,))
+    stats["removed"] = len(stale)
 
     stats["entities"] = _refresh_entities(db, root / "graph_data.json")
     db.commit()

@@ -98,7 +98,7 @@ def make_llm_judge(call_fn=None):
             parsed = json.loads(raw)
             return {
                 "verdict": parsed.get("verdict", "partial"),
-                "score": float(parsed.get("score", 0.5)),
+                "score": max(0.0, min(1.0, float(parsed.get("score", 0.5)))),
                 "reason": str(parsed.get("reason", ""))[:120],
             }
         except Exception:  # noqa: BLE001 — any failure degrades to lexical
