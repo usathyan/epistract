@@ -29,7 +29,7 @@ Examples:
 ```
 
 ```bash
-python3 ${CLAUDE_PLUGIN_ROOT}/core/cli.py index [--project NAME] [--rebuild]
+PYTHONPATH="${CLAUDE_PLUGIN_ROOT}" python3 -m core.cli index [--project NAME] [--rebuild]
 ```
 
 Report how many documents were indexed vs. skipped, total chunks, and entity count.

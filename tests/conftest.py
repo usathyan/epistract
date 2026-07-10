@@ -17,6 +17,7 @@ import pytest
 PROJECT_ROOT = Path(__file__).parent.parent
 FIXTURES_DIR = Path(__file__).parent / "fixtures"
 
+sys.path.insert(0, str(PROJECT_ROOT))
 sys.path.insert(0, str(PROJECT_ROOT / "core"))
 sys.path.insert(0, str(PROJECT_ROOT / "domains" / "drug-discovery" / "validation"))
 sys.path.insert(0, str(PROJECT_ROOT / "domains" / "drug-discovery"))

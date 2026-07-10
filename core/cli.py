@@ -2,15 +2,15 @@
 """epistract CLI — multi-project dataset management, indexing, and search.
 
 Usage:
-    python3 core/cli.py init <name> [--domain D] [--dir PATH]
-    python3 core/cli.py add project <name> [--domain D] [--dir PATH]
-    python3 core/cli.py add files <path>... [--project NAME]
-    python3 core/cli.py add url <url>... [--project NAME]
-    python3 core/cli.py index [--project NAME] [--rebuild]
-    python3 core/cli.py search <query> [--project NAME] [--type T] [-k N] [--expand]
-    python3 core/cli.py enhance [--project NAME] [--judge] [--resolve] [--epistemic]
-    python3 core/cli.py projects list|info <name>|delete <name> [--purge]
-    python3 core/cli.py status [--project NAME]
+    python3 -m core.cli init <name> [--domain D] [--dir PATH]
+    python3 -m core.cli add project <name> [--domain D] [--dir PATH]
+    python3 -m core.cli add files <path>... [--project NAME]
+    python3 -m core.cli add url <url>... [--project NAME]
+    python3 -m core.cli index [--project NAME] [--rebuild]
+    python3 -m core.cli search <query> [--project NAME] [--type T] [-k N] [--expand]
+    python3 -m core.cli enhance [--project NAME] [--judge] [--resolve] [--epistemic]
+    python3 -m core.cli projects list|info <name>|delete <name> [--purge]
+    python3 -m core.cli status [--project NAME]
 
 Project resolution order: --project flag > $EPISTRACT_PROJECT > nearest
 ancestor directory containing .epistract/project.json.
@@ -25,10 +25,10 @@ import json
 import sys
 from pathlib import Path
 
-import index_db
-import registry
-from graph_retrieval import expand_from_seeds
-from registry import ProjectError
+from . import index_db
+from . import registry
+from .graph_retrieval import expand_from_seeds
+from .registry import ProjectError
 
 
 def _emit(payload: dict | list, as_json: bool, human: str) -> None:
@@ -132,10 +132,10 @@ def cmd_enhance(args) -> int:
     enhancement_report.json. Uses lexical fallbacks unless an LLM is
     configured, so it runs offline.
     """
-    import entity_resolution_v2 as erv2
-    import epistemic_temporal as et
-    import hedging
-    import triple_judge
+    from . import entity_resolution_v2 as erv2
+    from . import epistemic_temporal as et
+    from . import hedging
+    from . import triple_judge
 
     project = registry.resolve_project(args.project)
     graph_path = Path(project["root"]) / "graph_data.json"
@@ -164,7 +164,18 @@ def cmd_enhance(args) -> int:
         }
 
     if args.judge or run_all:
-        judge_fn = triple_judge.make_llm_judge() if args.llm else None
+        judge_fn = None
+        if args.llm:
+            try:
+                judge_fn = triple_judge.make_llm_judge()
+            except ImportError as e:
+                print(
+                    f"Error: --llm requires an LLM client but it could not be "
+                    f"imported ({e}). Install the LLM dependencies or omit "
+                    "--llm to use the offline lexical fallback.",
+                    file=sys.stderr,
+                )
+                return 1
         report["judge"] = triple_judge.judge_graph(graph, judge_fn=judge_fn)
 
     if args.epistemic or run_all:

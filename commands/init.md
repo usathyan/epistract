@@ -34,7 +34,7 @@ Examples:
 - `--dir` (optional): Project root directory (default: `./<name>`).
 
 ```bash
-python3 ${CLAUDE_PLUGIN_ROOT}/core/cli.py init <name> [--domain DOMAIN] [--dir PATH]
+PYTHONPATH="${CLAUDE_PLUGIN_ROOT}" python3 -m core.cli init <name> [--domain DOMAIN] [--dir PATH]
 ```
 
 After creation, tell the user the project root and suggest the next step:

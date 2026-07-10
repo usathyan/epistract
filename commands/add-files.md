@@ -31,7 +31,7 @@ Examples:
 - `--project` (optional): Target project name.
 
 ```bash
-python3 ${CLAUDE_PLUGIN_ROOT}/core/cli.py add files <path>... [--project NAME]
+PYTHONPATH="${CLAUDE_PLUGIN_ROOT}" python3 -m core.cli add files <path>... [--project NAME]
 ```
 
 Report how many files were added, how many were skipped as duplicates, and any missing

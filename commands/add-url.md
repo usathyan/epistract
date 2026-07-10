@@ -30,7 +30,7 @@ Examples:
 - `--project` (optional): Target project name.
 
 ```bash
-python3 ${CLAUDE_PLUGIN_ROOT}/core/cli.py add url <url>... [--project NAME]
+PYTHONPATH="${CLAUDE_PLUGIN_ROOT}" python3 -m core.cli add url <url>... [--project NAME]
 ```
 
 Report the fetch status for each URL (added / skipped duplicate). For PubMed corpora,

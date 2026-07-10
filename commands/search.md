@@ -34,7 +34,7 @@ Examples:
 ```
 
 ```bash
-python3 ${CLAUDE_PLUGIN_ROOT}/core/cli.py search <query> [--project NAME] [--type TYPE] [-k N] [--expand]
+PYTHONPATH="${CLAUDE_PLUGIN_ROOT}" python3 -m core.cli search <query> [--project NAME] [--type TYPE] [-k N] [--expand]
 ```
 
 Present entity hits, chunk hits (with source doc), and — if `--expand` was used — the

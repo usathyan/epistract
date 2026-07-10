@@ -30,7 +30,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-from registry import STATE_DIRNAME
+from .registry import STATE_DIRNAME
 
 INDEX_FILENAME = "index.db"
 TEXT_SUFFIXES = {".txt", ".md", ".markdown", ".text", ".csv", ".json", ".html", ".htm"}

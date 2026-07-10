@@ -44,7 +44,7 @@ Examples:
 ```
 
 ```bash
-python3 ${CLAUDE_PLUGIN_ROOT}/core/cli.py enhance [--project NAME] [--judge] [--resolve] [--epistemic] [--llm]
+PYTHONPATH="${CLAUDE_PLUGIN_ROOT}" python3 -m core.cli enhance [--project NAME] [--judge] [--resolve] [--epistemic] [--llm]
 ```
 
 Report the merge count, triple-verdict breakdown, and epistemic status counts (including

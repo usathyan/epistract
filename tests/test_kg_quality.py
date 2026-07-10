@@ -10,10 +10,10 @@ Run: python -m pytest tests/test_kg_quality.py -v
 
 from pathlib import Path
 
-import entity_resolution_v2 as erv2
-import epistemic_temporal as et
-import hedging
-import triple_judge
+from core import entity_resolution_v2 as erv2
+from core import epistemic_temporal as et
+from core import hedging
+from core import triple_judge
 
 
 # ---------------------------------------------------------------------------
@@ -313,8 +313,8 @@ def test_adjudicate_fn_can_veto_lexical_contradiction():
 def test_cli_enhance_end_to_end(tmp_path, monkeypatch, capsys):
     import json as _json
 
-    import cli
-    import registry
+    from core import cli
+    from core import registry
 
     monkeypatch.setenv("EPISTRACT_HOME", str(tmp_path / "home"))
     monkeypatch.delenv("EPISTRACT_PROJECT", raising=False)
@@ -367,11 +367,48 @@ def test_cli_enhance_end_to_end(tmp_path, monkeypatch, capsys):
 
 
 def test_cli_enhance_requires_graph(tmp_path, monkeypatch, capsys):
-    import cli
-    import registry
+    from core import cli
+    from core import registry
 
     monkeypatch.setenv("EPISTRACT_HOME", str(tmp_path / "home"))
     monkeypatch.delenv("EPISTRACT_PROJECT", raising=False)
     registry.init_project("nograph", root=tmp_path / "nograph")
     assert cli.main(["enhance", "--project", "nograph"]) == 1
     assert "no graph_data.json" in capsys.readouterr().err
+
+
+def test_cli_enhance_llm_import_guard(tmp_path, monkeypatch, capsys):
+    """A broken llm_client import under --llm degrades to a friendly error."""
+    import json as _json
+
+    from core import cli
+    from core import registry
+
+    monkeypatch.setenv("EPISTRACT_HOME", str(tmp_path / "home"))
+    monkeypatch.delenv("EPISTRACT_PROJECT", raising=False)
+    project = registry.init_project(
+        "llmguard", root=tmp_path / "llmguard", domain="drug-discovery"
+    )
+    graph = {
+        "nodes": [{"id": "d:sema", "name": "Semaglutide", "entity_type": "COMPOUND"}],
+        "links": [
+            {
+                "source": "d:sema",
+                "target": "d:sema",
+                "relation_type": "SELF",
+                "confidence": 0.9,
+                "evidence": "Semaglutide is semaglutide.",
+            }
+        ],
+    }
+    (Path(project["root"]) / "graph_data.json").write_text(_json.dumps(graph))
+
+    def broken_make_llm_judge(call_fn=None):
+        raise ImportError("No module named 'litellm'")
+
+    monkeypatch.setattr(triple_judge, "make_llm_judge", broken_make_llm_judge)
+    assert (
+        cli.main(["enhance", "--project", "llmguard", "--judge", "--llm"]) == 1
+    ), "expected exit code 1 when the LLM client cannot be imported"
+    err = capsys.readouterr().err
+    assert "--llm" in err, f"stderr should mention --llm guidance, got: {err!r}"

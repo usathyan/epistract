@@ -28,9 +28,9 @@ Examples:
 ```
 
 ```bash
-python3 ${CLAUDE_PLUGIN_ROOT}/core/cli.py projects list
-python3 ${CLAUDE_PLUGIN_ROOT}/core/cli.py projects info <name>
-python3 ${CLAUDE_PLUGIN_ROOT}/core/cli.py projects delete <name> [--purge]
+PYTHONPATH="${CLAUDE_PLUGIN_ROOT}" python3 -m core.cli projects list
+PYTHONPATH="${CLAUDE_PLUGIN_ROOT}" python3 -m core.cli projects info <name>
+PYTHONPATH="${CLAUDE_PLUGIN_ROOT}" python3 -m core.cli projects delete <name> [--purge]
 ```
 
 For `list`, present a table of name, domain, and root. Deletion is registry-only by

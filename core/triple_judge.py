@@ -20,7 +20,7 @@ from __future__ import annotations
 import json
 import re
 
-from hedging import hedge_score
+from .hedging import hedge_score
 
 _JUDGE_SYSTEM = (
     "You are a knowledge-graph triple validator. Given a (subject, relation, "
@@ -82,7 +82,7 @@ def make_llm_judge(call_fn=None):
     cannot be parsed, so a flaky endpoint never crashes the gate.
     """
     if call_fn is None:
-        from llm_client import call_llm as call_fn  # noqa: PLC0415
+        from .llm_client import call_llm as call_fn  # noqa: PLC0415
 
     def _judge(triple: dict, evidence: str) -> dict:
         user = json.dumps(

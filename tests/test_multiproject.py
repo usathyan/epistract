@@ -9,11 +9,11 @@ from pathlib import Path
 
 import pytest
 
-import cli
-import graph_retrieval
-import index_db
-import registry
-from registry import ProjectError
+from core import cli
+from core import graph_retrieval
+from core import index_db
+from core import registry
+from core.registry import ProjectError
 
 
 @pytest.fixture
