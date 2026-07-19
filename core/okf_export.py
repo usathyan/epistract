@@ -675,7 +675,7 @@ def _write_indexes(
             fields, _body = _read_frontmatter(md_path)
             title = fields.get("title", md_path.stem)
             description = fields.get("description", "")
-            entries.append(f"* [{_cell(title)}]({md_path.name}) - {description}")
+            entries.append(f"* [{_cell(title)}]({md_path.name}) - {_cell(description)}")
         heading = _titleize(path.name)
         lines = [f"# {heading}", ""] + entries
         (path / "index.md").write_text(
@@ -812,15 +812,33 @@ if __name__ == "__main__":
         sys.exit(1)
 
     project_root_arg = sys.argv[1]
-    output_dir_arg: str | None = None
-    if "--out" in sys.argv:
-        output_dir_arg = sys.argv[sys.argv.index("--out") + 1]
+    if project_root_arg.startswith("--"):
+        print(
+            f"Error: first argument must be the project root, not a flag "
+            f"({project_root_arg!r})",
+            file=sys.stderr,
+        )
+        sys.exit(2)
+
+    def _flag_value(flag: str) -> str | None:
+        """Return the value following `flag`, None if absent; exit 2 if
+        the flag is present but trailing (no value to consume)."""
+        if flag not in sys.argv:
+            return None
+        index = sys.argv.index(flag)
+        if index + 1 >= len(sys.argv):
+            print(f"Error: {flag} requires a value", file=sys.stderr)
+            sys.exit(2)
+        return sys.argv[index + 1]
+
+    output_dir_arg = _flag_value("--out")
 
     include_evidence_arg = "--no-evidence" not in sys.argv
 
-    min_confidence_arg = 0.0
-    if "--min-confidence" in sys.argv:
-        min_confidence_arg = float(sys.argv[sys.argv.index("--min-confidence") + 1])
+    min_confidence_str = _flag_value("--min-confidence")
+    min_confidence_arg = (
+        float(min_confidence_str) if min_confidence_str is not None else 0.0
+    )
 
     as_json = "--json" in sys.argv
 

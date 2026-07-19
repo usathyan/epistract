@@ -13,12 +13,15 @@ from __future__ import annotations
 
 import json
 import re
+import subprocess
+import sys
 from pathlib import Path
 
 import pytest
 import yaml
 
 from core import cli
+from core import okf_export
 from core import registry
 from core.okf_export import export_okf
 
@@ -813,4 +816,56 @@ def test_no_evidence_redacts_derived_evidence_from_claim_frontmatter(tmp_path):
     fields, _body = _read_frontmatter(claim_path)
     assert fields.get("epistract_evidence_tier") == "high", (
         "allowlist must be selective: evidence_tier passes through"
+    )
+
+
+def test_index_description_with_newline_stays_single_line(tmp_path):
+    """A mid-sentence newline in a node description must be collapsed to a
+    space in the directory index.md, not split the list entry."""
+    graph = _sample_graph()
+    graph["nodes"].append(
+        {
+            "id": "org:multiline",
+            "name": "Multiline Org",
+            "entity_type": "Organization",
+            # Deliberately no .!? before the newline: _first_sentence splits
+            # on `(?<=[.!?])\s+`, so the whole string (newline intact)
+            # becomes the description.
+            "context": "First part\nsecond part",
+        }
+    )
+    root = tmp_path / "proj"
+    root.mkdir()
+    (root / "graph_data.json").write_text(json.dumps(graph))
+
+    summary = export_okf(root)
+    index_text = (
+        Path(summary["bundle_path"]) / "organization" / "index.md"
+    ).read_text()
+    assert "First part second part" in index_text, (
+        "newline in description must collapse to a space in index.md"
+    )
+
+
+def test_main_flag_missing_value_exits_cleanly():
+    """A trailing --out (no value) or a flag as first argument must exit 2
+    with a stderr message, not raise IndexError or consume the flag as the
+    project root. Neither invocation reaches export (no fs side effects)."""
+    script = Path(okf_export.__file__)
+
+    trailing = subprocess.run(
+        [sys.executable, str(script), "somepath", "--out"],
+        capture_output=True,
+        text=True,
+    )
+    assert trailing.returncode == 2, f"expected exit 2, got {trailing.returncode}"
+    assert "--out" in trailing.stderr
+
+    flag_as_root = subprocess.run(
+        [sys.executable, str(script), "--no-evidence"],
+        capture_output=True,
+        text=True,
+    )
+    assert flag_as_root.returncode == 2, (
+        f"expected exit 2, got {flag_as_root.returncode}"
     )
