@@ -306,7 +306,7 @@ def export_okf(
         metadata.get("updated_at") or metadata.get("created_at") or FALLBACK_TIMESTAMP
     )
     nodes = graph_data.get("nodes") or []
-    links = graph_data.get("links") or []
+    links = graph_data.get("links") or graph_data.get("edges") or []
 
     doc_nodes = [n for n in nodes if n.get("entity_type") == "DOCUMENT" and n.get("id")]
     concept_nodes = [
@@ -520,7 +520,7 @@ def export_okf(
                 concept_counts[f"{CLAIMS_DIRNAME}:{_slugify(claim_type)}"] += 1
 
     # --- log.md -----------------------------------------------------------
-    _write_log(bundle_dir, graph_data, node_title, timestamp)
+    _write_log(bundle_dir, graph_data, node_title, timestamp, links)
 
     # --- index.md (root + per-directory) ----------------------------------
     _write_indexes(bundle_dir, metadata, concept_counts)
@@ -613,20 +613,26 @@ def _write_claim(
 
 
 def _write_log(
-    bundle_dir: Path, graph_data: dict, node_title: dict[str, str], timestamp: str
+    bundle_dir: Path,
+    graph_data: dict,
+    node_title: dict[str, str],
+    timestamp: str,
+    links: list[dict],
 ) -> None:
     metadata = graph_data.get("metadata") or {}
     entries: dict[str, list[str]] = defaultdict(list)
 
     entity_count = metadata.get("entity_count", len(graph_data.get("nodes") or []))
-    relation_count = metadata.get("relation_count", len(graph_data.get("links") or []))
+    relation_count = metadata.get("relation_count", len(links))
     entries[_date_part(timestamp)].append(
         f"**Initialization**: bundle generated from epistract graph "
         f"({entity_count} entities, {relation_count} relations)."
     )
 
-    for link in graph_data.get("links") or []:
+    for link in links:
         if link.get("epistemic_status") != "superseded":
+            continue
+        if not link.get("source") or not link.get("target"):
             continue
         invalid_at = link.get("invalid_at") or timestamp
         source_title = node_title.get(link.get("source"), link.get("source"))
