@@ -554,6 +554,10 @@ def _write_claim(
     doc_key_to_path: dict[str, str],
     doc_key_to_title: dict[str, str],
 ) -> None:
+    if not include_evidence:
+        # _redact_evidence returns a new dict (caller's item untouched);
+        # all subsequent reads operate on the redacted copy.
+        item = _redact_evidence(item)
     reserved = {"id", "type", "severity", "description"}
     description = item.get("description") or claim_type
     fields: dict[str, object] = {
@@ -568,8 +572,6 @@ def _write_claim(
         fields["tags"] = [_slugify(str(severity))]
     for key, value in item.items():
         if key in reserved:
-            continue
-        if key == "evidence" and not include_evidence:
             continue
         fields[f"epistract_{key}"] = value
 
@@ -745,21 +747,39 @@ def _read_frontmatter(md_path: Path) -> tuple[dict, str]:
 # ---------------------------------------------------------------------------
 
 
-def _redact_evidence(value: object) -> object:
-    """Recursively blank any dict entry whose key contains 'evidence'
-    (case-insensitive), preserving the original value's container shape.
+_EVIDENCE_KEYS = frozenset(
+    {
+        "evidence",
+        "evidence_summary",
+        "evidence_text",
+        "mentions",
+        "positive_mentions",
+        "negative_mentions",
+    }
+)
 
-    Domain epistemic layers vary in the shape they give evidence text: the
-    contracts domain uses a flat `evidence` key on conflicts/coverage_gaps/
-    risks, while drug-discovery nests it under `evidence_summary` and inside
-    `positive_mentions[]`/`negative_mentions[]`/`mentions[]`. Walking the
-    whole structure (instead of special-casing one domain's field names)
-    catches both, plus any future domain's shape.
+
+def _redact_evidence(value: object) -> object:
+    """Recursively blank dict entries whose key is in the `_EVIDENCE_KEYS`
+    allowlist, preserving the original value's container shape.
+
+    Only listed text-bearing keys are blanked, so non-confidential metadata
+    like `evidence_tier`/`evidence_tier_counts` (and any other non-listed
+    keys) survive — a substring match on 'evidence' would over-blank them.
+    Domain epistemic layers vary in shape: the contracts domain uses a flat
+    `evidence` key on conflicts/coverage_gaps/risks, while drug-discovery
+    nests it under `evidence_summary` and inside `positive_mentions[]`/
+    `negative_mentions[]`/`mentions[]`. Intentional tradeoff: blanking
+    `mentions`/`positive_mentions`/`negative_mentions` wholesale also drops
+    their `document`/`confidence` metadata (the confidentiality-safe
+    direction; nested `evidence` inside a mention is caught either way
+    because the parent list is blanked, and any stray nested `evidence` key
+    elsewhere is caught by the recursive per-key check).
     """
     if isinstance(value, dict):
         redacted: dict[str, object] = {}
         for key, val in value.items():
-            if "evidence" in key.lower():
+            if key in _EVIDENCE_KEYS:
                 redacted[key] = (
                     {} if isinstance(val, dict) else [] if isinstance(val, list) else ""
                 )
