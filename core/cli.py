@@ -9,6 +9,8 @@ Usage:
     python3 -m core.cli index [--project NAME] [--rebuild]
     python3 -m core.cli search <query> [--project NAME] [--type T] [-k N] [--expand]
     python3 -m core.cli enhance [--project NAME] [--judge] [--resolve] [--epistemic]
+    python3 -m core.cli export --format okf [--project NAME] [--out DIR]
+                                [--no-evidence] [--min-confidence F]
     python3 -m core.cli projects list|info <name>|delete <name> [--purge]
     python3 -m core.cli status [--project NAME]
 
@@ -222,6 +224,59 @@ def cmd_enhance(args) -> int:
     return 0
 
 
+def cmd_export(args) -> int:
+    """Export the project's graph as an OKF bundle.
+
+    Only `--format okf` is handled here. Other formats (graphml, gexf, csv,
+    sqlite, plain json) continue to go through `core/run_sift.py export`
+    (see `/epistract:export`), which operates on a bare output directory
+    rather than a registered project.
+    """
+    if args.format != "okf":
+        print(
+            f"Error: `epistract export` only supports --format okf. "
+            f"For '{args.format}', use core/run_sift.py export "
+            "(graphml, gexf, csv, sqlite, json).",
+            file=sys.stderr,
+        )
+        return 2
+
+    try:
+        from .okf_export import export_okf
+    except ImportError as e:
+        print(
+            f"Error: OKF export requires dependencies that are not installed "
+            f"({e}). Run `scripts/setup.sh` (or `uv pip install sift-kg`) to "
+            "install them.",
+            file=sys.stderr,
+        )
+        return 1
+
+    project = registry.resolve_project(args.project)
+    try:
+        summary = export_okf(
+            project["root"],
+            args.out,
+            include_evidence=not args.no_evidence,
+            min_confidence=args.min_confidence,
+        )
+    except (FileNotFoundError, ValueError) as e:
+        print(f"Error: {e}", file=sys.stderr)
+        return 1
+
+    human = (
+        f"Project '{project['name']}': exported OKF bundle to {summary['bundle_path']}\n"
+        f"  concepts: {summary['concept_counts']}\n"
+        f"  skipped edges (below min-confidence): {summary['skipped_edges']}"
+    )
+    if summary["warnings"]:
+        human += "\n  warnings:\n" + "\n".join(
+            f"    - {w}" for w in summary["warnings"]
+        )
+    _emit(summary, args.json, human)
+    return 0
+
+
 def cmd_projects(args) -> int:
     if args.action == "list":
         projects = registry.list_projects()
@@ -376,6 +431,30 @@ def build_parser() -> argparse.ArgumentParser:
     )
     p_enhance.add_argument("--json", action="store_true")
     p_enhance.set_defaults(func=cmd_enhance)
+
+    p_export = sub.add_parser("export", help="Export the graph (currently: OKF bundle)")
+    p_export.add_argument(
+        "--format",
+        default="okf",
+        help="Export format (only 'okf' supported here; see run_sift.py for others)",
+    )
+    p_export.add_argument("--project", default=None)
+    p_export.add_argument(
+        "--out", default=None, help="Bundle output directory (default: <root>/okf/)"
+    )
+    p_export.add_argument(
+        "--no-evidence",
+        action="store_true",
+        help="Redact evidence text from concept bodies and sidecar JSON",
+    )
+    p_export.add_argument(
+        "--min-confidence",
+        type=float,
+        default=0.0,
+        help="Omit relations below this confidence from Relations tables",
+    )
+    p_export.add_argument("--json", action="store_true")
+    p_export.set_defaults(func=cmd_export)
 
     p_projects = sub.add_parser("projects", help="Manage the project registry")
     projects_sub = p_projects.add_subparsers(dest="action", required=True)

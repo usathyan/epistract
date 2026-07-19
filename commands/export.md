@@ -18,6 +18,10 @@ Report the export path and format-specific usage tips:
 - sqlite: Query with SQL, DuckDB, or Datasette
 - csv: Import to Excel, pandas, or R
 
+For OKF (Open Knowledge Format) bundles — a git-versionable markdown tree for
+publishing to agents/humans — use the multi-project CLI instead:
+`python3 -m core.cli export --format okf [--project NAME] [--out DIR] [--no-evidence] [--min-confidence F]`.
+
 ## Usage Guard
 
 **If invoked with no format argument or with `--help`:** Display the following usage block verbatim and stop — do not run any pipeline steps.

@@ -182,6 +182,7 @@ Full walkthrough: **[docs/PROJECTS.md](docs/PROJECTS.md)**.
 - [docs/ADDING-DOMAINS.md](docs/ADDING-DOMAINS.md) — domain wizard + manual creation
 - [docs/PIPELINE-CAPACITY.md](docs/PIPELINE-CAPACITY.md) — formats, limits, what works and what doesn't
 - [docs/known-limitations.md](docs/known-limitations.md) — current contracts + known gaps
+- [docs/OKF-MAPPING.md](docs/OKF-MAPPING.md) — Open Knowledge Format export conventions and extension keys
 - [DEVELOPER.md](DEVELOPER.md) — contributing, internals
 - [CHANGELOG.md](CHANGELOG.md) — release notes
 
