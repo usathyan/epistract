@@ -658,6 +658,61 @@ def test_log_date_heading_never_unknown_date(tmp_path):
     assert "unknown-date" not in log_text
 
 
+def test_export_reads_edges_key_relations(tmp_path):
+    """A graph keyed `edges` (not `links`) must export its relations,
+    contested/superseded tags, and log deprecations — and the verbatim
+    sidecar must stay `edges`-keyed (graph_data is never mutated)."""
+    graph = _sample_graph()
+    graph["edges"] = graph.pop("links")
+    del graph["metadata"]["relation_count"]  # force recomputation from edges
+    root = tmp_path / "proj"
+    root.mkdir()
+    (root / "graph_data.json").write_text(json.dumps(graph))
+
+    summary = export_okf(root)
+    bundle_dir = Path(summary["bundle_path"])
+
+    acme_path = bundle_dir / "organization" / "acme-corp.md"
+    acme_text = acme_path.read_text()
+    assert "PARTY_TO" in acme_text, "edges-keyed relations missing from concept file"
+    fields, _body = _read_frontmatter(acme_path)
+    assert "contested" in fields.get("tags", []), (
+        f"expected 'contested' tag from edges-keyed graph, got {fields.get('tags')}"
+    )
+
+    log_text = (bundle_dir / "log.md").read_text()
+    assert "Deprecation" in log_text
+    assert "2026-01-15" in log_text  # invalid_at of the superseded edge
+    assert "Cost Overrun Risk" in log_text
+
+    # Verbatim sidecar stays lossless: still keyed "edges", not "links".
+    sidecar = json.loads((bundle_dir / "graph_data.json").read_text())
+    assert "edges" in sidecar and "links" not in sidecar
+
+
+def test_write_log_skips_superseded_link_missing_endpoint(tmp_path):
+    """A superseded link missing source/target must be skipped in the log
+    walk, never rendered as a literal `None`."""
+    graph = _sample_graph()
+    graph["links"].append(
+        {
+            "source": "org:acme-1",
+            "relation_type": "X",
+            "epistemic_status": "superseded",
+            "invalid_at": "2026-01-16T00:00:00+00:00",
+        }
+    )
+    root = tmp_path / "proj"
+    root.mkdir()
+    (root / "graph_data.json").write_text(json.dumps(graph))
+
+    summary = export_okf(root)
+    log_text = (Path(summary["bundle_path"]) / "log.md").read_text()
+    assert "`None`" not in log_text, "malformed superseded link rendered `None`"
+    assert "Cost Overrun Risk" in log_text  # well-formed entry still present
+    assert any("link missing source/target" in w for w in summary["warnings"])
+
+
 def test_redaction_strips_evidence_from_drug_discovery_shape(tmp_path):
     graph = _sample_graph()
     root = tmp_path / "proj"
