@@ -747,3 +747,70 @@ def test_redaction_strips_evidence_from_drug_discovery_shape(tmp_path):
     assert "SECRET VERBATIM QUOTE" not in sidecar_text
     assert "SECRET A" not in sidecar_text
     assert "SECRET B" not in sidecar_text
+
+
+def test_no_evidence_preserves_evidence_tier_metadata(tmp_path):
+    """--no-evidence must blank verbatim evidence text but preserve
+    non-confidential tier metadata (`evidence_tier`, `evidence_tier_counts`)
+    in the claims sidecar — a substring match on 'evidence' over-blanks."""
+    root = tmp_path / "proj"
+    root.mkdir()
+    (root / "graph_data.json").write_text(json.dumps(_sample_graph()))
+    claims = {
+        "super_domain": {
+            "conflicts": [
+                {
+                    "id": "conflict-tiered",
+                    "description": "Tiered conflict with metadata.",
+                    "evidence": "SECRET TEXT",
+                    "evidence_tier": "high",
+                    "evidence_tier_counts": {"high": 3, "low": 1},
+                }
+            ]
+        }
+    }
+    (root / "claims_layer.json").write_text(json.dumps(claims))
+
+    summary = export_okf(root, include_evidence=False)
+    sidecar = json.loads(
+        (Path(summary["bundle_path"]) / "claims_layer.json").read_text()
+    )
+    conflict = sidecar["super_domain"]["conflicts"][0]
+    assert conflict["evidence"] == "", "verbatim evidence must be blanked"
+    assert conflict["evidence_tier"] == "high", "evidence_tier must survive"
+    assert conflict["evidence_tier_counts"] == {"high": 3, "low": 1}, (
+        "evidence_tier_counts must survive"
+    )
+
+
+def test_no_evidence_redacts_derived_evidence_from_claim_frontmatter(tmp_path):
+    """--no-evidence must redact nested/derived evidence text (e.g.
+    evidence_summary) from claim frontmatter, matching sidecar redaction —
+    while non-confidential tier metadata still passes through."""
+    root = tmp_path / "proj"
+    root.mkdir()
+    (root / "graph_data.json").write_text(json.dumps(_sample_graph()))
+    claims = {
+        "super_domain": {
+            "conflicts": [
+                {
+                    "id": "conflict-tier",
+                    "description": "Conflict with derived evidence.",
+                    "evidence_summary": "SECRET SUMMARY",
+                    "evidence_tier": "high",
+                }
+            ]
+        }
+    }
+    (root / "claims_layer.json").write_text(json.dumps(claims))
+
+    summary = export_okf(root, include_evidence=False)
+    claim_path = Path(summary["bundle_path"]) / "claims" / "conflict-tier.md"
+    claim_text = claim_path.read_text()
+    assert "SECRET SUMMARY" not in claim_text, (
+        "derived evidence leaked into claim frontmatter"
+    )
+    fields, _body = _read_frontmatter(claim_path)
+    assert fields.get("epistract_evidence_tier") == "high", (
+        "allowlist must be selective: evidence_tier passes through"
+    )
