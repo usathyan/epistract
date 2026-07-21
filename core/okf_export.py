@@ -593,6 +593,10 @@ def _write_claim(
     for key, value in item.items():
         if key in reserved:
             continue
+        # Non-identifier keys (e.g. containing ':' or newlines) are dropped:
+        # interpolated as-is they would corrupt the frontmatter YAML block.
+        if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", key):
+            continue
         fields[f"epistract_{key}"] = value
 
     body_parts = [description]
@@ -856,9 +860,17 @@ if __name__ == "__main__":
     include_evidence_arg = "--no-evidence" not in sys.argv
 
     min_confidence_str = _flag_value("--min-confidence")
-    min_confidence_arg = (
-        float(min_confidence_str) if min_confidence_str is not None else 0.0
-    )
+    min_confidence_arg = 0.0
+    if min_confidence_str is not None:
+        try:
+            min_confidence_arg = float(min_confidence_str)
+        except ValueError:
+            print(
+                f"Error: --min-confidence requires a number, "
+                f"got {min_confidence_str!r}",
+                file=sys.stderr,
+            )
+            sys.exit(2)
 
     as_json = "--json" in sys.argv
 
