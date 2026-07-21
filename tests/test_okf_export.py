@@ -869,3 +869,44 @@ def test_main_flag_missing_value_exits_cleanly():
     assert flag_as_root.returncode == 2, (
         f"expected exit 2, got {flag_as_root.returncode}"
     )
+
+
+def test_export_refuses_to_wipe_non_bundle_directory(tmp_path):
+    """`--out` pointed at a pre-existing non-empty directory that is NOT a
+    previous OKF bundle must raise instead of shutil.rmtree'ing it -- the
+    ancestor guard alone would happily wipe e.g. `--out ~/Documents`."""
+    root = _write_project(tmp_path / "proj")
+    out = tmp_path / "not-a-bundle"
+    out.mkdir()
+    (out / "keepme.txt").write_text("do not delete")
+
+    with pytest.raises(ValueError):
+        export_okf(root, out)
+
+    assert (out / "keepme.txt").exists(), "unrelated file was deleted"
+    assert (out / "keepme.txt").read_text() == "do not delete", (
+        "unrelated file contents were clobbered"
+    )
+
+
+def test_export_into_empty_directory_succeeds(tmp_path):
+    """An existing but EMPTY output directory is a safe boundary case: there
+    is nothing to lose, so export must proceed rather than refuse."""
+    root = _write_project(tmp_path / "proj")
+    out = tmp_path / "empty-out"
+    out.mkdir()
+
+    summary = export_okf(root, out)
+    assert (Path(summary["bundle_path"]) / "index.md").exists()
+
+
+def test_reexport_over_previous_bundle_succeeds(tmp_path):
+    """Re-exporting over this exporter's own previous bundle must stay
+    idempotent: the root index.md `okf_version` sentinel identifies the
+    directory as a bundle that is safe to wipe and recreate."""
+    root = _write_project(tmp_path / "proj")
+    out = tmp_path / "bundle-out"
+
+    export_okf(root, out)
+    export_okf(root, out)  # second export over the same bundle must not raise
+    assert (out / "index.md").exists()
