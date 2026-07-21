@@ -910,3 +910,52 @@ def test_reexport_over_previous_bundle_succeeds(tmp_path):
     export_okf(root, out)
     export_okf(root, out)  # second export over the same bundle must not raise
     assert (out / "index.md").exists()
+
+
+def test_claim_hostile_frontmatter_key_is_dropped(tmp_path):
+    """A claims-layer key containing ':' or a newline must not be interpolated
+    into the claim frontmatter YAML block: unfixed, `epistract_bad: key` +
+    `name: "HOSTILE_VALUE"` render as two physical lines, yielding a spurious
+    top-level `name` field and leaking the value."""
+    root = tmp_path / "proj"
+    root.mkdir()
+    (root / "graph_data.json").write_text(json.dumps(_sample_graph()))
+    claims = {
+        "super_domain": {
+            "conflicts": [
+                {
+                    "id": "conflict-hostile",
+                    "description": "Conflict carrying a hostile extra key.",
+                    "safe_key": "kept",
+                    "bad: key\nname": "HOSTILE_VALUE",
+                }
+            ]
+        }
+    }
+    (root / "claims_layer.json").write_text(json.dumps(claims))
+
+    summary = export_okf(root)
+    claim_path = Path(summary["bundle_path"]) / "claims" / "conflict-hostile.md"
+    fields, _body = _read_frontmatter(claim_path)
+    assert isinstance(fields, dict), "frontmatter no longer parses as a mapping"
+    assert fields.get("epistract_id") == "conflict-hostile"
+    assert fields.get("epistract_safe_key") == "kept", (
+        "legit identifier keys must survive -- filter must be selective"
+    )
+    assert "name" not in fields, "injected newline created a spurious top-level key"
+    assert "HOSTILE_VALUE" not in claim_path.read_text(), "hostile value leaked"
+
+
+def test_main_min_confidence_non_numeric_exits_cleanly():
+    """`--min-confidence abc` in the standalone __main__ must exit 2 with a
+    clean stderr message, not an uncaught ValueError traceback. (The argparse
+    path in core/cli.py uses type=float and handles this on its own.)"""
+    script = Path(okf_export.__file__)
+    result = subprocess.run(
+        [sys.executable, str(script), "somepath", "--min-confidence", "abc"],
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode == 2, f"expected exit 2, got {result.returncode}"
+    assert "--min-confidence" in result.stderr
+    assert "Traceback" not in result.stderr
