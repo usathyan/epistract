@@ -244,8 +244,11 @@ def export_okf(
         project_root: Project directory containing graph_data.json (and
             optionally claims_layer.json, communities.json).
         output_dir: Bundle destination. Defaults to `<project_root>/okf/`.
-            Wiped and recreated on every export so removed entities don't
-            leave stale files behind.
+            Wiped and recreated ONLY when it is empty or a previous OKF
+            bundle (root index.md with okf_version frontmatter), so removed
+            entities don't leave stale files behind. A non-empty directory
+            that is not a previous bundle raises ValueError instead --
+            unrelated files are never deleted.
         include_evidence: When False, strips evidence text from concept
             Relations tables and from the sidecar JSON copies (redaction
             for confidential corpora).
@@ -298,6 +301,19 @@ def export_okf(
             "the project root or one of its parents."
         )
     if bundle_dir.exists():
+        root_index = bundle_dir / "index.md"
+        looks_like_bundle = (
+            root_index.is_file()
+            and "okf_version" in root_index.read_text(encoding="utf-8")
+        )
+        if any(bundle_dir.iterdir()) and not looks_like_bundle:
+            raise ValueError(
+                f"Refusing to export: output directory ({resolved_bundle}) "
+                "exists, is not empty, and does not look like a previous OKF "
+                "bundle (no root index.md with okf_version frontmatter); "
+                "wiping it would delete unrelated files. Choose an empty "
+                "--out directory or the location of a previous bundle."
+            )
         shutil.rmtree(bundle_dir)
     bundle_dir.mkdir(parents=True, exist_ok=True)
 
@@ -383,6 +399,10 @@ def export_okf(
     # --- edges: outgoing non-MENTIONED_IN relations, min_confidence filter --
     outgoing: dict[str, list[dict]] = defaultdict(list)
     skipped_edges = 0
+    # Contested/superseded statuses are intentionally collected from ALL links
+    # BEFORE the MENTIONED_IN skip and min_confidence filter below: a node's
+    # status tags reflect its standing in the full graph, not the filtered
+    # Relations-table view.
     incident_status: dict[str, set[str]] = defaultdict(set)
     for link in links:
         status = link.get("epistemic_status")
