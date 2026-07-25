@@ -12,14 +12,14 @@ version: 1.0.0
 
 # Clinical Trials Extraction Skill
 
-## CRITICAL: NCT ID Capture Directive
+## NCT ID Capture
 
 For any Trial entity, the `name` field MUST be the NCT identifier
 (format: `NCT` followed by 8 digits, e.g. `NCT04303780`) when one is
 present in the document. Study acronyms ("CodeBreaK 200"), sponsor-assigned
 codes ("AMG 510 study"), and descriptive titles ("Phase 3 study of
 sotorasib in NSCLC") go into `attributes.trial_acronym` or
-`attributes.descriptive_title` — NEVER into `name`.
+`attributes.descriptive_title` — not into `name`.
 
 If no NCT ID is present, fall back to the study acronym. Only use a
 descriptive title as `name` as a last resort, and set `confidence` <= 0.6.

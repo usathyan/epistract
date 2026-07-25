@@ -107,6 +107,13 @@ This is belt + suspenders per D-07 cascade (`--model` flag > `EPISTRACT_MODEL` e
 
 **For 4+ documents:** Use the Agent tool to dispatch parallel extraction agents (one per document) for speed.
 
+**Cap concurrency at 20 agents.** Dispatch at most 20 extraction agents at a time; for
+larger corpora, process in successive waves of 20 and wait for each wave to return before
+starting the next. "One per document" is the *mapping*, not the *batch size* — a 200-document
+corpus is 10 waves, not 200 simultaneous agents. Beyond ~20 concurrent agents the runtime
+queues them anyway, so the extra dispatches buy no speed while multiplying token spend and
+making a partial failure much harder to attribute to a specific document.
+
 ### Step 3.5: Normalize Extractions
 
 **MUST run AFTER all Agent-dispatched extractions complete.** Parallel Agent dispatches block until all return — but this step boundary is stated explicitly so future changes to the dispatcher do not accidentally break the sequencing.

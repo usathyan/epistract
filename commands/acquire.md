@@ -102,6 +102,11 @@ The JSON format expected by the script:
 
 **For 10+ articles:** Use the Agent tool to dispatch parallel acquirer agents (batches of 5) for speed.
 
+**Cap concurrency at 20 agents.** "Batches of 5" describes how many PMIDs each agent handles,
+not how many agents run at once. Dispatch at most 20 acquirer agents concurrently — for a
+larger PMID list, run successive waves and wait for each to return. This also keeps PubMed
+E-utilities request rates within a sane range; NCBI rate-limits aggressive clients.
+
 ### Step 6: Report Summary
 
 Tell the user:
