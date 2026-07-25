@@ -57,15 +57,15 @@ def test_e2e_drug_discovery_pipeline(tmp_path):
 
     # 5. Verify claims layer
     claims_path = tmp_path / "claims_layer.json"
-    assert claims_path.exists(), f"claims_layer.json not created after epistemic analysis"
+    assert claims_path.exists(), "claims_layer.json not created after epistemic analysis"
     assert isinstance(claims_layer, dict), f"analyze_epistemic returned {type(claims_layer)}, expected dict"
 
     # 6. Export to JSON
     cmd_export(str(tmp_path), "json")
 
     # 7. Verify export file exists (sift-kg creates export_*.json or similar)
-    export_files = list(tmp_path.glob("*export*")) + list(tmp_path.glob("*.graphml")) + list(tmp_path.glob("export/"))
-    # sift-kg export may vary; just verify no error was raised
+    # sift-kg export layout varies by version; this step asserts only that
+    # cmd_export() completed without raising.
 
 
 @pytest.mark.e2e
@@ -88,11 +88,11 @@ def test_e2e_contract_pipeline(tmp_path):
     assert len(graph_data.get("nodes", [])) > 0, f"Graph has no nodes: {list(graph_data.keys())}"
 
     # 4. Run epistemic analysis
-    claims_layer = analyze_epistemic(tmp_path, domain_name="contract")
+    analyze_epistemic(tmp_path, domain_name="contract")  # asserted via claims_layer.json below
 
     # 5. Verify claims layer
     claims_path = tmp_path / "claims_layer.json"
-    assert claims_path.exists(), f"claims_layer.json not created after epistemic analysis"
+    assert claims_path.exists(), "claims_layer.json not created after epistemic analysis"
 
     # 6. Export
     cmd_export(str(tmp_path), "json")
@@ -109,7 +109,7 @@ def test_e2e_pipeline_graph_has_metadata(tmp_path):
 
     # Load and verify graph structure
     graph_path = tmp_path / "graph_data.json"
-    assert graph_path.exists(), f"graph_data.json not created"
+    assert graph_path.exists(), "graph_data.json not created"
 
     data = json.loads(graph_path.read_text())
 
@@ -170,8 +170,8 @@ def test_e2e_bug4_normalization_95pct(tmp_path):
     cmd_build(str(tmp_path), domain_name="drug-discovery")
     graph_path = tmp_path / "graph_data.json"
     assert graph_path.exists(), (
-        f"graph_data.json not created after normalize+build; "
-        f"sift-kg silent-drop bug may have regressed"
+        "graph_data.json not created after normalize+build; "
+        "sift-kg silent-drop bug may have regressed"
     )
     graph = json.loads(graph_path.read_text())
     nodes = graph.get("nodes", [])

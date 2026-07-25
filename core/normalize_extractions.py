@@ -48,7 +48,7 @@ if str(_CORE_DIR) not in sys.path:
     sys.path.insert(0, str(_CORE_DIR))
 
 # Reuse the coercion helper from build_extraction -- do not duplicate
-from build_extraction import _normalize_fields
+from build_extraction import _normalize_fields  # noqa: E402 — follows the sys.path insertion above
 
 try:
     from sift_kg.extract.models import DocumentExtraction

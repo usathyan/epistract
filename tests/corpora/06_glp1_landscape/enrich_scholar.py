@@ -80,7 +80,7 @@ def enrich_scholar_file(fpath: Path):
     time.sleep(0.5)
 
     if not pmid:
-        print(f"    -> Not found on PubMed")
+        print("    -> Not found on PubMed")
         return
 
     data = fetch_abstract(pmid)
@@ -100,8 +100,6 @@ def enrich_scholar_file(fpath: Path):
     # Rewrite the scholar file with full PubMed data
     url_match = re.search(r'^URL:\s*(.+)', content, re.MULTILINE)
     url = url_match.group(1).strip() if url_match else ""
-    pub_info_match = re.search(r'^Publication Info:\s*(.+)', content, re.MULTILINE)
-    pub_info = pub_info_match.group(1).strip() if pub_info_match else ""
 
     mesh_line = f"MeSH Terms: {', '.join(data['mesh'])}\n" if data['mesh'] else ""
     new_content = (

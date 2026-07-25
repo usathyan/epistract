@@ -108,7 +108,7 @@ if __name__ == "__main__":
         time.sleep(0.5)
 
         if not ids:
-            print(f"  -> No results")
+            print("  -> No results")
             continue
 
         pmid = ids[0]

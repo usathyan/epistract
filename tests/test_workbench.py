@@ -1,7 +1,6 @@
 """Tests for the Sample Contract Analysis Workbench."""
 from __future__ import annotations
 
-import json
 import shutil
 from pathlib import Path
 
@@ -170,7 +169,6 @@ def test_chat_stream_mock(client, monkeypatch):
     Mocks httpx to return a canned SSE stream.
     """
     import httpx
-    import examples.workbench.api_chat as chat_module
 
     # Set a fake API key so the endpoint doesn't short-circuit
     monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-test-mock-key")

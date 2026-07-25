@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Assemble S6 GLP-1 corpus from PubMed, Google Scholar, and Google Patents via SerpAPI."""
 
-import json
 import os
 import re
 import time

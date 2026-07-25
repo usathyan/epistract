@@ -25,7 +25,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from examples.workbench.template_loader import load_template, auto_generate_starters  # noqa: E402
+from examples.workbench.template_loader import load_template  # noqa: E402
 from examples.workbench.data_loader import WorkbenchData  # noqa: E402
 
 logger = logging.getLogger(__name__)

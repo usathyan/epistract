@@ -121,12 +121,12 @@ if __name__ == "__main__":
         data = search_and_fetch(queries["query"])
         time.sleep(0.5)
         if not data:
-            print(f"  Primary query failed, trying fallback...")
+            print("  Primary query failed, trying fallback...")
             data = search_and_fetch(queries["fallback_query"])
             time.sleep(0.5)
 
         if not data:
-            print(f"  -> No PubMed match found")
+            print("  -> No PubMed match found")
             continue
 
         if data["pmid"] in existing_pmids:

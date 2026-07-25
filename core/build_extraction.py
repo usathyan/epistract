@@ -22,8 +22,9 @@ _PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(_PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(_PROJECT_ROOT))
 
-import yaml
-from core.domain_resolver import resolve_domain
+# noqa: E402 — these must follow the sys.path insertion above.
+import yaml  # noqa: E402
+from core.domain_resolver import resolve_domain  # noqa: E402
 
 try:
     from sift_kg.extract.models import DocumentExtraction

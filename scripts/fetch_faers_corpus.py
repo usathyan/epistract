@@ -345,7 +345,7 @@ def render_report(report: dict, drug_label: str, rationale: str) -> str:
 
     parts.append("## Report Metadata")
     parts.append(f"- Safety report ID: `{rid}`")
-    parts.append(f"- Report type: **Spontaneous (FAERS)**")
+    parts.append("- Report type: **Spontaneous (FAERS)**")
     parts.append(f"- Pulled-for drug: `{drug_label}` (rationale: {rationale})")
     parts.append(f"- Receipt date: {receipt_date}")
     parts.append(f"- Receive date: {receive_date}")

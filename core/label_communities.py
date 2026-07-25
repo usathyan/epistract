@@ -10,7 +10,6 @@ Usage:
 
 import json
 import sys
-from collections import Counter
 from pathlib import Path
 
 
@@ -97,7 +96,6 @@ def _top_entities(members: list[dict], n: int = 5) -> list[str]:
 
 def _generate_label(members: list[dict]) -> str:
     """Generate a descriptive community label from member composition."""
-    type_counts = Counter(m.get("entity_type", "UNKNOWN") for m in members)
     total = len(members)
 
     # --- Contract domain labeling ---
@@ -153,8 +151,6 @@ def _generate_label(members: list[dict]) -> str:
     mechanisms = [m["name"] for m in members if m.get("entity_type") == "MECHANISM_OF_ACTION"]
     phenotypes = [m["name"] for m in members if m.get("entity_type") == "PHENOTYPE"]
     cells = [m["name"] for m in members if m.get("entity_type") == "CELL_OR_TISSUE"]
-    compounds = [m["name"] for m in members if m.get("entity_type") == "COMPOUND"]
-    biomarkers = [m["name"] for m in members if m.get("entity_type") == "BIOMARKER"]
 
     # 1. Gene-dominant cluster (GWAS-like) — only for truly gene-heavy clusters
     #    Must be >50% genes AND >15 members to qualify as a GWAS locus cluster.

@@ -14,13 +14,12 @@ from __future__ import annotations
 
 import json
 import shutil
-import sys
 from pathlib import Path
 
 import pytest
 import yaml
 
-from conftest import FIXTURES_DIR, HAS_BIOPYTHON, HAS_RDKIT, HAS_SIFTKG, PROJECT_ROOT
+from conftest import FIXTURES_DIR, HAS_RDKIT, HAS_SIFTKG
 
 # ---------------------------------------------------------------------------
 # Ensure core/ is importable (conftest.py already adds it to sys.path)
@@ -54,6 +53,9 @@ def test_build_extraction_writes_json(tmp_path):
 
     out_file = tmp_path / "extractions" / "test_doc.pdf.json"
     assert out_file.exists(), f"Expected extraction file at {out_file}"
+    assert result_path == str(out_file), (
+        f"write_extraction returned {result_path}, expected {out_file}"
+    )
 
     data = json.loads(out_file.read_text())
     assert data["document_id"] == "test_doc.pdf", (

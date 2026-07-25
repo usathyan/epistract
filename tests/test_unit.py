@@ -141,7 +141,6 @@ def test_ut008_validate_smiles_no_rdkit():
     """With RDKit not importable, validate_smiles returns valid=None."""
     # We need to reload validate_smiles with rdkit unavailable
     # Import the module fresh with mocked rdkit
-    import importlib
     import validate_smiles as vs_mod
 
     # Save original state
@@ -1015,7 +1014,8 @@ def test_build_extraction_threads_model_flag(tmp_path):
 @pytest.mark.skipif(not HAS_SIFTKG, reason="sift-kg not installed")
 def test_build_extraction_reads_model_env(tmp_path):
     """UT-027: EPISTRACT_MODEL env var is used when --model is absent."""
-    import subprocess, os as _os
+    import subprocess
+    import os as _os
 
     script = PROJECT_ROOT / "core" / "build_extraction.py"
     payload = json.dumps(
@@ -1082,7 +1082,8 @@ def test_build_extraction_no_hardcoded_model(tmp_path):
     default (``""``) instead of ``null``. The meaningful assertion is the absence
     of any fabricated provenance string (e.g., ``claude-opus-4-6``).
     """
-    import subprocess, os as _os
+    import subprocess
+    import os as _os
 
     script = PROJECT_ROOT / "core" / "build_extraction.py"
     payload = json.dumps(
@@ -1235,7 +1236,7 @@ def test_normalize_dedupes_keeps_richer(tmp_path):
     _write_extraction_file(ext / "dupe_a.json", doc_id="dupe", n_entities=2)
     _write_extraction_file(ext / "dupe_b.json", doc_id="dupe", n_entities=8)
 
-    result = normalize_extractions(tmp_path)
+    normalize_extractions(tmp_path)  # asserted via the on-disk survivor below
 
     # Survivor is the canonical <doc_id>.json with 8 entities
     survivor = ext / "dupe.json"
@@ -1292,7 +1293,7 @@ def test_normalize_writes_report(tmp_path):
     ext = tmp_path / "extractions"
     _write_extraction_file(ext / "good.json", doc_id="good")
 
-    result = normalize_extractions(tmp_path)
+    normalize_extractions(tmp_path)  # asserted via the on-disk report below
 
     report_path = ext / "_normalization_report.json"
     assert report_path.exists()
@@ -3822,8 +3823,7 @@ def test_get_models_openrouter_health_filtered(tmp_path, monkeypatch):
 # Wave 1 stub tests — RED until Plan 12-02 (manage_domains.py) lands.
 # ========================================================================
 
-import importlib
-import subprocess as _subprocess
+import subprocess as _subprocess  # noqa: E402 — section-local import, kept beside its tests
 
 
 def _make_synthetic_domain(parent: Path, name: str) -> Path:
@@ -3866,7 +3866,9 @@ def test_manage_domains_list_active(tmp_path):
 @pytest.mark.unit
 def test_manage_domains_row_fields(tmp_path):
     """LIST-02: Each row from cmd_list() contains all required fields."""
-    import sys, json as _json, os as _os
+    import sys
+    import json as _json
+    import os as _os
     domains_dir = tmp_path / "domains"
     _make_synthetic_domain(domains_dir, "test-domain")
 
@@ -3892,7 +3894,9 @@ def test_manage_domains_row_fields(tmp_path):
 @pytest.mark.unit
 def test_manage_domains_info_missing(tmp_path):
     """DEL-01: cmd_info for a nonexistent domain returns error JSON and exit code 1."""
-    import sys, json as _json, os as _os
+    import sys
+    import json as _json
+    import os as _os
     domains_dir = tmp_path / "domains"
     domains_dir.mkdir()
 
@@ -3916,7 +3920,9 @@ def test_manage_domains_info_missing(tmp_path):
 @pytest.mark.unit
 def test_manage_domains_info_fields(tmp_path):
     """DEL-03: cmd_info returns JSON with 'name' and 'file_count' keys."""
-    import sys, json as _json, os as _os
+    import sys
+    import json as _json
+    import os as _os
     domains_dir = tmp_path / "domains"
     _make_synthetic_domain(domains_dir, "test-domain")
 
@@ -3940,7 +3946,9 @@ def test_manage_domains_info_fields(tmp_path):
 @pytest.mark.unit
 def test_manage_domains_archive_moves(tmp_path):
     """DEL-02, DEL-04b: cmd_archive moves domain to _archived/<name>/ and returns success JSON."""
-    import sys, json as _json, os as _os
+    import sys
+    import json as _json
+    import os as _os
     domains_dir = tmp_path / "domains"
     _make_synthetic_domain(domains_dir, "test-domain")
 
@@ -3968,7 +3976,9 @@ def test_manage_domains_archive_moves(tmp_path):
 @pytest.mark.unit
 def test_manage_domains_remove_active(tmp_path):
     """DEL-02: cmd_remove on an active domain permanently deletes it."""
-    import sys, json as _json, os as _os
+    import sys
+    import json as _json
+    import os as _os
     domains_dir = tmp_path / "domains"
     _make_synthetic_domain(domains_dir, "test-domain")
 
@@ -4010,7 +4020,9 @@ def test_list_domains_excludes_archived(tmp_path, monkeypatch):
 @pytest.mark.unit
 def test_manage_domains_list_archived(tmp_path):
     """DEL-04b: cmd_list() includes rows with status='archived' from domains/_archived/."""
-    import sys, json as _json, os as _os
+    import sys
+    import json as _json
+    import os as _os
     domains_dir = tmp_path / "domains"
     _make_synthetic_domain(domains_dir, "active-domain")
     # Manually place an archived domain
@@ -4043,7 +4055,9 @@ def test_manage_domains_list_archived(tmp_path):
 @pytest.mark.unit
 def test_schema_validate_dangling_endpoint(tmp_path):
     """UPDT-02: validate subcommand detects a relation referencing a nonexistent entity type."""
-    import sys, json as _json, os as _os
+    import sys
+    import json as _json
+    import os as _os
 
     domains_dir = tmp_path / "domains"
     _make_synthetic_domain(domains_dir, "test-domain")
@@ -4097,7 +4111,9 @@ def test_schema_validate_no_duplicate_false_positive():
 @pytest.mark.unit
 def test_schema_validate_clean(tmp_path):
     """UPDT-02: validate subcommand returns valid=true and empty errors for a clean schema."""
-    import sys, json as _json, os as _os
+    import sys
+    import json as _json
+    import os as _os
 
     domains_dir = tmp_path / "domains"
     _make_synthetic_domain(domains_dir, "test-domain")
@@ -4128,7 +4144,9 @@ def test_schema_validate_clean(tmp_path):
 @pytest.mark.unit
 def test_schema_validate_no_endpoints(tmp_path):
     """UPDT-02: validate subcommand returns valid=true for contracts-style schema with no endpoint fields."""
-    import sys, json as _json, os as _os
+    import sys
+    import json as _json
+    import os as _os
 
     domains_dir = tmp_path / "domains"
     _make_synthetic_domain(domains_dir, "test-domain")

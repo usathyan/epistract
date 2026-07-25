@@ -399,14 +399,14 @@ def _builtin_biomedical_epistemic(output_dir: Path, graph_data: dict) -> dict:
         },
         "base_domain": {
             "asserted_relations": [
-                l for l in links if l.get("epistemic_status") == "asserted"
+                link for link in links if link.get("epistemic_status") == "asserted"
             ],
         },
         "super_domain": {
             "contradictions": contradictions,
             "hypotheses": hypotheses,
             "contested_claims": [
-                l for l in links if l.get("epistemic_status") in ("hypothesized", "speculative")
+                link for link in links if link.get("epistemic_status") in ("hypothesized", "speculative")
             ],
         },
     }
@@ -467,7 +467,7 @@ def _summarize_graph_for_narrator(graph_data: dict, claims_layer: dict) -> str:
     custom = super_domain.get("custom_findings", {}) or {}
 
     prophetic = [
-        l for l in links if l.get("epistemic_status") == "prophetic"
+        link for link in links if link.get("epistemic_status") == "prophetic"
     ]
 
     parts: list[str] = []
