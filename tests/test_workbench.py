@@ -467,3 +467,111 @@ def test_ft018_legacy_graph_no_metadata_domain(tmp_path):
     assert body["title"] == "Knowledge Graph Explorer", (
         f"D-08: legacy graph must fall back to generic, got {body['title']!r}"
     )
+
+
+# ---------------------------------------------------------------------------
+# Prompt-caching contract (GH #29)
+#
+# build_system_prompt() emits a large, byte-stable prefix on every chat turn.
+# Two things must hold for caching to actually pay off, and both are easy to
+# break accidentally, so both are pinned here:
+#   1. the system prompt is sent as a cache_control block, not a bare string
+#   2. the prompt is deterministic for unchanged inputs (any per-request
+#      variation silently drops the cache hit rate to zero with no error)
+# ---------------------------------------------------------------------------
+
+
+def test_chat_system_prompt_sent_as_cache_block(monkeypatch):
+    """GH29: the Anthropic payload sends `system` as an ephemeral cache block."""
+    import asyncio
+
+    import httpx
+
+    import examples.workbench.api_chat as chat_module
+
+    captured: dict = {}
+    mock_lines = [
+        'data: {"type":"content_block_delta","delta":{"type":"text_delta","text":"hi"}}',
+        "data: [DONE]",
+    ]
+
+    class _MockResponse:
+        status_code = 200
+
+        async def aiter_lines(self):
+            for line in mock_lines:
+                yield line
+
+        async def aread(self):
+            return b""
+
+    class _MockStreamCtx:
+        async def __aenter__(self):
+            return _MockResponse()
+
+        async def __aexit__(self, *args):
+            return False
+
+    class _MockAsyncClient:
+        def __init__(self, *args, **kwargs):
+            pass
+
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, *args):
+            return False
+
+        def stream(self, method, url, json=None, headers=None):
+            captured["payload"] = json
+            return _MockStreamCtx()
+
+    monkeypatch.setattr(httpx, "AsyncClient", _MockAsyncClient)
+
+    async def _drain():
+        gen = chat_module._stream_anthropic(
+            "sk-test",
+            "https://example.invalid/v1/messages",
+            "claude-sonnet-5",
+            "SYSTEM TEXT",
+            [{"role": "user", "content": "question"}],
+        )
+        async for _ in gen:
+            pass
+
+    asyncio.run(_drain())
+
+    system_block = captured["payload"]["system"]
+    assert isinstance(system_block, list), (
+        "system must be a list of content blocks so cache_control can attach; "
+        f"got {type(system_block).__name__}"
+    )
+    assert system_block[0]["text"] == "SYSTEM TEXT"
+    assert system_block[0]["cache_control"] == {"type": "ephemeral"}, (
+        "the system block must carry cache_control, else every turn re-pays "
+        "full input price for an unchanged prefix"
+    )
+
+
+def test_build_system_prompt_is_deterministic(sample_output_dir):
+    """GH29: identical inputs must produce a byte-identical prompt.
+
+    Prompt caching is a prefix match — any per-request variation (a timestamp,
+    an unsorted dict, a set iteration) silently drops the cache hit rate to zero
+    with no error anywhere. This is the precondition that makes the
+    cache_control block above worth adding.
+    """
+    from examples.workbench.data_loader import WorkbenchData
+    from examples.workbench.system_prompt import build_system_prompt
+
+    data = WorkbenchData(sample_output_dir)
+    template = {"persona": "You are a test analyst."}
+
+    first = build_system_prompt(data, template)
+    second = build_system_prompt(data, template)
+
+    assert first == second, (
+        "build_system_prompt is not deterministic — the cached prefix would be "
+        "invalidated on every request. Look for unsorted iteration or a "
+        "timestamp in the prompt."
+    )
