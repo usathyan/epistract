@@ -163,6 +163,58 @@ def test_source_text(client):
     assert len(body["text"]) > 0
 
 
+# ---------------------------------------------------------------------------
+# Not-found status regression tests (GH #28)
+#
+# These endpoints used the Flask idiom `return {...}, 404`. FastAPI has no
+# (body, status) convention — it serialized the tuple itself, so a missing
+# resource produced HTTP 200 with the two-element array body
+# `[{"error": "..."}, 404]`. Every pre-existing workbench test asserted
+# `status_code == 200`, so nothing caught it.
+#
+# Each test pins BOTH halves of the contract: the status must be 404, and the
+# body must be a JSON object carrying `error` (not an array, and not FastAPI's
+# `{"detail": ...}` shape, which static/sources.js does not read).
+# ---------------------------------------------------------------------------
+
+
+def test_source_text_missing_returns_404(client):
+    """GET /api/sources/{missing} returns a real 404 with an object body."""
+    resp = client.get("/api/sources/no-such-document")
+
+    assert resp.status_code == 404, (
+        f"Expected 404 for a missing document, got {resp.status_code}. "
+        "A 200 here means the tuple-return regression is back."
+    )
+    body = resp.json()
+    assert isinstance(body, dict), f"Expected an object body, got {type(body).__name__}: {body!r}"
+    assert "error" in body, f"Expected an 'error' key, got {list(body)}"
+
+
+def test_source_pdf_missing_returns_404(client):
+    """GET /api/sources/pdf/{missing} returns a real 404 with an object body."""
+    resp = client.get("/api/sources/pdf/no-such-document")
+
+    assert resp.status_code == 404, (
+        f"Expected 404 for a missing PDF, got {resp.status_code}"
+    )
+    body = resp.json()
+    assert isinstance(body, dict), f"Expected an object body, got {type(body).__name__}: {body!r}"
+    assert "error" in body, f"Expected an 'error' key, got {list(body)}"
+
+
+def test_graph_node_missing_returns_404(client):
+    """GET /api/graph/node/{missing} returns a real 404 with an object body."""
+    resp = client.get("/api/graph/node/no-such-node-id")
+
+    assert resp.status_code == 404, (
+        f"Expected 404 for a missing node, got {resp.status_code}"
+    )
+    body = resp.json()
+    assert isinstance(body, dict), f"Expected an object body, got {type(body).__name__}: {body!r}"
+    assert "error" in body, f"Expected an 'error' key, got {list(body)}"
+
+
 def test_chat_stream_mock(client, monkeypatch):
     """POST /api/chat returns SSE stream with mocked response (D-26).
 

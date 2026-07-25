@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from fastapi import APIRouter, Request
+from fastapi.responses import JSONResponse
 
 router = APIRouter(prefix="/api/graph", tags=["graph"])
 
@@ -29,7 +30,11 @@ async def get_node(request: Request, node_id: str):
     data = request.app.state.data
     node = data.get_node_by_id(node_id)
     if not node:
-        return {"error": f"Node not found: {node_id}"}, 404
+        # See api_sources.py — a bare (body, status) tuple is a Flask idiom that
+        # FastAPI serializes verbatim, producing HTTP 200 with an array body.
+        return JSONResponse(
+            status_code=404, content={"error": f"Node not found: {node_id}"}
+        )
     # Find connected edges and neighbor nodes
     edges = [
         e

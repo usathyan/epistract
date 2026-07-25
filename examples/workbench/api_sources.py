@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 from fastapi import APIRouter, Request
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, JSONResponse
 
 
 router = APIRouter(prefix="/api/sources", tags=["sources"])
@@ -21,7 +21,13 @@ async def get_source(request: Request, doc_id: str):
     data = request.app.state.data
     text = data.get_document_text(doc_id)
     if text is None:
-        return {"error": f"Document not found: {doc_id}"}, 404
+        # JSONResponse, not a bare tuple: FastAPI has no (body, status) convention
+        # and would serialize the tuple itself, yielding HTTP 200 with an array body.
+        # Not HTTPException either — that reshapes the body to {"detail": ...} and
+        # orphans the `data.error` branch in static/sources.js.
+        return JSONResponse(
+            status_code=404, content={"error": f"Document not found: {doc_id}"}
+        )
     return {"doc_id": doc_id, "text": text}
 
 
@@ -36,4 +42,6 @@ async def get_pdf(request: Request, doc_id: str):
             media_type="application/pdf",
             filename=pdf_path.name,
         )
-    return {"error": f"PDF not found for: {doc_id}"}, 404
+    return JSONResponse(
+        status_code=404, content={"error": f"PDF not found for: {doc_id}"}
+    )
