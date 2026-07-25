@@ -26,7 +26,11 @@ STATIC_DIR = Path(__file__).parent / "static"
 # ---------------------------------------------------------------------------
 _or_models_cache: dict = {"data": None, "fetched_at": 0.0}
 _OR_CACHE_TTL = 3600  # seconds — OpenRouter adds ~27 models / month
-_OPENROUTER_DEFAULT_MODEL = "anthropic/claude-sonnet-4"
+# Preferred default when it is present in OpenRouter's live catalog; get_models()
+# falls back to models[0] when it is not. Keep in sync with
+# api_chat.PROVIDER_MODELS["openrouter"][0] — this is the third copy of an
+# OpenRouter default in the tree, and the three had drifted apart before.
+_OPENROUTER_DEFAULT_MODEL = "anthropic/claude-sonnet-4.6"
 
 # Mapping of OpenRouter id prefix -> category label for optgroup rendering.
 # The tilde prefix used on "latest" aliases (e.g. ~anthropic/) is stripped
@@ -381,10 +385,12 @@ def create_app(output_dir: Path, domain: str | None = None) -> FastAPI:
             or os.environ.get("ANTHROPIC_FOUNDRY_API_KEY")
         )
         if has_foundry:
+            from examples.workbench.api_chat import DEFAULT_FOUNDRY_DEPLOYMENT
+
             deployment = (
                 os.environ.get("AZURE_FOUNDRY_DEPLOYMENT")
                 or os.environ.get("ANTHROPIC_FOUNDRY_DEPLOYMENT")
-                or "claude-sonnet-4-6"
+                or DEFAULT_FOUNDRY_DEPLOYMENT
             )
             has_custom_base = bool(
                 os.environ.get("AZURE_FOUNDRY_BASE_URL")

@@ -5,7 +5,7 @@ Usage:
     python build_extraction.py <doc_id> <output_dir> [--domain <name>] --json '{"entities": [...], "relations": [...]}'
     echo '{"entities": [...]}' | python build_extraction.py <doc_id> <output_dir> [--domain <name>]
     python build_extraction.py <doc_id> <output_dir> --model <model_id> --cost 0.012 --json '...'
-    EPISTRACT_MODEL=claude-opus-4-7 python build_extraction.py <doc_id> <output_dir> --json '...'
+    EPISTRACT_MODEL=claude-opus-5 python build_extraction.py <doc_id> <output_dir> --json '...'
 """
 from __future__ import annotations
 

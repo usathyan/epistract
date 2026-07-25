@@ -1,8 +1,15 @@
 """Synchronous LLM client with provider auto-detection.
 
-Mirrors `examples/workbench/api_chat._resolve_api_config()` provider priority
-(Azure Foundry → Anthropic direct → OpenRouter) but returns a sync call path
-for use from pipeline scripts like `core/label_epistemic.py`.
+Uses the same provider priority as `examples/workbench/api_chat._resolve_api_config()`
+(Azure Foundry → Anthropic direct → OpenRouter), but returns a sync call path for
+pipeline scripts like `core/label_epistemic.py`.
+
+The two implementations are deliberately independent: `examples/` is the consumer
+layer and depends on core's *output*, not its code (see CLAUDE.md §Layers). They are
+NOT a shared abstraction, and an earlier docstring claiming this module "mirrors"
+that one was wrong — the OpenRouter defaults had silently diverged. If you change a
+default here, change it there too; the model constants below are named so a grep for
+`DEFAULT_` finds both call sites.
 
 Callers should import `resolve_api_config()` + `call_llm()` and handle the
 `LLMConfigError` / `LLMCallError` exceptions they raise.
@@ -11,6 +18,22 @@ from __future__ import annotations
 
 import os
 from dataclasses import dataclass
+
+# ---------------------------------------------------------------------------
+# Model defaults
+# ---------------------------------------------------------------------------
+# Keep in sync with PROVIDER_MODELS and the defaults in
+# examples/workbench/api_chat.py. See the module docstring for why these are
+# duplicated rather than shared.
+DEFAULT_ANTHROPIC_MODEL = "claude-sonnet-5"
+DEFAULT_OPENROUTER_MODEL = "anthropic/claude-sonnet-4.6"
+
+# Foundry is a deployment NAME registered in Azure AI Studio, not an Anthropic
+# model id — it is whatever the operator called their deployment. Changing this
+# default would break every existing install whose Azure deployment is named
+# `claude-sonnet-4-6`, so it is intentionally left alone. Operators point it at
+# a newer model with AZURE_FOUNDRY_DEPLOYMENT.
+DEFAULT_FOUNDRY_DEPLOYMENT = "claude-sonnet-4-6"
 
 
 class LLMConfigError(RuntimeError):
@@ -59,7 +82,7 @@ def resolve_api_config() -> LLMConfig | None:
         deployment = (
             os.environ.get("AZURE_FOUNDRY_DEPLOYMENT")
             or os.environ.get("ANTHROPIC_FOUNDRY_DEPLOYMENT")
-            or "claude-sonnet-4-6"
+            or DEFAULT_FOUNDRY_DEPLOYMENT
         )
         if custom_base:
             base_url = _ensure_messages_suffix(custom_base)
@@ -81,7 +104,7 @@ def resolve_api_config() -> LLMConfig | None:
         return LLMConfig(
             anthropic_key,
             "https://api.anthropic.com/v1/messages",
-            "claude-sonnet-4-20250514",
+            DEFAULT_ANTHROPIC_MODEL,
             "anthropic",
         )
 
@@ -90,7 +113,7 @@ def resolve_api_config() -> LLMConfig | None:
         return LLMConfig(
             openrouter_key,
             "https://openrouter.ai/api/v1",
-            os.environ.get("OPENROUTER_MODEL", "anthropic/claude-sonnet-4.6"),
+            os.environ.get("OPENROUTER_MODEL", DEFAULT_OPENROUTER_MODEL),
             "openrouter",
         )
 
@@ -104,6 +127,7 @@ def call_llm(
     config: LLMConfig | None = None,
     max_tokens: int = 4096,
     temperature: float = 0.3,
+    effort: str | None = None,
     timeout: float = 120.0,
 ) -> str:
     """Make a single synchronous LLM call and return the assistant text.
@@ -112,9 +136,24 @@ def call_llm(
         system: System prompt (domain persona + graph context).
         user: User message (the narrator task).
         config: Optional pre-resolved config. If None, calls resolve_api_config().
-        max_tokens: Output token cap. Narratives fit comfortably in 4096.
-        temperature: 0.0 = deterministic, 0.3 = light variation (default).
+        max_tokens: Output token cap. On current Anthropic models this budget is
+            shared with thinking tokens, so leave headroom above the expected
+            answer length or the response truncates mid-output.
+        temperature: OpenRouter path only — see below. 0.0 = deterministic,
+            0.3 = light variation (default).
+        effort: Anthropic path only. One of "low" | "medium" | "high" | "xhigh"
+            | "max", sent as output_config.effort. This is the current control
+            for reasoning depth and token spend; it is the replacement for
+            temperature on the Anthropic-native path.
         timeout: Request timeout in seconds.
+
+    Note on `temperature`:
+        Current Anthropic models (Opus 5, Sonnet 5, Opus 4.8, Opus 4.7) removed
+        temperature/top_p/top_k and reject them with HTTP 400, so the
+        Anthropic-native path does NOT send it. It is still honoured on the
+        OpenRouter path, which is OpenAI-compatible and may route to non-Anthropic
+        models where the parameter is meaningful. Callers wanting deterministic
+        behaviour on Anthropic should pass effort="low" and tighten the prompt.
 
     Returns:
         Assistant-generated text (already stripped of markdown fences).
@@ -133,7 +172,7 @@ def call_llm(
         )
 
     if config.provider == "anthropic":
-        return _call_anthropic(config, system, user, max_tokens, temperature, timeout)
+        return _call_anthropic(config, system, user, max_tokens, effort, timeout)
     return _call_openrouter(config, system, user, max_tokens, temperature, timeout)
 
 
@@ -142,10 +181,17 @@ def _call_anthropic(
     system: str,
     user: str,
     max_tokens: int,
-    temperature: float,
+    effort: str | None,
     timeout: float,
 ) -> str:
-    """Call Anthropic-native endpoint (direct API or Foundry gateway) via httpx."""
+    """Call Anthropic-native endpoint (direct API or Foundry gateway) via httpx.
+
+    Deliberately does NOT send `temperature`. Opus 5, Sonnet 5, Opus 4.8 and
+    Opus 4.7 removed temperature/top_p/top_k and reject a non-default value with
+    HTTP 400 — sending it would break every call on a current model. Omitting the
+    parameter is accepted by older models too, so this is safe across the board.
+    Reasoning depth is controlled by `effort` instead.
+    """
     try:
         import httpx
     except ImportError as e:
@@ -156,13 +202,14 @@ def _call_anthropic(
         "anthropic-version": "2023-06-01",
         "content-type": "application/json",
     }
-    payload = {
+    payload: dict = {
         "model": config.model,
         "max_tokens": max_tokens,
-        "temperature": temperature,
         "system": system,
         "messages": [{"role": "user", "content": user}],
     }
+    if effort:
+        payload["output_config"] = {"effort": effort}
     try:
         with httpx.Client(timeout=timeout) as client:
             resp = client.post(config.base_url, headers=headers, json=payload)

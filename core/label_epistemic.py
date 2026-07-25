@@ -596,10 +596,13 @@ def narrate_claims_layer(
 
     context = _summarize_graph_for_narrator(graph_data, claims_layer)
     system_prompt = f"{persona}\n\n---\n\n{context}"
+    # max_tokens was 4096. On current Anthropic models thinking is on by default
+    # and draws from the same budget, so a narrative that used to fit can now be
+    # truncated mid-sentence. 8192 restores the headroom.
     narrative = call_llm(
         system=system_prompt,
         user=_NARRATOR_USER_PROMPT,
-        max_tokens=4096,
+        max_tokens=8192,
         temperature=0.3,
     )
     return narrative

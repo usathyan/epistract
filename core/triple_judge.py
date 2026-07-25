@@ -94,7 +94,22 @@ def make_llm_judge(call_fn=None):
             }
         )
         try:
-            raw = call_fn(_JUDGE_SYSTEM, user, max_tokens=200, temperature=0.0)
+            # effort="low" replaces temperature=0.0 as the determinism control on
+            # the Anthropic path (temperature is rejected by current models).
+            # temperature is still passed for the OpenRouter path.
+            #
+            # max_tokens was 200. On current models thinking is on by default and
+            # shares this budget, so 200 tokens could be consumed entirely by
+            # thinking, leaving no JSON verdict — json.loads would then fail and
+            # silently degrade every judgment to lexical_judge below. 2048 leaves
+            # room for low-effort thinking plus the small JSON payload.
+            raw = call_fn(
+                _JUDGE_SYSTEM,
+                user,
+                max_tokens=2048,
+                temperature=0.0,
+                effort="low",
+            )
             parsed = json.loads(raw)
             return {
                 "verdict": parsed.get("verdict", "partial"),

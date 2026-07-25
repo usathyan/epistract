@@ -30,20 +30,41 @@ router = APIRouter(prefix="/api", tags=["chat"])
 # Update this dict when provider model catalogs change. Invalid IDs are
 # rejected at LLM-API time (HTTP 400) and surface to the user as an SSE
 # error event — no server-side allowlist enforcement needed.
+#
+# ORDER IS SIGNIFICANT for the "anthropic" list: server.get_models() returns
+# `default_model = models[0]["id"]`, so the first entry becomes the selector's
+# default. Keep it aligned with DEFAULT_ANTHROPIC_MODEL below, or the UI default
+# and the no-model-specified API default will disagree.
+#
+# The "openrouter" list is only a degraded-mode fallback: server._fetch_or_models()
+# fetches OpenRouter's live catalog and health-checks it, falling back here only
+# when that request fails. These IDs could not be verified against OpenRouter's
+# live catalog offline — re-check them when convenient.
 PROVIDER_MODELS: dict[str, list[dict[str, str]]] = {
     "anthropic": [
-        {"id": "claude-sonnet-4-20250514", "label": "Claude Sonnet 4"},
-        {"id": "claude-opus-4-20250514", "label": "Claude Opus 4"},
-        {"id": "claude-haiku-3-5-20241022", "label": "Claude Haiku 3.5"},
+        {"id": "claude-sonnet-5", "label": "Claude Sonnet 5"},
+        {"id": "claude-opus-5", "label": "Claude Opus 5"},
+        {"id": "claude-haiku-4-5", "label": "Claude Haiku 4.5"},
     ],
     "openrouter": [
-        {"id": "anthropic/claude-sonnet-4", "label": "Claude Sonnet 4"},
-        {"id": "anthropic/claude-opus-4", "label": "Claude Opus 4"},
-        {"id": "anthropic/claude-haiku-4", "label": "Claude Haiku 4"},
-        {"id": "anthropic/claude-sonnet-4-5", "label": "Claude Sonnet 4.5"},
-        {"id": "anthropic/claude-haiku-3-5", "label": "Claude Haiku 3.5"},
+        {"id": "anthropic/claude-sonnet-4.6", "label": "Claude Sonnet 4.6"},
+        {"id": "anthropic/claude-sonnet-4.5", "label": "Claude Sonnet 4.5"},
     ],
 }
+
+# Default model for the Anthropic-native path when the request body specifies
+# none. Must match PROVIDER_MODELS["anthropic"][0]["id"] (see note above).
+#
+# Also duplicated as core.llm_client.DEFAULT_ANTHROPIC_MODEL — the consumer layer
+# does not import from core (CLAUDE.md §Layers), so these are kept in sync by
+# convention. Grep DEFAULT_ANTHROPIC_MODEL to find both.
+DEFAULT_ANTHROPIC_MODEL = "claude-sonnet-5"
+
+# Foundry is an Azure AI Studio deployment NAME, not an Anthropic model id.
+# Left at the historical value deliberately: changing it would break installs
+# whose Azure deployment is literally named "claude-sonnet-4-6". Operators
+# override with AZURE_FOUNDRY_DEPLOYMENT.
+DEFAULT_FOUNDRY_DEPLOYMENT = "claude-sonnet-4-6"
 
 
 # ---------------------------------------------------------------------------
@@ -158,7 +179,7 @@ def _resolve_api_config(
         deployment = (
             os.environ.get("AZURE_FOUNDRY_DEPLOYMENT")
             or os.environ.get("ANTHROPIC_FOUNDRY_DEPLOYMENT")
-            or "claude-sonnet-4-6"
+            or DEFAULT_FOUNDRY_DEPLOYMENT
         )
 
         if custom_base:
@@ -189,7 +210,7 @@ def _resolve_api_config(
         return (
             anthropic_key,
             "https://api.anthropic.com/v1/messages",
-            effective_model or "claude-sonnet-4-20250514",
+            effective_model or DEFAULT_ANTHROPIC_MODEL,
             "anthropic",
         )
 
@@ -198,7 +219,7 @@ def _resolve_api_config(
         return (
             openrouter_key,
             "https://openrouter.ai/api/v1/chat/completions",
-            effective_model or "anthropic/claude-sonnet-4",
+            effective_model or PROVIDER_MODELS["openrouter"][0]["id"],
             "openrouter",
         )
 
