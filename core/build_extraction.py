@@ -145,22 +145,45 @@ if __name__ == "__main__":
         sys.exit(1)
     doc_id, output_dir = sys.argv[1], sys.argv[2]
 
-    domain_name = None
-    if "--domain" in sys.argv:
-        domain_name = sys.argv[sys.argv.index("--domain") + 1]
+    def _flag_value(flag: str) -> str | None:
+        """Return the value following `flag`, None if absent; exit 2 if
+        the flag is present but trailing (no value to consume).
 
-    model_used: str | None = None
-    if "--model" in sys.argv:
-        model_used = sys.argv[sys.argv.index("--model") + 1]
-    elif os.environ.get("EPISTRACT_MODEL"):
+        Mirrors the helper in core/okf_export.py. Without it, a trailing
+        `--model` (easy to produce from a malformed agent dispatch, which is
+        how this script is normally invoked) raised an uncaught IndexError
+        instead of a usage message.
+        """
+        if flag not in sys.argv:
+            return None
+        index = sys.argv.index(flag)
+        if index + 1 >= len(sys.argv):
+            print(f"Error: {flag} requires a value", file=sys.stderr)
+            sys.exit(2)
+        return sys.argv[index + 1]
+
+    domain_name = _flag_value("--domain")
+
+    model_used: str | None = _flag_value("--model")
+    if model_used is None and os.environ.get("EPISTRACT_MODEL"):
         model_used = os.environ["EPISTRACT_MODEL"]
 
     cost_usd: float | None = None
-    if "--cost" in sys.argv:
-        cost_usd = float(sys.argv[sys.argv.index("--cost") + 1])
+    cost_str = _flag_value("--cost")
+    if cost_str is not None:
+        try:
+            cost_usd = float(cost_str)
+        except ValueError:
+            print(f"Error: --cost must be a number, got {cost_str!r}", file=sys.stderr)
+            sys.exit(2)
 
-    if "--json" in sys.argv:
-        data = json.loads(sys.argv[sys.argv.index("--json") + 1])
+    json_str = _flag_value("--json")
+    if json_str is not None:
+        try:
+            data = json.loads(json_str)
+        except json.JSONDecodeError as exc:
+            print(f"Error: --json is not valid JSON: {exc}", file=sys.stderr)
+            sys.exit(2)
     else:
         data = json.load(sys.stdin)
     path = write_extraction(

@@ -33,6 +33,28 @@ packages = ["epistract"]
 [tool.setuptools.package-dir]
 epistract = "core"
 
+# ---------------------------------------------------------------------------
+# Lint configuration
+# ---------------------------------------------------------------------------
+# Previously absent, which meant rule selection was whatever the contributor's
+# installed ruff happened to default to — free to drift between machines and
+# between ruff releases. Pinned explicitly here.
+#
+# The selected set is ruff's current default (E4/E7/E9 + F), stated outright so
+# a future ruff changing its defaults does not silently change this project's
+# gate. Widen deliberately rather than by upgrade.
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+    "E4",  # import formatting (E401 multiple imports, E402 import placement)
+    "E7",  # statement-level checks (E741 ambiguous names)
+    "E9",  # syntax / IO errors
+    "F",   # pyflakes (F401 unused imports, F811 redefinition, F841 unused locals)
+]
+
 [tool.pytest.ini_options]
 markers = [
     "unit: Fast tests with no external dependencies",
