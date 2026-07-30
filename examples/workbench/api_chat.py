@@ -294,7 +294,29 @@ async def _stream_anthropic(
     payload = {
         "model": model,
         "max_tokens": 4096,
-        "system": system,
+        # System prompt as a cacheable block rather than a bare string.
+        #
+        # build_system_prompt() emits the full KG summary, claims layer,
+        # communities, and up to ~50k tokens of entity JSON — and it is
+        # byte-identical on every turn of a session: app.state.data and
+        # app.state.template are assigned once at startup (server.py, "Load data
+        # at startup"), never per request, and the prompt builder iterates
+        # deterministically (sorted(by_type.items()), file-order nodes).
+        #
+        # Without cache_control every turn re-pays full input price for that
+        # unchanged prefix. Cache reads bill at ~0.1x and writes at ~1.25x, so
+        # break-even is the second turn of any session.
+        #
+        # The per-turn volatile part (matched source chunks) is deliberately in
+        # the USER message, not here — it must stay after the cached prefix or
+        # it would invalidate the cache on every request.
+        "system": [
+            {
+                "type": "text",
+                "text": system,
+                "cache_control": {"type": "ephemeral"},
+            }
+        ],
         "messages": messages,
         "stream": True,
     }

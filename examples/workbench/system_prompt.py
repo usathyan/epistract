@@ -141,9 +141,20 @@ def build_system_prompt(data: WorkbenchData, template: dict) -> str:
             parts.append("")
 
     # --- Full node data as structured JSON (for precise lookups) ---
-    # Estimate token count (~4 chars per token for JSON)
+    # Rough token estimate gating the include/omit decision below.
+    #
+    # Was chars//4, the usual prose rule of thumb. JSON tokenizes considerably
+    # denser than prose — quoted keys, braces, indentation and punctuation each
+    # cost a token or more — so chars//4 UNDER-counts here, which is the unsafe
+    # direction: it lets an oversized block through and risks blowing the context
+    # window. chars//3 is deliberately conservative; over-estimating merely falls
+    # back to the summary above, which is a graceful degradation.
+    #
+    # Not using messages.count_tokens: it is an API round-trip, and this runs on
+    # every chat turn purely to make an include/omit decision. The latency and
+    # cost are not worth the precision for a threshold check.
     node_json = json.dumps(nodes, indent=2)
-    estimated_tokens = len(node_json) // 4
+    estimated_tokens = len(node_json) // 3
 
     if estimated_tokens < 50000:
         parts.append("## FULL ENTITY DATA (JSON)")
