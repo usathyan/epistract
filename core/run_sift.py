@@ -18,7 +18,16 @@ import re
 import sys
 from pathlib import Path
 
-from core.domain_resolver import resolve_domain, list_domains, DOMAINS_DIR
+# Allow running as a plain script (python3 core/run_sift.py ...) in addition to
+# module import. commands/ingest.md invokes this by absolute path, so the package
+# root must be on sys.path for the `core.domain_resolver` import below — running a
+# script by path puts core/ on sys.path[0], not the project root. The insert in
+# cmd_dashboard() is far too late: this import runs at module load.
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(_PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(_PROJECT_ROOT))
+
+from core.domain_resolver import resolve_domain, list_domains, DOMAINS_DIR  # noqa: E402
 
 
 def resolve_domain_arg(value: str) -> str:

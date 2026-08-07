@@ -34,6 +34,11 @@ DEFINED_TERM_PATTERN = re.compile(
     re.IGNORECASE,
 )
 
+# Infrastructure files under extractions/ that are not extraction payloads
+# (_normalization_report.json, _dedupe_archive/, ...). Mirrors
+# normalize_extractions._SKIP_PREFIXES \u2014 keep the two in sync.
+_SKIP_PREFIXES = ("_",)
+
 
 # ---------------------------------------------------------------------------
 # Public API
@@ -146,7 +151,14 @@ def preprocess_extractions(output_dir: Path) -> dict:
     if not extractions_dir.exists():
         return {"files_processed": 0, "names_normalized": 0}
 
-    for path in sorted(extractions_dir.glob("*.json")):
+    # Skip underscore-prefixed infrastructure files (_normalization_report.json,
+    # _dedupe_archive/, ...) — same convention as normalize_extractions._SKIP_PREFIXES.
+    # They carry no entities, so parsing them is wasted work that also inflates
+    # files_processed.
+    for path in sorted(
+        p for p in extractions_dir.glob("*.json")
+        if not p.name.startswith(_SKIP_PREFIXES)
+    ):
         data = json.loads(path.read_text(encoding="utf-8"))
         modified = False
 

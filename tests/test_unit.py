@@ -4324,6 +4324,84 @@ def test_merge_preserves_top_level():
 
 
 # ---------------------------------------------------------------------------
+# Pipeline invocation ergonomics (quick task 260729-x10)
+#
+# Both defects surfaced running /epistract:ingest against an FDA product label
+# corpus. They are invocation/hygiene bugs, not extraction bugs, so they are
+# pinned here rather than in the e2e suite.
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.unit
+def test_run_sift_importable_by_path_without_pythonpath(tmp_path):
+    """run_sift.py must run when invoked by absolute path with no PYTHONPATH.
+
+    commands/ingest.md documents exactly this invocation. Running a script by
+    path puts core/ on sys.path[0] — not the project root — so the module-level
+    `from core.domain_resolver import ...` raised ModuleNotFoundError until the
+    project-root bootstrap was hoisted above it. cwd is deliberately outside the
+    repo so a stray '' entry on sys.path cannot mask the regression.
+    """
+    import subprocess
+    import os as _os
+
+    script = PROJECT_ROOT / "core" / "run_sift.py"
+    env = {k: v for k, v in _os.environ.items() if k != "PYTHONPATH"}
+    result = subprocess.run(
+        [sys.executable, str(script), "--list-domains"],
+        capture_output=True,
+        text=True,
+        env=env,
+        cwd=str(tmp_path),
+    )
+
+    assert "ModuleNotFoundError" not in result.stderr, (
+        "run_sift.py cannot be invoked by path — the sys.path bootstrap must "
+        f"precede the core.domain_resolver import. stderr: {result.stderr}"
+    )
+    assert result.returncode == 0, f"stderr: {result.stderr}"
+
+
+@pytest.mark.unit
+def test_preprocess_extractions_skips_underscore_infra_files(tmp_path):
+    """preprocess_extractions ignores _-prefixed infrastructure files.
+
+    extractions/ holds both extraction payloads and infrastructure written by
+    the pipeline itself (_normalization_report.json, _dedupe_archive/). Only the
+    former are extractions; counting the report inflates files_processed and
+    wastes a parse. normalize_extractions._SKIP_PREFIXES already encodes this
+    convention for the same directory.
+    """
+    from entity_resolution import preprocess_extractions
+
+    ext = tmp_path / "extractions"
+    ext.mkdir()
+    (ext / "doc_a.json").write_text(
+        json.dumps({
+            "document_id": "doc_a",
+            "entities": [{"name": "Acme Corp.", "entity_type": "PARTY"}],
+            "relations": [],
+        }),
+        encoding="utf-8",
+    )
+    # Infrastructure file — no entities key, must not be treated as an extraction
+    (ext / "_normalization_report.json").write_text(
+        json.dumps({"total": 1, "passed": 1, "pass_rate": 1.0}),
+        encoding="utf-8",
+    )
+
+    stats = preprocess_extractions(tmp_path)
+
+    assert stats["files_processed"] == 1, (
+        "_normalization_report.json was counted as an extraction; expected 1 "
+        f"real file, got {stats['files_processed']}"
+    )
+    # The report must be left byte-identical — never rewritten.
+    report = json.loads((ext / "_normalization_report.json").read_text())
+    assert report == {"total": 1, "passed": 1, "pass_rate": 1.0}
+
+
+# ---------------------------------------------------------------------------
 # core/llm_client payload construction (GH #27)
 #
 # core/llm_client.py had no test coverage at all, which is how it kept sending
