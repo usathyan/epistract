@@ -39,23 +39,56 @@ DOMAIN_ALIASES: dict[str, str] = {
 def _resolve_domain_dir(name: str) -> Path:
     """Resolve a domain name to its directory path.
 
-    Handles aliases and direct directory name lookups.
+    Handles aliases, then resolves by SET MEMBERSHIP rather than path
+    concatenation: caller input is never concatenated into a filesystem
+    path before validation. Aliases are resolved first (hardcoded in
+    DOMAIN_ALIASES, so safe), then the resolved name must appear in the
+    enumerated set of active domain names returned by list_domains() —
+    exactly the same directories that are exposed elsewhere in the app.
+    list_domains() is called fresh on every invocation (never cached at
+    import time) because tests can create a new domain package in
+    DOMAINS_DIR at runtime and expect it resolvable in the same process.
+    Only after membership succeeds is DOMAINS_DIR / resolved constructed.
+
+    This blocks path traversal (e.g. '../../etc') and archived-domain
+    escape (e.g. '_archived/x'), because neither string can ever appear
+    in the enumerated membership set.
+
+    Blast radius (verified before this change): routing membership through
+    list_domains() means directories lacking domain.yaml are no longer
+    resolvable. The only two such directories today are domains/arxiv-cs/
+    and domains/sec-filings/, both of which contain nothing but
+    __pycache__ (and sec-filings/validation/ has no run_validation.py).
+    No source file, test, or command references either name. All
+    DOMAIN_ALIASES targets (contracts, drug-discovery, clinicaltrials) are
+    members of the active set.
     """
-    # Check aliases first
     resolved = DOMAIN_ALIASES.get(name, name)
-    domain_dir = DOMAINS_DIR / resolved
-    if domain_dir.is_dir():
-        return domain_dir
 
-    # Try the name directly
-    domain_dir = DOMAINS_DIR / name
-    if domain_dir.is_dir():
-        return domain_dir
+    def _reject() -> FileNotFoundError:
+        return FileNotFoundError(
+            f"Domain '{name}' not found in {DOMAINS_DIR}. "
+            f"Available: {', '.join(list_domains())}"
+        )
 
-    raise FileNotFoundError(
-        f"Domain '{name}' not found in {DOMAINS_DIR}. "
-        f"Available: {', '.join(list_domains())}"
-    )
+    # Explicit reject guard (defense in depth, documents intent): the
+    # membership check below already excludes all of these, but rejecting
+    # up front means no separator/traversal string is ever compared
+    # against the filesystem.
+    if (
+        not resolved
+        or resolved.startswith("_")
+        or resolved in (".", "..")
+        or ".." in resolved
+        or "/" in resolved
+        or "\\" in resolved
+    ):
+        raise _reject()
+
+    if resolved not in list_domains():
+        raise _reject()
+
+    return DOMAINS_DIR / resolved
 
 
 def get_validation_dir(domain_name: str) -> Path | None:

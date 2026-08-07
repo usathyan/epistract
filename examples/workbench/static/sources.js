@@ -107,20 +107,17 @@ async function openDocument(docId, highlightSection) {
             return;
         }
 
-        let text = escapeHtml(data.text);
-
-        // Highlight section if provided (D-19)
-        if (highlightSection) {
-            const searchTerms = highlightSection.split(/\s+/).filter(w => w.length > 3);
-            for (const term of searchTerms) {
-                const regex = new RegExp(`(${escapeRegex(term)})`, 'gi');
-                text = text.replace(regex, '<mark class="source-highlight">$1</mark>');
-            }
-        }
-
         const pre = document.createElement('pre');
         pre.className = 'source-viewer';
-        pre.innerHTML = text; // text is escapeHtml(data.text) with safe <mark> highlight tags
+        // Append via a fragment loop, never `replaceChildren(...nodes)` — the node
+        // count is unbounded (2N+1 for N matches) and spreading a large array into
+        // a call throws RangeError past V8's argument limit. Corpus documents here
+        // run 12-31 MB, so a common highlight term reaches that ceiling.
+        const frag = document.createDocumentFragment();
+        for (const node of buildHighlightedNodes(data.text, highlightSection)) {
+            frag.appendChild(node);
+        }
+        pre.replaceChildren(frag);
         viewer.replaceChildren(pre);
 
         // Show PDF link
@@ -148,6 +145,37 @@ function escapeHtml(text) {
 
 function escapeRegex(str) {
     return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+// Build DOM nodes for the raw source text with <mark> highlight elements
+// around any highlightSection search terms, without ever passing untrusted
+// text through innerHTML (SEC-01 / Issue #24 PR A / T-260807-03). Text is
+// carried as real text nodes end to end; only the terms matched by the
+// escaped-and-anchored regex become <mark> elements.
+function buildHighlightedNodes(rawText, highlightSection) {
+    const text = String(rawText ?? '');
+    const searchTerms = (highlightSection || '').split(/\s+/).filter(w => w.length > 3);
+    if (searchTerms.length === 0) {
+        return [document.createTextNode(text)];
+    }
+    const alternation = searchTerms.map(escapeRegex).join('|');
+    const regex = new RegExp(`(${alternation})`, 'gi');
+    const nodes = [];
+    let lastIndex = 0;
+    for (const match of text.matchAll(regex)) {
+        if (match.index > lastIndex) {
+            nodes.push(document.createTextNode(text.slice(lastIndex, match.index)));
+        }
+        const mark = document.createElement('mark');
+        mark.className = 'source-highlight';
+        mark.textContent = match[0];
+        nodes.push(mark);
+        lastIndex = match.index + match[0].length;
+    }
+    if (lastIndex < text.length) {
+        nodes.push(document.createTextNode(text.slice(lastIndex)));
+    }
+    return nodes;
 }
 
 function formatSize(bytes) {

@@ -8,7 +8,12 @@ drive each test to GREEN.
 
 from __future__ import annotations
 
+import json
+import os
 import re
+import shutil
+import subprocess
+import tempfile
 from pathlib import Path
 
 import pytest
@@ -31,7 +36,32 @@ INDEX_HTML = WORKBENCH_STATIC / "index.html"
 
 @pytest.mark.unit
 def test_xss_sanitization():
-    """Every innerHTML assignment fed by untrusted data must be sanitized."""
+    """Every innerHTML assignment fed by untrusted data must be sanitized.
+
+    Statement-aware rule (Issue #24 PR A, T-260807-03). The previous
+    substring-in-line rule only flagged an innerHTML assignment whose RHS
+    contained `${` or one of four named function calls, so it missed both
+    string concatenation and bare identifiers. This rule instead extracts
+    the WHOLE right-hand side of every `.innerHTML =` / `.innerHTML +=`
+    assignment (joined across lines up to the terminating `;`) and accepts
+    it only when it is one whole static string literal with no `${`
+    interpolation, or when an allowlisted sanitizer call
+    (`DOMPurify.sanitize(...)` or `escapeHtml(...)`) appears anywhere in
+    the RHS. Everything else — concatenation, bare identifiers,
+    unsanitized template literals — is an offender.
+
+    `//`-to-EOL comments are stripped from the WHOLE file text FIRST,
+    before any other step, for two reasons: it removes the false positive
+    at graph.js:343 (a prose comment that quotes a cleared-container
+    assignment), and it stops a trailing comment from "laundering" a real
+    sink past the sanitizer allowlist (a comment merely mentioning
+    escapeHtml must not make an unsanitized assignment look safe).
+
+    Reads such as `return div.innerHTML;` (the escapeHtml helpers at
+    app.js:13 and sources.js:146) are never matched — the assignment
+    regex requires a `=` (or `+=`, excluding `==`/`===`) immediately after
+    `.innerHTML`, and a bare return has none.
+    """
     # SEC-07: glob every *.js under examples/workbench/static/ so any newly
     # added JS file is automatically scanned. Exclude minified third-party
     # bundles (*.min.js) to avoid false positives on vis-network etc.
@@ -40,32 +70,31 @@ def test_xss_sanitization():
         f for f in WORKBENCH_STATIC.glob("*.js")
         if not f.name.endswith(".min.js")
     )
-    # Acceptable patterns:
-    #   - DOMPurify.sanitize(...)            (Pattern A from RESEARCH)
-    #   - .textContent =                      (Pattern B — DOM API)
-    #   - escapeHtml(...)                     (Pattern C from RESEARCH)
-    sanitize_re = re.compile(r"DOMPurify\.sanitize|escapeHtml\s*\(")
-    # Lines containing innerHTML assignment that is NOT a static literal.
-    # We look for `innerHTML = ` followed by something containing `${` (template
-    # literal interpolation) OR a function call like marked.parse / renderMarkdown.
-    danger_re = re.compile(
-        r"innerHTML\s*=\s*.*(\$\{|marked\.parse|renderMarkdown|linkifyCitations|dashData\.html)"
+    COMMENT_RE = re.compile(r"//.*$", re.MULTILINE)
+    ASSIGN_RE = re.compile(
+        r"\.innerHTML\s*\+?=(?!=)(?P<rhs>.*?);\s*$", re.DOTALL | re.MULTILINE
     )
+    STATIC_LITERAL_RE = re.compile(r"""^\s*(?:'[^']*'|"[^"]*"|`[^`]*`)\s*$""")
+    SANITIZE_RE = re.compile(r"DOMPurify\.sanitize\s*\(|escapeHtml\s*\(")
+
     offenders: list[tuple[Path, int, str]] = []
     for f in files_to_check:
         if not f.exists():
             continue  # file not yet created (e.g. sidebar.js before Wave 2)
-        text = f.read_text(encoding="utf-8")
-        for lineno, line in enumerate(text.splitlines(), start=1):
-            if not danger_re.search(line):
+        raw_text = f.read_text(encoding="utf-8")
+        stripped_text = COMMENT_RE.sub("", raw_text)
+        for match in ASSIGN_RE.finditer(stripped_text):
+            rhs = match.group("rhs")
+            if STATIC_LITERAL_RE.match(rhs) and "${" not in rhs:
                 continue
-            if sanitize_re.search(line):
+            if SANITIZE_RE.search(rhs):
                 continue
-            offenders.append((f, lineno, line.strip()))
+            lineno = stripped_text[: match.start()].count("\n") + 1
+            offenders.append((f, lineno, rhs.strip()))
     assert not offenders, (
-        "Unsanitized innerHTML assignments found. Each line below must be wrapped "
-        "in DOMPurify.sanitize(...) or escapeHtml(...) per RESEARCH section "
-        "'Architecture Patterns':\n"
+        "Unsanitized innerHTML assignments found. Each RHS below must be a "
+        "static string literal (no ${ interpolation) or wrapped in "
+        "DOMPurify.sanitize(...) / escapeHtml(...):\n"
         + "\n".join(f"  {f.name}:{ln}: {src}" for f, ln, src in offenders)
     )
 
@@ -195,4 +224,112 @@ def test_sidebar_xss_dom_api():
         "sidebar.js uses innerHTML with dynamic graph data -- use textContent "
         "or createElement instead (SIDEBAR-04):\n"
         + "\n".join(f"  line {ln}: {src}" for ln, src in offenders)
+    )
+
+
+# -- Issue #24 PR A ---------------------------------------------------------
+# buildHighlightedNodes() is the one behavioral change in the XSS fix: source
+# text that used to be escaped and spliced into innerHTML is now segmented into
+# real DOM nodes. Exercise it under Node with a minimal document stub, since a
+# static-source check cannot see segmentation bugs.
+
+_HIGHLIGHT_HARNESS = r"""
+const fs = require('fs');
+const src = fs.readFileSync(process.argv[2], 'utf8');
+const body = src.slice(
+    src.indexOf('function buildHighlightedNodes'),
+    src.indexOf('function formatSize'),
+);
+
+// Minimal document stub: text nodes and <mark> elements are all this needs.
+global.document = {
+    createTextNode: (t) => ({ mark: false, text: t }),
+    createElement: (tag) => ({ mark: tag === 'mark', className: '', text: '',
+                              set textContent(v) { this.text = v; },
+                              get textContent() { return this.text; } }),
+};
+function escapeRegex(str) { return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+eval(body);
+
+// Round-trip: concatenated node text must equal the input exactly, and the
+// marked segments must be exactly the matched terms.
+const cases = JSON.parse(process.argv[3]);
+const out = cases.map(([text, section]) => {
+    const nodes = buildHighlightedNodes(text, section);
+    return {
+        roundtrip: nodes.map(n => n.text).join(''),
+        marked: nodes.filter(n => n.mark).map(n => n.text),
+        count: nodes.length,
+    };
+});
+console.log(JSON.stringify(out));
+"""
+
+
+@pytest.mark.unit
+def test_source_highlight_segmentation():
+    """buildHighlightedNodes() must preserve text exactly and mark only matches."""
+    node = shutil.which("node")
+    if node is None:
+        pytest.skip("node not available")
+
+    sources_js = WORKBENCH_STATIC / "sources.js"
+    assert sources_js.exists()
+
+    cases = [
+        ["alpha beta gamma", None],              # no highlight section
+        ["alpha beta gamma", "xx yy"],           # terms all <=3 chars -> no matches
+        ["alpha beta gamma", "beta"],            # single match, mid-string
+        ["beta alpha", "beta"],                  # match at index 0
+        ["alpha beta", "beta"],                  # match at end of string
+        ["betas beta", "beta"],                  # overlapping prefix, two matches
+        ["alpha BETA gamma", "beta"],            # case-insensitive
+        ["", "beta"],                            # empty document
+        ["a.b*c alpha", "a.b*c"],                # regex metacharacters in term
+    ]
+
+    with tempfile.NamedTemporaryFile("w", suffix=".js", delete=False) as fh:
+        fh.write(_HIGHLIGHT_HARNESS)
+        harness = fh.name
+    try:
+        proc = subprocess.run(
+            [node, harness, str(sources_js), json.dumps(cases)],
+            capture_output=True, text=True, timeout=30,
+        )
+    finally:
+        os.unlink(harness)
+
+    assert proc.returncode == 0, f"harness failed:\n{proc.stderr}"
+    results = json.loads(proc.stdout)
+
+    for (text, section), result in zip(cases, results):
+        assert result["roundtrip"] == text, (
+            f"text not preserved for {text!r} / {section!r}: "
+            f"got {result['roundtrip']!r}"
+        )
+        for marked in result["marked"]:
+            assert marked.lower() in (section or "").lower(), (
+                f"marked segment {marked!r} is not a search term from {section!r}"
+            )
+
+    # No section, or no term longer than 3 chars -> exactly one text node.
+    assert results[0]["count"] == 1
+    assert results[1]["count"] == 1
+    # 'betas beta' against 'beta' -> two marks.
+    assert len(results[5]["marked"]) == 2
+
+
+@pytest.mark.unit
+def test_source_highlight_no_unbounded_spread():
+    """Highlight nodes must not be spread into a call — the count is unbounded.
+
+    buildHighlightedNodes() returns 2N+1 nodes for N matches, and corpus
+    documents run 12-31 MB (see CLAUDE.md). Spreading that into
+    replaceChildren(...) throws RangeError past V8's argument limit, so the
+    call site must append via a loop instead.
+    """
+    text = (WORKBENCH_STATIC / "sources.js").read_text(encoding="utf-8")
+    assert "replaceChildren(...buildHighlightedNodes" not in text, (
+        "spreading buildHighlightedNodes() into replaceChildren() throws "
+        "RangeError on large documents -- append via a fragment loop"
     )

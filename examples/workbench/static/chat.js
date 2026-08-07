@@ -66,7 +66,10 @@ async function sendMessage(question) {
     // Add assistant message placeholder
     const assistantDiv = document.createElement('div');
     assistantDiv.className = 'chat-msg chat-msg--assistant';
-    assistantDiv.innerHTML = '<span class="loading-dots">' + (template.loading_message || 'Analyzing') + '</span>';
+    const loadingSpan = document.createElement('span');
+    loadingSpan.className = 'loading-dots';
+    loadingSpan.textContent = template.loading_message || 'Analyzing';
+    assistantDiv.replaceChildren(loadingSpan);
     messages.appendChild(assistantDiv);
     messages.scrollTop = messages.scrollHeight;
 

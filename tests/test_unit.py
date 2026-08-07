@@ -2149,6 +2149,34 @@ def test_get_validation_dir_resolution():
 
 
 @pytest.mark.unit
+def test_resolve_domain_rejects_traversal():
+    """Issue #24 PR A / T-260807-01: path traversal and archived-domain escape
+    must be rejected by set-membership resolution, not path concatenation."""
+    sys.path.insert(0, str(PROJECT_ROOT))
+    from core.domain_resolver import DOMAINS_DIR, get_validation_dir, resolve_domain
+
+    rejected_names = ["_archived/x", "../../etc", "..", ".", "/etc"]
+    for bad_name in rejected_names:
+        with pytest.raises(FileNotFoundError):
+            resolve_domain(bad_name)
+
+    # get_validation_dir must keep its never-raises contract for rejected
+    # and unknown names alike.
+    assert get_validation_dir("../../etc") is None
+
+    # Valid domain and valid alias still resolve, inside DOMAINS_DIR.
+    info_dd = resolve_domain("drug-discovery")
+    assert Path(info_dd["dir"]).parent == DOMAINS_DIR
+
+    info_alias = resolve_domain("contract")
+    assert Path(info_alias["dir"]).parent == DOMAINS_DIR
+    assert Path(info_alias["dir"]).name == "contracts"
+    assert info_alias["name"] == "contract", (
+        "resolve_domain()['name'] must still echo the caller's unresolved alias"
+    )
+
+
+@pytest.mark.unit
 def test_rule_failure_isolation(tmp_path, monkeypatch):
     """UT-050: one broken rule does not abort the phase; error recorded, others still run (D-02, D-09, D-15)."""
     sys.path.insert(0, str(PROJECT_ROOT))
