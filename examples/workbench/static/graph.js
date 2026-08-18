@@ -541,7 +541,11 @@ function filterGraph() {
     if (severityFilter !== 'all' && window._claimsData) {
         severityNodeIds = new Set();
         const claims = window._claimsData;
-        for (const section of ['conflicts', 'gaps', 'risks']) {
+        // `findings` is the flattened custom-rule channel (per-domain
+        // CUSTOM_RULES and the cross-domain rules engine). Its items carry the
+        // same `severity` + `affected_entities` fields as the three original
+        // sections, so it needs no special-casing beyond being listed here.
+        for (const section of ['conflicts', 'gaps', 'risks', 'findings']) {
             for (const item of (claims[section] || [])) {
                 if ((item.severity || '').toLowerCase() === severityFilter.toLowerCase()) {
                     // Collect affected entity IDs

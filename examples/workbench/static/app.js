@@ -131,6 +131,26 @@ async function populateDashboard(template) {
             autoHtml += '</tbody></table></div>';
             autoHtml += '<p>Total entities: ' + escapeHtml(String(dashData.total_nodes || 0))
                 + ' | Total relationships: ' + escapeHtml(String(dashData.total_edges || 0)) + '</p>';
+            // Custom rule findings — per-domain CUSTOM_RULES and cross-domain
+            // rules both land in claims_layer.super_domain.custom_findings.
+            // Purely additive: domains that ship no custom rules get an empty
+            // list from /api/dashboard and this block renders nothing.
+            const findings = dashData.findings || [];
+            if (findings.length) {
+                autoHtml += '<h3>Analysis Findings</h3><div class="dashboard-table-wrap">'
+                    + '<table class="dashboard-table"><thead><tr><th>Rule</th><th>Findings</th><th>By Severity</th></tr></thead><tbody>';
+                for (const f of findings) {
+                    const sev = Object.entries(f.by_severity || {})
+                        .map(([k, v]) => k + ': ' + v).join(', ');
+                    const label = f.errors
+                        ? String(f.rule_name) + ' (' + f.errors + ' rule error(s))'
+                        : String(f.rule_name);
+                    autoHtml += '<tr><td>' + escapeHtml(label) + '</td><td>'
+                        + escapeHtml(String(f.total || 0)) + '</td><td>'
+                        + escapeHtml(sev) + '</td></tr>';
+                }
+                autoHtml += '</tbody></table></div>';
+            }
             dashContent.innerHTML = (typeof DOMPurify !== 'undefined')
                 ? DOMPurify.sanitize(autoHtml, { ADD_ATTR: ['id'] })
                 : autoHtml;
@@ -184,17 +204,41 @@ async function configureSeverityVisibility() {
         const resp = await fetch('/api/graph/claims');
         if (!resp.ok) return;
         const claims = await resp.json();
-        // Walk every section of the claims payload and check whether any
-        // item carries a `severity` field. Sections vary by domain
-        // (conflicts/gaps/risks for contracts; hypotheses/contradictions
-        // for drug-discovery), so iterate over every array we find.
-        const hasSeverity = Object.values(claims || {}).some(section => {
-            if (!Array.isArray(section)) return false;
-            return section.some(item => item && typeof item === 'object' && 'severity' in item);
-        });
-        if (hasSeverity) {
+        // Walk every section of the claims payload and collect the distinct
+        // severity values actually present. Sections vary by domain
+        // (conflicts/gaps/risks for contracts; hypotheses/contradictions for
+        // drug-discovery; findings for custom and cross-domain rules), so
+        // iterate over every array we find.
+        const severities = new Set();
+        for (const section of Object.values(claims || {})) {
+            if (!Array.isArray(section)) continue;
+            for (const item of section) {
+                if (item && typeof item === 'object' && item.severity) {
+                    severities.add(String(item.severity));
+                }
+            }
+        }
+        if (severities.size) {
             if (sidebarSection) sidebarSection.style.display = '';
-            if (filterSelect) filterSelect.style.display = '';
+            if (filterSelect) {
+                // Rebuild the option list from the severities this graph
+                // actually carries. The markup ships critical/warning/info,
+                // which is the contracts vocabulary; cross-domain rules grade
+                // high/medium/low/advisory, and selecting an option no claim
+                // uses would hide every node in the graph.
+                filterSelect.replaceChildren();
+                const all = document.createElement('option');
+                all.value = 'all';
+                all.textContent = 'All Severities';
+                filterSelect.appendChild(all);
+                for (const sev of [...severities].sort()) {
+                    const opt = document.createElement('option');
+                    opt.value = sev;
+                    opt.textContent = sev.charAt(0).toUpperCase() + sev.slice(1);
+                    filterSelect.appendChild(opt);
+                }
+                filterSelect.style.display = '';
+            }
         }
     } catch (e) {
         console.warn('Could not check claims for severity field:', e);

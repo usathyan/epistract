@@ -50,19 +50,39 @@ async def get_node(request: Request, node_id: str):
 
 @router.get("/claims")
 async def get_claims(request: Request):
-    """Return claims layer data (conflicts, gaps, risks).
+    """Return claims layer data (conflicts, gaps, risks, custom findings).
 
     Reshapes the nested claims_layer structure into the flat format
-    the frontend expects: {conflicts, gaps, risks, cross_references}.
+    the frontend expects: {conflicts, gaps, risks, cross_references,
+    custom_findings, findings}.
+
+    `custom_findings` is the channel both the per-domain `CUSTOM_RULES` hook
+    (`core/label_epistemic.py`) and the cross-domain rules engine
+    (`core/cross_domain.py`) write to, keyed by rule name. It was dropped
+    here until now, which made every custom rule's output invisible over the
+    API. `findings` is the same data flattened into one severity-bearing list
+    so the dashboard can render it without knowing the rule names in advance.
     """
     data = request.app.state.data
     cl = data.claims_layer
     sd = cl.get("super_domain", {})
+    custom_findings = sd.get("custom_findings", {}) or {}
+
+    flattened: list[dict] = []
+    for rule_name, rule_findings in custom_findings.items():
+        if not isinstance(rule_findings, list):
+            continue
+        for f in rule_findings:
+            if isinstance(f, dict):
+                flattened.append({"rule_name": rule_name, **f})
+
     return {
         "conflicts": sd.get("conflicts", []),
         "gaps": sd.get("coverage_gaps", []),
         "risks": sd.get("risks", []),
         "cross_references": sd.get("cross_contract_entities", []),
+        "custom_findings": custom_findings,
+        "findings": flattened,
     }
 
 

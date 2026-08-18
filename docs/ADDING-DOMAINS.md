@@ -689,6 +689,47 @@ actual typed relation signatures before writing the `edges:` config --
 don't assume the semantically-obvious relation name is the one that
 actually reaches both endpoints.
 
+### Rendering the crosswalk as a viewable graph
+
+`spine.json` and `cross_domain_findings.json` are analysis artifacts, not
+displayable ones. `core/crosswalk_output.py` renders both into the pair every
+existing consumer already reads:
+
+```bash
+python3 -m core.crosswalk_output render \
+    --spine spine.json --findings cross_domain_findings.json \
+    --out ./crosswalk-output
+```
+
+`/epistract:crosswalk` runs all three steps (build → analyze → render) in one
+command and can hand off to the dashboard when it finishes.
+
+The rendered `graph_data.json` is a graph **about the joins**, not a merged
+graph — which is how it sidesteps the one-domain-per-project blocker noted
+below. Its nodes are one `Graph` node per source graph plus one node per
+(axis, canonical key) pair, typed by axis so the workbench legend and type
+filter treat axes as facets. Its links are `PRESENT_IN` (canonical key held by
+a source graph — two or more of these on one key is a join) and one link per
+cross-domain finding, named after the rule that raised it and carrying the
+finding's severity and subtype. Member node IDs from the source graphs ride
+along as attributes; they never become nodes.
+
+The rendered `claims_layer.json` writes the findings to
+`super_domain.custom_findings` verbatim (plus an `affected_entities` list of
+the crosswalk node IDs each finding spans) and every key shared by two or more
+graphs to `cross_references`, which the workbench chat prompt already renders.
+
+`metadata.domain` is `crosswalk`, resolving against `domains/crosswalk/` — a
+meta-domain that ships a `domain.yaml`, a `SKILL.md` reading guide and a
+`workbench/template.yaml`, but no extraction prompt: nothing is ever ingested
+against it. `/epistract:dashboard`, `/epistract:view` and `/epistract:export`
+all accept the output directory unchanged, with no `--domain` flag.
+
+Adding an axis to an axis spec means adding the matching entity type to
+`domains/crosswalk/domain.yaml` and a legend colour to its
+`workbench/template.yaml`. `tests/test_crosswalk_output.py` enforces that
+every axis in `crosswalks/pharma.yaml` has both.
+
 ### Not yet built
 
 - **Feeding spine-canonicalised endpoints into the existing temporal
@@ -696,16 +737,19 @@ actually reaches both endpoints.
   which already gates purely on node-pair identity -- rewriting endpoints to
   canonical spine IDs would make it directly reusable with no engine
   changes.
-- **Merging the cross-domain findings artifact into an existing claims
-  layer.** The output is already shaped for it (nested under
-  `super_domain.custom_findings` by rule name, matching the single-graph
-  dispatcher's own shape) -- nothing consumes it yet.
+- **Merging the cross-domain findings into an existing single-graph claims
+  layer.** The crosswalk now writes its own claims layer (see above), which
+  covers the viewing case. What remains unbuilt is folding the findings back
+  into a *source* graph's `claims_layer.json`, so a pharmacovigilance
+  workbench session would see what the label graph does not corroborate
+  without opening the crosswalk.
 - **Link-evidence text as an additional value source** -- worth roughly one
   or two more trial matches over the current node-attribute-plus-name
   sourcing.
-- **A merged `graph_data.json`** -- the project registry's one-domain-per-
-  project-directory assumption has no answer yet for what domain a merged
-  graph would validate against.
+- **A merged `graph_data.json`** -- still blocked, and still for the same
+  reason: the project registry's one-domain-per-project-directory assumption
+  has no answer for what domain a union graph would validate against. The
+  rendered crosswalk graph is not this; it unions nothing.
 - **An ontology mapping for the condition/indication axis.** The axis
   itself now exists (`indication`, joined in `crosswalks/pharma.yaml` and
   declared per-domain) -- what remains blocked is the MONDO/MeSH mapping

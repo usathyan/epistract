@@ -29,7 +29,54 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-import yaml
+# Allow running as a plain script (python3 core/label_epistemic.py ...) in addition
+# to module import. commands/epistemic.md invokes this by absolute path, so the
+# package root must be on sys.path for the deferred `core.domain_resolver` and
+# `core.llm_client` imports below — running a script by path puts core/ on
+# sys.path[0], not the project root. Those imports are inside functions, so the
+# failure surfaced only once analysis was under way, not at startup.
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(_PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(_PROJECT_ROOT))
+
+import yaml  # noqa: E402 — must follow the sys.path insertion above.
+
+
+# ---------------------------------------------------------------------------
+# Claims-layer authorship
+# ---------------------------------------------------------------------------
+
+# Stamped into every claims_layer.json this module writes, and checked before
+# overwriting one. `claims_layer.json` is a fixed filename in a project output
+# directory, and this module rewrites it unconditionally -- so a claims layer
+# produced by a different generator (core/crosswalk_output.py renders one for
+# a crosswalk graph, which no extraction pipeline ever built) was silently
+# destroyed by a routine `/epistract:epistemic` run on that directory.
+GENERATOR = "label_epistemic"
+
+
+def claims_layer_generator(output_dir: Path) -> str | None:
+    """Return the ``generator`` stamp on an existing claims_layer.json.
+
+    Returns None when there is no claims layer, when it cannot be read, or
+    when it carries no stamp. An unstamped layer is treated as this module's
+    own output: every claims layer written before stamping existed came from
+    here, and refusing to overwrite those would break re-running epistemic
+    analysis on any pre-existing project.
+    """
+    claims_path = Path(output_dir) / "claims_layer.json"
+    if not claims_path.is_file():
+        return None
+    try:
+        payload = json.loads(claims_path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        # An unreadable claims layer is not evidence of foreign authorship;
+        # let the normal write replace it.
+        return None
+    if not isinstance(payload, dict):
+        return None
+    generator = payload.get("generator")
+    return generator if isinstance(generator, str) else None
 
 
 # ---------------------------------------------------------------------------
@@ -613,6 +660,7 @@ def analyze_epistemic(
     domain_name: str | None = None,
     master_doc_path: Path | None = None,
     narrate: bool = True,
+    force: bool = False,
 ) -> dict:
     """Run full epistemic analysis on a built graph.
 
@@ -630,6 +678,8 @@ def analyze_epistemic(
             produce epistemic_narrative.md alongside claims_layer.json.
             Set False to skip the LLM call entirely (offline runs,
             no credentials available).
+        force: Overwrite a claims_layer.json written by a different
+            generator. Off by default — see the guard below.
 
     Returns:
         Claims layer dict with metadata, summary, base_domain, super_domain.
@@ -638,6 +688,25 @@ def analyze_epistemic(
     if not graph_path.exists():
         print(
             f"Error: {graph_path} not found. Run /epistract-build first.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+    # Refuse to overwrite a claims layer another generator authored. This runs
+    # before any analysis, because the write path below replaces BOTH
+    # claims_layer.json and graph_data.json — bailing later would still have
+    # stamped epistemic_status onto a graph this module does not understand.
+    existing_generator = claims_layer_generator(output_dir)
+    if existing_generator is not None and existing_generator != GENERATOR and not force:
+        print(
+            f"Error: {output_dir / 'claims_layer.json'} was written by "
+            f"{existing_generator!r}, not by the epistemic analyser. Overwriting it "
+            f"would discard that generator's findings.\n"
+            f"  This directory most likely holds a rendered crosswalk graph, which "
+            f"is not an extraction pipeline output — epistemic analysis over it is "
+            f"not meaningful.\n"
+            f"  Re-render it with `python3 -m core.crosswalk_output render`, or pass "
+            f"--force to overwrite anyway.",
             file=sys.stderr,
         )
         sys.exit(1)
@@ -710,7 +779,9 @@ def analyze_epistemic(
                         file=sys.stderr,
                     )
 
-    # Write claims layer
+    # Write claims layer, stamped so a later run — by this module or any other
+    # generator — can tell who authored it.
+    claims_layer["generator"] = GENERATOR
     claims_path = output_dir / "claims_layer.json"
     claims_path.write_text(json.dumps(claims_layer, indent=2))
 
@@ -784,7 +855,7 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         print(
             "Usage: python label_epistemic.py <output_dir> [--domain <name>] "
-            "[--master-doc <path>] [--no-narrate]",
+            "[--master-doc <path>] [--no-narrate] [--force]",
             file=sys.stderr,
         )
         sys.exit(1)
@@ -803,10 +874,12 @@ if __name__ == "__main__":
             master_doc = Path(sys.argv[idx + 1])
 
     narrate_flag = "--no-narrate" not in sys.argv
+    force_flag = "--force" in sys.argv
 
     analyze_epistemic(
         out_dir,
         domain_name=domain,
         master_doc_path=master_doc,
         narrate=narrate_flag,
+        force=force_flag,
     )

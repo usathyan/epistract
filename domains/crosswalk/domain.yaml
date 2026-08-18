@@ -1,0 +1,73 @@
+name: "Crosswalk"
+version: "1.0.0"
+description: |
+  Meta-domain for the cross-graph crosswalk layer. Unlike every other domain
+  in this repository, `crosswalk` is NOT an extraction domain -- no agent ever
+  reads a document against this schema and no `/epistract:ingest` run produces
+  it. Its graphs are rendered by `core/crosswalk_output.py` from a `spine.json`
+  (built by `core/crosswalk.py`) plus, optionally, the cross-domain findings
+  computed from that spine by `core/cross_domain.py`.
+
+  It exists so that the crosswalk has a domain identity: a `metadata.domain`
+  value the workbench can resolve, a set of entity types the graph legend and
+  type filter can key off, and a `workbench/template.yaml` giving the chat
+  panel a persona that understands what a canonical key is. Run it with
+  `/epistract:crosswalk`.
+
+system_context: |
+  This schema is not used for extraction. It documents the node and link
+  vocabulary of a rendered crosswalk graph so that readers -- human and
+  model -- can interpret one.
+
+  A crosswalk graph has exactly two kinds of node:
+
+  - A `Graph` node per source knowledge graph that fed the spine. Its name is
+    the key the spine recorded for that graph (`metadata.domain`, unless the
+    spine was built with a `NAME=DIR` override).
+  - One node per canonical key per axis, typed by the axis it belongs to
+    (`Trial`, `Drug`, `AdverseEvent`, `Indication`, `Outcome`). Its name is
+    the canonical key itself -- the value AFTER the axis spec's normalizer
+    chain has run, which is why it may differ from the name any source node
+    carries.
+
+  A canonical-key node linked to two or more `Graph` nodes is a join: the
+  same real-world entity, independently extracted by two separate corpora.
+  A canonical-key node linked to exactly one is not a failure -- most keys
+  legitimately appear in one corpus only.
+
+fallback_relation: PRESENT_IN
+
+entity_types:
+  Graph:
+    description: "A source knowledge graph that contributed nodes to the spine. Named by the key the spine recorded for it."
+  Trial:
+    description: "Canonical key on the `trial` axis -- a registry identifier (NCT########) after case normalisation."
+  Drug:
+    description: "Canonical key on the `drug` axis -- a parent moiety name after brand, salt and hydrate suffixes are stripped."
+  AdverseEvent:
+    description: "Canonical key on the `adverse_event` axis -- an adverse event term after British-to-US orthographic normalisation."
+  Indication:
+    description: "Canonical key on the `indication` axis -- a condition or indication term with parenthetical role markers stripped."
+  Outcome:
+    description: "Canonical key on the `outcome` axis -- an outcome measure name after whitespace normalisation."
+
+relation_types:
+  PRESENT_IN:
+    description: "Links a canonical-key node to a source Graph node that holds at least one member node canonicalising to that key. Attributes carry the member node IDs."
+  UNLABELED_ADVERSE_EVENT:
+    description: "Cross-domain finding: an adverse event the probe graph attaches to a drug that the reference label graph does not. Graded high/medium/low by subtype."
+  COVERAGE_GAP:
+    description: "Cross-domain finding: a trial outcome whose tokens are poorly covered by the reference graph's text for the same trial."
+  OFF_LABEL_EXPOSURE:
+    description: "Cross-domain finding (advisory only): a drug/indication pair in the probe graph not matched on the reference side. Ships advisory because the two indication vocabularies overlap on one term after normalisation."
+
+notes: |
+  The entity types above mirror the axes declared in `crosswalks/pharma.yaml`.
+  Adding a new axis to an axis spec means adding the matching entity type
+  here (and, for a legend colour, to `workbench/template.yaml`) -- the graph
+  renders correctly either way, but an undeclared axis falls back to the
+  workbench's rotating default palette instead of a stable colour.
+
+  The finding relation types mirror the rules in `crosswalks/pharma-rules.yaml`
+  (uppercased). A rules spec with different rule names produces different
+  relation types; that is expected and is not an error.

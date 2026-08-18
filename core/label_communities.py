@@ -12,6 +12,14 @@ import json
 import sys
 from pathlib import Path
 
+# Allow running as a plain script (python3 core/label_communities.py ...) in addition
+# to module import. Running a script by path puts core/ on sys.path[0], not the
+# project root, so the deferred `core.domain_resolver` import below would fail once
+# reached — mid-run rather than at startup.
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(_PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(_PROJECT_ROOT))
+
 
 def _anchor_label(members: list[dict], anchors: list[str]) -> str | None:
     """Generate a community label using domain-configured anchor entity types.

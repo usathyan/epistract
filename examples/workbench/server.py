@@ -316,6 +316,41 @@ def create_app(output_dir: Path, domain: str | None = None) -> FastAPI:
             "title", template.get("title", "Knowledge Graph Summary")
         )
         subtitle = dashboard_block.get("subtitle", template.get("subtitle", ""))
+
+        # Custom rule findings, summarised by rule and severity. This is the
+        # only surface on which cross-domain findings (core/cross_domain.py)
+        # and per-domain CUSTOM_RULES findings are visible without opening the
+        # chat panel — /api/graph/claims carries the full list.
+        custom_findings = (
+            (app.state.data.claims_layer.get("super_domain") or {}).get(
+                "custom_findings"
+            )
+            or {}
+        )
+        finding_summary: list[dict] = []
+        for rule_name in sorted(custom_findings):
+            rule_findings = custom_findings[rule_name]
+            if not isinstance(rule_findings, list) or not rule_findings:
+                continue
+            by_severity: dict[str, int] = {}
+            errors = 0
+            for f in rule_findings:
+                if not isinstance(f, dict):
+                    continue
+                if f.get("status") == "error":
+                    errors += 1
+                    continue
+                sev = str(f.get("severity", "unknown"))
+                by_severity[sev] = by_severity.get(sev, 0) + 1
+            finding_summary.append(
+                {
+                    "rule_name": rule_name,
+                    "total": sum(by_severity.values()),
+                    "errors": errors,
+                    "by_severity": by_severity,
+                }
+            )
+
         return {
             "html": None,
             "auto": True,
@@ -324,6 +359,7 @@ def create_app(output_dir: Path, domain: str | None = None) -> FastAPI:
             "entity_counts": entity_counts,
             "total_nodes": len(nodes),
             "total_edges": len(edges),
+            "findings": finding_summary,
         }
 
     @app.get("/api/health")
