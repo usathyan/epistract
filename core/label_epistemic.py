@@ -29,7 +29,17 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-import yaml
+# Allow running as a plain script (python3 core/label_epistemic.py ...) in addition
+# to module import. commands/epistemic.md invokes this by absolute path, so the
+# package root must be on sys.path for the deferred `core.domain_resolver` and
+# `core.llm_client` imports below — running a script by path puts core/ on
+# sys.path[0], not the project root. Those imports are inside functions, so the
+# failure surfaced only once analysis was under way, not at startup.
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(_PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(_PROJECT_ROOT))
+
+import yaml  # noqa: E402 — must follow the sys.path insertion above.
 
 
 # ---------------------------------------------------------------------------
