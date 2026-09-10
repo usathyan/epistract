@@ -50,9 +50,34 @@ python3 ${CLAUDE_PLUGIN_ROOT}/core/label_epistemic.py <output_dir> --no-narrate 
 ```
 
 This reads `graph_data.json` and produces:
-- `claims_layer.json` — the Super Domain overlay (epistemic claims, contradictions, grouped hypotheses) — rule-based, deterministic.
+- `claims_layer.json` — the Super Domain overlay (epistemic claims, contradictions, grouped hypotheses) — rule-based, deterministic. Stamped `"generator": "label_epistemic"`.
 - `epistemic_narrative.md` — the analyst briefing — LLM-generated. Skipped when `--no-narrate` is passed, when no API credentials are set, or when the domain's `workbench/template.yaml` has no `persona` field.
 - Updates `graph_data.json` nodes/links with `epistemic_status` field.
+
+### Claims-layer authorship guard
+
+`claims_layer.json` is a fixed filename and this step rewrites it — and
+`graph_data.json` — unconditionally. Not every claims layer comes from here:
+`core/crosswalk_output.py` renders one for a crosswalk graph, which no
+extraction pipeline ever built and over which epistemic analysis is not
+meaningful.
+
+So the script **refuses to run** when the claims layer on disk carries a
+`generator` stamp naming a different producer, exits 1 with a message naming
+that producer, and writes nothing at all — the check runs before any analysis,
+so `graph_data.json` is left untouched too.
+
+```bash
+python3 ${CLAUDE_PLUGIN_ROOT}/core/label_epistemic.py <output_dir> --force   # overwrite anyway
+```
+
+A claims layer with **no** stamp is treated as this script's own output and
+overwritten as before: every layer written before stamping existed came from
+here, so ordinary re-runs on existing projects are unaffected.
+
+If you hit this on a crosswalk directory, you almost certainly want
+`/epistract:crosswalk` (or `python3 -m core.crosswalk_output render`) instead —
+not `--force`, which discards the joins and cross-domain findings.
 
 ### Narrator credentials (same priority as workbench chat)
 

@@ -129,6 +129,37 @@ def build_system_prompt(data: WorkbenchData, template: dict) -> str:
                 )
             parts.append("")
 
+        # Custom rule findings — the channel both the per-domain CUSTOM_RULES
+        # hook (core/label_epistemic.py) and the cross-domain rules engine
+        # (core/cross_domain.py) write to, keyed by rule name and nested under
+        # super_domain rather than at top level like the four sections above.
+        # Nothing read it before; a domain shipping custom rules had its most
+        # domain-specific findings silently absent from the chat context.
+        custom_findings = (
+            data.claims_layer.get("super_domain", {}) or {}
+        ).get("custom_findings", {}) or {}
+        for rule_name in sorted(custom_findings):
+            rule_findings = custom_findings[rule_name]
+            if not isinstance(rule_findings, list) or not rule_findings:
+                continue
+            heading = rule_name.replace("_", " ").upper()
+            parts.append(f"### {heading} ({len(rule_findings)} found)")
+            for f in rule_findings:
+                if not isinstance(f, dict):
+                    continue
+                # A rule that raised records {status: error, error: ...}
+                # instead of a finding; surface it rather than hiding a
+                # broken rule behind an empty section.
+                if f.get("status") == "error":
+                    parts.append(f"- [ERROR] rule failed: {f.get('error', '')}")
+                    continue
+                severity = f.get("severity", "INFO")
+                desc = f.get("description", "")
+                subtype = (f.get("evidence") or {}).get("subtype", "")
+                suffix = f" (subtype: {subtype})" if subtype else ""
+                parts.append(f"- [{severity}] {desc}{suffix}")
+            parts.append("")
+
     # --- Communities ---
     if data.communities:
         communities = data.communities.get("communities", [])

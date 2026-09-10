@@ -139,6 +139,7 @@ The wizard reads your samples, proposes entity/relation types, asks about your a
 | `/epistract:domain` | Create a new domain from sample docs (wizard) |
 | `/epistract:query` | Search/filter graph by entity name or type |
 | `/epistract:ask` | One-shot natural-language Q&A over the graph |
+| `/epistract:crosswalk` | Join two or more built graphs on shared identifiers, render the joins + cross-domain findings as their own viewable graph |
 
 Full reference + flags: [docs/COMMANDS.md](docs/COMMANDS.md).
 
