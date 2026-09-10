@@ -21,6 +21,7 @@ import ast
 import importlib.util
 import json
 import re
+import sys
 import tempfile
 import textwrap
 import unicodedata
@@ -29,7 +30,14 @@ import yaml
 
 from pathlib import Path
 
-from core.domain_resolver import DOMAINS_DIR, DOMAIN_ALIASES, list_domains
+# Allow running as a plain script (python3 core/domain_wizard.py ...) in addition to
+# module import. Running a script by path puts core/ on sys.path[0], not the project
+# root, so the `core.domain_resolver` import below fails outright at startup.
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(_PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(_PROJECT_ROOT))
+
+from core.domain_resolver import DOMAINS_DIR, DOMAIN_ALIASES, list_domains  # noqa: E402
 
 # Optional sift-kg reader — used to extract text from binary formats (PDF, DOCX, etc.).
 # Matches the guard pattern at core/ingest_documents.py:20-25.
