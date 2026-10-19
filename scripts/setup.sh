@@ -11,6 +11,7 @@
 #   - Verifies uv is available
 #   - Creates a project-local .venv via `uv venv` if one doesn't exist
 #   - Installs sift-kg into that venv via `uv pip install`
+#   - Installs the `workbench` extra from pyproject.toml (fastapi, uvicorn, pyyaml, ...)
 #   - Optionally installs RDKit + Biopython with --all
 #
 # Usage: scripts/setup.sh [--all] [--check]
@@ -164,6 +165,25 @@ EOF
   fi
     CHONKIE_VERSION=$("$VENV_PYTHON" -c "import importlib.metadata; print(importlib.metadata.version('chonkie'))" 2>/dev/null || echo "unknown")
     echo "chonkie $CHONKIE_VERSION (installed)"
+  fi
+fi
+
+# ---------------------------------------------------------------------------
+# Workbench (`workbench` extra in pyproject.toml — needed by /epistract:dashboard)
+# ---------------------------------------------------------------------------
+
+WORKBENCH_IMPORTS="import fastapi, uvicorn, sse_starlette, httpx, yaml, rich"
+if "$VENV_PYTHON" -c "$WORKBENCH_IMPORTS" 2>/dev/null; then
+  echo "workbench deps (fastapi, uvicorn, pyyaml, ...)"
+elif [ "$CHECK_ONLY" = true ]; then
+  echo "MISSING: workbench deps (run without --check to install)"
+else
+  echo "workbench deps not found, installing the 'workbench' extra via uv..."
+  if uv pip install -r "$PROJECT_ROOT/pyproject.toml" --extra workbench; then
+    echo "workbench deps (installed)"
+  else
+    echo "WARN: workbench deps install failed — /epistract:dashboard will not run."
+    echo "      Retry with: uv pip install -r pyproject.toml --extra workbench"
   fi
 fi
 

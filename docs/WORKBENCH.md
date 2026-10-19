@@ -40,7 +40,13 @@ You should see `epistract` (version 3.0.0) in the installed list, and the `/epis
 /epistract:setup
 ```
 
-This runs `scripts/setup.sh` which creates `.venv/`, installs `sift-kg`, `chonkie`, `pydantic`, `fastapi`, and the other runtime dependencies, and checks for RDKit / Biopython. Re-run this whenever you upgrade the plugin.
+This runs `scripts/setup.sh` which creates `.venv/`, installs `sift-kg`, `chonkie`, and the `workbench` extra from `pyproject.toml` (`fastapi`, `uvicorn`, `sse-starlette`, `httpx`, `pyyaml`, `rich`), and checks for RDKit / Biopython. Re-run this whenever you upgrade the plugin.
+
+To install just the workbench dependencies into an existing venv:
+
+```bash
+uv pip install -r pyproject.toml --extra workbench
+```
 
 ## Panels
 
@@ -136,5 +142,6 @@ export OPENROUTER_API_KEY="sk-or-..."
 
 - **"No API key found"** in chat or narrator → set one of the env vars above, restart the workbench.
 - **Workbench shows generic persona / default title** → `graph_data.json` has no `metadata.domain`. Rebuild with `/epistract:ingest --domain <name>` to populate the field, or pass `--domain` explicitly to the dashboard command.
+- **`ModuleNotFoundError: No module named 'yaml'` (or `uvicorn`, `fastapi`, `sse_starlette`) on launch** → the venv is missing the workbench extra. Run `uv pip install -r pyproject.toml --extra workbench`, or re-run `/epistract:setup`.
 - **`/epistract:setup` fails on Python 3.14** → prebuilt wheels may not exist yet. Use 3.13 or 3.12.
 - **Port 8000 already in use** → pass `--port 8042` (or any free port) to `/epistract:dashboard`.

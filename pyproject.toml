@@ -1,6 +1,7 @@
 # ---------------------------------------------------------------------------
-# NOTE: This declares ONLY the phase-14 chonkie requirement because the
-# full dep graph is provisioned by scripts/setup.sh (sift-kg, kreuzberg,
+# NOTE: This declares ONLY the phase-14 chonkie requirement (plus the optional
+# `workbench` extra below) because the full dep graph is provisioned by
+# scripts/setup.sh (sift-kg, kreuzberg,
 # pydantic, etc.) per CLAUDE.md §Key Dependencies. Declaring every runtime
 # dep in [project].dependencies is a future migration (post-v3.0). For now,
 # running `uv pip install -e .` alone will NOT produce a working install —
@@ -16,6 +17,22 @@ description = "Domain-agnostic knowledge graph framework"
 requires-python = ">=3.11"
 dependencies = [
     "chonkie>=1.0",
+]
+
+# Optional extras. `workbench` covers everything examples/workbench/ and
+# scripts/launch_workbench.py import beyond the stdlib, so the dashboard can be
+# provisioned on its own:
+#   uv pip install -r pyproject.toml --extra workbench
+# scripts/setup.sh installs this extra by default.
+[project.optional-dependencies]
+workbench = [
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
+    "sse-starlette>=2.0",
+    "httpx>=0.27",
+    "pydantic>=2.5",
+    "pyyaml>=6.0",
+    "rich>=13.0",
 ]
 
 # Console entry point for the multi-project CLI. `core/` is packaged as the
