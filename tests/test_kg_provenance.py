@@ -191,9 +191,9 @@ class TestPCCVenueProvenance:
         assert node["entity_type"] == "PARTY"
 
     @pytest.mark.unit
-    def test_akka_party_referenced_in_response(self, chat_response):
+    def test_sta_party_referenced_in_response(self, chat_response):
         """Chat response should reference STA obligations."""
-        assert "akka" in chat_response.lower(), "Response does not mention STA"
+        assert re.search(r"\bSTA\b", chat_response), "Response does not mention STA"
 
     @pytest.mark.unit
     def test_pcc_has_obligations(self, graph_index):
